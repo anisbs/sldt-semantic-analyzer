@@ -138,6 +138,39 @@
     .link { stroke: #999; stroke-opacity: .6; }
     .link.optional { stroke-dasharray: 4 3; }
     .link-label { font-size: 9px; fill: #aaa; pointer-events: none; }
+    /* Issues (top tab) */
+    #issues { flex-direction: column; overflow-y: auto; padding: 16px 20px; gap: 14px; }
+    #issues h1 { margin: 0 0 4px; font-size: 18px; }
+    #issues .sub { font-size: 12px; color: #888; }
+    #iss-status { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; font-size: 13px; }
+    #iss-status .ttl { color: #666; font-size: 12px; }
+    #iss-status label { display: flex; align-items: center; gap: 5px; cursor: pointer; }
+    #iss-kpis { display: flex; gap: 12px; flex-wrap: wrap; }
+    .kpi.iss { border-left-color: #ccc; }
+    .kpi.iss .s { text-transform: none; }
+    .kpi.iss.zero { opacity: .5; }
+    .kpi.iss.zero .n { color: #999; }
+    .kpi.iss.err { border-left-color: #b00020; }
+    .kpi.iss.err .n { color: #b00020; }
+    .kpi.iss.warn { border-left-color: #f9a825; }
+    .kpi.iss.warn .n { color: #b9860b; }
+    #iss-list-head { font-size: 13px; color: #444; font-weight: 600; }
+    #iss-list { display: flex; flex-direction: column; border: 1px solid #eee; border-radius: 8px; }
+    #iss-list .row.clk { cursor: pointer; }
+    #iss-list .row.clk:hover { background: #f7f9ff; }
+    #iss-list .row .det { color: #666; font-size: 12px; flex: 1; }
+    #iss-list .empty { padding: 16px; color: #999; font-size: 13px; }
+    .idet { margin: 3px 0 0; padding-left: 18px; }
+    .idet li { font-size: 12px; color: #444; margin: 1px 0; }
+    .idet .pth { color: #999; }
+    /* Issues (Model Viewer sub-tab) */
+    #issues-body { position: absolute; inset: 0; overflow-y: auto; padding: 18px 22px; }
+    #issues-body h2 { font-size: 15px; margin: 0 0 6px; }
+    #issues-body h3 { font-size: 13px; margin: 16px 0 4px; display: flex; align-items: center; gap: 7px; }
+    #issues-body .sev { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
+    #issues-body .ok-msg { color: #2e7d32; font-size: 14px; }
+    #issues-body .none { color: #999; }
+
     #tooltip {
       position: absolute; pointer-events: none; background: #222; color: #fff;
       padding: 8px 10px; border-radius: 4px; font-size: 12px; max-width: 320px;
@@ -151,6 +184,7 @@
   <div id="tabs">
     <div class="tab active" data-view="home">Home</div>
     <div class="tab" data-view="modelviewer">Model Viewer</div>
+    <div class="tab" data-view="issues">Issues</div>
   </div>
   <div id="views">
     <div id="home" class="view active">
@@ -192,6 +226,7 @@
         <div class="subtab" data-sub="sv-dep">Dependency graph</div>
         <div class="subtab" data-sub="sv-docs">Generated docs</div>
         <div class="subtab" data-sub="sv-notes">Release notes</div>
+        <div class="subtab" data-sub="sv-issues">Issues</div>
       </div>
       <div id="subviews">
         <div id="sv-graph" class="subview active">
@@ -221,7 +256,22 @@
         <div id="sv-notes" class="subview">
           <div id="notes-body">Pick a model above.</div>
         </div>
+        <div id="sv-issues" class="subview">
+          <div id="issues-body">Pick a model and version above.</div>
+        </div>
       </div>
+    </div>
+
+    <div id="issues" class="view">
+      <div>
+        <h1>Quality issues</h1>
+        <div class="sub">Counts are over model+version whose status is checked
+          below (computed offline, served as static JSON).</div>
+      </div>
+      <div id="iss-status"><span class="ttl">Status:</span></div>
+      <div id="iss-kpis"></div>
+      <div id="iss-list-head"></div>
+      <div id="iss-list"></div>
     </div>
   </div>
 </div>
@@ -239,16 +289,20 @@ const STATUS_COLORS = {
   release: "#2e7d32", deprecated: "#b00020", draft: "#f9a825", undefined: "#9e9e9e",
 };
 const statusColor = s => STATUS_COLORS[s] || "#9e9e9e";
+const STATUS_ORDER = ["release", "draft", "deprecated", "undefined"];
 
 // Release notes are raw markdown that can contain <, &, > (e.g. urn:<...>).
 const escapeHtml = s => String(s).replace(/[&<>]/g,
   c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;" }[c]));
 
 // ---- Top tabs -------------------------------------------------------------
+let activeView = "home";
 function showTab(view) {
+  activeView = view;
   d3.selectAll(".tab").classed("active", function () { return this.dataset.view === view; });
   d3.selectAll(".view").classed("active", function () { return this.id === view; });
   if (view === "modelviewer") renderSub();   // svg needs to be visible to size
+  else if (view === "issues") renderIssues();
 }
 d3.selectAll(".tab").on("click", function () { showTab(this.dataset.view); });
 
@@ -753,7 +807,67 @@ function renderSub() {
     drawDep(k);
   } else if (activeSub === "sv-docs") {
     renderDocs();
+  } else if (activeSub === "sv-issues") {
+    renderIssuesSub();
   }
+}
+
+// ---- Issues : detail renderers (shared by the tab list & the sub-tab) -----
+// Short one-liner for a catalog row.
+function issueSummary(id, p) {
+  if (id === "deprecated_dep") return p.detail.map(x => x.target).join(", ");
+  if (id === "circular_dep")   return "cycle with " + p.detail.join(", ");
+  if (id === "unresolved_dep" || id === "missing_files") return p.detail.join(", ");
+  const head = p.detail.slice(0, 6).map(x => `${x.kind} ${x.name}`).join(", ");
+  return head + (p.detail.length > 6 ? ` … (+${p.detail.length - 6})` : "");
+}
+
+// Full <ul> for the sub-tab (everything escaped: names can hold urn:<…>).
+function issueDetailList(id, p) {
+  let items;
+  if (id === "deprecated_dep")
+    items = p.detail.map(x =>
+      `<li><b>${escapeHtml(x.target)}</b>` +
+      (x.path && x.path.length > 1
+        ? ` <span class="pth">via ${x.path.map(escapeHtml).join(" › ")}</span>`
+        : "") + `</li>`);
+  else if (id === "circular_dep" || id === "unresolved_dep" || id === "missing_files")
+    items = p.detail.map(x => `<li>${escapeHtml(x)}</li>`);
+  else
+    items = p.detail.map(x =>
+      `<li>${escapeHtml(x.kind)} <b>${escapeHtml(x.name)}</b> ` +
+      `<span class="pth">(${escapeHtml(x.file)})</span></li>`);
+  return `<ul class="idet">${items.join("")}</ul>`;
+}
+
+// ---- Issues : Model Viewer sub-tab (selected model+version only) ---------
+function renderIssuesSub() {
+  const el = document.getElementById("issues-body");
+  const k = depKey(curEntry);
+  if (!k) { el.textContent = "Pick a model and version above."; return; }
+  if (!issuesData) {
+    el.textContent = "issues.json not found — run: python -m sldt_analyzer.graph";
+    return;
+  }
+  const m = issuesData.models[k];
+  if (!m || !Object.keys(m.issues).length) {
+    el.innerHTML = `<h2>${escapeHtml(k)}</h2>` +
+      `<div class="ok-msg">No issues detected ✓</div>`;
+    return;
+  }
+  let html = `<h2>${escapeHtml(m.name)} ` +
+    `<span style="font-weight:400;color:#888;font-size:12px;">` +
+    `v${escapeHtml(m.version || "—")} · ${escapeHtml(m.status)}</span></h2>`;
+  issuesData.issue_types.forEach(t => {
+    const p = m.issues[t.id];
+    if (!p) return;
+    const col = t.severity === "warning" ? "#f9a825" : "#b00020";
+    html += `<h3><span class="sev" style="background:${col}"></span>` +
+      `${escapeHtml(t.label)} ` +
+      `<span style="color:#888;font-weight:400;">(${p.count})</span></h3>` +
+      issueDetailList(t.id, p);
+  });
+  el.innerHTML = html;
 }
 
 // ---- Generated docs (upstream gen/ HTML, fetched via jsDelivr) ------------
@@ -959,6 +1073,110 @@ function renderCatalog() {
 }
 
 d3.select("#search").on("input", renderCatalog);
+
+// ---- Issues (top tab) -----------------------------------------------------
+let issuesData = null;                 // issues.json { issue_types, models }
+let issStatuses = new Set(["release"]);// status scope (release on by default)
+let issSelType = null;                 // selected issue type (drives the list)
+
+fetch("data/graph/issues.json")
+  .then(r => r.json())
+  .then(j => {
+    issuesData = j;
+    if (activeView === "issues") renderIssues();
+    else if (activeSub === "sv-issues") renderSub();
+  })
+  .catch(() => { issuesData = null; });
+
+function renderIssues() {
+  if (activeView !== "issues") return;
+  const sbox = document.getElementById("iss-status");
+  const kbox = document.getElementById("iss-kpis");
+  const head = document.getElementById("iss-list-head");
+  const list = document.getElementById("iss-list");
+
+  if (!issuesData) {
+    kbox.innerHTML = ""; head.textContent = "";
+    list.innerHTML = `<div class="empty">issues.json not found — ` +
+      `run: python -m sldt_analyzer.graph</div>`;
+    return;
+  }
+
+  // Status checkboxes — built once, drive the KPI scope.
+  if (!sbox.dataset.built) {
+    STATUS_ORDER.forEach(s => {
+      const lab = document.createElement("label");
+      lab.innerHTML =
+        `<input type="checkbox" ${issStatuses.has(s) ? "checked" : ""}>` +
+        `<span class="badge" style="background:${statusColor(s)}">${s}</span>`;
+      lab.querySelector("input").addEventListener("change", function () {
+        if (this.checked) issStatuses.add(s); else issStatuses.delete(s);
+        renderIssues();
+      });
+      sbox.appendChild(lab);
+    });
+    sbox.dataset.built = "1";
+  }
+
+  const types = issuesData.issue_types;
+  const M = issuesData.models;
+  const labelOf = {};
+  types.forEach(t => (labelOf[t.id] = t.label));
+  const inScope = k => issStatuses.has(M[k].status);
+  const keysFor = id => Object.keys(M).filter(k => inScope(k) && M[k].issues[id]);
+
+  // KPI cards : one per issue type, highlighted as soon as count > 0.
+  kbox.innerHTML = "";
+  types.forEach(t => {
+    const n = keysFor(t.id).length;
+    const card = document.createElement("div");
+    card.className = "kpi iss " +
+      (n === 0 ? "zero" : t.severity === "warning" ? "warn" : "err") +
+      (issSelType === t.id ? " sel" : "");
+    card.innerHTML =
+      `<div class="n">${n}</div><div class="s">${escapeHtml(t.label)}</div>`;
+    card.addEventListener("click", () => {
+      issSelType = issSelType === t.id ? null : t.id;
+      renderIssues();
+    });
+    kbox.appendChild(card);
+  });
+
+  if (!issSelType) {
+    head.textContent = "";
+    list.innerHTML = `<div class="empty">Select an issue above to list ` +
+      `the affected model+version.</div>`;
+    return;
+  }
+
+  const rows = keysFor(issSelType)
+    .map(k => M[k])
+    .sort((a, b) =>
+      a.name.localeCompare(b.name) || cmpVerDesc(a.version, b.version));
+  head.textContent =
+    `${rows.length} model+version · ${labelOf[issSelType]}`;
+  list.innerHTML = "";
+  if (!rows.length) {
+    list.innerHTML =
+      `<div class="empty">None with the selected status.</div>`;
+    return;
+  }
+  rows.forEach(m => {
+    const ent = entryForKey(`${m.name}@${m.version}`);
+    const row = document.createElement("div");
+    row.className = "row" + (ent ? " clk" : "");
+    row.innerHTML =
+      `<span class="nm">${escapeHtml(m.name)} ` +
+      `<small>v${escapeHtml(m.version || "—")}</small></span>` +
+      `<span class="badge" style="background:${statusColor(m.status)}">` +
+      `${m.status}</span>` +
+      `<span class="det">` +
+      `${escapeHtml(issueSummary(issSelType, m.issues[issSelType]))}</span>`;
+    if (ent)
+      row.addEventListener("click", () => { openEntry(ent); showSub("sv-issues"); });
+    list.appendChild(row);
+  });
+}
 </script>
 </body>
 </html>

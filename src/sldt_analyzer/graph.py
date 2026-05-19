@@ -15,6 +15,7 @@ import json
 import logging
 from pathlib import Path
 
+from sldt_analyzer.issues import build_issues
 from sldt_analyzer.parser import ParsedModel, parse_directory
 
 logger = logging.getLogger("sldt.graph")
@@ -190,6 +191,21 @@ def build_graphs(
     )
     n_doc = sum(1 for m in index if m["gen"].get("html"))
     logger.info("gen/ : %d/%d fichiers ont une doc HTML amont", n_doc, len(index))
+
+    # issues.json : qualité des modèles, pré-calculée (site statique).
+    issues = build_issues(models, Path(models_dir), deps_out)
+    (out_dir / "issues.json").write_text(
+        json.dumps(issues, ensure_ascii=False, indent=2), encoding="utf-8"
+    )
+    n_flagged = len(issues["models"])
+    per_type = {
+        t["id"]: sum(1 for v in issues["models"].values() if t["id"] in v["issues"])
+        for t in issues["issue_types"]
+    }
+    logger.info(
+        "issues.json : %d modèles+version avec ≥1 issue %s",
+        n_flagged, per_type,
+    )
     return out_dir
 
 
