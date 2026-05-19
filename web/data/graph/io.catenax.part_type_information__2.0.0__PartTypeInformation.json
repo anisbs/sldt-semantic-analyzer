@@ -1,0 +1,161 @@
+{
+  "meta": {
+    "namespace": "urn:samm:io.catenax.part_type_information:2.0.0#",
+    "meta_model": "SAMM 2.1.0",
+    "path": "data/sldt-semantic-models/io.catenax.part_type_information/2.0.0/PartTypeInformation.ttl"
+  },
+  "nodes": [
+    {
+      "id": "urn:samm:io.catenax.part_type_information:2.0.0#PartTypeInformation",
+      "label": "PartTypeInformation",
+      "kind": "Aspect",
+      "preferredName": "Part Type Information",
+      "description": "A Part Type Information represents an item in the Catena-X Bill of Material (BOM) on a type level in a specific version."
+    },
+    {
+      "id": "urn:samm:io.catenax.part_type_information:2.0.0#partTypeInformation",
+      "label": "partTypeInformation",
+      "kind": "Property",
+      "preferredName": "Part Type Information",
+      "description": "The part type from which the serialized part has been instantiated."
+    },
+    {
+      "id": "urn:samm:io.catenax.part_type_information:2.0.0#partSitesInformationAsPlanned",
+      "label": "partSitesInformationAsPlanned",
+      "kind": "Property",
+      "preferredName": "Part Sites Information as Planned",
+      "description": "A site is a delimited geographical area where a legal entity does business (geographical address with geo coordinates). A site always has a primary physical address. It is possible that further physical addresses are specified for the site. P.O. box details are only possible in addition to the physical address. A site has a 1:n relation to addresses, means at least one address is necessary and multiple addresses are possible."
+    },
+    {
+      "id": "urn:samm:io.catenax.part_type_information:2.0.0#siteId",
+      "label": "siteId",
+      "kind": "Property",
+      "preferredName": "site identifier",
+      "description": "The identifier of the site according to BPDM. The siteId must be a valid BPN. The BPN is a unique, unchangeable identifier for business partners / company locations from foundation to closure, regardless of the different business relationships / structures between or within the business partners or company locations."
+    },
+    {
+      "id": "urn:samm:io.catenax.part_type_information:2.0.0#function",
+      "label": "function",
+      "kind": "Property",
+      "preferredName": "Function",
+      "description": "The function of the site in relation to the part (i.e. the activity within the value chain of the part that is performed at the site)."
+    },
+    {
+      "id": "urn:samm:io.catenax.part_type_information:2.0.0#functionValidFrom",
+      "label": "functionValidFrom",
+      "kind": "Property",
+      "preferredName": "Function valid from",
+      "description": "Timestamp, from when the site has the specified function for the given part."
+    },
+    {
+      "id": "urn:samm:io.catenax.part_type_information:2.0.0#functionValidUntil",
+      "label": "functionValidUntil",
+      "kind": "Property",
+      "preferredName": "Function valid until",
+      "description": "Timestamp, until when the site has the specified function for the given part."
+    },
+    {
+      "id": "urn:samm:io.catenax.part_type_information:2.0.0#PartTypeInformationCharacteristic",
+      "label": "PartTypeInformationCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Part Type Information Characteristic",
+      "description": "The characteristics of the part type."
+    },
+    {
+      "id": "urn:samm:io.catenax.part_type_information:2.0.0#partSitesInformationAsPlannedCharacteristic",
+      "label": "partSitesInformationAsPlannedCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Part Sites Information as Planned Characteristic",
+      "description": "The characteristic of the part site information that represents a set of possible site to a respective part."
+    },
+    {
+      "id": "urn:samm:io.catenax.part_type_information:2.0.0#PartTypeInformationEntity",
+      "label": "PartTypeInformationEntity",
+      "kind": "Entity",
+      "preferredName": "Part Type Information Entity",
+      "description": "Encapsulation for data related to the part type."
+    },
+    {
+      "id": "urn:samm:io.catenax.part_type_information:2.0.0#partSitesInformationAsPlannedEntity",
+      "label": "partSitesInformationAsPlannedEntity",
+      "kind": "Entity",
+      "preferredName": "Part Sites Information as Planned Entity",
+      "description": "Describes the ID, function and validity date of a site for the associated part in the AsPlanned context."
+    },
+    {
+      "id": "urn:samm:io.catenax.part_type_information:2.0.0#FunctionCharacteristic",
+      "label": "FunctionCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Function characteristic",
+      "description": "Describes the characteristics of the function for a site related to the respective part."
+    }
+  ],
+  "links": [
+    {
+      "source": "urn:samm:io.catenax.part_type_information:2.0.0#PartTypeInformation",
+      "target": "urn:samm:io.catenax.part_type_information:2.0.0#partTypeInformation",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.part_type_information:2.0.0#PartTypeInformation",
+      "target": "urn:samm:io.catenax.part_type_information:2.0.0#partSitesInformationAsPlanned",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.part_type_information:2.0.0#partSitesInformationAsPlannedEntity",
+      "target": "urn:samm:io.catenax.part_type_information:2.0.0#siteId",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.part_type_information:2.0.0#partSitesInformationAsPlannedEntity",
+      "target": "urn:samm:io.catenax.part_type_information:2.0.0#function",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.part_type_information:2.0.0#partSitesInformationAsPlannedEntity",
+      "target": "urn:samm:io.catenax.part_type_information:2.0.0#functionValidFrom",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.part_type_information:2.0.0#partSitesInformationAsPlannedEntity",
+      "target": "urn:samm:io.catenax.part_type_information:2.0.0#functionValidUntil",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.part_type_information:2.0.0#partTypeInformation",
+      "target": "urn:samm:io.catenax.part_type_information:2.0.0#PartTypeInformationCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.part_type_information:2.0.0#partSitesInformationAsPlanned",
+      "target": "urn:samm:io.catenax.part_type_information:2.0.0#partSitesInformationAsPlannedCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.part_type_information:2.0.0#function",
+      "target": "urn:samm:io.catenax.part_type_information:2.0.0#FunctionCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.part_type_information:2.0.0#PartTypeInformationCharacteristic",
+      "target": "urn:samm:io.catenax.part_type_information:2.0.0#PartTypeInformationEntity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.part_type_information:2.0.0#partSitesInformationAsPlannedCharacteristic",
+      "target": "urn:samm:io.catenax.part_type_information:2.0.0#partSitesInformationAsPlannedEntity",
+      "label": "dataType",
+      "optional": false
+    }
+  ]
+}

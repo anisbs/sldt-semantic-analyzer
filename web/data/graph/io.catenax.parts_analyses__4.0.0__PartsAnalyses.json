@@ -1,0 +1,135 @@
+{
+  "meta": {
+    "namespace": "urn:samm:io.catenax.parts_analyses:4.0.0#",
+    "meta_model": "SAMM 2.1.0",
+    "path": "data/sldt-semantic-models/io.catenax.parts_analyses/4.0.0/PartsAnalyses.ttl"
+  },
+  "nodes": [
+    {
+      "id": "urn:samm:io.catenax.parts_analyses:4.0.0#PartsAnalyses",
+      "label": "PartsAnalyses",
+      "kind": "Aspect",
+      "preferredName": "Parts Analysis",
+      "description": "For Catena-X(CX) business case Quality Management. Supported technical features: delta update feature, meta information feature and additionalInformationList key-value pairs. The supported model features are described in detail in the Catena-X Quality KIT. PartsAnalyses (hint: analyses is plural of one analysis) data model is usd to exchange analysis results of parts. Assumption: If a Quality Task exist a random sample of parts are sent to parts manufacturer to analyze these parts for potential malfunction."
+    },
+    {
+      "id": "urn:samm:io.catenax.parts_analyses:4.0.0#partsAnalyses",
+      "label": "partsAnalyses",
+      "kind": "Property",
+      "preferredName": "Parts Analyses",
+      "description": "A list of analysis result of several parts."
+    },
+    {
+      "id": "urn:samm:io.catenax.parts_analyses:4.0.0#isDefect",
+      "label": "isDefect",
+      "kind": "Property",
+      "preferredName": "Part Defect Flag",
+      "description": "True: Analysis turned out that analysed part is defect according part's specification."
+    },
+    {
+      "id": "urn:samm:io.catenax.parts_analyses:4.0.0#componentManufacturerAnalysisID",
+      "label": "componentManufacturerAnalysisID",
+      "kind": "Property",
+      "preferredName": "Component Manufacturer Analysis Identifier",
+      "description": "Internal identifier for this analysis inside component manufacturer company."
+    },
+    {
+      "id": "urn:samm:io.catenax.parts_analyses:4.0.0#catenaXPartnerAnalysisID",
+      "label": "catenaXPartnerAnalysisID",
+      "kind": "Property",
+      "preferredName": "Catena-X Partner Analysis Identifier",
+      "description": "The analysis identifier of your Catena-X partner company. Catena-X partner could be a vehicle manufacturer."
+    },
+    {
+      "id": "urn:samm:io.catenax.parts_analyses:4.0.0#resultsDescription",
+      "label": "resultsDescription",
+      "kind": "Property",
+      "preferredName": "Results Description",
+      "description": "Detailed description of part analysis results."
+    },
+    {
+      "id": "urn:samm:io.catenax.parts_analyses:4.0.0#status",
+      "label": "status",
+      "kind": "Property",
+      "preferredName": "Status",
+      "description": "Status of this part analysis"
+    },
+    {
+      "id": "urn:samm:io.catenax.parts_analyses:4.0.0#PartsAnalysesList",
+      "label": "PartsAnalysesList",
+      "kind": "Characteristic",
+      "preferredName": "Part Analyses List",
+      "description": "A list for multiple part analyses"
+    },
+    {
+      "id": "urn:samm:io.catenax.parts_analyses:4.0.0#PartAnalysis",
+      "label": "PartAnalysis",
+      "kind": "Entity",
+      "preferredName": "Part Analysis",
+      "description": "The analysis results of ONE part"
+    },
+    {
+      "id": "urn:samm:io.catenax.parts_analyses:4.0.0#StatusCharacteristic",
+      "label": "StatusCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Status Characteristic",
+      "description": "Enumeration of the different status values"
+    }
+  ],
+  "links": [
+    {
+      "source": "urn:samm:io.catenax.parts_analyses:4.0.0#PartsAnalyses",
+      "target": "urn:samm:io.catenax.parts_analyses:4.0.0#partsAnalyses",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.parts_analyses:4.0.0#PartAnalysis",
+      "target": "urn:samm:io.catenax.parts_analyses:4.0.0#componentManufacturerAnalysisID",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.parts_analyses:4.0.0#PartAnalysis",
+      "target": "urn:samm:io.catenax.parts_analyses:4.0.0#catenaXPartnerAnalysisID",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.parts_analyses:4.0.0#PartAnalysis",
+      "target": "urn:samm:io.catenax.parts_analyses:4.0.0#isDefect",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.parts_analyses:4.0.0#PartAnalysis",
+      "target": "urn:samm:io.catenax.parts_analyses:4.0.0#resultsDescription",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.parts_analyses:4.0.0#PartAnalysis",
+      "target": "urn:samm:io.catenax.parts_analyses:4.0.0#status",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.parts_analyses:4.0.0#partsAnalyses",
+      "target": "urn:samm:io.catenax.parts_analyses:4.0.0#PartsAnalysesList",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.parts_analyses:4.0.0#status",
+      "target": "urn:samm:io.catenax.parts_analyses:4.0.0#StatusCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.parts_analyses:4.0.0#PartsAnalysesList",
+      "target": "urn:samm:io.catenax.parts_analyses:4.0.0#PartAnalysis",
+      "label": "dataType",
+      "optional": false
+    }
+  ]
+}

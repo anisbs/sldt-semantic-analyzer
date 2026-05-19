@@ -1,0 +1,233 @@
+{
+  "meta": {
+    "namespace": "urn:bamm:io.catenax.quality_task:1.0.0#",
+    "meta_model": "BAMM 2.0.0",
+    "path": "data/sldt-semantic-models/io.catenax.quality_task/1.0.0/QualityTask.ttl"
+  },
+  "nodes": [
+    {
+      "id": "urn:bamm:io.catenax.quality_task:1.0.0#QualityTask",
+      "label": "QualityTask",
+      "kind": "Aspect",
+      "preferredName": "QualityTask",
+      "description": "A quality task (qTask) defines why data is exchanged between 2 or more companies and what insights should be generated out of the transferred data. In addition there is a flag, what happens with the transferred data when this qTask is closed"
+    },
+    {
+      "id": "urn:bamm:io.catenax.quality_task:1.0.0#qualityTaskId",
+      "label": "qualityTaskId",
+      "kind": "Property",
+      "preferredName": "q-Task ID",
+      "description": "A unique quality task identifier where these list of parts analysis belong to."
+    },
+    {
+      "id": "urn:bamm:io.catenax.quality_task:1.0.0#status",
+      "label": "status",
+      "kind": "Property",
+      "preferredName": "Status",
+      "description": "Status of this quality task"
+    },
+    {
+      "id": "urn:bamm:io.catenax.quality_task:1.0.0#creationDate",
+      "label": "creationDate",
+      "kind": "Property",
+      "preferredName": "Creation Date",
+      "description": "Timestamp when this qTask was created"
+    },
+    {
+      "id": "urn:bamm:io.catenax.quality_task:1.0.0#title",
+      "label": "title",
+      "kind": "Property",
+      "preferredName": "Title",
+      "description": "Working title for this qTask"
+    },
+    {
+      "id": "urn:bamm:io.catenax.quality_task:1.0.0#description",
+      "label": "description",
+      "kind": "Property",
+      "preferredName": "Description",
+      "description": "Description what should be done in this qTask"
+    },
+    {
+      "id": "urn:bamm:io.catenax.quality_task:1.0.0#component",
+      "label": "component",
+      "kind": "Property",
+      "preferredName": "Component",
+      "description": "The component that should be investigated in this qTask."
+    },
+    {
+      "id": "urn:bamm:io.catenax.quality_task:1.0.0#dataDeletion",
+      "label": "dataDeletion",
+      "kind": "Property",
+      "preferredName": "Deletion policy",
+      "description": "What should be done with the data after this qTask is closed"
+    },
+    {
+      "id": "urn:bamm:io.catenax.quality_task:1.0.0#listOfCompanies",
+      "label": "listOfCompanies",
+      "kind": "Property",
+      "preferredName": "List of companies",
+      "description": "A list of companies involved in this quality task"
+    },
+    {
+      "id": "urn:bamm:io.catenax.quality_task:1.0.0#cxBPN",
+      "label": "cxBPN",
+      "kind": "Property",
+      "preferredName": "CX Business partner number",
+      "description": "Catena-X business partner number of this company"
+    },
+    {
+      "id": "urn:bamm:io.catenax.quality_task:1.0.0#name",
+      "label": "name",
+      "kind": "Property",
+      "preferredName": "Company name",
+      "description": "Name of the comapny"
+    },
+    {
+      "id": "urn:bamm:io.catenax.quality_task:1.0.0#email",
+      "label": "email",
+      "kind": "Property",
+      "preferredName": "email",
+      "description": "An email address"
+    },
+    {
+      "id": "urn:bamm:io.catenax.quality_task:1.0.0#DataDeletionEnumeration",
+      "label": "DataDeletionEnumeration",
+      "kind": "Characteristic",
+      "preferredName": "Data deletion",
+      "description": "Enumeration of possible data deletions entries."
+    },
+    {
+      "id": "urn:bamm:io.catenax.quality_task:1.0.0#StatusCharacteristic",
+      "label": "StatusCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Status Characteristic",
+      "description": "Enumeration of the different status values"
+    },
+    {
+      "id": "urn:bamm:io.catenax.quality_task:1.0.0#ListOfCompanies",
+      "label": "ListOfCompanies",
+      "kind": "Characteristic",
+      "preferredName": "Companies",
+      "description": "A list of all companies involved in this qTask"
+    },
+    {
+      "id": "urn:bamm:io.catenax.quality_task:1.0.0#Company",
+      "label": "Company",
+      "kind": "Entity",
+      "preferredName": "Company",
+      "description": "One company involved in this qTask"
+    },
+    {
+      "id": "urn:bamm:io.catenax.quality_task:1.0.0#EMailTrait",
+      "label": "EMailTrait",
+      "kind": "Characteristic",
+      "preferredName": null,
+      "description": null
+    },
+    {
+      "id": "urn:bamm:io.catenax.quality_task:1.0.0#EMailConstraint",
+      "label": "EMailConstraint",
+      "kind": "Characteristic",
+      "preferredName": null,
+      "description": "Regular expression for mail address as defined in W3C (see https://html.spec.whatwg.org/multipage/input.html#valid-e-mail-address)"
+    }
+  ],
+  "links": [
+    {
+      "source": "urn:bamm:io.catenax.quality_task:1.0.0#QualityTask",
+      "target": "urn:bamm:io.catenax.quality_task:1.0.0#qualityTaskId",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.quality_task:1.0.0#QualityTask",
+      "target": "urn:bamm:io.catenax.quality_task:1.0.0#status",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.quality_task:1.0.0#QualityTask",
+      "target": "urn:bamm:io.catenax.quality_task:1.0.0#creationDate",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.quality_task:1.0.0#QualityTask",
+      "target": "urn:bamm:io.catenax.quality_task:1.0.0#title",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.quality_task:1.0.0#QualityTask",
+      "target": "urn:bamm:io.catenax.quality_task:1.0.0#description",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.quality_task:1.0.0#QualityTask",
+      "target": "urn:bamm:io.catenax.quality_task:1.0.0#component",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.quality_task:1.0.0#QualityTask",
+      "target": "urn:bamm:io.catenax.quality_task:1.0.0#dataDeletion",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.quality_task:1.0.0#QualityTask",
+      "target": "urn:bamm:io.catenax.quality_task:1.0.0#listOfCompanies",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.quality_task:1.0.0#Company",
+      "target": "urn:bamm:io.catenax.quality_task:1.0.0#cxBPN",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.quality_task:1.0.0#Company",
+      "target": "urn:bamm:io.catenax.quality_task:1.0.0#name",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.quality_task:1.0.0#Company",
+      "target": "urn:bamm:io.catenax.quality_task:1.0.0#email",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.quality_task:1.0.0#status",
+      "target": "urn:bamm:io.catenax.quality_task:1.0.0#StatusCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.quality_task:1.0.0#dataDeletion",
+      "target": "urn:bamm:io.catenax.quality_task:1.0.0#DataDeletionEnumeration",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.quality_task:1.0.0#listOfCompanies",
+      "target": "urn:bamm:io.catenax.quality_task:1.0.0#ListOfCompanies",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.quality_task:1.0.0#email",
+      "target": "urn:bamm:io.catenax.quality_task:1.0.0#EMailTrait",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.quality_task:1.0.0#ListOfCompanies",
+      "target": "urn:bamm:io.catenax.quality_task:1.0.0#Company",
+      "label": "dataType",
+      "optional": false
+    }
+  ]
+}

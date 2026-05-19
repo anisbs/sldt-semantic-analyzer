@@ -1,0 +1,44 @@
+{
+  "meta": {
+    "namespace": "urn:samm:io.catenax.remanufacturing_certificate:3.0.0#",
+    "meta_model": "SAMM 2.1.0",
+    "path": "data/sldt-semantic-models/io.catenax.remanufacturing_certificate/3.0.0/RemanufacturingCertificate.ttl"
+  },
+  "nodes": [
+    {
+      "id": "urn:samm:io.catenax.remanufacturing_certificate:3.0.0#RemanufacturingCertificate",
+      "label": "RemanufacturingCertificate",
+      "kind": "Aspect",
+      "preferredName": "Remanufacturing certificate",
+      "description": "This certificate represents the meticulous reconstruction and enhancement of an asset, marking the culmination of its previous life cycle and the inception of a renewed phase of functionality and sustainability through remanufacturing processes."
+    },
+    {
+      "id": "urn:samm:io.catenax.remanufacturing_certificate:3.0.0#certificate",
+      "label": "certificate",
+      "kind": "Property",
+      "preferredName": "Certificate",
+      "description": "A property of the model, named certificate."
+    },
+    {
+      "id": "urn:samm:io.catenax.remanufacturing_certificate:3.0.0#partInstanceId",
+      "label": "partInstanceId",
+      "kind": "Property",
+      "preferredName": "Part Instance Id",
+      "description": "The serial number of the part from the manufacturer"
+    }
+  ],
+  "links": [
+    {
+      "source": "urn:samm:io.catenax.remanufacturing_certificate:3.0.0#RemanufacturingCertificate",
+      "target": "urn:samm:io.catenax.remanufacturing_certificate:3.0.0#certificate",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.remanufacturing_certificate:3.0.0#RemanufacturingCertificate",
+      "target": "urn:samm:io.catenax.remanufacturing_certificate:3.0.0#partInstanceId",
+      "label": "properties",
+      "optional": false
+    }
+  ]
+}

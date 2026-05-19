@@ -1,0 +1,57 @@
+{
+  "meta": {
+    "namespace": "urn:samm:io.catenax.batch:4.0.0#",
+    "meta_model": "SAMM 2.1.0",
+    "path": "data/sldt-semantic-models/io.catenax.batch/4.0.0/Batch.ttl"
+  },
+  "nodes": [
+    {
+      "id": "urn:samm:io.catenax.batch:4.0.0#Batch",
+      "label": "Batch",
+      "kind": "Aspect",
+      "preferredName": "batch",
+      "description": "A batch is a quantity of(semi-)finished products or(raw)material product that have been produced under the same circumstances(e.g. same production location), as specified groups or amounts, within a certain time frame. Every batch can differ in the number or amount of products. Different batches can have varied specifications, e.g., different colors. A batch is identified via a Batch ID."
+    },
+    {
+      "id": "urn:samm:io.catenax.batch:4.0.0#partTypeInformation",
+      "label": "partTypeInformation",
+      "kind": "Property",
+      "preferredName": "part type information",
+      "description": "The part type of which the batch has been instantiated of."
+    },
+    {
+      "id": "urn:samm:io.catenax.batch:4.0.0#PartTypeInformationCharacteristic",
+      "label": "PartTypeInformationCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "part type information characteristic",
+      "description": "The characteristics of the part type"
+    },
+    {
+      "id": "urn:samm:io.catenax.batch:4.0.0#PartTypeInformationEntity",
+      "label": "PartTypeInformationEntity",
+      "kind": "Entity",
+      "preferredName": "part type information entity",
+      "description": "Encapsulation for data related to the part type."
+    }
+  ],
+  "links": [
+    {
+      "source": "urn:samm:io.catenax.batch:4.0.0#Batch",
+      "target": "urn:samm:io.catenax.batch:4.0.0#partTypeInformation",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.batch:4.0.0#partTypeInformation",
+      "target": "urn:samm:io.catenax.batch:4.0.0#PartTypeInformationCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.batch:4.0.0#PartTypeInformationCharacteristic",
+      "target": "urn:samm:io.catenax.batch:4.0.0#PartTypeInformationEntity",
+      "label": "dataType",
+      "optional": false
+    }
+  ]
+}

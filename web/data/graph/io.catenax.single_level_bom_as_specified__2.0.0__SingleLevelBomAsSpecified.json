@@ -1,0 +1,474 @@
+{
+  "meta": {
+    "namespace": "urn:samm:io.catenax.single_level_bom_as_specified:2.0.0#",
+    "meta_model": "SAMM 2.0.0",
+    "path": "data/sldt-semantic-models/io.catenax.single_level_bom_as_specified/2.0.0/SingleLevelBomAsSpecified.ttl"
+  },
+  "nodes": [
+    {
+      "id": "urn:samm:io.catenax.single_level_bom_as_specified:2.0.0#SingleLevelBomAsSpecified",
+      "label": "SingleLevelBomAsSpecified",
+      "kind": "Aspect",
+      "preferredName": "Single Level BOM as Specified",
+      "description": "The SingleLevelBomAsSpecified defines the view of the OEM or producer of the whole product, e.g. the OEM of a vehicle. It is free of any supplier-related information and specifies the promised and guaranteed content of the whole product to the end customer. This \"top-down\" view is in contrast to the \"bottom-up\" view of the SingleLevelBoMAsPlanned, though several sub-aspects are shared. The BomAsSpecified is merely one aspect, which is attached to the twin of the whole product and itself does neither introduce further twins nor reference them. Instead it merely comprises all functional information required by dismantlers, workshops or requestors for used parts to search for and to make a match on the market place."
+    },
+    {
+      "id": "urn:samm:io.catenax.single_level_bom_as_specified:2.0.0#assetId",
+      "label": "assetId",
+      "kind": "Property",
+      "preferredName": "assetID",
+      "description": "A unique reference to an asset which could be registered within Catena-X DataSpace"
+    },
+    {
+      "id": "urn:samm:io.catenax.single_level_bom_as_specified:2.0.0#manufacturerId",
+      "label": "manufacturerId",
+      "kind": "Property",
+      "preferredName": "Manufacturer ID",
+      "description": "The ID of the initial issuer of the single level BoMAsSpecified"
+    },
+    {
+      "id": "urn:samm:io.catenax.single_level_bom_as_specified:2.0.0#childassetId",
+      "label": "childassetId",
+      "kind": "Property",
+      "preferredName": "Child assetId",
+      "description": "Describes the Catena-X ID of the child part"
+    },
+    {
+      "id": "urn:samm:io.catenax.single_level_bom_as_specified:2.0.0#lastModifiedOn",
+      "label": "lastModifiedOn",
+      "kind": "Property",
+      "preferredName": "Last Modified On",
+      "description": "The time the item was modified the last time"
+    },
+    {
+      "id": "urn:samm:io.catenax.single_level_bom_as_specified:2.0.0#createdOn",
+      "label": "createdOn",
+      "kind": "Property",
+      "preferredName": "Created On",
+      "description": "The time the item was created on"
+    },
+    {
+      "id": "urn:samm:io.catenax.single_level_bom_as_specified:2.0.0#measurementUnit",
+      "label": "measurementUnit",
+      "kind": "Property",
+      "preferredName": "Measurement Unit",
+      "description": "Unit of measurement for the quantity of serialized objects."
+    },
+    {
+      "id": "urn:samm:io.catenax.single_level_bom_as_specified:2.0.0#quantityNumber",
+      "label": "quantityNumber",
+      "kind": "Property",
+      "preferredName": "Quantity Number",
+      "description": "The number of objects related to the measurement unit."
+    },
+    {
+      "id": "urn:samm:io.catenax.single_level_bom_as_specified:2.0.0#key",
+      "label": "key",
+      "kind": "Property",
+      "preferredName": "Key",
+      "description": "Key within the classification."
+    },
+    {
+      "id": "urn:samm:io.catenax.single_level_bom_as_specified:2.0.0#value",
+      "label": "value",
+      "kind": "Property",
+      "preferredName": "Value",
+      "description": "Value within the classification."
+    },
+    {
+      "id": "urn:samm:io.catenax.single_level_bom_as_specified:2.0.0#childItems",
+      "label": "childItems",
+      "kind": "Property",
+      "preferredName": "Child Items",
+      "description": "The child Items of the observed parent item"
+    },
+    {
+      "id": "urn:samm:io.catenax.single_level_bom_as_specified:2.0.0#item",
+      "label": "item",
+      "kind": "Property",
+      "preferredName": "Item",
+      "description": "The description of the part in the primary language of the production facility of the product owner."
+    },
+    {
+      "id": "urn:samm:io.catenax.single_level_bom_as_specified:2.0.0#ownerItemId",
+      "label": "ownerItemId",
+      "kind": "Property",
+      "preferredName": "Owner Item ID",
+      "description": "This is the key field of the component which usually keeps the part numbers used in after-sales, e.g. when repairing broken parts and searching for a replacement. This ownerPartId itself isn't usually bound to one part version, with the assumption that all part versions with the same ownerPartId are mutually interchangeable."
+    },
+    {
+      "id": "urn:samm:io.catenax.single_level_bom_as_specified:2.0.0#itemVersion",
+      "label": "itemVersion",
+      "kind": "Property",
+      "preferredName": "Item Version",
+      "description": "This is the version of the item. The engineering will at times supercede an older item version by a newer one, which might have different material aspects, physical dimensions etc., still maintaining compatibility."
+    },
+    {
+      "id": "urn:samm:io.catenax.single_level_bom_as_specified:2.0.0#itemQuantity",
+      "label": "itemQuantity",
+      "kind": "Property",
+      "preferredName": "Item Quantity",
+      "description": "This is the quantity how often this item is in the item."
+    },
+    {
+      "id": "urn:samm:io.catenax.single_level_bom_as_specified:2.0.0#itemDescription",
+      "label": "itemDescription",
+      "kind": "Property",
+      "preferredName": "Item Description",
+      "description": "The description of the item in the primary language of the production facility of the product owner."
+    },
+    {
+      "id": "urn:samm:io.catenax.single_level_bom_as_specified:2.0.0#itemClassification",
+      "label": "itemClassification",
+      "kind": "Property",
+      "preferredName": "Item Classification",
+      "description": "The item classification."
+    },
+    {
+      "id": "urn:samm:io.catenax.single_level_bom_as_specified:2.0.0#childItemCategory",
+      "label": "childItemCategory",
+      "kind": "Property",
+      "preferredName": "Child Item Category",
+      "description": "The BomAsSpecified defines the view of the OEM or producer of the whole product, e.g. the OEM of a vehicle. It is free of any supplier-related information and specifies the promised and guaranteed content of the whole product to the end customer. This \"top-down\" view is in contrast to the \"bottom-up\" view of the SingleLevelBoMAsPlanned, though several sub-aspects are shared. The BomAsSpecified is merely one aspect, which is attached to the twin of the whole product and itself does neither introduce further twins nor reference them. Instead it merely comprises all functional information required by dismantlers, workshops or requestors for used parts to search for and to make a match on the market place."
+    },
+    {
+      "id": "urn:samm:io.catenax.single_level_bom_as_specified:2.0.0#itemPositioning",
+      "label": "itemPositioning",
+      "kind": "Property",
+      "preferredName": "Item Positioning",
+      "description": "Some parts are intended to be used on either the left or right side, e.g. mirrors, hence this entity describes on which side a part is to be used"
+    },
+    {
+      "id": "urn:samm:io.catenax.single_level_bom_as_specified:2.0.0#assetIdTrait",
+      "label": "assetIdTrait",
+      "kind": "Characteristic",
+      "preferredName": null,
+      "description": null
+    },
+    {
+      "id": "urn:samm:io.catenax.single_level_bom_as_specified:2.0.0#Uuidv4RegularExpression",
+      "label": "Uuidv4RegularExpression",
+      "kind": "Characteristic",
+      "preferredName": "Regular Expression for the assetID",
+      "description": "The provided regular expression ensures that the UUID is composed of five groups of characters separated by hyphens, in the form 8-4-4-4-12 for a total of 36 characters (32 hexadecimal characters and 4 hyphens)."
+    },
+    {
+      "id": "urn:samm:io.catenax.single_level_bom_as_specified:2.0.0#NumberOfObjects",
+      "label": "NumberOfObjects",
+      "kind": "Characteristic",
+      "preferredName": "Number of Objects",
+      "description": "Quantifiable number of objects in reference to the measurementUnit."
+    },
+    {
+      "id": "urn:samm:io.catenax.single_level_bom_as_specified:2.0.0#ItemQuantityCharacteristic",
+      "label": "ItemQuantityCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Item Quantity Characteristic",
+      "description": "The characteristic of the item quantity."
+    },
+    {
+      "id": "urn:samm:io.catenax.single_level_bom_as_specified:2.0.0#ChildItemCharacteristic",
+      "label": "ChildItemCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Child Item Characteristic",
+      "description": "The characteristic of the child item property"
+    },
+    {
+      "id": "urn:samm:io.catenax.single_level_bom_as_specified:2.0.0#ItemCharacteristic",
+      "label": "ItemCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Item Characteristic",
+      "description": "Characteristic of the item."
+    },
+    {
+      "id": "urn:samm:io.catenax.single_level_bom_as_specified:2.0.0#ItemClassificationCharacteristic",
+      "label": "ItemClassificationCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Item Classification Characteristic",
+      "description": "The characteristic of the item classification."
+    },
+    {
+      "id": "urn:samm:io.catenax.single_level_bom_as_specified:2.0.0#ChildItemEntity",
+      "label": "ChildItemEntity",
+      "kind": "Entity",
+      "preferredName": "Child Item Entity",
+      "description": "Encapsulates the properties describing the child item"
+    },
+    {
+      "id": "urn:samm:io.catenax.single_level_bom_as_specified:2.0.0#ItemEntity",
+      "label": "ItemEntity",
+      "kind": "Entity",
+      "preferredName": "Item Entity",
+      "description": "Entity encapsulating the properies describing a item"
+    },
+    {
+      "id": "urn:samm:io.catenax.single_level_bom_as_specified:2.0.0#ItemQuantityEntity",
+      "label": "ItemQuantityEntity",
+      "kind": "Entity",
+      "preferredName": "Item Quantity Entity",
+      "description": "The entity encapsulating the properties describing the quantity of a item."
+    },
+    {
+      "id": "urn:samm:io.catenax.single_level_bom_as_specified:2.0.0#ItemClassificationEntity",
+      "label": "ItemClassificationEntity",
+      "kind": "Entity",
+      "preferredName": "Item Classification Entity",
+      "description": "The entity encapsulating the properties of the item classification."
+    },
+    {
+      "id": "urn:samm:io.catenax.single_level_bom_as_specified:2.0.0#ItemPositioningCharacteristic",
+      "label": "ItemPositioningCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Item Positioning Characteristic",
+      "description": "Describes the characteristic of the left or right mark entity with its possible values (left or right)"
+    }
+  ],
+  "links": [
+    {
+      "source": "urn:samm:io.catenax.single_level_bom_as_specified:2.0.0#SingleLevelBomAsSpecified",
+      "target": "urn:samm:io.catenax.single_level_bom_as_specified:2.0.0#assetId",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.single_level_bom_as_specified:2.0.0#SingleLevelBomAsSpecified",
+      "target": "urn:samm:io.catenax.single_level_bom_as_specified:2.0.0#childItems",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.single_level_bom_as_specified:2.0.0#SingleLevelBomAsSpecified",
+      "target": "urn:samm:io.catenax.single_level_bom_as_specified:2.0.0#manufacturerId",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.single_level_bom_as_specified:2.0.0#ChildItemEntity",
+      "target": "urn:samm:io.catenax.single_level_bom_as_specified:2.0.0#childItemCategory",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.single_level_bom_as_specified:2.0.0#ChildItemEntity",
+      "target": "urn:samm:io.catenax.single_level_bom_as_specified:2.0.0#item",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.single_level_bom_as_specified:2.0.0#ChildItemEntity",
+      "target": "urn:samm:io.catenax.single_level_bom_as_specified:2.0.0#childItemCategory",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.single_level_bom_as_specified:2.0.0#ChildItemEntity",
+      "target": "urn:samm:io.catenax.single_level_bom_as_specified:2.0.0#item",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.single_level_bom_as_specified:2.0.0#ChildItemEntity",
+      "target": "urn:samm:io.catenax.single_level_bom_as_specified:2.0.0#childassetId",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.single_level_bom_as_specified:2.0.0#ItemEntity",
+      "target": "urn:samm:io.catenax.single_level_bom_as_specified:2.0.0#ownerItemId",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.single_level_bom_as_specified:2.0.0#ItemEntity",
+      "target": "urn:samm:io.catenax.single_level_bom_as_specified:2.0.0#itemVersion",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.single_level_bom_as_specified:2.0.0#ItemEntity",
+      "target": "urn:samm:io.catenax.single_level_bom_as_specified:2.0.0#itemQuantity",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.single_level_bom_as_specified:2.0.0#ItemEntity",
+      "target": "urn:samm:io.catenax.single_level_bom_as_specified:2.0.0#itemDescription",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.single_level_bom_as_specified:2.0.0#ItemEntity",
+      "target": "urn:samm:io.catenax.single_level_bom_as_specified:2.0.0#itemClassification",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.single_level_bom_as_specified:2.0.0#ItemEntity",
+      "target": "urn:samm:io.catenax.single_level_bom_as_specified:2.0.0#lastModifiedOn",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.single_level_bom_as_specified:2.0.0#ItemEntity",
+      "target": "urn:samm:io.catenax.single_level_bom_as_specified:2.0.0#createdOn",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.single_level_bom_as_specified:2.0.0#ItemEntity",
+      "target": "urn:samm:io.catenax.single_level_bom_as_specified:2.0.0#ownerItemId",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.single_level_bom_as_specified:2.0.0#ItemEntity",
+      "target": "urn:samm:io.catenax.single_level_bom_as_specified:2.0.0#itemVersion",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.single_level_bom_as_specified:2.0.0#ItemEntity",
+      "target": "urn:samm:io.catenax.single_level_bom_as_specified:2.0.0#itemQuantity",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.single_level_bom_as_specified:2.0.0#ItemEntity",
+      "target": "urn:samm:io.catenax.single_level_bom_as_specified:2.0.0#itemDescription",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.single_level_bom_as_specified:2.0.0#ItemEntity",
+      "target": "urn:samm:io.catenax.single_level_bom_as_specified:2.0.0#itemClassification",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.single_level_bom_as_specified:2.0.0#ItemEntity",
+      "target": "urn:samm:io.catenax.single_level_bom_as_specified:2.0.0#lastModifiedOn",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.single_level_bom_as_specified:2.0.0#ItemEntity",
+      "target": "urn:samm:io.catenax.single_level_bom_as_specified:2.0.0#createdOn",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.single_level_bom_as_specified:2.0.0#ItemEntity",
+      "target": "urn:samm:io.catenax.single_level_bom_as_specified:2.0.0#itemPositioning",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.single_level_bom_as_specified:2.0.0#ItemQuantityEntity",
+      "target": "urn:samm:io.catenax.single_level_bom_as_specified:2.0.0#measurementUnit",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.single_level_bom_as_specified:2.0.0#ItemQuantityEntity",
+      "target": "urn:samm:io.catenax.single_level_bom_as_specified:2.0.0#quantityNumber",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.single_level_bom_as_specified:2.0.0#ItemQuantityEntity",
+      "target": "urn:samm:io.catenax.single_level_bom_as_specified:2.0.0#measurementUnit",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.single_level_bom_as_specified:2.0.0#ItemQuantityEntity",
+      "target": "urn:samm:io.catenax.single_level_bom_as_specified:2.0.0#quantityNumber",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.single_level_bom_as_specified:2.0.0#ItemClassificationEntity",
+      "target": "urn:samm:io.catenax.single_level_bom_as_specified:2.0.0#key",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.single_level_bom_as_specified:2.0.0#ItemClassificationEntity",
+      "target": "urn:samm:io.catenax.single_level_bom_as_specified:2.0.0#value",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.single_level_bom_as_specified:2.0.0#assetId",
+      "target": "urn:samm:io.catenax.single_level_bom_as_specified:2.0.0#assetIdTrait",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.single_level_bom_as_specified:2.0.0#ownerItemId",
+      "target": "urn:samm:io.catenax.single_level_bom_as_specified:2.0.0#assetIdTrait",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.single_level_bom_as_specified:2.0.0#quantityNumber",
+      "target": "urn:samm:io.catenax.single_level_bom_as_specified:2.0.0#NumberOfObjects",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.single_level_bom_as_specified:2.0.0#childItems",
+      "target": "urn:samm:io.catenax.single_level_bom_as_specified:2.0.0#ChildItemCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.single_level_bom_as_specified:2.0.0#item",
+      "target": "urn:samm:io.catenax.single_level_bom_as_specified:2.0.0#ItemCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.single_level_bom_as_specified:2.0.0#itemQuantity",
+      "target": "urn:samm:io.catenax.single_level_bom_as_specified:2.0.0#ItemQuantityCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.single_level_bom_as_specified:2.0.0#itemClassification",
+      "target": "urn:samm:io.catenax.single_level_bom_as_specified:2.0.0#ItemClassificationCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.single_level_bom_as_specified:2.0.0#itemPositioning",
+      "target": "urn:samm:io.catenax.single_level_bom_as_specified:2.0.0#ItemPositioningCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.single_level_bom_as_specified:2.0.0#ChildItemCharacteristic",
+      "target": "urn:samm:io.catenax.single_level_bom_as_specified:2.0.0#ChildItemEntity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.single_level_bom_as_specified:2.0.0#ItemCharacteristic",
+      "target": "urn:samm:io.catenax.single_level_bom_as_specified:2.0.0#ItemEntity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.single_level_bom_as_specified:2.0.0#ItemQuantityCharacteristic",
+      "target": "urn:samm:io.catenax.single_level_bom_as_specified:2.0.0#ItemQuantityEntity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.single_level_bom_as_specified:2.0.0#ItemClassificationCharacteristic",
+      "target": "urn:samm:io.catenax.single_level_bom_as_specified:2.0.0#ItemClassificationEntity",
+      "label": "dataType",
+      "optional": false
+    }
+  ]
+}

@@ -1,0 +1,1409 @@
+{
+  "meta": {
+    "namespace": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#",
+    "meta_model": "SAMM 2.1.0",
+    "path": "data/sldt-semantic-models/io.catenax.digital_engineering_master_data/1.0.0/DigitalEngineeringMasterData.ttl"
+  },
+  "nodes": [
+    {
+      "id": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#DigitalEngineeringMasterData",
+      "label": "DigitalEngineeringMasterData",
+      "kind": "Aspect",
+      "preferredName": "Digital Engineering Master Data",
+      "description": "Aspect Model to transport structured master data – including product, material and 3D related data "
+    },
+    {
+      "id": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#engineering",
+      "label": "engineering",
+      "kind": "Property",
+      "preferredName": "Engineering",
+      "description": "Top node of the Engineering cluster"
+    },
+    {
+      "id": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#basicdata",
+      "label": "basicdata",
+      "kind": "Property",
+      "preferredName": "Basic Data",
+      "description": "Property representing/collecting all the Basic Data of the Digital Master Data Mdoel"
+    },
+    {
+      "id": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#digitalMasterDataID",
+      "label": "digitalMasterDataID",
+      "kind": "Property",
+      "preferredName": "Digital Master Data ID",
+      "description": "The identifier of a requirement represented by a UUID, valid for the Catena-X dataspace."
+    },
+    {
+      "id": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#complianceData",
+      "label": "complianceData",
+      "kind": "Property",
+      "preferredName": "Compliance Data",
+      "description": "Property representing/collecting all the Compliance Data of the Digital Master Data Model"
+    },
+    {
+      "id": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#softwareData",
+      "label": "softwareData",
+      "kind": "Property",
+      "preferredName": "Software Data",
+      "description": "Property representing/collecting all the Software Data of the Digital Master Data Model"
+    },
+    {
+      "id": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#mechanicsData",
+      "label": "mechanicsData",
+      "kind": "Property",
+      "preferredName": "Mechanics Data",
+      "description": "Entity representing/collecting all the Mechanics Data of the Digital Master Data Model"
+    },
+    {
+      "id": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#electronicsData",
+      "label": "electronicsData",
+      "kind": "Property",
+      "preferredName": "Electronics Data",
+      "description": "Property representing/collecting all the Electronics Data of the Digital Master Data Model"
+    },
+    {
+      "id": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#validTo",
+      "label": "validTo",
+      "kind": "Property",
+      "preferredName": "Valid To",
+      "description": "The date on which this part was superseded."
+    },
+    {
+      "id": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#validFrom",
+      "label": "validFrom",
+      "kind": "Property",
+      "preferredName": "Valid From",
+      "description": "The date from which this part is approved."
+    },
+    {
+      "id": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#supplier",
+      "label": "supplier",
+      "kind": "Property",
+      "preferredName": "Supplier",
+      "description": "The Business Partner Number Legal Entity (BPNL) of the Supplier, producing the part primarily"
+    },
+    {
+      "id": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#supersededVersion",
+      "label": "supersededVersion",
+      "kind": "Property",
+      "preferredName": "Superseded Version",
+      "description": "Link to digital twin of the part superseding this one."
+    },
+    {
+      "id": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#successorPart",
+      "label": "successorPart",
+      "kind": "Property",
+      "preferredName": "Successor Part",
+      "description": "Link to digital twin of the part superseding this one."
+    },
+    {
+      "id": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#releaseDate",
+      "label": "releaseDate",
+      "kind": "Property",
+      "preferredName": "Release Date",
+      "description": "The official date when the part was approved."
+    },
+    {
+      "id": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#partNumber",
+      "label": "partNumber",
+      "kind": "Property",
+      "preferredName": "Part Number",
+      "description": "Unique identifier assigned to the part by the OEM or supplier (Sachnummer)"
+    },
+    {
+      "id": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#notes",
+      "label": "notes",
+      "kind": "Property",
+      "preferredName": "Notes",
+      "description": "List of notes that can be attached as additional information in engineering process."
+    },
+    {
+      "id": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#nomenclature",
+      "label": "nomenclature",
+      "kind": "Property",
+      "preferredName": "Nomenclature",
+      "description": "Standardized name of the part based on its function or application"
+    },
+    {
+      "id": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#description",
+      "label": "description",
+      "kind": "Property",
+      "preferredName": "Description",
+      "description": "Detailed textual description of the part, including key Detailed textual description of the part, including key characteristics\n"
+    },
+    {
+      "id": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#category",
+      "label": "category",
+      "kind": "Property",
+      "preferredName": "Category",
+      "description": "Category, the part belongs to. Based on VDA 4993."
+    },
+    {
+      "id": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#status",
+      "label": "status",
+      "kind": "Property",
+      "preferredName": "Status",
+      "description": "Status of the part exchanged."
+    },
+    {
+      "id": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#version",
+      "label": "version",
+      "kind": "Property",
+      "preferredName": "Version",
+      "description": "Versioning identifier for design updates and modifications."
+    },
+    {
+      "id": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#homologationApprovalNumber",
+      "label": "homologationApprovalNumber",
+      "kind": "Property",
+      "preferredName": "Homologation Approval Number",
+      "description": "Official certification number confirming compliance with regulatory requirements"
+    },
+    {
+      "id": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#safetyRelevant",
+      "label": "safetyRelevant",
+      "kind": "Property",
+      "preferredName": "Safety Relevant",
+      "description": "Describes, if safety relevance is required"
+    },
+    {
+      "id": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#safetyRelevantFeatures",
+      "label": "safetyRelevantFeatures",
+      "kind": "Property",
+      "preferredName": "Safety-relevant Features",
+      "description": "Number of safety relevant properties according to partner\n\nDaimler: DS und DZ Merkmale (Dokumentationspflichtig Sicherheitsrelevant und Dokumentationspflichtig Zertifizierungsrelevant)\nVW: D und S Merkmale (Dokumentationspflichtig und Sicherheitsrelevant)\nBMW: L und S und F Merkmale (Legal: Zulassungs- oder homologationsrelevant, Sicherheitsrelevant, Funktions- oder fertigungsrelevant)\nGM / Opel: S/C und F/F Merkmale (Safety and Compliance / Fit and Function)\nFord: CC und SC Merkmale (Critical Characteristic / Significant Characteristic)\nFiat / Alfa Romeo / Renault / PSA: R und S Merkmale (Réglementation und Security)\nConti: D und W Merkmale (Dokumentationspflichtige und Wichtige Merkmale)"
+    },
+    {
+      "id": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#statutoryFeatures",
+      "label": "statutoryFeatures",
+      "kind": "Property",
+      "preferredName": "Statutory Feature",
+      "description": "Specifies the legal and industry standards the part complies with"
+    },
+    {
+      "id": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#securityAndEncryptionStandards",
+      "label": "securityAndEncryptionStandards",
+      "kind": "Property",
+      "preferredName": "Security & Encryption Standards",
+      "description": "Defines cybersecurity measures implemented in the software"
+    },
+    {
+      "id": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#signatureSign",
+      "label": "signatureSign",
+      "kind": "Property",
+      "preferredName": "Signature Sign",
+      "description": "Flashware must be signed according to securtiy class CCC"
+    },
+    {
+      "id": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#softwareVersion",
+      "label": "softwareVersion",
+      "kind": "Property",
+      "preferredName": "Software Version",
+      "description": "Defines the version number of the embedded software or firmware"
+    },
+    {
+      "id": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#materialData",
+      "label": "materialData",
+      "kind": "Property",
+      "preferredName": "Material Data",
+      "description": "Property representing/collecting all the Material Data of the Digital Master Data Model"
+    },
+    {
+      "id": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#geometryData",
+      "label": "geometryData",
+      "kind": "Property",
+      "preferredName": "Geometry Data",
+      "description": "Property representing/collecting all the Geometry Data of the Digital Master Data Model"
+    },
+    {
+      "id": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#diagnosticsAndErrorCodes",
+      "label": "diagnosticsAndErrorCodes",
+      "kind": "Property",
+      "preferredName": "Diagnostics & Error Codes (DTCs)",
+      "description": "List of standardized trouble codes used for diagnostics"
+    },
+    {
+      "id": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#flashingMethod",
+      "label": "flashingMethod",
+      "kind": "Property",
+      "preferredName": "Flashing Method",
+      "description": "Flash type: the used method to update for example control units. For example UDS (Unified Diagnostic Services) Flash via DoIP (Diagnostics over Internet Protocol)"
+    },
+    {
+      "id": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#noteProperty",
+      "label": "noteProperty",
+      "kind": "Property",
+      "preferredName": "Note Property",
+      "description": "List of notes that can be attached as additional information in engineering process."
+    },
+    {
+      "id": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#timestamp",
+      "label": "timestamp",
+      "kind": "Property",
+      "preferredName": "Timestamp",
+      "description": "Describes a Property which contains the date and time with an optional timezone."
+    },
+    {
+      "id": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#versionNumber",
+      "label": "versionNumber",
+      "kind": "Property",
+      "preferredName": "VersionNumber",
+      "description": "The versioning follows the guidelines for semantic versioning of the SemVer Org"
+    },
+    {
+      "id": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#versionID",
+      "label": "versionID",
+      "kind": "Property",
+      "preferredName": "version ID (en)",
+      "description": "The identifier of this exact version of the Digital Master Data represented by a Catena-X ID or Part ID, valid for the Catena-X dataspace."
+    },
+    {
+      "id": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#density",
+      "label": "density",
+      "kind": "Property",
+      "preferredName": "Density",
+      "description": "Density of the material for CAD model usage 7850 kg/m³"
+    },
+    {
+      "id": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#materialDescription",
+      "label": "materialDescription",
+      "kind": "Property",
+      "preferredName": "Material Description",
+      "description": "Specifies the primary material composition of the part"
+    },
+    {
+      "id": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#materialID",
+      "label": "materialID",
+      "kind": "Property",
+      "preferredName": "Material ID",
+      "description": "Identification of the material from defined material database or standard"
+    },
+    {
+      "id": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#thermalExpansionCoefficient",
+      "label": "thermalExpansionCoefficient",
+      "kind": "Property",
+      "preferredName": "Thermal Expansion Coefficient",
+      "description": "Rate of material expansion per degree of temperature change; 2.3 × 10⁻⁶ 1/K"
+    },
+    {
+      "id": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#reference2DCADDrawing",
+      "label": "reference2DCADDrawing",
+      "kind": "Property",
+      "preferredName": "Reference to 2D CAD Drawing",
+      "description": "Link to the digital 2D model used for design and manufacturing (external and Catena-X-internal ressources, URN's). Based on IDTA SMT 020026 - Provision of 3D Models"
+    },
+    {
+      "id": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#reference3DCADDrawing",
+      "label": "reference3DCADDrawing",
+      "kind": "Property",
+      "preferredName": "Reference to 3D CAD Drawing",
+      "description": "Link the digital CAD model used for design and manufacturing (external and Catena-X-internal ressources, URN's). Based on IDTA SMT 020026 - Provision of 3D Models"
+    },
+    {
+      "id": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#boundingBox",
+      "label": "boundingBox",
+      "kind": "Property",
+      "preferredName": "Bounding Box",
+      "description": "The minimal 3D box that fully encloses the part geometry (length x width x height), units in millimetre."
+    },
+    {
+      "id": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#boundingSphere",
+      "label": "boundingSphere",
+      "kind": "Property",
+      "preferredName": "Bounding Sphere",
+      "description": "Diameter of the smallest possible sphere that fully encloses the part geometry. { \"value\": 315.0, \"unit\": \"mm\" }"
+    },
+    {
+      "id": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#calculatedWeight",
+      "label": "calculatedWeight",
+      "kind": "Property",
+      "preferredName": "Calculated Weight",
+      "description": "Mass of the part, typically in kilograms. Calculated out of all belonging 3D-models"
+    },
+    {
+      "id": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#calculatedWeightTolerance",
+      "label": "calculatedWeightTolerance",
+      "kind": "Property",
+      "preferredName": "Calculated Weight Tolerance",
+      "description": "Tolerance range of the calculated (theoretical) weight of a part or assembly."
+    },
+    {
+      "id": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#centerOfGravity",
+      "label": "centerOfGravity",
+      "kind": "Property",
+      "preferredName": "Center of Gravity (CoG)",
+      "description": "The calculated center of mass in a coordinate system for proper weight distribution"
+    },
+    {
+      "id": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#estimatedWeight",
+      "label": "estimatedWeight",
+      "kind": "Property",
+      "preferredName": "Estimated Weight",
+      "description": "Estimated mass of the part, typically in kilograms. Based on early design assumptions or incomplete data."
+    },
+    {
+      "id": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#estimatedWeightTolerance",
+      "label": "estimatedWeightTolerance",
+      "kind": "Property",
+      "preferredName": "Estimated Weight Tolerance",
+      "description": "Tolerance range of the estimated weight of a part or assembly. ±0.5 kg or ±2%"
+    },
+    {
+      "id": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#momentOfInertia",
+      "label": "momentOfInertia",
+      "kind": "Property",
+      "preferredName": "Moment of Inertia",
+      "description": "Resistance of the part to rotational acceleration around an axis\n kg·m²"
+    },
+    {
+      "id": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#surfaceArea",
+      "label": "surfaceArea",
+      "kind": "Property",
+      "preferredName": "Surface Area",
+      "description": "surface area in mm2"
+    },
+    {
+      "id": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#volume",
+      "label": "volume",
+      "kind": "Property",
+      "preferredName": "Volume",
+      "description": "volume of the part in mm3"
+    },
+    {
+      "id": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#weightedWeight",
+      "label": "weightedWeight",
+      "kind": "Property",
+      "preferredName": "Weighted Weight",
+      "description": "Mass of the part, typically in kilograms. Calculated out of all belonging 3D-models (== Actual weight)"
+    },
+    {
+      "id": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#weightedWeightTolerance",
+      "label": "weightedWeightTolerance",
+      "kind": "Property",
+      "preferredName": "Weighted Weight Tolerance",
+      "description": "Tolerance range of the measured or actual weighted weight of a part or assembly. ±0.5 kg or ±2%"
+    },
+    {
+      "id": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#boundingBoxPropertyLenght",
+      "label": "boundingBoxPropertyLenght",
+      "kind": "Property",
+      "preferredName": "Bounding Box Property Lenght",
+      "description": "The minimal 3D box that fully encloses the part geometry (length x width x height),  units in millimetre."
+    },
+    {
+      "id": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#boundingBoxPropertyWidth",
+      "label": "boundingBoxPropertyWidth",
+      "kind": "Property",
+      "preferredName": "Bounding Box Property Width",
+      "description": "The minimal 3D box that fully encloses the part geometry (length x width x height),,  units in millimetre."
+    },
+    {
+      "id": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#boundingBoxPropertyHeight",
+      "label": "boundingBoxPropertyHeight",
+      "kind": "Property",
+      "preferredName": "Bounding Box Property Height",
+      "description": "The minimal 3D box that fully encloses the part geometry (length x width x height),  units in millimetre."
+    },
+    {
+      "id": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#EngineeringCharacteristic",
+      "label": "EngineeringCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Engineering Characteristic",
+      "description": null
+    },
+    {
+      "id": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#BasicDataCharacteristic",
+      "label": "BasicDataCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Basic Data Characteristic",
+      "description": "Characteristic for all the Basic Data of the Digital Master Data Model"
+    },
+    {
+      "id": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#ComplianceDataCharacteristic",
+      "label": "ComplianceDataCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Compliance Data Characteristic",
+      "description": "Characteristic for all the Compliance Data of the Digital Master Data Model"
+    },
+    {
+      "id": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#SoftwareDataCharacteristic",
+      "label": "SoftwareDataCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Software Data Characteristic",
+      "description": "Characteristic representing/collecting all the Software Data of the Digital Master Data Model"
+    },
+    {
+      "id": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#MechanicsDataCharacteristic",
+      "label": "MechanicsDataCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Mechanics Data Characteristic",
+      "description": null
+    },
+    {
+      "id": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#ElectronicsDataCharacteristic",
+      "label": "ElectronicsDataCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Electronics Data Characteristic",
+      "description": "Characteristic representing/collecting all the Electronics Data of the Digital Master Data Model"
+    },
+    {
+      "id": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#SupersededVersionCharacteristic",
+      "label": "SupersededVersionCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Superseded Version Characteristic",
+      "description": "Characteristic for the Link to digital twin of the part superseding this one."
+    },
+    {
+      "id": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#SuccessorPartCharacteristic",
+      "label": "SuccessorPartCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Successor Part Characteristic",
+      "description": "Characteristic that describes the Link to digital twin of the part superseding this one."
+    },
+    {
+      "id": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#PartNumberCharacteristic",
+      "label": "PartNumberCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Part Number Characteristic",
+      "description": "Characteristic for the Unique identifier assigned to the part by the OEM or supplier (Sachnummer)"
+    },
+    {
+      "id": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#NotesCharacteristic",
+      "label": "NotesCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Notes Characteristic",
+      "description": "List of notes that can be attached as additional information in engineering process plus a Time Stamp"
+    },
+    {
+      "id": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#VersionCharacteristic",
+      "label": "VersionCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Version Characteristic (en)",
+      "description": "Characteristic for the version"
+    },
+    {
+      "id": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#HomologationApprovalNumberCharacteristic",
+      "label": "HomologationApprovalNumberCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Homologation Approval Number Characteristic",
+      "description": "Characteristic for the Official certification number confirming compliance with regulatory requirements"
+    },
+    {
+      "id": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#MaterialDataCharacteristic",
+      "label": "MaterialDataCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Material Data Characteristic",
+      "description": "Characteristic representing/collecting all the Material Data of the Digital Master Data Model"
+    },
+    {
+      "id": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#GeometryDataCharacteristic",
+      "label": "GeometryDataCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Geometry Data Characteristic",
+      "description": "Property representing/collecting all the Geometry Data of the Digital Master Data Model"
+    },
+    {
+      "id": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#VersionNumberCharacteristic",
+      "label": "VersionNumberCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Version Number Characteristic",
+      "description": "Characteristic for the Digital Master Data version"
+    },
+    {
+      "id": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#MaterialIDCharacteristic",
+      "label": "MaterialIDCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Material ID Characteristic",
+      "description": "Identification of the material from defined material database or standard"
+    },
+    {
+      "id": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#Reference2DCADDrawingCharacteristic",
+      "label": "Reference2DCADDrawingCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Reference 2D CAD Drawing Characteristic",
+      "description": "Link to the digital 2D model used for design and manufacturing (external and Catena-X-internal ressources, URN's). Based on IDTA SMT 020026 - Provision of 3D Models"
+    },
+    {
+      "id": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#Reference3DCADDrawingCharacteristic",
+      "label": "Reference3DCADDrawingCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Reference 3D CAD Drawing Characteristic",
+      "description": "Link  the digital CAD model used for design and manufacturing (external and Catena-X-internal ressources, URN's). Based on IDTA SMT 020026  - Provision of 3D Models"
+    },
+    {
+      "id": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#BoundingBoxCharacteristic",
+      "label": "BoundingBoxCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Bounding Box Characteristic",
+      "description": "The minimal 3D box that fully encloses the part geometry (length x width x height), units in millimetre."
+    },
+    {
+      "id": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#WeightToleranceCharacteristic",
+      "label": "WeightToleranceCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Weight Tolerance Characteristic",
+      "description": "Tolerance range of the weight of a part or assembly. ±0.5 kg or ±2%"
+    },
+    {
+      "id": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#EngneeringEntity",
+      "label": "EngneeringEntity",
+      "kind": "Entity",
+      "preferredName": "Engneering Entity",
+      "description": "Entity for all the Engineering Data of/in the Digital Master Data Model"
+    },
+    {
+      "id": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#BasicDataEntity",
+      "label": "BasicDataEntity",
+      "kind": "Entity",
+      "preferredName": "Basic Data Entity",
+      "description": "Entity for the Basic Data"
+    },
+    {
+      "id": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#ComplianceDataEntity",
+      "label": "ComplianceDataEntity",
+      "kind": "Entity",
+      "preferredName": "Compliance Data Entity",
+      "description": "Entity of  all the Compliance Data of the Digital Master Data Model"
+    },
+    {
+      "id": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#SoftwareDataEntity",
+      "label": "SoftwareDataEntity",
+      "kind": "Entity",
+      "preferredName": "Software Data Entity",
+      "description": "Entity for all the Software Data of the Digital Master Data Model"
+    },
+    {
+      "id": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#MechanicsDataEntity",
+      "label": "MechanicsDataEntity",
+      "kind": "Entity",
+      "preferredName": "Mechanics Data Entity",
+      "description": "Entity for all the Mechanics Data of the Digital Master Data Model"
+    },
+    {
+      "id": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#ElectronicsDataEntity",
+      "label": "ElectronicsDataEntity",
+      "kind": "Entity",
+      "preferredName": "Electronics Data Entity",
+      "description": "Entity for the Electronics Data"
+    },
+    {
+      "id": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#NotesEntity",
+      "label": "NotesEntity",
+      "kind": "Entity",
+      "preferredName": "Notes Entity",
+      "description": "List of notes that can be attached as additional information in engineering process plus a Time Stamp"
+    },
+    {
+      "id": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#VersionEntity",
+      "label": "VersionEntity",
+      "kind": "Entity",
+      "preferredName": "Version Entity (en)",
+      "description": "Entity for the Digital Master Data version"
+    },
+    {
+      "id": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#MaterialDataEntity",
+      "label": "MaterialDataEntity",
+      "kind": "Entity",
+      "preferredName": "Material Data Entity",
+      "description": "Entity for all the Material Data of the Digital Master Data Model"
+    },
+    {
+      "id": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#GeometryDataEntity",
+      "label": "GeometryDataEntity",
+      "kind": "Entity",
+      "preferredName": "Geometry Data Entity",
+      "description": "Entity for all the Geometry Data of the Digital Master Data "
+    },
+    {
+      "id": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#BoundingBoxEntity",
+      "label": "BoundingBoxEntity",
+      "kind": "Entity",
+      "preferredName": "Bounding Box Entity",
+      "description": "Entity for valuues of the 3D box that fully encloses the part geometry (length x width x height), units in millimetre"
+    },
+    {
+      "id": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#CategoryCharacteristic",
+      "label": "CategoryCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Category Characteristic",
+      "description": "Category, the part belongs to. Based on VDA 4993."
+    },
+    {
+      "id": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#StatusCharacteristic",
+      "label": "StatusCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Status",
+      "description": "Status of the part exchanged."
+    },
+    {
+      "id": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#SafetyRelevantFeaturesList",
+      "label": "SafetyRelevantFeaturesList",
+      "kind": "Characteristic",
+      "preferredName": "Safety Relevant Features List",
+      "description": "List of all the safety relevant properties according to partner"
+    },
+    {
+      "id": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#StatutoryFeaturesList",
+      "label": "StatutoryFeaturesList",
+      "kind": "Characteristic",
+      "preferredName": "Statutory  Features List",
+      "description": "List of all  the legal and industry standards the part complies with"
+    },
+    {
+      "id": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#NotesList",
+      "label": "NotesList",
+      "kind": "Characteristic",
+      "preferredName": "Notes List",
+      "description": "List of notes that can be attached as additional information in engineering process."
+    },
+    {
+      "id": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#CenterOfGravityCharacteristic",
+      "label": "CenterOfGravityCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Center Of Gravity Characteristic",
+      "description": "The calculated center of mass in a coordinate system for proper weight distribution"
+    },
+    {
+      "id": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#DensityCharacteristic",
+      "label": "DensityCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Density Characteristic",
+      "description": "Density of the material for CAD model usage 7850 kg/m³"
+    },
+    {
+      "id": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#ThermalExpansionCoefficientCharacteristic",
+      "label": "ThermalExpansionCoefficientCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Thermal Expansion Coefficient Characteristic",
+      "description": "Rate of material expansion per degree of temperature change; 2.3 × 10⁻⁶ 1/K"
+    },
+    {
+      "id": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#BoundingSphereCharacteristic",
+      "label": "BoundingSphereCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Bounding Sphere Characteristic",
+      "description": "Diameter of the smallest possible sphere that fully encloses the part geometry. { \"value\": 315.0, \"unit\": \"mm\" }"
+    },
+    {
+      "id": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#CalculatedWeightCharacteristic",
+      "label": "CalculatedWeightCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Calculated Weight Characteristic",
+      "description": "Mass of the part, typically in kilograms. Calculated out of all belonging 3D-models"
+    },
+    {
+      "id": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#EstimatedWeightCharacteristic",
+      "label": "EstimatedWeightCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Estimated Weight Characteristic",
+      "description": "Estimated mass of the part, typically in kilograms. Based on early design assumptions or incomplete data."
+    },
+    {
+      "id": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#MomentOfInertiaCharacteristic",
+      "label": "MomentOfInertiaCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Moment Of Inertia Characteristic",
+      "description": "Resistance of the part to rotational acceleration around an axis\n kg·m²"
+    },
+    {
+      "id": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#SurfaceAreaCharacteristic",
+      "label": "SurfaceAreaCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Surface Area Characteristic",
+      "description": "surface area in mm2"
+    },
+    {
+      "id": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#VolumeCharacteristic",
+      "label": "VolumeCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Volume Characteristic",
+      "description": "volume of the part in mm3"
+    },
+    {
+      "id": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#WeightedWeightCharacteristic",
+      "label": "WeightedWeightCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Weighted Weight Characteristic",
+      "description": "Mass of the part, typically in kilograms. Calculated out of all belonging 3D-models (== Actual weight)"
+    },
+    {
+      "id": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#BoundingBoxLenght",
+      "label": "BoundingBoxLenght",
+      "kind": "Characteristic",
+      "preferredName": "Bounding Box Lenght",
+      "description": "The minimal 3D box that fully encloses the part geometry (length x width x height),  units in millimetre."
+    },
+    {
+      "id": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#BoundingBoxWidth",
+      "label": "BoundingBoxWidth",
+      "kind": "Characteristic",
+      "preferredName": "Bounding Box Width",
+      "description": "The minimal 3D box that fully encloses the part geometry (length x width x height),  units in millimetre."
+    },
+    {
+      "id": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#BoundingBoxHeight",
+      "label": "BoundingBoxHeight",
+      "kind": "Characteristic",
+      "preferredName": "Bounding Box Heigh ",
+      "description": "The minimal 3D box that fully encloses the part geometry (length x width x height),  units in millimetre."
+    },
+    {
+      "id": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#WeightToleranceTrait",
+      "label": "WeightToleranceTrait",
+      "kind": "Characteristic",
+      "preferredName": "Weight Tolerance Trait",
+      "description": null
+    },
+    {
+      "id": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#WeightToleranceConstraint",
+      "label": "WeightToleranceConstraint",
+      "kind": "Characteristic",
+      "preferredName": "Weight Tolerance Constraint",
+      "description": "Tolerance range of the weight of a part or assembly. ±0.5 kg or ±2%"
+    }
+  ],
+  "links": [
+    {
+      "source": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#DigitalEngineeringMasterData",
+      "target": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#engineering",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#DigitalEngineeringMasterData",
+      "target": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#basicdata",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#DigitalEngineeringMasterData",
+      "target": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#digitalMasterDataID",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#DigitalEngineeringMasterData",
+      "target": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#complianceData",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#EngneeringEntity",
+      "target": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#softwareData",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#EngneeringEntity",
+      "target": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#mechanicsData",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#EngneeringEntity",
+      "target": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#electronicsData",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#BasicDataEntity",
+      "target": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#validTo",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#BasicDataEntity",
+      "target": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#validFrom",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#BasicDataEntity",
+      "target": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#supplier",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#BasicDataEntity",
+      "target": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#supersededVersion",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#BasicDataEntity",
+      "target": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#successorPart",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#BasicDataEntity",
+      "target": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#releaseDate",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#BasicDataEntity",
+      "target": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#partNumber",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#BasicDataEntity",
+      "target": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#notes",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#BasicDataEntity",
+      "target": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#nomenclature",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#BasicDataEntity",
+      "target": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#description",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#BasicDataEntity",
+      "target": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#category",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#BasicDataEntity",
+      "target": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#status",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#BasicDataEntity",
+      "target": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#version",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#ComplianceDataEntity",
+      "target": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#homologationApprovalNumber",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#ComplianceDataEntity",
+      "target": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#safetyRelevant",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#ComplianceDataEntity",
+      "target": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#safetyRelevantFeatures",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#ComplianceDataEntity",
+      "target": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#statutoryFeatures",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#SoftwareDataEntity",
+      "target": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#securityAndEncryptionStandards",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#SoftwareDataEntity",
+      "target": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#signatureSign",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#SoftwareDataEntity",
+      "target": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#softwareVersion",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#MechanicsDataEntity",
+      "target": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#materialData",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#MechanicsDataEntity",
+      "target": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#geometryData",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#ElectronicsDataEntity",
+      "target": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#diagnosticsAndErrorCodes",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#ElectronicsDataEntity",
+      "target": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#flashingMethod",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#NotesEntity",
+      "target": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#noteProperty",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#NotesEntity",
+      "target": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#timestamp",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#VersionEntity",
+      "target": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#versionNumber",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#VersionEntity",
+      "target": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#versionID",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#MaterialDataEntity",
+      "target": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#density",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#MaterialDataEntity",
+      "target": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#materialDescription",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#MaterialDataEntity",
+      "target": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#materialID",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#MaterialDataEntity",
+      "target": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#thermalExpansionCoefficient",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#GeometryDataEntity",
+      "target": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#reference2DCADDrawing",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#GeometryDataEntity",
+      "target": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#reference3DCADDrawing",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#GeometryDataEntity",
+      "target": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#boundingBox",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#GeometryDataEntity",
+      "target": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#boundingSphere",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#GeometryDataEntity",
+      "target": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#calculatedWeight",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#GeometryDataEntity",
+      "target": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#calculatedWeightTolerance",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#GeometryDataEntity",
+      "target": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#centerOfGravity",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#GeometryDataEntity",
+      "target": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#estimatedWeight",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#GeometryDataEntity",
+      "target": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#estimatedWeightTolerance",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#GeometryDataEntity",
+      "target": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#momentOfInertia",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#GeometryDataEntity",
+      "target": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#surfaceArea",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#GeometryDataEntity",
+      "target": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#volume",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#GeometryDataEntity",
+      "target": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#weightedWeight",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#GeometryDataEntity",
+      "target": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#weightedWeightTolerance",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#BoundingBoxEntity",
+      "target": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#boundingBoxPropertyLenght",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#BoundingBoxEntity",
+      "target": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#boundingBoxPropertyWidth",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#BoundingBoxEntity",
+      "target": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#boundingBoxPropertyHeight",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#engineering",
+      "target": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#EngineeringCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#basicdata",
+      "target": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#BasicDataCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#complianceData",
+      "target": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#ComplianceDataCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#softwareData",
+      "target": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#SoftwareDataCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#mechanicsData",
+      "target": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#MechanicsDataCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#electronicsData",
+      "target": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#ElectronicsDataCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#supersededVersion",
+      "target": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#SupersededVersionCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#successorPart",
+      "target": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#SuccessorPartCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#partNumber",
+      "target": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#PartNumberCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#notes",
+      "target": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#NotesCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#category",
+      "target": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#CategoryCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#status",
+      "target": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#StatusCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#version",
+      "target": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#VersionCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#homologationApprovalNumber",
+      "target": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#HomologationApprovalNumberCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#safetyRelevantFeatures",
+      "target": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#SafetyRelevantFeaturesList",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#statutoryFeatures",
+      "target": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#StatutoryFeaturesList",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#materialData",
+      "target": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#MaterialDataCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#geometryData",
+      "target": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#GeometryDataCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#noteProperty",
+      "target": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#NotesList",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#versionNumber",
+      "target": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#VersionNumberCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#density",
+      "target": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#DensityCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#materialID",
+      "target": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#MaterialIDCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#thermalExpansionCoefficient",
+      "target": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#ThermalExpansionCoefficientCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#reference2DCADDrawing",
+      "target": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#Reference2DCADDrawingCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#reference3DCADDrawing",
+      "target": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#Reference3DCADDrawingCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#boundingBox",
+      "target": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#BoundingBoxCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#boundingSphere",
+      "target": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#BoundingSphereCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#calculatedWeight",
+      "target": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#CalculatedWeightCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#calculatedWeightTolerance",
+      "target": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#WeightToleranceTrait",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#estimatedWeightTolerance",
+      "target": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#WeightToleranceTrait",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#weightedWeightTolerance",
+      "target": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#WeightToleranceTrait",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#centerOfGravity",
+      "target": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#CenterOfGravityCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#estimatedWeight",
+      "target": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#EstimatedWeightCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#momentOfInertia",
+      "target": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#MomentOfInertiaCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#surfaceArea",
+      "target": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#SurfaceAreaCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#volume",
+      "target": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#VolumeCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#weightedWeight",
+      "target": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#WeightedWeightCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#boundingBoxPropertyLenght",
+      "target": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#BoundingBoxLenght",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#boundingBoxPropertyWidth",
+      "target": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#BoundingBoxWidth",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#boundingBoxPropertyHeight",
+      "target": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#BoundingBoxHeight",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#EngineeringCharacteristic",
+      "target": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#EngneeringEntity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#BasicDataCharacteristic",
+      "target": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#BasicDataEntity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#ComplianceDataCharacteristic",
+      "target": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#ComplianceDataEntity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#SoftwareDataCharacteristic",
+      "target": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#SoftwareDataEntity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#MechanicsDataCharacteristic",
+      "target": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#MechanicsDataEntity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#ElectronicsDataCharacteristic",
+      "target": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#ElectronicsDataEntity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#NotesCharacteristic",
+      "target": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#NotesEntity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#VersionCharacteristic",
+      "target": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#VersionEntity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#MaterialDataCharacteristic",
+      "target": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#MaterialDataEntity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#GeometryDataCharacteristic",
+      "target": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#GeometryDataEntity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#BoundingBoxCharacteristic",
+      "target": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#BoundingBoxEntity",
+      "label": "dataType",
+      "optional": false
+    }
+  ]
+}

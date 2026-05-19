@@ -1,0 +1,31 @@
+{
+  "meta": {
+    "namespace": "urn:samm:io.catenax.material_recycling_certificate:1.0.0#",
+    "meta_model": "SAMM 2.0.0",
+    "path": "data/sldt-semantic-models/io.catenax.material_recycling_certificate/1.0.0/MaterialRecyclingCertificate.ttl"
+  },
+  "nodes": [
+    {
+      "id": "urn:samm:io.catenax.material_recycling_certificate:1.0.0#MaterialRecyclingCertificate",
+      "label": "MaterialRecyclingCertificate",
+      "kind": "Aspect",
+      "preferredName": "Material-Recycling certificate",
+      "description": "The Material-Recycling Certificate marks the point in time, respectively status update at which an asset irrevocably enters a new status through transferring to an authorized business partner. In most cases the authorized partner is a shredder company and/or a recycler."
+    },
+    {
+      "id": "urn:samm:io.catenax.material_recycling_certificate:1.0.0#certificate",
+      "label": "certificate",
+      "kind": "Property",
+      "preferredName": "Certificate",
+      "description": "A property of the model, named certificate."
+    }
+  ],
+  "links": [
+    {
+      "source": "urn:samm:io.catenax.material_recycling_certificate:1.0.0#MaterialRecyclingCertificate",
+      "target": "urn:samm:io.catenax.material_recycling_certificate:1.0.0#certificate",
+      "label": "properties",
+      "optional": false
+    }
+  ]
+}

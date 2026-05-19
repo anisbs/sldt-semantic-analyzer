@@ -1,0 +1,596 @@
+{
+  "meta": {
+    "namespace": "urn:bamm:io.catenax.shared.address_characteristic:1.0.1#",
+    "meta_model": "BAMM 1.0.0",
+    "path": "data/sldt-semantic-models/io.catenax.shared.address_characteristic/1.0.1/AddressAspect.ttl"
+  },
+  "nodes": [
+    {
+      "id": "urn:bamm:io.catenax.shared.address_characteristic:1.0.1#AddressAspect",
+      "label": "AddressAspect",
+      "kind": "Aspect",
+      "preferredName": "Address Aspect",
+      "description": "Aspect used for the Characteristic :PostalAddress to reference adress data"
+    },
+    {
+      "id": "urn:bamm:io.catenax.shared.address_characteristic:1.0.1#address",
+      "label": "address",
+      "kind": "Property",
+      "preferredName": "Adress",
+      "description": "the adress of the data provider"
+    },
+    {
+      "id": "urn:bamm:io.catenax.shared.address_characteristic:1.0.1#thoroughfare",
+      "label": "thoroughfare",
+      "kind": "Property",
+      "preferredName": "Thoroughfare",
+      "description": "Street or thorough road name"
+    },
+    {
+      "id": "urn:bamm:io.catenax.shared.address_characteristic:1.0.1#locality",
+      "label": "locality",
+      "kind": "Property",
+      "preferredName": "Locality",
+      "description": "Locality belonging to an address"
+    },
+    {
+      "id": "urn:bamm:io.catenax.shared.address_characteristic:1.0.1#premise",
+      "label": "premise",
+      "kind": "Property",
+      "preferredName": "Premise",
+      "description": "Premise of an address, e.g. a specific \"BUILDING\" but can also be used for naming a particular site"
+    },
+    {
+      "id": "urn:bamm:io.catenax.shared.address_characteristic:1.0.1#postalDeliveryPoint",
+      "label": "postalDeliveryPoint",
+      "kind": "Property",
+      "preferredName": "Postal Delivery Point",
+      "description": "Delivery point, e.g. designation of a gate"
+    },
+    {
+      "id": "urn:bamm:io.catenax.shared.address_characteristic:1.0.1#country",
+      "label": "country",
+      "kind": "Property",
+      "preferredName": "Country",
+      "description": "Country of an address"
+    },
+    {
+      "id": "urn:bamm:io.catenax.shared.address_characteristic:1.0.1#postCode",
+      "label": "postCode",
+      "kind": "Property",
+      "preferredName": "Post Code",
+      "description": null
+    },
+    {
+      "id": "urn:bamm:io.catenax.shared.address_characteristic:1.0.1#countryShortName",
+      "label": "countryShortName",
+      "kind": "Property",
+      "preferredName": "Country Short Name",
+      "description": null
+    },
+    {
+      "id": "urn:bamm:io.catenax.shared.address_characteristic:1.0.1#thoroughfareTechnicalKey",
+      "label": "thoroughfareTechnicalKey",
+      "kind": "Property",
+      "preferredName": "Thoroughfare Technical Key ",
+      "description": "Technical key of a thoroughfare. As specified by BPDM, this can be a \"STREET\" or a different type."
+    },
+    {
+      "id": "urn:bamm:io.catenax.shared.address_characteristic:1.0.1#thoroughfareValue",
+      "label": "thoroughfareValue",
+      "kind": "Property",
+      "preferredName": "Value Thoroughfare",
+      "description": "Value of a thoroughfare, e.g. name of a street."
+    },
+    {
+      "id": "urn:bamm:io.catenax.shared.address_characteristic:1.0.1#thoroughfareNumber",
+      "label": "thoroughfareNumber",
+      "kind": "Property",
+      "preferredName": "Thoroughfare Number",
+      "description": "Number of a thoroughfare. As used differently in international context, this number can contain both numerical and alphanumerical values"
+    },
+    {
+      "id": "urn:bamm:io.catenax.shared.address_characteristic:1.0.1#postCodeValue",
+      "label": "postCodeValue",
+      "kind": "Property",
+      "preferredName": "Post Code Value ",
+      "description": "The value of a post code"
+    },
+    {
+      "id": "urn:bamm:io.catenax.shared.address_characteristic:1.0.1#postCodeTechnicalKey",
+      "label": "postCodeTechnicalKey",
+      "kind": "Property",
+      "preferredName": "Post Code Technical Key",
+      "description": "The technical key of a post code"
+    },
+    {
+      "id": "urn:bamm:io.catenax.shared.address_characteristic:1.0.1#localityTechnicalKey",
+      "label": "localityTechnicalKey",
+      "kind": "Property",
+      "preferredName": "Locality Technical Key",
+      "description": "Technical key of a locality"
+    },
+    {
+      "id": "urn:bamm:io.catenax.shared.address_characteristic:1.0.1#localityValue",
+      "label": "localityValue",
+      "kind": "Property",
+      "preferredName": "Locality Value",
+      "description": "Value of a locality, e.g. name of a city (\"Mannheim\")."
+    },
+    {
+      "id": "urn:bamm:io.catenax.shared.address_characteristic:1.0.1#premiseTechnicalKey",
+      "label": "premiseTechnicalKey",
+      "kind": "Property",
+      "preferredName": "Premise Technical Key",
+      "description": "Technical key of a premise"
+    },
+    {
+      "id": "urn:bamm:io.catenax.shared.address_characteristic:1.0.1#premiseValue",
+      "label": "premiseValue",
+      "kind": "Property",
+      "preferredName": "Premise Value",
+      "description": "Value of a premise, e.g. name or designation of a particular site"
+    },
+    {
+      "id": "urn:bamm:io.catenax.shared.address_characteristic:1.0.1#postalDeliveryPointTechnicalKey",
+      "label": "postalDeliveryPointTechnicalKey",
+      "kind": "Property",
+      "preferredName": "Postal Delivery Point Technical Key",
+      "description": "Technical key of a postal delivery point"
+    },
+    {
+      "id": "urn:bamm:io.catenax.shared.address_characteristic:1.0.1#postalDeliveryPointValue",
+      "label": "postalDeliveryPointValue",
+      "kind": "Property",
+      "preferredName": "Postal Delivery Point Value",
+      "description": "Value of a postal delivery point, e.g. designation of a gate"
+    },
+    {
+      "id": "urn:bamm:io.catenax.shared.address_characteristic:1.0.1#PostalAddress",
+      "label": "PostalAddress",
+      "kind": "Characteristic",
+      "preferredName": null,
+      "description": "A characteristic to express the postal adress and which is intended to be referenced by other aspects"
+    },
+    {
+      "id": "urn:bamm:io.catenax.shared.address_characteristic:1.0.1#CountryShortNameCharacteristic",
+      "label": "CountryShortNameCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Country Short Name Characteristic",
+      "description": "Characteristic for a short name of a country belonging to an address"
+    },
+    {
+      "id": "urn:bamm:io.catenax.shared.address_characteristic:1.0.1#Text",
+      "label": "Text",
+      "kind": "Characteristic",
+      "preferredName": null,
+      "description": "Describes a Property which contains plain text. This is intended exclusively for human readable strings, not for identifiers, measurement values, etc."
+    },
+    {
+      "id": "urn:bamm:io.catenax.shared.address_characteristic:1.0.1#AddressEntity",
+      "label": "AddressEntity",
+      "kind": "Entity",
+      "preferredName": "Address Entity",
+      "description": "Entity of an address. Model follows specification of BPDM (Business Partner Data Management)."
+    },
+    {
+      "id": "urn:bamm:io.catenax.shared.address_characteristic:1.0.1#PostCodeEntity",
+      "label": "PostCodeEntity",
+      "kind": "Entity",
+      "preferredName": "PostCode Entity",
+      "description": "Entity for a postcode which consists of a type plus a value"
+    },
+    {
+      "id": "urn:bamm:io.catenax.shared.address_characteristic:1.0.1#CountryEntity",
+      "label": "CountryEntity",
+      "kind": "Entity",
+      "preferredName": "Country Entity",
+      "description": "Entity definition for a country"
+    },
+    {
+      "id": "urn:bamm:io.catenax.shared.address_characteristic:1.0.1#ThoroughfareEntity",
+      "label": "ThoroughfareEntity",
+      "kind": "Entity",
+      "preferredName": "Thoroughfare Entity",
+      "description": "Entity for a thoroughfare which consists of a type, value and number."
+    },
+    {
+      "id": "urn:bamm:io.catenax.shared.address_characteristic:1.0.1#LocalityEntity",
+      "label": "LocalityEntity",
+      "kind": "Entity",
+      "preferredName": "Thoroughfare Entity",
+      "description": "Entity for a thoroughfare which consists of a type, value and number."
+    },
+    {
+      "id": "urn:bamm:io.catenax.shared.address_characteristic:1.0.1#PremiseEntity",
+      "label": "PremiseEntity",
+      "kind": "Entity",
+      "preferredName": "Premise Entity",
+      "description": "Entity for a premise which consists of a type (technical key) and a value"
+    },
+    {
+      "id": "urn:bamm:io.catenax.shared.address_characteristic:1.0.1#PostalDeliveryPointEntity",
+      "label": "PostalDeliveryPointEntity",
+      "kind": "Entity",
+      "preferredName": "Postal Delivery Point Entity",
+      "description": "Entity for a postal delivery point which consists of a technical key and a value."
+    },
+    {
+      "id": "urn:bamm:io.catenax.shared.address_characteristic:1.0.1#ThoroughfareCharacteristic",
+      "label": "ThoroughfareCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Thoroughfare Characteristic",
+      "description": "Characteristic for defining a thoroughfare which can consist of a type (e.g. \"STREET\"), value (e.g. \"Bernstraße\") and number (e.g. \"45\"). Model follows the specification of BPDM."
+    },
+    {
+      "id": "urn:bamm:io.catenax.shared.address_characteristic:1.0.1#LocalityCharacteristic",
+      "label": "LocalityCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Locality Characteristic",
+      "description": "Characteristic for defining a locality which belongs to an address and which consists of a type (e.g. \"CITY\") and value (e.g. \"Mannheim\"). Model follows the specification of BPDM."
+    },
+    {
+      "id": "urn:bamm:io.catenax.shared.address_characteristic:1.0.1#PremiseCharacteristic",
+      "label": "PremiseCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": null,
+      "description": "Characteristic for defining a premise which consists of a technical key (e.g. \"BUILDING\" or \"OTHER\") and a value (e.g. \"Werk 1\")."
+    },
+    {
+      "id": "urn:bamm:io.catenax.shared.address_characteristic:1.0.1#PostalDeliveryPointCharacteristic",
+      "label": "PostalDeliveryPointCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Postal Delivery Point Characteristic",
+      "description": "Characteristic for defining a postal delivery point which consists of a technical key (e.g. \"MAILBOX\" or \"OTHER\") and a value. Model follows the specification of BPDM."
+    },
+    {
+      "id": "urn:bamm:io.catenax.shared.address_characteristic:1.0.1#CountryCharacteristic",
+      "label": "CountryCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Country Characteristic",
+      "description": "Characteristic of a country belonging to an address"
+    },
+    {
+      "id": "urn:bamm:io.catenax.shared.address_characteristic:1.0.1#PostCodeCharacteristic",
+      "label": "PostCodeCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "PostCode Characteristic",
+      "description": "Characteristic for defining a postcode which can consist of a type (e.g. \"REGULAR\" for zip codes) and a value (e.g. \"68161\\12\"). Model follows the specification of BPDM."
+    },
+    {
+      "id": "urn:bamm:io.catenax.shared.address_characteristic:1.0.1#PostCodeTrait",
+      "label": "PostCodeTrait",
+      "kind": "Characteristic",
+      "preferredName": null,
+      "description": null
+    },
+    {
+      "id": "urn:bamm:io.catenax.shared.address_characteristic:1.0.1#CountryTrait",
+      "label": "CountryTrait",
+      "kind": "Characteristic",
+      "preferredName": null,
+      "description": null
+    },
+    {
+      "id": "urn:bamm:io.catenax.shared.address_characteristic:1.0.1#PostCodeConstraint",
+      "label": "PostCodeConstraint",
+      "kind": "Characteristic",
+      "preferredName": "Post Code Constraint",
+      "description": "Regular expression for post codes"
+    },
+    {
+      "id": "urn:bamm:io.catenax.shared.address_characteristic:1.0.1#CountryShortNameConstraint",
+      "label": "CountryShortNameConstraint",
+      "kind": "Characteristic",
+      "preferredName": "CountryShortNameConstraint",
+      "description": "Regular expression for designation of a short name of a country as defined in ISO 3166-2"
+    },
+    {
+      "id": "urn:bamm:io.catenax.shared.address_characteristic:1.0.1#ThoroughfareTechnicalKeyCharacteristic",
+      "label": "ThoroughfareTechnicalKeyCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Thoroughfare Technical Key Characteristic",
+      "description": "Characteristic of the technical key of a thoroughfare"
+    },
+    {
+      "id": "urn:bamm:io.catenax.shared.address_characteristic:1.0.1#PostCodeTechnicalKeyCharacteristic",
+      "label": "PostCodeTechnicalKeyCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Post Code Technical Key Characteristic",
+      "description": "Characteristic for the technical key of a post code"
+    },
+    {
+      "id": "urn:bamm:io.catenax.shared.address_characteristic:1.0.1#LocalityTechnicalKeyCharacteristic",
+      "label": "LocalityTechnicalKeyCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Locality Technical Key Characteristic",
+      "description": "Characteristic of the technical key of a locality"
+    },
+    {
+      "id": "urn:bamm:io.catenax.shared.address_characteristic:1.0.1#PremiseTechnicalKeyCharacteristic",
+      "label": "PremiseTechnicalKeyCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Premise Technical Key Characteristic",
+      "description": "Characteristic of the technical key of a premise"
+    },
+    {
+      "id": "urn:bamm:io.catenax.shared.address_characteristic:1.0.1#PostalDeliveryPointTechnicalKeyCharacteristic",
+      "label": "PostalDeliveryPointTechnicalKeyCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Postal Delivery Point Technical Key Characteristic",
+      "description": "Characteristic of the technical key of a postal delivery point"
+    }
+  ],
+  "links": [
+    {
+      "source": "urn:bamm:io.catenax.shared.address_characteristic:1.0.1#AddressAspect",
+      "target": "urn:bamm:io.catenax.shared.address_characteristic:1.0.1#address",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.shared.address_characteristic:1.0.1#AddressEntity",
+      "target": "urn:bamm:io.catenax.shared.address_characteristic:1.0.1#thoroughfare",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.shared.address_characteristic:1.0.1#AddressEntity",
+      "target": "urn:bamm:io.catenax.shared.address_characteristic:1.0.1#locality",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.shared.address_characteristic:1.0.1#AddressEntity",
+      "target": "urn:bamm:io.catenax.shared.address_characteristic:1.0.1#premise",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:bamm:io.catenax.shared.address_characteristic:1.0.1#AddressEntity",
+      "target": "urn:bamm:io.catenax.shared.address_characteristic:1.0.1#postalDeliveryPoint",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:bamm:io.catenax.shared.address_characteristic:1.0.1#AddressEntity",
+      "target": "urn:bamm:io.catenax.shared.address_characteristic:1.0.1#country",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.shared.address_characteristic:1.0.1#AddressEntity",
+      "target": "urn:bamm:io.catenax.shared.address_characteristic:1.0.1#postCode",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.shared.address_characteristic:1.0.1#PostCodeEntity",
+      "target": "urn:bamm:io.catenax.shared.address_characteristic:1.0.1#postCodeValue",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.shared.address_characteristic:1.0.1#PostCodeEntity",
+      "target": "urn:bamm:io.catenax.shared.address_characteristic:1.0.1#postCodeTechnicalKey",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.shared.address_characteristic:1.0.1#CountryEntity",
+      "target": "urn:bamm:io.catenax.shared.address_characteristic:1.0.1#countryShortName",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.shared.address_characteristic:1.0.1#ThoroughfareEntity",
+      "target": "urn:bamm:io.catenax.shared.address_characteristic:1.0.1#thoroughfareTechnicalKey",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.shared.address_characteristic:1.0.1#ThoroughfareEntity",
+      "target": "urn:bamm:io.catenax.shared.address_characteristic:1.0.1#thoroughfareValue",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.shared.address_characteristic:1.0.1#ThoroughfareEntity",
+      "target": "urn:bamm:io.catenax.shared.address_characteristic:1.0.1#thoroughfareNumber",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.shared.address_characteristic:1.0.1#LocalityEntity",
+      "target": "urn:bamm:io.catenax.shared.address_characteristic:1.0.1#localityTechnicalKey",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.shared.address_characteristic:1.0.1#LocalityEntity",
+      "target": "urn:bamm:io.catenax.shared.address_characteristic:1.0.1#localityValue",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.shared.address_characteristic:1.0.1#PremiseEntity",
+      "target": "urn:bamm:io.catenax.shared.address_characteristic:1.0.1#premiseTechnicalKey",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.shared.address_characteristic:1.0.1#PremiseEntity",
+      "target": "urn:bamm:io.catenax.shared.address_characteristic:1.0.1#premiseValue",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.shared.address_characteristic:1.0.1#PostalDeliveryPointEntity",
+      "target": "urn:bamm:io.catenax.shared.address_characteristic:1.0.1#postalDeliveryPointTechnicalKey",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.shared.address_characteristic:1.0.1#PostalDeliveryPointEntity",
+      "target": "urn:bamm:io.catenax.shared.address_characteristic:1.0.1#postalDeliveryPointValue",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.shared.address_characteristic:1.0.1#address",
+      "target": "urn:bamm:io.catenax.shared.address_characteristic:1.0.1#PostalAddress",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.shared.address_characteristic:1.0.1#thoroughfare",
+      "target": "urn:bamm:io.catenax.shared.address_characteristic:1.0.1#ThoroughfareCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.shared.address_characteristic:1.0.1#locality",
+      "target": "urn:bamm:io.catenax.shared.address_characteristic:1.0.1#LocalityCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.shared.address_characteristic:1.0.1#premise",
+      "target": "urn:bamm:io.catenax.shared.address_characteristic:1.0.1#PremiseCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.shared.address_characteristic:1.0.1#postalDeliveryPoint",
+      "target": "urn:bamm:io.catenax.shared.address_characteristic:1.0.1#PostalDeliveryPointCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.shared.address_characteristic:1.0.1#country",
+      "target": "urn:bamm:io.catenax.shared.address_characteristic:1.0.1#CountryCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.shared.address_characteristic:1.0.1#postCode",
+      "target": "urn:bamm:io.catenax.shared.address_characteristic:1.0.1#PostCodeCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.shared.address_characteristic:1.0.1#countryShortName",
+      "target": "urn:bamm:io.catenax.shared.address_characteristic:1.0.1#CountryTrait",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.shared.address_characteristic:1.0.1#thoroughfareTechnicalKey",
+      "target": "urn:bamm:io.catenax.shared.address_characteristic:1.0.1#ThoroughfareTechnicalKeyCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.shared.address_characteristic:1.0.1#thoroughfareValue",
+      "target": "urn:bamm:io.catenax.shared.address_characteristic:1.0.1#Text",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.shared.address_characteristic:1.0.1#thoroughfareNumber",
+      "target": "urn:bamm:io.catenax.shared.address_characteristic:1.0.1#Text",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.shared.address_characteristic:1.0.1#localityValue",
+      "target": "urn:bamm:io.catenax.shared.address_characteristic:1.0.1#Text",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.shared.address_characteristic:1.0.1#premiseValue",
+      "target": "urn:bamm:io.catenax.shared.address_characteristic:1.0.1#Text",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.shared.address_characteristic:1.0.1#postalDeliveryPointValue",
+      "target": "urn:bamm:io.catenax.shared.address_characteristic:1.0.1#Text",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.shared.address_characteristic:1.0.1#postCodeValue",
+      "target": "urn:bamm:io.catenax.shared.address_characteristic:1.0.1#PostCodeTrait",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.shared.address_characteristic:1.0.1#postCodeTechnicalKey",
+      "target": "urn:bamm:io.catenax.shared.address_characteristic:1.0.1#PostCodeTechnicalKeyCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.shared.address_characteristic:1.0.1#localityTechnicalKey",
+      "target": "urn:bamm:io.catenax.shared.address_characteristic:1.0.1#LocalityTechnicalKeyCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.shared.address_characteristic:1.0.1#premiseTechnicalKey",
+      "target": "urn:bamm:io.catenax.shared.address_characteristic:1.0.1#PremiseTechnicalKeyCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.shared.address_characteristic:1.0.1#postalDeliveryPointTechnicalKey",
+      "target": "urn:bamm:io.catenax.shared.address_characteristic:1.0.1#PostalDeliveryPointTechnicalKeyCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.shared.address_characteristic:1.0.1#PostalAddress",
+      "target": "urn:bamm:io.catenax.shared.address_characteristic:1.0.1#AddressEntity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.shared.address_characteristic:1.0.1#ThoroughfareCharacteristic",
+      "target": "urn:bamm:io.catenax.shared.address_characteristic:1.0.1#ThoroughfareEntity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.shared.address_characteristic:1.0.1#LocalityCharacteristic",
+      "target": "urn:bamm:io.catenax.shared.address_characteristic:1.0.1#LocalityEntity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.shared.address_characteristic:1.0.1#PremiseCharacteristic",
+      "target": "urn:bamm:io.catenax.shared.address_characteristic:1.0.1#PremiseEntity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.shared.address_characteristic:1.0.1#PostalDeliveryPointCharacteristic",
+      "target": "urn:bamm:io.catenax.shared.address_characteristic:1.0.1#PostalDeliveryPointEntity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.shared.address_characteristic:1.0.1#CountryCharacteristic",
+      "target": "urn:bamm:io.catenax.shared.address_characteristic:1.0.1#CountryEntity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.shared.address_characteristic:1.0.1#PostCodeCharacteristic",
+      "target": "urn:bamm:io.catenax.shared.address_characteristic:1.0.1#PostCodeEntity",
+      "label": "dataType",
+      "optional": false
+    }
+  ]
+}

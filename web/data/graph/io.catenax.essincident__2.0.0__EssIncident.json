@@ -1,0 +1,784 @@
+{
+  "meta": {
+    "namespace": "urn:samm:io.catenax.essincident:2.0.0#",
+    "meta_model": "SAMM 2.0.0",
+    "path": "data/sldt-semantic-models/io.catenax.essincident/2.0.0/EssIncident.ttl"
+  },
+  "nodes": [
+    {
+      "id": "urn:samm:io.catenax.essincident:2.0.0#EssIncident",
+      "label": "EssIncident",
+      "kind": "Aspect",
+      "preferredName": "ESS Incident",
+      "description": "Aspect for defining an incident in context of Environmental and Social Standards as specified by the Catena-X Sustainability team."
+    },
+    {
+      "id": "urn:samm:io.catenax.essincident:2.0.0#productCommodity",
+      "label": "productCommodity",
+      "kind": "Property",
+      "preferredName": "Product Commodity",
+      "description": "Free-text description for commodity of a product affected by an incident in the context of ESS (Environmental and Social Standards)"
+    },
+    {
+      "id": "urn:samm:io.catenax.essincident:2.0.0#productDescription",
+      "label": "productDescription",
+      "kind": "Property",
+      "preferredName": "Product Description",
+      "description": "Description of product or component affected by an incident in the context of ESS (Environmental and Social Standards) "
+    },
+    {
+      "id": "urn:samm:io.catenax.essincident:2.0.0#partNumber",
+      "label": "partNumber",
+      "kind": "Property",
+      "preferredName": "Part Number",
+      "description": "Part number that is affected by an incident in the context of ESS (Environmental and Social Standards) "
+    },
+    {
+      "id": "urn:samm:io.catenax.essincident:2.0.0#rawMaterial",
+      "label": "rawMaterial",
+      "kind": "Property",
+      "preferredName": "Raw Material",
+      "description": "Raw material that causes an incident in the context of ESS (Environmental and Social Standards)"
+    },
+    {
+      "id": "urn:samm:io.catenax.essincident:2.0.0#industry",
+      "label": "industry",
+      "kind": "Property",
+      "preferredName": "Industry / Branch",
+      "description": "Industry / Branch that causes the incident"
+    },
+    {
+      "id": "urn:samm:io.catenax.essincident:2.0.0#incidentCategory",
+      "label": "incidentCategory",
+      "kind": "Property",
+      "preferredName": "Incident Category",
+      "description": "Environmental and social standards related incident category according to Supply Chain Due Diligence Act"
+    },
+    {
+      "id": "urn:samm:io.catenax.essincident:2.0.0#incidentSubcategory",
+      "label": "incidentSubcategory",
+      "kind": "Property",
+      "preferredName": "Incident Subcategory",
+      "description": "Subcategory of an incident Category"
+    },
+    {
+      "id": "urn:samm:io.catenax.essincident:2.0.0#incidentSubject",
+      "label": "incidentSubject",
+      "kind": "Property",
+      "preferredName": "Incident Subject",
+      "description": "Title/ subject of an incident in the context of ESS (Environmental and Social Standards)"
+    },
+    {
+      "id": "urn:samm:io.catenax.essincident:2.0.0#incidentExternalSubject",
+      "label": "incidentExternalSubject",
+      "kind": "Property",
+      "preferredName": "External Subject",
+      "description": "Replaces Incident Subject for external communication"
+    },
+    {
+      "id": "urn:samm:io.catenax.essincident:2.0.0#incidentDescription",
+      "label": "incidentDescription",
+      "kind": "Property",
+      "preferredName": "Incident Description",
+      "description": "Full text description of an incident in the context of ESS (Environmental and Social Standards)"
+    },
+    {
+      "id": "urn:samm:io.catenax.essincident:2.0.0#incidentExternalNotes",
+      "label": "incidentExternalNotes",
+      "kind": "Property",
+      "preferredName": "External Notes",
+      "description": "Incident description for external communication"
+    },
+    {
+      "id": "urn:samm:io.catenax.essincident:2.0.0#incidentAttachment",
+      "label": "incidentAttachment",
+      "kind": "Property",
+      "preferredName": "Incident Attachment",
+      "description": "Picture(s) about the reported incident in the context of ESS (Environmental and Social Standards)"
+    },
+    {
+      "id": "urn:samm:io.catenax.essincident:2.0.0#systemDate",
+      "label": "systemDate",
+      "kind": "Property",
+      "preferredName": "System Date",
+      "description": "System created timestamp when the incident in the context of ESS (Environmental and Social Standards) was issued and saved"
+    },
+    {
+      "id": "urn:samm:io.catenax.essincident:2.0.0#incidentDate",
+      "label": "incidentDate",
+      "kind": "Property",
+      "preferredName": "Date of Incident",
+      "description": "Date and time information when an incident in the context of ESS (Environmental and Social Standards) occurred"
+    },
+    {
+      "id": "urn:samm:io.catenax.essincident:2.0.0#incidentId",
+      "label": "incidentId",
+      "kind": "Property",
+      "preferredName": "Incident ID",
+      "description": "Unique identifier for an incident in the context of ESS (Environmental and Social Standards)"
+    },
+    {
+      "id": "urn:samm:io.catenax.essincident:2.0.0#masterOpCoId",
+      "label": "masterOpCoId",
+      "kind": "Property",
+      "preferredName": "Master Operating Company Incident ID",
+      "description": "Incident ID that has been checked and validated. In case of duplicates the \"parent\" incident ID will be used as Master Operating Company Incident ID."
+    },
+    {
+      "id": "urn:samm:io.catenax.essincident:2.0.0#incidentDisplayId",
+      "label": "incidentDisplayId",
+      "kind": "Property",
+      "preferredName": "Display ID",
+      "description": "Human readable format of Incident ID"
+    },
+    {
+      "id": "urn:samm:io.catenax.essincident:2.0.0#incidentStatusInformation",
+      "label": "incidentStatusInformation",
+      "kind": "Property",
+      "preferredName": "Incident Status",
+      "description": "Status of incident progress, default value = new"
+    },
+    {
+      "id": "urn:samm:io.catenax.essincident:2.0.0#incidentShareFlag",
+      "label": "incidentShareFlag",
+      "kind": "Property",
+      "preferredName": "Incident Share Flag",
+      "description": "Flag, that can be set to true in order to request to publish the incident, default value is false"
+    },
+    {
+      "id": "urn:samm:io.catenax.essincident:2.0.0#subCaseOpCoIds",
+      "label": "subCaseOpCoIds",
+      "kind": "Property",
+      "preferredName": "Sub Case Operating Company Incident Ids",
+      "description": "Incident Ids that belong to a Master Operating Company Incident Id"
+    },
+    {
+      "id": "urn:samm:io.catenax.essincident:2.0.0#incidentSystemId",
+      "label": "incidentSystemId",
+      "kind": "Property",
+      "preferredName": "Incident System Id",
+      "description": "System Id that defines the tenant"
+    },
+    {
+      "id": "urn:samm:io.catenax.essincident:2.0.0#essOriginatorCompanyName",
+      "label": "essOriginatorCompanyName",
+      "kind": "Property",
+      "preferredName": "ESS Originator Company Name",
+      "description": "Name of a company / an organisation that is the originator of an incident in the context of ESS (Environmental and Social Standards)"
+    },
+    {
+      "id": "urn:samm:io.catenax.essincident:2.0.0#essOriginatorAddress",
+      "label": "essOriginatorAddress",
+      "kind": "Property",
+      "preferredName": "Ess Originator Address",
+      "description": "Address of ESS Originator "
+    },
+    {
+      "id": "urn:samm:io.catenax.essincident:2.0.0#essOriginatorBpnL",
+      "label": "essOriginatorBpnL",
+      "kind": "Property",
+      "preferredName": "ESS Originator BPN-L",
+      "description": "BPN-L ID of the company that causes the incident"
+    },
+    {
+      "id": "urn:samm:io.catenax.essincident:2.0.0#essOriginatorBpnS",
+      "label": "essOriginatorBpnS",
+      "kind": "Property",
+      "preferredName": "ESS Originator BPN-S",
+      "description": "BPN-S ID of the company that causes the incident"
+    },
+    {
+      "id": "urn:samm:io.catenax.essincident:2.0.0#essOriginatorBpnA",
+      "label": "essOriginatorBpnA",
+      "kind": "Property",
+      "preferredName": "ESS Originator BPN A",
+      "description": "BPN-A ID of the company that causes the incident"
+    },
+    {
+      "id": "urn:samm:io.catenax.essincident:2.0.0#essOriginatorCoordinates",
+      "label": "essOriginatorCoordinates",
+      "kind": "Property",
+      "preferredName": "ESS Originator Geographic data / Coordinates",
+      "description": "Exact geographic position of an incident in the context of ESS (Environmental and Social Standards)"
+    },
+    {
+      "id": "urn:samm:io.catenax.essincident:2.0.0#essIncidentIssuerFirstName",
+      "label": "essIncidentIssuerFirstName",
+      "kind": "Property",
+      "preferredName": "ESS Incident Issuer First Name",
+      "description": "First name of ESS incident issuer"
+    },
+    {
+      "id": "urn:samm:io.catenax.essincident:2.0.0#essIncidentIssuerEmailAddress",
+      "label": "essIncidentIssuerEmailAddress",
+      "kind": "Property",
+      "preferredName": "ESS Incident Issuer Email Address",
+      "description": "Email address of ESS incident issuer"
+    },
+    {
+      "id": "urn:samm:io.catenax.essincident:2.0.0#essIncidentIssuerPhoneNo",
+      "label": "essIncidentIssuerPhoneNo",
+      "kind": "Property",
+      "preferredName": "ESS Incident Issuer Phone No",
+      "description": "Phone number of ESS incident issuer"
+    },
+    {
+      "id": "urn:samm:io.catenax.essincident:2.0.0#flagAnonymous",
+      "label": "flagAnonymous",
+      "kind": "Property",
+      "preferredName": "Flag anonymous",
+      "description": "Flag that Incident issuer wants to be anonymous"
+    },
+    {
+      "id": "urn:samm:io.catenax.essincident:2.0.0#essIncidentIssuerId",
+      "label": "essIncidentIssuerId",
+      "kind": "Property",
+      "preferredName": "Issuer ID",
+      "description": "System generated unique identifier of incident issuer"
+    },
+    {
+      "id": "urn:samm:io.catenax.essincident:2.0.0#essIncidentIssuerAddress",
+      "label": "essIncidentIssuerAddress",
+      "kind": "Property",
+      "preferredName": "Ess Incident Issuer Address",
+      "description": "Simple form of an address which can belong to a person, organisation, company etc."
+    },
+    {
+      "id": "urn:samm:io.catenax.essincident:2.0.0#essIncidentIssuerLastName",
+      "label": "essIncidentIssuerLastName",
+      "kind": "Property",
+      "preferredName": "ESS Incident Issuer Last Name",
+      "description": "Last name of ESS incident Issuer"
+    },
+    {
+      "id": "urn:samm:io.catenax.essincident:2.0.0#essOriginatorCountrySubdivision",
+      "label": "essOriginatorCountrySubdivision",
+      "kind": "Property",
+      "preferredName": "ESS Originator Country Subdivision",
+      "description": "Region within a country of ESS Originator"
+    },
+    {
+      "id": "urn:samm:io.catenax.essincident:2.0.0#essIncidentIssuerCountrySubdivision",
+      "label": "essIncidentIssuerCountrySubdivision",
+      "kind": "Property",
+      "preferredName": "ESS Incident Issuer Country Subdivision",
+      "description": "Region within a country of ESS Incident Issuer"
+    },
+    {
+      "id": "urn:samm:io.catenax.essincident:2.0.0#longitude",
+      "label": "longitude",
+      "kind": "Property",
+      "preferredName": "Longitude",
+      "description": "Longitude information for geographic coordinates."
+    },
+    {
+      "id": "urn:samm:io.catenax.essincident:2.0.0#latitude",
+      "label": "latitude",
+      "kind": "Property",
+      "preferredName": "Latitude",
+      "description": "Latitude information for geographic coordinates."
+    },
+    {
+      "id": "urn:samm:io.catenax.essincident:2.0.0#IndustryCharacteristic",
+      "label": "IndustryCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Industry characteristic",
+      "description": "Industry Characteristic"
+    },
+    {
+      "id": "urn:samm:io.catenax.essincident:2.0.0#IncidentCategoryCharacteristic",
+      "label": "IncidentCategoryCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Incident Category Characteristic",
+      "description": "Characteristic for defining an incident category in the context of ESS (Environmental and Social Standards)."
+    },
+    {
+      "id": "urn:samm:io.catenax.essincident:2.0.0#IncidentSubcategories",
+      "label": "IncidentSubcategories",
+      "kind": "Characteristic",
+      "preferredName": "Incident Subcategories",
+      "description": "Characteristic for defining subcategories of an incident in the context of ESS (Environmental and Social Standards)."
+    },
+    {
+      "id": "urn:samm:io.catenax.essincident:2.0.0#IncidentStatusCharacteristic",
+      "label": "IncidentStatusCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Incident Status",
+      "description": "Incident status as defined in a list, defalut value = new"
+    },
+    {
+      "id": "urn:samm:io.catenax.essincident:2.0.0#IdTrait",
+      "label": "IdTrait",
+      "kind": "Characteristic",
+      "preferredName": "Identifier Trait",
+      "description": "Trait for defining an incident ID"
+    },
+    {
+      "id": "urn:samm:io.catenax.essincident:2.0.0#BPNL",
+      "label": "BPNL",
+      "kind": "Characteristic",
+      "preferredName": "BPNL Business Partner Number",
+      "description": "BPNL Business Partner Number"
+    },
+    {
+      "id": "urn:samm:io.catenax.essincident:2.0.0#BPNS",
+      "label": "BPNS",
+      "kind": "Characteristic",
+      "preferredName": "BPNS Business Partner Number",
+      "description": "BPNS Business Partner Number"
+    },
+    {
+      "id": "urn:samm:io.catenax.essincident:2.0.0#BPNA",
+      "label": "BPNA",
+      "kind": "Characteristic",
+      "preferredName": "BPNA",
+      "description": "BPNA Business Partner Number"
+    },
+    {
+      "id": "urn:samm:io.catenax.essincident:2.0.0#ContactMailTrait",
+      "label": "ContactMailTrait",
+      "kind": "Characteristic",
+      "preferredName": "Contact Mail Trait",
+      "description": "Trait for a contact mail address."
+    },
+    {
+      "id": "urn:samm:io.catenax.essincident:2.0.0#LongitudeTrait",
+      "label": "LongitudeTrait",
+      "kind": "Characteristic",
+      "preferredName": "Longitude Trait",
+      "description": "Trait for longitude information belonging to geographic coordinates."
+    },
+    {
+      "id": "urn:samm:io.catenax.essincident:2.0.0#LatitudeTrait",
+      "label": "LatitudeTrait",
+      "kind": "Characteristic",
+      "preferredName": "Latitude Trait",
+      "description": "Trait for latitude information belonging to geographic coordinates."
+    },
+    {
+      "id": "urn:samm:io.catenax.essincident:2.0.0#EssOriginatorCoordinatesCharacteristic",
+      "label": "EssOriginatorCoordinatesCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "ESS Originator Coordinates Characteristic",
+      "description": "Characteristic for defining geographic coordinates (longitude and latitude) of an incident originator in context of ESS (Environmental and Social Standards)."
+    },
+    {
+      "id": "urn:samm:io.catenax.essincident:2.0.0#UUIDv4",
+      "label": "UUIDv4",
+      "kind": "Characteristic",
+      "preferredName": "UUIDv4",
+      "description": "A version 4 UUID is a universally unique identifier generated using random 32 hexadecimal characters."
+    },
+    {
+      "id": "urn:samm:io.catenax.essincident:2.0.0#BpnLCharacteristic",
+      "label": "BpnLCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "BPNL Characteristic",
+      "description": "BPNL Characteristic"
+    },
+    {
+      "id": "urn:samm:io.catenax.essincident:2.0.0#BpnSCharacteristic",
+      "label": "BpnSCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "BPNS Characteristic",
+      "description": "BPNS Characteristic"
+    },
+    {
+      "id": "urn:samm:io.catenax.essincident:2.0.0#BpnACharacteristic",
+      "label": "BpnACharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "BPNA Characteristic",
+      "description": "BPNA Characteristic"
+    },
+    {
+      "id": "urn:samm:io.catenax.essincident:2.0.0#LongitudeCharacteristic",
+      "label": "LongitudeCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Longitude Characteristic",
+      "description": "Characteristic for longitude information of geographic coordinates."
+    },
+    {
+      "id": "urn:samm:io.catenax.essincident:2.0.0#LatitudeCharacteristic",
+      "label": "LatitudeCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Latitude Characteristic",
+      "description": "Characteristic for latitude information of geographic coordinates."
+    },
+    {
+      "id": "urn:samm:io.catenax.essincident:2.0.0#RegularExpressionUUIDv4",
+      "label": "RegularExpressionUUIDv4",
+      "kind": "Characteristic",
+      "preferredName": "Regular Expression identifier UUIDv4",
+      "description": "Constraint for defining identifier UUIDv4"
+    },
+    {
+      "id": "urn:samm:io.catenax.essincident:2.0.0#BpnLConstraint",
+      "label": "BpnLConstraint",
+      "kind": "Characteristic",
+      "preferredName": "BPNL Constraint",
+      "description": "Business Partner L Number Contraint"
+    },
+    {
+      "id": "urn:samm:io.catenax.essincident:2.0.0#BpnSConstraint",
+      "label": "BpnSConstraint",
+      "kind": "Characteristic",
+      "preferredName": "BPNS Constraint",
+      "description": "Business Partner S Number Constraint"
+    },
+    {
+      "id": "urn:samm:io.catenax.essincident:2.0.0#BpnAConstraint",
+      "label": "BpnAConstraint",
+      "kind": "Characteristic",
+      "preferredName": "BPNA Constraint",
+      "description": "Business Partner A Number Constraint"
+    },
+    {
+      "id": "urn:samm:io.catenax.essincident:2.0.0#ContactMailConstraint",
+      "label": "ContactMailConstraint",
+      "kind": "Characteristic",
+      "preferredName": "Contact Mail Constraint",
+      "description": "Regular expression for a contact mail address."
+    },
+    {
+      "id": "urn:samm:io.catenax.essincident:2.0.0#LongitudeConstraint",
+      "label": "LongitudeConstraint",
+      "kind": "Characteristic",
+      "preferredName": "Longitude Constraint",
+      "description": "Regular expression for longitude information."
+    },
+    {
+      "id": "urn:samm:io.catenax.essincident:2.0.0#LatitudeConstraint",
+      "label": "LatitudeConstraint",
+      "kind": "Characteristic",
+      "preferredName": "Latitude Constraint",
+      "description": "Regular expression for latitude information of geographic coordinates."
+    },
+    {
+      "id": "urn:samm:io.catenax.essincident:2.0.0#EssOriginatorCoordinatesEntity",
+      "label": "EssOriginatorCoordinatesEntity",
+      "kind": "Entity",
+      "preferredName": "ESS Originator Coordinates Entity",
+      "description": "Entity for geographic coordinates including a longitude and a latitude value."
+    }
+  ],
+  "links": [
+    {
+      "source": "urn:samm:io.catenax.essincident:2.0.0#EssIncident",
+      "target": "urn:samm:io.catenax.essincident:2.0.0#productCommodity",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.essincident:2.0.0#EssIncident",
+      "target": "urn:samm:io.catenax.essincident:2.0.0#productDescription",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.essincident:2.0.0#EssIncident",
+      "target": "urn:samm:io.catenax.essincident:2.0.0#partNumber",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.essincident:2.0.0#EssIncident",
+      "target": "urn:samm:io.catenax.essincident:2.0.0#rawMaterial",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.essincident:2.0.0#EssIncident",
+      "target": "urn:samm:io.catenax.essincident:2.0.0#industry",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.essincident:2.0.0#EssIncident",
+      "target": "urn:samm:io.catenax.essincident:2.0.0#incidentCategory",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.essincident:2.0.0#EssIncident",
+      "target": "urn:samm:io.catenax.essincident:2.0.0#incidentSubcategory",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.essincident:2.0.0#EssIncident",
+      "target": "urn:samm:io.catenax.essincident:2.0.0#incidentSubject",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.essincident:2.0.0#EssIncident",
+      "target": "urn:samm:io.catenax.essincident:2.0.0#incidentExternalSubject",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.essincident:2.0.0#EssIncident",
+      "target": "urn:samm:io.catenax.essincident:2.0.0#incidentDescription",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.essincident:2.0.0#EssIncident",
+      "target": "urn:samm:io.catenax.essincident:2.0.0#incidentExternalNotes",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.essincident:2.0.0#EssIncident",
+      "target": "urn:samm:io.catenax.essincident:2.0.0#incidentAttachment",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.essincident:2.0.0#EssIncident",
+      "target": "urn:samm:io.catenax.essincident:2.0.0#systemDate",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.essincident:2.0.0#EssIncident",
+      "target": "urn:samm:io.catenax.essincident:2.0.0#incidentDate",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.essincident:2.0.0#EssIncident",
+      "target": "urn:samm:io.catenax.essincident:2.0.0#incidentId",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.essincident:2.0.0#EssIncident",
+      "target": "urn:samm:io.catenax.essincident:2.0.0#masterOpCoId",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.essincident:2.0.0#EssIncident",
+      "target": "urn:samm:io.catenax.essincident:2.0.0#incidentDisplayId",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.essincident:2.0.0#EssIncident",
+      "target": "urn:samm:io.catenax.essincident:2.0.0#incidentStatusInformation",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.essincident:2.0.0#EssIncident",
+      "target": "urn:samm:io.catenax.essincident:2.0.0#incidentShareFlag",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.essincident:2.0.0#EssIncident",
+      "target": "urn:samm:io.catenax.essincident:2.0.0#subCaseOpCoIds",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.essincident:2.0.0#EssIncident",
+      "target": "urn:samm:io.catenax.essincident:2.0.0#incidentSystemId",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.essincident:2.0.0#EssIncident",
+      "target": "urn:samm:io.catenax.essincident:2.0.0#essOriginatorCompanyName",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.essincident:2.0.0#EssIncident",
+      "target": "urn:samm:io.catenax.essincident:2.0.0#essOriginatorAddress",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.essincident:2.0.0#EssIncident",
+      "target": "urn:samm:io.catenax.essincident:2.0.0#essOriginatorBpnL",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.essincident:2.0.0#EssIncident",
+      "target": "urn:samm:io.catenax.essincident:2.0.0#essOriginatorBpnS",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.essincident:2.0.0#EssIncident",
+      "target": "urn:samm:io.catenax.essincident:2.0.0#essOriginatorBpnA",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.essincident:2.0.0#EssIncident",
+      "target": "urn:samm:io.catenax.essincident:2.0.0#essOriginatorCoordinates",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.essincident:2.0.0#EssIncident",
+      "target": "urn:samm:io.catenax.essincident:2.0.0#essIncidentIssuerFirstName",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.essincident:2.0.0#EssIncident",
+      "target": "urn:samm:io.catenax.essincident:2.0.0#essIncidentIssuerEmailAddress",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.essincident:2.0.0#EssIncident",
+      "target": "urn:samm:io.catenax.essincident:2.0.0#essIncidentIssuerPhoneNo",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.essincident:2.0.0#EssIncident",
+      "target": "urn:samm:io.catenax.essincident:2.0.0#flagAnonymous",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.essincident:2.0.0#EssIncident",
+      "target": "urn:samm:io.catenax.essincident:2.0.0#essIncidentIssuerId",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.essincident:2.0.0#EssIncident",
+      "target": "urn:samm:io.catenax.essincident:2.0.0#essIncidentIssuerAddress",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.essincident:2.0.0#EssIncident",
+      "target": "urn:samm:io.catenax.essincident:2.0.0#essIncidentIssuerLastName",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.essincident:2.0.0#EssIncident",
+      "target": "urn:samm:io.catenax.essincident:2.0.0#essOriginatorCountrySubdivision",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.essincident:2.0.0#EssIncident",
+      "target": "urn:samm:io.catenax.essincident:2.0.0#essIncidentIssuerCountrySubdivision",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.essincident:2.0.0#EssOriginatorCoordinatesEntity",
+      "target": "urn:samm:io.catenax.essincident:2.0.0#longitude",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.essincident:2.0.0#EssOriginatorCoordinatesEntity",
+      "target": "urn:samm:io.catenax.essincident:2.0.0#latitude",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.essincident:2.0.0#industry",
+      "target": "urn:samm:io.catenax.essincident:2.0.0#IndustryCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.essincident:2.0.0#incidentCategory",
+      "target": "urn:samm:io.catenax.essincident:2.0.0#IncidentCategoryCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.essincident:2.0.0#incidentSubcategory",
+      "target": "urn:samm:io.catenax.essincident:2.0.0#IncidentSubcategories",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.essincident:2.0.0#incidentId",
+      "target": "urn:samm:io.catenax.essincident:2.0.0#IdTrait",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.essincident:2.0.0#masterOpCoId",
+      "target": "urn:samm:io.catenax.essincident:2.0.0#IdTrait",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.essincident:2.0.0#essIncidentIssuerId",
+      "target": "urn:samm:io.catenax.essincident:2.0.0#IdTrait",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.essincident:2.0.0#incidentStatusInformation",
+      "target": "urn:samm:io.catenax.essincident:2.0.0#IncidentStatusCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.essincident:2.0.0#essOriginatorBpnL",
+      "target": "urn:samm:io.catenax.essincident:2.0.0#BPNL",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.essincident:2.0.0#essOriginatorBpnS",
+      "target": "urn:samm:io.catenax.essincident:2.0.0#BPNS",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.essincident:2.0.0#essOriginatorBpnA",
+      "target": "urn:samm:io.catenax.essincident:2.0.0#BPNA",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.essincident:2.0.0#essOriginatorCoordinates",
+      "target": "urn:samm:io.catenax.essincident:2.0.0#EssOriginatorCoordinatesCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.essincident:2.0.0#essIncidentIssuerEmailAddress",
+      "target": "urn:samm:io.catenax.essincident:2.0.0#ContactMailTrait",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.essincident:2.0.0#longitude",
+      "target": "urn:samm:io.catenax.essincident:2.0.0#LongitudeTrait",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.essincident:2.0.0#latitude",
+      "target": "urn:samm:io.catenax.essincident:2.0.0#LatitudeTrait",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.essincident:2.0.0#EssOriginatorCoordinatesCharacteristic",
+      "target": "urn:samm:io.catenax.essincident:2.0.0#EssOriginatorCoordinatesEntity",
+      "label": "dataType",
+      "optional": false
+    }
+  ]
+}

@@ -1,0 +1,356 @@
+{
+  "meta": {
+    "namespace": "urn:samm:io.catenax.iot_sensor_data:2.0.0#",
+    "meta_model": "SAMM 2.1.0",
+    "path": "data/sldt-semantic-models/io.catenax.iot_sensor_data/2.0.0/IotSensorData.ttl"
+  },
+  "nodes": [
+    {
+      "id": "urn:samm:io.catenax.iot_sensor_data:2.0.0#IotSensorData",
+      "label": "IotSensorData",
+      "kind": "Aspect",
+      "preferredName": "Iot Sensor Data",
+      "description": "The data collected by an IoT Sensor Device."
+    },
+    {
+      "id": "urn:samm:io.catenax.iot_sensor_data:2.0.0#catenaXId",
+      "label": "catenaXId",
+      "kind": "Property",
+      "preferredName": "Catena-X Identifier",
+      "description": "The fully anonymous Catena-X ID of the asset, valid for the Catena-X dataspace."
+    },
+    {
+      "id": "urn:samm:io.catenax.iot_sensor_data:2.0.0#sensorRuntimeData",
+      "label": "sensorRuntimeData",
+      "kind": "Property",
+      "preferredName": "Sensor Runtime Data",
+      "description": "The information collected by a Sensor device at an instance in time."
+    },
+    {
+      "id": "urn:samm:io.catenax.iot_sensor_data:2.0.0#sensorGeoLocation",
+      "label": "sensorGeoLocation",
+      "kind": "Property",
+      "preferredName": "Sensor Geo Location",
+      "description": "Geodata, geographic data or geospatial data, refers to data and information that has explicit or implicit association with a location relative to Earth."
+    },
+    {
+      "id": "urn:samm:io.catenax.iot_sensor_data:2.0.0#batteryLevel",
+      "label": "batteryLevel",
+      "kind": "Property",
+      "preferredName": "Battery Level",
+      "description": "The battery level displays how much charge of the battery has been left."
+    },
+    {
+      "id": "urn:samm:io.catenax.iot_sensor_data:2.0.0#timestamp",
+      "label": "timestamp",
+      "kind": "Property",
+      "preferredName": "Timestamp",
+      "description": "The timestamp of the latest sensor reading."
+    },
+    {
+      "id": "urn:samm:io.catenax.iot_sensor_data:2.0.0#sensorData",
+      "label": "sensorData",
+      "kind": "Property",
+      "preferredName": "Sensor Data",
+      "description": "The data collected by an IoT Sensor Device."
+    },
+    {
+      "id": "urn:samm:io.catenax.iot_sensor_data:2.0.0#transmissionMethod",
+      "label": "transmissionMethod",
+      "kind": "Property",
+      "preferredName": "Transmission Method",
+      "description": "The method under which the sensing data is transmitted from the source to the remote node."
+    },
+    {
+      "id": "urn:samm:io.catenax.iot_sensor_data:2.0.0#latitude",
+      "label": "latitude",
+      "kind": "Property",
+      "preferredName": "Latitude",
+      "description": "The angle between zenith and a plane parallel to the equator."
+    },
+    {
+      "id": "urn:samm:io.catenax.iot_sensor_data:2.0.0#longitude",
+      "label": "longitude",
+      "kind": "Property",
+      "preferredName": "Longitude",
+      "description": "Geographic coordinate that specifies the east-west position of a point on the Earth's surface."
+    },
+    {
+      "id": "urn:samm:io.catenax.iot_sensor_data:2.0.0#altitude",
+      "label": "altitude",
+      "kind": "Property",
+      "preferredName": "Altitude",
+      "description": "Antenna Altitude above/below mean-sea-level (geoid)."
+    },
+    {
+      "id": "urn:samm:io.catenax.iot_sensor_data:2.0.0#geoDataTimestamp",
+      "label": "geoDataTimestamp",
+      "kind": "Property",
+      "preferredName": "Geo Data Timestamp",
+      "description": "The timestamp of the latest sensor reading of the geo data."
+    },
+    {
+      "id": "urn:samm:io.catenax.iot_sensor_data:2.0.0#sensorType",
+      "label": "sensorType",
+      "kind": "Property",
+      "preferredName": "Sensor Type",
+      "description": "Different types of sensors that are commonly used in various applications, measuring one of the physical properties like Temperature, Pressure,  Resistance, Shock, Conduction, Heat Transfer etc."
+    },
+    {
+      "id": "urn:samm:io.catenax.iot_sensor_data:2.0.0#sensorValue",
+      "label": "sensorValue",
+      "kind": "Property",
+      "preferredName": "Sensor Value",
+      "description": "The measured value of the sensor type."
+    },
+    {
+      "id": "urn:samm:io.catenax.iot_sensor_data:2.0.0#sensorUnit",
+      "label": "sensorUnit",
+      "kind": "Property",
+      "preferredName": "Sensor Unit",
+      "description": null
+    },
+    {
+      "id": "urn:samm:io.catenax.iot_sensor_data:2.0.0#SensorRuntimeDataCharacteristics",
+      "label": "SensorRuntimeDataCharacteristics",
+      "kind": "Characteristic",
+      "preferredName": "Sensor Runtime Data Characteristics",
+      "description": "Characteristic describing the list of the Sensor Runtime Data property."
+    },
+    {
+      "id": "urn:samm:io.catenax.iot_sensor_data:2.0.0#SensorDataCharacteristics",
+      "label": "SensorDataCharacteristics",
+      "kind": "Characteristic",
+      "preferredName": "Sensor Data Characteristics",
+      "description": "Characteristic to describe the related Sensor data."
+    },
+    {
+      "id": "urn:samm:io.catenax.iot_sensor_data:2.0.0#SensorRuntimeDataEntity",
+      "label": "SensorRuntimeDataEntity",
+      "kind": "Entity",
+      "preferredName": "Sensor Runtime Data Entity",
+      "description": "Encapsulates the Sensor Data relevant attributes."
+    },
+    {
+      "id": "urn:samm:io.catenax.iot_sensor_data:2.0.0#SensorGeoLocationEntity",
+      "label": "SensorGeoLocationEntity",
+      "kind": "Entity",
+      "preferredName": "Sensor Geo Location Entity",
+      "description": "Encapsulates the Geo Data relevant attributes."
+    },
+    {
+      "id": "urn:samm:io.catenax.iot_sensor_data:2.0.0#SensorDataEntity",
+      "label": "SensorDataEntity",
+      "kind": "Entity",
+      "preferredName": "Sensor Data Entity",
+      "description": "Encapsulates the Sensor Data relevant attributes."
+    },
+    {
+      "id": "urn:samm:io.catenax.iot_sensor_data:2.0.0#SensorGeoLocationCharacteristics",
+      "label": "SensorGeoLocationCharacteristics",
+      "kind": "Characteristic",
+      "preferredName": "Sensor Geo Location Characteristics",
+      "description": "Characteristic to describe the related Geo data."
+    },
+    {
+      "id": "urn:samm:io.catenax.iot_sensor_data:2.0.0#TransmissionMethodCharacteristic",
+      "label": "TransmissionMethodCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Transmission Method Characteristic",
+      "description": "Characteristic that describes the property transmission method."
+    },
+    {
+      "id": "urn:samm:io.catenax.iot_sensor_data:2.0.0#LatitudeCharacteristic",
+      "label": "LatitudeCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Latitude Characteristic",
+      "description": "Characteristic describing the property latitude."
+    },
+    {
+      "id": "urn:samm:io.catenax.iot_sensor_data:2.0.0#LongitudeCharacteristic",
+      "label": "LongitudeCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Longitude Characteristic",
+      "description": "Characteristic describing the property longitude."
+    },
+    {
+      "id": "urn:samm:io.catenax.iot_sensor_data:2.0.0#AltitudeCharacteristic",
+      "label": "AltitudeCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Altitude Characteristic",
+      "description": "Characteristic describing the property altitude."
+    },
+    {
+      "id": "urn:samm:io.catenax.iot_sensor_data:2.0.0#SensorValueCharacteristics",
+      "label": "SensorValueCharacteristics",
+      "kind": "Characteristic",
+      "preferredName": "Sensor Value Characteristic",
+      "description": "Describes the property which contains a sensor value of data type decimal."
+    },
+    {
+      "id": "urn:samm:io.catenax.iot_sensor_data:2.0.0#BatteryLevelCharacteristic",
+      "label": "BatteryLevelCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Battery Level Characteristic",
+      "description": "Characteristic to describe the property battery level."
+    }
+  ],
+  "links": [
+    {
+      "source": "urn:samm:io.catenax.iot_sensor_data:2.0.0#IotSensorData",
+      "target": "urn:samm:io.catenax.iot_sensor_data:2.0.0#catenaXId",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.iot_sensor_data:2.0.0#IotSensorData",
+      "target": "urn:samm:io.catenax.iot_sensor_data:2.0.0#sensorRuntimeData",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.iot_sensor_data:2.0.0#SensorRuntimeDataEntity",
+      "target": "urn:samm:io.catenax.iot_sensor_data:2.0.0#sensorGeoLocation",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.iot_sensor_data:2.0.0#SensorRuntimeDataEntity",
+      "target": "urn:samm:io.catenax.iot_sensor_data:2.0.0#batteryLevel",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.iot_sensor_data:2.0.0#SensorRuntimeDataEntity",
+      "target": "urn:samm:io.catenax.iot_sensor_data:2.0.0#timestamp",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.iot_sensor_data:2.0.0#SensorRuntimeDataEntity",
+      "target": "urn:samm:io.catenax.iot_sensor_data:2.0.0#sensorData",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.iot_sensor_data:2.0.0#SensorRuntimeDataEntity",
+      "target": "urn:samm:io.catenax.iot_sensor_data:2.0.0#transmissionMethod",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.iot_sensor_data:2.0.0#SensorGeoLocationEntity",
+      "target": "urn:samm:io.catenax.iot_sensor_data:2.0.0#latitude",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.iot_sensor_data:2.0.0#SensorGeoLocationEntity",
+      "target": "urn:samm:io.catenax.iot_sensor_data:2.0.0#longitude",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.iot_sensor_data:2.0.0#SensorGeoLocationEntity",
+      "target": "urn:samm:io.catenax.iot_sensor_data:2.0.0#altitude",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.iot_sensor_data:2.0.0#SensorGeoLocationEntity",
+      "target": "urn:samm:io.catenax.iot_sensor_data:2.0.0#geoDataTimestamp",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.iot_sensor_data:2.0.0#SensorDataEntity",
+      "target": "urn:samm:io.catenax.iot_sensor_data:2.0.0#sensorType",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.iot_sensor_data:2.0.0#SensorDataEntity",
+      "target": "urn:samm:io.catenax.iot_sensor_data:2.0.0#sensorValue",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.iot_sensor_data:2.0.0#SensorDataEntity",
+      "target": "urn:samm:io.catenax.iot_sensor_data:2.0.0#sensorUnit",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.iot_sensor_data:2.0.0#sensorRuntimeData",
+      "target": "urn:samm:io.catenax.iot_sensor_data:2.0.0#SensorRuntimeDataCharacteristics",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.iot_sensor_data:2.0.0#sensorGeoLocation",
+      "target": "urn:samm:io.catenax.iot_sensor_data:2.0.0#SensorGeoLocationCharacteristics",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.iot_sensor_data:2.0.0#batteryLevel",
+      "target": "urn:samm:io.catenax.iot_sensor_data:2.0.0#BatteryLevelCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.iot_sensor_data:2.0.0#sensorData",
+      "target": "urn:samm:io.catenax.iot_sensor_data:2.0.0#SensorDataCharacteristics",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.iot_sensor_data:2.0.0#transmissionMethod",
+      "target": "urn:samm:io.catenax.iot_sensor_data:2.0.0#TransmissionMethodCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.iot_sensor_data:2.0.0#latitude",
+      "target": "urn:samm:io.catenax.iot_sensor_data:2.0.0#LatitudeCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.iot_sensor_data:2.0.0#longitude",
+      "target": "urn:samm:io.catenax.iot_sensor_data:2.0.0#LongitudeCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.iot_sensor_data:2.0.0#altitude",
+      "target": "urn:samm:io.catenax.iot_sensor_data:2.0.0#AltitudeCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.iot_sensor_data:2.0.0#sensorValue",
+      "target": "urn:samm:io.catenax.iot_sensor_data:2.0.0#SensorValueCharacteristics",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.iot_sensor_data:2.0.0#SensorRuntimeDataCharacteristics",
+      "target": "urn:samm:io.catenax.iot_sensor_data:2.0.0#SensorRuntimeDataEntity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.iot_sensor_data:2.0.0#SensorGeoLocationCharacteristics",
+      "target": "urn:samm:io.catenax.iot_sensor_data:2.0.0#SensorGeoLocationEntity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.iot_sensor_data:2.0.0#SensorDataCharacteristics",
+      "target": "urn:samm:io.catenax.iot_sensor_data:2.0.0#SensorDataEntity",
+      "label": "dataType",
+      "optional": false
+    }
+  ]
+}

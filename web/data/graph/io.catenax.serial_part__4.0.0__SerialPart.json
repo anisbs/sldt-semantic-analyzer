@@ -1,0 +1,57 @@
+{
+  "meta": {
+    "namespace": "urn:samm:io.catenax.serial_part:4.0.0#",
+    "meta_model": "SAMM 2.1.0",
+    "path": "data/sldt-semantic-models/io.catenax.serial_part/4.0.0/SerialPart.ttl"
+  },
+  "nodes": [
+    {
+      "id": "urn:samm:io.catenax.serial_part:4.0.0#SerialPart",
+      "label": "SerialPart",
+      "kind": "Aspect",
+      "preferredName": "serial part",
+      "description": "A serialized part is an instantiation of a (design-)part, where the particular instantiation can be uniquely identified by means of a serial number or a similar identifier (e.g. VAN)or a combination of multiple identifiers (e.g. combination of manufacturer, date and number)"
+    },
+    {
+      "id": "urn:samm:io.catenax.serial_part:4.0.0#partTypeInformation",
+      "label": "partTypeInformation",
+      "kind": "Property",
+      "preferredName": "part type information",
+      "description": "The part type from which the serialized part has been instantiated"
+    },
+    {
+      "id": "urn:samm:io.catenax.serial_part:4.0.0#PartTypeInformationCharacteristic",
+      "label": "PartTypeInformationCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "part type information characteristic",
+      "description": "The characteristics of the part type"
+    },
+    {
+      "id": "urn:samm:io.catenax.serial_part:4.0.0#PartTypeInformationEntity",
+      "label": "PartTypeInformationEntity",
+      "kind": "Entity",
+      "preferredName": "part type information entity",
+      "description": "Encapsulation for data related to the part type"
+    }
+  ],
+  "links": [
+    {
+      "source": "urn:samm:io.catenax.serial_part:4.0.0#SerialPart",
+      "target": "urn:samm:io.catenax.serial_part:4.0.0#partTypeInformation",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.serial_part:4.0.0#partTypeInformation",
+      "target": "urn:samm:io.catenax.serial_part:4.0.0#PartTypeInformationCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.serial_part:4.0.0#PartTypeInformationCharacteristic",
+      "target": "urn:samm:io.catenax.serial_part:4.0.0#PartTypeInformationEntity",
+      "label": "dataType",
+      "optional": false
+    }
+  ]
+}

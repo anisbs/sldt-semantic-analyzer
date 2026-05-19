@@ -1,0 +1,259 @@
+{
+  "meta": {
+    "namespace": "urn:samm:io.catenax.part_type_information:1.0.0#",
+    "meta_model": "SAMM 2.1.0",
+    "path": "data/sldt-semantic-models/io.catenax.part_type_information/1.0.0/PartTypeInformation.ttl"
+  },
+  "nodes": [
+    {
+      "id": "urn:samm:io.catenax.part_type_information:1.0.0#PartTypeInformation",
+      "label": "PartTypeInformation",
+      "kind": "Aspect",
+      "preferredName": "Part Type Information",
+      "description": "A Part Type Information represents an item in the Catena-X Bill of Material (BOM) on a type level in a specific version."
+    },
+    {
+      "id": "urn:samm:io.catenax.part_type_information:1.0.0#catenaXId",
+      "label": "catenaXId",
+      "kind": "Property",
+      "preferredName": "Catena-X ID",
+      "description": "The fully anonymous Catena-X ID of the serialized part, valid for the Catena-X dataspace."
+    },
+    {
+      "id": "urn:samm:io.catenax.part_type_information:1.0.0#partTypeInformation",
+      "label": "partTypeInformation",
+      "kind": "Property",
+      "preferredName": "Part Type Information",
+      "description": "The part type from which the serialized part has been instantiated."
+    },
+    {
+      "id": "urn:samm:io.catenax.part_type_information:1.0.0#partSitesInformationAsPlanned",
+      "label": "partSitesInformationAsPlanned",
+      "kind": "Property",
+      "preferredName": "Part Sites Information as Planned",
+      "description": "A site is a delimited geographical area where a legal entity does business (geographical address with geo coordinates). A site always has a primary physical address. It is possible that further physical addresses are specified for the site. P.O. box details are only possible in addition to the physical address. A site has a 1:n relation to addresses, means at least one address is necessary and multiple addresses are possible."
+    },
+    {
+      "id": "urn:samm:io.catenax.part_type_information:1.0.0#manufacturerPartId",
+      "label": "manufacturerPartId",
+      "kind": "Property",
+      "preferredName": "Manufacturer Part ID",
+      "description": "Part ID as assigned by the manufacturer of the part. The part ID identifies the part in the manufacturer`s dataspace. The part ID references a specific version of a part. The version number must be included in the part ID if it is available. The part ID does not reference a specific instance of a part and must not be confused with the serial number."
+    },
+    {
+      "id": "urn:samm:io.catenax.part_type_information:1.0.0#nameAtManufacturer",
+      "label": "nameAtManufacturer",
+      "kind": "Property",
+      "preferredName": "Name at manufacturer",
+      "description": "Name of the part as assigned by the manufacturer."
+    },
+    {
+      "id": "urn:samm:io.catenax.part_type_information:1.0.0#catenaXsiteId",
+      "label": "catenaXsiteId",
+      "kind": "Property",
+      "preferredName": "Catena-X site identifier",
+      "description": "The identifier of the site according to Catena-X BPDM. The catenaXsiteId must be a valid Catena-X BPN. The BPN is a unique, unchangeable identifier for business partners / company locations from foundation to closure, regardless of the different business relationships / structures between or within the business partners or company locations."
+    },
+    {
+      "id": "urn:samm:io.catenax.part_type_information:1.0.0#function",
+      "label": "function",
+      "kind": "Property",
+      "preferredName": "Function",
+      "description": "The function of the site in relation to the part (i.e. the activity within the value chain of the part that is performed at the site)."
+    },
+    {
+      "id": "urn:samm:io.catenax.part_type_information:1.0.0#functionValidFrom",
+      "label": "functionValidFrom",
+      "kind": "Property",
+      "preferredName": "Function valid from",
+      "description": "Timestamp, from when the site has the specified function for the given part."
+    },
+    {
+      "id": "urn:samm:io.catenax.part_type_information:1.0.0#functionValidUntil",
+      "label": "functionValidUntil",
+      "kind": "Property",
+      "preferredName": "Function valid until",
+      "description": "Timestamp, until when the site has the specified function for the given part."
+    },
+    {
+      "id": "urn:samm:io.catenax.part_type_information:1.0.0#PartTypeInformationCharacteristic",
+      "label": "PartTypeInformationCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Part Type Information Characteristic",
+      "description": "The characteristics of the part type."
+    },
+    {
+      "id": "urn:samm:io.catenax.part_type_information:1.0.0#PartIdCharacteristic",
+      "label": "PartIdCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Part ID characteristic",
+      "description": "The part ID is a multi-character string, usually assigned by an ERP system."
+    },
+    {
+      "id": "urn:samm:io.catenax.part_type_information:1.0.0#PartNameCharacteristic",
+      "label": "PartNameCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Part Name characteristic",
+      "description": "Part name in string format from the respective system in the value chain."
+    },
+    {
+      "id": "urn:samm:io.catenax.part_type_information:1.0.0#DateTimeCharacteristic",
+      "label": "DateTimeCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Date Time Characteristic",
+      "description": "Describes a property which contains the date and time with an optional timezone."
+    },
+    {
+      "id": "urn:samm:io.catenax.part_type_information:1.0.0#partSitesInformationAsPlannedCharacteristic",
+      "label": "partSitesInformationAsPlannedCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Part Sites Information as Planned Characteristic",
+      "description": "The characteristic of the part site information that represents a set of possible site to a respective part."
+    },
+    {
+      "id": "urn:samm:io.catenax.part_type_information:1.0.0#PartTypeInformationEntity",
+      "label": "PartTypeInformationEntity",
+      "kind": "Entity",
+      "preferredName": "Part Type Information Entity",
+      "description": "Encapsulation for data related to the part type."
+    },
+    {
+      "id": "urn:samm:io.catenax.part_type_information:1.0.0#partSitesInformationAsPlannedEntity",
+      "label": "partSitesInformationAsPlannedEntity",
+      "kind": "Entity",
+      "preferredName": "Part Sites Information as Planned Entity",
+      "description": "Describes the ID, function and validity date of a site for the associated part in the AsPlanned context."
+    },
+    {
+      "id": "urn:samm:io.catenax.part_type_information:1.0.0#FunctionCharacteristic",
+      "label": "FunctionCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Function characteristic",
+      "description": "Describes the characteristics of the function for a site related to the respective part."
+    },
+    {
+      "id": "urn:samm:io.catenax.part_type_information:1.0.0#DateTrait",
+      "label": "DateTrait",
+      "kind": "Characteristic",
+      "preferredName": "Date Trait",
+      "description": "Trait to ensure regular expressions with different date formats."
+    },
+    {
+      "id": "urn:samm:io.catenax.part_type_information:1.0.0#DateTimeRegularExpression",
+      "label": "DateTimeRegularExpression",
+      "kind": "Characteristic",
+      "preferredName": "Date Time Regular Expression",
+      "description": "Regular Expression to enable UTC and Timezone formats and the possibility to exclude time information."
+    }
+  ],
+  "links": [
+    {
+      "source": "urn:samm:io.catenax.part_type_information:1.0.0#PartTypeInformation",
+      "target": "urn:samm:io.catenax.part_type_information:1.0.0#catenaXId",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.part_type_information:1.0.0#PartTypeInformation",
+      "target": "urn:samm:io.catenax.part_type_information:1.0.0#partTypeInformation",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.part_type_information:1.0.0#PartTypeInformation",
+      "target": "urn:samm:io.catenax.part_type_information:1.0.0#partSitesInformationAsPlanned",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.part_type_information:1.0.0#PartTypeInformationEntity",
+      "target": "urn:samm:io.catenax.part_type_information:1.0.0#manufacturerPartId",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.part_type_information:1.0.0#PartTypeInformationEntity",
+      "target": "urn:samm:io.catenax.part_type_information:1.0.0#nameAtManufacturer",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.part_type_information:1.0.0#partSitesInformationAsPlannedEntity",
+      "target": "urn:samm:io.catenax.part_type_information:1.0.0#catenaXsiteId",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.part_type_information:1.0.0#partSitesInformationAsPlannedEntity",
+      "target": "urn:samm:io.catenax.part_type_information:1.0.0#function",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.part_type_information:1.0.0#partSitesInformationAsPlannedEntity",
+      "target": "urn:samm:io.catenax.part_type_information:1.0.0#functionValidFrom",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.part_type_information:1.0.0#partSitesInformationAsPlannedEntity",
+      "target": "urn:samm:io.catenax.part_type_information:1.0.0#functionValidUntil",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.part_type_information:1.0.0#partTypeInformation",
+      "target": "urn:samm:io.catenax.part_type_information:1.0.0#PartTypeInformationCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.part_type_information:1.0.0#partSitesInformationAsPlanned",
+      "target": "urn:samm:io.catenax.part_type_information:1.0.0#partSitesInformationAsPlannedCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.part_type_information:1.0.0#manufacturerPartId",
+      "target": "urn:samm:io.catenax.part_type_information:1.0.0#PartIdCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.part_type_information:1.0.0#nameAtManufacturer",
+      "target": "urn:samm:io.catenax.part_type_information:1.0.0#PartNameCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.part_type_information:1.0.0#function",
+      "target": "urn:samm:io.catenax.part_type_information:1.0.0#FunctionCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.part_type_information:1.0.0#functionValidFrom",
+      "target": "urn:samm:io.catenax.part_type_information:1.0.0#DateTrait",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.part_type_information:1.0.0#functionValidUntil",
+      "target": "urn:samm:io.catenax.part_type_information:1.0.0#DateTrait",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.part_type_information:1.0.0#PartTypeInformationCharacteristic",
+      "target": "urn:samm:io.catenax.part_type_information:1.0.0#PartTypeInformationEntity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.part_type_information:1.0.0#partSitesInformationAsPlannedCharacteristic",
+      "target": "urn:samm:io.catenax.part_type_information:1.0.0#partSitesInformationAsPlannedEntity",
+      "label": "dataType",
+      "optional": false
+    }
+  ]
+}

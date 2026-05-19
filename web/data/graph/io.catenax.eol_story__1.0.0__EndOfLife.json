@@ -1,0 +1,200 @@
+{
+  "meta": {
+    "namespace": "urn:bamm:io.catenax.eol_story:1.0.0#",
+    "meta_model": "BAMM 1.0.0",
+    "path": "data/sldt-semantic-models/io.catenax.eol_story/1.0.0/EndOfLife.ttl"
+  },
+  "nodes": [
+    {
+      "id": "urn:bamm:io.catenax.eol_story:1.0.0#EndOfLife",
+      "label": "EndOfLife",
+      "kind": "Aspect",
+      "preferredName": "End of life",
+      "description": "Aspect for End of Life Story for the Dismantler"
+    },
+    {
+      "id": "urn:bamm:io.catenax.eol_story:1.0.0#disassemblyStatus",
+      "label": "disassemblyStatus",
+      "kind": "Property",
+      "preferredName": "disassembly status",
+      "description": "Indicates the status of disassembly"
+    },
+    {
+      "id": "urn:bamm:io.catenax.eol_story:1.0.0#healthStatus",
+      "label": "healthStatus",
+      "kind": "Property",
+      "preferredName": "healthStatus",
+      "description": "The health condition of the vehicle or spare part."
+    },
+    {
+      "id": "urn:bamm:io.catenax.eol_story:1.0.0#recyclingStatus",
+      "label": "recyclingStatus",
+      "kind": "Property",
+      "preferredName": "recycling Status",
+      "description": "The recycling status of a vehicle or part."
+    },
+    {
+      "id": "urn:bamm:io.catenax.eol_story:1.0.0#dateOfReceptionGMT",
+      "label": "dateOfReceptionGMT",
+      "kind": "Property",
+      "preferredName": "date of reception",
+      "description": "Gives the date of reception of the vehicle in GMT time zone"
+    },
+    {
+      "id": "urn:bamm:io.catenax.eol_story:1.0.0#dateOfDissamblyGMT",
+      "label": "dateOfDissamblyGMT",
+      "kind": "Property",
+      "preferredName": "date of dissambly",
+      "description": "Gives the date of dissambly of the part in GMT time zone"
+    },
+    {
+      "id": "urn:bamm:io.catenax.eol_story:1.0.0#dateOfScrappingGMT",
+      "label": "dateOfScrappingGMT",
+      "kind": "Property",
+      "preferredName": "date of scrapping",
+      "description": "Gives the date of scrapping of the vehicle or part in GMT time zone"
+    },
+    {
+      "id": "urn:bamm:io.catenax.eol_story:1.0.0#sparePartQuality",
+      "label": "sparePartQuality",
+      "kind": "Property",
+      "preferredName": "spare part quality",
+      "description": "Indicates the quality of a spare part"
+    },
+    {
+      "id": "urn:bamm:io.catenax.eol_story:1.0.0#lastMileage",
+      "label": "lastMileage",
+      "kind": "Property",
+      "preferredName": "last mileage",
+      "description": "Gives the last mileage, which can be read on the vehicle"
+    },
+    {
+      "id": "urn:bamm:io.catenax.eol_story:1.0.0#certificateOfDestruction",
+      "label": "certificateOfDestruction",
+      "kind": "Property",
+      "preferredName": "certificate of destruction",
+      "description": "Indicates if an certificate of destruction is present"
+    },
+    {
+      "id": "urn:bamm:io.catenax.eol_story:1.0.0#DisassemblyStatus",
+      "label": "DisassemblyStatus",
+      "kind": "Characteristic",
+      "preferredName": null,
+      "description": "Possible status of disassembly"
+    },
+    {
+      "id": "urn:bamm:io.catenax.eol_story:1.0.0#HealthStatus",
+      "label": "HealthStatus",
+      "kind": "Characteristic",
+      "preferredName": null,
+      "description": "Possible status of condition of a vehicle or part."
+    },
+    {
+      "id": "urn:bamm:io.catenax.eol_story:1.0.0#RecyclingStatus",
+      "label": "RecyclingStatus",
+      "kind": "Characteristic",
+      "preferredName": "RecyclingStatus",
+      "description": "Possible status auf a vehicle or part"
+    },
+    {
+      "id": "urn:bamm:io.catenax.eol_story:1.0.0#SparePartQuality",
+      "label": "SparePartQuality",
+      "kind": "Characteristic",
+      "preferredName": null,
+      "description": "Possible status of condition: A=quality very good; B=quality normal used; C=quality defective or with defects; N=new"
+    },
+    {
+      "id": "urn:bamm:io.catenax.eol_story:1.0.0#LastMileage",
+      "label": "LastMileage",
+      "kind": "Characteristic",
+      "preferredName": null,
+      "description": null
+    }
+  ],
+  "links": [
+    {
+      "source": "urn:bamm:io.catenax.eol_story:1.0.0#EndOfLife",
+      "target": "urn:bamm:io.catenax.eol_story:1.0.0#disassemblyStatus",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.eol_story:1.0.0#EndOfLife",
+      "target": "urn:bamm:io.catenax.eol_story:1.0.0#healthStatus",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.eol_story:1.0.0#EndOfLife",
+      "target": "urn:bamm:io.catenax.eol_story:1.0.0#recyclingStatus",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.eol_story:1.0.0#EndOfLife",
+      "target": "urn:bamm:io.catenax.eol_story:1.0.0#dateOfReceptionGMT",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.eol_story:1.0.0#EndOfLife",
+      "target": "urn:bamm:io.catenax.eol_story:1.0.0#certificateOfDestruction",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.eol_story:1.0.0#EndOfLife",
+      "target": "urn:bamm:io.catenax.eol_story:1.0.0#lastMileage",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:bamm:io.catenax.eol_story:1.0.0#EndOfLife",
+      "target": "urn:bamm:io.catenax.eol_story:1.0.0#dateOfScrappingGMT",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:bamm:io.catenax.eol_story:1.0.0#EndOfLife",
+      "target": "urn:bamm:io.catenax.eol_story:1.0.0#sparePartQuality",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:bamm:io.catenax.eol_story:1.0.0#EndOfLife",
+      "target": "urn:bamm:io.catenax.eol_story:1.0.0#dateOfDissamblyGMT",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:bamm:io.catenax.eol_story:1.0.0#disassemblyStatus",
+      "target": "urn:bamm:io.catenax.eol_story:1.0.0#DisassemblyStatus",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.eol_story:1.0.0#healthStatus",
+      "target": "urn:bamm:io.catenax.eol_story:1.0.0#HealthStatus",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.eol_story:1.0.0#recyclingStatus",
+      "target": "urn:bamm:io.catenax.eol_story:1.0.0#RecyclingStatus",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.eol_story:1.0.0#sparePartQuality",
+      "target": "urn:bamm:io.catenax.eol_story:1.0.0#SparePartQuality",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.eol_story:1.0.0#lastMileage",
+      "target": "urn:bamm:io.catenax.eol_story:1.0.0#LastMileage",
+      "label": "characteristic",
+      "optional": false
+    }
+  ]
+}

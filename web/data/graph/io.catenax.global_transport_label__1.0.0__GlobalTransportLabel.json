@@ -1,0 +1,1035 @@
+{
+  "meta": {
+    "namespace": "urn:samm:io.catenax.global_transport_label:1.0.0#",
+    "meta_model": "SAMM 2.1.0",
+    "path": "data/sldt-semantic-models/io.catenax.global_transport_label/1.0.0/GlobalTransportLabel.ttl"
+  },
+  "nodes": [
+    {
+      "id": "urn:samm:io.catenax.global_transport_label:1.0.0#GlobalTransportLabel",
+      "label": "GlobalTransportLabel",
+      "kind": "Aspect",
+      "preferredName": "Global Transport Label",
+      "description": "This aspect represents the information included in a global transport label of a transport unit. A transport unit is one or more oder items of a delivery united to one unit that is not altered during the whole transport."
+    },
+    {
+      "id": "urn:samm:io.catenax.global_transport_label:1.0.0#shipFrom",
+      "label": "shipFrom",
+      "kind": "Property",
+      "preferredName": "Ship From",
+      "description": "Information about the sender of the transport unit."
+    },
+    {
+      "id": "urn:samm:io.catenax.global_transport_label:1.0.0#shipTo",
+      "label": "shipTo",
+      "kind": "Property",
+      "preferredName": "Ship To",
+      "description": "Information about the recipient of the transport unit."
+    },
+    {
+      "id": "urn:samm:io.catenax.global_transport_label:1.0.0#labelType",
+      "label": "labelType",
+      "kind": "Property",
+      "preferredName": "Label Type",
+      "description": "Describes the Label Type according to VDA 4994"
+    },
+    {
+      "id": "urn:samm:io.catenax.global_transport_label:1.0.0#customerReference1",
+      "label": "customerReference1",
+      "kind": "Property",
+      "preferredName": "Customer Reference 1 ",
+      "description": "Reference information from the customer."
+    },
+    {
+      "id": "urn:samm:io.catenax.global_transport_label:1.0.0#customerSpecificRouting",
+      "label": "customerSpecificRouting",
+      "kind": "Property",
+      "preferredName": "Customer Specific Routing",
+      "description": "Information on customer specific routing. This information is supplied as part of the call-off and does not need to be interpreted by the supplier."
+    },
+    {
+      "id": "urn:samm:io.catenax.global_transport_label:1.0.0#logisticsReference",
+      "label": "logisticsReference",
+      "kind": "Property",
+      "preferredName": "Logistics Reference",
+      "description": "Information of the transport unit that is relevant for the logstics."
+    },
+    {
+      "id": "urn:samm:io.catenax.global_transport_label:1.0.0#contentDescription",
+      "label": "contentDescription",
+      "kind": "Property",
+      "preferredName": "Content Description",
+      "description": "Describes the content of the global transport label."
+    },
+    {
+      "id": "urn:samm:io.catenax.global_transport_label:1.0.0#packageId",
+      "label": "packageId",
+      "kind": "Property",
+      "preferredName": "Package ID",
+      "description": "Information for identification of the transport unit."
+    },
+    {
+      "id": "urn:samm:io.catenax.global_transport_label:1.0.0#customerReference2",
+      "label": "customerReference2",
+      "kind": "Property",
+      "preferredName": "Customer Reference 2",
+      "description": "Information integrating a comprehensive labeling protocol for the customer for inner packages and simplified loading units."
+    },
+    {
+      "id": "urn:samm:io.catenax.global_transport_label:1.0.0#optionalInformation",
+      "label": "optionalInformation",
+      "kind": "Property",
+      "preferredName": "optional Information",
+      "description": "Supplier area that includes specific information for supplier's use only. Example Value: F61F008AD4."
+    },
+    {
+      "id": "urn:samm:io.catenax.global_transport_label:1.0.0#customerReference3",
+      "label": "customerReference3",
+      "kind": "Property",
+      "preferredName": "customer Reference 3",
+      "description": "Additional, customer specific information for customer's use only. This field contains customer data that is transmitted in the PCI segment (qual-ifier 16 or 3) of the customer call-off."
+    },
+    {
+      "id": "urn:samm:io.catenax.global_transport_label:1.0.0#supplierId",
+      "label": "supplierId",
+      "kind": "Property",
+      "preferredName": "Supplier ID",
+      "description": "The supplier ID is filled in if the actual sender of the goods differs from the actual supplier. In other words, the supplier ID provides information on where the goods are actually delivered from - the physical sender of the goods. A supplier ID is assigned by the ordering company for this purpose. This is not created or hosted centrally, similar to the DUNS number. It is freely selectable and can therefore be freely designed in terms of syntax.ID number from the supplier."
+    },
+    {
+      "id": "urn:samm:io.catenax.global_transport_label:1.0.0#unloadingPoint",
+      "label": "unloadingPoint",
+      "kind": "Property",
+      "preferredName": "Unloading Point",
+      "description": "Unloading point where the means of transport is being unloaded."
+    },
+    {
+      "id": "urn:samm:io.catenax.global_transport_label:1.0.0#internalDestination",
+      "label": "internalDestination",
+      "kind": "Property",
+      "preferredName": "Internal Destination",
+      "description": "Additional Internal destination at recipients' side after unloading (warehouse / storage)."
+    },
+    {
+      "id": "urn:samm:io.catenax.global_transport_label:1.0.0#deliveryNoteNumber",
+      "label": "deliveryNoteNumber",
+      "kind": "Property",
+      "preferredName": "Delivery Note Number",
+      "description": "Associated delivery note number, assigned by sender."
+    },
+    {
+      "id": "urn:samm:io.catenax.global_transport_label:1.0.0#supplierNumber",
+      "label": "supplierNumber",
+      "kind": "Property",
+      "preferredName": "Supplier Number",
+      "description": "Supplier number assigned to the seller by the customer. This supplier number may differ from ship-from's identifier, depending on the numbering concept applied by the customer."
+    },
+    {
+      "id": "urn:samm:io.catenax.global_transport_label:1.0.0#expectedTimeOfArrival",
+      "label": "expectedTimeOfArrival",
+      "kind": "Property",
+      "preferredName": "ExpectedTime Of Arrival",
+      "description": "Expected/request delivery time of the goods at the customer's premises."
+    },
+    {
+      "id": "urn:samm:io.catenax.global_transport_label:1.0.0#netWeight",
+      "label": "netWeight",
+      "kind": "Property",
+      "preferredName": "Net Weight",
+      "description": "Net weight of the loading unit or inner packaging item."
+    },
+    {
+      "id": "urn:samm:io.catenax.global_transport_label:1.0.0#grossWeight",
+      "label": "grossWeight",
+      "kind": "Property",
+      "preferredName": "Gross Weight",
+      "description": "Gross weight of the loading unit or inner packaging item."
+    },
+    {
+      "id": "urn:samm:io.catenax.global_transport_label:1.0.0#customerPartNumber",
+      "label": "customerPartNumber",
+      "kind": "Property",
+      "preferredName": "Customer Part Number",
+      "description": "Number that the customer uses to identify the delivered part."
+    },
+    {
+      "id": "urn:samm:io.catenax.global_transport_label:1.0.0#customerPartDescription",
+      "label": "customerPartDescription",
+      "kind": "Property",
+      "preferredName": "Customer Part Description",
+      "description": "Name of the part as assigned by the customer."
+    },
+    {
+      "id": "urn:samm:io.catenax.global_transport_label:1.0.0#safetyRelevantPart",
+      "label": "safetyRelevantPart",
+      "kind": "Property",
+      "preferredName": "Safety-relevant part",
+      "description": "Describes, wether the part is safety-relevant or not. "
+    },
+    {
+      "id": "urn:samm:io.catenax.global_transport_label:1.0.0#catenaXId",
+      "label": "catenaXId",
+      "kind": "Property",
+      "preferredName": "Catena-X ID ",
+      "description": "Catena-X ID of partType / delivered goods."
+    },
+    {
+      "id": "urn:samm:io.catenax.global_transport_label:1.0.0#licencePlate",
+      "label": "licencePlate",
+      "kind": "Property",
+      "preferredName": "Licence Plate",
+      "description": "Globally unique package ID of the package /\nloading unit: it does not include the data identifier. It includes the issuing agency code (IAC), the company identification number (CIN), and the serial number (SN)."
+    },
+    {
+      "id": "urn:samm:io.catenax.global_transport_label:1.0.0#dataIdentifier",
+      "label": "dataIdentifier",
+      "kind": "Property",
+      "preferredName": "Data Identifier",
+      "description": "The data identifier (DI) is a classifying characteristic and precedes the actual barcode content. The data identifier classifies the packages into Single, Homogeneous Master, Mixed Master.\nIdentifiers are based on ISO 17367"
+    },
+    {
+      "id": "urn:samm:io.catenax.global_transport_label:1.0.0#packagingTypeCode",
+      "label": "packagingTypeCode",
+      "kind": "Property",
+      "preferredName": "Packaging Type Code",
+      "description": "Is a digit code identifying the packaging type code."
+    },
+    {
+      "id": "urn:samm:io.catenax.global_transport_label:1.0.0#dateCategoryInformation",
+      "label": "dateCategoryInformation",
+      "kind": "Property",
+      "preferredName": "Date Category Information",
+      "description": "On Master and Mixed Labels attached to loading units: Package type, ship-ping date, number of inner packages\nThe following applies to inner packages and simplified loading units:\n- If there is an expiry date, it must be printed. The expiry date must be preceded by the letter \"E\".\n- If there is no expiry date, and if the shipping date is known at the time of printing the label, the shipping date should be printed. The shipping date must be preceded by the letter \"S\".\n- If none of the above dates are known or apply, the production date should be printed. The production date must be preceded by the letter \"P\"."
+    },
+    {
+      "id": "urn:samm:io.catenax.global_transport_label:1.0.0#batchNumber",
+      "label": "batchNumber",
+      "kind": "Property",
+      "preferredName": "batch Number",
+      "description": "Describes the transportation batch on a Master or Mixed labels that is attached to loading units."
+    },
+    {
+      "id": "urn:samm:io.catenax.global_transport_label:1.0.0#numberOfInnerPackageItems",
+      "label": "numberOfInnerPackageItems",
+      "kind": "Property",
+      "preferredName": "number Of Inner Package Items",
+      "description": "Describes the amount of internal packages."
+    },
+    {
+      "id": "urn:samm:io.catenax.global_transport_label:1.0.0#hardwareRevision",
+      "label": "hardwareRevision",
+      "kind": "Property",
+      "preferredName": "Hardware Revision",
+      "description": "Hardware Revision number."
+    },
+    {
+      "id": "urn:samm:io.catenax.global_transport_label:1.0.0#softwareRevision",
+      "label": "softwareRevision",
+      "kind": "Property",
+      "preferredName": "software Revision",
+      "description": "Software revision number."
+    },
+    {
+      "id": "urn:samm:io.catenax.global_transport_label:1.0.0#partRevision",
+      "label": "partRevision",
+      "kind": "Property",
+      "preferredName": "part revision",
+      "description": "Part revision number."
+    },
+    {
+      "id": "urn:samm:io.catenax.global_transport_label:1.0.0#dateCategory",
+      "label": "dateCategory",
+      "kind": "Property",
+      "preferredName": "Date Category",
+      "description": "Expery (E)\nShipment (S)\nProduction (P) \nin that order of priority"
+    },
+    {
+      "id": "urn:samm:io.catenax.global_transport_label:1.0.0#date",
+      "label": "date",
+      "kind": "Property",
+      "preferredName": "date",
+      "description": "Dates are to be given in the following format according to the example in the VDA recommendation: CCYY-MM-DD. Where the indication of times is required, they are to be separated from the date by a slash \"/\" and printed in a 24-hour format HH:MM"
+    },
+    {
+      "id": "urn:samm:io.catenax.global_transport_label:1.0.0#ShipFromCharacteristic",
+      "label": "ShipFromCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Ship From Characteristic",
+      "description": "Information about the sender of the transport unit"
+    },
+    {
+      "id": "urn:samm:io.catenax.global_transport_label:1.0.0#ShipToCharacteristic",
+      "label": "ShipToCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Ship To Characteristic",
+      "description": "Characteristic for the information about the recipient of the transport unit."
+    },
+    {
+      "id": "urn:samm:io.catenax.global_transport_label:1.0.0#CustomerReference1Characteristic",
+      "label": "CustomerReference1Characteristic",
+      "kind": "Characteristic",
+      "preferredName": "Customer Reference 1 Characteristic",
+      "description": "Characteristic for Customer Reference information."
+    },
+    {
+      "id": "urn:samm:io.catenax.global_transport_label:1.0.0#CustomerSpecificRoutingCharacteristic",
+      "label": "CustomerSpecificRoutingCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Customer Specific Routing Characteristic",
+      "description": "Characteristic to describe the customer specific routing information."
+    },
+    {
+      "id": "urn:samm:io.catenax.global_transport_label:1.0.0#LogisticsReferenceCharcteristic",
+      "label": "LogisticsReferenceCharcteristic",
+      "kind": "Characteristic",
+      "preferredName": "Logistics Reference Charcteristic",
+      "description": "Characteristic to describe logstics information."
+    },
+    {
+      "id": "urn:samm:io.catenax.global_transport_label:1.0.0#ContentDescriptionCharacteristic",
+      "label": "ContentDescriptionCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Customer Part Number Characteristic",
+      "description": "Number that the customer uses to identify the delivered part."
+    },
+    {
+      "id": "urn:samm:io.catenax.global_transport_label:1.0.0#PackageIdCharacteristic",
+      "label": "PackageIdCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Package ID Characteristic",
+      "description": "Characteristic to describes the Package ID."
+    },
+    {
+      "id": "urn:samm:io.catenax.global_transport_label:1.0.0#CustomerReference2Characteristic",
+      "label": "CustomerReference2Characteristic",
+      "kind": "Characteristic",
+      "preferredName": "Customer Reference 2 Characteristic",
+      "description": "Characteristic that describes the customer reference 2 information,"
+    },
+    {
+      "id": "urn:samm:io.catenax.global_transport_label:1.0.0#SupplierIdCharacteristic",
+      "label": "SupplierIdCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Supplier ID Characteristic",
+      "description": "Characteristic to give information on the ID of the supplier."
+    },
+    {
+      "id": "urn:samm:io.catenax.global_transport_label:1.0.0#UnloadingPointCharacteristic",
+      "label": "UnloadingPointCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Unloading Point Characteristic",
+      "description": "Characteristic to describe the unloading point."
+    },
+    {
+      "id": "urn:samm:io.catenax.global_transport_label:1.0.0#InternalDestinationCharacteristic",
+      "label": "InternalDestinationCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Internal Destination Characteristic",
+      "description": "Characteristic to describe the internal destination."
+    },
+    {
+      "id": "urn:samm:io.catenax.global_transport_label:1.0.0#DeliveryNoteNumberCharaceristic",
+      "label": "DeliveryNoteNumberCharaceristic",
+      "kind": "Characteristic",
+      "preferredName": "Delivery Note Number Characeristic",
+      "description": "Characteristic to describe the delivery note number, issued by sender."
+    },
+    {
+      "id": "urn:samm:io.catenax.global_transport_label:1.0.0#SupplierNumberCharacteristic",
+      "label": "SupplierNumberCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Supplier Number Characteristic",
+      "description": "Characteristic to describe the supplier number of the sender assigned by customer."
+    },
+    {
+      "id": "urn:samm:io.catenax.global_transport_label:1.0.0#ExpectedTimeOfArrivalCharacteristic",
+      "label": "ExpectedTimeOfArrivalCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Expected Time Of Arrival Characteristic",
+      "description": "Characteristic to describe the time of arrival."
+    },
+    {
+      "id": "urn:samm:io.catenax.global_transport_label:1.0.0#NetWeight",
+      "label": "NetWeight",
+      "kind": "Characteristic",
+      "preferredName": "Net Weight",
+      "description": "Net weight of the loading unit or inner packaging item in kilogram."
+    },
+    {
+      "id": "urn:samm:io.catenax.global_transport_label:1.0.0#GrossWeight",
+      "label": "GrossWeight",
+      "kind": "Characteristic",
+      "preferredName": "Gross Weight",
+      "description": "Gross weight of the loading unit or inner packaging item in kilogram."
+    },
+    {
+      "id": "urn:samm:io.catenax.global_transport_label:1.0.0#CustomerPartNumberCharacteristic",
+      "label": "CustomerPartNumberCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Customer part number characteristic",
+      "description": "Describes the number of the part provided by the customer."
+    },
+    {
+      "id": "urn:samm:io.catenax.global_transport_label:1.0.0#CustomerPartDescriptionCharacteristic",
+      "label": "CustomerPartDescriptionCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "customer Part Description Characteristic",
+      "description": "Name of the part as assigned by the customer."
+    },
+    {
+      "id": "urn:samm:io.catenax.global_transport_label:1.0.0#SafetyRelevantPartCharacteristic",
+      "label": "SafetyRelevantPartCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Safety-relevant part Characteristic",
+      "description": "Describes, wether the part is safety-relevant or not. If true, the part is safety-relevant. If false, the part is not safety-relevant."
+    },
+    {
+      "id": "urn:samm:io.catenax.global_transport_label:1.0.0#StringCharacteristic",
+      "label": "StringCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "String Characteristic",
+      "description": "Characteristic describing a non defined string."
+    },
+    {
+      "id": "urn:samm:io.catenax.global_transport_label:1.0.0#LicensePlateCharacteristic",
+      "label": "LicensePlateCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "License Plate Characteristic",
+      "description": "Characteristic that describes the license plate."
+    },
+    {
+      "id": "urn:samm:io.catenax.global_transport_label:1.0.0#DateCharacteristic",
+      "label": "DateCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "date characteristic",
+      "description": "Charactersitcs that describes the date."
+    },
+    {
+      "id": "urn:samm:io.catenax.global_transport_label:1.0.0#LabelTypeCharacteristic",
+      "label": "LabelTypeCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Label Type Characteristic",
+      "description": "Describes the label type according to VDA 4994.\n6J = Master (M)\n5J = Mixed (MIX)\n1J = Single (S)"
+    },
+    {
+      "id": "urn:samm:io.catenax.global_transport_label:1.0.0#DataIdentifierCharacteristic",
+      "label": "DataIdentifierCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Data Identifier Characteristic",
+      "description": "Characteristic that describes the data identifier. Possible values are:\nJ - Unique package ID of a bundle in the empty packages process\n1J - Unique package ID of inner packaging (Single Label)\n3J - Unique package ID of JIS loading unit with compartments\n4J - Unique package ID of JIS loading unit with 1...n JIS packages\n5J - Unique package ID of mixed loading unit with intermediate packaging level (mixed master)\n6J - Unique package ID of loading unit or intermediate packaging containing identical parts (Mas-ter Label for homogeneous loading unit)"
+    },
+    {
+      "id": "urn:samm:io.catenax.global_transport_label:1.0.0#DateCategoryEnumeration",
+      "label": "DateCategoryEnumeration",
+      "kind": "Characteristic",
+      "preferredName": "Date Category Enumeration",
+      "description": "Enumeration describing the date category conventions."
+    },
+    {
+      "id": "urn:samm:io.catenax.global_transport_label:1.0.0#OptionalInformationTrait",
+      "label": "OptionalInformationTrait",
+      "kind": "Characteristic",
+      "preferredName": "Optional Information Trait",
+      "description": "Trait limiting the usage of lines."
+    },
+    {
+      "id": "urn:samm:io.catenax.global_transport_label:1.0.0#CustomerReference3Trait",
+      "label": "CustomerReference3Trait",
+      "kind": "Characteristic",
+      "preferredName": "Customer Reference 3 Trait",
+      "description": "Trait limiting the customer refererence 3 input."
+    },
+    {
+      "id": "urn:samm:io.catenax.global_transport_label:1.0.0#CustomerReference3ContentTrait",
+      "label": "CustomerReference3ContentTrait",
+      "kind": "Characteristic",
+      "preferredName": "Customer Reference 3 Content Trait",
+      "description": "Trait limiting the content of the lines to a maximum of 25 characters."
+    },
+    {
+      "id": "urn:samm:io.catenax.global_transport_label:1.0.0#LicensePlateTrait",
+      "label": "LicensePlateTrait",
+      "kind": "Characteristic",
+      "preferredName": "License Plate Trait",
+      "description": "Trait for License Plate"
+    },
+    {
+      "id": "urn:samm:io.catenax.global_transport_label:1.0.0#DateTrait",
+      "label": "DateTrait",
+      "kind": "Characteristic",
+      "preferredName": "date trait",
+      "description": "Trait for the date."
+    },
+    {
+      "id": "urn:samm:io.catenax.global_transport_label:1.0.0#ShipFromEntity",
+      "label": "ShipFromEntity",
+      "kind": "Entity",
+      "preferredName": "Ship From Entity",
+      "description": "Encapsulation for information related to the goods sender."
+    },
+    {
+      "id": "urn:samm:io.catenax.global_transport_label:1.0.0#ShipToEntity",
+      "label": "ShipToEntity",
+      "kind": "Entity",
+      "preferredName": "Ship To Entity",
+      "description": "Encapsulation for information related to the goods recipient."
+    },
+    {
+      "id": "urn:samm:io.catenax.global_transport_label:1.0.0#CustomerReference1Entity",
+      "label": "CustomerReference1Entity",
+      "kind": "Entity",
+      "preferredName": "Customer Reference 1 Entity",
+      "description": "Encapsulation of Customer References."
+    },
+    {
+      "id": "urn:samm:io.catenax.global_transport_label:1.0.0#LogisticsReferenceEntity",
+      "label": "LogisticsReferenceEntity",
+      "kind": "Entity",
+      "preferredName": "Logistics Reference Entity",
+      "description": "Logistics information about estimated time of arrival, quantity and weight."
+    },
+    {
+      "id": "urn:samm:io.catenax.global_transport_label:1.0.0#ContentDescriptionEntity",
+      "label": "ContentDescriptionEntity",
+      "kind": "Entity",
+      "preferredName": "Content Description Entity",
+      "description": "Entity entailing information about the content of the GTL."
+    },
+    {
+      "id": "urn:samm:io.catenax.global_transport_label:1.0.0#PackageIdEntity",
+      "label": "PackageIdEntity",
+      "kind": "Entity",
+      "preferredName": "Package ID Entity",
+      "description": "Entity for the package ID that comprises the elements of the ID."
+    },
+    {
+      "id": "urn:samm:io.catenax.global_transport_label:1.0.0#CustomerReference2Entity",
+      "label": "CustomerReference2Entity",
+      "kind": "Entity",
+      "preferredName": "Customer Reference 2 Entity",
+      "description": "Entity for the Customer Reference 2  that incorporates package attributes, production status, and dynamic date representations for inner packages, adhering to precise rules for displaying expiry, shipping, or production information in standardized formats."
+    },
+    {
+      "id": "urn:samm:io.catenax.global_transport_label:1.0.0#DateCategoryEntity",
+      "label": "DateCategoryEntity",
+      "kind": "Entity",
+      "preferredName": "Date Category Entity",
+      "description": "Encapsulates the information of the Date Category Entity."
+    },
+    {
+      "id": "urn:samm:io.catenax.global_transport_label:1.0.0#OptionalInformationList",
+      "label": "OptionalInformationList",
+      "kind": "Characteristic",
+      "preferredName": "Optional Information List",
+      "description": "A list of maximum three lines that may be used by the supplier for internal purposes."
+    },
+    {
+      "id": "urn:samm:io.catenax.global_transport_label:1.0.0#CustomerReference3List",
+      "label": "CustomerReference3List",
+      "kind": "Characteristic",
+      "preferredName": "Customer Reference 3 List",
+      "description": "Characteristic that describes the list/lines of the customer reference 3. A maximum of 5 lines may be used. For each line, the customer transmits one DE 7102 in the PCI segment."
+    },
+    {
+      "id": "urn:samm:io.catenax.global_transport_label:1.0.0#OptionalInformationConstraint",
+      "label": "OptionalInformationConstraint",
+      "kind": "Characteristic",
+      "preferredName": "Optional Information Constraint",
+      "description": "Constraint the list to an maximum of three lines."
+    },
+    {
+      "id": "urn:samm:io.catenax.global_transport_label:1.0.0#CustomerReference3Constraint",
+      "label": "CustomerReference3Constraint",
+      "kind": "Characteristic",
+      "preferredName": "Customer Reference 3 Constraint",
+      "description": "Constraints the list to an maximum amount of 5 lines."
+    },
+    {
+      "id": "urn:samm:io.catenax.global_transport_label:1.0.0#ContentLengthConstraint",
+      "label": "ContentLengthConstraint",
+      "kind": "Characteristic",
+      "preferredName": "Content Length Constraint",
+      "description": "For each line, the customer transmits one DE 7102 in the PCI segment. In order to ensure that the code is correct, the DE 7102 must not exceed 25 characters per line. If the customer transmits more char-acters per line, all characters that exceed the prescribed length are lost when the label is printed."
+    },
+    {
+      "id": "urn:samm:io.catenax.global_transport_label:1.0.0#PackagingTypeCodeCharacteristic",
+      "label": "PackagingTypeCodeCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Packaging Type Code Characteristic",
+      "description": "Characteristic that describes the packaging type code."
+    },
+    {
+      "id": "urn:samm:io.catenax.global_transport_label:1.0.0#DateCategorySet",
+      "label": "DateCategorySet",
+      "kind": "Characteristic",
+      "preferredName": "Date Category Set",
+      "description": "A data set to define the data property for a date."
+    },
+    {
+      "id": "urn:samm:io.catenax.global_transport_label:1.0.0#LicencePlateRegEx",
+      "label": "LicencePlateRegEx",
+      "kind": "Characteristic",
+      "preferredName": "Licence Plate RegEx",
+      "description": "Regular Expression to ensure the correct format of the Licence Plate"
+    },
+    {
+      "id": "urn:samm:io.catenax.global_transport_label:1.0.0#DateRegEx",
+      "label": "DateRegEx",
+      "kind": "Characteristic",
+      "preferredName": "Date RegEx",
+      "description": "Regular Expression for the given date conditions."
+    }
+  ],
+  "links": [
+    {
+      "source": "urn:samm:io.catenax.global_transport_label:1.0.0#GlobalTransportLabel",
+      "target": "urn:samm:io.catenax.global_transport_label:1.0.0#shipFrom",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.global_transport_label:1.0.0#GlobalTransportLabel",
+      "target": "urn:samm:io.catenax.global_transport_label:1.0.0#shipTo",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.global_transport_label:1.0.0#GlobalTransportLabel",
+      "target": "urn:samm:io.catenax.global_transport_label:1.0.0#labelType",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.global_transport_label:1.0.0#GlobalTransportLabel",
+      "target": "urn:samm:io.catenax.global_transport_label:1.0.0#customerReference1",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.global_transport_label:1.0.0#GlobalTransportLabel",
+      "target": "urn:samm:io.catenax.global_transport_label:1.0.0#customerSpecificRouting",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.global_transport_label:1.0.0#GlobalTransportLabel",
+      "target": "urn:samm:io.catenax.global_transport_label:1.0.0#logisticsReference",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.global_transport_label:1.0.0#GlobalTransportLabel",
+      "target": "urn:samm:io.catenax.global_transport_label:1.0.0#contentDescription",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.global_transport_label:1.0.0#GlobalTransportLabel",
+      "target": "urn:samm:io.catenax.global_transport_label:1.0.0#packageId",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.global_transport_label:1.0.0#GlobalTransportLabel",
+      "target": "urn:samm:io.catenax.global_transport_label:1.0.0#customerReference2",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.global_transport_label:1.0.0#GlobalTransportLabel",
+      "target": "urn:samm:io.catenax.global_transport_label:1.0.0#optionalInformation",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.global_transport_label:1.0.0#GlobalTransportLabel",
+      "target": "urn:samm:io.catenax.global_transport_label:1.0.0#customerReference3",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.global_transport_label:1.0.0#ShipFromEntity",
+      "target": "urn:samm:io.catenax.global_transport_label:1.0.0#supplierId",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.global_transport_label:1.0.0#ShipToEntity",
+      "target": "urn:samm:io.catenax.global_transport_label:1.0.0#unloadingPoint",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.global_transport_label:1.0.0#ShipToEntity",
+      "target": "urn:samm:io.catenax.global_transport_label:1.0.0#internalDestination",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.global_transport_label:1.0.0#CustomerReference1Entity",
+      "target": "urn:samm:io.catenax.global_transport_label:1.0.0#deliveryNoteNumber",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.global_transport_label:1.0.0#CustomerReference1Entity",
+      "target": "urn:samm:io.catenax.global_transport_label:1.0.0#supplierNumber",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.global_transport_label:1.0.0#LogisticsReferenceEntity",
+      "target": "urn:samm:io.catenax.global_transport_label:1.0.0#expectedTimeOfArrival",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.global_transport_label:1.0.0#LogisticsReferenceEntity",
+      "target": "urn:samm:io.catenax.global_transport_label:1.0.0#netWeight",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.global_transport_label:1.0.0#LogisticsReferenceEntity",
+      "target": "urn:samm:io.catenax.global_transport_label:1.0.0#grossWeight",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.global_transport_label:1.0.0#ContentDescriptionEntity",
+      "target": "urn:samm:io.catenax.global_transport_label:1.0.0#customerPartNumber",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.global_transport_label:1.0.0#ContentDescriptionEntity",
+      "target": "urn:samm:io.catenax.global_transport_label:1.0.0#customerPartDescription",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.global_transport_label:1.0.0#ContentDescriptionEntity",
+      "target": "urn:samm:io.catenax.global_transport_label:1.0.0#safetyRelevantPart",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.global_transport_label:1.0.0#ContentDescriptionEntity",
+      "target": "urn:samm:io.catenax.global_transport_label:1.0.0#catenaXId",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.global_transport_label:1.0.0#PackageIdEntity",
+      "target": "urn:samm:io.catenax.global_transport_label:1.0.0#licencePlate",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.global_transport_label:1.0.0#PackageIdEntity",
+      "target": "urn:samm:io.catenax.global_transport_label:1.0.0#dataIdentifier",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.global_transport_label:1.0.0#CustomerReference2Entity",
+      "target": "urn:samm:io.catenax.global_transport_label:1.0.0#packagingTypeCode",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.global_transport_label:1.0.0#CustomerReference2Entity",
+      "target": "urn:samm:io.catenax.global_transport_label:1.0.0#dateCategoryInformation",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.global_transport_label:1.0.0#CustomerReference2Entity",
+      "target": "urn:samm:io.catenax.global_transport_label:1.0.0#batchNumber",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.global_transport_label:1.0.0#CustomerReference2Entity",
+      "target": "urn:samm:io.catenax.global_transport_label:1.0.0#numberOfInnerPackageItems",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.global_transport_label:1.0.0#CustomerReference2Entity",
+      "target": "urn:samm:io.catenax.global_transport_label:1.0.0#hardwareRevision",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.global_transport_label:1.0.0#CustomerReference2Entity",
+      "target": "urn:samm:io.catenax.global_transport_label:1.0.0#softwareRevision",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.global_transport_label:1.0.0#CustomerReference2Entity",
+      "target": "urn:samm:io.catenax.global_transport_label:1.0.0#partRevision",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.global_transport_label:1.0.0#DateCategoryEntity",
+      "target": "urn:samm:io.catenax.global_transport_label:1.0.0#dateCategory",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.global_transport_label:1.0.0#DateCategoryEntity",
+      "target": "urn:samm:io.catenax.global_transport_label:1.0.0#date",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.global_transport_label:1.0.0#shipFrom",
+      "target": "urn:samm:io.catenax.global_transport_label:1.0.0#ShipFromCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.global_transport_label:1.0.0#shipTo",
+      "target": "urn:samm:io.catenax.global_transport_label:1.0.0#ShipToCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.global_transport_label:1.0.0#labelType",
+      "target": "urn:samm:io.catenax.global_transport_label:1.0.0#LabelTypeCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.global_transport_label:1.0.0#customerReference1",
+      "target": "urn:samm:io.catenax.global_transport_label:1.0.0#CustomerReference1Characteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.global_transport_label:1.0.0#customerSpecificRouting",
+      "target": "urn:samm:io.catenax.global_transport_label:1.0.0#CustomerSpecificRoutingCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.global_transport_label:1.0.0#logisticsReference",
+      "target": "urn:samm:io.catenax.global_transport_label:1.0.0#LogisticsReferenceCharcteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.global_transport_label:1.0.0#contentDescription",
+      "target": "urn:samm:io.catenax.global_transport_label:1.0.0#ContentDescriptionCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.global_transport_label:1.0.0#packageId",
+      "target": "urn:samm:io.catenax.global_transport_label:1.0.0#PackageIdCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.global_transport_label:1.0.0#customerReference2",
+      "target": "urn:samm:io.catenax.global_transport_label:1.0.0#CustomerReference2Characteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.global_transport_label:1.0.0#optionalInformation",
+      "target": "urn:samm:io.catenax.global_transport_label:1.0.0#OptionalInformationTrait",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.global_transport_label:1.0.0#customerReference3",
+      "target": "urn:samm:io.catenax.global_transport_label:1.0.0#CustomerReference3Trait",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.global_transport_label:1.0.0#supplierId",
+      "target": "urn:samm:io.catenax.global_transport_label:1.0.0#SupplierIdCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.global_transport_label:1.0.0#unloadingPoint",
+      "target": "urn:samm:io.catenax.global_transport_label:1.0.0#UnloadingPointCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.global_transport_label:1.0.0#internalDestination",
+      "target": "urn:samm:io.catenax.global_transport_label:1.0.0#InternalDestinationCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.global_transport_label:1.0.0#deliveryNoteNumber",
+      "target": "urn:samm:io.catenax.global_transport_label:1.0.0#DeliveryNoteNumberCharaceristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.global_transport_label:1.0.0#supplierNumber",
+      "target": "urn:samm:io.catenax.global_transport_label:1.0.0#SupplierNumberCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.global_transport_label:1.0.0#expectedTimeOfArrival",
+      "target": "urn:samm:io.catenax.global_transport_label:1.0.0#ExpectedTimeOfArrivalCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.global_transport_label:1.0.0#netWeight",
+      "target": "urn:samm:io.catenax.global_transport_label:1.0.0#NetWeight",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.global_transport_label:1.0.0#grossWeight",
+      "target": "urn:samm:io.catenax.global_transport_label:1.0.0#GrossWeight",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.global_transport_label:1.0.0#customerPartNumber",
+      "target": "urn:samm:io.catenax.global_transport_label:1.0.0#CustomerPartNumberCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.global_transport_label:1.0.0#customerPartDescription",
+      "target": "urn:samm:io.catenax.global_transport_label:1.0.0#CustomerPartDescriptionCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.global_transport_label:1.0.0#safetyRelevantPart",
+      "target": "urn:samm:io.catenax.global_transport_label:1.0.0#SafetyRelevantPartCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.global_transport_label:1.0.0#licencePlate",
+      "target": "urn:samm:io.catenax.global_transport_label:1.0.0#LicensePlateTrait",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.global_transport_label:1.0.0#dataIdentifier",
+      "target": "urn:samm:io.catenax.global_transport_label:1.0.0#DataIdentifierCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.global_transport_label:1.0.0#packagingTypeCode",
+      "target": "urn:samm:io.catenax.global_transport_label:1.0.0#PackagingTypeCodeCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.global_transport_label:1.0.0#dateCategoryInformation",
+      "target": "urn:samm:io.catenax.global_transport_label:1.0.0#DateCategorySet",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.global_transport_label:1.0.0#batchNumber",
+      "target": "urn:samm:io.catenax.global_transport_label:1.0.0#StringCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.global_transport_label:1.0.0#numberOfInnerPackageItems",
+      "target": "urn:samm:io.catenax.global_transport_label:1.0.0#StringCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.global_transport_label:1.0.0#hardwareRevision",
+      "target": "urn:samm:io.catenax.global_transport_label:1.0.0#StringCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.global_transport_label:1.0.0#softwareRevision",
+      "target": "urn:samm:io.catenax.global_transport_label:1.0.0#StringCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.global_transport_label:1.0.0#partRevision",
+      "target": "urn:samm:io.catenax.global_transport_label:1.0.0#StringCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.global_transport_label:1.0.0#dateCategory",
+      "target": "urn:samm:io.catenax.global_transport_label:1.0.0#DateCategoryEnumeration",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.global_transport_label:1.0.0#date",
+      "target": "urn:samm:io.catenax.global_transport_label:1.0.0#DateTrait",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.global_transport_label:1.0.0#ShipFromCharacteristic",
+      "target": "urn:samm:io.catenax.global_transport_label:1.0.0#ShipFromEntity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.global_transport_label:1.0.0#ShipToCharacteristic",
+      "target": "urn:samm:io.catenax.global_transport_label:1.0.0#ShipToEntity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.global_transport_label:1.0.0#CustomerReference1Characteristic",
+      "target": "urn:samm:io.catenax.global_transport_label:1.0.0#CustomerReference1Entity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.global_transport_label:1.0.0#LogisticsReferenceCharcteristic",
+      "target": "urn:samm:io.catenax.global_transport_label:1.0.0#LogisticsReferenceEntity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.global_transport_label:1.0.0#ContentDescriptionCharacteristic",
+      "target": "urn:samm:io.catenax.global_transport_label:1.0.0#ContentDescriptionEntity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.global_transport_label:1.0.0#PackageIdCharacteristic",
+      "target": "urn:samm:io.catenax.global_transport_label:1.0.0#PackageIdEntity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.global_transport_label:1.0.0#CustomerReference2Characteristic",
+      "target": "urn:samm:io.catenax.global_transport_label:1.0.0#CustomerReference2Entity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.global_transport_label:1.0.0#DateCategorySet",
+      "target": "urn:samm:io.catenax.global_transport_label:1.0.0#DateCategoryEntity",
+      "label": "dataType",
+      "optional": false
+    }
+  ]
+}

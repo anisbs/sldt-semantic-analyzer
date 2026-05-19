@@ -1,0 +1,538 @@
+{
+  "meta": {
+    "namespace": "urn:samm:io.catenax.business_partner_certificate:3.1.0#",
+    "meta_model": "SAMM 2.1.0",
+    "path": "data/sldt-semantic-models/io.catenax.business_partner_certificate/3.1.0/BusinessPartnerCertificate.ttl"
+  },
+  "nodes": [
+    {
+      "id": "urn:samm:io.catenax.business_partner_certificate:3.1.0#BusinessPartnerCertificate",
+      "label": "BusinessPartnerCertificate",
+      "kind": "Aspect",
+      "preferredName": "Business Partner certificate",
+      "description": "A business partner certifcate describes a certificate (eg ISO9001, IATF-16949) via a certifcate document  of a Catena-X business partner"
+    },
+    {
+      "id": "urn:samm:io.catenax.business_partner_certificate:3.1.0#businessPartnerNumber",
+      "label": "businessPartnerNumber",
+      "kind": "Property",
+      "preferredName": "Business Partner Number",
+      "description": "The Business Partner Number (BPN) of the certified legal entity (on which the certificate is issued)."
+    },
+    {
+      "id": "urn:samm:io.catenax.business_partner_certificate:3.1.0#type",
+      "label": "type",
+      "kind": "Property",
+      "preferredName": "Certificate type",
+      "description": "Type of the certificate as defined on the document like IS09001, IATF 16949 or other"
+    },
+    {
+      "id": "urn:samm:io.catenax.business_partner_certificate:3.1.0#registrationNumber",
+      "label": "registrationNumber",
+      "kind": "Property",
+      "preferredName": "Certificate registration number",
+      "description": "Registration number of the certificate as defined on the certificate"
+    },
+    {
+      "id": "urn:samm:io.catenax.business_partner_certificate:3.1.0#areaOfApplication",
+      "label": "areaOfApplication",
+      "kind": "Property",
+      "preferredName": "Area of application",
+      "description": "Details on which areas / application types a certificate is valid for a company and/or site."
+    },
+    {
+      "id": "urn:samm:io.catenax.business_partner_certificate:3.1.0#enclosedSites",
+      "label": "enclosedSites",
+      "kind": "Property",
+      "preferredName": "Enclosed sites",
+      "description": "Additional sites covered by the certificate, which can be either the Business Partner Number Site (BPNS) or Business Partner Number Address (BPNA)"
+    },
+    {
+      "id": "urn:samm:io.catenax.business_partner_certificate:3.1.0#validFrom",
+      "label": "validFrom",
+      "kind": "Property",
+      "preferredName": "Valid from",
+      "description": "Valid from date as defined on the certificate."
+    },
+    {
+      "id": "urn:samm:io.catenax.business_partner_certificate:3.1.0#validUntil",
+      "label": "validUntil",
+      "kind": "Property",
+      "preferredName": "Valid until",
+      "description": "Valid valid until as defined on the certificate. If certificate never expires value until expected to be 9999-12-31"
+    },
+    {
+      "id": "urn:samm:io.catenax.business_partner_certificate:3.1.0#issuer",
+      "label": "issuer",
+      "kind": "Property",
+      "preferredName": "Issuing authority",
+      "description": "The BPN of the issuing authority e.g. TUEV Sued "
+    },
+    {
+      "id": "urn:samm:io.catenax.business_partner_certificate:3.1.0#trustLevel",
+      "label": "trustLevel",
+      "kind": "Property",
+      "preferredName": "Trust level",
+      "description": "The trust level of the given certificate - none,low, high, trusted"
+    },
+    {
+      "id": "urn:samm:io.catenax.business_partner_certificate:3.1.0#validator",
+      "label": "validator",
+      "kind": "Property",
+      "preferredName": "Validator",
+      "description": "The Business Partner Number (BPN) of the data service provider who validates the given certificate."
+    },
+    {
+      "id": "urn:samm:io.catenax.business_partner_certificate:3.1.0#uploader",
+      "label": "uploader",
+      "kind": "Property",
+      "preferredName": "Certifcate uploader",
+      "description": "The Business Partner Number (BPN) of the business partner who originally provided the certifcate data or document."
+    },
+    {
+      "id": "urn:samm:io.catenax.business_partner_certificate:3.1.0#document",
+      "label": "document",
+      "kind": "Property",
+      "preferredName": "Document",
+      "description": "The content and ID of the document."
+    },
+    {
+      "id": "urn:samm:io.catenax.business_partner_certificate:3.1.0#certificateType",
+      "label": "certificateType",
+      "kind": "Property",
+      "preferredName": "Certificate type",
+      "description": "Type of the certificate as defined on the document,valid types are registered at BPN metadatacontroller"
+    },
+    {
+      "id": "urn:samm:io.catenax.business_partner_certificate:3.1.0#certificateVersion",
+      "label": "certificateVersion",
+      "kind": "Property",
+      "preferredName": "Certificate version",
+      "description": "Version of the certificate as defined on the document, usually the specific version of a certification standard"
+    },
+    {
+      "id": "urn:samm:io.catenax.business_partner_certificate:3.1.0#enclosedSiteBpn",
+      "label": "enclosedSiteBpn",
+      "kind": "Property",
+      "preferredName": "enclosedSite BPN",
+      "description": "The Business Partner Number (BPNS or BPNA) of an enclosed site"
+    },
+    {
+      "id": "urn:samm:io.catenax.business_partner_certificate:3.1.0#issuerName",
+      "label": "issuerName",
+      "kind": "Property",
+      "preferredName": "Issuer Name",
+      "description": "Name of the Issuer i.e. Certifying Authority."
+    },
+    {
+      "id": "urn:samm:io.catenax.business_partner_certificate:3.1.0#issuerBpn",
+      "label": "issuerBpn",
+      "kind": "Property",
+      "preferredName": "Issuer BPN",
+      "description": "The Business Partner Number (BPN) of the Issuer."
+    },
+    {
+      "id": "urn:samm:io.catenax.business_partner_certificate:3.1.0#validatorName",
+      "label": "validatorName",
+      "kind": "Property",
+      "preferredName": "Validator name",
+      "description": "The optional name of the data service provider who validated the given certificate"
+    },
+    {
+      "id": "urn:samm:io.catenax.business_partner_certificate:3.1.0#validatorBpn",
+      "label": "validatorBpn",
+      "kind": "Property",
+      "preferredName": "Certifcate validator Bpn",
+      "description": "The Business Partner Number (BPN) of the data service provider who validated the given certificate"
+    },
+    {
+      "id": "urn:samm:io.catenax.business_partner_certificate:3.1.0#creationDate",
+      "label": "creationDate",
+      "kind": "Property",
+      "preferredName": "Creation Date",
+      "description": "The creation date of the document."
+    },
+    {
+      "id": "urn:samm:io.catenax.business_partner_certificate:3.1.0#documentID",
+      "label": "documentID",
+      "kind": "Property",
+      "preferredName": "Document ID",
+      "description": "The id of the certificate document as stored by the data service provider."
+    },
+    {
+      "id": "urn:samm:io.catenax.business_partner_certificate:3.1.0#contentType",
+      "label": "contentType",
+      "kind": "Property",
+      "preferredName": "Content Type",
+      "description": "The content type of the document."
+    },
+    {
+      "id": "urn:samm:io.catenax.business_partner_certificate:3.1.0#contentBase64",
+      "label": "contentBase64",
+      "kind": "Property",
+      "preferredName": "Content Base 64",
+      "description": "The data is encoded using the Base64 encoding scheme, which converts binary data into a string of ASCII characters. "
+    },
+    {
+      "id": "urn:samm:io.catenax.business_partner_certificate:3.1.0#CertificateTypeCharacteristic",
+      "label": "CertificateTypeCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Certificate Type Characteristic",
+      "description": "Describes the characteristics of the Certificate Type."
+    },
+    {
+      "id": "urn:samm:io.catenax.business_partner_certificate:3.1.0#EnclosedSitesCharacteristic",
+      "label": "EnclosedSitesCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Enclosed Sites Characteristic",
+      "description": "Describes the characteristic of the attribute enclosedSites. "
+    },
+    {
+      "id": "urn:samm:io.catenax.business_partner_certificate:3.1.0#Date",
+      "label": "Date",
+      "kind": "Characteristic",
+      "preferredName": "Date",
+      "description": "Describes a property which contains the date in english format."
+    },
+    {
+      "id": "urn:samm:io.catenax.business_partner_certificate:3.1.0#IssuerCharacteristics",
+      "label": "IssuerCharacteristics",
+      "kind": "Characteristic",
+      "preferredName": "Issuer Characteristics",
+      "description": "Issuer name and the Business Partner Number (BPN) Characteristics."
+    },
+    {
+      "id": "urn:samm:io.catenax.business_partner_certificate:3.1.0#TrustValidatorCharacteristic",
+      "label": "TrustValidatorCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Validiator caracteristic",
+      "description": "The Business Partner Number (BPN) of the data service provider who validated the given certificate"
+    },
+    {
+      "id": "urn:samm:io.catenax.business_partner_certificate:3.1.0#DocumentCharacteristic",
+      "label": "DocumentCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Document Characteristic",
+      "description": "Describes the characteristics of the attribute document."
+    },
+    {
+      "id": "urn:samm:io.catenax.business_partner_certificate:3.1.0#DocumentIdCharaccteristic",
+      "label": "DocumentIdCharaccteristic",
+      "kind": "Characteristic",
+      "preferredName": "DocumentId Characteristic",
+      "description": "The characcteristics of the document ID."
+    },
+    {
+      "id": "urn:samm:io.catenax.business_partner_certificate:3.1.0#ContentBase64Characteristic",
+      "label": "ContentBase64Characteristic",
+      "kind": "Characteristic",
+      "preferredName": "Content Base 64 Characteristic",
+      "description": "Describes the document's encoded value in a Content Base 64 String. "
+    },
+    {
+      "id": "urn:samm:io.catenax.business_partner_certificate:3.1.0#BpnNumberCharacteristic",
+      "label": "BpnNumberCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "BPN Number Characteristic",
+      "description": "The property enclosed site BPN can accept either BPNA or BPNS numbers. "
+    },
+    {
+      "id": "urn:samm:io.catenax.business_partner_certificate:3.1.0#TrustLevelValue",
+      "label": "TrustLevelValue",
+      "kind": "Characteristic",
+      "preferredName": "Trust level value",
+      "description": "The possible trust level values of certificate"
+    },
+    {
+      "id": "urn:samm:io.catenax.business_partner_certificate:3.1.0#CertificateTypeEntity",
+      "label": "CertificateTypeEntity",
+      "kind": "Entity",
+      "preferredName": "Entity of a certificate type",
+      "description": "Detailed entity of the certificate like IS09001:2015, IATF 16949:2015 or other, valid types are registered at BPN metadatacontroller"
+    },
+    {
+      "id": "urn:samm:io.catenax.business_partner_certificate:3.1.0#EnclosedSiteEntity",
+      "label": "EnclosedSiteEntity",
+      "kind": "Entity",
+      "preferredName": "Enclosed Site Entity",
+      "description": "Entity representing an enclosed site, can be the Business Partner Number Site (BPNS) or Business Partner Number Address (BPNA)."
+    },
+    {
+      "id": "urn:samm:io.catenax.business_partner_certificate:3.1.0#IssuerEntity",
+      "label": "IssuerEntity",
+      "kind": "Entity",
+      "preferredName": "Issuer Entity",
+      "description": "The name and the BPNL of the Issuer. "
+    },
+    {
+      "id": "urn:samm:io.catenax.business_partner_certificate:3.1.0#TrustValidatorEntitity",
+      "label": "TrustValidatorEntitity",
+      "kind": "Entity",
+      "preferredName": "Trust validator entity",
+      "description": "The Business Partner Number (BPN) of the data service provider who validated the given certificate."
+    },
+    {
+      "id": "urn:samm:io.catenax.business_partner_certificate:3.1.0#DocumentEntity",
+      "label": "DocumentEntity",
+      "kind": "Entity",
+      "preferredName": "Document Entity",
+      "description": "Encapsulation of all document relevant attributes."
+    },
+    {
+      "id": "urn:samm:io.catenax.business_partner_certificate:3.1.0#BpnTrait",
+      "label": "BpnTrait",
+      "kind": "Characteristic",
+      "preferredName": "Bpn Trait",
+      "description": "Trait to ensure data format for both BPNS and BPNA"
+    },
+    {
+      "id": "urn:samm:io.catenax.business_partner_certificate:3.1.0#BpnNumberRegularExpression",
+      "label": "BpnNumberRegularExpression",
+      "kind": "Characteristic",
+      "preferredName": "BPN Number Regular Expression",
+      "description": "The provided regular expression ensures that the BPN Number is composed of prefix BPNS or BPNA, 10 digits and 2 alphanumeric letters. "
+    }
+  ],
+  "links": [
+    {
+      "source": "urn:samm:io.catenax.business_partner_certificate:3.1.0#BusinessPartnerCertificate",
+      "target": "urn:samm:io.catenax.business_partner_certificate:3.1.0#businessPartnerNumber",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.business_partner_certificate:3.1.0#BusinessPartnerCertificate",
+      "target": "urn:samm:io.catenax.business_partner_certificate:3.1.0#type",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.business_partner_certificate:3.1.0#BusinessPartnerCertificate",
+      "target": "urn:samm:io.catenax.business_partner_certificate:3.1.0#registrationNumber",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.business_partner_certificate:3.1.0#BusinessPartnerCertificate",
+      "target": "urn:samm:io.catenax.business_partner_certificate:3.1.0#areaOfApplication",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.business_partner_certificate:3.1.0#BusinessPartnerCertificate",
+      "target": "urn:samm:io.catenax.business_partner_certificate:3.1.0#enclosedSites",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.business_partner_certificate:3.1.0#BusinessPartnerCertificate",
+      "target": "urn:samm:io.catenax.business_partner_certificate:3.1.0#validFrom",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.business_partner_certificate:3.1.0#BusinessPartnerCertificate",
+      "target": "urn:samm:io.catenax.business_partner_certificate:3.1.0#validUntil",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.business_partner_certificate:3.1.0#BusinessPartnerCertificate",
+      "target": "urn:samm:io.catenax.business_partner_certificate:3.1.0#issuer",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.business_partner_certificate:3.1.0#BusinessPartnerCertificate",
+      "target": "urn:samm:io.catenax.business_partner_certificate:3.1.0#trustLevel",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.business_partner_certificate:3.1.0#BusinessPartnerCertificate",
+      "target": "urn:samm:io.catenax.business_partner_certificate:3.1.0#validator",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.business_partner_certificate:3.1.0#BusinessPartnerCertificate",
+      "target": "urn:samm:io.catenax.business_partner_certificate:3.1.0#uploader",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.business_partner_certificate:3.1.0#BusinessPartnerCertificate",
+      "target": "urn:samm:io.catenax.business_partner_certificate:3.1.0#document",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.business_partner_certificate:3.1.0#CertificateTypeEntity",
+      "target": "urn:samm:io.catenax.business_partner_certificate:3.1.0#certificateType",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.business_partner_certificate:3.1.0#CertificateTypeEntity",
+      "target": "urn:samm:io.catenax.business_partner_certificate:3.1.0#certificateVersion",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.business_partner_certificate:3.1.0#EnclosedSiteEntity",
+      "target": "urn:samm:io.catenax.business_partner_certificate:3.1.0#enclosedSiteBpn",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.business_partner_certificate:3.1.0#EnclosedSiteEntity",
+      "target": "urn:samm:io.catenax.business_partner_certificate:3.1.0#areaOfApplication",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.business_partner_certificate:3.1.0#IssuerEntity",
+      "target": "urn:samm:io.catenax.business_partner_certificate:3.1.0#issuerName",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.business_partner_certificate:3.1.0#IssuerEntity",
+      "target": "urn:samm:io.catenax.business_partner_certificate:3.1.0#issuerBpn",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.business_partner_certificate:3.1.0#TrustValidatorEntitity",
+      "target": "urn:samm:io.catenax.business_partner_certificate:3.1.0#validatorName",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.business_partner_certificate:3.1.0#TrustValidatorEntitity",
+      "target": "urn:samm:io.catenax.business_partner_certificate:3.1.0#validatorBpn",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.business_partner_certificate:3.1.0#DocumentEntity",
+      "target": "urn:samm:io.catenax.business_partner_certificate:3.1.0#creationDate",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.business_partner_certificate:3.1.0#DocumentEntity",
+      "target": "urn:samm:io.catenax.business_partner_certificate:3.1.0#documentID",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.business_partner_certificate:3.1.0#DocumentEntity",
+      "target": "urn:samm:io.catenax.business_partner_certificate:3.1.0#contentType",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.business_partner_certificate:3.1.0#DocumentEntity",
+      "target": "urn:samm:io.catenax.business_partner_certificate:3.1.0#contentBase64",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.business_partner_certificate:3.1.0#type",
+      "target": "urn:samm:io.catenax.business_partner_certificate:3.1.0#CertificateTypeCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.business_partner_certificate:3.1.0#enclosedSites",
+      "target": "urn:samm:io.catenax.business_partner_certificate:3.1.0#EnclosedSitesCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.business_partner_certificate:3.1.0#validFrom",
+      "target": "urn:samm:io.catenax.business_partner_certificate:3.1.0#Date",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.business_partner_certificate:3.1.0#validUntil",
+      "target": "urn:samm:io.catenax.business_partner_certificate:3.1.0#Date",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.business_partner_certificate:3.1.0#issuer",
+      "target": "urn:samm:io.catenax.business_partner_certificate:3.1.0#IssuerCharacteristics",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.business_partner_certificate:3.1.0#trustLevel",
+      "target": "urn:samm:io.catenax.business_partner_certificate:3.1.0#TrustLevelValue",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.business_partner_certificate:3.1.0#validator",
+      "target": "urn:samm:io.catenax.business_partner_certificate:3.1.0#TrustValidatorCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.business_partner_certificate:3.1.0#document",
+      "target": "urn:samm:io.catenax.business_partner_certificate:3.1.0#DocumentCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.business_partner_certificate:3.1.0#enclosedSiteBpn",
+      "target": "urn:samm:io.catenax.business_partner_certificate:3.1.0#BpnTrait",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.business_partner_certificate:3.1.0#documentID",
+      "target": "urn:samm:io.catenax.business_partner_certificate:3.1.0#DocumentIdCharaccteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.business_partner_certificate:3.1.0#contentBase64",
+      "target": "urn:samm:io.catenax.business_partner_certificate:3.1.0#ContentBase64Characteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.business_partner_certificate:3.1.0#CertificateTypeCharacteristic",
+      "target": "urn:samm:io.catenax.business_partner_certificate:3.1.0#CertificateTypeEntity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.business_partner_certificate:3.1.0#EnclosedSitesCharacteristic",
+      "target": "urn:samm:io.catenax.business_partner_certificate:3.1.0#EnclosedSiteEntity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.business_partner_certificate:3.1.0#IssuerCharacteristics",
+      "target": "urn:samm:io.catenax.business_partner_certificate:3.1.0#IssuerEntity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.business_partner_certificate:3.1.0#TrustValidatorCharacteristic",
+      "target": "urn:samm:io.catenax.business_partner_certificate:3.1.0#TrustValidatorEntitity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.business_partner_certificate:3.1.0#DocumentCharacteristic",
+      "target": "urn:samm:io.catenax.business_partner_certificate:3.1.0#DocumentEntity",
+      "label": "dataType",
+      "optional": false
+    }
+  ]
+}

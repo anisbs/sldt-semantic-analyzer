@@ -1,0 +1,830 @@
+{
+  "meta": {
+    "namespace": "urn:bamm:io.catenax.classified_load_spectrum:1.0.0#",
+    "meta_model": "BAMM 1.0.0",
+    "path": "data/sldt-semantic-models/io.catenax.classified_load_spectrum/1.0.0/ClassifiedLoadSpectrum.ttl"
+  },
+  "nodes": [
+    {
+      "id": "urn:bamm:io.catenax.classified_load_spectrum:1.0.0#countingMethod",
+      "label": "countingMethod",
+      "kind": "Property",
+      "preferredName": "counting method",
+      "description": "Type of classification: rainflow or event counting or load revolution distribution"
+    },
+    {
+      "id": "urn:bamm:io.catenax.classified_load_spectrum:1.0.0#header",
+      "label": "header",
+      "kind": "Property",
+      "preferredName": "Header Classified Load Spectrum",
+      "description": "Information on the classified load spectrum including kind of classificationen, Classes, Limits"
+    },
+    {
+      "id": "urn:bamm:io.catenax.classified_load_spectrum:1.0.0#channels",
+      "label": "channels",
+      "kind": "Property",
+      "preferredName": "Channels",
+      "description": "Full information on loadchannel including name, unit, limits, classes"
+    },
+    {
+      "id": "urn:bamm:io.catenax.classified_load_spectrum:1.0.0#countingValue",
+      "label": "countingValue",
+      "kind": "Property",
+      "preferredName": "counting value",
+      "description": "Optional. By default, the number of for example events or peaks are counted. Value should be given if for example time or revolutions are counted."
+    },
+    {
+      "id": "urn:bamm:io.catenax.classified_load_spectrum:1.0.0#countingUnit",
+      "label": "countingUnit",
+      "kind": "Property",
+      "preferredName": "counting unit",
+      "description": "depending on counted value: if revolutions are counted, counted unit might be 1/min or 1/s.  Required, default is \"/\", which means no unit. "
+    },
+    {
+      "id": "urn:bamm:io.catenax.classified_load_spectrum:1.0.0#channelName",
+      "label": "channelName",
+      "kind": "Property",
+      "preferredName": "channel name",
+      "description": "identifier of the load channel, needed to combine the loading with the damage calculation"
+    },
+    {
+      "id": "urn:bamm:io.catenax.classified_load_spectrum:1.0.0#unit",
+      "label": "unit",
+      "kind": "Property",
+      "preferredName": null,
+      "description": "unit of the corresponding load channel"
+    },
+    {
+      "id": "urn:bamm:io.catenax.classified_load_spectrum:1.0.0#lowerLimit",
+      "label": "lowerLimit",
+      "kind": "Property",
+      "preferredName": null,
+      "description": "for classification, a range of load values must be set. The limits and the number of bins decribe the classes. "
+    },
+    {
+      "id": "urn:bamm:io.catenax.classified_load_spectrum:1.0.0#upperLimit",
+      "label": "upperLimit",
+      "kind": "Property",
+      "preferredName": null,
+      "description": "for classification, a range of load values must be set. The limits and the number of bins decribe the classes. "
+    },
+    {
+      "id": "urn:bamm:io.catenax.classified_load_spectrum:1.0.0#numberOfBins",
+      "label": "numberOfBins",
+      "kind": "Property",
+      "preferredName": null,
+      "description": "for classification, a range of load values must be set. The limits and the number of bins decribe the classes. "
+    },
+    {
+      "id": "urn:bamm:io.catenax.classified_load_spectrum:1.0.0#binLimits",
+      "label": "binLimits",
+      "kind": "Property",
+      "preferredName": "bin limits",
+      "description": "In case of non- equidistant classes, the limits of the intervalls are given here. Optional, but if given, this list will be used. List must start with lowerLimit and end with upperLimit."
+    },
+    {
+      "id": "urn:bamm:io.catenax.classified_load_spectrum:1.0.0#body",
+      "label": "body",
+      "kind": "Property",
+      "preferredName": "Body classified load spectrum",
+      "description": "List of load channel classes and corresponding counts"
+    },
+    {
+      "id": "urn:bamm:io.catenax.classified_load_spectrum:1.0.0#classes",
+      "label": "classes",
+      "kind": "Property",
+      "preferredName": null,
+      "description": "Several load channel classes  are sorted in a list. For rainflow counting, a load channel has two channel class lists, from-class and to-class. \n"
+    },
+    {
+      "id": "urn:bamm:io.catenax.classified_load_spectrum:1.0.0#counts",
+      "label": "counts",
+      "kind": "Property",
+      "preferredName": null,
+      "description": "List of counts according to the load channel lists."
+    },
+    {
+      "id": "urn:bamm:io.catenax.classified_load_spectrum:1.0.0#classList",
+      "label": "classList",
+      "kind": "Property",
+      "preferredName": null,
+      "description": "The class list contains the classes describing the load. The loading is the combination of all load channel classes, therefore, duplicates are possible."
+    },
+    {
+      "id": "urn:bamm:io.catenax.classified_load_spectrum:1.0.0#className",
+      "label": "className",
+      "kind": "Property",
+      "preferredName": null,
+      "description": "Channel name extended by \"-class\". In case of rainflow counting, the extention is from-class and to-class."
+    },
+    {
+      "id": "urn:bamm:io.catenax.classified_load_spectrum:1.0.0#countsName",
+      "label": "countsName",
+      "kind": "Property",
+      "preferredName": "counting value",
+      "description": "Name of the counted value: \"Counts\" or \"Time\" or\" Revolutions\""
+    },
+    {
+      "id": "urn:bamm:io.catenax.classified_load_spectrum:1.0.0#countsList",
+      "label": "countsList",
+      "kind": "Property",
+      "preferredName": null,
+      "description": "List of counts according to the load channel lists."
+    },
+    {
+      "id": "urn:bamm:io.catenax.classified_load_spectrum:1.0.0#metadata",
+      "label": "metadata",
+      "kind": "Property",
+      "preferredName": "metadata",
+      "description": "all information decribing the source, purpose and application of the load spectrum."
+    },
+    {
+      "id": "urn:bamm:io.catenax.classified_load_spectrum:1.0.0#componentDescription",
+      "label": "componentDescription",
+      "kind": "Property",
+      "preferredName": "component",
+      "description": "Component or assembly the load spectrum is valid for. A ZF_lrd counted load spectrum  belomgs to a gear set while a temperature load spectrum belong to the part where the temperature is measured (gear oil or IGBT). "
+    },
+    {
+      "id": "urn:bamm:io.catenax.classified_load_spectrum:1.0.0#routeDescription",
+      "label": "routeDescription",
+      "kind": "Property",
+      "preferredName": "route description",
+      "description": "Information on the route which the load spectrum is representing. For example \"city munich heavy trailer\" or \"motorway light trailer agil driver\"."
+    },
+    {
+      "id": "urn:bamm:io.catenax.classified_load_spectrum:1.0.0#projectDescription",
+      "label": "projectDescription",
+      "kind": "Property",
+      "preferredName": "project description",
+      "description": "Further information on the vehicle /assembly/component."
+    },
+    {
+      "id": "urn:bamm:io.catenax.classified_load_spectrum:1.0.0#status",
+      "label": "status",
+      "kind": "Property",
+      "preferredName": "Status",
+      "description": "Identification of vehicle status"
+    },
+    {
+      "id": "urn:bamm:io.catenax.classified_load_spectrum:1.0.0#mileage",
+      "label": "mileage",
+      "kind": "Property",
+      "preferredName": "Mileage",
+      "description": "Mileage of the vehicle respectively part."
+    },
+    {
+      "id": "urn:bamm:io.catenax.classified_load_spectrum:1.0.0#date",
+      "label": "date",
+      "kind": "Property",
+      "preferredName": null,
+      "description": "date representing the load spectrum"
+    },
+    {
+      "id": "urn:bamm:io.catenax.classified_load_spectrum:1.0.0#operatingHours",
+      "label": "operatingHours",
+      "kind": "Property",
+      "preferredName": "operating Hours",
+      "description": "Operating hours covered by the load spectrum."
+    },
+    {
+      "id": "urn:bamm:io.catenax.classified_load_spectrum:1.0.0#targetComponentID",
+      "label": "targetComponentID",
+      "kind": "Property",
+      "preferredName": null,
+      "description": "CX-ID /AAS-ID des Zwilling "
+    },
+    {
+      "id": "urn:bamm:io.catenax.classified_load_spectrum:1.0.0#residuum",
+      "label": "residuum",
+      "kind": "Property",
+      "preferredName": "Residuum",
+      "description": "Residuum of load history i case of rainflow counting"
+    },
+    {
+      "id": "urn:bamm:io.catenax.classified_load_spectrum:1.0.0#residuumClassName",
+      "label": "residuumClassName",
+      "kind": "Property",
+      "preferredName": null,
+      "description": "Name of the load channel extended by -class"
+    },
+    {
+      "id": "urn:bamm:io.catenax.classified_load_spectrum:1.0.0#residuumList",
+      "label": "residuumList",
+      "kind": "Property",
+      "preferredName": "Residuum list",
+      "description": "List of load-classes not defining a closed hysterese."
+    },
+    {
+      "id": "urn:bamm:io.catenax.classified_load_spectrum:1.0.0#CountingMethodCharacteristic",
+      "label": "CountingMethodCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": null,
+      "description": "Specification of counting method. EventCount, PeakCount, MaximunCount  specify the number of events. RangeCount specify the amplitudes of load cycles, Rangedifference of load classes Rainflow describes the number of closed hystersis fron one class to another class. Different procedures exists , the default is 4-point-method. If 3-point-method or HCM method is used, the corresponding values should be used. LRD means load revolution distribution describing the load spectra for gear sets.  "
+    },
+    {
+      "id": "urn:bamm:io.catenax.classified_load_spectrum:1.0.0#CountedValueCharacteristic",
+      "label": "CountedValueCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": null,
+      "description": "By default, the number of for example events or peaks are counted. Value should be given if for example time or revolutions are counted."
+    },
+    {
+      "id": "urn:bamm:io.catenax.classified_load_spectrum:1.0.0#HeaderCharacteristic",
+      "label": "HeaderCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Header",
+      "description": "Information on the classified load spectrum including kind of classificationen, Classes, Limits"
+    },
+    {
+      "id": "urn:bamm:io.catenax.classified_load_spectrum:1.0.0#ChannelNameCharacteristic",
+      "label": "ChannelNameCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": null,
+      "description": "Identifier of channel"
+    },
+    {
+      "id": "urn:bamm:io.catenax.classified_load_spectrum:1.0.0#LimitCharacteristic",
+      "label": "LimitCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": null,
+      "description": "Min and max value of classified load range"
+    },
+    {
+      "id": "urn:bamm:io.catenax.classified_load_spectrum:1.0.0#NumberOfBinsCharacteristic",
+      "label": "NumberOfBinsCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": null,
+      "description": "Number of classes "
+    },
+    {
+      "id": "urn:bamm:io.catenax.classified_load_spectrum:1.0.0#CountsCharacteristic",
+      "label": "CountsCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": null,
+      "description": "List of counts according to the load channel lists."
+    },
+    {
+      "id": "urn:bamm:io.catenax.classified_load_spectrum:1.0.0#CountsNameCharacteristic",
+      "label": "CountsNameCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": null,
+      "description": "Name of countings, \"Counts\" or \"Time\"  or \"revolutions\"."
+    },
+    {
+      "id": "urn:bamm:io.catenax.classified_load_spectrum:1.0.0#MetadataCharacteristic",
+      "label": "MetadataCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Metadata",
+      "description": "All information decribing the source, purpose and application of the load spectrum."
+    },
+    {
+      "id": "urn:bamm:io.catenax.classified_load_spectrum:1.0.0#ComponentCharacteristic",
+      "label": "ComponentCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": null,
+      "description": "Component or assembly the load spectrum is valid for. A ZF_lrd counted load spectrum  belomgs to a gear set while a temperature load spectrum belong to the part where the temperature is measured (gear oil or IGBT). "
+    },
+    {
+      "id": "urn:bamm:io.catenax.classified_load_spectrum:1.0.0#StatusCharacteristic",
+      "label": "StatusCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Status Characteristic",
+      "description": "Status describes the date when this aspect is filled, the according mileage and according operating time. "
+    },
+    {
+      "id": "urn:bamm:io.catenax.classified_load_spectrum:1.0.0#TargetComponentIDCharacteristic",
+      "label": "TargetComponentIDCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "TargetComponentID",
+      "description": "Asset ID of the specific parent: vehicle or gearbox or battery"
+    },
+    {
+      "id": "urn:bamm:io.catenax.classified_load_spectrum:1.0.0#ResiduumCharacteristic",
+      "label": "ResiduumCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Residuum",
+      "description": "Rainflow counting is restricted to one channel. Unclosed hystereses are described as list of classes."
+    },
+    {
+      "id": "urn:bamm:io.catenax.classified_load_spectrum:1.0.0#ResiduumClassNameCharacteristic",
+      "label": "ResiduumClassNameCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": null,
+      "description": "Channelname extended by -class"
+    },
+    {
+      "id": "urn:bamm:io.catenax.classified_load_spectrum:1.0.0#ClassNameCharacteristic",
+      "label": "ClassNameCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": null,
+      "description": "Name of the load channel class"
+    },
+    {
+      "id": "urn:bamm:io.catenax.classified_load_spectrum:1.0.0#HeaderEntity",
+      "label": "HeaderEntity",
+      "kind": "Entity",
+      "preferredName": "Header Classified Load Spectrum",
+      "description": "Information on the classified load spectrum including kind of classificationen, Classes, Limits"
+    },
+    {
+      "id": "urn:bamm:io.catenax.classified_load_spectrum:1.0.0#LoadChannelEntity",
+      "label": "LoadChannelEntity",
+      "kind": "Entity",
+      "preferredName": null,
+      "description": "Full information on loadchannel including name, unit, limits, classes"
+    },
+    {
+      "id": "urn:bamm:io.catenax.classified_load_spectrum:1.0.0#BodySets",
+      "label": "BodySets",
+      "kind": "Entity",
+      "preferredName": null,
+      "description": "Body contains the data lists of load channel classes and the corresponding countings."
+    },
+    {
+      "id": "urn:bamm:io.catenax.classified_load_spectrum:1.0.0#ClassesListEntity",
+      "label": "ClassesListEntity",
+      "kind": "Entity",
+      "preferredName": null,
+      "description": "Each channel class list are identified by the name and contains the list of classes describing the load.\n"
+    },
+    {
+      "id": "urn:bamm:io.catenax.classified_load_spectrum:1.0.0#CountsEntity",
+      "label": "CountsEntity",
+      "kind": "Entity",
+      "preferredName": null,
+      "description": "List of counts according to the load channel lists."
+    },
+    {
+      "id": "urn:bamm:io.catenax.classified_load_spectrum:1.0.0#Metadata",
+      "label": "Metadata",
+      "kind": "Entity",
+      "preferredName": "metadata",
+      "description": "All information decribing the source, purpose and application of the load spectrum."
+    },
+    {
+      "id": "urn:bamm:io.catenax.classified_load_spectrum:1.0.0#StatusEntity",
+      "label": "StatusEntity",
+      "kind": "Entity",
+      "preferredName": "status of aggregate",
+      "description": "Status describes the date when this aspect is filled, the according mileage and according operating time. "
+    },
+    {
+      "id": "urn:bamm:io.catenax.classified_load_spectrum:1.0.0#ResiduumEntity",
+      "label": "ResiduumEntity",
+      "kind": "Entity",
+      "preferredName": "Residuum",
+      "description": "Rainflow counting is restricted to one channel. Unclosed hystereses are described as list of classes."
+    },
+    {
+      "id": "urn:bamm:io.catenax.classified_load_spectrum:1.0.0#ChannelList",
+      "label": "ChannelList",
+      "kind": "Characteristic",
+      "preferredName": null,
+      "description": "Full information on loadchannel including name, unit, limits, classes"
+    },
+    {
+      "id": "urn:bamm:io.catenax.classified_load_spectrum:1.0.0#BinLimitsList",
+      "label": "BinLimitsList",
+      "kind": "Characteristic",
+      "preferredName": "bin limits list",
+      "description": "list of class limits"
+    },
+    {
+      "id": "urn:bamm:io.catenax.classified_load_spectrum:1.0.0#ClassesList",
+      "label": "ClassesList",
+      "kind": "Characteristic",
+      "preferredName": null,
+      "description": "Several load channel classes  are sorted in a list. For rainflow counting, a load channel has two channel class lists, from-class and to-class. \n"
+    },
+    {
+      "id": "urn:bamm:io.catenax.classified_load_spectrum:1.0.0#Counts",
+      "label": "Counts",
+      "kind": "Characteristic",
+      "preferredName": "Counts",
+      "description": "Counts of loads in the respective loadingclass. might be event counts, time counting or revolution counts - depending on the CountingMethod and CountingUnit\n"
+    },
+    {
+      "id": "urn:bamm:io.catenax.classified_load_spectrum:1.0.0#ClassListCharacteristic",
+      "label": "ClassListCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": null,
+      "description": "List of load classes "
+    },
+    {
+      "id": "urn:bamm:io.catenax.classified_load_spectrum:1.0.0#ResiduumListCharacteristic",
+      "label": "ResiduumListCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": null,
+      "description": "List of load-classes not defining a closed hysterese."
+    },
+    {
+      "id": "urn:bamm:io.catenax.classified_load_spectrum:1.0.0#BodyCharacteristic",
+      "label": "BodyCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": null,
+      "description": "Set for channelclasses and counts"
+    },
+    {
+      "id": "urn:bamm:io.catenax.classified_load_spectrum:1.0.0#Mileage",
+      "label": "Mileage",
+      "kind": "Characteristic",
+      "preferredName": "mileage",
+      "description": "Mileage of the vehicle respectively part."
+    },
+    {
+      "id": "urn:bamm:io.catenax.classified_load_spectrum:1.0.0#OperatingHoursCharacteristic",
+      "label": "OperatingHoursCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Operating Hours",
+      "description": "Operating hours for the vehicle respectively part."
+    },
+    {
+      "id": "urn:bamm:io.catenax.classified_load_spectrum:1.0.0#ClassifiedLoadSpectrum",
+      "label": "ClassifiedLoadSpectrum",
+      "kind": "Aspect",
+      "preferredName": "Classified Load Spectrum",
+      "description": "load spectrum with classified loads "
+    }
+  ],
+  "links": [
+    {
+      "source": "urn:bamm:io.catenax.classified_load_spectrum:1.0.0#HeaderEntity",
+      "target": "urn:bamm:io.catenax.classified_load_spectrum:1.0.0#channels",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.classified_load_spectrum:1.0.0#HeaderEntity",
+      "target": "urn:bamm:io.catenax.classified_load_spectrum:1.0.0#countingMethod",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.classified_load_spectrum:1.0.0#HeaderEntity",
+      "target": "urn:bamm:io.catenax.classified_load_spectrum:1.0.0#countingValue",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:bamm:io.catenax.classified_load_spectrum:1.0.0#HeaderEntity",
+      "target": "urn:bamm:io.catenax.classified_load_spectrum:1.0.0#countingUnit",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.classified_load_spectrum:1.0.0#LoadChannelEntity",
+      "target": "urn:bamm:io.catenax.classified_load_spectrum:1.0.0#channelName",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.classified_load_spectrum:1.0.0#LoadChannelEntity",
+      "target": "urn:bamm:io.catenax.classified_load_spectrum:1.0.0#unit",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.classified_load_spectrum:1.0.0#LoadChannelEntity",
+      "target": "urn:bamm:io.catenax.classified_load_spectrum:1.0.0#lowerLimit",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.classified_load_spectrum:1.0.0#LoadChannelEntity",
+      "target": "urn:bamm:io.catenax.classified_load_spectrum:1.0.0#upperLimit",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.classified_load_spectrum:1.0.0#LoadChannelEntity",
+      "target": "urn:bamm:io.catenax.classified_load_spectrum:1.0.0#numberOfBins",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.classified_load_spectrum:1.0.0#LoadChannelEntity",
+      "target": "urn:bamm:io.catenax.classified_load_spectrum:1.0.0#binLimits",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:bamm:io.catenax.classified_load_spectrum:1.0.0#BodySets",
+      "target": "urn:bamm:io.catenax.classified_load_spectrum:1.0.0#classes",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.classified_load_spectrum:1.0.0#BodySets",
+      "target": "urn:bamm:io.catenax.classified_load_spectrum:1.0.0#counts",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.classified_load_spectrum:1.0.0#ClassesListEntity",
+      "target": "urn:bamm:io.catenax.classified_load_spectrum:1.0.0#classList",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.classified_load_spectrum:1.0.0#ClassesListEntity",
+      "target": "urn:bamm:io.catenax.classified_load_spectrum:1.0.0#className",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.classified_load_spectrum:1.0.0#CountsEntity",
+      "target": "urn:bamm:io.catenax.classified_load_spectrum:1.0.0#countsName",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.classified_load_spectrum:1.0.0#CountsEntity",
+      "target": "urn:bamm:io.catenax.classified_load_spectrum:1.0.0#countsList",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.classified_load_spectrum:1.0.0#Metadata",
+      "target": "urn:bamm:io.catenax.classified_load_spectrum:1.0.0#componentDescription",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.classified_load_spectrum:1.0.0#Metadata",
+      "target": "urn:bamm:io.catenax.classified_load_spectrum:1.0.0#routeDescription",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.classified_load_spectrum:1.0.0#Metadata",
+      "target": "urn:bamm:io.catenax.classified_load_spectrum:1.0.0#projectDescription",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.classified_load_spectrum:1.0.0#Metadata",
+      "target": "urn:bamm:io.catenax.classified_load_spectrum:1.0.0#status",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.classified_load_spectrum:1.0.0#StatusEntity",
+      "target": "urn:bamm:io.catenax.classified_load_spectrum:1.0.0#mileage",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:bamm:io.catenax.classified_load_spectrum:1.0.0#StatusEntity",
+      "target": "urn:bamm:io.catenax.classified_load_spectrum:1.0.0#date",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.classified_load_spectrum:1.0.0#StatusEntity",
+      "target": "urn:bamm:io.catenax.classified_load_spectrum:1.0.0#operatingHours",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:bamm:io.catenax.classified_load_spectrum:1.0.0#ResiduumEntity",
+      "target": "urn:bamm:io.catenax.classified_load_spectrum:1.0.0#residuumClassName",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.classified_load_spectrum:1.0.0#ResiduumEntity",
+      "target": "urn:bamm:io.catenax.classified_load_spectrum:1.0.0#residuumList",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.classified_load_spectrum:1.0.0#ClassifiedLoadSpectrum",
+      "target": "urn:bamm:io.catenax.classified_load_spectrum:1.0.0#header",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.classified_load_spectrum:1.0.0#ClassifiedLoadSpectrum",
+      "target": "urn:bamm:io.catenax.classified_load_spectrum:1.0.0#body",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.classified_load_spectrum:1.0.0#ClassifiedLoadSpectrum",
+      "target": "urn:bamm:io.catenax.classified_load_spectrum:1.0.0#metadata",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.classified_load_spectrum:1.0.0#ClassifiedLoadSpectrum",
+      "target": "urn:bamm:io.catenax.classified_load_spectrum:1.0.0#targetComponentID",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.classified_load_spectrum:1.0.0#ClassifiedLoadSpectrum",
+      "target": "urn:bamm:io.catenax.classified_load_spectrum:1.0.0#residuum",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:bamm:io.catenax.classified_load_spectrum:1.0.0#countingMethod",
+      "target": "urn:bamm:io.catenax.classified_load_spectrum:1.0.0#CountingMethodCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.classified_load_spectrum:1.0.0#header",
+      "target": "urn:bamm:io.catenax.classified_load_spectrum:1.0.0#HeaderCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.classified_load_spectrum:1.0.0#channels",
+      "target": "urn:bamm:io.catenax.classified_load_spectrum:1.0.0#ChannelList",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.classified_load_spectrum:1.0.0#countingValue",
+      "target": "urn:bamm:io.catenax.classified_load_spectrum:1.0.0#CountedValueCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.classified_load_spectrum:1.0.0#channelName",
+      "target": "urn:bamm:io.catenax.classified_load_spectrum:1.0.0#ChannelNameCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.classified_load_spectrum:1.0.0#lowerLimit",
+      "target": "urn:bamm:io.catenax.classified_load_spectrum:1.0.0#LimitCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.classified_load_spectrum:1.0.0#upperLimit",
+      "target": "urn:bamm:io.catenax.classified_load_spectrum:1.0.0#LimitCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.classified_load_spectrum:1.0.0#numberOfBins",
+      "target": "urn:bamm:io.catenax.classified_load_spectrum:1.0.0#NumberOfBinsCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.classified_load_spectrum:1.0.0#binLimits",
+      "target": "urn:bamm:io.catenax.classified_load_spectrum:1.0.0#BinLimitsList",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.classified_load_spectrum:1.0.0#body",
+      "target": "urn:bamm:io.catenax.classified_load_spectrum:1.0.0#BodyCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.classified_load_spectrum:1.0.0#classes",
+      "target": "urn:bamm:io.catenax.classified_load_spectrum:1.0.0#ClassesList",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.classified_load_spectrum:1.0.0#counts",
+      "target": "urn:bamm:io.catenax.classified_load_spectrum:1.0.0#CountsCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.classified_load_spectrum:1.0.0#classList",
+      "target": "urn:bamm:io.catenax.classified_load_spectrum:1.0.0#ClassListCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.classified_load_spectrum:1.0.0#className",
+      "target": "urn:bamm:io.catenax.classified_load_spectrum:1.0.0#ClassNameCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.classified_load_spectrum:1.0.0#countsName",
+      "target": "urn:bamm:io.catenax.classified_load_spectrum:1.0.0#CountsNameCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.classified_load_spectrum:1.0.0#countsList",
+      "target": "urn:bamm:io.catenax.classified_load_spectrum:1.0.0#Counts",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.classified_load_spectrum:1.0.0#metadata",
+      "target": "urn:bamm:io.catenax.classified_load_spectrum:1.0.0#MetadataCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.classified_load_spectrum:1.0.0#componentDescription",
+      "target": "urn:bamm:io.catenax.classified_load_spectrum:1.0.0#ComponentCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.classified_load_spectrum:1.0.0#status",
+      "target": "urn:bamm:io.catenax.classified_load_spectrum:1.0.0#StatusCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.classified_load_spectrum:1.0.0#mileage",
+      "target": "urn:bamm:io.catenax.classified_load_spectrum:1.0.0#Mileage",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.classified_load_spectrum:1.0.0#operatingHours",
+      "target": "urn:bamm:io.catenax.classified_load_spectrum:1.0.0#OperatingHoursCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.classified_load_spectrum:1.0.0#targetComponentID",
+      "target": "urn:bamm:io.catenax.classified_load_spectrum:1.0.0#TargetComponentIDCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.classified_load_spectrum:1.0.0#residuum",
+      "target": "urn:bamm:io.catenax.classified_load_spectrum:1.0.0#ResiduumCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.classified_load_spectrum:1.0.0#residuumClassName",
+      "target": "urn:bamm:io.catenax.classified_load_spectrum:1.0.0#ResiduumClassNameCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.classified_load_spectrum:1.0.0#residuumList",
+      "target": "urn:bamm:io.catenax.classified_load_spectrum:1.0.0#ResiduumListCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.classified_load_spectrum:1.0.0#HeaderCharacteristic",
+      "target": "urn:bamm:io.catenax.classified_load_spectrum:1.0.0#HeaderEntity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.classified_load_spectrum:1.0.0#ChannelList",
+      "target": "urn:bamm:io.catenax.classified_load_spectrum:1.0.0#LoadChannelEntity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.classified_load_spectrum:1.0.0#BodyCharacteristic",
+      "target": "urn:bamm:io.catenax.classified_load_spectrum:1.0.0#BodySets",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.classified_load_spectrum:1.0.0#ClassesList",
+      "target": "urn:bamm:io.catenax.classified_load_spectrum:1.0.0#ClassesListEntity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.classified_load_spectrum:1.0.0#CountsCharacteristic",
+      "target": "urn:bamm:io.catenax.classified_load_spectrum:1.0.0#CountsEntity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.classified_load_spectrum:1.0.0#MetadataCharacteristic",
+      "target": "urn:bamm:io.catenax.classified_load_spectrum:1.0.0#Metadata",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.classified_load_spectrum:1.0.0#StatusCharacteristic",
+      "target": "urn:bamm:io.catenax.classified_load_spectrum:1.0.0#StatusEntity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.classified_load_spectrum:1.0.0#ResiduumCharacteristic",
+      "target": "urn:bamm:io.catenax.classified_load_spectrum:1.0.0#ResiduumEntity",
+      "label": "dataType",
+      "optional": false
+    }
+  ]
+}

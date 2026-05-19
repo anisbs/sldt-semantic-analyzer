@@ -1,0 +1,459 @@
+{
+  "meta": {
+    "namespace": "urn:samm:io.catenax.certificate_of_analysis:1.0.0#",
+    "meta_model": "SAMM 2.1.0",
+    "path": "data/sldt-semantic-models/io.catenax.certificate_of_analysis/1.0.0/CertificateOfAnalysis.ttl"
+  },
+  "nodes": [
+    {
+      "id": "urn:samm:io.catenax.certificate_of_analysis:1.0.0#CertificateOfAnalysis",
+      "label": "CertificateOfAnalysis",
+      "kind": "Aspect",
+      "preferredName": "Certificate of Analysis",
+      "description": "The Certificate of Analysis documents the material (e.g. chemical compound) properties describing a material's quality or performance factors specific to manufacturing batch.\nThe exact material properties depend on the material type and the following manufacturing processes. They are defined bilaterally between a supplier (manufacturer) and customer."
+    },
+    {
+      "id": "urn:samm:io.catenax.certificate_of_analysis:1.0.0#customer",
+      "label": "customer",
+      "kind": "Property",
+      "preferredName": "Customer",
+      "description": "The customer as a BPNL reference."
+    },
+    {
+      "id": "urn:samm:io.catenax.certificate_of_analysis:1.0.0#supplier",
+      "label": "supplier",
+      "kind": "Property",
+      "preferredName": "Supplier",
+      "description": "The supplier (manufacturer) as a BPNL reference."
+    },
+    {
+      "id": "urn:samm:io.catenax.certificate_of_analysis:1.0.0#certificateMetaData",
+      "label": "certificateMetaData",
+      "kind": "Property",
+      "preferredName": "Certificate meta data",
+      "description": "Meta data about this certificate"
+    },
+    {
+      "id": "urn:samm:io.catenax.certificate_of_analysis:1.0.0#materialProperties",
+      "label": "materialProperties",
+      "kind": "Property",
+      "preferredName": "Material properties",
+      "description": "A set of material properties containing the specification and the actual material analysis measurement results.\n\nThe properties may vary based on the material type as well as the agreed specification of the material and the analysis between the customer and manufacturer (supplier)."
+    },
+    {
+      "id": "urn:samm:io.catenax.certificate_of_analysis:1.0.0#productTypeInformation",
+      "label": "productTypeInformation",
+      "kind": "Property",
+      "preferredName": "Product type information",
+      "description": "Product type related information"
+    },
+    {
+      "id": "urn:samm:io.catenax.certificate_of_analysis:1.0.0#productInstanceInformation",
+      "label": "productInstanceInformation",
+      "kind": "Property",
+      "preferredName": "Product instance information",
+      "description": "Product instance related information, in the case of Certificate of Analysis a product instance refers to a batch."
+    },
+    {
+      "id": "urn:samm:io.catenax.certificate_of_analysis:1.0.0#issueDate",
+      "label": "issueDate",
+      "kind": "Property",
+      "preferredName": "Issue date",
+      "description": "the date and timestamp of issuing this certificate"
+    },
+    {
+      "id": "urn:samm:io.catenax.certificate_of_analysis:1.0.0#isConformWithSpecification",
+      "label": "isConformWithSpecification",
+      "kind": "Property",
+      "preferredName": "Conformity with Specification",
+      "description": "In the case that any of the properties that are part of the Certificate of Analysis violates the defined upper or lower limit this property should be set to false."
+    },
+    {
+      "id": "urn:samm:io.catenax.certificate_of_analysis:1.0.0#name",
+      "label": "name",
+      "kind": "Property",
+      "preferredName": "Property name",
+      "description": "The name of the property"
+    },
+    {
+      "id": "urn:samm:io.catenax.certificate_of_analysis:1.0.0#description",
+      "label": "description",
+      "kind": "Property",
+      "preferredName": "Property description",
+      "description": "This field should be used to describe the property."
+    },
+    {
+      "id": "urn:samm:io.catenax.certificate_of_analysis:1.0.0#value",
+      "label": "value",
+      "kind": "Property",
+      "preferredName": "Property value",
+      "description": "The result of the analysis for this specific property."
+    },
+    {
+      "id": "urn:samm:io.catenax.certificate_of_analysis:1.0.0#unit",
+      "label": "unit",
+      "kind": "Property",
+      "preferredName": "Property unit",
+      "description": "The unit of measure used for the property value and specification limits. This can be omitted for non-numerical properties, e.g. Boolean."
+    },
+    {
+      "id": "urn:samm:io.catenax.certificate_of_analysis:1.0.0#lowerLimit",
+      "label": "lowerLimit",
+      "kind": "Property",
+      "preferredName": "Lower limit",
+      "description": "The lower limit of the specification with a boundary condition of \"At least\".\nValues below that limit are considered out of specification. Values exactly at the limit are considered in specification."
+    },
+    {
+      "id": "urn:samm:io.catenax.certificate_of_analysis:1.0.0#upperLimit",
+      "label": "upperLimit",
+      "kind": "Property",
+      "preferredName": "Upper limit",
+      "description": "The upper limit of the specification with a boundary condition of \"At most\".\nValues above that limit are considered out of specification. Values exactly at the limit are considered in specification."
+    },
+    {
+      "id": "urn:samm:io.catenax.certificate_of_analysis:1.0.0#dataType",
+      "label": "dataType",
+      "kind": "Property",
+      "preferredName": "Data type",
+      "description": "The data type of the properties value and limits. The data type should specify how the string value should be type casted or interpreted."
+    },
+    {
+      "id": "urn:samm:io.catenax.certificate_of_analysis:1.0.0#method",
+      "label": "method",
+      "kind": "Property",
+      "preferredName": "Method",
+      "description": "A set of methods that describe how the part was tested"
+    },
+    {
+      "id": "urn:samm:io.catenax.certificate_of_analysis:1.0.0#customerPartId",
+      "label": "customerPartId",
+      "kind": "Property",
+      "preferredName": "Customer Part ID",
+      "description": "Part ID as assigned by the customer."
+    },
+    {
+      "id": "urn:samm:io.catenax.certificate_of_analysis:1.0.0#expiryDate",
+      "label": "expiryDate",
+      "kind": "Property",
+      "preferredName": "Expiry date",
+      "description": "The expiry date of the material."
+    },
+    {
+      "id": "urn:samm:io.catenax.certificate_of_analysis:1.0.0#methodStandard",
+      "label": "methodStandard",
+      "kind": "Property",
+      "preferredName": "Referenced Standard",
+      "description": "Reference to the standard that described the method."
+    },
+    {
+      "id": "urn:samm:io.catenax.certificate_of_analysis:1.0.0#methodDescription",
+      "label": "methodDescription",
+      "kind": "Property",
+      "preferredName": "Method description",
+      "description": "This field should be used to describe the method or provide additional information to the referenced norm."
+    },
+    {
+      "id": "urn:samm:io.catenax.certificate_of_analysis:1.0.0#CertificateMetaDataCharacteristic",
+      "label": "CertificateMetaDataCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Certificate Meta Data Characteristic",
+      "description": "Characteristic for describing meta or header data of a Certificate of Analysis."
+    },
+    {
+      "id": "urn:samm:io.catenax.certificate_of_analysis:1.0.0#ProductTypeInformationCharacteristic",
+      "label": "ProductTypeInformationCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Product type information characteristic",
+      "description": "Characteristic for some product type related information."
+    },
+    {
+      "id": "urn:samm:io.catenax.certificate_of_analysis:1.0.0#ProductInstanceInformationCharacteristic",
+      "label": "ProductInstanceInformationCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Product instance information characteristic",
+      "description": "Characteristic for product instance related information."
+    },
+    {
+      "id": "urn:samm:io.catenax.certificate_of_analysis:1.0.0#ValueCharacteristic",
+      "label": "ValueCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Value Characteristic",
+      "description": "The string should be formatted in a way sp that it is easily interpretable or convertible to the xsd datatype given in the field \"data type\"."
+    },
+    {
+      "id": "urn:samm:io.catenax.certificate_of_analysis:1.0.0#MethodSet",
+      "label": "MethodSet",
+      "kind": "Characteristic",
+      "preferredName": "Method set",
+      "description": "Characteristic for a set of methods on how the material property was tested."
+    },
+    {
+      "id": "urn:samm:io.catenax.certificate_of_analysis:1.0.0#DateCharacteristic",
+      "label": "DateCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Date Characteristic",
+      "description": "A calendar date"
+    },
+    {
+      "id": "urn:samm:io.catenax.certificate_of_analysis:1.0.0#MaterialPropertiesSet",
+      "label": "MaterialPropertiesSet",
+      "kind": "Characteristic",
+      "preferredName": "Material Properties Set Characteristic",
+      "description": "Set of measured material properties."
+    },
+    {
+      "id": "urn:samm:io.catenax.certificate_of_analysis:1.0.0#CertificateMetaData",
+      "label": "CertificateMetaData",
+      "kind": "Entity",
+      "preferredName": "Certificate Meta Data",
+      "description": null
+    },
+    {
+      "id": "urn:samm:io.catenax.certificate_of_analysis:1.0.0#MaterialProperty",
+      "label": "MaterialProperty",
+      "kind": "Entity",
+      "preferredName": "Material property",
+      "description": "A material property with its name, definition measured value and specification (limits).\nIf available, lower limit and upper limit must be given, they are only optional in the case that the limits don't exist or don't apply."
+    },
+    {
+      "id": "urn:samm:io.catenax.certificate_of_analysis:1.0.0#ProductTypeInformation",
+      "label": "ProductTypeInformation",
+      "kind": "Entity",
+      "preferredName": "Product type information",
+      "description": "Product type related information"
+    },
+    {
+      "id": "urn:samm:io.catenax.certificate_of_analysis:1.0.0#ProductInstanceInformation",
+      "label": "ProductInstanceInformation",
+      "kind": "Entity",
+      "preferredName": "Product instance information",
+      "description": "Product instance related information"
+    },
+    {
+      "id": "urn:samm:io.catenax.certificate_of_analysis:1.0.0#MethodEntity",
+      "label": "MethodEntity",
+      "kind": "Entity",
+      "preferredName": "Method entity",
+      "description": "A method with its authority, ID and description"
+    },
+    {
+      "id": "urn:samm:io.catenax.certificate_of_analysis:1.0.0#DataTypeEnumerationCharacteristic",
+      "label": "DataTypeEnumerationCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Data type enumeration",
+      "description": "Allows specification of any xsd data type allowed in SAMM 2.1.0 without the subtypes of xsd:integer."
+    }
+  ],
+  "links": [
+    {
+      "source": "urn:samm:io.catenax.certificate_of_analysis:1.0.0#CertificateOfAnalysis",
+      "target": "urn:samm:io.catenax.certificate_of_analysis:1.0.0#customer",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.certificate_of_analysis:1.0.0#CertificateOfAnalysis",
+      "target": "urn:samm:io.catenax.certificate_of_analysis:1.0.0#supplier",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.certificate_of_analysis:1.0.0#CertificateOfAnalysis",
+      "target": "urn:samm:io.catenax.certificate_of_analysis:1.0.0#certificateMetaData",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.certificate_of_analysis:1.0.0#CertificateOfAnalysis",
+      "target": "urn:samm:io.catenax.certificate_of_analysis:1.0.0#materialProperties",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.certificate_of_analysis:1.0.0#CertificateOfAnalysis",
+      "target": "urn:samm:io.catenax.certificate_of_analysis:1.0.0#productTypeInformation",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.certificate_of_analysis:1.0.0#CertificateOfAnalysis",
+      "target": "urn:samm:io.catenax.certificate_of_analysis:1.0.0#productInstanceInformation",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.certificate_of_analysis:1.0.0#CertificateMetaData",
+      "target": "urn:samm:io.catenax.certificate_of_analysis:1.0.0#issueDate",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.certificate_of_analysis:1.0.0#CertificateMetaData",
+      "target": "urn:samm:io.catenax.certificate_of_analysis:1.0.0#isConformWithSpecification",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.certificate_of_analysis:1.0.0#MaterialProperty",
+      "target": "urn:samm:io.catenax.certificate_of_analysis:1.0.0#name",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.certificate_of_analysis:1.0.0#MaterialProperty",
+      "target": "urn:samm:io.catenax.certificate_of_analysis:1.0.0#description",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.certificate_of_analysis:1.0.0#MaterialProperty",
+      "target": "urn:samm:io.catenax.certificate_of_analysis:1.0.0#value",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.certificate_of_analysis:1.0.0#MaterialProperty",
+      "target": "urn:samm:io.catenax.certificate_of_analysis:1.0.0#unit",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.certificate_of_analysis:1.0.0#MaterialProperty",
+      "target": "urn:samm:io.catenax.certificate_of_analysis:1.0.0#lowerLimit",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.certificate_of_analysis:1.0.0#MaterialProperty",
+      "target": "urn:samm:io.catenax.certificate_of_analysis:1.0.0#upperLimit",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.certificate_of_analysis:1.0.0#MaterialProperty",
+      "target": "urn:samm:io.catenax.certificate_of_analysis:1.0.0#dataType",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.certificate_of_analysis:1.0.0#MaterialProperty",
+      "target": "urn:samm:io.catenax.certificate_of_analysis:1.0.0#method",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.certificate_of_analysis:1.0.0#ProductTypeInformation",
+      "target": "urn:samm:io.catenax.certificate_of_analysis:1.0.0#customerPartId",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.certificate_of_analysis:1.0.0#ProductInstanceInformation",
+      "target": "urn:samm:io.catenax.certificate_of_analysis:1.0.0#expiryDate",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.certificate_of_analysis:1.0.0#MethodEntity",
+      "target": "urn:samm:io.catenax.certificate_of_analysis:1.0.0#methodStandard",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.certificate_of_analysis:1.0.0#MethodEntity",
+      "target": "urn:samm:io.catenax.certificate_of_analysis:1.0.0#methodDescription",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.certificate_of_analysis:1.0.0#certificateMetaData",
+      "target": "urn:samm:io.catenax.certificate_of_analysis:1.0.0#CertificateMetaDataCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.certificate_of_analysis:1.0.0#materialProperties",
+      "target": "urn:samm:io.catenax.certificate_of_analysis:1.0.0#MaterialPropertiesSet",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.certificate_of_analysis:1.0.0#productTypeInformation",
+      "target": "urn:samm:io.catenax.certificate_of_analysis:1.0.0#ProductTypeInformationCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.certificate_of_analysis:1.0.0#productInstanceInformation",
+      "target": "urn:samm:io.catenax.certificate_of_analysis:1.0.0#ProductInstanceInformationCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.certificate_of_analysis:1.0.0#value",
+      "target": "urn:samm:io.catenax.certificate_of_analysis:1.0.0#ValueCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.certificate_of_analysis:1.0.0#lowerLimit",
+      "target": "urn:samm:io.catenax.certificate_of_analysis:1.0.0#ValueCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.certificate_of_analysis:1.0.0#upperLimit",
+      "target": "urn:samm:io.catenax.certificate_of_analysis:1.0.0#ValueCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.certificate_of_analysis:1.0.0#dataType",
+      "target": "urn:samm:io.catenax.certificate_of_analysis:1.0.0#DataTypeEnumerationCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.certificate_of_analysis:1.0.0#method",
+      "target": "urn:samm:io.catenax.certificate_of_analysis:1.0.0#MethodSet",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.certificate_of_analysis:1.0.0#expiryDate",
+      "target": "urn:samm:io.catenax.certificate_of_analysis:1.0.0#DateCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.certificate_of_analysis:1.0.0#CertificateMetaDataCharacteristic",
+      "target": "urn:samm:io.catenax.certificate_of_analysis:1.0.0#CertificateMetaData",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.certificate_of_analysis:1.0.0#MaterialPropertiesSet",
+      "target": "urn:samm:io.catenax.certificate_of_analysis:1.0.0#MaterialProperty",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.certificate_of_analysis:1.0.0#ProductTypeInformationCharacteristic",
+      "target": "urn:samm:io.catenax.certificate_of_analysis:1.0.0#ProductTypeInformation",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.certificate_of_analysis:1.0.0#ProductInstanceInformationCharacteristic",
+      "target": "urn:samm:io.catenax.certificate_of_analysis:1.0.0#ProductInstanceInformation",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.certificate_of_analysis:1.0.0#MethodSet",
+      "target": "urn:samm:io.catenax.certificate_of_analysis:1.0.0#MethodEntity",
+      "label": "dataType",
+      "optional": false
+    }
+  ]
+}

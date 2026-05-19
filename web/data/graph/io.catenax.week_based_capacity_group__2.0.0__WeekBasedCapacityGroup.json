@@ -1,0 +1,559 @@
+{
+  "meta": {
+    "namespace": "urn:samm:io.catenax.week_based_capacity_group:2.0.0#",
+    "meta_model": "SAMM 2.0.0",
+    "path": "data/sldt-semantic-models/io.catenax.week_based_capacity_group/2.0.0/WeekBasedCapacityGroup.ttl"
+  },
+  "nodes": [
+    {
+      "id": "urn:samm:io.catenax.week_based_capacity_group:2.0.0#WeekBasedCapacityGroup",
+      "label": "WeekBasedCapacityGroup",
+      "kind": "Aspect",
+      "preferredName": "Week-Based Capacity Group",
+      "description": "An entity made up of the weekly actual and maximum capacities for a specific customer in a given time period. A capacity group is used to compare demand and capacity data for one or several similar bundled materials in a defined unit of measure."
+    },
+    {
+      "id": "urn:samm:io.catenax.week_based_capacity_group:2.0.0#capacityGroupId",
+      "label": "capacityGroupId",
+      "kind": "Property",
+      "preferredName": "Capacity Group ID",
+      "description": "The Capacity Group ID uniquely identifies the capacity group within the business relationship between a supplier and its customer."
+    },
+    {
+      "id": "urn:samm:io.catenax.week_based_capacity_group:2.0.0#name",
+      "label": "name",
+      "kind": "Property",
+      "preferredName": "Capacity Group Name",
+      "description": "Name of the capacity group."
+    },
+    {
+      "id": "urn:samm:io.catenax.week_based_capacity_group:2.0.0#supplierLocations",
+      "label": "supplierLocations",
+      "kind": "Property",
+      "preferredName": "Supplier Locations",
+      "description": "Set of BPNS indicating the supplier sites that will be fulfilling the demands associated with this capacity group."
+    },
+    {
+      "id": "urn:samm:io.catenax.week_based_capacity_group:2.0.0#customer",
+      "label": "customer",
+      "kind": "Property",
+      "preferredName": "Customer",
+      "description": "The Business Partner Number (BPNL) of the party requesting materials from a supplier."
+    },
+    {
+      "id": "urn:samm:io.catenax.week_based_capacity_group:2.0.0#supplier",
+      "label": "supplier",
+      "kind": "Property",
+      "preferredName": "Supplier",
+      "description": "The Business Partner Number (BPNL) of the party providing materials to a customer."
+    },
+    {
+      "id": "urn:samm:io.catenax.week_based_capacity_group:2.0.0#unitOfMeasure",
+      "label": "unitOfMeasure",
+      "kind": "Property",
+      "preferredName": "Unit of Measure",
+      "description": "Unit of measurement for capacity quantities."
+    },
+    {
+      "id": "urn:samm:io.catenax.week_based_capacity_group:2.0.0#linkedDemandSeries",
+      "label": "linkedDemandSeries",
+      "kind": "Property",
+      "preferredName": "Linked Demand Series",
+      "description": "Set of demand series assigned to this capacity group."
+    },
+    {
+      "id": "urn:samm:io.catenax.week_based_capacity_group:2.0.0#capacities",
+      "label": "capacities",
+      "kind": "Property",
+      "preferredName": "Capacities",
+      "description": "A time series with week-based granularity along a given time period containing the capacity values."
+    },
+    {
+      "id": "urn:samm:io.catenax.week_based_capacity_group:2.0.0#changedAt",
+      "label": "changedAt",
+      "kind": "Property",
+      "preferredName": "Changed At",
+      "description": "Point in time when the content (any property according to the data model) of the capacity group was changed, at the supplier, either by a human user or an automated process."
+    },
+    {
+      "id": "urn:samm:io.catenax.week_based_capacity_group:2.0.0#linkedCapacityGroups",
+      "label": "linkedCapacityGroups",
+      "kind": "Property",
+      "preferredName": "Linked Capacity Groups",
+      "description": "A set of capacity groups linked to this capacity group."
+    },
+    {
+      "id": "urn:samm:io.catenax.week_based_capacity_group:2.0.0#unitOfMeasureIsOmitted",
+      "label": "unitOfMeasureIsOmitted",
+      "kind": "Property",
+      "preferredName": "Unit Of Measure Is Omitted",
+      "description": "Explicit indicator of whether the unit of measure is left out of the payload intentionally. If \"true\" it means the sending application sends demand values without unit of measure intentionally and the unit of measure MUST NOT be contained in the payload. If \"false\" a unit of measure MUST be supplied."
+    },
+    {
+      "id": "urn:samm:io.catenax.week_based_capacity_group:2.0.0#materialNumberCustomer",
+      "label": "materialNumberCustomer",
+      "kind": "Property",
+      "preferredName": "Customer Material Number",
+      "description": "Material identifier as assigned by customer. This material number identifies the material (as planned) in the customer's database."
+    },
+    {
+      "id": "urn:samm:io.catenax.week_based_capacity_group:2.0.0#materialNumberSupplier",
+      "label": "materialNumberSupplier",
+      "kind": "Property",
+      "preferredName": "Supplier Material Number",
+      "description": "Material identifier as assigned by supplier. This material number identifies the material (as planned) in the supplier's database. Used as informational field only, not for assigning demand series to capacity groups."
+    },
+    {
+      "id": "urn:samm:io.catenax.week_based_capacity_group:2.0.0#customerLocation",
+      "label": "customerLocation",
+      "kind": "Property",
+      "preferredName": "Customer Location",
+      "description": "The BPNS number of the site at which the customer needs the specified material for the referenced demand series."
+    },
+    {
+      "id": "urn:samm:io.catenax.week_based_capacity_group:2.0.0#demandCategory",
+      "label": "demandCategory",
+      "kind": "Property",
+      "preferredName": "Demand Category",
+      "description": "Type of demand of the referenced demand series."
+    },
+    {
+      "id": "urn:samm:io.catenax.week_based_capacity_group:2.0.0#loadFactor",
+      "label": "loadFactor",
+      "kind": "Property",
+      "preferredName": "Load Factor",
+      "description": "If existent, the load factor indicates that this material of the material demand collection takes a factor more or less intensity to produce."
+    },
+    {
+      "id": "urn:samm:io.catenax.week_based_capacity_group:2.0.0#pointInTime",
+      "label": "pointInTime",
+      "kind": "Property",
+      "preferredName": "Point in Time",
+      "description": "ISO Calendar Week of the given time series entry. Must be given as date of the monday in the week."
+    },
+    {
+      "id": "urn:samm:io.catenax.week_based_capacity_group:2.0.0#actualCapacity",
+      "label": "actualCapacity",
+      "kind": "Property",
+      "preferredName": "Actual Capacity",
+      "description": "The actual capacity is the realistically planned output per calendar week and material for a specific customer in a specific unit of measure, considering all positive or negative impacts on this capacity."
+    },
+    {
+      "id": "urn:samm:io.catenax.week_based_capacity_group:2.0.0#maximumCapacity",
+      "label": "maximumCapacity",
+      "kind": "Property",
+      "preferredName": "Maximum Capacity",
+      "description": "The supplier maximum capacity is the maximal available output per calendar week and material for a specific customer in a specific unit of measure. The maximum capacity thereby restricts the flexible capacity, as the flexible capacity is obtained from the difference of a suppliers maximum capacity minus actual capacity."
+    },
+    {
+      "id": "urn:samm:io.catenax.week_based_capacity_group:2.0.0#deltaProductionResult",
+      "label": "deltaProductionResult",
+      "kind": "Property",
+      "preferredName": "Delta Production Result",
+      "description": "Delta related to the aggregated material demand after pre-/post production calculation the supplier wants to send to the customer. Can be positive and negative."
+    },
+    {
+      "id": "urn:samm:io.catenax.week_based_capacity_group:2.0.0#demandCategoryCode",
+      "label": "demandCategoryCode",
+      "kind": "Property",
+      "preferredName": "Demand Category Code",
+      "description": "The code identifying a demand category."
+    },
+    {
+      "id": "urn:samm:io.catenax.week_based_capacity_group:2.0.0#demandCategoryName",
+      "label": "demandCategoryName",
+      "kind": "Property",
+      "preferredName": "Demand Category Name",
+      "description": "The name describing a demand category."
+    },
+    {
+      "id": "urn:samm:io.catenax.week_based_capacity_group:2.0.0#CapacityGroupName",
+      "label": "CapacityGroupName",
+      "kind": "Characteristic",
+      "preferredName": "Capacity Group Name",
+      "description": "The name of a capacity group, used to distinguish it from other capacity groups."
+    },
+    {
+      "id": "urn:samm:io.catenax.week_based_capacity_group:2.0.0#Timestamp",
+      "label": "Timestamp",
+      "kind": "Characteristic",
+      "preferredName": "Timestamp",
+      "description": "Point in time."
+    },
+    {
+      "id": "urn:samm:io.catenax.week_based_capacity_group:2.0.0#MaterialNumber",
+      "label": "MaterialNumber",
+      "kind": "Characteristic",
+      "preferredName": "Material Number",
+      "description": "The material number is a multi-character string, usually assigned by an ERP system."
+    },
+    {
+      "id": "urn:samm:io.catenax.week_based_capacity_group:2.0.0#LoadFactorCharacteristic",
+      "label": "LoadFactorCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Load Factor Characteristic",
+      "description": "Describes the data type of the load factor."
+    },
+    {
+      "id": "urn:samm:io.catenax.week_based_capacity_group:2.0.0#PointInTimeCharacteristic",
+      "label": "PointInTimeCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Point in Time Characteristic",
+      "description": "An ISO calendar week in which a given capacity will be provided. Must be given as date of the monday in the week."
+    },
+    {
+      "id": "urn:samm:io.catenax.week_based_capacity_group:2.0.0#DeltaProductionResultCharacteristic",
+      "label": "DeltaProductionResultCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Delta Production Result Characteristic",
+      "description": "Describes data type of a delta production result information."
+    },
+    {
+      "id": "urn:samm:io.catenax.week_based_capacity_group:2.0.0#Quantity",
+      "label": "Quantity",
+      "kind": "Characteristic",
+      "preferredName": "Quantity",
+      "description": "Quantity of weekly actual or maximum capacity."
+    },
+    {
+      "id": "urn:samm:io.catenax.week_based_capacity_group:2.0.0#SupplierLocationsCharacteristic",
+      "label": "SupplierLocationsCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Supplier Locations Characteristic",
+      "description": "Contains a set of locations the supplier fulfills a demand request from."
+    },
+    {
+      "id": "urn:samm:io.catenax.week_based_capacity_group:2.0.0#LinkedDemandSeriesSet",
+      "label": "LinkedDemandSeriesSet",
+      "kind": "Characteristic",
+      "preferredName": "Linked Demand Series Set",
+      "description": "A set of demand series assigned to a certain capacity group."
+    },
+    {
+      "id": "urn:samm:io.catenax.week_based_capacity_group:2.0.0#LinkedCapacityGroupsCharacteristic",
+      "label": "LinkedCapacityGroupsCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Linked Capacity Groups Characteristic",
+      "description": "Contains all capacity groups which are linked to the current one."
+    },
+    {
+      "id": "urn:samm:io.catenax.week_based_capacity_group:2.0.0#CapacityTimeSeries",
+      "label": "CapacityTimeSeries",
+      "kind": "Characteristic",
+      "preferredName": "Capacity Time Series",
+      "description": "The weekly actual and maximum capacities in a given time period."
+    },
+    {
+      "id": "urn:samm:io.catenax.week_based_capacity_group:2.0.0#BPNSTrait",
+      "label": "BPNSTrait",
+      "kind": "Characteristic",
+      "preferredName": "BPNS Trait",
+      "description": "Trait to ensure data format for BPNS."
+    },
+    {
+      "id": "urn:samm:io.catenax.week_based_capacity_group:2.0.0#UUIDv4IdTrait",
+      "label": "UUIDv4IdTrait",
+      "kind": "Characteristic",
+      "preferredName": "UUIDv4 Trait",
+      "description": "Trait to ensure data format for UUIDv4."
+    },
+    {
+      "id": "urn:samm:io.catenax.week_based_capacity_group:2.0.0#QuantityTrait",
+      "label": "QuantityTrait",
+      "kind": "Characteristic",
+      "preferredName": null,
+      "description": null
+    },
+    {
+      "id": "urn:samm:io.catenax.week_based_capacity_group:2.0.0#LinkedDemandSeries",
+      "label": "LinkedDemandSeries",
+      "kind": "Entity",
+      "preferredName": "Linked Demand Series",
+      "description": "Encapsulates information used to reference a specific demand series."
+    },
+    {
+      "id": "urn:samm:io.catenax.week_based_capacity_group:2.0.0#Capacity",
+      "label": "Capacity",
+      "kind": "Entity",
+      "preferredName": "Capacity",
+      "description": "A supplier's realistically planned output per calendar week and material for a specific customer in a specific unit of measure, considering all positive or negative impacts on this capacity."
+    },
+    {
+      "id": "urn:samm:io.catenax.week_based_capacity_group:2.0.0#DemandCategoryType",
+      "label": "DemandCategoryType",
+      "kind": "Entity",
+      "preferredName": "Demand Category Type",
+      "description": "Describes the type of a demand category."
+    },
+    {
+      "id": "urn:samm:io.catenax.week_based_capacity_group:2.0.0#DemandCategoryCharacteristic",
+      "label": "DemandCategoryCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Demand Category Characteristic",
+      "description": "The classification of demands used to prioritize or allocate capacities."
+    },
+    {
+      "id": "urn:samm:io.catenax.week_based_capacity_group:2.0.0#QuantityRange",
+      "label": "QuantityRange",
+      "kind": "Characteristic",
+      "preferredName": "Quantity Range",
+      "description": "Constraint to ensure a non-negative value for quantities."
+    },
+    {
+      "id": "urn:samm:io.catenax.week_based_capacity_group:2.0.0#QuantityFixedPoint",
+      "label": "QuantityFixedPoint",
+      "kind": "Characteristic",
+      "preferredName": "Quantity Fixed Point",
+      "description": "Constraint to ensure size of quantities: 12 digits plus 3 decimal places."
+    },
+    {
+      "id": "urn:samm:io.catenax.week_based_capacity_group:2.0.0#DemandCategoryCodeCharacteristic",
+      "label": "DemandCategoryCodeCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Demand Category Code Characteristic",
+      "description": "The code identifying a demand category."
+    }
+  ],
+  "links": [
+    {
+      "source": "urn:samm:io.catenax.week_based_capacity_group:2.0.0#WeekBasedCapacityGroup",
+      "target": "urn:samm:io.catenax.week_based_capacity_group:2.0.0#capacityGroupId",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.week_based_capacity_group:2.0.0#WeekBasedCapacityGroup",
+      "target": "urn:samm:io.catenax.week_based_capacity_group:2.0.0#name",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.week_based_capacity_group:2.0.0#WeekBasedCapacityGroup",
+      "target": "urn:samm:io.catenax.week_based_capacity_group:2.0.0#supplierLocations",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.week_based_capacity_group:2.0.0#WeekBasedCapacityGroup",
+      "target": "urn:samm:io.catenax.week_based_capacity_group:2.0.0#customer",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.week_based_capacity_group:2.0.0#WeekBasedCapacityGroup",
+      "target": "urn:samm:io.catenax.week_based_capacity_group:2.0.0#supplier",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.week_based_capacity_group:2.0.0#WeekBasedCapacityGroup",
+      "target": "urn:samm:io.catenax.week_based_capacity_group:2.0.0#unitOfMeasure",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.week_based_capacity_group:2.0.0#WeekBasedCapacityGroup",
+      "target": "urn:samm:io.catenax.week_based_capacity_group:2.0.0#linkedDemandSeries",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.week_based_capacity_group:2.0.0#WeekBasedCapacityGroup",
+      "target": "urn:samm:io.catenax.week_based_capacity_group:2.0.0#capacities",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.week_based_capacity_group:2.0.0#WeekBasedCapacityGroup",
+      "target": "urn:samm:io.catenax.week_based_capacity_group:2.0.0#changedAt",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.week_based_capacity_group:2.0.0#WeekBasedCapacityGroup",
+      "target": "urn:samm:io.catenax.week_based_capacity_group:2.0.0#linkedCapacityGroups",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.week_based_capacity_group:2.0.0#WeekBasedCapacityGroup",
+      "target": "urn:samm:io.catenax.week_based_capacity_group:2.0.0#unitOfMeasureIsOmitted",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.week_based_capacity_group:2.0.0#LinkedDemandSeries",
+      "target": "urn:samm:io.catenax.week_based_capacity_group:2.0.0#materialNumberCustomer",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.week_based_capacity_group:2.0.0#LinkedDemandSeries",
+      "target": "urn:samm:io.catenax.week_based_capacity_group:2.0.0#materialNumberSupplier",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.week_based_capacity_group:2.0.0#LinkedDemandSeries",
+      "target": "urn:samm:io.catenax.week_based_capacity_group:2.0.0#customerLocation",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.week_based_capacity_group:2.0.0#LinkedDemandSeries",
+      "target": "urn:samm:io.catenax.week_based_capacity_group:2.0.0#demandCategory",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.week_based_capacity_group:2.0.0#LinkedDemandSeries",
+      "target": "urn:samm:io.catenax.week_based_capacity_group:2.0.0#loadFactor",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.week_based_capacity_group:2.0.0#Capacity",
+      "target": "urn:samm:io.catenax.week_based_capacity_group:2.0.0#pointInTime",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.week_based_capacity_group:2.0.0#Capacity",
+      "target": "urn:samm:io.catenax.week_based_capacity_group:2.0.0#actualCapacity",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.week_based_capacity_group:2.0.0#Capacity",
+      "target": "urn:samm:io.catenax.week_based_capacity_group:2.0.0#maximumCapacity",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.week_based_capacity_group:2.0.0#Capacity",
+      "target": "urn:samm:io.catenax.week_based_capacity_group:2.0.0#deltaProductionResult",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.week_based_capacity_group:2.0.0#DemandCategoryType",
+      "target": "urn:samm:io.catenax.week_based_capacity_group:2.0.0#demandCategoryCode",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.week_based_capacity_group:2.0.0#DemandCategoryType",
+      "target": "urn:samm:io.catenax.week_based_capacity_group:2.0.0#demandCategoryName",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.week_based_capacity_group:2.0.0#name",
+      "target": "urn:samm:io.catenax.week_based_capacity_group:2.0.0#CapacityGroupName",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.week_based_capacity_group:2.0.0#supplierLocations",
+      "target": "urn:samm:io.catenax.week_based_capacity_group:2.0.0#SupplierLocationsCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.week_based_capacity_group:2.0.0#linkedDemandSeries",
+      "target": "urn:samm:io.catenax.week_based_capacity_group:2.0.0#LinkedDemandSeriesSet",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.week_based_capacity_group:2.0.0#capacities",
+      "target": "urn:samm:io.catenax.week_based_capacity_group:2.0.0#CapacityTimeSeries",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.week_based_capacity_group:2.0.0#changedAt",
+      "target": "urn:samm:io.catenax.week_based_capacity_group:2.0.0#Timestamp",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.week_based_capacity_group:2.0.0#linkedCapacityGroups",
+      "target": "urn:samm:io.catenax.week_based_capacity_group:2.0.0#LinkedCapacityGroupsCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.week_based_capacity_group:2.0.0#materialNumberCustomer",
+      "target": "urn:samm:io.catenax.week_based_capacity_group:2.0.0#MaterialNumber",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.week_based_capacity_group:2.0.0#materialNumberSupplier",
+      "target": "urn:samm:io.catenax.week_based_capacity_group:2.0.0#MaterialNumber",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.week_based_capacity_group:2.0.0#demandCategory",
+      "target": "urn:samm:io.catenax.week_based_capacity_group:2.0.0#DemandCategoryCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.week_based_capacity_group:2.0.0#loadFactor",
+      "target": "urn:samm:io.catenax.week_based_capacity_group:2.0.0#LoadFactorCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.week_based_capacity_group:2.0.0#pointInTime",
+      "target": "urn:samm:io.catenax.week_based_capacity_group:2.0.0#PointInTimeCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.week_based_capacity_group:2.0.0#actualCapacity",
+      "target": "urn:samm:io.catenax.week_based_capacity_group:2.0.0#QuantityTrait",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.week_based_capacity_group:2.0.0#maximumCapacity",
+      "target": "urn:samm:io.catenax.week_based_capacity_group:2.0.0#QuantityTrait",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.week_based_capacity_group:2.0.0#deltaProductionResult",
+      "target": "urn:samm:io.catenax.week_based_capacity_group:2.0.0#DeltaProductionResultCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.week_based_capacity_group:2.0.0#demandCategoryCode",
+      "target": "urn:samm:io.catenax.week_based_capacity_group:2.0.0#DemandCategoryCodeCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.week_based_capacity_group:2.0.0#LinkedDemandSeriesSet",
+      "target": "urn:samm:io.catenax.week_based_capacity_group:2.0.0#LinkedDemandSeries",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.week_based_capacity_group:2.0.0#CapacityTimeSeries",
+      "target": "urn:samm:io.catenax.week_based_capacity_group:2.0.0#Capacity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.week_based_capacity_group:2.0.0#DemandCategoryCharacteristic",
+      "target": "urn:samm:io.catenax.week_based_capacity_group:2.0.0#DemandCategoryType",
+      "label": "dataType",
+      "optional": false
+    }
+  ]
+}

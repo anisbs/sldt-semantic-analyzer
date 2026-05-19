@@ -1,0 +1,2195 @@
+{
+  "meta": {
+    "namespace": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#",
+    "meta_model": "BAMM 1.0.0",
+    "path": "data/sldt-semantic-models/io.catenax.battery.battery_pass/3.0.1/BatteryPass.ttl"
+  },
+  "nodes": [
+    {
+      "id": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#BatteryPass",
+      "label": "BatteryPass",
+      "kind": "Aspect",
+      "preferredName": "battery pass",
+      "description": "The battery pass describes information collected during the lifecycle of a battery"
+    },
+    {
+      "id": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#document",
+      "label": "document",
+      "kind": "Property",
+      "preferredName": "document",
+      "description": "Set of documents containing the description of battery components"
+    },
+    {
+      "id": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#manufacturer",
+      "label": "manufacturer",
+      "kind": "Property",
+      "preferredName": "manufacturer",
+      "description": "Legal entity which sells and invoices the battery"
+    },
+    {
+      "id": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#electrochemicalProperties",
+      "label": "electrochemicalProperties",
+      "kind": "Property",
+      "preferredName": "electrochemical properties",
+      "description": "Electrochemical properties of an electrochemical energy storage"
+    },
+    {
+      "id": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#physicalDimensions",
+      "label": "physicalDimensions",
+      "kind": "Property",
+      "preferredName": "physical dimensions",
+      "description": "Geometrical properties of the battery"
+    },
+    {
+      "id": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#stateOfBattery",
+      "label": "stateOfBattery",
+      "kind": "Property",
+      "preferredName": "state of battery",
+      "description": "The condition of the battery at the end of life i.e. when entering recycling scheme"
+    },
+    {
+      "id": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#batteryIdentification",
+      "label": "batteryIdentification",
+      "kind": "Property",
+      "preferredName": "battery identification",
+      "description": "Information to identify a specific battery."
+    },
+    {
+      "id": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#manufacturing",
+      "label": "manufacturing",
+      "kind": "Property",
+      "preferredName": "manufacturing",
+      "description": "Information about the manufacturing process of a battery"
+    },
+    {
+      "id": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#datePlacedOnMarket",
+      "label": "datePlacedOnMarket",
+      "kind": "Property",
+      "preferredName": "date placed on market",
+      "description": "Date on which vehicle is produced i.e. when battery is put in the market or production date of the vehicle is describing a regulatory requirement."
+    },
+    {
+      "id": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#cellChemistry",
+      "label": "cellChemistry",
+      "kind": "Property",
+      "preferredName": "cell chemistry",
+      "description": "Information about the cell chemistry of a battery cell"
+    },
+    {
+      "id": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#composition",
+      "label": "composition",
+      "kind": "Property",
+      "preferredName": "composition",
+      "description": "Information about the composition of a battery and the combination of materials is describing a business requirement."
+    },
+    {
+      "id": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#cO2FootprintTotal",
+      "label": "cO2FootprintTotal",
+      "kind": "Property",
+      "preferredName": "CO2 footprint total",
+      "description": "The total carbon footprint of the battery, calculated as kg of carbon dioxide equivalent is describing a regulatory requirement."
+    },
+    {
+      "id": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#temperatureRangeIdleState",
+      "label": "temperatureRangeIdleState",
+      "kind": "Property",
+      "preferredName": "temperature range idle state",
+      "description": "The range of temperature the battery can withstand when not in use is describing a regulatory requirement."
+    },
+    {
+      "id": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#warrantyPeriod",
+      "label": "warrantyPeriod",
+      "kind": "Property",
+      "preferredName": "warranty period",
+      "description": "Commercial warranty period of the battery is describing a regulatory requirement."
+    },
+    {
+      "id": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#batteryCycleLife",
+      "label": "batteryCycleLife",
+      "kind": "Property",
+      "preferredName": "battery cycle life",
+      "description": "Property describing the cycle life of a battery"
+    },
+    {
+      "id": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#packagingInstructions",
+      "label": "packagingInstructions",
+      "kind": "Property",
+      "preferredName": "packaging instructions",
+      "description": "Instructions for safely packaging batteries is describing a business requirement."
+    },
+    {
+      "id": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#transportationInstructions",
+      "label": "transportationInstructions",
+      "kind": "Property",
+      "preferredName": "transportation instructions",
+      "description": "Instructions for safely transporting batteries is describing a business requirement."
+    },
+    {
+      "id": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#vehicleDismantlingProcedure",
+      "label": "vehicleDismantlingProcedure",
+      "kind": "Property",
+      "preferredName": "vehicle dismantling procedure",
+      "description": "Document containing the vehicle dismantling procedure is describing a regulatory requirement."
+    },
+    {
+      "id": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#batteryDismantlingProcedure",
+      "label": "batteryDismantlingProcedure",
+      "kind": "Property",
+      "preferredName": "battery dismantling procedure",
+      "description": "Document containing the battery dismantling procedure is describing a regulatory requirement."
+    },
+    {
+      "id": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#safetyMeasures",
+      "label": "safetyMeasures",
+      "kind": "Property",
+      "preferredName": "safety measures",
+      "description": "Safety measures document(s) is describing a regulatory requirement."
+    },
+    {
+      "id": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#testReportsResults",
+      "label": "testReportsResults",
+      "kind": "Property",
+      "preferredName": "test reports results",
+      "description": "Results of test reports which prove that the battery fulfills this regulation and its delegated regulations is describing a regulatory requirement."
+    },
+    {
+      "id": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#declarationOfConformity",
+      "label": "declarationOfConformity",
+      "kind": "Property",
+      "preferredName": "declaration of conformity",
+      "description": "Declaration of conformity (CE) is describing a regulatory requirement."
+    },
+    {
+      "id": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#responsibleSourcing",
+      "label": "responsibleSourcing",
+      "kind": "Property",
+      "preferredName": "responsible sourcing",
+      "description": "Document/Certificates on organizations compliance to ethical business practices"
+    },
+    {
+      "id": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#name",
+      "label": "name",
+      "kind": "Property",
+      "preferredName": "name",
+      "description": "Name of the manufacturer is describing a regulatory requirement."
+    },
+    {
+      "id": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#contact",
+      "label": "contact",
+      "kind": "Property",
+      "preferredName": "contact",
+      "description": "Contact details of the manufacturer"
+    },
+    {
+      "id": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#address",
+      "label": "address",
+      "kind": "Property",
+      "preferredName": "address",
+      "description": "An postal address"
+    },
+    {
+      "id": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#batteryPower",
+      "label": "batteryPower",
+      "kind": "Property",
+      "preferredName": "attachment",
+      "description": "Characteristic to describe the power (W) properties of the battery."
+    },
+    {
+      "id": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#batteryVoltage",
+      "label": "batteryVoltage",
+      "kind": "Property",
+      "preferredName": "battery voltage",
+      "description": "Voltage (V) of the battery."
+    },
+    {
+      "id": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#ratedCapacity",
+      "label": "ratedCapacity",
+      "kind": "Property",
+      "preferredName": "rated capacity",
+      "description": "The total number of ampere-hours (Ah) that can be withdrawn from a fully charged battery under specific conditions is describing a regulatory requirement."
+    },
+    {
+      "id": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#capacityFade",
+      "label": "capacityFade",
+      "kind": "Property",
+      "preferredName": "capacity fade",
+      "description": "The decrease over time and upon usage in the amount of charge that a battery can deliver at the rated voltage, with respect to the original rated capacity declared by the manufacturer is describing a regulatory requirement."
+    },
+    {
+      "id": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#internalResistance",
+      "label": "internalResistance",
+      "kind": "Property",
+      "preferredName": "internal resistance",
+      "description": "Internal resistance in a battery cell or pack is describing a regulatory requirement."
+    },
+    {
+      "id": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#capacityThresholdExhaustion",
+      "label": "capacityThresholdExhaustion",
+      "kind": "Property",
+      "preferredName": "capacity threshold exhaustion",
+      "description": "Capacity threshold for exhaustion as percentage value is describing a regulatory requirement."
+    },
+    {
+      "id": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#batteryEnergy",
+      "label": "batteryEnergy",
+      "kind": "Property",
+      "preferredName": "battery energy",
+      "description": "Characteristic to describe the energy (kWh) properties of the battery."
+    },
+    {
+      "id": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#ratioMaximumAllowedBatteryPowerAndMaximumAllowedBatteryEnergy",
+      "label": "ratioMaximumAllowedBatteryPowerAndMaximumAllowedBatteryEnergy",
+      "kind": "Property",
+      "preferredName": "ratio maximum allowed battery power and maximum allowed battery energy",
+      "description": "Ratio between maximum allowed battery power (W) and battery energy (Wh) is describing a regulatory requirement."
+    },
+    {
+      "id": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#length",
+      "label": "length",
+      "kind": "Property",
+      "preferredName": "length",
+      "description": "Length of the item is describing a business requirement."
+    },
+    {
+      "id": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#width",
+      "label": "width",
+      "kind": "Property",
+      "preferredName": "width",
+      "description": "Width of the item is describing a business requirement."
+    },
+    {
+      "id": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#height",
+      "label": "height",
+      "kind": "Property",
+      "preferredName": "height",
+      "description": "Height of the item is describing a business requirement."
+    },
+    {
+      "id": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#diameter",
+      "label": "diameter",
+      "kind": "Property",
+      "preferredName": "diameter",
+      "description": "Diameter of the item."
+    },
+    {
+      "id": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#weight",
+      "label": "weight",
+      "kind": "Property",
+      "preferredName": "weight",
+      "description": "Weight of the item is describing a regulatory requirement."
+    },
+    {
+      "id": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#stateOfHealth",
+      "label": "stateOfHealth",
+      "kind": "Property",
+      "preferredName": "state of health",
+      "description": "Evidence/Certificate of the health evaluation of a battery for its use following repurposing or remanufacturing operations is describing a business requirement."
+    },
+    {
+      "id": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#stateOfCharge",
+      "label": "stateOfCharge",
+      "kind": "Property",
+      "preferredName": "state of charge",
+      "description": "The value of the state of charge of the battery at the end of life i.e. when entering recycling scheme is describing a business requirement."
+    },
+    {
+      "id": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#statusBattery",
+      "label": "statusBattery",
+      "kind": "Property",
+      "preferredName": "status battery",
+      "description": "Status of the battery is describing a regulatory requirement. Value list provided by the regulators."
+    },
+    {
+      "id": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#batteryType",
+      "label": "batteryType",
+      "kind": "Property",
+      "preferredName": "battery type",
+      "description": "Battery type as described by the contents of the battery e.g. cell chemistry is describing a regulatory requirement."
+    },
+    {
+      "id": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#batteryModel",
+      "label": "batteryModel",
+      "kind": "Property",
+      "preferredName": "battery model",
+      "description": "Battery type as described by the contents of the battery e.g. cell chemistry is describing a regulatory requirement."
+    },
+    {
+      "id": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#batteryIDDMCCode",
+      "label": "batteryIDDMCCode",
+      "kind": "Property",
+      "preferredName": "battery ID DMC code",
+      "description": "Digital Matrix Code (DMC) of the battery i.e. serial number allowing for unequivocal identification of a battery is describing a regulatory requirement."
+    },
+    {
+      "id": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#dateOfManufacturing",
+      "label": "dateOfManufacturing",
+      "kind": "Property",
+      "preferredName": "date of manufacturing",
+      "description": "Manufacturing date of the battery is describing a regulatory requirement."
+    },
+    {
+      "id": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#cathodeActiveMaterials",
+      "label": "cathodeActiveMaterials",
+      "kind": "Property",
+      "preferredName": "cathode active materials",
+      "description": "The total amount of valuable materials contained in CAM material: Nickel, Cobalt, Lithium."
+    },
+    {
+      "id": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#recyclateContentActiveMaterials",
+      "label": "recyclateContentActiveMaterials",
+      "kind": "Property",
+      "preferredName": "recyclate content active materials",
+      "description": "List of recovered Recyclate Content in Active Material Recycled is describing a regulatory requirement. The following materials have to be reported on as a minimium: Cobalt, Lithium, Nickel, Lead"
+    },
+    {
+      "id": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#anodeActiveMaterials",
+      "label": "anodeActiveMaterials",
+      "kind": "Property",
+      "preferredName": "anode active materials",
+      "description": "The total amount of valuable materials contained in Anode: graphite"
+    },
+    {
+      "id": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#cathodeCompositionOther",
+      "label": "cathodeCompositionOther",
+      "kind": "Property",
+      "preferredName": "cathode composition other",
+      "description": "The composition or materials contained in the Cathode is describing a regulatory requirement."
+    },
+    {
+      "id": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#anodeCompositionOther",
+      "label": "anodeCompositionOther",
+      "kind": "Property",
+      "preferredName": "anode composition other",
+      "description": "The composition or materials contained in the anode is describing a regulatory requirement."
+    },
+    {
+      "id": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#electrolyteComposition",
+      "label": "electrolyteComposition",
+      "kind": "Property",
+      "preferredName": "electrolyte composition",
+      "description": "List of materials contained in the electrolyte is describing a regulatory requirement."
+    },
+    {
+      "id": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#components",
+      "label": "components",
+      "kind": "Property",
+      "preferredName": "components",
+      "description": "Properties of the battery's comoponents."
+    },
+    {
+      "id": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#compositionOfBattery",
+      "label": "compositionOfBattery",
+      "kind": "Property",
+      "preferredName": "composition of battery",
+      "description": "Full composition of battery is describing a business requirement."
+    },
+    {
+      "id": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#criticalRawMaterials",
+      "label": "criticalRawMaterials",
+      "kind": "Property",
+      "preferredName": "critical raw materials",
+      "description": "List of critical raw materials (CRM) as specified by EU in a battery is describing a regulatory requirement."
+    },
+    {
+      "id": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#temperatureRangeIdleStateLowerLimit",
+      "label": "temperatureRangeIdleStateLowerLimit",
+      "kind": "Property",
+      "preferredName": "temperature range idle state lower limit",
+      "description": "The lower range of temperature the battery can withstand when not in use is describing a regulatory requirement."
+    },
+    {
+      "id": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#temperatureRangeIdleStateUpperLimit",
+      "label": "temperatureRangeIdleStateUpperLimit",
+      "kind": "Property",
+      "preferredName": "temperature rangeIdle state upper limit",
+      "description": "The upper range of temperature the battery can withstand when not in use is describing a regulatory requirement."
+    },
+    {
+      "id": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#cycleLifeTestCRate",
+      "label": "cycleLifeTestCRate",
+      "kind": "Property",
+      "preferredName": "cycle life test c-rate",
+      "description": "C-rate of Relevant Cycle-life Test is describing a regulatory requirement."
+    },
+    {
+      "id": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#cycleLifeTestDepthOfDischarge",
+      "label": "cycleLifeTestDepthOfDischarge",
+      "kind": "Property",
+      "preferredName": "cycle-life test depth of discharge",
+      "description": "Depth of discharge in the cycle-life test is describing a regulatory requirement."
+    },
+    {
+      "id": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#expectedLifetime",
+      "label": "expectedLifetime",
+      "kind": "Property",
+      "preferredName": "expected lifetime",
+      "description": "Expected battery lifetime expressed in cycles, and reference test used is describing a regulatory requirement."
+    },
+    {
+      "id": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#fileLocation",
+      "label": "fileLocation",
+      "kind": "Property",
+      "preferredName": "file location",
+      "description": "Location of the file"
+    },
+    {
+      "id": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#title",
+      "label": "title",
+      "kind": "Property",
+      "preferredName": "title",
+      "description": "Title of the attached file"
+    },
+    {
+      "id": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#maximumAllowedBatteryPower",
+      "label": "maximumAllowedBatteryPower",
+      "kind": "Property",
+      "preferredName": "maximum allowed battery power",
+      "description": "Maximum allowed battery power (W) of the battery is describing a business requirement."
+    },
+    {
+      "id": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#powerFade",
+      "label": "powerFade",
+      "kind": "Property",
+      "preferredName": "maximum allowed battery power",
+      "description": "Maximum allowed battery power (W) of the battery is describing a business requirement."
+    },
+    {
+      "id": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#powerCapabilityAt20Charge",
+      "label": "powerCapabilityAt20Charge",
+      "kind": "Property",
+      "preferredName": "power capability at 20 charge",
+      "description": "Power (capability) at 20% state of charge. Description from the regulation is describing a regulatory requirement."
+    },
+    {
+      "id": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#powerCapabilityAt80Charge",
+      "label": "powerCapabilityAt80Charge",
+      "kind": "Property",
+      "preferredName": "power capability at 80 charge",
+      "description": "Power (capability) at 80% state of charge. Description from the regulation is describing a regulatory requirement."
+    },
+    {
+      "id": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#originalPowerCapability",
+      "label": "originalPowerCapability",
+      "kind": "Property",
+      "preferredName": "original power capability",
+      "description": "Performance ability of the high voltage battery i.e. the amount of energy that a battery is capable to provide over a given period of time is describing a regulatory requirement."
+    },
+    {
+      "id": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#originalPowerCapabilityLimits",
+      "label": "originalPowerCapabilityLimits",
+      "kind": "Property",
+      "preferredName": "original power capability limits",
+      "description": "Performance ability of the high voltage battery according to limits i.e. how much power it can provide within given limits is describing a regulatory requirement."
+    },
+    {
+      "id": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#minVoltage",
+      "label": "minVoltage",
+      "kind": "Property",
+      "preferredName": "min voltage",
+      "description": "Value of the minimal voltage the battery is rated for is describing a regulatory requirement."
+    },
+    {
+      "id": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#nominalVoltage",
+      "label": "nominalVoltage",
+      "kind": "Property",
+      "preferredName": "nominal voltage",
+      "description": "Value of the nominal voltage the battery is rated for is describing a regulatory requirement."
+    },
+    {
+      "id": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#maxVoltage",
+      "label": "maxVoltage",
+      "kind": "Property",
+      "preferredName": "max voltage",
+      "description": "Value of the maximum voltage the battery is rated for is describing a regulatory requirement."
+    },
+    {
+      "id": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#cellInternalResistance",
+      "label": "cellInternalResistance",
+      "kind": "Property",
+      "preferredName": "cell internal resistance",
+      "description": "The resistance offered by the cell in the flow of the current"
+    },
+    {
+      "id": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#packInternalResistance",
+      "label": "packInternalResistance",
+      "kind": "Property",
+      "preferredName": "pack internal resistance",
+      "description": "Total internal resistance in a battery pack is describing a regulatory requirement."
+    },
+    {
+      "id": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#packInternalResistanceIncrease",
+      "label": "packInternalResistanceIncrease",
+      "kind": "Property",
+      "preferredName": "pack internal resistanceIncrease",
+      "description": "Increase in internal resistance of a battery pack over a period of time is describing a regulatory requirement."
+    },
+    {
+      "id": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#maximumAllowedBatteryEnergy",
+      "label": "maximumAllowedBatteryEnergy",
+      "kind": "Property",
+      "preferredName": "maximum allowed battery energy",
+      "description": "Maximum allowed battery energy (Wh) of the battery is describing a regulatory requirement."
+    },
+    {
+      "id": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#energyRoundtripEfficiency",
+      "label": "energyRoundtripEfficiency",
+      "kind": "Property",
+      "preferredName": "energy roundtrip efficiency",
+      "description": "Round-trip efficiency is the percentage of electricity put into storage is describing a regulatory requirement."
+    },
+    {
+      "id": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#energyRoundtripEfficiencyChange",
+      "label": "energyRoundtripEfficiencyChange",
+      "kind": "Property",
+      "preferredName": "energy roundtrip efficiency change",
+      "description": "Round-trip efficiency is the percentage of electricity put into storage is describing a regulatory requirement."
+    },
+    {
+      "id": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#materialPercentageMassFraction",
+      "label": "materialPercentageMassFraction",
+      "kind": "Property",
+      "preferredName": "material percentage mass fraction",
+      "description": "Percentage mass fraction of a material."
+    },
+    {
+      "id": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#materialWeight",
+      "label": "materialWeight",
+      "kind": "Property",
+      "preferredName": "material weight",
+      "description": "Weight of the material (in gram)"
+    },
+    {
+      "id": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#materialName",
+      "label": "materialName",
+      "kind": "Property",
+      "preferredName": "material name",
+      "description": "Name of the material"
+    },
+    {
+      "id": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#componentsSupplier",
+      "label": "componentsSupplier",
+      "kind": "Property",
+      "preferredName": "components supplier",
+      "description": "Contact details of the suppliers of replacement parts / spare parts is describing a regulatory requirement. Available fields should be like:\nName - Street - Number - ZIP Code - City - State - Country - Phone - Fax - Email - Website"
+    },
+    {
+      "id": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#componentsPartNumber",
+      "label": "componentsPartNumber",
+      "kind": "Property",
+      "preferredName": "components part number",
+      "description": "The unique serial numbers of the different parts of a battery is describing a regulatory requirement."
+    },
+    {
+      "id": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#componentsSupplierName",
+      "label": "componentsSupplierName",
+      "kind": "Property",
+      "preferredName": "components supplier name",
+      "description": "Name of the components supplier"
+    },
+    {
+      "id": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#DocumentCharacteristic",
+      "label": "DocumentCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "document characteristic",
+      "description": "Set of documents containing the description of battery components"
+    },
+    {
+      "id": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#ManufacturerCharacteristic",
+      "label": "ManufacturerCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "manufacturer characteristic",
+      "description": "A manufacturer of goods"
+    },
+    {
+      "id": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#ElectrochemicalPropertiesCharacteristic",
+      "label": "ElectrochemicalPropertiesCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "electrochemical properties characteristic",
+      "description": "Electrochemical characteristics to describe a battery"
+    },
+    {
+      "id": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#PhysicalDimensionsCharacteristic",
+      "label": "PhysicalDimensionsCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "physical dimensions characteristic",
+      "description": "Geometrical properties of the battery"
+    },
+    {
+      "id": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#StateOfBatteryCharacteristic",
+      "label": "StateOfBatteryCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "state of battery characteristic",
+      "description": "The condition of the battery at the end of life i.e. when entering recycling scheme"
+    },
+    {
+      "id": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#BatteryIdentificationCharacteristic",
+      "label": "BatteryIdentificationCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "battery identification characteristic",
+      "description": "Information to identify a specific battery."
+    },
+    {
+      "id": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#ManufacturingCharacteristic",
+      "label": "ManufacturingCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "manufacturing characteristic",
+      "description": "Information about the manufacturing process of a battery"
+    },
+    {
+      "id": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#Datestamp",
+      "label": "Datestamp",
+      "kind": "Characteristic",
+      "preferredName": "datestamp",
+      "description": "Describes a Property which contains the date and time with an optional timezone."
+    },
+    {
+      "id": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#CellChemistryCharacteristic",
+      "label": "CellChemistryCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "cell chemistry",
+      "description": "Information about the the cell chemistry of a battery cell"
+    },
+    {
+      "id": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#CompositionCharacteristic",
+      "label": "CompositionCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "composition",
+      "description": "Information about the composition of a battery and the combination of materials is describing a business requirement."
+    },
+    {
+      "id": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#TemperatureRangeIdleStateCharacterisitic",
+      "label": "TemperatureRangeIdleStateCharacterisitic",
+      "kind": "Characteristic",
+      "preferredName": "temperature range idle state",
+      "description": "The range of temperature the battery can withstand when not in use is describing a regulatory requirement."
+    },
+    {
+      "id": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#BatteryCycleLifeCharacteristic",
+      "label": "BatteryCycleLifeCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "battery cycle life",
+      "description": "Characteristic describing the cycle life of a battery"
+    },
+    {
+      "id": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#BatteryPowerCharacteristic",
+      "label": "BatteryPowerCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "battery power characteristic",
+      "description": "Characteristic to describe the power (W) properties of the battery."
+    },
+    {
+      "id": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#BatteryVoltageCharacteristic",
+      "label": "BatteryVoltageCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "BatteryVoltageCharacteristic",
+      "description": "Characteristic to describe the voltage (V) properties of the battery."
+    },
+    {
+      "id": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#InternalResistanceCharacteristic",
+      "label": "InternalResistanceCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "internal resistance",
+      "description": "Internal resistance in a battery cell or pack is describing a regulatory requirement."
+    },
+    {
+      "id": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#BatteryEnergyCharacterisitc",
+      "label": "BatteryEnergyCharacterisitc",
+      "kind": "Characteristic",
+      "preferredName": "battery energy characterisitc",
+      "description": "Characteristic to describe the energy (kWh) properties of the battery."
+    },
+    {
+      "id": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#RatioMaximumAllowedBatteryPowerAndMaximumAllowedBatteryEnergyCharacterisitic",
+      "label": "RatioMaximumAllowedBatteryPowerAndMaximumAllowedBatteryEnergyCharacterisitic",
+      "kind": "Characteristic",
+      "preferredName": "ratio maximum allowed battery power and maximum allowed battery energy characterisitic",
+      "description": "Ratio between maximum allowed battery power (W) and battery energy (Wh) is describing a regulatory requirement."
+    },
+    {
+      "id": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#ComponentsCharacteristic",
+      "label": "ComponentsCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "components",
+      "description": "Characteristics of the battery's comoponents."
+    },
+    {
+      "id": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#CriticalRawMaterialsCharacteristic",
+      "label": "CriticalRawMaterialsCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "critical raw materials",
+      "description": "List of critical raw materials (CRM) as specified by EU in a battery is describing a regulatory requirement."
+    },
+    {
+      "id": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#CycleLifeTestCRateCharacterisitc",
+      "label": "CycleLifeTestCRateCharacterisitc",
+      "kind": "Characteristic",
+      "preferredName": "cycle life test c-rate",
+      "description": "C-rate of Relevant Cycle-life Test is describing a regulatory requirement."
+    },
+    {
+      "id": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#FileLocationCharacteristic",
+      "label": "FileLocationCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "file location",
+      "description": "The path to the file"
+    },
+    {
+      "id": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#CO2FootprintTotalCharacteristic",
+      "label": "CO2FootprintTotalCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "co2 footprint total",
+      "description": "The total carbon footprint of the battery, calculated as kg of carbon dioxide equivalent is describing a regulatory requirement."
+    },
+    {
+      "id": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#WarrantyPeriodCharacterisitic",
+      "label": "WarrantyPeriodCharacterisitic",
+      "kind": "Characteristic",
+      "preferredName": "warranty period",
+      "description": "Commercial warranty period of the battery is describing a regulatory requirement."
+    },
+    {
+      "id": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#RatedCapacityCharacteristic",
+      "label": "RatedCapacityCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "rated capacity characteristic",
+      "description": "The total number of ampere-hours (Ah) that can be withdrawn from a fully charged battery under specific conditions is describing a regulatory requirement."
+    },
+    {
+      "id": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#CapacityFadeCharacteristic",
+      "label": "CapacityFadeCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "capacity fade characteristic",
+      "description": "The decrease over time and upon usage in the amount of charge that a battery can deliver at the rated voltage, with respect to the original rated capacity declared by the manufacturer is describing a regulatory requirement."
+    },
+    {
+      "id": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#CapacityThresholdExhaustionCharacterisitic",
+      "label": "CapacityThresholdExhaustionCharacterisitic",
+      "kind": "Characteristic",
+      "preferredName": "capacity threshold exhaustion characterisitic",
+      "description": "Capacity threshold for exhaustion as percentage value is describing a regulatory requirement."
+    },
+    {
+      "id": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#MillimetreCharacteristic",
+      "label": "MillimetreCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "millimetre characteristic",
+      "description": "A measurment for the length/width/height of an item."
+    },
+    {
+      "id": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#KilogramCharacteristic",
+      "label": "KilogramCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "kilogram characteristic",
+      "description": "A measurement for the weight of an item."
+    },
+    {
+      "id": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#StateOfHealthCharacteristic",
+      "label": "StateOfHealthCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "state of health characteristic",
+      "description": "Evidence/Certificate of the health evaluation of a battery for its use following repurposing or remanufacturing operations is describing a business requirement."
+    },
+    {
+      "id": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#StateOfChargeCharacteristic",
+      "label": "StateOfChargeCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "state of charge characteristic",
+      "description": "The value of the state of charge of the battery at the end of life i.e. when entering recycling scheme is describing a business requirement."
+    },
+    {
+      "id": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#TemperatureRangeCharacterisitic",
+      "label": "TemperatureRangeCharacterisitic",
+      "kind": "Characteristic",
+      "preferredName": "temperature range",
+      "description": "The lower range of temperature the battery can withstand when not in use is describing a regulatory requirement."
+    },
+    {
+      "id": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#CycleLifeTestDepthOfDischargeCharacteristic",
+      "label": "CycleLifeTestDepthOfDischargeCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "cycle life test depth of discharge",
+      "description": "Depth of discharge in the cycle-life test is describing a regulatory requirement."
+    },
+    {
+      "id": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#ExpectedLifetime",
+      "label": "ExpectedLifetime",
+      "kind": "Characteristic",
+      "preferredName": "expected lifetime",
+      "description": "Expected battery lifetime expressed in cycles, and reference test used is describing a regulatory requirement."
+    },
+    {
+      "id": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#PowerCharacteristic",
+      "label": "PowerCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "power characteristic",
+      "description": "Power capability in kilowatts"
+    },
+    {
+      "id": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#PowerFadeCharacteristic",
+      "label": "PowerFadeCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "power fade characteristic",
+      "description": "The decrease over time and upon usage in the amount of power that a battery can deliver at the rated voltage is describing a regulatory requirement."
+    },
+    {
+      "id": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#VoltCharacteristic",
+      "label": "VoltCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "volt characteristic",
+      "description": "Value of the voltage the battery is rated for"
+    },
+    {
+      "id": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#MilliohmCharacteristic",
+      "label": "MilliohmCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "milliohm characteristic",
+      "description": "The resistance offered by the cell in the flow of the current"
+    },
+    {
+      "id": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#OhmCharacterisitic",
+      "label": "OhmCharacterisitic",
+      "kind": "Characteristic",
+      "preferredName": "ohm characterisitic",
+      "description": "Total internal resistance in a battery pack"
+    },
+    {
+      "id": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#PercentCharacteristic",
+      "label": "PercentCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "percent characteristic",
+      "description": "Increase in internal resistance of a battery pack over a period of time"
+    },
+    {
+      "id": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#MaximumAllowedBatteryEnergyCharacteristic",
+      "label": "MaximumAllowedBatteryEnergyCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "maximum allowed battery energy",
+      "description": "Characteristic to describe the energy (Wh) properties of the battery is describing a regulatory requirement."
+    },
+    {
+      "id": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#EnergyRoundtripEfficiency",
+      "label": "EnergyRoundtripEfficiency",
+      "kind": "Characteristic",
+      "preferredName": "energy roundtrip efficiency",
+      "description": "Round-trip efficiency is the percentage of electricity put into storage is describing a regulatory requirement."
+    },
+    {
+      "id": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#EnergyRoundtripEfficiencyChangeCharacterisitic",
+      "label": "EnergyRoundtripEfficiencyChangeCharacterisitic",
+      "kind": "Characteristic",
+      "preferredName": "energy roundtrip efficiency change",
+      "description": "Round-trip efficiency is the percentage of electricity put into storage after 50% of life of the battery is describing a regulatory requirement."
+    },
+    {
+      "id": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#materialPercentageMassFractionCharacteristic",
+      "label": "materialPercentageMassFractionCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "material percentage mass fraction",
+      "description": "Percentage mass fraction of a material"
+    },
+    {
+      "id": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#GramCharacteristic",
+      "label": "GramCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "gram characteristic",
+      "description": "Weight of the material (in gram)"
+    },
+    {
+      "id": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#DocumentEntity",
+      "label": "DocumentEntity",
+      "kind": "Entity",
+      "preferredName": "document entity",
+      "description": "Entity encapsulating the details of a attachment for the battery"
+    },
+    {
+      "id": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#ManufacturerEntity",
+      "label": "ManufacturerEntity",
+      "kind": "Entity",
+      "preferredName": "manufacturer",
+      "description": "Entity encapsulating the details of a manufacturer of goods"
+    },
+    {
+      "id": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#ElectrochemicalPropertiesEntity",
+      "label": "ElectrochemicalPropertiesEntity",
+      "kind": "Entity",
+      "preferredName": "electrochemical properties entity",
+      "description": "Entity encapsulating the electrochemical details of a battery"
+    },
+    {
+      "id": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#PhysicalDimensionsEntity",
+      "label": "PhysicalDimensionsEntity",
+      "kind": "Entity",
+      "preferredName": "physical dimensions entity",
+      "description": "Entity to bundle the characterisitics describing the physical dimensions"
+    },
+    {
+      "id": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#StateOfBatteryEntity",
+      "label": "StateOfBatteryEntity",
+      "kind": "Entity",
+      "preferredName": "state of battery entity",
+      "description": "Entity to bundle the characterisitics describing the state of a battery"
+    },
+    {
+      "id": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#BatteryIdentificationEntity",
+      "label": "BatteryIdentificationEntity",
+      "kind": "Entity",
+      "preferredName": "battery identification entity",
+      "description": "Entity to bundle the characterisitics describing the identification of a battery"
+    },
+    {
+      "id": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#ManufacturingEntity",
+      "label": "ManufacturingEntity",
+      "kind": "Entity",
+      "preferredName": "manufacturing entity",
+      "description": "Entity to bundle the characterisitics describing the manufacturing (place and date of manufacture)"
+    },
+    {
+      "id": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#CellChemistryEntity",
+      "label": "CellChemistryEntity",
+      "kind": "Entity",
+      "preferredName": "cell chemistry",
+      "description": "Entity to bundle the characterisitics describing a battery's cell chemistry"
+    },
+    {
+      "id": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#CompositionEntity",
+      "label": "CompositionEntity",
+      "kind": "Entity",
+      "preferredName": "composition",
+      "description": "Entity to bundle the characterisitics describing a battery's composition"
+    },
+    {
+      "id": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#TemperatureRangeIdleStateEntity",
+      "label": "TemperatureRangeIdleStateEntity",
+      "kind": "Entity",
+      "preferredName": "temperature range idle state",
+      "description": "Entity to bundle the characterisitics describing the battery's temperature range"
+    },
+    {
+      "id": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#BatteryCycleLifeEntity",
+      "label": "BatteryCycleLifeEntity",
+      "kind": "Entity",
+      "preferredName": "battery cycle life entity",
+      "description": "Entity to bundle the characterisitics describing the cycle life of a battery"
+    },
+    {
+      "id": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#AttachmentEntity",
+      "label": "AttachmentEntity",
+      "kind": "Entity",
+      "preferredName": "AttachmentEntity",
+      "description": "Entity encapsulating the details of a attachment for the battery"
+    },
+    {
+      "id": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#BatteryPowerEntity",
+      "label": "BatteryPowerEntity",
+      "kind": "Entity",
+      "preferredName": "battery power entity",
+      "description": "Entity to bundle the power properties of a battery."
+    },
+    {
+      "id": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#BatteryVoltageEntity",
+      "label": "BatteryVoltageEntity",
+      "kind": "Entity",
+      "preferredName": "battery voltage entity",
+      "description": "Entity to bundle the voltage properties of a battery."
+    },
+    {
+      "id": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#InternalResistanceEntity",
+      "label": "InternalResistanceEntity",
+      "kind": "Entity",
+      "preferredName": "internal resistance",
+      "description": "Entity to bundle the internal resistance properties of a battery."
+    },
+    {
+      "id": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#BatteryEnergyEntity",
+      "label": "BatteryEnergyEntity",
+      "kind": "Entity",
+      "preferredName": "battery energy entity",
+      "description": "Entity to bundle the energy properties of a battery."
+    },
+    {
+      "id": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#MaterialNameAndWeightAndPercentageMassFractionEntity",
+      "label": "MaterialNameAndWeightAndPercentageMassFractionEntity",
+      "kind": "Entity",
+      "preferredName": "material name and weight and percent",
+      "description": "Entity to bundle a material's name, weight and percentage of mass."
+    },
+    {
+      "id": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#CompomenentsEntity",
+      "label": "CompomenentsEntity",
+      "kind": "Entity",
+      "preferredName": "components",
+      "description": "Entity to bundle the components properties of a battery."
+    },
+    {
+      "id": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#ComponentsSupplierEntity",
+      "label": "ComponentsSupplierEntity",
+      "kind": "Entity",
+      "preferredName": "components supplier",
+      "description": "Entity encapsulating the details of a components supplier"
+    },
+    {
+      "id": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#AttachmentLinkCharacteristic",
+      "label": "AttachmentLinkCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "attachment",
+      "description": "Links the referenced attachments"
+    },
+    {
+      "id": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#CathodeActiveMaterialsCharacterisitic",
+      "label": "CathodeActiveMaterialsCharacterisitic",
+      "kind": "Characteristic",
+      "preferredName": "cathode active materials",
+      "description": "The total amount of valuable materials contained in CAM material: Nickel, Cobalt, Lithium."
+    },
+    {
+      "id": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#RecyclateContentActiveMaterialsCharacteristic",
+      "label": "RecyclateContentActiveMaterialsCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "recyclate content active materials",
+      "description": "List of recovered Recyclate Content in Active Material Recycled is describing a regulatory requirement. The following materials have to be reported on as a minimium: Cobalt, Lithium, Nickel, Lead"
+    },
+    {
+      "id": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#AnodeActiveMaterialsCharacteristic",
+      "label": "AnodeActiveMaterialsCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "anode active materials",
+      "description": "The total amount of valuable materials contained in Anode: graphite"
+    },
+    {
+      "id": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#CathodeCompositionOtherCharacteristic",
+      "label": "CathodeCompositionOtherCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "cathode composition other",
+      "description": "The composition or materials contained in the Cathode is describing a regulatory requirement."
+    },
+    {
+      "id": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#AnodeCompositionOtherCharacteristic",
+      "label": "AnodeCompositionOtherCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "anode composition other",
+      "description": "The composition or materials contained in the anode is describing a regulatory requirement."
+    },
+    {
+      "id": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#ElectrolyteCompositionCharacteristic",
+      "label": "ElectrolyteCompositionCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "electrolyte composition",
+      "description": "List of materials contained in the electrolyte is describing a regulatory requirement."
+    },
+    {
+      "id": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#CompositionOfBatteryCharacteristic",
+      "label": "CompositionOfBatteryCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "composition of battery",
+      "description": "Full composition of battery is describing a business requirement."
+    },
+    {
+      "id": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#ComponentsSupplierCharacteristic",
+      "label": "ComponentsSupplierCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "components supplier",
+      "description": "Contact details of the suppliers of replacement parts / spare parts is describing a regulatory requirement."
+    },
+    {
+      "id": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#ComponentsPartNumberList",
+      "label": "ComponentsPartNumberList",
+      "kind": "Characteristic",
+      "preferredName": "components part number list",
+      "description": "A list of the unique serial numbers of the different parts of a battery is describing a regulatory requirement."
+    }
+  ],
+  "links": [
+    {
+      "source": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#BatteryPass",
+      "target": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#document",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#BatteryPass",
+      "target": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#manufacturer",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#BatteryPass",
+      "target": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#electrochemicalProperties",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#BatteryPass",
+      "target": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#physicalDimensions",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#BatteryPass",
+      "target": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#stateOfBattery",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#BatteryPass",
+      "target": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#batteryIdentification",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#BatteryPass",
+      "target": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#manufacturing",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#BatteryPass",
+      "target": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#datePlacedOnMarket",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#BatteryPass",
+      "target": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#cellChemistry",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#BatteryPass",
+      "target": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#composition",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#BatteryPass",
+      "target": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#cO2FootprintTotal",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#BatteryPass",
+      "target": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#temperatureRangeIdleState",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#BatteryPass",
+      "target": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#warrantyPeriod",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#BatteryPass",
+      "target": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#batteryCycleLife",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#DocumentEntity",
+      "target": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#packagingInstructions",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#DocumentEntity",
+      "target": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#transportationInstructions",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#DocumentEntity",
+      "target": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#vehicleDismantlingProcedure",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#DocumentEntity",
+      "target": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#batteryDismantlingProcedure",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#DocumentEntity",
+      "target": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#safetyMeasures",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#DocumentEntity",
+      "target": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#testReportsResults",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#DocumentEntity",
+      "target": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#declarationOfConformity",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#DocumentEntity",
+      "target": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#responsibleSourcing",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#ManufacturerEntity",
+      "target": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#name",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#ManufacturerEntity",
+      "target": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#contact",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#ManufacturerEntity",
+      "target": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#address",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#ElectrochemicalPropertiesEntity",
+      "target": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#batteryPower",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#ElectrochemicalPropertiesEntity",
+      "target": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#batteryVoltage",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#ElectrochemicalPropertiesEntity",
+      "target": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#ratedCapacity",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#ElectrochemicalPropertiesEntity",
+      "target": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#capacityFade",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#ElectrochemicalPropertiesEntity",
+      "target": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#internalResistance",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#ElectrochemicalPropertiesEntity",
+      "target": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#capacityThresholdExhaustion",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#ElectrochemicalPropertiesEntity",
+      "target": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#batteryEnergy",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#ElectrochemicalPropertiesEntity",
+      "target": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#ratioMaximumAllowedBatteryPowerAndMaximumAllowedBatteryEnergy",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#PhysicalDimensionsEntity",
+      "target": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#length",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#PhysicalDimensionsEntity",
+      "target": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#width",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#PhysicalDimensionsEntity",
+      "target": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#height",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#PhysicalDimensionsEntity",
+      "target": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#diameter",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#PhysicalDimensionsEntity",
+      "target": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#weight",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#StateOfBatteryEntity",
+      "target": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#stateOfHealth",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#StateOfBatteryEntity",
+      "target": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#stateOfCharge",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#StateOfBatteryEntity",
+      "target": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#statusBattery",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#BatteryIdentificationEntity",
+      "target": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#batteryType",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#BatteryIdentificationEntity",
+      "target": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#batteryModel",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#BatteryIdentificationEntity",
+      "target": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#batteryIDDMCCode",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#ManufacturingEntity",
+      "target": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#dateOfManufacturing",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#ManufacturingEntity",
+      "target": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#address",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#CellChemistryEntity",
+      "target": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#cathodeActiveMaterials",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#CellChemistryEntity",
+      "target": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#recyclateContentActiveMaterials",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#CellChemistryEntity",
+      "target": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#anodeActiveMaterials",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#CellChemistryEntity",
+      "target": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#cathodeCompositionOther",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#CellChemistryEntity",
+      "target": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#anodeCompositionOther",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#CellChemistryEntity",
+      "target": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#electrolyteComposition",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#CompositionEntity",
+      "target": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#components",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#CompositionEntity",
+      "target": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#compositionOfBattery",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#CompositionEntity",
+      "target": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#criticalRawMaterials",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#TemperatureRangeIdleStateEntity",
+      "target": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#temperatureRangeIdleStateLowerLimit",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#TemperatureRangeIdleStateEntity",
+      "target": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#temperatureRangeIdleStateUpperLimit",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#BatteryCycleLifeEntity",
+      "target": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#cycleLifeTestCRate",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#BatteryCycleLifeEntity",
+      "target": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#cycleLifeTestDepthOfDischarge",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#BatteryCycleLifeEntity",
+      "target": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#expectedLifetime",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#AttachmentEntity",
+      "target": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#fileLocation",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#AttachmentEntity",
+      "target": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#title",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#BatteryPowerEntity",
+      "target": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#maximumAllowedBatteryPower",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#BatteryPowerEntity",
+      "target": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#powerFade",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#BatteryPowerEntity",
+      "target": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#powerCapabilityAt20Charge",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#BatteryPowerEntity",
+      "target": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#powerCapabilityAt80Charge",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#BatteryPowerEntity",
+      "target": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#originalPowerCapability",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#BatteryPowerEntity",
+      "target": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#originalPowerCapabilityLimits",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#BatteryVoltageEntity",
+      "target": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#minVoltage",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#BatteryVoltageEntity",
+      "target": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#nominalVoltage",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#BatteryVoltageEntity",
+      "target": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#maxVoltage",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#InternalResistanceEntity",
+      "target": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#cellInternalResistance",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#InternalResistanceEntity",
+      "target": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#packInternalResistance",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#InternalResistanceEntity",
+      "target": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#packInternalResistanceIncrease",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#BatteryEnergyEntity",
+      "target": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#maximumAllowedBatteryEnergy",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#BatteryEnergyEntity",
+      "target": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#energyRoundtripEfficiency",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#BatteryEnergyEntity",
+      "target": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#energyRoundtripEfficiencyChange",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#MaterialNameAndWeightAndPercentageMassFractionEntity",
+      "target": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#materialPercentageMassFraction",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#MaterialNameAndWeightAndPercentageMassFractionEntity",
+      "target": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#materialWeight",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#MaterialNameAndWeightAndPercentageMassFractionEntity",
+      "target": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#materialName",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#CompomenentsEntity",
+      "target": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#componentsSupplier",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#CompomenentsEntity",
+      "target": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#componentsPartNumber",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#ComponentsSupplierEntity",
+      "target": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#address",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#ComponentsSupplierEntity",
+      "target": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#contact",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#ComponentsSupplierEntity",
+      "target": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#componentsSupplierName",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#document",
+      "target": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#DocumentCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#manufacturer",
+      "target": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#ManufacturerCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#electrochemicalProperties",
+      "target": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#ElectrochemicalPropertiesCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#physicalDimensions",
+      "target": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#PhysicalDimensionsCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#stateOfBattery",
+      "target": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#StateOfBatteryCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#batteryIdentification",
+      "target": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#BatteryIdentificationCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#manufacturing",
+      "target": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#ManufacturingCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#datePlacedOnMarket",
+      "target": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#Datestamp",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#dateOfManufacturing",
+      "target": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#Datestamp",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#cellChemistry",
+      "target": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#CellChemistryCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#composition",
+      "target": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#CompositionCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#cO2FootprintTotal",
+      "target": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#CO2FootprintTotalCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#temperatureRangeIdleState",
+      "target": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#TemperatureRangeIdleStateCharacterisitic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#warrantyPeriod",
+      "target": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#WarrantyPeriodCharacterisitic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#batteryCycleLife",
+      "target": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#BatteryCycleLifeCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#packagingInstructions",
+      "target": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#AttachmentLinkCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#transportationInstructions",
+      "target": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#AttachmentLinkCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#vehicleDismantlingProcedure",
+      "target": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#AttachmentLinkCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#batteryDismantlingProcedure",
+      "target": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#AttachmentLinkCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#safetyMeasures",
+      "target": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#AttachmentLinkCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#testReportsResults",
+      "target": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#AttachmentLinkCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#declarationOfConformity",
+      "target": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#AttachmentLinkCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#responsibleSourcing",
+      "target": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#AttachmentLinkCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#batteryPower",
+      "target": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#BatteryPowerCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#batteryVoltage",
+      "target": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#BatteryVoltageCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#ratedCapacity",
+      "target": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#RatedCapacityCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#capacityFade",
+      "target": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#CapacityFadeCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#internalResistance",
+      "target": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#InternalResistanceCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#capacityThresholdExhaustion",
+      "target": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#CapacityThresholdExhaustionCharacterisitic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#batteryEnergy",
+      "target": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#BatteryEnergyCharacterisitc",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#ratioMaximumAllowedBatteryPowerAndMaximumAllowedBatteryEnergy",
+      "target": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#RatioMaximumAllowedBatteryPowerAndMaximumAllowedBatteryEnergyCharacterisitic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#length",
+      "target": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#MillimetreCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#width",
+      "target": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#MillimetreCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#height",
+      "target": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#MillimetreCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#diameter",
+      "target": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#MillimetreCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#weight",
+      "target": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#KilogramCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#stateOfHealth",
+      "target": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#StateOfHealthCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#stateOfCharge",
+      "target": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#StateOfChargeCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#cathodeActiveMaterials",
+      "target": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#CathodeActiveMaterialsCharacterisitic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#recyclateContentActiveMaterials",
+      "target": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#RecyclateContentActiveMaterialsCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#anodeActiveMaterials",
+      "target": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#AnodeActiveMaterialsCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#cathodeCompositionOther",
+      "target": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#CathodeCompositionOtherCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#anodeCompositionOther",
+      "target": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#AnodeCompositionOtherCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#electrolyteComposition",
+      "target": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#ElectrolyteCompositionCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#components",
+      "target": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#ComponentsCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#compositionOfBattery",
+      "target": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#CompositionOfBatteryCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#criticalRawMaterials",
+      "target": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#CriticalRawMaterialsCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#temperatureRangeIdleStateLowerLimit",
+      "target": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#TemperatureRangeCharacterisitic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#temperatureRangeIdleStateUpperLimit",
+      "target": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#TemperatureRangeCharacterisitic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#cycleLifeTestCRate",
+      "target": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#CycleLifeTestCRateCharacterisitc",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#cycleLifeTestDepthOfDischarge",
+      "target": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#CycleLifeTestDepthOfDischargeCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#expectedLifetime",
+      "target": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#ExpectedLifetime",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#fileLocation",
+      "target": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#FileLocationCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#maximumAllowedBatteryPower",
+      "target": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#PowerCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#powerCapabilityAt20Charge",
+      "target": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#PowerCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#powerCapabilityAt80Charge",
+      "target": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#PowerCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#originalPowerCapability",
+      "target": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#PowerCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#originalPowerCapabilityLimits",
+      "target": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#PowerCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#powerFade",
+      "target": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#PowerFadeCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#minVoltage",
+      "target": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#VoltCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#nominalVoltage",
+      "target": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#VoltCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#maxVoltage",
+      "target": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#VoltCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#cellInternalResistance",
+      "target": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#MilliohmCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#packInternalResistance",
+      "target": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#OhmCharacterisitic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#packInternalResistanceIncrease",
+      "target": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#PercentCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#maximumAllowedBatteryEnergy",
+      "target": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#MaximumAllowedBatteryEnergyCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#energyRoundtripEfficiency",
+      "target": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#EnergyRoundtripEfficiency",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#energyRoundtripEfficiencyChange",
+      "target": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#EnergyRoundtripEfficiencyChangeCharacterisitic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#materialPercentageMassFraction",
+      "target": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#materialPercentageMassFractionCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#materialWeight",
+      "target": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#GramCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#componentsSupplier",
+      "target": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#ComponentsSupplierCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#componentsPartNumber",
+      "target": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#ComponentsPartNumberList",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#DocumentCharacteristic",
+      "target": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#DocumentEntity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#ManufacturerCharacteristic",
+      "target": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#ManufacturerEntity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#ElectrochemicalPropertiesCharacteristic",
+      "target": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#ElectrochemicalPropertiesEntity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#PhysicalDimensionsCharacteristic",
+      "target": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#PhysicalDimensionsEntity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#StateOfBatteryCharacteristic",
+      "target": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#StateOfBatteryEntity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#BatteryIdentificationCharacteristic",
+      "target": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#BatteryIdentificationEntity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#ManufacturingCharacteristic",
+      "target": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#ManufacturingEntity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#CellChemistryCharacteristic",
+      "target": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#CellChemistryEntity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#CompositionCharacteristic",
+      "target": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#CompositionEntity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#TemperatureRangeIdleStateCharacterisitic",
+      "target": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#TemperatureRangeIdleStateEntity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#BatteryCycleLifeCharacteristic",
+      "target": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#BatteryCycleLifeEntity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#AttachmentLinkCharacteristic",
+      "target": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#AttachmentEntity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#BatteryPowerCharacteristic",
+      "target": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#BatteryPowerEntity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#BatteryVoltageCharacteristic",
+      "target": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#BatteryVoltageEntity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#InternalResistanceCharacteristic",
+      "target": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#InternalResistanceEntity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#BatteryEnergyCharacterisitc",
+      "target": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#BatteryEnergyEntity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#CathodeActiveMaterialsCharacterisitic",
+      "target": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#MaterialNameAndWeightAndPercentageMassFractionEntity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#RecyclateContentActiveMaterialsCharacteristic",
+      "target": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#MaterialNameAndWeightAndPercentageMassFractionEntity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#AnodeActiveMaterialsCharacteristic",
+      "target": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#MaterialNameAndWeightAndPercentageMassFractionEntity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#CathodeCompositionOtherCharacteristic",
+      "target": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#MaterialNameAndWeightAndPercentageMassFractionEntity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#AnodeCompositionOtherCharacteristic",
+      "target": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#MaterialNameAndWeightAndPercentageMassFractionEntity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#ElectrolyteCompositionCharacteristic",
+      "target": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#MaterialNameAndWeightAndPercentageMassFractionEntity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#CompositionOfBatteryCharacteristic",
+      "target": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#MaterialNameAndWeightAndPercentageMassFractionEntity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#ComponentsCharacteristic",
+      "target": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#CompomenentsEntity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#ComponentsSupplierCharacteristic",
+      "target": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#ComponentsSupplierEntity",
+      "label": "dataType",
+      "optional": false
+    }
+  ]
+}

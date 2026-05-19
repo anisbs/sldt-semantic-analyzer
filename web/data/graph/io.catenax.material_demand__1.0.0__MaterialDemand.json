@@ -1,0 +1,539 @@
+{
+  "meta": {
+    "namespace": "urn:samm:io.catenax.material_demand:1.0.0#",
+    "meta_model": "SAMM 2.0.0",
+    "path": "data/sldt-semantic-models/io.catenax.material_demand/1.0.0/MaterialDemand.ttl"
+  },
+  "nodes": [
+    {
+      "id": "urn:samm:io.catenax.material_demand:1.0.0#MaterialDemand",
+      "label": "MaterialDemand",
+      "kind": "Aspect",
+      "preferredName": "Material Demand",
+      "description": "The requirements of a customer towards a specific supplier for a specific material. Each material demand is unique by its Customer, Supplier and Material Number."
+    },
+    {
+      "id": "urn:samm:io.catenax.material_demand:1.0.0#materialDemandId",
+      "label": "materialDemandId",
+      "kind": "Property",
+      "preferredName": "Material Demand ID",
+      "description": "The Material Demand ID uniquely identifies the material demand within the business relationship between a customer and its supplier."
+    },
+    {
+      "id": "urn:samm:io.catenax.material_demand:1.0.0#demandSeries",
+      "label": "demandSeries",
+      "kind": "Property",
+      "preferredName": "Demand Series",
+      "description": "The demands for a dedicated material in a given time period of a given demand rate, distinguished by their demand location and demand category."
+    },
+    {
+      "id": "urn:samm:io.catenax.material_demand:1.0.0#customer",
+      "label": "customer",
+      "kind": "Property",
+      "preferredName": "Customer",
+      "description": "The Business Partner Number Legal Entity (BPNL) of the party requesting materials from a supplier."
+    },
+    {
+      "id": "urn:samm:io.catenax.material_demand:1.0.0#supplier",
+      "label": "supplier",
+      "kind": "Property",
+      "preferredName": "Supplier",
+      "description": "The Business Partner Number Legal Entity (BPNL) of the party providing materials to a customer."
+    },
+    {
+      "id": "urn:samm:io.catenax.material_demand:1.0.0#unitOfMeasure",
+      "label": "unitOfMeasure",
+      "kind": "Property",
+      "preferredName": "Unit of Measure",
+      "description": "Unit of measurement for demand quantities."
+    },
+    {
+      "id": "urn:samm:io.catenax.material_demand:1.0.0#materialNumberCustomer",
+      "label": "materialNumberCustomer",
+      "kind": "Property",
+      "preferredName": "Customer Material Number",
+      "description": "Material identifier as assigned by customer. This material number identifies the material (as planned) in customer's database. Must be unique for each Material Demand in the customer-supplier relationship."
+    },
+    {
+      "id": "urn:samm:io.catenax.material_demand:1.0.0#materialNumberSupplier",
+      "label": "materialNumberSupplier",
+      "kind": "Property",
+      "preferredName": "Supplier Material Number",
+      "description": "Material identifier as assigned by supplier. This material number identifies the material (as planned) in supplier's database."
+    },
+    {
+      "id": "urn:samm:io.catenax.material_demand:1.0.0#materialDescriptionCustomer",
+      "label": "materialDescriptionCustomer",
+      "kind": "Property",
+      "preferredName": "Customer Material Description",
+      "description": "Description of the material."
+    },
+    {
+      "id": "urn:samm:io.catenax.material_demand:1.0.0#changedAt",
+      "label": "changedAt",
+      "kind": "Property",
+      "preferredName": "Changed At",
+      "description": "Point in time when the content (any property according to the data model) of the material demand was changed, at the customer, either by a human user or an automated process."
+    },
+    {
+      "id": "urn:samm:io.catenax.material_demand:1.0.0#materialGlobalAssetId",
+      "label": "materialGlobalAssetId",
+      "kind": "Property",
+      "preferredName": "Material Number UUID of the Customer's Twin",
+      "description": "Material identifier used uniquely within Catena-X to identify the Material (e.g. PartAsPlanned)."
+    },
+    {
+      "id": "urn:samm:io.catenax.material_demand:1.0.0#demandRate",
+      "label": "demandRate",
+      "kind": "Property",
+      "preferredName": "Demand Rate",
+      "description": "Describes the demand rate or granularity of the demand information. It defines how to interpret the point in time."
+    },
+    {
+      "id": "urn:samm:io.catenax.material_demand:1.0.0#unitOfMeasureIsOmitted",
+      "label": "unitOfMeasureIsOmitted",
+      "kind": "Property",
+      "preferredName": "Unit Of Measure Is Omitted",
+      "description": "Explicit indicator of whether the unit of measure is left out of the payload intentionally. If \"true\" it means the sending application sends demand values without unit of measure intentionally and the unit of measure MUST NOT be contained in the payload. If \"false\" a unit of measure MUST be supplied."
+    },
+    {
+      "id": "urn:samm:io.catenax.material_demand:1.0.0#customerLocation",
+      "label": "customerLocation",
+      "kind": "Property",
+      "preferredName": "Customer Location",
+      "description": "The Business Partner Number Site (BPNS) of the site at which the customer needs the specified material for this demand series."
+    },
+    {
+      "id": "urn:samm:io.catenax.material_demand:1.0.0#demandCategory",
+      "label": "demandCategory",
+      "kind": "Property",
+      "preferredName": "Demand Category",
+      "description": "Type of demand for this demand series."
+    },
+    {
+      "id": "urn:samm:io.catenax.material_demand:1.0.0#demands",
+      "label": "demands",
+      "kind": "Property",
+      "preferredName": "Demands",
+      "description": "A time series with a specified demand rate along a given time period to describe the demand values for this demand series."
+    },
+    {
+      "id": "urn:samm:io.catenax.material_demand:1.0.0#expectedSupplierLocation",
+      "label": "expectedSupplierLocation",
+      "kind": "Property",
+      "preferredName": "Expected Supplier Location",
+      "description": "The Business Partner Number Site (BPNS) of the site from where the customer expects the supplier to fulfill the demands of the demand series. The value is used for informational purposes only and is therefore not binding for the supplier."
+    },
+    {
+      "id": "urn:samm:io.catenax.material_demand:1.0.0#demandRateCode",
+      "label": "demandRateCode",
+      "kind": "Property",
+      "preferredName": "Demand Rate Code",
+      "description": "Code identifying the demand rate."
+    },
+    {
+      "id": "urn:samm:io.catenax.material_demand:1.0.0#demandRateName",
+      "label": "demandRateName",
+      "kind": "Property",
+      "preferredName": "Demand Rate Name",
+      "description": "The name describing the demand rate."
+    },
+    {
+      "id": "urn:samm:io.catenax.material_demand:1.0.0#demandCategoryCode",
+      "label": "demandCategoryCode",
+      "kind": "Property",
+      "preferredName": "Demand Category Code",
+      "description": "The code identifying a demand category."
+    },
+    {
+      "id": "urn:samm:io.catenax.material_demand:1.0.0#demandCategoryName",
+      "label": "demandCategoryName",
+      "kind": "Property",
+      "preferredName": "Demand Category Name",
+      "description": "The name describing a demand category."
+    },
+    {
+      "id": "urn:samm:io.catenax.material_demand:1.0.0#demand",
+      "label": "demand",
+      "kind": "Property",
+      "preferredName": "Demand",
+      "description": " Quantity of materials required in the specified point in time according specified demand rate. This demand should be as close as possible to demand that is derived from the actual production program."
+    },
+    {
+      "id": "urn:samm:io.catenax.material_demand:1.0.0#pointInTime",
+      "label": "pointInTime",
+      "kind": "Property",
+      "preferredName": "Point in Time",
+      "description": "Defines the start of the demand rate as a point in time. The point in time must be interpreted according to the demand rate."
+    },
+    {
+      "id": "urn:samm:io.catenax.material_demand:1.0.0#DemandSeriesSet",
+      "label": "DemandSeriesSet",
+      "kind": "Characteristic",
+      "preferredName": "Demand Series Set",
+      "description": "A set of demand series belonging to a certain material demand. Each demand series in the set must have a unique combination of customer location and demand category."
+    },
+    {
+      "id": "urn:samm:io.catenax.material_demand:1.0.0#MaterialNumber",
+      "label": "MaterialNumber",
+      "kind": "Characteristic",
+      "preferredName": "Material Number",
+      "description": "The material number is a multi-character string, usually assigned by an ERP system."
+    },
+    {
+      "id": "urn:samm:io.catenax.material_demand:1.0.0#MaterialDescription",
+      "label": "MaterialDescription",
+      "kind": "Characteristic",
+      "preferredName": "Material Description",
+      "description": "Description of a material demand."
+    },
+    {
+      "id": "urn:samm:io.catenax.material_demand:1.0.0#Timestamp",
+      "label": "Timestamp",
+      "kind": "Characteristic",
+      "preferredName": "Timestamp",
+      "description": "Point in time."
+    },
+    {
+      "id": "urn:samm:io.catenax.material_demand:1.0.0#DemandRateCodeCharacteristic",
+      "label": "DemandRateCodeCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Demand Rate Code Characteristic",
+      "description": "The code that is actually used in the payload to indicate the demand rate."
+    },
+    {
+      "id": "urn:samm:io.catenax.material_demand:1.0.0#DemandRateNameCharacteristic",
+      "label": "DemandRateNameCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Demand Rate Name Characteristic",
+      "description": "The name describing the demand rate in the SAMM."
+    },
+    {
+      "id": "urn:samm:io.catenax.material_demand:1.0.0#PointInTimeCharacteristic",
+      "label": "PointInTimeCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Point in Time Characteristic",
+      "description": "- If demand rate is \"calendar week\": An ISO calendar week in which a given demand is needed. Must be given as date of the Monday in the week. (ISO-8601-1:2019)\n- If demand rate is \"day\": An ISO day on which a given demand is needed. Must be given as single day (consider the time zone of the customer's location). (ISO-8601)"
+    },
+    {
+      "id": "urn:samm:io.catenax.material_demand:1.0.0#Quantity",
+      "label": "Quantity",
+      "kind": "Characteristic",
+      "preferredName": "Quantity",
+      "description": "Quantities of demands."
+    },
+    {
+      "id": "urn:samm:io.catenax.material_demand:1.0.0#DemandRateEnumeration",
+      "label": "DemandRateEnumeration",
+      "kind": "Characteristic",
+      "preferredName": "Demand Rate Enumeration",
+      "description": "The demand rate specifies the time horizon of the the demand.\n- day = time between the start of the specified day till the end of the specified day (ISO-8601).\n- calendar week = time between the start of the specified calendar week till the end of the specified calendar week (ISO-8601-1:2019)."
+    },
+    {
+      "id": "urn:samm:io.catenax.material_demand:1.0.0#DemandCategoryCharacteristic",
+      "label": "DemandCategoryCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Demand Category Characteristic",
+      "description": "The classification of demands used for prioritization or allocation."
+    },
+    {
+      "id": "urn:samm:io.catenax.material_demand:1.0.0#DemandSeries",
+      "label": "DemandSeries",
+      "kind": "Entity",
+      "preferredName": "Demand Series",
+      "description": "Encapsulates the demand series related information."
+    },
+    {
+      "id": "urn:samm:io.catenax.material_demand:1.0.0#DemandRateType",
+      "label": "DemandRateType",
+      "kind": "Entity",
+      "preferredName": "Demand Rate Type",
+      "description": "Type defining the possible demand rates."
+    },
+    {
+      "id": "urn:samm:io.catenax.material_demand:1.0.0#DemandCategoryType",
+      "label": "DemandCategoryType",
+      "kind": "Entity",
+      "preferredName": "Demand Category Type",
+      "description": "Describes the type of a demand category."
+    },
+    {
+      "id": "urn:samm:io.catenax.material_demand:1.0.0#Demand",
+      "label": "Demand",
+      "kind": "Entity",
+      "preferredName": "Demand",
+      "description": "A single demand for a given point in time according to the demand rate."
+    },
+    {
+      "id": "urn:samm:io.catenax.material_demand:1.0.0#DemandDateSeries",
+      "label": "DemandDateSeries",
+      "kind": "Characteristic",
+      "preferredName": "Demand Date Series",
+      "description": "The demands in a given time period for a given demand rate."
+    },
+    {
+      "id": "urn:samm:io.catenax.material_demand:1.0.0#DemandCategoryCodeCharacteristic",
+      "label": "DemandCategoryCodeCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Demand Category Code Characteristic",
+      "description": "The code identifying a demand category."
+    },
+    {
+      "id": "urn:samm:io.catenax.material_demand:1.0.0#QuantityTrait",
+      "label": "QuantityTrait",
+      "kind": "Characteristic",
+      "preferredName": null,
+      "description": null
+    },
+    {
+      "id": "urn:samm:io.catenax.material_demand:1.0.0#QuantityRange",
+      "label": "QuantityRange",
+      "kind": "Characteristic",
+      "preferredName": "Quantity Range",
+      "description": "Constraint to ensure a non-negative value for quantities."
+    },
+    {
+      "id": "urn:samm:io.catenax.material_demand:1.0.0#QuantityFixedPoint",
+      "label": "QuantityFixedPoint",
+      "kind": "Characteristic",
+      "preferredName": "Quantity Fixed Point",
+      "description": "Constraint to ensure size of quantities: 12 digits plus 3 decimal places."
+    }
+  ],
+  "links": [
+    {
+      "source": "urn:samm:io.catenax.material_demand:1.0.0#MaterialDemand",
+      "target": "urn:samm:io.catenax.material_demand:1.0.0#materialDemandId",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material_demand:1.0.0#MaterialDemand",
+      "target": "urn:samm:io.catenax.material_demand:1.0.0#demandSeries",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material_demand:1.0.0#MaterialDemand",
+      "target": "urn:samm:io.catenax.material_demand:1.0.0#customer",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material_demand:1.0.0#MaterialDemand",
+      "target": "urn:samm:io.catenax.material_demand:1.0.0#supplier",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material_demand:1.0.0#MaterialDemand",
+      "target": "urn:samm:io.catenax.material_demand:1.0.0#unitOfMeasure",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.material_demand:1.0.0#MaterialDemand",
+      "target": "urn:samm:io.catenax.material_demand:1.0.0#materialNumberCustomer",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material_demand:1.0.0#MaterialDemand",
+      "target": "urn:samm:io.catenax.material_demand:1.0.0#materialNumberSupplier",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.material_demand:1.0.0#MaterialDemand",
+      "target": "urn:samm:io.catenax.material_demand:1.0.0#materialDescriptionCustomer",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material_demand:1.0.0#MaterialDemand",
+      "target": "urn:samm:io.catenax.material_demand:1.0.0#changedAt",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material_demand:1.0.0#MaterialDemand",
+      "target": "urn:samm:io.catenax.material_demand:1.0.0#materialGlobalAssetId",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.material_demand:1.0.0#MaterialDemand",
+      "target": "urn:samm:io.catenax.material_demand:1.0.0#demandRate",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material_demand:1.0.0#MaterialDemand",
+      "target": "urn:samm:io.catenax.material_demand:1.0.0#unitOfMeasureIsOmitted",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material_demand:1.0.0#DemandSeries",
+      "target": "urn:samm:io.catenax.material_demand:1.0.0#customerLocation",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material_demand:1.0.0#DemandSeries",
+      "target": "urn:samm:io.catenax.material_demand:1.0.0#demandCategory",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material_demand:1.0.0#DemandSeries",
+      "target": "urn:samm:io.catenax.material_demand:1.0.0#demands",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material_demand:1.0.0#DemandSeries",
+      "target": "urn:samm:io.catenax.material_demand:1.0.0#expectedSupplierLocation",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.material_demand:1.0.0#DemandRateType",
+      "target": "urn:samm:io.catenax.material_demand:1.0.0#demandRateCode",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material_demand:1.0.0#DemandRateType",
+      "target": "urn:samm:io.catenax.material_demand:1.0.0#demandRateName",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material_demand:1.0.0#DemandCategoryType",
+      "target": "urn:samm:io.catenax.material_demand:1.0.0#demandCategoryCode",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material_demand:1.0.0#DemandCategoryType",
+      "target": "urn:samm:io.catenax.material_demand:1.0.0#demandCategoryName",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material_demand:1.0.0#Demand",
+      "target": "urn:samm:io.catenax.material_demand:1.0.0#demand",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material_demand:1.0.0#Demand",
+      "target": "urn:samm:io.catenax.material_demand:1.0.0#pointInTime",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material_demand:1.0.0#demandSeries",
+      "target": "urn:samm:io.catenax.material_demand:1.0.0#DemandSeriesSet",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material_demand:1.0.0#materialNumberCustomer",
+      "target": "urn:samm:io.catenax.material_demand:1.0.0#MaterialNumber",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material_demand:1.0.0#materialNumberSupplier",
+      "target": "urn:samm:io.catenax.material_demand:1.0.0#MaterialNumber",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material_demand:1.0.0#materialDescriptionCustomer",
+      "target": "urn:samm:io.catenax.material_demand:1.0.0#MaterialDescription",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material_demand:1.0.0#changedAt",
+      "target": "urn:samm:io.catenax.material_demand:1.0.0#Timestamp",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material_demand:1.0.0#demandRate",
+      "target": "urn:samm:io.catenax.material_demand:1.0.0#DemandRateEnumeration",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material_demand:1.0.0#demandCategory",
+      "target": "urn:samm:io.catenax.material_demand:1.0.0#DemandCategoryCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material_demand:1.0.0#demands",
+      "target": "urn:samm:io.catenax.material_demand:1.0.0#DemandDateSeries",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material_demand:1.0.0#demandRateCode",
+      "target": "urn:samm:io.catenax.material_demand:1.0.0#DemandRateCodeCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material_demand:1.0.0#demandRateName",
+      "target": "urn:samm:io.catenax.material_demand:1.0.0#DemandRateNameCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material_demand:1.0.0#demandCategoryCode",
+      "target": "urn:samm:io.catenax.material_demand:1.0.0#DemandCategoryCodeCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material_demand:1.0.0#demand",
+      "target": "urn:samm:io.catenax.material_demand:1.0.0#QuantityTrait",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material_demand:1.0.0#pointInTime",
+      "target": "urn:samm:io.catenax.material_demand:1.0.0#PointInTimeCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material_demand:1.0.0#DemandSeriesSet",
+      "target": "urn:samm:io.catenax.material_demand:1.0.0#DemandSeries",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material_demand:1.0.0#DemandRateEnumeration",
+      "target": "urn:samm:io.catenax.material_demand:1.0.0#DemandRateType",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material_demand:1.0.0#DemandCategoryCharacteristic",
+      "target": "urn:samm:io.catenax.material_demand:1.0.0#DemandCategoryType",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material_demand:1.0.0#DemandDateSeries",
+      "target": "urn:samm:io.catenax.material_demand:1.0.0#Demand",
+      "label": "dataType",
+      "optional": false
+    }
+  ]
+}

@@ -1,0 +1,393 @@
+{
+  "meta": {
+    "namespace": "urn:samm:io.catenax.manufacturing_capability:2.0.0#",
+    "meta_model": "SAMM 2.0.0",
+    "path": "data/sldt-semantic-models/io.catenax.manufacturing_capability/2.0.0/ManufacturingCapability.ttl"
+  },
+  "nodes": [
+    {
+      "id": "urn:samm:io.catenax.manufacturing_capability:2.0.0#ManufacturingCapability",
+      "label": "ManufacturingCapability",
+      "kind": "Aspect",
+      "preferredName": "Manufacturing Capability Aspect Model",
+      "description": "An aspect model representing manufacturing capabilities, based on the concepts for products, processes, resources and capabilities, as well as their relations to each other."
+    },
+    {
+      "id": "urn:samm:io.catenax.manufacturing_capability:2.0.0#processSet",
+      "label": "processSet",
+      "kind": "Property",
+      "preferredName": "Process Set",
+      "description": "Set of production-relevant activities at any level of granularity that might affect materials and is performed by resources."
+    },
+    {
+      "id": "urn:samm:io.catenax.manufacturing_capability:2.0.0#resourceSet",
+      "label": "resourceSet",
+      "kind": "Property",
+      "preferredName": "Resource Set",
+      "description": "Set of entities capable of performing functions specified as capabilities."
+    },
+    {
+      "id": "urn:samm:io.catenax.manufacturing_capability:2.0.0#productSet",
+      "label": "productSet",
+      "kind": "Property",
+      "preferredName": "Product Set",
+      "description": "Set of physical objects being used as an input or created as an output of a production process."
+    },
+    {
+      "id": "urn:samm:io.catenax.manufacturing_capability:2.0.0#capabilitySet",
+      "label": "capabilitySet",
+      "kind": "Property",
+      "preferredName": "Capability Set",
+      "description": "Set of implementation-independent specifications of functions in industrial production to achieve an effect in the physical or virtual world."
+    },
+    {
+      "id": "urn:samm:io.catenax.manufacturing_capability:2.0.0#capabilityConstraintSet",
+      "label": "capabilityConstraintSet",
+      "kind": "Property",
+      "preferredName": "Capability Constraint Set",
+      "description": "Set of conditions imposed on capabilities which further detail their applicability."
+    },
+    {
+      "id": "urn:samm:io.catenax.manufacturing_capability:2.0.0#hasInput",
+      "label": "hasInput",
+      "kind": "Property",
+      "preferredName": "Has Input",
+      "description": "Relation between a process and its input products."
+    },
+    {
+      "id": "urn:samm:io.catenax.manufacturing_capability:2.0.0#hasOutput",
+      "label": "hasOutput",
+      "kind": "Property",
+      "preferredName": "Has Output",
+      "description": "Relation between a process and its output products."
+    },
+    {
+      "id": "urn:samm:io.catenax.manufacturing_capability:2.0.0#requires",
+      "label": "requires",
+      "kind": "Property",
+      "preferredName": "Requires",
+      "description": "Relation between a process and capabilities it requires."
+    },
+    {
+      "id": "urn:samm:io.catenax.manufacturing_capability:2.0.0#provides",
+      "label": "provides",
+      "kind": "Property",
+      "preferredName": "Provides",
+      "description": "Relation between a resource and capabilities it provides."
+    },
+    {
+      "id": "urn:samm:io.catenax.manufacturing_capability:2.0.0#productLabel",
+      "label": "productLabel",
+      "kind": "Property",
+      "preferredName": "Product Label",
+      "description": "Human readable label of a product, e.g. the name."
+    },
+    {
+      "id": "urn:samm:io.catenax.manufacturing_capability:2.0.0#capabilityLabel",
+      "label": "capabilityLabel",
+      "kind": "Property",
+      "preferredName": "Capability Label",
+      "description": "Human readable label of a capability"
+    },
+    {
+      "id": "urn:samm:io.catenax.manufacturing_capability:2.0.0#references",
+      "label": "references",
+      "kind": "Property",
+      "preferredName": "References",
+      "description": "Relation between a capability constraint and its properties."
+    },
+    {
+      "id": "urn:samm:io.catenax.manufacturing_capability:2.0.0#propertySet",
+      "label": "propertySet",
+      "kind": "Property",
+      "preferredName": "Property Set",
+      "description": "Set of qualities or characteristics inherent in or ascribed to process, resource, product or capability entities."
+    },
+    {
+      "id": "urn:samm:io.catenax.manufacturing_capability:2.0.0#propertyLabel",
+      "label": "propertyLabel",
+      "kind": "Property",
+      "preferredName": "Property Label",
+      "description": "Human readable label of a property."
+    },
+    {
+      "id": "urn:samm:io.catenax.manufacturing_capability:2.0.0#ProcessSetCharacteristic",
+      "label": "ProcessSetCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Process Set Characteristic",
+      "description": "Characteristic for a set of process representations."
+    },
+    {
+      "id": "urn:samm:io.catenax.manufacturing_capability:2.0.0#ResourceSetCharacteristic",
+      "label": "ResourceSetCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Resource Set Characteristic",
+      "description": "Characteristic for a set of resource representations."
+    },
+    {
+      "id": "urn:samm:io.catenax.manufacturing_capability:2.0.0#ProductSetCharacteristic",
+      "label": "ProductSetCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Product Set Characteristic",
+      "description": "Characteristic for a set of product representations."
+    },
+    {
+      "id": "urn:samm:io.catenax.manufacturing_capability:2.0.0#CapabilitySetCharacteristic",
+      "label": "CapabilitySetCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Capability Set Characteristic",
+      "description": "Characteristic for a set of capability representations."
+    },
+    {
+      "id": "urn:samm:io.catenax.manufacturing_capability:2.0.0#CapabilityConstraintSetCharacteristic",
+      "label": "CapabilityConstraintSetCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Capability Constraint Set Characteristic",
+      "description": "Characteristic for a set of capability constraint representations."
+    },
+    {
+      "id": "urn:samm:io.catenax.manufacturing_capability:2.0.0#PropertySetCharacteristic",
+      "label": "PropertySetCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Property Set Characteristic",
+      "description": "Characteristic for a set of property representations."
+    },
+    {
+      "id": "urn:samm:io.catenax.manufacturing_capability:2.0.0#ProcessEntity",
+      "label": "ProcessEntity",
+      "kind": "Entity",
+      "preferredName": "Process Entity",
+      "description": "Element containing the samm properties of a process."
+    },
+    {
+      "id": "urn:samm:io.catenax.manufacturing_capability:2.0.0#ResourceEntity",
+      "label": "ResourceEntity",
+      "kind": "Entity",
+      "preferredName": "Resource Entity",
+      "description": "Element containing the samm properties of a resource."
+    },
+    {
+      "id": "urn:samm:io.catenax.manufacturing_capability:2.0.0#ProductEntity",
+      "label": "ProductEntity",
+      "kind": "Entity",
+      "preferredName": "Product Entity",
+      "description": "Element containing the samm properties of a product."
+    },
+    {
+      "id": "urn:samm:io.catenax.manufacturing_capability:2.0.0#CapabilityEntity",
+      "label": "CapabilityEntity",
+      "kind": "Entity",
+      "preferredName": "Capability Entity",
+      "description": "Element containing the samm properties of a capability."
+    },
+    {
+      "id": "urn:samm:io.catenax.manufacturing_capability:2.0.0#CapabilityConstraintEntity",
+      "label": "CapabilityConstraintEntity",
+      "kind": "Entity",
+      "preferredName": "Capability Constraint Entity",
+      "description": "Element containing the samm properties of a capability constraint."
+    },
+    {
+      "id": "urn:samm:io.catenax.manufacturing_capability:2.0.0#PropertyEntity",
+      "label": "PropertyEntity",
+      "kind": "Entity",
+      "preferredName": "Property Entity",
+      "description": "Element containing the samm properties of a property."
+    },
+    {
+      "id": "urn:samm:io.catenax.manufacturing_capability:2.0.0#ElementAbstractEntity",
+      "label": "ElementAbstractEntity",
+      "kind": "AbstractEntity",
+      "preferredName": "Element Abstract Entity",
+      "description": "Abstract Entity containing the samm properties every process, resource, product and capability entity shall contain."
+    }
+  ],
+  "links": [
+    {
+      "source": "urn:samm:io.catenax.manufacturing_capability:2.0.0#ManufacturingCapability",
+      "target": "urn:samm:io.catenax.manufacturing_capability:2.0.0#processSet",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.manufacturing_capability:2.0.0#ManufacturingCapability",
+      "target": "urn:samm:io.catenax.manufacturing_capability:2.0.0#resourceSet",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.manufacturing_capability:2.0.0#ManufacturingCapability",
+      "target": "urn:samm:io.catenax.manufacturing_capability:2.0.0#productSet",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.manufacturing_capability:2.0.0#ManufacturingCapability",
+      "target": "urn:samm:io.catenax.manufacturing_capability:2.0.0#capabilitySet",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.manufacturing_capability:2.0.0#ManufacturingCapability",
+      "target": "urn:samm:io.catenax.manufacturing_capability:2.0.0#capabilityConstraintSet",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.manufacturing_capability:2.0.0#ProcessEntity",
+      "target": "urn:samm:io.catenax.manufacturing_capability:2.0.0#hasInput",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.manufacturing_capability:2.0.0#ProcessEntity",
+      "target": "urn:samm:io.catenax.manufacturing_capability:2.0.0#hasOutput",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.manufacturing_capability:2.0.0#ProcessEntity",
+      "target": "urn:samm:io.catenax.manufacturing_capability:2.0.0#requires",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.manufacturing_capability:2.0.0#ResourceEntity",
+      "target": "urn:samm:io.catenax.manufacturing_capability:2.0.0#provides",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.manufacturing_capability:2.0.0#ProductEntity",
+      "target": "urn:samm:io.catenax.manufacturing_capability:2.0.0#productLabel",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.manufacturing_capability:2.0.0#CapabilityEntity",
+      "target": "urn:samm:io.catenax.manufacturing_capability:2.0.0#capabilityLabel",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.manufacturing_capability:2.0.0#CapabilityConstraintEntity",
+      "target": "urn:samm:io.catenax.manufacturing_capability:2.0.0#references",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.manufacturing_capability:2.0.0#ElementAbstractEntity",
+      "target": "urn:samm:io.catenax.manufacturing_capability:2.0.0#propertySet",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.manufacturing_capability:2.0.0#PropertyEntity",
+      "target": "urn:samm:io.catenax.manufacturing_capability:2.0.0#propertyLabel",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.manufacturing_capability:2.0.0#processSet",
+      "target": "urn:samm:io.catenax.manufacturing_capability:2.0.0#ProcessSetCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.manufacturing_capability:2.0.0#resourceSet",
+      "target": "urn:samm:io.catenax.manufacturing_capability:2.0.0#ResourceSetCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.manufacturing_capability:2.0.0#productSet",
+      "target": "urn:samm:io.catenax.manufacturing_capability:2.0.0#ProductSetCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.manufacturing_capability:2.0.0#hasInput",
+      "target": "urn:samm:io.catenax.manufacturing_capability:2.0.0#ProductSetCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.manufacturing_capability:2.0.0#hasOutput",
+      "target": "urn:samm:io.catenax.manufacturing_capability:2.0.0#ProductSetCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.manufacturing_capability:2.0.0#capabilitySet",
+      "target": "urn:samm:io.catenax.manufacturing_capability:2.0.0#CapabilitySetCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.manufacturing_capability:2.0.0#requires",
+      "target": "urn:samm:io.catenax.manufacturing_capability:2.0.0#CapabilitySetCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.manufacturing_capability:2.0.0#provides",
+      "target": "urn:samm:io.catenax.manufacturing_capability:2.0.0#CapabilitySetCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.manufacturing_capability:2.0.0#capabilityConstraintSet",
+      "target": "urn:samm:io.catenax.manufacturing_capability:2.0.0#CapabilityConstraintSetCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.manufacturing_capability:2.0.0#references",
+      "target": "urn:samm:io.catenax.manufacturing_capability:2.0.0#PropertySetCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.manufacturing_capability:2.0.0#propertySet",
+      "target": "urn:samm:io.catenax.manufacturing_capability:2.0.0#PropertySetCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.manufacturing_capability:2.0.0#ProcessSetCharacteristic",
+      "target": "urn:samm:io.catenax.manufacturing_capability:2.0.0#ProcessEntity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.manufacturing_capability:2.0.0#ResourceSetCharacteristic",
+      "target": "urn:samm:io.catenax.manufacturing_capability:2.0.0#ResourceEntity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.manufacturing_capability:2.0.0#ProductSetCharacteristic",
+      "target": "urn:samm:io.catenax.manufacturing_capability:2.0.0#ProductEntity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.manufacturing_capability:2.0.0#CapabilitySetCharacteristic",
+      "target": "urn:samm:io.catenax.manufacturing_capability:2.0.0#CapabilityEntity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.manufacturing_capability:2.0.0#CapabilityConstraintSetCharacteristic",
+      "target": "urn:samm:io.catenax.manufacturing_capability:2.0.0#CapabilityConstraintEntity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.manufacturing_capability:2.0.0#PropertySetCharacteristic",
+      "target": "urn:samm:io.catenax.manufacturing_capability:2.0.0#PropertyEntity",
+      "label": "dataType",
+      "optional": false
+    }
+  ]
+}

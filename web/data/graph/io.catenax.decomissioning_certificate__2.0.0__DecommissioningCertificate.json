@@ -1,0 +1,127 @@
+{
+  "meta": {
+    "namespace": "urn:samm:io.catenax.decomissioning_certificate:2.0.0#",
+    "meta_model": "SAMM 2.1.0",
+    "path": "data/sldt-semantic-models/io.catenax.decomissioning_certificate/2.0.0/DecommissioningCertificate.ttl"
+  },
+  "nodes": [
+    {
+      "id": "urn:samm:io.catenax.decomissioning_certificate:2.0.0#DecommissioningCertificate",
+      "label": "DecommissioningCertificate",
+      "kind": "Aspect",
+      "preferredName": "Decommissioning Certificate",
+      "description": null
+    },
+    {
+      "id": "urn:samm:io.catenax.decomissioning_certificate:2.0.0#catenaXId",
+      "label": "catenaXId",
+      "kind": "Property",
+      "preferredName": "catenaXId",
+      "description": "Twin identification"
+    },
+    {
+      "id": "urn:samm:io.catenax.decomissioning_certificate:2.0.0#serialNumber",
+      "label": "serialNumber",
+      "kind": "Property",
+      "preferredName": "serial number",
+      "description": "This is the \"real-world\" identification of an object, which is bound to be destructed. In case of a complete vehicle, which was in circulation before, it has to be the VAN. "
+    },
+    {
+      "id": "urn:samm:io.catenax.decomissioning_certificate:2.0.0#issuer",
+      "label": "issuer",
+      "kind": "Property",
+      "preferredName": "issuer",
+      "description": "BPMN of the business partner who creates this certificate, usually a dismantler."
+    },
+    {
+      "id": "urn:samm:io.catenax.decomissioning_certificate:2.0.0#issueDate",
+      "label": "issueDate",
+      "kind": "Property",
+      "preferredName": "issue date",
+      "description": "This is the date when the item has been decommissioned by the issuer."
+    },
+    {
+      "id": "urn:samm:io.catenax.decomissioning_certificate:2.0.0#revocationDate",
+      "label": "revocationDate",
+      "kind": "Property",
+      "preferredName": "revocation date",
+      "description": "This is the date when the  decommission certificate is revoked by the issuer. This only happens in exceptional cases when a vehicle has been marked as decommissioned by error or any other error is made in the issuance of the certificate"
+    },
+    {
+      "id": "urn:samm:io.catenax.decomissioning_certificate:2.0.0#Text",
+      "label": "Text",
+      "kind": "Characteristic",
+      "preferredName": null,
+      "description": "Describes a Property, which contains plain text. This is intended exclusively for human readable strings, not for identifiers, measurement values, etc."
+    },
+    {
+      "id": "urn:samm:io.catenax.decomissioning_certificate:2.0.0#Timestamp",
+      "label": "Timestamp",
+      "kind": "Characteristic",
+      "preferredName": null,
+      "description": "Describes a Property which contains the date and time with an optional timezone."
+    }
+  ],
+  "links": [
+    {
+      "source": "urn:samm:io.catenax.decomissioning_certificate:2.0.0#DecommissioningCertificate",
+      "target": "urn:samm:io.catenax.decomissioning_certificate:2.0.0#catenaXId",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.decomissioning_certificate:2.0.0#DecommissioningCertificate",
+      "target": "urn:samm:io.catenax.decomissioning_certificate:2.0.0#serialNumber",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.decomissioning_certificate:2.0.0#DecommissioningCertificate",
+      "target": "urn:samm:io.catenax.decomissioning_certificate:2.0.0#issuer",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.decomissioning_certificate:2.0.0#DecommissioningCertificate",
+      "target": "urn:samm:io.catenax.decomissioning_certificate:2.0.0#issueDate",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.decomissioning_certificate:2.0.0#DecommissioningCertificate",
+      "target": "urn:samm:io.catenax.decomissioning_certificate:2.0.0#revocationDate",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.decomissioning_certificate:2.0.0#catenaXId",
+      "target": "urn:samm:io.catenax.decomissioning_certificate:2.0.0#Text",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.decomissioning_certificate:2.0.0#serialNumber",
+      "target": "urn:samm:io.catenax.decomissioning_certificate:2.0.0#Text",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.decomissioning_certificate:2.0.0#issuer",
+      "target": "urn:samm:io.catenax.decomissioning_certificate:2.0.0#Text",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.decomissioning_certificate:2.0.0#issueDate",
+      "target": "urn:samm:io.catenax.decomissioning_certificate:2.0.0#Timestamp",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.decomissioning_certificate:2.0.0#revocationDate",
+      "target": "urn:samm:io.catenax.decomissioning_certificate:2.0.0#Timestamp",
+      "label": "characteristic",
+      "optional": false
+    }
+  ]
+}

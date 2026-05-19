@@ -1,0 +1,1440 @@
+{
+  "meta": {
+    "namespace": "urn:samm:io.catenax.report_8d:1.0.0#",
+    "meta_model": "SAMM 2.1.0",
+    "path": "data/sldt-semantic-models/io.catenax.report_8d/1.0.0/Report8D.ttl"
+  },
+  "nodes": [
+    {
+      "id": "urn:samm:io.catenax.report_8d:1.0.0#Report8D",
+      "label": "Report8D",
+      "kind": "Aspect",
+      "preferredName": "8D Report",
+      "description": "Aspect Model for the Quality Management business case describing an 8D report. An 8D report (Eight Disciplines) is a structured problem-solving method used primarily in quality management to identify, correct, and eliminate recurring issues. It guides teams through eight steps, including root cause analysis and implementation of permanent corrective actions. The goal is to improve processes, prevent future problems, and ensure customer satisfaction."
+    },
+    {
+      "id": "urn:samm:io.catenax.report_8d:1.0.0#header",
+      "label": "header",
+      "kind": "Property",
+      "preferredName": "Header",
+      "description": "The header of the 8D Report"
+    },
+    {
+      "id": "urn:samm:io.catenax.report_8d:1.0.0#stepD1",
+      "label": "stepD1",
+      "kind": "Property",
+      "preferredName": "Step D1",
+      "description": "First step of the 8D Report. Containing information about the team members working on the root cause analysis"
+    },
+    {
+      "id": "urn:samm:io.catenax.report_8d:1.0.0#stepD2",
+      "label": "stepD2",
+      "kind": "Property",
+      "preferredName": "Step D2",
+      "description": "Second step of the 8D Report."
+    },
+    {
+      "id": "urn:samm:io.catenax.report_8d:1.0.0#stepD3",
+      "label": "stepD3",
+      "kind": "Property",
+      "preferredName": "Step D3",
+      "description": "Third step of the 8D Report"
+    },
+    {
+      "id": "urn:samm:io.catenax.report_8d:1.0.0#stepD4",
+      "label": "stepD4",
+      "kind": "Property",
+      "preferredName": "Step D4",
+      "description": "Fourth Step of the 8D Report"
+    },
+    {
+      "id": "urn:samm:io.catenax.report_8d:1.0.0#stepD5",
+      "label": "stepD5",
+      "kind": "Property",
+      "preferredName": "Step D5",
+      "description": "Fifth step of the 8D Report"
+    },
+    {
+      "id": "urn:samm:io.catenax.report_8d:1.0.0#stepD6",
+      "label": "stepD6",
+      "kind": "Property",
+      "preferredName": "Step D6",
+      "description": "Sixth step of the 8D Report"
+    },
+    {
+      "id": "urn:samm:io.catenax.report_8d:1.0.0#stepD7",
+      "label": "stepD7",
+      "kind": "Property",
+      "preferredName": "Step D7",
+      "description": "Seventh step of the 8D Report"
+    },
+    {
+      "id": "urn:samm:io.catenax.report_8d:1.0.0#stepD8",
+      "label": "stepD8",
+      "kind": "Property",
+      "preferredName": "Step D8",
+      "description": "Eighth step of the 8D Report"
+    },
+    {
+      "id": "urn:samm:io.catenax.report_8d:1.0.0#stepD0",
+      "label": "stepD0",
+      "kind": "Property",
+      "preferredName": "Step D0",
+      "description": "Optional Step D0 used for the Global 8D Standard"
+    },
+    {
+      "id": "urn:samm:io.catenax.report_8d:1.0.0#complaintDate",
+      "label": "complaintDate",
+      "kind": "Property",
+      "preferredName": "Complaint date",
+      "description": "The date of claim is the specific date on which the claim was filed."
+    },
+    {
+      "id": "urn:samm:io.catenax.report_8d:1.0.0#lastRevisionDate",
+      "label": "lastRevisionDate",
+      "kind": "Property",
+      "preferredName": "Last revision date",
+      "description": "The date of last revision refers to the most recent date on which the document was updated."
+    },
+    {
+      "id": "urn:samm:io.catenax.report_8d:1.0.0#title",
+      "label": "title",
+      "kind": "Property",
+      "preferredName": "Title",
+      "description": "The title of the 8D report is the official title given to the 8D report."
+    },
+    {
+      "id": "urn:samm:io.catenax.report_8d:1.0.0#customerComplaintId",
+      "label": "customerComplaintId",
+      "kind": "Property",
+      "preferredName": "CustomerComplaint ID",
+      "description": "The customer specific ID of the complaint process is the identifier assigned to the complaint process by the customer."
+    },
+    {
+      "id": "urn:samm:io.catenax.report_8d:1.0.0#supplierComplaintId",
+      "label": "supplierComplaintId",
+      "kind": "Property",
+      "preferredName": "Supplier Complaint ID",
+      "description": "The supplier specific ID of the complaint process is the identifier assigned to the complaint process by the supplier."
+    },
+    {
+      "id": "urn:samm:io.catenax.report_8d:1.0.0#customerContact",
+      "label": "customerContact",
+      "kind": "Property",
+      "preferredName": "Customer Contact",
+      "description": "The Contact of the customer"
+    },
+    {
+      "id": "urn:samm:io.catenax.report_8d:1.0.0#supplierContact",
+      "label": "supplierContact",
+      "kind": "Property",
+      "preferredName": "Supplier Contact",
+      "description": "The Contact of the supplier"
+    },
+    {
+      "id": "urn:samm:io.catenax.report_8d:1.0.0#parts",
+      "label": "parts",
+      "kind": "Property",
+      "preferredName": "Parts",
+      "description": "Information about the effected parts"
+    },
+    {
+      "id": "urn:samm:io.catenax.report_8d:1.0.0#complaintLocation",
+      "label": "complaintLocation",
+      "kind": "Property",
+      "preferredName": "Complaint Location",
+      "description": "Defines the location of the complaint"
+    },
+    {
+      "id": "urn:samm:io.catenax.report_8d:1.0.0#sponsor",
+      "label": "sponsor",
+      "kind": "Property",
+      "preferredName": "Sponsor",
+      "description": "Sponsor of the 8D Report"
+    },
+    {
+      "id": "urn:samm:io.catenax.report_8d:1.0.0#teamLeader",
+      "label": "teamLeader",
+      "kind": "Property",
+      "preferredName": "Team leader",
+      "description": "team leader"
+    },
+    {
+      "id": "urn:samm:io.catenax.report_8d:1.0.0#contactPerson",
+      "label": "contactPerson",
+      "kind": "Property",
+      "preferredName": "Contact person",
+      "description": "contact person"
+    },
+    {
+      "id": "urn:samm:io.catenax.report_8d:1.0.0#teamMembers",
+      "label": "teamMembers",
+      "kind": "Property",
+      "preferredName": "Team members",
+      "description": "Team members"
+    },
+    {
+      "id": "urn:samm:io.catenax.report_8d:1.0.0#symptomDescription",
+      "label": "symptomDescription",
+      "kind": "Property",
+      "preferredName": "Symptom Description",
+      "description": "Describes which symptoms lead to the claim"
+    },
+    {
+      "id": "urn:samm:io.catenax.report_8d:1.0.0#problemDescription",
+      "label": "problemDescription",
+      "kind": "Property",
+      "preferredName": "Problem Description",
+      "description": "Describes the problem of the complaint and the consequences that arise from it"
+    },
+    {
+      "id": "urn:samm:io.catenax.report_8d:1.0.0#errorType",
+      "label": "errorType",
+      "kind": "Property",
+      "preferredName": "Error Type",
+      "description": "Describes the error type to be classified"
+    },
+    {
+      "id": "urn:samm:io.catenax.report_8d:1.0.0#riskAssessmentStarted",
+      "label": "riskAssessmentStarted",
+      "kind": "Property",
+      "preferredName": "Risk Assessment Started",
+      "description": "Describes at what point the risk assessment was started - the date as yyyy-mm-dd"
+    },
+    {
+      "id": "urn:samm:io.catenax.report_8d:1.0.0#riskAssessmentUpdated",
+      "label": "riskAssessmentUpdated",
+      "kind": "Property",
+      "preferredName": "Risk Assessment Updated",
+      "description": "Describes at what point the risk assessment was updated - the date as yyyy-mm-dd"
+    },
+    {
+      "id": "urn:samm:io.catenax.report_8d:1.0.0#qualityTaskAttachmentId",
+      "label": "qualityTaskAttachmentId",
+      "kind": "Property",
+      "preferredName": "Quality Task Attachment ID",
+      "description": "Allows to link an quality task attachment with added information about the complaint e.g. dimensions, photos, production data,…."
+    },
+    {
+      "id": "urn:samm:io.catenax.report_8d:1.0.0#errorLocation",
+      "label": "errorLocation",
+      "kind": "Property",
+      "preferredName": "Error Location",
+      "description": "Describes at which component or location the error occurred"
+    },
+    {
+      "id": "urn:samm:io.catenax.report_8d:1.0.0#descriptionOfInterimContainmentActions",
+      "label": "descriptionOfInterimContainmentActions",
+      "kind": "Property",
+      "preferredName": "Description of Interim Containment Actions (ICA)",
+      "description": "Describes interim containment action to resolve the quality problem in the short term"
+    },
+    {
+      "id": "urn:samm:io.catenax.report_8d:1.0.0#causes",
+      "label": "causes",
+      "kind": "Property",
+      "preferredName": "Causes",
+      "description": "Describes and lists the root cause(s)"
+    },
+    {
+      "id": "urn:samm:io.catenax.report_8d:1.0.0#definePermanentCorrectiveActions",
+      "label": "definePermanentCorrectiveActions",
+      "kind": "Property",
+      "preferredName": "Define Permanent Corrective Actions (PCA)",
+      "description": "Describes and lists planned permanent corrective measure(s)"
+    },
+    {
+      "id": "urn:samm:io.catenax.report_8d:1.0.0#implementedCorrectiveMeasures",
+      "label": "implementedCorrectiveMeasures",
+      "kind": "Property",
+      "preferredName": "Implemented Corrective Measures",
+      "description": "A List of implemented corrective measures"
+    },
+    {
+      "id": "urn:samm:io.catenax.report_8d:1.0.0#errorPreventiveMeasures",
+      "label": "errorPreventiveMeasures",
+      "kind": "Property",
+      "preferredName": "Error Preventive Measures",
+      "description": "Describes and lists error preventive measure(s)"
+    },
+    {
+      "id": "urn:samm:io.catenax.report_8d:1.0.0#resultAssesment",
+      "label": "resultAssesment",
+      "kind": "Property",
+      "preferredName": "Result Assesment",
+      "description": "Allows a summary of the measure and a final statement on its effectiveness"
+    },
+    {
+      "id": "urn:samm:io.catenax.report_8d:1.0.0#closingDate",
+      "label": "closingDate",
+      "kind": "Property",
+      "preferredName": "Closing Date",
+      "description": "Determining the time of 8D completion"
+    },
+    {
+      "id": "urn:samm:io.catenax.report_8d:1.0.0#defineEmergencyResponseAction",
+      "label": "defineEmergencyResponseAction",
+      "kind": "Property",
+      "preferredName": "Define Emergency Response Action",
+      "description": "Describes and lists planned permanent corrective measure(s)"
+    },
+    {
+      "id": "urn:samm:io.catenax.report_8d:1.0.0#companyName",
+      "label": "companyName",
+      "kind": "Property",
+      "preferredName": "Company name",
+      "description": "The name of the buyer company is the official registered name of the buyer's business."
+    },
+    {
+      "id": "urn:samm:io.catenax.report_8d:1.0.0#street",
+      "label": "street",
+      "kind": "Property",
+      "preferredName": "Street",
+      "description": "The street of the contact refers to the street address where the contact's business is located."
+    },
+    {
+      "id": "urn:samm:io.catenax.report_8d:1.0.0#city",
+      "label": "city",
+      "kind": "Property",
+      "preferredName": "City",
+      "description": "The location of the contact indicates the city or town where the contact operates."
+    },
+    {
+      "id": "urn:samm:io.catenax.report_8d:1.0.0#postalCode",
+      "label": "postalCode",
+      "kind": "Property",
+      "preferredName": "Postal code",
+      "description": "The postal code of the contact is the ZIP or postal code for the contact's address."
+    },
+    {
+      "id": "urn:samm:io.catenax.report_8d:1.0.0#country",
+      "label": "country",
+      "kind": "Property",
+      "preferredName": "Country",
+      "description": "The country of the contact specifies the nation where the contact's business is based."
+    },
+    {
+      "id": "urn:samm:io.catenax.report_8d:1.0.0#supplierPartNumber",
+      "label": "supplierPartNumber",
+      "kind": "Property",
+      "preferredName": "Supplier Part Number",
+      "description": "The part number of the supplier is the identifier assigned to the part by the supplier."
+    },
+    {
+      "id": "urn:samm:io.catenax.report_8d:1.0.0#customerPartNumber",
+      "label": "customerPartNumber",
+      "kind": "Property",
+      "preferredName": "Customer Part Number",
+      "description": "The part number of the customer is the identifier assigned to the part by the customer."
+    },
+    {
+      "id": "urn:samm:io.catenax.report_8d:1.0.0#orderNumber",
+      "label": "orderNumber",
+      "kind": "Property",
+      "preferredName": "Order number",
+      "description": "The order number of the part is the number associated with the purchase order for the part."
+    },
+    {
+      "id": "urn:samm:io.catenax.report_8d:1.0.0#name",
+      "label": "name",
+      "kind": "Property",
+      "preferredName": "Name",
+      "description": "The name of the person working on the 8D-report"
+    },
+    {
+      "id": "urn:samm:io.catenax.report_8d:1.0.0#department",
+      "label": "department",
+      "kind": "Property",
+      "preferredName": "Department",
+      "description": "The department of the person working on the 8D-report"
+    },
+    {
+      "id": "urn:samm:io.catenax.report_8d:1.0.0#role",
+      "label": "role",
+      "kind": "Property",
+      "preferredName": "Role",
+      "description": "The role in the company of the person working on the 8D-report"
+    },
+    {
+      "id": "urn:samm:io.catenax.report_8d:1.0.0#proofOfEffectiveness",
+      "label": "proofOfEffectiveness",
+      "kind": "Property",
+      "preferredName": "Proof Of Effectiveness",
+      "description": "Explain how the effectiveness of this measure has been validated"
+    },
+    {
+      "id": "urn:samm:io.catenax.report_8d:1.0.0#effectivenessResult",
+      "label": "effectivenessResult",
+      "kind": "Property",
+      "preferredName": "Effectiveness Result",
+      "description": "Explain to which extend / percentage the measure is effective"
+    },
+    {
+      "id": "urn:samm:io.catenax.report_8d:1.0.0#introductionDate",
+      "label": "introductionDate",
+      "kind": "Property",
+      "preferredName": "Introduction Date",
+      "description": "Definition of the date of introduction of the immediate measures - the date as yyyy-mm-dd"
+    },
+    {
+      "id": "urn:samm:io.catenax.report_8d:1.0.0#responsiblePerson",
+      "label": "responsiblePerson",
+      "kind": "Property",
+      "preferredName": "Responsible Person",
+      "description": "Person responsible for the implementation of the planned corrective measure"
+    },
+    {
+      "id": "urn:samm:io.catenax.report_8d:1.0.0#riskOfImmediateMeasure",
+      "label": "riskOfImmediateMeasure",
+      "kind": "Property",
+      "preferredName": "Risk Of Immediate Measure",
+      "description": "Describes the risk of introduction an immediate measure"
+    },
+    {
+      "id": "urn:samm:io.catenax.report_8d:1.0.0#methodForEffectivenessCheck",
+      "label": "methodForEffectivenessCheck",
+      "kind": "Property",
+      "preferredName": "Method For Effectiveness Check",
+      "description": "Describes the method for testing and demonstrating effectiveness"
+    },
+    {
+      "id": "urn:samm:io.catenax.report_8d:1.0.0#typeOfCauses",
+      "label": "typeOfCauses",
+      "kind": "Property",
+      "preferredName": "Type Of Causes",
+      "description": "There are different types of causes which are defined in 4 different categories."
+    },
+    {
+      "id": "urn:samm:io.catenax.report_8d:1.0.0#causeHypothesisDescription",
+      "label": "causeHypothesisDescription",
+      "kind": "Property",
+      "preferredName": "Cause Hypothesis Description",
+      "description": "Describes the causal hypothesis"
+    },
+    {
+      "id": "urn:samm:io.catenax.report_8d:1.0.0#verificationBy",
+      "label": "verificationBy",
+      "kind": "Property",
+      "preferredName": "Verification By",
+      "description": "Name the person responsible for investigating the hypothesis"
+    },
+    {
+      "id": "urn:samm:io.catenax.report_8d:1.0.0#clarificationDate",
+      "label": "clarificationDate",
+      "kind": "Property",
+      "preferredName": "Clarification Date",
+      "description": "Determination of the date of clarification of the cause - the date as yyyy-mm-dd"
+    },
+    {
+      "id": "urn:samm:io.catenax.report_8d:1.0.0#result",
+      "label": "result",
+      "kind": "Property",
+      "preferredName": "Result",
+      "description": "The result describes the outcome of a causal hypothesis"
+    },
+    {
+      "id": "urn:samm:io.catenax.report_8d:1.0.0#method",
+      "label": "method",
+      "kind": "Property",
+      "preferredName": "Method",
+      "description": "Describes the method for forming the causal hypothesis"
+    },
+    {
+      "id": "urn:samm:io.catenax.report_8d:1.0.0#report",
+      "label": "report",
+      "kind": "Property",
+      "preferredName": "Report",
+      "description": "Describes in detail the result of the investigated root cause hypothesis"
+    },
+    {
+      "id": "urn:samm:io.catenax.report_8d:1.0.0#errorCauseCategory",
+      "label": "errorCauseCategory",
+      "kind": "Property",
+      "preferredName": "Error Cause Category",
+      "description": "Describes the error cause category (ID) according to the VDA error catalog"
+    },
+    {
+      "id": "urn:samm:io.catenax.report_8d:1.0.0#causeAssignment",
+      "label": "causeAssignment",
+      "kind": "Property",
+      "preferredName": "Cause Assignment",
+      "description": "Define for which root cause the measure is relevant"
+    },
+    {
+      "id": "urn:samm:io.catenax.report_8d:1.0.0#status",
+      "label": "status",
+      "kind": "Property",
+      "preferredName": "Status",
+      "description": "Implementation status"
+    },
+    {
+      "id": "urn:samm:io.catenax.report_8d:1.0.0#measure",
+      "label": "measure",
+      "kind": "Property",
+      "preferredName": "Measure",
+      "description": "Plan technical measure to resolve the quality problem permanently"
+    },
+    {
+      "id": "urn:samm:io.catenax.report_8d:1.0.0#HeaderCharacteristic",
+      "label": "HeaderCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Header characteristic",
+      "description": "Characteristic for the property Header"
+    },
+    {
+      "id": "urn:samm:io.catenax.report_8d:1.0.0#StepD1Characteristic",
+      "label": "StepD1Characteristic",
+      "kind": "Characteristic",
+      "preferredName": "Step D1 Characteristic",
+      "description": "Characteristic for the step D1"
+    },
+    {
+      "id": "urn:samm:io.catenax.report_8d:1.0.0#StepD2Characteristic",
+      "label": "StepD2Characteristic",
+      "kind": "Characteristic",
+      "preferredName": " Step D2 Characteristic",
+      "description": "Characteristic for the step D2"
+    },
+    {
+      "id": "urn:samm:io.catenax.report_8d:1.0.0#StepD3Characteristic",
+      "label": "StepD3Characteristic",
+      "kind": "Characteristic",
+      "preferredName": "Step D3 Characteristic",
+      "description": "Characteristic for the step D3"
+    },
+    {
+      "id": "urn:samm:io.catenax.report_8d:1.0.0#StepD4Characteristic",
+      "label": "StepD4Characteristic",
+      "kind": "Characteristic",
+      "preferredName": "Step D4 Characteristic",
+      "description": "Characteristic for the Step D4"
+    },
+    {
+      "id": "urn:samm:io.catenax.report_8d:1.0.0#StepD5Characteristic",
+      "label": "StepD5Characteristic",
+      "kind": "Characteristic",
+      "preferredName": "Step D5 Characteristic",
+      "description": "Characteristic for the Step D5"
+    },
+    {
+      "id": "urn:samm:io.catenax.report_8d:1.0.0#StepD6Characteristic",
+      "label": "StepD6Characteristic",
+      "kind": "Characteristic",
+      "preferredName": "Step D6 Characteristic",
+      "description": "Characteristic for the Step D6"
+    },
+    {
+      "id": "urn:samm:io.catenax.report_8d:1.0.0#StepD7Characteristic",
+      "label": "StepD7Characteristic",
+      "kind": "Characteristic",
+      "preferredName": "Step D7 Characteristic",
+      "description": "Characteristic for the Step D8"
+    },
+    {
+      "id": "urn:samm:io.catenax.report_8d:1.0.0#StepD8Characteristic",
+      "label": "StepD8Characteristic",
+      "kind": "Characteristic",
+      "preferredName": "Step D8 Characteristic",
+      "description": "Characteristic for the Step D8"
+    },
+    {
+      "id": "urn:samm:io.catenax.report_8d:1.0.0#StepD0Characteristic",
+      "label": "StepD0Characteristic",
+      "kind": "Characteristic",
+      "preferredName": "Step D0 Characteristic",
+      "description": "Characteristic for the Step D0"
+    },
+    {
+      "id": "urn:samm:io.catenax.report_8d:1.0.0#ContactCharacteristic",
+      "label": "ContactCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Contact Characteristic",
+      "description": "Characteristic for contacts"
+    },
+    {
+      "id": "urn:samm:io.catenax.report_8d:1.0.0#PersonCharacteristic",
+      "label": "PersonCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Person Characteristic",
+      "description": "Information about one specific person"
+    },
+    {
+      "id": "urn:samm:io.catenax.report_8d:1.0.0#HeaderEntity",
+      "label": "HeaderEntity",
+      "kind": "Entity",
+      "preferredName": "Header entity",
+      "description": "Entity for the property Header"
+    },
+    {
+      "id": "urn:samm:io.catenax.report_8d:1.0.0#StepD1Entity",
+      "label": "StepD1Entity",
+      "kind": "Entity",
+      "preferredName": "Step D1 Entity",
+      "description": "Entity for the Characteristic Step D1"
+    },
+    {
+      "id": "urn:samm:io.catenax.report_8d:1.0.0#StepD2Entity",
+      "label": "StepD2Entity",
+      "kind": "Entity",
+      "preferredName": "Step D2 Entity",
+      "description": "Entity for the Characteristic Step D2"
+    },
+    {
+      "id": "urn:samm:io.catenax.report_8d:1.0.0#StepD3Entity",
+      "label": "StepD3Entity",
+      "kind": "Entity",
+      "preferredName": "Step D3 Entity",
+      "description": "Entity for the Characteristic Step D3"
+    },
+    {
+      "id": "urn:samm:io.catenax.report_8d:1.0.0#StepD4Entity",
+      "label": "StepD4Entity",
+      "kind": "Entity",
+      "preferredName": "Step D4 Entity",
+      "description": "Entity for the Characteristic Step D4"
+    },
+    {
+      "id": "urn:samm:io.catenax.report_8d:1.0.0#StepD5Entity",
+      "label": "StepD5Entity",
+      "kind": "Entity",
+      "preferredName": "Step D5 Entity",
+      "description": "Entity for the Characteristic Step D5"
+    },
+    {
+      "id": "urn:samm:io.catenax.report_8d:1.0.0#StepD6Entity",
+      "label": "StepD6Entity",
+      "kind": "Entity",
+      "preferredName": "Step D6 Entity",
+      "description": "Entity for the Characteristic D6"
+    },
+    {
+      "id": "urn:samm:io.catenax.report_8d:1.0.0#StepD7Entity",
+      "label": "StepD7Entity",
+      "kind": "Entity",
+      "preferredName": "Step D7 Entity",
+      "description": "Entity for the Characteristic Step D7"
+    },
+    {
+      "id": "urn:samm:io.catenax.report_8d:1.0.0#StepD8Entity",
+      "label": "StepD8Entity",
+      "kind": "Entity",
+      "preferredName": "Step D8 Entity",
+      "description": "Entity for the Characteristic D8"
+    },
+    {
+      "id": "urn:samm:io.catenax.report_8d:1.0.0#StepD0Entity",
+      "label": "StepD0Entity",
+      "kind": "Entity",
+      "preferredName": "Step D0 Entity",
+      "description": "Entity for the Characteristic Step D0"
+    },
+    {
+      "id": "urn:samm:io.catenax.report_8d:1.0.0#ContactEntity",
+      "label": "ContactEntity",
+      "kind": "Entity",
+      "preferredName": "Contact Entity",
+      "description": "Entity describing contacts"
+    },
+    {
+      "id": "urn:samm:io.catenax.report_8d:1.0.0#PartEntity",
+      "label": "PartEntity",
+      "kind": "Entity",
+      "preferredName": "Part Entity",
+      "description": "Entity of the Characteristic PartCharacteristic"
+    },
+    {
+      "id": "urn:samm:io.catenax.report_8d:1.0.0#PersonEntity",
+      "label": "PersonEntity",
+      "kind": "Entity",
+      "preferredName": "Person Entity",
+      "description": "Entity containing information of one specific person"
+    },
+    {
+      "id": "urn:samm:io.catenax.report_8d:1.0.0#DescriptionofInterimContainmentAction",
+      "label": "DescriptionofInterimContainmentAction",
+      "kind": "Entity",
+      "preferredName": "Description of Interim Containment Action",
+      "description": "Describes the immediate technical measure to resolve the quality problem in the short term"
+    },
+    {
+      "id": "urn:samm:io.catenax.report_8d:1.0.0#Cause",
+      "label": "Cause",
+      "kind": "Entity",
+      "preferredName": "Cause",
+      "description": "Describes a cause for the 8D Report"
+    },
+    {
+      "id": "urn:samm:io.catenax.report_8d:1.0.0#Measure",
+      "label": "Measure",
+      "kind": "Entity",
+      "preferredName": "Measure",
+      "description": "Measure to resolve the quality problem permanently"
+    },
+    {
+      "id": "urn:samm:io.catenax.report_8d:1.0.0#PartCharacteristic",
+      "label": "PartCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Part Characteristic",
+      "description": "Characteristic of the property part"
+    },
+    {
+      "id": "urn:samm:io.catenax.report_8d:1.0.0#TeamMemberList",
+      "label": "TeamMemberList",
+      "kind": "Characteristic",
+      "preferredName": "Team Member List",
+      "description": "TeamMemberList"
+    },
+    {
+      "id": "urn:samm:io.catenax.report_8d:1.0.0#DescriptionOfInterimContainmentActionList",
+      "label": "DescriptionOfInterimContainmentActionList",
+      "kind": "Characteristic",
+      "preferredName": "Description of Interim Containment Action List",
+      "description": "A list of Descriptions of Interim Containment Actions"
+    },
+    {
+      "id": "urn:samm:io.catenax.report_8d:1.0.0#CauseList",
+      "label": "CauseList",
+      "kind": "Characteristic",
+      "preferredName": "Cause List",
+      "description": "The Characteristic to describe a list of causes"
+    },
+    {
+      "id": "urn:samm:io.catenax.report_8d:1.0.0#MeasuresList",
+      "label": "MeasuresList",
+      "kind": "Characteristic",
+      "preferredName": "Planned Corrective ",
+      "description": "A List of measures"
+    },
+    {
+      "id": "urn:samm:io.catenax.report_8d:1.0.0#Percentage",
+      "label": "Percentage",
+      "kind": "Characteristic",
+      "preferredName": "Percentage",
+      "description": "A number between 0 and 100"
+    },
+    {
+      "id": "urn:samm:io.catenax.report_8d:1.0.0#TypeOfCausesEnumeration",
+      "label": "TypeOfCausesEnumeration",
+      "kind": "Characteristic",
+      "preferredName": "Type Of Causes Enumeration",
+      "description": "Describes the valid inputs for the aspect typeOfCausesEnumeration"
+    },
+    {
+      "id": "urn:samm:io.catenax.report_8d:1.0.0#StatusEnumeration",
+      "label": "StatusEnumeration",
+      "kind": "Characteristic",
+      "preferredName": "Status Enumeration",
+      "description": "Defines valid values for the field Status"
+    }
+  ],
+  "links": [
+    {
+      "source": "urn:samm:io.catenax.report_8d:1.0.0#Report8D",
+      "target": "urn:samm:io.catenax.report_8d:1.0.0#header",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.report_8d:1.0.0#Report8D",
+      "target": "urn:samm:io.catenax.report_8d:1.0.0#stepD1",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.report_8d:1.0.0#Report8D",
+      "target": "urn:samm:io.catenax.report_8d:1.0.0#stepD2",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.report_8d:1.0.0#Report8D",
+      "target": "urn:samm:io.catenax.report_8d:1.0.0#stepD3",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.report_8d:1.0.0#Report8D",
+      "target": "urn:samm:io.catenax.report_8d:1.0.0#stepD4",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.report_8d:1.0.0#Report8D",
+      "target": "urn:samm:io.catenax.report_8d:1.0.0#stepD5",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.report_8d:1.0.0#Report8D",
+      "target": "urn:samm:io.catenax.report_8d:1.0.0#stepD6",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.report_8d:1.0.0#Report8D",
+      "target": "urn:samm:io.catenax.report_8d:1.0.0#stepD7",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.report_8d:1.0.0#Report8D",
+      "target": "urn:samm:io.catenax.report_8d:1.0.0#stepD8",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.report_8d:1.0.0#Report8D",
+      "target": "urn:samm:io.catenax.report_8d:1.0.0#stepD0",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.report_8d:1.0.0#HeaderEntity",
+      "target": "urn:samm:io.catenax.report_8d:1.0.0#complaintDate",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.report_8d:1.0.0#HeaderEntity",
+      "target": "urn:samm:io.catenax.report_8d:1.0.0#lastRevisionDate",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.report_8d:1.0.0#HeaderEntity",
+      "target": "urn:samm:io.catenax.report_8d:1.0.0#title",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.report_8d:1.0.0#HeaderEntity",
+      "target": "urn:samm:io.catenax.report_8d:1.0.0#customerComplaintId",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.report_8d:1.0.0#HeaderEntity",
+      "target": "urn:samm:io.catenax.report_8d:1.0.0#supplierComplaintId",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.report_8d:1.0.0#HeaderEntity",
+      "target": "urn:samm:io.catenax.report_8d:1.0.0#customerContact",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.report_8d:1.0.0#HeaderEntity",
+      "target": "urn:samm:io.catenax.report_8d:1.0.0#supplierContact",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.report_8d:1.0.0#HeaderEntity",
+      "target": "urn:samm:io.catenax.report_8d:1.0.0#parts",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.report_8d:1.0.0#HeaderEntity",
+      "target": "urn:samm:io.catenax.report_8d:1.0.0#complaintLocation",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.report_8d:1.0.0#StepD1Entity",
+      "target": "urn:samm:io.catenax.report_8d:1.0.0#sponsor",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.report_8d:1.0.0#StepD1Entity",
+      "target": "urn:samm:io.catenax.report_8d:1.0.0#teamLeader",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.report_8d:1.0.0#StepD1Entity",
+      "target": "urn:samm:io.catenax.report_8d:1.0.0#contactPerson",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.report_8d:1.0.0#StepD1Entity",
+      "target": "urn:samm:io.catenax.report_8d:1.0.0#teamMembers",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.report_8d:1.0.0#StepD2Entity",
+      "target": "urn:samm:io.catenax.report_8d:1.0.0#symptomDescription",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.report_8d:1.0.0#StepD2Entity",
+      "target": "urn:samm:io.catenax.report_8d:1.0.0#problemDescription",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.report_8d:1.0.0#StepD2Entity",
+      "target": "urn:samm:io.catenax.report_8d:1.0.0#errorType",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.report_8d:1.0.0#StepD2Entity",
+      "target": "urn:samm:io.catenax.report_8d:1.0.0#riskAssessmentStarted",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.report_8d:1.0.0#StepD2Entity",
+      "target": "urn:samm:io.catenax.report_8d:1.0.0#riskAssessmentUpdated",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.report_8d:1.0.0#StepD2Entity",
+      "target": "urn:samm:io.catenax.report_8d:1.0.0#qualityTaskAttachmentId",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.report_8d:1.0.0#StepD2Entity",
+      "target": "urn:samm:io.catenax.report_8d:1.0.0#errorLocation",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.report_8d:1.0.0#StepD3Entity",
+      "target": "urn:samm:io.catenax.report_8d:1.0.0#descriptionOfInterimContainmentActions",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.report_8d:1.0.0#StepD4Entity",
+      "target": "urn:samm:io.catenax.report_8d:1.0.0#causes",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.report_8d:1.0.0#StepD5Entity",
+      "target": "urn:samm:io.catenax.report_8d:1.0.0#definePermanentCorrectiveActions",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.report_8d:1.0.0#StepD6Entity",
+      "target": "urn:samm:io.catenax.report_8d:1.0.0#implementedCorrectiveMeasures",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.report_8d:1.0.0#StepD7Entity",
+      "target": "urn:samm:io.catenax.report_8d:1.0.0#errorPreventiveMeasures",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.report_8d:1.0.0#StepD8Entity",
+      "target": "urn:samm:io.catenax.report_8d:1.0.0#resultAssesment",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.report_8d:1.0.0#StepD8Entity",
+      "target": "urn:samm:io.catenax.report_8d:1.0.0#closingDate",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.report_8d:1.0.0#StepD0Entity",
+      "target": "urn:samm:io.catenax.report_8d:1.0.0#defineEmergencyResponseAction",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.report_8d:1.0.0#StepD0Entity",
+      "target": "urn:samm:io.catenax.report_8d:1.0.0#customerComplaintId",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.report_8d:1.0.0#StepD0Entity",
+      "target": "urn:samm:io.catenax.report_8d:1.0.0#supplierComplaintId",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.report_8d:1.0.0#StepD0Entity",
+      "target": "urn:samm:io.catenax.report_8d:1.0.0#problemDescription",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.report_8d:1.0.0#StepD0Entity",
+      "target": "urn:samm:io.catenax.report_8d:1.0.0#complaintDate",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.report_8d:1.0.0#StepD0Entity",
+      "target": "urn:samm:io.catenax.report_8d:1.0.0#complaintLocation",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.report_8d:1.0.0#ContactEntity",
+      "target": "urn:samm:io.catenax.report_8d:1.0.0#companyName",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.report_8d:1.0.0#ContactEntity",
+      "target": "urn:samm:io.catenax.report_8d:1.0.0#street",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.report_8d:1.0.0#ContactEntity",
+      "target": "urn:samm:io.catenax.report_8d:1.0.0#city",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.report_8d:1.0.0#ContactEntity",
+      "target": "urn:samm:io.catenax.report_8d:1.0.0#postalCode",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.report_8d:1.0.0#ContactEntity",
+      "target": "urn:samm:io.catenax.report_8d:1.0.0#country",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.report_8d:1.0.0#PartEntity",
+      "target": "urn:samm:io.catenax.report_8d:1.0.0#supplierPartNumber",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.report_8d:1.0.0#PartEntity",
+      "target": "urn:samm:io.catenax.report_8d:1.0.0#customerPartNumber",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.report_8d:1.0.0#PartEntity",
+      "target": "urn:samm:io.catenax.report_8d:1.0.0#orderNumber",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.report_8d:1.0.0#PersonEntity",
+      "target": "urn:samm:io.catenax.report_8d:1.0.0#name",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.report_8d:1.0.0#PersonEntity",
+      "target": "urn:samm:io.catenax.report_8d:1.0.0#department",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.report_8d:1.0.0#PersonEntity",
+      "target": "urn:samm:io.catenax.report_8d:1.0.0#role",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.report_8d:1.0.0#DescriptionofInterimContainmentAction",
+      "target": "urn:samm:io.catenax.report_8d:1.0.0#proofOfEffectiveness",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.report_8d:1.0.0#DescriptionofInterimContainmentAction",
+      "target": "urn:samm:io.catenax.report_8d:1.0.0#effectivenessResult",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.report_8d:1.0.0#DescriptionofInterimContainmentAction",
+      "target": "urn:samm:io.catenax.report_8d:1.0.0#introductionDate",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.report_8d:1.0.0#DescriptionofInterimContainmentAction",
+      "target": "urn:samm:io.catenax.report_8d:1.0.0#responsiblePerson",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.report_8d:1.0.0#DescriptionofInterimContainmentAction",
+      "target": "urn:samm:io.catenax.report_8d:1.0.0#riskOfImmediateMeasure",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.report_8d:1.0.0#DescriptionofInterimContainmentAction",
+      "target": "urn:samm:io.catenax.report_8d:1.0.0#methodForEffectivenessCheck",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.report_8d:1.0.0#Cause",
+      "target": "urn:samm:io.catenax.report_8d:1.0.0#typeOfCauses",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.report_8d:1.0.0#Cause",
+      "target": "urn:samm:io.catenax.report_8d:1.0.0#causeHypothesisDescription",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.report_8d:1.0.0#Cause",
+      "target": "urn:samm:io.catenax.report_8d:1.0.0#verificationBy",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.report_8d:1.0.0#Cause",
+      "target": "urn:samm:io.catenax.report_8d:1.0.0#clarificationDate",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.report_8d:1.0.0#Cause",
+      "target": "urn:samm:io.catenax.report_8d:1.0.0#result",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.report_8d:1.0.0#Cause",
+      "target": "urn:samm:io.catenax.report_8d:1.0.0#method",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.report_8d:1.0.0#Cause",
+      "target": "urn:samm:io.catenax.report_8d:1.0.0#report",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.report_8d:1.0.0#Cause",
+      "target": "urn:samm:io.catenax.report_8d:1.0.0#errorCauseCategory",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.report_8d:1.0.0#Measure",
+      "target": "urn:samm:io.catenax.report_8d:1.0.0#introductionDate",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.report_8d:1.0.0#Measure",
+      "target": "urn:samm:io.catenax.report_8d:1.0.0#responsiblePerson",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.report_8d:1.0.0#Measure",
+      "target": "urn:samm:io.catenax.report_8d:1.0.0#causeAssignment",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.report_8d:1.0.0#Measure",
+      "target": "urn:samm:io.catenax.report_8d:1.0.0#proofOfEffectiveness",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.report_8d:1.0.0#Measure",
+      "target": "urn:samm:io.catenax.report_8d:1.0.0#effectivenessResult",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.report_8d:1.0.0#Measure",
+      "target": "urn:samm:io.catenax.report_8d:1.0.0#status",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.report_8d:1.0.0#Measure",
+      "target": "urn:samm:io.catenax.report_8d:1.0.0#measure",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.report_8d:1.0.0#header",
+      "target": "urn:samm:io.catenax.report_8d:1.0.0#HeaderCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.report_8d:1.0.0#stepD1",
+      "target": "urn:samm:io.catenax.report_8d:1.0.0#StepD1Characteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.report_8d:1.0.0#stepD2",
+      "target": "urn:samm:io.catenax.report_8d:1.0.0#StepD2Characteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.report_8d:1.0.0#stepD3",
+      "target": "urn:samm:io.catenax.report_8d:1.0.0#StepD3Characteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.report_8d:1.0.0#stepD4",
+      "target": "urn:samm:io.catenax.report_8d:1.0.0#StepD4Characteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.report_8d:1.0.0#stepD5",
+      "target": "urn:samm:io.catenax.report_8d:1.0.0#StepD5Characteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.report_8d:1.0.0#stepD6",
+      "target": "urn:samm:io.catenax.report_8d:1.0.0#StepD6Characteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.report_8d:1.0.0#stepD7",
+      "target": "urn:samm:io.catenax.report_8d:1.0.0#StepD7Characteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.report_8d:1.0.0#stepD8",
+      "target": "urn:samm:io.catenax.report_8d:1.0.0#StepD8Characteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.report_8d:1.0.0#stepD0",
+      "target": "urn:samm:io.catenax.report_8d:1.0.0#StepD0Characteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.report_8d:1.0.0#customerContact",
+      "target": "urn:samm:io.catenax.report_8d:1.0.0#ContactCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.report_8d:1.0.0#supplierContact",
+      "target": "urn:samm:io.catenax.report_8d:1.0.0#ContactCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.report_8d:1.0.0#parts",
+      "target": "urn:samm:io.catenax.report_8d:1.0.0#PartCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.report_8d:1.0.0#sponsor",
+      "target": "urn:samm:io.catenax.report_8d:1.0.0#PersonCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.report_8d:1.0.0#teamLeader",
+      "target": "urn:samm:io.catenax.report_8d:1.0.0#PersonCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.report_8d:1.0.0#contactPerson",
+      "target": "urn:samm:io.catenax.report_8d:1.0.0#PersonCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.report_8d:1.0.0#teamMembers",
+      "target": "urn:samm:io.catenax.report_8d:1.0.0#TeamMemberList",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.report_8d:1.0.0#descriptionOfInterimContainmentActions",
+      "target": "urn:samm:io.catenax.report_8d:1.0.0#DescriptionOfInterimContainmentActionList",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.report_8d:1.0.0#causes",
+      "target": "urn:samm:io.catenax.report_8d:1.0.0#CauseList",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.report_8d:1.0.0#definePermanentCorrectiveActions",
+      "target": "urn:samm:io.catenax.report_8d:1.0.0#MeasuresList",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.report_8d:1.0.0#implementedCorrectiveMeasures",
+      "target": "urn:samm:io.catenax.report_8d:1.0.0#MeasuresList",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.report_8d:1.0.0#errorPreventiveMeasures",
+      "target": "urn:samm:io.catenax.report_8d:1.0.0#MeasuresList",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.report_8d:1.0.0#defineEmergencyResponseAction",
+      "target": "urn:samm:io.catenax.report_8d:1.0.0#MeasuresList",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.report_8d:1.0.0#effectivenessResult",
+      "target": "urn:samm:io.catenax.report_8d:1.0.0#Percentage",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.report_8d:1.0.0#typeOfCauses",
+      "target": "urn:samm:io.catenax.report_8d:1.0.0#TypeOfCausesEnumeration",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.report_8d:1.0.0#status",
+      "target": "urn:samm:io.catenax.report_8d:1.0.0#StatusEnumeration",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.report_8d:1.0.0#HeaderCharacteristic",
+      "target": "urn:samm:io.catenax.report_8d:1.0.0#HeaderEntity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.report_8d:1.0.0#StepD1Characteristic",
+      "target": "urn:samm:io.catenax.report_8d:1.0.0#StepD1Entity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.report_8d:1.0.0#StepD2Characteristic",
+      "target": "urn:samm:io.catenax.report_8d:1.0.0#StepD2Entity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.report_8d:1.0.0#StepD3Characteristic",
+      "target": "urn:samm:io.catenax.report_8d:1.0.0#StepD3Entity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.report_8d:1.0.0#StepD4Characteristic",
+      "target": "urn:samm:io.catenax.report_8d:1.0.0#StepD4Entity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.report_8d:1.0.0#StepD5Characteristic",
+      "target": "urn:samm:io.catenax.report_8d:1.0.0#StepD5Entity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.report_8d:1.0.0#StepD6Characteristic",
+      "target": "urn:samm:io.catenax.report_8d:1.0.0#StepD6Entity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.report_8d:1.0.0#StepD7Characteristic",
+      "target": "urn:samm:io.catenax.report_8d:1.0.0#StepD7Entity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.report_8d:1.0.0#StepD8Characteristic",
+      "target": "urn:samm:io.catenax.report_8d:1.0.0#StepD8Entity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.report_8d:1.0.0#StepD0Characteristic",
+      "target": "urn:samm:io.catenax.report_8d:1.0.0#StepD0Entity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.report_8d:1.0.0#ContactCharacteristic",
+      "target": "urn:samm:io.catenax.report_8d:1.0.0#ContactEntity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.report_8d:1.0.0#PartCharacteristic",
+      "target": "urn:samm:io.catenax.report_8d:1.0.0#PartEntity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.report_8d:1.0.0#PersonCharacteristic",
+      "target": "urn:samm:io.catenax.report_8d:1.0.0#PersonEntity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.report_8d:1.0.0#TeamMemberList",
+      "target": "urn:samm:io.catenax.report_8d:1.0.0#PersonEntity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.report_8d:1.0.0#DescriptionOfInterimContainmentActionList",
+      "target": "urn:samm:io.catenax.report_8d:1.0.0#DescriptionofInterimContainmentAction",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.report_8d:1.0.0#CauseList",
+      "target": "urn:samm:io.catenax.report_8d:1.0.0#Cause",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.report_8d:1.0.0#MeasuresList",
+      "target": "urn:samm:io.catenax.report_8d:1.0.0#Measure",
+      "label": "dataType",
+      "optional": false
+    }
+  ]
+}

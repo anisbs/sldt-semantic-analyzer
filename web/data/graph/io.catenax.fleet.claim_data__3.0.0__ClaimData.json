@@ -1,0 +1,408 @@
+{
+  "meta": {
+    "namespace": "urn:samm:io.catenax.fleet.claim_data:3.0.0#",
+    "meta_model": "SAMM 2.1.0",
+    "path": "data/sldt-semantic-models/io.catenax.fleet.claim_data/3.0.0/ClaimData.ttl"
+  },
+  "nodes": [
+    {
+      "id": "urn:samm:io.catenax.fleet.claim_data:3.0.0#ClaimData",
+      "label": "ClaimData",
+      "kind": "Aspect",
+      "preferredName": "Claim Data",
+      "description": "For Catena-X(CX) business case Quality Management. Supported technical features: delta update feature, meta information feature and additionalInformationList key-value pairs. The supported model features are described in detail in the Catena-X Quality KIT. This model is used to exchange claim information. FleetClaim data model is used to exchange a list of claims. A Claim is a complaint of a vehicle owner. The assumption for this data model is that a customer is coming to a repair shop and complaining about a malfunction in his/her vehicle during vehicle's warranty period. The repair shop than diagnosis the car (this is the link to FleetDiagnostic data model) and can eventually exchange faulty parts. The repair shop later hands in the invoice to the OEM to compensate his work. Defining the uniqueness of a claim: A claim gets a unique claimId (unique within one OEM). A claim is related to one vehicle that can be identified by anonymizedVIN and refers to a potentially faulty part/component in the vehicle. A claim is coming from a specific country - this is normally the country of the repair shop. A claim can contain a list of replaced parts that were put out of the affected vehicle and a list of spare parts/new parts that were put into the affected vehicle. Some of the old, potentially faulty parts are send back to the part's manufacturer for detailed analyses (this is the link to the PartsAnalyses data model)."
+    },
+    {
+      "id": "urn:samm:io.catenax.fleet.claim_data:3.0.0#claims",
+      "label": "claims",
+      "kind": "Property",
+      "preferredName": "Claims",
+      "description": "A list of customer complaints or workshop repairs that belong to one or more quality tasks."
+    },
+    {
+      "id": "urn:samm:io.catenax.fleet.claim_data:3.0.0#claimId",
+      "label": "claimId",
+      "kind": "Property",
+      "preferredName": "Claim ID",
+      "description": "Each claim from this data provider has a unique claim ID.If you combine the BPNL of the data provider with this claim ID you get a unique claim ID in the data space."
+    },
+    {
+      "id": "urn:samm:io.catenax.fleet.claim_data:3.0.0#repairDate",
+      "label": "repairDate",
+      "kind": "Property",
+      "preferredName": "Repair Date",
+      "description": "References the date when the claim was initially reported."
+    },
+    {
+      "id": "urn:samm:io.catenax.fleet.claim_data:3.0.0#repairMileage",
+      "label": "repairMileage",
+      "kind": "Property",
+      "preferredName": "Repair Mileage",
+      "description": "The mileage counter of the vehicle when it was in the workshop."
+    },
+    {
+      "id": "urn:samm:io.catenax.fleet.claim_data:3.0.0#repairMileageUnit",
+      "label": "repairMileageUnit",
+      "kind": "Property",
+      "preferredName": "Repair Mileage Unit",
+      "description": "The unit of the repair mileage - either km or mi. Default is km."
+    },
+    {
+      "id": "urn:samm:io.catenax.fleet.claim_data:3.0.0#customerComment",
+      "label": "customerComment",
+      "kind": "Property",
+      "preferredName": "Customer Comment",
+      "description": "End customer comment (e.g. from the vehicle owner, rental car user, etc. ) about the malfunction of this vehicle."
+    },
+    {
+      "id": "urn:samm:io.catenax.fleet.claim_data:3.0.0#damageCode",
+      "label": "damageCode",
+      "kind": "Property",
+      "preferredName": "Damage Code",
+      "description": "OEM-specific damage code"
+    },
+    {
+      "id": "urn:samm:io.catenax.fleet.claim_data:3.0.0#damageCodeDescription",
+      "label": "damageCodeDescription",
+      "kind": "Property",
+      "preferredName": "Damage Code Description.",
+      "description": "Description of the damage code."
+    },
+    {
+      "id": "urn:samm:io.catenax.fleet.claim_data:3.0.0#technicianComment",
+      "label": "technicianComment",
+      "kind": "Property",
+      "preferredName": "Technician Comment",
+      "description": "Short description of the claim from the technicians"
+    },
+    {
+      "id": "urn:samm:io.catenax.fleet.claim_data:3.0.0#diagnosticSessions",
+      "label": "diagnosticSessions",
+      "kind": "Property",
+      "preferredName": "Diagnostic Sessions",
+      "description": "A list of diagnostic sessions linked to this claim."
+    },
+    {
+      "id": "urn:samm:io.catenax.fleet.claim_data:3.0.0#claimedParts",
+      "label": "claimedParts",
+      "kind": "Property",
+      "preferredName": "Claimed Parts",
+      "description": "A list of claimed parts which were replaced or repaired."
+    },
+    {
+      "id": "urn:samm:io.catenax.fleet.claim_data:3.0.0#spareParts",
+      "label": "spareParts",
+      "kind": "Property",
+      "preferredName": "Spare Parts",
+      "description": "A list of spare parts that were built into the vehicle."
+    },
+    {
+      "id": "urn:samm:io.catenax.fleet.claim_data:3.0.0#monthInService",
+      "label": "monthInService",
+      "kind": "Property",
+      "preferredName": "Month In Service",
+      "description": "The number of month the vehicle is in service."
+    },
+    {
+      "id": "urn:samm:io.catenax.fleet.claim_data:3.0.0#breakdown",
+      "label": "breakdown",
+      "kind": "Property",
+      "preferredName": "Breakdown",
+      "description": "Had the vehicle a breakdown and could not drive any more?"
+    },
+    {
+      "id": "urn:samm:io.catenax.fleet.claim_data:3.0.0#repeatedRepair",
+      "label": "repeatedRepair",
+      "kind": "Property",
+      "preferredName": "Repeated Repair",
+      "description": "Was there a repeated repair for the same part in this vehicle."
+    },
+    {
+      "id": "urn:samm:io.catenax.fleet.claim_data:3.0.0#dateOfPreviousRepair",
+      "label": "dateOfPreviousRepair",
+      "kind": "Property",
+      "preferredName": "Date Of Previous Repair",
+      "description": "The date of the previous repair."
+    },
+    {
+      "id": "urn:samm:io.catenax.fleet.claim_data:3.0.0#isPartCausal",
+      "label": "isPartCausal",
+      "kind": "Property",
+      "preferredName": "Is Part Causal",
+      "description": "Flag is set to true if part was causing the problem-otherwise false."
+    },
+    {
+      "id": "urn:samm:io.catenax.fleet.claim_data:3.0.0#isPartReplaced",
+      "label": "isPartReplaced",
+      "kind": "Property",
+      "preferredName": "Is Part Replaced",
+      "description": "Flag is set to true if part was replaced-otherwise false."
+    },
+    {
+      "id": "urn:samm:io.catenax.fleet.claim_data:3.0.0#amountOfReplacedParts",
+      "label": "amountOfReplacedParts",
+      "kind": "Property",
+      "preferredName": "Amount Of Replaced Parts",
+      "description": "Counter for non-serial parts which have been replaced"
+    },
+    {
+      "id": "urn:samm:io.catenax.fleet.claim_data:3.0.0#partTreatment",
+      "label": "partTreatment",
+      "kind": "Property",
+      "preferredName": "Part Treatment",
+      "description": "Describes what happened to this part in the claim."
+    },
+    {
+      "id": "urn:samm:io.catenax.fleet.claim_data:3.0.0#ClaimsList",
+      "label": "ClaimsList",
+      "kind": "Characteristic",
+      "preferredName": "Claim List",
+      "description": "A list of claims."
+    },
+    {
+      "id": "urn:samm:io.catenax.fleet.claim_data:3.0.0#DiagnosticSessionsList",
+      "label": "DiagnosticSessionsList",
+      "kind": "Characteristic",
+      "preferredName": "Diagnostic Sessions List",
+      "description": "A list of diagnostic sessions that are linked to this claim."
+    },
+    {
+      "id": "urn:samm:io.catenax.fleet.claim_data:3.0.0#ClaimedPartsList",
+      "label": "ClaimedPartsList",
+      "kind": "Characteristic",
+      "preferredName": "Claimed Parts List",
+      "description": "Characteristic of a list of parts that are linked to a claim."
+    },
+    {
+      "id": "urn:samm:io.catenax.fleet.claim_data:3.0.0#SparePartsList",
+      "label": "SparePartsList",
+      "kind": "Characteristic",
+      "preferredName": "Spare Parts List",
+      "description": "A list of spare parts."
+    },
+    {
+      "id": "urn:samm:io.catenax.fleet.claim_data:3.0.0#Claim",
+      "label": "Claim",
+      "kind": "Entity",
+      "preferredName": "Claim",
+      "description": "A claim is when a customer has a problem with his vehicle and goes to the workshop to get this problem fixed. Sometimes potentially faulty parts are exchanged."
+    },
+    {
+      "id": "urn:samm:io.catenax.fleet.claim_data:3.0.0#DiagnosticSession",
+      "label": "DiagnosticSession",
+      "kind": "Entity",
+      "preferredName": "Diagnostic Session",
+      "description": "One diagnostic session of one vehicle: Either this is a diagnostic session done in a workshop or via over-the-air diagnostic."
+    },
+    {
+      "id": "urn:samm:io.catenax.fleet.claim_data:3.0.0#ClaimedPart",
+      "label": "ClaimedPart",
+      "kind": "Entity",
+      "preferredName": "Claimed Part",
+      "description": "One part in the vehicle that was treated during the repair."
+    },
+    {
+      "id": "urn:samm:io.catenax.fleet.claim_data:3.0.0#SparePart",
+      "label": "SparePart",
+      "kind": "Entity",
+      "preferredName": "Spare Part",
+      "description": "A generic description to identify a spare part."
+    },
+    {
+      "id": "urn:samm:io.catenax.fleet.claim_data:3.0.0#NonNegativeInteger",
+      "label": "NonNegativeInteger",
+      "kind": "Characteristic",
+      "preferredName": "Non Negative Integer",
+      "description": "An integer that is 0 or bigger. Please round."
+    },
+    {
+      "id": "urn:samm:io.catenax.fleet.claim_data:3.0.0#AmountOfReplacedPartsCharacteristic",
+      "label": "AmountOfReplacedPartsCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Amount Of Replaced Parts",
+      "description": "Counter for non-serial parts"
+    }
+  ],
+  "links": [
+    {
+      "source": "urn:samm:io.catenax.fleet.claim_data:3.0.0#ClaimData",
+      "target": "urn:samm:io.catenax.fleet.claim_data:3.0.0#claims",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.claim_data:3.0.0#Claim",
+      "target": "urn:samm:io.catenax.fleet.claim_data:3.0.0#claimId",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.claim_data:3.0.0#Claim",
+      "target": "urn:samm:io.catenax.fleet.claim_data:3.0.0#repairDate",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.claim_data:3.0.0#Claim",
+      "target": "urn:samm:io.catenax.fleet.claim_data:3.0.0#repairMileage",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.claim_data:3.0.0#Claim",
+      "target": "urn:samm:io.catenax.fleet.claim_data:3.0.0#repairMileageUnit",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.claim_data:3.0.0#Claim",
+      "target": "urn:samm:io.catenax.fleet.claim_data:3.0.0#customerComment",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.claim_data:3.0.0#Claim",
+      "target": "urn:samm:io.catenax.fleet.claim_data:3.0.0#damageCode",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.claim_data:3.0.0#Claim",
+      "target": "urn:samm:io.catenax.fleet.claim_data:3.0.0#damageCodeDescription",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.claim_data:3.0.0#Claim",
+      "target": "urn:samm:io.catenax.fleet.claim_data:3.0.0#technicianComment",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.claim_data:3.0.0#Claim",
+      "target": "urn:samm:io.catenax.fleet.claim_data:3.0.0#diagnosticSessions",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.claim_data:3.0.0#Claim",
+      "target": "urn:samm:io.catenax.fleet.claim_data:3.0.0#claimedParts",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.claim_data:3.0.0#Claim",
+      "target": "urn:samm:io.catenax.fleet.claim_data:3.0.0#spareParts",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.claim_data:3.0.0#Claim",
+      "target": "urn:samm:io.catenax.fleet.claim_data:3.0.0#monthInService",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.claim_data:3.0.0#Claim",
+      "target": "urn:samm:io.catenax.fleet.claim_data:3.0.0#breakdown",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.claim_data:3.0.0#Claim",
+      "target": "urn:samm:io.catenax.fleet.claim_data:3.0.0#repeatedRepair",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.claim_data:3.0.0#Claim",
+      "target": "urn:samm:io.catenax.fleet.claim_data:3.0.0#dateOfPreviousRepair",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.claim_data:3.0.0#ClaimedPart",
+      "target": "urn:samm:io.catenax.fleet.claim_data:3.0.0#isPartCausal",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.claim_data:3.0.0#ClaimedPart",
+      "target": "urn:samm:io.catenax.fleet.claim_data:3.0.0#isPartReplaced",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.claim_data:3.0.0#ClaimedPart",
+      "target": "urn:samm:io.catenax.fleet.claim_data:3.0.0#amountOfReplacedParts",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.claim_data:3.0.0#ClaimedPart",
+      "target": "urn:samm:io.catenax.fleet.claim_data:3.0.0#partTreatment",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.claim_data:3.0.0#claims",
+      "target": "urn:samm:io.catenax.fleet.claim_data:3.0.0#ClaimsList",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.claim_data:3.0.0#diagnosticSessions",
+      "target": "urn:samm:io.catenax.fleet.claim_data:3.0.0#DiagnosticSessionsList",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.claim_data:3.0.0#claimedParts",
+      "target": "urn:samm:io.catenax.fleet.claim_data:3.0.0#ClaimedPartsList",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.claim_data:3.0.0#spareParts",
+      "target": "urn:samm:io.catenax.fleet.claim_data:3.0.0#SparePartsList",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.claim_data:3.0.0#monthInService",
+      "target": "urn:samm:io.catenax.fleet.claim_data:3.0.0#NonNegativeInteger",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.claim_data:3.0.0#amountOfReplacedParts",
+      "target": "urn:samm:io.catenax.fleet.claim_data:3.0.0#AmountOfReplacedPartsCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.claim_data:3.0.0#ClaimsList",
+      "target": "urn:samm:io.catenax.fleet.claim_data:3.0.0#Claim",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.claim_data:3.0.0#DiagnosticSessionsList",
+      "target": "urn:samm:io.catenax.fleet.claim_data:3.0.0#DiagnosticSession",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.claim_data:3.0.0#ClaimedPartsList",
+      "target": "urn:samm:io.catenax.fleet.claim_data:3.0.0#ClaimedPart",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.claim_data:3.0.0#SparePartsList",
+      "target": "urn:samm:io.catenax.fleet.claim_data:3.0.0#SparePart",
+      "label": "dataType",
+      "optional": false
+    }
+  ]
+}

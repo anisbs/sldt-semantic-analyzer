@@ -1,0 +1,604 @@
+{
+  "meta": {
+    "namespace": "urn:bamm:io.catenax.iot_sensor_data:1.0.0#",
+    "meta_model": "BAMM 2.0.0",
+    "path": "data/sldt-semantic-models/io.catenax.iot_sensor_data/1.0.0/IotSensorData.ttl"
+  },
+  "nodes": [
+    {
+      "id": "urn:bamm:io.catenax.iot_sensor_data:1.0.0#IotSensorData",
+      "label": "IotSensorData",
+      "kind": "Aspect",
+      "preferredName": "IoT Sensor Data",
+      "description": "The data collected by an IoT Sensor Device."
+    },
+    {
+      "id": "urn:bamm:io.catenax.iot_sensor_data:1.0.0#geoData",
+      "label": "geoData",
+      "kind": "Property",
+      "preferredName": "Geo Data",
+      "description": "Geodata, geographic data or geospatial data, refers to data and information that has explicit or implicit association with a location relative to Earth."
+    },
+    {
+      "id": "urn:bamm:io.catenax.iot_sensor_data:1.0.0#batteryLevel",
+      "label": "batteryLevel",
+      "kind": "Property",
+      "preferredName": "Battery Level",
+      "description": "The battery level displays how much charge of the battery has been left."
+    },
+    {
+      "id": "urn:bamm:io.catenax.iot_sensor_data:1.0.0#humidity",
+      "label": "humidity",
+      "kind": "Property",
+      "preferredName": "Humidity",
+      "description": "Describes the concentration of water vapor present in the air."
+    },
+    {
+      "id": "urn:bamm:io.catenax.iot_sensor_data:1.0.0#fillingLevel",
+      "label": "fillingLevel",
+      "kind": "Property",
+      "preferredName": "Filling Level",
+      "description": "Volume percentage of a liquid or solid filling material in a container or vessel."
+    },
+    {
+      "id": "urn:bamm:io.catenax.iot_sensor_data:1.0.0#temperature",
+      "label": "temperature",
+      "kind": "Property",
+      "preferredName": "Temperature",
+      "description": "Physical quantity that expresses quantitatively the perceptions of hotness and coldness."
+    },
+    {
+      "id": "urn:bamm:io.catenax.iot_sensor_data:1.0.0#timestampSensoric",
+      "label": "timestampSensoric",
+      "kind": "Property",
+      "preferredName": "Timestamp Sensoric",
+      "description": "The timestamp of the latest sensor reading."
+    },
+    {
+      "id": "urn:bamm:io.catenax.iot_sensor_data:1.0.0#light",
+      "label": "light",
+      "kind": "Property",
+      "preferredName": "Light",
+      "description": "The measure of brightness of a light source in terms of energy being emitted."
+    },
+    {
+      "id": "urn:bamm:io.catenax.iot_sensor_data:1.0.0#acceleration",
+      "label": "acceleration",
+      "kind": "Property",
+      "preferredName": "Acceleration",
+      "description": "The rate of change of the velocity of an object with respect to time."
+    },
+    {
+      "id": "urn:bamm:io.catenax.iot_sensor_data:1.0.0#weight",
+      "label": "weight",
+      "kind": "Property",
+      "preferredName": "Weight",
+      "description": "Measured weight at timestamp."
+    },
+    {
+      "id": "urn:bamm:io.catenax.iot_sensor_data:1.0.0#pressure",
+      "label": "pressure",
+      "kind": "Property",
+      "preferredName": "Pressure",
+      "description": "Force applied over an area."
+    },
+    {
+      "id": "urn:bamm:io.catenax.iot_sensor_data:1.0.0#binarySensor",
+      "label": "binarySensor",
+      "kind": "Property",
+      "preferredName": "Binary Sensor",
+      "description": "Binary sensor monitors the state of condition of the parent assets."
+    },
+    {
+      "id": "urn:bamm:io.catenax.iot_sensor_data:1.0.0#soundSensor",
+      "label": "soundSensor",
+      "kind": "Property",
+      "preferredName": "Sound Sensor",
+      "description": "Measured sound pressure level -  local pressure deviation from the ambient pressure, caused by a sound wave."
+    },
+    {
+      "id": "urn:bamm:io.catenax.iot_sensor_data:1.0.0#transmissionMethod",
+      "label": "transmissionMethod",
+      "kind": "Property",
+      "preferredName": "Transmission Method",
+      "description": "The method under which the sensing data is transmitted from the source to the remote node."
+    },
+    {
+      "id": "urn:bamm:io.catenax.iot_sensor_data:1.0.0#analogSensor",
+      "label": "analogSensor",
+      "kind": "Property",
+      "preferredName": "Analog Sensor 1-10",
+      "description": "Sensor that produce continuous analog output signal."
+    },
+    {
+      "id": "urn:bamm:io.catenax.iot_sensor_data:1.0.0#catenaXId",
+      "label": "catenaXId",
+      "kind": "Property",
+      "preferredName": "Catena-X Identifier",
+      "description": "The fully anonymous Catena-X ID of the asset, valid for the Catena-X dataspace."
+    },
+    {
+      "id": "urn:bamm:io.catenax.iot_sensor_data:1.0.0#latitude",
+      "label": "latitude",
+      "kind": "Property",
+      "preferredName": "Latitude",
+      "description": "The angle between zenith and a plane parallel to the equator."
+    },
+    {
+      "id": "urn:bamm:io.catenax.iot_sensor_data:1.0.0#longitude",
+      "label": "longitude",
+      "kind": "Property",
+      "preferredName": "Longitude",
+      "description": "Geographic coordinate that specifies the east-west position of a point on the Earth's surface."
+    },
+    {
+      "id": "urn:bamm:io.catenax.iot_sensor_data:1.0.0#altitude",
+      "label": "altitude",
+      "kind": "Property",
+      "preferredName": "Altitude",
+      "description": "Antenna Altitude above/below mean-sea-level (geoid)."
+    },
+    {
+      "id": "urn:bamm:io.catenax.iot_sensor_data:1.0.0#geoDataTimestamp",
+      "label": "geoDataTimestamp",
+      "kind": "Property",
+      "preferredName": "Geo Data Timestamp",
+      "description": "The timestamp of the latest sensor reading of the geo data."
+    },
+    {
+      "id": "urn:bamm:io.catenax.iot_sensor_data:1.0.0#analogSensorNumber",
+      "label": "analogSensorNumber",
+      "kind": "Property",
+      "preferredName": "Analog Sensor Number",
+      "description": "Characteristic describing the number of Analog sensor."
+    },
+    {
+      "id": "urn:bamm:io.catenax.iot_sensor_data:1.0.0#analogSensorValue",
+      "label": "analogSensorValue",
+      "kind": "Property",
+      "preferredName": "Analog Sensor Value",
+      "description": "The value of the analog sensor. "
+    },
+    {
+      "id": "urn:bamm:io.catenax.iot_sensor_data:1.0.0#errorCode",
+      "label": "errorCode",
+      "kind": "Property",
+      "preferredName": "Error Code",
+      "description": "A numeric code that is used to determine the nature of an error and why it occured. The mapping is defined by the Asset Tracking Platform"
+    },
+    {
+      "id": "urn:bamm:io.catenax.iot_sensor_data:1.0.0#GeoDataCharacteristic",
+      "label": "GeoDataCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Geo Data Characteristic",
+      "description": "Characteristic to describe the related Geo data."
+    },
+    {
+      "id": "urn:bamm:io.catenax.iot_sensor_data:1.0.0#TransmissionMethodCharacteristic",
+      "label": "TransmissionMethodCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Transmission Method Characteristic",
+      "description": "Characteristic that describes the property transmission method."
+    },
+    {
+      "id": "urn:bamm:io.catenax.iot_sensor_data:1.0.0#LatitudeCharacteristic",
+      "label": "LatitudeCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Latitude Characteristic",
+      "description": "Characteristic describing the property latitude."
+    },
+    {
+      "id": "urn:bamm:io.catenax.iot_sensor_data:1.0.0#LongitudeCharacteristic",
+      "label": "LongitudeCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Longitude Characteristic",
+      "description": "Characteristic describing the property longitude."
+    },
+    {
+      "id": "urn:bamm:io.catenax.iot_sensor_data:1.0.0#AltitudeCharacteristic",
+      "label": "AltitudeCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Altitude Characteristic",
+      "description": "Characteristic describing the property altitude."
+    },
+    {
+      "id": "urn:bamm:io.catenax.iot_sensor_data:1.0.0#UUIDv4",
+      "label": "UUIDv4",
+      "kind": "Characteristic",
+      "preferredName": "UUIDv4",
+      "description": "A version 4 UUID is a universally unique identifier that is generated using random 32 hexadecimal characters."
+    },
+    {
+      "id": "urn:bamm:io.catenax.iot_sensor_data:1.0.0#AnalogSensorValueCharacteristic",
+      "label": "AnalogSensorValueCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Analog Sensor Value Characteristic",
+      "description": "Characteristic describing the property analog sensor value. "
+    },
+    {
+      "id": "urn:bamm:io.catenax.iot_sensor_data:1.0.0#BatteryLevelCharacteristic",
+      "label": "BatteryLevelCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Battery Level Characteristic",
+      "description": "Characteristic to describe the property battery level."
+    },
+    {
+      "id": "urn:bamm:io.catenax.iot_sensor_data:1.0.0#HumidityCharacteristic",
+      "label": "HumidityCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Humidity Characteristic",
+      "description": "Characteristic that describes the property humidity."
+    },
+    {
+      "id": "urn:bamm:io.catenax.iot_sensor_data:1.0.0#FillingLevelCharacteristic",
+      "label": "FillingLevelCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Filling Level Characteristic",
+      "description": "Characteristic that describes the property filling level."
+    },
+    {
+      "id": "urn:bamm:io.catenax.iot_sensor_data:1.0.0#TemperatureCharacteristic",
+      "label": "TemperatureCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Temperature Characteristic",
+      "description": "Characteristic that describes the property temperature."
+    },
+    {
+      "id": "urn:bamm:io.catenax.iot_sensor_data:1.0.0#LightCharacteristic",
+      "label": "LightCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Light Characteristic",
+      "description": "Characteristic that describes the property light."
+    },
+    {
+      "id": "urn:bamm:io.catenax.iot_sensor_data:1.0.0#AccelerationCharacteristic",
+      "label": "AccelerationCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Acceleration Characteristic",
+      "description": "Characteristic that describes the property acceleration."
+    },
+    {
+      "id": "urn:bamm:io.catenax.iot_sensor_data:1.0.0#WeightCharacteristic",
+      "label": "WeightCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Weight Characteristic",
+      "description": "Characteristic that describes the property weight."
+    },
+    {
+      "id": "urn:bamm:io.catenax.iot_sensor_data:1.0.0#PressureCharacteristic",
+      "label": "PressureCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Pressure Characteristic",
+      "description": "Characteristic that describes the property pressure."
+    },
+    {
+      "id": "urn:bamm:io.catenax.iot_sensor_data:1.0.0#SoundSensorCharacteristic",
+      "label": "SoundSensorCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Sound Sensor Characteristic",
+      "description": "Characteristic that describes the property sound sensor."
+    },
+    {
+      "id": "urn:bamm:io.catenax.iot_sensor_data:1.0.0#BinarySensorCharacteristic",
+      "label": "BinarySensorCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Binary Sensor Characteristic",
+      "description": "Characteristic that describes the property binary sensor."
+    },
+    {
+      "id": "urn:bamm:io.catenax.iot_sensor_data:1.0.0#AnalogSensorNumberCharacteristic",
+      "label": "AnalogSensorNumberCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": null,
+      "description": "Characteristic of the analog sensor number property."
+    },
+    {
+      "id": "urn:bamm:io.catenax.iot_sensor_data:1.0.0#AnalogSensorCharacteristic",
+      "label": "AnalogSensorCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Analog Sensor Characteristic",
+      "description": "Characteristic that describes the property analog sensor."
+    },
+    {
+      "id": "urn:bamm:io.catenax.iot_sensor_data:1.0.0#GeoDataEntity",
+      "label": "GeoDataEntity",
+      "kind": "Entity",
+      "preferredName": "Geo Data Entity",
+      "description": "Encapsulates the Geo Data relevant attributes."
+    },
+    {
+      "id": "urn:bamm:io.catenax.iot_sensor_data:1.0.0#AnalogSensorEntity",
+      "label": "AnalogSensorEntity",
+      "kind": "Entity",
+      "preferredName": "Analog Sensor Entity",
+      "description": "Encapsulates all analog sensor properties."
+    },
+    {
+      "id": "urn:bamm:io.catenax.iot_sensor_data:1.0.0#CatenaXIdTrait",
+      "label": "CatenaXIdTrait",
+      "kind": "Characteristic",
+      "preferredName": "Catena-X Id Trait",
+      "description": "Trait to ensure UUID v4 data format."
+    },
+    {
+      "id": "urn:bamm:io.catenax.iot_sensor_data:1.0.0#Constraint1",
+      "label": "Constraint1",
+      "kind": "Characteristic",
+      "preferredName": "Catena-X Id Regular Expression",
+      "description": "The provided regular expression ensures that the UUID is composed of five groups of characters separated by hyphens, in the form 8-4-4-4-12 for a total of 36 characters (32 hexadecimal characters and 4 hyphens), optionally prefixed by \"urn:uuid:\" to make it an IRI."
+    },
+    {
+      "id": "urn:bamm:io.catenax.iot_sensor_data:1.0.0#ErrorCodeCharacteristic",
+      "label": "ErrorCodeCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Error Code Characteristic",
+      "description": "A characteristic describing the property error code."
+    }
+  ],
+  "links": [
+    {
+      "source": "urn:bamm:io.catenax.iot_sensor_data:1.0.0#IotSensorData",
+      "target": "urn:bamm:io.catenax.iot_sensor_data:1.0.0#geoData",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:bamm:io.catenax.iot_sensor_data:1.0.0#IotSensorData",
+      "target": "urn:bamm:io.catenax.iot_sensor_data:1.0.0#batteryLevel",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:bamm:io.catenax.iot_sensor_data:1.0.0#IotSensorData",
+      "target": "urn:bamm:io.catenax.iot_sensor_data:1.0.0#humidity",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:bamm:io.catenax.iot_sensor_data:1.0.0#IotSensorData",
+      "target": "urn:bamm:io.catenax.iot_sensor_data:1.0.0#fillingLevel",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:bamm:io.catenax.iot_sensor_data:1.0.0#IotSensorData",
+      "target": "urn:bamm:io.catenax.iot_sensor_data:1.0.0#temperature",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:bamm:io.catenax.iot_sensor_data:1.0.0#IotSensorData",
+      "target": "urn:bamm:io.catenax.iot_sensor_data:1.0.0#timestampSensoric",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.iot_sensor_data:1.0.0#IotSensorData",
+      "target": "urn:bamm:io.catenax.iot_sensor_data:1.0.0#light",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:bamm:io.catenax.iot_sensor_data:1.0.0#IotSensorData",
+      "target": "urn:bamm:io.catenax.iot_sensor_data:1.0.0#acceleration",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:bamm:io.catenax.iot_sensor_data:1.0.0#IotSensorData",
+      "target": "urn:bamm:io.catenax.iot_sensor_data:1.0.0#weight",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:bamm:io.catenax.iot_sensor_data:1.0.0#IotSensorData",
+      "target": "urn:bamm:io.catenax.iot_sensor_data:1.0.0#pressure",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:bamm:io.catenax.iot_sensor_data:1.0.0#IotSensorData",
+      "target": "urn:bamm:io.catenax.iot_sensor_data:1.0.0#binarySensor",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:bamm:io.catenax.iot_sensor_data:1.0.0#IotSensorData",
+      "target": "urn:bamm:io.catenax.iot_sensor_data:1.0.0#soundSensor",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:bamm:io.catenax.iot_sensor_data:1.0.0#IotSensorData",
+      "target": "urn:bamm:io.catenax.iot_sensor_data:1.0.0#transmissionMethod",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:bamm:io.catenax.iot_sensor_data:1.0.0#IotSensorData",
+      "target": "urn:bamm:io.catenax.iot_sensor_data:1.0.0#analogSensor",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:bamm:io.catenax.iot_sensor_data:1.0.0#IotSensorData",
+      "target": "urn:bamm:io.catenax.iot_sensor_data:1.0.0#catenaXId",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.iot_sensor_data:1.0.0#IotSensorData",
+      "target": "urn:bamm:io.catenax.iot_sensor_data:1.0.0#errorCode",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:bamm:io.catenax.iot_sensor_data:1.0.0#GeoDataEntity",
+      "target": "urn:bamm:io.catenax.iot_sensor_data:1.0.0#latitude",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:bamm:io.catenax.iot_sensor_data:1.0.0#GeoDataEntity",
+      "target": "urn:bamm:io.catenax.iot_sensor_data:1.0.0#longitude",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:bamm:io.catenax.iot_sensor_data:1.0.0#GeoDataEntity",
+      "target": "urn:bamm:io.catenax.iot_sensor_data:1.0.0#altitude",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:bamm:io.catenax.iot_sensor_data:1.0.0#GeoDataEntity",
+      "target": "urn:bamm:io.catenax.iot_sensor_data:1.0.0#geoDataTimestamp",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:bamm:io.catenax.iot_sensor_data:1.0.0#AnalogSensorEntity",
+      "target": "urn:bamm:io.catenax.iot_sensor_data:1.0.0#analogSensorNumber",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.iot_sensor_data:1.0.0#AnalogSensorEntity",
+      "target": "urn:bamm:io.catenax.iot_sensor_data:1.0.0#analogSensorValue",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.iot_sensor_data:1.0.0#geoData",
+      "target": "urn:bamm:io.catenax.iot_sensor_data:1.0.0#GeoDataCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.iot_sensor_data:1.0.0#batteryLevel",
+      "target": "urn:bamm:io.catenax.iot_sensor_data:1.0.0#BatteryLevelCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.iot_sensor_data:1.0.0#humidity",
+      "target": "urn:bamm:io.catenax.iot_sensor_data:1.0.0#HumidityCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.iot_sensor_data:1.0.0#fillingLevel",
+      "target": "urn:bamm:io.catenax.iot_sensor_data:1.0.0#FillingLevelCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.iot_sensor_data:1.0.0#temperature",
+      "target": "urn:bamm:io.catenax.iot_sensor_data:1.0.0#TemperatureCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.iot_sensor_data:1.0.0#light",
+      "target": "urn:bamm:io.catenax.iot_sensor_data:1.0.0#LightCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.iot_sensor_data:1.0.0#acceleration",
+      "target": "urn:bamm:io.catenax.iot_sensor_data:1.0.0#AccelerationCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.iot_sensor_data:1.0.0#weight",
+      "target": "urn:bamm:io.catenax.iot_sensor_data:1.0.0#WeightCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.iot_sensor_data:1.0.0#pressure",
+      "target": "urn:bamm:io.catenax.iot_sensor_data:1.0.0#PressureCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.iot_sensor_data:1.0.0#binarySensor",
+      "target": "urn:bamm:io.catenax.iot_sensor_data:1.0.0#BinarySensorCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.iot_sensor_data:1.0.0#soundSensor",
+      "target": "urn:bamm:io.catenax.iot_sensor_data:1.0.0#SoundSensorCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.iot_sensor_data:1.0.0#transmissionMethod",
+      "target": "urn:bamm:io.catenax.iot_sensor_data:1.0.0#TransmissionMethodCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.iot_sensor_data:1.0.0#analogSensor",
+      "target": "urn:bamm:io.catenax.iot_sensor_data:1.0.0#AnalogSensorCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.iot_sensor_data:1.0.0#catenaXId",
+      "target": "urn:bamm:io.catenax.iot_sensor_data:1.0.0#CatenaXIdTrait",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.iot_sensor_data:1.0.0#latitude",
+      "target": "urn:bamm:io.catenax.iot_sensor_data:1.0.0#LatitudeCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.iot_sensor_data:1.0.0#longitude",
+      "target": "urn:bamm:io.catenax.iot_sensor_data:1.0.0#LongitudeCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.iot_sensor_data:1.0.0#altitude",
+      "target": "urn:bamm:io.catenax.iot_sensor_data:1.0.0#AltitudeCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.iot_sensor_data:1.0.0#analogSensorNumber",
+      "target": "urn:bamm:io.catenax.iot_sensor_data:1.0.0#AnalogSensorNumberCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.iot_sensor_data:1.0.0#analogSensorValue",
+      "target": "urn:bamm:io.catenax.iot_sensor_data:1.0.0#AnalogSensorValueCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.iot_sensor_data:1.0.0#errorCode",
+      "target": "urn:bamm:io.catenax.iot_sensor_data:1.0.0#ErrorCodeCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.iot_sensor_data:1.0.0#GeoDataCharacteristic",
+      "target": "urn:bamm:io.catenax.iot_sensor_data:1.0.0#GeoDataEntity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.iot_sensor_data:1.0.0#AnalogSensorCharacteristic",
+      "target": "urn:bamm:io.catenax.iot_sensor_data:1.0.0#AnalogSensorEntity",
+      "label": "dataType",
+      "optional": false
+    }
+  ]
+}

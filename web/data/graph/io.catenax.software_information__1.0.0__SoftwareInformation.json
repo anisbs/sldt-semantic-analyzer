@@ -1,0 +1,161 @@
+{
+  "meta": {
+    "namespace": "urn:samm:io.catenax.software_information:1.0.0#",
+    "meta_model": "SAMM 2.1.0",
+    "path": "data/sldt-semantic-models/io.catenax.software_information/1.0.0/SoftwareInformation.ttl"
+  },
+  "nodes": [
+    {
+      "id": "urn:samm:io.catenax.software_information:1.0.0#SoftwareInformation",
+      "label": "SoftwareInformation",
+      "kind": "Aspect",
+      "preferredName": "Software Information",
+      "description": "The software information aspect model contains the essential information of all software components that have been implemented or flashed in an instantiated part (e.g. serialized part). "
+    },
+    {
+      "id": "urn:samm:io.catenax.software_information:1.0.0#catenaXId",
+      "label": "catenaXId",
+      "kind": "Property",
+      "preferredName": "Catena-X ID",
+      "description": "The Catena-X ID of the given part (e.g. the assembly), valid for the Catena-X dataspace."
+    },
+    {
+      "id": "urn:samm:io.catenax.software_information:1.0.0#softwareInformation",
+      "label": "softwareInformation",
+      "kind": "Property",
+      "preferredName": "Software Information",
+      "description": "Describes one or more software of a unique serialized part with its name, version and modified date. Optionally, the software part number/ID and the BPNL of the modifying company can be provided."
+    },
+    {
+      "id": "urn:samm:io.catenax.software_information:1.0.0#name",
+      "label": "name",
+      "kind": "Property",
+      "preferredName": "Name",
+      "description": "The name of the software for the corresponding instantiated part."
+    },
+    {
+      "id": "urn:samm:io.catenax.software_information:1.0.0#version",
+      "label": "version",
+      "kind": "Property",
+      "preferredName": "Version",
+      "description": "The version of the software for the corresponding instantiated part."
+    },
+    {
+      "id": "urn:samm:io.catenax.software_information:1.0.0#softwareId",
+      "label": "softwareId",
+      "kind": "Property",
+      "preferredName": "Software ID",
+      "description": "The ID (e.g. part number) of the software for the corresponding instantiated part."
+    },
+    {
+      "id": "urn:samm:io.catenax.software_information:1.0.0#lastModifiedOn",
+      "label": "lastModifiedOn",
+      "kind": "Property",
+      "preferredName": "Last modified on",
+      "description": "The modified date when the software was installed or flashed on the corresponding instantiated part."
+    },
+    {
+      "id": "urn:samm:io.catenax.software_information:1.0.0#SetOfSoftwareCharacteristic",
+      "label": "SetOfSoftwareCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Set of Software",
+      "description": "A set of data that can contain multiple pieces of software information, but never duplicates of the same software with the same version. However, if this model is provided, at least one entry must exist."
+    },
+    {
+      "id": "urn:samm:io.catenax.software_information:1.0.0#SoftwareData",
+      "label": "SoftwareData",
+      "kind": "Entity",
+      "preferredName": "Software Data",
+      "description": "The Entity of the software information to additionally structure the set."
+    },
+    {
+      "id": "urn:samm:io.catenax.software_information:1.0.0#NameCharacteristic",
+      "label": "NameCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Name Characteristic",
+      "description": "The characteristic of the (software) name, that is defined as a String."
+    },
+    {
+      "id": "urn:samm:io.catenax.software_information:1.0.0#VersionCharacteristic",
+      "label": "VersionCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Version Characteristic",
+      "description": "The characteristic of the (software) version, that is defined as a String."
+    },
+    {
+      "id": "urn:samm:io.catenax.software_information:1.0.0#SoftwareIdCharacteristic",
+      "label": "SoftwareIdCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Software ID Characteristic",
+      "description": "The characteristic of the (software) ID, that is defined as a String."
+    }
+  ],
+  "links": [
+    {
+      "source": "urn:samm:io.catenax.software_information:1.0.0#SoftwareInformation",
+      "target": "urn:samm:io.catenax.software_information:1.0.0#catenaXId",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.software_information:1.0.0#SoftwareInformation",
+      "target": "urn:samm:io.catenax.software_information:1.0.0#softwareInformation",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.software_information:1.0.0#SoftwareData",
+      "target": "urn:samm:io.catenax.software_information:1.0.0#name",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.software_information:1.0.0#SoftwareData",
+      "target": "urn:samm:io.catenax.software_information:1.0.0#version",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.software_information:1.0.0#SoftwareData",
+      "target": "urn:samm:io.catenax.software_information:1.0.0#softwareId",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.software_information:1.0.0#SoftwareData",
+      "target": "urn:samm:io.catenax.software_information:1.0.0#lastModifiedOn",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.software_information:1.0.0#softwareInformation",
+      "target": "urn:samm:io.catenax.software_information:1.0.0#SetOfSoftwareCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.software_information:1.0.0#name",
+      "target": "urn:samm:io.catenax.software_information:1.0.0#NameCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.software_information:1.0.0#version",
+      "target": "urn:samm:io.catenax.software_information:1.0.0#VersionCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.software_information:1.0.0#softwareId",
+      "target": "urn:samm:io.catenax.software_information:1.0.0#SoftwareIdCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.software_information:1.0.0#SetOfSoftwareCharacteristic",
+      "target": "urn:samm:io.catenax.software_information:1.0.0#SoftwareData",
+      "label": "dataType",
+      "optional": false
+    }
+  ]
+}

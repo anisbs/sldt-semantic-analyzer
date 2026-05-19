@@ -1,0 +1,298 @@
+{
+  "meta": {
+    "namespace": "urn:samm:io.catenax.material.certificate_of_analysis:1.0.0#",
+    "meta_model": "SAMM 2.1.0",
+    "path": "data/sldt-semantic-models/io.catenax.material.certificate_of_analysis/1.0.0/CertificateOfAnalysis.ttl"
+  },
+  "nodes": [
+    {
+      "id": "urn:samm:io.catenax.material.certificate_of_analysis:1.0.0#CertificateOfAnalysis",
+      "label": "CertificateOfAnalysis",
+      "kind": "Aspect",
+      "preferredName": "Certificate of Analysis Model",
+      "description": "Model that represents the CertificateOfAnalysis of Chemical Materials."
+    },
+    {
+      "id": "urn:samm:io.catenax.material.certificate_of_analysis:1.0.0#hasCertificateOfAnalysisLink",
+      "label": "hasCertificateOfAnalysisLink",
+      "kind": "Property",
+      "preferredName": "has certificate of analysis link",
+      "description": "Property that references the link representation of the Certificate of Analysis."
+    },
+    {
+      "id": "urn:samm:io.catenax.material.certificate_of_analysis:1.0.0#hasCertificateOfAnalysisBinary",
+      "label": "hasCertificateOfAnalysisBinary",
+      "kind": "Property",
+      "preferredName": "has certificate of analysis binary",
+      "description": "Property that references the binary representation of the Certificate of Analysis."
+    },
+    {
+      "id": "urn:samm:io.catenax.material.certificate_of_analysis:1.0.0#hasCertificateOfAnalysisSheetPreFormatted",
+      "label": "hasCertificateOfAnalysisSheetPreFormatted",
+      "kind": "Property",
+      "preferredName": "has certificate of analysis sheet pre formatted",
+      "description": "Property that references the pre formatted representation of the Certificate of Analysis."
+    },
+    {
+      "id": "urn:samm:io.catenax.material.certificate_of_analysis:1.0.0#link",
+      "label": "link",
+      "kind": "Property",
+      "preferredName": "link",
+      "description": "HTTP(S) address according to RFC 3986"
+    },
+    {
+      "id": "urn:samm:io.catenax.material.certificate_of_analysis:1.0.0#payload",
+      "label": "payload",
+      "kind": "Property",
+      "preferredName": "payload",
+      "description": "Base64-encoded string of PDF file"
+    },
+    {
+      "id": "urn:samm:io.catenax.material.certificate_of_analysis:1.0.0#format",
+      "label": "format",
+      "kind": "Property",
+      "preferredName": "format",
+      "description": "Identifier of the format of the payload."
+    },
+    {
+      "id": "urn:samm:io.catenax.material.certificate_of_analysis:1.0.0#formatVersion",
+      "label": "formatVersion",
+      "kind": "Property",
+      "preferredName": "format version",
+      "description": "Corresponding version identifier of the given format."
+    },
+    {
+      "id": "urn:samm:io.catenax.material.certificate_of_analysis:1.0.0#formatLink",
+      "label": "formatLink",
+      "kind": "Property",
+      "preferredName": "format link",
+      "description": "URL to the format definition file"
+    },
+    {
+      "id": "urn:samm:io.catenax.material.certificate_of_analysis:1.0.0#payloadPreFormatted",
+      "label": "payloadPreFormatted",
+      "kind": "Property",
+      "preferredName": "payload pre formatted",
+      "description": "Base64-encoded string of data according to format"
+    },
+    {
+      "id": "urn:samm:io.catenax.material.certificate_of_analysis:1.0.0#issueDate",
+      "label": "issueDate",
+      "kind": "Property",
+      "preferredName": "issue date",
+      "description": "Issue date of Certificate of Analysis"
+    },
+    {
+      "id": "urn:samm:io.catenax.material.certificate_of_analysis:1.0.0#issueVersion",
+      "label": "issueVersion",
+      "kind": "Property",
+      "preferredName": "issue version",
+      "description": "Versioning information of the Certificate of Analysis"
+    },
+    {
+      "id": "urn:samm:io.catenax.material.certificate_of_analysis:1.0.0#language",
+      "label": "language",
+      "kind": "Property",
+      "preferredName": "language",
+      "description": "ISO-639-1 code of language"
+    },
+    {
+      "id": "urn:samm:io.catenax.material.certificate_of_analysis:1.0.0#CertificateOfAnalysisLinkCharacteristic",
+      "label": "CertificateOfAnalysisLinkCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "certificate of analysis link characteristic",
+      "description": "Characteristic to describe the properties of the link representation of the Certificate of Analysis."
+    },
+    {
+      "id": "urn:samm:io.catenax.material.certificate_of_analysis:1.0.0#CertificateOfAnalysisBinaryCharacteristic",
+      "label": "CertificateOfAnalysisBinaryCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "certificate of analysis binary characteristic",
+      "description": "Characteristic to describe the properties of the binary representation of the Certificate of Analysis."
+    },
+    {
+      "id": "urn:samm:io.catenax.material.certificate_of_analysis:1.0.0#CertificateOfAnalysisPreFormattedCharacteristic",
+      "label": "CertificateOfAnalysisPreFormattedCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "certificate of analysis pre formatted",
+      "description": "Characteristic to describe the properties of the pre formatted representation of the Certificate of Analysis."
+    },
+    {
+      "id": "urn:samm:io.catenax.material.certificate_of_analysis:1.0.0#PayloadCharacteristic",
+      "label": "PayloadCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "payload characteristic",
+      "description": "Describes a Property which contains the Base64-encoded payload representation of the Certificate of Analysis."
+    },
+    {
+      "id": "urn:samm:io.catenax.material.certificate_of_analysis:1.0.0#PayloadPreFormattedCharacteristic",
+      "label": "PayloadPreFormattedCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "payload pre formatted characteristic",
+      "description": "Describes a Property which contains the Base64-encoded payload pre formatted representation of the Certificate of Analysis."
+    },
+    {
+      "id": "urn:samm:io.catenax.material.certificate_of_analysis:1.0.0#IssueDateCharacteristic",
+      "label": "IssueDateCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "issue date characteristic",
+      "description": "Describes the date of the Property."
+    },
+    {
+      "id": "urn:samm:io.catenax.material.certificate_of_analysis:1.0.0#CertificateOfAnalysisLink",
+      "label": "CertificateOfAnalysisLink",
+      "kind": "Entity",
+      "preferredName": "certificate of analysis link",
+      "description": "Represents the link of the certificate of analysis document usually supplied via paper or digitally as PDF"
+    },
+    {
+      "id": "urn:samm:io.catenax.material.certificate_of_analysis:1.0.0#CertificateOfAnalysisBinary",
+      "label": "CertificateOfAnalysisBinary",
+      "kind": "Entity",
+      "preferredName": "certificate of analysis binary",
+      "description": "Represents the binary format of the certificate of analysis document usually supplied via paper or digitally as PDF"
+    },
+    {
+      "id": "urn:samm:io.catenax.material.certificate_of_analysis:1.0.0#CertificateOfAnalysisPreFormatted",
+      "label": "CertificateOfAnalysisPreFormatted",
+      "kind": "Entity",
+      "preferredName": "certificate of analysis pre formatted",
+      "description": "Represents the information of the Certificate of Analysis based on already defined or standardized data formats (\"pre-formatted\"). Those data formats define the structure of the data and the corresponding data is referenced as \"payload\" information here. "
+    },
+    {
+      "id": "urn:samm:io.catenax.material.certificate_of_analysis:1.0.0#CertificateOfAnalysisAbstractEntity",
+      "label": "CertificateOfAnalysisAbstractEntity",
+      "kind": "AbstractEntity",
+      "preferredName": "Certificate Of Analysis Abstract Entity",
+      "description": "Represents the certificate of analysis document usually supplied via paper or digitally as PDF"
+    }
+  ],
+  "links": [
+    {
+      "source": "urn:samm:io.catenax.material.certificate_of_analysis:1.0.0#CertificateOfAnalysis",
+      "target": "urn:samm:io.catenax.material.certificate_of_analysis:1.0.0#hasCertificateOfAnalysisLink",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material.certificate_of_analysis:1.0.0#CertificateOfAnalysis",
+      "target": "urn:samm:io.catenax.material.certificate_of_analysis:1.0.0#hasCertificateOfAnalysisBinary",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material.certificate_of_analysis:1.0.0#CertificateOfAnalysis",
+      "target": "urn:samm:io.catenax.material.certificate_of_analysis:1.0.0#hasCertificateOfAnalysisSheetPreFormatted",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material.certificate_of_analysis:1.0.0#CertificateOfAnalysisLink",
+      "target": "urn:samm:io.catenax.material.certificate_of_analysis:1.0.0#link",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material.certificate_of_analysis:1.0.0#CertificateOfAnalysisBinary",
+      "target": "urn:samm:io.catenax.material.certificate_of_analysis:1.0.0#payload",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material.certificate_of_analysis:1.0.0#CertificateOfAnalysisPreFormatted",
+      "target": "urn:samm:io.catenax.material.certificate_of_analysis:1.0.0#format",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material.certificate_of_analysis:1.0.0#CertificateOfAnalysisPreFormatted",
+      "target": "urn:samm:io.catenax.material.certificate_of_analysis:1.0.0#formatVersion",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material.certificate_of_analysis:1.0.0#CertificateOfAnalysisPreFormatted",
+      "target": "urn:samm:io.catenax.material.certificate_of_analysis:1.0.0#formatLink",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material.certificate_of_analysis:1.0.0#CertificateOfAnalysisPreFormatted",
+      "target": "urn:samm:io.catenax.material.certificate_of_analysis:1.0.0#payloadPreFormatted",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material.certificate_of_analysis:1.0.0#CertificateOfAnalysisAbstractEntity",
+      "target": "urn:samm:io.catenax.material.certificate_of_analysis:1.0.0#issueDate",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.material.certificate_of_analysis:1.0.0#CertificateOfAnalysisAbstractEntity",
+      "target": "urn:samm:io.catenax.material.certificate_of_analysis:1.0.0#issueVersion",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.material.certificate_of_analysis:1.0.0#CertificateOfAnalysisAbstractEntity",
+      "target": "urn:samm:io.catenax.material.certificate_of_analysis:1.0.0#language",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material.certificate_of_analysis:1.0.0#hasCertificateOfAnalysisLink",
+      "target": "urn:samm:io.catenax.material.certificate_of_analysis:1.0.0#CertificateOfAnalysisLinkCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material.certificate_of_analysis:1.0.0#hasCertificateOfAnalysisBinary",
+      "target": "urn:samm:io.catenax.material.certificate_of_analysis:1.0.0#CertificateOfAnalysisBinaryCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material.certificate_of_analysis:1.0.0#hasCertificateOfAnalysisSheetPreFormatted",
+      "target": "urn:samm:io.catenax.material.certificate_of_analysis:1.0.0#CertificateOfAnalysisPreFormattedCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material.certificate_of_analysis:1.0.0#payload",
+      "target": "urn:samm:io.catenax.material.certificate_of_analysis:1.0.0#PayloadCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material.certificate_of_analysis:1.0.0#payloadPreFormatted",
+      "target": "urn:samm:io.catenax.material.certificate_of_analysis:1.0.0#PayloadPreFormattedCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material.certificate_of_analysis:1.0.0#issueDate",
+      "target": "urn:samm:io.catenax.material.certificate_of_analysis:1.0.0#IssueDateCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material.certificate_of_analysis:1.0.0#CertificateOfAnalysisLinkCharacteristic",
+      "target": "urn:samm:io.catenax.material.certificate_of_analysis:1.0.0#CertificateOfAnalysisLink",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material.certificate_of_analysis:1.0.0#CertificateOfAnalysisBinaryCharacteristic",
+      "target": "urn:samm:io.catenax.material.certificate_of_analysis:1.0.0#CertificateOfAnalysisBinary",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material.certificate_of_analysis:1.0.0#CertificateOfAnalysisPreFormattedCharacteristic",
+      "target": "urn:samm:io.catenax.material.certificate_of_analysis:1.0.0#CertificateOfAnalysisPreFormatted",
+      "label": "dataType",
+      "optional": false
+    }
+  ]
+}

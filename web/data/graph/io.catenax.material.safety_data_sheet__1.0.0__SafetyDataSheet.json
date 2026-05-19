@@ -1,0 +1,417 @@
+{
+  "meta": {
+    "namespace": "urn:samm:io.catenax.material.safety_data_sheet:1.0.0#",
+    "meta_model": "SAMM 2.1.0",
+    "path": "data/sldt-semantic-models/io.catenax.material.safety_data_sheet/1.0.0/SafetyDataSheet.ttl"
+  },
+  "nodes": [
+    {
+      "id": "urn:samm:io.catenax.material.safety_data_sheet:1.0.0#SafetyDataSheet",
+      "label": "SafetyDataSheet",
+      "kind": "Aspect",
+      "preferredName": "Safety Data Sheet",
+      "description": "Model that represents the Safety Data Sheet document which is structured in 16 internationally agreed sections usually supplied via paper or digitally as PDF."
+    },
+    {
+      "id": "urn:samm:io.catenax.material.safety_data_sheet:1.0.0#hasSafetyDataSheetLink",
+      "label": "hasSafetyDataSheetLink",
+      "kind": "Property",
+      "preferredName": "has safety data sheet link",
+      "description": "Property that references the link representation of the Safety Data Sheet."
+    },
+    {
+      "id": "urn:samm:io.catenax.material.safety_data_sheet:1.0.0#hasSafetyDataSheetBinary",
+      "label": "hasSafetyDataSheetBinary",
+      "kind": "Property",
+      "preferredName": "has safety data sheet binary",
+      "description": "Property that references the binary representation of the Safety Data Sheet."
+    },
+    {
+      "id": "urn:samm:io.catenax.material.safety_data_sheet:1.0.0#hasSafetyDataSheetPreFormatted",
+      "label": "hasSafetyDataSheetPreFormatted",
+      "kind": "Property",
+      "preferredName": "has safety data sheet pre formatted",
+      "description": "Property that references the pre formatted representation of the Safety Data Sheet."
+    },
+    {
+      "id": "urn:samm:io.catenax.material.safety_data_sheet:1.0.0#link",
+      "label": "link",
+      "kind": "Property",
+      "preferredName": "link",
+      "description": "HTTP(S) address according to RFC 3986"
+    },
+    {
+      "id": "urn:samm:io.catenax.material.safety_data_sheet:1.0.0#payload",
+      "label": "payload",
+      "kind": "Property",
+      "preferredName": "payload",
+      "description": "Base64-encoded string of PDF file"
+    },
+    {
+      "id": "urn:samm:io.catenax.material.safety_data_sheet:1.0.0#format",
+      "label": "format",
+      "kind": "Property",
+      "preferredName": "format",
+      "description": "Identifier of the format of the payload."
+    },
+    {
+      "id": "urn:samm:io.catenax.material.safety_data_sheet:1.0.0#formatVersion",
+      "label": "formatVersion",
+      "kind": "Property",
+      "preferredName": "format version",
+      "description": "Corresponding version identifier of the given format"
+    },
+    {
+      "id": "urn:samm:io.catenax.material.safety_data_sheet:1.0.0#preFormattedPayload",
+      "label": "preFormattedPayload",
+      "kind": "Property",
+      "preferredName": "pre formatted payload",
+      "description": "Base64-encoded string of data according to format"
+    },
+    {
+      "id": "urn:samm:io.catenax.material.safety_data_sheet:1.0.0#formatLink",
+      "label": "formatLink",
+      "kind": "Property",
+      "preferredName": "format link",
+      "description": "URL to the format definition file"
+    },
+    {
+      "id": "urn:samm:io.catenax.material.safety_data_sheet:1.0.0#issueVersion",
+      "label": "issueVersion",
+      "kind": "Property",
+      "preferredName": "issue version",
+      "description": "Versioning information of the Safety Data Sheet"
+    },
+    {
+      "id": "urn:samm:io.catenax.material.safety_data_sheet:1.0.0#previousVersion",
+      "label": "previousVersion",
+      "kind": "Property",
+      "preferredName": "previous version",
+      "description": "Versioning information of the previous SDS"
+    },
+    {
+      "id": "urn:samm:io.catenax.material.safety_data_sheet:1.0.0#language",
+      "label": "language",
+      "kind": "Property",
+      "preferredName": "language",
+      "description": "ISO-639-1 code of language"
+    },
+    {
+      "id": "urn:samm:io.catenax.material.safety_data_sheet:1.0.0#applicableToCountry",
+      "label": "applicableToCountry",
+      "kind": "Property",
+      "preferredName": "applies to country",
+      "description": "Relationship between the Safety Data Sheet and the country to which it applies for."
+    },
+    {
+      "id": "urn:samm:io.catenax.material.safety_data_sheet:1.0.0#issueDate",
+      "label": "issueDate",
+      "kind": "Property",
+      "preferredName": "issue date",
+      "description": "Issue date of Safety Data Sheet"
+    },
+    {
+      "id": "urn:samm:io.catenax.material.safety_data_sheet:1.0.0#hasAlpha3Code",
+      "label": "hasAlpha3Code",
+      "kind": "Property",
+      "preferredName": "has alpha3 code",
+      "description": "Country code consisting of three capital letters according to ISO 3166."
+    },
+    {
+      "id": "urn:samm:io.catenax.material.safety_data_sheet:1.0.0#label",
+      "label": "label",
+      "kind": "Property",
+      "preferredName": "label",
+      "description": "Country name."
+    },
+    {
+      "id": "urn:samm:io.catenax.material.safety_data_sheet:1.0.0#SafetyDataSheetLinkList",
+      "label": "SafetyDataSheetLinkList",
+      "kind": "Characteristic",
+      "preferredName": "safety data sheet link list",
+      "description": "Characteristic to describe the properties of the link representation of the Safety Data Sheet."
+    },
+    {
+      "id": "urn:samm:io.catenax.material.safety_data_sheet:1.0.0#SafetyDataSheetBinaryList",
+      "label": "SafetyDataSheetBinaryList",
+      "kind": "Characteristic",
+      "preferredName": "safety data sheet binary list",
+      "description": "Characteristic to describe the properties of the binary representation of the Safety Data Sheet."
+    },
+    {
+      "id": "urn:samm:io.catenax.material.safety_data_sheet:1.0.0#SafetyDataSheetPreFormattedList",
+      "label": "SafetyDataSheetPreFormattedList",
+      "kind": "Characteristic",
+      "preferredName": "safety data sheet pre formatted list",
+      "description": "Characteristic to describe the properties of the pre formatted representation of the Safety Data Sheet."
+    },
+    {
+      "id": "urn:samm:io.catenax.material.safety_data_sheet:1.0.0#SafetyDataSheetLinkEntity",
+      "label": "SafetyDataSheetLinkEntity",
+      "kind": "Entity",
+      "preferredName": "safety data sheet link",
+      "description": "Allows referencing a SDS via a (publically available) URL."
+    },
+    {
+      "id": "urn:samm:io.catenax.material.safety_data_sheet:1.0.0#SafetyDataSheetBinaryEntity",
+      "label": "SafetyDataSheetBinaryEntity",
+      "kind": "Entity",
+      "preferredName": "safety data sheet binary",
+      "description": "Represents a base64 encoded SDS. The binary PDF file will be encoded by the binary-to-text encoding \"Base64\" which is common to be transported safely throughout systems that may only support text characters."
+    },
+    {
+      "id": "urn:samm:io.catenax.material.safety_data_sheet:1.0.0#SafetyDataSheetPreFormattedEntity",
+      "label": "SafetyDataSheetPreFormattedEntity",
+      "kind": "Entity",
+      "preferredName": "safety data sheet pre formatted",
+      "description": "Represents the information from a SDS based on already defined or standardized data formats (\"pre-formatted\"). Those data formats define the structure of the data and the corresponding data is referenced as \"payload\" information. For the SDS, the idea is to utilize the sdscom-xml format, while the payload data itself is included in a base64-encoded string. Nevertheless, other formats could be specified and utilized, too."
+    },
+    {
+      "id": "urn:samm:io.catenax.material.safety_data_sheet:1.0.0#SDSCountryEntity",
+      "label": "SDSCountryEntity",
+      "kind": "Entity",
+      "preferredName": "country",
+      "description": "A country is a distinct territorial body or political entity."
+    },
+    {
+      "id": "urn:samm:io.catenax.material.safety_data_sheet:1.0.0#SafetyDataSheetAbstractEntity",
+      "label": "SafetyDataSheetAbstractEntity",
+      "kind": "AbstractEntity",
+      "preferredName": "safety data sheet",
+      "description": "Chemical products are supplied with a \"Safety Data Sheet\" (SDS) which is a document structured in 16 internationally agreed sections usually supplied via paper or digitally as PDF. A SDS lists information relating to occupational safety and health for the use of various substances and products."
+    },
+    {
+      "id": "urn:samm:io.catenax.material.safety_data_sheet:1.0.0#PayloadCharacteristic",
+      "label": "PayloadCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "payload characteristic",
+      "description": "Describes a Property which contains the Base64-encoded payload representation of the Safety Data Sheet."
+    },
+    {
+      "id": "urn:samm:io.catenax.material.safety_data_sheet:1.0.0#PreFormattedPayloadCharacteristic",
+      "label": "PreFormattedPayloadCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "pre formatted payload characteristic",
+      "description": "Describes a Property which contains the Base64-encoded pre formatted payload representation of the Safety Data Sheet."
+    },
+    {
+      "id": "urn:samm:io.catenax.material.safety_data_sheet:1.0.0#IssueDateCharacteristic",
+      "label": "IssueDateCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "issue date",
+      "description": "Describes the date of the Property."
+    },
+    {
+      "id": "urn:samm:io.catenax.material.safety_data_sheet:1.0.0#CountryTrait",
+      "label": "CountryTrait",
+      "kind": "Characteristic",
+      "preferredName": "Country Trait",
+      "description": "Trait to ensure that the Safety Data Sheet is applicable to at least one country."
+    },
+    {
+      "id": "urn:samm:io.catenax.material.safety_data_sheet:1.0.0#Alpha3CodeTrait",
+      "label": "Alpha3CodeTrait",
+      "kind": "Characteristic",
+      "preferredName": "Alpha 3 Code Trait",
+      "description": "Trait to ensure standard data format for country code."
+    },
+    {
+      "id": "urn:samm:io.catenax.material.safety_data_sheet:1.0.0#SDSCountrySet",
+      "label": "SDSCountrySet",
+      "kind": "Characteristic",
+      "preferredName": "country set",
+      "description": "Set of countries where the SDS is applicable."
+    },
+    {
+      "id": "urn:samm:io.catenax.material.safety_data_sheet:1.0.0#CountryConstraint",
+      "label": "CountryConstraint",
+      "kind": "Characteristic",
+      "preferredName": "Country Constraint",
+      "description": "Limits the set of countries to at least to one element."
+    },
+    {
+      "id": "urn:samm:io.catenax.material.safety_data_sheet:1.0.0#Alpha3CodeCharacteristic",
+      "label": "Alpha3CodeCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Alpha 3 Code",
+      "description": "Three letter country code defined in ISO 3166"
+    },
+    {
+      "id": "urn:samm:io.catenax.material.safety_data_sheet:1.0.0#ISO3166CodeConstraint",
+      "label": "ISO3166CodeConstraint",
+      "kind": "Characteristic",
+      "preferredName": "ISO 3166 code constraint",
+      "description": "Constrainst the value to only three capital letters to represent the country code according to ISO 3166."
+    }
+  ],
+  "links": [
+    {
+      "source": "urn:samm:io.catenax.material.safety_data_sheet:1.0.0#SafetyDataSheet",
+      "target": "urn:samm:io.catenax.material.safety_data_sheet:1.0.0#hasSafetyDataSheetLink",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material.safety_data_sheet:1.0.0#SafetyDataSheet",
+      "target": "urn:samm:io.catenax.material.safety_data_sheet:1.0.0#hasSafetyDataSheetBinary",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material.safety_data_sheet:1.0.0#SafetyDataSheet",
+      "target": "urn:samm:io.catenax.material.safety_data_sheet:1.0.0#hasSafetyDataSheetPreFormatted",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material.safety_data_sheet:1.0.0#SafetyDataSheetLinkEntity",
+      "target": "urn:samm:io.catenax.material.safety_data_sheet:1.0.0#link",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material.safety_data_sheet:1.0.0#SafetyDataSheetBinaryEntity",
+      "target": "urn:samm:io.catenax.material.safety_data_sheet:1.0.0#payload",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material.safety_data_sheet:1.0.0#SafetyDataSheetPreFormattedEntity",
+      "target": "urn:samm:io.catenax.material.safety_data_sheet:1.0.0#format",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material.safety_data_sheet:1.0.0#SafetyDataSheetPreFormattedEntity",
+      "target": "urn:samm:io.catenax.material.safety_data_sheet:1.0.0#formatVersion",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material.safety_data_sheet:1.0.0#SafetyDataSheetPreFormattedEntity",
+      "target": "urn:samm:io.catenax.material.safety_data_sheet:1.0.0#preFormattedPayload",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material.safety_data_sheet:1.0.0#SafetyDataSheetPreFormattedEntity",
+      "target": "urn:samm:io.catenax.material.safety_data_sheet:1.0.0#formatLink",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material.safety_data_sheet:1.0.0#SafetyDataSheetAbstractEntity",
+      "target": "urn:samm:io.catenax.material.safety_data_sheet:1.0.0#issueVersion",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.material.safety_data_sheet:1.0.0#SafetyDataSheetAbstractEntity",
+      "target": "urn:samm:io.catenax.material.safety_data_sheet:1.0.0#previousVersion",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.material.safety_data_sheet:1.0.0#SafetyDataSheetAbstractEntity",
+      "target": "urn:samm:io.catenax.material.safety_data_sheet:1.0.0#language",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material.safety_data_sheet:1.0.0#SafetyDataSheetAbstractEntity",
+      "target": "urn:samm:io.catenax.material.safety_data_sheet:1.0.0#applicableToCountry",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material.safety_data_sheet:1.0.0#SafetyDataSheetAbstractEntity",
+      "target": "urn:samm:io.catenax.material.safety_data_sheet:1.0.0#issueDate",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.material.safety_data_sheet:1.0.0#SDSCountryEntity",
+      "target": "urn:samm:io.catenax.material.safety_data_sheet:1.0.0#hasAlpha3Code",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material.safety_data_sheet:1.0.0#SDSCountryEntity",
+      "target": "urn:samm:io.catenax.material.safety_data_sheet:1.0.0#label",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material.safety_data_sheet:1.0.0#hasSafetyDataSheetLink",
+      "target": "urn:samm:io.catenax.material.safety_data_sheet:1.0.0#SafetyDataSheetLinkList",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material.safety_data_sheet:1.0.0#hasSafetyDataSheetBinary",
+      "target": "urn:samm:io.catenax.material.safety_data_sheet:1.0.0#SafetyDataSheetBinaryList",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material.safety_data_sheet:1.0.0#hasSafetyDataSheetPreFormatted",
+      "target": "urn:samm:io.catenax.material.safety_data_sheet:1.0.0#SafetyDataSheetPreFormattedList",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material.safety_data_sheet:1.0.0#payload",
+      "target": "urn:samm:io.catenax.material.safety_data_sheet:1.0.0#PayloadCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material.safety_data_sheet:1.0.0#preFormattedPayload",
+      "target": "urn:samm:io.catenax.material.safety_data_sheet:1.0.0#PreFormattedPayloadCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material.safety_data_sheet:1.0.0#applicableToCountry",
+      "target": "urn:samm:io.catenax.material.safety_data_sheet:1.0.0#CountryTrait",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material.safety_data_sheet:1.0.0#issueDate",
+      "target": "urn:samm:io.catenax.material.safety_data_sheet:1.0.0#IssueDateCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material.safety_data_sheet:1.0.0#hasAlpha3Code",
+      "target": "urn:samm:io.catenax.material.safety_data_sheet:1.0.0#Alpha3CodeTrait",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material.safety_data_sheet:1.0.0#SafetyDataSheetLinkList",
+      "target": "urn:samm:io.catenax.material.safety_data_sheet:1.0.0#SafetyDataSheetLinkEntity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material.safety_data_sheet:1.0.0#SafetyDataSheetBinaryList",
+      "target": "urn:samm:io.catenax.material.safety_data_sheet:1.0.0#SafetyDataSheetBinaryEntity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material.safety_data_sheet:1.0.0#SafetyDataSheetPreFormattedList",
+      "target": "urn:samm:io.catenax.material.safety_data_sheet:1.0.0#SafetyDataSheetPreFormattedEntity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material.safety_data_sheet:1.0.0#SDSCountrySet",
+      "target": "urn:samm:io.catenax.material.safety_data_sheet:1.0.0#SDSCountryEntity",
+      "label": "dataType",
+      "optional": false
+    }
+  ]
+}

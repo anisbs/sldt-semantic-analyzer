@@ -1,0 +1,335 @@
+{
+  "meta": {
+    "namespace": "urn:bamm:io.catenax.battery.product_description:1.0.1#",
+    "meta_model": "BAMM 1.0.0",
+    "path": "data/sldt-semantic-models/io.catenax.battery.product_description/1.0.1/ProductDescription.ttl"
+  },
+  "nodes": [
+    {
+      "id": "urn:bamm:io.catenax.battery.product_description:1.0.1#ProductDescription",
+      "label": "ProductDescription",
+      "kind": "Aspect",
+      "preferredName": "Product Description",
+      "description": "Aspect to describe battery specific information such as the state of health and the capacity"
+    },
+    {
+      "id": "urn:bamm:io.catenax.battery.product_description:1.0.1#performanceIndicator",
+      "label": "performanceIndicator",
+      "kind": "Property",
+      "preferredName": "performance indicator",
+      "description": "The performance indicator"
+    },
+    {
+      "id": "urn:bamm:io.catenax.battery.product_description:1.0.1#type",
+      "label": "type",
+      "kind": "Property",
+      "preferredName": "type",
+      "description": "type of the battery"
+    },
+    {
+      "id": "urn:bamm:io.catenax.battery.product_description:1.0.1#minimalStateOfHealth",
+      "label": "minimalStateOfHealth",
+      "kind": "Property",
+      "preferredName": "minimal State Of Health",
+      "description": "describes the minimal state of health (SOH) of the manufacturer for the battery to be rated as reusable. The state of health is defined as the ratio of the maximum battery charge to its rated capacity."
+    },
+    {
+      "id": "urn:bamm:io.catenax.battery.product_description:1.0.1#currentStateOfHealth",
+      "label": "currentStateOfHealth",
+      "kind": "Property",
+      "preferredName": "current state of health",
+      "description": "the current state of health of the battery. The state of health is defined as the ratio of the maximum battery charge to its rated capacity"
+    },
+    {
+      "id": "urn:bamm:io.catenax.battery.product_description:1.0.1#electrictiyCapacityMin",
+      "label": "electrictiyCapacityMin",
+      "kind": "Property",
+      "preferredName": "electric capacity min",
+      "description": "The minimal electric capacity"
+    },
+    {
+      "id": "urn:bamm:io.catenax.battery.product_description:1.0.1#electrictiyCapacityMax",
+      "label": "electrictiyCapacityMax",
+      "kind": "Property",
+      "preferredName": "electric capacity max",
+      "description": "The maximal electric capacity"
+    },
+    {
+      "id": "urn:bamm:io.catenax.battery.product_description:1.0.1#minimalStateOfHealthValue",
+      "label": "minimalStateOfHealthValue",
+      "kind": "Property",
+      "preferredName": "minimalStateOfHealthValue",
+      "description": "Value of the minimal state of health as percentage"
+    },
+    {
+      "id": "urn:bamm:io.catenax.battery.product_description:1.0.1#specificatorId",
+      "label": "specificatorId",
+      "kind": "Property",
+      "preferredName": "specificator Id",
+      "description": "specificator of the minimal state of health defined by an identifier"
+    },
+    {
+      "id": "urn:bamm:io.catenax.battery.product_description:1.0.1#minimalStateOfHealthPhase",
+      "label": "minimalStateOfHealthPhase",
+      "kind": "Property",
+      "preferredName": "minimal State Of Health Phase",
+      "description": "minimal State Of Health Phase for the battery"
+    },
+    {
+      "id": "urn:bamm:io.catenax.battery.product_description:1.0.1#currentStateOfHealthValue",
+      "label": "currentStateOfHealthValue",
+      "kind": "Property",
+      "preferredName": "current State of Health Value",
+      "description": "current value as percentage of the state of health attribute"
+    },
+    {
+      "id": "urn:bamm:io.catenax.battery.product_description:1.0.1#currentStateOfHealthTimestamp",
+      "label": "currentStateOfHealthTimestamp",
+      "kind": "Property",
+      "preferredName": "current State of Health Timestamp",
+      "description": "timestamp of the input for the current state of health"
+    },
+    {
+      "id": "urn:bamm:io.catenax.battery.product_description:1.0.1#currentStateOfHealthPhase",
+      "label": "currentStateOfHealthPhase",
+      "kind": "Property",
+      "preferredName": "currentStateOfHealthPhase",
+      "description": "current state of health phase of the battery as enumeration"
+    },
+    {
+      "id": "urn:bamm:io.catenax.battery.product_description:1.0.1#PerformanceIndicatorCharacteristic",
+      "label": "PerformanceIndicatorCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Performance Indicator Characteristic",
+      "description": "indicates the performance of the battery"
+    },
+    {
+      "id": "urn:bamm:io.catenax.battery.product_description:1.0.1#BatteryType",
+      "label": "BatteryType",
+      "kind": "Characteristic",
+      "preferredName": "Battery type",
+      "description": "Differentation between High Voltage Battery = HVB and Low Voltage Battery = LVB"
+    },
+    {
+      "id": "urn:bamm:io.catenax.battery.product_description:1.0.1#LifecyclePhases",
+      "label": "LifecyclePhases",
+      "kind": "Characteristic",
+      "preferredName": "Lifecycle Phases",
+      "description": "temporary definition of lifecycle phases as following in enumeration for: as specified by OEM, as specified by other, as recieved by dismantling, as maintained by workshop"
+    },
+    {
+      "id": "urn:bamm:io.catenax.battery.product_description:1.0.1#MinStateOfHealthCharacteristic",
+      "label": "MinStateOfHealthCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "minimal State of Health Characteristic",
+      "description": "Characteristic to describe a set of attributes which state the minimal state of healt of a battery"
+    },
+    {
+      "id": "urn:bamm:io.catenax.battery.product_description:1.0.1#DateTimestamp",
+      "label": "DateTimestamp",
+      "kind": "Characteristic",
+      "preferredName": "Date Timestamp",
+      "description": "Date Timestamp for current state of health"
+    },
+    {
+      "id": "urn:bamm:io.catenax.battery.product_description:1.0.1#CurrentState",
+      "label": "CurrentState",
+      "kind": "Characteristic",
+      "preferredName": "Current State",
+      "description": "Current State of the battery"
+    },
+    {
+      "id": "urn:bamm:io.catenax.battery.product_description:1.0.1#PerformanceIndicatorEntity",
+      "label": "PerformanceIndicatorEntity",
+      "kind": "Entity",
+      "preferredName": "PerformanceIndicatorEntity",
+      "description": "indicates the min/max performance of the battery"
+    },
+    {
+      "id": "urn:bamm:io.catenax.battery.product_description:1.0.1#CurrentStateOfHealthEntity",
+      "label": "CurrentStateOfHealthEntity",
+      "kind": "Entity",
+      "preferredName": "Current State Of Health Entity",
+      "description": "entity to describe further attributes of the current state of health of the specified battery"
+    },
+    {
+      "id": "urn:bamm:io.catenax.battery.product_description:1.0.1#MinimalStateOfHealthEntity",
+      "label": "MinimalStateOfHealthEntity",
+      "kind": "Entity",
+      "preferredName": "MinimalStateOfHealthEntity",
+      "description": "minimal State of Health Entity for a battery"
+    },
+    {
+      "id": "urn:bamm:io.catenax.battery.product_description:1.0.1#Capacity",
+      "label": "Capacity",
+      "kind": "Characteristic",
+      "preferredName": "Capacity",
+      "description": "Capacity in farad"
+    },
+    {
+      "id": "urn:bamm:io.catenax.battery.product_description:1.0.1#Percentage",
+      "label": "Percentage",
+      "kind": "Characteristic",
+      "preferredName": "Percentage",
+      "description": "Percentage"
+    }
+  ],
+  "links": [
+    {
+      "source": "urn:bamm:io.catenax.battery.product_description:1.0.1#ProductDescription",
+      "target": "urn:bamm:io.catenax.battery.product_description:1.0.1#performanceIndicator",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.battery.product_description:1.0.1#ProductDescription",
+      "target": "urn:bamm:io.catenax.battery.product_description:1.0.1#type",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.battery.product_description:1.0.1#ProductDescription",
+      "target": "urn:bamm:io.catenax.battery.product_description:1.0.1#minimalStateOfHealth",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.battery.product_description:1.0.1#ProductDescription",
+      "target": "urn:bamm:io.catenax.battery.product_description:1.0.1#currentStateOfHealth",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.battery.product_description:1.0.1#PerformanceIndicatorEntity",
+      "target": "urn:bamm:io.catenax.battery.product_description:1.0.1#electrictiyCapacityMin",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.battery.product_description:1.0.1#PerformanceIndicatorEntity",
+      "target": "urn:bamm:io.catenax.battery.product_description:1.0.1#electrictiyCapacityMax",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.battery.product_description:1.0.1#CurrentStateOfHealthEntity",
+      "target": "urn:bamm:io.catenax.battery.product_description:1.0.1#currentStateOfHealthValue",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.battery.product_description:1.0.1#CurrentStateOfHealthEntity",
+      "target": "urn:bamm:io.catenax.battery.product_description:1.0.1#currentStateOfHealthTimestamp",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.battery.product_description:1.0.1#CurrentStateOfHealthEntity",
+      "target": "urn:bamm:io.catenax.battery.product_description:1.0.1#currentStateOfHealthPhase",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.battery.product_description:1.0.1#MinimalStateOfHealthEntity",
+      "target": "urn:bamm:io.catenax.battery.product_description:1.0.1#minimalStateOfHealthValue",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.battery.product_description:1.0.1#MinimalStateOfHealthEntity",
+      "target": "urn:bamm:io.catenax.battery.product_description:1.0.1#specificatorId",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.battery.product_description:1.0.1#MinimalStateOfHealthEntity",
+      "target": "urn:bamm:io.catenax.battery.product_description:1.0.1#minimalStateOfHealthPhase",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.battery.product_description:1.0.1#performanceIndicator",
+      "target": "urn:bamm:io.catenax.battery.product_description:1.0.1#PerformanceIndicatorCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.battery.product_description:1.0.1#type",
+      "target": "urn:bamm:io.catenax.battery.product_description:1.0.1#BatteryType",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.battery.product_description:1.0.1#minimalStateOfHealth",
+      "target": "urn:bamm:io.catenax.battery.product_description:1.0.1#MinStateOfHealthCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.battery.product_description:1.0.1#currentStateOfHealth",
+      "target": "urn:bamm:io.catenax.battery.product_description:1.0.1#CurrentState",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.battery.product_description:1.0.1#electrictiyCapacityMin",
+      "target": "urn:bamm:io.catenax.battery.product_description:1.0.1#Capacity",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.battery.product_description:1.0.1#electrictiyCapacityMax",
+      "target": "urn:bamm:io.catenax.battery.product_description:1.0.1#Capacity",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.battery.product_description:1.0.1#minimalStateOfHealthValue",
+      "target": "urn:bamm:io.catenax.battery.product_description:1.0.1#Percentage",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.battery.product_description:1.0.1#currentStateOfHealthValue",
+      "target": "urn:bamm:io.catenax.battery.product_description:1.0.1#Percentage",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.battery.product_description:1.0.1#minimalStateOfHealthPhase",
+      "target": "urn:bamm:io.catenax.battery.product_description:1.0.1#LifecyclePhases",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.battery.product_description:1.0.1#currentStateOfHealthPhase",
+      "target": "urn:bamm:io.catenax.battery.product_description:1.0.1#LifecyclePhases",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.battery.product_description:1.0.1#currentStateOfHealthTimestamp",
+      "target": "urn:bamm:io.catenax.battery.product_description:1.0.1#DateTimestamp",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.battery.product_description:1.0.1#PerformanceIndicatorCharacteristic",
+      "target": "urn:bamm:io.catenax.battery.product_description:1.0.1#PerformanceIndicatorEntity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.battery.product_description:1.0.1#MinStateOfHealthCharacteristic",
+      "target": "urn:bamm:io.catenax.battery.product_description:1.0.1#MinimalStateOfHealthEntity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.battery.product_description:1.0.1#CurrentState",
+      "target": "urn:bamm:io.catenax.battery.product_description:1.0.1#CurrentStateOfHealthEntity",
+      "label": "dataType",
+      "optional": false
+    }
+  ]
+}

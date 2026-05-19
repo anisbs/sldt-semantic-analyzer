@@ -1,0 +1,15 @@
+# Gros clone local des .ttl, jamais commité (reproductible via la feature 1).
+# Ancré à la racine : web/data/ (graphes JSON générés) reste suivi par git.
+/data/
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+.pytest_cache/
+
+# IDE / OS
+.idea/
+.DS_Store

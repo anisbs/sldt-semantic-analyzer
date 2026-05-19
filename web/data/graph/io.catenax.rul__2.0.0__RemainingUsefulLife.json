@@ -1,0 +1,278 @@
+{
+  "meta": {
+    "namespace": "urn:samm:io.catenax.rul:2.0.0#",
+    "meta_model": "SAMM 2.1.0",
+    "path": "data/sldt-semantic-models/io.catenax.rul/2.0.0/RemainingUsefulLife.ttl"
+  },
+  "nodes": [
+    {
+      "id": "urn:samm:io.catenax.rul:2.0.0#RemainingUsefulLife",
+      "label": "RemainingUsefulLife",
+      "kind": "Aspect",
+      "preferredName": "remaining useful life",
+      "description": "Remaining useful Life (RuL) describes the approximated life of a part, a component, an assembly, a vehicle. \nThe approximation is based on the damage due to usage and extrapolation. \nremainingUsefulLife can be a procentual number, or expressed in remainingDistance or remaingOperationHours or remainingAge."
+    },
+    {
+      "id": "urn:samm:io.catenax.rul:2.0.0#remainingRunningDistance",
+      "label": "remainingRunningDistance",
+      "kind": "Property",
+      "preferredName": "remainingRunningDistance",
+      "description": "Expected additional mileage for the vehicle or part might without failure."
+    },
+    {
+      "id": "urn:samm:io.catenax.rul:2.0.0#remainingOperatingHours",
+      "label": "remainingOperatingHours",
+      "kind": "Property",
+      "preferredName": "remaining operating hours",
+      "description": "Expected additional operation hours for the vehicle or part might without failure."
+    },
+    {
+      "id": "urn:samm:io.catenax.rul:2.0.0#determinationStatus",
+      "label": "determinationStatus",
+      "kind": "Property",
+      "preferredName": "Determination status",
+      "description": "Remaining useful life is determined at a specific  date with  acording mileage and operating hours. This status should be stored to interpretate the calculated values remaingRunningDistance and RemainingOperatingHours."
+    },
+    {
+      "id": "urn:samm:io.catenax.rul:2.0.0#determinationLoaddataSource",
+      "label": "determinationLoaddataSource",
+      "kind": "Property",
+      "preferredName": "loaddata source",
+      "description": "The source of the load data used to determine the remaining useful life is stored for information/interpretation."
+    },
+    {
+      "id": "urn:samm:io.catenax.rul:2.0.0#mileage",
+      "label": "mileage",
+      "kind": "Property",
+      "preferredName": "mileage",
+      "description": "Mileage of the vehicle respectively part at date of determination."
+    },
+    {
+      "id": "urn:samm:io.catenax.rul:2.0.0#date",
+      "label": "date",
+      "kind": "Property",
+      "preferredName": "date of determination",
+      "description": "Date of determination."
+    },
+    {
+      "id": "urn:samm:io.catenax.rul:2.0.0#operatingHours",
+      "label": "operatingHours",
+      "kind": "Property",
+      "preferredName": "Operating hours",
+      "description": "Operating hours at determination."
+    },
+    {
+      "id": "urn:samm:io.catenax.rul:2.0.0#informationOriginLoadSpectrum",
+      "label": "informationOriginLoadSpectrum",
+      "kind": "Property",
+      "preferredName": "information on origin of load spectrum",
+      "description": "A load spectrum is used to calulated the damage and the expected remaining useful for similar further usage. Information on the source of the load spectrum is stored."
+    },
+    {
+      "id": "urn:samm:io.catenax.rul:2.0.0#sourceLoadSpectrum",
+      "label": "sourceLoadSpectrum",
+      "kind": "Property",
+      "preferredName": "link to origin of load spectrum",
+      "description": "The link to the load spectrum used to determine the remaining useful life, if available."
+    },
+    {
+      "id": "urn:samm:io.catenax.rul:2.0.0#RemainingMileage",
+      "label": "RemainingMileage",
+      "kind": "Characteristic",
+      "preferredName": "remaining mileage",
+      "description": "Expected addition mileage"
+    },
+    {
+      "id": "urn:samm:io.catenax.rul:2.0.0#RemainingOperatingHoursCharacteristic",
+      "label": "RemainingOperatingHoursCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Remaining operating hours",
+      "description": "Expected additional operating hours"
+    },
+    {
+      "id": "urn:samm:io.catenax.rul:2.0.0#StatusCharacteristic",
+      "label": "StatusCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "status",
+      "description": "Status describes the date when this aspect is filled, the according mileage and according operating hours. "
+    },
+    {
+      "id": "urn:samm:io.catenax.rul:2.0.0#LoaddataSourceCharacteristic",
+      "label": "LoaddataSourceCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "loaddata source",
+      "description": "Information on the origin of the used load spectrum. If available, the link to the load spectrum."
+    },
+    {
+      "id": "urn:samm:io.catenax.rul:2.0.0#Timestamp",
+      "label": "Timestamp",
+      "kind": "Characteristic",
+      "preferredName": null,
+      "description": "Describes a Property which contains the date and time with an optional timezone."
+    },
+    {
+      "id": "urn:samm:io.catenax.rul:2.0.0#SourceLoadSpectrum",
+      "label": "SourceLoadSpectrum",
+      "kind": "Characteristic",
+      "preferredName": "link to load spectrum",
+      "description": "Link to load spectrum"
+    },
+    {
+      "id": "urn:samm:io.catenax.rul:2.0.0#DeterminationStatus",
+      "label": "DeterminationStatus",
+      "kind": "Entity",
+      "preferredName": "DeterminationStatus",
+      "description": "Status describes the date when this aspect is filled, the according mileage and according operating hours. "
+    },
+    {
+      "id": "urn:samm:io.catenax.rul:2.0.0#LoaddataSource",
+      "label": "LoaddataSource",
+      "kind": "Entity",
+      "preferredName": "Input information on loaddata",
+      "description": "Information on the origin of the used load spectrum. If available, the link to the load spectrum."
+    },
+    {
+      "id": "urn:samm:io.catenax.rul:2.0.0#Mileage",
+      "label": "Mileage",
+      "kind": "Characteristic",
+      "preferredName": "mileage",
+      "description": "Mileage of vehicle respectively part."
+    },
+    {
+      "id": "urn:samm:io.catenax.rul:2.0.0#OperatingHoursCharacteristic",
+      "label": "OperatingHoursCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Operating hours",
+      "description": "Operating hours for the vehicle respectively part."
+    },
+    {
+      "id": "urn:samm:io.catenax.rul:2.0.0#InformationOriginLoadSpectrumCharacteristic",
+      "label": "InformationOriginLoadSpectrumCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "characteristic of origin of load spectrum",
+      "description": "Origin of input load spectrum: measured, simulated, aggregated"
+    }
+  ],
+  "links": [
+    {
+      "source": "urn:samm:io.catenax.rul:2.0.0#RemainingUsefulLife",
+      "target": "urn:samm:io.catenax.rul:2.0.0#remainingRunningDistance",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.rul:2.0.0#RemainingUsefulLife",
+      "target": "urn:samm:io.catenax.rul:2.0.0#remainingOperatingHours",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.rul:2.0.0#RemainingUsefulLife",
+      "target": "urn:samm:io.catenax.rul:2.0.0#determinationStatus",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.rul:2.0.0#RemainingUsefulLife",
+      "target": "urn:samm:io.catenax.rul:2.0.0#determinationLoaddataSource",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.rul:2.0.0#DeterminationStatus",
+      "target": "urn:samm:io.catenax.rul:2.0.0#mileage",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.rul:2.0.0#DeterminationStatus",
+      "target": "urn:samm:io.catenax.rul:2.0.0#date",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.rul:2.0.0#DeterminationStatus",
+      "target": "urn:samm:io.catenax.rul:2.0.0#operatingHours",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.rul:2.0.0#LoaddataSource",
+      "target": "urn:samm:io.catenax.rul:2.0.0#informationOriginLoadSpectrum",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.rul:2.0.0#LoaddataSource",
+      "target": "urn:samm:io.catenax.rul:2.0.0#sourceLoadSpectrum",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.rul:2.0.0#remainingRunningDistance",
+      "target": "urn:samm:io.catenax.rul:2.0.0#RemainingMileage",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.rul:2.0.0#remainingOperatingHours",
+      "target": "urn:samm:io.catenax.rul:2.0.0#RemainingOperatingHoursCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.rul:2.0.0#determinationStatus",
+      "target": "urn:samm:io.catenax.rul:2.0.0#StatusCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.rul:2.0.0#determinationLoaddataSource",
+      "target": "urn:samm:io.catenax.rul:2.0.0#LoaddataSourceCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.rul:2.0.0#mileage",
+      "target": "urn:samm:io.catenax.rul:2.0.0#Mileage",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.rul:2.0.0#date",
+      "target": "urn:samm:io.catenax.rul:2.0.0#Timestamp",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.rul:2.0.0#operatingHours",
+      "target": "urn:samm:io.catenax.rul:2.0.0#OperatingHoursCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.rul:2.0.0#informationOriginLoadSpectrum",
+      "target": "urn:samm:io.catenax.rul:2.0.0#InformationOriginLoadSpectrumCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.rul:2.0.0#sourceLoadSpectrum",
+      "target": "urn:samm:io.catenax.rul:2.0.0#SourceLoadSpectrum",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.rul:2.0.0#StatusCharacteristic",
+      "target": "urn:samm:io.catenax.rul:2.0.0#DeterminationStatus",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.rul:2.0.0#LoaddataSourceCharacteristic",
+      "target": "urn:samm:io.catenax.rul:2.0.0#LoaddataSource",
+      "label": "dataType",
+      "optional": false
+    }
+  ]
+}

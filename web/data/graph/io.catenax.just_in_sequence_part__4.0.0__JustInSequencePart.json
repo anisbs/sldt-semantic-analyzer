@@ -1,0 +1,57 @@
+{
+  "meta": {
+    "namespace": "urn:samm:io.catenax.just_in_sequence_part:4.0.0#",
+    "meta_model": "SAMM 2.1.0",
+    "path": "data/sldt-semantic-models/io.catenax.just_in_sequence_part/4.0.0/JustInSequencePart.ttl"
+  },
+  "nodes": [
+    {
+      "id": "urn:samm:io.catenax.just_in_sequence_part:4.0.0#JustInSequencePart",
+      "label": "JustInSequencePart",
+      "kind": "Aspect",
+      "preferredName": "just in sequence part",
+      "description": "A just-in-sequence part is an instantiation of a (design-)part, where the particular instantiation can be uniquely identified by means of a combination of several IDs related to a just-in-sequence process."
+    },
+    {
+      "id": "urn:samm:io.catenax.just_in_sequence_part:4.0.0#partTypeInformation",
+      "label": "partTypeInformation",
+      "kind": "Property",
+      "preferredName": "part type information",
+      "description": "The part type or part family from which the just-in-sequence part has been instantiated."
+    },
+    {
+      "id": "urn:samm:io.catenax.just_in_sequence_part:4.0.0#PartTypeInformationCharacteristic",
+      "label": "PartTypeInformationCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "part type information characteristic",
+      "description": "The characteristics of the part type."
+    },
+    {
+      "id": "urn:samm:io.catenax.just_in_sequence_part:4.0.0#PartTypeInformationEntity",
+      "label": "PartTypeInformationEntity",
+      "kind": "Entity",
+      "preferredName": "part type information entity",
+      "description": "Encapsulation for data related to the part type"
+    }
+  ],
+  "links": [
+    {
+      "source": "urn:samm:io.catenax.just_in_sequence_part:4.0.0#JustInSequencePart",
+      "target": "urn:samm:io.catenax.just_in_sequence_part:4.0.0#partTypeInformation",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.just_in_sequence_part:4.0.0#partTypeInformation",
+      "target": "urn:samm:io.catenax.just_in_sequence_part:4.0.0#PartTypeInformationCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.just_in_sequence_part:4.0.0#PartTypeInformationCharacteristic",
+      "target": "urn:samm:io.catenax.just_in_sequence_part:4.0.0#PartTypeInformationEntity",
+      "label": "dataType",
+      "optional": false
+    }
+  ]
+}

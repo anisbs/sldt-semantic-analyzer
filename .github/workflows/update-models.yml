@@ -1,0 +1,48 @@
+name: Update SLDT models site
+
+# Resynchronise les modèles amont, régénère les graphes JSON et pousse
+# web/data/graph si quelque chose a changé. GitHub Pages (déployé depuis la
+# branche) se reconstruit automatiquement après le push.
+
+on:
+  schedule:
+    - cron: "0 6 * * 1"      # tous les lundis 06:00 UTC
+  workflow_dispatch: {}       # + déclenchement manuel depuis l'onglet Actions
+
+permissions:
+  contents: write             # nécessaire pour que le bot puisse pousser
+
+concurrency:
+  group: update-models
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Installer les dépendances
+        run: pip install "rdflib>=7.0"
+
+      - name: Rapatrier les modèles amont (feature 1)
+        run: PYTHONPATH=src python -m sldt_analyzer.fetch
+
+      - name: Régénérer les graphes JSON (feature 3)
+        run: PYTHONPATH=src python -m sldt_analyzer.graph
+
+      - name: Commiter et pousser si changement
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add web/data/graph
+          if git diff --cached --quiet; then
+            echo "Aucun changement de modèles — rien à pousser."
+          else
+            git commit -m "chore: refresh des graphes SLDT (auto)"
+            git push
+          fi

@@ -1,0 +1,1747 @@
+{
+  "meta": {
+    "namespace": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#",
+    "meta_model": "BAMM 2.0.0",
+    "path": "data/sldt-semantic-models/io.catenax.sealant.sealant_pass/1.0.0/SealantPass.ttl"
+  },
+  "nodes": [
+    {
+      "id": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#SealantPass",
+      "label": "SealantPass",
+      "kind": "Aspect",
+      "preferredName": "Sealant Pass",
+      "description": "The Sealant Passport represents the needs from manufacturers of chemical substance and mixtures. It describes data required by the safety data sheet (SDS) - which is based on the REACH Regulation No 1907/2006 in the format of a DPP."
+    },
+    {
+      "id": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#documents",
+      "label": "documents",
+      "kind": "Property",
+      "preferredName": "Documents",
+      "description": "Set of documents containing the description of components."
+    },
+    {
+      "id": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#performanceProperties",
+      "label": "performanceProperties",
+      "kind": "Property",
+      "preferredName": "Performance Properties",
+      "description": "Describes the performance and durability of a substance or mixture."
+    },
+    {
+      "id": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#productIdentification",
+      "label": "productIdentification",
+      "kind": "Property",
+      "preferredName": "Product Identification",
+      "description": "Identification of the substance/mixture and of the company/undertaking."
+    },
+    {
+      "id": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#application",
+      "label": "application",
+      "kind": "Property",
+      "preferredName": "Application",
+      "description": "Relevant identified uses of the substance or mixture and uses advised against."
+    },
+    {
+      "id": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#supplier",
+      "label": "supplier",
+      "kind": "Property",
+      "preferredName": "Supplier",
+      "description": "Supplier of the mixture or substance."
+    },
+    {
+      "id": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#hazardsIdentification",
+      "label": "hazardsIdentification",
+      "kind": "Property",
+      "preferredName": "Hazards Identification",
+      "description": "Describes the hazards of the substance or mixture and the appropriate warning information associated with those hazards."
+    },
+    {
+      "id": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#productComposition",
+      "label": "productComposition",
+      "kind": "Property",
+      "preferredName": "Product Composition",
+      "description": "Information on the ingredients."
+    },
+    {
+      "id": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#safetyMeasure",
+      "label": "safetyMeasure",
+      "kind": "Property",
+      "preferredName": "Safety Measure",
+      "description": "Describes measures related to the safe handling of the mixtures and substances."
+    },
+    {
+      "id": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#productProperties",
+      "label": "productProperties",
+      "kind": "Property",
+      "preferredName": "Product Properties ",
+      "description": "Describes the physical and chemical properties of the substance or mixture."
+    },
+    {
+      "id": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#productDisposal",
+      "label": "productDisposal",
+      "kind": "Property",
+      "preferredName": "Product Disposal",
+      "description": "Describes the proper disposal of the product."
+    },
+    {
+      "id": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#transportInformation",
+      "label": "transportInformation",
+      "kind": "Property",
+      "preferredName": "Transport Information",
+      "description": "Describes transport relevant information."
+    },
+    {
+      "id": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#regulatoryInformation",
+      "label": "regulatoryInformation",
+      "kind": "Property",
+      "preferredName": "Regulatory Information",
+      "description": "Describes the regulatory data points."
+    },
+    {
+      "id": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#carbonFootprint",
+      "label": "carbonFootprint",
+      "kind": "Property",
+      "preferredName": "Carbon Footprint",
+      "description": "Describes the carbon footprint of the substance or mixture based on the Ecodesign."
+    },
+    {
+      "id": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#localIdentifiers",
+      "label": "localIdentifiers",
+      "kind": "Property",
+      "preferredName": "Local Identifiers",
+      "description": "A local identifier enables identification of a part in a specific data space, but is not unique in Catena-X data space. Multiple local identifiers may exist."
+    },
+    {
+      "id": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#crossSectoralStandardsUsed",
+      "label": "crossSectoralStandardsUsed",
+      "kind": "Property",
+      "preferredName": "Cross Sectoral Standards Used",
+      "description": "Discloses the cross-sectoral standards applied for calculating or allocating GHG (Greenhouse Gas) emissions as specified by the WBCSD (World Business Council for Sustainable Development) Pathfinder initiative."
+    },
+    {
+      "id": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#productOrSectorSpecificRules",
+      "label": "productOrSectorSpecificRules",
+      "kind": "Property",
+      "preferredName": "Product or Sector Specific Rules",
+      "description": "Product or sector specific rules applied for calculating or allocating GHG (Greenhouse Gas) emissions, e.g. PCRs (Product Category Rules), including operators or pubishers and according rule names. Specified by the WBCSD (World Business Council for Sustainable Development) Pathfinder initiative."
+    },
+    {
+      "id": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#declarationOfConformity",
+      "label": "declarationOfConformity",
+      "kind": "Property",
+      "preferredName": "Declaration of Conformity",
+      "description": "Declaration of conformity (CE) is describing a regulatory requirement from the EU."
+    },
+    {
+      "id": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#removalProcedure",
+      "label": "removalProcedure",
+      "kind": "Property",
+      "preferredName": "Removal Procedure",
+      "description": "The documents explain the removal and possible recycling options of the product."
+    },
+    {
+      "id": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#dueDiligence",
+      "label": "dueDiligence",
+      "kind": "Property",
+      "preferredName": "Due Diligence",
+      "description": "Report on supply chain due diligence policies. Link to document or website on its supply chain due diligence policies."
+    },
+    {
+      "id": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#technicalDocumentation",
+      "label": "technicalDocumentation",
+      "kind": "Property",
+      "preferredName": "Technical Documentation",
+      "description": "Technical documentation refers to documents that explain the use, functionality, creation, or architecture of the product."
+    },
+    {
+      "id": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#safetyDataSheet",
+      "label": "safetyDataSheet",
+      "kind": "Property",
+      "preferredName": "Full Safety Data Sheet (SDS)",
+      "description": "A link to the full seafty data sheet of the material. A link to a SDS might be provided for several countries and possibly multiple languages for each country. The table includes: version, country name, language of the document and the link to the document. The documents should preferably be provided as PDF or Word document."
+    },
+    {
+      "id": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#sustainabilityReport",
+      "label": "sustainabilityReport",
+      "kind": "Property",
+      "preferredName": "Sustainability Report",
+      "description": "Link to public website or document. Reporting in accordance with the new European Sustainability Reporting Standards (ESRS) including the new ESG reporting standards."
+    },
+    {
+      "id": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#curingTime",
+      "label": "curingTime",
+      "kind": "Property",
+      "preferredName": "Curing Time",
+      "description": "Cure time is the time that determines how long it will take for the material to fully cure. A number of chemical reactions occur during this time, for the material to harden. It can take a long time for a material to fully cure."
+    },
+    {
+      "id": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#tradeName",
+      "label": "tradeName",
+      "kind": "Property",
+      "preferredName": "Trade Name",
+      "description": "Trade name given to the chemical substance or mixture as part of the product identification."
+    },
+    {
+      "id": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#productCode",
+      "label": "productCode",
+      "kind": "Property",
+      "preferredName": "Product Code",
+      "description": "Product Code given to the Substance/mixture as part of the product identification."
+    },
+    {
+      "id": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#reachRegistration",
+      "label": "reachRegistration",
+      "kind": "Property",
+      "preferredName": "Reach Registration",
+      "description": "A REACH registration number is an 18-digit number assigned by the European Chemicals Agency (ECHA)."
+    },
+    {
+      "id": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#substanceName",
+      "label": "substanceName",
+      "kind": "Property",
+      "preferredName": "Substance Name",
+      "description": "Name given to the substance."
+    },
+    {
+      "id": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#casNumber",
+      "label": "casNumber",
+      "kind": "Property",
+      "preferredName": "CAS Number",
+      "description": "A CAS registry number is a unique identification number assigned by the Chemical Abstracts Service (CAS)."
+    },
+    {
+      "id": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#ecNumber",
+      "label": "ecNumber",
+      "kind": "Property",
+      "preferredName": "EC Number",
+      "description": "The European Commission number (EC number), is the code assigned to chemical substances that are commercially available within the European Union."
+    },
+    {
+      "id": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#indexNumber",
+      "label": "indexNumber",
+      "kind": "Property",
+      "preferredName": "Index Number",
+      "description": "The index number is used as an identifier."
+    },
+    {
+      "id": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#usage",
+      "label": "usage",
+      "kind": "Property",
+      "preferredName": "Usage",
+      "description": "Brief description of the identified uses of the substance or mixture relevant for the recipient(s)."
+    },
+    {
+      "id": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#recommendedUse",
+      "label": "recommendedUse",
+      "kind": "Property",
+      "preferredName": "Recommended Use",
+      "description": "Recommended restrictions on use"
+    },
+    {
+      "id": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#emergencyNumber",
+      "label": "emergencyNumber",
+      "kind": "Property",
+      "preferredName": "Emergency Number",
+      "description": "Suppliers emergency telephone number for information services."
+    },
+    {
+      "id": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#supplierId",
+      "label": "supplierId",
+      "kind": "Property",
+      "preferredName": "Supplier ID",
+      "description": "BPNL of the supplier."
+    },
+    {
+      "id": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#classificationGHS",
+      "label": "classificationGHS",
+      "kind": "Property",
+      "preferredName": "Classification GHS",
+      "description": "The classification of the substance or the mixture which results from the application of the classification criteria in Regulation (EC) No 1272/2008 shall be given."
+    },
+    {
+      "id": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#possibleHazards",
+      "label": "possibleHazards",
+      "kind": "Property",
+      "preferredName": "Possible Hazards",
+      "description": "A description of the various toxicological (health) effects and the available data used to identify those effects (SDS Section 11.1)."
+    },
+    {
+      "id": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#hazardousIngredients",
+      "label": "hazardousIngredients",
+      "kind": "Property",
+      "preferredName": "Hazardous Ingredients",
+      "description": "Ingredients classified as hazardous (SDS Section 12.1)."
+    },
+    {
+      "id": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#substance",
+      "label": "substance",
+      "kind": "Property",
+      "preferredName": "Substance",
+      "description": "Property to describes a substance."
+    },
+    {
+      "id": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#mixture",
+      "label": "mixture",
+      "kind": "Property",
+      "preferredName": "Mixture",
+      "description": "Property to describes the mixture."
+    },
+    {
+      "id": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#firstAid",
+      "label": "firstAid",
+      "kind": "Property",
+      "preferredName": "First Aid",
+      "description": "First aid instructions are provided by relevant routes of exposure (SDS Section 4.1)."
+    },
+    {
+      "id": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#fireExtinguisher",
+      "label": "fireExtinguisher",
+      "kind": "Property",
+      "preferredName": "Fire Extinguisher",
+      "description": "Suitable extinguishing media,  for fighting a fire caused by the substance or mixture, or arising in its vicinity (SDS Section 5.1)."
+    },
+    {
+      "id": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#personalPrecaution",
+      "label": "personalPrecaution",
+      "kind": "Property",
+      "preferredName": "Personal Precaution",
+      "description": "Information about the appropriate response to spills, leaks, or releases, to prevent or minimize the adverse effects on persons, property and the environment (SDS Section 6.1)."
+    },
+    {
+      "id": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#technicalMeasures",
+      "label": "technicalMeasures",
+      "kind": "Property",
+      "preferredName": "Technical Measures",
+      "description": "Information is provided concerning protective measures for safe handling and recommended technical measures (SDS Section 7.1)."
+    },
+    {
+      "id": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#exposureLimit",
+      "label": "exposureLimit",
+      "kind": "Property",
+      "preferredName": "Exposure Limit",
+      "description": "Information about the applicable exposure limits of the substances and mixtures (SDS Section 8.1)."
+    },
+    {
+      "id": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#physicalState",
+      "label": "physicalState",
+      "kind": "Property",
+      "preferredName": "Physical State",
+      "description": "Describes the physical state (gas, liquid or solid) at standard conditions of temperature and pressure."
+    },
+    {
+      "id": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#colour",
+      "label": "colour",
+      "kind": "Property",
+      "preferredName": "Colour",
+      "description": "The colour of the substance or mixture as supplied is indicated."
+    },
+    {
+      "id": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#odour",
+      "label": "odour",
+      "kind": "Property",
+      "preferredName": "Odour",
+      "description": "A qualitative description of the odour is shown if it is well-known or described in the literature."
+    },
+    {
+      "id": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#pH",
+      "label": "pH",
+      "kind": "Property",
+      "preferredName": "pH",
+      "description": "The pH of the substance or mixture as supplied, or where the product is a solid, the pH of an aqueous liquid or solution at a given concentration, shall be indicated."
+    },
+    {
+      "id": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#phaseTransition",
+      "label": "phaseTransition",
+      "kind": "Property",
+      "preferredName": "Phase Transition",
+      "description": "Phase Transition temperature from liquid to gas."
+    },
+    {
+      "id": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#flashPoint",
+      "label": "flashPoint",
+      "kind": "Property",
+      "preferredName": "Flash Point",
+      "description": "For mixtures, a value for the mixture shall be indicated, if available. Otherwise, the flash point of the substance with the lowest flash point shall be indicated."
+    },
+    {
+      "id": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#density",
+      "label": "density",
+      "kind": "Property",
+      "preferredName": "Density",
+      "description": "Density and relative density shall generally be indicated at standard conditions of temperature and pressure."
+    },
+    {
+      "id": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#reactivity",
+      "label": "reactivity",
+      "kind": "Property",
+      "preferredName": "Reactivity",
+      "description": "Reactivity hazards of the substance or mixtures."
+    },
+    {
+      "id": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#wasteManagement",
+      "label": "wasteManagement",
+      "kind": "Property",
+      "preferredName": "Waste Management",
+      "description": "Waste management of the substance or mixture and/or its container to assist in the determination of safe and environmentally preferred waste management options."
+    },
+    {
+      "id": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#wasteInformation",
+      "label": "wasteInformation",
+      "kind": "Property",
+      "preferredName": "Waste Information",
+      "description": "Waste treatment-relevant information."
+    },
+    {
+      "id": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#unNumber",
+      "label": "unNumber",
+      "kind": "Property",
+      "preferredName": "UN Number",
+      "description": "The UN number or the ID number (i.e. the four-figure identification number of the substance, mixture or article preceded by the letters ‘UN’ or ‘ID’) from the UN Model Regulations, IMDG, ADR, RID, ADN or ICAO TI shall be provided."
+    },
+    {
+      "id": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#shippingName",
+      "label": "shippingName",
+      "kind": "Property",
+      "preferredName": "Shipping Name",
+      "description": "A proper shipping name."
+    },
+    {
+      "id": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#dgClass",
+      "label": "dgClass",
+      "kind": "Property",
+      "preferredName": "DG Class",
+      "description": "The transport hazard class (and subsidiary risks) assigned to the substances or mixtures on the basis of the predominant hazard that they present according to the UN Model Regulations shall be provided."
+    },
+    {
+      "id": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#dgPack",
+      "label": "dgPack",
+      "kind": "Property",
+      "preferredName": "DG Pack",
+      "description": "The packing group number from the UN Model Regulations shall be provided, if applicable, as required by the UN Model Regulations, ADR, RID and ADN."
+    },
+    {
+      "id": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#limitations",
+      "label": "limitations",
+      "kind": "Property",
+      "preferredName": "Limitations",
+      "description": "Information shall be provided regarding relevant Union safety, health and environmental provisions including the prohibitions and restrictions."
+    },
+    {
+      "id": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#co2FootprintTotal",
+      "label": "co2FootprintTotal",
+      "kind": "Property",
+      "preferredName": "CO2 Footprint Total",
+      "description": "The total carbon footprint, calculated as kg of carbon dioxide equivalent."
+    },
+    {
+      "id": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#documentTitle",
+      "label": "documentTitle",
+      "kind": "Property",
+      "preferredName": "Document Title",
+      "description": "The header or title of the document."
+    },
+    {
+      "id": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#documentLocation",
+      "label": "documentLocation",
+      "kind": "Property",
+      "preferredName": "Document Location",
+      "description": "Location or link of and to the document."
+    },
+    {
+      "id": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#documentLanguage",
+      "label": "documentLanguage",
+      "kind": "Property",
+      "preferredName": "Document Language",
+      "description": "Language of the safety data sheet (SDS) document."
+    },
+    {
+      "id": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#documentVersion",
+      "label": "documentVersion",
+      "kind": "Property",
+      "preferredName": "Document Version",
+      "description": "Version of the document."
+    },
+    {
+      "id": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#provisioningCountry",
+      "label": "provisioningCountry",
+      "kind": "Property",
+      "preferredName": "Provisioning Country",
+      "description": "The country from where the documentation is issued from."
+    },
+    {
+      "id": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#otherInformation",
+      "label": "otherInformation",
+      "kind": "Property",
+      "preferredName": "Other Information",
+      "description": "Additional information relevant to the safety data sheet (SDS) document."
+    },
+    {
+      "id": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#manufactureId",
+      "label": "manufactureId",
+      "kind": "Property",
+      "preferredName": "Manufacture ID",
+      "description": "Unique BPN number."
+    },
+    {
+      "id": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#indicationChanges",
+      "label": "indicationChanges",
+      "kind": "Property",
+      "preferredName": "Indication Changes",
+      "description": "in the case of a revised safety data sheet (SDS), a clear indication of where changes have been made to the previous version of the safety data sheet (SDS)."
+    },
+    {
+      "id": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#authorSDS",
+      "label": "authorSDS",
+      "kind": "Property",
+      "preferredName": "Author SDS",
+      "description": "safety data sheet (SDS) author changing the document."
+    },
+    {
+      "id": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#chemicalName",
+      "label": "chemicalName",
+      "kind": "Property",
+      "preferredName": "Chemical Name",
+      "description": "Name of the chemical."
+    },
+    {
+      "id": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#chemicalPercentage",
+      "label": "chemicalPercentage",
+      "kind": "Property",
+      "preferredName": "Chemical Percentage",
+      "description": "Describes chemical distribution in percentage. It can include a percentage range. Either 10% or 5,5%-6% . Allowed are decimal values with a \",\" separator. Mandatory are no spaces between the values and the percentage character."
+    },
+    {
+      "id": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#composition",
+      "label": "composition",
+      "kind": "Property",
+      "preferredName": "Composition",
+      "description": "Describes the chemical identity of the ingredient(s) of the substance or mixture."
+    },
+    {
+      "id": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#chemicalNature",
+      "label": "chemicalNature",
+      "kind": "Property",
+      "preferredName": "Chemical Nature",
+      "description": "Chemical nature of the mixture or substance."
+    },
+    {
+      "id": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#Document",
+      "label": "Document",
+      "kind": "Characteristic",
+      "preferredName": "Document Characteristic",
+      "description": "Set of documents containing the description of chemical substances and mixture components."
+    },
+    {
+      "id": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#PerformanceCharacteristic",
+      "label": "PerformanceCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Performance Characteristic",
+      "description": "Set of measures linked to the performance and durability of the mixtures and substances."
+    },
+    {
+      "id": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#ProductIdentificationCharacteristic",
+      "label": "ProductIdentificationCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Product Identification Characteristic",
+      "description": "Set of information to identify the product."
+    },
+    {
+      "id": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#ApplicationCharacteristic",
+      "label": "ApplicationCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Application Characteristic",
+      "description": "Set of information referring to the application of the substance and mixture."
+    },
+    {
+      "id": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#SupplierCharacteristic",
+      "label": "SupplierCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Supplier Characteristic",
+      "description": "Set of information to identify the supplier."
+    },
+    {
+      "id": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#HazardsIdentification",
+      "label": "HazardsIdentification",
+      "kind": "Characteristic",
+      "preferredName": "Hazards Identification Characteristic",
+      "description": "Set of information to identify the hazards."
+    },
+    {
+      "id": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#ProductComposition",
+      "label": "ProductComposition",
+      "kind": "Characteristic",
+      "preferredName": "Product Composition Characteristic",
+      "description": "Set of information displaying the product composition."
+    },
+    {
+      "id": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#SafetyMeasureCharacteristic",
+      "label": "SafetyMeasureCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Safety Measure Characteristic",
+      "description": "Set of information referring to safety measures."
+    },
+    {
+      "id": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#ProductProperties",
+      "label": "ProductProperties",
+      "kind": "Characteristic",
+      "preferredName": "Product Properties Characteristic",
+      "description": "Set of information describing the physical and chemical properties."
+    },
+    {
+      "id": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#ProductDisposal",
+      "label": "ProductDisposal",
+      "kind": "Characteristic",
+      "preferredName": "Product Disposal Characteristic",
+      "description": "Set of information describing the proper disposal of the product."
+    },
+    {
+      "id": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#TransportInformation",
+      "label": "TransportInformation",
+      "kind": "Characteristic",
+      "preferredName": "Transport Information Characteristic",
+      "description": "Set of information describing the transport information."
+    },
+    {
+      "id": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#RegulatoryInformationCharacteristic",
+      "label": "RegulatoryInformationCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Regulatory Information Characteristic",
+      "description": "Set of information regarding the regulations."
+    },
+    {
+      "id": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#CarbonFootprint",
+      "label": "CarbonFootprint",
+      "kind": "Characteristic",
+      "preferredName": "Carbon Footprint Characteristic",
+      "description": "Set of information needed for the carbon footprint ecodesign regulations."
+    },
+    {
+      "id": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#PhCharacteristic",
+      "label": "PhCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "pH Characteristic",
+      "description": "Provides a range or a pH value."
+    },
+    {
+      "id": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#DocumentEntity",
+      "label": "DocumentEntity",
+      "kind": "Entity",
+      "preferredName": "Document Entity",
+      "description": "Entity encapsulating the details of a attachment for the chemical substances and mixtures of the pass."
+    },
+    {
+      "id": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#PerformanceEntity",
+      "label": "PerformanceEntity",
+      "kind": "Entity",
+      "preferredName": "Performance Entity",
+      "description": "Entity encapsulating the measures of the performance and durability."
+    },
+    {
+      "id": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#ProductIdentificationEntity",
+      "label": "ProductIdentificationEntity",
+      "kind": "Entity",
+      "preferredName": "Product Identification Entity ",
+      "description": "Entity encapsulating the product identification."
+    },
+    {
+      "id": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#ApplicationEntity",
+      "label": "ApplicationEntity",
+      "kind": "Entity",
+      "preferredName": "Application Entity",
+      "description": "Entity encapsulating the substance or mixtures application."
+    },
+    {
+      "id": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#SupplierEntity",
+      "label": "SupplierEntity",
+      "kind": "Entity",
+      "preferredName": "Supplier Entity",
+      "description": "Entity encapsulating the information from the supplier."
+    },
+    {
+      "id": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#HazardsIdentificationEntity",
+      "label": "HazardsIdentificationEntity",
+      "kind": "Entity",
+      "preferredName": "Hazards Identification Entity",
+      "description": "Entity encapsulating the hazards on a substance or mixture."
+    },
+    {
+      "id": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#ProductCompositionEntity",
+      "label": "ProductCompositionEntity",
+      "kind": "Entity",
+      "preferredName": "Product Composition Entity",
+      "description": "Entity encapsulating the product composition information."
+    },
+    {
+      "id": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#SafetyMeasureEntity",
+      "label": "SafetyMeasureEntity",
+      "kind": "Entity",
+      "preferredName": "Safety Measure Entity",
+      "description": "Entity encapsulating the safety measures."
+    },
+    {
+      "id": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#ProductPropertyEntity",
+      "label": "ProductPropertyEntity",
+      "kind": "Entity",
+      "preferredName": "Product Property Entity",
+      "description": "Entity encapsulating the product properties."
+    },
+    {
+      "id": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#ProductDisposalEntity",
+      "label": "ProductDisposalEntity",
+      "kind": "Entity",
+      "preferredName": "Product Disposal Entity",
+      "description": "Entity encapsulating the information needed for the product disposal."
+    },
+    {
+      "id": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#TransportInformationEntity",
+      "label": "TransportInformationEntity",
+      "kind": "Entity",
+      "preferredName": "Transport Information Entity",
+      "description": "Entity encapsulating the transport information data."
+    },
+    {
+      "id": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#RegulatoryInformationEntity",
+      "label": "RegulatoryInformationEntity",
+      "kind": "Entity",
+      "preferredName": "Regulatory Information Entity",
+      "description": "Entity encapsulating the regulatory information."
+    },
+    {
+      "id": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#CarbonFootprintEntity",
+      "label": "CarbonFootprintEntity",
+      "kind": "Entity",
+      "preferredName": "Carbon Footprint Entity",
+      "description": "Entity encapsulating the carbon footprint."
+    },
+    {
+      "id": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#LocateEntity",
+      "label": "LocateEntity",
+      "kind": "Entity",
+      "preferredName": "Locate Entity",
+      "description": "Entity encapsulating the details from the documents title and location."
+    },
+    {
+      "id": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#SpecificsSDSEntity",
+      "label": "SpecificsSDSEntity",
+      "kind": "Entity",
+      "preferredName": "Specifics SDS Entity",
+      "description": "Entity encapsulating the details from the safety data sheet (SDS) documentation."
+    },
+    {
+      "id": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#IngredientsEntity",
+      "label": "IngredientsEntity",
+      "kind": "Entity",
+      "preferredName": "Ingredients Entity",
+      "description": "Entity encapsulating the ingredients."
+    },
+    {
+      "id": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#ChemicalCompositionEntity",
+      "label": "ChemicalCompositionEntity",
+      "kind": "Entity",
+      "preferredName": "Chemical Composition Entity",
+      "description": "Entity encapsulating the chemical composition and nature."
+    },
+    {
+      "id": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#OtherInformationEntity",
+      "label": "OtherInformationEntity",
+      "kind": "Entity",
+      "preferredName": "Other iInformation Entity",
+      "description": "Entity encapsulating the required information."
+    },
+    {
+      "id": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#LocateCharacteristic",
+      "label": "LocateCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Locate Characteristic",
+      "description": "Connects the title and location of the document."
+    },
+    {
+      "id": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#SpecificsSDSCharacteristic",
+      "label": "SpecificsSDSCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Specifics SDS Characteristic",
+      "description": "Connects the safety data sheet (SDS) version, language, and country."
+    },
+    {
+      "id": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#ListOfIngredients",
+      "label": "ListOfIngredients",
+      "kind": "Characteristic",
+      "preferredName": "List of Ingredients Characteristic",
+      "description": "Describes the amount of each individual chemical."
+    },
+    {
+      "id": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#ChemicalComposition",
+      "label": "ChemicalComposition",
+      "kind": "Characteristic",
+      "preferredName": "Chemical Composition Characteristic",
+      "description": "Characteristic combining the chemical composition for a mixture and a substance."
+    },
+    {
+      "id": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#OtherInformationCharacteristic",
+      "label": "OtherInformationCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Other Information Characteristic",
+      "description": "Describes additional information, in a set of values."
+    },
+    {
+      "id": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#CuringTime",
+      "label": "CuringTime",
+      "kind": "Characteristic",
+      "preferredName": "Curing Ttime Characteristic",
+      "description": "Time in seconds needed for the curing of the substance or mixture."
+    },
+    {
+      "id": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#ReachRegistrationTrait",
+      "label": "ReachRegistrationTrait",
+      "kind": "Characteristic",
+      "preferredName": "Reach Registration Trait",
+      "description": "Constraints the value to two digits followed by an - followed by ten digits followed by an - followed by two digits followed by an - and four digits."
+    },
+    {
+      "id": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#CasNumberTrait",
+      "label": "CasNumberTrait",
+      "kind": "Characteristic",
+      "preferredName": "CAS Number Trait",
+      "description": "Constraints the value to four digits followed by an - followed by two digits followed by an - and one digit."
+    },
+    {
+      "id": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#EcNumberTrait",
+      "label": "EcNumberTrait",
+      "kind": "Characteristic",
+      "preferredName": "EC Number Trait",
+      "description": "Constraints the value to three digits followed by an - followed by three digits followed by an - and one digit."
+    },
+    {
+      "id": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#IndexNumberTrait",
+      "label": "IndexNumberTrait",
+      "kind": "Characteristic",
+      "preferredName": "Index Number Trait",
+      "description": "Constraints the value to three digits followed by an - followed by three digits followed by an - followed by two digits followed by an - and one digit."
+    },
+    {
+      "id": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#UsageTrait",
+      "label": "UsageTrait",
+      "kind": "Characteristic",
+      "preferredName": "Usage Trait",
+      "description": "Constraint to allow only numbers, blanks and an optional leading + sign."
+    },
+    {
+      "id": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#DocumentTitleTrait",
+      "label": "DocumentTitleTrait",
+      "kind": "Characteristic",
+      "preferredName": "Document Title Trait",
+      "description": "Constraints the length to 60 characters."
+    },
+    {
+      "id": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#ProvisioningCountryTrait",
+      "label": "ProvisioningCountryTrait",
+      "kind": "Characteristic",
+      "preferredName": "Provisioning CountryTrait",
+      "description": "Constraints the value to to three letters based on the ISO 3166 standard."
+    },
+    {
+      "id": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#ChemicalPercentageTrait",
+      "label": "ChemicalPercentageTrait",
+      "kind": "Characteristic",
+      "preferredName": "Chemical Percentage Trait",
+      "description": "Constraints the value to a percentage range. Either 10% or 5.5%-6% . Allowed are decimal values with a dot as separator. Mandatory are no spaces between the values and the percentage character."
+    },
+    {
+      "id": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#PhysicalState",
+      "label": "PhysicalState",
+      "kind": "Characteristic",
+      "preferredName": "Physical State Characteristic",
+      "description": "Enumeration with three physical states: gas, liquid and solid."
+    },
+    {
+      "id": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#Degree",
+      "label": "Degree",
+      "kind": "Characteristic",
+      "preferredName": "Degree Characteristic",
+      "description": "The temperature in its phase."
+    },
+    {
+      "id": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#Density",
+      "label": "Density",
+      "kind": "Characteristic",
+      "preferredName": "Density Characteristic",
+      "description": "Describes the density of the product."
+    },
+    {
+      "id": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#Co2Total",
+      "label": "Co2Total",
+      "kind": "Characteristic",
+      "preferredName": "CO2 Total Characteristic",
+      "description": "Describes the amount of kg of the CO2 equivalent."
+    },
+    {
+      "id": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#ReachRegistrationRegex",
+      "label": "ReachRegistrationRegex",
+      "kind": "Characteristic",
+      "preferredName": "Reach Registration Regex",
+      "description": "Describes the regex expression for the Reach Registration number. Constraints the value to two digits followed by an - followed by ten digits followed by an - followed by two digits followed by an - and four digits."
+    },
+    {
+      "id": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#CASNumberConstraint",
+      "label": "CASNumberConstraint",
+      "kind": "Characteristic",
+      "preferredName": "CAS Number Constraint",
+      "description": "Describes the Regex expression for the CAS number. Constraints the value to four digits followed by an - followed by two digits followed by an - and one digit."
+    },
+    {
+      "id": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#ECNumberRegex",
+      "label": "ECNumberRegex",
+      "kind": "Characteristic",
+      "preferredName": "EC Number Regex",
+      "description": "Describes the regex expression for the EC number. Constraints the value to three digits followed by an - followed by three digits followed by an - and one digit."
+    },
+    {
+      "id": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#IndexNumberRegex",
+      "label": "IndexNumberRegex",
+      "kind": "Characteristic",
+      "preferredName": "Index Number Regex",
+      "description": "Describes the regex expression for the Index number. Constraints the value to three digits followed by an - followed by three digits followed by an - followed by two digits followed by an - and one digit."
+    },
+    {
+      "id": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#TelephoneNumberRegex",
+      "label": "TelephoneNumberRegex",
+      "kind": "Characteristic",
+      "preferredName": "Telephone Number Regex",
+      "description": "Constraint to allow only numbers, blanks and an optional leading + sign."
+    },
+    {
+      "id": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#ChemicalDistribution",
+      "label": "ChemicalDistribution",
+      "kind": "Characteristic",
+      "preferredName": "Chemical Distribution Constraint",
+      "description": "Describes chemical distribution in percentage. It can include a percentage range. Either 10% or 5.5%-6% . Allowed are decimal values with a dot as separator. Mandatory are no spaces between the values and the percentage character."
+    },
+    {
+      "id": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#DocumentVersionCharacteristic",
+      "label": "DocumentVersionCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Document Version Characteristic",
+      "description": "Refers to the version of the safety data sheet (SDS) document."
+    },
+    {
+      "id": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#ProvisioningCountry",
+      "label": "ProvisioningCountry",
+      "kind": "Characteristic",
+      "preferredName": "Provisioning Country Characteristic",
+      "description": "Refers to the country of the safety data sheet (SDS) provisioner."
+    },
+    {
+      "id": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#MaxTitleCharacterConstraint",
+      "label": "MaxTitleCharacterConstraint",
+      "kind": "Characteristic",
+      "preferredName": "Max Title Character Constraint",
+      "description": "Maximum title characters set to 60."
+    },
+    {
+      "id": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#ISOCodeConstraint",
+      "label": "ISOCodeConstraint",
+      "kind": "Characteristic",
+      "preferredName": "ISO Code Constraint",
+      "description": "Length of the text is capped to three letters based on the ISO 3166 standard."
+    }
+  ],
+  "links": [
+    {
+      "source": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#SealantPass",
+      "target": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#documents",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#SealantPass",
+      "target": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#performanceProperties",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#SealantPass",
+      "target": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#productIdentification",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#SealantPass",
+      "target": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#application",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#SealantPass",
+      "target": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#supplier",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#SealantPass",
+      "target": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#hazardsIdentification",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#SealantPass",
+      "target": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#productComposition",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#SealantPass",
+      "target": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#safetyMeasure",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#SealantPass",
+      "target": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#productProperties",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#SealantPass",
+      "target": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#productDisposal",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#SealantPass",
+      "target": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#transportInformation",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#SealantPass",
+      "target": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#regulatoryInformation",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#SealantPass",
+      "target": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#carbonFootprint",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#DocumentEntity",
+      "target": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#declarationOfConformity",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#DocumentEntity",
+      "target": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#removalProcedure",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#DocumentEntity",
+      "target": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#dueDiligence",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#DocumentEntity",
+      "target": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#technicalDocumentation",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#DocumentEntity",
+      "target": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#safetyDataSheet",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#DocumentEntity",
+      "target": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#sustainabilityReport",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#PerformanceEntity",
+      "target": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#curingTime",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#ProductIdentificationEntity",
+      "target": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#tradeName",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#ProductIdentificationEntity",
+      "target": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#productCode",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#ProductIdentificationEntity",
+      "target": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#reachRegistration",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#ProductIdentificationEntity",
+      "target": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#localIdentifiers",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#ProductIdentificationEntity",
+      "target": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#substanceName",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#ProductIdentificationEntity",
+      "target": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#casNumber",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#ProductIdentificationEntity",
+      "target": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#ecNumber",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#ProductIdentificationEntity",
+      "target": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#indexNumber",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#ApplicationEntity",
+      "target": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#usage",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#ApplicationEntity",
+      "target": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#recommendedUse",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#SupplierEntity",
+      "target": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#emergencyNumber",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#SupplierEntity",
+      "target": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#supplierId",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#HazardsIdentificationEntity",
+      "target": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#classificationGHS",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#HazardsIdentificationEntity",
+      "target": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#possibleHazards",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#HazardsIdentificationEntity",
+      "target": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#hazardousIngredients",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#ProductCompositionEntity",
+      "target": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#substance",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#ProductCompositionEntity",
+      "target": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#mixture",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#SafetyMeasureEntity",
+      "target": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#firstAid",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#SafetyMeasureEntity",
+      "target": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#fireExtinguisher",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#SafetyMeasureEntity",
+      "target": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#personalPrecaution",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#SafetyMeasureEntity",
+      "target": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#technicalMeasures",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#SafetyMeasureEntity",
+      "target": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#exposureLimit",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#ProductPropertyEntity",
+      "target": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#physicalState",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#ProductPropertyEntity",
+      "target": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#colour",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#ProductPropertyEntity",
+      "target": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#odour",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#ProductPropertyEntity",
+      "target": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#pH",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#ProductPropertyEntity",
+      "target": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#phaseTransition",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#ProductPropertyEntity",
+      "target": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#flashPoint",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#ProductPropertyEntity",
+      "target": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#density",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#ProductPropertyEntity",
+      "target": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#reactivity",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#ProductDisposalEntity",
+      "target": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#wasteManagement",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#ProductDisposalEntity",
+      "target": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#wasteInformation",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#TransportInformationEntity",
+      "target": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#unNumber",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#TransportInformationEntity",
+      "target": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#shippingName",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#TransportInformationEntity",
+      "target": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#dgClass",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#TransportInformationEntity",
+      "target": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#dgPack",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#RegulatoryInformationEntity",
+      "target": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#limitations",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#CarbonFootprintEntity",
+      "target": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#co2FootprintTotal",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#CarbonFootprintEntity",
+      "target": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#crossSectoralStandardsUsed",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#CarbonFootprintEntity",
+      "target": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#productOrSectorSpecificRules",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#LocateEntity",
+      "target": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#documentTitle",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#LocateEntity",
+      "target": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#documentLocation",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#SpecificsSDSEntity",
+      "target": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#documentLanguage",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#SpecificsSDSEntity",
+      "target": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#documentVersion",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#SpecificsSDSEntity",
+      "target": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#provisioningCountry",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#SpecificsSDSEntity",
+      "target": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#documentLocation",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#SpecificsSDSEntity",
+      "target": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#otherInformation",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#SpecificsSDSEntity",
+      "target": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#manufactureId",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#IngredientsEntity",
+      "target": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#chemicalName",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#IngredientsEntity",
+      "target": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#chemicalPercentage",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#ChemicalCompositionEntity",
+      "target": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#composition",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#ChemicalCompositionEntity",
+      "target": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#chemicalNature",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#OtherInformationEntity",
+      "target": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#indicationChanges",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#OtherInformationEntity",
+      "target": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#authorSDS",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#documents",
+      "target": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#Document",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#performanceProperties",
+      "target": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#PerformanceCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#productIdentification",
+      "target": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#ProductIdentificationCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#application",
+      "target": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#ApplicationCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#supplier",
+      "target": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#SupplierCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#hazardsIdentification",
+      "target": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#HazardsIdentification",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#productComposition",
+      "target": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#ProductComposition",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#safetyMeasure",
+      "target": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#SafetyMeasureCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#productProperties",
+      "target": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#ProductProperties",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#productDisposal",
+      "target": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#ProductDisposal",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#transportInformation",
+      "target": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#TransportInformation",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#regulatoryInformation",
+      "target": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#RegulatoryInformationCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#carbonFootprint",
+      "target": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#CarbonFootprint",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#declarationOfConformity",
+      "target": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#LocateCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#removalProcedure",
+      "target": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#LocateCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#dueDiligence",
+      "target": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#LocateCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#technicalDocumentation",
+      "target": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#LocateCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#sustainabilityReport",
+      "target": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#LocateCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#safetyDataSheet",
+      "target": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#SpecificsSDSCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#curingTime",
+      "target": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#CuringTime",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#reachRegistration",
+      "target": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#ReachRegistrationTrait",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#casNumber",
+      "target": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#CasNumberTrait",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#ecNumber",
+      "target": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#EcNumberTrait",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#indexNumber",
+      "target": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#IndexNumberTrait",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#emergencyNumber",
+      "target": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#UsageTrait",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#hazardousIngredients",
+      "target": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#ListOfIngredients",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#exposureLimit",
+      "target": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#ListOfIngredients",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#composition",
+      "target": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#ListOfIngredients",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#substance",
+      "target": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#ChemicalComposition",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#mixture",
+      "target": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#ChemicalComposition",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#physicalState",
+      "target": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#PhysicalState",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#pH",
+      "target": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#PhCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#phaseTransition",
+      "target": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#Degree",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#flashPoint",
+      "target": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#Degree",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#density",
+      "target": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#Density",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#co2FootprintTotal",
+      "target": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#Co2Total",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#documentTitle",
+      "target": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#DocumentTitleTrait",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#documentVersion",
+      "target": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#DocumentVersionCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#provisioningCountry",
+      "target": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#ProvisioningCountryTrait",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#otherInformation",
+      "target": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#OtherInformationCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#chemicalPercentage",
+      "target": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#ChemicalPercentageTrait",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#Document",
+      "target": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#DocumentEntity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#PerformanceCharacteristic",
+      "target": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#PerformanceEntity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#ProductIdentificationCharacteristic",
+      "target": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#ProductIdentificationEntity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#ApplicationCharacteristic",
+      "target": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#ApplicationEntity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#SupplierCharacteristic",
+      "target": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#SupplierEntity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#HazardsIdentification",
+      "target": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#HazardsIdentificationEntity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#ProductComposition",
+      "target": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#ProductCompositionEntity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#SafetyMeasureCharacteristic",
+      "target": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#SafetyMeasureEntity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#ProductProperties",
+      "target": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#ProductPropertyEntity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#ProductDisposal",
+      "target": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#ProductDisposalEntity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#TransportInformation",
+      "target": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#TransportInformationEntity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#RegulatoryInformationCharacteristic",
+      "target": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#RegulatoryInformationEntity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#CarbonFootprint",
+      "target": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#CarbonFootprintEntity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#LocateCharacteristic",
+      "target": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#LocateEntity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#SpecificsSDSCharacteristic",
+      "target": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#SpecificsSDSEntity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#ListOfIngredients",
+      "target": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#IngredientsEntity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#ChemicalComposition",
+      "target": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#ChemicalCompositionEntity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#OtherInformationCharacteristic",
+      "target": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#OtherInformationEntity",
+      "label": "dataType",
+      "optional": false
+    }
+  ]
+}

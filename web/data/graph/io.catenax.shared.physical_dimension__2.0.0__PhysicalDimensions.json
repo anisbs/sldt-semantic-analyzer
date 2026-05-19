@@ -1,0 +1,166 @@
+{
+  "meta": {
+    "namespace": "urn:bamm:io.catenax.shared.physical_dimension:2.0.0#",
+    "meta_model": "BAMM 2.0.0",
+    "path": "data/sldt-semantic-models/io.catenax.shared.physical_dimension/2.0.0/PhysicalDimensions.ttl"
+  },
+  "nodes": [
+    {
+      "id": "urn:bamm:io.catenax.shared.physical_dimension:2.0.0#length",
+      "label": "length",
+      "kind": "Property",
+      "preferredName": "length",
+      "description": "Length of the item."
+    },
+    {
+      "id": "urn:bamm:io.catenax.shared.physical_dimension:2.0.0#width",
+      "label": "width",
+      "kind": "Property",
+      "preferredName": "width",
+      "description": "Width of the item."
+    },
+    {
+      "id": "urn:bamm:io.catenax.shared.physical_dimension:2.0.0#height",
+      "label": "height",
+      "kind": "Property",
+      "preferredName": "height",
+      "description": "Height of the item."
+    },
+    {
+      "id": "urn:bamm:io.catenax.shared.physical_dimension:2.0.0#diameter",
+      "label": "diameter",
+      "kind": "Property",
+      "preferredName": "diameter",
+      "description": "Diameter of the item."
+    },
+    {
+      "id": "urn:bamm:io.catenax.shared.physical_dimension:2.0.0#weight",
+      "label": "weight",
+      "kind": "Property",
+      "preferredName": "weight",
+      "description": "Weight of the item"
+    },
+    {
+      "id": "urn:bamm:io.catenax.shared.physical_dimension:2.0.0#physicalDimensionsProperty",
+      "label": "physicalDimensionsProperty",
+      "kind": "Property",
+      "preferredName": "physical dimensions",
+      "description": "Describes the physical dimensions of then entity."
+    },
+    {
+      "id": "urn:bamm:io.catenax.shared.physical_dimension:2.0.0#MillimetreCharacteristic",
+      "label": "MillimetreCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "millimetre characteristic",
+      "description": "a measurement for a lenght given in the unit millimetre"
+    },
+    {
+      "id": "urn:bamm:io.catenax.shared.physical_dimension:2.0.0#KilogramCharacteristic",
+      "label": "KilogramCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "kilogram characteristic",
+      "description": "a measurement value given in the unit kilogram"
+    },
+    {
+      "id": "urn:bamm:io.catenax.shared.physical_dimension:2.0.0#PhysicalDimensions",
+      "label": "PhysicalDimensions",
+      "kind": "Aspect",
+      "preferredName": "physical dimensions",
+      "description": "Describes the physical dimensions of then entity."
+    },
+    {
+      "id": "urn:bamm:io.catenax.shared.physical_dimension:2.0.0#PhysicalDimensionsCharacteristic",
+      "label": "PhysicalDimensionsCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "physical dimensions",
+      "description": "Describes the physical dimensions of then entity."
+    },
+    {
+      "id": "urn:bamm:io.catenax.shared.physical_dimension:2.0.0#PhysicalDimensionsEntity",
+      "label": "PhysicalDimensionsEntity",
+      "kind": "Entity",
+      "preferredName": "physical dimensions",
+      "description": "Entity encapsulating the physical dimensions of an object."
+    }
+  ],
+  "links": [
+    {
+      "source": "urn:bamm:io.catenax.shared.physical_dimension:2.0.0#PhysicalDimensions",
+      "target": "urn:bamm:io.catenax.shared.physical_dimension:2.0.0#physicalDimensionsProperty",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.shared.physical_dimension:2.0.0#PhysicalDimensionsEntity",
+      "target": "urn:bamm:io.catenax.shared.physical_dimension:2.0.0#weight",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:bamm:io.catenax.shared.physical_dimension:2.0.0#PhysicalDimensionsEntity",
+      "target": "urn:bamm:io.catenax.shared.physical_dimension:2.0.0#diameter",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:bamm:io.catenax.shared.physical_dimension:2.0.0#PhysicalDimensionsEntity",
+      "target": "urn:bamm:io.catenax.shared.physical_dimension:2.0.0#height",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:bamm:io.catenax.shared.physical_dimension:2.0.0#PhysicalDimensionsEntity",
+      "target": "urn:bamm:io.catenax.shared.physical_dimension:2.0.0#width",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:bamm:io.catenax.shared.physical_dimension:2.0.0#PhysicalDimensionsEntity",
+      "target": "urn:bamm:io.catenax.shared.physical_dimension:2.0.0#length",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:bamm:io.catenax.shared.physical_dimension:2.0.0#length",
+      "target": "urn:bamm:io.catenax.shared.physical_dimension:2.0.0#MillimetreCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.shared.physical_dimension:2.0.0#width",
+      "target": "urn:bamm:io.catenax.shared.physical_dimension:2.0.0#MillimetreCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.shared.physical_dimension:2.0.0#height",
+      "target": "urn:bamm:io.catenax.shared.physical_dimension:2.0.0#MillimetreCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.shared.physical_dimension:2.0.0#diameter",
+      "target": "urn:bamm:io.catenax.shared.physical_dimension:2.0.0#MillimetreCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.shared.physical_dimension:2.0.0#weight",
+      "target": "urn:bamm:io.catenax.shared.physical_dimension:2.0.0#KilogramCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.shared.physical_dimension:2.0.0#physicalDimensionsProperty",
+      "target": "urn:bamm:io.catenax.shared.physical_dimension:2.0.0#PhysicalDimensionsCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.shared.physical_dimension:2.0.0#PhysicalDimensionsCharacteristic",
+      "target": "urn:bamm:io.catenax.shared.physical_dimension:2.0.0#PhysicalDimensionsEntity",
+      "label": "dataType",
+      "optional": false
+    }
+  ]
+}

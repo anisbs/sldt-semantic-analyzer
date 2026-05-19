@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<!--
+  Feature 4 — Visualisation D3 (force-directed simple).
+  Lit web/data/graph/index.json (catalogue) puis <id>.json — chemins relatifs
+  à cette page, donc identiques en local et sur GitHub Pages.
+  Local : python3 -m http.server 8000  ->  http://localhost:8000/web/
+  En ligne : https://anisbs.github.io/sldt-semantic-analyzer/web/
+-->
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <title>SLDT — Analyseur sémantique</title>
+  <script src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js"></script>
+  <style>
+    * { box-sizing: border-box; }
+    html, body { margin: 0; height: 100%; font-family: system-ui, sans-serif; }
+    #app { display: flex; height: 100vh; }
+    #sidebar {
+      width: 320px; flex-shrink: 0; border-right: 1px solid #ddd;
+      display: flex; flex-direction: column; background: #fafafa;
+    }
+    #sidebar header { padding: 12px; border-bottom: 1px solid #ddd; }
+    #sidebar h1 { font-size: 15px; margin: 0 0 8px; }
+    #search { width: 100%; padding: 6px 8px; font-size: 13px; }
+    #models { flex: 1; overflow-y: auto; }
+    .model {
+      padding: 8px 12px; font-size: 13px; cursor: pointer;
+      border-bottom: 1px solid #eee;
+    }
+    .model:hover { background: #eef4ff; }
+    .model.active { background: #d6e4ff; font-weight: 600; }
+    .model .meta { color: #888; font-size: 11px; font-weight: 400; }
+    #main { flex: 1; position: relative; overflow: hidden; }
+    #legend {
+      position: absolute; top: 10px; left: 10px; background: rgba(255,255,255,.9);
+      border: 1px solid #ddd; border-radius: 4px; padding: 8px 10px; font-size: 12px;
+    }
+    #legend div { display: flex; align-items: center; margin: 2px 0; }
+    #legend span.dot { width: 11px; height: 11px; border-radius: 50%; margin-right: 6px; }
+    .node circle { stroke: #fff; stroke-width: 1.5px; cursor: pointer; }
+    .node text { font-size: 10px; fill: #333; pointer-events: none; }
+    .link { stroke: #999; stroke-opacity: .6; }
+    .link.optional { stroke-dasharray: 4 3; }
+    .link-label { font-size: 9px; fill: #aaa; pointer-events: none; }
+    #tooltip {
+      position: absolute; pointer-events: none; background: #222; color: #fff;
+      padding: 8px 10px; border-radius: 4px; font-size: 12px; max-width: 320px;
+      opacity: 0; transition: opacity .1s; z-index: 10;
+    }
+    #tooltip .k { color: #9cf; }
+    #empty { position: absolute; inset: 0; display: flex; align-items: center;
+      justify-content: center; color: #999; font-size: 14px; }
+  </style>
+</head>
+<body>
+<div id="app">
+  <div id="sidebar">
+    <header>
+      <h1>SLDT — modèles</h1>
+      <input id="search" placeholder="Filtrer (nom, vocabulaire…)" />
+    </header>
+    <div id="models"></div>
+  </div>
+  <div id="main">
+    <div id="legend"></div>
+    <div id="empty">Choisis un modèle à gauche.</div>
+    <svg id="graph" width="100%" height="100%"></svg>
+  </div>
+</div>
+<div id="tooltip"></div>
+
+<script>
+const KIND_COLORS = {
+  Aspect: "#e6194b", Property: "#3cb44b", Characteristic: "#4363d8",
+  Entity: "#f58231", AbstractEntity: "#911eb4", Operation: "#46f0f0",
+  Event: "#f032e6", Constraint: "#bcf60c",
+};
+const color = k => KIND_COLORS[k] || "#999";
+
+const svg = d3.select("#graph");
+const tooltip = d3.select("#tooltip");
+const container = svg.append("g");
+svg.call(d3.zoom().scaleExtent([0.1, 4]).on("zoom",
+  e => container.attr("transform", e.transform)));
+
+// Flèche orientée pour les arêtes
+svg.append("defs").append("marker")
+  .attr("id", "arrow").attr("viewBox", "0 -5 10 10").attr("refX", 18)
+  .attr("markerWidth", 6).attr("markerHeight", 6).attr("orient", "auto")
+  .append("path").attr("d", "M0,-5L10,0L0,5").attr("fill", "#999");
+
+drawLegend();
+let allModels = [];
+
+fetch("data/graph/index.json")
+  .then(r => r.json())
+  .then(idx => { allModels = idx; renderList(idx); })
+  .catch(() => {
+    document.getElementById("empty").textContent =
+      "index.json introuvable — génère-le : python -m sldt_analyzer.graph";
+  });
+
+d3.select("#search").on("input", function () {
+  const q = this.value.toLowerCase();
+  renderList(allModels.filter(m =>
+    m.name.toLowerCase().includes(q) || m.meta_model.toLowerCase().includes(q)
+    || m.id.toLowerCase().includes(q)));
+});
+
+function renderList(models) {
+  const list = d3.select("#models");
+  list.selectAll(".model").remove();
+  list.selectAll(".model").data(models).enter().append("div")
+    .attr("class", "model")
+    .html(m => `${m.name}
+       <div class="meta">${m.meta_model} · ${m.n_nodes} nœuds · ${m.n_links} liens
+       ${m.has_aspect ? "" : " · (sans Aspect)"}</div>`)
+    .on("click", function (_, m) {
+      d3.selectAll(".model").classed("active", false);
+      d3.select(this).classed("active", true);
+      loadModel(m);
+    });
+}
+
+function loadModel(m) {
+  fetch(`data/graph/${m.file}`).then(r => r.json()).then(draw);
+}
+
+let sim;
+function draw(g) {
+  document.getElementById("empty").style.display = "none";
+  container.selectAll("*").remove();
+  const { width, height } = svg.node().getBoundingClientRect();
+
+  // Copies (D3 mute les objets en y injectant x/y/source/target résolus)
+  const nodes = g.nodes.map(d => ({ ...d }));
+  const links = g.links.map(d => ({ ...d }));
+
+  if (sim) sim.stop();
+  sim = d3.forceSimulation(nodes)
+    .force("link", d3.forceLink(links).id(d => d.id).distance(70))
+    .force("charge", d3.forceManyBody().strength(-180))
+    .force("center", d3.forceCenter(width / 2, height / 2))
+    .force("collide", d3.forceCollide(22));
+
+  const link = container.append("g").selectAll("line").data(links).enter()
+    .append("line")
+    .attr("class", d => "link" + (d.optional ? " optional" : ""))
+    .attr("stroke-width", 1.2).attr("marker-end", "url(#arrow)");
+
+  const linkLabel = container.append("g").selectAll("text").data(links).enter()
+    .append("text").attr("class", "link-label").text(d => d.label);
+
+  const node = container.append("g").selectAll("g").data(nodes).enter()
+    .append("g").attr("class", "node")
+    .call(d3.drag()
+      .on("start", (e, d) => { if (!e.active) sim.alphaTarget(.3).restart();
+        d.fx = d.x; d.fy = d.y; })
+      .on("drag", (e, d) => { d.fx = e.x; d.fy = e.y; })
+      .on("end", (e, d) => { if (!e.active) sim.alphaTarget(0);
+        d.fx = null; d.fy = null; }));
+
+  node.append("circle").attr("r", 9).attr("fill", d => color(d.kind))
+    .on("mouseover", (e, d) => {
+      tooltip.style("opacity", 1).html(
+        `<span class="k">${d.kind}</span> — <b>${d.label}</b><br>` +
+        (d.preferredName ? `<i>${d.preferredName}</i><br>` : "") +
+        (d.description ? d.description.slice(0, 280) : ""));
+    })
+    .on("mousemove", e =>
+      tooltip.style("left", (e.pageX + 14) + "px").style("top", (e.pageY + 8) + "px"))
+    .on("mouseout", () => tooltip.style("opacity", 0));
+
+  node.append("text").attr("x", 12).attr("y", 4).text(d => d.label);
+
+  sim.on("tick", () => {
+    link.attr("x1", d => d.source.x).attr("y1", d => d.source.y)
+        .attr("x2", d => d.target.x).attr("y2", d => d.target.y);
+    linkLabel.attr("x", d => (d.source.x + d.target.x) / 2)
+             .attr("y", d => (d.source.y + d.target.y) / 2);
+    node.attr("transform", d => `translate(${d.x},${d.y})`);
+  });
+}
+
+function drawLegend() {
+  const l = d3.select("#legend");
+  l.append("div").style("font-weight", "600").text("Type de nœud");
+  Object.entries(KIND_COLORS).forEach(([k, c]) =>
+    l.append("div").html(`<span class="dot" style="background:${c}"></span>${k}`));
+}
+</script>
+</body>
+</html>

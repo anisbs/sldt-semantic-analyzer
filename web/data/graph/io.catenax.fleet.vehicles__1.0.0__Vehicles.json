@@ -1,0 +1,44 @@
+{
+  "meta": {
+    "namespace": "urn:samm:io.catenax.fleet.vehicles:1.0.0#",
+    "meta_model": "SAMM 2.0.0",
+    "path": "data/sldt-semantic-models/io.catenax.fleet.vehicles/1.0.0/Vehicles.ttl"
+  },
+  "nodes": [
+    {
+      "id": "urn:samm:io.catenax.fleet.vehicles:1.0.0#Vehicles",
+      "label": "Vehicles",
+      "kind": "Aspect",
+      "preferredName": "Vehicles",
+      "description": "Fleet of vehicles. This model is a shell around io.catenax.vehicle.product_description 3.0.0\nIt allows to send multiple io.catenax.vehicle.product_description."
+    },
+    {
+      "id": "urn:samm:io.catenax.fleet.vehicles:1.0.0#listOfVehicles",
+      "label": "listOfVehicles",
+      "kind": "Property",
+      "preferredName": "listOfVehicles",
+      "description": "List of Vehicle.ProductDescription"
+    },
+    {
+      "id": "urn:samm:io.catenax.fleet.vehicles:1.0.0#ListOfVehicles",
+      "label": "ListOfVehicles",
+      "kind": "Characteristic",
+      "preferredName": "List of vehicles",
+      "description": "List of vehicles"
+    }
+  ],
+  "links": [
+    {
+      "source": "urn:samm:io.catenax.fleet.vehicles:1.0.0#Vehicles",
+      "target": "urn:samm:io.catenax.fleet.vehicles:1.0.0#listOfVehicles",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.vehicles:1.0.0#listOfVehicles",
+      "target": "urn:samm:io.catenax.fleet.vehicles:1.0.0#ListOfVehicles",
+      "label": "characteristic",
+      "optional": false
+    }
+  ]
+}

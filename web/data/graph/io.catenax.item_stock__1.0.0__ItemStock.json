@@ -1,0 +1,394 @@
+{
+  "meta": {
+    "namespace": "urn:samm:io.catenax.item_stock:1.0.0#",
+    "meta_model": "SAMM 2.0.0",
+    "path": "data/sldt-semantic-models/io.catenax.item_stock/1.0.0/ItemStock.ttl"
+  },
+  "nodes": [
+    {
+      "id": "urn:samm:io.catenax.item_stock:1.0.0#ItemStock",
+      "label": "ItemStock",
+      "kind": "Aspect",
+      "preferredName": "Stock of Items",
+      "description": "This aspect represents the latest quantities of a partner's items that are on stock. The stock represent the build-to-order (BTO) stocks already available."
+    },
+    {
+      "id": "urn:samm:io.catenax.item_stock:1.0.0#positions",
+      "label": "positions",
+      "kind": "Property",
+      "preferredName": "Positions",
+      "description": "In case of a supplier's stocks for a customer, these stocks may reference the order position for that they have been produced. \nIn case of a customer's stock delivered by a supplier, there is exactly one position.\n\nIn case there is no item on stock, positions MUST be empty."
+    },
+    {
+      "id": "urn:samm:io.catenax.item_stock:1.0.0#materialNumberCustomer",
+      "label": "materialNumberCustomer",
+      "kind": "Property",
+      "preferredName": "Customer Material Number",
+      "description": "Material identifier as assigned by customer. This material number identifies the material (as planned) in customer's database. For standard parts (e.g. screws) for which a customer does not have an own number, the materialNumberSupplier should be set in this field, too."
+    },
+    {
+      "id": "urn:samm:io.catenax.item_stock:1.0.0#materialGlobalAssetId",
+      "label": "materialGlobalAssetId",
+      "kind": "Property",
+      "preferredName": "Material Number UUID of the Customer's Twin",
+      "description": "Material identifier used uniquely to identify the Material (e.g. PartAsPlanned)."
+    },
+    {
+      "id": "urn:samm:io.catenax.item_stock:1.0.0#materialNumberSupplier",
+      "label": "materialNumberSupplier",
+      "kind": "Property",
+      "preferredName": "Supplier Material Number",
+      "description": "Material identifier as assigned by supplier. This material number identifies the material (as planned) in supplier's database."
+    },
+    {
+      "id": "urn:samm:io.catenax.item_stock:1.0.0#direction",
+      "label": "direction",
+      "kind": "Property",
+      "preferredName": "Direction of Stock",
+      "description": "Direction of the stock from data provider perspective."
+    },
+    {
+      "id": "urn:samm:io.catenax.item_stock:1.0.0#orderPositionReference",
+      "label": "orderPositionReference",
+      "kind": "Property",
+      "preferredName": "Order Position Reference",
+      "description": "The order position reference contains information to identify a position within an order."
+    },
+    {
+      "id": "urn:samm:io.catenax.item_stock:1.0.0#lastUpdatedOnDateTime",
+      "label": "lastUpdatedOnDateTime",
+      "kind": "Property",
+      "preferredName": "Lasted Updated on Date",
+      "description": "Date and time at which the position has been updated by the supplier's systems. Date and time are set according to a timezone."
+    },
+    {
+      "id": "urn:samm:io.catenax.item_stock:1.0.0#allocatedStocks",
+      "label": "allocatedStocks",
+      "kind": "Property",
+      "preferredName": "Allocated Stocks",
+      "description": "Stocks that have been already allocated to the customer or delivered by a specific supplier. An allocated stock always refers to a stock location."
+    },
+    {
+      "id": "urn:samm:io.catenax.item_stock:1.0.0#supplierOrderId",
+      "label": "supplierOrderId",
+      "kind": "Property",
+      "preferredName": "Supplier Order ID",
+      "description": "This is the order number on the supplier side that is given by e.g., the supplier's enterprise resource planning system."
+    },
+    {
+      "id": "urn:samm:io.catenax.item_stock:1.0.0#customerOrderId",
+      "label": "customerOrderId",
+      "kind": "Property",
+      "preferredName": "Customer Order ID",
+      "description": "This is the order number on the customer side that can be given by e.g., the customer's enterprise resource planning system."
+    },
+    {
+      "id": "urn:samm:io.catenax.item_stock:1.0.0#customerOrderPositionId",
+      "label": "customerOrderPositionId",
+      "kind": "Property",
+      "preferredName": "Customer Order Position ID",
+      "description": "This is an identifier for the position of an order defined by the customer. It's not a technical identifier, such as an UUID. This identifier is used within the business context when talking about the position."
+    },
+    {
+      "id": "urn:samm:io.catenax.item_stock:1.0.0#quantityOnAllocatedStock",
+      "label": "quantityOnAllocatedStock",
+      "kind": "Property",
+      "preferredName": "Quantity on Allocated Stock",
+      "description": "This is the quantity of the material on stock. In case of stocks \"from a supplier ready to be shipped to a certain customer\", the stock may refer to an order position of a customer."
+    },
+    {
+      "id": "urn:samm:io.catenax.item_stock:1.0.0#stockLocationBPNS",
+      "label": "stockLocationBPNS",
+      "kind": "Property",
+      "preferredName": "BPNS of Stock Location",
+      "description": "BPNS identifying the site the stock is located at. One stock has always one location."
+    },
+    {
+      "id": "urn:samm:io.catenax.item_stock:1.0.0#isBlocked",
+      "label": "isBlocked",
+      "kind": "Property",
+      "preferredName": "Is Blocked",
+      "description": "A set of finished items that are located on the blocked stock area, quarantine area, etc. waiting to be released.\n\nExample: Stock is in review and not released due to customer complaint regarding a recent batch."
+    },
+    {
+      "id": "urn:samm:io.catenax.item_stock:1.0.0#stockLocationBPNA",
+      "label": "stockLocationBPNA",
+      "kind": "Property",
+      "preferredName": "BPNA of Stock Location",
+      "description": "BPNA identifying the address the stock is located at. One stock has always one location."
+    },
+    {
+      "id": "urn:samm:io.catenax.item_stock:1.0.0#PositionsCollection",
+      "label": "PositionsCollection",
+      "kind": "Characteristic",
+      "preferredName": "Positions Collection",
+      "description": "If any stock is available, then there is at least one position. \n\nIn case of a supplier's stock for a customer, the supplier can  differentiate the stock according to the order positions of his customer. In this case multiple positions can be given. There could also be only one position without an OrderPositionReference indicating an anonymous stock which is allocated to the customer.\n\nIn case of a customer's stock delivered by a supplier, there is exactly one position without order position references."
+    },
+    {
+      "id": "urn:samm:io.catenax.item_stock:1.0.0#AllocatedStockCollection",
+      "label": "AllocatedStockCollection",
+      "kind": "Characteristic",
+      "preferredName": "Allocated Stock Collection",
+      "description": "Collection of allocated stocks that may relate to different stock locations. Per location there could be at maximum one blocked and one non blocked stock at the same time."
+    },
+    {
+      "id": "urn:samm:io.catenax.item_stock:1.0.0#MaterialNumberCharacteristic",
+      "label": "MaterialNumberCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Material Number",
+      "description": "The material number is a multi-character string, usually assigned by an ERP system."
+    },
+    {
+      "id": "urn:samm:io.catenax.item_stock:1.0.0#OrderPositionReferenceCharacteristic",
+      "label": "OrderPositionReferenceCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Order Position Reference Characteristic",
+      "description": "The order position reference includes reference numbers for the order and the ID. As these information are meant for the customer, the customer reference numbers are mandatory."
+    },
+    {
+      "id": "urn:samm:io.catenax.item_stock:1.0.0#DateTimeStamp",
+      "label": "DateTimeStamp",
+      "kind": "Characteristic",
+      "preferredName": "Date Time Stamp Characteristic",
+      "description": "The Date with the the timezone of the involved site."
+    },
+    {
+      "id": "urn:samm:io.catenax.item_stock:1.0.0#OrderIdCharacteristic",
+      "label": "OrderIdCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Order ID Characteristic",
+      "description": "This is a proprietary order ID, generated by either the supplier side or customer side."
+    },
+    {
+      "id": "urn:samm:io.catenax.item_stock:1.0.0#OrderPositionIdCharacteristic",
+      "label": "OrderPositionIdCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Position ID within Order",
+      "description": "The position ID is unique for an order and used within business context to refer to a position."
+    },
+    {
+      "id": "urn:samm:io.catenax.item_stock:1.0.0#IsBlockedCharacteristic",
+      "label": "IsBlockedCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Is Blocked Characteristic",
+      "description": "Boolean characteristic indicating whether a stock is blocked (true) or not (false)."
+    },
+    {
+      "id": "urn:samm:io.catenax.item_stock:1.0.0#DirectionCharacteristic",
+      "label": "DirectionCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Direction of Stock Characteristic",
+      "description": "If a supplier provides stock information to a customer, use \"OUTBOUND\".\nIf a customer provides stock information to a supplier, use \"INBOUND\"."
+    },
+    {
+      "id": "urn:samm:io.catenax.item_stock:1.0.0#Position",
+      "label": "Position",
+      "kind": "Entity",
+      "preferredName": "Position",
+      "description": "The Position can be located at several stocks. \nIn case of a supplier's stock for a customer, a position may be either anonymous or reference a position within a customer order. \nIn case of a customer's stock for a supplier, the order position reference MUST NOT be set."
+    },
+    {
+      "id": "urn:samm:io.catenax.item_stock:1.0.0#OrderPositionReference",
+      "label": "OrderPositionReference",
+      "kind": "Entity",
+      "preferredName": "Reference to Order Position",
+      "description": "Encapsulates the references to identify a position within an order."
+    },
+    {
+      "id": "urn:samm:io.catenax.item_stock:1.0.0#AllocatedStock",
+      "label": "AllocatedStock",
+      "kind": "Entity",
+      "preferredName": "Stock Allocated to a Partner",
+      "description": "This is the quantity of items on stock at a location. A stock can either be\n- from a certain supplier and ready to be consumed by a customer or\n- from a supplier and ready to be shipped to a certain customer. \n\nIn case of stocks \"from a supplier ready to be shipped to a certain customer\", the stock may refer to an order position of a customer. This stock consists only of the good-finished items."
+    },
+    {
+      "id": "urn:samm:io.catenax.item_stock:1.0.0#QuantityCharacteristic",
+      "label": "QuantityCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Quantity Characteristic",
+      "description": "Describes the quantity on stock of the item defined by a quantity value and the measurement unit in which the quantity is measured."
+    }
+  ],
+  "links": [
+    {
+      "source": "urn:samm:io.catenax.item_stock:1.0.0#ItemStock",
+      "target": "urn:samm:io.catenax.item_stock:1.0.0#positions",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.item_stock:1.0.0#ItemStock",
+      "target": "urn:samm:io.catenax.item_stock:1.0.0#materialNumberCustomer",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.item_stock:1.0.0#ItemStock",
+      "target": "urn:samm:io.catenax.item_stock:1.0.0#materialGlobalAssetId",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.item_stock:1.0.0#ItemStock",
+      "target": "urn:samm:io.catenax.item_stock:1.0.0#materialNumberSupplier",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.item_stock:1.0.0#ItemStock",
+      "target": "urn:samm:io.catenax.item_stock:1.0.0#direction",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.item_stock:1.0.0#Position",
+      "target": "urn:samm:io.catenax.item_stock:1.0.0#orderPositionReference",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.item_stock:1.0.0#Position",
+      "target": "urn:samm:io.catenax.item_stock:1.0.0#lastUpdatedOnDateTime",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.item_stock:1.0.0#Position",
+      "target": "urn:samm:io.catenax.item_stock:1.0.0#allocatedStocks",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.item_stock:1.0.0#OrderPositionReference",
+      "target": "urn:samm:io.catenax.item_stock:1.0.0#supplierOrderId",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.item_stock:1.0.0#OrderPositionReference",
+      "target": "urn:samm:io.catenax.item_stock:1.0.0#customerOrderId",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.item_stock:1.0.0#OrderPositionReference",
+      "target": "urn:samm:io.catenax.item_stock:1.0.0#customerOrderPositionId",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.item_stock:1.0.0#AllocatedStock",
+      "target": "urn:samm:io.catenax.item_stock:1.0.0#quantityOnAllocatedStock",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.item_stock:1.0.0#AllocatedStock",
+      "target": "urn:samm:io.catenax.item_stock:1.0.0#stockLocationBPNS",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.item_stock:1.0.0#AllocatedStock",
+      "target": "urn:samm:io.catenax.item_stock:1.0.0#isBlocked",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.item_stock:1.0.0#AllocatedStock",
+      "target": "urn:samm:io.catenax.item_stock:1.0.0#stockLocationBPNA",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.item_stock:1.0.0#positions",
+      "target": "urn:samm:io.catenax.item_stock:1.0.0#PositionsCollection",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.item_stock:1.0.0#materialNumberCustomer",
+      "target": "urn:samm:io.catenax.item_stock:1.0.0#MaterialNumberCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.item_stock:1.0.0#materialNumberSupplier",
+      "target": "urn:samm:io.catenax.item_stock:1.0.0#MaterialNumberCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.item_stock:1.0.0#direction",
+      "target": "urn:samm:io.catenax.item_stock:1.0.0#DirectionCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.item_stock:1.0.0#orderPositionReference",
+      "target": "urn:samm:io.catenax.item_stock:1.0.0#OrderPositionReferenceCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.item_stock:1.0.0#lastUpdatedOnDateTime",
+      "target": "urn:samm:io.catenax.item_stock:1.0.0#DateTimeStamp",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.item_stock:1.0.0#allocatedStocks",
+      "target": "urn:samm:io.catenax.item_stock:1.0.0#AllocatedStockCollection",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.item_stock:1.0.0#supplierOrderId",
+      "target": "urn:samm:io.catenax.item_stock:1.0.0#OrderIdCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.item_stock:1.0.0#customerOrderId",
+      "target": "urn:samm:io.catenax.item_stock:1.0.0#OrderIdCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.item_stock:1.0.0#customerOrderPositionId",
+      "target": "urn:samm:io.catenax.item_stock:1.0.0#OrderPositionIdCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.item_stock:1.0.0#quantityOnAllocatedStock",
+      "target": "urn:samm:io.catenax.item_stock:1.0.0#QuantityCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.item_stock:1.0.0#isBlocked",
+      "target": "urn:samm:io.catenax.item_stock:1.0.0#IsBlockedCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.item_stock:1.0.0#PositionsCollection",
+      "target": "urn:samm:io.catenax.item_stock:1.0.0#Position",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.item_stock:1.0.0#OrderPositionReferenceCharacteristic",
+      "target": "urn:samm:io.catenax.item_stock:1.0.0#OrderPositionReference",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.item_stock:1.0.0#AllocatedStockCollection",
+      "target": "urn:samm:io.catenax.item_stock:1.0.0#AllocatedStock",
+      "label": "dataType",
+      "optional": false
+    }
+  ]
+}

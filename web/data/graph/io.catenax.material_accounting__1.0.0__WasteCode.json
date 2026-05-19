@@ -1,0 +1,44 @@
+{
+  "meta": {
+    "namespace": "urn:samm:io.catenax.material_accounting:1.0.0#",
+    "meta_model": "SAMM 2.1.0",
+    "path": "data/sldt-semantic-models/io.catenax.material_accounting/1.0.0/WasteCode.ttl"
+  },
+  "nodes": [
+    {
+      "id": "urn:samm:io.catenax.material_accounting:1.0.0#WasteCode",
+      "label": "WasteCode",
+      "kind": "Aspect",
+      "preferredName": "waste code",
+      "description": "The WasteCode aspect model defines a standardized and interoperable representation of waste categorization information, including European Waste Catalogue (EWC) codes and their descriptions, to classify vehicles, parts or materials in a consistent and machine-readable manner."
+    },
+    {
+      "id": "urn:samm:io.catenax.material_accounting:1.0.0#wasteCode",
+      "label": "wasteCode",
+      "kind": "Property",
+      "preferredName": "waste code",
+      "description": "The waste code is used to identify the type of waste on part or material level."
+    },
+    {
+      "id": "urn:samm:io.catenax.material_accounting:1.0.0#WasteCodeEnum",
+      "label": "WasteCodeEnum",
+      "kind": "Characteristic",
+      "preferredName": "waste code enum",
+      "description": "Enumeration of waste codes according to EWC (european waste directory)."
+    }
+  ],
+  "links": [
+    {
+      "source": "urn:samm:io.catenax.material_accounting:1.0.0#WasteCode",
+      "target": "urn:samm:io.catenax.material_accounting:1.0.0#wasteCode",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material_accounting:1.0.0#wasteCode",
+      "target": "urn:samm:io.catenax.material_accounting:1.0.0#WasteCodeEnum",
+      "label": "characteristic",
+      "optional": false
+    }
+  ]
+}

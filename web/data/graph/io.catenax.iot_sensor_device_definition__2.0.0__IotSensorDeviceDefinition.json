@@ -1,0 +1,122 @@
+{
+  "meta": {
+    "namespace": "urn:samm:io.catenax.iot_sensor_device_definition:2.0.0#",
+    "meta_model": "SAMM 2.1.0",
+    "path": "data/sldt-semantic-models/io.catenax.iot_sensor_device_definition/2.0.0/IotSensorDeviceDefinition.ttl"
+  },
+  "nodes": [
+    {
+      "id": "urn:samm:io.catenax.iot_sensor_device_definition:2.0.0#IotSensorDeviceDefinition",
+      "label": "IotSensorDeviceDefinition",
+      "kind": "Aspect",
+      "preferredName": "IoT Sensor Device Definition",
+      "description": "Permanent characteristics of the individual IoT sensor device."
+    },
+    {
+      "id": "urn:samm:io.catenax.iot_sensor_device_definition:2.0.0#catenaXId",
+      "label": "catenaXId",
+      "kind": "Property",
+      "preferredName": "Catena-X Identifier",
+      "description": "The fully anonymous Catena-X ID of the serialized part, valid for the Catena-X dataspace."
+    },
+    {
+      "id": "urn:samm:io.catenax.iot_sensor_device_definition:2.0.0#manufacturer",
+      "label": "manufacturer",
+      "kind": "Property",
+      "preferredName": "Manufacturer",
+      "description": "Manufacturer of the IoT sensor device."
+    },
+    {
+      "id": "urn:samm:io.catenax.iot_sensor_device_definition:2.0.0#type",
+      "label": "type",
+      "kind": "Property",
+      "preferredName": "IoT Sensor  Device Type",
+      "description": "The type of the IoT sensor device."
+    },
+    {
+      "id": "urn:samm:io.catenax.iot_sensor_device_definition:2.0.0#serialNumber",
+      "label": "serialNumber",
+      "kind": "Property",
+      "preferredName": "IoT Sensor Device Serial Number",
+      "description": "The serial number of the IoT sensor device, as assigned by the manufacturer of the device."
+    },
+    {
+      "id": "urn:samm:io.catenax.iot_sensor_device_definition:2.0.0#ownerID",
+      "label": "ownerID",
+      "kind": "Property",
+      "preferredName": "IoT Sensor Device Owner",
+      "description": "The Catena-X BPNL of the device owner."
+    },
+    {
+      "id": "urn:samm:io.catenax.iot_sensor_device_definition:2.0.0#ManufacturerCharacteristic",
+      "label": "ManufacturerCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "IoT Device Manufacturer Name",
+      "description": "Characteristic describing the property manufacturer."
+    },
+    {
+      "id": "urn:samm:io.catenax.iot_sensor_device_definition:2.0.0#TypeCharacteristic",
+      "label": "TypeCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "IoT Device Type",
+      "description": "Describes the characteristics of the given type of device."
+    },
+    {
+      "id": "urn:samm:io.catenax.iot_sensor_device_definition:2.0.0#SerialNumberCharacteristic",
+      "label": "SerialNumberCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "IoT Device Serial Number",
+      "description": "Describes the characteristic of the property serial number."
+    }
+  ],
+  "links": [
+    {
+      "source": "urn:samm:io.catenax.iot_sensor_device_definition:2.0.0#IotSensorDeviceDefinition",
+      "target": "urn:samm:io.catenax.iot_sensor_device_definition:2.0.0#catenaXId",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.iot_sensor_device_definition:2.0.0#IotSensorDeviceDefinition",
+      "target": "urn:samm:io.catenax.iot_sensor_device_definition:2.0.0#manufacturer",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.iot_sensor_device_definition:2.0.0#IotSensorDeviceDefinition",
+      "target": "urn:samm:io.catenax.iot_sensor_device_definition:2.0.0#type",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.iot_sensor_device_definition:2.0.0#IotSensorDeviceDefinition",
+      "target": "urn:samm:io.catenax.iot_sensor_device_definition:2.0.0#serialNumber",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.iot_sensor_device_definition:2.0.0#IotSensorDeviceDefinition",
+      "target": "urn:samm:io.catenax.iot_sensor_device_definition:2.0.0#ownerID",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.iot_sensor_device_definition:2.0.0#manufacturer",
+      "target": "urn:samm:io.catenax.iot_sensor_device_definition:2.0.0#ManufacturerCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.iot_sensor_device_definition:2.0.0#type",
+      "target": "urn:samm:io.catenax.iot_sensor_device_definition:2.0.0#TypeCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.iot_sensor_device_definition:2.0.0#serialNumber",
+      "target": "urn:samm:io.catenax.iot_sensor_device_definition:2.0.0#SerialNumberCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "meta": {
+    "namespace": "urn:samm:io.catenax.reuse_certificate:3.0.0#",
+    "meta_model": "SAMM 2.1.0",
+    "path": "data/sldt-semantic-models/io.catenax.reuse_certificate/3.0.0/ReuseCertificate.ttl"
+  },
+  "nodes": [
+    {
+      "id": "urn:samm:io.catenax.reuse_certificate:3.0.0#ReuseCertificate",
+      "label": "ReuseCertificate",
+      "kind": "Aspect",
+      "preferredName": "Reuse certificate",
+      "description": "The Reuse-Certificate marks the point when an asset enters a new life by using parts or components of end-of-life vehicles for the same purpose for which they were conceived, as defined by the EU proposal 2023/0284."
+    },
+    {
+      "id": "urn:samm:io.catenax.reuse_certificate:3.0.0#certificate",
+      "label": "certificate",
+      "kind": "Property",
+      "preferredName": "Certificate",
+      "description": "A property of the model, named certificate."
+    },
+    {
+      "id": "urn:samm:io.catenax.reuse_certificate:3.0.0#partInstanceId",
+      "label": "partInstanceId",
+      "kind": "Property",
+      "preferredName": "Part Instance Id",
+      "description": "The serial number of the part from the manufacturer"
+    }
+  ],
+  "links": [
+    {
+      "source": "urn:samm:io.catenax.reuse_certificate:3.0.0#ReuseCertificate",
+      "target": "urn:samm:io.catenax.reuse_certificate:3.0.0#certificate",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.reuse_certificate:3.0.0#ReuseCertificate",
+      "target": "urn:samm:io.catenax.reuse_certificate:3.0.0#partInstanceId",
+      "label": "properties",
+      "optional": false
+    }
+  ]
+}

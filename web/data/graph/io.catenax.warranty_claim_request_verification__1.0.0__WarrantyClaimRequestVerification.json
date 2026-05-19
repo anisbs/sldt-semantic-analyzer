@@ -1,0 +1,220 @@
+{
+  "meta": {
+    "namespace": "urn:samm:io.catenax.warranty_claim_request_verification:1.0.0#",
+    "meta_model": "SAMM 2.1.0",
+    "path": "data/sldt-semantic-models/io.catenax.warranty_claim_request_verification/1.0.0/WarrantyClaimRequestVerification.ttl"
+  },
+  "nodes": [
+    {
+      "id": "urn:samm:io.catenax.warranty_claim_request_verification:1.0.0#WarrantyClaimRequestVerification",
+      "label": "WarrantyClaimRequestVerification",
+      "kind": "Aspect",
+      "preferredName": "Warranty Claim Request Verification",
+      "description": "Aspect Model for the Quality Management business case. This model is used to send back the answer for a WarrantyClaimRequest from a component manufacturer to a vehicle manufacturer (OEM). "
+    },
+    {
+      "id": "urn:samm:io.catenax.warranty_claim_request_verification:1.0.0#claimId",
+      "label": "claimId",
+      "kind": "Property",
+      "preferredName": "Claim Identifier",
+      "description": "Each claim from this data provider has a unique claim ID.If you combine the BPNL of the data provider with this claim ID you get a unique claim ID in the data space."
+    },
+    {
+      "id": "urn:samm:io.catenax.warranty_claim_request_verification:1.0.0#billingId",
+      "label": "billingId",
+      "kind": "Property",
+      "preferredName": "Billing Identifier",
+      "description": "A unique identifier for one billing. It is data provider individual."
+    },
+    {
+      "id": "urn:samm:io.catenax.warranty_claim_request_verification:1.0.0#billingDate",
+      "label": "billingDate",
+      "kind": "Property",
+      "preferredName": "Billing Date",
+      "description": "References the date when the claim was billed. Date format: ISO (YYYY-MM-DD)"
+    },
+    {
+      "id": "urn:samm:io.catenax.warranty_claim_request_verification:1.0.0#agreedTechnicalFactor",
+      "label": "agreedTechnicalFactor",
+      "kind": "Property",
+      "preferredName": "Agreed Technical Factor",
+      "description": "Technical factor which was agreed upon."
+    },
+    {
+      "id": "urn:samm:io.catenax.warranty_claim_request_verification:1.0.0#debitValueJustified",
+      "label": "debitValueJustified",
+      "kind": "Property",
+      "preferredName": "Debit Value Justified",
+      "description": "Check between billed technical factor & agreed technical factor; other plausibility checks"
+    },
+    {
+      "id": "urn:samm:io.catenax.warranty_claim_request_verification:1.0.0#billedCurrency",
+      "label": "billedCurrency",
+      "kind": "Property",
+      "preferredName": "Billed Currency",
+      "description": "Billing currency"
+    },
+    {
+      "id": "urn:samm:io.catenax.warranty_claim_request_verification:1.0.0#claimPlausible",
+      "label": "claimPlausible",
+      "kind": "Property",
+      "preferredName": "Claim Plausible",
+      "description": "Check between billed technical factor & agreed technical factor"
+    },
+    {
+      "id": "urn:samm:io.catenax.warranty_claim_request_verification:1.0.0#claimImplausible",
+      "label": "claimImplausible",
+      "kind": "Property",
+      "preferredName": "Claim Implausible",
+      "description": "Check between billed technical factor & agreed technical factor"
+    },
+    {
+      "id": "urn:samm:io.catenax.warranty_claim_request_verification:1.0.0#billingStatus",
+      "label": "billingStatus",
+      "kind": "Property",
+      "preferredName": "Billing Status",
+      "description": "Status of the bill based on claim_request_verification assessment (approved / disputed)"
+    },
+    {
+      "id": "urn:samm:io.catenax.warranty_claim_request_verification:1.0.0#statementDate",
+      "label": "statementDate",
+      "kind": "Property",
+      "preferredName": "Statement Date",
+      "description": "Due date for the claim_request_verification to approve / dispute the bill"
+    },
+    {
+      "id": "urn:samm:io.catenax.warranty_claim_request_verification:1.0.0#statementReason",
+      "label": "statementReason",
+      "kind": "Property",
+      "preferredName": "Statement Reason",
+      "description": "Reason give by the claim_request_verification, why the bill / claim was disputed"
+    },
+    {
+      "id": "urn:samm:io.catenax.warranty_claim_request_verification:1.0.0#PositiveInteger",
+      "label": "PositiveInteger",
+      "kind": "Characteristic",
+      "preferredName": "Positive Integer",
+      "description": "Defines a positive integer number."
+    },
+    {
+      "id": "urn:samm:io.catenax.warranty_claim_request_verification:1.0.0#Float",
+      "label": "Float",
+      "kind": "Characteristic",
+      "preferredName": "Float",
+      "description": "Defines a float number."
+    },
+    {
+      "id": "urn:samm:io.catenax.warranty_claim_request_verification:1.0.0#PositiveFloatNumber",
+      "label": "PositiveFloatNumber",
+      "kind": "Characteristic",
+      "preferredName": "Positive Float Number",
+      "description": "Represents a positive float number."
+    },
+    {
+      "id": "urn:samm:io.catenax.warranty_claim_request_verification:1.0.0#BillingStatusEnumeration",
+      "label": "BillingStatusEnumeration",
+      "kind": "Characteristic",
+      "preferredName": "Billing Status Enumeration",
+      "description": "An enumeration to describe whether the billing status is approved or disputed"
+    },
+    {
+      "id": "urn:samm:io.catenax.warranty_claim_request_verification:1.0.0#GreaterZero",
+      "label": "GreaterZero",
+      "kind": "Characteristic",
+      "preferredName": "Greatere Zero",
+      "description": "Range constraint for numbers including or bigger than 0."
+    }
+  ],
+  "links": [
+    {
+      "source": "urn:samm:io.catenax.warranty_claim_request_verification:1.0.0#WarrantyClaimRequestVerification",
+      "target": "urn:samm:io.catenax.warranty_claim_request_verification:1.0.0#claimId",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.warranty_claim_request_verification:1.0.0#WarrantyClaimRequestVerification",
+      "target": "urn:samm:io.catenax.warranty_claim_request_verification:1.0.0#billingId",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.warranty_claim_request_verification:1.0.0#WarrantyClaimRequestVerification",
+      "target": "urn:samm:io.catenax.warranty_claim_request_verification:1.0.0#billingDate",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.warranty_claim_request_verification:1.0.0#WarrantyClaimRequestVerification",
+      "target": "urn:samm:io.catenax.warranty_claim_request_verification:1.0.0#agreedTechnicalFactor",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.warranty_claim_request_verification:1.0.0#WarrantyClaimRequestVerification",
+      "target": "urn:samm:io.catenax.warranty_claim_request_verification:1.0.0#debitValueJustified",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.warranty_claim_request_verification:1.0.0#WarrantyClaimRequestVerification",
+      "target": "urn:samm:io.catenax.warranty_claim_request_verification:1.0.0#billedCurrency",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.warranty_claim_request_verification:1.0.0#WarrantyClaimRequestVerification",
+      "target": "urn:samm:io.catenax.warranty_claim_request_verification:1.0.0#claimPlausible",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.warranty_claim_request_verification:1.0.0#WarrantyClaimRequestVerification",
+      "target": "urn:samm:io.catenax.warranty_claim_request_verification:1.0.0#claimImplausible",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.warranty_claim_request_verification:1.0.0#WarrantyClaimRequestVerification",
+      "target": "urn:samm:io.catenax.warranty_claim_request_verification:1.0.0#billingStatus",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.warranty_claim_request_verification:1.0.0#WarrantyClaimRequestVerification",
+      "target": "urn:samm:io.catenax.warranty_claim_request_verification:1.0.0#statementDate",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.warranty_claim_request_verification:1.0.0#WarrantyClaimRequestVerification",
+      "target": "urn:samm:io.catenax.warranty_claim_request_verification:1.0.0#statementReason",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.warranty_claim_request_verification:1.0.0#agreedTechnicalFactor",
+      "target": "urn:samm:io.catenax.warranty_claim_request_verification:1.0.0#PositiveInteger",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.warranty_claim_request_verification:1.0.0#claimPlausible",
+      "target": "urn:samm:io.catenax.warranty_claim_request_verification:1.0.0#PositiveFloatNumber",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.warranty_claim_request_verification:1.0.0#claimImplausible",
+      "target": "urn:samm:io.catenax.warranty_claim_request_verification:1.0.0#PositiveFloatNumber",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.warranty_claim_request_verification:1.0.0#billingStatus",
+      "target": "urn:samm:io.catenax.warranty_claim_request_verification:1.0.0#BillingStatusEnumeration",
+      "label": "characteristic",
+      "optional": false
+    }
+  ]
+}

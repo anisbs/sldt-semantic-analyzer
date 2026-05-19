@@ -1,0 +1,44 @@
+{
+  "meta": {
+    "namespace": "urn:samm:io.catenax.repair_certificate:1.0.0#",
+    "meta_model": "SAMM 2.1.0",
+    "path": "data/sldt-semantic-models/io.catenax.repair_certificate/1.0.0/RepairCertificate.ttl"
+  },
+  "nodes": [
+    {
+      "id": "urn:samm:io.catenax.repair_certificate:1.0.0#RepairCertificate",
+      "label": "RepairCertificate",
+      "kind": "Aspect",
+      "preferredName": "Repair certificate",
+      "description": "The repair certificate marks the point in time or status update when one or several actions carried out to return a defective product or waste to a condition where it fulfils its intended use."
+    },
+    {
+      "id": "urn:samm:io.catenax.repair_certificate:1.0.0#certificate",
+      "label": "certificate",
+      "kind": "Property",
+      "preferredName": "Certificate",
+      "description": "A property of the model, named certificate."
+    },
+    {
+      "id": "urn:samm:io.catenax.repair_certificate:1.0.0#partInstanceId",
+      "label": "partInstanceId",
+      "kind": "Property",
+      "preferredName": "Part Instance Id",
+      "description": "The serial number of the part from the manufacturer"
+    }
+  ],
+  "links": [
+    {
+      "source": "urn:samm:io.catenax.repair_certificate:1.0.0#RepairCertificate",
+      "target": "urn:samm:io.catenax.repair_certificate:1.0.0#certificate",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.repair_certificate:1.0.0#RepairCertificate",
+      "target": "urn:samm:io.catenax.repair_certificate:1.0.0#partInstanceId",
+      "label": "properties",
+      "optional": false
+    }
+  ]
+}

@@ -1,0 +1,677 @@
+{
+  "meta": {
+    "namespace": "urn:samm:io.catenax.customs_information:1.0.0#",
+    "meta_model": "SAMM 2.1.0",
+    "path": "data/sldt-semantic-models/io.catenax.customs_information/1.0.0/CustomsInformation.ttl"
+  },
+  "nodes": [
+    {
+      "id": "urn:samm:io.catenax.customs_information:1.0.0#CustomsInformation",
+      "label": "CustomsInformation",
+      "kind": "Aspect",
+      "preferredName": "Customs Information",
+      "description": "To carry out a preference calculation, customs-specific master data is required for all installed parts within a product. For this purpose, the manufacturer of the product requests this information from the relevant suppliers for all purchased parts (part numbers)and uses it for the preference calculation.\n\nThe exchange takes place peer-to-peer from one value-added participant across the two tier levels."
+    },
+    {
+      "id": "urn:samm:io.catenax.customs_information:1.0.0#customsInformation",
+      "label": "customsInformation",
+      "kind": "Property",
+      "preferredName": "Customs Information",
+      "description": "CustomsInformation contains all customs-related information for a long-term supplier's declaration for a part. Long-term supplier's declarations (LLE)are one-off declarations that are valid for deliveries over a longer period of time, provided that the delivered goods are expected to have the same origin status."
+    },
+    {
+      "id": "urn:samm:io.catenax.customs_information:1.0.0#catenaXId",
+      "label": "catenaXId",
+      "kind": "Property",
+      "preferredName": "Catena-X Identifier",
+      "description": "The fully anonymous Catena-X ID of the corresponding part, valid for the Catena-X dataspace."
+    },
+    {
+      "id": "urn:samm:io.catenax.customs_information:1.0.0#originInformation",
+      "label": "originInformation",
+      "kind": "Property",
+      "preferredName": "Origin Information",
+      "description": "OriginInformation contains all the information required to determine that the part is eligible for preferential treatment, i.e. the determination of preferential origin."
+    },
+    {
+      "id": "urn:samm:io.catenax.customs_information:1.0.0#confirmationDate",
+      "label": "confirmationDate",
+      "kind": "Property",
+      "preferredName": "Confirmation Date",
+      "description": "Confirmation Date is the date of issue of a long-term supplier's declaration."
+    },
+    {
+      "id": "urn:samm:io.catenax.customs_information:1.0.0#validFrom",
+      "label": "validFrom",
+      "kind": "Property",
+      "preferredName": "Valid From",
+      "description": "Valid From is the date from which a long-term supplier declaration is valid. This date can be in the future."
+    },
+    {
+      "id": "urn:samm:io.catenax.customs_information:1.0.0#type",
+      "label": "type",
+      "kind": "Property",
+      "preferredName": "Type",
+      "description": "Type is the reason for submitting a long-term supplier's declaration. This may be due to a recurring annual enquiry by the customer or at the start of a supply relationship."
+    },
+    {
+      "id": "urn:samm:io.catenax.customs_information:1.0.0#status",
+      "label": "status",
+      "kind": "Property",
+      "preferredName": "Status",
+      "description": "Status represents the stage of a long-term supplier's declaration. Committed indicates to the data recipient that all data has been provided correctly."
+    },
+    {
+      "id": "urn:samm:io.catenax.customs_information:1.0.0#tradeRelation",
+      "label": "tradeRelation",
+      "kind": "Property",
+      "preferredName": "Trade Relation",
+      "description": "The trade relation (preferential agreement)for which origin information has been provided."
+    },
+    {
+      "id": "urn:samm:io.catenax.customs_information:1.0.0#commercialCountryOfOrigin",
+      "label": "commercialCountryOfOrigin",
+      "kind": "Property",
+      "preferredName": "Commercial Country Of Origin",
+      "description": "The term \"Commercial Country Of Origin\" specifically refers to the country where the goods were originally produced, manufactured or significantly transformed"
+    },
+    {
+      "id": "urn:samm:io.catenax.customs_information:1.0.0#federalState",
+      "label": "federalState",
+      "kind": "Property",
+      "preferredName": "Federal State",
+      "description": "German federal state in which the part was manufactured."
+    },
+    {
+      "id": "urn:samm:io.catenax.customs_information:1.0.0#preferredStatus",
+      "label": "preferredStatus",
+      "kind": "Property",
+      "preferredName": "Preferred Status",
+      "description": "This is the preference status of the part."
+    },
+    {
+      "id": "urn:samm:io.catenax.customs_information:1.0.0#tracedWorth",
+      "label": "tracedWorth",
+      "kind": "Property",
+      "preferredName": "Traced Worth",
+      "description": "Material value of the part in a currency unit."
+    },
+    {
+      "id": "urn:samm:io.catenax.customs_information:1.0.0#contactInformation",
+      "label": "contactInformation",
+      "kind": "Property",
+      "preferredName": "Contact Information",
+      "description": "Contact information for the responsible."
+    },
+    {
+      "id": "urn:samm:io.catenax.customs_information:1.0.0#originOfManufacturing",
+      "label": "originOfManufacturing",
+      "kind": "Property",
+      "preferredName": "Origin Of Manufacturing",
+      "description": "Information of the Manufacturing place."
+    },
+    {
+      "id": "urn:samm:io.catenax.customs_information:1.0.0#value",
+      "label": "value",
+      "kind": "Property",
+      "preferredName": "Value",
+      "description": "Value of traced Value  depending on the currency."
+    },
+    {
+      "id": "urn:samm:io.catenax.customs_information:1.0.0#currency",
+      "label": "currency",
+      "kind": "Property",
+      "preferredName": "Currency",
+      "description": "This is the currency of the traced value."
+    },
+    {
+      "id": "urn:samm:io.catenax.customs_information:1.0.0#contactPerson",
+      "label": "contactPerson",
+      "kind": "Property",
+      "preferredName": "Contact Person",
+      "description": "Name of the person responsible for the customs information provided."
+    },
+    {
+      "id": "urn:samm:io.catenax.customs_information:1.0.0#jobTitle",
+      "label": "jobTitle",
+      "kind": "Property",
+      "preferredName": "Job Title",
+      "description": "Jobtitle of the responsible for the customs information provided."
+    },
+    {
+      "id": "urn:samm:io.catenax.customs_information:1.0.0#email",
+      "label": "email",
+      "kind": "Property",
+      "preferredName": "Email",
+      "description": "E-Mail of the responsible for the customs information provided."
+    },
+    {
+      "id": "urn:samm:io.catenax.customs_information:1.0.0#phoneNumber",
+      "label": "phoneNumber",
+      "kind": "Property",
+      "preferredName": "Phone Number",
+      "description": "Phone number of the responsible for the customs information provided."
+    },
+    {
+      "id": "urn:samm:io.catenax.customs_information:1.0.0#longitude",
+      "label": "longitude",
+      "kind": "Property",
+      "preferredName": "Longitude",
+      "description": "Longitude of the manufacturing place."
+    },
+    {
+      "id": "urn:samm:io.catenax.customs_information:1.0.0#latitude",
+      "label": "latitude",
+      "kind": "Property",
+      "preferredName": "Latitude",
+      "description": "Latiitude of the manufacturing place."
+    },
+    {
+      "id": "urn:samm:io.catenax.customs_information:1.0.0#CustomsInformationSet",
+      "label": "CustomsInformationSet",
+      "kind": "Characteristic",
+      "preferredName": "Customs Information Set",
+      "description": "Characteristic of the customs information property defined as a Set."
+    },
+    {
+      "id": "urn:samm:io.catenax.customs_information:1.0.0#CustomsInformationEntity",
+      "label": "CustomsInformationEntity",
+      "kind": "Entity",
+      "preferredName": "Customs Information Entity",
+      "description": "Entity of the customs information."
+    },
+    {
+      "id": "urn:samm:io.catenax.customs_information:1.0.0#OriginInformationEntity",
+      "label": "OriginInformationEntity",
+      "kind": "Entity",
+      "preferredName": "Origin Information Entity",
+      "description": "Entity of the origin information."
+    },
+    {
+      "id": "urn:samm:io.catenax.customs_information:1.0.0#TracedWorthEntity",
+      "label": "TracedWorthEntity",
+      "kind": "Entity",
+      "preferredName": "Traced Worth Entity",
+      "description": "Entity of the traced worth."
+    },
+    {
+      "id": "urn:samm:io.catenax.customs_information:1.0.0#ContactInformationEntity",
+      "label": "ContactInformationEntity",
+      "kind": "Entity",
+      "preferredName": "Contact Information Entity",
+      "description": "Entity of the contact information."
+    },
+    {
+      "id": "urn:samm:io.catenax.customs_information:1.0.0#OriginOfManufacturingEntity",
+      "label": "OriginOfManufacturingEntity",
+      "kind": "Entity",
+      "preferredName": "Origin Of Manufacturing Entity",
+      "description": "Entity of the origin of manufacturing."
+    },
+    {
+      "id": "urn:samm:io.catenax.customs_information:1.0.0#OriginInformationCharacteristic",
+      "label": "OriginInformationCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Origin Information Characteristic",
+      "description": "Characteristic of the origin information property."
+    },
+    {
+      "id": "urn:samm:io.catenax.customs_information:1.0.0#DateCharacteristic",
+      "label": "DateCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Date Characteristic",
+      "description": "Characteristic to define the date for one or more properties."
+    },
+    {
+      "id": "urn:samm:io.catenax.customs_information:1.0.0#TracedWorthCharacteristic",
+      "label": "TracedWorthCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Traced Worth Characteristic",
+      "description": "Characteristic of the traced worth property."
+    },
+    {
+      "id": "urn:samm:io.catenax.customs_information:1.0.0#ContactInformationCharacteristic",
+      "label": "ContactInformationCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Contact Information Characteristic",
+      "description": "Characteristic of the contact information property."
+    },
+    {
+      "id": "urn:samm:io.catenax.customs_information:1.0.0#OriginOfManufacturingCharacteristic",
+      "label": "OriginOfManufacturingCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Origin Of Manufacturing Characteristic",
+      "description": "Characteristic of the origin of manufacturing."
+    },
+    {
+      "id": "urn:samm:io.catenax.customs_information:1.0.0#TradeRelationCharacteristic",
+      "label": "TradeRelationCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Trade Relation Characteristic",
+      "description": "Characteristic of the trade relation property defined as String with Regular Expression."
+    },
+    {
+      "id": "urn:samm:io.catenax.customs_information:1.0.0#CommercialCountryOfOriginCharacteristic",
+      "label": "CommercialCountryOfOriginCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Commercial Country Of Origin Characteristic",
+      "description": "Characteristic of the commercial country of origin property defined as String with Regular Expression."
+    },
+    {
+      "id": "urn:samm:io.catenax.customs_information:1.0.0#ValueCharacteristic",
+      "label": "ValueCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Value Characteristic",
+      "description": "Characteristic of the value property defined as double. "
+    },
+    {
+      "id": "urn:samm:io.catenax.customs_information:1.0.0#ContactPersionCharacteristic",
+      "label": "ContactPersionCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Contact Persion Characteristic",
+      "description": "Characteristic of the contact person defined as String."
+    },
+    {
+      "id": "urn:samm:io.catenax.customs_information:1.0.0#JobTitleCharacteristic",
+      "label": "JobTitleCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Job Title Characteristic",
+      "description": "Characteristic of the job title defined as String."
+    },
+    {
+      "id": "urn:samm:io.catenax.customs_information:1.0.0#EmailCharacteristic",
+      "label": "EmailCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Email Characteristic",
+      "description": "Characteristic of the e-mail defined as String."
+    },
+    {
+      "id": "urn:samm:io.catenax.customs_information:1.0.0#PhoneNumberCharacteristic",
+      "label": "PhoneNumberCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Phone Number Characteristic",
+      "description": "Characteristic of the phone number defined as String."
+    },
+    {
+      "id": "urn:samm:io.catenax.customs_information:1.0.0#LongitudeAndLatitudeCharacteristic",
+      "label": "LongitudeAndLatitudeCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Longitude And Latitude Characteristic",
+      "description": "Characteristic of the geological position for the manufacturing origin defined as double. "
+    },
+    {
+      "id": "urn:samm:io.catenax.customs_information:1.0.0#CurrencyCharacteristic",
+      "label": "CurrencyCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Currency Characteristic",
+      "description": "Characteristic of the currency property defined as String."
+    },
+    {
+      "id": "urn:samm:io.catenax.customs_information:1.0.0#TypeEnumaration",
+      "label": "TypeEnumaration",
+      "kind": "Characteristic",
+      "preferredName": "Type Enumaration",
+      "description": "Characteristic of the type property defined as an Enumeration."
+    },
+    {
+      "id": "urn:samm:io.catenax.customs_information:1.0.0#StatusEnumeration",
+      "label": "StatusEnumeration",
+      "kind": "Characteristic",
+      "preferredName": "Status Enumeration",
+      "description": "Characteristic of the status property defined as an Enumeration."
+    },
+    {
+      "id": "urn:samm:io.catenax.customs_information:1.0.0#PreferredStatusEnumeration",
+      "label": "PreferredStatusEnumeration",
+      "kind": "Characteristic",
+      "preferredName": "Preferred Status Enumeration",
+      "description": "Characteristic of the preferred status property defined as an enumeration."
+    },
+    {
+      "id": "urn:samm:io.catenax.customs_information:1.0.0#FederalStateEnumeration",
+      "label": "FederalStateEnumeration",
+      "kind": "Characteristic",
+      "preferredName": "Federal State Enumeration",
+      "description": "Characteristic of the federal state property defined as Enumeration with Regular Expression."
+    },
+    {
+      "id": "urn:samm:io.catenax.customs_information:1.0.0#TradeRelationTrait",
+      "label": "TradeRelationTrait",
+      "kind": "Characteristic",
+      "preferredName": "Trade Relation Trait",
+      "description": null
+    },
+    {
+      "id": "urn:samm:io.catenax.customs_information:1.0.0#CommercialCountryOfOriginTrait",
+      "label": "CommercialCountryOfOriginTrait",
+      "kind": "Characteristic",
+      "preferredName": "Commercial Country Of Origin Trait",
+      "description": null
+    },
+    {
+      "id": "urn:samm:io.catenax.customs_information:1.0.0#FederalStateTrait",
+      "label": "FederalStateTrait",
+      "kind": "Characteristic",
+      "preferredName": "Federal State Trait",
+      "description": null
+    },
+    {
+      "id": "urn:samm:io.catenax.customs_information:1.0.0#CurrencyTrait",
+      "label": "CurrencyTrait",
+      "kind": "Characteristic",
+      "preferredName": "Currency Trait",
+      "description": null
+    },
+    {
+      "id": "urn:samm:io.catenax.customs_information:1.0.0#TradeRelationRegularExpression",
+      "label": "TradeRelationRegularExpression",
+      "kind": "Characteristic",
+      "preferredName": "Trade Relation Regular Expression",
+      "description": "Regular expression to restrict the trade relation based on the ISO 3166."
+    },
+    {
+      "id": "urn:samm:io.catenax.customs_information:1.0.0#CountryAndStateCodeRegularExpression",
+      "label": "CountryAndStateCodeRegularExpression",
+      "kind": "Characteristic",
+      "preferredName": "Country And State Code Regular Expression",
+      "description": "Regular expression to restrict a country code or federal state based on the ISO 3166."
+    },
+    {
+      "id": "urn:samm:io.catenax.customs_information:1.0.0#CurrencyRegularExpression",
+      "label": "CurrencyRegularExpression",
+      "kind": "Characteristic",
+      "preferredName": "Currency Regular Expression",
+      "description": "Regular expression to restrict the currency based on the ISO 4217."
+    }
+  ],
+  "links": [
+    {
+      "source": "urn:samm:io.catenax.customs_information:1.0.0#CustomsInformation",
+      "target": "urn:samm:io.catenax.customs_information:1.0.0#customsInformation",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.customs_information:1.0.0#CustomsInformation",
+      "target": "urn:samm:io.catenax.customs_information:1.0.0#catenaXId",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.customs_information:1.0.0#CustomsInformationEntity",
+      "target": "urn:samm:io.catenax.customs_information:1.0.0#originInformation",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.customs_information:1.0.0#CustomsInformationEntity",
+      "target": "urn:samm:io.catenax.customs_information:1.0.0#confirmationDate",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.customs_information:1.0.0#CustomsInformationEntity",
+      "target": "urn:samm:io.catenax.customs_information:1.0.0#validFrom",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.customs_information:1.0.0#CustomsInformationEntity",
+      "target": "urn:samm:io.catenax.customs_information:1.0.0#type",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.customs_information:1.0.0#CustomsInformationEntity",
+      "target": "urn:samm:io.catenax.customs_information:1.0.0#status",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.customs_information:1.0.0#OriginInformationEntity",
+      "target": "urn:samm:io.catenax.customs_information:1.0.0#tradeRelation",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.customs_information:1.0.0#OriginInformationEntity",
+      "target": "urn:samm:io.catenax.customs_information:1.0.0#commercialCountryOfOrigin",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.customs_information:1.0.0#OriginInformationEntity",
+      "target": "urn:samm:io.catenax.customs_information:1.0.0#federalState",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.customs_information:1.0.0#OriginInformationEntity",
+      "target": "urn:samm:io.catenax.customs_information:1.0.0#preferredStatus",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.customs_information:1.0.0#OriginInformationEntity",
+      "target": "urn:samm:io.catenax.customs_information:1.0.0#tracedWorth",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.customs_information:1.0.0#OriginInformationEntity",
+      "target": "urn:samm:io.catenax.customs_information:1.0.0#contactInformation",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.customs_information:1.0.0#OriginInformationEntity",
+      "target": "urn:samm:io.catenax.customs_information:1.0.0#originOfManufacturing",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.customs_information:1.0.0#TracedWorthEntity",
+      "target": "urn:samm:io.catenax.customs_information:1.0.0#value",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.customs_information:1.0.0#TracedWorthEntity",
+      "target": "urn:samm:io.catenax.customs_information:1.0.0#currency",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.customs_information:1.0.0#ContactInformationEntity",
+      "target": "urn:samm:io.catenax.customs_information:1.0.0#contactPerson",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.customs_information:1.0.0#ContactInformationEntity",
+      "target": "urn:samm:io.catenax.customs_information:1.0.0#jobTitle",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.customs_information:1.0.0#ContactInformationEntity",
+      "target": "urn:samm:io.catenax.customs_information:1.0.0#email",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.customs_information:1.0.0#ContactInformationEntity",
+      "target": "urn:samm:io.catenax.customs_information:1.0.0#phoneNumber",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.customs_information:1.0.0#OriginOfManufacturingEntity",
+      "target": "urn:samm:io.catenax.customs_information:1.0.0#longitude",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.customs_information:1.0.0#OriginOfManufacturingEntity",
+      "target": "urn:samm:io.catenax.customs_information:1.0.0#latitude",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.customs_information:1.0.0#customsInformation",
+      "target": "urn:samm:io.catenax.customs_information:1.0.0#CustomsInformationSet",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.customs_information:1.0.0#originInformation",
+      "target": "urn:samm:io.catenax.customs_information:1.0.0#OriginInformationCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.customs_information:1.0.0#confirmationDate",
+      "target": "urn:samm:io.catenax.customs_information:1.0.0#DateCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.customs_information:1.0.0#validFrom",
+      "target": "urn:samm:io.catenax.customs_information:1.0.0#DateCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.customs_information:1.0.0#type",
+      "target": "urn:samm:io.catenax.customs_information:1.0.0#TypeEnumaration",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.customs_information:1.0.0#status",
+      "target": "urn:samm:io.catenax.customs_information:1.0.0#StatusEnumeration",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.customs_information:1.0.0#tradeRelation",
+      "target": "urn:samm:io.catenax.customs_information:1.0.0#TradeRelationTrait",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.customs_information:1.0.0#commercialCountryOfOrigin",
+      "target": "urn:samm:io.catenax.customs_information:1.0.0#CommercialCountryOfOriginTrait",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.customs_information:1.0.0#federalState",
+      "target": "urn:samm:io.catenax.customs_information:1.0.0#FederalStateTrait",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.customs_information:1.0.0#preferredStatus",
+      "target": "urn:samm:io.catenax.customs_information:1.0.0#PreferredStatusEnumeration",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.customs_information:1.0.0#tracedWorth",
+      "target": "urn:samm:io.catenax.customs_information:1.0.0#TracedWorthCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.customs_information:1.0.0#contactInformation",
+      "target": "urn:samm:io.catenax.customs_information:1.0.0#ContactInformationCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.customs_information:1.0.0#originOfManufacturing",
+      "target": "urn:samm:io.catenax.customs_information:1.0.0#OriginOfManufacturingCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.customs_information:1.0.0#value",
+      "target": "urn:samm:io.catenax.customs_information:1.0.0#ValueCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.customs_information:1.0.0#currency",
+      "target": "urn:samm:io.catenax.customs_information:1.0.0#CurrencyTrait",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.customs_information:1.0.0#contactPerson",
+      "target": "urn:samm:io.catenax.customs_information:1.0.0#ContactPersionCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.customs_information:1.0.0#jobTitle",
+      "target": "urn:samm:io.catenax.customs_information:1.0.0#JobTitleCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.customs_information:1.0.0#email",
+      "target": "urn:samm:io.catenax.customs_information:1.0.0#EmailCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.customs_information:1.0.0#phoneNumber",
+      "target": "urn:samm:io.catenax.customs_information:1.0.0#PhoneNumberCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.customs_information:1.0.0#longitude",
+      "target": "urn:samm:io.catenax.customs_information:1.0.0#LongitudeAndLatitudeCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.customs_information:1.0.0#latitude",
+      "target": "urn:samm:io.catenax.customs_information:1.0.0#LongitudeAndLatitudeCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.customs_information:1.0.0#CustomsInformationSet",
+      "target": "urn:samm:io.catenax.customs_information:1.0.0#CustomsInformationEntity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.customs_information:1.0.0#OriginInformationCharacteristic",
+      "target": "urn:samm:io.catenax.customs_information:1.0.0#OriginInformationEntity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.customs_information:1.0.0#TracedWorthCharacteristic",
+      "target": "urn:samm:io.catenax.customs_information:1.0.0#TracedWorthEntity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.customs_information:1.0.0#ContactInformationCharacteristic",
+      "target": "urn:samm:io.catenax.customs_information:1.0.0#ContactInformationEntity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.customs_information:1.0.0#OriginOfManufacturingCharacteristic",
+      "target": "urn:samm:io.catenax.customs_information:1.0.0#OriginOfManufacturingEntity",
+      "label": "dataType",
+      "optional": false
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "meta": {
+    "namespace": "urn:samm:io.catenax.refurbishing_certificate:3.0.0#",
+    "meta_model": "SAMM 2.0.0",
+    "path": "data/sldt-semantic-models/io.catenax.refurbishing_certificate/3.0.0/RefurbishingCertificate.ttl"
+  },
+  "nodes": [
+    {
+      "id": "urn:samm:io.catenax.refurbishing_certificate:3.0.0#RefurbishingCertificate",
+      "label": "RefurbishingCertificate",
+      "kind": "Aspect",
+      "preferredName": "Refurbishing certificate",
+      "description": "This certificate confirms the comprehensive renovation and rejuvenation undergone by an asset, enhancing its performance, appearance, and functionality to meet or exceed its original specifications, contributing to circular economy principles."
+    },
+    {
+      "id": "urn:samm:io.catenax.refurbishing_certificate:3.0.0#certificate",
+      "label": "certificate",
+      "kind": "Property",
+      "preferredName": "Certificate",
+      "description": "A property of the model, named certificate."
+    },
+    {
+      "id": "urn:samm:io.catenax.refurbishing_certificate:3.0.0#partInstanceId",
+      "label": "partInstanceId",
+      "kind": "Property",
+      "preferredName": "Part Instance Id",
+      "description": "The serial number of the part from the manufacturer"
+    }
+  ],
+  "links": [
+    {
+      "source": "urn:samm:io.catenax.refurbishing_certificate:3.0.0#RefurbishingCertificate",
+      "target": "urn:samm:io.catenax.refurbishing_certificate:3.0.0#certificate",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.refurbishing_certificate:3.0.0#RefurbishingCertificate",
+      "target": "urn:samm:io.catenax.refurbishing_certificate:3.0.0#partInstanceId",
+      "label": "properties",
+      "optional": false
+    }
+  ]
+}
