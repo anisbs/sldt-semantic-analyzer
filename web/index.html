@@ -93,6 +93,18 @@
       position: absolute; inset: 0; display: flex; align-items: center;
       justify-content: center; color: #999; font-size: 14px; text-align: center; padding: 24px;
     }
+    #docs-bar {
+      position: absolute; top: 0; left: 0; right: 0; height: 36px; z-index: 2;
+      display: flex; align-items: center; gap: 16px; padding: 0 14px;
+      background: #fafafa; border-bottom: 1px solid #eee; font-size: 12px;
+    }
+    #docs-title { font-weight: 600; color: #333; }
+    #docs-bar a { color: #1a7f37; text-decoration: none; }
+    #docs-bar a:hover { text-decoration: underline; }
+    #docs-links a { margin-right: 12px; }
+    #docs-frame { position: absolute; top: 36px; left: 0; right: 0; bottom: 0;
+      width: 100%; border: 0; background: #fff; }
+    #docs-msg { inset: 36px 0 0 0; }
     #notes-body { position: absolute; inset: 0; overflow-y: auto; padding: 18px 22px; }
     #notes-body h2 { font-size: 15px; margin: 0 0 10px; }
     #notes-body pre {
@@ -197,7 +209,14 @@
           <svg id="depgraph" width="100%" height="100%"></svg>
         </div>
         <div id="sv-docs" class="subview">
-          <div class="placeholder">Generated docs — coming next: jsDelivr links<br>(HTML doc · JSON Schema · sample payload · OpenAPI). To design together.</div>
+          <div id="docs-bar">
+            <span id="docs-title"></span>
+            <span id="docs-links"></span>
+            <a id="docs-open" target="_blank" rel="noopener" style="display:none">Open full page ↗</a>
+          </div>
+          <div id="docs-msg" class="placeholder">Pick a model and version above.</div>
+          <iframe id="docs-frame" referrerpolicy="no-referrer"
+                  sandbox="allow-scripts allow-popups" style="display:none"></iframe>
         </div>
         <div id="sv-notes" class="subview">
           <div id="notes-body">Pick a model above.</div>
@@ -732,8 +751,85 @@ function renderSub() {
       return;
     }
     drawDep(k);
+  } else if (activeSub === "sv-docs") {
+    renderDocs();
   }
-  // sv-docs is a static placeholder
+}
+
+// ---- Generated docs (upstream gen/ HTML, fetched via jsDelivr) ------------
+// jsDelivr serves repo files with CORS (access-control-allow-origin: *) but
+// as text/plain, so we fetch the text and render it via the iframe's srcdoc
+// (works in a sandboxed iframe; a blob: URL would be origin-blocked there).
+// No self-hosting — the doc is self-contained (inline SVG). The Blob URL is
+// only for the external "Open full page" link (real tab, renders fine).
+const CDN = "https://cdn.jsdelivr.net/gh/eclipse-tractusx/sldt-semantic-models@main/";
+let docState = { id: null, text: null, url: null, ctrl: null };
+
+function renderDocs() {
+  const msg = document.getElementById("docs-msg");
+  const frame = document.getElementById("docs-frame");
+  const open = document.getElementById("docs-open");
+  const links = document.getElementById("docs-links");
+  const title = document.getElementById("docs-title");
+  const show = (el, on) => { el.style.display = on ? "" : "none"; };
+
+  const g = curEntry && curEntry.gen;
+  if (!curEntry) {
+    title.textContent = ""; links.innerHTML = ""; show(open, false);
+    show(frame, false); show(msg, true);
+    msg.textContent = "Pick a model and version above.";
+    return;
+  }
+  title.textContent = `${curEntry.model_name} v${curEntry.version}`;
+
+  // Companion artifacts (open in a new tab on jsDelivr).
+  const arts = [["schema", "JSON Schema", "-schema.json"],
+                ["payload", "Sample payload", ".json"],
+                ["openapi", "OpenAPI", ".yml"]];
+  links.innerHTML = arts
+    .filter(([k]) => g && g[k])
+    .map(([, label, suf]) =>
+      `<a href="${CDN}${g.base}${suf}" target="_blank" rel="noopener">${label}</a>`)
+    .join("");
+
+  if (!g || !g.html) {
+    frame.srcdoc = ""; show(open, false); show(frame, false); show(msg, true);
+    msg.textContent = "No generated documentation upstream for this model+version.";
+    return;
+  }
+
+  if (docState.id === curEntry.id && docState.text != null) {  // cached
+    frame.srcdoc = docState.text;
+    open.href = docState.url; show(open, true);
+    show(msg, false); show(frame, true);
+    return;
+  }
+
+  if (docState.ctrl) docState.ctrl.abort();
+  const ctrl = new AbortController();
+  docState.ctrl = ctrl;
+  const wantId = curEntry.id;
+  frame.srcdoc = ""; show(open, false); show(frame, false); show(msg, true);
+  msg.textContent = "Loading generated doc… (can be a few MB)";
+
+  fetch(`${CDN}${g.base}.html`, { signal: ctrl.signal })
+    .then(r => r.ok ? r.text() : Promise.reject("HTTP " + r.status))
+    .then(htmlText => {
+      if (ctrl.signal.aborted || !curEntry || curEntry.id !== wantId) return;
+      if (docState.url) URL.revokeObjectURL(docState.url);
+      docState.text = htmlText;
+      docState.url = URL.createObjectURL(
+        new Blob([htmlText], { type: "text/html" }));
+      docState.id = wantId;
+      frame.srcdoc = htmlText;
+      open.href = docState.url; show(open, true);
+      show(msg, false); show(frame, true);
+    })
+    .catch(err => {
+      if (ctrl.signal.aborted) return;
+      show(frame, false); show(msg, true);
+      msg.textContent = `Could not load the generated doc (${err}).`;
+    });
 }
 
 // Select a model (auto-loads its latest version; notes are model-level).

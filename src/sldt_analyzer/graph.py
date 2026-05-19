@@ -37,6 +37,35 @@ def _model_id(model: ParsedModel, models_dir: Path) -> str:
         return Path(model.path).stem
 
 
+# Artefacts générés voisins du .ttl : <dir>/gen/<Stem><suffixe>. Servis tels
+# quels par l'amont (jsDelivr), jamais hébergés ici.
+_GEN_SUFFIXES = {
+    "html": ".html",          # doc HTML autonome (SVG inline)
+    "schema": "-schema.json", # JSON Schema
+    "payload": ".json",       # payload exemple
+    "openapi": ".yml",        # OpenAPI
+}
+
+
+def _gen_artifacts(model: ParsedModel, models_dir: Path) -> dict:
+    """Quels artefacts `gen/` existent en amont pour ce .ttl.
+
+    Retourne `{ "base": "<chemin-repo-relatif>/gen/<Stem>", "html": bool,
+    "schema": bool, "payload": bool, "openapi": bool }` ; `base` est en
+    séparateurs POSIX (URL jsDelivr). Repli sûr si chemin inattendu."""
+    try:
+        rel = Path(model.path).resolve().relative_to(
+            models_dir.resolve()
+        ).with_suffix("")
+    except ValueError:
+        return {"base": None, **{k: False for k in _GEN_SUFFIXES}}
+    gen_rel = rel.parent / "gen" / rel.name
+    out = {"base": gen_rel.as_posix()}
+    for key, suf in _GEN_SUFFIXES.items():
+        out[key] = (models_dir / (str(gen_rel) + suf)).is_file()
+    return out
+
+
 def model_to_graph(model: ParsedModel) -> dict:
     """Convertit un ParsedModel en {meta, nodes, links} pour D3."""
     nodes = [
@@ -126,6 +155,7 @@ def build_graphs(
                 "n_links": len(graph["links"]),
                 "has_aspect": aspect is not None,
                 "file": f"{gid}.json",
+                "gen": _gen_artifacts(model, Path(models_dir)),
             }
         )
 
@@ -158,6 +188,8 @@ def build_graphs(
         "deps.json : %d modèles+version, %d avec dépendances",
         len(deps_out), n_with_deps,
     )
+    n_doc = sum(1 for m in index if m["gen"].get("html"))
+    logger.info("gen/ : %d/%d fichiers ont une doc HTML amont", n_doc, len(index))
     return out_dir
 
 
