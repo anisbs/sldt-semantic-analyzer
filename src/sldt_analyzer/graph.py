@@ -7,6 +7,7 @@ consommable par un force-directed D3 (feature 4).
 Sortie : un dossier `data/graph/` contenant
   - `index.json`      : liste des modèles { id, name, meta_model, n_nodes, ... }
   - `<id>.json`       : un graphe { meta, nodes[], links[] } par modèle
+  - `search.json`     : index plat des éléments cherchables (Feature 6C)
 """
 
 from __future__ import annotations
@@ -67,6 +68,22 @@ def _gen_artifacts(model: ParsedModel, models_dir: Path) -> dict:
     return out
 
 
+# Feature 6C — éléments exposés par l'onglet Recherche (cross-modèles).
+# AbstractProperty/AbstractEntity inclus : ce sont des variantes de
+# Property/Entity, on ne veut pas perdre ces correspondances.
+_SEARCH_KINDS = {"Aspect", "Property", "AbstractProperty",
+                 "Entity", "AbstractEntity"}
+
+
+def _short_desc(text: str | None, limit: int = 240) -> str | None:
+    """Description compacte pour la liste de résultats (le texte plein
+    reste disponible dans le Model Viewer). Espaces normalisés, tronquée."""
+    if not text:
+        return None
+    t = " ".join(text.split())
+    return t if len(t) <= limit else t[: limit - 1].rstrip() + "…"
+
+
 def model_to_graph(model: ParsedModel) -> dict:
     """Convertit un ParsedModel en {meta, nodes, links} pour D3."""
     nodes = [
@@ -119,6 +136,7 @@ def build_graphs(
     out_dir.mkdir(parents=True, exist_ok=True)
 
     index = []
+    search: list[dict] = []  # Feature 6C — éléments cherchables (cross-modèles)
     # Dépendances agrégées AU NIVEAU (model_name, version) : un dossier de
     # version peut contenir plusieurs .ttl, chacun avec ses `ext-*:`. Le front
     # raisonne par modèle+version -> on fait l'UNION de leurs dépendances.
@@ -142,6 +160,20 @@ def build_graphs(
         (out_dir / f"{gid}.json").write_text(
             json.dumps(graph, ensure_ascii=False, indent=2), encoding="utf-8"
         )
+        for e in model.elements:
+            if e.kind not in _SEARCH_KINDS:
+                continue
+            search.append({
+                "name": e.name,
+                "preferredName": e.preferred_name,
+                "description": _short_desc(e.description),
+                "kind": e.kind,
+                "model_name": model.model_name,
+                "version": model.model_version,
+                "family": model.model_family,
+                "status": model.status,
+                "id": gid,
+            })
         aspect = next((n for n in graph["nodes"] if n["kind"] == "Aspect"), None)
         index.append(
             {
@@ -205,6 +237,20 @@ def build_graphs(
     logger.info(
         "issues.json : %d modèles+version avec ≥1 issue %s",
         n_flagged, per_type,
+    )
+
+    # search.json : index plat des éléments cherchables (Feature 6C).
+    # Auto-contenu (comme issues.json) : name/desc/modèle/version/status y
+    # figurent -> filtrage par statut côté front sans relire index.json.
+    # Trié pour des diffs git stables (sortie commitée).
+    search.sort(key=lambda s: (s["model_name"], s["version"],
+                               s["kind"], s["name"]))
+    (out_dir / "search.json").write_text(
+        json.dumps(search, ensure_ascii=False, indent=2), encoding="utf-8"
+    )
+    logger.info(
+        "search.json : %d éléments cherchables (Aspect/Property/Entity)",
+        len(search),
     )
     return out_dir
 

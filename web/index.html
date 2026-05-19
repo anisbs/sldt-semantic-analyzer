@@ -376,6 +376,49 @@
     .link { stroke: #999; stroke-opacity: .6; }
     .link.optional { stroke-dasharray: 4 3; }
     .link-label { font-size: 9px; fill: var(--text-3); pointer-events: none; }
+    /* Search (top tab) */
+    #searchview { flex-direction: column; overflow-y: auto;
+      padding: var(--sp-4) var(--sp-5); gap: var(--sp-4); }
+    #searchview h1 { margin: 0 0 4px; font-size: var(--fs-xl); }
+    #searchview .sub { font-size: var(--fs-sm); color: var(--text-3); }
+    #sr-head { display: flex; align-items: center; gap: var(--sp-3); }
+    #sr-q { flex: 1; max-width: 460px; padding: 8px 11px;
+      font-size: var(--fs-md); color: var(--text); background: var(--surface);
+      border: 1px solid var(--border-strong); border-radius: var(--r-sm);
+      transition: border-color var(--dur) var(--ease),
+        box-shadow var(--dur) var(--ease); }
+    #sr-q::placeholder { color: var(--text-3); }
+    #sr-q:focus { outline: none; border-color: var(--accent);
+      box-shadow: 0 0 0 3px var(--accent-weak); }
+    #sr-count { font-size: var(--fs-sm); color: var(--text-3); }
+    #sr-status, #sr-kinds { display: flex; gap: var(--sp-4); flex-wrap: wrap;
+      align-items: center; font-size: var(--fs-md); }
+    #sr-status .ttl, #sr-kinds .ttl { color: var(--text-2);
+      font-size: var(--fs-sm); }
+    #sr-status label, #sr-kinds label { display: flex; align-items: center;
+      gap: 5px; cursor: pointer; }
+    #sr-list { display: flex; flex-direction: column; flex: none;
+      border: 1px solid var(--border); border-radius: var(--r-md);
+      background: var(--surface); box-shadow: var(--shadow-sm);
+      overflow: hidden; }
+    #sr-list .empty { padding: var(--sp-4); color: var(--text-3);
+      font-size: var(--fs-md); }
+    .sr-row { display: flex; flex-direction: column; gap: 3px;
+      cursor: pointer; padding: var(--sp-3) var(--sp-4);
+      border-bottom: 1px solid var(--border); font-size: var(--fs-md);
+      transition: background-color var(--dur) var(--ease); }
+    .sr-row:last-child { border-bottom: none; }
+    .sr-row:hover { background: var(--accent-weak); }
+    .sr-row .top { display: flex; align-items: center; gap: var(--sp-2);
+      flex-wrap: wrap; }
+    .sr-row .nm { font-weight: 600; }
+    .sr-row .pn { color: var(--text-3); font-size: var(--fs-sm); }
+    .sr-row .loc { margin-left: auto; color: var(--text-2);
+      font-size: var(--fs-sm); font-variant-numeric: tabular-nums; }
+    .sr-row .desc { color: var(--text-2); font-size: var(--fs-sm); }
+    .kbadge { font-size: var(--fs-xs); padding: 2px 7px;
+      border-radius: var(--r-pill); color: #fff; }
+
     /* Issues (top tab) */
     #issues { flex-direction: column; overflow-y: auto;
       padding: var(--sp-4) var(--sp-5); gap: var(--sp-4); }
@@ -468,6 +511,7 @@
   </header>
   <div id="tabs">
     <div class="tab active" data-view="home">Home</div>
+    <div class="tab" data-view="searchview">Search</div>
     <div class="tab" data-view="modelviewer">Model Viewer</div>
     <div class="tab" data-view="issues">Issues</div>
   </div>
@@ -483,6 +527,22 @@
         <span id="count"></span>
       </div>
       <div id="catalog"></div>
+    </div>
+
+    <div id="searchview" class="view">
+      <div>
+        <h1>Search</h1>
+        <div class="sub">Find aspects, properties and entities by name
+          across all models — results update as you type.</div>
+      </div>
+      <div id="sr-head">
+        <input id="sr-q" type="text" autocomplete="off"
+               placeholder="Type part of a name (aspect, property, entity)…" />
+        <span id="sr-count"></span>
+      </div>
+      <div id="sr-kinds"><span class="ttl">Type:</span></div>
+      <div id="sr-status"><span class="ttl">Model status:</span></div>
+      <div id="sr-list"></div>
     </div>
 
     <div id="modelviewer" class="view">
@@ -588,6 +648,7 @@ function showTab(view) {
   d3.selectAll(".view").classed("active", function () { return this.id === view; });
   if (view === "modelviewer") renderSub();   // svg needs to be visible to size
   else if (view === "issues") renderIssues();
+  else if (view === "searchview") renderSearch();
 }
 d3.selectAll(".tab").on("click", function () { showTab(this.dataset.view); });
 
@@ -1492,6 +1553,140 @@ function renderIssues() {
     list.appendChild(row);
   });
 }
+
+// ---- Search (cross-model element search, Feature 6C) ---------------------
+// search.json is ~3.6 MB -> lazy-loaded on the first visit of the Search tab.
+let searchData = null, srFetchStarted = false;
+let srStatuses = new Set(["release"]);   // model-status scope (release default)
+const SR_KINDS = ["Aspect", "Property", "Entity"];
+let srKinds = new Set(SR_KINDS);         // kind buckets (all on by default)
+// Element kind -> one of the 3 user-facing buckets (Abstract* fold into
+// Property/Entity so narrowing by type never silently drops results).
+const kindBucket = k =>
+  k === "Aspect" ? "Aspect" : k.endsWith("Property") ? "Property" : "Entity";
+const SR_CAP = 300;                      // max rows rendered (perf)
+
+function loadSearch() {
+  if (srFetchStarted) return;
+  srFetchStarted = true;
+  fetch("data/graph/search.json")
+    .then(r => r.json())
+    .then(j => { searchData = j; if (activeView === "searchview") renderSearch(); })
+    .catch(() => {
+      srFetchStarted = false;
+      if (activeView === "searchview") renderSearch();
+    });
+}
+
+function renderSearch() {
+  if (activeView !== "searchview") return;
+  const sbox = document.getElementById("sr-status");
+  const kbox = document.getElementById("sr-kinds");
+  const list = document.getElementById("sr-list");
+  const cnt = document.getElementById("sr-count");
+
+  // Status checkboxes — built once (same pattern as the Issues tab).
+  if (!sbox.dataset.built) {
+    STATUS_ORDER.forEach(s => {
+      const lab = document.createElement("label");
+      lab.innerHTML =
+        `<input type="checkbox" ${srStatuses.has(s) ? "checked" : ""}>` +
+        `<span class="badge" style="background:${statusColor(s)}">${s}</span>`;
+      lab.querySelector("input").addEventListener("change", function () {
+        if (this.checked) srStatuses.add(s); else srStatuses.delete(s);
+        renderSearch();
+      });
+      sbox.appendChild(lab);
+    });
+    sbox.dataset.built = "1";
+  }
+
+  // Kind checkboxes — built once (Aspect / Property / Entity buckets).
+  if (!kbox.dataset.built) {
+    SR_KINDS.forEach(k => {
+      const lab = document.createElement("label");
+      lab.innerHTML =
+        `<input type="checkbox" ${srKinds.has(k) ? "checked" : ""}>` +
+        `<span class="badge" style="background:${color(k)}">${k}</span>`;
+      lab.querySelector("input").addEventListener("change", function () {
+        if (this.checked) srKinds.add(k); else srKinds.delete(k);
+        renderSearch();
+      });
+      kbox.appendChild(lab);
+    });
+    kbox.dataset.built = "1";
+  }
+
+  if (!searchData) {
+    loadSearch();
+    cnt.textContent = "";
+    list.innerHTML = `<div class="empty">` +
+      (srFetchStarted ? "Loading search index…"
+        : "search.json not found — run: python -m sldt_analyzer.graph") +
+      `</div>`;
+    return;
+  }
+
+  const q = (document.getElementById("sr-q").value || "").trim().toLowerCase();
+  if (q.length < 2) {
+    cnt.textContent = `${searchData.length} searchable elements`;
+    list.innerHTML =
+      `<div class="empty">Type at least 2 characters to search names.</div>`;
+    return;
+  }
+
+  const hits = searchData.filter(e =>
+    srStatuses.has(e.status) &&
+    srKinds.has(kindBucket(e.kind)) &&
+    (e.name.toLowerCase().includes(q) ||
+     (e.preferredName && e.preferredName.toLowerCase().includes(q))));
+
+  hits.sort((a, b) => {
+    const ap = a.name.toLowerCase().startsWith(q) ? 0 : 1;
+    const bp = b.name.toLowerCase().startsWith(q) ? 0 : 1;
+    return ap - bp || a.name.localeCompare(b.name) ||
+           a.model_name.localeCompare(b.model_name);
+  });
+
+  cnt.textContent = hits.length > SR_CAP
+    ? `showing ${SR_CAP} of ${hits.length} matches`
+    : `${hits.length} match${hits.length === 1 ? "" : "es"}`;
+
+  if (!hits.length) {
+    list.innerHTML = `<div class="empty">No element matches ` +
+      `“${escapeHtml(q)}” in the selected type / status scope.</div>`;
+    return;
+  }
+
+  list.innerHTML = "";
+  hits.slice(0, SR_CAP).forEach(e => {
+    const row = document.createElement("div");
+    row.className = "sr-row";
+    const pn = e.preferredName &&
+      e.preferredName.toLowerCase() !== e.name.toLowerCase()
+        ? `<span class="pn">${escapeHtml(e.preferredName)}</span>` : "";
+    row.innerHTML =
+      `<div class="top">` +
+        `<span class="kbadge" style="background:${color(e.kind)}">` +
+        `${e.kind}</span>` +
+        `<span class="nm">${escapeHtml(e.name)}</span>` + pn +
+        `<span class="loc">${escapeHtml(e.model_name)} · v` +
+        `${escapeHtml(e.version)} ` +
+        `<span class="badge" style="background:${statusColor(e.status)}">` +
+        `${e.status}</span></span>` +
+      `</div>` +
+      (e.description
+        ? `<div class="desc">${escapeHtml(e.description)}</div>` : "");
+    const ent = allModels.find(m => m.id === e.id) ||
+                entryForKey(`${e.model_name}@${e.version}`);
+    if (ent)
+      row.addEventListener("click", () => { openEntry(ent); showSub("sv-graph"); });
+    list.appendChild(row);
+  });
+}
+
+const srInput = document.getElementById("sr-q");
+if (srInput) srInput.addEventListener("input", renderSearch);
 </script>
 </body>
 </html>
