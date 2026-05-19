@@ -66,6 +66,8 @@ def model_to_graph(model: ParsedModel) -> dict:
             "model_name": model.model_name,
             "model_version": model.model_version,
             "status": model.status,
+            "release_date": model.release_date,
+            "release_notes": model.release_notes,
             "path": model.path,
         },
         "nodes": nodes,

@@ -66,6 +66,8 @@ class ParsedModel:
     model_name: str = ""    # ex. "batch" (namespace sans "io.catenax.")
     model_version: str = "" # ex. "2.0.0" (version DU MODÈLE, ≠ meta_model)
     status: str = "undefined"  # release | deprecated | draft | undefined
+    release_date: str | None = None   # date de la section RELEASE_NOTES.md
+    release_notes: str | None = None  # corps markdown de la section version
     elements: list[Element] = field(default_factory=list)
     edges: list[Edge] = field(default_factory=list)
 
@@ -143,6 +145,41 @@ def _read_status(ttl_path: Path) -> str:
     return _STATUS_FIX.get(status, status)
 
 
+# Titre de section "Keep a Changelog" : "## [6.1.0] - 2025-10-30"
+_RN_HEAD = re.compile(r"^##\s*\[([^\]]+)\]\s*(?:-\s*(.+?))?\s*$")
+
+
+def _read_release_notes(ttl_path: Path, version: str) -> tuple[str | None, str | None]:
+    """RELEASE_NOTES.md = changelog **du modèle** (dossier parent du dossier
+    de version), **indépendant de la version**. Retourne
+    `(date_de_cette_version, changelog_complet)` : le changelog est identique
+    pour toutes les versions du modèle ; la date est juste la métadonnée de
+    la section `## [<version>]` (utile pour étiqueter la version, ce ne sont
+    pas « les notes »). Absent -> (None, None) ; jamais d'exception."""
+    rn = Path(ttl_path).parent.parent / "RELEASE_NOTES.md"
+    if not rn.is_file():
+        return (None, None)
+    try:
+        raw = rn.read_bytes()
+        try:
+            text = raw.decode("utf-8")
+        except UnicodeDecodeError:
+            text = raw.decode("latin-1")
+    except Exception as exc:  # noqa: BLE001 — fichier illisible : on logge
+        logger.warning("RELEASE_NOTES.md illisible : %s — %s", rn, exc)
+        return (None, None)
+
+    full = text.strip() or None
+    date: str | None = None
+    if version:
+        for line in text.splitlines():
+            m = _RN_HEAD.match(line)
+            if m and m.group(1).strip() == version:
+                date = (m.group(2) or "").strip() or None
+                break
+    return (date, full)
+
+
 def _list_items(graph: Graph, head) -> list:
     """Déroule une collection RDF ( :a :b ... ) ; [] si ce n'en est pas une."""
     try:
@@ -176,6 +213,7 @@ def parse_file(path: Path) -> ParsedModel | None:
 
     ns = _model_namespace(graph)
     family, name, version = _parse_model_urn(ns)
+    rdate, rnotes = _read_release_notes(path, version)
     model = ParsedModel(
         path=str(path),
         namespace=ns,
@@ -184,6 +222,8 @@ def parse_file(path: Path) -> ParsedModel | None:
         model_name=name,
         model_version=version,
         status=_read_status(path),
+        release_date=rdate,
+        release_notes=rnotes,
     )
 
     M = lambda local: URIRef(meta_ns + local)  # noqa: E731 — fabrique d'URI méta
@@ -294,9 +334,11 @@ def main(argv: list[str] | None = None) -> int:
     for m in models:
         kinds.update(e.kind for e in m.elements)
         n_edges += len(m.edges)
+    n_notes = sum(1 for m in models if m.release_notes)  # versions dont le modèle a un RELEASE_NOTES.md
     logger.info("Vocabulaires : %s", dict(meta))
     logger.info("Familles     : %s", dict(families))
     logger.info("Statuts      : %s", dict(statuses))
+    logger.info("Release notes: %d/%d versions dont le modèle a un RELEASE_NOTES.md", n_notes, len(models))
     logger.info("Éléments     : %d %s", sum(kinds.values()), dict(kinds))
     logger.info("Arêtes       : %d", n_edges)
     return 0

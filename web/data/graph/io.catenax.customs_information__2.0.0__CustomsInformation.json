@@ -6,6 +6,8 @@
     "model_name": "customs_information",
     "model_version": "2.0.0",
     "status": "release",
+    "release_date": null,
+    "release_notes": "# Changelog\n\nAll notable changes to this model will be documented in this file.\n\n## [2.0.0] 2025-04-29\n### Added\n\n\n### Changed\n- aspect contactPerson renamed to person \n- all originInformation elements are renamed to tradeRalation\n- arrayItems within trade Relations (former origin Information) changed to String\n- contact Information and traced Worth changes to the top level\n- For email and phoneNumber the aspects of the shared aspect model contact information are used\n\n### Removed\n\n\n\n## [1.0.0] 2024-07-29\n\n- initial version of the aspect model for CustomsInformation",
     "path": "data/sldt-semantic-models/io.catenax.customs_information/2.0.0/CustomsInformation.ttl"
   },
   "nodes": [

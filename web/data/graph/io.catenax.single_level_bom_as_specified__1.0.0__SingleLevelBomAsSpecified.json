@@ -6,6 +6,8 @@
     "model_name": "single_level_bom_as_specified",
     "model_version": "1.0.0",
     "status": "deprecated",
+    "release_date": "2023-06-30",
+    "release_notes": "# Changelog\n\nAll notable changes to this model will be documented in this file.\n\n## [2.0.1] - 2025-10-09\n\n### Changed\n\n- fixed modelling error which prevented the successfull validation of the payload\n\n## [2.0.0] - 2023-08-28\n\n### Added\n\n- added new properties: partGeometry (represting the side a part belongs to, e.g. left or right) and manufacturerId (BPN of the manufacturer)\n\n\n### Changed\n\n- rename property catenaXId to assetId to accomodate ongoing discussion\n- adjust examle value of CatenaXIdTrait to a valid random uuid value\n- adjusted bamm meta model to samm meta model since it samm is default since 07.07.2023\n\n### Removed\n\n- removed unused property since it is already defined by samm-characteristics\n\n## [1.0.0] - 2023-06-30\n\n### Added\n\n- added new properties: createdOn, lastModifiedOn\n\n### Changed\n\n- changed model name from BomAsSpecified to SingleLevelBomAsSpecified for consistency reasons with other Bom models\n- moved new model to a new namespace\n- changed existing properties: identifier -> catenaXId, item -> childParts\n- minor adjustments of exemplary values to reflect current state of the model\n\n### Removed\n\n- removed non-needed properties: index, quantity",
     "path": "data/sldt-semantic-models/io.catenax.single_level_bom_as_specified/1.0.0/SingleLevelBomAsSpecified.ttl"
   },
   "nodes": [

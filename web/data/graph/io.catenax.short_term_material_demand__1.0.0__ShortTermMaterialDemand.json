@@ -6,6 +6,8 @@
     "model_name": "short_term_material_demand",
     "model_version": "1.0.0",
     "status": "release",
+    "release_date": "2024-02-26",
+    "release_notes": "# Changelog\nAll notable changes to this model will be documented in this file.\n\n## [1.0.0] - 2024-02-26\n### Added\n- initial model adjusted based on io.catenax.material_demand:1.0.0\n  - removed all material related information except for materialGlobalAssetId\n  - removed demandId\n  - replaced unitOfMeasure and demand by io.catenax.shared.quantity:2.0.0\n  - migrated to samm 2.1.0\n  - removed unitOfMeasureIsOmmitted\n\n### Changed\n- compared to io.catenax.material_demand:1.0.0\n  - renamed expectedSupplierLocation to expectedSupplierLocationBpns\n  - renamed customerLocation to customerLocationBpns\n  - replaced pointInTime by day\n  - moved changedAt to DemandSeries and renamed to lastUpdatedOn including semanticxs\n\n### Removed\n- compared to io.catenax.material_demand:1.0.0\n  - removed all material related information except for materialGlobalAssetId (materialDescriptionCustomer, materialNumberSupplier, materialNumberCustomer)\n  - removed demandId\n  - removed unitOfMeasureIsOmmitted\n  - removed demandRate and updated semantics\n  - removed supplier and customer",
     "path": "data/sldt-semantic-models/io.catenax.short_term_material_demand/1.0.0/ShortTermMaterialDemand.ttl"
   },
   "nodes": [

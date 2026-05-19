@@ -6,6 +6,8 @@
     "model_name": "manufacturing_capability",
     "model_version": "3.0.0",
     "status": "release",
+    "release_date": "2024-01-29",
+    "release_notes": "# Changelog\n\nAll notable changes to this model will be documented in this file.\n\n## [3.1.0] - 2024-03-04\n### Changed\n- Fixed hierarchical element representation by letting it extend abstract element representation\n\n\n## [3.0.0] - 2024-01-29\n### Added\n\n- Many new concepts to describe resources, materials, capabilities and processes in more detail\n- Possibility to reference a bill of process (BoP) using the BoP identifier from the bill of process aspect model\n- A certificate representation\n- Concept for semantic references\n\n### Changed\n\n- Replaced the former process representation by a set to reference bills of processes\n- Replaced the resource representation by representations for machines and machine tools\n\n\n## [2.0.0] - 2023-10-16\n\n### Changed\n\n- Moved from BAMM to SAMM\n\n## [1.0.0] - 2023-07-03\n\n### Added\n\n- initial model\n\n### Changed\n\nn/a\n\n### Removed",
     "path": "data/sldt-semantic-models/io.catenax.manufacturing_capability/3.0.0/ManufacturingCapability.ttl"
   },
   "nodes": [

@@ -6,6 +6,8 @@
     "model_name": "shared.recycling_strategy_certificate",
     "model_version": "2.0.0",
     "status": "release",
+    "release_date": "2023-11-07",
+    "release_notes": "# Changelog\nAll notable changes to this model will be documented in this file.\n\n## [Unreleased]\n\n## [3.0.0] - 2024-03-04\n\n### Changed\n- Update based on shared aspect \"uuid\"\n- Update based on shared aspect \"business partner number\"\n- Renamed \"issuer\" to \"supplier\"\n- Changed VIN to VAN (optional)\n- made article number optional\n- made catena x id previous life optional\n- Renamed OE Number to Original Equipment Number\n\n### Added\n- new features: Revocation Date\n- new features: (Optional) Vehicle Catena X ID\n\n### Removed\n\n\n## [2.0.0] - 2023-11-07\n### Added\n- Upgrade from BAMM model to SAMM model\n- new features: Article Number, VIN, OE number\n\n### Changed\n- Using shared aspect (BusinessPartnerNumber, Uuid) instead of defining new attributes\n\n### Removed\n\n## [1.0.0] - 2023-02-08\n### Added\n- initial model\n\n### Changed\nn/a\n\n### Removed",
     "path": "data/sldt-semantic-models/io.catenax.shared.recycling_strategy_certificate/2.0.0/RecyclingStrategyCertificate.ttl"
   },
   "nodes": [

@@ -6,6 +6,8 @@
     "model_name": "bom_as_specified",
     "model_version": "1.0.1",
     "status": "deprecated",
+    "release_date": null,
+    "release_notes": "# Changelog\nAll notable changes to this model will be documented in this file.\n\n## [2.0.0] - 2023-06-30\n### Added\n\n### Changed\n\n### Removed\n- Deprecation of model 2.0.0 due to its new name which requires another namespace. Hence, the 2.0.0 model can be found in the new namespace io.catenax.single_level_bom_as_specified as version 1.0.0\n\n## [2.0.0] - 2023-04-24\n### Added\n- added new properties: createdOn, lastModifiedOn\n\n### Changed\n- changed model name from BomAsSpecified to SingleLevelBomAsSpecified for consistency reasons with other Bom models\n- changed existing properties: identifier -> catenaXId, item -> childParts\n- minor adjustments of exemplary values to reflect current state of the model\n\n### Removed\n- removed non-needed properties: index, quantity",
     "path": "data/sldt-semantic-models/io.catenax.bom_as_specified/1.0.1/BomAsSpecified.ttl"
   },
   "nodes": [

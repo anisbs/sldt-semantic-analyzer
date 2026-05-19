@@ -6,6 +6,8 @@
     "model_name": "demand_and_capacity_notification",
     "model_version": "1.0.0",
     "status": "release",
+    "release_date": "2024-02-19",
+    "release_notes": "# Changelog\n\nAll notable changes to this model will be documented in this file.\n\n## [3.0.0] - 2025-06-23\n\n### Added\n\n- added field `resolvingMeasureDescription`\n\n### Changed\n\n- `sourceNotificationId`:\n  - renamed to `sourceNotificationId` and elaborated semantics\n  - now is mandatory\n- `relatedNotificationId`:\n  - changed to be a collection (`relatedNotificationIds`)\n  - added logic when a notification can be considered a related notification\n- `leadingRootCauseEnumeration`: added `insolvency`\n- Introduce a Set of Material Entities with `materialNumberCustomer`, `materialNumberSupplier` and `materialGlobalAssetId`\n  - `materialNumberSupplier` and `materialNumberCustomer` use the `PartIdCharacterstic` from `PartTypeInformation`\n  - `materialGlobalAssetId` uses the UUID characteristic directly\n- `text`:\n  - enhanced semantics to inform about information to set and rules.\n    - MUST be set during creation, update and forwarding\n    - CAN be set during resolving\n\n### Removed\n\n## [2.0.0] - 2024-03-11\n\n### Added\n\n- notificationId: mandatory id for notifications\n- relatedNotificationId: optional id to refer to a notification along the tiers\n\n### Changed\n\n- relatedSourceMessageId: renamed to sourceNotificationId and reframed semantics\n- preferredName of TextLengthConstraint was CamelCase\n\n### Removed\n\n\n## [1.0.0] - 2024-02-19\n### Added\n- initial model",
     "path": "data/sldt-semantic-models/io.catenax.demand_and_capacity_notification/1.0.0/DemandAndCapacityNotification.ttl"
   },
   "nodes": [

@@ -6,6 +6,8 @@
     "model_name": "battery.battery_pass",
     "model_version": "6.1.0",
     "status": "release",
+    "release_date": "2025-10-30",
+    "release_notes": "# Changelog\n\nAll notable changes to this model will be documented in this file.\n\n## [6.1.0] - 2025-10-30\n\n### Changed\n\n- new attribute added: specVersion (Optional)\n\n## [6.0.0] - 2024-05-21\n\n### Changed\n\n- connection update to @prefix ext-passport: <urn:samm:io.catenax.generic.digital_product_passport:5.0.0#>\n- declarationOfConformityId is a string instead of a document list\n- example values for doubles are now doubles and not integers\n- corrected description texts with typos\n\n### Added\n\n- added commercial from ext-passport\n\n## [5.0.0] - 2024-03-04\n\n### Changed\n\n- import of the new samm:io.catenax.generic.digital_product_passport:4.0.0\n- deletion of either-or possibilities\n\n## [4.0.0] - 2023-12-11\n\n### Changed\n\n- changed to SAMM\n- fundamental changes in the structure\n- references to the Digital Product Passport which references multiple other shared models\n\n## [3.0.1] - 2023-01-15\n\n### Added\n\nn/a\n\n### Changed\n\n- several smaller fixes according to technical committee feedback\n\n### Removed\n\nn/a\n\n## [3.0.0] - 2022-12-05\n\n### Added\n\n- added „componentsSupplierName“\n- attribute \"ComponentsPartNumber\" was changed to a collection\n\n### Changed\n\nn/a\n\n### Removed\n\n## [2.0.0] - 2022-09-07\n\n### Added\n\n- attributes describing battery or its condition in more detail\n- set namespace to io.catenax",
     "path": "data/sldt-semantic-models/io.catenax.battery.battery_pass/6.1.0/BatteryPass.ttl"
   },
   "nodes": [
