@@ -105,10 +105,14 @@
     }
     #legend div, #dep-legend div { display: flex; align-items: center; margin: 2px 0; }
     #legend span.dot, #dep-legend span.dot { width: 11px; height: 11px; border-radius: 50%; margin-right: 6px; }
+    #dep-legend span.ring { width: 11px; height: 11px; border-radius: 50%; margin-right: 6px;
+      background: transparent; box-sizing: border-box; }
+    #dep-legend .sep { font-weight: 600; margin-top: 6px; }
     #mv-empty, #dep-empty { position: absolute; inset: 0; display: flex; align-items: center;
       justify-content: center; color: #999; font-size: 14px; text-align: center; padding: 24px; }
     .node circle.dep-root { stroke: #111; stroke-width: 3px; }
     .node circle.dep-missing { stroke: #b00020; stroke-dasharray: 3 2; }
+    .node circle.dep-status { pointer-events: none; }
     #dep-controls { position: absolute; top: 10px; right: 14px; z-index: 4; display: flex; }
     #dep-controls button {
       font-size: 12px; padding: 5px 11px; border: 1px solid #ccc;
@@ -160,6 +164,14 @@
         </label>
         <label>Version
           <select id="mv-version"></select>
+        </label>
+        <label>Layout
+          <select id="mv-layout">
+            <option value="freeze" selected>Static (auto-layout)</option>
+            <option value="force">Force (animated)</option>
+            <option value="circle">Circle</option>
+            <option value="grid">Grid</option>
+          </select>
         </label>
         <span id="mv-badges"></span>
       </div>
@@ -231,6 +243,79 @@ function showSub(sub) {
 }
 d3.selectAll(".subtab").on("click", function () { showSub(this.dataset.sub); });
 
+// ---- Layout engine (shared by the element graph AND the dependency graph)
+// "freeze" : force-directed computed once then frozen — nothing drifts, a
+//            dragged node stays where you drop it (default)
+// "force"  : live force-directed (keeps animating; drag releases)
+// "circle" : static ring     "grid": static grid   (no simulation at all)
+let layoutMode = "freeze";
+
+function placeStatic(nodes, mode, width, height) {
+  const n = nodes.length || 1;
+  if (mode === "circle") {
+    const cx = width / 2, cy = height / 2;
+    const R = Math.max(70, Math.min(width, height) / 2 - 70);
+    nodes.forEach((d, i) => {
+      const a = (2 * Math.PI * i) / n - Math.PI / 2;
+      d.x = d.fx = cx + R * Math.cos(a);
+      d.y = d.fy = cy + R * Math.sin(a);
+    });
+  } else {                                   // grid
+    const cols = Math.ceil(Math.sqrt(n));
+    const rows = Math.ceil(n / cols);
+    const gx = width / (cols + 1), gy = height / (rows + 1);
+    nodes.forEach((d, i) => {
+      d.x = d.fx = gx * ((i % cols) + 1);
+      d.y = d.fy = gy * (((i / cols) | 0) + 1);
+    });
+  }
+}
+
+// Build a simulation honoring layoutMode. For freeze/circle/grid it is
+// returned already stopped with x/y/fx/fy set, so the graph never moves on
+// its own and dragging a node only moves that node.
+function makeSim(nodes, links, width, height, opt) {
+  const sim = d3.forceSimulation(nodes)
+    .force("link", d3.forceLink(links).id(d => d.id).distance(opt.distance))
+    .force("charge", d3.forceManyBody().strength(opt.charge))
+    .force("center", d3.forceCenter(width / 2, height / 2))
+    .force("collide", d3.forceCollide(opt.collide));
+  if (layoutMode === "circle" || layoutMode === "grid") {
+    sim.stop();
+    placeStatic(nodes, layoutMode, width, height);
+  } else if (layoutMode === "freeze") {
+    sim.stop();
+    for (let i = 0; i < 300; i++) sim.tick();          // settle once…
+    nodes.forEach(d => { d.fx = d.x; d.fy = d.y; });   // …then pin
+  }
+  return sim;                                          // "force": running
+}
+
+// Drag matched to the layout: live force releases the node; every other
+// mode pins it where dropped and repaints just that move.
+function dragger(sim, ticked) {
+  const live = layoutMode === "force";
+  return d3.drag()
+    .on("start", (e, d) => {
+      if (live && !e.active) sim.alphaTarget(.3).restart();
+      d.fx = d.x; d.fy = d.y;
+    })
+    .on("drag", (e, d) => {
+      d.fx = e.x; d.fy = e.y;
+      if (!live) { d.x = e.x; d.y = e.y; ticked(); }
+    })
+    .on("end", (e, d) => {
+      if (live) { if (!e.active) sim.alphaTarget(0); d.fx = d.fy = null; }
+      // freeze/circle/grid: keep fx/fy so the node stays put
+    });
+}
+
+// Layout selector applies to whichever graph sub-tab is showing.
+document.getElementById("mv-layout").addEventListener("change", function () {
+  layoutMode = this.value;
+  if (activeSub === "sv-graph" || activeSub === "sv-dep") renderSub();
+});
+
 // ---- Graph (D3 force-directed) -------------------------------------------
 const svg = d3.select("#graph");
 const tooltip = d3.select("#tooltip");
@@ -257,11 +342,8 @@ function draw(g) {
   const links = g.links.map(d => ({ ...d }));
 
   if (sim) sim.stop();
-  sim = d3.forceSimulation(nodes)
-    .force("link", d3.forceLink(links).id(d => d.id).distance(70))
-    .force("charge", d3.forceManyBody().strength(-180))
-    .force("center", d3.forceCenter(width / 2, height / 2))
-    .force("collide", d3.forceCollide(22));
+  sim = makeSim(nodes, links, width, height,
+    { distance: 70, charge: -180, collide: 22 });
 
   const link = container.append("g").selectAll("line").data(links).enter()
     .append("line")
@@ -271,14 +353,17 @@ function draw(g) {
   const linkLabel = container.append("g").selectAll("text").data(links).enter()
     .append("text").attr("class", "link-label").text(d => d.label);
 
+  function ticked() {
+    link.attr("x1", d => d.source.x).attr("y1", d => d.source.y)
+        .attr("x2", d => d.target.x).attr("y2", d => d.target.y);
+    linkLabel.attr("x", d => (d.source.x + d.target.x) / 2)
+             .attr("y", d => (d.source.y + d.target.y) / 2);
+    node.attr("transform", d => `translate(${d.x},${d.y})`);
+  }
+
   const node = container.append("g").selectAll("g").data(nodes).enter()
     .append("g").attr("class", "node")
-    .call(d3.drag()
-      .on("start", (e, d) => { if (!e.active) sim.alphaTarget(.3).restart();
-        d.fx = d.x; d.fy = d.y; })
-      .on("drag", (e, d) => { d.fx = e.x; d.fy = e.y; })
-      .on("end", (e, d) => { if (!e.active) sim.alphaTarget(0);
-        d.fx = null; d.fy = null; }));
+    .call(dragger(sim, ticked));
 
   node.append("circle").attr("r", 9).attr("fill", d => color(d.kind))
     .on("mouseover", (e, d) => {
@@ -293,13 +378,8 @@ function draw(g) {
 
   node.append("text").attr("x", 12).attr("y", 4).text(d => d.label);
 
-  sim.on("tick", () => {
-    link.attr("x1", d => d.source.x).attr("y1", d => d.source.y)
-        .attr("x2", d => d.target.x).attr("y2", d => d.target.y);
-    linkLabel.attr("x", d => (d.source.x + d.target.x) / 2)
-             .attr("y", d => (d.source.y + d.target.y) / 2);
-    node.attr("transform", d => `translate(${d.x},${d.y})`);
-  });
+  sim.on("tick", ticked);
+  ticked();                       // initial paint (static layouts won't tick)
 }
 
 function drawLegend() {
@@ -315,18 +395,37 @@ const depSvg = d3.select("#depgraph");
 const depContainer = depSvg.append("g");
 depSvg.call(d3.zoom().scaleExtent([0.1, 4]).on("zoom",
   e => depContainer.attr("transform", e.transform)));
+// refX = path tip (x=10): the line is trimmed to the node ring edge in
+// ticked(), so the arrowhead lands in the gap just outside the ring.
 depSvg.append("defs").append("marker")
-  .attr("id", "darrow").attr("viewBox", "0 -5 10 10").attr("refX", 20)
-  .attr("markerWidth", 6).attr("markerHeight", 6).attr("orient", "auto")
-  .append("path").attr("d", "M0,-5L10,0L0,5").attr("fill", "#999");
+  .attr("id", "darrow").attr("viewBox", "0 -5 10 10").attr("refX", 10)
+  .attr("markerWidth", 7).attr("markerHeight", 7).attr("orient", "auto")
+  .append("path").attr("d", "M0,-5L10,0L0,5").attr("fill", "#777");
+
+// Outer visual radius of a dep node (ring r=16 + ~half its 3.5px stroke),
+// plus a small gap, so the trimmed link end clears the status ring.
+const DEP_R = 20;
+function depEndpoints(d) {
+  const sx = d.source.x, sy = d.source.y, tx = d.target.x, ty = d.target.y;
+  let dx = tx - sx, dy = ty - sy;
+  const dist = Math.hypot(dx, dy) || 1;
+  dx /= dist; dy /= dist;
+  const r = Math.max(0, Math.min(DEP_R, dist / 2 - 1)); // never cross over
+  return { x1: sx + dx * r, y1: sy + dy * r,
+           x2: tx - dx * r, y2: ty - dy * r };
+}
 
 (function depLegend() {
   const l = d3.select("#dep-legend");
-  l.append("div").style("font-weight", "600").text("Dependency graph");
+  l.append("div").attr("class", "sep").text("Role (fill)");
   [["Selected model", DEP_COLORS.root],
    ["Linked model (in catalog)", DEP_COLORS.dep],
    ["Not in catalog", DEP_COLORS.missing]].forEach(([t, c]) =>
     l.append("div").html(`<span class="dot" style="background:${c}"></span>${t}`));
+  l.append("div").attr("class", "sep").text("Status (ring)");
+  ["release", "draft", "deprecated", "undefined"].forEach(s =>
+    l.append("div").html(
+      `<span class="ring" style="border:3px solid ${statusColor(s)}"></span>${s}`));
 })();
 
 const depKey = e => (e ? `${e.model_name}@${e.version}` : null);
@@ -335,12 +434,26 @@ const depKey = e => (e ? `${e.model_name}@${e.version}` : null);
 // USE this one). Edges always mean source→target = "source uses target".
 let depDir = "out";
 let revMap = null;                 // built lazily : key -> [keys that use it]
+let statusByKey = null;            // built lazily from index.json : key -> status
 
 function buildRevMap() {
   const r = {};
   for (const [p, v] of Object.entries(depsMap || {}))
     v.deps.forEach(d => (r[d] = r[d] || []).push(p));
   return r;
+}
+
+// Status comes from the catalog (index.json, already loaded). A key out of
+// the catalog has none (it's the "Not in catalog" case anyway).
+function keyStatus(k) {
+  if (!statusByKey) {
+    statusByKey = {};
+    allModels.forEach(e => {
+      const kk = `${e.model_name}@${e.version}`;
+      if (!(kk in statusByKey)) statusByKey[kk] = e.status;
+    });
+  }
+  return statusByKey[k] || null;
 }
 
 // BFS, transitive. `expanded` guards cycles: A→B and B→A both draw an edge,
@@ -355,6 +468,7 @@ function buildDepGraph(rootKey) {
         id: k, present: !!m,
         name: m ? m.name : k.slice(0, at),
         version: m ? m.version : k.slice(at + 1),
+        status: m ? (keyStatus(k) || "undefined") : null,
         root: k === rootKey,
       });
     }
@@ -403,24 +517,32 @@ function drawDep(rootKey) {
   const nodes = g.nodes, links = g.links.map(d => ({ ...d }));
 
   if (depSim) depSim.stop();
-  depSim = d3.forceSimulation(nodes)
-    .force("link", d3.forceLink(links).id(d => d.id).distance(110))
-    .force("charge", d3.forceManyBody().strength(-320))
-    .force("center", d3.forceCenter(width / 2, height / 2))
-    .force("collide", d3.forceCollide(34));
+  depSim = makeSim(nodes, links, width, height,
+    { distance: 110, charge: -320, collide: 34 });
 
   const link = depContainer.append("g").selectAll("line").data(links).enter()
     .append("line").attr("class", "link")
     .attr("stroke-width", 1.4).attr("marker-end", "url(#darrow)");
 
+  function ticked() {
+    link.each(function (d) {
+      const e = depEndpoints(d);
+      this.setAttribute("x1", e.x1); this.setAttribute("y1", e.y1);
+      this.setAttribute("x2", e.x2); this.setAttribute("y2", e.y2);
+    });
+    node.attr("transform", d => `translate(${d.x},${d.y})`);
+  }
+
   const node = depContainer.append("g").selectAll("g").data(nodes).enter()
     .append("g").attr("class", "node")
-    .call(d3.drag()
-      .on("start", (e, d) => { if (!e.active) depSim.alphaTarget(.3).restart();
-        d.fx = d.x; d.fy = d.y; })
-      .on("drag", (e, d) => { d.fx = e.x; d.fy = e.y; })
-      .on("end", (e, d) => { if (!e.active) depSim.alphaTarget(0);
-        d.fx = null; d.fy = null; }));
+    .call(dragger(depSim, ticked));
+
+  // Outer ring = status (release/draft/deprecated/undefined); fill = role.
+  // Use .style() so it beats the `.node circle { stroke:#fff }` stylesheet
+  // rule (presentation attributes lose the cascade to CSS rules).
+  node.append("circle").attr("r", 16).attr("class", "dep-status")
+    .style("fill", "none").style("stroke-width", "3.5px")
+    .style("stroke", d => d.status ? statusColor(d.status) : "transparent");
 
   node.append("circle").attr("r", 12)
     .attr("class", d => d.root ? "dep-root" : (d.present ? "" : "dep-missing"))
@@ -429,6 +551,9 @@ function drawDep(rootKey) {
     .style("cursor", d => d.present ? "pointer" : "default")
     .on("mouseover", (e, d) => tooltip.style("opacity", 1).html(
       `<b>${d.name}</b> <span class="k">v${d.version}</span><br>` +
+      (d.status
+        ? `status: <b style="color:${statusColor(d.status)}">${d.status}</b><br>`
+        : "") +
       (d.root ? "selected model<br><i>click to re-root here</i>"
        : d.present ? "in catalog<br><i>click to re-root here</i>"
        : "<i>not in catalog (unresolved dependency)</i>")))
@@ -444,11 +569,8 @@ function drawDep(rootKey) {
   node.append("text").attr("x", 15).attr("y", 4)
     .text(d => `${d.name} v${d.version}`);
 
-  depSim.on("tick", () => {
-    link.attr("x1", d => d.source.x).attr("y1", d => d.source.y)
-        .attr("x2", d => d.target.x).attr("y2", d => d.target.y);
-    node.attr("transform", d => `translate(${d.x},${d.y})`);
-  });
+  depSim.on("tick", ticked);
+  ticked();                       // initial paint (static layouts won't tick)
 }
 
 // ---- Model Viewer state ---------------------------------------------------
@@ -659,6 +781,7 @@ fetch("data/graph/index.json")
   .then(r => r.json())
   .then(idx => {
     allModels = idx;
+    statusByKey = null;            // rebuild status lookup from fresh catalog
     buildGroups();
     setupModelSearch();
     renderKpis();
