@@ -13,7 +13,9 @@ parseur. `parse_file` retourne `None` et logge un WARNING (chemin + raison).
 
 from __future__ import annotations
 
+import json
 import logging
+import re
 from dataclasses import dataclass, field
 from pathlib import Path
 
@@ -59,7 +61,11 @@ class Edge:
 class ParsedModel:
     path: str
     namespace: str          # urn propre du modèle (@prefix : ...)
-    meta_model: str         # ex. "SAMM 2.1.0" / "BAMM 1.0.0"
+    meta_model: str         # ex. "SAMM 2.1.0" / "BAMM 1.0.0" (version de la SPEC)
+    model_family: str = ""  # SAMM | BAMM (issu de l'urn du modèle)
+    model_name: str = ""    # ex. "batch" (namespace sans "io.catenax.")
+    model_version: str = "" # ex. "2.0.0" (version DU MODÈLE, ≠ meta_model)
+    status: str = "undefined"  # release | deprecated | draft | undefined
     elements: list[Element] = field(default_factory=list)
     edges: list[Edge] = field(default_factory=list)
 
@@ -89,6 +95,52 @@ def _model_namespace(graph: Graph) -> str:
         if prefix == "":
             return str(ns)
     return ""
+
+
+# urn:<famille>:<namespace>:<version>#  (le @prefix : ... sans nom)
+_URN_RE = re.compile(r"^urn:(?P<family>[^:]+):(?P<ns>.+):(?P<version>[^:#]+)#?$")
+_ORG_PREFIXES = ("io.catenax.", "io.openmanufacturing.")
+
+
+def _parse_model_urn(namespace: str) -> tuple[str, str, str]:
+    """'urn:samm:io.catenax.batch:2.0.0#' -> ('SAMM', 'batch', '2.0.0').
+    Repli sûr (jamais d'exception) si la forme est inattendue."""
+    m = _URN_RE.match((namespace or "").strip())
+    if not m:
+        return ("", (namespace or "").rstrip("#"), "")
+    family = m.group("family").upper()        # samm/bamm -> SAMM/BAMM
+    name = m.group("ns")
+    for org in _ORG_PREFIXES:
+        if name.startswith(org):
+            name = name[len(org):]
+            break
+    return (family, name, m.group("version"))
+
+
+# Quelques metadata.json amont ont la coquille "deprecate".
+_STATUS_FIX = {"deprecate": "deprecated"}
+
+
+def _read_status(ttl_path: Path) -> str:
+    """`status` du metadata.json voisin (même dossier de version).
+    Absent -> 'undefined' ; illisible/malformé -> WARNING + 'undefined'."""
+    meta = Path(ttl_path).parent / "metadata.json"
+    if not meta.is_file():
+        return "undefined"
+    try:
+        raw = meta.read_bytes()
+        try:
+            txt = raw.decode("utf-8")
+        except UnicodeDecodeError:
+            txt = raw.decode("latin-1")
+        status = json.loads(txt).get("status")
+    except Exception as exc:  # noqa: BLE001 — JSON cassé : on logge et on continue
+        logger.warning("metadata.json illisible : %s — %s", meta, exc)
+        return "undefined"
+    if not isinstance(status, str) or not status.strip():
+        return "undefined"
+    status = status.strip().lower()
+    return _STATUS_FIX.get(status, status)
 
 
 def _list_items(graph: Graph, head) -> list:
@@ -122,10 +174,16 @@ def parse_file(path: Path) -> ParsedModel | None:
         return None
     meta_ns, meta_label = detected
 
+    ns = _model_namespace(graph)
+    family, name, version = _parse_model_urn(ns)
     model = ParsedModel(
         path=str(path),
-        namespace=_model_namespace(graph),
+        namespace=ns,
         meta_model=meta_label,
+        model_family=family,
+        model_name=name,
+        model_version=version,
+        status=_read_status(path),
     )
 
     M = lambda local: URIRef(meta_ns + local)  # noqa: E731 — fabrique d'URI méta
@@ -229,12 +287,16 @@ def main(argv: list[str] | None = None) -> int:
     models = parse_directory(args.dir)
 
     meta = Counter(m.meta_model for m in models)
+    families = Counter(m.model_family for m in models)
+    statuses = Counter(m.status for m in models)
     kinds: Counter = Counter()
     n_edges = 0
     for m in models:
         kinds.update(e.kind for e in m.elements)
         n_edges += len(m.edges)
     logger.info("Vocabulaires : %s", dict(meta))
+    logger.info("Familles     : %s", dict(families))
+    logger.info("Statuts      : %s", dict(statuses))
     logger.info("Éléments     : %d %s", sum(kinds.values()), dict(kinds))
     logger.info("Arêtes       : %d", n_edges)
     return 0

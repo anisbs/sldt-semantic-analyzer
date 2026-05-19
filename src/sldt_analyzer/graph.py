@@ -62,6 +62,10 @@ def model_to_graph(model: ParsedModel) -> dict:
         "meta": {
             "namespace": model.namespace,
             "meta_model": model.meta_model,
+            "model_family": model.model_family,
+            "model_name": model.model_name,
+            "model_version": model.model_version,
+            "status": model.status,
             "path": model.path,
         },
         "nodes": nodes,
@@ -90,6 +94,10 @@ def build_graphs(
             {
                 "id": gid,
                 "name": aspect["label"] if aspect else gid,
+                "model_name": model.model_name,
+                "version": model.model_version,
+                "family": model.model_family,
+                "status": model.status,
                 "meta_model": model.meta_model,
                 "n_nodes": len(graph["nodes"]),
                 "n_links": len(graph["links"]),
