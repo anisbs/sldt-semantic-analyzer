@@ -58,7 +58,32 @@
     .row .nm { flex: 1; font-weight: 600; }
     .row .nm small { font-weight: 400; color: #999; }
     .badge { font-size: 11px; padding: 2px 7px; border-radius: 10px; color: #fff; }
-    .row select { font-size: 12px; padding: 4px 6px; border: 1px solid #ccc; border-radius: 5px; }
+    /* Home catalog: expandable model rows (versions revealed on click) */
+    .crow { border-bottom: 1px solid #f0f0f0; }
+    .crow:last-child { border-bottom: none; }
+    .ch {
+      display: flex; align-items: center; gap: 10px; padding: 9px 14px;
+      cursor: pointer; user-select: none;
+    }
+    .ch:hover { background: #f7f9ff; }
+    .ch .ct { color: #bbb; font-size: 10px; width: 9px; transition: transform .12s; }
+    .crow.open .ch .ct { transform: rotate(90deg); }
+    .ch .cn { flex: 1; font-weight: 600; }
+    .ch .cs { font-weight: 400; color: #999; font-size: 12px; }
+    .ch .cs b { color: #2e7d32; font-weight: 600; }
+    .cvs { display: none; padding: 1px 0 6px; background: #fcfcfd; }
+    .crow.open .cvs { display: block; }
+    .cv {
+      display: flex; align-items: center; gap: 12px; cursor: pointer;
+      padding: 5px 14px 5px 33px; font-size: 12px;
+    }
+    .cv:hover { background: #eef3ff; }
+    .cv .vv { font-weight: 600; min-width: 62px; }
+    .cv .vf { color: #888; min-width: 44px; }
+    .cv .vs { flex: 1; display: flex; align-items: center; gap: 6px;
+      color: #555; text-transform: capitalize; }
+    .cv .vd { width: 8px; height: 8px; border-radius: 50%; }
+    .cv .va { color: #ccc; }
 
     /* Model Viewer */
     #modelviewer { flex-direction: column; }
@@ -986,6 +1011,7 @@ function entryForKey(key) {
 
 // ---- Home (KPI + catalog) ------------------------------------------------
 let statusFilter = null;
+const catOpen = new Set();     // model_name of expanded catalog rows
 
 fetch("data/graph/index.json")
   .then(r => r.json())
@@ -1056,18 +1082,33 @@ function renderCatalog() {
   const cat = d3.select("#catalog");
   cat.selectAll("*").remove();
   visible.forEach(g => {
-    const row = cat.append("div").attr("class", "row");
-    row.append("div").attr("class", "nm")
-      .html(`${g.name} <small>· ${g.entries.length} version(s)</small>`);
+    const nRel = g.entries.filter(e => e.status === "release").length;
+    const open = catOpen.has(g.name);
+    const row = cat.append("div").attr("class", "crow" + (open ? " open" : ""));
 
-    const sel = row.append("select");
-    sel.append("option").attr("value", "").attr("disabled", true)
-      .attr("selected", true).text("Open version…");
-    g.entries.forEach((e, i) =>
-      sel.append("option").attr("value", i)
-        .text(`v${e.version} · ${e.family} · ${e.status}`));
-    sel.on("change", function () {
-      if (this.value !== "") openEntry(g.entries[+this.value]);
+    // Header: click anywhere to expand/collapse this model's versions.
+    const head = row.append("div").attr("class", "ch");
+    head.append("span").attr("class", "ct").text("▶");
+    head.append("span").attr("class", "cn").text(g.name);
+    head.append("span").attr("class", "cs")
+      .html(`${g.entries.length} version${g.entries.length > 1 ? "s" : ""}` +
+            (nRel ? ` · <b>${nRel} release</b>` : ""));
+    head.on("click", () => {
+      if (catOpen.has(g.name)) catOpen.delete(g.name);
+      else catOpen.add(g.name);
+      renderCatalog();
+    });
+
+    // One clickable line per version (newest first) -> open in Model Viewer.
+    const vs = row.append("div").attr("class", "cvs");
+    g.entries.forEach(e => {
+      const v = vs.append("div").attr("class", "cv").on("click", () => openEntry(e));
+      v.append("span").attr("class", "vv").text("v" + e.version);
+      v.append("span").attr("class", "vf").text(e.family);
+      const st = v.append("span").attr("class", "vs");
+      st.append("span").attr("class", "vd").style("background", statusColor(e.status));
+      st.append("span").text(e.status);
+      v.append("span").attr("class", "va").text("→");
     });
   });
 }
