@@ -8,6 +8,23 @@
     "status": "release",
     "release_date": "2024-03-11",
     "release_notes": "# Changelog\nAll notable changes to this model will be documented in this file.\n\n## [2.0.0] - 2024-12-12\n\n### Added\n\n### Changed\n- adapt data transfer direction \n\n## [1.0.0] - 2024-03-11\n\n### Added\n- initial version of this model\n\n### Changed\n\n### Removed",
+    "dependencies": [
+      {
+        "name": "shared.business_partner_number",
+        "version": "2.0.0",
+        "family": "SAMM"
+      },
+      {
+        "name": "shared.quantity",
+        "version": "2.0.0",
+        "family": "SAMM"
+      },
+      {
+        "name": "shared.uuid",
+        "version": "2.0.0",
+        "family": "SAMM"
+      }
+    ],
     "path": "data/sldt-semantic-models/io.catenax.mandatory_dismantling/1.0.0/MandatoryDismantling.ttl"
   },
   "nodes": [

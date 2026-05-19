@@ -8,6 +8,23 @@
     "status": "release",
     "release_date": "2024-05-27",
     "release_notes": "# Changelog\nAll notable changes to this model will be documented in this file.\n\n## [Unreleased]\n\n## [4.0.0] - 2024-05-27\n### Changed\n- add field essIncidentModerator with trait BPNL\n- set fields to optional:\n- incidentDisplayId\n- incidentShareFlag\n- essIncidentIssuerId\n- flagAnonymous\n\n\n## [3.0.0] - 2024-02-19\n### Changed\n- updated version of model\n- update reference to shared aspect address\n- update BPN-L/S/A and refer to shared model\n- update IDs and refer to shared Uuidv4Characteristic\n- delete product number\n- update copyright information\n\n\n## [2.0.0] - 2023-08-21\n### Changed\n- updated version of model\n- change headline to subject\n- change ess incident issuer name to first name, add last name\n- change field descriptions \n- use reference to shared aspect address, replace formerly used fields for address information \n- keep ess originator country subdivision (not in shared aspect)\n- keep ess incident issuer country subdivision (not in shared aspect)\n\n\n### Added\n- incident external notes and external subject for external communication\n- incident master operating company id and sub case operating company id\n- incident display id\n- incident status information\n- incident share flag\n- incident system id\n- regular expressions for UUIDv4 and BPN\n\n### Removed\n- incident duration\n- batch number\n- unique part number\n- ess originator bpn available\n- ess originator cx member\n- ess incident issuer company name\n\n\n\n## [1.0.0] - 2022-11-18\n### Added\n- initial version of model",
+    "dependencies": [
+      {
+        "name": "shared.address_characteristic",
+        "version": "4.0.0",
+        "family": "SAMM"
+      },
+      {
+        "name": "shared.business_partner_number",
+        "version": "2.0.0",
+        "family": "SAMM"
+      },
+      {
+        "name": "shared.uuid",
+        "version": "2.0.0",
+        "family": "SAMM"
+      }
+    ],
     "path": "data/sldt-semantic-models/io.catenax.essincident/4.0.0/EssIncident.ttl"
   },
   "nodes": [

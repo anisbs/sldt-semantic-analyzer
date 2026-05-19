@@ -8,6 +8,18 @@
     "status": "release",
     "release_date": "2025-06-23",
     "release_notes": "# Changelog\n\nAll notable changes to this model will be documented in this file.\n\n## [Purpose of this model]\n\nThe SimulatedWeekBasedMaterialDemand allows a customer to initiate a simulation scenario within the context of demand and capacity management. The simulation scenario process utilizes the SimulatedWeekBasedMaterialDemand and SimulatedWeekBasedCapacityGroup aspect models to facility communication between customer and supplier.\n\n## [1.0.0] - 2025-06-23\n\n- initial version of the aspect model for week based material demands",
+    "dependencies": [
+      {
+        "name": "shared.uuid",
+        "version": "2.0.0",
+        "family": "SAMM"
+      },
+      {
+        "name": "week_based_material_demand",
+        "version": "3.0.1",
+        "family": "SAMM"
+      }
+    ],
     "path": "data/sldt-semantic-models/io.catenax.simulated_week_based_material_demand/1.0.0/SimulatedWeekBasedMaterialDemand.ttl"
   },
   "nodes": [

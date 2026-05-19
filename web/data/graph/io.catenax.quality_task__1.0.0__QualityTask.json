@@ -8,6 +8,7 @@
     "status": "deprecated",
     "release_date": "2022-12-13",
     "release_notes": "# Changelog\nAll notable changes to this model will be documented in this file.\n\n## [Purpose of this model]\nThis aspect model was created in the Catena-X use case quality. The purpose of this aspect model is to describe a quality task between companies.\n\n## [3.0.0] - 2025-05-13\n### Added\n- model feature additionalInformation key:value pair added\n\n### Changed\n- to reduce redundancies in modelling some properties are now used form share quality core model\n- listOfQualityTasks from version 2.0.0 has changed to qualityTasks only\n- qualityTasks_creationDate is now mandatory\n- qualityTasks_companies_name now mandatory\n\n### Removed\n\n\n## [2.0.0] - 2024-01-22\n### Added\n- metaInformation added to root entity: Gives data consumer necessary information how data provider created this data set\n- integration of shared UUID characteristic and RegEx for the vehicle Catena-X identifier\n- integration of the shared BPNL trait\n- integration of shared e-Mail trait\n- using of Catena-X UUID as qualityTaskId\n\n### Changed\n- qTask aspect model is now able to held also lists of qTasks\n- changed all properties to optional except one unique identifier per entity\n- change property cxbpn cxBusinessPartnerNumber\n\n### Removed\n\n## [1.0.0] - 2022-12-13\n### Added\n- initial version of this model\n\n### Changed\nn/a\n\n### Removed",
+    "dependencies": [],
     "path": "data/sldt-semantic-models/io.catenax.quality_task/1.0.0/QualityTask.ttl"
   },
   "nodes": [

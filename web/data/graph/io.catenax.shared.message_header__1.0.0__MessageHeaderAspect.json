@@ -8,6 +8,7 @@
     "status": "deprecated",
     "release_date": null,
     "release_notes": "# Changelog\n\nAll notable changes to this model will be documented in this file.\n\n### [3.0.0] - 2024-01-30\n- migrated from samm 2.0.0 to samm 2.1.0\n\n## [2.0.0] - 2023-11-28\n### Added\n- add / integrate shared UUID characteristic and RegEx for the properties messageId and relatedMessageId\n- add / integrate shared BPN-L characteristic and RegEx for the properties senderBpn and receiverBpn\n\n### Changed\n- fixed bug of missing connection between messageId property and the idTrait to link the UUIDv4 RegEx\n- fixed bug of missing connection between relatedMessageId property and the idTrait to link the UUIDv4 RegEx\n- fixed bug of missing connection between version property and the SemanticVersioningTrait to link the semVer RegEx\n\n### Removed\n- removed existing characteristic of the properties messageId and relatedMessageId and replaced it with content of shared aspect models (see added information)\n- removed existing characteristic of the properties senderBpn and reveiverBpn and replaced it with content of shared aspect models (see added information)\n\n## [1.0.0] 2023-07-31\n\n- initial version of the aspect model for the Message Header",
+    "dependencies": [],
     "path": "data/sldt-semantic-models/io.catenax.shared.message_header/1.0.0/MessageHeaderAspect.ttl"
   },
   "nodes": [

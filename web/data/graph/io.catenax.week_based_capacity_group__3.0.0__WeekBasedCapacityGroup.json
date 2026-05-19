@@ -8,6 +8,23 @@
     "status": "release",
     "release_date": "2024-03-11",
     "release_notes": "# Changelog\n\nAll notable changes to this model will be documented in this file.\n\n## [3.0.1] - 2024-10-14\n\n### Changed\n\n- updated descriptions and constraint inconsistencies fixed (no semantic conflicts)\n\n## [3.0.0] - 2024-03-11\n\n### Added\n\n- added `capacityGroupIsInactive` as mandatory flag in aspect model header\n- added `demandVolatilityParameters` as optional entity in aspect model header\n- added `agreedCapacity` as optional property in capacities set\n\n### Changed\n\n- migrated from SAMM version `2.0.0` to `2.1.0`\n- updated external references of `urn:samm:io.catenax.shared.business_partner_number`, `urn:samm:io.catenax.shared.quantity` and `urn:samm:io.catenax.shared.uuid` to version `2.0.0`\n\n## [2.0.0] - 2023-11-07\n\n### Added\n\n- `linkedCapacityGroups` added as optional property in aspect model header\n- added `loadFactor` as optional property in LinkedDemandSeries entity\n- added `unit:secondUnitOfTime`, `unit:minuteUnitOfTime`, `unit:hourUnitOfTime` and `unit:cycle` to list of unit of measure for load information\n- added `deltaProductionResult` as optional property in Capacity entity\n- added `unitOfMeasureIsOmitted` as mandatory property in aspect model header\n\n### Changed\n\n- made `linkedDemandSeries` property optional\n- made `capacities` property optional\n- `unitOfMeasure` uses value list of shared aspect Quantity now. Units are now represented as reference units instead of common codes\n- changed property name of `calendarWeeks` to `pointInTime`\n- migrated from BAMM to SAMM namespace\n\n### Removed\n\n- removed `blank` value in list of `unitOfMeasure`. `unitOfMeasureIsOmitted` flag taking over the function of the `blank` value\n\n## [1.0.1] - 2023-05-10\n\n### Changed\n\n- Changed description for property `changedAt`\n\n## [1.0.0]\n\n- initial version of the aspect model for week-based capacity groups",
+    "dependencies": [
+      {
+        "name": "shared.business_partner_number",
+        "version": "2.0.0",
+        "family": "SAMM"
+      },
+      {
+        "name": "shared.quantity",
+        "version": "2.0.0",
+        "family": "SAMM"
+      },
+      {
+        "name": "shared.uuid",
+        "version": "2.0.0",
+        "family": "SAMM"
+      }
+    ],
     "path": "data/sldt-semantic-models/io.catenax.week_based_capacity_group/3.0.0/WeekBasedCapacityGroup.ttl"
   },
   "nodes": [

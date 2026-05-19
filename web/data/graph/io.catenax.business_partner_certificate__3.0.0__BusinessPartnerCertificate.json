@@ -8,6 +8,13 @@
     "status": "release",
     "release_date": null,
     "release_notes": "# Changelog\n\nAll notable changes to this model will be documented in this file.\n\n## [3.1.0] 24.03.2025\n\n### Changed\n- EnclosedSiteBpn property accepts either BPNA or BPNS. (previous version was only BPNS)\n\n## [3.0.0] 16.12.2024\n\n### Changed\n- New data attributes added for entity Document: creationDate, contentType and contentBase64\n- New data attributes for entity Issuer: issuerName and issuerBpn.\n- issuerBpn changed to optional\n- fixed typos, added missing descriptions \n\n## [2.0.0] 29.08.2024\n\n### Changed\n\n- Updated enclosedSiteBpn property to accept both site and address type for Business Partner Certificate.\n- Updated validator object. Now validator object is optional including validatorName and validatorBpn attributes, for increased flexibility in validation details.\n\n## [1.0.0] 11.03.2024\n\n- initial version of the aspect model for Business Partner Certificate.",
+    "dependencies": [
+      {
+        "name": "shared.business_partner_number",
+        "version": "2.0.0",
+        "family": "SAMM"
+      }
+    ],
     "path": "data/sldt-semantic-models/io.catenax.business_partner_certificate/3.0.0/BusinessPartnerCertificate.ttl"
   },
   "nodes": [

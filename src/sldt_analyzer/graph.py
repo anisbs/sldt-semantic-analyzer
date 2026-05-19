@@ -68,6 +68,10 @@ def model_to_graph(model: ParsedModel) -> dict:
             "status": model.status,
             "release_date": model.release_date,
             "release_notes": model.release_notes,
+            "dependencies": [
+                {"name": d.name, "version": d.version, "family": d.family}
+                for d in model.dependencies
+            ],
             "path": model.path,
         },
         "nodes": nodes,
@@ -85,9 +89,26 @@ def build_graphs(
     out_dir.mkdir(parents=True, exist_ok=True)
 
     index = []
+    # Dépendances agrégées AU NIVEAU (model_name, version) : un dossier de
+    # version peut contenir plusieurs .ttl, chacun avec ses `ext-*:`. Le front
+    # raisonne par modèle+version -> on fait l'UNION de leurs dépendances.
+    deps_map: dict[str, dict] = {}
     for model in models:
         gid = _model_id(model, Path(models_dir))
         graph = model_to_graph(model)
+        key = f"{model.model_name}@{model.model_version}"
+        entry = deps_map.setdefault(
+            key,
+            {
+                "name": model.model_name,
+                "version": model.model_version,
+                "family": model.model_family,
+                "deps": set(),
+            },
+        )
+        entry["deps"].update(
+            f"{d.name}@{d.version}" for d in model.dependencies
+        )
         (out_dir / f"{gid}.json").write_text(
             json.dumps(graph, ensure_ascii=False, indent=2), encoding="utf-8"
         )
@@ -112,9 +133,30 @@ def build_graphs(
     (out_dir / "index.json").write_text(
         json.dumps(index, ensure_ascii=False, indent=2), encoding="utf-8"
     )
+
+    # deps.json : carte modèle+version -> dépendances (clé "name@version").
+    # Une clé absente = ce modèle+version n'est pas dans le catalogue (cible
+    # de dépendance non résolue) ; le front la dessine en "manquant".
+    deps_out = {
+        key: {
+            "name": v["name"],
+            "version": v["version"],
+            "family": v["family"],
+            "deps": sorted(v["deps"]),
+        }
+        for key, v in sorted(deps_map.items())
+    }
+    (out_dir / "deps.json").write_text(
+        json.dumps(deps_out, ensure_ascii=False, indent=2), encoding="utf-8"
+    )
+    n_with_deps = sum(1 for v in deps_out.values() if v["deps"])
     logger.info(
-        "Graphe écrit : %d modèles -> %s (index.json + 1 fichier/modèle)",
+        "Graphe écrit : %d modèles -> %s (index.json + deps.json + 1 fichier/modèle)",
         len(index), out_dir,
+    )
+    logger.info(
+        "deps.json : %d modèles+version, %d avec dépendances",
+        len(deps_out), n_with_deps,
     )
     return out_dir
 

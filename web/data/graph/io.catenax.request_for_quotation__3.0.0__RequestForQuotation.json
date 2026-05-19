@@ -8,6 +8,23 @@
     "status": "release",
     "release_date": "24-03-04",
     "release_notes": "# Changelog\n\nAll notable changes to this model will be documented in this file.\n\n## [Unreleased]\n\n## [3.0.0] - 24-03-04\n\n### Changed\n\n- Replaced the previous description of process steps (Property 'processes') with Shared.bill_of_process (referencing MP's model) (Property 'billOfProcess')\n\n## [2.0.0] - 2023-12-04\n\n- Standardization of Request for Quotation exclusively for individual parts.\n- No longer a need for a detailed parts list.\n\n## [1.0.0] - 2023-10-30\n\n### Added\n\n- initial model\n\n### Changed\n\nn/a\n\n### Removed",
+    "dependencies": [
+      {
+        "name": "shared.bill_of_process",
+        "version": "1.1.0",
+        "family": "SAMM"
+      },
+      {
+        "name": "shared.message_header",
+        "version": "3.0.0",
+        "family": "SAMM"
+      },
+      {
+        "name": "shared.quantity",
+        "version": "2.0.0",
+        "family": "SAMM"
+      }
+    ],
     "path": "data/sldt-semantic-models/io.catenax.request_for_quotation/3.0.0/RequestForQuotation.ttl"
   },
   "nodes": [

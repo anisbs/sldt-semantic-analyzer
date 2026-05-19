@@ -8,6 +8,23 @@
     "status": "release",
     "release_date": null,
     "release_notes": "# Changelog\n\nAll notable changes to this model will be documented in this file.\n\n## [1.0.0]\n\n- initial version of the aspect model for ProvideProductionForecast\n\n## [2.0.0] 29.01.2024\n\n- Message Header, shopfloor_information_types updated to latest version 2.0.0",
+    "dependencies": [
+      {
+        "name": "shared.message_header",
+        "version": "2.0.0",
+        "family": "SAMM"
+      },
+      {
+        "name": "shared.shopfloor_information_types",
+        "version": "2.0.0",
+        "family": "SAMM"
+      },
+      {
+        "name": "shared.uuid",
+        "version": "1.0.0",
+        "family": "SAMM"
+      }
+    ],
     "path": "data/sldt-semantic-models/io.catenax.shopfloor_information.provide_production_forecast/2.0.0/ProvideProductionForecast.ttl"
   },
   "nodes": [

@@ -8,6 +8,18 @@
     "status": "release",
     "release_date": "2023-12-04",
     "release_notes": "# Changelog\nAll notable changes to this model will be documented in this file.\n\n## [2.0.0] - 2023-12-04\n### Added\n- added all relevant part site information of the PartSiteInforamtionAsPlanned aspect model, that will be deprecated\n\n### Changed\n- replaced existing BPNCharacteristic with the BPNCharacterstic of the shared BusinessPartnerNumber aspect model\n\n### Removed\n- removed the whole validityPeriod abstract property with its respective child properties and characteristics\n\n## [1.0.1]\n### Added\nn/a\n\n### Changed\n- PartAsPlanned aspect element and manufacturerPartID property elements have improved descriptions , more explicitly mentioning versioning information of a part as planned\n- all characteristics, entities, and constraints now have proper names, preferred names and descriptions\n- validFrom and validTo properties now have more meaningful example values.\n- fixed some typos in preferred names and descriptions.\n\n### Removed\nn/a\n\n## [1.0.0] - 2022-08-06\n### Added\n- initial model\n\n### Changed\nn/a\n\n### Removed",
+    "dependencies": [
+      {
+        "name": "shared.business_partner_number",
+        "version": "1.0.0",
+        "family": "SAMM"
+      },
+      {
+        "name": "shared.uuid",
+        "version": "1.0.0",
+        "family": "SAMM"
+      }
+    ],
     "path": "data/sldt-semantic-models/io.catenax.part_as_planned/2.0.0/PartAsPlanned.ttl"
   },
   "nodes": [

@@ -8,6 +8,23 @@
     "status": "release",
     "release_date": null,
     "release_notes": "# Changelog\n\nAll notable changes to this model will be documented in this file.\n\n## [1.0.0] 05.02.2024\n\n- initial version of the aspect model for GetProductionTrackingData",
+    "dependencies": [
+      {
+        "name": "serial_part",
+        "version": "3.0.0",
+        "family": "SAMM"
+      },
+      {
+        "name": "shared.business_partner_number",
+        "version": "2.0.0",
+        "family": "SAMM"
+      },
+      {
+        "name": "shared.message_header",
+        "version": "2.0.0",
+        "family": "SAMM"
+      }
+    ],
     "path": "data/sldt-semantic-models/io.catenax.shopfloor_information.get_production_tracking/1.0.0/GetProductionTracking.ttl"
   },
   "nodes": [

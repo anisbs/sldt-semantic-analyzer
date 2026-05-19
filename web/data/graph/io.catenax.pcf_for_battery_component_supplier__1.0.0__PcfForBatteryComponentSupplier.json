@@ -8,6 +8,23 @@
     "status": "release",
     "release_date": null,
     "release_notes": "# Changelog\nAll notable changes to this model will be documented in this file.\n\n## [Unreleased]\n\n## [1.0.0] R26.03\n\n### Added\n\n- add data model to enable a battery components supplier to provide the calculated PCF value to a certain Component according to the pre-release version of the Delegated Act.",
+    "dependencies": [
+      {
+        "name": "pcf",
+        "version": "9.0.0",
+        "family": "SAMM"
+      },
+      {
+        "name": "shared.business_partner_number",
+        "version": "2.0.0",
+        "family": "SAMM"
+      },
+      {
+        "name": "shared.industry_core.common",
+        "version": "1.0.0",
+        "family": "SAMM"
+      }
+    ],
     "path": "data/sldt-semantic-models/io.catenax.pcf_for_battery_component_supplier/1.0.0/PcfForBatteryComponentSupplier.ttl"
   },
   "nodes": [

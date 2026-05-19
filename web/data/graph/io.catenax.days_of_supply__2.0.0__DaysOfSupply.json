@@ -8,6 +8,18 @@
     "status": "release",
     "release_date": "2024-03-04",
     "release_notes": "# Changelog\nAll notable changes to this model will be documented in this file.\n\n## [1.0.0] - 2024-02-12\n### Added\ninitial model adjusted from product stock model 1.0.0.\nremoved positions collection and refined allocatedStocks into allocatedDaysOfSupply\nQuantityCharacteristic changed from Collection to SortedSet to reflect the date-daysOfSupply sorted pair\ndefinitions for aspect model provided\n\n## [2.0.0] - 2024-03-04\n### Added\nlastUpdatedOnDateTime property (samm-c:Timestamp) to describe when the data was last updated",
+    "dependencies": [
+      {
+        "name": "shared.business_partner_number",
+        "version": "2.0.0",
+        "family": "SAMM"
+      },
+      {
+        "name": "shared.uuid",
+        "version": "2.0.0",
+        "family": "SAMM"
+      }
+    ],
     "path": "data/sldt-semantic-models/io.catenax.days_of_supply/2.0.0/DaysOfSupply.ttl"
   },
   "nodes": [

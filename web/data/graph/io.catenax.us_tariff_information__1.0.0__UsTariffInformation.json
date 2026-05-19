@@ -8,6 +8,18 @@
     "status": "release",
     "release_date": "2025-07-17",
     "release_notes": "# Changelog\nAll notable changes to this model will be documented in this file.\n\n## [2.0.0] - 2025-12-16\n### Added\n- partName\n- partOriginCountry\n- partValue\n- active\n\n### Changed\n- htsCode --> customClassificationCode\n- htsCodingSystem --> customClassificationCodingSystem\n- value --> partValue.amount\n- currency --> partValue.currency\n- processingCountry uses 3 letter country code instead of 2 letter code\n- originWeight --> kg is unit by default\n- partWeight --> kg is unit by default\n- materialClassification --> is now imported from a shared model --> requires three levels of classification instead of one\n- ProcessingTypeCharacteristic --> fixed typo in values (Pourring --> Pouring)\n- originCountry --> materialOriginCountry\n- certificateId --> documentID\n\n### Removed\n- processing.successor\n\n\n## [1.0.0] - 2025-07-17\n### Added\n- initial model\n\n### Changed\nn/a\n\n### Removed\nn/a",
+    "dependencies": [
+      {
+        "name": "shared.quantity",
+        "version": "2.0.0",
+        "family": "SAMM"
+      },
+      {
+        "name": "shared.uuid",
+        "version": "2.0.0",
+        "family": "SAMM"
+      }
+    ],
     "path": "data/sldt-semantic-models/io.catenax.us_tariff_information/1.0.0/UsTariffInformation.ttl"
   },
   "nodes": [

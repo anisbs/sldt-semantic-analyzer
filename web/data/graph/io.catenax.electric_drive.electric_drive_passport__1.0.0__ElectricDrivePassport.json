@@ -8,6 +8,23 @@
     "status": "release",
     "release_date": "2024-03-25",
     "release_notes": "# Changelog\nAll notable changes to this model will be documented in this file.\n\n## [Unreleased]\n\n## [2.0.0] - 2024-05-21\n### Changed\n- connection update to @prefix ext-passport: <urn:samm:io.catenax.generic.digital_product_passport:5.0.0#>\n- connection update to @prefix ext-pass: <urn:samm:io.catenax.transmission.transmission_pass:3.0.0#>\n- changed payload name from unspecific to generic on highest level\n- min and maxOilPressure are dynamic and will be changed to rated - structure changed below\n- added connections to transmission_pass:3.0.0 in \"power\" and \"torque\" to have more similarities\n\n## [1.0.0] - 2024-03-25\n### Added\n- initial model in SAMM 2.1.0\n\n### Changed\nn/a\n\n### Removed\nn/a",
+    "dependencies": [
+      {
+        "name": "generic.digital_product_passport",
+        "version": "4.0.0",
+        "family": "SAMM"
+      },
+      {
+        "name": "shared.quantity",
+        "version": "2.0.0",
+        "family": "SAMM"
+      },
+      {
+        "name": "transmission.transmission_pass",
+        "version": "2.0.0",
+        "family": "SAMM"
+      }
+    ],
     "path": "data/sldt-semantic-models/io.catenax.electric_drive.electric_drive_passport/1.0.0/ElectricDrivePassport.ttl"
   },
   "nodes": [

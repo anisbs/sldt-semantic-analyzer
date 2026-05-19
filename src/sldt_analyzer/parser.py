@@ -58,6 +58,14 @@ class Edge:
 
 
 @dataclass
+class Dependency:
+    """Un autre modèle (name@version) référencé via un @prefix `ext-*:`."""
+    family: str             # SAMM | BAMM
+    name: str               # ex. "generic.digital_product_passport"
+    version: str            # ex. "5.0.0"
+
+
+@dataclass
 class ParsedModel:
     path: str
     namespace: str          # urn propre du modèle (@prefix : ...)
@@ -70,6 +78,7 @@ class ParsedModel:
     release_notes: str | None = None  # corps markdown de la section version
     elements: list[Element] = field(default_factory=list)
     edges: list[Edge] = field(default_factory=list)
+    dependencies: list[Dependency] = field(default_factory=list)
 
 
 def _local_name(uri: str) -> str:
@@ -117,6 +126,31 @@ def _parse_model_urn(namespace: str) -> tuple[str, str, str]:
             name = name[len(org):]
             break
     return (family, name, m.group("version"))
+
+
+def _dependencies(
+    graph: Graph, own_ns: str, own_name: str, own_version: str
+) -> list[Dependency]:
+    """Modèles dont CE .ttl dépend, déduits des `@prefix` pointant vers un
+    autre namespace de modèle Catena-X (`urn:samm|bamm:io.catenax.…:<v>#`).
+
+    On exclut le préfixe par défaut (le modèle lui-même), le namespace propre
+    et les namespaces du méta-modèle (`org.eclipse.esmf.samm:…`,
+    `io.openmanufacturing:meta-model…` : le segment ns ne commence pas par
+    `io.catenax.`/`io.openmanufacturing.`). Dédupliqué par (name, version)."""
+    deps: dict[tuple[str, str], Dependency] = {}
+    for prefix, ns in graph.namespaces():
+        ns = str(ns)
+        if prefix == "" or ns == own_ns:
+            continue
+        m = _URN_RE.match(ns.strip())
+        if not m or not m.group("ns").startswith(_ORG_PREFIXES):
+            continue  # méta-modèle ou URN non-modèle : pas une dépendance
+        family, name, version = _parse_model_urn(ns)
+        if (name, version) == (own_name, own_version):
+            continue  # alias vers soi-même
+        deps.setdefault((name, version), Dependency(family, name, version))
+    return sorted(deps.values(), key=lambda d: (d.name, d.version))
 
 
 # Quelques metadata.json amont ont la coquille "deprecate".
@@ -224,6 +258,7 @@ def parse_file(path: Path) -> ParsedModel | None:
         status=_read_status(path),
         release_date=rdate,
         release_notes=rnotes,
+        dependencies=_dependencies(graph, ns, name, version),
     )
 
     M = lambda local: URIRef(meta_ns + local)  # noqa: E731 — fabrique d'URI méta
@@ -334,6 +369,8 @@ def main(argv: list[str] | None = None) -> int:
     for m in models:
         kinds.update(e.kind for e in m.elements)
         n_edges += len(m.edges)
+    n_deps = sum(1 for m in models if m.dependencies)
+    n_dep_edges = sum(len(m.dependencies) for m in models)
     n_notes = sum(1 for m in models if m.release_notes)  # versions dont le modèle a un RELEASE_NOTES.md
     logger.info("Vocabulaires : %s", dict(meta))
     logger.info("Familles     : %s", dict(families))
@@ -341,6 +378,7 @@ def main(argv: list[str] | None = None) -> int:
     logger.info("Release notes: %d/%d versions dont le modèle a un RELEASE_NOTES.md", n_notes, len(models))
     logger.info("Éléments     : %d %s", sum(kinds.values()), dict(kinds))
     logger.info("Arêtes       : %d", n_edges)
+    logger.info("Dépendances  : %d fichiers en ont (%d arêtes inter-modèles)", n_deps, n_dep_edges)
     return 0
 
 

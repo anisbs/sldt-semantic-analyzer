@@ -8,6 +8,23 @@
     "status": "release",
     "release_date": "2023-11-20",
     "release_notes": "# Changelog\nAll notable changes to this model will be documented in this file.\n\n## [2.0.0] - 2024-02-19\n### Added\nn/a\n\n### Changed\n- Update Collections to Set for stronger semantics\n  - PositionsCollection -> PositionsSet\n  - AllocatedPlannedProductionOutputCollection -> AllocatedPlannedProductionOutputSet\n- lastUpdatedOnDateTime\n  - move from position to AllocatedPlannedProductionOutput\n  - use samm datatype instead of custom Characteristic\n- estimatedTimeOfCompletion -> use samm datatype instead of custom Characteristic\n- updated dependencies\n  - io.catenax.shared.uuid\n  - io.catenax.shared.quantity\n  - io.catenax.shared.business_partner_number\n- migrated samm version from 2.0.0 to 2.1.0\n- updated materialGlobalAssetId description to point to part type twin\n- make materialGlobalAssetId mandatory\n\n### Removed\n- Harmonization for Industry Core\n  - materialNumberSupplier\n  - materialNumberCustomer\n\n## [1.0.0] - 2023-11-20\n### Added\n- initial model",
+    "dependencies": [
+      {
+        "name": "shared.business_partner_number",
+        "version": "1.0.0",
+        "family": "SAMM"
+      },
+      {
+        "name": "shared.quantity",
+        "version": "1.0.0",
+        "family": "SAMM"
+      },
+      {
+        "name": "shared.uuid",
+        "version": "1.0.0",
+        "family": "SAMM"
+      }
+    ],
     "path": "data/sldt-semantic-models/io.catenax.planned_production_output/1.0.0/PlannedProductionOutput.ttl"
   },
   "nodes": [

@@ -8,6 +8,13 @@
     "status": "release",
     "release_date": "2025-07-01",
     "release_notes": "# Changelog\nAll notable changes to this model will be documented in this file.\n\n## [Unreleased]\n\n## [1.0.0] - 2023-07-10\n### Added\n- initial version of this model\n\n### Changed\nn/a\n\n### Removed\n\n## [2.0.0] - 2024-02-19\n### Added\n\n\n### Changed\n- fixed wrong example value for \"unit\"\n- updated SAMM Version from 2.0.0 to 2.1.0\n\n### Removed\n\n## [3.0.0] - 2025-07-01\n### Added\n- added qualityTaskAttachmentId to identify attachments\n\n### Changed\n- changed referenced model description from enumeration to definition via namespace, ttl file name and version\n- moved model reference to file level instead of top level\n- usage of quality core model (e.g., for the qualityTaskId)\n\n\n### Removed",
+    "dependencies": [
+      {
+        "name": "shared.quality_core",
+        "version": "1.0.0",
+        "family": "SAMM"
+      }
+    ],
     "path": "data/sldt-semantic-models/io.catenax.quality_task_attachment/3.0.0/QualityTaskAttachment.ttl"
   },
   "nodes": [

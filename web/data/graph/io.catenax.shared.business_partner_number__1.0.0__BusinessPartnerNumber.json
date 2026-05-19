@@ -8,6 +8,7 @@
     "status": "release",
     "release_date": "2023-09-11",
     "release_notes": "# Changelog\nAll notable changes to this model will be documented in this file.\n\n## [2.0.0] - 2024-02-05\n### Added\nn/a\n\n### Changed\n- updated regexes\n  - from `^BPNL[0-9]{8}[a-zA-Z0-9]{4}$` to `^BPNL[a-zA-Z0-9]{12}$`\n  - semantic descriptions as checksum is not two UPPERCASE but two alphanumeric digits\n- fixed typo in prefferedName of BpnlTrait\n\n\n### Removed\nn/a\n\n## [1.0.0] - 2023-09-11\n### Added\n- initial model\n\n### Changed\nn/a\n\n### Removed\nn/a",
+    "dependencies": [],
     "path": "data/sldt-semantic-models/io.catenax.shared.business_partner_number/1.0.0/BusinessPartnerNumber.ttl"
   },
   "nodes": [

@@ -8,6 +8,23 @@
     "status": "release",
     "release_date": null,
     "release_notes": "# Changelog\n\nAll notable changes to this model will be documented in this file.\n\n## [4.0.0] 26.03\n\n### Changed\n\n- introduced `io.catenax.shared.industry_core.common:1.0.0`, `io.catenax.shared.industry_core.manufacturing_information:1.0.0` and `io.catenax.shared.industry_core.part_classification:1.0.0` as shared models\n- renamed `catenaXId` to `globalAssetId`\n- renamed `catenaXsiteId` to `siteId`\n- renamed `classificationID` to `classificationId`\n- renamed `date` to `productionDate`\n\n## [3.0.0] 2024-02-05\n\n### Added\n\n- Integration of the new shared PartClassification 1.0.0 aspect model as child-property of the PartTypeInformation\n- Added possibility to add date information excluding time\n- Include additional RegEx values for the local identifier key\n\n### Changed\n\n- Change (shared) partSiteInformation to be a child-property of the manufacturerInformation\n\n## [2.0.0] 2023-11-30\n\n### Added\n\n- integration of the sites property and its childtree of the shared PartSiteInformationAsBuilt (1.0.0) aspect model as optional content\n- integration of the shared UUID characteristic and RegEx for the catenaXId property\n\n### Changed\n\n- migrated current aspect model from BAMM to SAMM\n\n### Removed\n\n- removed existing characteristic and RegEx of the catenaXId property and replaced it with content of the shared UUID aspect model (see added information)\n\n## [1.0.0]\n\n### Added\n\n- initial version of model\n\n### Changed\n\nn/a\n\n### Removed",
+    "dependencies": [
+      {
+        "name": "shared.industry_core.common",
+        "version": "1.0.0",
+        "family": "SAMM"
+      },
+      {
+        "name": "shared.industry_core.manufacturing_information",
+        "version": "1.0.0",
+        "family": "SAMM"
+      },
+      {
+        "name": "shared.industry_core.part_classification",
+        "version": "1.0.0",
+        "family": "SAMM"
+      }
+    ],
     "path": "data/sldt-semantic-models/io.catenax.just_in_sequence_part/4.0.0/JustInSequencePart.ttl"
   },
   "nodes": [

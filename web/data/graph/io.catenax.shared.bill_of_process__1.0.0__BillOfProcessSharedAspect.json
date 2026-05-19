@@ -8,6 +8,18 @@
     "status": "release",
     "release_date": null,
     "release_notes": "# Changelog\n\nAll notable changes to this model will be documented in this file. \n\n## [1.1.0] 04.03.2024\n\n- update header to 3.0.0 Manufacturing capability to 3.1.0",
+    "dependencies": [
+      {
+        "name": "manufacturing_capability",
+        "version": "3.0.0",
+        "family": "SAMM"
+      },
+      {
+        "name": "shared.message_header",
+        "version": "2.0.0",
+        "family": "SAMM"
+      }
+    ],
     "path": "data/sldt-semantic-models/io.catenax.shared.bill_of_process/1.0.0/BillOfProcessSharedAspect.ttl"
   },
   "nodes": [

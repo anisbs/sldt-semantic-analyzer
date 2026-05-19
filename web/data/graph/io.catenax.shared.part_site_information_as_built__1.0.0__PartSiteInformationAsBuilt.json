@@ -8,6 +8,18 @@
     "status": "deprecated",
     "release_date": null,
     "release_notes": "# Changelog\n\nAll notable changes to this model will be documented in this file.\n\n**Note**: Deprecated by `io.catenax.shared.industry_core.site_information`.\n\n## [2.0.0] 2024-02-01\n\n- Reference to BPNS Trait updated\n- Reference to BPN 2.0.0\n- Reference to UUIDV4 2.0.0\n- Update to SAMM 2.1.0\n\n## [1.0.0] 2023-11-27\n\n- Initial version of the shared aspect model for PartSiteInformationAsBuilt (formely PartSiteInformationAsPlanned)",
+    "dependencies": [
+      {
+        "name": "shared.business_partner_number",
+        "version": "1.0.0",
+        "family": "SAMM"
+      },
+      {
+        "name": "shared.uuid",
+        "version": "1.0.0",
+        "family": "SAMM"
+      }
+    ],
     "path": "data/sldt-semantic-models/io.catenax.shared.part_site_information_as_built/1.0.0/PartSiteInformationAsBuilt.ttl"
   },
   "nodes": [

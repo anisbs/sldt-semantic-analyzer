@@ -8,6 +8,28 @@
     "status": "deprecated",
     "release_date": "2023-05-08",
     "release_notes": "# Changelog\nAll notable changes to this model will be documented in this file.\n\n## [3.1.0] - 2025-10-30\n\n### Changed\n\n- new attribute added: specVersion (Optional)\n\n## [3.0.0] - 2024-05-21\n\n### Changed\n\n- connection update to @prefix ext-passport: <urn:samm:io.catenax.generic.digital_product_passport:5.0.0#>\n- renamed and changed attribute and payload name from unspecific to generic on highest level\n- changed example value for oilType\n- changed names for torquePeak, torqueContinuous, powerPeak, powerContinuous, speed, maxPeriod\n- changed PerformancePower to KilowattMeasurement (characteristic)\n\n## [2.0.0] - 2024-03-04\n\n### Added\n\n- import of io.catenax.generic.digital_product_passport 4.0.0\n\n### Changed\n\n- redefined electrical performance attributes\n- characteristics for the life time/warranty refined\n\n## [1.0.0] - 2023-05-08\n\n### Added\n\nmodel created\n\n### Changed\n\nn/a\n\n### Removed\n\nn/a",
+    "dependencies": [
+      {
+        "name": "pcf",
+        "version": "3.0.0",
+        "family": "BAMM"
+      },
+      {
+        "name": "serial_part_typization",
+        "version": "2.0.0",
+        "family": "BAMM"
+      },
+      {
+        "name": "shared.contact_information",
+        "version": "2.0.0",
+        "family": "BAMM"
+      },
+      {
+        "name": "shared.physical_dimension",
+        "version": "2.0.0",
+        "family": "BAMM"
+      }
+    ],
     "path": "data/sldt-semantic-models/io.catenax.transmission.transmission_pass/1.0.0/TransmissionPass.ttl"
   },
   "nodes": [

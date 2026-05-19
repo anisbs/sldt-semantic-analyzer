@@ -8,6 +8,23 @@
     "status": "release",
     "release_date": "2024-02-19",
     "release_notes": "# Changelog\nAll notable changes to this model will be documented in this file.\n\n## [2.0.0] - 2024-02-19\n### Added\nn/a\n\n### Changed\n- Update Collections to Set for stronger semantics\n  - PositionsCollection -> PositionsSet\n  - AllocatedPlannedProductionOutputCollection -> AllocatedPlannedProductionOutputSet\n- lastUpdatedOnDateTime\n  - move from position to AllocatedPlannedProductionOutput\n  - use samm datatype instead of custom Characteristic\n- updated dependencies\n  - io.catenax.shared.uuid\n  - io.catenax.shared.quantity\n  - io.catenax.shared.business_partner_number\n- migrated samm version from 2.0.0 to 2.1.0\n- updated materialGlobalAssetId description to point to part type twin\n- Delivery: fixed lowercase start in preferred name\n- make materialGlobalAssetId mandatory\n- fixed typo in eventType description\n- dateTimeOfEvent -> use samm datatype instead of custom Characteristic\n\n### Removed\n- Harmonization for Industry Core\n  - materialNumberSupplier\n  - materialNumberCustomer\n\n## [1.0.0] - 2023-12-04\n### Added\n- initial model",
+    "dependencies": [
+      {
+        "name": "shared.business_partner_number",
+        "version": "2.0.0",
+        "family": "SAMM"
+      },
+      {
+        "name": "shared.quantity",
+        "version": "2.0.0",
+        "family": "SAMM"
+      },
+      {
+        "name": "shared.uuid",
+        "version": "2.0.0",
+        "family": "SAMM"
+      }
+    ],
     "path": "data/sldt-semantic-models/io.catenax.delivery_information/2.0.0/DeliveryInformation.ttl"
   },
   "nodes": [

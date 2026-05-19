@@ -8,6 +8,23 @@
     "status": "release",
     "release_date": "2024-02-26",
     "release_notes": "## Changelog\n\nAll notable changes to this model will be documented in this file.\n\n## [4.0.0] 25.12\n\n### Changed\n\n- introduced `io.catenax.shared.industry_core.common:1.0.0` and `io.catenax.shared.quantity:3.0.0` as a shared model\n- renamed `catenaXId` to `globalAssetId`\n\n## [2.0.0] - 2024-02-26\n\n### Added\n\n- added new `customers` property as child of the `SingleLevelUsageAsPlanned` aspect property including its `ListOfCustomersCharactersistics` and `Customer` entity\n- added new `businessPartner` property with its `BpnlTrait` of the shared business_partner_number 2.0.0 aspect model\n- added new links from the `customers` entity to the `businesspartner`, `createdOn` and `lastModifiedOn` properties\n\n### Changed\n\n- changed `parentCatenaXId` to `catenaXId` to be conform with the data chain template\n- renamed `parentParts` property to be `parentItems`\n- changed `parentItems` property to be a mandatory child of the `SingleLevelUsageBuilt` aspect property instead of a child of the `customers` property\n- replaced the `quantityNumber` and `measurementUnit` properties with the `itemUnit` and `quantityValue` properties of the shared quantity 2.0.0 aspect model\n- replaced the existing `Timestamp` characteristics of `validFrom` and `validTo` with a new `DateTimeTrait`, to permit date information excluding time\n- replaced the whole `CatenaXIdTraitCharacteristi`c and its childs with the `UuidV4Trait` of the shared uuid 2.0.0 aspect model\n- description of some objects were adjusted\n\n## [1.1.0]\n\n### Added\n\n- optional validity period for child-parent relation\n\n### Changed\n\n- descriptions to more explicitly describe handling of versions of child parts\n- updated reference for SAMM Unit Catalog to a more stable one\n- all characteristics, entities, and constraints now have proper names, preferred names and descriptions\n- fixed some typos in preferred names and descriptions\n\n### Removed\n\n## [1.0.0] - 2022-12-07\n\n### Added\n\n- initial model\n\n### Changed\n\nn/a\n\n### Removed",
+    "dependencies": [
+      {
+        "name": "shared.business_partner_number",
+        "version": "2.0.0",
+        "family": "SAMM"
+      },
+      {
+        "name": "shared.quantity",
+        "version": "2.0.0",
+        "family": "SAMM"
+      },
+      {
+        "name": "shared.uuid",
+        "version": "2.0.0",
+        "family": "SAMM"
+      }
+    ],
     "path": "data/sldt-semantic-models/io.catenax.single_level_usage_as_planned/2.0.0/SingleLevelUsageAsPlanned.ttl"
   },
   "nodes": [

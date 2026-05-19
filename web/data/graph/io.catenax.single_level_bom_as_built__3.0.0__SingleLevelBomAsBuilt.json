@@ -8,6 +8,23 @@
     "status": "release",
     "release_date": null,
     "release_notes": "# Changelog\n\nAll notable changes to this model will be documented in this file.\n\n## [4.0.0] 25.12\n\n### Changed\n\n- introduced `io.catenax.shared.industry_core.common:1.0.0` and `io.catenax.shared.quantity:3.0.0` as a shared model\n- renamed `catenaXId` to `globalAssetId`\n\n## [3.0.0] 2024-02-26\n\n### Changed\n\n- replaced the `quantityNumber` and `measurementUnit` properties with the `itemUnit` and `quantityValue` properties of the shared quantity 2.0.0 aspect model\n- replaced the whole `CatenaXIdTraitCharacteristic` and its childs with the `UuidV4Trait` of the shared uuid 2.0.0 aspect model\n- replaced the whole `BpnTrait` and its childs with the `BpnlTrait` of the shared business_partner_number 2.0.0 aspect model\n- description of some objects were adjusted\n\n## [2.0.0] 25.09.2023\n\n### Added\n\n- property called hasAlternative\n- Boolean characteristic\n\n### Changed\n\n- Description of the main property 'SingleLevelBomAsBuil' was adapted to the new requirements of the model\n\n## [1.0.0]\n\n### Added\n\n- renamed model from `io.catenax.assembly_part_relationship:1.1.1#AssemblyPartRelationship`\n- optional business partner reference (BPNL) for each child item\n\n### Changed\n\n- changed several descriptions due to aspect renaming\n- changed `childCatenaXId` to `catenaXId`\n- changed `childParts` to `childItems`\n- changed several descriptions to use `item` instead of `part` where applicable\n- fixed camelCase for `NumberOfObjects` characteristic\n\n### Removed\n\n- removed lifecycle context property from child item",
+    "dependencies": [
+      {
+        "name": "shared.business_partner_number",
+        "version": "2.0.0",
+        "family": "SAMM"
+      },
+      {
+        "name": "shared.quantity",
+        "version": "2.0.0",
+        "family": "SAMM"
+      },
+      {
+        "name": "shared.uuid",
+        "version": "2.0.0",
+        "family": "SAMM"
+      }
+    ],
     "path": "data/sldt-semantic-models/io.catenax.single_level_bom_as_built/3.0.0/SingleLevelBomAsBuilt.ttl"
   },
   "nodes": [

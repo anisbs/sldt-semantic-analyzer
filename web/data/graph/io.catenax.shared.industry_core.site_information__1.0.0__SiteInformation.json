@@ -8,6 +8,18 @@
     "status": "release",
     "release_date": null,
     "release_notes": "# Changelog\n\nAll notable changes to this model will be documented in this file.\n\n## [1.0.0] 26.03\n\n### Added\n\n- this model is a successor of `io.catenax.shared.part_site_information_as_built`\n- initial version of this model\n\n### Changed\n\nn/a\n\n### Removed\n\nn/a",
+    "dependencies": [
+      {
+        "name": "shared.business_partner_number",
+        "version": "2.0.0",
+        "family": "SAMM"
+      },
+      {
+        "name": "shared.uuid",
+        "version": "2.0.0",
+        "family": "SAMM"
+      }
+    ],
     "path": "data/sldt-semantic-models/io.catenax.shared.industry_core.site_information/1.0.0/SiteInformation.ttl"
   },
   "nodes": [

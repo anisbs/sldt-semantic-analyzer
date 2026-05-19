@@ -8,6 +8,23 @@
     "status": "release",
     "release_date": null,
     "release_notes": "# Changelog\n\nAll notable changes to this model will be documented in this file.\n\n## [2.0.0] 26.03\n\n### Changed\n\n- introduced `io.catenax.shared.industry_core.common:1.0.0` and `io.catenax.shared.industry_core.part_classification:1.0.0` as shared models\n- renamed `catenaXId` to `globalAssetId`\n- renamed `catenaXsiteId` to `siteId`\n- renamed `classificationID` to `classificationId`\n\n## [1.0.0] 2024-02-12\n\n- Initial version of the aspect model PartTypeInformation (formerly PartAsPlanned)",
+    "dependencies": [
+      {
+        "name": "shared.business_partner_number",
+        "version": "2.0.0",
+        "family": "SAMM"
+      },
+      {
+        "name": "shared.part_classification",
+        "version": "1.0.0",
+        "family": "SAMM"
+      },
+      {
+        "name": "shared.uuid",
+        "version": "2.0.0",
+        "family": "SAMM"
+      }
+    ],
     "path": "data/sldt-semantic-models/io.catenax.part_type_information/1.0.0/PartTypeInformation.ttl"
   },
   "nodes": [

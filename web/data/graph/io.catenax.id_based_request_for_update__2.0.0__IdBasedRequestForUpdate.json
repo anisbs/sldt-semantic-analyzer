@@ -8,6 +8,13 @@
     "status": "release",
     "release_date": "2023-11-13",
     "release_notes": "# Changelog\n\nAll notable changes to this model will be documented in this file.\n\n## [3.0.0] - 2024-03-11\n\n### Added\n\nn/a\n\n### Changed\n\n- migrated from SAMM version `2.0.0` to `2.1.0`\n- renamed property `materialDemand` to `weekBasedMaterialDemand`\n- updated external references of `urn:samm:io.catenax.shared.uuid` to version `2.0.0`\n\n### Removed\n\nn/a\n\n## [2.0.0] - 2023-11-13\n\n### Added\n\nn/a\n\n### Changed\n\n- renamed property `weekBasedMaterialDemand` to `materialDemand`\n- use [`io.catenax.shared.uuid`](https://github.com/eclipse-tractusx/sldt-semantic-models/blob/main/io.catenax.shared.uuid/1.0.0/Uuid.ttl) trait for UUIDs\n\n### Removed\n\nn/a\n\n## [1.0.0] - 2023-05-08\n\n### Added\n\n- initial version of this model\n\n### Changed\n\nn/a\n\n### Removed\n\nn/a",
+    "dependencies": [
+      {
+        "name": "shared.uuid",
+        "version": "1.0.0",
+        "family": "SAMM"
+      }
+    ],
     "path": "data/sldt-semantic-models/io.catenax.id_based_request_for_update/2.0.0/IdBasedRequestForUpdate.ttl"
   },
   "nodes": [

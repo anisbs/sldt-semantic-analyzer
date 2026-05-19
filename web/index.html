@@ -3,9 +3,10 @@
   Feature 4 + 5 + 6A — single static page.
   Top tabs:
     Home         : KPI cards (models per status) + name filter + versions
-    Model Viewer : pick Model + Version, then sub-tabs:
+    Model Viewer : search a Model (type-ahead) + pick Version, then sub-tabs:
                    Graph · Dependency graph (later) · Generated docs (later)
-                   · Release notes (full model changelog, version-independent)
+                   · Release notes (model-level changelog, shown once per
+                     model — independent of the Version selector)
   Reads web/data/graph/index.json (catalog) then <id>.json — paths relative
   to this page, so identical locally and on GitHub Pages.
   Local: python3 -m http.server 8000  ->  http://localhost:8000/web/
@@ -67,6 +68,17 @@
     }
     #mv-head label { font-size: 12px; color: #666; display: flex; align-items: center; gap: 6px; }
     #mv-head select { font-size: 13px; padding: 5px 8px; border: 1px solid #ccc; border-radius: 5px; }
+    .combo { position: relative; display: inline-block; }
+    #mv-model { font-size: 13px; padding: 5px 8px; border: 1px solid #ccc; border-radius: 5px; width: 240px; }
+    #mv-model-list {
+      position: absolute; top: 100%; left: 0; right: 0; z-index: 20; background: #fff;
+      border: 1px solid #ccc; border-top: none; border-radius: 0 0 5px 5px;
+      max-height: 260px; overflow-y: auto; display: none;
+    }
+    #mv-model-list.open { display: block; }
+    #mv-model-list .opt { padding: 6px 9px; font-size: 12px; cursor: pointer; }
+    #mv-model-list .opt.hl, #mv-model-list .opt:hover { background: #eef3ff; }
+    #mv-model-list .msg { padding: 6px 9px; font-size: 12px; color: #999; }
     #mv-badges { font-size: 12px; color: #555; display: flex; align-items: center; gap: 8px; }
     #subtabs { display: flex; gap: 2px; padding: 6px 12px 0; border-bottom: 1px solid #ddd; background: #fff; }
     .subtab {
@@ -87,14 +99,24 @@
       white-space: pre-wrap; word-wrap: break-word; margin: 0; color: #333;
       font: 12.5px/1.5 ui-monospace, Menlo, Consolas, monospace;
     }
-    #legend {
+    #legend, #dep-legend {
       position: absolute; top: 10px; left: 10px; background: rgba(255,255,255,.9);
       border: 1px solid #ddd; border-radius: 4px; padding: 8px 10px; font-size: 12px; z-index: 4;
     }
-    #legend div { display: flex; align-items: center; margin: 2px 0; }
-    #legend span.dot { width: 11px; height: 11px; border-radius: 50%; margin-right: 6px; }
-    #mv-empty { position: absolute; inset: 0; display: flex; align-items: center;
-      justify-content: center; color: #999; font-size: 14px; }
+    #legend div, #dep-legend div { display: flex; align-items: center; margin: 2px 0; }
+    #legend span.dot, #dep-legend span.dot { width: 11px; height: 11px; border-radius: 50%; margin-right: 6px; }
+    #mv-empty, #dep-empty { position: absolute; inset: 0; display: flex; align-items: center;
+      justify-content: center; color: #999; font-size: 14px; text-align: center; padding: 24px; }
+    .node circle.dep-root { stroke: #111; stroke-width: 3px; }
+    .node circle.dep-missing { stroke: #b00020; stroke-dasharray: 3 2; }
+    #dep-controls { position: absolute; top: 10px; right: 14px; z-index: 4; display: flex; }
+    #dep-controls button {
+      font-size: 12px; padding: 5px 11px; border: 1px solid #ccc;
+      background: #f3f3f3; color: #555; cursor: pointer;
+    }
+    #dep-controls button:first-child { border-radius: 5px 0 0 5px; }
+    #dep-controls button:last-child { border-radius: 0 5px 5px 0; border-left: none; }
+    #dep-controls button.on { background: #fff; color: #111; font-weight: 600; }
     .node circle { stroke: #fff; stroke-width: 1.5px; cursor: pointer; }
     .node text { font-size: 10px; fill: #333; pointer-events: none; }
     .link { stroke: #999; stroke-opacity: .6; }
@@ -131,7 +153,10 @@
     <div id="modelviewer" class="view">
       <div id="mv-head">
         <label>Model
-          <select id="mv-model"></select>
+          <span class="combo">
+            <input id="mv-model" type="text" placeholder="Search a model…" autocomplete="off" />
+            <div id="mv-model-list"></div>
+          </span>
         </label>
         <label>Version
           <select id="mv-version"></select>
@@ -151,7 +176,13 @@
           <svg id="graph" width="100%" height="100%"></svg>
         </div>
         <div id="sv-dep" class="subview">
-          <div class="placeholder">Dependency graph — coming next (cross-file <code>ext-*:</code> resolution).</div>
+          <div id="dep-legend"></div>
+          <div id="dep-controls">
+            <button data-dir="out" class="on">Outgoing (uses →)</button>
+            <button data-dir="in">Incoming (← used by)</button>
+          </div>
+          <div id="dep-empty">Pick a model and version above.</div>
+          <svg id="depgraph" width="100%" height="100%"></svg>
         </div>
         <div id="sv-docs" class="subview">
           <div class="placeholder">Generated docs — coming next: jsDelivr links<br>(HTML doc · JSON Schema · sample payload · OpenAPI). To design together.</div>
@@ -278,12 +309,157 @@ function drawLegend() {
     l.append("div").html(`<span class="dot" style="background:${c}"></span>${k}`));
 }
 
+// ---- Dependency graph (D3 force, recursive, cycle-safe) ------------------
+const DEP_COLORS = { root: "#4363d8", dep: "#3cb44b", missing: "#b00020" };
+const depSvg = d3.select("#depgraph");
+const depContainer = depSvg.append("g");
+depSvg.call(d3.zoom().scaleExtent([0.1, 4]).on("zoom",
+  e => depContainer.attr("transform", e.transform)));
+depSvg.append("defs").append("marker")
+  .attr("id", "darrow").attr("viewBox", "0 -5 10 10").attr("refX", 20)
+  .attr("markerWidth", 6).attr("markerHeight", 6).attr("orient", "auto")
+  .append("path").attr("d", "M0,-5L10,0L0,5").attr("fill", "#999");
+
+(function depLegend() {
+  const l = d3.select("#dep-legend");
+  l.append("div").style("font-weight", "600").text("Dependency graph");
+  [["Selected model", DEP_COLORS.root],
+   ["Linked model (in catalog)", DEP_COLORS.dep],
+   ["Not in catalog", DEP_COLORS.missing]].forEach(([t, c]) =>
+    l.append("div").html(`<span class="dot" style="background:${c}"></span>${t}`));
+})();
+
+const depKey = e => (e ? `${e.model_name}@${e.version}` : null);
+
+// "out" = follow deps (models this one USES) ; "in" = reverse (models that
+// USE this one). Edges always mean source→target = "source uses target".
+let depDir = "out";
+let revMap = null;                 // built lazily : key -> [keys that use it]
+
+function buildRevMap() {
+  const r = {};
+  for (const [p, v] of Object.entries(depsMap || {}))
+    v.deps.forEach(d => (r[d] = r[d] || []).push(p));
+  return r;
+}
+
+// BFS, transitive. `expanded` guards cycles: A→B and B→A both draw an edge,
+// but each node is expanded once, so no infinite recursion.
+function buildDepGraph(rootKey) {
+  const nodes = new Map(), links = [], expanded = new Set(), queue = [rootKey];
+  const ensure = k => {
+    if (!nodes.has(k)) {
+      const m = depsMap && depsMap[k];
+      const at = k.lastIndexOf("@");
+      nodes.set(k, {
+        id: k, present: !!m,
+        name: m ? m.name : k.slice(0, at),
+        version: m ? m.version : k.slice(at + 1),
+        root: k === rootKey,
+      });
+    }
+    return nodes.get(k);
+  };
+  const incoming = depDir === "in";
+  if (incoming && !revMap) revMap = buildRevMap();
+  ensure(rootKey);
+  while (queue.length) {
+    const k = queue.shift();
+    if (expanded.has(k)) continue;
+    expanded.add(k);
+    // Neighbours + edge orientation per direction (arrow = "uses").
+    const next = incoming
+      ? (revMap[k] || []).map(p => [p, { source: p, target: k }])
+      : ((depsMap && depsMap[k] ? depsMap[k].deps : [])
+          .map(d => [d, { source: k, target: d }]));
+    next.forEach(([nb, edge]) => {
+      ensure(nb);
+      links.push(edge);
+      if (!expanded.has(nb)) queue.push(nb);   // cycle-safe
+    });
+  }
+  return { nodes: [...nodes.values()], links };
+}
+
+d3.selectAll("#dep-controls button").on("click", function () {
+  depDir = this.dataset.dir;
+  d3.selectAll("#dep-controls button")
+    .classed("on", function () { return this.dataset.dir === depDir; });
+  if (activeSub === "sv-dep") renderSub();
+});
+
+let depSim;
+function drawDep(rootKey) {
+  const empty = document.getElementById("dep-empty");
+  if (!depsMap) {
+    empty.style.display = "";
+    empty.textContent = "deps.json not found — run: python -m sldt_analyzer.graph";
+    return;
+  }
+  const g = buildDepGraph(rootKey);
+  empty.style.display = "none";
+  depContainer.selectAll("*").remove();
+  const { width, height } = depSvg.node().getBoundingClientRect();
+  const nodes = g.nodes, links = g.links.map(d => ({ ...d }));
+
+  if (depSim) depSim.stop();
+  depSim = d3.forceSimulation(nodes)
+    .force("link", d3.forceLink(links).id(d => d.id).distance(110))
+    .force("charge", d3.forceManyBody().strength(-320))
+    .force("center", d3.forceCenter(width / 2, height / 2))
+    .force("collide", d3.forceCollide(34));
+
+  const link = depContainer.append("g").selectAll("line").data(links).enter()
+    .append("line").attr("class", "link")
+    .attr("stroke-width", 1.4).attr("marker-end", "url(#darrow)");
+
+  const node = depContainer.append("g").selectAll("g").data(nodes).enter()
+    .append("g").attr("class", "node")
+    .call(d3.drag()
+      .on("start", (e, d) => { if (!e.active) depSim.alphaTarget(.3).restart();
+        d.fx = d.x; d.fy = d.y; })
+      .on("drag", (e, d) => { d.fx = e.x; d.fy = e.y; })
+      .on("end", (e, d) => { if (!e.active) depSim.alphaTarget(0);
+        d.fx = null; d.fy = null; }));
+
+  node.append("circle").attr("r", 12)
+    .attr("class", d => d.root ? "dep-root" : (d.present ? "" : "dep-missing"))
+    .attr("fill", d => d.root ? DEP_COLORS.root
+                              : (d.present ? DEP_COLORS.dep : DEP_COLORS.missing))
+    .style("cursor", d => d.present ? "pointer" : "default")
+    .on("mouseover", (e, d) => tooltip.style("opacity", 1).html(
+      `<b>${d.name}</b> <span class="k">v${d.version}</span><br>` +
+      (d.root ? "selected model<br><i>click to re-root here</i>"
+       : d.present ? "in catalog<br><i>click to re-root here</i>"
+       : "<i>not in catalog (unresolved dependency)</i>")))
+    .on("mousemove", e =>
+      tooltip.style("left", (e.pageX + 14) + "px").style("top", (e.pageY + 8) + "px"))
+    .on("mouseout", () => tooltip.style("opacity", 0))
+    .on("click", (e, d) => {
+      if (!d.present) return;
+      const ent = entryForKey(d.id);
+      if (ent) openEntry(ent);     // re-roots here (we stay on this sub-tab)
+    });
+
+  node.append("text").attr("x", 15).attr("y", 4)
+    .text(d => `${d.name} v${d.version}`);
+
+  depSim.on("tick", () => {
+    link.attr("x1", d => d.source.x).attr("y1", d => d.source.y)
+        .attr("x2", d => d.target.x).attr("y2", d => d.target.y);
+    node.attr("transform", d => `translate(${d.x},${d.y})`);
+  });
+}
+
 // ---- Model Viewer state ---------------------------------------------------
 let allModels = [];          // index.json (one entry per version file)
 let groups = new Map();      // model_name -> entries sorted by version desc
+let curModel = null;         // selected model_name (notes are model-level)
 let curEntries = [];         // sorted entries of the selected model
 let curEntry = null;         // selected entry (version)
 let curGraph = null;         // fetched <id>.json for curEntry
+const notesCache = new Map();// model_name -> release_notes (version-independent)
+let depsMap = null;          // deps.json : "name@version" -> {name,version,family,deps[]}
 
 // descending semantic-ish version compare ("4.0.0" before "2.0.1")
 function cmpVerDesc(a, b) {
@@ -302,16 +478,78 @@ function buildGroups() {
       groups.set(name, entries.slice().sort((a, b) => cmpVerDesc(a.version, b.version))));
 }
 
-function populateModelSelect() {
-  const sel = document.getElementById("mv-model");
-  sel.innerHTML = "";
-  const ph = document.createElement("option");
-  ph.value = ""; ph.textContent = "Choose a model…"; ph.disabled = true; ph.selected = true;
-  sel.appendChild(ph);
-  [...groups.keys()].sort().forEach(name => {
-    const o = document.createElement("option");
-    o.value = name; o.textContent = name;
-    sel.appendChild(o);
+// ---- Model search (type-ahead over model_name) ---------------------------
+const MV_MAX = 50;                 // cap rendered matches
+let mvHl = -1;                     // highlighted index in the open list
+
+function modelMatches(q) {
+  q = q.trim().toLowerCase();
+  const names = [...groups.keys()].sort();
+  return q ? names.filter(n => n.toLowerCase().includes(q)) : names;
+}
+
+function closeModelList() {
+  document.getElementById("mv-model-list").classList.remove("open");
+  mvHl = -1;
+}
+
+function renderModelList() {
+  const inp = document.getElementById("mv-model");
+  const box = document.getElementById("mv-model-list");
+  const all = modelMatches(inp.value);
+  const shown = all.slice(0, MV_MAX);
+  box.innerHTML = "";
+  if (!shown.length) {
+    box.innerHTML = `<div class="msg">No model matches.</div>`;
+  } else {
+    shown.forEach((name, i) => {
+      const d = document.createElement("div");
+      d.className = "opt" + (i === mvHl ? " hl" : "");
+      d.textContent = name;
+      // mousedown fires before the input's blur, so the pick is not lost.
+      d.addEventListener("mousedown", e => { e.preventDefault(); chooseModel(name); });
+      box.appendChild(d);
+    });
+    if (all.length > shown.length) {
+      const m = document.createElement("div");
+      m.className = "msg";
+      m.textContent = `+${all.length - shown.length} more — keep typing to refine`;
+      box.appendChild(m);
+    }
+  }
+  box.classList.add("open");
+}
+
+function chooseModel(name) {
+  document.getElementById("mv-model").value = name;
+  closeModelList();
+  selectModel(name);
+}
+
+function setupModelSearch() {
+  const inp = document.getElementById("mv-model");
+  inp.addEventListener("input", () => { mvHl = -1; renderModelList(); });
+  inp.addEventListener("focus", () => { mvHl = -1; renderModelList(); });
+  inp.addEventListener("blur", () => setTimeout(closeModelList, 120));
+  inp.addEventListener("keydown", e => {
+    const box = document.getElementById("mv-model-list");
+    const opts = [...box.querySelectorAll(".opt")];
+    if (e.key === "ArrowDown" || e.key === "ArrowUp") {
+      e.preventDefault();
+      if (!box.classList.contains("open")) { renderModelList(); return; }
+      if (!opts.length) return;
+      mvHl = e.key === "ArrowDown"
+        ? (mvHl + 1) % opts.length
+        : (mvHl - 1 + opts.length) % opts.length;
+      opts.forEach((o, i) => o.classList.toggle("hl", i === mvHl));
+      opts[mvHl].scrollIntoView({ block: "nearest" });
+    } else if (e.key === "Enter") {
+      e.preventDefault();
+      const pick = mvHl >= 0 ? opts[mvHl] : opts[0];
+      if (pick && pick.classList.contains("opt")) chooseModel(pick.textContent);
+    } else if (e.key === "Escape") {
+      closeModelList();
+    }
   });
 }
 
@@ -339,6 +577,9 @@ function loadEntry(e) {
   document.getElementById("mv-badges").innerHTML = "";
   fetch(`data/graph/${e.file}`).then(r => r.json()).then(g => {
     curGraph = g;
+    // Release notes are identical across a model's versions: cache once.
+    if (!notesCache.has(e.model_name))
+      notesCache.set(e.model_name, (g.meta && g.meta.release_notes) || null);
     document.getElementById("mv-badges").innerHTML = badges(e);
     renderSub();
   });
@@ -352,29 +593,38 @@ function renderSub() {
     else document.getElementById("mv-empty").style.display = "";
   } else if (activeSub === "sv-notes") {
     const el = document.getElementById("notes-body");
-    if (!curEntry) { el.textContent = "Pick a model above."; return; }
-    const notes = curGraph && curGraph.meta && curGraph.meta.release_notes;
+    if (!curModel) { el.textContent = "Search and pick a model above."; return; }
+    if (!notesCache.has(curModel)) { el.textContent = "Loading release notes…"; return; }
+    const notes = notesCache.get(curModel);
     el.innerHTML = notes
-      ? `<h2>Changelog — ${escapeHtml(curEntry.model_name)} ` +
+      ? `<h2>Changelog — ${escapeHtml(curModel)} ` +
         `<span style="font-weight:400;color:#888;font-size:12px;">` +
-        `(all versions — not version-specific)</span></h2>` +
+        `(whole model — same for every version)</span></h2>` +
         `<pre>${escapeHtml(notes)}</pre>`
       : `<i>No RELEASE_NOTES.md for this model.</i>`;
+  } else if (activeSub === "sv-dep") {
+    const k = depKey(curEntry);
+    if (!k) {
+      const e = document.getElementById("dep-empty");
+      e.style.display = ""; e.textContent = "Pick a model and version above.";
+      return;
+    }
+    drawDep(k);
   }
-  // sv-dep / sv-docs are static placeholders
+  // sv-docs is a static placeholder
 }
 
-// Select a model (auto-loads its latest version).
+// Select a model (auto-loads its latest version; notes are model-level).
 function selectModel(name) {
+  curModel = name;
   document.getElementById("mv-model").value = name;
   curEntries = groups.get(name) || [];
   fillVersionSelect(curEntries);
   document.getElementById("mv-version").value = 0;
+  curEntry = curEntries[0] || null;  // so notes/dep render at once, no flash
+  renderSub();                       // show notes at once (model-level)
   if (curEntries.length) loadEntry(curEntries[0]);
 }
-document.getElementById("mv-model").addEventListener("change", function () {
-  if (this.value) selectModel(this.value);
-});
 document.getElementById("mv-version").addEventListener("change", function () {
   if (curEntries[+this.value]) loadEntry(curEntries[+this.value]);
 });
@@ -382,12 +632,24 @@ document.getElementById("mv-version").addEventListener("change", function () {
 // From the Home catalog: open this exact model+version in Model Viewer.
 function openEntry(e) {
   showTab("modelviewer");
+  curModel = e.model_name;
   document.getElementById("mv-model").value = e.model_name;
   curEntries = groups.get(e.model_name) || [];
   fillVersionSelect(curEntries);
   const i = curEntries.findIndex(x => x.id === e.id);
   document.getElementById("mv-version").value = i < 0 ? 0 : i;
+  curEntry = curEntries[i < 0 ? 0 : i] || null;
+  renderSub();
   loadEntry(curEntries[i < 0 ? 0 : i]);
+}
+
+// Resolve a "name@version" dep key to a catalog entry (prefer one with an
+// Aspect) so a dependency node can be opened in the Model Viewer.
+function entryForKey(key) {
+  const at = key.lastIndexOf("@");
+  const name = key.slice(0, at), ver = key.slice(at + 1);
+  const cands = allModels.filter(e => e.model_name === name && e.version === ver);
+  return cands.find(e => e.has_aspect) || cands[0] || null;
 }
 
 // ---- Home (KPI + catalog) ------------------------------------------------
@@ -398,7 +660,7 @@ fetch("data/graph/index.json")
   .then(idx => {
     allModels = idx;
     buildGroups();
-    populateModelSelect();
+    setupModelSearch();
     renderKpis();
     renderCatalog();
   })
@@ -408,6 +670,13 @@ fetch("data/graph/index.json")
     document.getElementById("mv-empty").textContent =
       "index.json not found — generate it: python -m sldt_analyzer.graph";
   });
+
+// Dependency map (loaded once). If the Dependency tab is already open when it
+// arrives, re-render it.
+fetch("data/graph/deps.json")
+  .then(r => r.json())
+  .then(m => { depsMap = m; revMap = null; if (activeSub === "sv-dep") renderSub(); })
+  .catch(() => { depsMap = null; });
 
 function renderKpis() {
   const counts = d3.rollup(allModels, v => v.length, d => d.status);
