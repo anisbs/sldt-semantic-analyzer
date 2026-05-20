@@ -31,21 +31,45 @@
       "label": "MarketplaceOffer",
       "kind": "Aspect",
       "preferredName": "Marketplace Offer",
-      "description": "Description of all needed information to place a market place offer on the marketplace."
+      "description": "Description of all needed information to place a market place offer on the marketplace.",
+      "external_refs": [
+        {
+          "predicate": "properties",
+          "target_local": "date",
+          "target_model": "serial_part@3.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.market_place_offer:2.0.0#sku",
       "label": "sku",
       "kind": "Property",
       "preferredName": "sku",
-      "description": "Stock Keeping Unit is an unique identifier of the dealer providing the product"
+      "description": "Stock Keeping Unit is an unique identifier of the dealer providing the product",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.market_place_offer:2.0.0#quantity",
       "label": "quantity",
       "kind": "Property",
       "preferredName": "quantity",
-      "description": "The available quantity of an offered product."
+      "description": "The available quantity of an offered product.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "ItemQuantityCharacteristic",
+          "target_model": "shared.quantity@2.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.market_place_offer:2.0.0#condition",
@@ -66,7 +90,15 @@
       "label": "incoterms",
       "kind": "Property",
       "preferredName": "Incoterms",
-      "description": "The International Commercial Terms are standardized trade terms used in international commerce to define the responsibilities and obligations of buyers and sellers during the transportation and delivery of goods. "
+      "description": "The International Commercial Terms are standardized trade terms used in international commerce to define the responsibilities and obligations of buyers and sellers during the transportation and delivery of goods. ",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.market_place_offer:2.0.0#price",
@@ -164,28 +196,60 @@
       "label": "errorCodes",
       "kind": "Property",
       "preferredName": "Error Codes",
-      "description": "Error codes that are recorded as part of onboard data and can be read as part of diagnostics"
+      "description": "Error codes that are recorded as part of onboard data and can be read as part of diagnostics",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.market_place_offer:2.0.0#partMarking",
       "label": "partMarking",
       "kind": "Property",
       "preferredName": "Part Marking",
-      "description": "Unique identifier for a core"
+      "description": "Unique identifier for a core",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.market_place_offer:2.0.0#vehicleDescription",
       "label": "vehicleDescription",
       "kind": "Property",
       "preferredName": "Vehicle Description",
-      "description": "Description of vehicle where the EoL part has been dismantled from (if applicable)"
+      "description": "Description of vehicle where the EoL part has been dismantled from (if applicable)",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.market_place_offer:2.0.0#serialNumber",
       "label": "serialNumber",
       "kind": "Property",
       "preferredName": "serial number",
-      "description": "Unique identifier of an item in a serial production"
+      "description": "Unique identifier of an item in a serial production",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.market_place_offer:2.0.0#taxPercentage",
@@ -199,42 +263,90 @@
       "label": "height",
       "kind": "Property",
       "preferredName": "height",
-      "description": "The product height. According to: UCUM (Unified Code for Units of Measure)."
+      "description": "The product height. According to: UCUM (Unified Code for Units of Measure).",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "LinearCharacteristic",
+          "target_model": "shared.quantity@2.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.market_place_offer:2.0.0#areaOfUsage",
       "label": "areaOfUsage",
       "kind": "Property",
       "preferredName": "areaOfUsage",
-      "description": "Information, in which countries/areas the component has been in use"
+      "description": "Information, in which countries/areas the component has been in use",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.market_place_offer:2.0.0#width",
       "label": "width",
       "kind": "Property",
       "preferredName": "width",
-      "description": "The product width. According to: UCUM (Unified Code for Units of Measure)."
+      "description": "The product width. According to: UCUM (Unified Code for Units of Measure).",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "LinearCharacteristic",
+          "target_model": "shared.quantity@2.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.market_place_offer:2.0.0#length",
       "label": "length",
       "kind": "Property",
       "preferredName": "length",
-      "description": "The product length. According to: UCUM (Unified Code for Units of Measure)."
+      "description": "The product length. According to: UCUM (Unified Code for Units of Measure).",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "LinearCharacteristic",
+          "target_model": "shared.quantity@2.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.market_place_offer:2.0.0#diameter",
       "label": "diameter",
       "kind": "Property",
       "preferredName": "diameter",
-      "description": "The product diameter. According to: UCUM (Unified Code for Units of Measure)."
+      "description": "The product diameter. According to: UCUM (Unified Code for Units of Measure).",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "LinearCharacteristic",
+          "target_model": "shared.quantity@2.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.market_place_offer:2.0.0#weight",
       "label": "weight",
       "kind": "Property",
       "preferredName": "weight",
-      "description": "The product weight."
+      "description": "The product weight.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "MassCharacteristic",
+          "target_model": "shared.quantity@2.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.market_place_offer:2.0.0#longitude",
@@ -262,14 +374,30 @@
       "label": "currency",
       "kind": "Property",
       "preferredName": "currency",
-      "description": "The currency of the price."
+      "description": "The currency of the price.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.market_place_offer:2.0.0#unitForPrice",
       "label": "unitForPrice",
       "kind": "Property",
       "preferredName": "unit for price ",
-      "description": "The unit of measure (related to price)"
+      "description": "The unit of measure (related to price)",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.market_place_offer:2.0.0#size",
@@ -290,14 +418,30 @@
       "label": "productDescription",
       "kind": "Property",
       "preferredName": "product description",
-      "description": "The description of the product on the marketplace."
+      "description": "The description of the product on the marketplace.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.market_place_offer:2.0.0#brand",
       "label": "brand",
       "kind": "Property",
       "preferredName": "brand",
-      "description": "The brandname of the offered product."
+      "description": "The brandname of the offered product.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.market_place_offer:2.0.0#category",
@@ -311,7 +455,15 @@
       "label": "originalManufacturer",
       "kind": "Property",
       "preferredName": "original manufacturer",
-      "description": "The original manufacturer of a product."
+      "description": "The original manufacturer of a product.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.market_place_offer:2.0.0#productLink",
@@ -346,21 +498,45 @@
       "label": "key",
       "kind": "Property",
       "preferredName": "key",
-      "description": "The key of the key value pair"
+      "description": "The key of the key value pair",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.market_place_offer:2.0.0#technicalValue",
       "label": "technicalValue",
       "kind": "Property",
       "preferredName": "technical value",
-      "description": "The value of the key value pair."
+      "description": "The value of the key value pair.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.market_place_offer:2.0.0#ConditionCharacteristic",
       "label": "ConditionCharacteristic",
       "kind": "Characteristic",
       "preferredName": "Condition Characteristic",
-      "description": "Condition of the article as enumeration."
+      "description": "Condition of the article as enumeration.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.market_place_offer:2.0.0#GeographicalCoordinates",
@@ -381,7 +557,15 @@
       "label": "BundleOfferCharacteristic",
       "kind": "Characteristic",
       "preferredName": "bundleOffer",
-      "description": "the characteristic of bundleOffer"
+      "description": "the characteristic of bundleOffer",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "boolean",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.market_place_offer:2.0.0#ProductCharacteristic",
@@ -395,49 +579,105 @@
       "label": "Boolean",
       "kind": "Characteristic",
       "preferredName": "boolean",
-      "description": null
+      "description": null,
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "boolean",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.market_place_offer:2.0.0#AvailabilityDateCharacteristic",
       "label": "AvailabilityDateCharacteristic",
       "kind": "Characteristic",
       "preferredName": "availability date characteristic",
-      "description": "The availability date when the product is in stock."
+      "description": "The availability date when the product is in stock.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "date",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.market_place_offer:2.0.0#Decimal",
       "label": "Decimal",
       "kind": "Characteristic",
       "preferredName": "Decimal",
-      "description": "decribes the percentage"
+      "description": "decribes the percentage",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "decimal",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.market_place_offer:2.0.0#LongitudeCharacteristic",
       "label": "LongitudeCharacteristic",
       "kind": "Characteristic",
       "preferredName": "longitude characteristic",
-      "description": "longitude information"
+      "description": "longitude information",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "float",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.market_place_offer:2.0.0#LatitudeCharacteristic",
       "label": "LatitudeCharacteristic",
       "kind": "Characteristic",
       "preferredName": "latitude characteristic",
-      "description": "latitude information"
+      "description": "latitude information",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "float",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.market_place_offer:2.0.0#ValueCharacteristic",
       "label": "ValueCharacteristic",
       "kind": "Characteristic",
       "preferredName": "value  characteristic",
-      "description": "the characteristic of value"
+      "description": "the characteristic of value",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "float",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.market_place_offer:2.0.0#Number",
       "label": "Number",
       "kind": "Characteristic",
       "preferredName": "value",
-      "description": "exact value"
+      "description": "exact value",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "integer",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.market_place_offer:2.0.0#CategoryCharacteristic",
@@ -451,7 +691,15 @@
       "label": "ProductLinkCharacteristic",
       "kind": "Characteristic",
       "preferredName": "product link characteristic",
-      "description": "describes characteristic of product link "
+      "description": "describes characteristic of product link ",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "anyURI",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.market_place_offer:2.0.0#ImageFileArray",
@@ -479,7 +727,15 @@
       "label": "MileageCharacteristic",
       "kind": "Characteristic",
       "preferredName": "mileage characteristic",
-      "description": "The value describing the mileage of the item."
+      "description": "The value describing the mileage of the item.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "decimal",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.market_place_offer:2.0.0#GeographicalCoordinateEntity",
@@ -507,7 +763,21 @@
       "label": "ProductEntity",
       "kind": "Entity",
       "preferredName": "product entity",
-      "description": "describes product entity"
+      "description": "describes product entity",
+      "external_refs": [
+        {
+          "predicate": "properties",
+          "target_local": "manufacturerPartId",
+          "target_model": "serial_part@3.0.0",
+          "target_source": "catenax"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "customerPartId",
+          "target_model": "serial_part@3.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.market_place_offer:2.0.0#CategoryEntity",
@@ -528,14 +798,30 @@
       "label": "MainCategoryCharacteristic",
       "kind": "Characteristic",
       "preferredName": "main category characteristic",
-      "description": "describes characteristic of main category "
+      "description": "describes characteristic of main category ",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.market_place_offer:2.0.0#SubCategoryCharacteristic",
       "label": "SubCategoryCharacteristic",
       "kind": "Characteristic",
       "preferredName": "sub category characteristic",
-      "description": "describes characteristic of sub category "
+      "description": "describes characteristic of sub category ",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     }
   ],
   "links": [

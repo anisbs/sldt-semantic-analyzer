@@ -18,21 +18,45 @@
       "label": "materialCategory",
       "kind": "Property",
       "preferredName": "material category",
-      "description": "The highest-level classification that groups materials into broad, fundamental classes based on their overall nature and fundamental properties."
+      "description": "The highest-level classification that groups materials into broad, fundamental classes based on their overall nature and fundamental properties.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.shared.material_classification:1.0.0#materialGroup",
       "label": "materialGroup",
       "kind": "Property",
       "preferredName": "material group",
-      "description": "A more specific subdivision within a Material Category. It organizes materials into technical families that share similar composition, structure, and performance characteristics."
+      "description": "A more specific subdivision within a Material Category. It organizes materials into technical families that share similar composition, structure, and performance characteristics.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.shared.material_classification:1.0.0#materialSubgroup",
       "label": "materialSubgroup",
       "kind": "Property",
       "preferredName": "material subgroup",
-      "description": "A refined subset of a Material Group that classifies materials according to detailed technical distinctions such as alloying type, polymer family, manufacturing process, or functional properties."
+      "description": "A refined subset of a Material Group that classifies materials according to detailed technical distinctions such as alloying type, polymer family, manufacturing process, or functional properties.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.shared.material_classification:1.0.0#materialClassification",
@@ -53,7 +77,15 @@
       "label": "ClassificationStandardEnumeration",
       "kind": "Characteristic",
       "preferredName": "classification standard enumeration",
-      "description": "This enumeration assures that only allowed classification standards are used."
+      "description": "This enumeration assures that only allowed classification standards are used.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.shared.material_classification:1.0.0#MaterialClassificationCharacteristic",

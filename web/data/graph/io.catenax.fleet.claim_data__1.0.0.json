@@ -46,28 +46,60 @@
       "label": "repairDate",
       "kind": "Property",
       "preferredName": "RepairDate",
-      "description": "references the date when claim was initially reported"
+      "description": "references the date when claim was initially reported",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Timestamp",
+          "target_model": "io.openmanufacturing:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.fleet.claim_data:1.0.0#technicianComment",
       "label": "technicianComment",
       "kind": "Property",
       "preferredName": "TechnicianComment",
-      "description": "short description of the claim from the technicians"
+      "description": "short description of the claim from the technicians",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "MultiLanguageText",
+          "target_model": "io.openmanufacturing:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.fleet.claim_data:1.0.0#customerComment",
       "label": "customerComment",
       "kind": "Property",
       "preferredName": "CustomerComment",
-      "description": "short description of the claim from customer view"
+      "description": "short description of the claim from customer view",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "MultiLanguageText",
+          "target_model": "io.openmanufacturing:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.fleet.claim_data:1.0.0#claimId",
       "label": "claimId",
       "kind": "Property",
       "preferredName": "ClaimID",
-      "description": "Claim ID: Unique for each OEM"
+      "description": "Claim ID: Unique for each OEM",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "io.openmanufacturing:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.fleet.claim_data:1.0.0#vehicleIdentifiers",
@@ -88,7 +120,15 @@
       "label": "damageCode",
       "kind": "Property",
       "preferredName": "DamageCode",
-      "description": "OEM-specific damage code"
+      "description": "OEM-specific damage code",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "io.openmanufacturing:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.fleet.claim_data:1.0.0#vehicleCatenaXId",
@@ -102,21 +142,45 @@
       "label": "anonymizedVIN",
       "kind": "Property",
       "preferredName": "Anonymized Vin",
-      "description": "OEM-specific hashed VIN; link to car data over pseydomized/hashed VIN or Catena-X unique digital twin identifier"
+      "description": "OEM-specific hashed VIN; link to car data over pseydomized/hashed VIN or Catena-X unique digital twin identifier",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "io.openmanufacturing:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.fleet.claim_data:1.0.0#isPartReplaced",
       "label": "isPartReplaced",
       "kind": "Property",
       "preferredName": "IsPartReplaced",
-      "description": "flag is set if part was replaced\nTrue: replaced\nFalse: not replaced"
+      "description": "flag is set if part was replaced\nTrue: replaced\nFalse: not replaced",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Boolean",
+          "target_model": "io.openmanufacturing:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.fleet.claim_data:1.0.0#isPartCausal",
       "label": "isPartCausal",
       "kind": "Property",
       "preferredName": "IsPartCausal",
-      "description": "flag set to True if part was causing the problem\nTrue: part caused the problem\nFalse: part didn't cause the problem\n"
+      "description": "flag set to True if part was causing the problem\nTrue: part caused the problem\nFalse: part didn't cause the problem\n",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Boolean",
+          "target_model": "io.openmanufacturing:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.fleet.claim_data:1.0.0#amountOfReplacedParts",
@@ -144,21 +208,45 @@
       "label": "number",
       "kind": "Property",
       "preferredName": "Number",
-      "description": "OEM specific partnumber"
+      "description": "OEM specific partnumber",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "io.openmanufacturing:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.fleet.claim_data:1.0.0#name",
       "label": "name",
       "kind": "Property",
       "preferredName": "Name",
-      "description": "OEM specific name of the part"
+      "description": "OEM specific name of the part",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "io.openmanufacturing:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.fleet.claim_data:1.0.0#serialNumber",
       "label": "serialNumber",
       "kind": "Property",
       "preferredName": "SerialNumber",
-      "description": "OEM serial part number of the part - only available for serial parts"
+      "description": "OEM serial part number of the part - only available for serial parts",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "io.openmanufacturing:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.fleet.claim_data:1.0.0#catenaXId",
@@ -172,14 +260,30 @@
       "label": "supplierId",
       "kind": "Property",
       "preferredName": "SupplierID",
-      "description": "OEM-specific ID of the supplier that manufactured the part that was put out - available if known"
+      "description": "OEM-specific ID of the supplier that manufactured the part that was put out - available if known",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "io.openmanufacturing:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.fleet.claim_data:1.0.0#qualityTaskId",
       "label": "qualityTaskId",
       "kind": "Property",
       "preferredName": "QualityTaskID",
-      "description": "Reference to  Quality Task: A unique identifier. The company creating this quality task sets this identifer. The identifier should contain the BPN to make it unique inside CX network"
+      "description": "Reference to  Quality Task: A unique identifier. The company creating this quality task sets this identifer. The identifier should contain the BPN to make it unique inside CX network",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "io.openmanufacturing:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.fleet.claim_data:1.0.0#ListOfClaims",
@@ -228,7 +332,15 @@
       "label": "Mileage",
       "kind": "Characteristic",
       "preferredName": "Mileage",
-      "description": null
+      "description": null,
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "positiveInteger",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.fleet.claim_data:1.0.0#VehicleIdentifiersCharacteristic",
@@ -242,14 +354,30 @@
       "label": "AmountOfReplacedPartsCharacteristic",
       "kind": "Characteristic",
       "preferredName": "Amount of replaced Parts",
-      "description": "counter for non-serial parts"
+      "description": "counter for non-serial parts",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "nonNegativeInteger",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.fleet.claim_data:1.0.0#UUIDv4",
       "label": "UUIDv4",
       "kind": "Characteristic",
       "preferredName": "UUIDv4",
-      "description": "A version 4 UUID is a universally unique identifier that is generated using random 32 hexadecimal characters."
+      "description": "A version 4 UUID is a universally unique identifier that is generated using random 32 hexadecimal characters.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.fleet.claim_data:1.0.0#ListOfPartsCharacteristic",

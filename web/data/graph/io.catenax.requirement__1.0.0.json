@@ -32,7 +32,15 @@
       "label": "requirementId",
       "kind": "Property",
       "preferredName": "Requirement Id",
-      "description": "The identifier of a requirement represented by a UUID, valid for the Catena-X dataspace."
+      "description": "The identifier of a requirement represented by a UUID, valid for the Catena-X dataspace.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "UuidV4Trait",
+          "target_model": "shared.uuid@2.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.requirement:1.0.0#requirementInformation",
@@ -60,7 +68,15 @@
       "label": "reqIfName",
       "kind": "Property",
       "preferredName": "ReqIF Name",
-      "description": "Name of the requirement (from ReqIF)."
+      "description": "Name of the requirement (from ReqIF).",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.requirement:1.0.0#reqIfType",
@@ -81,35 +97,75 @@
       "label": "description",
       "kind": "Property",
       "preferredName": "Description",
-      "description": "Textual description of the requirement."
+      "description": "Textual description of the requirement.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.requirement:1.0.0#creationDate",
       "label": "creationDate",
       "kind": "Property",
       "preferredName": "Creationdate",
-      "description": "Date of requirement/version creation."
+      "description": "Date of requirement/version creation.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Timestamp",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.requirement:1.0.0#author",
       "label": "author",
       "kind": "Property",
       "preferredName": "Author",
-      "description": "Company that created the requirement. "
+      "description": "Company that created the requirement. ",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.requirement:1.0.0#foreignId",
       "label": "foreignId",
       "kind": "Property",
       "preferredName": "Foreign Id",
-      "description": "Identifier from an external system (e.g. the chapter in a set of requirements)"
+      "description": "Identifier from an external system (e.g. the chapter in a set of requirements)",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.requirement:1.0.0#longname",
       "label": "longname",
       "kind": "Property",
       "preferredName": "Longname",
-      "description": "Descriptive name for the requirement."
+      "description": "Descriptive name for the requirement.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.requirement:1.0.0#metadata",
@@ -144,7 +200,15 @@
       "label": "statusTimestamp",
       "kind": "Property",
       "preferredName": "Status Timestamp",
-      "description": "Timestamp of the status change."
+      "description": "Timestamp of the status change.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Timestamp",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.requirement:1.0.0#customerStatus",
@@ -165,14 +229,30 @@
       "label": "relatedRequirementId",
       "kind": "Property",
       "preferredName": "Related Requirement Identifier",
-      "description": "Id of related requirement in form of a UUID"
+      "description": "Id of related requirement in form of a UUID",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "UuidV4Trait",
+          "target_model": "shared.uuid@2.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.requirement:1.0.0#requirementRelationshipType",
       "label": "requirementRelationshipType",
       "kind": "Property",
       "preferredName": "Requiremement Relationship Type",
-      "description": "The type of relationship of the two related requirements"
+      "description": "The type of relationship of the two related requirements",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.requirement:1.0.0#versionNumber",
@@ -186,7 +266,15 @@
       "label": "versionId",
       "kind": "Property",
       "preferredName": "Version Id",
-      "description": "The identifier of this exact version of the requirement represented by a UUID, valid for the Catena-X dataspace."
+      "description": "The identifier of this exact version of the requirement represented by a UUID, valid for the Catena-X dataspace.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "UuidV4Trait",
+          "target_model": "shared.uuid@2.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.requirement:1.0.0#key",
@@ -200,14 +288,30 @@
       "label": "value",
       "kind": "Property",
       "preferredName": "Value",
-      "description": "Value string for the associated metadata"
+      "description": "Value string for the associated metadata",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.requirement:1.0.0#metadataDescription",
       "label": "metadataDescription",
       "kind": "Property",
       "preferredName": "Metadata Description",
-      "description": "Description of the associated metadata"
+      "description": "Description of the associated metadata",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.requirement:1.0.0#versionPredecessorNumber",
@@ -221,7 +325,15 @@
       "label": "versionPredecessorId",
       "kind": "Property",
       "preferredName": "Version Predecessor Id",
-      "description": "The identifier of the predecessor version of the requirement represented by a UUID, valid for the Catena-X dataspace."
+      "description": "The identifier of the predecessor version of the requirement represented by a UUID, valid for the Catena-X dataspace.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "UuidV4Trait",
+          "target_model": "shared.uuid@2.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.requirement:1.0.0#customerStatusValue",
@@ -235,14 +347,30 @@
       "label": "customerStatusComment",
       "kind": "Property",
       "preferredName": "Customer Status Comment",
-      "description": "Comment from the customer."
+      "description": "Comment from the customer.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.requirement:1.0.0#customerStatusTimestamp",
       "label": "customerStatusTimestamp",
       "kind": "Property",
       "preferredName": "Customer Status Timestamp ",
-      "description": "Property for the customer status timestamp"
+      "description": "Property for the customer status timestamp",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Timestamp",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.requirement:1.0.0#supplierStatusValue",
@@ -256,14 +384,30 @@
       "label": "supplierStatusComment",
       "kind": "Property",
       "preferredName": "Supplier Status Comment",
-      "description": "Comment from the supplier."
+      "description": "Comment from the supplier.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.requirement:1.0.0#supplierStatusTimestamp",
       "label": "supplierStatusTimestamp",
       "kind": "Property",
       "preferredName": "Supplier Status Timestamp",
-      "description": "Property for the supplier status timestamp"
+      "description": "Property for the supplier status timestamp",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Timestamp",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.requirement:1.0.0#RequirementInformationCharacteristic",
@@ -361,28 +505,60 @@
       "label": "ReqIFTypeEnum",
       "kind": "Characteristic",
       "preferredName": "ReqIF Type Characteristic",
-      "description": "Enumeration of requirement types."
+      "description": "Enumeration of requirement types.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.requirement:1.0.0#StatusValueEnum",
       "label": "StatusValueEnum",
       "kind": "Characteristic",
       "preferredName": "Status Value Characteristic",
-      "description": "Characteristic for the status"
+      "description": "Characteristic for the status",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.requirement:1.0.0#CustomerStatusValueEnum",
       "label": "CustomerStatusValueEnum",
       "kind": "Characteristic",
       "preferredName": "Customer Status Value Enum",
-      "description": "Characteristic for the value of customer status"
+      "description": "Characteristic for the value of customer status",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.requirement:1.0.0#SupplierStatusValueEnum",
       "label": "SupplierStatusValueEnum",
       "kind": "Characteristic",
       "preferredName": "Supplier Status Value Characteristic",
-      "description": "Characteristic for the value of supplier status"
+      "description": "Characteristic for the value of supplier status",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.requirement:1.0.0#MetadataList",
@@ -396,7 +572,15 @@
       "label": "SpecificationList",
       "kind": "Characteristic",
       "preferredName": "Specification List",
-      "description": "A list of all related specifications (e.g. norms)"
+      "description": "A list of all related specifications (e.g. norms)",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.requirement:1.0.0#CustomerStatusList",

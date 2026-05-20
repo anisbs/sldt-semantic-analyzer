@@ -206,28 +206,60 @@
       "label": "StringCharacteristic",
       "kind": "Characteristic",
       "preferredName": "String Characteristic",
-      "description": "Characteristic to express string values"
+      "description": "Characteristic to express string values",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.shared.bill_of_process:1.1.0#BillOfProcessIdCharacteristic",
       "label": "BillOfProcessIdCharacteristic",
       "kind": "Characteristic",
       "preferredName": "Bill Of Process Id Characteristic",
-      "description": "Characteristic for Bill of process Identifiers"
+      "description": "Characteristic for Bill of process Identifiers",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.shared.bill_of_process:1.1.0#BillOfProcess",
       "label": "BillOfProcess",
       "kind": "Entity",
       "preferredName": "Bill of Process",
-      "description": "Entity to describe processes in an industrial context"
+      "description": "Entity to describe processes in an industrial context",
+      "external_refs": [
+        {
+          "predicate": "properties",
+          "target_local": "version",
+          "target_model": "shared.message_header@3.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.shared.bill_of_process:1.1.0#ProcessStep",
       "label": "ProcessStep",
       "kind": "Entity",
       "preferredName": "Process Step",
-      "description": "Entity to characterize single process steps"
+      "description": "Entity to characterize single process steps",
+      "external_refs": [
+        {
+          "predicate": "properties",
+          "target_local": "capabilityId",
+          "target_model": "manufacturing_capability@3.1.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.shared.bill_of_process:1.1.0#Parameter",
@@ -276,7 +308,15 @@
       "label": "ProcessStepIdentifierList",
       "kind": "Characteristic",
       "preferredName": "Process Step Identifier List",
-      "description": "List of process step identifiers to reference to  other process steps that are part of the bill of process"
+      "description": "List of process step identifiers to reference to  other process steps that are part of the bill of process",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.shared.bill_of_process:1.1.0#ParameterList",
@@ -297,7 +337,15 @@
       "label": "SemanticListCharacteristic",
       "kind": "Characteristic",
       "preferredName": "Semantic List Characteristic",
-      "description": "A list containing all semantic references for a parameter"
+      "description": "A list containing all semantic references for a parameter",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.shared.bill_of_process:1.1.0#ValueRangeList",
@@ -325,14 +373,30 @@
       "label": "ProcessStepTypeCharacteristic",
       "kind": "Characteristic",
       "preferredName": "Process Step Type Characteristic",
-      "description": "Distinguishes 4 cases of process steps: the first and the last process step, a process step that is in between the first and the last, or a subprocess step "
+      "description": "Distinguishes 4 cases of process steps: the first and the last process step, a process step that is in between the first and the last, or a subprocess step ",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.shared.bill_of_process:1.1.0#ParameterKeyCharacteristic",
       "label": "ParameterKeyCharacteristic",
       "kind": "Characteristic",
       "preferredName": "Parameter Key Characteristic",
-      "description": "Enumeration that predefines values for the parameter key"
+      "description": "Enumeration that predefines values for the parameter key",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     }
   ],
   "links": [

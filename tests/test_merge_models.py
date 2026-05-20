@@ -10,7 +10,9 @@ recalcul de `unused_property_urns` à l'échelle du groupe).
 from __future__ import annotations
 
 from sldt_analyzer.graph import merge_models
-from sldt_analyzer.parser import Dependency, Edge, Element, ParsedModel
+from sldt_analyzer.parser import (
+    Dependency, Edge, Element, ExternalRef, ParsedModel,
+)
 
 
 def _mk(path, source="catenax", name="batch", version="1.0.0",
@@ -163,6 +165,60 @@ class TestNoAspect:
         merged = merge_models([m1, m2])[0]
         assert merged.path == "data/x/1.0.0/A.ttl"
         assert {e.kind for e in merged.elements} == {"Property", "Entity"}
+
+
+class TestExternalRefsPromotion:
+    """Feature 23 — quand un .ttl du groupe référence un élément défini
+    dans un .ttl frère du même namespace, le parser le voit comme
+    `external_ref` (cible absente de `seen` localement) ; après fusion,
+    la cible est dans le modèle agrégé et la ref doit être **promue en
+    Edge**. Cas dominant IDTA (Aspect dans Foo.ttl pointe vers une
+    Property de Foo_shared.ttl)."""
+
+    def test_internal_ref_promoted_to_edge(self):
+        aspect = _el("Foo", "Aspect")
+        prop = _el("bar", "Property")
+        # Aspect dans Foo.ttl, Property dans Foo_shared.ttl. Au parse de
+        # Foo.ttl, la cible :bar n'est PAS dans `seen` -> external_ref.
+        aspect.external_refs.append(ExternalRef(
+            predicate="properties", target_urn=prop.urn,
+            target_local="bar", target_model="batch@1.0.0",
+            target_source="catenax",
+        ))
+        m1 = _mk("data/x/1.0.0/Foo.ttl", elements=[aspect])
+        m2 = _mk("data/x/1.0.0/Foo_shared.ttl", elements=[prop])
+
+        merged = merge_models([m1, m2])[0]
+        # The ref must have been promoted to an actual edge.
+        labels = sorted((e.source, e.target, e.label) for e in merged.edges)
+        assert labels == [(aspect.urn, prop.urn, "properties")]
+        # And removed from external_refs (no longer "external").
+        merged_aspect = next(e for e in merged.elements
+                              if e.kind == "Aspect")
+        assert merged_aspect.external_refs == []
+
+    def test_true_external_ref_kept(self):
+        # Ref vers une cible qui n'est PAS dans le groupe -> conserved
+        # as external_ref (true cross-model bridge).
+        aspect = _el("Foo", "Aspect")
+        aspect.external_refs.append(ExternalRef(
+            predicate="characteristic",
+            target_urn="urn:samm:io.admin-shell.idta.shared:3.1.0#SomeChar",
+            target_local="SomeChar", target_model="shared@3.1.0",
+            target_source="idta",
+        ))
+        m1 = _mk("data/x/1.0.0/Foo.ttl", elements=[aspect])
+        m2 = _mk("data/x/1.0.0/Foo_shared.ttl",
+                 elements=[_el("filler", "Property")])
+
+        merged = merge_models([m1, m2])[0]
+        # No edge created (target not in the group).
+        assert merged.edges == []
+        # Ref preserved on the Aspect.
+        merged_aspect = next(e for e in merged.elements
+                              if e.kind == "Aspect")
+        assert len(merged_aspect.external_refs) == 1
+        assert merged_aspect.external_refs[0].target_local == "SomeChar"
 
 
 class TestGrouping:

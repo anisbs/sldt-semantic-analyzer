@@ -39,14 +39,30 @@
       "label": "qualityTaskId",
       "kind": "Property",
       "preferredName": "Quality Task ID",
-      "description": "A unique quality task identifier where these list of parts analysis belong to."
+      "description": "A unique quality task identifier where these list of parts analysis belong to.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.parts_analyses:2.0.0#anonymizedVin",
       "label": "anonymizedVin",
       "kind": "Property",
       "preferredName": "Anonymized VIN",
-      "description": "Reference to vehicle. OEM-specific hashed VIN. This property is the link to the vehicle from which the analyzed part came from."
+      "description": "Reference to vehicle. OEM-specific hashed VIN. This property is the link to the vehicle from which the analyzed part came from.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.parts_analyses:2.0.0#status",
@@ -60,35 +76,75 @@
       "label": "isDefect",
       "kind": "Property",
       "preferredName": "Part defect flag",
-      "description": "True: Analysis turned out that analyzed part is defect accroding part's specification."
+      "description": "True: Analysis turned out that analyzed part is defect accroding part's specification.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Boolean",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.parts_analyses:2.0.0#resultsDescription",
       "label": "resultsDescription",
       "kind": "Property",
       "preferredName": "Several results of analysis",
-      "description": "Detailed description of part analysis results."
+      "description": "Detailed description of part analysis results.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.parts_analyses:2.0.0#manufacturerSerialPartNumber",
       "label": "manufacturerSerialPartNumber",
       "kind": "Property",
       "preferredName": "Manufacturer serial part number",
-      "description": "Serial Part Number of the analyzed part as assigned by the manufacturer of the part. The serial part number is unique for each serial part. Not available for all kinds of parts."
+      "description": "Serial Part Number of the analyzed part as assigned by the manufacturer of the part. The serial part number is unique for each serial part. Not available for all kinds of parts.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.parts_analyses:2.0.0#manufacturerPartNumber",
       "label": "manufacturerPartNumber",
       "kind": "Property",
       "preferredName": "Manufacturer Part Number",
-      "description": "Part number property for parts. This part number is not unique. Same parts have normally same part number."
+      "description": "Part number property for parts. This part number is not unique. Same parts have normally same part number.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.parts_analyses:2.0.0#manufacturerPartName",
       "label": "manufacturerPartName",
       "kind": "Property",
       "preferredName": "Manufacturer part name",
-      "description": "Name of the analyzed part as assigned by the manufacturer of the part."
+      "description": "Name of the analyzed part as assigned by the manufacturer of the part.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.parts_analyses:2.0.0#catenaXPartId",
@@ -102,14 +158,30 @@
       "label": "customerAnalysisID",
       "kind": "Property",
       "preferredName": "Customer Analysis ID",
-      "description": "Internal identifier for this analysis at customer."
+      "description": "Internal identifier for this analysis at customer.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.parts_analyses:2.0.0#customerPartNumber",
       "label": "customerPartNumber",
       "kind": "Property",
       "preferredName": "Customer part number",
-      "description": "Part number from original manufacturer equipment (OEM). This part number is normally not unique."
+      "description": "Part number from original manufacturer equipment (OEM). This part number is normally not unique.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.parts_analyses:2.0.0#addtionalInformation",
@@ -144,14 +216,30 @@
       "label": "Keys",
       "kind": "Characteristic",
       "preferredName": "Keys",
-      "description": "A list of additional keys. Togther with the values list this list forms the additional data information."
+      "description": "A list of additional keys. Togther with the values list this list forms the additional data information.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.parts_analyses:2.0.0#Values",
       "label": "Values",
       "kind": "Characteristic",
       "preferredName": "Values",
-      "description": "A list of additional values that forms the additional data. Togther with the keys list this list forms the additional data information."
+      "description": "A list of additional values that forms the additional data. Togther with the keys list this list forms the additional data information.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.parts_analyses:2.0.0#PartAnalysis",
@@ -172,7 +260,15 @@
       "label": "UniqueID",
       "kind": "Characteristic",
       "preferredName": "unique ID",
-      "description": "Characteristic for a unique id: every linked property to this characteristic is a unique ID"
+      "description": "Characteristic for a unique id: every linked property to this characteristic is a unique ID",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.parts_analyses:2.0.0#Text",
@@ -186,14 +282,30 @@
       "label": "UUIDv4",
       "kind": "Characteristic",
       "preferredName": "UUIDv4",
-      "description": "A version 4 UUID is a universally unique identifier that is generated using random 32 hexadecimal characters."
+      "description": "A version 4 UUID is a universally unique identifier that is generated using random 32 hexadecimal characters.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.parts_analyses:2.0.0#StatusCharacteristic",
       "label": "StatusCharacteristic",
       "kind": "Characteristic",
       "preferredName": "StatusCharacteristic",
-      "description": "Enumeration of the different status values"
+      "description": "Enumeration of the different status values",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.parts_analyses:2.0.0#CatenaXIdTrait",

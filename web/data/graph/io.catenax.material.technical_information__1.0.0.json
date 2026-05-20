@@ -39,7 +39,15 @@
       "label": "link",
       "kind": "Property",
       "preferredName": "link",
-      "description": "HTTP(S) address according to RFC 3986"
+      "description": "HTTP(S) address according to RFC 3986",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "ResourcePath",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.material.technical_information:1.0.0#payload",
@@ -53,7 +61,15 @@
       "label": "issueVersion",
       "kind": "Property",
       "preferredName": "issue version",
-      "description": "Versioning information of the Technical Information"
+      "description": "Versioning information of the Technical Information",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.material.technical_information:1.0.0#appliesToCountry",
@@ -74,7 +90,15 @@
       "label": "language",
       "kind": "Property",
       "preferredName": "language",
-      "description": "ISO-639-2/B code of language"
+      "description": "ISO-639-2/B code of language",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.material.technical_information:1.0.0#hasAlpha3Code",
@@ -88,7 +112,15 @@
       "label": "label",
       "kind": "Property",
       "preferredName": "label",
-      "description": "Country name."
+      "description": "Country name.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.material.technical_information:1.0.0#TechnicalInformationCharacteristicList",
@@ -137,14 +169,30 @@
       "label": "PayloadCharacteristic",
       "kind": "Characteristic",
       "preferredName": "payload characteristic",
-      "description": "Describes a Property which contains the Base64-encoded payload representation of the Technical Information."
+      "description": "Describes a Property which contains the Base64-encoded payload representation of the Technical Information.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "base64Binary",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.material.technical_information:1.0.0#IssueDateCharacteristic",
       "label": "IssueDateCharacteristic",
       "kind": "Characteristic",
       "preferredName": "issue date characteristic",
-      "description": "Describes the date of the Property."
+      "description": "Describes the date of the Property.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "date",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.material.technical_information:1.0.0#CountryTrait",
@@ -179,7 +227,15 @@
       "label": "Alpha3CodeCharacteristic",
       "kind": "Characteristic",
       "preferredName": "Alpha 3 Code",
-      "description": "Three letter country code defined in ISO 3166"
+      "description": "Three letter country code defined in ISO 3166",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.material.technical_information:1.0.0#ISO3166CodeConstraint",

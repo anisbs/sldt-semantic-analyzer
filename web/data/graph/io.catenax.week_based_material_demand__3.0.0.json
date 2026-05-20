@@ -44,7 +44,15 @@
       "label": "materialDemandId",
       "kind": "Property",
       "preferredName": "Material Demand ID",
-      "description": "The Material Demand ID uniquely identifies the material demand within the business relationship between a customer and its supplier."
+      "description": "The Material Demand ID uniquely identifies the material demand within the business relationship between a customer and its supplier.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "UuidV4Trait",
+          "target_model": "shared.uuid@2.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.week_based_material_demand:3.0.0#demandSeries",
@@ -58,21 +66,45 @@
       "label": "customer",
       "kind": "Property",
       "preferredName": "Customer",
-      "description": "The Business Partner Number Legal Entity (BPNL) of the party requesting materials from a supplier."
+      "description": "The Business Partner Number Legal Entity (BPNL) of the party requesting materials from a supplier.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "BpnlTrait",
+          "target_model": "shared.business_partner_number@2.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.week_based_material_demand:3.0.0#supplier",
       "label": "supplier",
       "kind": "Property",
       "preferredName": "Supplier",
-      "description": "The Business Partner Number Legal Entity (BPNL) of the party providing materials to a customer."
+      "description": "The Business Partner Number Legal Entity (BPNL) of the party providing materials to a customer.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "BpnlTrait",
+          "target_model": "shared.business_partner_number@2.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.week_based_material_demand:3.0.0#unitOfMeasure",
       "label": "unitOfMeasure",
       "kind": "Property",
       "preferredName": "Unit of Measure",
-      "description": "Unit of measurement for demand quantities."
+      "description": "Unit of measurement for demand quantities.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "ItemUnitEnumeration",
+          "target_model": "shared.quantity@2.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.week_based_material_demand:3.0.0#materialNumberCustomer",
@@ -107,28 +139,60 @@
       "label": "materialGlobalAssetId",
       "kind": "Property",
       "preferredName": "UUID of the Part Type Twin",
-      "description": "Identifier used uniquely to identify part type twin."
+      "description": "Identifier used uniquely to identify part type twin.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "UuidV4Trait",
+          "target_model": "shared.uuid@2.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.week_based_material_demand:3.0.0#unitOfMeasureIsOmitted",
       "label": "unitOfMeasureIsOmitted",
       "kind": "Property",
       "preferredName": "Unit Of Measure Is Omitted",
-      "description": "Explicit indicator of whether the unit of measure is left out of the payload intentionally. If \"true\" it means the sending application sends demand values without unit of measure intentionally and the unit of measure MUST NOT be contained in the payload. If \"false\" a unit of measure MUST be supplied."
+      "description": "Explicit indicator of whether the unit of measure is left out of the payload intentionally. If \"true\" it means the sending application sends demand values without unit of measure intentionally and the unit of measure MUST NOT be contained in the payload. If \"false\" a unit of measure MUST be supplied.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Boolean",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.week_based_material_demand:3.0.0#materialDemandIsInactive",
       "label": "materialDemandIsInactive",
       "kind": "Property",
       "preferredName": "Material Demand Is Inactive",
-      "description": "Indicates that this material demand is currently not in use/maintained by the supplier."
+      "description": "Indicates that this material demand is currently not in use/maintained by the supplier.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Boolean",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.week_based_material_demand:3.0.0#customerLocation",
       "label": "customerLocation",
       "kind": "Property",
       "preferredName": "Customer Location",
-      "description": "The Business Partner Number Site (BPNS) of the site at which the customer needs the specified material for this demand series."
+      "description": "The Business Partner Number Site (BPNS) of the site at which the customer needs the specified material for this demand series.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "BpnsTrait",
+          "target_model": "shared.business_partner_number@2.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.week_based_material_demand:3.0.0#demandCategory",
@@ -149,7 +213,15 @@
       "label": "expectedSupplierLocation",
       "kind": "Property",
       "preferredName": "Expected Supplier Location",
-      "description": "The Business Partner Number Site (BPNS) of the site from where the customer expects the supplier to fulfill the demands of the demand series. The value is used for informational purposes only and is therefore not binding for the supplier."
+      "description": "The Business Partner Number Site (BPNS) of the site from where the customer expects the supplier to fulfill the demands of the demand series. The value is used for informational purposes only and is therefore not binding for the supplier.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "BpnsTrait",
+          "target_model": "shared.business_partner_number@2.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.week_based_material_demand:3.0.0#demandCategoryCode",
@@ -163,7 +235,15 @@
       "label": "demandCategoryName",
       "kind": "Property",
       "preferredName": "Demand Category Name",
-      "description": "The name describing a demand category."
+      "description": "The name describing a demand category.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "MultiLanguageText",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.week_based_material_demand:3.0.0#demand",
@@ -191,35 +271,75 @@
       "label": "MaterialNumber",
       "kind": "Characteristic",
       "preferredName": "Material Number",
-      "description": "The material number is a multi-character string, usually assigned by an ERP system."
+      "description": "The material number is a multi-character string, usually assigned by an ERP system.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.week_based_material_demand:3.0.0#MaterialDescription",
       "label": "MaterialDescription",
       "kind": "Characteristic",
       "preferredName": "Material Description",
-      "description": "Description of a material demand."
+      "description": "Description of a material demand.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.week_based_material_demand:3.0.0#Timestamp",
       "label": "Timestamp",
       "kind": "Characteristic",
       "preferredName": "Timestamp",
-      "description": "Point in time."
+      "description": "Point in time.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "dateTimeStamp",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.week_based_material_demand:3.0.0#PointInTimeCharacteristic",
       "label": "PointInTimeCharacteristic",
       "kind": "Characteristic",
       "preferredName": "Point in Time Characteristic",
-      "description": "- If demand rate is \"calendar week\": An ISO calendar week in which a given demand is needed. Must be given as date of the Monday in the week. (ISO-8601-1:2019)\n- If demand rate is \"day\": An ISO day on which a given demand is needed. Must be given as single day (consider the time zone of the customer's location). (ISO-8601)"
+      "description": "- If demand rate is \"calendar week\": An ISO calendar week in which a given demand is needed. Must be given as date of the Monday in the week. (ISO-8601-1:2019)\n- If demand rate is \"day\": An ISO day on which a given demand is needed. Must be given as single day (consider the time zone of the customer's location). (ISO-8601)",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "date",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.week_based_material_demand:3.0.0#Quantity",
       "label": "Quantity",
       "kind": "Characteristic",
       "preferredName": "Quantity",
-      "description": "Quantities of demands."
+      "description": "Quantities of demands.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "decimal",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.week_based_material_demand:3.0.0#DemandSeries",
@@ -261,7 +381,15 @@
       "label": "DemandCategoryCodeCharacteristic",
       "kind": "Characteristic",
       "preferredName": "Demand Category Code Characteristic",
-      "description": "The code identifying a demand category."
+      "description": "The code identifying a demand category.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.week_based_material_demand:3.0.0#QuantityTrait",

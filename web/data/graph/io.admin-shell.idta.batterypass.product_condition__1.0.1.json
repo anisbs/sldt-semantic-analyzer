@@ -37,21 +37,105 @@
       "label": "ProductCondition",
       "kind": "Aspect",
       "preferredName": "product condition",
-      "description": "Covers all battery lifetime relevant properties."
+      "description": "Covers all battery lifetime relevant properties.",
+      "external_refs": [
+        {
+          "predicate": "properties",
+          "target_local": "energyThroughput",
+          "target_model": "batterypass.product_condition@1.0.0",
+          "target_source": "idta"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "capacityThroughput",
+          "target_model": "batterypass.product_condition@1.0.0",
+          "target_source": "idta"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "stateOfCertifiedEnergy",
+          "target_model": "batterypass.product_condition@1.0.0",
+          "target_source": "idta"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "remainingEnergy",
+          "target_model": "batterypass.product_condition@1.0.0",
+          "target_source": "idta"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "remainingCapacity",
+          "target_model": "batterypass.product_condition@1.0.0",
+          "target_source": "idta"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "negativeEvents",
+          "target_model": "batterypass.product_condition@1.0.0",
+          "target_source": "idta"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "remainingPowerCapability",
+          "target_model": "batterypass.product_condition@1.0.0",
+          "target_source": "idta"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "evolutionOfSelfDischarge",
+          "target_model": "batterypass.product_condition@1.0.0",
+          "target_source": "idta"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "currentSelfDischargingRate",
+          "target_model": "batterypass.product_condition@1.0.0",
+          "target_source": "idta"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "remainingRoundTripEnergyEfficiency",
+          "target_model": "batterypass.product_condition@1.0.0",
+          "target_source": "idta"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "stateOfCharge",
+          "target_model": "batterypass.product_condition@1.0.0",
+          "target_source": "idta"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#informationOnAccidents",
       "label": "informationOnAccidents",
       "kind": "Property",
       "preferredName": "information on accidents",
-      "description": "The battery passport must contain information and data resulting from its use such as accidents. \n\nDIN DKE Spec 99100 chapter reference: 6.7.8.4"
+      "description": "The battery passport must contain information and data resulting from its use such as accidents. \n\nDIN DKE Spec 99100 chapter reference: 6.7.8.4",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "DocumentIdentifierSet",
+          "target_model": "shared@3.1.0",
+          "target_source": "idta"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#lastUpdate",
       "label": "lastUpdate",
       "kind": "Property",
       "preferredName": "last update",
-      "description": "Timestamp for dynamic data attributes show the last update time.\n\n   Defined time within a time range, measured from the start time of the time range.\n   "
+      "description": "Timestamp for dynamic data attributes show the last update time.\n\n   Defined time within a time range, measured from the start time of the time range.\n   ",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Timestamp",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.2.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#energyThroughput",
@@ -149,7 +233,15 @@
       "label": "negativeEventValue",
       "kind": "Property",
       "preferredName": "negative event",
-      "description": "Negative event, such as an accident. No further definition provided by regulation."
+      "description": "Negative event, such as an accident. No further definition provided by regulation.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.2.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#temperatureInformation",
@@ -226,7 +318,15 @@
       "label": "rPCLastUpdated",
       "kind": "Property",
       "preferredName": "RPC last updated",
-      "description": "RPC last updated."
+      "description": "RPC last updated.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Timestamp",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.2.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#evolutionOfSelfDischarge",
@@ -485,119 +585,255 @@
       "label": "EnergyThroughputValue",
       "kind": "Characteristic",
       "preferredName": null,
-      "description": null
+      "description": null,
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "float",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#CapacityThroughputValue",
       "label": "CapacityThroughputValue",
       "kind": "Characteristic",
       "preferredName": null,
-      "description": null
+      "description": null,
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "float",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#NumberOfFullCyclesValue",
       "label": "NumberOfFullCyclesValue",
       "kind": "Characteristic",
       "preferredName": null,
-      "description": null
+      "description": null,
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "unsignedInt",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#StateOfCertifiedEnergyValue",
       "label": "StateOfCertifiedEnergyValue",
       "kind": "Characteristic",
       "preferredName": null,
-      "description": null
+      "description": null,
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "float",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#UBERemainingValue",
       "label": "UBERemainingValue",
       "kind": "Characteristic",
       "preferredName": null,
-      "description": null
+      "description": null,
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "float",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#RemainingCapacityValue",
       "label": "RemainingCapacityValue",
       "kind": "Characteristic",
       "preferredName": null,
-      "description": null
+      "description": null,
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "float",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#Temperature",
       "label": "Temperature",
       "kind": "Characteristic",
       "preferredName": null,
-      "description": null
+      "description": null,
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "float",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#TimeExtremeHighTemp",
       "label": "TimeExtremeHighTemp",
       "kind": "Characteristic",
       "preferredName": null,
-      "description": null
+      "description": null,
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "float",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#TimeExtremeLowTemp",
       "label": "TimeExtremeLowTemp",
       "kind": "Characteristic",
       "preferredName": null,
-      "description": null
+      "description": null,
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "float",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#TimeExtremeHighTempCharging",
       "label": "TimeExtremeHighTempCharging",
       "kind": "Characteristic",
       "preferredName": null,
-      "description": null
+      "description": null,
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "float",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#TimeExtremeLowTempCharging",
       "label": "TimeExtremeLowTempCharging",
       "kind": "Characteristic",
       "preferredName": null,
-      "description": null
+      "description": null,
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "float",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#AtSoC",
       "label": "AtSoC",
       "kind": "Characteristic",
       "preferredName": null,
-      "description": null
+      "description": null,
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "float",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#PowerCapabilityAtSoc",
       "label": "PowerCapabilityAtSoc",
       "kind": "Characteristic",
       "preferredName": null,
-      "description": null
+      "description": null,
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "float",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#EvolutionOfSelfDischargeEntityValue",
       "label": "EvolutionOfSelfDischargeEntityValue",
       "kind": "Characteristic",
       "preferredName": null,
-      "description": null
+      "description": null,
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "float",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#CurrentSelfDischargingRateValue",
       "label": "CurrentSelfDischargingRateValue",
       "kind": "Characteristic",
       "preferredName": null,
-      "description": null
+      "description": null,
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "float",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#StateOfChargeValue",
       "label": "StateOfChargeValue",
       "kind": "Characteristic",
       "preferredName": "Value",
-      "description": null
+      "description": null,
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "float",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#RemainingRoundTripEnergyEfficiencyValue",
       "label": "RemainingRoundTripEnergyEfficiencyValue",
       "kind": "Characteristic",
       "preferredName": null,
-      "description": null
+      "description": null,
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "float",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#NegativeEvents",
@@ -1080,6 +1316,18 @@
       "source": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#RemainingRoundTripEnergyEfficiency",
       "target": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#RemainingRoundTripEnergyEfficiencyEntity",
       "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#ProductCondition",
+      "target": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#numberOfFullCycles",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#ProductCondition",
+      "target": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#temperatureInformation",
+      "label": "properties",
       "optional": false
     }
   ]

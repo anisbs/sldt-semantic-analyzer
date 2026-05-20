@@ -25,7 +25,15 @@
       "label": "sku",
       "kind": "Property",
       "preferredName": null,
-      "description": "Stock Keeping Unit is an unique identifier of the dealer providing the product."
+      "description": "Stock Keeping Unit is an unique identifier of the dealer providing the product.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "io.openmanufacturing:characteristic@1.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.market_place_offer:1.2.0#quantity",
@@ -39,7 +47,15 @@
       "label": "unitOfMeasure",
       "kind": "Property",
       "preferredName": null,
-      "description": "The unit of measure (related to quantity)."
+      "description": "The unit of measure (related to quantity).",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "io.openmanufacturing:characteristic@1.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.market_place_offer:1.2.0#condition",
@@ -60,7 +76,15 @@
       "label": "incoterms",
       "kind": "Property",
       "preferredName": null,
-      "description": "The incoterms."
+      "description": "The incoterms.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "io.openmanufacturing:characteristic@1.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.market_place_offer:1.2.0#price",
@@ -193,14 +217,30 @@
       "label": "currency",
       "kind": "Property",
       "preferredName": null,
-      "description": "The currency of the price."
+      "description": "The currency of the price.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "io.openmanufacturing:characteristic@1.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.market_place_offer:1.2.0#name",
       "label": "name",
       "kind": "Property",
       "preferredName": "name",
-      "description": "Name or title of the object."
+      "description": "Name or title of the object.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "io.openmanufacturing:characteristic@1.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.market_place_offer:1.2.0#location",
@@ -214,14 +254,30 @@
       "label": "certificateNumber",
       "kind": "Property",
       "preferredName": "certificate number",
-      "description": "The number of the certificate."
+      "description": "The number of the certificate.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "io.openmanufacturing:characteristic@1.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.market_place_offer:1.2.0#issue",
       "label": "issue",
       "kind": "Property",
       "preferredName": "issue",
-      "description": "The issue of the certificate."
+      "description": "The issue of the certificate.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "io.openmanufacturing:characteristic@1.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.market_place_offer:1.2.0#publicationYear",
@@ -235,7 +291,15 @@
       "label": "effectiveDate",
       "kind": "Property",
       "preferredName": "effective date",
-      "description": "The date the certificate becomes effective."
+      "description": "The date the certificate becomes effective.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Timestamp",
+          "target_model": "io.openmanufacturing:characteristic@1.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.market_place_offer:1.2.0#expirationDate",
@@ -249,14 +313,30 @@
       "label": "productDescription",
       "kind": "Property",
       "preferredName": "product description",
-      "description": "The description of the product on the marketplace."
+      "description": "The description of the product on the marketplace.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "io.openmanufacturing:characteristic@1.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.market_place_offer:1.2.0#brand",
       "label": "brand",
       "kind": "Property",
       "preferredName": "brand",
-      "description": "The brandname of the offered product."
+      "description": "The brandname of the offered product.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "io.openmanufacturing:characteristic@1.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.market_place_offer:1.2.0#category",
@@ -270,14 +350,30 @@
       "label": "originalManufacturer",
       "kind": "Property",
       "preferredName": "original manufacturer",
-      "description": "The original manufacturer of a product."
+      "description": "The original manufacturer of a product.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "io.openmanufacturing:characteristic@1.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.market_place_offer:1.2.0#manufacturerPartNumber",
       "label": "manufacturerPartNumber",
       "kind": "Property",
       "preferredName": "manufacturer part number",
-      "description": "The unique identifier of the product from the manufacturer."
+      "description": "The unique identifier of the product from the manufacturer.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "io.openmanufacturing:characteristic@1.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.market_place_offer:1.2.0#productLink",
@@ -291,7 +387,15 @@
       "label": "oeNumber",
       "kind": "Property",
       "preferredName": "original equipment number",
-      "description": "The original equipment number."
+      "description": "The original equipment number.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "io.openmanufacturing:characteristic@1.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.market_place_offer:1.2.0#technicalSpecification",
@@ -319,28 +423,60 @@
       "label": "key",
       "kind": "Property",
       "preferredName": "key",
-      "description": "The key of the key value pair."
+      "description": "The key of the key value pair.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "io.openmanufacturing:characteristic@1.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.market_place_offer:1.2.0#technicalValue",
       "label": "technicalValue",
       "kind": "Property",
       "preferredName": "technical value",
-      "description": "The value of the key value pair."
+      "description": "The value of the key value pair.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "io.openmanufacturing:characteristic@1.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.market_place_offer:1.2.0#ConditionCharacteristic",
       "label": "ConditionCharacteristic",
       "kind": "Characteristic",
       "preferredName": "Condition Characteristic",
-      "description": "Condition of the article as enumeration."
+      "description": "Condition of the article as enumeration.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.market_place_offer:1.2.0#Status",
       "label": "Status",
       "kind": "Characteristic",
       "preferredName": "Status",
-      "description": null
+      "description": null,
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.market_place_offer:1.2.0#GeographicalCoordinates",
@@ -375,7 +511,15 @@
       "label": "BundleOffer",
       "kind": "Characteristic",
       "preferredName": "bundle offer",
-      "description": null
+      "description": null,
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "boolean",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.market_place_offer:1.2.0#ProductCharacteristic",
@@ -389,49 +533,105 @@
       "label": "Boolean",
       "kind": "Characteristic",
       "preferredName": "boolean",
-      "description": null
+      "description": null,
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "boolean",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.market_place_offer:1.2.0#AvailabilityDateCharacteristic",
       "label": "AvailabilityDateCharacteristic",
       "kind": "Characteristic",
       "preferredName": "availability date characteristic",
-      "description": "The availability date when the product is in stock."
+      "description": "The availability date when the product is in stock.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "date",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.market_place_offer:1.2.0#LongitudeCharacteristic",
       "label": "LongitudeCharacteristic",
       "kind": "Characteristic",
       "preferredName": "longitude characteristic",
-      "description": null
+      "description": null,
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "float",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.market_place_offer:1.2.0#LatitudeCharacteristic",
       "label": "LatitudeCharacteristic",
       "kind": "Characteristic",
       "preferredName": "latitude characteristic",
-      "description": null
+      "description": null,
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "float",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.market_place_offer:1.2.0#Value",
       "label": "Value",
       "kind": "Characteristic",
       "preferredName": "value",
-      "description": null
+      "description": null,
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "float",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.market_place_offer:1.2.0#LocationCharacteristic",
       "label": "LocationCharacteristic",
       "kind": "Characteristic",
       "preferredName": "Location characteristic",
-      "description": "Location with an URI."
+      "description": "Location with an URI.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "anyURI",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.market_place_offer:1.2.0#Timestamp",
       "label": "Timestamp",
       "kind": "Characteristic",
       "preferredName": null,
-      "description": "Describes a Property which contains the date and time with an optional timezone."
+      "description": "Describes a Property which contains the date and time with an optional timezone.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "dateTime",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.market_place_offer:1.2.0#CategoryCharacteristic",
@@ -445,7 +645,15 @@
       "label": "ProductLinkCharacteristic",
       "kind": "Characteristic",
       "preferredName": "product link characteristic",
-      "description": null
+      "description": null,
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "anyURI",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.market_place_offer:1.2.0#Certificates",
@@ -466,7 +674,15 @@
       "label": "MileageCharacteristic",
       "kind": "Characteristic",
       "preferredName": "mileage characteristic",
-      "description": "The value describing the mileage of the item."
+      "description": "The value describing the mileage of the item.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "decimal",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.market_place_offer:1.2.0#GeographicalCoordinate",
@@ -529,28 +745,60 @@
       "label": "Year",
       "kind": "Characteristic",
       "preferredName": null,
-      "description": null
+      "description": null,
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "gYear",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.market_place_offer:1.2.0#MainCategory",
       "label": "MainCategory",
       "kind": "Characteristic",
       "preferredName": "main category",
-      "description": null
+      "description": null,
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.market_place_offer:1.2.0#SubCategory",
       "label": "SubCategory",
       "kind": "Characteristic",
       "preferredName": "sub category",
-      "description": null
+      "description": null,
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.market_place_offer:1.2.0#QuantityCharacteristic",
       "label": "QuantityCharacteristic",
       "kind": "Characteristic",
       "preferredName": "quantity characteristic",
-      "description": "The available quantity of the on the offered product in SKU."
+      "description": "The available quantity of the on the offered product in SKU.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "float",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     }
   ],
   "links": [

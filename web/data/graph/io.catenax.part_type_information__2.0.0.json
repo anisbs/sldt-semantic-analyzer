@@ -37,7 +37,15 @@
       "label": "PartTypeInformation",
       "kind": "Aspect",
       "preferredName": "Part Type Information",
-      "description": "A Part Type Information represents an item in the Catena-X Bill of Material (BOM) on a type level in a specific version."
+      "description": "A Part Type Information represents an item in the Catena-X Bill of Material (BOM) on a type level in a specific version.",
+      "external_refs": [
+        {
+          "predicate": "properties",
+          "target_local": "globalAssetId",
+          "target_model": "shared.industry_core.common@1.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.part_type_information:2.0.0#partTypeInformation",
@@ -58,7 +66,15 @@
       "label": "siteId",
       "kind": "Property",
       "preferredName": "site identifier",
-      "description": "The identifier of the site according to BPDM. The siteId must be a valid BPN. The BPN is a unique, unchangeable identifier for business partners / company locations from foundation to closure, regardless of the different business relationships / structures between or within the business partners or company locations."
+      "description": "The identifier of the site according to BPDM. The siteId must be a valid BPN. The BPN is a unique, unchangeable identifier for business partners / company locations from foundation to closure, regardless of the different business relationships / structures between or within the business partners or company locations.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "BpnsTrait",
+          "target_model": "shared.business_partner_number@2.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.part_type_information:2.0.0#function",
@@ -72,14 +88,30 @@
       "label": "functionValidFrom",
       "kind": "Property",
       "preferredName": "Function valid from",
-      "description": "Timestamp, from when the site has the specified function for the given part."
+      "description": "Timestamp, from when the site has the specified function for the given part.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Timestamp",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.part_type_information:2.0.0#functionValidUntil",
       "label": "functionValidUntil",
       "kind": "Property",
       "preferredName": "Function valid until",
-      "description": "Timestamp, until when the site has the specified function for the given part."
+      "description": "Timestamp, until when the site has the specified function for the given part.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Timestamp",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.part_type_information:2.0.0#PartTypeInformationCharacteristic",
@@ -100,7 +132,27 @@
       "label": "PartTypeInformationEntity",
       "kind": "Entity",
       "preferredName": "Part Type Information Entity",
-      "description": "Encapsulation for data related to the part type."
+      "description": "Encapsulation for data related to the part type.",
+      "external_refs": [
+        {
+          "predicate": "properties",
+          "target_local": "partClassification",
+          "target_model": "shared.industry_core.part_classification@1.0.0",
+          "target_source": "catenax"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "nameAtManufacturer",
+          "target_model": "shared.industry_core.common@1.0.0",
+          "target_source": "catenax"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "manufacturerPartId",
+          "target_model": "shared.industry_core.common@1.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.part_type_information:2.0.0#partSitesInformationAsPlannedEntity",
@@ -114,7 +166,15 @@
       "label": "FunctionCharacteristic",
       "kind": "Characteristic",
       "preferredName": "Function characteristic",
-      "description": "Describes the characteristics of the function for a site related to the respective part."
+      "description": "Describes the characteristics of the function for a site related to the respective part.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     }
   ],
   "links": [

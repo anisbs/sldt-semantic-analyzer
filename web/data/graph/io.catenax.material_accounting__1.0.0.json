@@ -37,7 +37,15 @@
       "label": "Composition",
       "kind": "Aspect",
       "preferredName": "composition",
-      "description": "The Composition aspect model defines a standardized and interoperable representation of material compositions, capturing material shares of a digital twin in a consistent and machine-readable manner."
+      "description": "The Composition aspect model defines a standardized and interoperable representation of material compositions, capturing material shares of a digital twin in a consistent and machine-readable manner.",
+      "external_refs": [
+        {
+          "predicate": "properties",
+          "target_local": "globalAssetId",
+          "target_model": "shared.industry_core.common@1.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.material_accounting:1.0.0#materials",
@@ -65,35 +73,81 @@
       "label": "MaterialEntity",
       "kind": "Entity",
       "preferredName": "material entity",
-      "description": "Materials shares of a digital twin."
+      "description": "Materials shares of a digital twin.",
+      "external_refs": [
+        {
+          "predicate": "properties",
+          "target_local": "globalAssetId",
+          "target_model": "shared.industry_core.common@1.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.material_accounting:1.0.0#WeightCharacteristic",
       "label": "WeightCharacteristic",
       "kind": "Characteristic",
       "preferredName": "weight characteristic",
-      "description": "Weight Characteristic"
+      "description": "Weight Characteristic",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "float",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.material_accounting:1.0.0#Material",
       "label": "Material",
       "kind": "Aspect",
       "preferredName": "material",
-      "description": "The Material aspect model defines a standardized and interoperable representation based on VDA material classification and also covering chemical, thermal, and physical properties as well as material states, formats, and uncertainty information, in a consistent and machine-readable manner."
+      "description": "The Material aspect model defines a standardized and interoperable representation based on VDA material classification and also covering chemical, thermal, and physical properties as well as material states, formats, and uncertainty information, in a consistent and machine-readable manner.",
+      "external_refs": [
+        {
+          "predicate": "properties",
+          "target_local": "materialClassification",
+          "target_model": "shared.material_classification@1.0.0",
+          "target_source": "catenax"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "globalAssetId",
+          "target_model": "shared.industry_core.common@1.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.material_accounting:1.0.0#thermalCharacterization",
       "label": "thermalCharacterization",
       "kind": "Property",
       "preferredName": "thermal characterization",
-      "description": "Characterisation of Materials Thermal: Information about the material's behaviour under various thermal conditions."
+      "description": "Characterisation of Materials Thermal: Information about the material's behaviour under various thermal conditions.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.material_accounting:1.0.0#chemicalCharacterization",
       "label": "chemicalCharacterization",
       "kind": "Property",
       "preferredName": "chemical characterization",
-      "description": "Characterisation of Materials Chemical: Description of the chemical composition and properties of the material."
+      "description": "Characterisation of Materials Chemical: Description of the chemical composition and properties of the material.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.material_accounting:1.0.0#physicalState",
@@ -107,42 +161,90 @@
       "label": "materialFormat",
       "kind": "Property",
       "preferredName": "material format",
-      "description": "Format of material in the process step."
+      "description": "Format of material in the process step.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.material_accounting:1.0.0#materialStatus",
       "label": "materialStatus",
       "kind": "Property",
       "preferredName": "material status",
-      "description": "Status of the material in the process step"
+      "description": "Status of the material in the process step",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.material_accounting:1.0.0#rangeOfUncertainty",
       "label": "rangeOfUncertainty",
       "kind": "Property",
       "preferredName": "range of uncertainty",
-      "description": "Tolerance specification in material composition"
+      "description": "Tolerance specification in material composition",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.material_accounting:1.0.0#PhysicalStateEnum",
       "label": "PhysicalStateEnum",
       "kind": "Characteristic",
       "preferredName": "physical state enum",
-      "description": "physical state enum"
+      "description": "physical state enum",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.material_accounting:1.0.0#RecyclingBatch",
       "label": "RecyclingBatch",
       "kind": "Aspect",
       "preferredName": "recycling batch",
-      "description": "The RecyclingBatch aspect model defines a standardized and interoperable representation containing information about involved actors, process steps, and batch-specific details such as identifiers and container-related properties, in a consistent and machine-readable manner."
+      "description": "The RecyclingBatch aspect model defines a standardized and interoperable representation containing information about involved actors, process steps, and batch-specific details such as identifiers and container-related properties, in a consistent and machine-readable manner.",
+      "external_refs": [
+        {
+          "predicate": "properties",
+          "target_local": "globalAssetId",
+          "target_model": "shared.industry_core.common@1.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.material_accounting:1.0.0#recyclingBatchId",
       "label": "recyclingBatchId",
       "kind": "Property",
       "preferredName": "recycling batch identifier",
-      "description": "Identifier of the recycling batch."
+      "description": "Identifier of the recycling batch.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.material_accounting:1.0.0#container",
@@ -205,28 +307,60 @@
       "label": "containerDescription",
       "kind": "Property",
       "preferredName": "container description",
-      "description": "Standardized description of the container type according to AVAL."
+      "description": "Standardized description of the container type according to AVAL.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.material_accounting:1.0.0#containerTypeId",
       "label": "containerTypeId",
       "kind": "Property",
       "preferredName": "container type identifier",
-      "description": "Standardized number for the container type which contains compositions / components / materials according to AVAL"
+      "description": "Standardized number for the container type which contains compositions / components / materials according to AVAL",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.material_accounting:1.0.0#startTimestamp",
       "label": "startTimestamp",
       "kind": "Property",
       "preferredName": "start timestamp",
-      "description": "Start of the specific process step."
+      "description": "Start of the specific process step.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Timestamp",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.material_accounting:1.0.0#endTimestamp",
       "label": "endTimestamp",
       "kind": "Property",
       "preferredName": "end timestamp",
-      "description": "End of the specific process step."
+      "description": "End of the specific process step.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Timestamp",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.material_accounting:1.0.0#inputNetMass",
@@ -247,14 +381,30 @@
       "label": "measurementType",
       "kind": "Property",
       "preferredName": "measurement type",
-      "description": "Measuring instrument for material share/weight determination."
+      "description": "Measuring instrument for material share/weight determination.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.material_accounting:1.0.0#measurementTimestamp",
       "label": "measurementTimestamp",
       "kind": "Property",
       "preferredName": "measurement timestamp",
-      "description": "timestamp of the specific time of measurement."
+      "description": "timestamp of the specific time of measurement.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Timestamp",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.material_accounting:1.0.0#processLoss",
@@ -268,14 +418,30 @@
       "label": "weighingSlip",
       "kind": "Property",
       "preferredName": "weighing slip",
-      "description": "Official document that records the result of weighing (of composition / components / materials) on a scale."
+      "description": "Official document that records the result of weighing (of composition / components / materials) on a scale.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.material_accounting:1.0.0#lossType",
       "label": "lossType",
       "kind": "Property",
       "preferredName": "loss type",
-      "description": "Specification of loss within the specific process step."
+      "description": "Specification of loss within the specific process step.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.material_accounting:1.0.0#childProcessType",
@@ -296,14 +462,30 @@
       "label": "mechanicalRecycling",
       "kind": "Property",
       "preferredName": "mechanical recycling",
-      "description": "Materials that have undergone mechanical recycling (true or false)."
+      "description": "Materials that have undergone mechanical recycling (true or false).",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Boolean",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.material_accounting:1.0.0#chemicalRecycling",
       "label": "chemicalRecycling",
       "kind": "Property",
       "preferredName": "chemical recycling",
-      "description": "Materials that have undergone chemical recycling (true or false)."
+      "description": "Materials that have undergone chemical recycling (true or false).",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Boolean",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.material_accounting:1.0.0#processType",
@@ -317,7 +499,15 @@
       "label": "actorNumber",
       "kind": "Property",
       "preferredName": "actor number",
-      "description": "Operating number of the actor."
+      "description": "Operating number of the actor.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.material_accounting:1.0.0#actorRole",
@@ -331,7 +521,15 @@
       "label": "transferId",
       "kind": "Property",
       "preferredName": "transfer identifier",
-      "description": "Identifier for the transport of compositions / components / materials between two actors."
+      "description": "Identifier for the transport of compositions / components / materials between two actors.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.material_accounting:1.0.0#ContainerCharacteristic",
@@ -394,63 +592,135 @@
       "label": "ActorEntity",
       "kind": "Entity",
       "preferredName": "actor entity",
-      "description": "Single Entity of an Actor"
+      "description": "Single Entity of an Actor",
+      "external_refs": [
+        {
+          "predicate": "properties",
+          "target_local": "bpnsProperty",
+          "target_model": "shared.business_partner_number@2.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.material_accounting:1.0.0#OperatorEntity",
       "label": "OperatorEntity",
       "kind": "Entity",
       "preferredName": "operator entity",
-      "description": "Entity of operator"
+      "description": "Entity of operator",
+      "external_refs": [
+        {
+          "predicate": "properties",
+          "target_local": "bpnsProperty",
+          "target_model": "shared.business_partner_number@2.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.material_accounting:1.0.0#MassCharacteristic",
       "label": "MassCharacteristic",
       "kind": "Characteristic",
       "preferredName": "mass characteristic",
-      "description": "Characteric for mass data (in kg)."
+      "description": "Characteric for mass data (in kg).",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "float",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.material_accounting:1.0.0#VolumeCharacteristic",
       "label": "VolumeCharacteristic",
       "kind": "Characteristic",
       "preferredName": "volume characteristic",
-      "description": "Characteristic describing the volume."
+      "description": "Characteristic describing the volume.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "positiveInteger",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.material_accounting:1.0.0#ChildProcessEnum",
       "label": "ChildProcessEnum",
       "kind": "Characteristic",
       "preferredName": "child process enum",
-      "description": "Enumeration of valid child process types."
+      "description": "Enumeration of valid child process types.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.material_accounting:1.0.0#DisposalCodeEnum",
       "label": "DisposalCodeEnum",
       "kind": "Characteristic",
       "preferredName": "disposal code enum",
-      "description": "Enumreation valid disposal codes."
+      "description": "Enumreation valid disposal codes.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.material_accounting:1.0.0#ProcessTypeEnum",
       "label": "ProcessTypeEnum",
       "kind": "Characteristic",
       "preferredName": "process type enum",
-      "description": "Enumeration of valid process type values."
+      "description": "Enumeration of valid process type values.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.material_accounting:1.0.0#ActorRoleEnumeration",
       "label": "ActorRoleEnumeration",
       "kind": "Characteristic",
       "preferredName": "actor role enumeration",
-      "description": "Enums of the actor role."
+      "description": "Enums of the actor role.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.material_accounting:1.0.0#RecyclingInformation",
       "label": "RecyclingInformation",
       "kind": "Aspect",
       "preferredName": "recycling information",
-      "description": "The RecyclingInformation aspect model defines a standardized and interoperable representation of recycling-related material shares, including material origin, reutilization, pre- and post-consumer shares, and primary and secondary material sources, in a consistent and machine-readable manner."
+      "description": "The RecyclingInformation aspect model defines a standardized and interoperable representation of recycling-related material shares, including material origin, reutilization, pre- and post-consumer shares, and primary and secondary material sources, in a consistent and machine-readable manner.",
+      "external_refs": [
+        {
+          "predicate": "properties",
+          "target_local": "globalAssetId",
+          "target_model": "shared.industry_core.common@1.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.material_accounting:1.0.0#reutilizationMaterialShare",
@@ -492,7 +762,15 @@
       "label": "otherInformation",
       "kind": "Property",
       "preferredName": "other information",
-      "description": "Document or evidence verifying the origin, quality, or compliance of a material"
+      "description": "Document or evidence verifying the origin, quality, or compliance of a material",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.material_accounting:1.0.0#automotive",
@@ -534,7 +812,15 @@
       "label": "OriginEnumeration",
       "kind": "Characteristic",
       "preferredName": "enum of origins",
-      "description": "Enum of origins"
+      "description": "Enum of origins",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.material_accounting:1.0.0#ConsumerShareCharacteristic",
@@ -555,7 +841,15 @@
       "label": "MaterialPercentageCharacteristic",
       "kind": "Characteristic",
       "preferredName": "material percentage characteristic",
-      "description": null
+      "description": null,
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "float",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.material_accounting:1.0.0#MaterialShareConstraint",
@@ -583,42 +877,90 @@
       "label": "VehicleInformation",
       "kind": "Aspect",
       "preferredName": "vehicle information",
-      "description": "The VehicleInformation aspect model defines a standardized and interoperable set of vehicle attributes, including identification data, technical properties and classification information, to describe a vehicle in a consistent and machine-readable manner."
+      "description": "The VehicleInformation aspect model defines a standardized and interoperable set of vehicle attributes, including identification data, technical properties and classification information, to describe a vehicle in a consistent and machine-readable manner.",
+      "external_refs": [
+        {
+          "predicate": "properties",
+          "target_local": "globalAssetId",
+          "target_model": "shared.industry_core.common@1.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.material_accounting:1.0.0#vehicleCondition",
       "label": "vehicleCondition",
       "kind": "Property",
       "preferredName": "vehicle condition",
-      "description": "Condition of the actual vehicle."
+      "description": "Condition of the actual vehicle.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.material_accounting:1.0.0#driveType",
       "label": "driveType",
       "kind": "Property",
       "preferredName": "drive type",
-      "description": "Drive type of a vehicle according enumeration."
+      "description": "Drive type of a vehicle according enumeration.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.material_accounting:1.0.0#modelIdentifier",
       "label": "modelIdentifier",
       "kind": "Property",
       "preferredName": "model identifier",
-      "description": "OEM-specific model identifier or OEM-specific project name."
+      "description": "OEM-specific model identifier or OEM-specific project name.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.material_accounting:1.0.0#vehicleSeries",
       "label": "vehicleSeries",
       "kind": "Property",
       "preferredName": "vehicle series",
-      "description": "Series information of the vehicle model that needs to be processed."
+      "description": "Series information of the vehicle model that needs to be processed.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.material_accounting:1.0.0#oem",
       "label": "oem",
       "kind": "Property",
       "preferredName": "original equipment manufacturer",
-      "description": "Original equipment manufacturer."
+      "description": "Original equipment manufacturer.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.material_accounting:1.0.0#emptyWeight",
@@ -646,28 +988,60 @@
       "label": "anonymizedVin",
       "kind": "Property",
       "preferredName": "anonymized VIN",
-      "description": "OEM-specific hashed VIN."
+      "description": "OEM-specific hashed VIN.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.material_accounting:1.0.0#Date",
       "label": "Date",
       "kind": "Characteristic",
       "preferredName": "date characteristic",
-      "description": "Characteristic to ensure a consistent structure for date-related properties."
+      "description": "Characteristic to ensure a consistent structure for date-related properties.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "date",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.material_accounting:1.0.0#VehicleTypeEnum",
       "label": "VehicleTypeEnum",
       "kind": "Characteristic",
       "preferredName": "vehicle type enum",
-      "description": "Enumeration of vehicle types according to EG Vehicle Classification."
+      "description": "Enumeration of vehicle types according to EG Vehicle Classification.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.material_accounting:1.0.0#WasteCode",
       "label": "WasteCode",
       "kind": "Aspect",
       "preferredName": "waste code",
-      "description": "The WasteCode aspect model defines a standardized and interoperable representation of waste categorization information, including European Waste Catalogue (EWC) codes and their descriptions, to classify vehicles, parts or materials in a consistent and machine-readable manner."
+      "description": "The WasteCode aspect model defines a standardized and interoperable representation of waste categorization information, including European Waste Catalogue (EWC) codes and their descriptions, to classify vehicles, parts or materials in a consistent and machine-readable manner.",
+      "external_refs": [
+        {
+          "predicate": "properties",
+          "target_local": "globalAssetId",
+          "target_model": "shared.industry_core.common@1.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.material_accounting:1.0.0#wasteCode",
@@ -681,7 +1055,15 @@
       "label": "WasteCodeEnum",
       "kind": "Characteristic",
       "preferredName": "waste code enum",
-      "description": "Enumeration of waste codes according to EWC (european waste directory)."
+      "description": "Enumeration of waste codes according to EWC (european waste directory).",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     }
   ],
   "links": [
@@ -1252,6 +1634,24 @@
     {
       "source": "urn:samm:io.catenax.material_accounting:1.0.0#wasteCode",
       "target": "urn:samm:io.catenax.material_accounting:1.0.0#WasteCodeEnum",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material_accounting:1.0.0#Material",
+      "target": "urn:samm:io.catenax.material_accounting:1.0.0#wasteCode",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material_accounting:1.0.0#VehicleInformation",
+      "target": "urn:samm:io.catenax.material_accounting:1.0.0#wasteCode",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material_accounting:1.0.0#emptyWeight",
+      "target": "urn:samm:io.catenax.material_accounting:1.0.0#MassCharacteristic",
       "label": "characteristic",
       "optional": false
     }

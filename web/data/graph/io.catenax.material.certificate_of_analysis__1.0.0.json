@@ -46,7 +46,15 @@
       "label": "link",
       "kind": "Property",
       "preferredName": "link",
-      "description": "HTTP(S) address according to RFC 3986"
+      "description": "HTTP(S) address according to RFC 3986",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "ResourcePath",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.material.certificate_of_analysis:1.0.0#payload",
@@ -60,21 +68,45 @@
       "label": "format",
       "kind": "Property",
       "preferredName": "format",
-      "description": "Identifier of the format of the payload."
+      "description": "Identifier of the format of the payload.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.material.certificate_of_analysis:1.0.0#formatVersion",
       "label": "formatVersion",
       "kind": "Property",
       "preferredName": "format version",
-      "description": "Corresponding version identifier of the given format."
+      "description": "Corresponding version identifier of the given format.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.material.certificate_of_analysis:1.0.0#formatLink",
       "label": "formatLink",
       "kind": "Property",
       "preferredName": "format link",
-      "description": "URL to the format definition file"
+      "description": "URL to the format definition file",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "ResourcePath",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.material.certificate_of_analysis:1.0.0#payloadPreFormatted",
@@ -95,14 +127,30 @@
       "label": "issueVersion",
       "kind": "Property",
       "preferredName": "issue version",
-      "description": "Versioning information of the Certificate of Analysis"
+      "description": "Versioning information of the Certificate of Analysis",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.material.certificate_of_analysis:1.0.0#language",
       "label": "language",
       "kind": "Property",
       "preferredName": "language",
-      "description": "ISO-639-1 code of language"
+      "description": "ISO-639-1 code of language",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Language",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.material.certificate_of_analysis:1.0.0#CertificateOfAnalysisLinkCharacteristic",
@@ -130,21 +178,45 @@
       "label": "PayloadCharacteristic",
       "kind": "Characteristic",
       "preferredName": "payload characteristic",
-      "description": "Describes a Property which contains the Base64-encoded payload representation of the Certificate of Analysis."
+      "description": "Describes a Property which contains the Base64-encoded payload representation of the Certificate of Analysis.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "base64Binary",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.material.certificate_of_analysis:1.0.0#PayloadPreFormattedCharacteristic",
       "label": "PayloadPreFormattedCharacteristic",
       "kind": "Characteristic",
       "preferredName": "payload pre formatted characteristic",
-      "description": "Describes a Property which contains the Base64-encoded payload pre formatted representation of the Certificate of Analysis."
+      "description": "Describes a Property which contains the Base64-encoded payload pre formatted representation of the Certificate of Analysis.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "base64Binary",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.material.certificate_of_analysis:1.0.0#IssueDateCharacteristic",
       "label": "IssueDateCharacteristic",
       "kind": "Characteristic",
       "preferredName": "issue date characteristic",
-      "description": "Describes the date of the Property."
+      "description": "Describes the date of the Property.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "date",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.material.certificate_of_analysis:1.0.0#CertificateOfAnalysisLink",

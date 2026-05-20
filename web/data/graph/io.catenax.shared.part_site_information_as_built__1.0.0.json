@@ -45,14 +45,30 @@
       "label": "catenaXId",
       "kind": "Property",
       "preferredName": "Catena-X Identifier",
-      "description": "The Catena-X ID of the given item(i.e. a part type or part instance), valid for the Catena-X dataspace."
+      "description": "The Catena-X ID of the given item(i.e. a part type or part instance), valid for the Catena-X dataspace.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "UuidV4Trait",
+          "target_model": "shared.uuid@1.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.shared.part_site_information_as_built:1.0.0#catenaXsiteId",
       "label": "catenaXsiteId",
       "kind": "Property",
       "preferredName": "Catena-X site identifier",
-      "description": "The identifier of the site according to Catena-X BPDM. The catenaXsiteId must be a valid Catena-X BPN. The BPN is a unique, unchangeable identifier for Business Partners / company locations from foundation to closure, regardless of the different business relationships / structures between or within the Business Partners or company locations."
+      "description": "The identifier of the site according to Catena-X BPDM. The catenaXsiteId must be a valid Catena-X BPN. The BPN is a unique, unchangeable identifier for Business Partners / company locations from foundation to closure, regardless of the different business relationships / structures between or within the Business Partners or company locations.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "BpnsCharacteristic",
+          "target_model": "shared.business_partner_number@1.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.shared.part_site_information_as_built:1.0.0#function",
@@ -80,7 +96,15 @@
       "label": "FunctionCharacteristic",
       "kind": "Characteristic",
       "preferredName": "Function Characteristic",
-      "description": "Describes the characteristics of the function for a site related to the respective part."
+      "description": "Describes the characteristics of the function for a site related to the respective part.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     }
   ],
   "links": [

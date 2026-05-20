@@ -74,7 +74,15 @@
       "label": "specificatorId",
       "kind": "Property",
       "preferredName": "specificator Id",
-      "description": "specificator of the minimal state of health defined by an identifier"
+      "description": "specificator of the minimal state of health defined by an identifier",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "io.openmanufacturing:characteristic@1.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.battery.product_description:1.0.1#minimalStateOfHealthPhase",
@@ -116,14 +124,30 @@
       "label": "BatteryType",
       "kind": "Characteristic",
       "preferredName": "Battery type",
-      "description": "Differentation between High Voltage Battery = HVB and Low Voltage Battery = LVB"
+      "description": "Differentation between High Voltage Battery = HVB and Low Voltage Battery = LVB",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.battery.product_description:1.0.1#LifecyclePhases",
       "label": "LifecyclePhases",
       "kind": "Characteristic",
       "preferredName": "Lifecycle Phases",
-      "description": "temporary definition of lifecycle phases as following in enumeration for: as specified by OEM, as specified by other, as recieved by dismantling, as maintained by workshop"
+      "description": "temporary definition of lifecycle phases as following in enumeration for: as specified by OEM, as specified by other, as recieved by dismantling, as maintained by workshop",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.battery.product_description:1.0.1#MinStateOfHealthCharacteristic",
@@ -137,7 +161,15 @@
       "label": "DateTimestamp",
       "kind": "Characteristic",
       "preferredName": "Date Timestamp",
-      "description": "Date Timestamp for current state of health"
+      "description": "Date Timestamp for current state of health",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "date",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.battery.product_description:1.0.1#CurrentState",
@@ -172,14 +204,30 @@
       "label": "Capacity",
       "kind": "Characteristic",
       "preferredName": "Capacity",
-      "description": "Capacity in farad"
+      "description": "Capacity in farad",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "double",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.battery.product_description:1.0.1#Percentage",
       "label": "Percentage",
       "kind": "Characteristic",
       "preferredName": "Percentage",
-      "description": "Percentage"
+      "description": "Percentage",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "double",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     }
   ],
   "links": [

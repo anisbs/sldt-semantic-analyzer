@@ -126,7 +126,15 @@
       "label": "version",
       "kind": "Property",
       "preferredName": "Version",
-      "description": "The current version of the product passport. The possibility of modification/updating the product passport needs to include versioning of the dataset. This attribute is an internal versioning from the passport issuer."
+      "description": "The current version of the product passport. The possibility of modification/updating the product passport needs to include versioning of the dataset. This attribute is an internal versioning from the passport issuer.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.generic.digital_product_passport:3.0.0#status",
@@ -175,7 +183,15 @@
       "label": "longName",
       "kind": "Property",
       "preferredName": "Long Name",
-      "description": "The full name of the product as a general short product description. This provides the users of the product passport with relevant information about the product. It can also be a marketing slogan or short description with one to a few sentences."
+      "description": "The full name of the product as a general short product description. This provides the users of the product passport with relevant information about the product. It can also be a marketing slogan or short description with one to a few sentences.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.generic.digital_product_passport:3.0.0#class",
@@ -189,7 +205,15 @@
       "label": "shortName",
       "kind": "Property",
       "preferredName": "Short Name",
-      "description": "The short name of the product. Short names can contain abbreviations."
+      "description": "The short name of the product. Short names can contain abbreviations.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.generic.digital_product_passport:3.0.0#state",
@@ -287,7 +311,15 @@
       "label": "content",
       "kind": "Property",
       "preferredName": "Content",
-      "description": "The content of the document e.g a link."
+      "description": "The content of the document e.g a link.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.generic.digital_product_passport:3.0.0#category",
@@ -315,14 +347,30 @@
       "label": "label",
       "kind": "Property",
       "preferredName": "Label",
-      "description": "The human readable name of the attribute."
+      "description": "The human readable name of the attribute.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.generic.digital_product_passport:3.0.0#description",
       "label": "description",
       "kind": "Property",
       "preferredName": "Description",
-      "description": "The description of the attribute context."
+      "description": "The description of the attribute context.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.generic.digital_product_passport:3.0.0#type",
@@ -336,7 +384,15 @@
       "label": "data",
       "kind": "Property",
       "preferredName": "Data",
-      "description": "The content from the attribute which is a depended of the data type and typeUnit."
+      "description": "The content from the attribute which is a depended of the data type and typeUnit.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.generic.digital_product_passport:3.0.0#children",
@@ -378,7 +434,15 @@
       "label": "definition",
       "kind": "Property",
       "preferredName": "Definition",
-      "description": "The associated product category preferred name/definition according to ECLASS. This preferred name is always associated with the code."
+      "description": "The associated product category preferred name/definition according to ECLASS. This preferred name is always associated with the code.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.generic.digital_product_passport:3.0.0#environmentalFootprint",
@@ -420,42 +484,90 @@
       "label": "width",
       "kind": "Property",
       "preferredName": "width",
-      "description": "The width of the item measured in a specific linear unit which can be declared in the corresponding unit attribute."
+      "description": "The width of the item measured in a specific linear unit which can be declared in the corresponding unit attribute.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "LinearCharacteristic",
+          "target_model": "shared.quantity@1.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.generic.digital_product_passport:3.0.0#length",
       "label": "length",
       "kind": "Property",
       "preferredName": "length",
-      "description": "The length of the item measured in a specific linear unit which can be declared in the corresponding unit attribute."
+      "description": "The length of the item measured in a specific linear unit which can be declared in the corresponding unit attribute.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "LinearCharacteristic",
+          "target_model": "shared.quantity@1.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.generic.digital_product_passport:3.0.0#diameter",
       "label": "diameter",
       "kind": "Property",
       "preferredName": "diameter",
-      "description": "The diameter of the item, if applicable, measured in a specific linear unit which can be declared in the corresponding unit attribute."
+      "description": "The diameter of the item, if applicable, measured in a specific linear unit which can be declared in the corresponding unit attribute.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "LinearCharacteristic",
+          "target_model": "shared.quantity@1.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.generic.digital_product_passport:3.0.0#height",
       "label": "height",
       "kind": "Property",
       "preferredName": "height",
-      "description": "The height of the item measured in a specific linear unit which can be declared in the corresponding unit attribute."
+      "description": "The height of the item measured in a specific linear unit which can be declared in the corresponding unit attribute.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "LinearCharacteristic",
+          "target_model": "shared.quantity@1.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.generic.digital_product_passport:3.0.0#grossWeight",
       "label": "grossWeight",
       "kind": "Property",
       "preferredName": "Gross Weight",
-      "description": "The gross weight of the item measured in a specific mass unit which can be declared in the corresponding unit attribute. Gross weight refers to the total weight of a product, including the weight of the packaging. This attribute is mentioned in the ESPR proposal from March 30th, 2022 Article 7:\n(2) (b) (i) information on the performance of the product in relation to the product parameters referred to in Annex I;\nAnnex I (i) weight and volume of the product and its packaging, and the product-to-packaging ratio."
+      "description": "The gross weight of the item measured in a specific mass unit which can be declared in the corresponding unit attribute. Gross weight refers to the total weight of a product, including the weight of the packaging. This attribute is mentioned in the ESPR proposal from March 30th, 2022 Article 7:\n(2) (b) (i) information on the performance of the product in relation to the product parameters referred to in Annex I;\nAnnex I (i) weight and volume of the product and its packaging, and the product-to-packaging ratio.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "MassCharacteristic",
+          "target_model": "shared.quantity@1.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.generic.digital_product_passport:3.0.0#grossVolume",
       "label": "grossVolume",
       "kind": "Property",
       "preferredName": "Gross Volume",
-      "description": "The gross volume of the item measured in a specific capacity unit which can be declared in the corresponding unit attribute. Gross volume refers to the total volume of a product, including the volume of the packaging. This attribute is mentioned in the ESPR proposal from March 30th, 2022 Article 7:\n(2) (b) (i) information on the performance of the product in relation to the product parameters referred to in Annex I;\nAnnex I (i) weight and volume of the product and its packaging, and the product-to-packaging ratio."
+      "description": "The gross volume of the item measured in a specific capacity unit which can be declared in the corresponding unit attribute. Gross volume refers to the total volume of a product, including the volume of the packaging. This attribute is mentioned in the ESPR proposal from March 30th, 2022 Article 7:\n(2) (b) (i) information on the performance of the product in relation to the product parameters referred to in Annex I;\nAnnex I (i) weight and volume of the product and its packaging, and the product-to-packaging ratio.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "VolumeCharacteristic",
+          "target_model": "shared.quantity@1.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.generic.digital_product_passport:3.0.0#weightOrVolume",
@@ -518,14 +630,30 @@
       "label": "carrierType",
       "kind": "Property",
       "preferredName": "Carrier Type",
-      "description": "The type of data carrier such as a QR code on the product. This attribute is mentioned in the ESPR proposal from March 30th, 2022 Article 8:\n(2) (b) the types of data carrier to be used."
+      "description": "The type of data carrier such as a QR code on the product. This attribute is mentioned in the ESPR proposal from March 30th, 2022 Article 8:\n(2) (b) the types of data carrier to be used.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.generic.digital_product_passport:3.0.0#carrierLayout",
       "label": "carrierLayout",
       "kind": "Property",
       "preferredName": "Carrier Layout",
-      "description": "The positioning of data carrier on the product. This attribute is mentioned in the ESPR proposal from March 30th, 2022 Article 8:\n(2) (c) the layout in which the data carrier shall be presented and its positioning."
+      "description": "The positioning of data carrier on the product. This attribute is mentioned in the ESPR proposal from March 30th, 2022 Article 8:\n(2) (c) the layout in which the data carrier shall be presented and its positioning.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.generic.digital_product_passport:3.0.0#typeUnit",
@@ -623,7 +751,15 @@
       "label": "location",
       "kind": "Property",
       "preferredName": "Location",
-      "description": "The location of the substances of concern within the product. This attribute is mentioned in the ESPR proposal from March 30th, 2022 Article 7:\n(5) (b) the location of the substances of concern within the product."
+      "description": "The location of the substances of concern within the product. This attribute is mentioned in the ESPR proposal from March 30th, 2022 Article 7:\n(5) (b) the location of the substances of concern within the product.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.generic.digital_product_passport:3.0.0#concentration",
@@ -644,14 +780,30 @@
       "label": "exemption",
       "kind": "Property",
       "preferredName": "Exemption",
-      "description": "Exemptions to the substance of concern. This attribute is mentioned in the ESPR proposal from March 30th, 2022 Article 7:\n(5) (c) provide exemptions for substances of concern or information elements from the information requirements referred to in the first subparagraph."
+      "description": "Exemptions to the substance of concern. This attribute is mentioned in the ESPR proposal from March 30th, 2022 Article 7:\n(5) (c) provide exemptions for substances of concern or information elements from the information requirements referred to in the first subparagraph.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.generic.digital_product_passport:3.0.0#hazardClass",
       "label": "hazardClass",
       "kind": "Property",
       "preferredName": null,
-      "description": "The specification of the hazard class."
+      "description": "The specification of the hazard class.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.generic.digital_product_passport:3.0.0#footprintValue",
@@ -665,21 +817,45 @@
       "label": "footprintRulebook",
       "kind": "Property",
       "preferredName": "Footprint Rulebook",
-      "description": "The applied rulebook for the environmental footprint of the product."
+      "description": "The applied rulebook for the environmental footprint of the product.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.generic.digital_product_passport:3.0.0#footprintLifecycle",
       "label": "footprintLifecycle",
       "kind": "Property",
       "preferredName": "Footprint Lifecycle",
-      "description": "The lifecycle stage, to which the environmental footprint corresponds. These could be for example \"raw material acquisition and pre-processing\", \"main product production\", \"distribution\" or \"end of life and recycling\"."
+      "description": "The lifecycle stage, to which the environmental footprint corresponds. These could be for example \"raw material acquisition and pre-processing\", \"main product production\", \"distribution\" or \"end of life and recycling\".",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.generic.digital_product_passport:3.0.0#footprintUnit",
       "label": "footprintUnit",
       "kind": "Property",
       "preferredName": "Footprint Unit",
-      "description": "The unit of measurement of the environmental impact category. For each impact category a specific unit is used. For climate change/carbon footprint \"kg CO2 eq\" will be used. If an aggregation is used, utilize the normalization and weighting methods used in the referenced rulebook."
+      "description": "The unit of measurement of the environmental impact category. For each impact category a specific unit is used. For climate change/carbon footprint \"kg CO2 eq\" will be used. If an aggregation is used, utilize the normalization and weighting methods used in the referenced rulebook.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.generic.digital_product_passport:3.0.0#footprintType",
@@ -693,7 +869,15 @@
       "label": "performanceClass",
       "kind": "Property",
       "preferredName": "Performance Class",
-      "description": "The performance classification of the footprint."
+      "description": "The performance classification of the footprint.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.generic.digital_product_passport:3.0.0#manufacturingPlant",
@@ -707,7 +891,15 @@
       "label": "declaration",
       "kind": "Property",
       "preferredName": "declaration",
-      "description": "The footprint declaration in the format of a link "
+      "description": "The footprint declaration in the format of a link ",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.generic.digital_product_passport:3.0.0#companyName",
@@ -735,7 +927,15 @@
       "label": "chemicalName",
       "kind": "Property",
       "preferredName": "Chemical Name",
-      "description": "The name, in accordance with the specification in the attribute for the list type, which is present in the product."
+      "description": "The name, in accordance with the specification in the attribute for the list type, which is present in the product.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.generic.digital_product_passport:3.0.0#listTypeName",
@@ -770,7 +970,15 @@
       "label": "locationIdentifierType",
       "kind": "Property",
       "preferredName": "location Identifier Type",
-      "description": "The type of identifier used for a location. In the case of catena-x it is a BPNA."
+      "description": "The type of identifier used for a location. In the case of catena-x it is a BPNA.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.generic.digital_product_passport:3.0.0#sourcesIdentification",
@@ -791,7 +999,15 @@
       "label": "partName",
       "kind": "Property",
       "preferredName": "Part Name",
-      "description": "The name of the spare part. This attribute is mentioned in the ESPR proposal from March 30th, 2022 Annex I:\n(b) ease of repair and maintenance as expressed through: characteristics, availability and delivery time of spare parts, modularity, compatibility with commonly available spare parts, availability of repair and maintenance instructions, number of materials and components used, use of standard components, use of component and material coding standards for the identification of components and materials, number and complexity of processes and tools needed,  ease of non-destructive disassembly and re-assembly, conditions for access to product data, conditions for access to or use of hardware and software needed."
+      "description": "The name of the spare part. This attribute is mentioned in the ESPR proposal from March 30th, 2022 Annex I:\n(b) ease of repair and maintenance as expressed through: characteristics, availability and delivery time of spare parts, modularity, compatibility with commonly available spare parts, availability of repair and maintenance instructions, number of materials and components used, use of standard components, use of component and material coding standards for the identification of components and materials, number and complexity of processes and tools needed,  ease of non-destructive disassembly and re-assembly, conditions for access to product data, conditions for access to or use of hardware and software needed.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.generic.digital_product_passport:3.0.0#minConcentration",
@@ -924,7 +1140,15 @@
       "label": "IdentifierCharacteristic",
       "kind": "Characteristic",
       "preferredName": "Identifier Characteristic",
-      "description": "Characteristic for Identifiers."
+      "description": "Characteristic for Identifiers.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.generic.digital_product_passport:3.0.0#ImporterCharacteristic",
@@ -945,7 +1169,15 @@
       "label": "UnitCatalog",
       "kind": "Characteristic",
       "preferredName": "Unit Catalog",
-      "description": "Link to the unit catalog with all possible units in the format \"unit:xxx\"."
+      "description": "Link to the unit catalog with all possible units in the format \"unit:xxx\".",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.generic.digital_product_passport:3.0.0#BusinessAddress",
@@ -980,21 +1212,45 @@
       "label": "BusinessType",
       "kind": "Characteristic",
       "preferredName": "Business Type",
-      "description": "The type of identifier used in combination with the business identifier."
+      "description": "The type of identifier used in combination with the business identifier.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.generic.digital_product_passport:3.0.0#BusinessIdentifierCharacteristic",
       "label": "BusinessIdentifierCharacteristic",
       "kind": "Characteristic",
       "preferredName": "Business Identifier Characteristic",
-      "description": "Business Identifier Characteristic which describes an identifier for a company."
+      "description": "Business Identifier Characteristic which describes an identifier for a company.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.generic.digital_product_passport:3.0.0#LocationIdentifierCharacteristic",
       "label": "LocationIdentifierCharacteristic",
       "kind": "Characteristic",
       "preferredName": "Location Identifier Characteristic",
-      "description": "String for a location identifier."
+      "description": "String for a location identifier.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.generic.digital_product_passport:3.0.0#SourceList",
@@ -1043,7 +1299,15 @@
       "label": "CriticalList",
       "kind": "Characteristic",
       "preferredName": "Critical List",
-      "description": "The list of critical raw materials in the product (CRM) which is specified by EU."
+      "description": "The list of critical raw materials in the product (CRM) which is specified by EU.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.generic.digital_product_passport:3.0.0#SubstanceList",
@@ -1099,7 +1363,15 @@
       "label": "CompanyList",
       "kind": "Characteristic",
       "preferredName": "Company List",
-      "description": "List of company names."
+      "description": "List of company names.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.generic.digital_product_passport:3.0.0#MetadataEntity",
@@ -1281,7 +1553,21 @@
       "label": "BusinessEntity",
       "kind": "Entity",
       "preferredName": "Business Entity",
-      "description": "Entity with a company name, address and contact information."
+      "description": "Entity with a company name, address and contact information.",
+      "external_refs": [
+        {
+          "predicate": "properties",
+          "target_local": "contactProperty",
+          "target_model": "shared.contact_information@3.0.0",
+          "target_source": "catenax"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "address",
+          "target_model": "shared.address_characteristic@3.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.generic.digital_product_passport:3.0.0#BusinessIdEntity",
@@ -1344,105 +1630,225 @@
       "label": "StatusEnumeration",
       "kind": "Characteristic",
       "preferredName": "Status Enumeration",
-      "description": "The current status of the product passport declared through either: draft, approved, invalid or expired."
+      "description": "The current status of the product passport declared through either: draft, approved, invalid or expired.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.generic.digital_product_passport:3.0.0#StateEnumeration",
       "label": "StateEnumeration",
       "kind": "Characteristic",
       "preferredName": "State Enumeration",
-      "description": "Enumeration defined as original, repurposed, re-used, remanufactured or waste."
+      "description": "Enumeration defined as original, repurposed, re-used, remanufactured or waste.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.generic.digital_product_passport:3.0.0#PhysicalStateEnumeration",
       "label": "PhysicalStateEnumeration",
       "kind": "Characteristic",
       "preferredName": "Physical State Enumeration",
-      "description": "Enumeration with the values solid, liquid, gas and plasma."
+      "description": "Enumeration with the values solid, liquid, gas and plasma.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.generic.digital_product_passport:3.0.0#SourceCategoryEnumeration",
       "label": "SourceCategoryEnumeration",
       "kind": "Characteristic",
       "preferredName": "Source Category Enumeration",
-      "description": "The types of sources that can be linked in a digital product passport can vary depending on the nature of the product and the information that needs to be included. This is an enumeration of possible sources."
+      "description": "The types of sources that can be linked in a digital product passport can vary depending on the nature of the product and the information that needs to be included. This is an enumeration of possible sources.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.generic.digital_product_passport:3.0.0#SourceEnumeration",
       "label": "SourceEnumeration",
       "kind": "Characteristic",
       "preferredName": "Source Enumeration",
-      "description": "Enumeration on different sources."
+      "description": "Enumeration on different sources.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.generic.digital_product_passport:3.0.0#NotApplicableEnumeration",
       "label": "NotApplicableEnumeration",
       "kind": "Characteristic",
       "preferredName": "Not Applicable Enumeration",
-      "description": "Enumeration with the value \"not applicable\"."
+      "description": "Enumeration with the value \"not applicable\".",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.generic.digital_product_passport:3.0.0#LifeEnumeration",
       "label": "LifeEnumeration",
       "kind": "Characteristic",
       "preferredName": "Life Enumeration",
-      "description": "Enumeration with the possible units day, month, cycle, year and runningOrOperatingHour."
+      "description": "Enumeration with the possible units day, month, cycle, year and runningOrOperatingHour.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.generic.digital_product_passport:3.0.0#LifeTypeEnumeration",
       "label": "LifeTypeEnumeration",
       "kind": "Characteristic",
       "preferredName": "Life Type Enumeration",
-      "description": "Enumeration with the values guaranteed lifetime, technical lifetime and mean time between failures."
+      "description": "Enumeration with the values guaranteed lifetime, technical lifetime and mean time between failures.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.generic.digital_product_passport:3.0.0#CodeEnumeration",
       "label": "CodeEnumeration",
       "kind": "Characteristic",
       "preferredName": "Code Enumeration",
-      "description": "Enumeration for GTIN, hash, DID, ISBN, TARIC or other."
+      "description": "Enumeration for GTIN, hash, DID, ISBN, TARIC or other.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.generic.digital_product_passport:3.0.0#IdentifierEnumeration",
       "label": "IdentifierEnumeration",
       "kind": "Characteristic",
       "preferredName": "Identifier Enumeration",
-      "description": "Enumeration with \"PartInstanceId\" \"BatchId\" and \"ModelId\"."
+      "description": "Enumeration with \"PartInstanceId\" \"BatchId\" and \"ModelId\".",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.generic.digital_product_passport:3.0.0#DataTypeEnumeration",
       "label": "DataTypeEnumeration",
       "kind": "Characteristic",
       "preferredName": "Data Type Enumeration",
-      "description": "Data type that describe the content of the attributes children and data. In case \"object\" is selected in the enumeration, the children field will be used in the AdditionalDataEntity instead of the \"data\" property. If it is an other type, the content will be specified in \"data\" as a string."
+      "description": "Data type that describe the content of the attributes children and data. In case \"object\" is selected in the enumeration, the children field will be used in the AdditionalDataEntity instead of the \"data\" property. If it is an other type, the content will be specified in \"data\" as a string.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.generic.digital_product_passport:3.0.0#ConcentrationEnumeration",
       "label": "ConcentrationEnumeration",
       "kind": "Characteristic",
       "preferredName": "Concentration Enumeration",
-      "description": "Enumeration of possible units of concentration with percent, volume percent, parts per thousand, parts per million, parts per billion and parts per trillion."
+      "description": "Enumeration of possible units of concentration with percent, volume percent, parts per thousand, parts per million, parts per billion and parts per trillion.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.generic.digital_product_passport:3.0.0#CategoryEnumeration",
       "label": "CategoryEnumeration",
       "kind": "Characteristic",
       "preferredName": "Category Enumeration",
-      "description": "Enumeration of the 19 impact categories in accordance to EN15804+A2."
+      "description": "Enumeration of the 19 impact categories in accordance to EN15804+A2.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.generic.digital_product_passport:3.0.0#ListTypeEnumerationName",
       "label": "ListTypeEnumerationName",
       "kind": "Characteristic",
       "preferredName": "List Type Enumeration Name",
-      "description": "Enumeration of different systems and organizations related to the identification and classification of chemical substances in the field of chemistry. The enumeration values are IUPAC, EC or CAS."
+      "description": "Enumeration of different systems and organizations related to the identification and classification of chemical substances in the field of chemistry. The enumeration values are IUPAC, EC or CAS.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.generic.digital_product_passport:3.0.0#ListTypeEnumerationId",
       "label": "ListTypeEnumerationId",
       "kind": "Characteristic",
       "preferredName": "List Type Enumeration Id",
-      "description": "Enumeration of different systems and organizations related to the identification and classification of chemical substances in the field of chemistry. The enumeration values are EC or CAS."
+      "description": "Enumeration of different systems and organizations related to the identification and classification of chemical substances in the field of chemistry. The enumeration values are EC or CAS.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.generic.digital_product_passport:3.0.0#DateTrait",
@@ -1589,28 +1995,60 @@
       "label": "LifeValueCharacteristic",
       "kind": "Characteristic",
       "preferredName": "Life Value Characteristic",
-      "description": "Characteristic for the life span value as an integer."
+      "description": "Characteristic for the life span value as an integer.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "integer",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.generic.digital_product_passport:3.0.0#ConcentrationValue",
       "label": "ConcentrationValue",
       "kind": "Characteristic",
       "preferredName": "Concentration Value",
-      "description": "Float number representing a concentration."
+      "description": "Float number representing a concentration.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "float",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.generic.digital_product_passport:3.0.0#FootprintValueCharacteristic",
       "label": "FootprintValueCharacteristic",
       "kind": "Characteristic",
       "preferredName": "Footprint Value Characteristic",
-      "description": "The value corresponding to the environmental footprint associated with the unit."
+      "description": "The value corresponding to the environmental footprint associated with the unit.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "float",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.generic.digital_product_passport:3.0.0#Share",
       "label": "Share",
       "kind": "Characteristic",
       "preferredName": "share",
-      "description": "The share represented in a float number in the unit percent."
+      "description": "The share represented in a float number in the unit percent.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "float",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     }
   ],
   "links": [

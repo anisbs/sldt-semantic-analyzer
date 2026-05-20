@@ -32,7 +32,15 @@
       "label": "serialNumber",
       "kind": "Property",
       "preferredName": "serial number",
-      "description": "Serial number to identify the certificate of destruction"
+      "description": "Serial number to identify the certificate of destruction",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.certificate_of_destruction:2.0.0#vehicleOwnerProperties",
@@ -67,14 +75,30 @@
       "label": "companyNumber",
       "kind": "Property",
       "preferredName": "company number",
-      "description": "Company number as an dismantler"
+      "description": "Company number as an dismantler",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.certificate_of_destruction:2.0.0#isVehicleOwnerInformationComplete",
       "label": "isVehicleOwnerInformationComplete",
       "kind": "Property",
       "preferredName": "is vehicle owner information complete",
-      "description": "Boolean flag to indicate whether the information in the data set is complete. If the data set contains unknown fields, the value is false"
+      "description": "Boolean flag to indicate whether the information in the data set is complete. If the data set contains unknown fields, the value is false",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Boolean",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.certificate_of_destruction:2.0.0#vehicleOwnerAddress",
@@ -95,7 +119,15 @@
       "label": "isVehicleInformationComplete",
       "kind": "Property",
       "preferredName": "is vehicle information complete",
-      "description": "Boolean flag to indicate whether the information in the data set is complete. If the data set contains unknown fields, the value is false"
+      "description": "Boolean flag to indicate whether the information in the data set is complete. If the data set contains unknown fields, the value is false",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Boolean",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.certificate_of_destruction:2.0.0#emptyWeight",
@@ -109,56 +141,120 @@
       "label": "firstRegistration",
       "kind": "Property",
       "preferredName": "first registration",
-      "description": "The first time this vehicle got registered with an initial license plate"
+      "description": "The first time this vehicle got registered with an initial license plate",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.certificate_of_destruction:2.0.0#licensePlate",
       "label": "licensePlate",
       "kind": "Property",
       "preferredName": "license plate",
-      "description": "Current (i.e. last) assigned number/ license plate to the vehicle"
+      "description": "Current (i.e. last) assigned number/ license plate to the vehicle",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.certificate_of_destruction:2.0.0#licenseAbbreviation",
       "label": "licenseAbbreviation",
       "kind": "Property",
       "preferredName": "license abbreviation",
-      "description": "The first characters on the license plate"
+      "description": "The first characters on the license plate",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.certificate_of_destruction:2.0.0#identification",
       "label": "identification",
       "kind": "Property",
       "preferredName": "vehicle identification number (VIN)",
-      "description": "The unique vehicle identification number (VIN) of the vehicle "
+      "description": "The unique vehicle identification number (VIN) of the vehicle ",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.certificate_of_destruction:2.0.0#model",
       "label": "model",
       "kind": "Property",
       "preferredName": "model",
-      "description": "Vehicle model"
+      "description": "Vehicle model",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.certificate_of_destruction:2.0.0#brand",
       "label": "brand",
       "kind": "Property",
       "preferredName": "brand",
-      "description": "Brand name"
+      "description": "Brand name",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.certificate_of_destruction:2.0.0#class",
       "label": "class",
       "kind": "Property",
       "preferredName": "class",
-      "description": "Vehicle class the vehicle refers to"
+      "description": "Vehicle class the vehicle refers to",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.certificate_of_destruction:2.0.0#isVehicleWithdrawnFromService",
       "label": "isVehicleWithdrawnFromService",
       "kind": "Property",
       "preferredName": "isVehicleWithdrawnFromService",
-      "description": "True if the vehicle has been withdrawn from the service and out of circulation"
+      "description": "True if the vehicle has been withdrawn from the service and out of circulation",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Boolean",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.certificate_of_destruction:2.0.0#receiverAuditorAddress",
@@ -242,14 +338,30 @@
       "label": "street",
       "kind": "Property",
       "preferredName": "street",
-      "description": "The street name"
+      "description": "The street name",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.certificate_of_destruction:2.0.0#houseNumber",
       "label": "houseNumber",
       "kind": "Property",
       "preferredName": "house number",
-      "description": "The house number of the address"
+      "description": "The house number of the address",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.certificate_of_destruction:2.0.0#zip",
@@ -263,14 +375,30 @@
       "label": "location",
       "kind": "Property",
       "preferredName": "location",
-      "description": "The location or city of the address"
+      "description": "The location or city of the address",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.certificate_of_destruction:2.0.0#name",
       "label": "name",
       "kind": "Property",
       "preferredName": "name",
-      "description": "Name of the private individual, company or authority"
+      "description": "Name of the private individual, company or authority",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.certificate_of_destruction:2.0.0#country",
@@ -298,7 +426,15 @@
       "label": "DateCharacteristic",
       "kind": "Characteristic",
       "preferredName": "date characteristic",
-      "description": "Date characteristic"
+      "description": "Date characteristic",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "date",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.certificate_of_destruction:2.0.0#VehicleOwnerCharacteristic",
@@ -347,7 +483,15 @@
       "label": "Zip",
       "kind": "Characteristic",
       "preferredName": "ZIP",
-      "description": "Characteristic to describe the zip"
+      "description": "Characteristic to describe the zip",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.certificate_of_destruction:2.0.0#VehicleOwnerEntity",
@@ -417,7 +561,15 @@
       "label": "Weight",
       "kind": "Characteristic",
       "preferredName": "weight",
-      "description": "weight of the vehicle"
+      "description": "weight of the vehicle",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "integer",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.certificate_of_destruction:2.0.0#IsoCodeConstraint",

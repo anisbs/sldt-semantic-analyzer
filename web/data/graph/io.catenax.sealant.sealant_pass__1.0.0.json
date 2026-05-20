@@ -129,21 +129,45 @@
       "label": "localIdentifiers",
       "kind": "Property",
       "preferredName": "Local Identifiers",
-      "description": "A local identifier enables identification of a part in a specific data space, but is not unique in Catena-X data space. Multiple local identifiers may exist."
+      "description": "A local identifier enables identification of a part in a specific data space, but is not unique in Catena-X data space. Multiple local identifiers may exist.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "LocalIdentifierCharacteristic",
+          "target_model": "serial_part_typization@2.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#crossSectoralStandardsUsed",
       "label": "crossSectoralStandardsUsed",
       "kind": "Property",
       "preferredName": "Cross Sectoral Standards Used",
-      "description": "Discloses the cross-sectoral standards applied for calculating or allocating GHG (Greenhouse Gas) emissions as specified by the WBCSD (World Business Council for Sustainable Development) Pathfinder initiative."
+      "description": "Discloses the cross-sectoral standards applied for calculating or allocating GHG (Greenhouse Gas) emissions as specified by the WBCSD (World Business Council for Sustainable Development) Pathfinder initiative.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "CrossSectoralStandardsUsedListCharacteristic",
+          "target_model": "pcf@3.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#productOrSectorSpecificRules",
       "label": "productOrSectorSpecificRules",
       "kind": "Property",
       "preferredName": "Product or Sector Specific Rules",
-      "description": "Product or sector specific rules applied for calculating or allocating GHG (Greenhouse Gas) emissions, e.g. PCRs (Product Category Rules), including operators or pubishers and according rule names. Specified by the WBCSD (World Business Council for Sustainable Development) Pathfinder initiative."
+      "description": "Product or sector specific rules applied for calculating or allocating GHG (Greenhouse Gas) emissions, e.g. PCRs (Product Category Rules), including operators or pubishers and according rule names. Specified by the WBCSD (World Business Council for Sustainable Development) Pathfinder initiative.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "ProductOrSectorSpecificRuleSet",
+          "target_model": "pcf@3.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#declarationOfConformity",
@@ -199,14 +223,30 @@
       "label": "tradeName",
       "kind": "Property",
       "preferredName": "Trade Name",
-      "description": "Trade name given to the chemical substance or mixture as part of the product identification."
+      "description": "Trade name given to the chemical substance or mixture as part of the product identification.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "io.openmanufacturing:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#productCode",
       "label": "productCode",
       "kind": "Property",
       "preferredName": "Product Code",
-      "description": "Product Code given to the Substance/mixture as part of the product identification."
+      "description": "Product Code given to the Substance/mixture as part of the product identification.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "io.openmanufacturing:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#reachRegistration",
@@ -220,7 +260,15 @@
       "label": "substanceName",
       "kind": "Property",
       "preferredName": "Substance Name",
-      "description": "Name given to the substance."
+      "description": "Name given to the substance.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "io.openmanufacturing:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#casNumber",
@@ -248,14 +296,30 @@
       "label": "usage",
       "kind": "Property",
       "preferredName": "Usage",
-      "description": "Brief description of the identified uses of the substance or mixture relevant for the recipient(s)."
+      "description": "Brief description of the identified uses of the substance or mixture relevant for the recipient(s).",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "io.openmanufacturing:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#recommendedUse",
       "label": "recommendedUse",
       "kind": "Property",
       "preferredName": "Recommended Use",
-      "description": "Recommended restrictions on use"
+      "description": "Recommended restrictions on use",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "io.openmanufacturing:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#emergencyNumber",
@@ -269,21 +333,45 @@
       "label": "supplierId",
       "kind": "Property",
       "preferredName": "Supplier ID",
-      "description": "BPNL of the supplier."
+      "description": "BPNL of the supplier.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "io.openmanufacturing:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#classificationGHS",
       "label": "classificationGHS",
       "kind": "Property",
       "preferredName": "Classification GHS",
-      "description": "The classification of the substance or the mixture which results from the application of the classification criteria in Regulation (EC) No 1272/2008 shall be given."
+      "description": "The classification of the substance or the mixture which results from the application of the classification criteria in Regulation (EC) No 1272/2008 shall be given.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "io.openmanufacturing:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#possibleHazards",
       "label": "possibleHazards",
       "kind": "Property",
       "preferredName": "Possible Hazards",
-      "description": "A description of the various toxicological (health) effects and the available data used to identify those effects (SDS Section 11.1)."
+      "description": "A description of the various toxicological (health) effects and the available data used to identify those effects (SDS Section 11.1).",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "io.openmanufacturing:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#hazardousIngredients",
@@ -311,28 +399,60 @@
       "label": "firstAid",
       "kind": "Property",
       "preferredName": "First Aid",
-      "description": "First aid instructions are provided by relevant routes of exposure (SDS Section 4.1)."
+      "description": "First aid instructions are provided by relevant routes of exposure (SDS Section 4.1).",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "io.openmanufacturing:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#fireExtinguisher",
       "label": "fireExtinguisher",
       "kind": "Property",
       "preferredName": "Fire Extinguisher",
-      "description": "Suitable extinguishing media,  for fighting a fire caused by the substance or mixture, or arising in its vicinity (SDS Section 5.1)."
+      "description": "Suitable extinguishing media,  for fighting a fire caused by the substance or mixture, or arising in its vicinity (SDS Section 5.1).",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "io.openmanufacturing:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#personalPrecaution",
       "label": "personalPrecaution",
       "kind": "Property",
       "preferredName": "Personal Precaution",
-      "description": "Information about the appropriate response to spills, leaks, or releases, to prevent or minimize the adverse effects on persons, property and the environment (SDS Section 6.1)."
+      "description": "Information about the appropriate response to spills, leaks, or releases, to prevent or minimize the adverse effects on persons, property and the environment (SDS Section 6.1).",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "io.openmanufacturing:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#technicalMeasures",
       "label": "technicalMeasures",
       "kind": "Property",
       "preferredName": "Technical Measures",
-      "description": "Information is provided concerning protective measures for safe handling and recommended technical measures (SDS Section 7.1)."
+      "description": "Information is provided concerning protective measures for safe handling and recommended technical measures (SDS Section 7.1).",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "io.openmanufacturing:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#exposureLimit",
@@ -353,14 +473,30 @@
       "label": "colour",
       "kind": "Property",
       "preferredName": "Colour",
-      "description": "The colour of the substance or mixture as supplied is indicated."
+      "description": "The colour of the substance or mixture as supplied is indicated.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "io.openmanufacturing:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#odour",
       "label": "odour",
       "kind": "Property",
       "preferredName": "Odour",
-      "description": "A qualitative description of the odour is shown if it is well-known or described in the literature."
+      "description": "A qualitative description of the odour is shown if it is well-known or described in the literature.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "io.openmanufacturing:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#pH",
@@ -395,56 +531,120 @@
       "label": "reactivity",
       "kind": "Property",
       "preferredName": "Reactivity",
-      "description": "Reactivity hazards of the substance or mixtures."
+      "description": "Reactivity hazards of the substance or mixtures.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "io.openmanufacturing:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#wasteManagement",
       "label": "wasteManagement",
       "kind": "Property",
       "preferredName": "Waste Management",
-      "description": "Waste management of the substance or mixture and/or its container to assist in the determination of safe and environmentally preferred waste management options."
+      "description": "Waste management of the substance or mixture and/or its container to assist in the determination of safe and environmentally preferred waste management options.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "io.openmanufacturing:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#wasteInformation",
       "label": "wasteInformation",
       "kind": "Property",
       "preferredName": "Waste Information",
-      "description": "Waste treatment-relevant information."
+      "description": "Waste treatment-relevant information.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "io.openmanufacturing:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#unNumber",
       "label": "unNumber",
       "kind": "Property",
       "preferredName": "UN Number",
-      "description": "The UN number or the ID number (i.e. the four-figure identification number of the substance, mixture or article preceded by the letters ‘UN’ or ‘ID’) from the UN Model Regulations, IMDG, ADR, RID, ADN or ICAO TI shall be provided."
+      "description": "The UN number or the ID number (i.e. the four-figure identification number of the substance, mixture or article preceded by the letters ‘UN’ or ‘ID’) from the UN Model Regulations, IMDG, ADR, RID, ADN or ICAO TI shall be provided.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "io.openmanufacturing:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#shippingName",
       "label": "shippingName",
       "kind": "Property",
       "preferredName": "Shipping Name",
-      "description": "A proper shipping name."
+      "description": "A proper shipping name.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "io.openmanufacturing:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#dgClass",
       "label": "dgClass",
       "kind": "Property",
       "preferredName": "DG Class",
-      "description": "The transport hazard class (and subsidiary risks) assigned to the substances or mixtures on the basis of the predominant hazard that they present according to the UN Model Regulations shall be provided."
+      "description": "The transport hazard class (and subsidiary risks) assigned to the substances or mixtures on the basis of the predominant hazard that they present according to the UN Model Regulations shall be provided.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "io.openmanufacturing:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#dgPack",
       "label": "dgPack",
       "kind": "Property",
       "preferredName": "DG Pack",
-      "description": "The packing group number from the UN Model Regulations shall be provided, if applicable, as required by the UN Model Regulations, ADR, RID and ADN."
+      "description": "The packing group number from the UN Model Regulations shall be provided, if applicable, as required by the UN Model Regulations, ADR, RID and ADN.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "io.openmanufacturing:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#limitations",
       "label": "limitations",
       "kind": "Property",
       "preferredName": "Limitations",
-      "description": "Information shall be provided regarding relevant Union safety, health and environmental provisions including the prohibitions and restrictions."
+      "description": "Information shall be provided regarding relevant Union safety, health and environmental provisions including the prohibitions and restrictions.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "io.openmanufacturing:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#co2FootprintTotal",
@@ -465,14 +665,30 @@
       "label": "documentLocation",
       "kind": "Property",
       "preferredName": "Document Location",
-      "description": "Location or link of and to the document."
+      "description": "Location or link of and to the document.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "io.openmanufacturing:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#documentLanguage",
       "label": "documentLanguage",
       "kind": "Property",
       "preferredName": "Document Language",
-      "description": "Language of the safety data sheet (SDS) document."
+      "description": "Language of the safety data sheet (SDS) document.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Language",
+          "target_model": "io.openmanufacturing:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#documentVersion",
@@ -500,28 +716,60 @@
       "label": "manufactureId",
       "kind": "Property",
       "preferredName": "Manufacture ID",
-      "description": "Unique BPN number."
+      "description": "Unique BPN number.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "io.openmanufacturing:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#indicationChanges",
       "label": "indicationChanges",
       "kind": "Property",
       "preferredName": "Indication Changes",
-      "description": "in the case of a revised safety data sheet (SDS), a clear indication of where changes have been made to the previous version of the safety data sheet (SDS)."
+      "description": "in the case of a revised safety data sheet (SDS), a clear indication of where changes have been made to the previous version of the safety data sheet (SDS).",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "io.openmanufacturing:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#authorSDS",
       "label": "authorSDS",
       "kind": "Property",
       "preferredName": "Author SDS",
-      "description": "safety data sheet (SDS) author changing the document."
+      "description": "safety data sheet (SDS) author changing the document.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "io.openmanufacturing:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#chemicalName",
       "label": "chemicalName",
       "kind": "Property",
       "preferredName": "Chemical Name",
-      "description": "Name of the chemical."
+      "description": "Name of the chemical.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "io.openmanufacturing:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#chemicalPercentage",
@@ -542,7 +790,15 @@
       "label": "chemicalNature",
       "kind": "Property",
       "preferredName": "Chemical Nature",
-      "description": "Chemical nature of the mixture or substance."
+      "description": "Chemical nature of the mixture or substance.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "io.openmanufacturing:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#Document",
@@ -640,7 +896,15 @@
       "label": "PhCharacteristic",
       "kind": "Characteristic",
       "preferredName": "pH Characteristic",
-      "description": "Provides a range or a pH value."
+      "description": "Provides a range or a pH value.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "integer",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#DocumentEntity",
@@ -808,7 +1072,15 @@
       "label": "CuringTime",
       "kind": "Characteristic",
       "preferredName": "Curing Ttime Characteristic",
-      "description": "Time in seconds needed for the curing of the substance or mixture."
+      "description": "Time in seconds needed for the curing of the substance or mixture.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "float",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#ReachRegistrationTrait",
@@ -871,28 +1143,60 @@
       "label": "PhysicalState",
       "kind": "Characteristic",
       "preferredName": "Physical State Characteristic",
-      "description": "Enumeration with three physical states: gas, liquid and solid."
+      "description": "Enumeration with three physical states: gas, liquid and solid.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#Degree",
       "label": "Degree",
       "kind": "Characteristic",
       "preferredName": "Degree Characteristic",
-      "description": "The temperature in its phase."
+      "description": "The temperature in its phase.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "decimal",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#Density",
       "label": "Density",
       "kind": "Characteristic",
       "preferredName": "Density Characteristic",
-      "description": "Describes the density of the product."
+      "description": "Describes the density of the product.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "decimal",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#Co2Total",
       "label": "Co2Total",
       "kind": "Characteristic",
       "preferredName": "CO2 Total Characteristic",
-      "description": "Describes the amount of kg of the CO2 equivalent."
+      "description": "Describes the amount of kg of the CO2 equivalent.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "decimal",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#ReachRegistrationRegex",
@@ -941,14 +1245,30 @@
       "label": "DocumentVersionCharacteristic",
       "kind": "Characteristic",
       "preferredName": "Document Version Characteristic",
-      "description": "Refers to the version of the safety data sheet (SDS) document."
+      "description": "Refers to the version of the safety data sheet (SDS) document.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#ProvisioningCountry",
       "label": "ProvisioningCountry",
       "kind": "Characteristic",
       "preferredName": "Provisioning Country Characteristic",
-      "description": "Refers to the country of the safety data sheet (SDS) provisioner."
+      "description": "Refers to the country of the safety data sheet (SDS) provisioner.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#MaxTitleCharacterConstraint",

@@ -67,21 +67,45 @@
       "label": "wasteCode",
       "kind": "Property",
       "preferredName": "Waste code",
-      "description": "The waste code identifying the waste type"
+      "description": "The waste code identifying the waste type",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "io.openmanufacturing:characteristic@1.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.waste:1.0.0#wasteCodeDescription",
       "label": "wasteCodeDescription",
       "kind": "Property",
       "preferredName": "Waste Code Description",
-      "description": "The waste code description"
+      "description": "The waste code description",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "io.openmanufacturing:characteristic@1.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.waste:1.0.0#metalScrapIdentificationCode",
       "label": "metalScrapIdentificationCode",
       "kind": "Property",
       "preferredName": "waste code jurisdiction",
-      "description": "The jurisdiction in which the waste code is valid (country, EU,...)"
+      "description": "The jurisdiction in which the waste code is valid (country, EU,...)",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "io.openmanufacturing:characteristic@1.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.waste:1.0.0#wasteCodeJurisdiction",
@@ -130,7 +154,15 @@
       "label": "hazardousness",
       "kind": "Property",
       "preferredName": "Hazardousness",
-      "description": "If the product can be classified as hazardous"
+      "description": "If the product can be classified as hazardous",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Boolean",
+          "target_model": "io.openmanufacturing:characteristic@1.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.waste:1.0.0#phValue",
@@ -256,7 +288,15 @@
       "label": "Text",
       "kind": "Characteristic",
       "preferredName": null,
-      "description": "Describes a Property which contains plain text. This is intended exclusively for human readable strings, not for identifiers, measurement values, etc."
+      "description": "Describes a Property which contains plain text. This is intended exclusively for human readable strings, not for identifiers, measurement values, etc.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.waste:1.0.0#RiskPotentialCharacterisitc",
@@ -270,7 +310,15 @@
       "label": "DateStamp",
       "kind": "Characteristic",
       "preferredName": "date stamp",
-      "description": "Date on which waste was incurred"
+      "description": "Date on which waste was incurred",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "date",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.waste:1.0.0#ProductPurityCharacteristic",
@@ -291,70 +339,150 @@
       "label": "PhValueCharacterisitc",
       "kind": "Characteristic",
       "preferredName": "pH value",
-      "description": null
+      "description": null,
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "double",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.waste:1.0.0#PricePerWeightInGramCharacteristic",
       "label": "PricePerWeightInGramCharacteristic",
       "kind": "Characteristic",
       "preferredName": "price per weight in gram",
-      "description": "Price per weight in gram of waste material"
+      "description": "Price per weight in gram of waste material",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "decimal",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.waste:1.0.0#PricePerWeightInKiloGramCharacterisitic",
       "label": "PricePerWeightInKiloGramCharacterisitic",
       "kind": "Characteristic",
       "preferredName": "price per weight in kilo gram",
-      "description": "Price per weight in kilo gram of waste material"
+      "description": "Price per weight in kilo gram of waste material",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "decimal",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.waste:1.0.0#PricePerVolumeInLitreCharacteristic",
       "label": "PricePerVolumeInLitreCharacteristic",
       "kind": "Characteristic",
       "preferredName": "price per volume in litre",
-      "description": "Price per volume in litre gram of waste material"
+      "description": "Price per volume in litre gram of waste material",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "decimal",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.waste:1.0.0#PricePerVolumeInMillilitreCharacteristic",
       "label": "PricePerVolumeInMillilitreCharacteristic",
       "kind": "Characteristic",
       "preferredName": "price per volume in millilitre",
-      "description": "Price per volume in millilitre of waste material"
+      "description": "Price per volume in millilitre of waste material",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "decimal",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.waste:1.0.0#PricePerAreaInSquareMeterCharacteristic",
       "label": "PricePerAreaInSquareMeterCharacteristic",
       "kind": "Characteristic",
       "preferredName": "price per area in square meter",
-      "description": "Price per area in square meter of waste material"
+      "description": "Price per area in square meter of waste material",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "decimal",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.waste:1.0.0#PricePerAreaInSquareMillimeterCharacteristic",
       "label": "PricePerAreaInSquareMillimeterCharacteristic",
       "kind": "Characteristic",
       "preferredName": "price per area in square millimeter",
-      "description": "Price per area in square millimeter of waste material"
+      "description": "Price per area in square millimeter of waste material",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "decimal",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.waste:1.0.0#PricePerLengthInMeterCharacteristic",
       "label": "PricePerLengthInMeterCharacteristic",
       "kind": "Characteristic",
       "preferredName": "Price per length in meter of waste material",
-      "description": "Price per length in meter of waste material"
+      "description": "Price per length in meter of waste material",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "decimal",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.waste:1.0.0#PricePerLengthInMillimeterCharacteristic",
       "label": "PricePerLengthInMillimeterCharacteristic",
       "kind": "Characteristic",
       "preferredName": "price per length in millimeter",
-      "description": "Price per length in millimeter of waste material"
+      "description": "Price per length in millimeter of waste material",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "decimal",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.waste:1.0.0#PricePerPieceCharacteristic",
       "label": "PricePerPieceCharacteristic",
       "kind": "Characteristic",
       "preferredName": "price per piece",
-      "description": "Price per piece of waste material"
+      "description": "Price per piece of waste material",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "decimal",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.waste:1.0.0#CurrentMarketPriceCharacteristic",
@@ -417,14 +545,30 @@
       "label": "DensityCharacteristic",
       "kind": "Characteristic",
       "preferredName": null,
-      "description": null
+      "description": null,
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "double",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.waste:1.0.0#PercentCharacterisitic",
       "label": "PercentCharacterisitic",
       "kind": "Characteristic",
       "preferredName": "percent characterisitic",
-      "description": null
+      "description": null,
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "decimal",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.waste:1.0.0#MarketIndexCurrencyTrait",

@@ -44,7 +44,15 @@
       "label": "catenaXId",
       "kind": "Property",
       "preferredName": "Catena-X Identifier",
-      "description": "The fully anonymous Catena-X ID of the batch, valid for the Catena-X dataspace."
+      "description": "The fully anonymous Catena-X ID of the batch, valid for the Catena-X dataspace.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "UuidV4Trait",
+          "target_model": "shared.uuid@2.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.batch:3.0.0#localIdentifiers",
@@ -135,42 +143,90 @@
       "label": "ValueCharacteristic",
       "kind": "Characteristic",
       "preferredName": "Value Characteristic",
-      "description": "The value of an identifier."
+      "description": "The value of an identifier.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.batch:3.0.0#PartIdCharacteristic",
       "label": "PartIdCharacteristic",
       "kind": "Characteristic",
       "preferredName": "Part ID Characteristic",
-      "description": "The part ID is a multi-character string, usually assigned by an ERP system"
+      "description": "The part ID is a multi-character string, usually assigned by an ERP system",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.batch:3.0.0#PartNameCharacteristic",
       "label": "PartNameCharacteristic",
       "kind": "Characteristic",
       "preferredName": "Part Name Characteristic",
-      "description": "Part Name in string format from the respective system in the value chain"
+      "description": "Part Name in string format from the respective system in the value chain",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.batch:3.0.0#KeyCharacteristic",
       "label": "KeyCharacteristic",
       "kind": "Characteristic",
       "preferredName": "Key Characteristic",
-      "description": "The key characteristic of a local identifier. A specific subset of keys is predefined. Custom keys are not allowed. Predefined keys:\n- \"manufacturerId\" - The Business Partner Number(BPN)of the manufacturer. Value: BPN-Nummer\n- \"batchId\" - The identifier of the batch, to which the serialzed part belongs"
+      "description": "The key characteristic of a local identifier. A specific subset of keys is predefined. Custom keys are not allowed. Predefined keys:\n- \"manufacturerId\" - The Business Partner Number(BPN)of the manufacturer. Value: BPN-Nummer\n- \"batchId\" - The identifier of the batch, to which the serialzed part belongs",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.batch:3.0.0#DateTimeCharacteristic",
       "label": "DateTimeCharacteristic",
       "kind": "Characteristic",
       "preferredName": "Date Time Characteristic",
-      "description": "Describes a Property which contains the date and time with an optional timezone."
+      "description": "Describes a Property which contains the date and time with an optional timezone.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.batch:3.0.0#CountryCodeCharacteristic",
       "label": "CountryCodeCharacteristic",
       "kind": "Characteristic",
       "preferredName": "Country Code Characteristic",
-      "description": "ISO 3166-1 alpha-3 ? three-letter country codes"
+      "description": "ISO 3166-1 alpha-3 ? three-letter country codes",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.batch:3.0.0#KeyValueList",
@@ -184,14 +240,30 @@
       "label": "ManufacturingEntity",
       "kind": "Entity",
       "preferredName": "Manufacturing Entity",
-      "description": "Encapsulates the manufacturing relevant attributes"
+      "description": "Encapsulates the manufacturing relevant attributes",
+      "external_refs": [
+        {
+          "predicate": "properties",
+          "target_local": "sites",
+          "target_model": "shared.part_site_information_as_built@2.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.batch:3.0.0#PartTypeInformationEntity",
       "label": "PartTypeInformationEntity",
       "kind": "Entity",
       "preferredName": "Part Type Information Entity",
-      "description": "Encapsulation for data related to the part type"
+      "description": "Encapsulation for data related to the part type",
+      "external_refs": [
+        {
+          "predicate": "properties",
+          "target_local": "partClassification",
+          "target_model": "shared.part_classification@1.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.batch:3.0.0#KeyTrait",

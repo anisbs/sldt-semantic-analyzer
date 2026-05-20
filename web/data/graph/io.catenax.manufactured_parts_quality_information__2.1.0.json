@@ -59,42 +59,90 @@
       "label": "batchId",
       "kind": "Property",
       "preferredName": "Batch number",
-      "description": "Manufacturer-specific batch identifier: In which batch was this part manufactured"
+      "description": "Manufacturer-specific batch identifier: In which batch was this part manufactured",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.manufactured_parts_quality_information:2.1.0#catenaXPartId",
       "label": "catenaXPartId",
       "kind": "Property",
       "preferredName": "Catena-X Identifier of this part",
-      "description": "The fully anonymous and unique Catena-X ID of this part. This id is unique inside Catena-X data space."
+      "description": "The fully anonymous and unique Catena-X ID of this part. This id is unique inside Catena-X data space.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "UuidV4Trait",
+          "target_model": "shared.uuid@2.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.manufactured_parts_quality_information:2.1.0#catenaXQualityTaskId",
       "label": "catenaXQualityTaskId",
       "kind": "Property",
       "preferredName": "Quality Task ID",
-      "description": "The fully anonymous and unique Catena-X ID of this quality task. This id is unique inside Catena-X data space."
+      "description": "The fully anonymous and unique Catena-X ID of this quality task. This id is unique inside Catena-X data space.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "UuidV4Trait",
+          "target_model": "shared.uuid@2.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.manufactured_parts_quality_information:2.1.0#hasBeenReworked",
       "label": "hasBeenReworked",
       "kind": "Property",
       "preferredName": "Reworked",
-      "description": "Indicator whether this part was reworked during manufacturing"
+      "description": "Indicator whether this part was reworked during manufacturing",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Boolean",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.manufactured_parts_quality_information:2.1.0#manufacturerPartName",
       "label": "manufacturerPartName",
       "kind": "Property",
       "preferredName": "Manufacturer part name",
-      "description": "Part name given from  the manufacturer or supplier of this part, component, sub component or raw material. A manufacturer part name is NOT unique: All parts of the same kind share the same part name."
+      "description": "Part name given from  the manufacturer or supplier of this part, component, sub component or raw material. A manufacturer part name is NOT unique: All parts of the same kind share the same part name.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.manufactured_parts_quality_information:2.1.0#manufacturerPartNumber",
       "label": "manufacturerPartNumber",
       "kind": "Property",
       "preferredName": "Manufacturer part number",
-      "description": "Part number given from  the manufacturer or supplier of this part, component, sub component or raw material. A manufacturer part number is NOT unique: All parts of the same kind share the same part number."
+      "description": "Part number given from  the manufacturer or supplier of this part, component, sub component or raw material. A manufacturer part number is NOT unique: All parts of the same kind share the same part number.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.manufactured_parts_quality_information:2.1.0#manufacturerSerialNumber",
@@ -115,7 +163,15 @@
       "label": "parentPartNumber",
       "kind": "Property",
       "preferredName": "Parent part number",
-      "description": "Internal part number of the analysed part.\nIf the manufacturer is a TIER1 supplier -> parent level is OEM.\nIf the manufacturer is a TIER2 supplier -> parent level is TIER1 supplier.\nA parent part number is NOT unique: All parent parts of the same kind share the same parent part number."
+      "description": "Internal part number of the analysed part.\nIf the manufacturer is a TIER1 supplier -> parent level is OEM.\nIf the manufacturer is a TIER2 supplier -> parent level is TIER1 supplier.\nA parent part number is NOT unique: All parent parts of the same kind share the same parent part number.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.manufactured_parts_quality_information:2.1.0#parentSerialNumber",
@@ -129,7 +185,15 @@
       "label": "plantCatenaXId",
       "kind": "Property",
       "preferredName": "Plant Catena-X ID",
-      "description": "Unique Catena-X plant identifier, also called BPNS."
+      "description": "Unique Catena-X plant identifier, also called BPNS.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "BpnsTrait",
+          "target_model": "shared.business_partner_number@2.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.manufactured_parts_quality_information:2.1.0#plantCountryCode",
@@ -143,7 +207,15 @@
       "label": "plantDescription",
       "kind": "Property",
       "preferredName": "Vehicle production plant name",
-      "description": "Long name of the production plant of the vehicle"
+      "description": "Long name of the production plant of the vehicle",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.manufactured_parts_quality_information:2.1.0#plantIdentifier",
@@ -157,14 +229,30 @@
       "label": "productionDate",
       "kind": "Property",
       "preferredName": "Production Date",
-      "description": "Date of production for this specific part."
+      "description": "Date of production for this specific part.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Timestamp",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.manufactured_parts_quality_information:2.1.0#productionLine",
       "label": "productionLine",
       "kind": "Property",
       "preferredName": "Production line",
-      "description": "On which production line was this part produced"
+      "description": "On which production line was this part produced",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.manufactured_parts_quality_information:2.1.0#additionalInformation",
@@ -178,35 +266,75 @@
       "label": "selectionCriteria",
       "kind": "Property",
       "preferredName": "Selection criteria",
-      "description": "Describes the selection criteria a Catena-X data provider has applied to create this data set."
+      "description": "Describes the selection criteria a Catena-X data provider has applied to create this data set.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.manufactured_parts_quality_information:2.1.0#selectionStart",
       "label": "selectionStart",
       "kind": "Property",
       "preferredName": "Selection start",
-      "description": "Describes the starting point for providing records in this data set."
+      "description": "Describes the starting point for providing records in this data set.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.manufactured_parts_quality_information:2.1.0#selectionEnd",
       "label": "selectionEnd",
       "kind": "Property",
       "preferredName": "Selection end",
-      "description": "Describes the end point for providing records in this data set."
+      "description": "Describes the end point for providing records in this data set.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.manufactured_parts_quality_information:2.1.0#key",
       "label": "key",
       "kind": "Property",
       "preferredName": "Key id",
-      "description": "Key identifier for this additional information"
+      "description": "Key identifier for this additional information",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.manufactured_parts_quality_information:2.1.0#value",
       "label": "value",
       "kind": "Property",
       "preferredName": "Value",
-      "description": "Value for this additional information"
+      "description": "Value for this additional information",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.manufactured_parts_quality_information:2.1.0#ManufacturedPartsList",
@@ -234,21 +362,45 @@
       "label": "UniqueID",
       "kind": "Characteristic",
       "preferredName": "unique ID",
-      "description": "This Characteristic describes a property that is truly unique either inside the Company that is providing the data or even in Catena-X data space. Only one property in a semantic entity should be a uniqueID. Unique IDs can be used to link a data set with other semantic models."
+      "description": "This Characteristic describes a property that is truly unique either inside the Company that is providing the data or even in Catena-X data space. Only one property in a semantic entity should be a uniqueID. Unique IDs can be used to link a data set with other semantic models.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.manufactured_parts_quality_information:2.1.0#PositiveNumber",
       "label": "PositiveNumber",
       "kind": "Characteristic",
       "preferredName": "Positive Number characteristic",
-      "description": "This Characteristic describes a positive number. 0 is not included."
+      "description": "This Characteristic describes a positive number. 0 is not included.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "positiveInteger",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.manufactured_parts_quality_information:2.1.0#CountryCodeCharacteristic",
       "label": "CountryCodeCharacteristic",
       "kind": "Characteristic",
       "preferredName": "Country Code Characteristic",
-      "description": "ISO 3166-1 alpha-3 – three-letter country codes "
+      "description": "ISO 3166-1 alpha-3 – three-letter country codes ",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.manufactured_parts_quality_information:2.1.0#ManufacturedPart",
@@ -276,7 +428,15 @@
       "label": "RecordStatusEnumeration",
       "kind": "Characteristic",
       "preferredName": "Record status enumeration",
-      "description": "Defining the enumeration for the record status"
+      "description": "Defining the enumeration for the record status",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.manufactured_parts_quality_information:2.1.0#CountryCodeTrait",

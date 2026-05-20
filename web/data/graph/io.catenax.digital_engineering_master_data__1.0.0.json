@@ -58,7 +58,15 @@
       "label": "digitalMasterDataID",
       "kind": "Property",
       "preferredName": "Digital Master Data ID",
-      "description": "The identifier of a requirement represented by a UUID, valid for the Catena-X dataspace."
+      "description": "The identifier of a requirement represented by a UUID, valid for the Catena-X dataspace.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "UuidV4Trait",
+          "target_model": "shared.uuid@2.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#complianceData",
@@ -93,21 +101,45 @@
       "label": "validTo",
       "kind": "Property",
       "preferredName": "Valid To",
-      "description": "The date on which this part was superseded."
+      "description": "The date on which this part was superseded.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Timestamp",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#validFrom",
       "label": "validFrom",
       "kind": "Property",
       "preferredName": "Valid From",
-      "description": "The date from which this part is approved."
+      "description": "The date from which this part is approved.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Timestamp",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#supplier",
       "label": "supplier",
       "kind": "Property",
       "preferredName": "Supplier",
-      "description": "The Business Partner Number Legal Entity (BPNL) of the Supplier, producing the part primarily"
+      "description": "The Business Partner Number Legal Entity (BPNL) of the Supplier, producing the part primarily",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "BpnlTrait",
+          "target_model": "shared.business_partner_number@2.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#supersededVersion",
@@ -128,7 +160,15 @@
       "label": "releaseDate",
       "kind": "Property",
       "preferredName": "Release Date",
-      "description": "The official date when the part was approved."
+      "description": "The official date when the part was approved.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Timestamp",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#partNumber",
@@ -149,14 +189,30 @@
       "label": "nomenclature",
       "kind": "Property",
       "preferredName": "Nomenclature",
-      "description": "Standardized name of the part based on its function or application"
+      "description": "Standardized name of the part based on its function or application",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#description",
       "label": "description",
       "kind": "Property",
       "preferredName": "Description",
-      "description": "Detailed textual description of the part, including key Detailed textual description of the part, including key characteristics\n"
+      "description": "Detailed textual description of the part, including key Detailed textual description of the part, including key characteristics\n",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#category",
@@ -191,7 +247,15 @@
       "label": "safetyRelevant",
       "kind": "Property",
       "preferredName": "Safety Relevant",
-      "description": "Describes, if safety relevance is required"
+      "description": "Describes, if safety relevance is required",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Boolean",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#safetyRelevantFeatures",
@@ -212,21 +276,45 @@
       "label": "securityAndEncryptionStandards",
       "kind": "Property",
       "preferredName": "Security & Encryption Standards",
-      "description": "Defines cybersecurity measures implemented in the software"
+      "description": "Defines cybersecurity measures implemented in the software",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#signatureSign",
       "label": "signatureSign",
       "kind": "Property",
       "preferredName": "Signature Sign",
-      "description": "Flashware must be signed according to securtiy class CCC"
+      "description": "Flashware must be signed according to securtiy class CCC",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#softwareVersion",
       "label": "softwareVersion",
       "kind": "Property",
       "preferredName": "Software Version",
-      "description": "Defines the version number of the embedded software or firmware"
+      "description": "Defines the version number of the embedded software or firmware",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#materialData",
@@ -247,14 +335,30 @@
       "label": "diagnosticsAndErrorCodes",
       "kind": "Property",
       "preferredName": "Diagnostics & Error Codes (DTCs)",
-      "description": "List of standardized trouble codes used for diagnostics"
+      "description": "List of standardized trouble codes used for diagnostics",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#flashingMethod",
       "label": "flashingMethod",
       "kind": "Property",
       "preferredName": "Flashing Method",
-      "description": "Flash type: the used method to update for example control units. For example UDS (Unified Diagnostic Services) Flash via DoIP (Diagnostics over Internet Protocol)"
+      "description": "Flash type: the used method to update for example control units. For example UDS (Unified Diagnostic Services) Flash via DoIP (Diagnostics over Internet Protocol)",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#noteProperty",
@@ -268,7 +372,15 @@
       "label": "timestamp",
       "kind": "Property",
       "preferredName": "Timestamp",
-      "description": "Describes a Property which contains the date and time with an optional timezone."
+      "description": "Describes a Property which contains the date and time with an optional timezone.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Timestamp",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#versionNumber",
@@ -282,7 +394,15 @@
       "label": "versionID",
       "kind": "Property",
       "preferredName": "version ID (en)",
-      "description": "The identifier of this exact version of the Digital Master Data represented by a Catena-X ID or Part ID, valid for the Catena-X dataspace."
+      "description": "The identifier of this exact version of the Digital Master Data represented by a Catena-X ID or Part ID, valid for the Catena-X dataspace.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "UuidV4Trait",
+          "target_model": "shared.uuid@2.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#density",
@@ -296,7 +416,15 @@
       "label": "materialDescription",
       "kind": "Property",
       "preferredName": "Material Description",
-      "description": "Specifies the primary material composition of the part"
+      "description": "Specifies the primary material composition of the part",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#materialID",
@@ -478,21 +606,45 @@
       "label": "SupersededVersionCharacteristic",
       "kind": "Characteristic",
       "preferredName": "Superseded Version Characteristic",
-      "description": "Characteristic for the Link to digital twin of the part superseding this one."
+      "description": "Characteristic for the Link to digital twin of the part superseding this one.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#SuccessorPartCharacteristic",
       "label": "SuccessorPartCharacteristic",
       "kind": "Characteristic",
       "preferredName": "Successor Part Characteristic",
-      "description": "Characteristic that describes the Link to digital twin of the part superseding this one."
+      "description": "Characteristic that describes the Link to digital twin of the part superseding this one.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "anyURI",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#PartNumberCharacteristic",
       "label": "PartNumberCharacteristic",
       "kind": "Characteristic",
       "preferredName": "Part Number Characteristic",
-      "description": "Characteristic for the Unique identifier assigned to the part by the OEM or supplier (Sachnummer)"
+      "description": "Characteristic for the Unique identifier assigned to the part by the OEM or supplier (Sachnummer)",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#NotesCharacteristic",
@@ -513,7 +665,15 @@
       "label": "HomologationApprovalNumberCharacteristic",
       "kind": "Characteristic",
       "preferredName": "Homologation Approval Number Characteristic",
-      "description": "Characteristic for the Official certification number confirming compliance with regulatory requirements"
+      "description": "Characteristic for the Official certification number confirming compliance with regulatory requirements",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#MaterialDataCharacteristic",
@@ -534,28 +694,60 @@
       "label": "VersionNumberCharacteristic",
       "kind": "Characteristic",
       "preferredName": "Version Number Characteristic",
-      "description": "Characteristic for the Digital Master Data version"
+      "description": "Characteristic for the Digital Master Data version",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#MaterialIDCharacteristic",
       "label": "MaterialIDCharacteristic",
       "kind": "Characteristic",
       "preferredName": "Material ID Characteristic",
-      "description": "Identification of the material from defined material database or standard"
+      "description": "Identification of the material from defined material database or standard",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#Reference2DCADDrawingCharacteristic",
       "label": "Reference2DCADDrawingCharacteristic",
       "kind": "Characteristic",
       "preferredName": "Reference 2D CAD Drawing Characteristic",
-      "description": "Link to the digital 2D model used for design and manufacturing (external and Catena-X-internal ressources, URN's). Based on IDTA SMT 020026 - Provision of 3D Models"
+      "description": "Link to the digital 2D model used for design and manufacturing (external and Catena-X-internal ressources, URN's). Based on IDTA SMT 020026 - Provision of 3D Models",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "anyURI",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#Reference3DCADDrawingCharacteristic",
       "label": "Reference3DCADDrawingCharacteristic",
       "kind": "Characteristic",
       "preferredName": "Reference 3D CAD Drawing Characteristic",
-      "description": "Link  the digital CAD model used for design and manufacturing (external and Catena-X-internal ressources, URN's). Based on IDTA SMT 020026  - Provision of 3D Models"
+      "description": "Link  the digital CAD model used for design and manufacturing (external and Catena-X-internal ressources, URN's). Based on IDTA SMT 020026  - Provision of 3D Models",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "anyURI",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#BoundingBoxCharacteristic",
@@ -569,14 +761,30 @@
       "label": "WeightToleranceCharacteristic",
       "kind": "Characteristic",
       "preferredName": "Weight Tolerance Characteristic",
-      "description": "Tolerance range of the weight of a part or assembly. ±0.5 kg or ±2%"
+      "description": "Tolerance range of the weight of a part or assembly. ±0.5 kg or ±2%",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "float",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#EngneeringEntity",
       "label": "EngneeringEntity",
       "kind": "Entity",
       "preferredName": "Engneering Entity",
-      "description": "Entity for all the Engineering Data of/in the Digital Master Data Model"
+      "description": "Entity for all the Engineering Data of/in the Digital Master Data Model",
+      "external_refs": [
+        {
+          "predicate": "properties",
+          "target_local": "requirementInformation",
+          "target_model": "requirement@1.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#BasicDataEntity",
@@ -653,126 +861,270 @@
       "label": "CategoryCharacteristic",
       "kind": "Characteristic",
       "preferredName": "Category Characteristic",
-      "description": "Category, the part belongs to. Based on VDA 4993."
+      "description": "Category, the part belongs to. Based on VDA 4993.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#StatusCharacteristic",
       "label": "StatusCharacteristic",
       "kind": "Characteristic",
       "preferredName": "Status",
-      "description": "Status of the part exchanged."
+      "description": "Status of the part exchanged.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#SafetyRelevantFeaturesList",
       "label": "SafetyRelevantFeaturesList",
       "kind": "Characteristic",
       "preferredName": "Safety Relevant Features List",
-      "description": "List of all the safety relevant properties according to partner"
+      "description": "List of all the safety relevant properties according to partner",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#StatutoryFeaturesList",
       "label": "StatutoryFeaturesList",
       "kind": "Characteristic",
       "preferredName": "Statutory  Features List",
-      "description": "List of all  the legal and industry standards the part complies with"
+      "description": "List of all  the legal and industry standards the part complies with",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#NotesList",
       "label": "NotesList",
       "kind": "Characteristic",
       "preferredName": "Notes List",
-      "description": "List of notes that can be attached as additional information in engineering process."
+      "description": "List of notes that can be attached as additional information in engineering process.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#CenterOfGravityCharacteristic",
       "label": "CenterOfGravityCharacteristic",
       "kind": "Characteristic",
       "preferredName": "Center Of Gravity Characteristic",
-      "description": "The calculated center of mass in a coordinate system for proper weight distribution"
+      "description": "The calculated center of mass in a coordinate system for proper weight distribution",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#DensityCharacteristic",
       "label": "DensityCharacteristic",
       "kind": "Characteristic",
       "preferredName": "Density Characteristic",
-      "description": "Density of the material for CAD model usage 7850 kg/m³"
+      "description": "Density of the material for CAD model usage 7850 kg/m³",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "float",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#ThermalExpansionCoefficientCharacteristic",
       "label": "ThermalExpansionCoefficientCharacteristic",
       "kind": "Characteristic",
       "preferredName": "Thermal Expansion Coefficient Characteristic",
-      "description": "Rate of material expansion per degree of temperature change; 2.3 × 10⁻⁶ 1/K"
+      "description": "Rate of material expansion per degree of temperature change; 2.3 × 10⁻⁶ 1/K",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "float",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#BoundingSphereCharacteristic",
       "label": "BoundingSphereCharacteristic",
       "kind": "Characteristic",
       "preferredName": "Bounding Sphere Characteristic",
-      "description": "Diameter of the smallest possible sphere that fully encloses the part geometry. { \"value\": 315.0, \"unit\": \"mm\" }"
+      "description": "Diameter of the smallest possible sphere that fully encloses the part geometry. { \"value\": 315.0, \"unit\": \"mm\" }",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "float",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#CalculatedWeightCharacteristic",
       "label": "CalculatedWeightCharacteristic",
       "kind": "Characteristic",
       "preferredName": "Calculated Weight Characteristic",
-      "description": "Mass of the part, typically in kilograms. Calculated out of all belonging 3D-models"
+      "description": "Mass of the part, typically in kilograms. Calculated out of all belonging 3D-models",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "float",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#EstimatedWeightCharacteristic",
       "label": "EstimatedWeightCharacteristic",
       "kind": "Characteristic",
       "preferredName": "Estimated Weight Characteristic",
-      "description": "Estimated mass of the part, typically in kilograms. Based on early design assumptions or incomplete data."
+      "description": "Estimated mass of the part, typically in kilograms. Based on early design assumptions or incomplete data.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "float",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#MomentOfInertiaCharacteristic",
       "label": "MomentOfInertiaCharacteristic",
       "kind": "Characteristic",
       "preferredName": "Moment Of Inertia Characteristic",
-      "description": "Resistance of the part to rotational acceleration around an axis\n kg·m²"
+      "description": "Resistance of the part to rotational acceleration around an axis\n kg·m²",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "float",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#SurfaceAreaCharacteristic",
       "label": "SurfaceAreaCharacteristic",
       "kind": "Characteristic",
       "preferredName": "Surface Area Characteristic",
-      "description": "surface area in mm2"
+      "description": "surface area in mm2",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "float",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#VolumeCharacteristic",
       "label": "VolumeCharacteristic",
       "kind": "Characteristic",
       "preferredName": "Volume Characteristic",
-      "description": "volume of the part in mm3"
+      "description": "volume of the part in mm3",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "float",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#WeightedWeightCharacteristic",
       "label": "WeightedWeightCharacteristic",
       "kind": "Characteristic",
       "preferredName": "Weighted Weight Characteristic",
-      "description": "Mass of the part, typically in kilograms. Calculated out of all belonging 3D-models (== Actual weight)"
+      "description": "Mass of the part, typically in kilograms. Calculated out of all belonging 3D-models (== Actual weight)",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "float",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#BoundingBoxLenght",
       "label": "BoundingBoxLenght",
       "kind": "Characteristic",
       "preferredName": "Bounding Box Lenght",
-      "description": "The minimal 3D box that fully encloses the part geometry (length x width x height),  units in millimetre."
+      "description": "The minimal 3D box that fully encloses the part geometry (length x width x height),  units in millimetre.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "float",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#BoundingBoxWidth",
       "label": "BoundingBoxWidth",
       "kind": "Characteristic",
       "preferredName": "Bounding Box Width",
-      "description": "The minimal 3D box that fully encloses the part geometry (length x width x height),  units in millimetre."
+      "description": "The minimal 3D box that fully encloses the part geometry (length x width x height),  units in millimetre.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "float",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#BoundingBoxHeight",
       "label": "BoundingBoxHeight",
       "kind": "Characteristic",
       "preferredName": "Bounding Box Heigh ",
-      "description": "The minimal 3D box that fully encloses the part geometry (length x width x height),  units in millimetre."
+      "description": "The minimal 3D box that fully encloses the part geometry (length x width x height),  units in millimetre.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "float",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.digital_engineering_master_data:1.0.0#WeightToleranceTrait",

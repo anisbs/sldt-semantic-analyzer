@@ -31,21 +31,51 @@
       "label": "SpecialCharacteristicMeasurement",
       "kind": "Aspect",
       "preferredName": "SpecialCharacteristicMeasurment",
-      "description": "Contains the Measurment for a special characteristic"
+      "description": "Contains the Measurment for a special characteristic",
+      "external_refs": [
+        {
+          "predicate": "properties",
+          "target_local": "localIdentifiers",
+          "target_model": "serial_part@3.0.0",
+          "target_source": "catenax"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "customerPartId",
+          "target_model": "serial_part@3.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.special_characteristics.measurement:1.0.0#manufacturerId",
       "label": "manufacturerId",
       "kind": "Property",
       "preferredName": "Manufacturere Business Partner Number",
-      "description": "business partner number of the manufacturer of the related product"
+      "description": "business partner number of the manufacturer of the related product",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "BpnlTrait",
+          "target_model": "shared.business_partner_number@2.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.special_characteristics.measurement:1.0.0#characteristicId",
       "label": "characteristicId",
       "kind": "Property",
       "preferredName": "characteristicId",
-      "description": "Identification of the special characteristic in in relation of the specified part"
+      "description": "Identification of the special characteristic in in relation of the specified part",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.special_characteristics.measurement:1.0.0#results",
@@ -59,28 +89,60 @@
       "label": "measurementType",
       "kind": "Property",
       "preferredName": "Measurement Type",
-      "description": "This optional attribute hints the type of the measurement"
+      "description": "This optional attribute hints the type of the measurement",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.special_characteristics.measurement:1.0.0#revisionIndex",
       "label": "revisionIndex",
       "kind": "Property",
       "preferredName": "Revision Index",
-      "description": "This attribute contains the revision index of the special characteristic, it is necessary to identify a special characteristic"
+      "description": "This attribute contains the revision index of the special characteristic, it is necessary to identify a special characteristic",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.special_characteristics.measurement:1.0.0#identifier",
       "label": "identifier",
       "kind": "Property",
       "preferredName": "Identifier",
-      "description": "Use this Attribute to identify the measuremnt "
+      "description": "Use this Attribute to identify the measuremnt ",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.special_characteristics.measurement:1.0.0#measurementTimestamp",
       "label": "measurementTimestamp",
       "kind": "Property",
       "preferredName": "Measurement Timestamp",
-      "description": "Timestamp when the measurement was taken"
+      "description": "Timestamp when the measurement was taken",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Timestamp",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.special_characteristics.measurement:1.0.0#value",
@@ -94,14 +156,30 @@
       "label": "unit",
       "kind": "Property",
       "preferredName": "Unit ",
-      "description": "Unit of the measured value"
+      "description": "Unit of the measured value",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "UnitReference",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.special_characteristics.measurement:1.0.0#description",
       "label": "description",
       "kind": "Property",
       "preferredName": "Description",
-      "description": "Use this attribute to give a more detailed description to this measurement. "
+      "description": "Use this attribute to give a more detailed description to this measurement. ",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.special_characteristics.measurement:1.0.0#ResultList",
@@ -122,7 +200,15 @@
       "label": "ValueCharacteristic",
       "kind": "Characteristic",
       "preferredName": null,
-      "description": null
+      "description": null,
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "float",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     }
   ],
   "links": [

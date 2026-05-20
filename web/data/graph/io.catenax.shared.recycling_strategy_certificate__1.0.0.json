@@ -18,14 +18,30 @@
       "label": "UUIDCharacteristic",
       "kind": "Characteristic",
       "preferredName": "UUIDv4Characteristic",
-      "description": "A version 4 UUID is a universally unique identifier that is generated using random 32 hexadecimal characters."
+      "description": "A version 4 UUID is a universally unique identifier that is generated using random 32 hexadecimal characters.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.shared.recycling_strategy_certificate:1.0.0#IssuerCharacteristic",
       "label": "IssuerCharacteristic",
       "kind": "Characteristic",
       "preferredName": "Issuer characteristic",
-      "description": null
+      "description": null,
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.shared.recycling_strategy_certificate:1.0.0#RecyclingStrategyCertificateCharacteristic",
@@ -53,7 +69,15 @@
       "label": "issueDate",
       "kind": "Property",
       "preferredName": "Issue date",
-      "description": "This is the date when the certificate was issued."
+      "description": "This is the date when the certificate was issued.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Timestamp",
+          "target_model": "io.openmanufacturing:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.shared.recycling_strategy_certificate:1.0.0#catenaXIdPreviousLife",

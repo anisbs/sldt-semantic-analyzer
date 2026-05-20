@@ -53,21 +53,45 @@
       "label": "nameAtOwner",
       "kind": "Property",
       "preferredName": "Name at Owner",
-      "description": "Name of the part as assigned by the part owner."
+      "description": "Name of the part as assigned by the part owner.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "io.openmanufacturing:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.part_as_specified:2.0.0#ownerPartId",
       "label": "ownerPartId",
       "kind": "Property",
       "preferredName": "Owner PartId",
-      "description": "PartID as assigned by the part owner. The PartID identifies the part in the part owner's data space. The PartId does not reference a specific instance of a part and thus should not be confused with the serial number."
+      "description": "PartID as assigned by the part owner. The PartID identifies the part in the part owner's data space. The PartId does not reference a specific instance of a part and thus should not be confused with the serial number.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "io.openmanufacturing:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.part_as_specified:2.0.0#partVersion",
       "label": "partVersion",
       "kind": "Property",
       "preferredName": "Part Version",
-      "description": "This is the version of the part. The engineering will at times supercede an older part version by a newer one, which might have different material aspects, physical dimensions etc., still maintaining compatibility."
+      "description": "This is the version of the part. The engineering will at times supercede an older part version by a newer one, which might have different material aspects, physical dimensions etc., still maintaining compatibility.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "io.openmanufacturing:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.part_as_specified:2.0.0#itemCategory",
@@ -81,35 +105,75 @@
       "label": "partDescription",
       "kind": "Property",
       "preferredName": "Part Description",
-      "description": "Description of the part of interest"
+      "description": "Description of the part of interest",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "io.openmanufacturing:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.part_as_specified:2.0.0#validFrom",
       "label": "validFrom",
       "kind": "Property",
       "preferredName": "Valid From",
-      "description": "Start date of the validity period."
+      "description": "Start date of the validity period.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Timestamp",
+          "target_model": "io.openmanufacturing:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.part_as_specified:2.0.0#validTo",
       "label": "validTo",
       "kind": "Property",
       "preferredName": "Valid To",
-      "description": "End date of the validity period."
+      "description": "End date of the validity period.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Timestamp",
+          "target_model": "io.openmanufacturing:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.part_as_specified:2.0.0#key",
       "label": "key",
       "kind": "Property",
       "preferredName": "Key",
-      "description": "Key within the classification"
+      "description": "Key within the classification",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "io.openmanufacturing:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.part_as_specified:2.0.0#value",
       "label": "value",
       "kind": "Property",
       "preferredName": "Value",
-      "description": "Value within the classification"
+      "description": "Value within the classification",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "io.openmanufacturing:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.part_as_specified:2.0.0#PartTypeInformationCharacteristic",
@@ -172,7 +236,15 @@
       "label": "ItemCategoryCharacteristic",
       "kind": "Characteristic",
       "preferredName": "Item Category Characteristic",
-      "description": "A part type must be placed into one of the following classes: 'component', 'product', 'software', ‘assembly’, 'tool', or 'raw material'."
+      "description": "A part type must be placed into one of the following classes: 'component', 'product', 'software', ‘assembly’, 'tool', or 'raw material'.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     }
   ],
   "links": [

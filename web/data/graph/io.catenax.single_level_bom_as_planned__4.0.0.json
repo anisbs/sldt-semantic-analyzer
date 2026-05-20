@@ -31,7 +31,15 @@
       "label": "SingleLevelBomAsPlanned",
       "kind": "Aspect",
       "preferredName": "single level bill of material as planned",
-      "description": "The single-level bill of material (BoM) represents one sub-level of an assembly and does not include any lower-level subassemblies. In the As-Planned lifecycle state all variants are covered (\"120% BoM\").\nIf multiple versions of child parts exist that can be assembled into the same parent part, all versions of the child part are included in the BoM.\nIf there are multiple suppliers for the same child part, each supplier has an entry for their child part in the BoM."
+      "description": "The single-level bill of material (BoM) represents one sub-level of an assembly and does not include any lower-level subassemblies. In the As-Planned lifecycle state all variants are covered (\"120% BoM\").\nIf multiple versions of child parts exist that can be assembled into the same parent part, all versions of the child part are included in the BoM.\nIf there are multiple suppliers for the same child part, each supplier has an entry for their child part in the BoM.",
+      "external_refs": [
+        {
+          "predicate": "properties",
+          "target_local": "globalAssetId",
+          "target_model": "shared.industry_core.common@1.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.single_level_bom_as_planned:4.0.0#childItems",
@@ -45,7 +53,15 @@
       "label": "quantity",
       "kind": "Property",
       "preferredName": "quantity",
-      "description": "Quantity of which the child part will be assembled into the parent part."
+      "description": "Quantity of which the child part will be assembled into the parent part.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "ItemQuantityCharacteristic",
+          "target_model": "shared.quantity@3.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.single_level_bom_as_planned:4.0.0#SetOfChildItemsCharacteristic",
@@ -59,7 +75,39 @@
       "label": "ChildData",
       "kind": "Entity",
       "preferredName": "child data",
-      "description": "globalAssetId and meta data of the assembled child item."
+      "description": "globalAssetId and meta data of the assembled child item.",
+      "external_refs": [
+        {
+          "predicate": "properties",
+          "target_local": "globalAssetId",
+          "target_model": "shared.industry_core.common@1.0.0",
+          "target_source": "catenax"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "lastModifiedOn",
+          "target_model": "shared.industry_core.common@1.0.0",
+          "target_source": "catenax"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "createdOn",
+          "target_model": "shared.industry_core.common@1.0.0",
+          "target_source": "catenax"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "validityPeriod",
+          "target_model": "shared.industry_core.common@1.0.0",
+          "target_source": "catenax"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "businessPartner",
+          "target_model": "shared.industry_core.common@1.0.0",
+          "target_source": "catenax"
+        }
+      ]
     }
   ],
   "links": [

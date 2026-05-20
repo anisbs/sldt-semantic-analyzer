@@ -88,14 +88,30 @@
       "label": "RemainingMileage",
       "kind": "Characteristic",
       "preferredName": "remaining mileage",
-      "description": "Expected addition mileage"
+      "description": "Expected addition mileage",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "nonNegativeInteger",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.rul:2.0.0#RemainingOperatingHoursCharacteristic",
       "label": "RemainingOperatingHoursCharacteristic",
       "kind": "Characteristic",
       "preferredName": "Remaining operating hours",
-      "description": "Expected additional operating hours"
+      "description": "Expected additional operating hours",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "float",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.rul:2.0.0#StatusCharacteristic",
@@ -116,14 +132,30 @@
       "label": "Timestamp",
       "kind": "Characteristic",
       "preferredName": null,
-      "description": "Describes a Property which contains the date and time with an optional timezone."
+      "description": "Describes a Property which contains the date and time with an optional timezone.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "dateTime",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.rul:2.0.0#SourceLoadSpectrum",
       "label": "SourceLoadSpectrum",
       "kind": "Characteristic",
       "preferredName": "link to load spectrum",
-      "description": "Link to load spectrum"
+      "description": "Link to load spectrum",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "anyURI",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.rul:2.0.0#DeterminationStatus",
@@ -144,21 +176,45 @@
       "label": "Mileage",
       "kind": "Characteristic",
       "preferredName": "mileage",
-      "description": "Mileage of vehicle respectively part."
+      "description": "Mileage of vehicle respectively part.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "nonNegativeInteger",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.rul:2.0.0#OperatingHoursCharacteristic",
       "label": "OperatingHoursCharacteristic",
       "kind": "Characteristic",
       "preferredName": "Operating hours",
-      "description": "Operating hours for the vehicle respectively part."
+      "description": "Operating hours for the vehicle respectively part.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "float",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.rul:2.0.0#InformationOriginLoadSpectrumCharacteristic",
       "label": "InformationOriginLoadSpectrumCharacteristic",
       "kind": "Characteristic",
       "preferredName": "characteristic of origin of load spectrum",
-      "description": "Origin of input load spectrum: measured, simulated, aggregated"
+      "description": "Origin of input load spectrum: measured, simulated, aggregated",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     }
   ],
   "links": [

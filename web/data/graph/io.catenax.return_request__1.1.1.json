@@ -25,14 +25,30 @@
       "label": "needsReturn",
       "kind": "Property",
       "preferredName": "needs return",
-      "description": "Describes the fact whether a vehicle, assembly or part needs to be returned to requestor."
+      "description": "Describes the fact whether a vehicle, assembly or part needs to be returned to requestor.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Boolean",
+          "target_model": "io.openmanufacturing:characteristic@1.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.return_request:1.1.1#returnConditions",
       "label": "returnConditions",
       "kind": "Property",
       "preferredName": "return conditions",
-      "description": "Describes WHY a vehicle, assembly or part needs to be returned to the requestor and under which conditions."
+      "description": "Describes WHY a vehicle, assembly or part needs to be returned to the requestor and under which conditions.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "io.openmanufacturing:characteristic@1.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.return_request:1.1.1#requestDate",
@@ -60,14 +76,30 @@
       "label": "title",
       "kind": "Property",
       "preferredName": "title",
-      "description": "The request name to be used by the buyer to navigate through the list of demand requests."
+      "description": "The request name to be used by the buyer to navigate through the list of demand requests.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "io.openmanufacturing:characteristic@1.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.return_request:1.1.1#marketplaceProduct",
       "label": "marketplaceProduct",
       "kind": "Property",
       "preferredName": "marketplace product",
-      "description": "The description of the product within the marketplace that might differ from the digital twin."
+      "description": "The description of the product within the marketplace that might differ from the digital twin.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "io.openmanufacturing:characteristic@1.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.return_request:1.1.1#quantity",
@@ -81,7 +113,15 @@
       "label": "unitOfMeasure",
       "kind": "Property",
       "preferredName": "unit of measure",
-      "description": "The unit of measure (related to quantity)."
+      "description": "The unit of measure (related to quantity).",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "io.openmanufacturing:characteristic@1.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.return_request:1.1.1#validityPeriod",
@@ -102,21 +142,45 @@
       "label": "isRecall",
       "kind": "Property",
       "preferredName": "is recall",
-      "description": "Depicts if the manufacturer issued a recall (e.g. for security reasons). In concjunction with property needsReturn it can be expressed if the item has to be returned or can directly be destroyed."
+      "description": "Depicts if the manufacturer issued a recall (e.g. for security reasons). In concjunction with property needsReturn it can be expressed if the item has to be returned or can directly be destroyed.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Boolean",
+          "target_model": "io.openmanufacturing:characteristic@1.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.return_request:1.1.1#startDate",
       "label": "startDate",
       "kind": "Property",
       "preferredName": "start date",
-      "description": "The first day of the period"
+      "description": "The first day of the period",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Timestamp",
+          "target_model": "io.openmanufacturing:characteristic@1.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.return_request:1.1.1#endDate",
       "label": "endDate",
       "kind": "Property",
       "preferredName": "end date",
-      "description": "The last day of the period."
+      "description": "The last day of the period.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Timestamp",
+          "target_model": "io.openmanufacturing:characteristic@1.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.return_request:1.1.1#minPrice",
@@ -151,49 +215,105 @@
       "label": "missingParts",
       "kind": "Property",
       "preferredName": "missing parts",
-      "description": "Completeness of the product, e.g. missing parts are not acceptable."
+      "description": "Completeness of the product, e.g. missing parts are not acceptable.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Boolean",
+          "target_model": "io.openmanufacturing:characteristic@1.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.return_request:1.1.1#dismantled",
       "label": "dismantled",
       "kind": "Property",
       "preferredName": "dismantled",
-      "description": "Information on whether the product has been dismantled."
+      "description": "Information on whether the product has been dismantled.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Boolean",
+          "target_model": "io.openmanufacturing:characteristic@1.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.return_request:1.1.1#mechanicalDamage",
       "label": "mechanicalDamage",
       "kind": "Property",
       "preferredName": "mechanical damage",
-      "description": "Information on mechanical damage to the part, e.g. two broken ribs or part deformation indicate mechanical damage."
+      "description": "Information on mechanical damage to the part, e.g. two broken ribs or part deformation indicate mechanical damage.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Boolean",
+          "target_model": "io.openmanufacturing:characteristic@1.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.return_request:1.1.1#corroded",
       "label": "corroded",
       "kind": "Property",
       "preferredName": "corroded",
-      "description": "Information on whether the product has corrosion."
+      "description": "Information on whether the product has corrosion.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Boolean",
+          "target_model": "io.openmanufacturing:characteristic@1.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.return_request:1.1.1#discolored",
       "label": "discolored",
       "kind": "Property",
       "preferredName": "discolored",
-      "description": "Information on whether the product has been discoloured."
+      "description": "Information on whether the product has been discoloured.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Boolean",
+          "target_model": "io.openmanufacturing:characteristic@1.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.return_request:1.1.1#QuantityCharacteristic",
       "label": "QuantityCharacteristic",
       "kind": "Characteristic",
       "preferredName": "quantity characteristic",
-      "description": "Characteristic describing the quantity"
+      "description": "Characteristic describing the quantity",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "float",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.return_request:1.1.1#DateTimestamp",
       "label": "DateTimestamp",
       "kind": "Characteristic",
       "preferredName": "date timestamp",
-      "description": "Timestamp for dates"
+      "description": "Timestamp for dates",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "date",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.return_request:1.1.1#ProductConditionsCharacteristic",
@@ -221,14 +341,30 @@
       "label": "ValueCharacteristic",
       "kind": "Characteristic",
       "preferredName": "Value Characteristic",
-      "description": "Characteristic to describe the value in a float type."
+      "description": "Characteristic to describe the value in a float type.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "float",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.return_request:1.1.1#CurrencyCharacteristic",
       "label": "CurrencyCharacteristic",
       "kind": "Characteristic",
       "preferredName": "CurrencyCharacteristic",
-      "description": "Characteristic to represent the iso-code conform curreny entries as defined in the ISO4217 for numerical codes."
+      "description": "Characteristic to represent the iso-code conform curreny entries as defined in the ISO4217 for numerical codes.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.return_request:1.1.1#TimePeriod",

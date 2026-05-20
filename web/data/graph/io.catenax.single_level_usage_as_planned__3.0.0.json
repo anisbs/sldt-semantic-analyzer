@@ -31,7 +31,21 @@
       "label": "SingleLevelUsageAsPlanned",
       "kind": "Aspect",
       "preferredName": "single level usage as planned",
-      "description": "The aspect provides the information in which parent part(s)/product(s)the given item is to be assembled into or used. This could be a 1:1 relationship in terms of a e.g. a brake component or 1:n for e.g. coatings. The given item as well as the parent item must refer to an object from the as-planned lifecycle phase.\nIf multiple versions of parent parts exist that the child part can be assembled into or used, all versions of the parent part are included in the usage list."
+      "description": "The aspect provides the information in which parent part(s)/product(s)the given item is to be assembled into or used. This could be a 1:1 relationship in terms of a e.g. a brake component or 1:n for e.g. coatings. The given item as well as the parent item must refer to an object from the as-planned lifecycle phase.\nIf multiple versions of parent parts exist that the child part can be assembled into or used, all versions of the parent part are included in the usage list.",
+      "external_refs": [
+        {
+          "predicate": "properties",
+          "target_local": "customers",
+          "target_model": "shared.industry_core.common@1.0.0",
+          "target_source": "catenax"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "globalAssetId",
+          "target_model": "shared.industry_core.common@1.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.single_level_usage_as_planned:3.0.0#parentItems",
@@ -45,7 +59,15 @@
       "label": "quantity",
       "kind": "Property",
       "preferredName": "quantity",
-      "description": "Quantity of which the child part will be assembled into or used in the parent part."
+      "description": "Quantity of which the child part will be assembled into or used in the parent part.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "ItemQuantityCharacteristic",
+          "target_model": "shared.quantity@3.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.single_level_usage_as_planned:3.0.0#SetOfParentItemsCharacteristic",
@@ -59,7 +81,39 @@
       "label": "ParentData",
       "kind": "Entity",
       "preferredName": "parent data",
-      "description": "globalAssetId and meta data of the parent part."
+      "description": "globalAssetId and meta data of the parent part.",
+      "external_refs": [
+        {
+          "predicate": "properties",
+          "target_local": "createdOn",
+          "target_model": "shared.industry_core.common@1.0.0",
+          "target_source": "catenax"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "businessPartner",
+          "target_model": "shared.industry_core.common@1.0.0",
+          "target_source": "catenax"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "globalAssetId",
+          "target_model": "shared.industry_core.common@1.0.0",
+          "target_source": "catenax"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "lastModifiedOn",
+          "target_model": "shared.industry_core.common@1.0.0",
+          "target_source": "catenax"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "validityPeriod",
+          "target_model": "shared.industry_core.common@1.0.0",
+          "target_source": "catenax"
+        }
+      ]
     }
   ],
   "links": [

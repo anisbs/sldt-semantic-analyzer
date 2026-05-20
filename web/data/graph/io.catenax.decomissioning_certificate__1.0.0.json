@@ -60,14 +60,30 @@
       "label": "Text",
       "kind": "Characteristic",
       "preferredName": null,
-      "description": "Describes a Property, which contains plain text. This is intended exclusively for human readable strings, not for identifiers, measurement values, etc."
+      "description": "Describes a Property, which contains plain text. This is intended exclusively for human readable strings, not for identifiers, measurement values, etc.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.decomissioning_certificate:1.0.0#Timestamp",
       "label": "Timestamp",
       "kind": "Characteristic",
       "preferredName": null,
-      "description": "Describes a Property which contains the date and time with an optional timezone."
+      "description": "Describes a Property which contains the date and time with an optional timezone.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "dateTime",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     }
   ],
   "links": [

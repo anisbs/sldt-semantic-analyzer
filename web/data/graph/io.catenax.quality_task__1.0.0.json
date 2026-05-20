@@ -25,7 +25,15 @@
       "label": "qualityTaskId",
       "kind": "Property",
       "preferredName": "q-Task ID",
-      "description": "A unique quality task identifier where these list of parts analysis belong to."
+      "description": "A unique quality task identifier where these list of parts analysis belong to.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "io.openmanufacturing:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.quality_task:1.0.0#status",
@@ -39,28 +47,60 @@
       "label": "creationDate",
       "kind": "Property",
       "preferredName": "Creation Date",
-      "description": "Timestamp when this qTask was created"
+      "description": "Timestamp when this qTask was created",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Timestamp",
+          "target_model": "io.openmanufacturing:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.quality_task:1.0.0#title",
       "label": "title",
       "kind": "Property",
       "preferredName": "Title",
-      "description": "Working title for this qTask"
+      "description": "Working title for this qTask",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "io.openmanufacturing:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.quality_task:1.0.0#description",
       "label": "description",
       "kind": "Property",
       "preferredName": "Description",
-      "description": "Description what should be done in this qTask"
+      "description": "Description what should be done in this qTask",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "io.openmanufacturing:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.quality_task:1.0.0#component",
       "label": "component",
       "kind": "Property",
       "preferredName": "Component",
-      "description": "The component that should be investigated in this qTask."
+      "description": "The component that should be investigated in this qTask.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "io.openmanufacturing:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.quality_task:1.0.0#dataDeletion",
@@ -81,14 +121,30 @@
       "label": "cxBPN",
       "kind": "Property",
       "preferredName": "CX Business partner number",
-      "description": "Catena-X business partner number of this company"
+      "description": "Catena-X business partner number of this company",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "io.openmanufacturing:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.quality_task:1.0.0#name",
       "label": "name",
       "kind": "Property",
       "preferredName": "Company name",
-      "description": "Name of the comapny"
+      "description": "Name of the comapny",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "io.openmanufacturing:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.quality_task:1.0.0#email",
@@ -102,14 +158,30 @@
       "label": "DataDeletionEnumeration",
       "kind": "Characteristic",
       "preferredName": "Data deletion",
-      "description": "Enumeration of possible data deletions entries."
+      "description": "Enumeration of possible data deletions entries.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.quality_task:1.0.0#StatusCharacteristic",
       "label": "StatusCharacteristic",
       "kind": "Characteristic",
       "preferredName": "Status Characteristic",
-      "description": "Enumeration of the different status values"
+      "description": "Enumeration of the different status values",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.quality_task:1.0.0#ListOfCompanies",

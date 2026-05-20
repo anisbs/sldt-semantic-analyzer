@@ -32,21 +32,45 @@
       "label": "creationDate",
       "kind": "Property",
       "preferredName": "Creationdate",
-      "description": "date-timestamp for this session according ISO 8601 when this session was created. Depending on OEM this attribute reflects the start or end date of one diag session"
+      "description": "date-timestamp for this session according ISO 8601 when this session was created. Depending on OEM this attribute reflects the start or end date of one diag session",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Timestamp",
+          "target_model": "io.openmanufacturing:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.fleet.diagnostic_data:1.0.0#sessionId",
       "label": "sessionId",
       "kind": "Property",
       "preferredName": "Session identifier",
-      "description": "Format OEM-specific: A unique session identifier within one OEM."
+      "description": "Format OEM-specific: A unique session identifier within one OEM.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "io.openmanufacturing:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.fleet.diagnostic_data:1.0.0#qualityTaskId",
       "label": "qualityTaskId",
       "kind": "Property",
       "preferredName": "Quality Task ID",
-      "description": "A unique quality task identifier where these list of session data belongs to. Optional to ensure that also Diagnostic Data without assigned qTask can be exchanged."
+      "description": "A unique quality task identifier where these list of session data belongs to. Optional to ensure that also Diagnostic Data without assigned qTask can be exchanged.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "io.openmanufacturing:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.fleet.diagnostic_data:1.0.0#countryCode",
@@ -109,7 +133,15 @@
       "label": "anonymizedVIN",
       "kind": "Property",
       "preferredName": "Anonymized VIN",
-      "description": "OEM-specific hashed VIN; link to car data over pseydomized/hashed VIN or Catena-X unique digital twin identifier"
+      "description": "OEM-specific hashed VIN; link to car data over pseydomized/hashed VIN or Catena-X unique digital twin identifier",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "io.openmanufacturing:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.fleet.diagnostic_data:1.0.0#catenaXId",
@@ -123,21 +155,45 @@
       "label": "softwareCategory",
       "kind": "Property",
       "preferredName": "Vehicle software category",
-      "description": "Software category of this car during the session - only available for OEMs that have a software category on vehicle level."
+      "description": "Software category of this car during the session - only available for OEMs that have a software category on vehicle level.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "io.openmanufacturing:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.fleet.diagnostic_data:1.0.0#softwareVersion",
       "label": "softwareVersion",
       "kind": "Property",
       "preferredName": "Vehicle software version",
-      "description": "Software version of this car during the session - only available for OEMs that have a software category on vehicle level."
+      "description": "Software version of this car during the session - only available for OEMs that have a software category on vehicle level.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "io.openmanufacturing:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.fleet.diagnostic_data:1.0.0#workShopId",
       "label": "workShopId",
       "kind": "Property",
       "preferredName": "OEM Workshop ID",
-      "description": "OEM internal workshop ID"
+      "description": "OEM internal workshop ID",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "io.openmanufacturing:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.fleet.diagnostic_data:1.0.0#latitude",
@@ -158,70 +214,150 @@
       "label": "ecuSerialPartNumber",
       "kind": "Property",
       "preferredName": "ECU serial  part number",
-      "description": "serial number of ECU"
+      "description": "serial number of ECU",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "io.openmanufacturing:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.fleet.diagnostic_data:1.0.0#name",
       "label": "name",
       "kind": "Property",
       "preferredName": "ECU name",
-      "description": "name of ecu"
+      "description": "name of ecu",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "io.openmanufacturing:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.fleet.diagnostic_data:1.0.0#description",
       "label": "description",
       "kind": "Property",
       "preferredName": "ECU description",
-      "description": "long name of ecu"
+      "description": "long name of ecu",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "io.openmanufacturing:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.fleet.diagnostic_data:1.0.0#hwPartNumber",
       "label": "hwPartNumber",
       "kind": "Property",
       "preferredName": "ECU HW part number",
-      "description": "hardware part number of ECU"
+      "description": "hardware part number of ECU",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "io.openmanufacturing:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.fleet.diagnostic_data:1.0.0#hwVersion",
       "label": "hwVersion",
       "kind": "Property",
       "preferredName": "ECU HW version",
-      "description": "hardware version of ECU"
+      "description": "hardware version of ECU",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "io.openmanufacturing:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.fleet.diagnostic_data:1.0.0#swPartNumber",
       "label": "swPartNumber",
       "kind": "Property",
       "preferredName": "ECU SW part number",
-      "description": "SW part number of this ecu"
+      "description": "SW part number of this ecu",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "io.openmanufacturing:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.fleet.diagnostic_data:1.0.0#swVersion",
       "label": "swVersion",
       "kind": "Property",
       "preferredName": "ECU SW version",
-      "description": "current version of the software on this ecu"
+      "description": "current version of the software on this ecu",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "io.openmanufacturing:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.fleet.diagnostic_data:1.0.0#assemblyPartNumber",
       "label": "assemblyPartNumber",
       "kind": "Property",
       "preferredName": "ECU assembly part number",
-      "description": "OEM-sepcific ecu assembly from hardware and software"
+      "description": "OEM-sepcific ecu assembly from hardware and software",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "io.openmanufacturing:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.fleet.diagnostic_data:1.0.0#assemblyPartNumberVersion",
       "label": "assemblyPartNumberVersion",
       "kind": "Property",
       "preferredName": "ECU assembly part number version",
-      "description": "OEM-sepcific ecu assembly version"
+      "description": "OEM-sepcific ecu assembly version",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "io.openmanufacturing:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.fleet.diagnostic_data:1.0.0#readOutDate",
       "label": "readOutDate",
       "kind": "Property",
       "preferredName": "Read out date",
-      "description": "Date when this ECU information was read out from the diagnostic session"
+      "description": "Date when this ECU information was read out from the diagnostic session",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Timestamp",
+          "target_model": "io.openmanufacturing:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.fleet.diagnostic_data:1.0.0#dtcHexValue",
@@ -242,28 +378,60 @@
       "label": "fullDescription",
       "kind": "Property",
       "preferredName": "DTC description",
-      "description": "description of DTC and failure byte. Both description strings are concatenated using a \"-\" as separator"
+      "description": "description of DTC and failure byte. Both description strings are concatenated using a \"-\" as separator",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "io.openmanufacturing:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.fleet.diagnostic_data:1.0.0#occurenceDateTime",
       "label": "occurenceDateTime",
       "kind": "Property",
       "preferredName": "DTC first occurence",
-      "description": "date and time when the DTC occured the first time/was recorded the first time in the ECU"
+      "description": "date and time when the DTC occured the first time/was recorded the first time in the ECU",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Timestamp",
+          "target_model": "io.openmanufacturing:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.fleet.diagnostic_data:1.0.0#state",
       "label": "state",
       "kind": "Property",
       "preferredName": "DTC state",
-      "description": "OEM-specific state of DTC: 0;1 (permanent/temporary/intermediate), could also be a string with permanent, temporary, intermediate, ...."
+      "description": "OEM-specific state of DTC: 0;1 (permanent/temporary/intermediate), could also be a string with permanent, temporary, intermediate, ....",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "io.openmanufacturing:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.fleet.diagnostic_data:1.0.0#isMilOn",
       "label": "isMilOn",
       "kind": "Property",
       "preferredName": "Is MIL On",
-      "description": "describes whether this DTC set the MIL (malfunction indicator light)  in the dashboard"
+      "description": "describes whether this DTC set the MIL (malfunction indicator light)  in the dashboard",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Boolean",
+          "target_model": "io.openmanufacturing:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.fleet.diagnostic_data:1.0.0#occurenceMileage",
@@ -277,14 +445,30 @@
       "label": "faultPath",
       "kind": "Property",
       "preferredName": "DTC fault path",
-      "description": "OEM-specific: Fault path for this DTC. Allows further analysis"
+      "description": "OEM-specific: Fault path for this DTC. Allows further analysis",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "io.openmanufacturing:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.fleet.diagnostic_data:1.0.0#faultPathDescription",
       "label": "faultPathDescription",
       "kind": "Property",
       "preferredName": "DTC fault path description",
-      "description": "OEM-specific description of DTC fault path"
+      "description": "OEM-specific description of DTC fault path",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "io.openmanufacturing:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.fleet.diagnostic_data:1.0.0#type",
@@ -312,21 +496,45 @@
       "label": "conditionId",
       "kind": "Property",
       "preferredName": "Id",
-      "description": "OEM-specific: Primary key for this condition consists of unique identifier of env. condition and DTC"
+      "description": "OEM-specific: Primary key for this condition consists of unique identifier of env. condition and DTC",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "io.openmanufacturing:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.fleet.diagnostic_data:1.0.0#conditionCreationDate",
       "label": "conditionCreationDate",
       "kind": "Property",
       "preferredName": "Creation Date",
-      "description": "Date and time when this condition/information was created."
+      "description": "Date and time when this condition/information was created.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Timestamp",
+          "target_model": "io.openmanufacturing:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.fleet.diagnostic_data:1.0.0#conditionDescription",
       "label": "conditionDescription",
       "kind": "Property",
       "preferredName": "Description",
-      "description": "The description of the environment condition/information"
+      "description": "The description of the environment condition/information",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "io.openmanufacturing:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.fleet.diagnostic_data:1.0.0#conditionValue",
@@ -340,35 +548,75 @@
       "label": "measurementUnit",
       "kind": "Property",
       "preferredName": "DTC fault path",
-      "description": "The unit of measurement for the environment condition value."
+      "description": "The unit of measurement for the environment condition value.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "io.openmanufacturing:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.fleet.diagnostic_data:1.0.0#eventId",
       "label": "eventId",
       "kind": "Property",
       "preferredName": "Id",
-      "description": "OEM-specific: Primary key for this event"
+      "description": "OEM-specific: Primary key for this event",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "io.openmanufacturing:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.fleet.diagnostic_data:1.0.0#eventCreationDate",
       "label": "eventCreationDate",
       "kind": "Property",
       "preferredName": "Creation Date",
-      "description": "Date and time when this event was created."
+      "description": "Date and time when this event was created.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Timestamp",
+          "target_model": "io.openmanufacturing:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.fleet.diagnostic_data:1.0.0#eventDescription",
       "label": "eventDescription",
       "kind": "Property",
       "preferredName": "Description",
-      "description": "The description of the event"
+      "description": "The description of the event",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "io.openmanufacturing:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.fleet.diagnostic_data:1.0.0#eventValue",
       "label": "eventValue",
       "kind": "Property",
       "preferredName": "Value",
-      "description": "The value of this event."
+      "description": "The value of this event.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "io.openmanufacturing:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.fleet.diagnostic_data:1.0.0#DiagnosticSessions",
@@ -501,7 +749,15 @@
       "label": "Mileage",
       "kind": "Characteristic",
       "preferredName": null,
-      "description": "mileage counter of the car"
+      "description": "mileage counter of the car",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "positiveInteger",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.fleet.diagnostic_data:1.0.0#VehicleCharacteristic",
@@ -522,56 +778,120 @@
       "label": "CountryCodeCharacteristic",
       "kind": "Characteristic",
       "preferredName": "Country Code Characteristic",
-      "description": "ISO 3166-1 alpha-3 – three-letter country codes "
+      "description": "ISO 3166-1 alpha-3 – three-letter country codes ",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.fleet.diagnostic_data:1.0.0#UUIDv4",
       "label": "UUIDv4",
       "kind": "Characteristic",
       "preferredName": "UUIDv4",
-      "description": "A version 4 UUID is a universally unique identifier that is generated using random 32 hexadecimal characters."
+      "description": "A version 4 UUID is a universally unique identifier that is generated using random 32 hexadecimal characters.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.fleet.diagnostic_data:1.0.0#Latitude",
       "label": "Latitude",
       "kind": "Characteristic",
       "preferredName": null,
-      "description": "Latitude of this workshop"
+      "description": "Latitude of this workshop",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "float",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.fleet.diagnostic_data:1.0.0#Longitude",
       "label": "Longitude",
       "kind": "Characteristic",
       "preferredName": null,
-      "description": null
+      "description": null,
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "float",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.fleet.diagnostic_data:1.0.0#Double",
       "label": "Double",
       "kind": "Characteristic",
       "preferredName": "Double",
-      "description": "Double"
+      "description": "Double",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "double",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.fleet.diagnostic_data:1.0.0#HEXString",
       "label": "HEXString",
       "kind": "Characteristic",
       "preferredName": null,
-      "description": "allows characters \"A\"-\"F\", \"a\"-\"f\" and \"0\"-\"9\" in this string"
+      "description": "allows characters \"A\"-\"F\", \"a\"-\"f\" and \"0\"-\"9\" in this string",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.fleet.diagnostic_data:1.0.0#Long",
       "label": "Long",
       "kind": "Characteristic",
       "preferredName": null,
-      "description": null
+      "description": null,
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "long",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.fleet.diagnostic_data:1.0.0#FullDTCCharacteristic",
       "label": "FullDTCCharacteristic",
       "kind": "Characteristic",
       "preferredName": null,
-      "description": "DTC-FaultByte like P0573-00"
+      "description": "DTC-FaultByte like P0573-00",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.fleet.diagnostic_data:1.0.0#CountryCodeRegularExpression",
@@ -620,7 +940,15 @@
       "label": "TypeEnum",
       "kind": "Characteristic",
       "preferredName": null,
-      "description": null
+      "description": null,
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     }
   ],
   "links": [

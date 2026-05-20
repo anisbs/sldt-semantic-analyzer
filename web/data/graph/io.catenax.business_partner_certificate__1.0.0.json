@@ -32,7 +32,15 @@
       "label": "businessPartnerNumber",
       "kind": "Property",
       "preferredName": "Business Partner number",
-      "description": "The BPN of the certified legal entity "
+      "description": "The BPN of the certified legal entity ",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "BpnlTrait",
+          "target_model": "shared.business_partner_number@2.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.business_partner_certificate:1.0.0#type",
@@ -46,28 +54,60 @@
       "label": "certificateType",
       "kind": "Property",
       "preferredName": "Certificate type",
-      "description": "Type of the certificate as defined on the document,valid types are registered at BPN metadatacontroller"
+      "description": "Type of the certificate as defined on the document,valid types are registered at BPN metadatacontroller",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.business_partner_certificate:1.0.0#certificateVersion",
       "label": "certificateVersion",
       "kind": "Property",
       "preferredName": "Certificate version",
-      "description": "Version of the certificate as defined on the document, usually the specific version of a certification standard"
+      "description": "Version of the certificate as defined on the document, usually the specific version of a certification standard",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.business_partner_certificate:1.0.0#registrationNumber",
       "label": "registrationNumber",
       "kind": "Property",
       "preferredName": "Certificate registration number",
-      "description": "Registration number of the certificate as defined on the certificate"
+      "description": "Registration number of the certificate as defined on the certificate",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.business_partner_certificate:1.0.0#areaOfApplication",
       "label": "areaOfApplication",
       "kind": "Property",
       "preferredName": "area of application",
-      "description": "Details on which areas / application types a certificate is valid for a company"
+      "description": "Details on which areas / application types a certificate is valid for a company",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.business_partner_certificate:1.0.0#enclosedSites",
@@ -81,7 +121,15 @@
       "label": "enclosedSiteBpn",
       "kind": "Property",
       "preferredName": "enclosedSite BPN",
-      "description": "The BPN of an enclosed site "
+      "description": "The BPN of an enclosed site ",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "BpnsTrait",
+          "target_model": "shared.business_partner_number@2.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.business_partner_certificate:1.0.0#validFrom",
@@ -109,21 +157,45 @@
       "label": "validatorName",
       "kind": "Property",
       "preferredName": "Validator name",
-      "description": "The optional name of the data service provider who validated the given certificate"
+      "description": "The optional name of the data service provider who validated the given certificate",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.business_partner_certificate:1.0.0#validatorBpn",
       "label": "validatorBpn",
       "kind": "Property",
       "preferredName": "Certifcate validator Bpn",
-      "description": "The BPN of the data service provider who validated the given certificate"
+      "description": "The BPN of the data service provider who validated the given certificate",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "BpnlTrait",
+          "target_model": "shared.business_partner_number@2.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.business_partner_certificate:1.0.0#issuer",
       "label": "issuer",
       "kind": "Property",
       "preferredName": "Issuing authority",
-      "description": "The BPN of the issuing authority e.g. TUEV Sued "
+      "description": "The BPN of the issuing authority e.g. TUEV Sued ",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "BpnlTrait",
+          "target_model": "shared.business_partner_number@2.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.business_partner_certificate:1.0.0#trustLevel",
@@ -137,14 +209,30 @@
       "label": "uploader",
       "kind": "Property",
       "preferredName": "Certifcate uploader",
-      "description": "The BPN of the business partner who originally provided the certifcate data or document e.g. Mercedes Benz AG"
+      "description": "The BPN of the business partner who originally provided the certifcate data or document e.g. Mercedes Benz AG",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "BpnlTrait",
+          "target_model": "shared.business_partner_number@2.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.business_partner_certificate:1.0.0#documentID",
       "label": "documentID",
       "kind": "Property",
       "preferredName": "Document ID",
-      "description": "The id of the certificate document as stored by the data service provider for physical download via API"
+      "description": "The id of the certificate document as stored by the data service provider for physical download via API",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.business_partner_certificate:1.0.0#CertificateTypeEntity",
@@ -172,7 +260,15 @@
       "label": "Date",
       "kind": "Characteristic",
       "preferredName": "Date",
-      "description": "Describes a property which contains the date in english format."
+      "description": "Describes a property which contains the date in english format.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "date",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.business_partner_certificate:1.0.0#TrustValidatorCharacteristic",
@@ -186,7 +282,15 @@
       "label": "TrustLevelValue",
       "kind": "Characteristic",
       "preferredName": "Trust level value",
-      "description": "The possible trust level values of certificate"
+      "description": "The possible trust level values of certificate",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     }
   ],
   "links": [

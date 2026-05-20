@@ -51,7 +51,15 @@
       "label": "materialGlobalAssetId",
       "kind": "Property",
       "preferredName": "UUID of the Part Type Twin",
-      "description": "Identifier used uniquely to identify part type twin."
+      "description": "Identifier used uniquely to identify part type twin.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "UuidV4Trait",
+          "target_model": "shared.uuid@2.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.short_term_material_demand:1.0.0#demands",
@@ -72,21 +80,45 @@
       "label": "expectedSupplierLocationBpns",
       "kind": "Property",
       "preferredName": "Expected Supplier Location",
-      "description": "The Business Partner Number Site (BPNS) of the site from where the customer expects the supplier to fulfill the demands of the demand series. The value is used for informational purposes only and is therefore not binding for the supplier."
+      "description": "The Business Partner Number Site (BPNS) of the site from where the customer expects the supplier to fulfill the demands of the demand series. The value is used for informational purposes only and is therefore not binding for the supplier.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "BpnsTrait",
+          "target_model": "shared.business_partner_number@2.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.short_term_material_demand:1.0.0#customerLocationBpns",
       "label": "customerLocationBpns",
       "kind": "Property",
       "preferredName": "Customer Location",
-      "description": "The Business Partner Number Site (BPNS) of the site at which the customer needs the specified material for this demand series."
+      "description": "The Business Partner Number Site (BPNS) of the site at which the customer needs the specified material for this demand series.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "BpnsTrait",
+          "target_model": "shared.business_partner_number@2.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.short_term_material_demand:1.0.0#lastUpdatedOnDateTime",
       "label": "lastUpdatedOnDateTime",
       "kind": "Property",
       "preferredName": "Lasted Updated on Date",
-      "description": "Date and time at which the DemandSeries has been updated by the reporting partner's system. Date and time are set according to a timezone."
+      "description": "Date and time at which the DemandSeries has been updated by the reporting partner's system. Date and time are set according to a timezone.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Timestamp",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.short_term_material_demand:1.0.0#demand",
@@ -114,7 +146,15 @@
       "label": "demandCategoryName",
       "kind": "Property",
       "preferredName": "Demand Category Name",
-      "description": "The name describing a demand category."
+      "description": "The name describing a demand category.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "MultiLanguageText",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.short_term_material_demand:1.0.0#DemandSeriesSet",
@@ -163,21 +203,45 @@
       "label": "DemandQuantityCharacteristic",
       "kind": "Characteristic",
       "preferredName": "Demand Quantity Characteristic",
-      "description": "Demand expressed as item quantity with a unit of measure."
+      "description": "Demand expressed as item quantity with a unit of measure.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "ItemQuantityEntity",
+          "target_model": "shared.quantity@2.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.short_term_material_demand:1.0.0#DateCharacteristic",
       "label": "DateCharacteristic",
       "kind": "Characteristic",
       "preferredName": "Date Characteristic",
-      "description": "An ISO date on which a given demand is needed. Must be given as single day (consider the time zone of the customer's location)."
+      "description": "An ISO date on which a given demand is needed. Must be given as single day (consider the time zone of the customer's location).",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "date",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.short_term_material_demand:1.0.0#DemandCategoryCodeCharacteristic",
       "label": "DemandCategoryCodeCharacteristic",
       "kind": "Characteristic",
       "preferredName": "Demand Category Code Characteristic",
-      "description": "The code identifying a demand category."
+      "description": "The code identifying a demand category.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     }
   ],
   "links": [

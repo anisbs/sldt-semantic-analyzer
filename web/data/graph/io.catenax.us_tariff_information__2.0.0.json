@@ -37,7 +37,15 @@
       "label": "UsTariffInformation",
       "kind": "Aspect",
       "preferredName": "US tariff information",
-      "description": "Information required for tariff declaration."
+      "description": "Information required for tariff declaration.",
+      "external_refs": [
+        {
+          "predicate": "properties",
+          "target_local": "globalAssetId",
+          "target_model": "shared.industry_core.common@1.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.us_tariff_information:2.0.0#materialList",
@@ -58,14 +66,30 @@
       "label": "partOriginCountry",
       "kind": "Property",
       "preferredName": "part origin country",
-      "description": "Country of origin for the part."
+      "description": "Country of origin for the part.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "CountryAlpha3Trait",
+          "target_model": "shared.standard_codes@1.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.us_tariff_information:2.0.0#referenceNumber",
       "label": "referenceNumber",
       "kind": "Property",
       "preferredName": "reference number",
-      "description": "Latest Purchase Order Number (PO) or Advanced Shipping Notice (ASN)."
+      "description": "Latest Purchase Order Number (PO) or Advanced Shipping Notice (ASN).",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.us_tariff_information:2.0.0#customsClassification",
@@ -107,14 +131,30 @@
       "label": "customClassificationCode",
       "kind": "Property",
       "preferredName": "custom classification code",
-      "description": "Custom classification code according to hs or hts."
+      "description": "Custom classification code according to hs or hts.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.us_tariff_information:2.0.0#customClassificationCodingSystem",
       "label": "customClassificationCodingSystem",
       "kind": "Property",
       "preferredName": "custom classification coding system",
-      "description": "Coding system according to which the custom classification code was created."
+      "description": "Coding system according to which the custom classification code was created.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.us_tariff_information:2.0.0#amount",
@@ -135,7 +175,15 @@
       "label": "processingCountry",
       "kind": "Property",
       "preferredName": "processing country",
-      "description": "Country in which a specific processing step took place."
+      "description": "Country in which a specific processing step took place.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "CountryAlpha3Trait",
+          "target_model": "shared.standard_codes@1.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.us_tariff_information:2.0.0#originWeight",
@@ -156,14 +204,30 @@
       "label": "materialOriginCountry",
       "kind": "Property",
       "preferredName": "material origin country",
-      "description": "Country in which the material was originally produced or extracted, expressed as an ISO 3166-1 alpha-3 country code."
+      "description": "Country in which the material was originally produced or extracted, expressed as an ISO 3166-1 alpha-3 country code.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "CountryAlpha3Trait",
+          "target_model": "shared.standard_codes@1.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.us_tariff_information:2.0.0#certificateResource",
       "label": "certificateResource",
       "kind": "Property",
       "preferredName": "certificateResource",
-      "description": "External reference / URI to the the corresponding certificate."
+      "description": "External reference / URI to the the corresponding certificate.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "ResourcePath",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.us_tariff_information:2.0.0#MaterialListCollection",
@@ -191,14 +255,30 @@
       "label": "WeightCharacteristic",
       "kind": "Characteristic",
       "preferredName": "Weight Characteristic",
-      "description": "Characteristic for the partWeight property in kilogram."
+      "description": "Characteristic for the partWeight property in kilogram.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "decimal",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.us_tariff_information:2.0.0#ValuePercentageCharacteristic",
       "label": "ValuePercentageCharacteristic",
       "kind": "Characteristic",
       "preferredName": "value percentage characteristic",
-      "description": "Characteristic of the valuePercentage property."
+      "description": "Characteristic of the valuePercentage property.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "float",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.us_tariff_information:2.0.0#CustomsClassificationCharacteristic",
@@ -212,7 +292,15 @@
       "label": "AmountCharacteristic",
       "kind": "Characteristic",
       "preferredName": "amount characteristic",
-      "description": "Characteristic of the amount."
+      "description": "Characteristic of the amount.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "float",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.us_tariff_information:2.0.0#ValueCharacteristic",
@@ -226,7 +314,15 @@
       "label": "MaterialListEntity",
       "kind": "Entity",
       "preferredName": "material list entity",
-      "description": "Entity of the materialList entity."
+      "description": "Entity of the materialList entity.",
+      "external_refs": [
+        {
+          "predicate": "properties",
+          "target_local": "materialClassification",
+          "target_model": "shared.material_classification@1.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.us_tariff_information:2.0.0#CustomsClassificationEntity",
@@ -240,7 +336,15 @@
       "label": "ValueEntity",
       "kind": "Entity",
       "preferredName": "value entity",
-      "description": "Value Entity to group the monetary value with the respective currency."
+      "description": "Value Entity to group the monetary value with the respective currency.",
+      "external_refs": [
+        {
+          "predicate": "properties",
+          "target_local": "currency",
+          "target_model": "shared.standard_codes@1.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.us_tariff_information:2.0.0#ProcessingListEntity",
@@ -261,7 +365,15 @@
       "label": "ProcessingTypeCharacteristic",
       "kind": "Characteristic",
       "preferredName": "processing type characteristic",
-      "description": "Enumeration of processingTypes."
+      "description": "Enumeration of processingTypes.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     }
   ],
   "links": [

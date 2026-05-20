@@ -43,21 +43,57 @@
       "label": "ReturnRequest",
       "kind": "Aspect",
       "preferredName": "return request",
-      "description": "Aspect to indicate if there is a return request for a product."
+      "description": "Aspect to indicate if there is a return request for a product.",
+      "external_refs": [
+        {
+          "predicate": "properties",
+          "target_local": "date",
+          "target_model": "serial_part@3.0.0",
+          "target_source": "catenax"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "nameAtCustomer",
+          "target_model": "serial_part@3.0.0",
+          "target_source": "catenax"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "partClassification",
+          "target_model": "shared.part_classification@1.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.return_request:2.0.0#needsReturn",
       "label": "needsReturn",
       "kind": "Property",
       "preferredName": "needs return",
-      "description": "Describes the fact whether a vehicle, assembly or part needs to be returned to requestor."
+      "description": "Describes the fact whether a vehicle, assembly or part needs to be returned to requestor.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Boolean",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.return_request:2.0.0#returnConditions",
       "label": "returnConditions",
       "kind": "Property",
       "preferredName": "return conditions",
-      "description": "Describes WHY a vehicle, assembly or part needs to be returned to the requestor and under which conditions."
+      "description": "Describes WHY a vehicle, assembly or part needs to be returned to the requestor and under which conditions.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.return_request:2.0.0#requestDate",
@@ -85,14 +121,30 @@
       "label": "marketplaceProduct",
       "kind": "Property",
       "preferredName": "marketplace product",
-      "description": "The description of the product within the marketplace that might differ from the digital twin."
+      "description": "The description of the product within the marketplace that might differ from the digital twin.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.return_request:2.0.0#quantity",
       "label": "quantity",
       "kind": "Property",
       "preferredName": "quantity",
-      "description": "The desired quantity of the on the marketplace offered product in SKU."
+      "description": "The desired quantity of the on the marketplace offered product in SKU.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "ItemQuantityCharacteristic",
+          "target_model": "shared.quantity@2.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.return_request:2.0.0#validityPeriod",
@@ -106,7 +158,15 @@
       "label": "isRecall",
       "kind": "Property",
       "preferredName": "is recall",
-      "description": "Depicts if the manufacturer issued a recall (e.g. for security reasons). In conjunction with property needsReturn it can be expressed if the item has to be returned or can directly be destroyed."
+      "description": "Depicts if the manufacturer issued a recall (e.g. for security reasons). In conjunction with property needsReturn it can be expressed if the item has to be returned or can directly be destroyed.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Boolean",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.return_request:2.0.0#identification",
@@ -120,14 +180,30 @@
       "label": "deliveryAddress",
       "kind": "Property",
       "preferredName": "delivery address",
-      "description": "The address that the product should be delivered to"
+      "description": "The address that the product should be delivered to",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "PostalAddress",
+          "target_model": "shared.address_characteristic@3.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.return_request:2.0.0#areaOfUsage",
       "label": "areaOfUsage",
       "kind": "Property",
       "preferredName": "area of usage",
-      "description": "Information, in which countries/areas the component has been in use"
+      "description": "Information, in which countries/areas the component has been in use",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.return_request:2.0.0#arrivalDateAtCustomer",
@@ -141,35 +217,75 @@
       "label": "missingParts",
       "kind": "Property",
       "preferredName": "missing parts",
-      "description": "Completeness of the product, e.g. missing parts are not acceptable."
+      "description": "Completeness of the product, e.g. missing parts are not acceptable.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Boolean",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.return_request:2.0.0#dismantled",
       "label": "dismantled",
       "kind": "Property",
       "preferredName": "dismantled",
-      "description": "Information on whether the product has been dismantled."
+      "description": "Information on whether the product has been dismantled.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Boolean",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.return_request:2.0.0#mechanicalDamage",
       "label": "mechanicalDamage",
       "kind": "Property",
       "preferredName": "mechanical damage",
-      "description": "Information on mechanical damage to the part, e.g. two broken ribs or part deformation indicate mechanical damage."
+      "description": "Information on mechanical damage to the part, e.g. two broken ribs or part deformation indicate mechanical damage.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Boolean",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.return_request:2.0.0#corroded",
       "label": "corroded",
       "kind": "Property",
       "preferredName": "corroded",
-      "description": "Information on whether the product has corrosion."
+      "description": "Information on whether the product has corrosion.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Boolean",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.return_request:2.0.0#discolored",
       "label": "discolored",
       "kind": "Property",
       "preferredName": "discolored",
-      "description": "Information on whether the product has been discoloured."
+      "description": "Information on whether the product has been discoloured.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Boolean",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.return_request:2.0.0#mileage",
@@ -197,7 +313,15 @@
       "label": "DateTimestamp",
       "kind": "Characteristic",
       "preferredName": "date timestamp",
-      "description": "Timestamp for dates"
+      "description": "Timestamp for dates",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "date",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.return_request:2.0.0#ProductConditionsCharacteristic",
@@ -239,14 +363,42 @@
       "label": "IdentificationEntity",
       "kind": "Entity",
       "preferredName": "identification entity",
-      "description": "Entity encapsulating different unique identifier of the product (manufacturingPartID, OeNumber and/or serialNumber)"
+      "description": "Entity encapsulating different unique identifier of the product (manufacturingPartID, OeNumber and/or serialNumber)",
+      "external_refs": [
+        {
+          "predicate": "properties",
+          "target_local": "localIdentifiers",
+          "target_model": "serial_part@3.0.0",
+          "target_source": "catenax"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "manufacturerPartId",
+          "target_model": "serial_part@3.0.0",
+          "target_source": "catenax"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "customerPartId",
+          "target_model": "serial_part@3.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.return_request:2.0.0#NumericValueofMileage",
       "label": "NumericValueofMileage",
       "kind": "Characteristic",
       "preferredName": "value of mileage",
-      "description": "Represents the value of mileage."
+      "description": "Represents the value of mileage.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "integer",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     }
   ],
   "links": [

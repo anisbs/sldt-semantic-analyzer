@@ -31,7 +31,15 @@
       "label": "SingleLevelBomAsBuilt",
       "kind": "Aspect",
       "preferredName": "single level bill of material as built",
-      "description": "The single-level bill of material represents one sub-level of an assembly and does not include any lower-level subassemblies. The as-built lifecycle references all child items as manufactured by the manufacturer referencing only child items in an as-built lifecycle themselves (e.g. serial parts or batches), unless parts can only be tracked by an part ID (on a type level).\n\nIf it is unclear which item has been built-in into the parent item, all potential parts must be listed. This is the case when, e.g. the same item is supplied by two suppliers and the item is only tracked by a customer part ID during assembly, these items can not be differentiated from each other.\n"
+      "description": "The single-level bill of material represents one sub-level of an assembly and does not include any lower-level subassemblies. The as-built lifecycle references all child items as manufactured by the manufacturer referencing only child items in an as-built lifecycle themselves (e.g. serial parts or batches), unless parts can only be tracked by an part ID (on a type level).\n\nIf it is unclear which item has been built-in into the parent item, all potential parts must be listed. This is the case when, e.g. the same item is supplied by two suppliers and the item is only tracked by a customer part ID during assembly, these items can not be differentiated from each other.\n",
+      "external_refs": [
+        {
+          "predicate": "properties",
+          "target_local": "globalAssetId",
+          "target_model": "shared.industry_core.common@1.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.single_level_bom_as_built:4.0.0#childItems",
@@ -45,14 +53,30 @@
       "label": "quantity",
       "kind": "Property",
       "preferredName": "quantity",
-      "description": "Quantity of which the child item is assembled into the parent item. In general it is '1' for serialized parts."
+      "description": "Quantity of which the child item is assembled into the parent item. In general it is '1' for serialized parts.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "ItemQuantityCharacteristic",
+          "target_model": "shared.quantity@3.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.single_level_bom_as_built:4.0.0#hasAlternatives",
       "label": "hasAlternatives",
       "kind": "Property",
       "preferredName": "has alternatives",
-      "description": "Expresses whether the part is built-in or wether it is one of several options. If the value is false, it can be assumed this exact item is built-in. If the value is true, it is unknown wether this or an alternative item is built-in.\nThis is the case when, e.g. the same item is supplied by two suppliers, the item is only tracked by a customer part ID during assembly. Thus, these items can not be differentiated from each other.\n\n"
+      "description": "Expresses whether the part is built-in or wether it is one of several options. If the value is false, it can be assumed this exact item is built-in. If the value is true, it is unknown wether this or an alternative item is built-in.\nThis is the case when, e.g. the same item is supplied by two suppliers, the item is only tracked by a customer part ID during assembly. Thus, these items can not be differentiated from each other.\n\n",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Boolean",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.single_level_bom_as_built:4.0.0#SetOfChildItemsCharacteristic",
@@ -66,7 +90,33 @@
       "label": "ChildData",
       "kind": "Entity",
       "preferredName": "child data",
-      "description": "Catena-X ID and meta data of the assembled child item."
+      "description": "Catena-X ID and meta data of the assembled child item.",
+      "external_refs": [
+        {
+          "predicate": "properties",
+          "target_local": "lastModifiedOn",
+          "target_model": "shared.industry_core.common@1.0.0",
+          "target_source": "catenax"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "createdOn",
+          "target_model": "shared.industry_core.common@1.0.0",
+          "target_source": "catenax"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "globalAssetId",
+          "target_model": "shared.industry_core.common@1.0.0",
+          "target_source": "catenax"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "businessPartner",
+          "target_model": "shared.industry_core.common@1.0.0",
+          "target_source": "catenax"
+        }
+      ]
     }
   ],
   "links": [

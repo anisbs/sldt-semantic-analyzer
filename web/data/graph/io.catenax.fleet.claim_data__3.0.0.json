@@ -25,7 +25,15 @@
       "label": "ClaimData",
       "kind": "Aspect",
       "preferredName": "Claim Data",
-      "description": "For Catena-X(CX) business case Quality Management. Supported technical features: delta update feature, meta information feature and additionalInformationList key-value pairs. The supported model features are described in detail in the Catena-X Quality KIT. This model is used to exchange claim information. FleetClaim data model is used to exchange a list of claims. A Claim is a complaint of a vehicle owner. The assumption for this data model is that a customer is coming to a repair shop and complaining about a malfunction in his/her vehicle during vehicle's warranty period. The repair shop than diagnosis the car (this is the link to FleetDiagnostic data model) and can eventually exchange faulty parts. The repair shop later hands in the invoice to the OEM to compensate his work. Defining the uniqueness of a claim: A claim gets a unique claimId (unique within one OEM). A claim is related to one vehicle that can be identified by anonymizedVIN and refers to a potentially faulty part/component in the vehicle. A claim is coming from a specific country - this is normally the country of the repair shop. A claim can contain a list of replaced parts that were put out of the affected vehicle and a list of spare parts/new parts that were put into the affected vehicle. Some of the old, potentially faulty parts are send back to the part's manufacturer for detailed analyses (this is the link to the PartsAnalyses data model)."
+      "description": "For Catena-X(CX) business case Quality Management. Supported technical features: delta update feature, meta information feature and additionalInformationList key-value pairs. The supported model features are described in detail in the Catena-X Quality KIT. This model is used to exchange claim information. FleetClaim data model is used to exchange a list of claims. A Claim is a complaint of a vehicle owner. The assumption for this data model is that a customer is coming to a repair shop and complaining about a malfunction in his/her vehicle during vehicle's warranty period. The repair shop than diagnosis the car (this is the link to FleetDiagnostic data model) and can eventually exchange faulty parts. The repair shop later hands in the invoice to the OEM to compensate his work. Defining the uniqueness of a claim: A claim gets a unique claimId (unique within one OEM). A claim is related to one vehicle that can be identified by anonymizedVIN and refers to a potentially faulty part/component in the vehicle. A claim is coming from a specific country - this is normally the country of the repair shop. A claim can contain a list of replaced parts that were put out of the affected vehicle and a list of spare parts/new parts that were put into the affected vehicle. Some of the old, potentially faulty parts are send back to the part's manufacturer for detailed analyses (this is the link to the PartsAnalyses data model).",
+      "external_refs": [
+        {
+          "predicate": "properties",
+          "target_local": "metaInformation",
+          "target_model": "shared.quality_core@1.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.fleet.claim_data:3.0.0#claims",
@@ -39,56 +47,120 @@
       "label": "claimId",
       "kind": "Property",
       "preferredName": "Claim ID",
-      "description": "Each claim from this data provider has a unique claim ID.If you combine the BPNL of the data provider with this claim ID you get a unique claim ID in the data space."
+      "description": "Each claim from this data provider has a unique claim ID.If you combine the BPNL of the data provider with this claim ID you get a unique claim ID in the data space.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "UniqueID",
+          "target_model": "shared.quality_core@1.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.fleet.claim_data:3.0.0#repairDate",
       "label": "repairDate",
       "kind": "Property",
       "preferredName": "Repair Date",
-      "description": "References the date when the claim was initially reported."
+      "description": "References the date when the claim was initially reported.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "ISO8601LocalDate",
+          "target_model": "shared.quality_core@1.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.fleet.claim_data:3.0.0#repairMileage",
       "label": "repairMileage",
       "kind": "Property",
       "preferredName": "Repair Mileage",
-      "description": "The mileage counter of the vehicle when it was in the workshop."
+      "description": "The mileage counter of the vehicle when it was in the workshop.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "MileageTrait",
+          "target_model": "shared.quality_core@1.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.fleet.claim_data:3.0.0#repairMileageUnit",
       "label": "repairMileageUnit",
       "kind": "Property",
       "preferredName": "Repair Mileage Unit",
-      "description": "The unit of the repair mileage - either km or mi. Default is km."
+      "description": "The unit of the repair mileage - either km or mi. Default is km.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "MileageUnit",
+          "target_model": "shared.quality_core@1.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.fleet.claim_data:3.0.0#customerComment",
       "label": "customerComment",
       "kind": "Property",
       "preferredName": "Customer Comment",
-      "description": "End customer comment (e.g. from the vehicle owner, rental car user, etc. ) about the malfunction of this vehicle."
+      "description": "End customer comment (e.g. from the vehicle owner, rental car user, etc. ) about the malfunction of this vehicle.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.fleet.claim_data:3.0.0#damageCode",
       "label": "damageCode",
       "kind": "Property",
       "preferredName": "Damage Code",
-      "description": "OEM-specific damage code"
+      "description": "OEM-specific damage code",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.fleet.claim_data:3.0.0#damageCodeDescription",
       "label": "damageCodeDescription",
       "kind": "Property",
       "preferredName": "Damage Code Description.",
-      "description": "Description of the damage code."
+      "description": "Description of the damage code.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.fleet.claim_data:3.0.0#technicianComment",
       "label": "technicianComment",
       "kind": "Property",
       "preferredName": "Technician Comment",
-      "description": "Short description of the claim from the technicians"
+      "description": "Short description of the claim from the technicians",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.fleet.claim_data:3.0.0#diagnosticSessions",
@@ -123,35 +195,75 @@
       "label": "breakdown",
       "kind": "Property",
       "preferredName": "Breakdown",
-      "description": "Had the vehicle a breakdown and could not drive any more?"
+      "description": "Had the vehicle a breakdown and could not drive any more?",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Boolean",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.fleet.claim_data:3.0.0#repeatedRepair",
       "label": "repeatedRepair",
       "kind": "Property",
       "preferredName": "Repeated Repair",
-      "description": "Was there a repeated repair for the same part in this vehicle."
+      "description": "Was there a repeated repair for the same part in this vehicle.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Boolean",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.fleet.claim_data:3.0.0#dateOfPreviousRepair",
       "label": "dateOfPreviousRepair",
       "kind": "Property",
       "preferredName": "Date Of Previous Repair",
-      "description": "The date of the previous repair."
+      "description": "The date of the previous repair.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "ISO8601LocalDate",
+          "target_model": "shared.quality_core@1.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.fleet.claim_data:3.0.0#isPartCausal",
       "label": "isPartCausal",
       "kind": "Property",
       "preferredName": "Is Part Causal",
-      "description": "Flag is set to true if part was causing the problem-otherwise false."
+      "description": "Flag is set to true if part was causing the problem-otherwise false.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Boolean",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.fleet.claim_data:3.0.0#isPartReplaced",
       "label": "isPartReplaced",
       "kind": "Property",
       "preferredName": "Is Part Replaced",
-      "description": "Flag is set to true if part was replaced-otherwise false."
+      "description": "Flag is set to true if part was replaced-otherwise false.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Boolean",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.fleet.claim_data:3.0.0#amountOfReplacedParts",
@@ -165,7 +277,15 @@
       "label": "partTreatment",
       "kind": "Property",
       "preferredName": "Part Treatment",
-      "description": "Describes what happened to this part in the claim."
+      "description": "Describes what happened to this part in the claim.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.fleet.claim_data:3.0.0#ClaimsList",
@@ -200,14 +320,66 @@
       "label": "Claim",
       "kind": "Entity",
       "preferredName": "Claim",
-      "description": "A claim is when a customer has a problem with his vehicle and goes to the workshop to get this problem fixed. Sometimes potentially faulty parts are exchanged."
+      "description": "A claim is when a customer has a problem with his vehicle and goes to the workshop to get this problem fixed. Sometimes potentially faulty parts are exchanged.",
+      "external_refs": [
+        {
+          "predicate": "properties",
+          "target_local": "anonymizedVIN",
+          "target_model": "shared.quality_core@1.0.0",
+          "target_source": "catenax"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "qualityTaskId",
+          "target_model": "shared.quality_core@1.0.0",
+          "target_source": "catenax"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "countryCode",
+          "target_model": "shared.quality_core@1.0.0",
+          "target_source": "catenax"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "vehicleId",
+          "target_model": "shared.quality_core@1.0.0",
+          "target_source": "catenax"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "recordStatus",
+          "target_model": "shared.quality_core@1.0.0",
+          "target_source": "catenax"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "workshop",
+          "target_model": "shared.quality_core@1.0.0",
+          "target_source": "catenax"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "additionalInformationList",
+          "target_model": "shared.quality_core@1.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.fleet.claim_data:3.0.0#DiagnosticSession",
       "label": "DiagnosticSession",
       "kind": "Entity",
       "preferredName": "Diagnostic Session",
-      "description": "One diagnostic session of one vehicle: Either this is a diagnostic session done in a workshop or via over-the-air diagnostic."
+      "description": "One diagnostic session of one vehicle: Either this is a diagnostic session done in a workshop or via over-the-air diagnostic.",
+      "external_refs": [
+        {
+          "predicate": "properties",
+          "target_local": "sessionId",
+          "target_model": "shared.quality_core@1.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.fleet.claim_data:3.0.0#ClaimedPart",
@@ -221,21 +393,51 @@
       "label": "SparePart",
       "kind": "Entity",
       "preferredName": "Spare Part",
-      "description": "A generic description to identify a spare part."
+      "description": "A generic description to identify a spare part.",
+      "external_refs": [
+        {
+          "predicate": "properties",
+          "target_local": "supplierId",
+          "target_model": "shared.quality_core@1.0.0",
+          "target_source": "catenax"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "supplierName",
+          "target_model": "shared.quality_core@1.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.fleet.claim_data:3.0.0#NonNegativeInteger",
       "label": "NonNegativeInteger",
       "kind": "Characteristic",
       "preferredName": "Non Negative Integer",
-      "description": "An integer that is 0 or bigger. Please round."
+      "description": "An integer that is 0 or bigger. Please round.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "nonNegativeInteger",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.fleet.claim_data:3.0.0#AmountOfReplacedPartsCharacteristic",
       "label": "AmountOfReplacedPartsCharacteristic",
       "kind": "Characteristic",
       "preferredName": "Amount Of Replaced Parts",
-      "description": "Counter for non-serial parts"
+      "description": "Counter for non-serial parts",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "nonNegativeInteger",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     }
   ],
   "links": [

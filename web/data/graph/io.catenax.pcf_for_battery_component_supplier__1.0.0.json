@@ -37,7 +37,39 @@
       "label": "PcfForBatteryComponentSupplier",
       "kind": "Aspect",
       "preferredName": "PCF for battery component supplier",
-      "description": "Intermediate Datamodel to enable Supplier to provide PCF information for their products according to the preliminary Delegated Act. This model is to be replaced as soon as the Delegated Act is finalized"
+      "description": "Intermediate Datamodel to enable Supplier to provide PCF information for their products according to the preliminary Delegated Act. This model is to be replaced as soon as the Delegated Act is finalized",
+      "external_refs": [
+        {
+          "predicate": "properties",
+          "target_local": "secondaryEmissionFactorSources",
+          "target_model": "pcf@9.0.0",
+          "target_source": "catenax"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "primaryDataShare",
+          "target_model": "pcf@9.0.0",
+          "target_source": "catenax"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "customerPartId",
+          "target_model": "shared.industry_core.common@1.0.0",
+          "target_source": "catenax"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "manufacturerPartId",
+          "target_model": "shared.industry_core.common@1.0.0",
+          "target_source": "catenax"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "validityPeriod",
+          "target_model": "shared.industry_core.common@1.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.pcf_for_battery_component_supplier:1.0.0#pcfValues",
@@ -51,42 +83,90 @@
       "label": "technologicalRepresentativeness",
       "kind": "Property",
       "preferredName": "technological representativeness",
-      "description": "Data Quality Rating for technological context. Value between 1-5."
+      "description": "Data Quality Rating for technological context. Value between 1-5.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "DqiNumberTrait",
+          "target_model": "pcf@9.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.pcf_for_battery_component_supplier:1.0.0#geographicalRepresentativeness",
       "label": "geographicalRepresentativeness",
       "kind": "Property",
       "preferredName": "geographical representativeness",
-      "description": "Quality Rating for Data in context of geographical product information."
+      "description": "Quality Rating for Data in context of geographical product information.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "DqiNumberTrait",
+          "target_model": "pcf@9.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.pcf_for_battery_component_supplier:1.0.0#timerelatedRepresentativeness",
       "label": "timerelatedRepresentativeness",
       "kind": "Property",
       "preferredName": "timerelated representativeness",
-      "description": "Data quality rating for data in context of time."
+      "description": "Data quality rating for data in context of time.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "DqiNumberTrait",
+          "target_model": "pcf@9.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.pcf_for_battery_component_supplier:1.0.0#dataQualityRating",
       "label": "dataQualityRating",
       "kind": "Property",
       "preferredName": "data quality rating",
-      "description": "Data quality Rating measurement. Value between 1-5. Depending on TechnologicalRepresentativeness[TER], GeographicalRepresentativeness[GER] and TimeRepresentativeness[TIR]."
+      "description": "Data quality Rating measurement. Value between 1-5. Depending on TechnologicalRepresentativeness[TER], GeographicalRepresentativeness[GER] and TimeRepresentativeness[TIR].",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "DqiNumberTrait",
+          "target_model": "pcf@9.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.pcf_for_battery_component_supplier:1.0.0#siteIdentifier",
       "label": "siteIdentifier",
       "kind": "Property",
       "preferredName": "business partner number site (BPN-S)",
-      "description": "Site identifier of the providing Catena-X participant"
+      "description": "Site identifier of the providing Catena-X participant",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "BpnsTrait",
+          "target_model": "shared.business_partner_number@2.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.pcf_for_battery_component_supplier:1.0.0#legalidentifier",
       "label": "legalidentifier",
       "kind": "Property",
       "preferredName": "business partner number legal (BPN-L)",
-      "description": "Legal identifier of the providing Catena-X participant."
+      "description": "Legal identifier of the providing Catena-X participant.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "BpnlTrait",
+          "target_model": "shared.business_partner_number@2.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.pcf_for_battery_component_supplier:1.0.0#productQualityParameter",
@@ -114,14 +194,30 @@
       "label": "pcfPerformanceClass",
       "kind": "Property",
       "preferredName": "PCF performance class",
-      "description": "pcf performance class."
+      "description": "pcf performance class.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.pcf_for_battery_component_supplier:1.0.0#webLinkToCarbonFootPrintStudy",
       "label": "webLinkToCarbonFootPrintStudy",
       "kind": "Property",
       "preferredName": "link to carbon footprint study",
-      "description": "Link to used Carbon Foot Print Study."
+      "description": "Link to used Carbon Foot Print Study.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "ResourcePath",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.pcf_for_battery_component_supplier:1.0.0#stage1RawMaterialAquisitionPreProcessing",
@@ -198,14 +294,30 @@
       "label": "CharacteristicStageValue",
       "kind": "Characteristic",
       "preferredName": "characteristic stage value",
-      "description": "Characteristic for each stage value."
+      "description": "Characteristic for each stage value.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "float",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.pcf_for_battery_component_supplier:1.0.0#StringArray",
       "label": "StringArray",
       "kind": "Characteristic",
       "preferredName": "string array",
-      "description": "this is a list of strings."
+      "description": "this is a list of strings.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.pcf_for_battery_component_supplier:1.0.0#EntityPCF",
@@ -233,7 +345,15 @@
       "label": "CharacteristicDeclaredUnit",
       "kind": "Characteristic",
       "preferredName": "characteristic declared unit",
-      "description": "characteristic for declared Unit property."
+      "description": "characteristic for declared Unit property.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.pcf_for_battery_component_supplier:1.0.0#StageValueTrait",

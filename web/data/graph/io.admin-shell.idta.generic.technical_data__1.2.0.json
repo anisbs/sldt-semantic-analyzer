@@ -72,7 +72,15 @@
       "label": "FurtherInformationEntity",
       "kind": "Entity",
       "preferredName": null,
-      "description": null
+      "description": null,
+      "external_refs": [
+        {
+          "predicate": "properties",
+          "target_local": "nil",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.admin-shell.idta.generic.technical_data:1.2.0#GeneralInformationEntity",
@@ -86,35 +94,75 @@
       "label": "manufacturerName",
       "kind": "Property",
       "preferredName": "manufacturer name",
-      "description": "Legally valid designation of the natural or judicial person which is directly responsible for the design, production, packaging and labeling of a product in respect to its being brought into circulation."
+      "description": "Legally valid designation of the natural or judicial person which is directly responsible for the design, production, packaging and labeling of a product in respect to its being brought into circulation.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.2.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.admin-shell.idta.generic.technical_data:1.2.0#manufacturerLogo",
       "label": "manufacturerLogo",
       "kind": "Property",
       "preferredName": "Firmenlogo",
-      "description": "Das Firmenlogo des Produkts."
+      "description": "Das Firmenlogo des Produkts.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "ResourcePath",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.2.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.admin-shell.idta.generic.technical_data:1.2.0#manufacturerProductDesignation",
       "label": "manufacturerProductDesignation",
       "kind": "Property",
       "preferredName": "Produktbezeichnung",
-      "description": "Short description of the product (short text), third or lowest level of a 3 level manufacturer specific product hierarchy."
+      "description": "Short description of the product (short text), third or lowest level of a 3 level manufacturer specific product hierarchy.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "MultiLanguageTexts",
+          "target_model": "shared@3.1.0",
+          "target_source": "idta"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.admin-shell.idta.generic.technical_data:1.2.0#manufacturerArticleNumber",
       "label": "manufacturerArticleNumber",
       "kind": "Property",
       "preferredName": "Artikelnummer des Produkts",
-      "description": "Unique product identifier of the manufacturer Note: The manufacturer article number is represented as a string, although often a numerical ID."
+      "description": "Unique product identifier of the manufacturer Note: The manufacturer article number is represented as a string, although often a numerical ID.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.2.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.admin-shell.idta.generic.technical_data:1.2.0#manufacturerOrderCode",
       "label": "manufacturerOrderCode",
       "kind": "Property",
       "preferredName": "Bestellcode des Produkts",
-      "description": "Eindeutige Zahlen- und Buchstabenkombination um das Produkt eindeutig für die Bestellung zu identifizieren."
+      "description": "Eindeutige Zahlen- und Buchstabenkombination um das Produkt eindeutig für die Bestellung zu identifizieren.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.2.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.admin-shell.idta.generic.technical_data:1.2.0#productClassifications",
@@ -128,21 +176,45 @@
       "label": "productClassificationSystem",
       "kind": "Property",
       "preferredName": "product classification system",
-      "description": "Common name of the classification system.\nNote: Examples for common names for classification systems are \"ECLASS\" or \"IEC CDD\"."
+      "description": "Common name of the classification system.\nNote: Examples for common names for classification systems are \"ECLASS\" or \"IEC CDD\".",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.2.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.admin-shell.idta.generic.technical_data:1.2.0#classificationSystemVersion",
       "label": "classificationSystemVersion",
       "kind": "Property",
       "preferredName": "classification system version",
-      "description": "Common version identifier of the used classification system, in order to distinguish different version of the property dictionary.\nNote: Casing is to be ignored."
+      "description": "Common version identifier of the used classification system, in order to distinguish different version of the property dictionary.\nNote: Casing is to be ignored.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.2.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.admin-shell.idta.generic.technical_data:1.2.0#productClassId",
       "label": "productClassId",
       "kind": "Property",
       "preferredName": "product class ID",
-      "description": "Class of the associated product or industrial equipment in the classification system. According to the notation of the system.\nNote: Ideally, the Property/valueId is used to reference the IRI/ IRDI of the product class."
+      "description": "Class of the associated product or industrial equipment in the classification system. According to the notation of the system.\nNote: Ideally, the Property/valueId is used to reference the IRI/ IRDI of the product class.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.2.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.admin-shell.idta.generic.technical_data:1.2.0#ProductClassificationSet",
@@ -191,7 +263,15 @@
       "label": "TechnicalPropertiesEntity",
       "kind": "Entity",
       "preferredName": null,
-      "description": null
+      "description": null,
+      "external_refs": [
+        {
+          "predicate": "properties",
+          "target_local": "nil",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     }
   ],
   "links": [
@@ -296,6 +376,36 @@
       "target": "urn:samm:io.admin-shell.idta.generic.technical_data:1.2.0#TechnicalPropertiesEntity",
       "label": "dataType",
       "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.generic.technical_data:1.2.0#TechnicalData",
+      "target": "urn:samm:io.admin-shell.idta.generic.technical_data:1.2.0#furtherInformation",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.generic.technical_data:1.2.0#TechnicalData",
+      "target": "urn:samm:io.admin-shell.idta.generic.technical_data:1.2.0#technicalProperties",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.generic.technical_data:1.2.0#TechnicalData",
+      "target": "urn:samm:io.admin-shell.idta.generic.technical_data:1.2.0#productClassifications",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.generic.technical_data:1.2.0#GeneralInformationCharacteristic",
+      "target": "urn:samm:io.admin-shell.idta.generic.technical_data:1.2.0#GeneralInformationEntity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.generic.technical_data:1.2.0#GeneralInformationEntity",
+      "target": "urn:samm:io.admin-shell.idta.generic.technical_data:1.2.0#productImages",
+      "label": "properties",
+      "optional": true
     }
   ]
 }

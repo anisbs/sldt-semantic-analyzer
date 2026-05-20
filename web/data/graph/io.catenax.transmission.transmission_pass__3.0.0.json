@@ -109,7 +109,15 @@
       "label": "serviceHistory",
       "kind": "Property",
       "preferredName": "Service History",
-      "description": "Documentation of the service history of the transmission."
+      "description": "Documentation of the service history of the transmission.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "DocumentList",
+          "target_model": "generic.digital_product_passport@5.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.transmission.transmission_pass:3.0.0#characteristics",
@@ -158,7 +166,15 @@
       "label": "applicable",
       "kind": "Property",
       "preferredName": "Applicable",
-      "description": "If there is a transmission-integrated electrical machine included, select true and state the values in the connected attributes. If there is none, select false and provide dummy data."
+      "description": "If there is a transmission-integrated electrical machine included, select true and state the values in the connected attributes. If there is none, select false and provide dummy data.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Boolean",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.transmission.transmission_pass:3.0.0#electricalMachine",
@@ -312,7 +328,57 @@
       "label": "GenericEntity",
       "kind": "Entity",
       "preferredName": "Generic Entity",
-      "description": "Entity for the product generic parameters."
+      "description": "Entity for the product generic parameters.",
+      "external_refs": [
+        {
+          "predicate": "properties",
+          "target_local": "metadata",
+          "target_model": "generic.digital_product_passport@5.0.0",
+          "target_source": "catenax"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "identification",
+          "target_model": "generic.digital_product_passport@5.0.0",
+          "target_source": "catenax"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "operation",
+          "target_model": "generic.digital_product_passport@5.0.0",
+          "target_source": "catenax"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "handling",
+          "target_model": "generic.digital_product_passport@5.0.0",
+          "target_source": "catenax"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "commercial",
+          "target_model": "generic.digital_product_passport@5.0.0",
+          "target_source": "catenax"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "materials",
+          "target_model": "generic.digital_product_passport@5.0.0",
+          "target_source": "catenax"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "sustainability",
+          "target_model": "generic.digital_product_passport@5.0.0",
+          "target_source": "catenax"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "sources",
+          "target_model": "generic.digital_product_passport@5.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.transmission.transmission_pass:3.0.0#SpeedResistanceEntity",
@@ -347,7 +413,15 @@
       "label": "CharacteristicsEntity",
       "kind": "Entity",
       "preferredName": "Characteristics Entity",
-      "description": "Entity which defines specific characteristics of the transmission such as different life spans and physical dimensions."
+      "description": "Entity which defines specific characteristics of the transmission such as different life spans and physical dimensions.",
+      "external_refs": [
+        {
+          "predicate": "properties",
+          "target_local": "physicalDimension",
+          "target_model": "generic.digital_product_passport@5.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.transmission.transmission_pass:3.0.0#ElectricalMachineEntity",
@@ -389,56 +463,120 @@
       "label": "TorqueNewtonMetre",
       "kind": "Characteristic",
       "preferredName": "Torque Newton Metre",
-      "description": "Characteristic to describe torque in newton meters."
+      "description": "Characteristic to describe torque in newton meters.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "nonNegativeInteger",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.transmission.transmission_pass:3.0.0#KilowattMeasurement",
       "label": "KilowattMeasurement",
       "kind": "Characteristic",
       "preferredName": "Kilowatt Measurement",
-      "description": "The performance power in kilowatt as non-negative integer."
+      "description": "The performance power in kilowatt as non-negative integer.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "nonNegativeInteger",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.transmission.transmission_pass:3.0.0#RevolutionsPerMinute",
       "label": "RevolutionsPerMinute",
       "kind": "Characteristic",
       "preferredName": "Revolutions ",
-      "description": "The permissible maximum input speed in revolutions per minute in the respective gear."
+      "description": "The permissible maximum input speed in revolutions per minute in the respective gear.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "nonNegativeInteger",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.transmission.transmission_pass:3.0.0#MonthCharacteristics",
       "label": "MonthCharacteristics",
       "kind": "Characteristic",
       "preferredName": "Month Characteristics",
-      "description": "Measurement in months as an integer."
+      "description": "Measurement in months as an integer.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "nonNegativeInteger",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.transmission.transmission_pass:3.0.0#KilometreCharacteristic",
       "label": "KilometreCharacteristic",
       "kind": "Characteristic",
       "preferredName": "Kilometre Characteristic",
-      "description": "Measurement in kilometre as an integer."
+      "description": "Measurement in kilometre as an integer.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "nonNegativeInteger",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.transmission.transmission_pass:3.0.0#VoltageMeasurement",
       "label": "VoltageMeasurement",
       "kind": "Characteristic",
       "preferredName": "Voltage Measurement",
-      "description": "Measurement in voltage."
+      "description": "Measurement in voltage.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "decimal",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.transmission.transmission_pass:3.0.0#TimeMeasurement",
       "label": "TimeMeasurement",
       "kind": "Characteristic",
       "preferredName": "Time Measurement",
-      "description": "Time in seconds."
+      "description": "Time in seconds.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "nonNegativeInteger",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.transmission.transmission_pass:3.0.0#StringList",
       "label": "StringList",
       "kind": "Characteristic",
       "preferredName": "String Characteristic",
-      "description": "A list with the data types string."
+      "description": "A list with the data types string.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.transmission.transmission_pass:3.0.0#SpeedResistanceList",
@@ -452,7 +590,15 @@
       "label": "DriveList",
       "kind": "Characteristic",
       "preferredName": "Drive List",
-      "description": "List of drive types, which is restricted to combustion, full hybrid, mild hybrid, plug-in hybrid, fuel-cell and battery."
+      "description": "List of drive types, which is restricted to combustion, full hybrid, mild hybrid, plug-in hybrid, fuel-cell and battery.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.transmission.transmission_pass:3.0.0#StandardGearRatioSet",
@@ -466,14 +612,30 @@
       "label": "Ratio",
       "kind": "Characteristic",
       "preferredName": "Ratio Characteristic",
-      "description": "The ratio in the respective gear."
+      "description": "The ratio in the respective gear.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "float",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.transmission.transmission_pass:3.0.0#Capacity",
       "label": "Capacity",
       "kind": "Characteristic",
       "preferredName": "Capacity Characteristic",
-      "description": "The oil capacity in dm³."
+      "description": "The oil capacity in dm³.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "float",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.transmission.transmission_pass:3.0.0#DriveTypeConstraint",

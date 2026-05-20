@@ -38,7 +38,15 @@
       "label": "catenaXId",
       "kind": "Property",
       "preferredName": "Catena-X Identifier",
-      "description": "The fully anonymous Catena-X ID of the corresponding part, valid for the Catena-X dataspace."
+      "description": "The fully anonymous Catena-X ID of the corresponding part, valid for the Catena-X dataspace.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "UuidV4Trait",
+          "target_model": "shared.uuid@2.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.customs_information:2.0.0#contactInformation",
@@ -115,14 +123,30 @@
       "label": "person",
       "kind": "Property",
       "preferredName": "Person",
-      "description": "Name of the person responsible for the customs information provided."
+      "description": "Name of the person responsible for the customs information provided.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.customs_information:2.0.0#jobTitle",
       "label": "jobTitle",
       "kind": "Property",
       "preferredName": "Job Title",
-      "description": "Jobtitle of the responsible for the customs information provided."
+      "description": "Jobtitle of the responsible for the customs information provided.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.customs_information:2.0.0#value",
@@ -157,49 +181,105 @@
       "label": "DateCharacteristic",
       "kind": "Characteristic",
       "preferredName": "Date Characteristic",
-      "description": "Characteristic of the value property defined as date. "
+      "description": "Characteristic of the value property defined as date. ",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "date",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.customs_information:2.0.0#TracedWorthValueCharacteristic",
       "label": "TracedWorthValueCharacteristic",
       "kind": "Characteristic",
       "preferredName": "Traced Worth Value Characteristic",
-      "description": "Characteristic of the value property defined as double. "
+      "description": "Characteristic of the value property defined as double. ",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "double",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.customs_information:2.0.0#TracedWorthCurrenyCharacteristic",
       "label": "TracedWorthCurrenyCharacteristic",
       "kind": "Characteristic",
       "preferredName": "Traced Worth Curreny Characteristic",
-      "description": "Describes a property which contains the currency of traced worth. "
+      "description": "Describes a property which contains the currency of traced worth. ",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.customs_information:2.0.0#TypeEnumeration",
       "label": "TypeEnumeration",
       "kind": "Characteristic",
       "preferredName": "Type Enumeration",
-      "description": "Characteristic of the type property defined as an Enumeration."
+      "description": "Characteristic of the type property defined as an Enumeration.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.customs_information:2.0.0#FederatedStateEnumeration",
       "label": "FederatedStateEnumeration",
       "kind": "Characteristic",
       "preferredName": "Federated State Enumeration",
-      "description": "Characteristic of the federal state property defined as Enumeration with Regular Expression."
+      "description": "Characteristic of the federal state property defined as Enumeration with Regular Expression.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.customs_information:2.0.0#PreferredStatusEnumeration",
       "label": "PreferredStatusEnumeration",
       "kind": "Characteristic",
       "preferredName": "Preferred Status Enumeration",
-      "description": "Characteristic of the preferred status property defined as an enumeration."
+      "description": "Characteristic of the preferred status property defined as an enumeration.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.customs_information:2.0.0#StatusEnumeration",
       "label": "StatusEnumeration",
       "kind": "Characteristic",
       "preferredName": "Status Enumeration",
-      "description": "Status represents the stage of a long-term supplier's declaration. Committed indicates to the data recipient that all data has been provided correctly."
+      "description": "Status represents the stage of a long-term supplier's declaration. Committed indicates to the data recipient that all data has been provided correctly.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.customs_information:2.0.0#CountryAndStateCodeTrait",
@@ -227,7 +307,21 @@
       "label": "ContactInformationEntity",
       "kind": "Entity",
       "preferredName": "Contact Information Entity",
-      "description": "Entity of the contact information."
+      "description": "Entity of the contact information.",
+      "external_refs": [
+        {
+          "predicate": "properties",
+          "target_local": "email",
+          "target_model": "shared.contact_information@4.0.0",
+          "target_source": "catenax"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "phoneNumber",
+          "target_model": "shared.contact_information@4.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.customs_information:2.0.0#TracedWorthEntity",
@@ -262,7 +356,15 @@
       "label": "TradeRelation",
       "kind": "Characteristic",
       "preferredName": "Trade Relation",
-      "description": "Characteristic of the trade relation property."
+      "description": "Characteristic of the trade relation property.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     }
   ],
   "links": [

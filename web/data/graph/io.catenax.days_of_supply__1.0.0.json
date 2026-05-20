@@ -38,7 +38,15 @@
       "label": "materialGlobalAssetId",
       "kind": "Property",
       "preferredName": "UUID of the Part Type Twin",
-      "description": "Identifier used uniquely to identify part type twin."
+      "description": "Identifier used uniquely to identify part type twin.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "UuidV4Trait",
+          "target_model": "shared.uuid@2.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.days_of_supply:1.0.0#direction",
@@ -66,21 +74,45 @@
       "label": "stockLocationBPNS",
       "kind": "Property",
       "preferredName": "BPNS of Stock Location",
-      "description": "BPNS identifying the site the stock is located at. One stock has always one location."
+      "description": "BPNS identifying the site the stock is located at. One stock has always one location.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "BpnsTrait",
+          "target_model": "shared.business_partner_number@2.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.days_of_supply:1.0.0#stockLocationBPNA",
       "label": "stockLocationBPNA",
       "kind": "Property",
       "preferredName": "BPNA of Stock Location",
-      "description": "BPNA identifying the address the stock is located at. One stock has always one location."
+      "description": "BPNA identifying the address the stock is located at. One stock has always one location.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "BpnaTrait",
+          "target_model": "shared.business_partner_number@2.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.days_of_supply:1.0.0#date",
       "label": "date",
       "kind": "Property",
       "preferredName": "Date of Days of Supply",
-      "description": "Date refers to the specific calendar day (current or projected) associated with the measured (or expected) inventory level. It serves as a timestamp for calculating Days of Supply, indicating when the inventory count was taken or projected."
+      "description": "Date refers to the specific calendar day (current or projected) associated with the measured (or expected) inventory level. It serves as a timestamp for calculating Days of Supply, indicating when the inventory count was taken or projected.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Timestamp",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.days_of_supply:1.0.0#daysOfSupply",
@@ -94,7 +126,15 @@
       "label": "DirectionCharacteristic",
       "kind": "Characteristic",
       "preferredName": "Direction of Stock Characteristic",
-      "description": "If a supplier provides stock information to a customer, use \"OUTBOUND\".\nIf a customer provides stock information to a supplier, use \"INBOUND\"."
+      "description": "If a supplier provides stock information to a customer, use \"OUTBOUND\".\nIf a customer provides stock information to a supplier, use \"INBOUND\".",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.days_of_supply:1.0.0#AllocatedDaysOfSupplySet",
@@ -129,7 +169,15 @@
       "label": "DaysOfSupplyCharacteristic",
       "kind": "Characteristic",
       "preferredName": "Days of Supply Characteristic",
-      "description": "Provides days of supply"
+      "description": "Provides days of supply",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "double",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     }
   ],
   "links": [

@@ -57,28 +57,60 @@
       "label": "pcfCo2eq",
       "kind": "Property",
       "preferredName": "CO2 eq Climate Change",
-      "description": "sum of all greenhouse gas emissions of a product according to the quantification requirements of the standard\n\n DIN DKE Spec 99100 chapter reference: 6.3.2"
+      "description": "sum of all greenhouse gas emissions of a product according to the quantification requirements of the standard\n\n DIN DKE Spec 99100 chapter reference: 6.3.2",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "PcfCo2eqCharacteristic",
+          "target_model": "carbon_footprint@1.0.0",
+          "target_source": "idta"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.admin-shell.idta.batterypass.carbon_footprint:1.0.0#referenceImpactUnitForCalculation",
       "label": "referenceImpactUnitForCalculation",
       "kind": "Property",
       "preferredName": "reference value for calculation",
-      "description": "Quantity unit of the product to which the PCF information on the CO2 footprint refers.\n\n If a normalized product carbon footprint (PCF) value is provided, the reference value for calculation should be a specific unit such as 'kWh'. If the total PCF value is provided the reference value for calculation should be 'piece'."
+      "description": "Quantity unit of the product to which the PCF information on the CO2 footprint refers.\n\n If a normalized product carbon footprint (PCF) value is provided, the reference value for calculation should be a specific unit such as 'kWh'. If the total PCF value is provided the reference value for calculation should be 'piece'.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "ReferenceImpactUnitForCalculationEnum",
+          "target_model": "carbon_footprint@1.0.0",
+          "target_source": "idta"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.admin-shell.idta.batterypass.carbon_footprint:1.0.0#quantityOfMeasureForCalculation",
       "label": "quantityOfMeasureForCalculation",
       "kind": "Property",
       "preferredName": "quantity of measure for calculation",
-      "description": "Provides the quantity number of pieces or mass or volume to compute the impact of climate change or product carbon footprint.\n\n If a normalized product carbon footprint (PCF) value is provided, the quantity of measure for calculation should be 1.\n If the total PCF value is provided the quantity of measure for calculation should be 1."
+      "description": "Provides the quantity number of pieces or mass or volume to compute the impact of climate change or product carbon footprint.\n\n If a normalized product carbon footprint (PCF) value is provided, the quantity of measure for calculation should be 1.\n If the total PCF value is provided the quantity of measure for calculation should be 1.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "QuantityOfMeasureForCalculationCharacteristic",
+          "target_model": "carbon_footprint@1.0.0",
+          "target_source": "idta"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.admin-shell.idta.batterypass.carbon_footprint:1.0.0#lifeCyclePhases",
       "label": "lifeCyclePhases",
       "kind": "Property",
       "preferredName": "life cycle phases",
-      "description": "Life cycle stages of the product according to the quantification requirements of the standard to which the PCF carbon footprint statement refers.\n\nThe string value in the value list is based on DIN DKE SPEC 99100: 'A1 - raw material supply (and upstream production)' (6.3.5 required lify cycle mapping), 'A3 - production' (6.3.4 Contribution of main product production/manufacturing lifecycle stage), 'A4 - transport to final destination' (6.3.5 Contribution of distribution lifecycle stage), 'C3 - recycling, waste treatment' (6.3.6 Contribution of end of life and recycling lifecycle stage)\n\nPlease note that the model should always contain at least one Product Carbon Footprint entry that reflects the total PCF value (including all life cycle phases) of the battery."
+      "description": "Life cycle stages of the product according to the quantification requirements of the standard to which the PCF carbon footprint statement refers.\n\nThe string value in the value list is based on DIN DKE SPEC 99100: 'A1 - raw material supply (and upstream production)' (6.3.5 required lify cycle mapping), 'A3 - production' (6.3.4 Contribution of main product production/manufacturing lifecycle stage), 'A4 - transport to final destination' (6.3.5 Contribution of distribution lifecycle stage), 'C3 - recycling, waste treatment' (6.3.6 Contribution of end of life and recycling lifecycle stage)\n\nPlease note that the model should always contain at least one Product Carbon Footprint entry that reflects the total PCF value (including all life cycle phases) of the battery.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "LifeCyclePhaseSet",
+          "target_model": "carbon_footprint@1.0.0",
+          "target_source": "idta"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.admin-shell.idta.batterypass.carbon_footprint:1.0.0#performanceClass",
@@ -92,7 +124,15 @@
       "label": "webLinkToPublicCarbonFootprintStudy",
       "kind": "Property",
       "preferredName": "web link to public carbon footprint study",
-      "description": "One or more document identifiers (depending, for example, on the translation) of a specific document, which can be found in the 'HandoverDocumentation' model.\n\n DIN DKE Spec 99100 chapter reference: 6.3.8"
+      "description": "One or more document identifiers (depending, for example, on the translation) of a specific document, which can be found in the 'HandoverDocumentation' model.\n\n DIN DKE Spec 99100 chapter reference: 6.3.8",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "DocumentIdentifierSet",
+          "target_model": "shared@3.1.0",
+          "target_source": "idta"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.admin-shell.idta.batterypass.carbon_footprint:1.0.0#ProductCarbonFootprintSet",
@@ -106,7 +146,15 @@
       "label": "ProductCarbonFootprint",
       "kind": "Entity",
       "preferredName": "carbon footprint of a product",
-      "description": "Balance of greenhouse gas emissions along the entire life cycle of a product in a defined application and in relation to a defined unit of use."
+      "description": "Balance of greenhouse gas emissions along the entire life cycle of a product in a defined application and in relation to a defined unit of use.",
+      "external_refs": [
+        {
+          "predicate": "properties",
+          "target_local": "pcfCalculationMethods",
+          "target_model": "carbon_footprint@1.0.0",
+          "target_source": "idta"
+        }
+      ]
     }
   ],
   "links": [

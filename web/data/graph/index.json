@@ -32,7 +32,7 @@
     "status": "undefined",
     "meta_model": "SAMM 2.2.0",
     "n_nodes": 43,
-    "n_links": 32,
+    "n_links": 38,
     "n_aspects": 1,
     "has_aspect": true,
     "file": "io.admin-shell.idta.batterypass.circularity__1.0.0.json",
@@ -101,7 +101,7 @@
     "status": "undefined",
     "meta_model": "SAMM 2.2.0",
     "n_nodes": 35,
-    "n_links": 32,
+    "n_links": 35,
     "n_aspects": 1,
     "has_aspect": true,
     "file": "io.admin-shell.idta.batterypass.material_composition__1.0.0.json",
@@ -124,7 +124,7 @@
     "status": "undefined",
     "meta_model": "SAMM 2.2.0",
     "n_nodes": 35,
-    "n_links": 31,
+    "n_links": 35,
     "n_aspects": 1,
     "has_aspect": true,
     "file": "io.admin-shell.idta.batterypass.material_composition__1.0.1.json",
@@ -147,7 +147,7 @@
     "status": "undefined",
     "meta_model": "SAMM 2.2.0",
     "n_nodes": 80,
-    "n_links": 77,
+    "n_links": 90,
     "n_aspects": 1,
     "has_aspect": true,
     "file": "io.admin-shell.idta.batterypass.product_condition__1.0.0.json",
@@ -170,7 +170,7 @@
     "status": "undefined",
     "meta_model": "SAMM 2.2.0",
     "n_nodes": 82,
-    "n_links": 79,
+    "n_links": 81,
     "n_aspects": 1,
     "has_aspect": true,
     "file": "io.admin-shell.idta.batterypass.product_condition__1.0.1.json",
@@ -193,7 +193,7 @@
     "status": "undefined",
     "meta_model": "SAMM 2.2.0",
     "n_nodes": 84,
-    "n_links": 59,
+    "n_links": 89,
     "n_aspects": 1,
     "has_aspect": true,
     "file": "io.admin-shell.idta.batterypass.technical_data__1.0.0.json",
@@ -216,7 +216,7 @@
     "status": "undefined",
     "meta_model": "SAMM 2.2.0",
     "n_nodes": 87,
-    "n_links": 62,
+    "n_links": 92,
     "n_aspects": 1,
     "has_aspect": true,
     "file": "io.admin-shell.idta.batterypass.technical_data__1.0.1.json",
@@ -239,7 +239,7 @@
     "status": "undefined",
     "meta_model": "SAMM 2.2.0",
     "n_nodes": 40,
-    "n_links": 30,
+    "n_links": 38,
     "n_aspects": 1,
     "has_aspect": true,
     "file": "io.admin-shell.idta.carbon_footprint__1.0.0.json",
@@ -262,7 +262,7 @@
     "status": "undefined",
     "meta_model": "SAMM 2.2.0",
     "n_nodes": 53,
-    "n_links": 46,
+    "n_links": 47,
     "n_aspects": 1,
     "has_aspect": true,
     "file": "io.admin-shell.idta.contact_information__1.0.0.json",
@@ -285,7 +285,7 @@
     "status": "undefined",
     "meta_model": "SAMM 2.2.0",
     "n_nodes": 24,
-    "n_links": 22,
+    "n_links": 23,
     "n_aspects": 1,
     "has_aspect": true,
     "file": "io.admin-shell.idta.digital_nameplate__3.0.0.json",
@@ -308,7 +308,7 @@
     "status": "undefined",
     "meta_model": "SAMM 2.2.0",
     "n_nodes": 23,
-    "n_links": 17,
+    "n_links": 22,
     "n_aspects": 1,
     "has_aspect": true,
     "file": "io.admin-shell.idta.generic.technical_data__1.2.0.json",
@@ -318,7 +318,25 @@
       "html": true,
       "schema": true,
       "payload": true,
-      "openapi": false
+      "openapi": false,
+      "aspects": [
+        {
+          "name": "TechnicalDataGeneric",
+          "base": "io.admin-shell.idta.generic.technical_data/1.2.0/gen/TechnicalDataGeneric",
+          "html": true,
+          "schema": true,
+          "payload": true,
+          "openapi": false
+        },
+        {
+          "name": "TechnicalDataGeneric_1.2.0",
+          "base": "io.admin-shell.idta.generic.technical_data/1.2.0/gen/TechnicalDataGeneric_1.2.0",
+          "html": true,
+          "schema": true,
+          "payload": true,
+          "openapi": false
+        }
+      ]
     }
   },
   {
@@ -331,7 +349,7 @@
     "status": "undefined",
     "meta_model": "SAMM 2.2.0",
     "n_nodes": 35,
-    "n_links": 28,
+    "n_links": 34,
     "n_aspects": 1,
     "has_aspect": true,
     "file": "io.admin-shell.idta.generic.technical_data__2.0.0.json",
@@ -354,7 +372,7 @@
     "status": "undefined",
     "meta_model": "SAMM 2.2.0",
     "n_nodes": 43,
-    "n_links": 39,
+    "n_links": 41,
     "n_aspects": 1,
     "has_aspect": true,
     "file": "io.admin-shell.idta.handover_documentation__2.0.0.json",
@@ -377,7 +395,7 @@
     "status": "undefined",
     "meta_model": "SAMM 2.2.0",
     "n_nodes": 111,
-    "n_links": 86,
+    "n_links": 110,
     "n_aspects": 2,
     "has_aspect": true,
     "file": "io.admin-shell.idta.shared__3.1.0.json",
@@ -387,7 +405,33 @@
       "html": true,
       "schema": true,
       "payload": true,
-      "openapi": false
+      "openapi": false,
+      "aspects": [
+        {
+          "name": "TestAspect",
+          "base": "io.admin-shell.idta.shared/3.1.0/gen/TestAspect",
+          "html": true,
+          "schema": true,
+          "payload": true,
+          "openapi": false
+        },
+        {
+          "name": "TestAspectShared",
+          "base": "io.admin-shell.idta.shared/3.1.0/gen/TestAspectShared",
+          "html": true,
+          "schema": true,
+          "payload": true,
+          "openapi": false
+        },
+        {
+          "name": "ValueOnlyExampleAspect",
+          "base": "io.admin-shell.idta.shared/3.1.0/gen/ValueOnlyExampleAspect",
+          "html": true,
+          "schema": true,
+          "payload": true,
+          "openapi": false
+        }
+      ]
     }
   },
   {
@@ -2861,7 +2905,7 @@
     "status": "release",
     "meta_model": "SAMM 2.1.0",
     "n_nodes": 93,
-    "n_links": 95,
+    "n_links": 98,
     "n_aspects": 6,
     "has_aspect": true,
     "file": "io.catenax.material_accounting__1.0.0.json",
@@ -2871,7 +2915,57 @@
       "html": true,
       "schema": true,
       "payload": true,
-      "openapi": true
+      "openapi": true,
+      "aspects": [
+        {
+          "name": "Composition",
+          "base": "io.catenax.material_accounting/1.0.0/gen/Composition",
+          "html": true,
+          "schema": true,
+          "payload": true,
+          "openapi": true
+        },
+        {
+          "name": "Material",
+          "base": "io.catenax.material_accounting/1.0.0/gen/Material",
+          "html": true,
+          "schema": true,
+          "payload": true,
+          "openapi": true
+        },
+        {
+          "name": "RecyclingBatch",
+          "base": "io.catenax.material_accounting/1.0.0/gen/RecyclingBatch",
+          "html": true,
+          "schema": true,
+          "payload": true,
+          "openapi": true
+        },
+        {
+          "name": "RecyclingInformation",
+          "base": "io.catenax.material_accounting/1.0.0/gen/RecyclingInformation",
+          "html": true,
+          "schema": true,
+          "payload": true,
+          "openapi": true
+        },
+        {
+          "name": "VehicleInformation",
+          "base": "io.catenax.material_accounting/1.0.0/gen/VehicleInformation",
+          "html": true,
+          "schema": true,
+          "payload": true,
+          "openapi": true
+        },
+        {
+          "name": "WasteCode",
+          "base": "io.catenax.material_accounting/1.0.0/gen/WasteCode",
+          "html": true,
+          "schema": true,
+          "payload": true,
+          "openapi": true
+        }
+      ]
     }
   },
   {

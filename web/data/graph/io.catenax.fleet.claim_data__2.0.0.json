@@ -60,14 +60,30 @@
       "label": "catenaXQualityTaskId",
       "kind": "Property",
       "preferredName": "Quality Task ID",
-      "description": "The fully anonymous and unique Catena-X ID of this quality task. This id is unique inside Catena-X data space."
+      "description": "The fully anonymous and unique Catena-X ID of this quality task. This id is unique inside Catena-X data space.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "UuidV4Trait",
+          "target_model": "shared.uuid@1.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.fleet.claim_data:2.0.0#catenaXVehicleId",
       "label": "catenaXVehicleId",
       "kind": "Property",
       "preferredName": "Vehicle Catena-X Identifier",
-      "description": "A unique identifier for the vehicle in the Catena-X data space."
+      "description": "A unique identifier for the vehicle in the Catena-X data space.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "UuidV4Trait",
+          "target_model": "shared.uuid@1.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.fleet.claim_data:2.0.0#claimId",
@@ -88,14 +104,30 @@
       "label": "customerComment",
       "kind": "Property",
       "preferredName": "CustomerComment",
-      "description": "short description of the claim from customer view"
+      "description": "short description of the claim from customer view",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.fleet.claim_data:2.0.0#damageCode",
       "label": "damageCode",
       "kind": "Property",
       "preferredName": "DamageCode",
-      "description": "OEM-specific damage code"
+      "description": "OEM-specific damage code",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.fleet.claim_data:2.0.0#repairCountryCode",
@@ -109,7 +141,15 @@
       "label": "repairDate",
       "kind": "Property",
       "preferredName": "RepairDate",
-      "description": "references the date when claim was initially reported"
+      "description": "references the date when claim was initially reported",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Timestamp",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.fleet.claim_data:2.0.0#repairMileage",
@@ -123,7 +163,15 @@
       "label": "technicianComment",
       "kind": "Property",
       "preferredName": "TechnicianComment",
-      "description": "short description of the claim from the technicians"
+      "description": "short description of the claim from the technicians",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.fleet.claim_data:2.0.0#workshop",
@@ -151,21 +199,45 @@
       "label": "selectionCriteria",
       "kind": "Property",
       "preferredName": "Selection criteria",
-      "description": "Describes the selection criteria a Catena-X data provider has applied to create this data set."
+      "description": "Describes the selection criteria a Catena-X data provider has applied to create this data set.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.fleet.claim_data:2.0.0#selectionStart",
       "label": "selectionStart",
       "kind": "Property",
       "preferredName": "Selection start",
-      "description": "Describes the starting point for providing records in this data set."
+      "description": "Describes the starting point for providing records in this data set.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.fleet.claim_data:2.0.0#selectionEnd",
       "label": "selectionEnd",
       "kind": "Property",
       "preferredName": "Selection end",
-      "description": "Describes the end point for providing records in this data set."
+      "description": "Describes the end point for providing records in this data set.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.fleet.claim_data:2.0.0#workShopId",
@@ -200,42 +272,90 @@
       "label": "catenaXClaimPartId",
       "kind": "Property",
       "preferredName": "Catena-X Claim Part ID",
-      "description": "Catena-X ID of the part that is involved in the claim."
+      "description": "Catena-X ID of the part that is involved in the claim.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "UuidV4Trait",
+          "target_model": "shared.uuid@1.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.fleet.claim_data:2.0.0#isPartCausal",
       "label": "isPartCausal",
       "kind": "Property",
       "preferredName": "IsPartCausal",
-      "description": "Flag is set to true if part was causing the problem-otherwise false."
+      "description": "Flag is set to true if part was causing the problem-otherwise false.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Boolean",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.fleet.claim_data:2.0.0#isPartReplaced",
       "label": "isPartReplaced",
       "kind": "Property",
       "preferredName": "IsPartReplaced",
-      "description": "Flag is set to true if part was replaced-otherwise false."
+      "description": "Flag is set to true if part was replaced-otherwise false.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Boolean",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.fleet.claim_data:2.0.0#partName",
       "label": "partName",
       "kind": "Property",
       "preferredName": "Part name",
-      "description": "Part name of this part."
+      "description": "Part name of this part.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.fleet.claim_data:2.0.0#partNumber",
       "label": "partNumber",
       "kind": "Property",
       "preferredName": "Part number",
-      "description": "Internal part number of the part. A part number is NOT unique."
+      "description": "Internal part number of the part. A part number is NOT unique.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.fleet.claim_data:2.0.0#partTreatment",
       "label": "partTreatment",
       "kind": "Property",
       "preferredName": "Part treatment",
-      "description": "Describes what happened to this part in the claim."
+      "description": "Describes what happened to this part in the claim.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.fleet.claim_data:2.0.0#serialNumber",
@@ -270,21 +390,45 @@
       "label": "catenaXSparePartId",
       "kind": "Property",
       "preferredName": "Catena-X spare part ID",
-      "description": "Catena-X ID of the spare part that was put into the vehicle."
+      "description": "Catena-X ID of the spare part that was put into the vehicle.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "UuidV4Trait",
+          "target_model": "shared.uuid@1.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.fleet.claim_data:2.0.0#sparePartName",
       "label": "sparePartName",
       "kind": "Property",
       "preferredName": "Spare part name",
-      "description": "Spare part name of this part."
+      "description": "Spare part name of this part.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.fleet.claim_data:2.0.0#sparePartNumber",
       "label": "sparePartNumber",
       "kind": "Property",
       "preferredName": "Spare part number",
-      "description": "Internal spare part number of the part. A spare part number is NOT unique."
+      "description": "Internal spare part number of the part. A spare part number is NOT unique.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.fleet.claim_data:2.0.0#sparePartSerialNumber",
@@ -340,7 +484,15 @@
       "label": "UniqueID",
       "kind": "Characteristic",
       "preferredName": "unique ID",
-      "description": "This Characteristic describes a property that is truly unique either inside the Company that is providing the data or even in Catena-X data space. Only one property in a semantic entity should be a uniqueID. Unique IDs can be used to link a data set with other semantic models."
+      "description": "This Characteristic describes a property that is truly unique either inside the Company that is providing the data or even in Catena-X data space. Only one property in a semantic entity should be a uniqueID. Unique IDs can be used to link a data set with other semantic models.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.fleet.claim_data:2.0.0#WorkshopCharacteristic",
@@ -354,21 +506,45 @@
       "label": "CountryCodeCharacteristic",
       "kind": "Characteristic",
       "preferredName": "Country Code Characteristic",
-      "description": "ISO 3166-1 alpha-3 – three-letter country codes "
+      "description": "ISO 3166-1 alpha-3 – three-letter country codes ",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.fleet.claim_data:2.0.0#AmountOfReplacedPartsCharacteristic",
       "label": "AmountOfReplacedPartsCharacteristic",
       "kind": "Characteristic",
       "preferredName": "Amount of replaced Parts",
-      "description": "counter for non-serial parts"
+      "description": "counter for non-serial parts",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "nonNegativeInteger",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.fleet.claim_data:2.0.0#Float",
       "label": "Float",
       "kind": "Characteristic",
       "preferredName": "Float",
-      "description": "Characteristic of a float value."
+      "description": "Characteristic of a float value.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "float",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.fleet.claim_data:2.0.0#Claim",
@@ -417,7 +593,15 @@
       "label": "RecordStatusEnumeration",
       "kind": "Characteristic",
       "preferredName": "Record status enumeration",
-      "description": "Defining the enumeration for the record status"
+      "description": "Defining the enumeration for the record status",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.fleet.claim_data:2.0.0#CountryCodeTrait",
@@ -445,7 +629,15 @@
       "label": "MileageCounter",
       "kind": "Characteristic",
       "preferredName": "Mileage",
-      "description": "The mileage counter of the car."
+      "description": "The mileage counter of the car.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "nonNegativeInteger",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.fleet.claim_data:2.0.0#CountryCodeRegularExpression",

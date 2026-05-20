@@ -128,7 +128,15 @@
       "label": "permanentMagnetType",
       "kind": "Property",
       "preferredName": "Permanent Magnet Type",
-      "description": "The permanent magnet type describes the material composition of the permanent magnet in use. In case of SSM e-Motors, no permanent magnets are used, requiring the input of a default value. Possible selections:\n- No permanent magnets used (SSM motor): \"None\"\n- AlNiCo: \"Aluminum-Nickel-Cobalt\"\n- Ceramic: \"Ceramic\"\n- Ferrite: \"Ferrite\"\n- Flexible: \"Flexible Rubber\"\n- SmCo: \"Samarium Cobalt\"\n- NdFeB: \"Neodymium Iron Boron\""
+      "description": "The permanent magnet type describes the material composition of the permanent magnet in use. In case of SSM e-Motors, no permanent magnets are used, requiring the input of a default value. Possible selections:\n- No permanent magnets used (SSM motor): \"None\"\n- AlNiCo: \"Aluminum-Nickel-Cobalt\"\n- Ceramic: \"Ceramic\"\n- Ferrite: \"Ferrite\"\n- Flexible: \"Flexible Rubber\"\n- SmCo: \"Samarium Cobalt\"\n- NdFeB: \"Neodymium Iron Boron\"",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#ratedSpeed",
@@ -156,7 +164,15 @@
       "label": "eMachineWeight",
       "kind": "Property",
       "preferredName": "E-Machine Weight",
-      "description": "Net weight, component weight without packaging, of the electrical machine, which is built into the eDrive."
+      "description": "Net weight, component weight without packaging, of the electrical machine, which is built into the eDrive.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "MassCharacteristic",
+          "target_model": "shared.quantity@2.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#coolingTopology",
@@ -177,7 +193,15 @@
       "label": "oilTypeEdrive",
       "kind": "Property",
       "preferredName": "Oil Type eDrive",
-      "description": "The type of the oil for the eDrive defined by the manufacturer. In case of a combined oil circuit for both the eDrive and the built-in transmission, the value must be identical to the oil type value of the transmission."
+      "description": "The type of the oil for the eDrive defined by the manufacturer. In case of a combined oil circuit for both the eDrive and the built-in transmission, the value must be identical to the oil type value of the transmission.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#minimumOilPressure",
@@ -198,7 +222,15 @@
       "label": "oilModule",
       "kind": "Property",
       "preferredName": "Oil Module",
-      "description": "Flag indicating the availability or absence of an oil module. An oil module is an umbrella term for devices that are manipulating the oil flow and the temperature in the product and incorporate cooler, pump, valves (pressure regulation valve)."
+      "description": "Flag indicating the availability or absence of an oil module. An oil module is an umbrella term for devices that are manipulating the oil flow and the temperature in the product and incorporate cooler, pump, valves (pressure regulation valve).",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Boolean",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#maximumOilTemperature",
@@ -226,7 +258,15 @@
       "label": "softwareVersion",
       "kind": "Property",
       "preferredName": "Software Version",
-      "description": "Indicates the software version of the inverter."
+      "description": "Indicates the software version of the inverter.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#systemVoltage",
@@ -268,21 +308,45 @@
       "label": "gearboxStructure",
       "kind": "Property",
       "preferredName": "Gearbox Structure",
-      "description": "Short description of the gearbox design, e.g. layshaft or planetary, depending on the technical design of the car."
+      "description": "Short description of the gearbox design, e.g. layshaft or planetary, depending on the technical design of the car.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#technicalDismantlingInstructions",
       "label": "technicalDismantlingInstructions",
       "kind": "Property",
       "preferredName": "Technical Dismantling Instructions",
-      "description": "Document containing information and instructions, including steps, diagrams and illustrations of removing or replacing the eDrive or dismantling it."
+      "description": "Document containing information and instructions, including steps, diagrams and illustrations of removing or replacing the eDrive or dismantling it.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "DocumentList",
+          "target_model": "generic.digital_product_passport@4.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#requiredToolsForDismantling",
       "label": "requiredToolsForDismantling",
       "kind": "Property",
       "preferredName": "Required Tools For Dismantling",
-      "description": "Document containing information and instructions for required tools or technologies pertaining to the removal, replacement or dismantling of the eDrive."
+      "description": "Document containing information and instructions for required tools or technologies pertaining to the removal, replacement or dismantling of the eDrive.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "DocumentList",
+          "target_model": "generic.digital_product_passport@4.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#serviceHistory",
@@ -303,7 +367,15 @@
       "label": "oilTimeStamp",
       "kind": "Property",
       "preferredName": "Oil Time Stamp",
-      "description": "Measuring timestamp, when the oil pressure during the usage of the eDrive was measured last."
+      "description": "Measuring timestamp, when the oil pressure during the usage of the eDrive was measured last.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Timestamp",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#oilValue",
@@ -464,7 +536,15 @@
       "label": "IdentifierCharacteristic",
       "kind": "Characteristic",
       "preferredName": "Identifier Characteristic",
-      "description": "Characteristic for identifiers of components in the electrical drive."
+      "description": "Characteristic for identifiers of components in the electrical drive.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#OilPressureCharacteristic",
@@ -492,7 +572,15 @@
       "label": "DateCharacteristic",
       "kind": "Characteristic",
       "preferredName": "Date Characteristic",
-      "description": "Characteristic for values in the data type date."
+      "description": "Characteristic for values in the data type date.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "date",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#MaximumPowerCharacteristic",
@@ -527,7 +615,63 @@
       "label": "UnspecificEntity",
       "kind": "Entity",
       "preferredName": "Unspecific Entity",
-      "description": "Entity for the product unspecific parameters."
+      "description": "Entity for the product unspecific parameters.",
+      "external_refs": [
+        {
+          "predicate": "properties",
+          "target_local": "metadata",
+          "target_model": "generic.digital_product_passport@4.0.0",
+          "target_source": "catenax"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "identification",
+          "target_model": "generic.digital_product_passport@4.0.0",
+          "target_source": "catenax"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "operation",
+          "target_model": "generic.digital_product_passport@4.0.0",
+          "target_source": "catenax"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "handling",
+          "target_model": "generic.digital_product_passport@4.0.0",
+          "target_source": "catenax"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "characteristics",
+          "target_model": "generic.digital_product_passport@4.0.0",
+          "target_source": "catenax"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "commercial",
+          "target_model": "generic.digital_product_passport@4.0.0",
+          "target_source": "catenax"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "materials",
+          "target_model": "generic.digital_product_passport@4.0.0",
+          "target_source": "catenax"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "sustainability",
+          "target_model": "generic.digital_product_passport@4.0.0",
+          "target_source": "catenax"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "sources",
+          "target_model": "generic.digital_product_passport@4.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#GeneralEntity",
@@ -569,7 +713,15 @@
       "label": "TransmissionEntity",
       "kind": "Entity",
       "preferredName": "Transmission Entity",
-      "description": "Entity for transmission values."
+      "description": "Entity for transmission values.",
+      "external_refs": [
+        {
+          "predicate": "properties",
+          "target_local": "oil",
+          "target_model": "transmission.transmission_pass@2.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#ElectricDriveDocumentsEntity",
@@ -639,98 +791,210 @@
       "label": "RevolutionsMeasurement",
       "kind": "Characteristic",
       "preferredName": "Revolutions Measurement",
-      "description": "Measurement of revolutions per minute as float value."
+      "description": "Measurement of revolutions per minute as float value.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "float",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#MillimetreMeasurement",
       "label": "MillimetreMeasurement",
       "kind": "Characteristic",
       "preferredName": "Millimetre Measurement",
-      "description": "Measurement of millimetre as float value."
+      "description": "Measurement of millimetre as float value.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "float",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#CubicDecimetreMeasurement",
       "label": "CubicDecimetreMeasurement",
       "kind": "Characteristic",
       "preferredName": "Cubic Decimetre Measurement",
-      "description": "Measurement of cubic decimetre as float value."
+      "description": "Measurement of cubic decimetre as float value.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "float",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#CelsiusMeasurement",
       "label": "CelsiusMeasurement",
       "kind": "Characteristic",
       "preferredName": "Celsius Measurement",
-      "description": "Measurement in celsius as float value."
+      "description": "Measurement in celsius as float value.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "float",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#AmpereMeasurement",
       "label": "AmpereMeasurement",
       "kind": "Characteristic",
       "preferredName": "Ampere Measurement",
-      "description": "Measurement of ampere as float value."
+      "description": "Measurement of ampere as float value.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "float",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#VoltMeasurement",
       "label": "VoltMeasurement",
       "kind": "Characteristic",
       "preferredName": "Volt Measurement",
-      "description": "Measurement in volt as float value."
+      "description": "Measurement in volt as float value.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "float",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#BarMeasurement",
       "label": "BarMeasurement",
       "kind": "Characteristic",
       "preferredName": "Bar Measurement",
-      "description": "Measurement of the pressure in bar as float value."
+      "description": "Measurement of the pressure in bar as float value.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "float",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#KilowattMeasurement",
       "label": "KilowattMeasurement",
       "kind": "Characteristic",
       "preferredName": "Kilowatt Measurement",
-      "description": "Measurement in kilowatt as float value."
+      "description": "Measurement in kilowatt as float value.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "float",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#NewtonMetreMeasurement",
       "label": "NewtonMetreMeasurement",
       "kind": "Characteristic",
       "preferredName": "Newton Metre Measurement",
-      "description": "Measurement in newton metre as decimal value."
+      "description": "Measurement in newton metre as decimal value.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "decimal",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#SecondsMeasurement",
       "label": "SecondsMeasurement",
       "kind": "Characteristic",
       "preferredName": "Seconds Measurement",
-      "description": "Measurement in seconds as integer value."
+      "description": "Measurement in seconds as integer value.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "integer",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#TechnologyEnumeration",
       "label": "TechnologyEnumeration",
       "kind": "Characteristic",
       "preferredName": "Technology Enumeration",
-      "description": "Enumeration for the e-machine technology."
+      "description": "Enumeration for the e-machine technology.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#CoolingEnumeration",
       "label": "CoolingEnumeration",
       "kind": "Characteristic",
       "preferredName": "Cooling Enumeration",
-      "description": "Enumeration of cooling technology."
+      "description": "Enumeration of cooling technology.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#StringList",
       "label": "StringList",
       "kind": "Characteristic",
       "preferredName": "String List",
-      "description": "A list of values in the data type string."
+      "description": "A list of values in the data type string.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#DateList",
       "label": "DateList",
       "kind": "Characteristic",
       "preferredName": "Date List",
-      "description": "A list of values in the data type date."
+      "description": "A list of values in the data type date.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "date",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#VehicleTypesConstraint",

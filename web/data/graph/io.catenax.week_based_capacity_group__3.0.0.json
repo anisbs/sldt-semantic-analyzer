@@ -44,7 +44,15 @@
       "label": "capacityGroupId",
       "kind": "Property",
       "preferredName": "Capacity Group ID",
-      "description": "The Capacity Group ID uniquely identifies the capacity group within the business relationship between a supplier and its customer."
+      "description": "The Capacity Group ID uniquely identifies the capacity group within the business relationship between a supplier and its customer.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "UuidV4Trait",
+          "target_model": "shared.uuid@2.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.week_based_capacity_group:3.0.0#name",
@@ -65,21 +73,45 @@
       "label": "customer",
       "kind": "Property",
       "preferredName": "Customer",
-      "description": "The Business Partner Number (BPNL) of the party requesting materials from a supplier."
+      "description": "The Business Partner Number (BPNL) of the party requesting materials from a supplier.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "BpnlTrait",
+          "target_model": "shared.business_partner_number@2.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.week_based_capacity_group:3.0.0#supplier",
       "label": "supplier",
       "kind": "Property",
       "preferredName": "Supplier",
-      "description": "The Business Partner Number (BPNL) of the party providing materials to a customer."
+      "description": "The Business Partner Number (BPNL) of the party providing materials to a customer.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "BpnlTrait",
+          "target_model": "shared.business_partner_number@2.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.week_based_capacity_group:3.0.0#unitOfMeasure",
       "label": "unitOfMeasure",
       "kind": "Property",
       "preferredName": "Unit of Measure",
-      "description": "Unit of measurement for capacity quantities."
+      "description": "Unit of measurement for capacity quantities.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "ItemUnitEnumeration",
+          "target_model": "shared.quantity@2.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.week_based_capacity_group:3.0.0#linkedDemandSeries",
@@ -114,7 +146,15 @@
       "label": "unitOfMeasureIsOmitted",
       "kind": "Property",
       "preferredName": "Unit Of Measure Is Omitted",
-      "description": "Explicit indicator of whether the unit of measure is left out of the payload intentionally. If \"true\" it means the sending application sends demand values without unit of measure intentionally and the unit of measure MUST NOT be contained in the payload. If \"false\" a unit of measure MUST be supplied."
+      "description": "Explicit indicator of whether the unit of measure is left out of the payload intentionally. If \"true\" it means the sending application sends demand values without unit of measure intentionally and the unit of measure MUST NOT be contained in the payload. If \"false\" a unit of measure MUST be supplied.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Boolean",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.week_based_capacity_group:3.0.0#demandVolatilityParameters",
@@ -128,7 +168,15 @@
       "label": "capacityGroupIsInactive",
       "kind": "Property",
       "preferredName": "Capacity Group Is Inactive",
-      "description": "Indicates that this capacity group is currently not in use/maintained by the supplier."
+      "description": "Indicates that this capacity group is currently not in use/maintained by the supplier.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Boolean",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.week_based_capacity_group:3.0.0#materialNumberCustomer",
@@ -149,7 +197,15 @@
       "label": "customerLocation",
       "kind": "Property",
       "preferredName": "Customer Location",
-      "description": "The BPNS number of the site at which the customer needs the specified material for the referenced demand series."
+      "description": "The BPNS number of the site at which the customer needs the specified material for the referenced demand series.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "BpnsTrait",
+          "target_model": "shared.business_partner_number@2.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.week_based_capacity_group:3.0.0#demandCategory",
@@ -205,7 +261,15 @@
       "label": "startReferenceDateTime",
       "kind": "Property",
       "preferredName": "Start Reference Date Time",
-      "description": "Point in time when the measurement starts on supplier side. It needs to be a point in time after the receival of active flag.\nThis point in time marks the beginning of the first reporting interval. It is also the time of the first week for the rolling sub horizons for alert generation."
+      "description": "Point in time when the measurement starts on supplier side. It needs to be a point in time after the receival of active flag.\nThis point in time marks the beginning of the first reporting interval. It is also the time of the first week for the rolling sub horizons for alert generation.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Timestamp",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.week_based_capacity_group:3.0.0#measurementInterval",
@@ -233,7 +297,15 @@
       "label": "demandCategoryName",
       "kind": "Property",
       "preferredName": "Demand Category Name",
-      "description": "The name describing a demand category."
+      "description": "The name describing a demand category.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "MultiLanguageText",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.week_based_capacity_group:3.0.0#sequenceNumber",
@@ -282,14 +354,30 @@
       "label": "CapacityGroupName",
       "kind": "Characteristic",
       "preferredName": "Capacity Group Name",
-      "description": "The name of a capacity group, used to distinguish it from other capacity groups."
+      "description": "The name of a capacity group, used to distinguish it from other capacity groups.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.week_based_capacity_group:3.0.0#Timestamp",
       "label": "Timestamp",
       "kind": "Characteristic",
       "preferredName": "Timestamp",
-      "description": "Point in time."
+      "description": "Point in time.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "dateTimeStamp",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.week_based_capacity_group:3.0.0#DemandVolatilityCharacteristic",
@@ -303,56 +391,120 @@
       "label": "MaterialNumber",
       "kind": "Characteristic",
       "preferredName": "Material Number",
-      "description": "The material number is a multi-character string, usually assigned by an ERP system."
+      "description": "The material number is a multi-character string, usually assigned by an ERP system.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.week_based_capacity_group:3.0.0#LoadFactorCharacteristic",
       "label": "LoadFactorCharacteristic",
       "kind": "Characteristic",
       "preferredName": "Load Factor Characteristic",
-      "description": "Describes the data type of the load factor."
+      "description": "Describes the data type of the load factor.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "decimal",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.week_based_capacity_group:3.0.0#PointInTimeCharacteristic",
       "label": "PointInTimeCharacteristic",
       "kind": "Characteristic",
       "preferredName": "Point in Time Characteristic",
-      "description": "An ISO calendar week in which a given capacity will be provided. Must be given as date of the monday in the week."
+      "description": "An ISO calendar week in which a given capacity will be provided. Must be given as date of the monday in the week.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "date",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.week_based_capacity_group:3.0.0#DeltaProductionResultCharacteristic",
       "label": "DeltaProductionResultCharacteristic",
       "kind": "Characteristic",
       "preferredName": "Delta Production Result Characteristic",
-      "description": "Describes data type of a delta production result information."
+      "description": "Describes data type of a delta production result information.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "decimal",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.week_based_capacity_group:3.0.0#Quantity",
       "label": "Quantity",
       "kind": "Characteristic",
       "preferredName": "Quantity",
-      "description": "Quantity of weekly actual or maximum capacity."
+      "description": "Quantity of weekly actual or maximum capacity.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "decimal",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.week_based_capacity_group:3.0.0#Integer",
       "label": "Integer",
       "kind": "Characteristic",
       "preferredName": "Integer",
-      "description": "Describes a property which is defined by an Integer value"
+      "description": "Describes a property which is defined by an Integer value",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "int",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.week_based_capacity_group:3.0.0#Decimal",
       "label": "Decimal",
       "kind": "Characteristic",
       "preferredName": "Decimal",
-      "description": "Property which is defined by a decimal value"
+      "description": "Property which is defined by a decimal value",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "decimal",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.week_based_capacity_group:3.0.0#SupplierLocationsCharacteristic",
       "label": "SupplierLocationsCharacteristic",
       "kind": "Characteristic",
       "preferredName": "Supplier Locations Characteristic",
-      "description": "Contains a set of locations the supplier fulfills a demand request from."
+      "description": "Contains a set of locations the supplier fulfills a demand request from.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.week_based_capacity_group:3.0.0#LinkedDemandSeriesSet",
@@ -366,7 +518,15 @@
       "label": "LinkedCapacityGroupsCharacteristic",
       "kind": "Characteristic",
       "preferredName": "Linked Capacity Groups Characteristic",
-      "description": "Contains all capacity groups which are linked to the current one."
+      "description": "Contains all capacity groups which are linked to the current one.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.week_based_capacity_group:3.0.0#RollingHorizonAlertThresholdsSet",
@@ -387,14 +547,30 @@
       "label": "BPNSTrait",
       "kind": "Characteristic",
       "preferredName": "BPNS Trait",
-      "description": "Trait to ensure data format for BPNS."
+      "description": "Trait to ensure data format for BPNS.",
+      "external_refs": [
+        {
+          "predicate": "constraint",
+          "target_local": "BpnsRegularExpression",
+          "target_model": "shared.business_partner_number@2.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.week_based_capacity_group:3.0.0#UUIDv4IdTrait",
       "label": "UUIDv4IdTrait",
       "kind": "Characteristic",
       "preferredName": "UUIDv4 Trait",
-      "description": "Trait to ensure data format for UUIDv4."
+      "description": "Trait to ensure data format for UUIDv4.",
+      "external_refs": [
+        {
+          "predicate": "constraint",
+          "target_local": "Uuidv4RegularExpression",
+          "target_model": "shared.uuid@2.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.week_based_capacity_group:3.0.0#QuantityTrait",
@@ -492,7 +668,15 @@
       "label": "DemandCategoryCodeCharacteristic",
       "kind": "Characteristic",
       "preferredName": "Demand Category Code Characteristic",
-      "description": "The code identifying a demand category."
+      "description": "The code identifying a demand category.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     }
   ],
   "links": [

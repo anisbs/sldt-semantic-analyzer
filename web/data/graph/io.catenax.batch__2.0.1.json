@@ -31,14 +31,30 @@
       "label": "Batch",
       "kind": "Aspect",
       "preferredName": "Batch",
-      "description": "A batch is a quantity of(semi-) finished products or(raw) material product that have been produced under the same circumstances(e.g. same production location), as specified groups or amounts, within a certain time frame. Every batch can differ in the number or amount of products. Different batches can have varied specifications, e.g., different colors. A batch is identified via a Batch ID."
+      "description": "A batch is a quantity of(semi-) finished products or(raw) material product that have been produced under the same circumstances(e.g. same production location), as specified groups or amounts, within a certain time frame. Every batch can differ in the number or amount of products. Different batches can have varied specifications, e.g., different colors. A batch is identified via a Batch ID.",
+      "external_refs": [
+        {
+          "predicate": "properties",
+          "target_local": "sites",
+          "target_model": "shared.part_site_information_as_built@1.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.batch:2.0.1#catenaXId",
       "label": "catenaXId",
       "kind": "Property",
       "preferredName": "Catena-X Identifier",
-      "description": "The fully anonymous Catena-X ID of the batch, valid for the Catena-X dataspace."
+      "description": "The fully anonymous Catena-X ID of the batch, valid for the Catena-X dataspace.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "UuidV4Trait",
+          "target_model": "shared.uuid@1.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.batch:2.0.1#localIdentifiers",
@@ -80,7 +96,15 @@
       "label": "date",
       "kind": "Property",
       "preferredName": "Production Date",
-      "description": "Timestamp of the manufacturing date as the final step in production process(e.g. final quality check, ready-for-shipment event)"
+      "description": "Timestamp of the manufacturing date as the final step in production process(e.g. final quality check, ready-for-shipment event)",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Timestamp",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.batch:2.0.1#country",
@@ -136,35 +160,75 @@
       "label": "ValueCharacteristic",
       "kind": "Characteristic",
       "preferredName": "Value Characteristic",
-      "description": "The value of an identifier."
+      "description": "The value of an identifier.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.batch:2.0.1#PartIdCharacteristic",
       "label": "PartIdCharacteristic",
       "kind": "Characteristic",
       "preferredName": "Part ID Characteristic",
-      "description": "The part ID is a multi-character string, usually assigned by an ERP system"
+      "description": "The part ID is a multi-character string, usually assigned by an ERP system",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.batch:2.0.1#PartNameCharacteristic",
       "label": "PartNameCharacteristic",
       "kind": "Characteristic",
       "preferredName": "Part Name Characteristic",
-      "description": "Part Name in string format from the respective system in the value chain"
+      "description": "Part Name in string format from the respective system in the value chain",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.batch:2.0.1#KeyCharacteristic",
       "label": "KeyCharacteristic",
       "kind": "Characteristic",
       "preferredName": "Key Characteristic",
-      "description": "The key characteristic of a local identifier. A specific subset of keys is predefined. Custom keys are not allowed. Predefined keys:\n- \"manufacturerId\" - The Business Partner Number(BPN) of the manufacturer. Value: BPN-Nummer\n- \"batchId\" - The identifier of the batch, to which the serialzed part belongs"
+      "description": "The key characteristic of a local identifier. A specific subset of keys is predefined. Custom keys are not allowed. Predefined keys:\n- \"manufacturerId\" - The Business Partner Number(BPN) of the manufacturer. Value: BPN-Nummer\n- \"batchId\" - The identifier of the batch, to which the serialzed part belongs",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.batch:2.0.1#CountryCodeCharacteristic",
       "label": "CountryCodeCharacteristic",
       "kind": "Characteristic",
       "preferredName": "Country Code Characteristic",
-      "description": "ISO 3166-1 alpha-3 ? three-letter country codes"
+      "description": "ISO 3166-1 alpha-3 ? three-letter country codes",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.batch:2.0.1#KeyValueList",
@@ -206,7 +270,15 @@
       "label": "ClassificationCharacteristic",
       "kind": "Characteristic",
       "preferredName": "Classification Characteristic",
-      "description": "A part type must be placed into one of the following classes: 'component', 'product', 'software', 'assembly', 'tool', or 'raw material'."
+      "description": "A part type must be placed into one of the following classes: 'component', 'product', 'software', 'assembly', 'tool', or 'raw material'.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.batch:2.0.1#KeyRegularExpression",

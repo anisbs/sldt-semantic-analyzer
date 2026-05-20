@@ -39,7 +39,15 @@
       "label": "ListOfVehicles",
       "kind": "Characteristic",
       "preferredName": "List of vehicles",
-      "description": "List of vehicles"
+      "description": "List of vehicles",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "Vehicle",
+          "target_model": "vehicle.product_description@3.0.0",
+          "target_source": "catenax"
+        }
+      ]
     }
   ],
   "links": [

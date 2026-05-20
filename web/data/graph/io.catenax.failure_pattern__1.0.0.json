@@ -74,7 +74,15 @@
       "label": "stringPropertyName",
       "kind": "Property",
       "preferredName": "String property name",
-      "description": "A property name of type string from the model."
+      "description": "A property name of type string from the model.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.failure_pattern:1.0.0#stringInsideOperator",
@@ -88,7 +96,15 @@
       "label": "stringValue",
       "kind": "Property",
       "preferredName": "String value",
-      "description": "The value that is used within the string expression and with which it is to be compared"
+      "description": "The value that is used within the string expression and with which it is to be compared",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.failure_pattern:1.0.0#referenceToAspectModel",
@@ -102,7 +118,15 @@
       "label": "booleanPropertyName",
       "kind": "Property",
       "preferredName": "Boolean property name",
-      "description": "A property name of type boolean from the model."
+      "description": "A property name of type boolean from the model.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.failure_pattern:1.0.0#booleanInsideOperator",
@@ -116,14 +140,30 @@
       "label": "booleanValue",
       "kind": "Property",
       "preferredName": "Boolean value",
-      "description": "The value that is used within the boolean expression and with which it is to be compared"
+      "description": "The value that is used within the boolean expression and with which it is to be compared",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Boolean",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.failure_pattern:1.0.0#timestampPropertyName",
       "label": "timestampPropertyName",
       "kind": "Property",
       "preferredName": "Timestamp property name",
-      "description": "A property name of type timestamp from the model."
+      "description": "A property name of type timestamp from the model.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.failure_pattern:1.0.0#timestampInsideOperator",
@@ -137,14 +177,30 @@
       "label": "timestampValue",
       "kind": "Property",
       "preferredName": "Timestamp value",
-      "description": "The value that is used within the timestamp expression and with which it is to be compared"
+      "description": "The value that is used within the timestamp expression and with which it is to be compared",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Timestamp",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.failure_pattern:1.0.0#numericPropertyName",
       "label": "numericPropertyName",
       "kind": "Property",
       "preferredName": "Numeric property name",
-      "description": "A property name of a numeric type from the model."
+      "description": "A property name of a numeric type from the model.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.failure_pattern:1.0.0#numericInsideOperator",
@@ -172,7 +228,15 @@
       "label": "ttlFile",
       "kind": "Property",
       "preferredName": "TTl file name",
-      "description": "A defined ttl file"
+      "description": "A defined ttl file",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.failure_pattern:1.0.0#modelVersion",
@@ -270,49 +334,105 @@
       "label": "NumericValueCharacteristic",
       "kind": "Characteristic",
       "preferredName": "Numeric value characteristic",
-      "description": "The characteristic to describe numeric values as double"
+      "description": "The characteristic to describe numeric values as double",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "double",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.failure_pattern:1.0.0#ExpressionConnectorEnumeration",
       "label": "ExpressionConnectorEnumeration",
       "kind": "Characteristic",
       "preferredName": "Expression connector enumeration",
-      "description": "Provides a selection of several connectors for the expressions"
+      "description": "Provides a selection of several connectors for the expressions",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.failure_pattern:1.0.0#StringInsideOperatorEnumeration",
       "label": "StringInsideOperatorEnumeration",
       "kind": "Characteristic",
       "preferredName": "String inside operator enumeration",
-      "description": "Provides a selection of several logical operators for string expressions"
+      "description": "Provides a selection of several logical operators for string expressions",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.failure_pattern:1.0.0#BooleanInsideOperatorEnumerator",
       "label": "BooleanInsideOperatorEnumerator",
       "kind": "Characteristic",
       "preferredName": "Boolean inside operator enumeration",
-      "description": "Provides a selection of several logical operators for boolean expressions"
+      "description": "Provides a selection of several logical operators for boolean expressions",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.failure_pattern:1.0.0#TimestampInsideOperatorEnumeration",
       "label": "TimestampInsideOperatorEnumeration",
       "kind": "Characteristic",
       "preferredName": "Timestamp inside operator enumeration",
-      "description": "Provides a selection of several logical operators for timestamp expressions"
+      "description": "Provides a selection of several logical operators for timestamp expressions",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.failure_pattern:1.0.0#NumericInsideOperatorEnumeration",
       "label": "NumericInsideOperatorEnumeration",
       "kind": "Characteristic",
       "preferredName": "Numeric inside operator enumeration",
-      "description": "Provides a selection of several logical operators for numeric expressions"
+      "description": "Provides a selection of several logical operators for numeric expressions",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.failure_pattern:1.0.0#QAXNamespaces",
       "label": "QAXNamespaces",
       "kind": "Characteristic",
       "preferredName": "Aspect model from CX use case quality.",
-      "description": "A list to all existing qax namespaces."
+      "description": "A list to all existing qax namespaces.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.failure_pattern:1.0.0#ModelVersionTrait",

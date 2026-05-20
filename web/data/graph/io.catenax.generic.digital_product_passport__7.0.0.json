@@ -139,7 +139,15 @@
       "label": "version",
       "kind": "Property",
       "preferredName": "Version",
-      "description": "The current version of the product passport. The possibility of modification/ updating the product passport needs to include versioning of the dataset. This attribute is an internal versioning from the passport issuer. This attribute is mentioned in the Regulation (EU) 2024/1781 of the European Parliament and of the Council of 13 June 2024 establishing a framework for the setting of ecodesign requirements for sustainable products, Article 9: (1)The data in the digital product passport shall be accurate, complete and up to date."
+      "description": "The current version of the product passport. The possibility of modification/ updating the product passport needs to include versioning of the dataset. This attribute is an internal versioning from the passport issuer. This attribute is mentioned in the Regulation (EU) 2024/1781 of the European Parliament and of the Council of 13 June 2024 establishing a framework for the setting of ecodesign requirements for sustainable products, Article 9: (1)The data in the digital product passport shall be accurate, complete and up to date.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.generic.digital_product_passport:7.0.0#passportStatus",
@@ -167,7 +175,15 @@
       "label": "passportIdentifier",
       "kind": "Property",
       "preferredName": "Passport Identifier",
-      "description": "The identifier of the product passport, which is a uuidv4 (Universally Unique Identifier, version 4)."
+      "description": "The identifier of the product passport, which is a uuidv4 (Universally Unique Identifier, version 4).",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "UuidV4Trait",
+          "target_model": "shared.uuid@2.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.generic.digital_product_passport:7.0.0#predecessor",
@@ -181,7 +197,15 @@
       "label": "backupReference",
       "kind": "Property",
       "preferredName": "Backup Reference",
-      "description": "A reference to the data backup of the passport. This mandatory attribute will be further defined in the future. This attribute is mentioned in the  Regulation (EU) 2024/1781 of the European Parliament and of the Council of 13 June 2024 establishing a framework for the setting of ecodesign requirements for sustainable products Annex III: (l) the reference of the digital product passport service provider hosting the back-up copy of the digital product passport. Article 10 also mentions: 4. The economic operator, when placing the product on the market, shall make available a back-up copy of the digital product passport through a digital product passport service provider. Article 27 and 29(c) a digital product passport is available in accordance with Article 9 and the delegated acts adopted pursuant to Article 4, including a back-up copy of the most up-to-date version of the digital product passport stored by a digital product passport service provider in accordance with Article 10(4)."
+      "description": "A reference to the data backup of the passport. This mandatory attribute will be further defined in the future. This attribute is mentioned in the  Regulation (EU) 2024/1781 of the European Parliament and of the Council of 13 June 2024 establishing a framework for the setting of ecodesign requirements for sustainable products Annex III: (l) the reference of the digital product passport service provider hosting the back-up copy of the digital product passport. Article 10 also mentions: 4. The economic operator, when placing the product on the market, shall make available a back-up copy of the digital product passport through a digital product passport service provider. Article 27 and 29(c) a digital product passport is available in accordance with Article 9 and the delegated acts adopted pursuant to Article 4, including a back-up copy of the most up-to-date version of the digital product passport stored by a digital product passport service provider in accordance with Article 10(4).",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.generic.digital_product_passport:7.0.0#registrationIdentifier",
@@ -202,7 +226,15 @@
       "label": "language",
       "kind": "Property",
       "preferredName": "Language",
-      "description": "Language used in the digital passport data fields with indication the code of the country. Specific language in which the passport content is created. 2-letter code from ISO 639:2023 + EN ISO 3166.1:2020. ISO 639:2023 Code for individual languages and language groups, ISO 3166-1:2020 Codes for the representation of names of countries and their subdivisions. This attribute is mentioned in REGULATION (EU) 2024/1781 of 13 June 2024 establishing a framework for the setting of ecodesign requirements for sustainable products in: Article 7 (8) The information to be supplied pursuant to information requirements shall be provided in a language which can be easily understood by customers, as determined by the Member State on whose market the product is to be made available or in which it is to be put into service. Proposal for a Regulation of the European Parliament and of the Council on detergents and surfactants, amending Regulation (EU) 2019/1020 and repealing Regulation (EC) No 648/2004 - Analysis of the final compromise text with a view to agreement of 25 June 2025, Article 18: The digital product passport shall:(e) be available in the language or languages required by the Member State where the detergent or surfactant is made available on the market."
+      "description": "Language used in the digital passport data fields with indication the code of the country. Specific language in which the passport content is created. 2-letter code from ISO 639:2023 + EN ISO 3166.1:2020. ISO 639:2023 Code for individual languages and language groups, ISO 3166-1:2020 Codes for the representation of names of countries and their subdivisions. This attribute is mentioned in REGULATION (EU) 2024/1781 of 13 June 2024 establishing a framework for the setting of ecodesign requirements for sustainable products in: Article 7 (8) The information to be supplied pursuant to information requirements shall be provided in a language which can be easily understood by customers, as determined by the Member State on whose market the product is to be made available or in which it is to be put into service. Proposal for a Regulation of the European Parliament and of the Council on detergents and surfactants, amending Regulation (EU) 2019/1020 and repealing Regulation (EC) No 648/2004 - Analysis of the final compromise text with a view to agreement of 25 June 2025, Article 18: The digital product passport shall:(e) be available in the language or languages required by the Member State where the detergent or surfactant is made available on the market.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.generic.digital_product_passport:7.0.0#economicOperator",
@@ -216,21 +248,45 @@
       "label": "specVersion",
       "kind": "Property",
       "preferredName": "Digital Product Passport Specification Version",
-      "description": "Specification of the DPP format/data model (name and version number), which is used."
+      "description": "Specification of the DPP format/data model (name and version number), which is used.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.generic.digital_product_passport:7.0.0#serialInformation",
       "label": "serialInformation",
       "kind": "Property",
       "preferredName": "Serial Information",
-      "description": "Identifier for a serial part if available. This is mentioned in the Regulation (EU) 2024/1781 of the European Parliament and of the Council of 13 June 2024 establishing a framework for the setting of ecodesign requirements for sustainable products Recital (33):the term item usually refers to a single unit of a model."
+      "description": "Identifier for a serial part if available. This is mentioned in the Regulation (EU) 2024/1781 of the European Parliament and of the Council of 13 June 2024 establishing a framework for the setting of ecodesign requirements for sustainable products Recital (33):the term item usually refers to a single unit of a model.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "LocalIdentifierCharacteristic",
+          "target_model": "shared.industry_core.common@1.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.generic.digital_product_passport:7.0.0#batchInformation",
       "label": "batchInformation",
       "kind": "Property",
       "preferredName": "Batch Information",
-      "description": "Identifier for a batch part if available. This is mentioned in Regulation (EU) 2024/1781 of the European Parliament and of the Council of 13 June 2024 establishing a framework for the setting of ecodesign requirements for sustainable products, Recital (33):the term batch usually refers to a subset of a specific model composed of all products produced in a specific manufacturing plant at a specific moment in time."
+      "description": "Identifier for a batch part if available. This is mentioned in Regulation (EU) 2024/1781 of the European Parliament and of the Council of 13 June 2024 establishing a framework for the setting of ecodesign requirements for sustainable products, Recital (33):the term batch usually refers to a subset of a specific model composed of all products produced in a specific manufacturing plant at a specific moment in time.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "LocalIdentifierCharacteristic",
+          "target_model": "shared.industry_core.common@1.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.generic.digital_product_passport:7.0.0#partTypeInformation",
@@ -300,7 +356,15 @@
       "label": "applicable",
       "kind": "Property",
       "preferredName": "Applicable",
-      "description": "Check whether the connected attributes are applicable to the product. If applicable (true), content must be provided."
+      "description": "Check whether the connected attributes are applicable to the product. If applicable (true), content must be provided.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Boolean",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.generic.digital_product_passport:7.0.0#lifespan",
@@ -328,7 +392,15 @@
       "label": "generalPerformanceClass",
       "kind": "Property",
       "preferredName": "General Performance Class",
-      "description": "The performance class of the product. This attribute is mentioned in Regulation (EU) 2024/1781 of the European Parliament and of the Council of 13 June 2024 establishing a framework for the setting of ecodesign requirements for sustainable products Article 7: 4. When setting the information requirements referred to in paragraph 2, point (b)(i), the Commission shall, where appropriate in view of the specificity of the product group, determine classes of performance.The Commission may base the classes of performance on single parameters or on aggregated scores. Such classes of performance may be expressed in absolute terms or in any other form that enables potential customers to choose the best performing products.Those classes of performance shall correspond to significant improvements in performance levels. Where classes of performance are based on parameters in relation to which performance requirements are set, the lowest class shall correspond to the minimum performance required at the time when the classes of performance start to apply.Article 2 Definitions:(15) class of performance means a range of performance levels in relation to one or more product parameters referred to in Annex I, which is established based on a common methodology for the product or product group, ordered in such a way as to allow for product differentiation."
+      "description": "The performance class of the product. This attribute is mentioned in Regulation (EU) 2024/1781 of the European Parliament and of the Council of 13 June 2024 establishing a framework for the setting of ecodesign requirements for sustainable products Article 7: 4. When setting the information requirements referred to in paragraph 2, point (b)(i), the Commission shall, where appropriate in view of the specificity of the product group, determine classes of performance.The Commission may base the classes of performance on single parameters or on aggregated scores. Such classes of performance may be expressed in absolute terms or in any other form that enables potential customers to choose the best performing products.Those classes of performance shall correspond to significant improvements in performance levels. Where classes of performance are based on parameters in relation to which performance requirements are set, the lowest class shall correspond to the minimum performance required at the time when the classes of performance start to apply.Article 2 Definitions:(15) class of performance means a range of performance levels in relation to one or more product parameters referred to in Annex I, which is established based on a common methodology for the product or product group, ordered in such a way as to allow for product differentiation.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.generic.digital_product_passport:7.0.0#otherCharacteristics",
@@ -356,7 +428,15 @@
       "label": "purchaseOrder",
       "kind": "Property",
       "preferredName": "Purchase Order",
-      "description": "A unique identifier assigned to the order of the product for tracking purposes between supplier and customer."
+      "description": "A unique identifier assigned to the order of the product for tracking purposes between supplier and customer.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.generic.digital_product_passport:7.0.0#recallInformation",
@@ -384,14 +464,30 @@
       "label": "reparabilityScore",
       "kind": "Property",
       "preferredName": "Reparability Score",
-      "description": "The reparability score. This attribute is mentioned in the Regulation (EU) 2024/1781 of the European Parliament and of the Council of 13 June 2024 establishing a framework for the setting of ecodesign requirements for sustainable products, Article 7:(b) as appropriate, also require products to be accompanied by: (i) information on the performance of the product in relation to one or more of the product parameters referred to in Annex I, including a repairability score."
+      "description": "The reparability score. This attribute is mentioned in the Regulation (EU) 2024/1781 of the European Parliament and of the Council of 13 June 2024 establishing a framework for the setting of ecodesign requirements for sustainable products, Article 7:(b) as appropriate, also require products to be accompanied by: (i) information on the performance of the product in relation to one or more of the product parameters referred to in Annex I, including a repairability score.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.generic.digital_product_passport:7.0.0#durabilityScore",
       "label": "durabilityScore",
       "kind": "Property",
       "preferredName": "Durability Score",
-      "description": "The durability score. This attribute is mentioned in the Regulation (EU) 2024/1781 of the European Parliament and of the Council of 13 June 2024 establishing a framework for the setting of ecodesign requirements for sustainable products, Article 7: (b) as appropriate, also require products to be accompanied by: (i) information on the performance of the product in relation to one or more of the product parameters referred to in Annex I, including a repairability score, a durability score."
+      "description": "The durability score. This attribute is mentioned in the Regulation (EU) 2024/1781 of the European Parliament and of the Council of 13 June 2024 establishing a framework for the setting of ecodesign requirements for sustainable products, Article 7: (b) as appropriate, also require products to be accompanied by: (i) information on the performance of the product in relation to one or more of the product parameters referred to in Annex I, including a repairability score, a durability score.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.generic.digital_product_passport:7.0.0#reusability",
@@ -412,7 +508,15 @@
       "label": "content",
       "kind": "Property",
       "preferredName": "Content",
-      "description": "The content of the document e.g a link."
+      "description": "The content of the document e.g a link.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.generic.digital_product_passport:7.0.0#category",
@@ -426,7 +530,15 @@
       "label": "contentType",
       "kind": "Property",
       "preferredName": "Content Type",
-      "description": "The type of content which can be expected in the \"content\" property. Examples are a link, restricted link, pdf, excel, etc."
+      "description": "The type of content which can be expected in the \"content\" property. Examples are a link, restricted link, pdf, excel, etc.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.generic.digital_product_passport:7.0.0#header",
@@ -440,14 +552,30 @@
       "label": "label",
       "kind": "Property",
       "preferredName": "Label",
-      "description": "The human readable name of the attribute."
+      "description": "The human readable name of the attribute.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.generic.digital_product_passport:7.0.0#description",
       "label": "description",
       "kind": "Property",
       "preferredName": "Description",
-      "description": "The description of the attribute context."
+      "description": "The description of the attribute context.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.generic.digital_product_passport:7.0.0#type",
@@ -461,7 +589,15 @@
       "label": "data",
       "kind": "Property",
       "preferredName": "Data",
-      "description": "The content from the attribute which is a depended of the data type and typeUnit."
+      "description": "The content from the attribute which is a depended of the data type and typeUnit.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.generic.digital_product_passport:7.0.0#children",
@@ -475,14 +611,30 @@
       "label": "requirementName",
       "kind": "Property",
       "preferredName": "Requirement Name",
-      "description": "Name the regulation, standard, code of conduct, or specification that the product must comply with. This information can be sourced from the Supplier Survey."
+      "description": "Name the regulation, standard, code of conduct, or specification that the product must comply with. This information can be sourced from the Supplier Survey.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.generic.digital_product_passport:7.0.0#complianceStatement",
       "label": "complianceStatement",
       "kind": "Property",
       "preferredName": "Compliance Statement",
-      "description": "The statement indicates whether the product complies with the aforementioned regulations."
+      "description": "The statement indicates whether the product complies with the aforementioned regulations.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.generic.digital_product_passport:7.0.0#complianceCountries",
@@ -531,14 +683,30 @@
       "label": "predecessorIdentifier",
       "kind": "Property",
       "preferredName": "Predecessor Identifier",
-      "description": "Identification of the preceding product passport."
+      "description": "Identification of the preceding product passport.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "UuidV4Trait",
+          "target_model": "shared.uuid@2.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.generic.digital_product_passport:7.0.0#economicOperatorIdentification",
       "label": "economicOperatorIdentification",
       "kind": "Property",
       "preferredName": "Economic Operator Identification",
-      "description": "The identification of the owner/economic operator of the passport. Proposed, according to ISO 15459, is the CIN (Company Identification Code). Other identification numbers like the tax identification number, value added tax identification number, commercial register number and the like are also valid entries. In the Catena-X network, the BPNL is used for the identification of companies. This attribute is mentioned in the Regulation (EU) 2024/1781 of the European Parliament and of the Council of 13 June 2024 establishing a framework for the setting of ecodesign requirements for sustainable products  Annex III: (k) the name, contact details and unique operator identifier of the economic operator established in the Union responsible for carrying out the tasks set out in Article 4 of Regulation (EU) 2019/1020 or Article 15 of Regulation (EU) 2023/988, or similar tasks pursuant to other Union law applicable to the product, Article 11 The technical design and operation of the digital product passport shall comply with the following essential requirements:(c) the digital product passport shall be stored by the economic operator responsible for its creation or by digital product passport service providers."
+      "description": "The identification of the owner/economic operator of the passport. Proposed, according to ISO 15459, is the CIN (Company Identification Code). Other identification numbers like the tax identification number, value added tax identification number, commercial register number and the like are also valid entries. In the Catena-X network, the BPNL is used for the identification of companies. This attribute is mentioned in the Regulation (EU) 2024/1781 of the European Parliament and of the Council of 13 June 2024 establishing a framework for the setting of ecodesign requirements for sustainable products  Annex III: (k) the name, contact details and unique operator identifier of the economic operator established in the Union responsible for carrying out the tasks set out in Article 4 of Regulation (EU) 2019/1020 or Article 15 of Regulation (EU) 2023/988, or similar tasks pursuant to other Union law applicable to the product, Article 11 The technical design and operation of the digital product passport shall comply with the following essential requirements:(c) the digital product passport shall be stored by the economic operator responsible for its creation or by digital product passport service providers.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.generic.digital_product_passport:7.0.0#economicOperatorNames",
@@ -552,14 +720,30 @@
       "label": "economicOperatorAddress",
       "kind": "Property",
       "preferredName": "Economic Operator Address",
-      "description": "Full address of the economic operator.This attribute is mentioned in the Regulation (EU) 2024/1781 of the European Parliament and of the Council of 13 June 2024 establishing a framework for the setting of ecodesign requirements for sustainable products  Annex III: (k) the name, contact details and unique operator identifier of the economic operator established in the Union responsible for carrying out the tasks set out in Article 4 of Regulation (EU) 2019/1020 or Article 15 of Regulation (EU) 2023/988, or similar tasks pursuant to other Union law applicable to the product, Article 11 The technical design and operation of the digital product passport shall comply with the following essential requirements:(c) the digital product passport shall be stored by the economic operator responsible for its creation or by digital product passport service providers."
+      "description": "Full address of the economic operator.This attribute is mentioned in the Regulation (EU) 2024/1781 of the European Parliament and of the Council of 13 June 2024 establishing a framework for the setting of ecodesign requirements for sustainable products  Annex III: (k) the name, contact details and unique operator identifier of the economic operator established in the Union responsible for carrying out the tasks set out in Article 4 of Regulation (EU) 2019/1020 or Article 15 of Regulation (EU) 2023/988, or similar tasks pursuant to other Union law applicable to the product, Article 11 The technical design and operation of the digital product passport shall comply with the following essential requirements:(c) the digital product passport shall be stored by the economic operator responsible for its creation or by digital product passport service providers.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "PostalAddress",
+          "target_model": "shared.address_characteristic@4.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.generic.digital_product_passport:7.0.0#economicOperatorContact",
       "label": "economicOperatorContact",
       "kind": "Property",
       "preferredName": "Economic Operator Contact",
-      "description": "Contact details of the economic operator. This attribute is mentioned in the Regulation (EU) 2024/1781 of the European Parliament and of the Council of 13 June 2024 establishing a framework for the setting of ecodesign requirements for sustainable products  Annex III: (k) the name, contact details and unique operator identifier of the economic operator established in the Union responsible for carrying out the tasks set out in Article 4 of Regulation (EU) 2019/1020 or Article 15 of Regulation (EU) 2023/988, or similar tasks pursuant to other Union law applicable to the product, Article 11 The technical design and operation of the digital product passport shall comply with the following essential requirements:(c) the digital product passport shall be stored by the economic operator responsible for its creation or by digital product passport service providers."
+      "description": "Contact details of the economic operator. This attribute is mentioned in the Regulation (EU) 2024/1781 of the European Parliament and of the Council of 13 June 2024 establishing a framework for the setting of ecodesign requirements for sustainable products  Annex III: (k) the name, contact details and unique operator identifier of the economic operator established in the Union responsible for carrying out the tasks set out in Article 4 of Regulation (EU) 2019/1020 or Article 15 of Regulation (EU) 2023/988, or similar tasks pursuant to other Union law applicable to the product, Article 11 The technical design and operation of the digital product passport shall comply with the following essential requirements:(c) the digital product passport shall be stored by the economic operator responsible for its creation or by digital product passport service providers.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "ContactCharacteristic",
+          "target_model": "shared.contact_information@4.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.generic.digital_product_passport:7.0.0#codeKey",
@@ -580,14 +764,30 @@
       "label": "codeDescription",
       "kind": "Property",
       "preferredName": "Code Description",
-      "description": "Description of the specific code. This attribute can be particularly used if \"other\" as a code key is used."
+      "description": "Description of the specific code. This attribute can be particularly used if \"other\" as a code key is used.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.generic.digital_product_passport:7.0.0#carrierType",
       "label": "carrierType",
       "kind": "Property",
       "preferredName": "Carrier Type",
-      "description": "The type of data carrier such as a QR code on the product. This attribute is mentioned in the Regulation (EU) 2024/1781 of the European Parliament and of the Council of 13 June 2024 establishing a framework for the setting of ecodesign requirements for sustainable products, Article 9:(b) one or more data carriers to be used."
+      "description": "The type of data carrier such as a QR code on the product. This attribute is mentioned in the Regulation (EU) 2024/1781 of the European Parliament and of the Council of 13 June 2024 establishing a framework for the setting of ecodesign requirements for sustainable products, Article 9:(b) one or more data carriers to be used.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.generic.digital_product_passport:7.0.0#carrierPositions",
@@ -629,28 +829,60 @@
       "label": "otherOperatorIdentification",
       "kind": "Property",
       "preferredName": "Other Operator Identification",
-      "description": "Identifier of the other operator. This can be a BPN. These attributes are mentioned in the Regulation (EU) 2024/1781 of the European Parliament and of the Council of 13 June 2024 establishing a framework for the setting of ecodesign requirements for sustainable products  Annex III: (h) unique operator identifiers other than that of the manufacturer."
+      "description": "Identifier of the other operator. This can be a BPN. These attributes are mentioned in the Regulation (EU) 2024/1781 of the European Parliament and of the Council of 13 June 2024 establishing a framework for the setting of ecodesign requirements for sustainable products  Annex III: (h) unique operator identifiers other than that of the manufacturer.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.generic.digital_product_passport:7.0.0#otherOperatorRole",
       "label": "otherOperatorRole",
       "kind": "Property",
       "preferredName": "Other Operator Role",
-      "description": "Role of the other operator."
+      "description": "Role of the other operator.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.generic.digital_product_passport:7.0.0#otherOperatorAddress",
       "label": "otherOperatorAddress",
       "kind": "Property",
       "preferredName": "Other Operator Address",
-      "description": "Full address of the other operators."
+      "description": "Full address of the other operators.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "PostalAddress",
+          "target_model": "shared.address_characteristic@4.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.generic.digital_product_passport:7.0.0#otherOperatorContact",
       "label": "otherOperatorContact",
       "kind": "Property",
       "preferredName": "Other Operator Contact",
-      "description": "Contact details of the other operator."
+      "description": "Contact details of the other operator.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "ContactCharacteristic",
+          "target_model": "shared.contact_information@4.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.generic.digital_product_passport:7.0.0#otherOperatorNames",
@@ -699,84 +931,180 @@
       "label": "lifeDescription",
       "kind": "Property",
       "preferredName": "Life Description",
-      "description": "Additional detailed description of the lifeType (e.g. shelf life as a technical lifetime)."
+      "description": "Additional detailed description of the lifeType (e.g. shelf life as a technical lifetime).",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.generic.digital_product_passport:7.0.0#width",
       "label": "width",
       "kind": "Property",
       "preferredName": "Width",
-      "description": "The width of the item measured in a specific linear unit which can be declared in the corresponding unit attribute."
+      "description": "The width of the item measured in a specific linear unit which can be declared in the corresponding unit attribute.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "LinearCharacteristic",
+          "target_model": "shared.quantity@3.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.generic.digital_product_passport:7.0.0#length",
       "label": "length",
       "kind": "Property",
       "preferredName": "Length",
-      "description": "The length of the item measured in a specific linear unit which can be declared in the corresponding unit attribute."
+      "description": "The length of the item measured in a specific linear unit which can be declared in the corresponding unit attribute.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "LinearCharacteristic",
+          "target_model": "shared.quantity@3.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.generic.digital_product_passport:7.0.0#diameter",
       "label": "diameter",
       "kind": "Property",
       "preferredName": "Diameter",
-      "description": "The diameter of the item, if applicable, measured in a specific linear unit which can be declared in the corresponding unit attribute."
+      "description": "The diameter of the item, if applicable, measured in a specific linear unit which can be declared in the corresponding unit attribute.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "LinearCharacteristic",
+          "target_model": "shared.quantity@3.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.generic.digital_product_passport:7.0.0#height",
       "label": "height",
       "kind": "Property",
       "preferredName": "Height",
-      "description": "The height of the item measured in a specific linear unit which can be declared in the corresponding unit attribute."
+      "description": "The height of the item measured in a specific linear unit which can be declared in the corresponding unit attribute.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "LinearCharacteristic",
+          "target_model": "shared.quantity@3.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.generic.digital_product_passport:7.0.0#grossWeight",
       "label": "grossWeight",
       "kind": "Property",
       "preferredName": "Gross Weight",
-      "description": "The gross weight of the item measured in a specific mass unit which can be declared in the corresponding unit attribute. Gross weight refers to the total weight of a product, including the weight of the packaging. These attributes are mentioned in the Regulation (EU) 2024/1781 of the European Parliament and of the Council of 13 June 2024 establishing a framework for the setting of ecodesign requirements for sustainable products, Article 7:(2)(b) as appropriate, also require products to be accompanied by: (i) information on the performance of the product in relation to one or more of the product parameters referred to in Annex I, including a repairability score, a durability score, a carbon footprint or an environmental footprint, Annex I (j) weight and volume of the product and its packaging, and the product-to-packaging ratio, (l) quantity, characteristics and availability of consumables needed for proper use and maintenance as expressed, inter alia, through yield, technical lifetime, ability to reuse, repair, and remanufacture, mass-resource efficiency, and interoperability."
+      "description": "The gross weight of the item measured in a specific mass unit which can be declared in the corresponding unit attribute. Gross weight refers to the total weight of a product, including the weight of the packaging. These attributes are mentioned in the Regulation (EU) 2024/1781 of the European Parliament and of the Council of 13 June 2024 establishing a framework for the setting of ecodesign requirements for sustainable products, Article 7:(2)(b) as appropriate, also require products to be accompanied by: (i) information on the performance of the product in relation to one or more of the product parameters referred to in Annex I, including a repairability score, a durability score, a carbon footprint or an environmental footprint, Annex I (j) weight and volume of the product and its packaging, and the product-to-packaging ratio, (l) quantity, characteristics and availability of consumables needed for proper use and maintenance as expressed, inter alia, through yield, technical lifetime, ability to reuse, repair, and remanufacture, mass-resource efficiency, and interoperability.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "MassCharacteristic",
+          "target_model": "shared.quantity@3.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.generic.digital_product_passport:7.0.0#grossVolume",
       "label": "grossVolume",
       "kind": "Property",
       "preferredName": "Gross Volume",
-      "description": "The gross volume of the item, if possible, measured in a specific capacity unit which can be declared in the corresponding unit attribute. If there is no separate packing, the volume of the product shall be given. Gross volume refers to the total volume of a product, including the volume of the packaging. These attributes are mentioned in the Regulation (EU) 2024/1781 of the European Parliament and of the Council of 13 June 2024 establishing a framework for the setting of ecodesign requirements for sustainable products, Article 7:(2)(b) as appropriate, also require products to be accompanied by: (i) information on the performance of the product in relation to one or more of the product parameters referred to in Annex I, including a repairability score, a durability score, a carbon footprint or an environmental footprint, Annex I (j) weight and volume of the product and its packaging, and the product-to-packaging ratio, (l) quantity, characteristics and availability of consumables needed for proper use and maintenance as expressed, inter alia, through yield, technical lifetime, ability to reuse, repair, and remanufacture, mass-resource efficiency, and interoperability."
+      "description": "The gross volume of the item, if possible, measured in a specific capacity unit which can be declared in the corresponding unit attribute. If there is no separate packing, the volume of the product shall be given. Gross volume refers to the total volume of a product, including the volume of the packaging. These attributes are mentioned in the Regulation (EU) 2024/1781 of the European Parliament and of the Council of 13 June 2024 establishing a framework for the setting of ecodesign requirements for sustainable products, Article 7:(2)(b) as appropriate, also require products to be accompanied by: (i) information on the performance of the product in relation to one or more of the product parameters referred to in Annex I, including a repairability score, a durability score, a carbon footprint or an environmental footprint, Annex I (j) weight and volume of the product and its packaging, and the product-to-packaging ratio, (l) quantity, characteristics and availability of consumables needed for proper use and maintenance as expressed, inter alia, through yield, technical lifetime, ability to reuse, repair, and remanufacture, mass-resource efficiency, and interoperability.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "VolumeCharacteristic",
+          "target_model": "shared.quantity@3.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.generic.digital_product_passport:7.0.0#weight",
       "label": "weight",
       "kind": "Property",
       "preferredName": "Weight",
-      "description": "Weight of the product measured in a specific mass unit which can be declared in the corresponding unit attribute. These attributes are mentioned in the Regulation (EU) 2024/1781 of the European Parliament and of the Council of 13 June 2024 establishing a framework for the setting of ecodesign requirements for sustainable products, Article 7:(2)(b) as appropriate, also require products to be accompanied by: (i) information on the performance of the product in relation to one or more of the product parameters referred to in Annex I, including a repairability score, a durability score, a carbon footprint or an environmental footprint, Annex I (j) weight and volume of the product and its packaging, and the product-to-packaging ratio, (l) quantity, characteristics and availability of consumables needed for proper use and maintenance as expressed, inter alia, through yield, technical lifetime, ability to reuse, repair, and remanufacture, mass-resource efficiency, and interoperability."
+      "description": "Weight of the product measured in a specific mass unit which can be declared in the corresponding unit attribute. These attributes are mentioned in the Regulation (EU) 2024/1781 of the European Parliament and of the Council of 13 June 2024 establishing a framework for the setting of ecodesign requirements for sustainable products, Article 7:(2)(b) as appropriate, also require products to be accompanied by: (i) information on the performance of the product in relation to one or more of the product parameters referred to in Annex I, including a repairability score, a durability score, a carbon footprint or an environmental footprint, Annex I (j) weight and volume of the product and its packaging, and the product-to-packaging ratio, (l) quantity, characteristics and availability of consumables needed for proper use and maintenance as expressed, inter alia, through yield, technical lifetime, ability to reuse, repair, and remanufacture, mass-resource efficiency, and interoperability.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "MassCharacteristic",
+          "target_model": "shared.quantity@3.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.generic.digital_product_passport:7.0.0#volume",
       "label": "volume",
       "kind": "Property",
       "preferredName": "Volume",
-      "description": "Volume of the product, if possible, measured in a specific capacity unit which can be declared in the corresponding unit attribute. This attribute is mentioned in the ESPR  Article 7:\n(2) (b) (i) information on the performance of the product in relation to the product parameters referred to in Annex I \nAnnex I (i) weight and volume of the product."
+      "description": "Volume of the product, if possible, measured in a specific capacity unit which can be declared in the corresponding unit attribute. This attribute is mentioned in the ESPR  Article 7:\n(2) (b) (i) information on the performance of the product in relation to the product parameters referred to in Annex I \nAnnex I (i) weight and volume of the product.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "VolumeCharacteristic",
+          "target_model": "shared.quantity@3.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.generic.digital_product_passport:7.0.0#itemQuantityInPackage",
       "label": "itemQuantityInPackage",
       "kind": "Property",
       "preferredName": "Item Quantity In Package",
-      "description": "Physical dimensions are properties  associated with physical quantities for purposes of classification or differentiation. These attributes are mentioned in the Regulation (EU) 2024/1781 of the European Parliament and of the Council of 13 June 2024 establishing a framework for the setting of ecodesign requirements for sustainable products, Article 7:(2)(b) as appropriate, also require products to be accompanied by:\n(i) information on the performance of the product in relation to one or more of the product parameters referred to in Annex I, including a repairability score, a durability score, a carbon footprint or an environmental footprint \nAnnex I \n(j) weight and volume of the product and its packaging, and the product-to-packaging ratio \n(l) quantity, characteristics and availability of consumables needed for proper use and maintenance as expressed, inter alia, through yield, technical lifetime, ability to reuse, repair, and remanufacture, mass-resource efficiency, and interoperability.\n\nThe amout of items, if product base units may be packed into inner packs. Base units are not sold individualy, only pack are possible within value chain."
+      "description": "Physical dimensions are properties  associated with physical quantities for purposes of classification or differentiation. These attributes are mentioned in the Regulation (EU) 2024/1781 of the European Parliament and of the Council of 13 June 2024 establishing a framework for the setting of ecodesign requirements for sustainable products, Article 7:(2)(b) as appropriate, also require products to be accompanied by:\n(i) information on the performance of the product in relation to one or more of the product parameters referred to in Annex I, including a repairability score, a durability score, a carbon footprint or an environmental footprint \nAnnex I \n(j) weight and volume of the product and its packaging, and the product-to-packaging ratio \n(l) quantity, characteristics and availability of consumables needed for proper use and maintenance as expressed, inter alia, through yield, technical lifetime, ability to reuse, repair, and remanufacture, mass-resource efficiency, and interoperability.\n\nThe amout of items, if product base units may be packed into inner packs. Base units are not sold individualy, only pack are possible within value chain.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "ItemQuantityCharacteristic",
+          "target_model": "shared.quantity@3.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.generic.digital_product_passport:7.0.0#otherCharacteristicName",
       "label": "otherCharacteristicName",
       "kind": "Property",
       "preferredName": "Other Characteristic Name",
-      "description": "Name of the specific characteristic associated with a product."
+      "description": "Name of the specific characteristic associated with a product.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.generic.digital_product_passport:7.0.0#otherCharacteristicOutcome",
       "label": "otherCharacteristicOutcome",
       "kind": "Property",
       "preferredName": "Other Characteristic Outcome",
-      "description": "Specific results or effects that are associated with the product."
+      "description": "Specific results or effects that are associated with the product.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.generic.digital_product_passport:7.0.0#recallInformationDocumentation",
@@ -818,7 +1146,15 @@
       "label": "recycleabilityPerformaceGrade",
       "kind": "Property",
       "preferredName": "Recycleability Performace Grade",
-      "description": "Indication of recycleability grade."
+      "description": "Indication of recycleability grade.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.generic.digital_product_passport:7.0.0#typeUnit",
@@ -853,21 +1189,45 @@
       "label": "facilityIdentification",
       "kind": "Property",
       "preferredName": "Facility Identification",
-      "description": "The identifier used for a location.  In the CATENA-X use case, the BPNA can be stated. \n\nThis attribute is mentioned in the ESPR provisional agreement from January 9th 2024 Annex III:\n(i) unique facility identifiers \nArticle 2 Definitions: (33) 'unique facility identifier' means a unique string of characters for the identification of locations or buildings involved in the value chain of a product or used by actors involved in the value chain of a product."
+      "description": "The identifier used for a location.  In the CATENA-X use case, the BPNA can be stated. \n\nThis attribute is mentioned in the ESPR provisional agreement from January 9th 2024 Annex III:\n(i) unique facility identifiers \nArticle 2 Definitions: (33) 'unique facility identifier' means a unique string of characters for the identification of locations or buildings involved in the value chain of a product or used by actors involved in the value chain of a product.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.generic.digital_product_passport:7.0.0#facilityAddress",
       "label": "facilityAddress",
       "kind": "Property",
       "preferredName": "Facility Address",
-      "description": "Full address of the facility."
+      "description": "Full address of the facility.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "PostalAddress",
+          "target_model": "shared.address_characteristic@4.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.generic.digital_product_passport:7.0.0#manufacturerIdentification",
       "label": "manufacturerIdentification",
       "kind": "Property",
       "preferredName": "Manufacturer Identification",
-      "description": "The main manufacturer represented by an identification number. In the Catena-X use case, the BPNL can be stated."
+      "description": "The main manufacturer represented by an identification number. In the Catena-X use case, the BPNL can be stated.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.generic.digital_product_passport:7.0.0#manufacturerNames",
@@ -881,14 +1241,30 @@
       "label": "manufacturerAddress",
       "kind": "Property",
       "preferredName": "Manufacturer Address",
-      "description": "Full address of the manufacturer."
+      "description": "Full address of the manufacturer.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "PostalAddress",
+          "target_model": "shared.address_characteristic@4.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.generic.digital_product_passport:7.0.0#manufacturerContact",
       "label": "manufacturerContact",
       "kind": "Property",
       "preferredName": "Manufacturer Contact",
-      "description": "Contact details of the manufacturer."
+      "description": "Contact details of the manufacturer.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "ContactCharacteristic",
+          "target_model": "shared.contact_information@4.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.generic.digital_product_passport:7.0.0#eori",
@@ -902,7 +1278,15 @@
       "label": "importerIdentification",
       "kind": "Property",
       "preferredName": "Importer Identification",
-      "description": "The importer of the product, if different from the owner of the passport. In the Catena-X network, BPNL can be used.\n\nThis attribute is mentioned in the ESPR provisional agreement from January 9th, 2024  Annex III:\n(j) information related to the importer, including the information referred to in Article 23(3) and its EORI number \nArticle 23 states:\n(3) Importers shall, for products covered by a delegated act adopted pursuant to Article 4, indicate their name, registered trade name or registered trade mark and the postal address and electronic means of communication, where they can be contacted: (a) on the public part of the product passport, when applicable, and\n(b) on the product or, where this is not possible, on the packaging, or in a document accompanying the product."
+      "description": "The importer of the product, if different from the owner of the passport. In the Catena-X network, BPNL can be used.\n\nThis attribute is mentioned in the ESPR provisional agreement from January 9th, 2024  Annex III:\n(j) information related to the importer, including the information referred to in Article 23(3) and its EORI number \nArticle 23 states:\n(3) Importers shall, for products covered by a delegated act adopted pursuant to Article 4, indicate their name, registered trade name or registered trade mark and the postal address and electronic means of communication, where they can be contacted: (a) on the public part of the product passport, when applicable, and\n(b) on the product or, where this is not possible, on the packaging, or in a document accompanying the product.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.generic.digital_product_passport:7.0.0#importerNames",
@@ -916,14 +1300,30 @@
       "label": "importerAddress",
       "kind": "Property",
       "preferredName": "Importer Address",
-      "description": "Full address of the importer."
+      "description": "Full address of the importer.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "PostalAddress",
+          "target_model": "shared.address_characteristic@4.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.generic.digital_product_passport:7.0.0#importerContact",
       "label": "importerContact",
       "kind": "Property",
       "preferredName": "Importer Contact",
-      "description": "Contact details of the importer."
+      "description": "Contact details of the importer.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "ContactCharacteristic",
+          "target_model": "shared.contact_information@4.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.generic.digital_product_passport:7.0.0#symbolsOfExtendedProducerResponsibilityScheme",
@@ -951,21 +1351,45 @@
       "label": "sparePartProviderIdentification",
       "kind": "Property",
       "preferredName": "Spare Part Provider Identification",
-      "description": "The identifier of a spare part producer of the product. In the Catena-X network, the BPNL is used for the identification of companies and the information stored for this like contact information and addresses."
+      "description": "The identifier of a spare part producer of the product. In the Catena-X network, the BPNL is used for the identification of companies and the information stored for this like contact information and addresses.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.generic.digital_product_passport:7.0.0#sparePartProviderAddress",
       "label": "sparePartProviderAddress",
       "kind": "Property",
       "preferredName": "Spare Part Provider Address",
-      "description": "Full address of the provider company of the spare part."
+      "description": "Full address of the provider company of the spare part.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "PostalAddress",
+          "target_model": "shared.address_characteristic@4.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.generic.digital_product_passport:7.0.0#sparePartProviderContact",
       "label": "sparePartProviderContact",
       "kind": "Property",
       "preferredName": "Spare Part Provider Contact",
-      "description": "Contact details of the provider company of the spare part."
+      "description": "Contact details of the provider company of the spare part.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "ContactCharacteristic",
+          "target_model": "shared.contact_information@4.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.generic.digital_product_passport:7.0.0#footprintValue",
@@ -986,14 +1410,30 @@
       "label": "footprintLifecycle",
       "kind": "Property",
       "preferredName": "Footprint Lifecycle",
-      "description": "The lifecycle stage, to which the environmental footprint corresponds. These could be for example \"raw material acquisition and pre-processing\", \"main product production\", \"distribution\" or \"end of life and recycling\"."
+      "description": "The lifecycle stage, to which the environmental footprint corresponds. These could be for example \"raw material acquisition and pre-processing\", \"main product production\", \"distribution\" or \"end of life and recycling\".",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.generic.digital_product_passport:7.0.0#footprintUnit",
       "label": "footprintUnit",
       "kind": "Property",
       "preferredName": "Footprint Unit",
-      "description": "The unit of measurement of the environmental impact category. For each impact category a specific unit is used. If an aggregation is used, utilize the normalization and weighting methods used in the referenced rulebook."
+      "description": "The unit of measurement of the environmental impact category. For each impact category a specific unit is used. If an aggregation is used, utilize the normalization and weighting methods used in the referenced rulebook.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.generic.digital_product_passport:7.0.0#footprintType",
@@ -1007,7 +1447,15 @@
       "label": "performanceClass",
       "kind": "Property",
       "preferredName": "Performance Class",
-      "description": "The performance classification of the footprint."
+      "description": "The performance classification of the footprint.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.generic.digital_product_passport:7.0.0#manufacturingPlant",
@@ -1028,7 +1476,15 @@
       "label": "reuseInfo",
       "kind": "Property",
       "preferredName": "Reuse Info",
-      "description": "Information about whether product is reusable or not, and description of the type of reuse, and possibilities of the reuse."
+      "description": "Information about whether product is reusable or not, and description of the type of reuse, and possibilities of the reuse.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.generic.digital_product_passport:7.0.0#reuseSystem",
@@ -1042,21 +1498,45 @@
       "label": "componentName",
       "kind": "Property",
       "preferredName": "Component Name",
-      "description": "Name of the component. If the product has only one component (the product itself), a comment is enough.\n\nThis field must be used where the product consists multiple components, and where these components are made of different materials as assigned by the manufacturer of a product."
+      "description": "Name of the component. If the product has only one component (the product itself), a comment is enough.\n\nThis field must be used where the product consists multiple components, and where these components are made of different materials as assigned by the manufacturer of a product.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.generic.digital_product_passport:7.0.0#componentCode",
       "label": "componentCode",
       "kind": "Property",
       "preferredName": "Component Code",
-      "description": "An identifier assigned to the component."
+      "description": "An identifier assigned to the component.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.generic.digital_product_passport:7.0.0#componentDescription",
       "label": "componentDescription",
       "kind": "Property",
       "preferredName": "Component Description",
-      "description": "Short description of component, including function or specification. Information can include data about component type, weight."
+      "description": "Short description of component, including function or specification. Information can include data about component type, weight.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.generic.digital_product_passport:7.0.0#componentLocations",
@@ -1070,14 +1550,30 @@
       "label": "componentSortingInformation",
       "kind": "Property",
       "preferredName": "Component Sorting Information",
-      "description": "Description of how to sort the component."
+      "description": "Description of how to sort the component.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.generic.digital_product_passport:7.0.0#componentPassportIdentifier",
       "label": "componentPassportIdentifier",
       "kind": "Property",
       "preferredName": "Component Passport Identifier",
-      "description": "The identifier of the component passport, which is a uuidv4."
+      "description": "The identifier of the component passport, which is a uuidv4.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "UuidV4Trait",
+          "target_model": "shared.uuid@2.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.generic.digital_product_passport:7.0.0#recycled",
@@ -1112,21 +1608,45 @@
       "label": "materialType",
       "kind": "Property",
       "preferredName": "Material Type",
-      "description": "Information refers to the specific category of material intentionally or unintentionally incorporated into the product. Can inform about multi-constituent substances or other aspects that can be associated with the proper identification of material or informing about Substance of Unknown or Variable composition, Complex reaction products or Biological material."
+      "description": "Information refers to the specific category of material intentionally or unintentionally incorporated into the product. Can inform about multi-constituent substances or other aspects that can be associated with the proper identification of material or informing about Substance of Unknown or Variable composition, Complex reaction products or Biological material.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.generic.digital_product_passport:7.0.0#materialOrigin",
       "label": "materialOrigin",
       "kind": "Property",
       "preferredName": "Material Origin",
-      "description": "Country of material origin. 2 letter code from ISO 3166.\n\nAttribute is mentioned in Regulation (EU) 2017/821 of the European Parliament and of the Council of 17 May 2017 laying down supply chain due diligence obligations for Union importers of tin, tantalum and tungsten, their ores, and gold originating from conflict-affected and high-risk areas. \nArticle 4: Management system obligations\nUnion importers of minerals or metals shall:\n(a) adopt, and clearly communicate to suppliers and the public up-to-date information on, their supply chain policy for the minerals and metals potentially originating from conflict-affected and high-risk areas \n\nThis attribute is mentioned in: COMMUNICATION FROM THE COMMISSION TO THE EUROPEAN PARLIAMENT, THE COUNCIL, THE EUROPEAN ECONOMIC AND SOCIAL COMMITTEE AND THE COMMITTEE OF THE REGIONS EU Strategy for Sustainable and Circular Textiles \n2.4.Introducing information requirements and a Digital Product Passport\n To ensure consistency with this new piece of legislation, the Commission will also review the Textile Labelling Regulation, which requires textiles sold on the EU market to carry a label clearly identifying the fibre composition and indicating any non-textile parts of animal origin. As part of this review and subject to an impact assessment, the Commission will introduce mandatory disclosure of other types of information, such as sustainability and circularity parameters, products  size and, where applicable, the country where manufacturing processes take place ( made in ).\n\nDirective (EU) 2024/1760 of the European Parliament and of the Council of 13 June 2024 on corporate sustainability due diligence and amending Directive (EU) 2019/1937 and Regulation (EU) 2023/2859 also demand in non\nfinancial statement this kind of information.\n\nThis attribute often appear in different voluntary certification and labelling schemes."
+      "description": "Country of material origin. 2 letter code from ISO 3166.\n\nAttribute is mentioned in Regulation (EU) 2017/821 of the European Parliament and of the Council of 17 May 2017 laying down supply chain due diligence obligations for Union importers of tin, tantalum and tungsten, their ores, and gold originating from conflict-affected and high-risk areas. \nArticle 4: Management system obligations\nUnion importers of minerals or metals shall:\n(a) adopt, and clearly communicate to suppliers and the public up-to-date information on, their supply chain policy for the minerals and metals potentially originating from conflict-affected and high-risk areas \n\nThis attribute is mentioned in: COMMUNICATION FROM THE COMMISSION TO THE EUROPEAN PARLIAMENT, THE COUNCIL, THE EUROPEAN ECONOMIC AND SOCIAL COMMITTEE AND THE COMMITTEE OF THE REGIONS EU Strategy for Sustainable and Circular Textiles \n2.4.Introducing information requirements and a Digital Product Passport\n To ensure consistency with this new piece of legislation, the Commission will also review the Textile Labelling Regulation, which requires textiles sold on the EU market to carry a label clearly identifying the fibre composition and indicating any non-textile parts of animal origin. As part of this review and subject to an impact assessment, the Commission will introduce mandatory disclosure of other types of information, such as sustainability and circularity parameters, products  size and, where applicable, the country where manufacturing processes take place ( made in ).\n\nDirective (EU) 2024/1760 of the European Parliament and of the Council of 13 June 2024 on corporate sustainability due diligence and amending Directive (EU) 2019/1937 and Regulation (EU) 2023/2859 also demand in non\nfinancial statement this kind of information.\n\nThis attribute often appear in different voluntary certification and labelling schemes.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.generic.digital_product_passport:7.0.0#materialPassportIdentifier",
       "label": "materialPassportIdentifier",
       "kind": "Property",
       "preferredName": "Material Passport Identifier",
-      "description": "The identifier of the material passport, which is a uuidv4."
+      "description": "The identifier of the material passport, which is a uuidv4.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "UuidV4Trait",
+          "target_model": "shared.uuid@2.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.generic.digital_product_passport:7.0.0#materialLocations",
@@ -1154,14 +1674,30 @@
       "label": "collectionPointIdentification",
       "kind": "Property",
       "preferredName": "Collection Point Identification",
-      "description": "The identifier used for a location."
+      "description": "The identifier used for a location.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.generic.digital_product_passport:7.0.0#collectionPointAddress",
       "label": "collectionPointAddress",
       "kind": "Property",
       "preferredName": "Collection Point Address",
-      "description": "Full address of the collection point for reusable products."
+      "description": "Full address of the collection point for reusable products.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "PostalAddress",
+          "target_model": "shared.address_characteristic@4.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.generic.digital_product_passport:7.0.0#reuseSystemInformation",
@@ -1175,7 +1711,15 @@
       "label": "materialName",
       "kind": "Property",
       "preferredName": "Material Name",
-      "description": "The name of the material that is present in the product."
+      "description": "The name of the material that is present in the product.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.generic.digital_product_passport:7.0.0#materialId",
@@ -1224,7 +1768,15 @@
       "label": "reuseSystemIdentification",
       "kind": "Property",
       "preferredName": "Reuse System Identification",
-      "description": "Identification of the reuse system."
+      "description": "Identification of the reuse system.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.generic.digital_product_passport:7.0.0#symbolsOfDepositAndReturnSystem",
@@ -1259,7 +1811,15 @@
       "label": "exemption",
       "kind": "Property",
       "preferredName": "Exemption",
-      "description": "Exemptions to the substance of concern. This attribute is mentioned in the Regulation (EU) 2024/1781 of the European Parliament and of the Council of 13 June 2024 establishing a framework for the setting of ecodesign requirements for sustainable products Article 7: (5) (c) provide duly justified exemptions for substances of concern or information elements from the information requirements referred to in the first subparagraph based on the technical feasibility or relevance of tracking substances of concern, the existence of analytical methods to detect and quantify them, the need to protect confidential business information or in other duly justified cases. Substances of concern within the meaning of Article 2(28), point (a), shall not be exempted if they are present in products, their relevant components or spare parts in a concentration above 0,1 % weight by weight."
+      "description": "Exemptions to the substance of concern. This attribute is mentioned in the Regulation (EU) 2024/1781 of the European Parliament and of the Council of 13 June 2024 establishing a framework for the setting of ecodesign requirements for sustainable products Article 7: (5) (c) provide duly justified exemptions for substances of concern or information elements from the information requirements referred to in the first subparagraph based on the technical feasibility or relevance of tracking substances of concern, the existence of analytical methods to detect and quantify them, the need to protect confidential business information or in other duly justified cases. Substances of concern within the meaning of Article 2(28), point (a), shall not be exempted if they are present in products, their relevant components or spare parts in a concentration above 0,1 % weight by weight.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.generic.digital_product_passport:7.0.0#hazardClassifications",
@@ -1294,14 +1854,30 @@
       "label": "declarableIngredientListName",
       "kind": "Property",
       "preferredName": "Declarable Ingredient List Name",
-      "description": "Name of the Declarable Ingredient List."
+      "description": "Name of the Declarable Ingredient List.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.generic.digital_product_passport:7.0.0#declarableIngredientListDocumentId",
       "label": "declarableIngredientListDocumentId",
       "kind": "Property",
       "preferredName": "Declarable Ingredient List Document Id",
-      "description": "Document ID refered to Declarable Ingredient list."
+      "description": "Document ID refered to Declarable Ingredient list.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.generic.digital_product_passport:7.0.0#declarableIngredientDocuments",
@@ -1343,7 +1919,15 @@
       "label": "calculationKey",
       "kind": "Property",
       "preferredName": "Calculation Key",
-      "description": "Key for calculation of trips/rotations."
+      "description": "Key for calculation of trips/rotations.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.generic.digital_product_passport:7.0.0#calculationValue",
@@ -1357,21 +1941,45 @@
       "label": "hazardCategory",
       "kind": "Property",
       "preferredName": "Hazard Category",
-      "description": "The hazard category of the substance of concern. Defined in Article 2 of Regulation (EC) No 1272/2008 of the European Parliament and of the Council of 16 December 2008 on classification, labelling and packaging of substances and mixtures, amending and repealing Directives 67/548/EEC and 1999/45/EC, and amending Regulation (EC) No 1907/2006:\n2. 'hazard category' means the division of criteria within each hazard class, specifying hazard severity."
+      "description": "The hazard category of the substance of concern. Defined in Article 2 of Regulation (EC) No 1272/2008 of the European Parliament and of the Council of 16 December 2008 on classification, labelling and packaging of substances and mixtures, amending and repealing Directives 67/548/EEC and 1999/45/EC, and amending Regulation (EC) No 1907/2006:\n2. 'hazard category' means the division of criteria within each hazard class, specifying hazard severity.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.generic.digital_product_passport:7.0.0#hazardClass",
       "label": "hazardClass",
       "kind": "Property",
       "preferredName": "Hazard Class",
-      "description": "The hazard class of the substance of concern. Defined in Article 2 of Regulation (EC) No 1272/2008 of the European Parliament and of the Council of 16 December 2008 on classification, labelling and packaging of substances and mixtures, amending and repealing Directives 67/548/EEC and 1999/45/EC, and amending Regulation (EC) No 1907/2006:\n1. 'hazard class' means the nature of the physical, health or environmental hazard."
+      "description": "The hazard class of the substance of concern. Defined in Article 2 of Regulation (EC) No 1272/2008 of the European Parliament and of the Council of 16 December 2008 on classification, labelling and packaging of substances and mixtures, amending and repealing Directives 67/548/EEC and 1999/45/EC, and amending Regulation (EC) No 1907/2006:\n1. 'hazard class' means the nature of the physical, health or environmental hazard.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.generic.digital_product_passport:7.0.0#hazardStatement",
       "label": "hazardStatement",
       "kind": "Property",
       "preferredName": "Hazard Statement",
-      "description": "The hazard statement of the substance of concern. Defined in Article 2 of Regulation (EC) No 1272/2008 of the European Parliament and of the Council of 16 December 2008 on classification, labelling and packaging of substances and mixtures, amending and repealing Directives 67/548/EEC and 1999/45/EC, and amending Regulation (EC) No 1907/2006:\n5. 'hazard statement' means a phrase assigned to a hazard class and category that describes the nature of the hazards of a hazardous substance or mixture, including, where appropriate, the degree of hazard."
+      "description": "The hazard statement of the substance of concern. Defined in Article 2 of Regulation (EC) No 1272/2008 of the European Parliament and of the Council of 16 December 2008 on classification, labelling and packaging of substances and mixtures, amending and repealing Directives 67/548/EEC and 1999/45/EC, and amending Regulation (EC) No 1907/2006:\n5. 'hazard statement' means a phrase assigned to a hazard class and category that describes the nature of the hazards of a hazardous substance or mixture, including, where appropriate, the degree of hazard.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.generic.digital_product_passport:7.0.0#MetadataCharacteristic",
@@ -1441,7 +2049,15 @@
       "label": "IdentifierCharacteristic",
       "kind": "Characteristic",
       "preferredName": "Identifier Characteristic",
-      "description": "Characteristic for Identifiers."
+      "description": "Characteristic for Identifiers.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.generic.digital_product_passport:7.0.0#EconomicOperatorCharacteristic",
@@ -1567,7 +2183,15 @@
       "label": "UnitCatalog",
       "kind": "Characteristic",
       "preferredName": "Unit Catalog",
-      "description": "Link to the unit catalog with all possible units in the format \"unit:xxx\"."
+      "description": "Link to the unit catalog with all possible units in the format \"unit:xxx\".",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.generic.digital_product_passport:7.0.0#ReuseSystemCharacteristic",
@@ -1714,7 +2338,15 @@
       "label": "StringList",
       "kind": "Characteristic",
       "preferredName": "String List",
-      "description": "List of strings."
+      "description": "List of strings.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.generic.digital_product_passport:7.0.0#DocumentList",
@@ -1728,7 +2360,15 @@
       "label": "NameList",
       "kind": "Characteristic",
       "preferredName": "Name List",
-      "description": "List of names or organizations (can be a name, trade mark, etc.)."
+      "description": "List of names or organizations (can be a name, trade mark, etc.).",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.generic.digital_product_passport:7.0.0#FacilityList",
@@ -1819,7 +2459,15 @@
       "label": "IdentificationEntity",
       "kind": "Entity",
       "preferredName": "Identification Entity",
-      "description": "Component with identification information of the product with part type information, local identifiers, other codes and the data carrier."
+      "description": "Component with identification information of the product with part type information, local identifiers, other codes and the data carrier.",
+      "external_refs": [
+        {
+          "predicate": "properties",
+          "target_local": "partClassification",
+          "target_model": "shared.industry_core.part_classification@1.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.generic.digital_product_passport:7.0.0#OperationEntity",
@@ -1903,7 +2551,21 @@
       "label": "PartTypeEntity",
       "kind": "Entity",
       "preferredName": "Part Type Entity",
-      "description": "Entity for the part type with manufacturer id and name."
+      "description": "Entity for the part type with manufacturer id and name.",
+      "external_refs": [
+        {
+          "predicate": "properties",
+          "target_local": "manufacturerPartId",
+          "target_model": "shared.industry_core.common@1.0.0",
+          "target_source": "catenax"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "nameAtManufacturer",
+          "target_model": "shared.industry_core.common@1.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.generic.digital_product_passport:7.0.0#CodeEntity",
@@ -1959,7 +2621,21 @@
       "label": "SparePartEntity",
       "kind": "Entity",
       "preferredName": "Spare Part Entity",
-      "description": "Entity for spare part information."
+      "description": "Entity for spare part information.",
+      "external_refs": [
+        {
+          "predicate": "properties",
+          "target_local": "nameAtManufacturer",
+          "target_model": "shared.industry_core.common@1.0.0",
+          "target_source": "catenax"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "manufacturerPartId",
+          "target_model": "shared.industry_core.common@1.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.generic.digital_product_passport:7.0.0#LifespanEntity",
@@ -2218,70 +2894,150 @@
       "label": "PassportStatusEnumeration",
       "kind": "Characteristic",
       "preferredName": "Passport Status Enumeration",
-      "description": "The current status of the product passport declared through either: draft, approved, invalid or expired."
+      "description": "The current status of the product passport declared through either: draft, approved, invalid or expired.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.generic.digital_product_passport:7.0.0#PhysicalStateEnumeration",
       "label": "PhysicalStateEnumeration",
       "kind": "Characteristic",
       "preferredName": "Physical State Enumeration",
-      "description": "Enumeration with the values solid, liquid, gas and plasma. Due to its specific character, aerosol was added."
+      "description": "Enumeration with the values solid, liquid, gas and plasma. Due to its specific character, aerosol was added.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.generic.digital_product_passport:7.0.0#ProductStatusEnumeration",
       "label": "ProductStatusEnumeration",
       "kind": "Characteristic",
       "preferredName": "Product Status Enumeration",
-      "description": "Enumeration defined as original, repurposed, re-used, remanufactured or waste."
+      "description": "Enumeration defined as original, repurposed, re-used, remanufactured or waste.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.generic.digital_product_passport:7.0.0#SourceCategoryEnumeration",
       "label": "SourceCategoryEnumeration",
       "kind": "Characteristic",
       "preferredName": "Source Category Enumeration",
-      "description": "The types of sources that can be linked in a digital product passport can vary depending on the nature of the product and the information that needs to be included. This is an enumeration of possible sources."
+      "description": "The types of sources that can be linked in a digital product passport can vary depending on the nature of the product and the information that needs to be included. This is an enumeration of possible sources.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.generic.digital_product_passport:7.0.0#LifeEnumeration",
       "label": "LifeEnumeration",
       "kind": "Characteristic",
       "preferredName": "Life Enumeration",
-      "description": "Enumeration with the possible units day, month, cycle, year and runningOrOperatingHour."
+      "description": "Enumeration with the possible units day, month, cycle, year and runningOrOperatingHour.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.generic.digital_product_passport:7.0.0#LifeTypeEnumeration",
       "label": "LifeTypeEnumeration",
       "kind": "Characteristic",
       "preferredName": "Life Type Enumeration",
-      "description": "Enumeration with the values guaranteed lifetime, technical lifetime and mean time between failures."
+      "description": "Enumeration with the values guaranteed lifetime, technical lifetime and mean time between failures.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.generic.digital_product_passport:7.0.0#DataTypeEnumeration",
       "label": "DataTypeEnumeration",
       "kind": "Characteristic",
       "preferredName": "Data Type Enumeration",
-      "description": "Data type that describe the content of the attributes children and data. In case \"object\" is selected in the enumeration, the children field will be used in the AdditionalDataEntity instead of the \"data\" property. If it is an other type, the content will be specified in \"data\" as a string."
+      "description": "Data type that describe the content of the attributes children and data. In case \"object\" is selected in the enumeration, the children field will be used in the AdditionalDataEntity instead of the \"data\" property. If it is an other type, the content will be specified in \"data\" as a string.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.generic.digital_product_passport:7.0.0#CategoryEnumeration",
       "label": "CategoryEnumeration",
       "kind": "Characteristic",
       "preferredName": "Category Enumeration",
-      "description": "Enumeration of the 19 impact categories in accordance to EN15804+A2."
+      "description": "Enumeration of the 19 impact categories in accordance to EN15804+A2.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.generic.digital_product_passport:7.0.0#ListTypeIdEnumeration",
       "label": "ListTypeIdEnumeration",
       "kind": "Characteristic",
       "preferredName": "List Type Id Enumeration",
-      "description": "Enumeration of different systems and organizations related to the identification and classification of chemical substances in the field of chemistry. The enumeration values are eg. EC or CAS."
+      "description": "Enumeration of different systems and organizations related to the identification and classification of chemical substances in the field of chemistry. The enumeration values are eg. EC or CAS.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.generic.digital_product_passport:7.0.0#ConcentrationEnumeration",
       "label": "ConcentrationEnumeration",
       "kind": "Characteristic",
       "preferredName": "Concentration Enumeration",
-      "description": "Enumeration of possible units of concentration with percent, volume percent, parts per thousand, parts per million, parts per billion and parts per trillion."
+      "description": "Enumeration of possible units of concentration with percent, volume percent, parts per thousand, parts per million, parts per billion and parts per trillion.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.generic.digital_product_passport:7.0.0#DateTrait",
@@ -2344,14 +3100,30 @@
       "label": "LifeValueCharacteristic",
       "kind": "Characteristic",
       "preferredName": "Life Value Characteristic",
-      "description": "Characteristic for the life span value as an integer."
+      "description": "Characteristic for the life span value as an integer.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "integer",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.generic.digital_product_passport:7.0.0#FloatValue",
       "label": "FloatValue",
       "kind": "Characteristic",
       "preferredName": "Float Value",
-      "description": "Float number representing a positive value."
+      "description": "Float number representing a positive value.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "float",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.generic.digital_product_passport:7.0.0#PositiveRangeConstraint",
@@ -2372,7 +3144,15 @@
       "label": "Share",
       "kind": "Characteristic",
       "preferredName": "share",
-      "description": "The share represented in a float number in the unit percent."
+      "description": "The share represented in a float number in the unit percent.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "float",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     }
   ],
   "links": [

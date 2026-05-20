@@ -32,7 +32,15 @@
       "label": "qualityTaskId",
       "kind": "Property",
       "preferredName": "Quality Task ID",
-      "description": "The fully anonymous and unique Catena-X ID of this quality task. This id is unique inside Catena-X data space."
+      "description": "The fully anonymous and unique Catena-X ID of this quality task. This id is unique inside Catena-X data space.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "UuidV4Trait",
+          "target_model": "shared.uuid@2.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.quality_task_attachment:2.0.0#relatedModelType",
@@ -53,7 +61,15 @@
       "label": "fileName",
       "kind": "Property",
       "preferredName": "file name",
-      "description": "The name of the described file"
+      "description": "The name of the described file",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.quality_task_attachment:2.0.0#schema",
@@ -67,7 +83,15 @@
       "label": "filePath",
       "kind": "Property",
       "preferredName": "File Path",
-      "description": "Indicates where the file is located within the ZIP-folder"
+      "description": "Indicates where the file is located within the ZIP-folder",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.quality_task_attachment:2.0.0#sizeInKbProperty",
@@ -81,28 +105,60 @@
       "label": "fileDescription",
       "kind": "Property",
       "preferredName": "File Description",
-      "description": "A description of the file content"
+      "description": "A description of the file content",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.quality_task_attachment:2.0.0#fileExtension",
       "label": "fileExtension",
       "kind": "Property",
       "preferredName": "File Extension",
-      "description": "Indicates which file format the file has"
+      "description": "Indicates which file format the file has",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.quality_task_attachment:2.0.0#decimalSeperator",
       "label": "decimalSeperator",
       "kind": "Property",
       "preferredName": "Decimal Separator Enumeration",
-      "description": "Enumeration types to be used for the decimal separators"
+      "description": "Enumeration types to be used for the decimal separators",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.quality_task_attachment:2.0.0#delimiter",
       "label": "delimiter",
       "kind": "Property",
       "preferredName": "Delimiter",
-      "description": "Indicates whether a semicolon, comma or tab is used as a delimiter between data points"
+      "description": "Indicates whether a semicolon, comma or tab is used as a delimiter between data points",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.quality_task_attachment:2.0.0#variablesProperty",
@@ -116,35 +172,75 @@
       "label": "variableName",
       "kind": "Property",
       "preferredName": "Variable name",
-      "description": "The name of the column"
+      "description": "The name of the column",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.quality_task_attachment:2.0.0#dataType",
       "label": "dataType",
       "kind": "Property",
       "preferredName": "Variable data type",
-      "description": "The data type of the data contained in the column"
+      "description": "The data type of the data contained in the column",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.quality_task_attachment:2.0.0#unit",
       "label": "unit",
       "kind": "Property",
       "preferredName": "Unit",
-      "description": "The unit of the data contained in the column (used for numeric values)"
+      "description": "The unit of the data contained in the column (used for numeric values)",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "UnitReference",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.quality_task_attachment:2.0.0#variableDescription",
       "label": "variableDescription",
       "kind": "Property",
       "preferredName": "Variable description",
-      "description": "A description of the data contained in the column"
+      "description": "A description of the data contained in the column",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.quality_task_attachment:2.0.0#QualityModelType",
       "label": "QualityModelType",
       "kind": "Characteristic",
       "preferredName": "QualityModelType",
-      "description": "Enumeration of released quality aspect models"
+      "description": "Enumeration of released quality aspect models",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.quality_task_attachment:2.0.0#ListOfFiles",
@@ -193,7 +289,15 @@
       "label": "SizeInKb",
       "kind": "Characteristic",
       "preferredName": "Size in Kilobyte",
-      "description": "Indicates the size of the file"
+      "description": "Indicates the size of the file",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "positiveInteger",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     }
   ],
   "links": [

@@ -44,14 +44,30 @@
       "label": "catenaXId",
       "kind": "Property",
       "preferredName": "Catena-X ID",
-      "description": "The fully anonymous Catena-X ID of the serialized part, valid for the Catena-X dataspace."
+      "description": "The fully anonymous Catena-X ID of the serialized part, valid for the Catena-X dataspace.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "UuidV4Trait",
+          "target_model": "shared.uuid@2.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.mandatory_dismantling:2.0.0#bpnOEM",
       "label": "bpnOEM",
       "kind": "Property",
       "preferredName": "Business Partner Number OEM",
-      "description": "The aim of Business Partner Data Management (BPDM) with its BPN is to define a set of rules for a unique ID for cross-company communication and identification of Business Partners.?"
+      "description": "The aim of Business Partner Data Management (BPDM) with its BPN is to define a set of rules for a unique ID for cross-company communication and identification of Business Partners.?",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "BpnlTrait",
+          "target_model": "shared.business_partner_number@2.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.mandatory_dismantling:2.0.0#substanceOfConcern",
@@ -86,21 +102,45 @@
       "label": "derivate",
       "kind": "Property",
       "preferredName": "Derivate",
-      "description": "The the drivate sepcifies the vehicle architecture."
+      "description": "The the drivate sepcifies the vehicle architecture.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.mandatory_dismantling:2.0.0#driveTechnology",
       "label": "driveTechnology",
       "kind": "Property",
       "preferredName": "Drive Technology",
-      "description": "The drive tehcnology describes the type of engine"
+      "description": "The drive tehcnology describes the type of engine",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.mandatory_dismantling:2.0.0#pollutant",
       "label": "pollutant",
       "kind": "Property",
       "preferredName": "Pollutant",
-      "description": "Type of pollutant present. \"Pb\" (Lead), \"Hg\" (Mercury), \"Cd\" (Cadmium), \"Cr\" (Chromium), etc."
+      "description": "Type of pollutant present. \"Pb\" (Lead), \"Hg\" (Mercury), \"Cd\" (Cadmium), \"Cr\" (Chromium), etc.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.mandatory_dismantling:2.0.0#number",
@@ -114,21 +154,45 @@
       "label": "part",
       "kind": "Property",
       "preferredName": "Part",
-      "description": "The part or component that contains the specific pollutant."
+      "description": "The part or component that contains the specific pollutant.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.mandatory_dismantling:2.0.0#location",
       "label": "location",
       "kind": "Property",
       "preferredName": "Location",
-      "description": "String specifying the location of the pollutant , component or part."
+      "description": "String specifying the location of the pollutant , component or part.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.mandatory_dismantling:2.0.0#weight",
       "label": "weight",
       "kind": "Property",
       "preferredName": "Weight",
-      "description": "Weight of the pollutant, component or part in grams"
+      "description": "Weight of the pollutant, component or part in grams",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "MassCharacteristic",
+          "target_model": "shared.quantity@2.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.mandatory_dismantling:2.0.0#minimumConcentration",
@@ -149,7 +213,15 @@
       "label": "weightOfPart",
       "kind": "Property",
       "preferredName": "Weight Of Part",
-      "description": "Weight of part containing pollutant in gram"
+      "description": "Weight of part containing pollutant in gram",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "MassCharacteristic",
+          "target_model": "shared.quantity@2.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.mandatory_dismantling:2.0.0#fluid",
@@ -170,21 +242,45 @@
       "label": "removalInstruction",
       "kind": "Property",
       "preferredName": "Technical Instruction",
-      "description": "String providing technical instructions on removal and replacement, including the sequence of all steps."
+      "description": "String providing technical instructions on removal and replacement, including the sequence of all steps.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.mandatory_dismantling:2.0.0#functionalityDescription",
       "label": "functionalityDescription",
       "kind": "Property",
       "preferredName": "Functionality Description",
-      "description": "String describing the functionality, interchangeability, and compatibility with specific parts and components of other makes and models."
+      "description": "String describing the functionality, interchangeability, and compatibility with specific parts and components of other makes and models.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.mandatory_dismantling:2.0.0#manufacturerContact",
       "label": "manufacturerContact",
       "kind": "Property",
       "preferredName": "Manufacturer Contact",
-      "description": "String indicating the contact point of the manufacturer for technical assistance."
+      "description": "String indicating the contact point of the manufacturer for technical assistance.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.mandatory_dismantling:2.0.0#electricVehicleBattery",
@@ -471,7 +567,15 @@
       "label": "isPresent",
       "kind": "Property",
       "preferredName": "Is Present",
-      "description": "Does the asset contain the parent item"
+      "description": "Does the asset contain the parent item",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Boolean",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.mandatory_dismantling:2.0.0#partDetail",
@@ -499,7 +603,15 @@
       "label": "itemType",
       "kind": "Property",
       "preferredName": "Item Type",
-      "description": "The item type of parent."
+      "description": "The item type of parent.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.mandatory_dismantling:2.0.0#itemDetail",
@@ -513,35 +625,75 @@
       "label": "batteryType",
       "kind": "Property",
       "preferredName": "Battery Type",
-      "description": "Type of battery chemistry of electric vehicle batteries"
+      "description": "Type of battery chemistry of electric vehicle batteries",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.mandatory_dismantling:2.0.0#dischargeInstruction",
       "label": "dischargeInstruction",
       "kind": "Property",
       "preferredName": "Discharge Instruction",
-      "description": "Provides instructions for the safe discharging of the battery."
+      "description": "Provides instructions for the safe discharging of the battery.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.mandatory_dismantling:2.0.0#requiredTool",
       "label": "requiredTool",
       "kind": "Property",
       "preferredName": "Required Tool",
-      "description": "Lists the tools or technologies required for accessing, removing, and replacing the electric vehicle batteries."
+      "description": "Lists the tools or technologies required for accessing, removing, and replacing the electric vehicle batteries.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.mandatory_dismantling:2.0.0#permanentMagnet",
       "label": "permanentMagnet",
       "kind": "Property",
       "preferredName": "Permanent Magnet",
-      "description": "types of permanent magnets present in e-drive motors, if they belong to the following types: Neodymium-Iron-Boron, Samarium-Cobalt, Aluminium-Nickel-Cobalt, Ferrite"
+      "description": "types of permanent magnets present in e-drive motors, if they belong to the following types: Neodymium-Iron-Boron, Samarium-Cobalt, Aluminium-Nickel-Cobalt, Ferrite",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.mandatory_dismantling:2.0.0#treatmentTechnique",
       "label": "treatmentTechnique",
       "kind": "Property",
       "preferredName": "Treatment Technique",
-      "description": "Availability of best treatment techniques"
+      "description": "Availability of best treatment techniques",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.mandatory_dismantling:2.0.0#SubstanceOfConcernCharacteristic",
@@ -1248,14 +1400,30 @@
       "label": "QuantityCharacteristic",
       "kind": "Characteristic",
       "preferredName": "Quantity Characteristic",
-      "description": "Describes a Property which contains a number."
+      "description": "Describes a Property which contains a number.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "integer",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.mandatory_dismantling:2.0.0#ConcentrationCharacteristic",
       "label": "ConcentrationCharacteristic",
       "kind": "Characteristic",
       "preferredName": "Concentration Characteristic",
-      "description": "The characteristic of Concentration."
+      "description": "The characteristic of Concentration.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "float",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     }
   ],
   "links": [

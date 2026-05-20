@@ -25,14 +25,30 @@
       "label": "description",
       "kind": "Property",
       "preferredName": "classification description",
-      "description": "Optional property describing the classification standard."
+      "description": "Optional property describing the classification standard.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.shared.industry_core.part_classification:1.0.0#id",
       "label": "id",
       "kind": "Property",
       "preferredName": "classification identifier",
-      "description": "The classification ID of the part type according to the corresponding standard definition mentioned in the key value pair."
+      "description": "The classification ID of the part type according to the corresponding standard definition mentioned in the key value pair.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.shared.industry_core.part_classification:1.0.0#partClassification",
@@ -46,7 +62,15 @@
       "label": "standard",
       "kind": "Property",
       "preferredName": "classification standard",
-      "description": "Identified classification standards"
+      "description": "Identified classification standards",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.shared.industry_core.part_classification:1.0.0#PartClassificationCharacteristic",

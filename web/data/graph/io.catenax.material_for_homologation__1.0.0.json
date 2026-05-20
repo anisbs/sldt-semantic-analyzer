@@ -88,7 +88,15 @@
       "label": "ShareCharacteristic",
       "kind": "Characteristic",
       "preferredName": "share characteristic",
-      "description": "Characteristic to represent the proportion of the material."
+      "description": "Characteristic to represent the proportion of the material.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "double",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.material_for_homologation:1.0.0#NameTrait1",
@@ -137,42 +145,90 @@
       "label": "NameCharacteristic",
       "kind": "Characteristic",
       "preferredName": "name characteristic",
-      "description": "Characteristic to designate the material."
+      "description": "Characteristic to designate the material.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.material_for_homologation:1.0.0#ItemNumberCharacteristic",
       "label": "ItemNumberCharacteristic",
       "kind": "Characteristic",
       "preferredName": "item number characteristic",
-      "description": "Characteristic to describe the individual component to which the materials belong."
+      "description": "Characteristic to describe the individual component to which the materials belong.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.material_for_homologation:1.0.0#MainGroupCharacteristic",
       "label": "MainGroupCharacteristic",
       "kind": "Characteristic",
       "preferredName": "main group characteristic",
-      "description": "Characteristic to describe the main group classification of the VDA standard 231-10."
+      "description": "Characteristic to describe the main group classification of the VDA standard 231-10.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.material_for_homologation:1.0.0#SubgroupCharacteristic",
       "label": "SubgroupCharacteristic",
       "kind": "Characteristic",
       "preferredName": "subgroup characteristic",
-      "description": "Characteristic to describe the first subgroup classification of the VDA standard 231-11."
+      "description": "Characteristic to describe the first subgroup classification of the VDA standard 231-11.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.material_for_homologation:1.0.0#StandardCharacteristic",
       "label": "StandardCharacteristic",
       "kind": "Characteristic",
       "preferredName": "standard characteristic",
-      "description": "Describes the standard in which the material is listed."
+      "description": "Describes the standard in which the material is listed.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.material_for_homologation:1.0.0#MaterialNumberCharacteristic",
       "label": "MaterialNumberCharacteristic",
       "kind": "Characteristic",
       "preferredName": "material number characteristic",
-      "description": "Characteristic to represent the number of the material in the standard."
+      "description": "Characteristic to represent the number of the material in the standard.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.material_for_homologation:1.0.0#VDAStandardIdCharacteristic",

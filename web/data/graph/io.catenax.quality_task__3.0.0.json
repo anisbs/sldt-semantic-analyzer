@@ -37,7 +37,15 @@
       "label": "QualityTask",
       "kind": "Aspect",
       "preferredName": "QualityTasks",
-      "description": "For Catena-X business case Quality Management. Supported technical features: delta update feature, meta information feature and can be used along the supply chain - also for supplier-to-supplier data exchange. The supported model features are described in detail in the Catena-X Quality KIT. This model is used to exchange quality tasks. A quality task is used to link  information from different Catena-X Quality Management data models together."
+      "description": "For Catena-X business case Quality Management. Supported technical features: delta update feature, meta information feature and can be used along the supply chain - also for supplier-to-supplier data exchange. The supported model features are described in detail in the Catena-X Quality KIT. This model is used to exchange quality tasks. A quality task is used to link  information from different Catena-X Quality Management data models together.",
+      "external_refs": [
+        {
+          "predicate": "properties",
+          "target_local": "metaInformation",
+          "target_model": "shared.quality_core@1.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.quality_task:3.0.0#qualityTasks",
@@ -51,7 +59,15 @@
       "label": "creationDate",
       "kind": "Property",
       "preferredName": "Creation Date",
-      "description": "Timestamp when this quality task was created in ISO8601 local date notation."
+      "description": "Timestamp when this quality task was created in ISO8601 local date notation.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "ISO8601LocalDate",
+          "target_model": "shared.quality_core@1.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.quality_task:3.0.0#dataDeletion",
@@ -65,7 +81,15 @@
       "label": "description",
       "kind": "Property",
       "preferredName": "Description",
-      "description": "Description what should be done in this quality task"
+      "description": "Description what should be done in this quality task",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.quality_task:3.0.0#status",
@@ -79,7 +103,15 @@
       "label": "title",
       "kind": "Property",
       "preferredName": "Title",
-      "description": "Working title for this quality task"
+      "description": "Working title for this quality task",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.quality_task:3.0.0#companies",
@@ -93,7 +125,15 @@
       "label": "name",
       "kind": "Property",
       "preferredName": "Company name",
-      "description": "Name of the company"
+      "description": "Name of the company",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.quality_task:3.0.0#QualityTaskList",
@@ -114,28 +154,84 @@
       "label": "SingleQualityTask",
       "kind": "Entity",
       "preferredName": "Single quality task",
-      "description": "A single quality task defines why data is exchanged between 2 or more companies and what insights should be generated out of the transferred data. In addition there is a flag, what happens with the transferred data when this quality task is closed"
+      "description": "A single quality task defines why data is exchanged between 2 or more companies and what insights should be generated out of the transferred data. In addition there is a flag, what happens with the transferred data when this quality task is closed",
+      "external_refs": [
+        {
+          "predicate": "properties",
+          "target_local": "qualityTaskId",
+          "target_model": "shared.quality_core@1.0.0",
+          "target_source": "catenax"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "partName",
+          "target_model": "shared.quality_core@1.0.0",
+          "target_source": "catenax"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "recordStatus",
+          "target_model": "shared.quality_core@1.0.0",
+          "target_source": "catenax"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "additionalInformationList",
+          "target_model": "shared.quality_core@1.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.quality_task:3.0.0#Company",
       "label": "Company",
       "kind": "Entity",
       "preferredName": "Company",
-      "description": "One company involved in this quality task"
+      "description": "One company involved in this quality task",
+      "external_refs": [
+        {
+          "predicate": "properties",
+          "target_local": "bpnlProperty",
+          "target_model": "shared.business_partner_number@2.0.0",
+          "target_source": "catenax"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "email",
+          "target_model": "shared.contact_information@4.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.quality_task:3.0.0#DataDeletionEnumeration",
       "label": "DataDeletionEnumeration",
       "kind": "Characteristic",
       "preferredName": "Data deletion",
-      "description": "Enumeration of possible data deletions entries."
+      "description": "Enumeration of possible data deletions entries.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.quality_task:3.0.0#StatusCharacteristic",
       "label": "StatusCharacteristic",
       "kind": "Characteristic",
       "preferredName": "Status Characteristic",
-      "description": "Enumeration of the different status values"
+      "description": "Enumeration of the different status values",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     }
   ],
   "links": [

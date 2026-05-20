@@ -25,7 +25,15 @@
       "label": "DiagnosticData",
       "kind": "Aspect",
       "preferredName": null,
-      "description": "Part of the business case Quality Management. Supported technical features: delta update feature, meta information feature and additionalInformationList key-value pairs. FleetDiagnostic data model is used to exchange Digital Trouble Codes (DTC) which are read out from Electronic Control Units (ECU). This model supports diagnostic sessions from workshops as well as over-the-air (OTA) diagnostic sessions. FleetDiagnostic data model can also be used to exchange whole interactive workshop diagnostic sessions in which procedures/commands are send to the car and an answer is coming back. As diagnostic data is coming from a vehicle manufacturer only vehicle manufacturer's set of part properties are integrated in this semantic model."
+      "description": "Part of the business case Quality Management. Supported technical features: delta update feature, meta information feature and additionalInformationList key-value pairs. FleetDiagnostic data model is used to exchange Digital Trouble Codes (DTC) which are read out from Electronic Control Units (ECU). This model supports diagnostic sessions from workshops as well as over-the-air (OTA) diagnostic sessions. FleetDiagnostic data model can also be used to exchange whole interactive workshop diagnostic sessions in which procedures/commands are send to the car and an answer is coming back. As diagnostic data is coming from a vehicle manufacturer only vehicle manufacturer's set of part properties are integrated in this semantic model.",
+      "external_refs": [
+        {
+          "predicate": "properties",
+          "target_local": "metaInformation",
+          "target_model": "shared.quality_core@1.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.fleet.diagnostic_data:3.0.0#diagnosticSessions",
@@ -39,35 +47,75 @@
       "label": "sessionMileage",
       "kind": "Property",
       "preferredName": "Session Mileage",
-      "description": "The mileage counter of the vehicle during diagnostic session."
+      "description": "The mileage counter of the vehicle during diagnostic session.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "MileageTrait",
+          "target_model": "shared.quality_core@1.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.fleet.diagnostic_data:3.0.0#sessionMileageUnit",
       "label": "sessionMileageUnit",
       "kind": "Property",
       "preferredName": "Session Mileage Unit",
-      "description": "Unit of session mileage - either km or mi."
+      "description": "Unit of session mileage - either km or mi.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "MileageUnit",
+          "target_model": "shared.quality_core@1.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.fleet.diagnostic_data:3.0.0#sessionStart",
       "label": "sessionStart",
       "kind": "Property",
       "preferredName": "Selection Start Timestamp",
-      "description": "Describes the starting point for this diagnostic session."
+      "description": "Describes the starting point for this diagnostic session.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Timestamp",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.fleet.diagnostic_data:3.0.0#diagnosticSoftwareName",
       "label": "diagnosticSoftwareName",
       "kind": "Property",
       "preferredName": "Diagnostic Software",
-      "description": "The name of the diagnostic software that was used."
+      "description": "The name of the diagnostic software that was used.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.fleet.diagnostic_data:3.0.0#diagnosticSoftwareVersion",
       "label": "diagnosticSoftwareVersion",
       "kind": "Property",
       "preferredName": "Diagnostic Software Version",
-      "description": "The version of the used diagnostic software"
+      "description": "The version of the used diagnostic software",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.fleet.diagnostic_data:3.0.0#ecus",
@@ -88,28 +136,60 @@
       "label": "sessionEnd",
       "kind": "Property",
       "preferredName": "Selection End Timestamp",
-      "description": "Describes the end point for this diagnostic session."
+      "description": "Describes the end point for this diagnostic session.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Timestamp",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.fleet.diagnostic_data:3.0.0#vehicleSoftwareCategory",
       "label": "vehicleSoftwareCategory",
       "kind": "Property",
       "preferredName": "Vehicle Software Category",
-      "description": "Software category of this car during the session - only available for OEMs that have a software category on vehicle level."
+      "description": "Software category of this car during the session - only available for OEMs that have a software category on vehicle level.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.fleet.diagnostic_data:3.0.0#vehicleSoftwareVersion",
       "label": "vehicleSoftwareVersion",
       "kind": "Property",
       "preferredName": "Vehicle Software Version",
-      "description": "Software version of this car during the session - only available for OEMs that have a software category on vehicle level."
+      "description": "Software version of this car during the session - only available for OEMs that have a software category on vehicle level.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.fleet.diagnostic_data:3.0.0#readOutTimestamp",
       "label": "readOutTimestamp",
       "kind": "Property",
       "preferredName": "Read Out Date",
-      "description": "Date when this ECU information was read out from the diagnostic session"
+      "description": "Date when this ECU information was read out from the diagnostic session",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Timestamp",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.fleet.diagnostic_data:3.0.0#dtcs",
@@ -123,28 +203,60 @@
       "label": "procedureId",
       "kind": "Property",
       "preferredName": "Procedure Identifier",
-      "description": "A unique identifier for this procedure/sub-procedure call"
+      "description": "A unique identifier for this procedure/sub-procedure call",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "UniqueID",
+          "target_model": "shared.quality_core@1.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.fleet.diagnostic_data:3.0.0#procedureDescription",
       "label": "procedureDescription",
       "kind": "Property",
       "preferredName": "Procedure Description",
-      "description": "An optional description for this procedure"
+      "description": "An optional description for this procedure",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.fleet.diagnostic_data:3.0.0#procedureEnd",
       "label": "procedureEnd",
       "kind": "Property",
       "preferredName": "Procedure End",
-      "description": "End date and time for this procedure call."
+      "description": "End date and time for this procedure call.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Timestamp",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.fleet.diagnostic_data:3.0.0#procedureStart",
       "label": "procedureStart",
       "kind": "Property",
       "preferredName": "Procedure Start",
-      "description": "Start date and time for this procedure call."
+      "description": "Start date and time for this procedure call.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Timestamp",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.fleet.diagnostic_data:3.0.0#procedureResult",
@@ -165,49 +277,105 @@
       "label": "dtcHexValue",
       "kind": "Property",
       "preferredName": "Hex",
-      "description": "Hex value of this DTC"
+      "description": "Hex value of this DTC",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "HexValueTrait",
+          "target_model": "shared.quality_core@1.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.fleet.diagnostic_data:3.0.0#fullName",
       "label": "fullName",
       "kind": "Property",
       "preferredName": "DTC Full Name",
-      "description": "A human-readable name that is the result of the translation of DTC hex code. There is a 1:1 relationship between DTC hex code and DTC full name. DTC full name must include the fault byte added after the minus. DTC full name is unique: That means that at one occurrence timestamp and the same vehicle and the same ECU only one DTC full name can be set."
+      "description": "A human-readable name that is the result of the translation of DTC hex code. There is a 1:1 relationship between DTC hex code and DTC full name. DTC full name must include the fault byte added after the minus. DTC full name is unique: That means that at one occurrence timestamp and the same vehicle and the same ECU only one DTC full name can be set.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "UniqueID",
+          "target_model": "shared.quality_core@1.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.fleet.diagnostic_data:3.0.0#fullDescription",
       "label": "fullDescription",
       "kind": "Property",
       "preferredName": "DTC Description",
-      "description": "Description of this DTC. If description name consists of main DTC  and failure byte, than both description strings are concatenated using a \"-\" as separator."
+      "description": "Description of this DTC. If description name consists of main DTC  and failure byte, than both description strings are concatenated using a \"-\" as separator.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.fleet.diagnostic_data:3.0.0#faultPath",
       "label": "faultPath",
       "kind": "Property",
       "preferredName": "DTC Fault Path",
-      "description": "OEM-specific: Fault path for this DTC. Allows further analysis"
+      "description": "OEM-specific: Fault path for this DTC. Allows further analysis",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.fleet.diagnostic_data:3.0.0#faultPathDescription",
       "label": "faultPathDescription",
       "kind": "Property",
       "preferredName": "DTC Fault Path Description",
-      "description": "OEM-specific description of DTC fault path"
+      "description": "OEM-specific description of DTC fault path",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.fleet.diagnostic_data:3.0.0#freezeFrame",
       "label": "freezeFrame",
       "kind": "Property",
       "preferredName": "DTC Freeze Frame",
-      "description": "freeze frame from ecu. The freeze frame records many parameters of the DTC and surrounding parameters like outside temperature when the DTC was set. It is a very long HEX string with many OEM-specific and ECU-specific content in"
+      "description": "freeze frame from ecu. The freeze frame records many parameters of the DTC and surrounding parameters like outside temperature when the DTC was set. It is a very long HEX string with many OEM-specific and ECU-specific content in",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "HexValueTrait",
+          "target_model": "shared.quality_core@1.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.fleet.diagnostic_data:3.0.0#isMilOn",
       "label": "isMilOn",
       "kind": "Property",
       "preferredName": "Is MIL On",
-      "description": "Describes whether this DTC sets the MIL (malfunction indicator light) in the dashboard."
+      "description": "Describes whether this DTC sets the MIL (malfunction indicator light) in the dashboard.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Boolean",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.fleet.diagnostic_data:3.0.0#occurenceCounterTotal",
@@ -221,28 +389,60 @@
       "label": "occurenceMileage",
       "kind": "Property",
       "preferredName": "DTC First Occurrence Mileage",
-      "description": "mileage in km when the DTC occurred the first time "
+      "description": "mileage in km when the DTC occurred the first time ",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "MileageTrait",
+          "target_model": "shared.quality_core@1.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.fleet.diagnostic_data:3.0.0#occurenceMileageUnit",
       "label": "occurenceMileageUnit",
       "kind": "Property",
       "preferredName": "Occurrence Mileage Unit",
-      "description": "Unit of occurrence mileage - either km or mi."
+      "description": "Unit of occurrence mileage - either km or mi.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "MileageUnit",
+          "target_model": "shared.quality_core@1.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.fleet.diagnostic_data:3.0.0#occurenceTimeStamp",
       "label": "occurenceTimeStamp",
       "kind": "Property",
       "preferredName": "DTC First Occurrence",
-      "description": "date and time when the DTC occurred the first time/was recorded the first time in the ECU"
+      "description": "date and time when the DTC occurred the first time/was recorded the first time in the ECU",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Timestamp",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.fleet.diagnostic_data:3.0.0#state",
       "label": "state",
       "kind": "Property",
       "preferredName": "DTC State",
-      "description": "OEM-specific state of DTC: 0;1 (permanent/temporary/intermediate), could also be a string with permanent, temporary, intermediate, ...."
+      "description": "OEM-specific state of DTC: 0;1 (permanent/temporary/intermediate), could also be a string with permanent, temporary, intermediate, ....",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.fleet.diagnostic_data:3.0.0#type",
@@ -263,28 +463,60 @@
       "label": "conditionId",
       "kind": "Property",
       "preferredName": "Condition Identifier",
-      "description": "OEM-specific: Primary key for this condition consists of unique identifier of env. condition and DTC"
+      "description": "OEM-specific: Primary key for this condition consists of unique identifier of env. condition and DTC",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "UniqueID",
+          "target_model": "shared.quality_core@1.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.fleet.diagnostic_data:3.0.0#conditionCreationTimeStamp",
       "label": "conditionCreationTimeStamp",
       "kind": "Property",
       "preferredName": "Condition Creation Timestamp",
-      "description": "Date and time when this condition/information was created."
+      "description": "Date and time when this condition/information was created.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Timestamp",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.fleet.diagnostic_data:3.0.0#conditionDescription",
       "label": "conditionDescription",
       "kind": "Property",
       "preferredName": "Description",
-      "description": "The description of the environment condition/information"
+      "description": "The description of the environment condition/information",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.fleet.diagnostic_data:3.0.0#conditionHexValue",
       "label": "conditionHexValue",
       "kind": "Property",
       "preferredName": "Hex Condition Value",
-      "description": "Hex value of the condition."
+      "description": "Hex value of the condition.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "HexValueTrait",
+          "target_model": "shared.quality_core@1.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.fleet.diagnostic_data:3.0.0#conditionNumericValue",
@@ -298,14 +530,30 @@
       "label": "conditionTextValue",
       "kind": "Property",
       "preferredName": "Textual Condition Value",
-      "description": "Text value of the condition."
+      "description": "Text value of the condition.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.fleet.diagnostic_data:3.0.0#measurementUnit",
       "label": "measurementUnit",
       "kind": "Property",
       "preferredName": "DTC Fault Path",
-      "description": "The unit of measurement for the environment condition value."
+      "description": "The unit of measurement for the environment condition value.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.fleet.diagnostic_data:3.0.0#SessionList",
@@ -354,7 +602,57 @@
       "label": "DiagnosticSession",
       "kind": "Entity",
       "preferredName": "Diagnostic Session",
-      "description": "One diagnostic session of one vehicle: Either this is a diagnostic session done in a workshop or via over-the-air diagnostic."
+      "description": "One diagnostic session of one vehicle: Either this is a diagnostic session done in a workshop or via over-the-air diagnostic.",
+      "external_refs": [
+        {
+          "predicate": "properties",
+          "target_local": "anonymizedVIN",
+          "target_model": "shared.quality_core@1.0.0",
+          "target_source": "catenax"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "qualityTaskId",
+          "target_model": "shared.quality_core@1.0.0",
+          "target_source": "catenax"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "countryCode",
+          "target_model": "shared.quality_core@1.0.0",
+          "target_source": "catenax"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "sessionId",
+          "target_model": "shared.quality_core@1.0.0",
+          "target_source": "catenax"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "vehicleId",
+          "target_model": "shared.quality_core@1.0.0",
+          "target_source": "catenax"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "recordStatus",
+          "target_model": "shared.quality_core@1.0.0",
+          "target_source": "catenax"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "workshop",
+          "target_model": "shared.quality_core@1.0.0",
+          "target_source": "catenax"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "additionalInformationList",
+          "target_model": "shared.quality_core@1.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.fleet.diagnostic_data:3.0.0#ECU",
@@ -389,28 +687,60 @@
       "label": "ProcedureResultCharacterisitc",
       "kind": "Characteristic",
       "preferredName": "Procedure Result Characteristic",
-      "description": "Characteristic for procedure results."
+      "description": "Characteristic for procedure results.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.fleet.diagnostic_data:3.0.0#TypeEnumumeration",
       "label": "TypeEnumumeration",
       "kind": "Characteristic",
       "preferredName": "Type Enumeration",
-      "description": "Enumeration for a DTC."
+      "description": "Enumeration for a DTC.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.fleet.diagnostic_data:3.0.0#Long",
       "label": "Long",
       "kind": "Characteristic",
       "preferredName": "Long",
-      "description": "Characteristic for a long value."
+      "description": "Characteristic for a long value.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "long",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.fleet.diagnostic_data:3.0.0#Double",
       "label": "Double",
       "kind": "Characteristic",
       "preferredName": "Double",
-      "description": "A double value"
+      "description": "A double value",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "double",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     }
   ],
   "links": [

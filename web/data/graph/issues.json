@@ -2707,7 +2707,7 @@
       "family": "SAMM",
       "source": "idta",
       "status": "undefined",
-      "total": 99,
+      "total": 60,
       "issues": {
         "dep_on_undefined": {
           "count": 3,
@@ -2718,18 +2718,8 @@
           ]
         },
         "orphan_isolated": {
-          "count": 7,
+          "count": 5,
           "detail": [
-            {
-              "name": "Circularity",
-              "kind": "Aspect",
-              "file": "Circularity"
-            },
-            {
-              "name": "dismantlingAndRemovalInformation",
-              "kind": "Property",
-              "file": "Circularity"
-            },
             {
               "name": "nameOfSupplier",
               "kind": "Property",
@@ -2758,146 +2748,16 @@
           ]
         },
         "orphan_unreachable": {
-          "count": 42,
+          "count": 5,
           "detail": [
-            {
-              "name": "dismantlingAndRemovalInformation",
-              "kind": "Property",
-              "file": "Circularity"
-            },
-            {
-              "name": "sparePartSources",
-              "kind": "Property",
-              "file": "Circularity"
-            },
-            {
-              "name": "recycledContent",
-              "kind": "Property",
-              "file": "Circularity"
-            },
-            {
-              "name": "safetyMeasures",
-              "kind": "Property",
-              "file": "Circularity"
-            },
-            {
-              "name": "endOfLifeInformation",
-              "kind": "Property",
-              "file": "Circularity"
-            },
-            {
-              "name": "renewableContent",
-              "kind": "Property",
-              "file": "Circularity"
-            },
             {
               "name": "nameOfSupplier",
               "kind": "Property",
               "file": "Circularity"
             },
             {
-              "name": "addressOfSupplier",
-              "kind": "Property",
-              "file": "Circularity"
-            },
-            {
               "name": "supplierWebAddress",
               "kind": "Property",
-              "file": "Circularity"
-            },
-            {
-              "name": "components",
-              "kind": "Property",
-              "file": "Circularity"
-            },
-            {
-              "name": "preConsumerShare",
-              "kind": "Property",
-              "file": "Circularity"
-            },
-            {
-              "name": "recycledMaterial",
-              "kind": "Property",
-              "file": "Circularity"
-            },
-            {
-              "name": "postConsumerShare",
-              "kind": "Property",
-              "file": "Circularity"
-            },
-            {
-              "name": "safetyInstructions",
-              "kind": "Property",
-              "file": "Circularity"
-            },
-            {
-              "name": "extinguishingAgents",
-              "kind": "Property",
-              "file": "Circularity"
-            },
-            {
-              "name": "wastePrevention",
-              "kind": "Property",
-              "file": "Circularity"
-            },
-            {
-              "name": "separateCollection",
-              "kind": "Property",
-              "file": "Circularity"
-            },
-            {
-              "name": "informationOnCollection",
-              "kind": "Property",
-              "file": "Circularity"
-            },
-            {
-              "name": "partName",
-              "kind": "Property",
-              "file": "Circularity"
-            },
-            {
-              "name": "partNumber",
-              "kind": "Property",
-              "file": "Circularity"
-            },
-            {
-              "name": "SparePartSourcesList",
-              "kind": "Characteristic",
-              "file": "Circularity"
-            },
-            {
-              "name": "RecycledContentList",
-              "kind": "Characteristic",
-              "file": "Circularity"
-            },
-            {
-              "name": "ComponentList",
-              "kind": "Characteristic",
-              "file": "Circularity"
-            },
-            {
-              "name": "ExtinguishingAgentsList",
-              "kind": "Characteristic",
-              "file": "Circularity"
-            },
-            {
-              "name": "SafetyMeasures",
-              "kind": "Characteristic",
-              "file": "Circularity"
-            },
-            {
-              "name": "EndOfLifeInformation",
-              "kind": "Characteristic",
-              "file": "Circularity"
-            },
-            {
-              "name": "AddressOfSupplier",
-              "kind": "Characteristic",
-              "file": "Circularity"
-            },
-            {
-              "name": "RenewableContent",
-              "kind": "Characteristic",
               "file": "Circularity"
             },
             {
@@ -2911,62 +2771,7 @@
               "file": "Circularity"
             },
             {
-              "name": "SparePartSupplier",
-              "kind": "Entity",
-              "file": "Circularity"
-            },
-            {
-              "name": "RecycledContent",
-              "kind": "Entity",
-              "file": "Circularity"
-            },
-            {
-              "name": "SafetyMeasuresEntity",
-              "kind": "Entity",
-              "file": "Circularity"
-            },
-            {
-              "name": "EndOfLifeInformationEntity",
-              "kind": "Entity",
-              "file": "Circularity"
-            },
-            {
-              "name": "PostalAddress",
-              "kind": "Entity",
-              "file": "Circularity"
-            },
-            {
-              "name": "Component",
-              "kind": "Entity",
-              "file": "Circularity"
-            },
-            {
-              "name": "PreConsumerShareTrait",
-              "kind": "Characteristic",
-              "file": "Circularity"
-            },
-            {
-              "name": "PostConsumerShareTrait",
-              "kind": "Characteristic",
-              "file": "Circularity"
-            },
-            {
-              "name": "RecycledMaterial",
-              "kind": "Characteristic",
-              "file": "Circularity"
-            },
-            {
               "name": "ExtinguishingAgent",
-              "kind": "Characteristic",
-              "file": "Circularity"
-            },
-            {
-              "name": "ConsumerShareRange",
-              "kind": "Characteristic",
-              "file": "Circularity"
-            },
-            {
-              "name": "PartNumber",
               "kind": "Characteristic",
               "file": "Circularity"
             }
@@ -3431,16 +3236,11 @@
       "family": "SAMM",
       "source": "idta",
       "status": "undefined",
-      "total": 64,
+      "total": 30,
       "issues": {
         "orphan_isolated": {
-          "count": 2,
+          "count": 1,
           "detail": [
-            {
-              "name": "MaterialComposition",
-              "kind": "Aspect",
-              "file": "MaterialComposition"
-            },
             {
               "name": "Impact",
               "kind": "Characteristic",
@@ -3449,175 +3249,10 @@
           ]
         },
         "orphan_unreachable": {
-          "count": 34,
+          "count": 1,
           "detail": [
             {
-              "name": "batteryChemistry",
-              "kind": "Property",
-              "file": "MaterialComposition"
-            },
-            {
-              "name": "batteryMaterials",
-              "kind": "Property",
-              "file": "MaterialComposition"
-            },
-            {
-              "name": "hazardousSubstances",
-              "kind": "Property",
-              "file": "MaterialComposition"
-            },
-            {
-              "name": "shortName",
-              "kind": "Property",
-              "file": "MaterialComposition"
-            },
-            {
-              "name": "clearName",
-              "kind": "Property",
-              "file": "MaterialComposition"
-            },
-            {
-              "name": "batteryMaterialLocation",
-              "kind": "Property",
-              "file": "MaterialComposition"
-            },
-            {
-              "name": "batteryMaterialIdentifier",
-              "kind": "Property",
-              "file": "MaterialComposition"
-            },
-            {
-              "name": "batteryMaterialName",
-              "kind": "Property",
-              "file": "MaterialComposition"
-            },
-            {
-              "name": "batteryMaterialMass",
-              "kind": "Property",
-              "file": "MaterialComposition"
-            },
-            {
-              "name": "isCriticalRawMaterial",
-              "kind": "Property",
-              "file": "MaterialComposition"
-            },
-            {
-              "name": "hazardousSubstanceClass",
-              "kind": "Property",
-              "file": "MaterialComposition"
-            },
-            {
-              "name": "hazardousSubstanceName",
-              "kind": "Property",
-              "file": "MaterialComposition"
-            },
-            {
-              "name": "hazardousSubstanceConcentration",
-              "kind": "Property",
-              "file": "MaterialComposition"
-            },
-            {
-              "name": "hazardousSubstanceImpact",
-              "kind": "Property",
-              "file": "MaterialComposition"
-            },
-            {
-              "name": "hazardousSubstanceLocation",
-              "kind": "Property",
-              "file": "MaterialComposition"
-            },
-            {
-              "name": "hazardousSubstanceIdentifier",
-              "kind": "Property",
-              "file": "MaterialComposition"
-            },
-            {
-              "name": "componentName",
-              "kind": "Property",
-              "file": "MaterialComposition"
-            },
-            {
-              "name": "componentId",
-              "kind": "Property",
-              "file": "MaterialComposition"
-            },
-            {
-              "name": "BatteryChemistryEntityList",
-              "kind": "Characteristic",
-              "file": "MaterialComposition"
-            },
-            {
-              "name": "BatteryMaterialLocation",
-              "kind": "Characteristic",
-              "file": "MaterialComposition"
-            },
-            {
-              "name": "HubstanceSubstanceLocationEntity",
-              "kind": "Characteristic",
-              "file": "MaterialComposition"
-            },
-            {
-              "name": "BatteryMaterialList",
-              "kind": "Characteristic",
-              "file": "MaterialComposition"
-            },
-            {
-              "name": "HazardousSubstancesList",
-              "kind": "Characteristic",
-              "file": "MaterialComposition"
-            },
-            {
-              "name": "ImpactList",
-              "kind": "Characteristic",
-              "file": "MaterialComposition"
-            },
-            {
-              "name": "BatteryChemistry",
-              "kind": "Entity",
-              "file": "MaterialComposition"
-            },
-            {
-              "name": "BatteryMaterial",
-              "kind": "Entity",
-              "file": "MaterialComposition"
-            },
-            {
-              "name": "HazardousSubstance",
-              "kind": "Entity",
-              "file": "MaterialComposition"
-            },
-            {
-              "name": "BatteryLocation",
-              "kind": "Entity",
-              "file": "MaterialComposition"
-            },
-            {
-              "name": "MaterialIdentifierTrait",
-              "kind": "Characteristic",
-              "file": "MaterialComposition"
-            },
-            {
-              "name": "Weight",
-              "kind": "Characteristic",
-              "file": "MaterialComposition"
-            },
-            {
-              "name": "HazardousSubstanceConcentrationCharacteristic",
-              "kind": "Characteristic",
-              "file": "MaterialComposition"
-            },
-            {
-              "name": "HazardousSubstanceClassEnum",
-              "kind": "Characteristic",
-              "file": "MaterialComposition"
-            },
-            {
               "name": "Impact",
-              "kind": "Characteristic",
-              "file": "MaterialComposition"
-            },
-            {
-              "name": "CASNumberConstraint",
               "kind": "Characteristic",
               "file": "MaterialComposition"
             }
@@ -3793,198 +3428,23 @@
       "family": "SAMM",
       "source": "idta",
       "status": "undefined",
-      "total": 66,
+      "total": 30,
       "issues": {
         "orphan_isolated": {
-          "count": 3,
+          "count": 1,
           "detail": [
             {
-              "name": "MaterialComposition",
-              "kind": "Aspect",
-              "file": "MaterialComposition"
-            },
-            {
               "name": "Impact",
-              "kind": "Characteristic",
-              "file": "MaterialComposition"
-            },
-            {
-              "name": "HazardousSubstanceClassEnum",
               "kind": "Characteristic",
               "file": "MaterialComposition"
             }
           ]
         },
         "orphan_unreachable": {
-          "count": 34,
+          "count": 1,
           "detail": [
             {
-              "name": "batteryChemistry",
-              "kind": "Property",
-              "file": "MaterialComposition"
-            },
-            {
-              "name": "batteryMaterials",
-              "kind": "Property",
-              "file": "MaterialComposition"
-            },
-            {
-              "name": "hazardousSubstances",
-              "kind": "Property",
-              "file": "MaterialComposition"
-            },
-            {
-              "name": "shortName",
-              "kind": "Property",
-              "file": "MaterialComposition"
-            },
-            {
-              "name": "clearName",
-              "kind": "Property",
-              "file": "MaterialComposition"
-            },
-            {
-              "name": "batteryMaterialLocation",
-              "kind": "Property",
-              "file": "MaterialComposition"
-            },
-            {
-              "name": "batteryMaterialIdentifier",
-              "kind": "Property",
-              "file": "MaterialComposition"
-            },
-            {
-              "name": "batteryMaterialName",
-              "kind": "Property",
-              "file": "MaterialComposition"
-            },
-            {
-              "name": "batteryMaterialMass",
-              "kind": "Property",
-              "file": "MaterialComposition"
-            },
-            {
-              "name": "isCriticalRawMaterial",
-              "kind": "Property",
-              "file": "MaterialComposition"
-            },
-            {
-              "name": "hazardousSubstanceClass",
-              "kind": "Property",
-              "file": "MaterialComposition"
-            },
-            {
-              "name": "hazardousSubstanceName",
-              "kind": "Property",
-              "file": "MaterialComposition"
-            },
-            {
-              "name": "hazardousSubstanceConcentration",
-              "kind": "Property",
-              "file": "MaterialComposition"
-            },
-            {
-              "name": "hazardousSubstanceImpact",
-              "kind": "Property",
-              "file": "MaterialComposition"
-            },
-            {
-              "name": "hazardousSubstanceLocation",
-              "kind": "Property",
-              "file": "MaterialComposition"
-            },
-            {
-              "name": "hazardousSubstanceIdentifier",
-              "kind": "Property",
-              "file": "MaterialComposition"
-            },
-            {
-              "name": "componentName",
-              "kind": "Property",
-              "file": "MaterialComposition"
-            },
-            {
-              "name": "componentId",
-              "kind": "Property",
-              "file": "MaterialComposition"
-            },
-            {
-              "name": "BatteryChemistryEntityList",
-              "kind": "Characteristic",
-              "file": "MaterialComposition"
-            },
-            {
-              "name": "BatteryMaterialLocation",
-              "kind": "Characteristic",
-              "file": "MaterialComposition"
-            },
-            {
-              "name": "HazardousSubstanceLocation",
-              "kind": "Characteristic",
-              "file": "MaterialComposition"
-            },
-            {
-              "name": "BatteryMaterialList",
-              "kind": "Characteristic",
-              "file": "MaterialComposition"
-            },
-            {
-              "name": "HazardousSubstancesList",
-              "kind": "Characteristic",
-              "file": "MaterialComposition"
-            },
-            {
-              "name": "ImpactList",
-              "kind": "Characteristic",
-              "file": "MaterialComposition"
-            },
-            {
-              "name": "BatteryChemistry",
-              "kind": "Entity",
-              "file": "MaterialComposition"
-            },
-            {
-              "name": "BatteryMaterial",
-              "kind": "Entity",
-              "file": "MaterialComposition"
-            },
-            {
-              "name": "HazardousSubstance",
-              "kind": "Entity",
-              "file": "MaterialComposition"
-            },
-            {
-              "name": "BatteryComponentEntity",
-              "kind": "Entity",
-              "file": "MaterialComposition"
-            },
-            {
-              "name": "MaterialIdentifierTrait",
-              "kind": "Characteristic",
-              "file": "MaterialComposition"
-            },
-            {
-              "name": "WeightInKilogram",
-              "kind": "Characteristic",
-              "file": "MaterialComposition"
-            },
-            {
-              "name": "HazardousSubstanceConcentrationCharacteristic",
-              "kind": "Characteristic",
-              "file": "MaterialComposition"
-            },
-            {
               "name": "Impact",
-              "kind": "Characteristic",
-              "file": "MaterialComposition"
-            },
-            {
-              "name": "CASNumberConstraint",
-              "kind": "Characteristic",
-              "file": "MaterialComposition"
-            },
-            {
-              "name": "HazardousSubstanceClassEnum",
               "kind": "Characteristic",
               "file": "MaterialComposition"
             }
@@ -4071,7 +3531,7 @@
           ]
         },
         "property_without_characteristic": {
-          "count": 8,
+          "count": 7,
           "detail": [
             {
               "name": "shortName",
@@ -4090,11 +3550,6 @@
             },
             {
               "name": "isCriticalRawMaterial",
-              "kind": "Property",
-              "file": "MaterialComposition"
-            },
-            {
-              "name": "hazardousSubstanceClass",
               "kind": "Property",
               "file": "MaterialComposition"
             },
@@ -4165,7 +3620,7 @@
       "family": "SAMM",
       "source": "idta",
       "status": "undefined",
-      "total": 157,
+      "total": 84,
       "issues": {
         "dep_on_undefined": {
           "count": 2,
@@ -4175,118 +3630,8 @@
           ]
         },
         "orphan_unreachable": {
-          "count": 78,
+          "count": 5,
           "detail": [
-            {
-              "name": "lastUpdate",
-              "kind": "Property",
-              "file": "ProductCondition"
-            },
-            {
-              "name": "energyThroughput",
-              "kind": "Property",
-              "file": "ProductCondition"
-            },
-            {
-              "name": "energyThroughputValue",
-              "kind": "Property",
-              "file": "ProductCondition"
-            },
-            {
-              "name": "capacityThroughput",
-              "kind": "Property",
-              "file": "ProductCondition"
-            },
-            {
-              "name": "capacityThroughputValue",
-              "kind": "Property",
-              "file": "ProductCondition"
-            },
-            {
-              "name": "numberOfFullCycles",
-              "kind": "Property",
-              "file": "ProductCondition"
-            },
-            {
-              "name": "numberOfFullCyclesValue",
-              "kind": "Property",
-              "file": "ProductCondition"
-            },
-            {
-              "name": "stateOfCertifiedEnergy",
-              "kind": "Property",
-              "file": "ProductCondition"
-            },
-            {
-              "name": "stateOfCertifiedEnergyValue",
-              "kind": "Property",
-              "file": "ProductCondition"
-            },
-            {
-              "name": "remainingEnergy",
-              "kind": "Property",
-              "file": "ProductCondition"
-            },
-            {
-              "name": "remainingEnergyValue",
-              "kind": "Property",
-              "file": "ProductCondition"
-            },
-            {
-              "name": "remainingCapacity",
-              "kind": "Property",
-              "file": "ProductCondition"
-            },
-            {
-              "name": "remainingCapacityValue",
-              "kind": "Property",
-              "file": "ProductCondition"
-            },
-            {
-              "name": "negativeEvents",
-              "kind": "Property",
-              "file": "ProductCondition"
-            },
-            {
-              "name": "negativeEventValue",
-              "kind": "Property",
-              "file": "ProductCondition"
-            },
-            {
-              "name": "temperatureInformation",
-              "kind": "Property",
-              "file": "ProductCondition"
-            },
-            {
-              "name": "timeExtremeHighTemp",
-              "kind": "Property",
-              "file": "ProductCondition"
-            },
-            {
-              "name": "timeExtremeLowTemp",
-              "kind": "Property",
-              "file": "ProductCondition"
-            },
-            {
-              "name": "timeExtremeHighTempCharging",
-              "kind": "Property",
-              "file": "ProductCondition"
-            },
-            {
-              "name": "timeExtremeLowTempCharging",
-              "kind": "Property",
-              "file": "ProductCondition"
-            },
-            {
-              "name": "remainingPowerCapability",
-              "kind": "Property",
-              "file": "ProductCondition"
-            },
-            {
-              "name": "remainingPowerCapabilityValue",
-              "kind": "Property",
-              "file": "ProductCondition"
-            },
             {
               "name": "atSoC",
               "kind": "Property",
@@ -4298,238 +3643,8 @@
               "file": "ProductCondition"
             },
             {
-              "name": "rPCLastUpdated",
-              "kind": "Property",
-              "file": "ProductCondition"
-            },
-            {
-              "name": "evolutionOfSelfDischarge",
-              "kind": "Property",
-              "file": "ProductCondition"
-            },
-            {
-              "name": "evolutionOfSelfDischargeValue",
-              "kind": "Property",
-              "file": "ProductCondition"
-            },
-            {
-              "name": "currentSelfDischargingRate",
-              "kind": "Property",
-              "file": "ProductCondition"
-            },
-            {
-              "name": "currentSelfDischargingRateValue",
-              "kind": "Property",
-              "file": "ProductCondition"
-            },
-            {
-              "name": "stateOfCharge",
-              "kind": "Property",
-              "file": "ProductCondition"
-            },
-            {
-              "name": "stateOfChargeValue",
-              "kind": "Property",
-              "file": "ProductCondition"
-            },
-            {
-              "name": "remainingRoundTripEnergyEfficiency",
-              "kind": "Property",
-              "file": "ProductCondition"
-            },
-            {
-              "name": "remainingRoundTripEnergyEfficiencyValue",
-              "kind": "Property",
-              "file": "ProductCondition"
-            },
-            {
-              "name": "EnergyThroughput",
-              "kind": "Characteristic",
-              "file": "ProductCondition"
-            },
-            {
-              "name": "CapacityThroughput",
-              "kind": "Characteristic",
-              "file": "ProductCondition"
-            },
-            {
-              "name": "NumberOfFullCycles",
-              "kind": "Characteristic",
-              "file": "ProductCondition"
-            },
-            {
-              "name": "StateOfCertifiedEnergy",
-              "kind": "Characteristic",
-              "file": "ProductCondition"
-            },
-            {
-              "name": "RemainingEnergy",
-              "kind": "Characteristic",
-              "file": "ProductCondition"
-            },
-            {
-              "name": "RemainingCapacity",
-              "kind": "Characteristic",
-              "file": "ProductCondition"
-            },
-            {
-              "name": "TemperatureInformation",
-              "kind": "Characteristic",
-              "file": "ProductCondition"
-            },
-            {
-              "name": "RemainingPowerCapability",
-              "kind": "Characteristic",
-              "file": "ProductCondition"
-            },
-            {
-              "name": "RemainingPowerCapabilityValue",
-              "kind": "Characteristic",
-              "file": "ProductCondition"
-            },
-            {
-              "name": "EvolutionOfSelfDischarge",
-              "kind": "Characteristic",
-              "file": "ProductCondition"
-            },
-            {
-              "name": "CurrentSelfDischargingRate",
-              "kind": "Characteristic",
-              "file": "ProductCondition"
-            },
-            {
-              "name": "StateOfCharge",
-              "kind": "Characteristic",
-              "file": "ProductCondition"
-            },
-            {
-              "name": "RemainingRoundTripEnergyEfficiency",
-              "kind": "Characteristic",
-              "file": "ProductCondition"
-            },
-            {
-              "name": "EnergyThroughputEntity",
-              "kind": "Entity",
-              "file": "ProductCondition"
-            },
-            {
-              "name": "CapacityThroughputEntity",
-              "kind": "Entity",
-              "file": "ProductCondition"
-            },
-            {
-              "name": "NumberOfFullCyclesEntity",
-              "kind": "Entity",
-              "file": "ProductCondition"
-            },
-            {
-              "name": "StateOfCertifiedEnergyEntity",
-              "kind": "Entity",
-              "file": "ProductCondition"
-            },
-            {
-              "name": "RemainingEnergyEntity",
-              "kind": "Entity",
-              "file": "ProductCondition"
-            },
-            {
-              "name": "RemainingCapacityEntity",
-              "kind": "Entity",
-              "file": "ProductCondition"
-            },
-            {
-              "name": "NegativeEvent",
-              "kind": "Entity",
-              "file": "ProductCondition"
-            },
-            {
-              "name": "TemperatureConditionsEntity",
-              "kind": "Entity",
-              "file": "ProductCondition"
-            },
-            {
-              "name": "RemainingPowerCapabilityEntity",
-              "kind": "Entity",
-              "file": "ProductCondition"
-            },
-            {
-              "name": "RemainingPowerCapabilityDynamicAt",
-              "kind": "Entity",
-              "file": "ProductCondition"
-            },
-            {
               "name": "PowerCapabilityAtEntity",
               "kind": "Entity",
-              "file": "ProductCondition"
-            },
-            {
-              "name": "EvolutionOfSelfDischargeEntity",
-              "kind": "Entity",
-              "file": "ProductCondition"
-            },
-            {
-              "name": "CurrentSelfDischargingRateEntity",
-              "kind": "Entity",
-              "file": "ProductCondition"
-            },
-            {
-              "name": "StateOfChargeEntity",
-              "kind": "Entity",
-              "file": "ProductCondition"
-            },
-            {
-              "name": "RemainingRoundTripEnergyEfficiencyEntity",
-              "kind": "Entity",
-              "file": "ProductCondition"
-            },
-            {
-              "name": "EnergyThroughputValue",
-              "kind": "Characteristic",
-              "file": "ProductCondition"
-            },
-            {
-              "name": "CapacityThroughputValue",
-              "kind": "Characteristic",
-              "file": "ProductCondition"
-            },
-            {
-              "name": "NumberOfFullCyclesValue",
-              "kind": "Characteristic",
-              "file": "ProductCondition"
-            },
-            {
-              "name": "StateOfCertifiedEnergyValue",
-              "kind": "Characteristic",
-              "file": "ProductCondition"
-            },
-            {
-              "name": "UBERemainingValue",
-              "kind": "Characteristic",
-              "file": "ProductCondition"
-            },
-            {
-              "name": "RemainingCapacityValue",
-              "kind": "Characteristic",
-              "file": "ProductCondition"
-            },
-            {
-              "name": "TimeExtremeHighTemp",
-              "kind": "Characteristic",
-              "file": "ProductCondition"
-            },
-            {
-              "name": "TimeExtremeLowTemp",
-              "kind": "Characteristic",
-              "file": "ProductCondition"
-            },
-            {
-              "name": "TimeExtremeHighTempCharging",
-              "kind": "Characteristic",
-              "file": "ProductCondition"
-            },
-            {
-              "name": "TimeExtremeLowTempCharging",
-              "kind": "Characteristic",
               "file": "ProductCondition"
             },
             {
@@ -4539,31 +3654,6 @@
             },
             {
               "name": "PowerCapabilityAtSoc",
-              "kind": "Characteristic",
-              "file": "ProductCondition"
-            },
-            {
-              "name": "EvolutionOfSelfDischargeEntityValue",
-              "kind": "Characteristic",
-              "file": "ProductCondition"
-            },
-            {
-              "name": "CurrentSelfDischargingRateValue",
-              "kind": "Characteristic",
-              "file": "ProductCondition"
-            },
-            {
-              "name": "StateOfChargeValue",
-              "kind": "Characteristic",
-              "file": "ProductCondition"
-            },
-            {
-              "name": "RemainingRoundTripEnergyEfficiencyValue",
-              "kind": "Characteristic",
-              "file": "ProductCondition"
-            },
-            {
-              "name": "NegativeEvents",
               "kind": "Characteristic",
               "file": "ProductCondition"
             }
@@ -4984,7 +4074,7 @@
       "family": "SAMM",
       "source": "idta",
       "status": "undefined",
-      "total": 174,
+      "total": 155,
       "issues": {
         "dep_on_undefined": {
           "count": 3,
@@ -4995,13 +4085,8 @@
           ]
         },
         "orphan_unreachable": {
-          "count": 80,
+          "count": 61,
           "detail": [
-            {
-              "name": "lastUpdate",
-              "kind": "Property",
-              "file": "ProductCondition"
-            },
             {
               "name": "energyThroughput",
               "kind": "Property",
@@ -5019,16 +4104,6 @@
             },
             {
               "name": "capacityThroughputValue",
-              "kind": "Property",
-              "file": "ProductCondition"
-            },
-            {
-              "name": "numberOfFullCycles",
-              "kind": "Property",
-              "file": "ProductCondition"
-            },
-            {
-              "name": "numberOfFullCyclesValue",
               "kind": "Property",
               "file": "ProductCondition"
             },
@@ -5069,36 +4144,6 @@
             },
             {
               "name": "negativeEventValue",
-              "kind": "Property",
-              "file": "ProductCondition"
-            },
-            {
-              "name": "temperatureInformation",
-              "kind": "Property",
-              "file": "ProductCondition"
-            },
-            {
-              "name": "measuredTemp",
-              "kind": "Property",
-              "file": "ProductCondition"
-            },
-            {
-              "name": "timeExtremeHighTemp",
-              "kind": "Property",
-              "file": "ProductCondition"
-            },
-            {
-              "name": "timeExtremeLowTemp",
-              "kind": "Property",
-              "file": "ProductCondition"
-            },
-            {
-              "name": "timeExtremeHighTempCharging",
-              "kind": "Property",
-              "file": "ProductCondition"
-            },
-            {
-              "name": "timeExtremeLowTempCharging",
               "kind": "Property",
               "file": "ProductCondition"
             },
@@ -5178,11 +4223,6 @@
               "file": "ProductCondition"
             },
             {
-              "name": "NumberOfFullCycles",
-              "kind": "Characteristic",
-              "file": "ProductCondition"
-            },
-            {
               "name": "StateOfCertifiedEnergy",
               "kind": "Characteristic",
               "file": "ProductCondition"
@@ -5194,11 +4234,6 @@
             },
             {
               "name": "RemainingCapacity",
-              "kind": "Characteristic",
-              "file": "ProductCondition"
-            },
-            {
-              "name": "TemperatureInformation",
               "kind": "Characteristic",
               "file": "ProductCondition"
             },
@@ -5243,11 +4278,6 @@
               "file": "ProductCondition"
             },
             {
-              "name": "NumberOfFullCyclesEntity",
-              "kind": "Entity",
-              "file": "ProductCondition"
-            },
-            {
               "name": "StateOfCertifiedEnergyEntity",
               "kind": "Entity",
               "file": "ProductCondition"
@@ -5264,11 +4294,6 @@
             },
             {
               "name": "NegativeEvent",
-              "kind": "Entity",
-              "file": "ProductCondition"
-            },
-            {
-              "name": "TemperatureConditionsEntity",
               "kind": "Entity",
               "file": "ProductCondition"
             },
@@ -5318,11 +4343,6 @@
               "file": "ProductCondition"
             },
             {
-              "name": "NumberOfFullCyclesValue",
-              "kind": "Characteristic",
-              "file": "ProductCondition"
-            },
-            {
               "name": "StateOfCertifiedEnergyValue",
               "kind": "Characteristic",
               "file": "ProductCondition"
@@ -5334,31 +4354,6 @@
             },
             {
               "name": "RemainingCapacityValue",
-              "kind": "Characteristic",
-              "file": "ProductCondition"
-            },
-            {
-              "name": "Temperature",
-              "kind": "Characteristic",
-              "file": "ProductCondition"
-            },
-            {
-              "name": "TimeExtremeHighTemp",
-              "kind": "Characteristic",
-              "file": "ProductCondition"
-            },
-            {
-              "name": "TimeExtremeLowTemp",
-              "kind": "Characteristic",
-              "file": "ProductCondition"
-            },
-            {
-              "name": "TimeExtremeHighTempCharging",
-              "kind": "Characteristic",
-              "file": "ProductCondition"
-            },
-            {
-              "name": "TimeExtremeLowTempCharging",
               "kind": "Characteristic",
               "file": "ProductCondition"
             },
@@ -5889,7 +4884,7 @@
       "family": "SAMM",
       "source": "idta",
       "status": "undefined",
-      "total": 199,
+      "total": 122,
       "issues": {
         "unresolved_dep": {
           "count": 2,
@@ -5907,13 +4902,8 @@
           ]
         },
         "orphan_isolated": {
-          "count": 2,
+          "count": 1,
           "detail": [
-            {
-              "name": "BatteryCategoryEnum",
-              "kind": "Characteristic",
-              "file": "TechnicalData"
-            },
             {
               "name": "PowerCapabilityAtSoC",
               "kind": "Characteristic",
@@ -5922,173 +4912,8 @@
           ]
         },
         "orphan_unreachable": {
-          "count": 79,
+          "count": 6,
           "detail": [
-            {
-              "name": "BatteryCategoryEnum",
-              "kind": "Characteristic",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "GeneralInformationEntity",
-              "kind": "Entity",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "manufacturerIdentifier",
-              "kind": "Property",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "warrantyPeriod",
-              "kind": "Property",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "batteryCategory",
-              "kind": "Property",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "batteryMass",
-              "kind": "Property",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "WarrantyPeriod",
-              "kind": "Characteristic",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "BatteryMassMeasurable",
-              "kind": "Characteristic",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "temperatureRangeIdleStateUpperBoundary",
-              "kind": "Property",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "temperatureRangeIdleStateLowerBoundary",
-              "kind": "Property",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "maximumPermittedBatteryPower",
-              "kind": "Property",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "initialRoundTripEnergyEfficiency",
-              "kind": "Property",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "initialSelfDischargingRate",
-              "kind": "Property",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "initialInternalResistanceAtBatteryCellLevel",
-              "kind": "Property",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "initialInternalResistanceAtBatteryPackLevel",
-              "kind": "Property",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "initialInternalResistanceAtBatteryModuleLevel",
-              "kind": "Property",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "internalResistanceIncreaseAtBatteryCellLevel",
-              "kind": "Property",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "internalResistanceIncreaseAtBatteryPackLevel",
-              "kind": "Property",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "internalResistanceIncreaseAtBatteryModuleLevel",
-              "kind": "Property",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "nominalVoltage",
-              "kind": "Property",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "minimumVoltage",
-              "kind": "Property",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "maximumVoltage",
-              "kind": "Property",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "ratedEnergy",
-              "kind": "Property",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "ratedCapacity",
-              "kind": "Property",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "powerFade",
-              "kind": "Property",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "powerCapabilityRatio",
-              "kind": "Property",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "capacityFade",
-              "kind": "Property",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "energyRoundTripEfficiencyFade",
-              "kind": "Property",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "expectedNumberOfCycles",
-              "kind": "Property",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "roundTripEfficiencyAt50PercentCycleLife",
-              "kind": "Property",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "expectedLifetime",
-              "kind": "Property",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "capacityThresholdForExhaustion",
-              "kind": "Property",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "cRateLifeCycleTest",
-              "kind": "Property",
-              "file": "TechnicalData"
-            },
             {
               "name": "atSoC",
               "kind": "Property",
@@ -6100,213 +4925,13 @@
               "file": "TechnicalData"
             },
             {
-              "name": "TemperatureRangeBoundary",
-              "kind": "Characteristic",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "BatteryDischargingRate",
-              "kind": "Characteristic",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "InternalResistance",
-              "kind": "Characteristic",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "ResistanceIncrease",
-              "kind": "Characteristic",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "Voltage",
-              "kind": "Characteristic",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "EnergyEfficiency",
-              "kind": "Characteristic",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "RatedEnergy",
-              "kind": "Characteristic",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "RatedCapacity",
-              "kind": "Characteristic",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "PowerFade",
-              "kind": "Characteristic",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "PowerCapabilityRatio",
-              "kind": "Characteristic",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "CapacityFadeValue",
-              "kind": "Characteristic",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "energyRoundTripEfficiencyFadeValue",
-              "kind": "Characteristic",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "RoundTripEfficiencyAt50PercentCycleLife",
-              "kind": "Characteristic",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "CapacityThresholdForExhaustion",
-              "kind": "Characteristic",
-              "file": "TechnicalData"
-            },
-            {
               "name": "AtSoC",
               "kind": "Characteristic",
               "file": "TechnicalData"
             },
             {
-              "name": "PowerCapabilityAtSoc",
-              "kind": "Characteristic",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "ExpectedNumberOfCycles",
-              "kind": "Characteristic",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "ExpectedLifeTime",
-              "kind": "Characteristic",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "CRateLifeCycleTest",
-              "kind": "Characteristic",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "TechnicalAttributes",
-              "kind": "Entity",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "CapacityEnergyVoltage",
-              "kind": "Entity",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "RoundTripEnergyEfficiency",
-              "kind": "Entity",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "Resistance",
-              "kind": "Entity",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "PowerCapability",
-              "kind": "Entity",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "Temperature",
-              "kind": "Entity",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "Lifetime",
-              "kind": "Entity",
-              "file": "TechnicalData"
-            },
-            {
               "name": "PowerCapabilityAt",
               "kind": "Entity",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "capacityEnergyVoltage",
-              "kind": "Property",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "roundTripEnergyEfficiency",
-              "kind": "Property",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "resistance",
-              "kind": "Property",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "powerCapability",
-              "kind": "Property",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "temperature",
-              "kind": "Property",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "lifetime",
-              "kind": "Property",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "originalPowerCapability",
-              "kind": "Property",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "cycleLifeReferenceTest",
-              "kind": "Property",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "CapacityEnergyVoltageCharacteristic",
-              "kind": "Characteristic",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "RoundTripEnergyEfficiencyCharacteristic",
-              "kind": "Characteristic",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "ResistanceCharacteristic",
-              "kind": "Characteristic",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "PowerCapabilityCharacteristic",
-              "kind": "Characteristic",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "TemperatureCharacteristic",
-              "kind": "Characteristic",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "LifetimeCharacteristic",
-              "kind": "Characteristic",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "PowerCapabilityAtSoCTrait",
-              "kind": "Characteristic",
               "file": "TechnicalData"
             },
             {
@@ -6737,15 +5362,10 @@
           ]
         },
         "property_without_characteristic": {
-          "count": 3,
+          "count": 2,
           "detail": [
             {
               "name": "manufacturerIdentifier",
-              "kind": "Property",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "batteryCategory",
               "kind": "Property",
               "file": "TechnicalData"
             },
@@ -6757,18 +5377,8 @@
           ]
         },
         "characteristic_without_datatype": {
-          "count": 25,
+          "count": 23,
           "detail": [
-            {
-              "name": "GeneralInformationCharacteristic",
-              "kind": "Characteristic",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "TechnicalPropertyAreaSet",
-              "kind": "Characteristic",
-              "file": "TechnicalData"
-            },
             {
               "name": "BatteryCategoryEnum",
               "kind": "Characteristic",
@@ -6926,7 +5536,7 @@
       "family": "SAMM",
       "source": "idta",
       "status": "undefined",
-      "total": 206,
+      "total": 126,
       "issues": {
         "unresolved_dep": {
           "count": 2,
@@ -6944,13 +5554,8 @@
           ]
         },
         "orphan_isolated": {
-          "count": 2,
+          "count": 1,
           "detail": [
-            {
-              "name": "BatteryCategoryEnum",
-              "kind": "Characteristic",
-              "file": "TechnicalData"
-            },
             {
               "name": "PowerCapabilityAtSoC",
               "kind": "Characteristic",
@@ -6959,188 +5564,8 @@
           ]
         },
         "orphan_unreachable": {
-          "count": 82,
+          "count": 6,
           "detail": [
-            {
-              "name": "BatteryCategoryEnum",
-              "kind": "Characteristic",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "GeneralInformationEntity",
-              "kind": "Entity",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "WarrantyInformationEntity",
-              "kind": "Entity",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "warrantyInformation",
-              "kind": "Property",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "manufacturerIdentifier",
-              "kind": "Property",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "warrantyPeriod",
-              "kind": "Property",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "batteryCategory",
-              "kind": "Property",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "batteryMass",
-              "kind": "Property",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "WarrantyInformationCharacteristic",
-              "kind": "Characteristic",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "WarrantyPeriodTrait",
-              "kind": "Characteristic",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "BatteryMassMeasurable",
-              "kind": "Characteristic",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "temperatureRangeIdleStateUpperBoundary",
-              "kind": "Property",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "temperatureRangeIdleStateLowerBoundary",
-              "kind": "Property",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "maximumPermittedBatteryPower",
-              "kind": "Property",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "initialRoundTripEnergyEfficiency",
-              "kind": "Property",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "initialSelfDischargingRate",
-              "kind": "Property",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "initialInternalResistanceAtBatteryCellLevel",
-              "kind": "Property",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "initialInternalResistanceAtBatteryPackLevel",
-              "kind": "Property",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "initialInternalResistanceAtBatteryModuleLevel",
-              "kind": "Property",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "internalResistanceIncreaseAtBatteryCellLevel",
-              "kind": "Property",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "internalResistanceIncreaseAtBatteryPackLevel",
-              "kind": "Property",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "internalResistanceIncreaseAtBatteryModuleLevel",
-              "kind": "Property",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "nominalVoltage",
-              "kind": "Property",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "minimumVoltage",
-              "kind": "Property",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "maximumVoltage",
-              "kind": "Property",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "ratedEnergy",
-              "kind": "Property",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "ratedCapacity",
-              "kind": "Property",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "powerFade",
-              "kind": "Property",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "powerCapabilityRatio",
-              "kind": "Property",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "capacityFade",
-              "kind": "Property",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "energyRoundTripEfficiencyFade",
-              "kind": "Property",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "expectedNumberOfCycles",
-              "kind": "Property",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "roundTripEfficiencyAt50PercentCycleLife",
-              "kind": "Property",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "expectedLifetime",
-              "kind": "Property",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "capacityThresholdForExhaustion",
-              "kind": "Property",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "cRateLifeCycleTest",
-              "kind": "Property",
-              "file": "TechnicalData"
-            },
             {
               "name": "atSoC",
               "kind": "Property",
@@ -7152,213 +5577,13 @@
               "file": "TechnicalData"
             },
             {
-              "name": "TemperatureRangeBoundary",
-              "kind": "Characteristic",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "BatteryDischargingRate",
-              "kind": "Characteristic",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "InternalResistance",
-              "kind": "Characteristic",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "ResistanceIncrease",
-              "kind": "Characteristic",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "Voltage",
-              "kind": "Characteristic",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "EnergyEfficiency",
-              "kind": "Characteristic",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "RatedEnergy",
-              "kind": "Characteristic",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "RatedCapacity",
-              "kind": "Characteristic",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "PowerFade",
-              "kind": "Characteristic",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "PowerCapabilityRatio",
-              "kind": "Characteristic",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "CapacityFadeValue",
-              "kind": "Characteristic",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "energyRoundTripEfficiencyFadeValue",
-              "kind": "Characteristic",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "RoundTripEfficiencyAt50PercentCycleLife",
-              "kind": "Characteristic",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "CapacityThresholdForExhaustion",
-              "kind": "Characteristic",
-              "file": "TechnicalData"
-            },
-            {
               "name": "AtSoC",
               "kind": "Characteristic",
               "file": "TechnicalData"
             },
             {
-              "name": "PowerCapabilityAtSoc",
-              "kind": "Characteristic",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "ExpectedNumberOfCycles",
-              "kind": "Characteristic",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "ExpectedLifeTime",
-              "kind": "Characteristic",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "CRateLifeCycleTest",
-              "kind": "Characteristic",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "TechnicalAttributes",
-              "kind": "Entity",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "CapacityEnergyVoltage",
-              "kind": "Entity",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "RoundTripEnergyEfficiency",
-              "kind": "Entity",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "Resistance",
-              "kind": "Entity",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "PowerCapability",
-              "kind": "Entity",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "Temperature",
-              "kind": "Entity",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "Lifetime",
-              "kind": "Entity",
-              "file": "TechnicalData"
-            },
-            {
               "name": "PowerCapabilityAt",
               "kind": "Entity",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "capacityEnergyVoltage",
-              "kind": "Property",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "roundTripEnergyEfficiency",
-              "kind": "Property",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "resistance",
-              "kind": "Property",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "powerCapability",
-              "kind": "Property",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "temperature",
-              "kind": "Property",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "lifetime",
-              "kind": "Property",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "originalPowerCapability",
-              "kind": "Property",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "cycleLifeReferenceTest",
-              "kind": "Property",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "CapacityEnergyVoltageCharacteristic",
-              "kind": "Characteristic",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "RoundTripEnergyEfficiencyCharacteristic",
-              "kind": "Characteristic",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "ResistanceCharacteristic",
-              "kind": "Characteristic",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "PowerCapabilityCharacteristic",
-              "kind": "Characteristic",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "TemperatureCharacteristic",
-              "kind": "Characteristic",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "LifetimeCharacteristic",
-              "kind": "Characteristic",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "PowerCapabilityAtSoCTrait",
-              "kind": "Characteristic",
               "file": "TechnicalData"
             },
             {
@@ -7809,15 +6034,10 @@
           ]
         },
         "property_without_characteristic": {
-          "count": 3,
+          "count": 2,
           "detail": [
             {
               "name": "manufacturerIdentifier",
-              "kind": "Property",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "batteryCategory",
               "kind": "Property",
               "file": "TechnicalData"
             },
@@ -7829,18 +6049,8 @@
           ]
         },
         "characteristic_without_datatype": {
-          "count": 24,
+          "count": 22,
           "detail": [
-            {
-              "name": "GeneralInformationCharacteristic",
-              "kind": "Characteristic",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "TechnicalPropertyAreaSet",
-              "kind": "Characteristic",
-              "file": "TechnicalData"
-            },
             {
               "name": "BatteryCategoryEnum",
               "kind": "Characteristic",
@@ -8746,7 +6956,7 @@
       "family": "SAMM",
       "source": "idta",
       "status": "undefined",
-      "total": 95,
+      "total": 52,
       "issues": {
         "dep_on_undefined": {
           "count": 2,
@@ -8765,230 +6975,30 @@
           ]
         },
         "orphan_isolated": {
-          "count": 5,
+          "count": 2,
           "detail": [
-            {
-              "name": "CarbonFootprint",
-              "kind": "Aspect",
-              "file": "CarbonFootprint"
-            },
             {
               "name": "PcfCalculationMethodCharacteristic",
               "kind": "Characteristic",
               "file": "CarbonFootprint"
             },
             {
-              "name": "productOrSectorSpecificPcfCalculationMethods",
-              "kind": "Property",
-              "file": "CarbonFootprint"
-            },
-            {
               "name": "LifeCyclePhaseEnum",
-              "kind": "Characteristic",
-              "file": "CarbonFootprint"
-            },
-            {
-              "name": "ReferenceImpactUnitForCalculationEnum",
               "kind": "Characteristic",
               "file": "CarbonFootprint"
             }
           ]
         },
         "orphan_unreachable": {
-          "count": 39,
+          "count": 2,
           "detail": [
-            {
-              "name": "productCarbonFootprints",
-              "kind": "Property",
-              "file": "CarbonFootprint"
-            },
-            {
-              "name": "expirationDate",
-              "kind": "Property",
-              "file": "CarbonFootprint"
-            },
-            {
-              "name": "publicationDate",
-              "kind": "Property",
-              "file": "CarbonFootprint"
-            },
-            {
-              "name": "goodsHandoverAddress",
-              "kind": "Property",
-              "file": "CarbonFootprint"
-            },
-            {
-              "name": "explanatoryStatement",
-              "kind": "Property",
-              "file": "CarbonFootprint"
-            },
-            {
-              "name": "lifeCyclePhases",
-              "kind": "Property",
-              "file": "CarbonFootprint"
-            },
-            {
-              "name": "quantityOfMeasureForCalculation",
-              "kind": "Property",
-              "file": "CarbonFootprint"
-            },
-            {
-              "name": "referenceImpactUnitForCalculation",
-              "kind": "Property",
-              "file": "CarbonFootprint"
-            },
-            {
-              "name": "pcfCo2eq",
-              "kind": "Property",
-              "file": "CarbonFootprint"
-            },
-            {
-              "name": "pcfCalculationMethods",
-              "kind": "Property",
-              "file": "CarbonFootprint"
-            },
-            {
-              "name": "ProductCarbonFootprintSet",
-              "kind": "Characteristic",
-              "file": "CarbonFootprint"
-            },
-            {
-              "name": "LifeCyclePhaseSet",
-              "kind": "Characteristic",
-              "file": "CarbonFootprint"
-            },
-            {
-              "name": "PcfCalculationMethodSet",
-              "kind": "Characteristic",
-              "file": "CarbonFootprint"
-            },
-            {
-              "name": "ProductCarbonFootprint",
-              "kind": "Entity",
-              "file": "CarbonFootprint"
-            },
-            {
-              "name": "ContactAddressCharacteristic",
-              "kind": "Characteristic",
-              "file": "CarbonFootprint"
-            },
-            {
-              "name": "QuantityOfMeasureForCalculationCharacteristic",
-              "kind": "Characteristic",
-              "file": "CarbonFootprint"
-            },
-            {
-              "name": "PcfCo2eqCharacteristic",
-              "kind": "Characteristic",
-              "file": "CarbonFootprint"
-            },
             {
               "name": "PcfCalculationMethodCharacteristic",
               "kind": "Characteristic",
               "file": "CarbonFootprint"
             },
             {
-              "name": "ProductOrSectorSpecificCarbonFootprintEntity",
-              "kind": "Entity",
-              "file": "CarbonFootprint"
-            },
-            {
-              "name": "ProductOrSectorSpecificPcfInformationEntity",
-              "kind": "Entity",
-              "file": "CarbonFootprint"
-            },
-            {
-              "name": "productOrSectorSpecificPcfInformation",
-              "kind": "Property",
-              "file": "CarbonFootprint"
-            },
-            {
-              "name": "ProductOrSectorSpecificPcfInformationCharacteristic",
-              "kind": "Characteristic",
-              "file": "CarbonFootprint"
-            },
-            {
-              "name": "productOrSectorSpecificCarbonFootprints",
-              "kind": "Property",
-              "file": "CarbonFootprint"
-            },
-            {
-              "name": "productOrSectorSpecificPcfCalculationMethods",
-              "kind": "Property",
-              "file": "CarbonFootprint"
-            },
-            {
-              "name": "productOrSectorSpecificRule",
-              "kind": "Property",
-              "file": "CarbonFootprint"
-            },
-            {
-              "name": "externalPcfApi",
-              "kind": "Property",
-              "file": "CarbonFootprint"
-            },
-            {
-              "name": "pcfApiEndpoint",
-              "kind": "Property",
-              "file": "CarbonFootprint"
-            },
-            {
-              "name": "pcfApiQuery",
-              "kind": "Property",
-              "file": "CarbonFootprint"
-            },
-            {
-              "name": "pcfRuleOperator",
-              "kind": "Property",
-              "file": "CarbonFootprint"
-            },
-            {
-              "name": "pcfRuleName",
-              "kind": "Property",
-              "file": "CarbonFootprint"
-            },
-            {
-              "name": "pcfRuleVersion",
-              "kind": "Property",
-              "file": "CarbonFootprint"
-            },
-            {
-              "name": "pcfRuleOnlineReference",
-              "kind": "Property",
-              "file": "CarbonFootprint"
-            },
-            {
-              "name": "ProductOrSectorSpecificCarbonFootprintSet",
-              "kind": "Characteristic",
-              "file": "CarbonFootprint"
-            },
-            {
-              "name": "ProductOrSectorSpecificRuleCharacteristic",
-              "kind": "Characteristic",
-              "file": "CarbonFootprint"
-            },
-            {
-              "name": "ProductOrSectorSpecificRuleEntity",
-              "kind": "Entity",
-              "file": "CarbonFootprint"
-            },
-            {
-              "name": "ExternalPcfApiEntity",
-              "kind": "Entity",
-              "file": "CarbonFootprint"
-            },
-            {
-              "name": "ExternalPcfApiCharacteristic",
-              "kind": "Characteristic",
-              "file": "CarbonFootprint"
-            },
-            {
               "name": "LifeCyclePhaseEnum",
-              "kind": "Characteristic",
-              "file": "CarbonFootprint"
-            },
-            {
-              "name": "ReferenceImpactUnitForCalculationEnum",
               "kind": "Characteristic",
               "file": "CarbonFootprint"
             }
@@ -9135,7 +7145,7 @@
           ]
         },
         "property_without_characteristic": {
-          "count": 11,
+          "count": 9,
           "detail": [
             {
               "name": "expirationDate",
@@ -9149,16 +7159,6 @@
             },
             {
               "name": "explanatoryStatement",
-              "kind": "Property",
-              "file": "CarbonFootprint"
-            },
-            {
-              "name": "referenceImpactUnitForCalculation",
-              "kind": "Property",
-              "file": "CarbonFootprint"
-            },
-            {
-              "name": "productOrSectorSpecificPcfCalculationMethods",
               "kind": "Property",
               "file": "CarbonFootprint"
             },
@@ -9195,7 +7195,7 @@
           ]
         },
         "characteristic_without_datatype": {
-          "count": 9,
+          "count": 8,
           "detail": [
             {
               "name": "LifeCyclePhaseSet",
@@ -9224,11 +7224,6 @@
             },
             {
               "name": "PcfCalculationMethodCharacteristic",
-              "kind": "Characteristic",
-              "file": "CarbonFootprint"
-            },
-            {
-              "name": "ProductOrSectorSpecificCarbonFootprintSet",
               "kind": "Characteristic",
               "file": "CarbonFootprint"
             },
@@ -10450,7 +8445,7 @@
       "family": "SAMM",
       "source": "idta",
       "status": "undefined",
-      "total": 118,
+      "total": 74,
       "issues": {
         "dep_on_undefined": {
           "count": 1,
@@ -10489,7 +8484,7 @@
           ]
         },
         "orphan_unreachable": {
-          "count": 50,
+          "count": 7,
           "detail": [
             {
               "name": "ContactRoleEnum",
@@ -10512,227 +8507,12 @@
               "file": "ContactInformations"
             },
             {
-              "name": "ContactInformation",
-              "kind": "Entity",
-              "file": "ContactInformations"
-            },
-            {
-              "name": "PhoneEntity",
-              "kind": "Entity",
-              "file": "ContactInformations"
-            },
-            {
-              "name": "FaxEntity",
-              "kind": "Entity",
-              "file": "ContactInformations"
-            },
-            {
-              "name": "EmailEntity",
-              "kind": "Entity",
-              "file": "ContactInformations"
-            },
-            {
-              "name": "IpCommunicationChannelEntity",
-              "kind": "Entity",
-              "file": "ContactInformations"
-            },
-            {
-              "name": "typeOfCommunication",
-              "kind": "Property",
-              "file": "ContactInformations"
-            },
-            {
-              "name": "addressOfAdditionalLink",
-              "kind": "Property",
-              "file": "ContactInformations"
-            },
-            {
-              "name": "addressOfAdditionalLinkOfIpCommunicationChannel",
-              "kind": "Property",
-              "file": "ContactInformations"
-            },
-            {
-              "name": "timeZone",
-              "kind": "Property",
-              "file": "ContactInformations"
-            },
-            {
-              "name": "company",
-              "kind": "Property",
-              "file": "ContactInformations"
-            },
-            {
-              "name": "zipCode",
-              "kind": "Property",
-              "file": "ContactInformations"
-            },
-            {
-              "name": "poBox",
-              "kind": "Property",
-              "file": "ContactInformations"
-            },
-            {
               "name": "contactInformation",
               "kind": "Property",
               "file": "ContactInformations"
             },
             {
-              "name": "availableTime",
-              "kind": "Property",
-              "file": "ContactInformations"
-            },
-            {
-              "name": "roleOfContactPerson",
-              "kind": "Property",
-              "file": "ContactInformations"
-            },
-            {
-              "name": "firstName",
-              "kind": "Property",
-              "file": "ContactInformations"
-            },
-            {
-              "name": "zipCodeOfPoBox",
-              "kind": "Property",
-              "file": "ContactInformations"
-            },
-            {
-              "name": "faxNumber",
-              "kind": "Property",
-              "file": "ContactInformations"
-            },
-            {
-              "name": "stateCounty",
-              "kind": "Property",
-              "file": "ContactInformations"
-            },
-            {
-              "name": "fax",
-              "kind": "Property",
-              "file": "ContactInformations"
-            },
-            {
-              "name": "department",
-              "kind": "Property",
-              "file": "ContactInformations"
-            },
-            {
-              "name": "phone",
-              "kind": "Property",
-              "file": "ContactInformations"
-            },
-            {
-              "name": "emailAddress",
-              "kind": "Property",
-              "file": "ContactInformations"
-            },
-            {
-              "name": "cityTown",
-              "kind": "Property",
-              "file": "ContactInformations"
-            },
-            {
-              "name": "furtherDetailsOfContact",
-              "kind": "Property",
-              "file": "ContactInformations"
-            },
-            {
-              "name": "availableTimeIpCommunicationChannel",
-              "kind": "Property",
-              "file": "ContactInformations"
-            },
-            {
-              "name": "email",
-              "kind": "Property",
-              "file": "ContactInformations"
-            },
-            {
-              "name": "typeOfPublicKey",
-              "kind": "Property",
-              "file": "ContactInformations"
-            },
-            {
-              "name": "typeOfTelephone",
-              "kind": "Property",
-              "file": "ContactInformations"
-            },
-            {
-              "name": "nameOfContact",
-              "kind": "Property",
-              "file": "ContactInformations"
-            },
-            {
-              "name": "telephoneNumber",
-              "kind": "Property",
-              "file": "ContactInformations"
-            },
-            {
-              "name": "publicKey",
-              "kind": "Property",
-              "file": "ContactInformations"
-            },
-            {
-              "name": "ipCommunicationChannels",
-              "kind": "Property",
-              "file": "ContactInformations"
-            },
-            {
-              "name": "title",
-              "kind": "Property",
-              "file": "ContactInformations"
-            },
-            {
-              "name": "middleNames",
-              "kind": "Property",
-              "file": "ContactInformations"
-            },
-            {
-              "name": "nationalCode",
-              "kind": "Property",
-              "file": "ContactInformations"
-            },
-            {
-              "name": "typeOfFaxNumber",
-              "kind": "Property",
-              "file": "ContactInformations"
-            },
-            {
-              "name": "typeOfEmailAddress",
-              "kind": "Property",
-              "file": "ContactInformations"
-            },
-            {
-              "name": "street",
-              "kind": "Property",
-              "file": "ContactInformations"
-            },
-            {
-              "name": "academicTitle",
-              "kind": "Property",
-              "file": "ContactInformations"
-            },
-            {
-              "name": "PhoneCharacteristic",
-              "kind": "Characteristic",
-              "file": "ContactInformations"
-            },
-            {
-              "name": "EmailCharacteristic",
-              "kind": "Characteristic",
-              "file": "ContactInformations"
-            },
-            {
               "name": "ContactInformationCharacteristic",
-              "kind": "Characteristic",
-              "file": "ContactInformations"
-            },
-            {
-              "name": "FaxCharacteristic",
-              "kind": "Characteristic",
-              "file": "ContactInformations"
-            },
-            {
-              "name": "IpCommunicationChannelSet",
               "kind": "Characteristic",
               "file": "ContactInformations"
             },
@@ -11024,7 +8804,7 @@
           ]
         },
         "characteristic_without_datatype": {
-          "count": 5,
+          "count": 4,
           "detail": [
             {
               "name": "ContactRoleEnum",
@@ -11043,11 +8823,6 @@
             },
             {
               "name": "FaxTypeEnum",
-              "kind": "Characteristic",
-              "file": "ContactInformations"
-            },
-            {
-              "name": "ContactInfomationSet",
               "kind": "Characteristic",
               "file": "ContactInformations"
             }
@@ -12505,33 +10280,13 @@
       "family": "SAMM",
       "source": "idta",
       "status": "undefined",
-      "total": 32,
+      "total": 29,
       "issues": {
         "dep_on_undefined": {
           "count": 2,
           "detail": [
             "contact_information@1.0.0",
             "shared@3.1.0"
-          ]
-        },
-        "orphan_unreachable": {
-          "count": 3,
-          "detail": [
-            {
-              "name": "addressInformation",
-              "kind": "Property",
-              "file": "Nameplate"
-            },
-            {
-              "name": "AddressInformationCharacteristic",
-              "kind": "Characteristic",
-              "file": "Nameplate"
-            },
-            {
-              "name": "AdressInformation",
-              "kind": "Entity",
-              "file": "Nameplate"
-            }
           ]
         },
         "missing_description": {
@@ -20203,7 +17958,7 @@
       "family": "SAMM",
       "source": "idta",
       "status": "undefined",
-      "total": 54,
+      "total": 33,
       "issues": {
         "unresolved_dep": {
           "count": 1,
@@ -20216,111 +17971,6 @@
           "detail": [
             "digital_nameplate@3.0.0",
             "shared@3.1.0"
-          ]
-        },
-        "orphan_unreachable": {
-          "count": 20,
-          "detail": [
-            {
-              "name": "furtherInformation",
-              "kind": "Property",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "FurtherInformationCharacteristic",
-              "kind": "Characteristic",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "FurtherInformationEntity",
-              "kind": "Entity",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "GeneralInformationEntity",
-              "kind": "Entity",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "manufacturerName",
-              "kind": "Property",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "manufacturerLogo",
-              "kind": "Property",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "manufacturerProductDesignation",
-              "kind": "Property",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "manufacturerArticleNumber",
-              "kind": "Property",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "manufacturerOrderCode",
-              "kind": "Property",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "productClassifications",
-              "kind": "Property",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "productClassificationSystem",
-              "kind": "Property",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "classificationSystemVersion",
-              "kind": "Property",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "productClassId",
-              "kind": "Property",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "ProductClassificationSet",
-              "kind": "Characteristic",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "ProductClassificationEntity",
-              "kind": "Entity",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "productImages",
-              "kind": "Property",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "ProductImageSet",
-              "kind": "Characteristic",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "technicalProperties",
-              "kind": "Property",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "TechnicalPropertiesCharacteristic",
-              "kind": "Characteristic",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "TechnicalPropertiesEntity",
-              "kind": "Entity",
-              "file": "TechnicalData"
-            }
           ]
         },
         "missing_description": {
@@ -20474,13 +18124,8 @@
           ]
         },
         "characteristic_without_datatype": {
-          "count": 2,
+          "count": 1,
           "detail": [
-            {
-              "name": "GeneralInformationCharacteristic",
-              "kind": "Characteristic",
-              "file": "TechnicalData"
-            },
             {
               "name": "ProductImageSet",
               "kind": "Characteristic",
@@ -20508,7 +18153,7 @@
       "family": "SAMM",
       "source": "idta",
       "status": "undefined",
-      "total": 74,
+      "total": 43,
       "issues": {
         "unresolved_dep": {
           "count": 1,
@@ -20521,146 +18166,6 @@
           "detail": [
             "digital_nameplate@3.0.0",
             "shared@3.1.0"
-          ]
-        },
-        "orphan_isolated": {
-          "count": 2,
-          "detail": [
-            {
-              "name": "SpecificDescriptionEntity",
-              "kind": "Entity",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "TechnicalAttributes",
-              "kind": "Entity",
-              "file": "TechnicalData"
-            }
-          ]
-        },
-        "orphan_unreachable": {
-          "count": 24,
-          "detail": [
-            {
-              "name": "FurtherInformationEntity",
-              "kind": "Entity",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "validDate",
-              "kind": "Property",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "textStatement",
-              "kind": "Property",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "GeneralInformationEntity",
-              "kind": "Entity",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "manufacturerName",
-              "kind": "Property",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "companyLogo",
-              "kind": "Property",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "manufacturerProductDesignation",
-              "kind": "Property",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "manufacturerArticleNumber",
-              "kind": "Property",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "manufacturerOrderCode",
-              "kind": "Property",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "ProductClassificationEntity",
-              "kind": "Entity",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "productClassificationSystem",
-              "kind": "Property",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "classificationSystemVersion",
-              "kind": "Property",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "productClassId",
-              "kind": "Property",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "classificationSystemUrl",
-              "kind": "Property",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "productClassCodedName",
-              "kind": "Property",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "productClassName",
-              "kind": "Property",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "referenceToTechnicalPropertyArea",
-              "kind": "Property",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "productImages",
-              "kind": "Property",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "imageFile",
-              "kind": "Property",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "imageNote",
-              "kind": "Property",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "ProductImageSet",
-              "kind": "Characteristic",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "ProductImage",
-              "kind": "Entity",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "SpecificDescriptionEntity",
-              "kind": "Entity",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "TechnicalAttributes",
-              "kind": "Entity",
-              "file": "TechnicalData"
-            }
           ]
         },
         "missing_description": {
@@ -20864,36 +18369,6 @@
             {
               "name": "imageNote",
               "kind": "Property",
-              "file": "TechnicalData"
-            }
-          ]
-        },
-        "characteristic_without_datatype": {
-          "count": 5,
-          "detail": [
-            {
-              "name": "GeneralInformationCharacteristic",
-              "kind": "Characteristic",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "TechnicalPropertyAreaSet",
-              "kind": "Characteristic",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "FurtherInformationCharacteristic",
-              "kind": "Characteristic",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "ProductClassificationSet",
-              "kind": "Characteristic",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "SpecificDescriptionsSet",
-              "kind": "Characteristic",
               "file": "TechnicalData"
             }
           ]
@@ -21121,7 +18596,7 @@
       "family": "SAMM",
       "source": "idta",
       "status": "undefined",
-      "total": 91,
+      "total": 89,
       "issues": {
         "dep_on_undefined": {
           "count": 1,
@@ -21136,7 +18611,7 @@
           ]
         },
         "orphan_isolated": {
-          "count": 4,
+          "count": 2,
           "detail": [
             {
               "name": "EntitySet",
@@ -21146,16 +18621,6 @@
             {
               "name": "FileSet",
               "kind": "Characteristic",
-              "file": "HandoverDocumentation"
-            },
-            {
-              "name": "organizationOfficialName",
-              "kind": "Property",
-              "file": "HandoverDocumentation"
-            },
-            {
-              "name": "organizationName",
-              "kind": "Property",
               "file": "HandoverDocumentation"
             }
           ]
@@ -26927,7 +24392,7 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 43,
+      "total": 42,
       "issues": {
         "orphan_isolated": {
           "count": 1,
@@ -26960,7 +24425,7 @@
           ]
         },
         "property_without_characteristic": {
-          "count": 26,
+          "count": 25,
           "detail": [
             {
               "name": "thermalCharacterization",
@@ -27079,11 +24544,6 @@
             },
             {
               "name": "oem",
-              "kind": "Property",
-              "file": "Composition"
-            },
-            {
-              "name": "emptyWeight",
               "kind": "Property",
               "file": "Composition"
             },
@@ -39918,7 +37378,7 @@
       "family": "SAMM",
       "source": "idta",
       "status": "undefined",
-      "total": 297,
+      "total": 202,
       "issues": {
         "dep_on_undefined": {
           "count": 1,
@@ -39933,7 +37393,7 @@
           ]
         },
         "orphan_isolated": {
-          "count": 12,
+          "count": 6,
           "detail": [
             {
               "name": "ISO8601Duration",
@@ -39941,27 +37401,7 @@
               "file": "TestAspect"
             },
             {
-              "name": "DocumentIdentifierSet",
-              "kind": "Characteristic",
-              "file": "TestAspect"
-            },
-            {
-              "name": "DocumentIdentifierSetTrait",
-              "kind": "Characteristic",
-              "file": "TestAspect"
-            },
-            {
-              "name": "CardinalityOneToMany",
-              "kind": "Characteristic",
-              "file": "TestAspect"
-            },
-            {
               "name": "ProductMarkingEnum",
-              "kind": "Characteristic",
-              "file": "TestAspect"
-            },
-            {
-              "name": "MultiLanguageTexts",
               "kind": "Characteristic",
               "file": "TestAspect"
             },
@@ -39981,16 +37421,6 @@
               "file": "TestAspect"
             },
             {
-              "name": "contentType",
-              "kind": "Property",
-              "file": "TestAspect"
-            },
-            {
-              "name": "externalSubjectId",
-              "kind": "Property",
-              "file": "TestAspect"
-            },
-            {
               "name": "LanguageSet",
               "kind": "Characteristic",
               "file": "TestAspect"
@@ -39998,7 +37428,7 @@
           ]
         },
         "orphan_unreachable": {
-          "count": 85,
+          "count": 15,
           "detail": [
             {
               "name": "annotations",
@@ -40008,21 +37438,6 @@
             {
               "name": "AasAnnotatedRelationshipElementWithAnnotationsType",
               "kind": "AbstractEntity",
-              "file": "TestAspect"
-            },
-            {
-              "name": "BasicEventElementType",
-              "kind": "Characteristic",
-              "file": "TestAspect"
-            },
-            {
-              "name": "BasicEventElementEntity",
-              "kind": "Entity",
-              "file": "TestAspect"
-            },
-            {
-              "name": "observed",
-              "kind": "Property",
               "file": "TestAspect"
             },
             {
@@ -40051,11 +37466,6 @@
               "file": "TestAspect"
             },
             {
-              "name": "DocumentIdentifierSet",
-              "kind": "Characteristic",
-              "file": "TestAspect"
-            },
-            {
               "name": "DocumentIdentifierSetTrait",
               "kind": "Characteristic",
               "file": "TestAspect"
@@ -40071,112 +37481,7 @@
               "file": "TestAspect"
             },
             {
-              "name": "specificAssetIds",
-              "kind": "Property",
-              "file": "TestAspect"
-            },
-            {
-              "name": "globalAssetId",
-              "kind": "Property",
-              "file": "TestAspect"
-            },
-            {
-              "name": "entityType",
-              "kind": "Property",
-              "file": "TestAspect"
-            },
-            {
-              "name": "SpecificAssetIdSet",
-              "kind": "Characteristic",
-              "file": "TestAspect"
-            },
-            {
-              "name": "AasEntityCharacteristic",
-              "kind": "Characteristic",
-              "file": "TestAspect"
-            },
-            {
-              "name": "EntityType",
-              "kind": "Characteristic",
-              "file": "TestAspect"
-            },
-            {
-              "name": "AasEntityType",
-              "kind": "Entity",
-              "file": "TestAspect"
-            },
-            {
-              "name": "resourceValue",
-              "kind": "Property",
-              "file": "TestAspect"
-            },
-            {
-              "name": "FileWithContentType",
-              "kind": "Characteristic",
-              "file": "TestAspect"
-            },
-            {
-              "name": "ResourceWithContentType",
-              "kind": "Entity",
-              "file": "TestAspect"
-            },
-            {
-              "name": "CardinalityOneToMany",
-              "kind": "Characteristic",
-              "file": "TestAspect"
-            },
-            {
-              "name": "expiryDate",
-              "kind": "Property",
-              "file": "TestAspect"
-            },
-            {
-              "name": "markingName",
-              "kind": "Property",
-              "file": "TestAspect"
-            },
-            {
-              "name": "markingFile",
-              "kind": "Property",
-              "file": "TestAspect"
-            },
-            {
-              "name": "issueDate",
-              "kind": "Property",
-              "file": "TestAspect"
-            },
-            {
-              "name": "markingAdditionalText",
-              "kind": "Property",
-              "file": "TestAspect"
-            },
-            {
-              "name": "designationOfCertificateOrApproval",
-              "kind": "Property",
-              "file": "TestAspect"
-            },
-            {
-              "name": "Date",
-              "kind": "Characteristic",
-              "file": "TestAspect"
-            },
-            {
-              "name": "Marking",
-              "kind": "Entity",
-              "file": "TestAspect"
-            },
-            {
-              "name": "Markings",
-              "kind": "Characteristic",
-              "file": "TestAspect"
-            },
-            {
               "name": "ProductMarkingEnum",
-              "kind": "Characteristic",
-              "file": "TestAspect"
-            },
-            {
-              "name": "MultiLanguageTexts",
               "kind": "Characteristic",
               "file": "TestAspect"
             },
@@ -40193,231 +37498,6 @@
             {
               "name": "RangeTypeAbstract",
               "kind": "AbstractEntity",
-              "file": "TestAspect"
-            },
-            {
-              "name": "RangeFloatTypeCharacteristic",
-              "kind": "Characteristic",
-              "file": "TestAspect"
-            },
-            {
-              "name": "rangeFloatMin",
-              "kind": "Property",
-              "file": "TestAspect"
-            },
-            {
-              "name": "rangeFloatMax",
-              "kind": "Property",
-              "file": "TestAspect"
-            },
-            {
-              "name": "RangeFloatType",
-              "kind": "Entity",
-              "file": "TestAspect"
-            },
-            {
-              "name": "ReferenceType",
-              "kind": "Characteristic",
-              "file": "TestAspect"
-            },
-            {
-              "name": "ModelReferenceType",
-              "kind": "Characteristic",
-              "file": "TestAspect"
-            },
-            {
-              "name": "ExternalReferenceType",
-              "kind": "Characteristic",
-              "file": "TestAspect"
-            },
-            {
-              "name": "ReferenceEntity",
-              "kind": "Entity",
-              "file": "TestAspect"
-            },
-            {
-              "name": "KeyEntity",
-              "kind": "Entity",
-              "file": "TestAspect"
-            },
-            {
-              "name": "ModelReferenceEntity",
-              "kind": "Entity",
-              "file": "TestAspect"
-            },
-            {
-              "name": "ModelReferenceKeyEntity",
-              "kind": "Entity",
-              "file": "TestAspect"
-            },
-            {
-              "name": "ExternalReferenceEntity",
-              "kind": "Entity",
-              "file": "TestAspect"
-            },
-            {
-              "name": "ExternalReferenceKeyEntity",
-              "kind": "Entity",
-              "file": "TestAspect"
-            },
-            {
-              "name": "keys",
-              "kind": "Property",
-              "file": "TestAspect"
-            },
-            {
-              "name": "type",
-              "kind": "Property",
-              "file": "TestAspect"
-            },
-            {
-              "name": "key",
-              "kind": "Property",
-              "file": "TestAspect"
-            },
-            {
-              "name": "keyValue",
-              "kind": "Property",
-              "file": "TestAspect"
-            },
-            {
-              "name": "modelReferenceKeys",
-              "kind": "Property",
-              "file": "TestAspect"
-            },
-            {
-              "name": "modelReferenceType",
-              "kind": "Property",
-              "file": "TestAspect"
-            },
-            {
-              "name": "ModelReferenceKey",
-              "kind": "Property",
-              "file": "TestAspect"
-            },
-            {
-              "name": "ModelReferenceKeyValue",
-              "kind": "Property",
-              "file": "TestAspect"
-            },
-            {
-              "name": "KeysExternalReference",
-              "kind": "Property",
-              "file": "TestAspect"
-            },
-            {
-              "name": "TypeExternalReference",
-              "kind": "Property",
-              "file": "TestAspect"
-            },
-            {
-              "name": "ExternalReferenceKey",
-              "kind": "Property",
-              "file": "TestAspect"
-            },
-            {
-              "name": "ExternalReferenceKeyValue",
-              "kind": "Property",
-              "file": "TestAspect"
-            },
-            {
-              "name": "KeyReferenceTypesEnum",
-              "kind": "Characteristic",
-              "file": "TestAspect"
-            },
-            {
-              "name": "ReferenceKeyEnum",
-              "kind": "Characteristic",
-              "file": "TestAspect"
-            },
-            {
-              "name": "KeyModelReferenceTypesEnum",
-              "kind": "Characteristic",
-              "file": "TestAspect"
-            },
-            {
-              "name": "ModelReferenceKeyEnum",
-              "kind": "Characteristic",
-              "file": "TestAspect"
-            },
-            {
-              "name": "KeyExternalReferenceTypesEnum",
-              "kind": "Characteristic",
-              "file": "TestAspect"
-            },
-            {
-              "name": "ExternalReferenceKeyEnum",
-              "kind": "Characteristic",
-              "file": "TestAspect"
-            },
-            {
-              "name": "SetOfKeys",
-              "kind": "Characteristic",
-              "file": "TestAspect"
-            },
-            {
-              "name": "ModelReferenceSetOfKeys",
-              "kind": "Characteristic",
-              "file": "TestAspect"
-            },
-            {
-              "name": "ExternalReferenceSetOfKeys",
-              "kind": "Characteristic",
-              "file": "TestAspect"
-            },
-            {
-              "name": "RelationshipElementType",
-              "kind": "Characteristic",
-              "file": "TestAspect"
-            },
-            {
-              "name": "RelationshipElementEntity",
-              "kind": "Entity",
-              "file": "TestAspect"
-            },
-            {
-              "name": "first",
-              "kind": "Property",
-              "file": "TestAspect"
-            },
-            {
-              "name": "second",
-              "kind": "Property",
-              "file": "TestAspect"
-            },
-            {
-              "name": "SpecificAssetId",
-              "kind": "Entity",
-              "file": "TestAspect"
-            },
-            {
-              "name": "specificAssetIdName",
-              "kind": "Property",
-              "file": "TestAspect"
-            },
-            {
-              "name": "specificAssetIdValue",
-              "kind": "Property",
-              "file": "TestAspect"
-            },
-            {
-              "name": "contentType",
-              "kind": "Property",
-              "file": "TestAspect"
-            },
-            {
-              "name": "externalSubjectId",
-              "kind": "Property",
-              "file": "TestAspect"
-            },
-            {
-              "name": "languages",
-              "kind": "Property",
-              "file": "TestAspect"
-            },
-            {
-              "name": "LanguageSetTrait",
-              "kind": "Characteristic",
               "file": "TestAspect"
             },
             {
@@ -41148,13 +38228,8 @@
           ]
         },
         "property_without_characteristic": {
-          "count": 30,
+          "count": 14,
           "detail": [
-            {
-              "name": "observed",
-              "kind": "Property",
-              "file": "TestAspect"
-            },
             {
               "name": "globalAssetId",
               "kind": "Property",
@@ -41167,11 +38242,6 @@
             },
             {
               "name": "markingName",
-              "kind": "Property",
-              "file": "TestAspect"
-            },
-            {
-              "name": "markingFile",
               "kind": "Property",
               "file": "TestAspect"
             },
@@ -41211,16 +38281,6 @@
               "file": "TestAspect"
             },
             {
-              "name": "first",
-              "kind": "Property",
-              "file": "TestAspect"
-            },
-            {
-              "name": "second",
-              "kind": "Property",
-              "file": "TestAspect"
-            },
-            {
               "name": "specificAssetIdName",
               "kind": "Property",
               "file": "TestAspect"
@@ -41231,62 +38291,7 @@
               "file": "TestAspect"
             },
             {
-              "name": "example4Markings",
-              "kind": "Property",
-              "file": "TestAspect"
-            },
-            {
-              "name": "example4documentIdentifierSet",
-              "kind": "Property",
-              "file": "TestAspect"
-            },
-            {
               "name": "example4specificAssetId",
-              "kind": "Property",
-              "file": "TestAspect"
-            },
-            {
-              "name": "valueOnly4MultiLanguageProperty",
-              "kind": "Property",
-              "file": "TestAspect"
-            },
-            {
-              "name": "valueOnly4File",
-              "kind": "Property",
-              "file": "TestAspect"
-            },
-            {
-              "name": "valueOnly4Reference",
-              "kind": "Property",
-              "file": "TestAspect"
-            },
-            {
-              "name": "valueOnly4ModelReference",
-              "kind": "Property",
-              "file": "TestAspect"
-            },
-            {
-              "name": "valueOnly4ExternalReference",
-              "kind": "Property",
-              "file": "TestAspect"
-            },
-            {
-              "name": "valueOnly4RelationshipElement",
-              "kind": "Property",
-              "file": "TestAspect"
-            },
-            {
-              "name": "valueOnly4Entity",
-              "kind": "Property",
-              "file": "TestAspect"
-            },
-            {
-              "name": "valueOnly4Range",
-              "kind": "Property",
-              "file": "TestAspect"
-            },
-            {
-              "name": "valueOnly4BasicEventElement",
               "kind": "Property",
               "file": "TestAspect"
             },
@@ -41294,16 +38299,11 @@
               "name": "contentType",
               "kind": "Property",
               "file": "TestAspect"
-            },
-            {
-              "name": "externalSubjectId",
-              "kind": "Property",
-              "file": "TestAspect"
             }
           ]
         },
         "characteristic_without_datatype": {
-          "count": 14,
+          "count": 13,
           "detail": [
             {
               "name": "BlobType",
@@ -41312,11 +38312,6 @@
             },
             {
               "name": "DocumentIdentifierSet",
-              "kind": "Characteristic",
-              "file": "TestAspect"
-            },
-            {
-              "name": "SpecificAssetIdSet",
               "kind": "Characteristic",
               "file": "TestAspect"
             },
@@ -41372,21 +38367,6 @@
             },
             {
               "name": "LanguageSet",
-              "kind": "Characteristic",
-              "file": "TestAspect"
-            }
-          ]
-        },
-        "trait_without_constraint": {
-          "count": 2,
-          "detail": [
-            {
-              "name": "DocumentIdentifierSetTrait",
-              "kind": "Characteristic",
-              "file": "TestAspect"
-            },
-            {
-              "name": "LanguageSetTrait",
               "kind": "Characteristic",
               "file": "TestAspect"
             }

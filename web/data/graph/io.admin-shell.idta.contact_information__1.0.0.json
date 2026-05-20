@@ -25,35 +25,75 @@
       "label": "ContactRoleEnum",
       "kind": "Characteristic",
       "preferredName": "contact role",
-      "description": null
+      "description": null,
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.admin-shell.idta.contact_information:1.0.0#TelephoneTypeEnum",
       "label": "TelephoneTypeEnum",
       "kind": "Characteristic",
       "preferredName": "phone number type",
-      "description": null
+      "description": null,
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.admin-shell.idta.contact_information:1.0.0#EmailTypeEnum",
       "label": "EmailTypeEnum",
       "kind": "Characteristic",
       "preferredName": "e-mail type",
-      "description": null
+      "description": null,
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.admin-shell.idta.contact_information:1.0.0#FaxTypeEnum",
       "label": "FaxTypeEnum",
       "kind": "Characteristic",
       "preferredName": "fax number type",
-      "description": null
+      "description": null,
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.admin-shell.idta.contact_information:1.0.0#ContactInformation",
       "label": "ContactInformation",
       "kind": "Entity",
       "preferredName": null,
-      "description": "Contains information on how to contact the manufacturer or an authorised service provider, e.g. when a maintenance service is required."
+      "description": "Contains information on how to contact the manufacturer or an authorised service provider, e.g. when a maintenance service is required.",
+      "external_refs": [
+        {
+          "predicate": "properties",
+          "target_local": "languages",
+          "target_model": "shared@3.1.0",
+          "target_source": "idta"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.admin-shell.idta.contact_information:1.0.0#PhoneEntity",
@@ -88,49 +128,105 @@
       "label": "typeOfCommunication",
       "kind": "Property",
       "preferredName": "type of communication",
-      "description": "Characterization of an IP-based communication channel."
+      "description": "Characterization of an IP-based communication channel.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.2.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.admin-shell.idta.contact_information:1.0.0#addressOfAdditionalLink",
       "label": "addressOfAdditionalLink",
       "kind": "Property",
       "preferredName": "address of additional link",
-      "description": "Web site address where information about the product or contact is given."
+      "description": "Web site address where information about the product or contact is given.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.2.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.admin-shell.idta.contact_information:1.0.0#addressOfAdditionalLinkOfIpCommunicationChannel",
       "label": "addressOfAdditionalLinkOfIpCommunicationChannel",
       "kind": "Property",
       "preferredName": "address of additional link",
-      "description": "Web site address where information about the product or contact is given."
+      "description": "Web site address where information about the product or contact is given.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.2.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.admin-shell.idta.contact_information:1.0.0#timeZone",
       "label": "timeZone",
       "kind": "Property",
       "preferredName": "time zone",
-      "description": "Offsets from Coordinated Universal Time (UTC)\nNote: notation accord. to ISO 8601\nNote: for time in UTC the zone designator 'Z' is to be used."
+      "description": "Offsets from Coordinated Universal Time (UTC)\nNote: notation accord. to ISO 8601\nNote: for time in UTC the zone designator 'Z' is to be used.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.2.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.admin-shell.idta.contact_information:1.0.0#company",
       "label": "company",
       "kind": "Property",
       "preferredName": "company",
-      "description": "Name of the company."
+      "description": "Name of the company.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "MultiLanguageTexts",
+          "target_model": "shared@3.1.0",
+          "target_source": "idta"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.admin-shell.idta.contact_information:1.0.0#zipCode",
       "label": "zipCode",
       "kind": "Property",
       "preferredName": "ZIP code",
-      "description": "ZIP code of address."
+      "description": "ZIP code of address.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "MultiLanguageTexts",
+          "target_model": "shared@3.1.0",
+          "target_source": "idta"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.admin-shell.idta.contact_information:1.0.0#poBox",
       "label": "poBox",
       "kind": "Property",
       "preferredName": "P.O. box",
-      "description": "P.O. box number."
+      "description": "P.O. box number.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "MultiLanguageTexts",
+          "target_model": "shared@3.1.0",
+          "target_source": "idta"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.admin-shell.idta.contact_information:1.0.0#contactInformation",
@@ -144,7 +240,15 @@
       "label": "availableTime",
       "kind": "Property",
       "preferredName": "available time",
-      "description": "Specification of the available time window."
+      "description": "Specification of the available time window.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "MultiLanguageTexts",
+          "target_model": "shared@3.1.0",
+          "target_source": "idta"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.admin-shell.idta.contact_information:1.0.0#roleOfContactPerson",
@@ -158,28 +262,60 @@
       "label": "firstName",
       "kind": "Property",
       "preferredName": "first name",
-      "description": "First name of a contact person."
+      "description": "First name of a contact person.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "MultiLanguageTexts",
+          "target_model": "shared@3.1.0",
+          "target_source": "idta"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.admin-shell.idta.contact_information:1.0.0#zipCodeOfPoBox",
       "label": "zipCodeOfPoBox",
       "kind": "Property",
       "preferredName": "Postleitzahl",
-      "description": "ZIP code of address."
+      "description": "ZIP code of address.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "MultiLanguageTexts",
+          "target_model": "shared@3.1.0",
+          "target_source": "idta"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.admin-shell.idta.contact_information:1.0.0#faxNumber",
       "label": "faxNumber",
       "kind": "Property",
       "preferredName": "fax number",
-      "description": "Complete telephone number to be called to reach a business partner's fax machine."
+      "description": "Complete telephone number to be called to reach a business partner's fax machine.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "MultiLanguageTexts",
+          "target_model": "shared@3.1.0",
+          "target_source": "idta"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.admin-shell.idta.contact_information:1.0.0#stateCounty",
       "label": "stateCounty",
       "kind": "Property",
       "preferredName": "state/county",
-      "description": "Federal state, a part of a state."
+      "description": "Federal state, a part of a state.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "MultiLanguageTexts",
+          "target_model": "shared@3.1.0",
+          "target_source": "idta"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.admin-shell.idta.contact_information:1.0.0#fax",
@@ -193,7 +329,15 @@
       "label": "department",
       "kind": "Property",
       "preferredName": "department",
-      "description": "Administrative section within an organisation where a business partner is located."
+      "description": "Administrative section within an organisation where a business partner is located.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "MultiLanguageTexts",
+          "target_model": "shared@3.1.0",
+          "target_source": "idta"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.admin-shell.idta.contact_information:1.0.0#phone",
@@ -207,28 +351,60 @@
       "label": "emailAddress",
       "kind": "Property",
       "preferredName": "email address",
-      "description": "Electronic mail address of a business partner."
+      "description": "Electronic mail address of a business partner.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.2.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.admin-shell.idta.contact_information:1.0.0#cityTown",
       "label": "cityTown",
       "kind": "Property",
       "preferredName": "city",
-      "description": "Town or city."
+      "description": "Town or city.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "MultiLanguageTexts",
+          "target_model": "shared@3.1.0",
+          "target_source": "idta"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.admin-shell.idta.contact_information:1.0.0#furtherDetailsOfContact",
       "label": "furtherDetailsOfContact",
       "kind": "Property",
       "preferredName": "further details of contact",
-      "description": "Additional information of the contact person."
+      "description": "Additional information of the contact person.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "MultiLanguageTexts",
+          "target_model": "shared@3.1.0",
+          "target_source": "idta"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.admin-shell.idta.contact_information:1.0.0#availableTimeIpCommunicationChannel",
       "label": "availableTimeIpCommunicationChannel",
       "kind": "Property",
       "preferredName": "available time",
-      "description": "Specification of the available time windows."
+      "description": "Specification of the available time windows.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "MultiLanguageTexts",
+          "target_model": "shared@3.1.0",
+          "target_source": "idta"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.admin-shell.idta.contact_information:1.0.0#email",
@@ -242,35 +418,75 @@
       "label": "typeOfPublicKey",
       "kind": "Property",
       "preferredName": "type of public key",
-      "description": "Characterization of a public key according to its encryption process."
+      "description": "Characterization of a public key according to its encryption process.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "MultiLanguageTexts",
+          "target_model": "shared@3.1.0",
+          "target_source": "idta"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.admin-shell.idta.contact_information:1.0.0#typeOfTelephone",
       "label": "typeOfTelephone",
       "kind": "Property",
       "preferredName": "type of telephone",
-      "description": "Characterization of a telephone according to its location or usage.\nenumeration: 0173-1#07-AAS754#001 (office), 0173-1#07-AAS755#001 (office mobile), 0173-1#07-AAS756#001 (secretary), 0173-1#07-AAS757#001 (substitute), 0173-1#07-AAS758#001 (home), 0173-1#07-AAS759#001 (private mobile)."
+      "description": "Characterization of a telephone according to its location or usage.\nenumeration: 0173-1#07-AAS754#001 (office), 0173-1#07-AAS755#001 (office mobile), 0173-1#07-AAS756#001 (secretary), 0173-1#07-AAS757#001 (substitute), 0173-1#07-AAS758#001 (home), 0173-1#07-AAS759#001 (private mobile).",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.2.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.admin-shell.idta.contact_information:1.0.0#nameOfContact",
       "label": "nameOfContact",
       "kind": "Property",
       "preferredName": "name of contact",
-      "description": null
+      "description": null,
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "MultiLanguageTexts",
+          "target_model": "shared@3.1.0",
+          "target_source": "idta"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.admin-shell.idta.contact_information:1.0.0#telephoneNumber",
       "label": "telephoneNumber",
       "kind": "Property",
       "preferredName": "Telefonnummer",
-      "description": "Complete telephone number to be called to reach a business partner."
+      "description": "Complete telephone number to be called to reach a business partner.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "MultiLanguageTexts",
+          "target_model": "shared@3.1.0",
+          "target_source": "idta"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.admin-shell.idta.contact_information:1.0.0#publicKey",
       "label": "publicKey",
       "kind": "Property",
       "preferredName": "public key",
-      "description": "Public part of an unsymmetrical key pair to sign or encrypt text or messages."
+      "description": "Public part of an unsymmetrical key pair to sign or encrypt text or messages.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "MultiLanguageTexts",
+          "target_model": "shared@3.1.0",
+          "target_source": "idta"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.admin-shell.idta.contact_information:1.0.0#ipCommunicationChannels",
@@ -284,49 +500,105 @@
       "label": "title",
       "kind": "Property",
       "preferredName": "title",
-      "description": "Common, formal, religious, or other title preceding a contact person's name."
+      "description": "Common, formal, religious, or other title preceding a contact person's name.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "MultiLanguageTexts",
+          "target_model": "shared@3.1.0",
+          "target_source": "idta"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.admin-shell.idta.contact_information:1.0.0#middleNames",
       "label": "middleNames",
       "kind": "Property",
       "preferredName": "middle names",
-      "description": "Middle names of contact person."
+      "description": "Middle names of contact person.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "MultiLanguageTexts",
+          "target_model": "shared@3.1.0",
+          "target_source": "idta"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.admin-shell.idta.contact_information:1.0.0#nationalCode",
       "label": "nationalCode",
       "kind": "Property",
       "preferredName": "Länderkürzel",
-      "description": "Code of a country (Country codes defined accord. to DIN EN ISO 3166-1)."
+      "description": "Code of a country (Country codes defined accord. to DIN EN ISO 3166-1).",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "MultiLanguageTexts",
+          "target_model": "shared@3.1.0",
+          "target_source": "idta"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.admin-shell.idta.contact_information:1.0.0#typeOfFaxNumber",
       "label": "typeOfFaxNumber",
       "kind": "Property",
       "preferredName": "type of fax number",
-      "description": "Characterization of the fax according its location or usage\nenumeration: 0173-1#07-AAS754#001 (office), 0173-1#07-AAS756#001 (secretary), 0173-1#07-AAS758#001 (home)."
+      "description": "Characterization of the fax according its location or usage\nenumeration: 0173-1#07-AAS754#001 (office), 0173-1#07-AAS756#001 (secretary), 0173-1#07-AAS758#001 (home).",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.2.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.admin-shell.idta.contact_information:1.0.0#typeOfEmailAddress",
       "label": "typeOfEmailAddress",
       "kind": "Property",
       "preferredName": "type of email address",
-      "description": "Characterization of an e-mail address according to its location or usage\nenumeration: 0173-1#07-AAS754#001 (office), 0173-1#07-AAS756#001 (secretary), 0173-1#07-AAS757#001 (substitute), 0173-1#07-AAS758#001 (home)."
+      "description": "Characterization of an e-mail address according to its location or usage\nenumeration: 0173-1#07-AAS754#001 (office), 0173-1#07-AAS756#001 (secretary), 0173-1#07-AAS757#001 (substitute), 0173-1#07-AAS758#001 (home).",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.2.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.admin-shell.idta.contact_information:1.0.0#street",
       "label": "street",
       "kind": "Property",
       "preferredName": "street",
-      "description": "Street name and house number."
+      "description": "Street name and house number.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "MultiLanguageTexts",
+          "target_model": "shared@3.1.0",
+          "target_source": "idta"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.admin-shell.idta.contact_information:1.0.0#academicTitle",
       "label": "academicTitle",
       "kind": "Property",
       "preferredName": "academic title",
-      "description": "Academic title preceding a contact person's name."
+      "description": "Academic title preceding a contact person's name.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "MultiLanguageTexts",
+          "target_model": "shared@3.1.0",
+          "target_source": "idta"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.admin-shell.idta.contact_information:1.0.0#PhoneCharacteristic",
@@ -389,7 +661,15 @@
       "label": "postalCode",
       "kind": "Property",
       "preferredName": "postal code",
-      "description": "postal code of address."
+      "description": "postal code of address.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "MultiLanguageTexts",
+          "target_model": "shared@3.1.0",
+          "target_source": "idta"
+        }
+      ]
     }
   ],
   "links": [
@@ -667,6 +947,12 @@
       "source": "urn:samm:io.admin-shell.idta.contact_information:1.0.0#contactInformations",
       "target": "urn:samm:io.admin-shell.idta.contact_information:1.0.0#ContactInfomationSet",
       "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.contact_information:1.0.0#ContactInfomationSet",
+      "target": "urn:samm:io.admin-shell.idta.contact_information:1.0.0#ContactInformation",
+      "label": "dataType",
       "optional": false
     }
   ]

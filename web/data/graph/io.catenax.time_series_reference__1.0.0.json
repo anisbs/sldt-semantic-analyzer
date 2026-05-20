@@ -81,42 +81,90 @@
       "label": "unit",
       "kind": "Property",
       "preferredName": "Unit Property",
-      "description": "The unit of a column."
+      "description": "The unit of a column.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "UnitReference",
+          "target_model": "io.openmanufacturing:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.time_series_reference:1.0.0#DecimalSeperator",
       "label": "DecimalSeperator",
       "kind": "Characteristic",
       "preferredName": "Decimal Separator Enumeration",
-      "description": "Indicates whether a dot or comma is used to separate the decimal place in the source file."
+      "description": "Indicates whether a dot or comma is used to separate the decimal place in the source file.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.time_series_reference:1.0.0#FileExtension",
       "label": "FileExtension",
       "kind": "Characteristic",
       "preferredName": "File Extension Enumeration",
-      "description": "Indicates whether csv, none or txt is used as file extension."
+      "description": "Indicates whether csv, none or txt is used as file extension.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.time_series_reference:1.0.0#Delimiter",
       "label": "Delimiter",
       "kind": "Characteristic",
       "preferredName": "Delimiter Enumeration",
-      "description": "Indicates whether a semicolon, comma or tab is used as a deliniter between datapoints."
+      "description": "Indicates whether a semicolon, comma or tab is used as a deliniter between datapoints.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.time_series_reference:1.0.0#TimeColumnChoice",
       "label": "TimeColumnChoice",
       "kind": "Characteristic",
       "preferredName": "time column name",
-      "description": "Specifies the name of the time colums variable."
+      "description": "Specifies the name of the time colums variable.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.time_series_reference:1.0.0#ResourcePath",
       "label": "ResourcePath",
       "kind": "Characteristic",
       "preferredName": "Resource Path",
-      "description": "The path of a resource."
+      "description": "The path of a resource.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "anyURI",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.time_series_reference:1.0.0#PayloadCharacteristic",
@@ -144,7 +192,15 @@
       "label": "VariableListCharacteristic",
       "kind": "Characteristic",
       "preferredName": null,
-      "description": "Lists the name for each datapoint."
+      "description": "Lists the name for each datapoint.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.time_series_reference:1.0.0#UnitsListCharacteristic",

@@ -81,7 +81,15 @@
       "label": "countingUnit",
       "kind": "Property",
       "preferredName": "counting unit",
-      "description": "depending on counted value: if revolutions are counted, counted unit might be 1/min or 1/s.  Required, default is \"/\", which means no unit. "
+      "description": "depending on counted value: if revolutions are counted, counted unit might be 1/min or 1/s.  Required, default is \"/\", which means no unit. ",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "UnitReference",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.classified_load_spectrum:2.0.0#classes",
@@ -109,14 +117,30 @@
       "label": "routeDescription",
       "kind": "Property",
       "preferredName": "route description",
-      "description": "Information on the route which the load spectrum is representing. For example \"city munich heavy trailer\" or \"motorway light trailer agil driver\"."
+      "description": "Information on the route which the load spectrum is representing. For example \"city munich heavy trailer\" or \"motorway light trailer agil driver\".",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.classified_load_spectrum:2.0.0#projectDescription",
       "label": "projectDescription",
       "kind": "Property",
       "preferredName": "project description",
-      "description": "Further information on the vehicle /assembly/component."
+      "description": "Further information on the vehicle /assembly/component.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.classified_load_spectrum:2.0.0#status",
@@ -151,7 +175,15 @@
       "label": "unit",
       "kind": "Property",
       "preferredName": null,
-      "description": "unit of the corresponding load channel"
+      "description": "unit of the corresponding load channel",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "UnitReference",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.classified_load_spectrum:2.0.0#lowerLimit",
@@ -221,7 +253,15 @@
       "label": "date",
       "kind": "Property",
       "preferredName": null,
-      "description": "date representing the load spectrum"
+      "description": "date representing the load spectrum",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Timestamp",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.classified_load_spectrum:2.0.0#operatingHours",
@@ -249,7 +289,15 @@
       "label": "TargetComponentIDCharacteristic",
       "kind": "Characteristic",
       "preferredName": "TargetComponentID",
-      "description": "Asset ID of the specific parent: vehicle or gearbox or battery"
+      "description": "Asset ID of the specific parent: vehicle or gearbox or battery",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "anyURI",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.classified_load_spectrum:2.0.0#ResiduumCharacteristic",
@@ -263,7 +311,15 @@
       "label": "CountedValueCharacteristic",
       "kind": "Characteristic",
       "preferredName": null,
-      "description": "By default, the number of for example events or peaks are counted. Value should be given if for example time or revolutions are counted."
+      "description": "By default, the number of for example events or peaks are counted. Value should be given if for example time or revolutions are counted.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.classified_load_spectrum:2.0.0#CountsCharacteristic",
@@ -277,7 +333,15 @@
       "label": "ComponentCharacteristic",
       "kind": "Characteristic",
       "preferredName": null,
-      "description": "Component or assembly the load spectrum is valid for. A ZF_lrd counted load spectrum  belomgs to a gear set while a temperature load spectrum belong to the part where the temperature is measured (gear oil or IGBT). "
+      "description": "Component or assembly the load spectrum is valid for. A ZF_lrd counted load spectrum  belomgs to a gear set while a temperature load spectrum belong to the part where the temperature is measured (gear oil or IGBT). ",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.classified_load_spectrum:2.0.0#StatusCharacteristic",
@@ -291,42 +355,90 @@
       "label": "ResiduumClassNameCharacteristic",
       "kind": "Characteristic",
       "preferredName": null,
-      "description": "Channelname extended by -class"
+      "description": "Channelname extended by -class",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.classified_load_spectrum:2.0.0#ChannelNameCharacteristic",
       "label": "ChannelNameCharacteristic",
       "kind": "Characteristic",
       "preferredName": null,
-      "description": "Identifier of channel"
+      "description": "Identifier of channel",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.classified_load_spectrum:2.0.0#LimitCharacteristic",
       "label": "LimitCharacteristic",
       "kind": "Characteristic",
       "preferredName": null,
-      "description": "Min and max value of classified load range"
+      "description": "Min and max value of classified load range",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "float",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.classified_load_spectrum:2.0.0#NumberOfBinsCharacteristic",
       "label": "NumberOfBinsCharacteristic",
       "kind": "Characteristic",
       "preferredName": null,
-      "description": "Number of classes "
+      "description": "Number of classes ",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "positiveInteger",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.classified_load_spectrum:2.0.0#ClassNameCharacteristic",
       "label": "ClassNameCharacteristic",
       "kind": "Characteristic",
       "preferredName": null,
-      "description": "Name of the load channel class"
+      "description": "Name of the load channel class",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.classified_load_spectrum:2.0.0#CountsNameCharacteristic",
       "label": "CountsNameCharacteristic",
       "kind": "Characteristic",
       "preferredName": null,
-      "description": "Name of countings, \"Counts\" or \"Time\"  or \"revolutions\"."
+      "description": "Name of countings, \"Counts\" or \"Time\"  or \"revolutions\".",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.classified_load_spectrum:2.0.0#BodyCharacteristic",
@@ -410,49 +522,105 @@
       "label": "ResiduumListCharacteristic",
       "kind": "Characteristic",
       "preferredName": null,
-      "description": "List of load-classes not defining a closed hysterese."
+      "description": "List of load-classes not defining a closed hysterese.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "positiveInteger",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.classified_load_spectrum:2.0.0#BinLimitsList",
       "label": "BinLimitsList",
       "kind": "Characteristic",
       "preferredName": "bin limits list",
-      "description": "list of class limits"
+      "description": "list of class limits",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "float",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.classified_load_spectrum:2.0.0#ClassListCharacteristic",
       "label": "ClassListCharacteristic",
       "kind": "Characteristic",
       "preferredName": null,
-      "description": "List of load classes "
+      "description": "List of load classes ",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "positiveInteger",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.classified_load_spectrum:2.0.0#Counts",
       "label": "Counts",
       "kind": "Characteristic",
       "preferredName": "Counts",
-      "description": "Counts of loads in the respective loadingclass. might be event counts, time counting or revolution counts - depending on the CountingMethod and CountingUnit"
+      "description": "Counts of loads in the respective loadingclass. might be event counts, time counting or revolution counts - depending on the CountingMethod and CountingUnit",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "double",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.classified_load_spectrum:2.0.0#CountingMethodCharacteristic",
       "label": "CountingMethodCharacteristic",
       "kind": "Characteristic",
       "preferredName": null,
-      "description": "Specification of counting method. EventCount, PeakCount, MaximunCount  specify the number of events. RangeCount specify the amplitudes of load cycles, Rangedifference of load classes Rainflow describes the number of closed hystersis fron one class to another class. Different procedures exists , the default is 4-point-method. If 3-point-method or HCM method is used, the corresponding values should be used. LRD means load revolution distribution describing the load spectra for gear sets.  "
+      "description": "Specification of counting method. EventCount, PeakCount, MaximunCount  specify the number of events. RangeCount specify the amplitudes of load cycles, Rangedifference of load classes Rainflow describes the number of closed hystersis fron one class to another class. Different procedures exists , the default is 4-point-method. If 3-point-method or HCM method is used, the corresponding values should be used. LRD means load revolution distribution describing the load spectra for gear sets.  ",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.classified_load_spectrum:2.0.0#Mileage",
       "label": "Mileage",
       "kind": "Characteristic",
       "preferredName": "mileage",
-      "description": "Mileage of the vehicle respectively part."
+      "description": "Mileage of the vehicle respectively part.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "nonNegativeInteger",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.classified_load_spectrum:2.0.0#OperatingHoursCharacteristic",
       "label": "OperatingHoursCharacteristic",
       "kind": "Characteristic",
       "preferredName": "Operating Hours",
-      "description": "Operating hours for the vehicle respectively part."
+      "description": "Operating hours for the vehicle respectively part.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "float",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     }
   ],
   "links": [

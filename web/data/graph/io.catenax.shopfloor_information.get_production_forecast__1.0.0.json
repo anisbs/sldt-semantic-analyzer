@@ -31,7 +31,15 @@
       "label": "GetProductionForecast",
       "kind": "Aspect",
       "preferredName": "Get Production Forecast",
-      "description": "Aspect Model to request a production forecast"
+      "description": "Aspect Model to request a production forecast",
+      "external_refs": [
+        {
+          "predicate": "properties",
+          "target_local": "header",
+          "target_model": "shared.message_header@1.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.shopfloor_information.get_production_forecast:1.0.0#request",
@@ -52,7 +60,15 @@
       "label": "customerId",
       "kind": "Property",
       "preferredName": "customerId",
-      "description": "Internal customerId"
+      "description": "Internal customerId",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "BpnCharacteristic",
+          "target_model": "shared.message_header@1.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.shopfloor_information.get_production_forecast:1.0.0#precisionOfForecast",
@@ -66,14 +82,30 @@
       "label": "productionForecastForAll",
       "kind": "Property",
       "preferredName": "Production forecast for all",
-      "description": "Boolean variable that detemines whether the customer request information about each position of an order, or information about the complete order"
+      "description": "Boolean variable that detemines whether the customer request information about each position of an order, or information about the complete order",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Boolean",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.shopfloor_information.get_production_forecast:1.0.0#orderId",
       "label": "orderId",
       "kind": "Property",
       "preferredName": "orderId",
-      "description": "The Id identifying subject of the request"
+      "description": "The Id identifying subject of the request",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "UuidCharacteristic",
+          "target_model": "shared.message_header@1.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.shopfloor_information.get_production_forecast:1.0.0#deviationOfSchedule",
@@ -101,14 +133,36 @@
       "label": "TimeValueCharacteristic",
       "kind": "Characteristic",
       "preferredName": "TimeValueCharacteristic",
-      "description": "Link to the  TimeUnit Data Type"
+      "description": "Link to the  TimeUnit Data Type",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "TimeValue",
+          "target_model": "shared.shopfloor_information_types@1.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.shopfloor_information.get_production_forecast:1.0.0#RequestEntity",
       "label": "RequestEntity",
       "kind": "Entity",
       "preferredName": "Request Entity",
-      "description": "Entity for a request of a production forecast"
+      "description": "Entity for a request of a production forecast",
+      "external_refs": [
+        {
+          "predicate": "properties",
+          "target_local": "communicationMode",
+          "target_model": "shared.shopfloor_information_types@1.0.0",
+          "target_source": "catenax"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "versionDataModel",
+          "target_model": "shared.shopfloor_information_types@1.0.0",
+          "target_source": "catenax"
+        }
+      ]
     }
   ],
   "links": [

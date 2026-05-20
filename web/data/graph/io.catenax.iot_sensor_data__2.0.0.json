@@ -32,7 +32,15 @@
       "label": "catenaXId",
       "kind": "Property",
       "preferredName": "Catena-X Identifier",
-      "description": "The fully anonymous Catena-X ID of the asset, valid for the Catena-X dataspace."
+      "description": "The fully anonymous Catena-X ID of the asset, valid for the Catena-X dataspace.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "UuidV4Trait",
+          "target_model": "shared.uuid@1.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.iot_sensor_data:2.0.0#sensorRuntimeData",
@@ -60,7 +68,15 @@
       "label": "timestamp",
       "kind": "Property",
       "preferredName": "Timestamp",
-      "description": "The timestamp of the latest sensor reading."
+      "description": "The timestamp of the latest sensor reading.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Timestamp",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.iot_sensor_data:2.0.0#sensorData",
@@ -102,14 +118,30 @@
       "label": "geoDataTimestamp",
       "kind": "Property",
       "preferredName": "Geo Data Timestamp",
-      "description": "The timestamp of the latest sensor reading of the geo data."
+      "description": "The timestamp of the latest sensor reading of the geo data.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Timestamp",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.iot_sensor_data:2.0.0#sensorType",
       "label": "sensorType",
       "kind": "Property",
       "preferredName": "Sensor Type",
-      "description": "Different types of sensors that are commonly used in various applications, measuring one of the physical properties like Temperature, Pressure,  Resistance, Shock, Conduction, Heat Transfer etc."
+      "description": "Different types of sensors that are commonly used in various applications, measuring one of the physical properties like Temperature, Pressure,  Resistance, Shock, Conduction, Heat Transfer etc.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.iot_sensor_data:2.0.0#sensorValue",
@@ -123,7 +155,15 @@
       "label": "sensorUnit",
       "kind": "Property",
       "preferredName": "Sensor Unit",
-      "description": null
+      "description": null,
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "UnitReference",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.iot_sensor_data:2.0.0#SensorRuntimeDataCharacteristics",
@@ -172,42 +212,90 @@
       "label": "TransmissionMethodCharacteristic",
       "kind": "Characteristic",
       "preferredName": "Transmission Method Characteristic",
-      "description": "Characteristic that describes the property transmission method."
+      "description": "Characteristic that describes the property transmission method.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.iot_sensor_data:2.0.0#LatitudeCharacteristic",
       "label": "LatitudeCharacteristic",
       "kind": "Characteristic",
       "preferredName": "Latitude Characteristic",
-      "description": "Characteristic describing the property latitude."
+      "description": "Characteristic describing the property latitude.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "decimal",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.iot_sensor_data:2.0.0#LongitudeCharacteristic",
       "label": "LongitudeCharacteristic",
       "kind": "Characteristic",
       "preferredName": "Longitude Characteristic",
-      "description": "Characteristic describing the property longitude."
+      "description": "Characteristic describing the property longitude.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "decimal",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.iot_sensor_data:2.0.0#AltitudeCharacteristic",
       "label": "AltitudeCharacteristic",
       "kind": "Characteristic",
       "preferredName": "Altitude Characteristic",
-      "description": "Characteristic describing the property altitude."
+      "description": "Characteristic describing the property altitude.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "decimal",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.iot_sensor_data:2.0.0#SensorValueCharacteristics",
       "label": "SensorValueCharacteristics",
       "kind": "Characteristic",
       "preferredName": "Sensor Value Characteristic",
-      "description": "Describes the property which contains a sensor value of data type decimal."
+      "description": "Describes the property which contains a sensor value of data type decimal.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "decimal",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.iot_sensor_data:2.0.0#BatteryLevelCharacteristic",
       "label": "BatteryLevelCharacteristic",
       "kind": "Characteristic",
       "preferredName": "Battery Level Characteristic",
-      "description": "Characteristic to describe the property battery level."
+      "description": "Characteristic to describe the property battery level.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "decimal",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     }
   ],
   "links": [

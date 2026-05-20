@@ -32,7 +32,15 @@
       "label": "certificate",
       "kind": "Property",
       "preferredName": "Certificate",
-      "description": null
+      "description": null,
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "RecyclingStrategyCertificateCharacteristic",
+          "target_model": "shared.recycling_strategy_certificate@1.0.0",
+          "target_source": "catenax"
+        }
+      ]
     }
   ],
   "links": [

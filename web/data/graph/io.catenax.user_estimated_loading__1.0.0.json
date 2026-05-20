@@ -109,14 +109,30 @@
       "label": "trailerUse",
       "kind": "Property",
       "preferredName": "Trailer use switch",
-      "description": "Usage of trailer like caravan. "
+      "description": "Usage of trailer like caravan. ",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Boolean",
+          "target_model": "io.openmanufacturing:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.user_estimated_loading:1.0.0#cityDriving",
       "label": "cityDriving",
       "kind": "Property",
       "preferredName": "City driving switch",
-      "description": "City driving means a short distances."
+      "description": "City driving means a short distances.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Boolean",
+          "target_model": "io.openmanufacturing:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.user_estimated_loading:1.0.0#drivingStyle",
@@ -172,28 +188,60 @@
       "label": "NumberOfDriveAxle",
       "kind": "Characteristic",
       "preferredName": "Number of drive axles",
-      "description": "Characteristic of number of drive axles"
+      "description": "Characteristic of number of drive axles",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "positiveInteger",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.user_estimated_loading:1.0.0#Percentage",
       "label": "Percentage",
       "kind": "Characteristic",
       "preferredName": null,
-      "description": null
+      "description": null,
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "decimal",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.user_estimated_loading:1.0.0#WeightFactor",
       "label": "WeightFactor",
       "kind": "Characteristic",
       "preferredName": null,
-      "description": "Weightfactor is a number between 1 and 100 weightening the hilliness or curviness or driving style."
+      "description": "Weightfactor is a number between 1 and 100 weightening the hilliness or curviness or driving style.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "decimal",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.user_estimated_loading:1.0.0#PositiveInteger",
       "label": "PositiveInteger",
       "kind": "Characteristic",
       "preferredName": "Positive integer",
-      "description": "Positive integer number without unit"
+      "description": "Positive integer number without unit",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "positiveInteger",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.user_estimated_loading:1.0.0#HistoryProfileList",
@@ -249,42 +297,90 @@
       "label": "Mileage",
       "kind": "Characteristic",
       "preferredName": "Mileage @en",
-      "description": "Distance in kilometre"
+      "description": "Distance in kilometre",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "positiveInteger",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.user_estimated_loading:1.0.0#EnginePowerKW",
       "label": "EnginePowerKW",
       "kind": "Characteristic",
       "preferredName": "Engine Power @en",
-      "description": "Engine power expressed in kilowatt"
+      "description": "Engine power expressed in kilowatt",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "integer",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.user_estimated_loading:1.0.0#Weight",
       "label": "Weight",
       "kind": "Characteristic",
       "preferredName": "Weight",
-      "description": "Weight of an object"
+      "description": "Weight of an object",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "double",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.user_estimated_loading:1.0.0#AgeInMonths",
       "label": "AgeInMonths",
       "kind": "Characteristic",
       "preferredName": "Age in months",
-      "description": "Age of vehicle in month"
+      "description": "Age of vehicle in month",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "nonNegativeInteger",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.user_estimated_loading:1.0.0#KbaVariant",
       "label": "KbaVariant",
       "kind": "Characteristic",
       "preferredName": "KBA Variant @en",
-      "description": "Current version of the Enumeration is sub-set of list defined from the German Federal Office for motor vehicles."
+      "description": "Current version of the Enumeration is sub-set of list defined from the German Federal Office for motor vehicles.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.user_estimated_loading:1.0.0#EnergySource",
       "label": "EnergySource",
       "kind": "Characteristic",
       "preferredName": "Energy Source",
-      "description": "Enumeration of possible energy sources/fuel types of a vehicle. The list is defined from the German Federal Office for motor vehicles."
+      "description": "Enumeration of possible energy sources/fuel types of a vehicle. The list is defined from the German Federal Office for motor vehicles.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.user_estimated_loading:1.0.0#FutureScenarioList",

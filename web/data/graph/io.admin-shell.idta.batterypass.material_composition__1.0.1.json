@@ -46,14 +46,30 @@
       "label": "shortName",
       "kind": "Property",
       "preferredName": "short name",
-      "description": "Short name."
+      "description": "Short name.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.2.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.admin-shell.idta.batterypass.material_composition:1.0.1#clearName",
       "label": "clearName",
       "kind": "Property",
       "preferredName": "clear name",
-      "description": "Clear name."
+      "description": "Clear name.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.2.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.admin-shell.idta.batterypass.material_composition:1.0.1#batteryMaterialLocation",
@@ -74,7 +90,15 @@
       "label": "batteryMaterialName",
       "kind": "Property",
       "preferredName": "name",
-      "description": "Clear name of Material.\n\n Alphanumeric character string which describes the object."
+      "description": "Clear name of Material.\n\n Alphanumeric character string which describes the object.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.2.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.admin-shell.idta.batterypass.material_composition:1.0.1#batteryMaterialMass",
@@ -88,7 +112,15 @@
       "label": "isCriticalRawMaterial",
       "kind": "Property",
       "preferredName": "is critical raw material",
-      "description": "The battery passport must contain information on the critical raw materials present in the battery.\n\nThe information on the critical raw materials must also be provided on the battery label.\nPer Annex VI, Part A(10), critical raw materials must be reported if present in the battery in a concentration of more than 0,1 % weight by weight. "
+      "description": "The battery passport must contain information on the critical raw materials present in the battery.\n\nThe information on the critical raw materials must also be provided on the battery label.\nPer Annex VI, Part A(10), critical raw materials must be reported if present in the battery in a concentration of more than 0,1 % weight by weight. ",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Boolean",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.2.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.admin-shell.idta.batterypass.material_composition:1.0.1#hazardousSubstanceClass",
@@ -102,7 +134,15 @@
       "label": "hazardousSubstanceName",
       "kind": "Property",
       "preferredName": "name",
-      "description": "Clear name of hazardous substance."
+      "description": "Clear name of hazardous substance.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.2.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.admin-shell.idta.batterypass.material_composition:1.0.1#hazardousSubstanceConcentration",
@@ -137,14 +177,30 @@
       "label": "componentName",
       "kind": "Property",
       "preferredName": "name",
-      "description": null
+      "description": null,
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.2.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.admin-shell.idta.batterypass.material_composition:1.0.1#componentId",
       "label": "componentId",
       "kind": "Property",
       "preferredName": "component ID",
-      "description": "Identifier of the component."
+      "description": "Identifier of the component.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.2.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.admin-shell.idta.batterypass.material_composition:1.0.1#BatteryChemistryEntityList",
@@ -186,7 +242,15 @@
       "label": "ImpactList",
       "kind": "Characteristic",
       "preferredName": null,
-      "description": null
+      "description": null,
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.admin-shell.idta.batterypass.material_composition:1.0.1#BatteryChemistry",
@@ -228,21 +292,45 @@
       "label": "WeightInKilogram",
       "kind": "Characteristic",
       "preferredName": null,
-      "description": null
+      "description": null,
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "float",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.admin-shell.idta.batterypass.material_composition:1.0.1#HazardousSubstanceConcentrationCharacteristic",
       "label": "HazardousSubstanceConcentrationCharacteristic",
       "kind": "Characteristic",
       "preferredName": null,
-      "description": null
+      "description": null,
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "double",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.admin-shell.idta.batterypass.material_composition:1.0.1#Impact",
       "label": "Impact",
       "kind": "Characteristic",
       "preferredName": "impact",
-      "description": "Impact."
+      "description": "Impact.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.admin-shell.idta.batterypass.material_composition:1.0.1#CASNumberConstraint",
@@ -256,7 +344,15 @@
       "label": "HazardousSubstanceClassEnum",
       "kind": "Characteristic",
       "preferredName": null,
-      "description": null
+      "description": null,
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     }
   ],
   "links": [
@@ -444,6 +540,30 @@
       "source": "urn:samm:io.admin-shell.idta.batterypass.material_composition:1.0.1#MaterialIdentifierTrait",
       "target": "urn:samm:io.admin-shell.idta.batterypass.material_composition:1.0.1#CASNumberConstraint",
       "label": "constraint",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.batterypass.material_composition:1.0.1#MaterialComposition",
+      "target": "urn:samm:io.admin-shell.idta.batterypass.material_composition:1.0.1#batteryChemistry",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.batterypass.material_composition:1.0.1#MaterialComposition",
+      "target": "urn:samm:io.admin-shell.idta.batterypass.material_composition:1.0.1#batteryMaterials",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.batterypass.material_composition:1.0.1#MaterialComposition",
+      "target": "urn:samm:io.admin-shell.idta.batterypass.material_composition:1.0.1#hazardousSubstances",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.batterypass.material_composition:1.0.1#hazardousSubstanceClass",
+      "target": "urn:samm:io.admin-shell.idta.batterypass.material_composition:1.0.1#HazardousSubstanceClassEnum",
+      "label": "characteristic",
       "optional": false
     }
   ]

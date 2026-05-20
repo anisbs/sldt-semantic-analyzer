@@ -37,7 +37,27 @@
       "label": "SerialPart",
       "kind": "Aspect",
       "preferredName": "serial part",
-      "description": "A serialized part is an instantiation of a (design-)part, where the particular instantiation can be uniquely identified by means of a serial number or a similar identifier (e.g. VAN)or a combination of multiple identifiers (e.g. combination of manufacturer, date and number)"
+      "description": "A serialized part is an instantiation of a (design-)part, where the particular instantiation can be uniquely identified by means of a serial number or a similar identifier (e.g. VAN)or a combination of multiple identifiers (e.g. combination of manufacturer, date and number)",
+      "external_refs": [
+        {
+          "predicate": "properties",
+          "target_local": "globalAssetId",
+          "target_model": "shared.industry_core.common@1.0.0",
+          "target_source": "catenax"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "localIdentifiers",
+          "target_model": "shared.industry_core.common@1.0.0",
+          "target_source": "catenax"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "manufacturingInformation",
+          "target_model": "shared.industry_core.manufacturing_information@1.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.serial_part:4.0.0#partTypeInformation",
@@ -58,7 +78,39 @@
       "label": "PartTypeInformationEntity",
       "kind": "Entity",
       "preferredName": "part type information entity",
-      "description": "Encapsulation for data related to the part type"
+      "description": "Encapsulation for data related to the part type",
+      "external_refs": [
+        {
+          "predicate": "properties",
+          "target_local": "nameAtCustomer",
+          "target_model": "shared.industry_core.common@1.0.0",
+          "target_source": "catenax"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "nameAtManufacturer",
+          "target_model": "shared.industry_core.common@1.0.0",
+          "target_source": "catenax"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "customerPartId",
+          "target_model": "shared.industry_core.common@1.0.0",
+          "target_source": "catenax"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "manufacturerPartId",
+          "target_model": "shared.industry_core.common@1.0.0",
+          "target_source": "catenax"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "partClassification",
+          "target_model": "shared.industry_core.part_classification@1.0.0",
+          "target_source": "catenax"
+        }
+      ]
     }
   ],
   "links": [

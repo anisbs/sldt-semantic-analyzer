@@ -54,6 +54,28 @@ _CHAR_EDGE_PREDICATES = {
 
 
 @dataclass
+class ExternalRef:
+    """Une arête sortante d'un Element vers un URN qui n'est pas défini
+    DANS le même fichier `.ttl` que cet élément. Deux cas distincts :
+      - **Same-namespace, sibling file** (cas IDTA dominant) : Aspect dans
+        `Foo.ttl` référence une Property définie dans `Foo_shared.ttl` du
+        même dossier de version. Après fusion (`graph.merge_models`), la
+        cible devient un nœud du modèle agrégé et la ref est **promue en
+        Edge** (= arête visible).
+      - **Cross-namespace, true external** (bridge cross-modèle) : ex.
+        `CarbonFootprintBattery` (idta) qui référence
+        `pcf:ProductCarbonFootprint` (catenax). La cible reste hors du
+        modèle ; la ref est conservée et affichée dans le tooltip du
+        nœud côté front (Feature 23)."""
+    predicate: str             # ex. "characteristic", "dataType", "properties"
+    target_urn: str            # URN complète (urn:samm:...#localName)
+    target_local: str          # localName (après '#'), ex. "ProductCarbonFootprint"
+    target_model: str          # "name@version" si l'URN est parseable, "" sinon
+    target_source: str         # catenax | idta | external | unknown
+    optional: bool = False
+
+
+@dataclass
 class Element:
     urn: str
     kind: str               # Aspect | Property | Characteristic | Entity | ...
@@ -66,6 +88,10 @@ class Element:
     # Tous les `rdf:type` (noms locaux). Permet de distinguer un `Trait`, un
     # `Enumeration`, etc. d'un `Characteristic` "pur" (qui DOIT avoir dataType).
     types: list[str] = field(default_factory=list)
+    # Refs sortantes vers des URN absents de `seen` lors du parse de CE .ttl
+    # (cf. ExternalRef). Tient compte de la cible et permet la promotion en
+    # Edge lors de la fusion (`graph.merge_models`).
+    external_refs: list[ExternalRef] = field(default_factory=list)
 
 
 @dataclass
@@ -445,6 +471,28 @@ def parse_file(path: Path) -> ParsedModel | None:
                 tgt = str(t)
                 if tgt in seen:
                     model.edges.append(Edge(src, tgt, label, opt))
+                else:
+                    # Cible hors de CE fichier — stockée en `external_refs`
+                    # sur l'Element source. Sera (a) promue en Edge si la
+                    # cible apparaît dans un .ttl frère après `merge_models`,
+                    # ou (b) conservée comme info cross-modèle dans le
+                    # tooltip côté front.
+                    target_local = _local_name(tgt)
+                    target_model = ""
+                    target_source = "unknown"
+                    if "#" in tgt:
+                        base_ns = tgt.rsplit("#", 1)[0] + "#"
+                        _f, t_name, t_ver, t_src = _parse_model_urn(base_ns)
+                        if t_name and t_ver:
+                            target_model = f"{t_name}@{t_ver}"
+                        target_source = t_src
+                    seen[src].external_refs.append(ExternalRef(
+                        predicate=label, target_urn=tgt,
+                        target_local=target_local,
+                        target_model=target_model,
+                        target_source=target_source,
+                        optional=opt,
+                    ))
 
     return model
 

@@ -192,21 +192,45 @@
       "label": "name",
       "kind": "Property",
       "preferredName": "name",
-      "description": "Name of the manufacturer is describing a regulatory requirement."
+      "description": "Name of the manufacturer is describing a regulatory requirement.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "io.openmanufacturing:characteristic@1.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#contact",
       "label": "contact",
       "kind": "Property",
       "preferredName": "contact",
-      "description": "Contact details of the manufacturer"
+      "description": "Contact details of the manufacturer",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "ContactCharacteristic",
+          "target_model": "shared.contact_information@1.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#address",
       "label": "address",
       "kind": "Property",
       "preferredName": "address",
-      "description": "An postal address"
+      "description": "An postal address",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "PostalAddress",
+          "target_model": "shared.address_characteristic@1.0.1",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#batteryPower",
@@ -318,28 +342,60 @@
       "label": "statusBattery",
       "kind": "Property",
       "preferredName": "status battery",
-      "description": "Status of the battery is describing a regulatory requirement. Value list provided by the regulators."
+      "description": "Status of the battery is describing a regulatory requirement. Value list provided by the regulators.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "io.openmanufacturing:characteristic@1.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#batteryType",
       "label": "batteryType",
       "kind": "Property",
       "preferredName": "battery type",
-      "description": "Battery type as described by the contents of the battery e.g. cell chemistry is describing a regulatory requirement."
+      "description": "Battery type as described by the contents of the battery e.g. cell chemistry is describing a regulatory requirement.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "io.openmanufacturing:characteristic@1.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#batteryModel",
       "label": "batteryModel",
       "kind": "Property",
       "preferredName": "battery model",
-      "description": "Battery type as described by the contents of the battery e.g. cell chemistry is describing a regulatory requirement."
+      "description": "Battery type as described by the contents of the battery e.g. cell chemistry is describing a regulatory requirement.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "io.openmanufacturing:characteristic@1.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#batteryIDDMCCode",
       "label": "batteryIDDMCCode",
       "kind": "Property",
       "preferredName": "battery ID DMC code",
-      "description": "Digital Matrix Code (DMC) of the battery i.e. serial number allowing for unequivocal identification of a battery is describing a regulatory requirement."
+      "description": "Digital Matrix Code (DMC) of the battery i.e. serial number allowing for unequivocal identification of a battery is describing a regulatory requirement.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "io.openmanufacturing:characteristic@1.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#dateOfManufacturing",
@@ -458,7 +514,15 @@
       "label": "title",
       "kind": "Property",
       "preferredName": "title",
-      "description": "Title of the attached file"
+      "description": "Title of the attached file",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "io.openmanufacturing:characteristic@1.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#maximumAllowedBatteryPower",
@@ -584,7 +648,15 @@
       "label": "materialName",
       "kind": "Property",
       "preferredName": "material name",
-      "description": "Name of the material"
+      "description": "Name of the material",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "io.openmanufacturing:characteristic@1.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#componentsSupplier",
@@ -605,7 +677,15 @@
       "label": "componentsSupplierName",
       "kind": "Property",
       "preferredName": "components supplier name",
-      "description": "Name of the components supplier"
+      "description": "Name of the components supplier",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "io.openmanufacturing:characteristic@1.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#DocumentCharacteristic",
@@ -661,7 +741,15 @@
       "label": "Datestamp",
       "kind": "Characteristic",
       "preferredName": "datestamp",
-      "description": "Describes a Property which contains the date and time with an optional timezone."
+      "description": "Describes a Property which contains the date and time with an optional timezone.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "date",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#CellChemistryCharacteristic",
@@ -724,7 +812,15 @@
       "label": "RatioMaximumAllowedBatteryPowerAndMaximumAllowedBatteryEnergyCharacterisitic",
       "kind": "Characteristic",
       "preferredName": "ratio maximum allowed battery power and maximum allowed battery energy characterisitic",
-      "description": "Ratio between maximum allowed battery power (W) and battery energy (Wh) is describing a regulatory requirement."
+      "description": "Ratio between maximum allowed battery power (W) and battery energy (Wh) is describing a regulatory requirement.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "decimal",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#ComponentsCharacteristic",
@@ -738,182 +834,390 @@
       "label": "CriticalRawMaterialsCharacteristic",
       "kind": "Characteristic",
       "preferredName": "critical raw materials",
-      "description": "List of critical raw materials (CRM) as specified by EU in a battery is describing a regulatory requirement."
+      "description": "List of critical raw materials (CRM) as specified by EU in a battery is describing a regulatory requirement.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#CycleLifeTestCRateCharacterisitc",
       "label": "CycleLifeTestCRateCharacterisitc",
       "kind": "Characteristic",
       "preferredName": "cycle life test c-rate",
-      "description": "C-rate of Relevant Cycle-life Test is describing a regulatory requirement."
+      "description": "C-rate of Relevant Cycle-life Test is describing a regulatory requirement.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "decimal",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#FileLocationCharacteristic",
       "label": "FileLocationCharacteristic",
       "kind": "Characteristic",
       "preferredName": "file location",
-      "description": "The path to the file"
+      "description": "The path to the file",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "anyURI",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#CO2FootprintTotalCharacteristic",
       "label": "CO2FootprintTotalCharacteristic",
       "kind": "Characteristic",
       "preferredName": "co2 footprint total",
-      "description": "The total carbon footprint of the battery, calculated as kg of carbon dioxide equivalent is describing a regulatory requirement."
+      "description": "The total carbon footprint of the battery, calculated as kg of carbon dioxide equivalent is describing a regulatory requirement.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "double",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#WarrantyPeriodCharacterisitic",
       "label": "WarrantyPeriodCharacterisitic",
       "kind": "Characteristic",
       "preferredName": "warranty period",
-      "description": "Commercial warranty period of the battery is describing a regulatory requirement."
+      "description": "Commercial warranty period of the battery is describing a regulatory requirement.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "positiveInteger",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#RatedCapacityCharacteristic",
       "label": "RatedCapacityCharacteristic",
       "kind": "Characteristic",
       "preferredName": "rated capacity characteristic",
-      "description": "The total number of ampere-hours (Ah) that can be withdrawn from a fully charged battery under specific conditions is describing a regulatory requirement."
+      "description": "The total number of ampere-hours (Ah) that can be withdrawn from a fully charged battery under specific conditions is describing a regulatory requirement.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "decimal",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#CapacityFadeCharacteristic",
       "label": "CapacityFadeCharacteristic",
       "kind": "Characteristic",
       "preferredName": "capacity fade characteristic",
-      "description": "The decrease over time and upon usage in the amount of charge that a battery can deliver at the rated voltage, with respect to the original rated capacity declared by the manufacturer is describing a regulatory requirement."
+      "description": "The decrease over time and upon usage in the amount of charge that a battery can deliver at the rated voltage, with respect to the original rated capacity declared by the manufacturer is describing a regulatory requirement.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "decimal",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#CapacityThresholdExhaustionCharacterisitic",
       "label": "CapacityThresholdExhaustionCharacterisitic",
       "kind": "Characteristic",
       "preferredName": "capacity threshold exhaustion characterisitic",
-      "description": "Capacity threshold for exhaustion as percentage value is describing a regulatory requirement."
+      "description": "Capacity threshold for exhaustion as percentage value is describing a regulatory requirement.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "decimal",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#MillimetreCharacteristic",
       "label": "MillimetreCharacteristic",
       "kind": "Characteristic",
       "preferredName": "millimetre characteristic",
-      "description": "A measurment for the length/width/height of an item."
+      "description": "A measurment for the length/width/height of an item.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "integer",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#KilogramCharacteristic",
       "label": "KilogramCharacteristic",
       "kind": "Characteristic",
       "preferredName": "kilogram characteristic",
-      "description": "A measurement for the weight of an item."
+      "description": "A measurement for the weight of an item.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "integer",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#StateOfHealthCharacteristic",
       "label": "StateOfHealthCharacteristic",
       "kind": "Characteristic",
       "preferredName": "state of health characteristic",
-      "description": "Evidence/Certificate of the health evaluation of a battery for its use following repurposing or remanufacturing operations is describing a business requirement."
+      "description": "Evidence/Certificate of the health evaluation of a battery for its use following repurposing or remanufacturing operations is describing a business requirement.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "integer",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#StateOfChargeCharacteristic",
       "label": "StateOfChargeCharacteristic",
       "kind": "Characteristic",
       "preferredName": "state of charge characteristic",
-      "description": "The value of the state of charge of the battery at the end of life i.e. when entering recycling scheme is describing a business requirement."
+      "description": "The value of the state of charge of the battery at the end of life i.e. when entering recycling scheme is describing a business requirement.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "integer",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#TemperatureRangeCharacterisitic",
       "label": "TemperatureRangeCharacterisitic",
       "kind": "Characteristic",
       "preferredName": "temperature range",
-      "description": "The lower range of temperature the battery can withstand when not in use is describing a regulatory requirement."
+      "description": "The lower range of temperature the battery can withstand when not in use is describing a regulatory requirement.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "decimal",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#CycleLifeTestDepthOfDischargeCharacteristic",
       "label": "CycleLifeTestDepthOfDischargeCharacteristic",
       "kind": "Characteristic",
       "preferredName": "cycle life test depth of discharge",
-      "description": "Depth of discharge in the cycle-life test is describing a regulatory requirement."
+      "description": "Depth of discharge in the cycle-life test is describing a regulatory requirement.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "decimal",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#ExpectedLifetime",
       "label": "ExpectedLifetime",
       "kind": "Characteristic",
       "preferredName": "expected lifetime",
-      "description": "Expected battery lifetime expressed in cycles, and reference test used is describing a regulatory requirement."
+      "description": "Expected battery lifetime expressed in cycles, and reference test used is describing a regulatory requirement.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "decimal",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#PowerCharacteristic",
       "label": "PowerCharacteristic",
       "kind": "Characteristic",
       "preferredName": "power characteristic",
-      "description": "Power capability in kilowatts"
+      "description": "Power capability in kilowatts",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "decimal",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#PowerFadeCharacteristic",
       "label": "PowerFadeCharacteristic",
       "kind": "Characteristic",
       "preferredName": "power fade characteristic",
-      "description": "The decrease over time and upon usage in the amount of power that a battery can deliver at the rated voltage is describing a regulatory requirement."
+      "description": "The decrease over time and upon usage in the amount of power that a battery can deliver at the rated voltage is describing a regulatory requirement.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "decimal",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#VoltCharacteristic",
       "label": "VoltCharacteristic",
       "kind": "Characteristic",
       "preferredName": "volt characteristic",
-      "description": "Value of the voltage the battery is rated for"
+      "description": "Value of the voltage the battery is rated for",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "decimal",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#MilliohmCharacteristic",
       "label": "MilliohmCharacteristic",
       "kind": "Characteristic",
       "preferredName": "milliohm characteristic",
-      "description": "The resistance offered by the cell in the flow of the current"
+      "description": "The resistance offered by the cell in the flow of the current",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "decimal",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#OhmCharacterisitic",
       "label": "OhmCharacterisitic",
       "kind": "Characteristic",
       "preferredName": "ohm characterisitic",
-      "description": "Total internal resistance in a battery pack"
+      "description": "Total internal resistance in a battery pack",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "decimal",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#PercentCharacteristic",
       "label": "PercentCharacteristic",
       "kind": "Characteristic",
       "preferredName": "percent characteristic",
-      "description": "Increase in internal resistance of a battery pack over a period of time"
+      "description": "Increase in internal resistance of a battery pack over a period of time",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "decimal",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#MaximumAllowedBatteryEnergyCharacteristic",
       "label": "MaximumAllowedBatteryEnergyCharacteristic",
       "kind": "Characteristic",
       "preferredName": "maximum allowed battery energy",
-      "description": "Characteristic to describe the energy (Wh) properties of the battery is describing a regulatory requirement."
+      "description": "Characteristic to describe the energy (Wh) properties of the battery is describing a regulatory requirement.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "decimal",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#EnergyRoundtripEfficiency",
       "label": "EnergyRoundtripEfficiency",
       "kind": "Characteristic",
       "preferredName": "energy roundtrip efficiency",
-      "description": "Round-trip efficiency is the percentage of electricity put into storage is describing a regulatory requirement."
+      "description": "Round-trip efficiency is the percentage of electricity put into storage is describing a regulatory requirement.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "decimal",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#EnergyRoundtripEfficiencyChangeCharacterisitic",
       "label": "EnergyRoundtripEfficiencyChangeCharacterisitic",
       "kind": "Characteristic",
       "preferredName": "energy roundtrip efficiency change",
-      "description": "Round-trip efficiency is the percentage of electricity put into storage after 50% of life of the battery is describing a regulatory requirement."
+      "description": "Round-trip efficiency is the percentage of electricity put into storage after 50% of life of the battery is describing a regulatory requirement.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "decimal",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#materialPercentageMassFractionCharacteristic",
       "label": "materialPercentageMassFractionCharacteristic",
       "kind": "Characteristic",
       "preferredName": "material percentage mass fraction",
-      "description": "Percentage mass fraction of a material"
+      "description": "Percentage mass fraction of a material",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "decimal",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#GramCharacteristic",
       "label": "GramCharacteristic",
       "kind": "Characteristic",
       "preferredName": "gram characteristic",
-      "description": "Weight of the material (in gram)"
+      "description": "Weight of the material (in gram)",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "decimal",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.battery.battery_pass:3.0.1#DocumentEntity",
@@ -1116,7 +1420,15 @@
       "label": "ComponentsPartNumberList",
       "kind": "Characteristic",
       "preferredName": "components part number list",
-      "description": "A list of the unique serial numbers of the different parts of a battery is describing a regulatory requirement."
+      "description": "A list of the unique serial numbers of the different parts of a battery is describing a regulatory requirement.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     }
   ],
   "links": [

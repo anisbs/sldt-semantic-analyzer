@@ -38,14 +38,30 @@
       "label": "commentId",
       "kind": "Property",
       "preferredName": "Comment ID",
-      "description": "The Comment ID uniquely identifies the entity within the business relationship between a customer and its supplier."
+      "description": "The Comment ID uniquely identifies the entity within the business relationship between a customer and its supplier.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "UuidV4Trait",
+          "target_model": "shared.uuid@1.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.id_based_comment:1.0.0#objectId",
       "label": "objectId",
       "kind": "Property",
       "preferredName": "Object ID",
-      "description": "The ID of the object to which the comment belongs."
+      "description": "The ID of the object to which the comment belongs.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "UuidV4Trait",
+          "target_model": "shared.uuid@1.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.id_based_comment:1.0.0#author",
@@ -87,7 +103,15 @@
       "label": "requestDelete",
       "kind": "Property",
       "preferredName": "Request Delete",
-      "description": "Indicates that the deletion of the comment is requested by sender incl. all of it's history."
+      "description": "Indicates that the deletion of the comment is requested by sender incl. all of it's history.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Boolean",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.id_based_comment:1.0.0#listOfReferenceDates",
@@ -108,42 +132,90 @@
       "label": "customer",
       "kind": "Property",
       "preferredName": "Customer",
-      "description": "The Business Partner Number Legal Entity (BPNL) of the party requesting materials from a supplier."
+      "description": "The Business Partner Number Legal Entity (BPNL) of the party requesting materials from a supplier.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "BpnlTrait",
+          "target_model": "shared.business_partner_number@1.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.id_based_comment:1.0.0#supplier",
       "label": "supplier",
       "kind": "Property",
       "preferredName": "Supplier",
-      "description": "The Business Partner Number Legal Entity (BPNL) of the party providing materials to a customer."
+      "description": "The Business Partner Number Legal Entity (BPNL) of the party providing materials to a customer.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "BpnlTrait",
+          "target_model": "shared.business_partner_number@1.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.id_based_comment:1.0.0#AuthorCharacteristic",
       "label": "AuthorCharacteristic",
       "kind": "Characteristic",
       "preferredName": "Author Characteristic",
-      "description": "Characteristic for an E-Mail or a BPNL"
+      "description": "Characteristic for an E-Mail or a BPNL",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.id_based_comment:1.0.0#Timestamp",
       "label": "Timestamp",
       "kind": "Characteristic",
       "preferredName": "Timestamp",
-      "description": "Point in time."
+      "description": "Point in time.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "dateTimeStamp",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.id_based_comment:1.0.0#ObjectTypeCharacteristic",
       "label": "ObjectTypeCharacteristic",
       "kind": "Characteristic",
       "preferredName": "Object Type Characteristic",
-      "description": "Defining a string value for the objectType."
+      "description": "Defining a string value for the objectType.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.id_based_comment:1.0.0#CommentTextCharacteristic",
       "label": "CommentTextCharacteristic",
       "kind": "Characteristic",
       "preferredName": "Comment Text Characteristic",
-      "description": "Type of the text being exchanged between partners belonging to a UUID entity."
+      "description": "Type of the text being exchanged between partners belonging to a UUID entity.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.id_based_comment:1.0.0#CommentTrait",
@@ -157,14 +229,30 @@
       "label": "CommentTypeCharacteristic",
       "kind": "Characteristic",
       "preferredName": "Comment Type Characteristic",
-      "description": "The classification of a comment."
+      "description": "The classification of a comment.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.id_based_comment:1.0.0#ListOfReferenceDatesCharacteristic",
       "label": "ListOfReferenceDatesCharacteristic",
       "kind": "Characteristic",
       "preferredName": "List Of Reference Dates Characteristic",
-      "description": "Point in time."
+      "description": "Point in time.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "date",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.id_based_comment:1.0.0#TextRegularExpression",

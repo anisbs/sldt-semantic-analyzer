@@ -31,14 +31,30 @@
       "label": "SerialPart",
       "kind": "Aspect",
       "preferredName": "Serial Part",
-      "description": "A serialized part is an instantiation of a (design-) part, where the particular instantiation can be uniquely identified by means of a serial number or a similar identifier (e.g. VAN) or a combination of multiple identifiers (e.g. combination of manufacturer, date and number)"
+      "description": "A serialized part is an instantiation of a (design-) part, where the particular instantiation can be uniquely identified by means of a serial number or a similar identifier (e.g. VAN) or a combination of multiple identifiers (e.g. combination of manufacturer, date and number)",
+      "external_refs": [
+        {
+          "predicate": "properties",
+          "target_local": "sites",
+          "target_model": "shared.part_site_information_as_built@1.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.serial_part:2.0.0#catenaXId",
       "label": "catenaXId",
       "kind": "Property",
       "preferredName": "Catena-X ID",
-      "description": "The fully anonymous Catena-X ID of the serialized part, valid for the Catena-X dataspace."
+      "description": "The fully anonymous Catena-X ID of the serialized part, valid for the Catena-X dataspace.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "UuidV4Trait",
+          "target_model": "shared.uuid@1.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.serial_part:2.0.0#localIdentifiers",
@@ -80,7 +96,15 @@
       "label": "date",
       "kind": "Property",
       "preferredName": "Production Date",
-      "description": "Timestamp of the manufacturing date as the final step in production process (e.g. final quality check, ready-for-shipment event)"
+      "description": "Timestamp of the manufacturing date as the final step in production process (e.g. final quality check, ready-for-shipment event)",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Timestamp",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.serial_part:2.0.0#country",
@@ -150,35 +174,75 @@
       "label": "KeyCharacteristic",
       "kind": "Characteristic",
       "preferredName": "Key Characteristic",
-      "description": "The key characteristic of a local identifier. A specific subset of keys is predefined, but additionally any other custom key is allowed. Predefined keys (to be used when applicable):\n- \"manufacturerId\" - The Business Partner Number (BPN) of the manufacturer. Value: BPN-Nummer\n- \"partInstanceId\" - The identifier of the manufacturer for the serialized instance of the part, e.g. the serial number\n- \"batchId\" - The identifier of the batch, to which the serialzed part belongs\n- \"van\" - The anonymized vehicle identification number (VIN). Value: anonymized VIN according to OEM anonymization rules. Note: If the key \"van\" is available, \"partInstanceId\" must also be available and hold the identical value."
+      "description": "The key characteristic of a local identifier. A specific subset of keys is predefined, but additionally any other custom key is allowed. Predefined keys (to be used when applicable):\n- \"manufacturerId\" - The Business Partner Number (BPN) of the manufacturer. Value: BPN-Nummer\n- \"partInstanceId\" - The identifier of the manufacturer for the serialized instance of the part, e.g. the serial number\n- \"batchId\" - The identifier of the batch, to which the serialzed part belongs\n- \"van\" - The anonymized vehicle identification number (VIN). Value: anonymized VIN according to OEM anonymization rules. Note: If the key \"van\" is available, \"partInstanceId\" must also be available and hold the identical value.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.serial_part:2.0.0#ValueCharacteristic",
       "label": "ValueCharacteristic",
       "kind": "Characteristic",
       "preferredName": "Value Characteristic",
-      "description": "The value of an identifier."
+      "description": "The value of an identifier.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.serial_part:2.0.0#PartIdCharacteristic",
       "label": "PartIdCharacteristic",
       "kind": "Characteristic",
       "preferredName": "Part ID Characteristic",
-      "description": "The part ID is a multi-character string, usually assigned by an ERP system"
+      "description": "The part ID is a multi-character string, usually assigned by an ERP system",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.serial_part:2.0.0#PartNameCharacteristic",
       "label": "PartNameCharacteristic",
       "kind": "Characteristic",
       "preferredName": "Part Name Characteristic",
-      "description": "Part Name in string format from the respective system in the value chain"
+      "description": "Part Name in string format from the respective system in the value chain",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.serial_part:2.0.0#CountryCodeCharacteristic",
       "label": "CountryCodeCharacteristic",
       "kind": "Characteristic",
       "preferredName": "Country Code Characteristic",
-      "description": "ISO 3166-1 alpha-3 - three-letter country codes "
+      "description": "ISO 3166-1 alpha-3 - three-letter country codes ",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.serial_part:2.0.0#KeyValueList",
@@ -213,7 +277,15 @@
       "label": "ClassificationCharacteristic",
       "kind": "Characteristic",
       "preferredName": "Classification Characteristic",
-      "description": "A part type must be placed into one of the following classes: 'component', 'product', 'software', 'assembly', 'tool', or 'raw material'."
+      "description": "A part type must be placed into one of the following classes: 'component', 'product', 'software', 'assembly', 'tool', or 'raw material'.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.serial_part:2.0.0#CountryCodeRegularExpression",

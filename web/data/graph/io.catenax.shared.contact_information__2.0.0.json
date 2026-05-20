@@ -25,7 +25,15 @@
       "label": "WebsiteCharacteristic",
       "kind": "Characteristic",
       "preferredName": "website",
-      "description": "Address of the website"
+      "description": "Address of the website",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "anyURI",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.shared.contact_information:2.0.0#ContactEntity",

@@ -84,21 +84,75 @@
       "label": "BatteryCategoryEnum",
       "kind": "Characteristic",
       "preferredName": null,
-      "description": null
+      "description": null,
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#GeneralInformationEntity",
       "label": "GeneralInformationEntity",
       "kind": "Entity",
       "preferredName": null,
-      "description": null
+      "description": null,
+      "external_refs": [
+        {
+          "predicate": "properties",
+          "target_local": "manufacturerName",
+          "target_model": "generic.technical_data@2.0.0",
+          "target_source": "idta"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "companyLogo",
+          "target_model": "generic.technical_data@2.0.0",
+          "target_source": "idta"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "manufacturerProductDesignation",
+          "target_model": "generic.technical_data@2.0.0",
+          "target_source": "idta"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "manufacturerArticleNumber",
+          "target_model": "generic.technical_data@2.0.0",
+          "target_source": "idta"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "manufacturerOrderCode",
+          "target_model": "generic.technical_data@2.0.0",
+          "target_source": "idta"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "productImages",
+          "target_model": "generic.technical_data@2.0.0",
+          "target_source": "idta"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#manufacturerIdentifier",
       "label": "manufacturerIdentifier",
       "kind": "Property",
       "preferredName": "identifier of the manufacturer",
-      "description": "A battery passport must include information identifying the manufacturer.\n\n DIN DKE Spec 99100 chapter reference: 6.1.2.4"
+      "description": "A battery passport must include information identifying the manufacturer.\n\n DIN DKE Spec 99100 chapter reference: 6.1.2.4",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.2.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#warrantyPeriod",
@@ -126,14 +180,30 @@
       "label": "WarrantyPeriod",
       "kind": "Characteristic",
       "preferredName": null,
-      "description": null
+      "description": null,
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "gYearMonth",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#BatteryMassMeasurable",
       "label": "BatteryMassMeasurable",
       "kind": "Characteristic",
       "preferredName": null,
-      "description": "Weight of the battery\nEUBR: Annex XIII (1a) - Annex VI Part A (5)"
+      "description": "Weight of the battery\nEUBR: Annex XIII (1a) - Annex VI Part A (5)",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "float",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#temperatureRangeIdleStateUpperBoundary",
@@ -329,133 +399,285 @@
       "label": "TemperatureRangeBoundary",
       "kind": "Characteristic",
       "preferredName": "boundary for temperature range",
-      "description": null
+      "description": null,
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "float",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#BatteryDischargingRate",
       "label": "BatteryDischargingRate",
       "kind": "Characteristic",
       "preferredName": null,
-      "description": null
+      "description": null,
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "integer",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#InternalResistance",
       "label": "InternalResistance",
       "kind": "Characteristic",
       "preferredName": null,
-      "description": null
+      "description": null,
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "float",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#ResistanceIncrease",
       "label": "ResistanceIncrease",
       "kind": "Characteristic",
       "preferredName": null,
-      "description": null
+      "description": null,
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "integer",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#Voltage",
       "label": "Voltage",
       "kind": "Characteristic",
       "preferredName": null,
-      "description": null
+      "description": null,
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "float",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#EnergyEfficiency",
       "label": "EnergyEfficiency",
       "kind": "Characteristic",
       "preferredName": null,
-      "description": null
+      "description": null,
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "integer",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#RatedEnergy",
       "label": "RatedEnergy",
       "kind": "Characteristic",
       "preferredName": null,
-      "description": null
+      "description": null,
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "float",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#RatedCapacity",
       "label": "RatedCapacity",
       "kind": "Characteristic",
       "preferredName": null,
-      "description": null
+      "description": null,
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "float",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#PowerFade",
       "label": "PowerFade",
       "kind": "Characteristic",
       "preferredName": null,
-      "description": null
+      "description": null,
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "float",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#PowerCapabilityRatio",
       "label": "PowerCapabilityRatio",
       "kind": "Characteristic",
       "preferredName": null,
-      "description": "Ratio between nominal allowed battery power (W) and battery energy (Wh)."
+      "description": "Ratio between nominal allowed battery power (W) and battery energy (Wh).",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "float",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#CapacityFadeValue",
       "label": "CapacityFadeValue",
       "kind": "Characteristic",
       "preferredName": null,
-      "description": null
+      "description": null,
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "float",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#energyRoundTripEfficiencyFadeValue",
       "label": "energyRoundTripEfficiencyFadeValue",
       "kind": "Characteristic",
       "preferredName": null,
-      "description": null
+      "description": null,
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "float",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#RoundTripEfficiencyAt50PercentCycleLife",
       "label": "RoundTripEfficiencyAt50PercentCycleLife",
       "kind": "Characteristic",
       "preferredName": null,
-      "description": null
+      "description": null,
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "integer",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#CapacityThresholdForExhaustion",
       "label": "CapacityThresholdForExhaustion",
       "kind": "Characteristic",
       "preferredName": null,
-      "description": null
+      "description": null,
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "float",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#AtSoC",
       "label": "AtSoC",
       "kind": "Characteristic",
       "preferredName": null,
-      "description": null
+      "description": null,
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "float",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#PowerCapabilityAtSoc",
       "label": "PowerCapabilityAtSoc",
       "kind": "Characteristic",
       "preferredName": null,
-      "description": null
+      "description": null,
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "float",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#ExpectedNumberOfCycles",
       "label": "ExpectedNumberOfCycles",
       "kind": "Characteristic",
       "preferredName": null,
-      "description": null
+      "description": null,
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "unsignedInt",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#ExpectedLifeTime",
       "label": "ExpectedLifeTime",
       "kind": "Characteristic",
       "preferredName": null,
-      "description": null
+      "description": null,
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "unsignedInt",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#CRateLifeCycleTest",
       "label": "CRateLifeCycleTest",
       "kind": "Characteristic",
       "preferredName": null,
-      "description": null
+      "description": null,
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "float",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#TechnicalAttributes",
@@ -567,7 +789,15 @@
       "label": "cycleLifeReferenceTest",
       "kind": "Property",
       "preferredName": "reference test for 'Expected lifetime: Number of charge-discharge cycles'",
-      "description": "The battery passport must include information about the expected battery lifetime expressed in cycles, and reference test used. \n\nDIN DKE Spec 99100 chapter reference: 6.7.6.5"
+      "description": "The battery passport must include information about the expected battery lifetime expressed in cycles, and reference test used. \n\nDIN DKE Spec 99100 chapter reference: 6.7.6.5",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "DocumentIdentifierSet",
+          "target_model": "shared@3.1.0",
+          "target_source": "idta"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#CapacityEnergyVoltageCharacteristic",
@@ -616,7 +846,15 @@
       "label": "PowerCapabilityAtSoCTrait",
       "kind": "Characteristic",
       "preferredName": null,
-      "description": null
+      "description": null,
+      "external_refs": [
+        {
+          "predicate": "constraint",
+          "target_local": "CardinalityOneToMany",
+          "target_model": "shared@3.1.0",
+          "target_source": "idta"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#PowerCapabilityAtSoC",
@@ -986,6 +1224,186 @@
       "source": "urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#PowerCapabilityAtCharacteristic",
       "target": "urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#PowerCapabilityAt",
       "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#GeneralInformationCharacteristic",
+      "target": "urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#GeneralInformationEntity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#TechnicalPropertyAreaSet",
+      "target": "urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#TechnicalAttributes",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#batteryCategory",
+      "target": "urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#BatteryCategoryEnum",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#CapacityEnergyVoltage",
+      "target": "urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#nominalVoltage",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#CapacityEnergyVoltage",
+      "target": "urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#minimumVoltage",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#CapacityEnergyVoltage",
+      "target": "urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#maximumVoltage",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#CapacityEnergyVoltage",
+      "target": "urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#ratedCapacity",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#CapacityEnergyVoltage",
+      "target": "urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#capacityFade",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#CapacityEnergyVoltage",
+      "target": "urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#ratedEnergy",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#RoundTripEnergyEfficiency",
+      "target": "urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#initialRoundTripEnergyEfficiency",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#RoundTripEnergyEfficiency",
+      "target": "urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#roundTripEfficiencyAt50PercentCycleLife",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#RoundTripEnergyEfficiency",
+      "target": "urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#energyRoundTripEfficiencyFade",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#RoundTripEnergyEfficiency",
+      "target": "urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#initialSelfDischargingRate",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#Resistance",
+      "target": "urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#initialInternalResistanceAtBatteryCellLevel",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#Resistance",
+      "target": "urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#initialInternalResistanceAtBatteryPackLevel",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#Resistance",
+      "target": "urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#initialInternalResistanceAtBatteryModuleLevel",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#Resistance",
+      "target": "urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#internalResistanceIncreaseAtBatteryCellLevel",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#Resistance",
+      "target": "urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#internalResistanceIncreaseAtBatteryPackLevel",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#Resistance",
+      "target": "urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#internalResistanceIncreaseAtBatteryModuleLevel",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#PowerCapability",
+      "target": "urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#maximumPermittedBatteryPower",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#PowerCapability",
+      "target": "urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#powerFade",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#PowerCapability",
+      "target": "urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#powerCapabilityRatio",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#Temperature",
+      "target": "urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#temperatureRangeIdleStateLowerBoundary",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#Temperature",
+      "target": "urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#temperatureRangeIdleStateUpperBoundary",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#Lifetime",
+      "target": "urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#expectedLifetime",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#Lifetime",
+      "target": "urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#expectedNumberOfCycles",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#Lifetime",
+      "target": "urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#capacityThresholdForExhaustion",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#Lifetime",
+      "target": "urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#cRateLifeCycleTest",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#PowerCapabilityAt",
+      "target": "urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#atSoC",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#PowerCapabilityAt",
+      "target": "urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#powerCapabilityAt",
+      "label": "properties",
       "optional": false
     }
   ]

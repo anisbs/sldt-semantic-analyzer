@@ -79,14 +79,30 @@
       "label": "startDateOfEffect",
       "kind": "Property",
       "preferredName": "Start date of the effect.",
-      "description": "This property defines the start date and time of the effect regardless of the time the notification was sent."
+      "description": "This property defines the start date and time of the effect regardless of the time the notification was sent.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Timestamp",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.demand_and_capacity_notification:3.0.0#expectedEndDateOfEffect",
       "label": "expectedEndDateOfEffect",
       "kind": "Property",
       "preferredName": "Expected end date of effect.",
-      "description": "Expected end date of the impact MAY be defined by the sender of the notification."
+      "description": "Expected end date of the impact MAY be defined by the sender of the notification.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Timestamp",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.demand_and_capacity_notification:3.0.0#status",
@@ -100,21 +116,45 @@
       "label": "contentChangedAt",
       "kind": "Property",
       "preferredName": "Content changed at",
-      "description": "The timestamp of the latest change of this notification. Date and time are set according to a timezone."
+      "description": "The timestamp of the latest change of this notification. Date and time are set according to a timezone.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Timestamp",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.demand_and_capacity_notification:3.0.0#sourceDisruptionId",
       "label": "sourceDisruptionId",
       "kind": "Property",
       "preferredName": "Source Disruption ID",
-      "description": "Unique ID identifying a source of the disruption to which the notification may relate. The sender of the first disruption notification generates the Source Disruption ID. Multiple notifications may relate to the same disruption ID."
+      "description": "Unique ID identifying a source of the disruption to which the notification may relate. The sender of the first disruption notification generates the Source Disruption ID. Multiple notifications may relate to the same disruption ID.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "UuidV4Trait",
+          "target_model": "shared.uuid@2.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.demand_and_capacity_notification:3.0.0#notificationId",
       "label": "notificationId",
       "kind": "Property",
       "preferredName": "Notification ID",
-      "description": "Unique ID identifying the notification."
+      "description": "Unique ID identifying the notification.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "UuidV4Trait",
+          "target_model": "shared.uuid@2.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.demand_and_capacity_notification:3.0.0#relatedNotificationIds",
@@ -142,21 +182,45 @@
       "label": "materialGlobalAssetId",
       "kind": "Property",
       "preferredName": "UUID of the Part Type Twin",
-      "description": "Identifier used uniquely to identify the part type twin."
+      "description": "Identifier used uniquely to identify the part type twin.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "UuidV4Trait",
+          "target_model": "shared.uuid@2.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.demand_and_capacity_notification:3.0.0#materialNumberCustomer",
       "label": "materialNumberCustomer",
       "kind": "Property",
       "preferredName": "Material Number Customer",
-      "description": "Material identifier as assigned by the customer. This property identifies the material in the customer's database. For standard materials (e.g. screws) for which a customer does not have an own ID, the manufacturer material ID should be set in this field, too. If the customer is the data provider, sending this property is RECOMMENDED."
+      "description": "Material identifier as assigned by the customer. This property identifies the material in the customer's database. For standard materials (e.g. screws) for which a customer does not have an own ID, the manufacturer material ID should be set in this field, too. If the customer is the data provider, sending this property is RECOMMENDED.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "PartIdCharacteristic",
+          "target_model": "part_type_information@1.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.demand_and_capacity_notification:3.0.0#materialNumberSupplier",
       "label": "materialNumberSupplier",
       "kind": "Property",
       "preferredName": "Material Number Supplier",
-      "description": "Material identifiers as assigned by the supplier or manufacturer. This property identifies the material in the supplier's database. If the supplier is the data provider, sending this property is RECOMMENDED."
+      "description": "Material identifiers as assigned by the supplier or manufacturer. This property identifies the material in the supplier's database. If the supplier is the data provider, sending this property is RECOMMENDED.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "PartIdCharacteristic",
+          "target_model": "part_type_information@1.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.demand_and_capacity_notification:3.0.0#AffectedSitesCharacteristic",
@@ -184,21 +248,45 @@
       "label": "LeadingRootCauseEnumeration",
       "kind": "Characteristic",
       "preferredName": "Leading root cause enumeration",
-      "description": "Enumeration of the available leading root causes."
+      "description": "Enumeration of the available leading root causes.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.demand_and_capacity_notification:3.0.0#EffectEnumeration",
       "label": "EffectEnumeration",
       "kind": "Characteristic",
       "preferredName": "Effect enumeration",
-      "description": "Enumeration of the available effects due to the mentioned leadingRootCause."
+      "description": "Enumeration of the available effects due to the mentioned leadingRootCause.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.demand_and_capacity_notification:3.0.0#StatusEnumeration",
       "label": "StatusEnumeration",
       "kind": "Characteristic",
       "preferredName": "Status enumeration.",
-      "description": "Status can be either \"open\" or \"resolved\"."
+      "description": "Status can be either \"open\" or \"resolved\".",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.demand_and_capacity_notification:3.0.0#UserInputTrait",
@@ -212,7 +300,15 @@
       "label": "UserInputCharacteristic",
       "kind": "Characteristic",
       "preferredName": "User input characteristic",
-      "description": "User input can be any string that is max. 4000 characters."
+      "description": "User input can be any string that is max. 4000 characters.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.demand_and_capacity_notification:3.0.0#TextLengthConstraint",

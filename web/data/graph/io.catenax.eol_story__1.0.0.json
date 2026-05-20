@@ -46,21 +46,45 @@
       "label": "dateOfReceptionGMT",
       "kind": "Property",
       "preferredName": "date of reception",
-      "description": "Gives the date of reception of the vehicle in GMT time zone"
+      "description": "Gives the date of reception of the vehicle in GMT time zone",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Timestamp",
+          "target_model": "io.openmanufacturing:characteristic@1.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.eol_story:1.0.0#dateOfDissamblyGMT",
       "label": "dateOfDissamblyGMT",
       "kind": "Property",
       "preferredName": "date of dissambly",
-      "description": "Gives the date of dissambly of the part in GMT time zone"
+      "description": "Gives the date of dissambly of the part in GMT time zone",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Timestamp",
+          "target_model": "io.openmanufacturing:characteristic@1.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.eol_story:1.0.0#dateOfScrappingGMT",
       "label": "dateOfScrappingGMT",
       "kind": "Property",
       "preferredName": "date of scrapping",
-      "description": "Gives the date of scrapping of the vehicle or part in GMT time zone"
+      "description": "Gives the date of scrapping of the vehicle or part in GMT time zone",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Timestamp",
+          "target_model": "io.openmanufacturing:characteristic@1.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.eol_story:1.0.0#sparePartQuality",
@@ -81,42 +105,90 @@
       "label": "certificateOfDestruction",
       "kind": "Property",
       "preferredName": "certificate of destruction",
-      "description": "Indicates if an certificate of destruction is present"
+      "description": "Indicates if an certificate of destruction is present",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Boolean",
+          "target_model": "io.openmanufacturing:characteristic@1.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.eol_story:1.0.0#DisassemblyStatus",
       "label": "DisassemblyStatus",
       "kind": "Characteristic",
       "preferredName": null,
-      "description": "Possible status of disassembly"
+      "description": "Possible status of disassembly",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.eol_story:1.0.0#HealthStatus",
       "label": "HealthStatus",
       "kind": "Characteristic",
       "preferredName": null,
-      "description": "Possible status of condition of a vehicle or part."
+      "description": "Possible status of condition of a vehicle or part.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.eol_story:1.0.0#RecyclingStatus",
       "label": "RecyclingStatus",
       "kind": "Characteristic",
       "preferredName": "RecyclingStatus",
-      "description": "Possible status auf a vehicle or part"
+      "description": "Possible status auf a vehicle or part",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.eol_story:1.0.0#SparePartQuality",
       "label": "SparePartQuality",
       "kind": "Characteristic",
       "preferredName": null,
-      "description": "Possible status of condition: A=quality very good; B=quality normal used; C=quality defective or with defects; N=new"
+      "description": "Possible status of condition: A=quality very good; B=quality normal used; C=quality defective or with defects; N=new",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.eol_story:1.0.0#LastMileage",
       "label": "LastMileage",
       "kind": "Characteristic",
       "preferredName": null,
-      "description": null
+      "description": null,
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "double",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     }
   ],
   "links": [

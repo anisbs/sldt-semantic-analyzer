@@ -25,14 +25,30 @@
       "label": "mappingRuleId",
       "kind": "Property",
       "preferredName": "mapping rule id",
-      "description": "Unique identifier of the document specifying the mapping rules used for creating and reading the binary file."
+      "description": "Unique identifier of the document specifying the mapping rules used for creating and reading the binary file.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.binary_exchange:1.0.0#fileContentDescriptionId",
       "label": "fileContentDescriptionId",
       "kind": "Property",
       "preferredName": "file content description ID",
-      "description": "Unique identifier of the semantic model describing the content of the binary file."
+      "description": "Unique identifier of the semantic model describing the content of the binary file.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.binary_exchange:1.0.0#binaryFile",
@@ -53,28 +69,60 @@
       "label": "resourceValue",
       "kind": "Property",
       "preferredName": "resource value",
-      "description": "Path and name of the file (with file extension).\\n\\nThe path can be absolute or relative."
+      "description": "Path and name of the file (with file extension).\\n\\nThe path can be absolute or relative.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "ResourcePath",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.binary_exchange:1.0.0#contentType",
       "label": "contentType",
       "kind": "Property",
       "preferredName": "content type",
-      "description": "Content type of that file."
+      "description": "Content type of that file.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "MimeType",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.binary_exchange:1.0.0#controlPlaneUrl",
       "label": "controlPlaneUrl",
       "kind": "Property",
       "preferredName": "control plane URL",
-      "description": "Control plane URL for accessing the binary file."
+      "description": "Control plane URL for accessing the binary file.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.binary_exchange:1.0.0#dspAssetId",
       "label": "dspAssetId",
       "kind": "Property",
       "preferredName": "dsp asset ID",
-      "description": "DSP asset ID of the binary file."
+      "description": "DSP asset ID of the binary file.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.binary_exchange:1.0.0#FileWithContentType",

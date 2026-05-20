@@ -204,7 +204,15 @@
       "label": "catenaXId",
       "kind": "Property",
       "preferredName": "Catena-X ID ",
-      "description": "Catena-X ID of partType / delivered goods."
+      "description": "Catena-X ID of partType / delivered goods.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "UuidV4Trait",
+          "target_model": "shared.uuid@2.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.global_transport_label:1.0.0#licencePlate",
@@ -309,7 +317,15 @@
       "label": "CustomerSpecificRoutingCharacteristic",
       "kind": "Characteristic",
       "preferredName": "Customer Specific Routing Characteristic",
-      "description": "Characteristic to describe the customer specific routing information."
+      "description": "Characteristic to describe the customer specific routing information.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.global_transport_label:1.0.0#LogisticsReferenceCharcteristic",
@@ -344,119 +360,255 @@
       "label": "SupplierIdCharacteristic",
       "kind": "Characteristic",
       "preferredName": "Supplier ID Characteristic",
-      "description": "Characteristic to give information on the ID of the supplier."
+      "description": "Characteristic to give information on the ID of the supplier.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.global_transport_label:1.0.0#UnloadingPointCharacteristic",
       "label": "UnloadingPointCharacteristic",
       "kind": "Characteristic",
       "preferredName": "Unloading Point Characteristic",
-      "description": "Characteristic to describe the unloading point."
+      "description": "Characteristic to describe the unloading point.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.global_transport_label:1.0.0#InternalDestinationCharacteristic",
       "label": "InternalDestinationCharacteristic",
       "kind": "Characteristic",
       "preferredName": "Internal Destination Characteristic",
-      "description": "Characteristic to describe the internal destination."
+      "description": "Characteristic to describe the internal destination.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.global_transport_label:1.0.0#DeliveryNoteNumberCharaceristic",
       "label": "DeliveryNoteNumberCharaceristic",
       "kind": "Characteristic",
       "preferredName": "Delivery Note Number Characeristic",
-      "description": "Characteristic to describe the delivery note number, issued by sender."
+      "description": "Characteristic to describe the delivery note number, issued by sender.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.global_transport_label:1.0.0#SupplierNumberCharacteristic",
       "label": "SupplierNumberCharacteristic",
       "kind": "Characteristic",
       "preferredName": "Supplier Number Characteristic",
-      "description": "Characteristic to describe the supplier number of the sender assigned by customer."
+      "description": "Characteristic to describe the supplier number of the sender assigned by customer.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.global_transport_label:1.0.0#ExpectedTimeOfArrivalCharacteristic",
       "label": "ExpectedTimeOfArrivalCharacteristic",
       "kind": "Characteristic",
       "preferredName": "Expected Time Of Arrival Characteristic",
-      "description": "Characteristic to describe the time of arrival."
+      "description": "Characteristic to describe the time of arrival.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "date",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.global_transport_label:1.0.0#NetWeight",
       "label": "NetWeight",
       "kind": "Characteristic",
       "preferredName": "Net Weight",
-      "description": "Net weight of the loading unit or inner packaging item in kilogram."
+      "description": "Net weight of the loading unit or inner packaging item in kilogram.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "double",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.global_transport_label:1.0.0#GrossWeight",
       "label": "GrossWeight",
       "kind": "Characteristic",
       "preferredName": "Gross Weight",
-      "description": "Gross weight of the loading unit or inner packaging item in kilogram."
+      "description": "Gross weight of the loading unit or inner packaging item in kilogram.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "double",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.global_transport_label:1.0.0#CustomerPartNumberCharacteristic",
       "label": "CustomerPartNumberCharacteristic",
       "kind": "Characteristic",
       "preferredName": "Customer part number characteristic",
-      "description": "Describes the number of the part provided by the customer."
+      "description": "Describes the number of the part provided by the customer.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.global_transport_label:1.0.0#CustomerPartDescriptionCharacteristic",
       "label": "CustomerPartDescriptionCharacteristic",
       "kind": "Characteristic",
       "preferredName": "customer Part Description Characteristic",
-      "description": "Name of the part as assigned by the customer."
+      "description": "Name of the part as assigned by the customer.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.global_transport_label:1.0.0#SafetyRelevantPartCharacteristic",
       "label": "SafetyRelevantPartCharacteristic",
       "kind": "Characteristic",
       "preferredName": "Safety-relevant part Characteristic",
-      "description": "Describes, wether the part is safety-relevant or not. If true, the part is safety-relevant. If false, the part is not safety-relevant."
+      "description": "Describes, wether the part is safety-relevant or not. If true, the part is safety-relevant. If false, the part is not safety-relevant.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "boolean",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.global_transport_label:1.0.0#StringCharacteristic",
       "label": "StringCharacteristic",
       "kind": "Characteristic",
       "preferredName": "String Characteristic",
-      "description": "Characteristic describing a non defined string."
+      "description": "Characteristic describing a non defined string.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.global_transport_label:1.0.0#LicensePlateCharacteristic",
       "label": "LicensePlateCharacteristic",
       "kind": "Characteristic",
       "preferredName": "License Plate Characteristic",
-      "description": "Characteristic that describes the license plate."
+      "description": "Characteristic that describes the license plate.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.global_transport_label:1.0.0#DateCharacteristic",
       "label": "DateCharacteristic",
       "kind": "Characteristic",
       "preferredName": "date characteristic",
-      "description": "Charactersitcs that describes the date."
+      "description": "Charactersitcs that describes the date.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.global_transport_label:1.0.0#LabelTypeCharacteristic",
       "label": "LabelTypeCharacteristic",
       "kind": "Characteristic",
       "preferredName": "Label Type Characteristic",
-      "description": "Describes the label type according to VDA 4994.\n6J = Master (M)\n5J = Mixed (MIX)\n1J = Single (S)"
+      "description": "Describes the label type according to VDA 4994.\n6J = Master (M)\n5J = Mixed (MIX)\n1J = Single (S)",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.global_transport_label:1.0.0#DataIdentifierCharacteristic",
       "label": "DataIdentifierCharacteristic",
       "kind": "Characteristic",
       "preferredName": "Data Identifier Characteristic",
-      "description": "Characteristic that describes the data identifier. Possible values are:\nJ - Unique package ID of a bundle in the empty packages process\n1J - Unique package ID of inner packaging (Single Label)\n3J - Unique package ID of JIS loading unit with compartments\n4J - Unique package ID of JIS loading unit with 1...n JIS packages\n5J - Unique package ID of mixed loading unit with intermediate packaging level (mixed master)\n6J - Unique package ID of loading unit or intermediate packaging containing identical parts (Mas-ter Label for homogeneous loading unit)"
+      "description": "Characteristic that describes the data identifier. Possible values are:\nJ - Unique package ID of a bundle in the empty packages process\n1J - Unique package ID of inner packaging (Single Label)\n3J - Unique package ID of JIS loading unit with compartments\n4J - Unique package ID of JIS loading unit with 1...n JIS packages\n5J - Unique package ID of mixed loading unit with intermediate packaging level (mixed master)\n6J - Unique package ID of loading unit or intermediate packaging containing identical parts (Mas-ter Label for homogeneous loading unit)",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.global_transport_label:1.0.0#DateCategoryEnumeration",
       "label": "DateCategoryEnumeration",
       "kind": "Characteristic",
       "preferredName": "Date Category Enumeration",
-      "description": "Enumeration describing the date category conventions."
+      "description": "Enumeration describing the date category conventions.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.global_transport_label:1.0.0#OptionalInformationTrait",
@@ -498,14 +650,42 @@
       "label": "ShipFromEntity",
       "kind": "Entity",
       "preferredName": "Ship From Entity",
-      "description": "Encapsulation for information related to the goods sender."
+      "description": "Encapsulation for information related to the goods sender.",
+      "external_refs": [
+        {
+          "predicate": "properties",
+          "target_local": "address",
+          "target_model": "shared.address_characteristic@3.0.0",
+          "target_source": "catenax"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "bpnsProperty",
+          "target_model": "shared.business_partner_number@2.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.global_transport_label:1.0.0#ShipToEntity",
       "label": "ShipToEntity",
       "kind": "Entity",
       "preferredName": "Ship To Entity",
-      "description": "Encapsulation for information related to the goods recipient."
+      "description": "Encapsulation for information related to the goods recipient.",
+      "external_refs": [
+        {
+          "predicate": "properties",
+          "target_local": "address",
+          "target_model": "shared.address_characteristic@3.0.0",
+          "target_source": "catenax"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "bpnaProperty",
+          "target_model": "shared.business_partner_number@2.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.global_transport_label:1.0.0#CustomerReference1Entity",
@@ -519,7 +699,15 @@
       "label": "LogisticsReferenceEntity",
       "kind": "Entity",
       "preferredName": "Logistics Reference Entity",
-      "description": "Logistics information about estimated time of arrival, quantity and weight."
+      "description": "Logistics information about estimated time of arrival, quantity and weight.",
+      "external_refs": [
+        {
+          "predicate": "properties",
+          "target_local": "itemQuantityProperty",
+          "target_model": "shared.quantity@2.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.global_transport_label:1.0.0#ContentDescriptionEntity",
@@ -589,7 +777,15 @@
       "label": "PackagingTypeCodeCharacteristic",
       "kind": "Characteristic",
       "preferredName": "Packaging Type Code Characteristic",
-      "description": "Characteristic that describes the packaging type code."
+      "description": "Characteristic that describes the packaging type code.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.global_transport_label:1.0.0#DateCategorySet",

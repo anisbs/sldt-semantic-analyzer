@@ -67,7 +67,15 @@
       "label": "date",
       "kind": "Property",
       "preferredName": "Production Date",
-      "description": "Timestamp of the manufacturing date as the final step in production process (e.g. final quality check, ready-for-shipment event)"
+      "description": "Timestamp of the manufacturing date as the final step in production process (e.g. final quality check, ready-for-shipment event)",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Timestamp",
+          "target_model": "io.openmanufacturing:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.serial_part:1.0.1#country",
@@ -151,42 +159,90 @@
       "label": "Uuidv4Characteristic",
       "kind": "Characteristic",
       "preferredName": "UUIDv4 Characteristic",
-      "description": "A version 4 UUID is a universally unique identifier that is generated using random 32 hexadecimal characters."
+      "description": "A version 4 UUID is a universally unique identifier that is generated using random 32 hexadecimal characters.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.serial_part:1.0.1#KeyCharacteristic",
       "label": "KeyCharacteristic",
       "kind": "Characteristic",
       "preferredName": "Key Characteristic",
-      "description": "The key characteristic of a local identifier. A specific subset of keys is predefined, but additionally any other custom key is allowed. Predefined keys (to be used when applicable):\n- \"manufacturerId\" - The Business Partner Number (BPN) of the manufacturer. Value: BPN-Nummer\n- \"partInstanceId\" - The identifier of the manufacturer for the serialized instance of the part, e.g. the serial number\n- \"batchId\" - The identifier of the batch, to which the serialzed part belongs\n- \"van\" - The anonymized vehicle identification number (VIN). Value: anonymized VIN according to OEM anonymization rules. Note: If the key \"van\" is available, \"partInstanceId\" must also be available and hold the identical value."
+      "description": "The key characteristic of a local identifier. A specific subset of keys is predefined, but additionally any other custom key is allowed. Predefined keys (to be used when applicable):\n- \"manufacturerId\" - The Business Partner Number (BPN) of the manufacturer. Value: BPN-Nummer\n- \"partInstanceId\" - The identifier of the manufacturer for the serialized instance of the part, e.g. the serial number\n- \"batchId\" - The identifier of the batch, to which the serialzed part belongs\n- \"van\" - The anonymized vehicle identification number (VIN). Value: anonymized VIN according to OEM anonymization rules. Note: If the key \"van\" is available, \"partInstanceId\" must also be available and hold the identical value.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.serial_part:1.0.1#ValueCharacteristic",
       "label": "ValueCharacteristic",
       "kind": "Characteristic",
       "preferredName": "Value Characteristic",
-      "description": "The value of an identifier."
+      "description": "The value of an identifier.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.serial_part:1.0.1#PartIdCharacteristic",
       "label": "PartIdCharacteristic",
       "kind": "Characteristic",
       "preferredName": "Part ID Characteristic",
-      "description": "The part ID is a multi-character string, ususally assigned by an ERP system"
+      "description": "The part ID is a multi-character string, ususally assigned by an ERP system",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.serial_part:1.0.1#PartNameCharacteristic",
       "label": "PartNameCharacteristic",
       "kind": "Characteristic",
       "preferredName": "Part Name Characteristic",
-      "description": "Part Name in string format from the respective system in the value chain"
+      "description": "Part Name in string format from the respective system in the value chain",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.serial_part:1.0.1#CountryCodeCharacteristic",
       "label": "CountryCodeCharacteristic",
       "kind": "Characteristic",
       "preferredName": "Country Code Characteristic",
-      "description": "ISO 3166-1 alpha-3 - three-letter country codes "
+      "description": "ISO 3166-1 alpha-3 - three-letter country codes ",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.serial_part:1.0.1#Uuidv4RegularExpression",
@@ -228,7 +284,15 @@
       "label": "ClassificationCharacteristic",
       "kind": "Characteristic",
       "preferredName": "Classification Characteristic",
-      "description": "A part type must be placed into one of the following classes: 'component', 'product', 'software', 'assembly', 'tool', or 'raw material'."
+      "description": "A part type must be placed into one of the following classes: 'component', 'product', 'software', 'assembly', 'tool', or 'raw material'.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     }
   ],
   "links": [

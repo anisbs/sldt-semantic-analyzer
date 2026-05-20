@@ -32,21 +32,45 @@
       "label": "notificationId",
       "kind": "Property",
       "preferredName": "Notification Id",
-      "description": "A unique ID for the EW notification "
+      "description": "A unique ID for the EW notification ",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "UuidV4Trait",
+          "target_model": "shared.uuid@2.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.early_warning_notification:1.0.0#relatedQualityTaskID",
       "label": "relatedQualityTaskID",
       "kind": "Property",
       "preferredName": "Related Quality Task ID",
-      "description": "An ID to reference an existing early warning project and its data"
+      "description": "An ID to reference an existing early warning project and its data",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.early_warning_notification:1.0.0#information",
       "label": "information",
       "kind": "Property",
       "preferredName": "Information",
-      "description": "Some text describing the detected anomaly in the data"
+      "description": "Some text describing the detected anomaly in the data",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.early_warning_notification:1.0.0#status",
@@ -81,42 +105,90 @@
       "label": "earlyWarningAttachmentLink",
       "kind": "Property",
       "preferredName": "Additional Quality Data Link",
-      "description": "This property provides a reference to an EDC asset that will contain a zip file organized according to the specification CX-0092 and the model defined in io.catenax.quality_task_attachment:1.0.0. The zip file will contain additional data describing the early warning case."
+      "description": "This property provides a reference to an EDC asset that will contain a zip file organized according to the specification CX-0092 and the model defined in io.catenax.quality_task_attachment:1.0.0. The zip file will contain additional data describing the early warning case.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.early_warning_notification:1.0.0#catenaXId",
       "label": "catenaXId",
       "kind": "Property",
       "preferredName": "Catena-X ID",
-      "description": "A unique identifier for a part or a vehicle. The identifier relates to a Catena-X digital twin"
+      "description": "A unique identifier for a part or a vehicle. The identifier relates to a Catena-X digital twin",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "UuidV4Trait",
+          "target_model": "shared.uuid@2.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.early_warning_notification:1.0.0#aspectProperty",
       "label": "aspectProperty",
       "kind": "Property",
       "preferredName": "Aspect Property",
-      "description": "A property from the aspect model referenced by \"aspectModel\""
+      "description": "A property from the aspect model referenced by \"aspectModel\"",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.early_warning_notification:1.0.0#aspectModel",
       "label": "aspectModel",
       "kind": "Property",
       "preferredName": "Aspect Model",
-      "description": "A reference to an aspect model standardized by Catena-X for the quality use case"
+      "description": "A reference to an aspect model standardized by Catena-X for the quality use case",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "ResourcePath",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.early_warning_notification:1.0.0#rangeFrom",
       "label": "rangeFrom",
       "kind": "Property",
       "preferredName": "Value Range From",
-      "description": "Start value of a value range for an aspect property "
+      "description": "Start value of a value range for an aspect property ",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.early_warning_notification:1.0.0#rangeTo",
       "label": "rangeTo",
       "kind": "Property",
       "preferredName": "Value Range To",
-      "description": "End value of a value range for an aspect property "
+      "description": "End value of a value range for an aspect property ",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.early_warning_notification:1.0.0#valueList",
@@ -130,14 +202,30 @@
       "label": "Status",
       "kind": "Characteristic",
       "preferredName": "Status  ",
-      "description": "A status infomration d´selected from a predefined set of possible states."
+      "description": "A status infomration d´selected from a predefined set of possible states.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.early_warning_notification:1.0.0#Severity",
       "label": "Severity",
       "kind": "Characteristic",
       "preferredName": "Severity",
-      "description": "Describes the severity of a quality issue."
+      "description": "Describes the severity of a quality issue.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.early_warning_notification:1.0.0#AffectedItemsCharacteristic",
@@ -158,7 +246,15 @@
       "label": "ValuesCharacteristic",
       "kind": "Characteristic",
       "preferredName": "Values Characteristic",
-      "description": "Characteristic for the values in the value list"
+      "description": "Characteristic for the values in the value list",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.early_warning_notification:1.0.0#Items",

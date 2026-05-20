@@ -52,14 +52,36 @@
       "label": "ManufacturingEntity",
       "kind": "Entity",
       "preferredName": "manufacturing entity",
-      "description": "Encapsulates the manufacturing relevant attributes"
+      "description": "Encapsulates the manufacturing relevant attributes",
+      "external_refs": [
+        {
+          "predicate": "properties",
+          "target_local": "country",
+          "target_model": "shared.standard_codes@1.0.0",
+          "target_source": "catenax"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "sites",
+          "target_model": "shared.industry_core.site_information@1.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.shared.industry_core.manufacturing_information:1.0.0#DateCharacteristic",
       "label": "DateCharacteristic",
       "kind": "Characteristic",
       "preferredName": "date characteristic",
-      "description": "Date Characteristic"
+      "description": "Date Characteristic",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "date",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     }
   ],
   "links": [

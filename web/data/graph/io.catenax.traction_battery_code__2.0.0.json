@@ -60,14 +60,30 @@
       "label": "ComponentTypeCharacterstic",
       "kind": "Characteristic",
       "preferredName": "Component Type Characterstic",
-      "description": null
+      "description": null,
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.traction_battery_code:2.0.0#TractionBatteryCodeCharacteristic",
       "label": "TractionBatteryCodeCharacteristic",
       "kind": "Characteristic",
       "preferredName": "Batery Code Characteristic",
-      "description": "A code identifying a traction battery component like a pack, module or cell."
+      "description": "A code identifying a traction battery component like a pack, module or cell.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.traction_battery_code:2.0.0#TractionBatteryCodeRegularExpression",

@@ -81,14 +81,30 @@
       "label": "thoroughfareValue",
       "kind": "Property",
       "preferredName": "Value Thoroughfare",
-      "description": "Value of a thoroughfare, e.g. name of a street."
+      "description": "Value of a thoroughfare, e.g. name of a street.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.shared.address_characteristic:3.0.0#thoroughfareNumber",
       "label": "thoroughfareNumber",
       "kind": "Property",
       "preferredName": "Thoroughfare Number",
-      "description": "Number of a thoroughfare. As used differently in international context, this number can contain both numerical and alphanumerical values."
+      "description": "Number of a thoroughfare. As used differently in international context, this number can contain both numerical and alphanumerical values.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.shared.address_characteristic:3.0.0#localityTechnicalKey",
@@ -102,7 +118,15 @@
       "label": "localityValue",
       "kind": "Property",
       "preferredName": "Locality Value",
-      "description": "Value of a locality, e.g. name of a city (\"Mannheim\")."
+      "description": "Value of a locality, e.g. name of a city (\"Mannheim\").",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.shared.address_characteristic:3.0.0#premiseTechnicalKey",
@@ -116,7 +140,15 @@
       "label": "premiseValue",
       "kind": "Property",
       "preferredName": "Premise Value",
-      "description": "Value of a premise, e.g. name or designation of a particular site."
+      "description": "Value of a premise, e.g. name or designation of a particular site.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.shared.address_characteristic:3.0.0#postalDeliveryPointTechnicalKey",
@@ -130,7 +162,15 @@
       "label": "postalDeliveryPointValue",
       "kind": "Property",
       "preferredName": "Postal Delivery Point Value",
-      "description": "Value of a postal delivery point, e.g. designation of a gate."
+      "description": "Value of a postal delivery point, e.g. designation of a gate.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.shared.address_characteristic:3.0.0#countryShortName",
@@ -165,7 +205,15 @@
       "label": "CountryShortNameCharacteristic",
       "kind": "Characteristic",
       "preferredName": "Country Short Name Characteristic",
-      "description": "Characteristic for a short name of a country belonging to an address."
+      "description": "Characteristic for a short name of a country belonging to an address.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.shared.address_characteristic:3.0.0#AddressEntity",
@@ -263,35 +311,75 @@
       "label": "ThoroughfareTechnicalKeyCharacteristic",
       "kind": "Characteristic",
       "preferredName": "Thoroughfare Technical Key Characteristic",
-      "description": "Characteristic of the technical key of a thoroughfare."
+      "description": "Characteristic of the technical key of a thoroughfare.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.shared.address_characteristic:3.0.0#LocalityTechnicalKeyCharacteristic",
       "label": "LocalityTechnicalKeyCharacteristic",
       "kind": "Characteristic",
       "preferredName": "Locality Technical Key Characteristic",
-      "description": "Characteristic of the technical key of a locality"
+      "description": "Characteristic of the technical key of a locality",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.shared.address_characteristic:3.0.0#PremiseTechnicalKeyCharacteristic",
       "label": "PremiseTechnicalKeyCharacteristic",
       "kind": "Characteristic",
       "preferredName": "Premise Technical Key Characteristic",
-      "description": "Characteristic of the technical key of a premise."
+      "description": "Characteristic of the technical key of a premise.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.shared.address_characteristic:3.0.0#PostalDeliveryPointTechnicalKeyCharacteristic",
       "label": "PostalDeliveryPointTechnicalKeyCharacteristic",
       "kind": "Characteristic",
       "preferredName": "Postal Delivery Point Technical Key Characteristic",
-      "description": "Characteristic of the technical key of a postal delivery point."
+      "description": "Characteristic of the technical key of a postal delivery point.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.shared.address_characteristic:3.0.0#PostCodeTechnicalKeyCharacteristic",
       "label": "PostCodeTechnicalKeyCharacteristic",
       "kind": "Characteristic",
       "preferredName": "Post Code Technical Key Characteristic",
-      "description": "Characteristic for the technical key of a post code."
+      "description": "Characteristic for the technical key of a post code.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.shared.address_characteristic:3.0.0#CountryTrait",

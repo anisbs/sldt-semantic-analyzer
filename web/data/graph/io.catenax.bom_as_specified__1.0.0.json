@@ -39,7 +39,15 @@
       "label": "itemCategory",
       "kind": "Property",
       "preferredName": "Item category",
-      "description": "The BomAsSpecified defines the view of the OEM or producer of the whole product, e.g. the OEM of a vehicle. It is free of any supplier-related information and specifies the promised and guaranteed content of the whole product to the end customer. This “top-down” view is in contrast to the “bottom-up” view of the SingleLevelBoMAsPlanned, though several sub-aspects are shared. The BomAsSpecified is merely one aspect, which is attached to the twin of the whole product and itself does neither introduce further twins nor reference them. Instead it merely comprises all functional information required by dismantlers, workshops or requestors for used parts to search for and to make a match on the market place."
+      "description": "The BomAsSpecified defines the view of the OEM or producer of the whole product, e.g. the OEM of a vehicle. It is free of any supplier-related information and specifies the promised and guaranteed content of the whole product to the end customer. This “top-down” view is in contrast to the “bottom-up” view of the SingleLevelBoMAsPlanned, though several sub-aspects are shared. The BomAsSpecified is merely one aspect, which is attached to the twin of the whole product and itself does neither introduce further twins nor reference them. Instead it merely comprises all functional information required by dismantlers, workshops or requestors for used parts to search for and to make a match on the market place.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "io.openmanufacturing:characteristic@1.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.bom_as_specified:1.0.0#index",
@@ -67,14 +75,30 @@
       "label": "ownerPartId",
       "kind": "Property",
       "preferredName": "Owner part ID",
-      "description": "This is the key field of the component which usually keeps the part numbers used in after-sales, e.g. when repairing broken parts and searching for a replacement. This ownerPartId itself isn't usually bound to one part version, with the assumption that all part versions with the same ownerPartId are mutually interchangeable."
+      "description": "This is the key field of the component which usually keeps the part numbers used in after-sales, e.g. when repairing broken parts and searching for a replacement. This ownerPartId itself isn't usually bound to one part version, with the assumption that all part versions with the same ownerPartId are mutually interchangeable.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "io.openmanufacturing:characteristic@1.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.bom_as_specified:1.0.0#partVersion",
       "label": "partVersion",
       "kind": "Property",
       "preferredName": "Part version",
-      "description": "This is the version of the part. The engineering will at times supercede an older part version by a newer one, which might have different material aspects, physical dimensions etc., still maintaining compatibility."
+      "description": "This is the version of the part. The engineering will at times supercede an older part version by a newer one, which might have different material aspects, physical dimensions etc., still maintaining compatibility.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "io.openmanufacturing:characteristic@1.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.bom_as_specified:1.0.0#partQuantity",
@@ -88,7 +112,15 @@
       "label": "partDescription",
       "kind": "Property",
       "preferredName": "Part description",
-      "description": "The description of the part in the primary language of the production facility of the product owner."
+      "description": "The description of the part in the primary language of the production facility of the product owner.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "io.openmanufacturing:characteristic@1.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.bom_as_specified:1.0.0#partClassification",
@@ -102,21 +134,45 @@
       "label": "key",
       "kind": "Property",
       "preferredName": "Key",
-      "description": "Key within the classification."
+      "description": "Key within the classification.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "io.openmanufacturing:characteristic@1.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.bom_as_specified:1.0.0#value",
       "label": "value",
       "kind": "Property",
       "preferredName": "Value",
-      "description": "Value within the classification."
+      "description": "Value within the classification.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "io.openmanufacturing:characteristic@1.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.bom_as_specified:1.0.0#measurementUnit",
       "label": "measurementUnit",
       "kind": "Property",
       "preferredName": "Measurement unit",
-      "description": "Unit of measurement for the quantity of serialized objects."
+      "description": "Unit of measurement for the quantity of serialized objects.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "UnitReference",
+          "target_model": "io.openmanufacturing:characteristic@1.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.bom_as_specified:1.0.0#quantityNumber",
@@ -130,14 +186,30 @@
       "label": "IdentifierCharacteristic",
       "kind": "Characteristic",
       "preferredName": "IdentifierCharacteristic",
-      "description": null
+      "description": null,
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.bom_as_specified:1.0.0#IndexCharacteristic",
       "label": "IndexCharacteristic",
       "kind": "Characteristic",
       "preferredName": "Index characteristic",
-      "description": "Characteristic of the index."
+      "description": "Characteristic of the index.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "integer",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.bom_as_specified:1.0.0#PartQuantityCharacteristic",
@@ -151,7 +223,15 @@
       "label": "NumberOfObjects",
       "kind": "Characteristic",
       "preferredName": "Number of objects",
-      "description": "Quantifiable number of objects in reference to the measurementUnit."
+      "description": "Quantifiable number of objects in reference to the measurementUnit.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "double",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.bom_as_specified:1.0.0#ItemCharacteristic",
@@ -207,7 +287,15 @@
       "label": "QuantityCharacteristic",
       "kind": "Characteristic",
       "preferredName": "Quantity characteristic",
-      "description": "Characteristic of the quantity."
+      "description": "Characteristic of the quantity.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "integer",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     }
   ],
   "links": [

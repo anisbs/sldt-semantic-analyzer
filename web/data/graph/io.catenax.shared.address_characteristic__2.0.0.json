@@ -165,14 +165,30 @@
       "label": "CountryShortNameCharacteristic",
       "kind": "Characteristic",
       "preferredName": "Country Short Name Characteristic",
-      "description": "Characteristic for a short name of a country belonging to an address"
+      "description": "Characteristic for a short name of a country belonging to an address",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.shared.address_characteristic:2.0.0#Text",
       "label": "Text",
       "kind": "Characteristic",
       "preferredName": null,
-      "description": "Describes a Property which contains plain text. This is intended exclusively for human readable strings, not for identifiers, measurement values, etc."
+      "description": "Describes a Property which contains plain text. This is intended exclusively for human readable strings, not for identifiers, measurement values, etc.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.shared.address_characteristic:2.0.0#AddressEntity",
@@ -298,35 +314,75 @@
       "label": "ThoroughfareTechnicalKeyCharacteristic",
       "kind": "Characteristic",
       "preferredName": "Thoroughfare Technical Key Characteristic",
-      "description": "Characteristic of the technical key of a thoroughfare"
+      "description": "Characteristic of the technical key of a thoroughfare",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.shared.address_characteristic:2.0.0#PostCodeTechnicalKeyCharacteristic",
       "label": "PostCodeTechnicalKeyCharacteristic",
       "kind": "Characteristic",
       "preferredName": "Post Code Technical Key Characteristic",
-      "description": "Characteristic for the technical key of a post code"
+      "description": "Characteristic for the technical key of a post code",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.shared.address_characteristic:2.0.0#LocalityTechnicalKeyCharacteristic",
       "label": "LocalityTechnicalKeyCharacteristic",
       "kind": "Characteristic",
       "preferredName": "Locality Technical Key Characteristic",
-      "description": "Characteristic of the technical key of a locality"
+      "description": "Characteristic of the technical key of a locality",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.shared.address_characteristic:2.0.0#PremiseTechnicalKeyCharacteristic",
       "label": "PremiseTechnicalKeyCharacteristic",
       "kind": "Characteristic",
       "preferredName": "Premise Technical Key Characteristic",
-      "description": "Characteristic of the technical key of a premise"
+      "description": "Characteristic of the technical key of a premise",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.shared.address_characteristic:2.0.0#PostalDeliveryPointTechnicalKeyCharacteristic",
       "label": "PostalDeliveryPointTechnicalKeyCharacteristic",
       "kind": "Characteristic",
       "preferredName": "Postal Delivery Point Technical Key Characteristic",
-      "description": "Characteristic of the technical key of a postal delivery point"
+      "description": "Characteristic of the technical key of a postal delivery point",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     }
   ],
   "links": [

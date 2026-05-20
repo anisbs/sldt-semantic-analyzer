@@ -31,7 +31,15 @@
       "label": "ProvideProductionForecast",
       "kind": "Aspect",
       "preferredName": "Provide Production Forecast",
-      "description": "Answer to a customer with all information about the requested items"
+      "description": "Answer to a customer with all information about the requested items",
+      "external_refs": [
+        {
+          "predicate": "properties",
+          "target_local": "header",
+          "target_model": "shared.message_header@1.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.shopfloor_information.provide_production_forecast:1.0.0#productionForecastResponse",
@@ -52,28 +60,60 @@
       "label": "iterationNumber",
       "kind": "Property",
       "preferredName": "Iteration Number",
-      "description": "Only set in CommunicationMode == \"notification/cyclic\" to be able to check the order of the notifications. \n\nNot required for communication mode = \"synchronous\""
+      "description": "Only set in CommunicationMode == \"notification/cyclic\" to be able to check the order of the notifications. \n\nNot required for communication mode = \"synchronous\"",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "IntegerValueCharacteristic",
+          "target_model": "shared.shopfloor_information_types@1.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.shopfloor_information.provide_production_forecast:1.0.0#positionId",
       "label": "positionId",
       "kind": "Property",
       "preferredName": "Position Id",
-      "description": "Identifier of a position of an order"
+      "description": "Identifier of a position of an order",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "UuidCharacteristic",
+          "target_model": "shared.message_header@1.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.shopfloor_information.provide_production_forecast:1.0.0#productionForecast",
       "label": "productionForecast",
       "kind": "Property",
       "preferredName": "Production Forecast",
-      "description": "Date of completion"
+      "description": "Date of completion",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Timestamp",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.shopfloor_information.provide_production_forecast:1.0.0#precisionOfForecast",
       "label": "precisionOfForecast",
       "kind": "Property",
       "preferredName": "Precision Of Forecast",
-      "description": "Accuracy of the prediction"
+      "description": "Accuracy of the prediction",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "TimeValueCharacteristic",
+          "target_model": "shared.shopfloor_information_types@1.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.shopfloor_information.provide_production_forecast:1.0.0#productionStatus",
@@ -101,7 +141,15 @@
       "label": "forecastDate",
       "kind": "Property",
       "preferredName": "Forecast Date",
-      "description": "Date/time of the forecast calculation"
+      "description": "Date/time of the forecast calculation",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Timestamp",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.shopfloor_information.provide_production_forecast:1.0.0#ProductionForecastCharacteristic",
@@ -115,7 +163,21 @@
       "label": "ProductionForecastItem",
       "kind": "Entity",
       "preferredName": "Production Forecast Item",
-      "description": "Datamodel of the concrete production forecast for one forecast item"
+      "description": "Datamodel of the concrete production forecast for one forecast item",
+      "external_refs": [
+        {
+          "predicate": "properties",
+          "target_local": "communicationMode",
+          "target_model": "shared.shopfloor_information_types@1.0.0",
+          "target_source": "catenax"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "versionDataModel",
+          "target_model": "shared.shopfloor_information_types@1.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.shopfloor_information.provide_production_forecast:1.0.0#ForecastItem",
@@ -136,21 +198,45 @@
       "label": "ProductionStatusEnum",
       "kind": "Characteristic",
       "preferredName": "Production Status Enumeration",
-      "description": "Enumeration with all possible states of an order within MP"
+      "description": "Enumeration with all possible states of an order within MP",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.shopfloor_information.provide_production_forecast:1.0.0#ReasonsForDelayEnum",
       "label": "ReasonsForDelayEnum",
       "kind": "Characteristic",
       "preferredName": "Reasons for Delay Enum",
-      "description": "Enum that specifies reasons for a delay of an order"
+      "description": "Enum that specifies reasons for a delay of an order",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.shopfloor_information.provide_production_forecast:1.0.0#ReturnCodeEnum",
       "label": "ReturnCodeEnum",
       "kind": "Characteristic",
       "preferredName": "Return Code Enumeration",
-      "description": "Enumeration with all Return Codes"
+      "description": "Enumeration with all Return Codes",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     }
   ],
   "links": [

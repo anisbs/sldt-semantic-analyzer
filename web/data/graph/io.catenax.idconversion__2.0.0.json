@@ -18,7 +18,15 @@
       "label": "IdConversion",
       "kind": "Aspect",
       "preferredName": "Id Conversion",
-      "description": "The IdConversion aspect deals with the Conversion of (vehicle, global) Identifiers like VINs into Pseudonyms which are located in an OEM domain (VANs, UUIDs and other concepts) and vice versa. As there are multiple options for representing Identifiers and performing Pseudonymization, this model uses a combination of unqualified values for identifiers paired with namespaces (domains, keys)."
+      "description": "The IdConversion aspect deals with the Conversion of (vehicle, global) Identifiers like VINs into Pseudonyms which are located in an OEM domain (VANs, UUIDs and other concepts) and vice versa. As there are multiple options for representing Identifiers and performing Pseudonymization, this model uses a combination of unqualified values for identifiers paired with namespaces (domains, keys).",
+      "external_refs": [
+        {
+          "predicate": "properties",
+          "target_local": "nil",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.idconversion:2.0.0#ConvertOperation",
@@ -88,14 +96,30 @@
       "label": "UrnCharacteristic",
       "kind": "Characteristic",
       "preferredName": "A Urn",
-      "description": "A Unique Resource Name (URN) preferrably in IRI syntax (with a trailing #)"
+      "description": "A Unique Resource Name (URN) preferrably in IRI syntax (with a trailing #)",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "anyURI",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.idconversion:2.0.0#IdCharacteristic",
       "label": "IdCharacteristic",
       "kind": "Characteristic",
       "preferredName": "An Id",
-      "description": "An (unqualified) Identifier. This characteristic should be constrained in concrete implementations and in correspondence with associated domains of the Convert operation."
+      "description": "An (unqualified) Identifier. This characteristic should be constrained in concrete implementations and in correspondence with associated domains of the Convert operation.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.idconversion:2.0.0#QualifiedBatchOfIdentifiersEither",
@@ -123,7 +147,15 @@
       "label": "IdList",
       "kind": "Characteristic",
       "preferredName": "A List of Ids",
-      "description": "A list of (unqualified) identifiers. This characteristic should be constrained in concrete implementations and in correspondence with associated domains of the Convert operation."
+      "description": "A list of (unqualified) identifiers. This characteristic should be constrained in concrete implementations and in correspondence with associated domains of the Convert operation.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.idconversion:2.0.0#QualifiedListOfIdentifiersEntity",

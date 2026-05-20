@@ -32,35 +32,75 @@
       "label": "manufacturerId",
       "kind": "Property",
       "preferredName": "Manufacturer ID",
-      "description": "The ID of the initial issuer of the single level BoMAsSpecified"
+      "description": "The ID of the initial issuer of the single level BoMAsSpecified",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.single_level_bom_as_specified:2.0.0#childassetId",
       "label": "childassetId",
       "kind": "Property",
       "preferredName": "Child assetId",
-      "description": "Describes the Catena-X ID of the child part"
+      "description": "Describes the Catena-X ID of the child part",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.single_level_bom_as_specified:2.0.0#lastModifiedOn",
       "label": "lastModifiedOn",
       "kind": "Property",
       "preferredName": "Last Modified On",
-      "description": "The time the item was modified the last time"
+      "description": "The time the item was modified the last time",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Timestamp",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.single_level_bom_as_specified:2.0.0#createdOn",
       "label": "createdOn",
       "kind": "Property",
       "preferredName": "Created On",
-      "description": "The time the item was created on"
+      "description": "The time the item was created on",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Timestamp",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.single_level_bom_as_specified:2.0.0#measurementUnit",
       "label": "measurementUnit",
       "kind": "Property",
       "preferredName": "Measurement Unit",
-      "description": "Unit of measurement for the quantity of serialized objects."
+      "description": "Unit of measurement for the quantity of serialized objects.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "UnitReference",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.single_level_bom_as_specified:2.0.0#quantityNumber",
@@ -74,14 +114,30 @@
       "label": "key",
       "kind": "Property",
       "preferredName": "Key",
-      "description": "Key within the classification."
+      "description": "Key within the classification.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.single_level_bom_as_specified:2.0.0#value",
       "label": "value",
       "kind": "Property",
       "preferredName": "Value",
-      "description": "Value within the classification."
+      "description": "Value within the classification.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.single_level_bom_as_specified:2.0.0#childItems",
@@ -109,7 +165,15 @@
       "label": "itemVersion",
       "kind": "Property",
       "preferredName": "Item Version",
-      "description": "This is the version of the item. The engineering will at times supercede an older item version by a newer one, which might have different material aspects, physical dimensions etc., still maintaining compatibility."
+      "description": "This is the version of the item. The engineering will at times supercede an older item version by a newer one, which might have different material aspects, physical dimensions etc., still maintaining compatibility.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.single_level_bom_as_specified:2.0.0#itemQuantity",
@@ -123,7 +187,15 @@
       "label": "itemDescription",
       "kind": "Property",
       "preferredName": "Item Description",
-      "description": "The description of the item in the primary language of the production facility of the product owner."
+      "description": "The description of the item in the primary language of the production facility of the product owner.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.single_level_bom_as_specified:2.0.0#itemClassification",
@@ -137,7 +209,15 @@
       "label": "childItemCategory",
       "kind": "Property",
       "preferredName": "Child Item Category",
-      "description": "The BomAsSpecified defines the view of the OEM or producer of the whole product, e.g. the OEM of a vehicle. It is free of any supplier-related information and specifies the promised and guaranteed content of the whole product to the end customer. This \"top-down\" view is in contrast to the \"bottom-up\" view of the SingleLevelBoMAsPlanned, though several sub-aspects are shared. The BomAsSpecified is merely one aspect, which is attached to the twin of the whole product and itself does neither introduce further twins nor reference them. Instead it merely comprises all functional information required by dismantlers, workshops or requestors for used parts to search for and to make a match on the market place."
+      "description": "The BomAsSpecified defines the view of the OEM or producer of the whole product, e.g. the OEM of a vehicle. It is free of any supplier-related information and specifies the promised and guaranteed content of the whole product to the end customer. This \"top-down\" view is in contrast to the \"bottom-up\" view of the SingleLevelBoMAsPlanned, though several sub-aspects are shared. The BomAsSpecified is merely one aspect, which is attached to the twin of the whole product and itself does neither introduce further twins nor reference them. Instead it merely comprises all functional information required by dismantlers, workshops or requestors for used parts to search for and to make a match on the market place.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.single_level_bom_as_specified:2.0.0#itemPositioning",
@@ -165,7 +245,15 @@
       "label": "NumberOfObjects",
       "kind": "Characteristic",
       "preferredName": "Number of Objects",
-      "description": "Quantifiable number of objects in reference to the measurementUnit."
+      "description": "Quantifiable number of objects in reference to the measurementUnit.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "double",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.single_level_bom_as_specified:2.0.0#ItemQuantityCharacteristic",
@@ -228,7 +316,15 @@
       "label": "ItemPositioningCharacteristic",
       "kind": "Characteristic",
       "preferredName": "Item Positioning Characteristic",
-      "description": "Describes the characteristic of the left or right mark entity with its possible values (left or right)"
+      "description": "Describes the characteristic of the left or right mark entity with its possible values (left or right)",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     }
   ],
   "links": [

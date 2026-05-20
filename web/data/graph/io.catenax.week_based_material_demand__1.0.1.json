@@ -123,7 +123,15 @@
       "label": "demandCategoryName",
       "kind": "Property",
       "preferredName": "Demand Category Name",
-      "description": "The name describing a demand category."
+      "description": "The name describing a demand category.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "MultiLanguageText",
+          "target_model": "io.openmanufacturing:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.week_based_material_demand:1.0.1#calendarWeek",
@@ -144,56 +152,120 @@
       "label": "UUIDv4",
       "kind": "Characteristic",
       "preferredName": "UUIDv4",
-      "description": "A version 4 UUID is a universally unique identifier that is generated using random 32 hexadecimal characters."
+      "description": "A version 4 UUID is a universally unique identifier that is generated using random 32 hexadecimal characters.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.week_based_material_demand:1.0.1#BPNL",
       "label": "BPNL",
       "kind": "Characteristic",
       "preferredName": "Business Partner Number Legal Entity",
-      "description": "BPNL represents the legal entity of an organization participating in Catena-X."
+      "description": "BPNL represents the legal entity of an organization participating in Catena-X.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.week_based_material_demand:1.0.1#MaterialNumber",
       "label": "MaterialNumber",
       "kind": "Characteristic",
       "preferredName": "Material Number",
-      "description": "The material number is a multi-character string, usually assigned by an ERP system."
+      "description": "The material number is a multi-character string, usually assigned by an ERP system.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.week_based_material_demand:1.0.1#MaterialDescription",
       "label": "MaterialDescription",
       "kind": "Characteristic",
       "preferredName": "Material Description",
-      "description": "Description of a material demand."
+      "description": "Description of a material demand.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.week_based_material_demand:1.0.1#Timestamp",
       "label": "Timestamp",
       "kind": "Characteristic",
       "preferredName": "Timestamp",
-      "description": "Point in time."
+      "description": "Point in time.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "dateTimeStamp",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.week_based_material_demand:1.0.1#BPNS",
       "label": "BPNS",
       "kind": "Characteristic",
       "preferredName": "Business Partner Number Site",
-      "description": "BPNS represents a site which can be a production plant inside one location."
+      "description": "BPNS represents a site which can be a production plant inside one location.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.week_based_material_demand:1.0.1#CalendarWeek",
       "label": "CalendarWeek",
       "kind": "Characteristic",
       "preferredName": "Calendar Week",
-      "description": "An ISO calendar week in which a given demand is needed. Must be given as date of the Monday in the week."
+      "description": "An ISO calendar week in which a given demand is needed. Must be given as date of the Monday in the week.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "date",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.week_based_material_demand:1.0.1#Quantity",
       "label": "Quantity",
       "kind": "Characteristic",
       "preferredName": "Quantity",
-      "description": "Quantities of weekly demands."
+      "description": "Quantities of weekly demands.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "decimal",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.week_based_material_demand:1.0.1#DemandSeriesSet",
@@ -207,7 +279,15 @@
       "label": "UnitOfMeasure",
       "kind": "Characteristic",
       "preferredName": "Unit of Measure",
-      "description": "The Enumeration lists a selection of allowed units of measure referenced by their official code according to Codes for Units of Measure Used in International Trade"
+      "description": "The Enumeration lists a selection of allowed units of measure referenced by their official code according to Codes for Units of Measure Used in International Trade",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.week_based_material_demand:1.0.1#DemandCategory",
@@ -298,7 +378,15 @@
       "label": "DemandCategoryCode",
       "kind": "Characteristic",
       "preferredName": "Demand Category Code",
-      "description": "The code identifying a demand category."
+      "description": "The code identifying a demand category.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.week_based_material_demand:1.0.1#QuantityRange",

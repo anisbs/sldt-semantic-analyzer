@@ -46,14 +46,30 @@
       "label": "CountryCodeCharacteristic",
       "kind": "Characteristic",
       "preferredName": "Country Code Characteristic",
-      "description": "ISO 3166-1 alpha-3 – three-letter country codes "
+      "description": "ISO 3166-1 alpha-3 – three-letter country codes ",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.manufactured_parts_quality_information:1.0.0#UUIDv4",
       "label": "UUIDv4",
       "kind": "Characteristic",
       "preferredName": "UUIDv4",
-      "description": "A version 4 UUID is a universally unique identifier that is generated using random 32 hexadecimal characters."
+      "description": "A version 4 UUID is a universally unique identifier that is generated using random 32 hexadecimal characters.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.manufactured_parts_quality_information:1.0.0#ManufacturingCharacteristic",
@@ -67,21 +83,45 @@
       "label": "PositiveNumber",
       "kind": "Characteristic",
       "preferredName": null,
-      "description": null
+      "description": null,
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "positiveInteger",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.manufactured_parts_quality_information:1.0.0#manufacturerSerialPartNumber",
       "label": "manufacturerSerialPartNumber",
       "kind": "Property",
       "preferredName": "Manufacturer serial part number",
-      "description": "Serial part number given by  the manufacturer. Not available for common parts."
+      "description": "Serial part number given by  the manufacturer. Not available for common parts.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "io.openmanufacturing:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.manufactured_parts_quality_information:1.0.0#nameAtManufacturer",
       "label": "nameAtManufacturer",
       "kind": "Property",
       "preferredName": "Manufacturer part name",
-      "description": "Name of the manufactured part as given by the manufacturer."
+      "description": "Name of the manufactured part as given by the manufacturer.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "io.openmanufacturing:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.manufactured_parts_quality_information:1.0.0#listOfManufacturedParts",
@@ -102,7 +142,15 @@
       "label": "qualityTaskId",
       "kind": "Property",
       "preferredName": "Quality Task ID",
-      "description": "A unique quality task identifier where this manufacturing information belongs to. Optional to ensure that also data exchange without having a quality task."
+      "description": "A unique quality task identifier where this manufacturing information belongs to. Optional to ensure that also data exchange without having a quality task.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "io.openmanufacturing:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.manufactured_parts_quality_information:1.0.0#manufacturingInformation",
@@ -116,7 +164,15 @@
       "label": "date",
       "kind": "Property",
       "preferredName": "Production Date",
-      "description": "Date of manufacturing"
+      "description": "Date of manufacturing",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Timestamp",
+          "target_model": "io.openmanufacturing:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.manufactured_parts_quality_information:1.0.0#country",
@@ -130,35 +186,75 @@
       "label": "plantId",
       "kind": "Property",
       "preferredName": "Plant id",
-      "description": "Manufacturer-specific identifier of a the production plant of this part"
+      "description": "Manufacturer-specific identifier of a the production plant of this part",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "io.openmanufacturing:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.manufactured_parts_quality_information:1.0.0#plantDescription",
       "label": "plantDescription",
       "kind": "Property",
       "preferredName": "Plant description",
-      "description": "Manufacturer-specific description of the production plant of this part"
+      "description": "Manufacturer-specific description of the production plant of this part",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "io.openmanufacturing:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.manufactured_parts_quality_information:1.0.0#batchId",
       "label": "batchId",
       "kind": "Property",
       "preferredName": "Batch number",
-      "description": "Manufacturer-specific batch identifier: In which batch was this part manufactured"
+      "description": "Manufacturer-specific batch identifier: In which batch was this part manufactured",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "io.openmanufacturing:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.manufactured_parts_quality_information:1.0.0#productionLine",
       "label": "productionLine",
       "kind": "Property",
       "preferredName": "Production line",
-      "description": "On which production line was this part produced"
+      "description": "On which production line was this part produced",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "io.openmanufacturing:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.manufactured_parts_quality_information:1.0.0#hasBeenReworked",
       "label": "hasBeenReworked",
       "kind": "Property",
       "preferredName": "Reworked",
-      "description": "Indicator whether this part was reworked during manufacturing"
+      "description": "Indicator whether this part was reworked during manufacturing",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Boolean",
+          "target_model": "io.openmanufacturing:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.manufactured_parts_quality_information:1.0.0#numberOfConductedEOLTests",
@@ -179,21 +275,45 @@
       "label": "key",
       "kind": "Property",
       "preferredName": "Key id",
-      "description": "Key identifier for this additional information"
+      "description": "Key identifier for this additional information",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "io.openmanufacturing:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.manufactured_parts_quality_information:1.0.0#value",
       "label": "value",
       "kind": "Property",
       "preferredName": "Value",
-      "description": "Value for this additional information"
+      "description": "Value for this additional information",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "io.openmanufacturing:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.manufactured_parts_quality_information:1.0.0#manufacturerId",
       "label": "manufacturerId",
       "kind": "Property",
       "preferredName": "Manufacturer ID",
-      "description": "Identifier assigned by the manufacturer for this specific part. In case of common parts: This identifier is not unique."
+      "description": "Identifier assigned by the manufacturer for this specific part. In case of common parts: This identifier is not unique.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "io.openmanufacturing:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.manufactured_parts_quality_information:1.0.0#ManufacturedPartsQualityInformation",

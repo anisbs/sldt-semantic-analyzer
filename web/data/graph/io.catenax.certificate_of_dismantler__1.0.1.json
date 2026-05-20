@@ -31,14 +31,30 @@
       "label": "governmentAddress",
       "kind": "Property",
       "preferredName": "government address",
-      "description": "the address of the responsible government agency"
+      "description": "the address of the responsible government agency",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "PostalAddress",
+          "target_model": "shared.address_characteristic@1.0.1",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.certificate_of_dismantler:1.0.1#certificateNumber",
       "label": "certificateNumber",
       "kind": "Property",
       "preferredName": "certificate number",
-      "description": "license number of the license"
+      "description": "license number of the license",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "io.openmanufacturing:characteristic@1.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.certificate_of_dismantler:1.0.1#issueDate",
@@ -59,49 +75,105 @@
       "label": "producerNumber",
       "kind": "Property",
       "preferredName": "producer number",
-      "description": "describes the identification of the producing company"
+      "description": "describes the identification of the producing company",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "io.openmanufacturing:characteristic@1.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.certificate_of_dismantler:1.0.1#carrierIdentification",
       "label": "carrierIdentification",
       "kind": "Property",
       "preferredName": "carrier identification",
-      "description": "describes the identification of the transporting company"
+      "description": "describes the identification of the transporting company",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "io.openmanufacturing:characteristic@1.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.certificate_of_dismantler:1.0.1#disposerNumber",
       "label": "disposerNumber",
       "kind": "Property",
       "preferredName": "disposer number",
-      "description": "describes the identification of the disposal company"
+      "description": "describes the identification of the disposal company",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "io.openmanufacturing:characteristic@1.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.certificate_of_dismantler:1.0.1#dismantlerContact",
       "label": "dismantlerContact",
       "kind": "Property",
       "preferredName": "dismantling company contact",
-      "description": "dismantling company contact information"
+      "description": "dismantling company contact information",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "ContactCharacteristic",
+          "target_model": "shared.contact_information@1.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.certificate_of_dismantler:1.0.1#auditorAddress",
       "label": "auditorAddress",
       "kind": "Property",
       "preferredName": "auditor address",
-      "description": "the address of the auditor"
+      "description": "the address of the auditor",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "PostalAddress",
+          "target_model": "shared.address_characteristic@1.0.1",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.certificate_of_dismantler:1.0.1#dismantlerAddress",
       "label": "dismantlerAddress",
       "kind": "Property",
       "preferredName": "dismantler address",
-      "description": "address data for the dismantling company"
+      "description": "address data for the dismantling company",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "PostalAddress",
+          "target_model": "shared.address_characteristic@1.0.1",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.certificate_of_dismantler:1.0.1#auditorContact",
       "label": "auditorContact",
       "kind": "Property",
       "preferredName": "auditor contact",
-      "description": "the address of the auditor"
+      "description": "the address of the auditor",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "ContactCharacteristic",
+          "target_model": "shared.contact_information@1.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.certificate_of_dismantler:1.0.1#CertificateOfDismantler",
@@ -115,7 +187,15 @@
       "label": "DateCharacteristic",
       "kind": "Characteristic",
       "preferredName": "date Characteristic",
-      "description": "characteristic to describe a date"
+      "description": "characteristic to describe a date",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "date",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     }
   ],
   "links": [

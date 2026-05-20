@@ -38,14 +38,30 @@
       "label": "certificate",
       "kind": "Property",
       "preferredName": "Certificate",
-      "description": "A property of the model, named certificate."
+      "description": "A property of the model, named certificate.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "RecyclingStrategyCertificateCharacteristic",
+          "target_model": "shared.recycling_strategy_certificate@3.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.reuse_certificate:3.0.0#partInstanceId",
       "label": "partInstanceId",
       "kind": "Property",
       "preferredName": "Part Instance Id",
-      "description": "The serial number of the part from the manufacturer"
+      "description": "The serial number of the part from the manufacturer",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "LocalIdentifierCharacteristic",
+          "target_model": "serial_part@3.0.0",
+          "target_source": "catenax"
+        }
+      ]
     }
   ],
   "links": [

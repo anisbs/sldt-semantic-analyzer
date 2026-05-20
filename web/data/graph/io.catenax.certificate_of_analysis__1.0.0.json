@@ -50,14 +50,30 @@
       "label": "customer",
       "kind": "Property",
       "preferredName": "Customer",
-      "description": "The customer as a BPNL reference."
+      "description": "The customer as a BPNL reference.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "BpnlTrait",
+          "target_model": "shared.business_partner_number@2.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.certificate_of_analysis:1.0.0#supplier",
       "label": "supplier",
       "kind": "Property",
       "preferredName": "Supplier",
-      "description": "The supplier (manufacturer) as a BPNL reference."
+      "description": "The supplier (manufacturer) as a BPNL reference.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "BpnlTrait",
+          "target_model": "shared.business_partner_number@2.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.certificate_of_analysis:1.0.0#certificateMetaData",
@@ -92,28 +108,60 @@
       "label": "issueDate",
       "kind": "Property",
       "preferredName": "Issue date",
-      "description": "the date and timestamp of issuing this certificate"
+      "description": "the date and timestamp of issuing this certificate",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Timestamp",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.certificate_of_analysis:1.0.0#isConformWithSpecification",
       "label": "isConformWithSpecification",
       "kind": "Property",
       "preferredName": "Conformity with Specification",
-      "description": "In the case that any of the properties that are part of the Certificate of Analysis violates the defined upper or lower limit this property should be set to false."
+      "description": "In the case that any of the properties that are part of the Certificate of Analysis violates the defined upper or lower limit this property should be set to false.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Boolean",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.certificate_of_analysis:1.0.0#name",
       "label": "name",
       "kind": "Property",
       "preferredName": "Property name",
-      "description": "The name of the property"
+      "description": "The name of the property",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.certificate_of_analysis:1.0.0#description",
       "label": "description",
       "kind": "Property",
       "preferredName": "Property description",
-      "description": "This field should be used to describe the property."
+      "description": "This field should be used to describe the property.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.certificate_of_analysis:1.0.0#value",
@@ -127,7 +175,15 @@
       "label": "unit",
       "kind": "Property",
       "preferredName": "Property unit",
-      "description": "The unit of measure used for the property value and specification limits. This can be omitted for non-numerical properties, e.g. Boolean."
+      "description": "The unit of measure used for the property value and specification limits. This can be omitted for non-numerical properties, e.g. Boolean.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "UnitReference",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.certificate_of_analysis:1.0.0#lowerLimit",
@@ -162,7 +218,15 @@
       "label": "customerPartId",
       "kind": "Property",
       "preferredName": "Customer Part ID",
-      "description": "Part ID as assigned by the customer."
+      "description": "Part ID as assigned by the customer.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "PartIdCharacteristic",
+          "target_model": "part_as_planned@2.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.certificate_of_analysis:1.0.0#expiryDate",
@@ -176,14 +240,30 @@
       "label": "methodStandard",
       "kind": "Property",
       "preferredName": "Referenced Standard",
-      "description": "Reference to the standard that described the method."
+      "description": "Reference to the standard that described the method.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.certificate_of_analysis:1.0.0#methodDescription",
       "label": "methodDescription",
       "kind": "Property",
       "preferredName": "Method description",
-      "description": "This field should be used to describe the method or provide additional information to the referenced norm."
+      "description": "This field should be used to describe the method or provide additional information to the referenced norm.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.certificate_of_analysis:1.0.0#CertificateMetaDataCharacteristic",
@@ -211,7 +291,15 @@
       "label": "ValueCharacteristic",
       "kind": "Characteristic",
       "preferredName": "Value Characteristic",
-      "description": "The string should be formatted in a way sp that it is easily interpretable or convertible to the xsd datatype given in the field \"data type\"."
+      "description": "The string should be formatted in a way sp that it is easily interpretable or convertible to the xsd datatype given in the field \"data type\".",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.certificate_of_analysis:1.0.0#MethodSet",
@@ -225,7 +313,15 @@
       "label": "DateCharacteristic",
       "kind": "Characteristic",
       "preferredName": "Date Characteristic",
-      "description": "A calendar date"
+      "description": "A calendar date",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "date",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.certificate_of_analysis:1.0.0#MaterialPropertiesSet",
@@ -239,7 +335,21 @@
       "label": "CertificateMetaData",
       "kind": "Entity",
       "preferredName": "Certificate Meta Data",
-      "description": null
+      "description": null,
+      "external_refs": [
+        {
+          "predicate": "properties",
+          "target_local": "supplierOrderId",
+          "target_model": "delivery_information@2.0.0",
+          "target_source": "catenax"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "customerOrderId",
+          "target_model": "delivery_information@2.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.certificate_of_analysis:1.0.0#MaterialProperty",
@@ -253,14 +363,48 @@
       "label": "ProductTypeInformation",
       "kind": "Entity",
       "preferredName": "Product type information",
-      "description": "Product type related information"
+      "description": "Product type related information",
+      "external_refs": [
+        {
+          "predicate": "properties",
+          "target_local": "nameAtManufacturer",
+          "target_model": "part_as_planned@2.0.0",
+          "target_source": "catenax"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "manufacturerPartId",
+          "target_model": "part_as_planned@2.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.certificate_of_analysis:1.0.0#ProductInstanceInformation",
       "label": "ProductInstanceInformation",
       "kind": "Entity",
       "preferredName": "Product instance information",
-      "description": "Product instance related information"
+      "description": "Product instance related information",
+      "external_refs": [
+        {
+          "predicate": "properties",
+          "target_local": "localIdentifiers",
+          "target_model": "batch@3.0.1",
+          "target_source": "catenax"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "catenaXId",
+          "target_model": "batch@3.0.1",
+          "target_source": "catenax"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "manufacturingInformation",
+          "target_model": "batch@3.0.1",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.certificate_of_analysis:1.0.0#MethodEntity",
@@ -274,7 +418,15 @@
       "label": "DataTypeEnumerationCharacteristic",
       "kind": "Characteristic",
       "preferredName": "Data type enumeration",
-      "description": "Allows specification of any xsd data type allowed in SAMM 2.1.0 without the subtypes of xsd:integer."
+      "description": "Allows specification of any xsd data type allowed in SAMM 2.1.0 without the subtypes of xsd:integer.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "curie",
+          "target_model": "org.eclipse.esmf.samm:meta-model@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     }
   ],
   "links": [

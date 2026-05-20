@@ -37,7 +37,15 @@
       "label": "GetProductionTracking",
       "kind": "Aspect",
       "preferredName": "Get Production Tracking",
-      "description": "Aspect to request product specific data from modular production"
+      "description": "Aspect to request product specific data from modular production",
+      "external_refs": [
+        {
+          "predicate": "properties",
+          "target_local": "header",
+          "target_model": "shared.message_header@2.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.shopfloor_information.get_production_tracking:1.0.0#request",
@@ -72,7 +80,15 @@
       "label": "customerId",
       "kind": "Property",
       "preferredName": "customer Identification",
-      "description": "Internal customer Identification"
+      "description": "Internal customer Identification",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "BpnlTrait",
+          "target_model": "shared.business_partner_number@2.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.shopfloor_information.get_production_tracking:1.0.0#capabilityId",
@@ -163,14 +179,36 @@
       "label": "StringCharacteristic",
       "kind": "Characteristic",
       "preferredName": "String Characteristic",
-      "description": "Characteristic to express string values"
+      "description": "Characteristic to express string values",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.shopfloor_information.get_production_tracking:1.0.0#ProductionTrackingRequest",
       "label": "ProductionTrackingRequest",
       "kind": "Entity",
       "preferredName": "Production Tracking Request",
-      "description": "Entity that describes the request for the production tracking "
+      "description": "Entity that describes the request for the production tracking ",
+      "external_refs": [
+        {
+          "predicate": "properties",
+          "target_local": "catenaXId",
+          "target_model": "serial_part@3.0.0",
+          "target_source": "catenax"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "version",
+          "target_model": "shared.message_header@2.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.shopfloor_information.get_production_tracking:1.0.0#ProcessIdentifier",
@@ -205,21 +243,45 @@
       "label": "ProcessReferenceTypeCharacteristic",
       "kind": "Characteristic",
       "preferredName": "Process Reference Type Characteristic",
-      "description": "Enumeration to distinguish between a request based on process steps or a request based on capabilities"
+      "description": "Enumeration to distinguish between a request based on process steps or a request based on capabilities",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.shopfloor_information.get_production_tracking:1.0.0#PartInstanceLevelCharacteristic",
       "label": "PartInstanceLevelCharacteristic",
       "kind": "Characteristic",
       "preferredName": "Part Instance Level Characteristic",
-      "description": "Enumeration that contains two values, bom and partInstanceId. It is used to determine whether the optinal field bill of materialId and billOfMaterialElementId or partInstanceId become mandatory"
+      "description": "Enumeration that contains two values, bom and partInstanceId. It is used to determine whether the optinal field bill of materialId and billOfMaterialElementId or partInstanceId become mandatory",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.shopfloor_information.get_production_tracking:1.0.0#IdentifierTypeCharacteristic",
       "label": "IdentifierTypeCharacteristic",
       "kind": "Characteristic",
       "preferredName": "Identifier Type Characteristic",
-      "description": "Used to distinguish between a part instanceId, batchId or bill of materialId based identification of a product"
+      "description": "Used to distinguish between a part instanceId, batchId or bill of materialId based identification of a product",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     }
   ],
   "links": [

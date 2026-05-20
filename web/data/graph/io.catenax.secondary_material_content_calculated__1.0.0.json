@@ -25,7 +25,21 @@
       "label": "SecondaryMaterialContentCalculated",
       "kind": "Aspect",
       "preferredName": "Secondary Material Content Calculated",
-      "description": "This model refers to a planned or designed part containing one or more different materials. It references the assumed/calculated share on primary and secondary materials and relevant details."
+      "description": "This model refers to a planned or designed part containing one or more different materials. It references the assumed/calculated share on primary and secondary materials and relevant details.",
+      "external_refs": [
+        {
+          "predicate": "properties",
+          "target_local": "secondaryMaterialContent",
+          "target_model": "shared.secondary_material_content@1.0.0",
+          "target_source": "catenax"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "orderNumber",
+          "target_model": "shared.secondary_material_content@1.0.0",
+          "target_source": "catenax"
+        }
+      ]
     }
   ],
   "links": []

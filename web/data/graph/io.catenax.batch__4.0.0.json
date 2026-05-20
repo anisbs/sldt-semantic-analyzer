@@ -37,7 +37,27 @@
       "label": "Batch",
       "kind": "Aspect",
       "preferredName": "batch",
-      "description": "A batch is a quantity of(semi-)finished products or(raw)material product that have been produced under the same circumstances(e.g. same production location), as specified groups or amounts, within a certain time frame. Every batch can differ in the number or amount of products. Different batches can have varied specifications, e.g., different colors. A batch is identified via a Batch ID."
+      "description": "A batch is a quantity of(semi-)finished products or(raw)material product that have been produced under the same circumstances(e.g. same production location), as specified groups or amounts, within a certain time frame. Every batch can differ in the number or amount of products. Different batches can have varied specifications, e.g., different colors. A batch is identified via a Batch ID.",
+      "external_refs": [
+        {
+          "predicate": "properties",
+          "target_local": "globalAssetId",
+          "target_model": "shared.industry_core.common@1.0.0",
+          "target_source": "catenax"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "localIdentifiers",
+          "target_model": "shared.industry_core.common@1.0.0",
+          "target_source": "catenax"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "manufacturingInformation",
+          "target_model": "shared.industry_core.manufacturing_information@1.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.batch:4.0.0#partTypeInformation",
@@ -58,7 +78,27 @@
       "label": "PartTypeInformationEntity",
       "kind": "Entity",
       "preferredName": "part type information entity",
-      "description": "Encapsulation for data related to the part type."
+      "description": "Encapsulation for data related to the part type.",
+      "external_refs": [
+        {
+          "predicate": "properties",
+          "target_local": "manufacturerPartId",
+          "target_model": "shared.industry_core.common@1.0.0",
+          "target_source": "catenax"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "nameAtManufacturer",
+          "target_model": "shared.industry_core.common@1.0.0",
+          "target_source": "catenax"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "partClassification",
+          "target_model": "shared.industry_core.part_classification@1.0.0",
+          "target_source": "catenax"
+        }
+      ]
     }
   ],
   "links": [

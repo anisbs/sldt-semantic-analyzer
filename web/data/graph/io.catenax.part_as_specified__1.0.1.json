@@ -39,42 +39,90 @@
       "label": "classification",
       "kind": "Property",
       "preferredName": "classification",
-      "description": "The classification of the part type."
+      "description": "The classification of the part type.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "io.openmanufacturing:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.part_as_specified:1.0.1#nameAtOwner",
       "label": "nameAtOwner",
       "kind": "Property",
       "preferredName": "name at owner",
-      "description": "Name of the part as assigned by the part owner."
+      "description": "Name of the part as assigned by the part owner.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "io.openmanufacturing:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.part_as_specified:1.0.1#ownerPartId",
       "label": "ownerPartId",
       "kind": "Property",
       "preferredName": "owner part id",
-      "description": " \tpartID as assigned by the part owner. The partID identifies the part in the part owner's data space. The partId does not reference a specific instance of a part and thus should not be confused with the serial number."
+      "description": " \tpartID as assigned by the part owner. The partID identifies the part in the part owner's data space. The partId does not reference a specific instance of a part and thus should not be confused with the serial number.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "io.openmanufacturing:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.part_as_specified:1.0.1#partVersion",
       "label": "partVersion",
       "kind": "Property",
       "preferredName": "part version",
-      "description": "This is the version of the part. The engineering will at times supercede an older part version by a newer one, which might have different material aspects, physical dimensions etc., still maintaining compatibility."
+      "description": "This is the version of the part. The engineering will at times supercede an older part version by a newer one, which might have different material aspects, physical dimensions etc., still maintaining compatibility.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "io.openmanufacturing:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.part_as_specified:1.0.1#validFrom",
       "label": "validFrom",
       "kind": "Property",
       "preferredName": "valid from",
-      "description": "Start date of the validity period."
+      "description": "Start date of the validity period.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Timestamp",
+          "target_model": "io.openmanufacturing:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.part_as_specified:1.0.1#validTo",
       "label": "validTo",
       "kind": "Property",
       "preferredName": "valid to",
-      "description": "End date of the validity period."
+      "description": "End date of the validity period.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Timestamp",
+          "target_model": "io.openmanufacturing:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.part_as_specified:1.0.1#PartTypeInformationCharacteristic",

@@ -67,21 +67,45 @@
       "label": "BpnlCharacteristic",
       "kind": "Characteristic",
       "preferredName": "Business Partner Number Legal Entity",
-      "description": "BPNL (Business Partner Number Legal Entity) represents the legal entity of an organization (e.g. enterprise, university, association, …) and contains its legal name (incl. legal form, if registered), registered address and tax number. The registered address is the official, legal correspondence address which has to be supplied to governmental and tax authorities and is the address which is used in any legal or court documents. BPNL is on corporate level and is unique for this legal entity."
+      "description": "BPNL (Business Partner Number Legal Entity) represents the legal entity of an organization (e.g. enterprise, university, association, …) and contains its legal name (incl. legal form, if registered), registered address and tax number. The registered address is the official, legal correspondence address which has to be supplied to governmental and tax authorities and is the address which is used in any legal or court documents. BPNL is on corporate level and is unique for this legal entity.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.shared.business_partner_number:2.0.0#BpnaCharacteristic",
       "label": "BpnaCharacteristic",
       "kind": "Characteristic",
       "preferredName": "Business Partner Number Site",
-      "description": "BPNA (Business Partner Number Address) contains the legal name (incl. legal form, if registered) and additional organization information about site, e.g. Plant xxx, Branch office yyy of an organization with its corresponding, most commonly physical, address. A BPNA is always linked to a BPNL via relationship 'belongs to legal entity' and should be linked to a BPNS via relationship 'belongs to site'.The BPNA is on operational level (e.g. shipping or pick-up address)."
+      "description": "BPNA (Business Partner Number Address) contains the legal name (incl. legal form, if registered) and additional organization information about site, e.g. Plant xxx, Branch office yyy of an organization with its corresponding, most commonly physical, address. A BPNA is always linked to a BPNL via relationship 'belongs to legal entity' and should be linked to a BPNS via relationship 'belongs to site'.The BPNA is on operational level (e.g. shipping or pick-up address).",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.shared.business_partner_number:2.0.0#BpnsCharacteristic",
       "label": "BpnsCharacteristic",
       "kind": "Characteristic",
       "preferredName": "Business Partner Number Site",
-      "description": "BPNS (Business Partner Number Site) represents a site which can be a production plant. A site can also be e.g. an office or a warehouse. An information related to a site is e.g. needed for reporting issues (How many sites does e.g. Beispiel AG have?), status of operation (out of operations due to environmental disaster), for certificates on site level (e.g. environment certificates) or for internal regulations on site level, (e.g. security topics, Corona rules,...). Several addresses (= BPNA with different streets and different gates) can belong to one site. A BPNS should be always linked to one BPNL via relationship 'belongs to legal entity'."
+      "description": "BPNS (Business Partner Number Site) represents a site which can be a production plant. A site can also be e.g. an office or a warehouse. An information related to a site is e.g. needed for reporting issues (How many sites does e.g. Beispiel AG have?), status of operation (out of operations due to environmental disaster), for certificates on site level (e.g. environment certificates) or for internal regulations on site level, (e.g. security topics, Corona rules,...). Several addresses (= BPNA with different streets and different gates) can belong to one site. A BPNS should be always linked to one BPNL via relationship 'belongs to legal entity'.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.shared.business_partner_number:2.0.0#BpnlRegularExpression",

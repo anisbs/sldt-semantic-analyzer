@@ -60,21 +60,45 @@
       "label": "catenaXPartId",
       "kind": "Property",
       "preferredName": "Catena-X Part ID",
-      "description": "The fully anonymous Catena-X ID of the analysed part - only available after digital twin registry is fully operational."
+      "description": "The fully anonymous Catena-X ID of the analysed part - only available after digital twin registry is fully operational.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "UuidV4Trait",
+          "target_model": "shared.uuid@1.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.parts_analyses:3.0.0#catenaXQualityTaskId",
       "label": "catenaXQualityTaskId",
       "kind": "Property",
       "preferredName": "Quality Task ID",
-      "description": "The fully anonymous and unique Catena-X ID of this quality task. This id is unique inside Catena-X data space."
+      "description": "The fully anonymous and unique Catena-X ID of this quality task. This id is unique inside Catena-X data space.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "UuidV4Trait",
+          "target_model": "shared.uuid@1.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.parts_analyses:3.0.0#isDefect",
       "label": "isDefect",
       "kind": "Property",
       "preferredName": "Part defect flag",
-      "description": "True: Analysis turned out that analysed part is defect according part's specification."
+      "description": "True: Analysis turned out that analysed part is defect according part's specification.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Boolean",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.parts_analyses:3.0.0#manufacturerAnalysisID",
@@ -88,14 +112,30 @@
       "label": "manufacturerPartName",
       "kind": "Property",
       "preferredName": "Manufacturer part name",
-      "description": "Part name given from  the manufacturer or supplier of this part, component, sub component or raw material. A manufacturer part name is NOT unique: All parts of the same kind share the same part name."
+      "description": "Part name given from  the manufacturer or supplier of this part, component, sub component or raw material. A manufacturer part name is NOT unique: All parts of the same kind share the same part name.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.parts_analyses:3.0.0#manufacturerPartNumber",
       "label": "manufacturerPartNumber",
       "kind": "Property",
       "preferredName": "Manufacturer part number",
-      "description": "Part number given from  the manufacturer or supplier of this part, component, sub component or raw material. A manufacturer part number is NOT unique: All parts of the same kind share the same part number."
+      "description": "Part number given from  the manufacturer or supplier of this part, component, sub component or raw material. A manufacturer part number is NOT unique: All parts of the same kind share the same part number.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.parts_analyses:3.0.0#manufacturerSerialNumber",
@@ -109,14 +149,30 @@
       "label": "parentAnalysisID",
       "kind": "Property",
       "preferredName": "Customer Analysis ID",
-      "description": "Internal identifier for this analysis on parent level.\nIf the manufacturer is a TIER1 supplier -> parent level is OEM.\nIf the manufacturer is TIER2 supplier -> parent level is TIER1 supplier."
+      "description": "Internal identifier for this analysis on parent level.\nIf the manufacturer is a TIER1 supplier -> parent level is OEM.\nIf the manufacturer is TIER2 supplier -> parent level is TIER1 supplier.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.parts_analyses:3.0.0#parentPartNumber",
       "label": "parentPartNumber",
       "kind": "Property",
       "preferredName": "Parent part number",
-      "description": "Internal part number of the analysed part.\nIf the manufacturer is a TIER1 supplier -> parent level is OEM.\nIf the manufacturer is a TIER2 supplier -> parent level is TIER1 supplier.\nA parent part number is NOT unique: All parent parts of the same kind share the same parent part number."
+      "description": "Internal part number of the analysed part.\nIf the manufacturer is a TIER1 supplier -> parent level is OEM.\nIf the manufacturer is a TIER2 supplier -> parent level is TIER1 supplier.\nA parent part number is NOT unique: All parent parts of the same kind share the same parent part number.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.parts_analyses:3.0.0#parentSerialNumber",
@@ -130,7 +186,15 @@
       "label": "resultsDescription",
       "kind": "Property",
       "preferredName": "Several results of analysis",
-      "description": "Detailed description of part analysis results."
+      "description": "Detailed description of part analysis results.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.parts_analyses:3.0.0#status",
@@ -151,21 +215,45 @@
       "label": "selectionCriteria",
       "kind": "Property",
       "preferredName": "Selection criteria",
-      "description": "Describes the selection criteria a Catena-X data provider has applied to create this data set."
+      "description": "Describes the selection criteria a Catena-X data provider has applied to create this data set.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.parts_analyses:3.0.0#selectionStart",
       "label": "selectionStart",
       "kind": "Property",
       "preferredName": "Selection start timestamp",
-      "description": "Describes the starting point for providing records in this data set."
+      "description": "Describes the starting point for providing records in this data set.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.parts_analyses:3.0.0#selectionEnd",
       "label": "selectionEnd",
       "kind": "Property",
       "preferredName": "Selection end timestamp",
-      "description": "Describes the end point for providing records in this data set."
+      "description": "Describes the end point for providing records in this data set.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.parts_analyses:3.0.0#key",
@@ -179,7 +267,15 @@
       "label": "value",
       "kind": "Property",
       "preferredName": "Value",
-      "description": "The value for this additional information that refers to the linked unique key."
+      "description": "The value for this additional information that refers to the linked unique key.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.parts_analyses:3.0.0#PartsAnalysesList",
@@ -207,7 +303,15 @@
       "label": "UniqueID",
       "kind": "Characteristic",
       "preferredName": "unique ID",
-      "description": "Characteristic for a unique id: every linked property to this characteristic is a unique ID"
+      "description": "Characteristic for a unique id: every linked property to this characteristic is a unique ID",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.parts_analyses:3.0.0#AdditionalInformationCharacteristic",
@@ -242,14 +346,30 @@
       "label": "RecordStatusEnumeration",
       "kind": "Characteristic",
       "preferredName": "Record status enumeration",
-      "description": "Defining the enumeration for the record status"
+      "description": "Defining the enumeration for the record status",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.parts_analyses:3.0.0#StatusCharacteristic",
       "label": "StatusCharacteristic",
       "kind": "Characteristic",
       "preferredName": "StatusCharacteristic",
-      "description": "Enumeration of the different status values"
+      "description": "Enumeration of the different status values",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     }
   ],
   "links": [

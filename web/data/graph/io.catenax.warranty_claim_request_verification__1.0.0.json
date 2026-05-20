@@ -37,28 +37,78 @@
       "label": "WarrantyClaimRequestVerification",
       "kind": "Aspect",
       "preferredName": "Warranty Claim Request Verification",
-      "description": "Aspect Model for the Quality Management business case. This model is used to send back the answer for a WarrantyClaimRequest from a component manufacturer to a vehicle manufacturer (OEM). "
+      "description": "Aspect Model for the Quality Management business case. This model is used to send back the answer for a WarrantyClaimRequest from a component manufacturer to a vehicle manufacturer (OEM). ",
+      "external_refs": [
+        {
+          "predicate": "properties",
+          "target_local": "qualityTaskId",
+          "target_model": "shared.quality_core@1.0.0",
+          "target_source": "catenax"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "bpnlProperty",
+          "target_model": "shared.business_partner_number@2.0.0",
+          "target_source": "catenax"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "vehicleId",
+          "target_model": "shared.quality_core@1.0.0",
+          "target_source": "catenax"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "anonymizedVIN",
+          "target_model": "shared.quality_core@1.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.warranty_claim_request_verification:1.0.0#claimId",
       "label": "claimId",
       "kind": "Property",
       "preferredName": "Claim Identifier",
-      "description": "Each claim from this data provider has a unique claim ID.If you combine the BPNL of the data provider with this claim ID you get a unique claim ID in the data space."
+      "description": "Each claim from this data provider has a unique claim ID.If you combine the BPNL of the data provider with this claim ID you get a unique claim ID in the data space.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "UniqueID",
+          "target_model": "shared.quality_core@1.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.warranty_claim_request_verification:1.0.0#billingId",
       "label": "billingId",
       "kind": "Property",
       "preferredName": "Billing Identifier",
-      "description": "A unique identifier for one billing. It is data provider individual."
+      "description": "A unique identifier for one billing. It is data provider individual.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "UniqueID",
+          "target_model": "shared.quality_core@1.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.warranty_claim_request_verification:1.0.0#billingDate",
       "label": "billingDate",
       "kind": "Property",
       "preferredName": "Billing Date",
-      "description": "References the date when the claim was billed. Date format: ISO (YYYY-MM-DD)"
+      "description": "References the date when the claim was billed. Date format: ISO (YYYY-MM-DD)",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "ISO8601LocalDate",
+          "target_model": "shared.quality_core@1.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.warranty_claim_request_verification:1.0.0#agreedTechnicalFactor",
@@ -72,14 +122,30 @@
       "label": "debitValueJustified",
       "kind": "Property",
       "preferredName": "Debit Value Justified",
-      "description": "Check between billed technical factor & agreed technical factor; other plausibility checks"
+      "description": "Check between billed technical factor & agreed technical factor; other plausibility checks",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Boolean",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.warranty_claim_request_verification:1.0.0#billedCurrency",
       "label": "billedCurrency",
       "kind": "Property",
       "preferredName": "Billed Currency",
-      "description": "Billing currency"
+      "description": "Billing currency",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.warranty_claim_request_verification:1.0.0#claimPlausible",
@@ -107,28 +173,60 @@
       "label": "statementDate",
       "kind": "Property",
       "preferredName": "Statement Date",
-      "description": "Due date for the claim_request_verification to approve / dispute the bill"
+      "description": "Due date for the claim_request_verification to approve / dispute the bill",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "ISO8601LocalDate",
+          "target_model": "shared.quality_core@1.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.warranty_claim_request_verification:1.0.0#statementReason",
       "label": "statementReason",
       "kind": "Property",
       "preferredName": "Statement Reason",
-      "description": "Reason give by the claim_request_verification, why the bill / claim was disputed"
+      "description": "Reason give by the claim_request_verification, why the bill / claim was disputed",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.warranty_claim_request_verification:1.0.0#PositiveInteger",
       "label": "PositiveInteger",
       "kind": "Characteristic",
       "preferredName": "Positive Integer",
-      "description": "Defines a positive integer number."
+      "description": "Defines a positive integer number.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "positiveInteger",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.warranty_claim_request_verification:1.0.0#Float",
       "label": "Float",
       "kind": "Characteristic",
       "preferredName": "Float",
-      "description": "Defines a float number."
+      "description": "Defines a float number.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "float",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.warranty_claim_request_verification:1.0.0#PositiveFloatNumber",
@@ -142,7 +240,15 @@
       "label": "BillingStatusEnumeration",
       "kind": "Characteristic",
       "preferredName": "Billing Status Enumeration",
-      "description": "An enumeration to describe whether the billing status is approved or disputed"
+      "description": "An enumeration to describe whether the billing status is approved or disputed",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.warranty_claim_request_verification:1.0.0#GreaterZero",

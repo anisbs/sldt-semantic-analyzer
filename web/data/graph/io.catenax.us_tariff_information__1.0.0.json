@@ -45,14 +45,30 @@
       "label": "partId",
       "kind": "Property",
       "preferredName": "partId",
-      "description": "The fully anonymous partId (catenaxId) of the serialized part, valid for the Catena-X dataspace."
+      "description": "The fully anonymous partId (catenaxId) of the serialized part, valid for the Catena-X dataspace.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "UuidV4Trait",
+          "target_model": "shared.uuid@2.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.us_tariff_information:1.0.0#partWeight",
       "label": "partWeight",
       "kind": "Property",
       "preferredName": "Part Weight",
-      "description": "Total weight of the part"
+      "description": "Total weight of the part",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "MassCharacteristic",
+          "target_model": "shared.quantity@2.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.us_tariff_information:1.0.0#processing",
@@ -150,7 +166,15 @@
       "label": "originWeight",
       "kind": "Property",
       "preferredName": "Origin Weight",
-      "description": "Total weight of the material for one originCountry"
+      "description": "Total weight of the material for one originCountry",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "MassCharacteristic",
+          "target_model": "shared.quantity@2.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.us_tariff_information:1.0.0#valuePercentage",
@@ -283,7 +307,15 @@
       "label": "ValueCharacteristic",
       "kind": "Characteristic",
       "preferredName": "Value Characteristic",
-      "description": "Characteristic of the value property"
+      "description": "Characteristic of the value property",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "decimal",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.us_tariff_information:1.0.0#MaterialCharacteristic",
@@ -297,63 +329,135 @@
       "label": "ReferenceNumberCharacteristic",
       "kind": "Characteristic",
       "preferredName": "Reference Number Characteristic",
-      "description": "Characteristic of the Reference Number"
+      "description": "Characteristic of the Reference Number",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.us_tariff_information:1.0.0#HtsCodingsSytemCharacteristic",
       "label": "HtsCodingsSytemCharacteristic",
       "kind": "Characteristic",
       "preferredName": "HTS Codings Sytem Characteristic",
-      "description": "Characteristic of the Harmonized Tariff Schedule (HTS) Codings System."
+      "description": "Characteristic of the Harmonized Tariff Schedule (HTS) Codings System.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.us_tariff_information:1.0.0#CurrencyCharacteristic",
       "label": "CurrencyCharacteristic",
       "kind": "Characteristic",
       "preferredName": "Currency Characteristic",
-      "description": "Characteristic of the currency property defined as String."
+      "description": "Characteristic of the currency property defined as String.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.us_tariff_information:1.0.0#HtsCharacteristic",
       "label": "HtsCharacteristic",
       "kind": "Characteristic",
       "preferredName": "HTS Characteristic",
-      "description": "Characteristic of the HTS property"
+      "description": "Characteristic of the HTS property",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.us_tariff_information:1.0.0#ProcessingIdCharacteristic",
       "label": "ProcessingIdCharacteristic",
       "kind": "Characteristic",
       "preferredName": "Processing Id Characteristic",
-      "description": "Characteristic of a processing Id"
+      "description": "Characteristic of a processing Id",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "integer",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.us_tariff_information:1.0.0#CertificateIdCharacteristic",
       "label": "CertificateIdCharacteristic",
       "kind": "Characteristic",
       "preferredName": "Certificate Id Characteristic",
-      "description": "Characteristic of the Certificate Id"
+      "description": "Characteristic of the Certificate Id",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "anyURI",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.us_tariff_information:1.0.0#ClassificationIdCharacteristic",
       "label": "ClassificationIdCharacteristic",
       "kind": "Characteristic",
       "preferredName": "Classification Id Characteristic",
-      "description": "Characteristic of the classification Id property"
+      "description": "Characteristic of the classification Id property",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.us_tariff_information:1.0.0#MaterialNameCharacteristic",
       "label": "MaterialNameCharacteristic",
       "kind": "Characteristic",
       "preferredName": "Material name characteristic",
-      "description": "Characteristic of materialName property"
+      "description": "Characteristic of materialName property",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.us_tariff_information:1.0.0#CountryCharacteristic",
       "label": "CountryCharacteristic",
       "kind": "Characteristic",
       "preferredName": "Country of Origin",
-      "description": "Characteristic of a country property"
+      "description": "Characteristic of a country property",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.us_tariff_information:1.0.0#CurrencyRegularExpression",
@@ -381,21 +485,45 @@
       "label": "ProcessingTypeCharacteristic",
       "kind": "Characteristic",
       "preferredName": "Processing Type Characteristic",
-      "description": "Enumeration of processingTypes"
+      "description": "Enumeration of processingTypes",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.us_tariff_information:1.0.0#ClassificationTypeEnumeration",
       "label": "ClassificationTypeEnumeration",
       "kind": "Characteristic",
       "preferredName": "Enumeration for the Classification Type",
-      "description": "Enumeration of the classification Type property"
+      "description": "Enumeration of the classification Type property",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.us_tariff_information:1.0.0#ValuePercentageCharacteristic",
       "label": "ValuePercentageCharacteristic",
       "kind": "Characteristic",
       "preferredName": "Value Percentage Characteristic",
-      "description": "Characteristic of the valuePercentage property"
+      "description": "Characteristic of the valuePercentage property",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "decimal",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     }
   ],
   "links": [

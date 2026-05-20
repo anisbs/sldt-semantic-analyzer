@@ -72,7 +72,15 @@
       "label": "component",
       "kind": "Property",
       "preferredName": "Component",
-      "description": "The component that should be investigated in this qTask."
+      "description": "The component that should be investigated in this qTask.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.quality_task:2.0.0#dataDeletion",
@@ -86,14 +94,30 @@
       "label": "description",
       "kind": "Property",
       "preferredName": "Description",
-      "description": "Description what should be done in this qTask"
+      "description": "Description what should be done in this qTask",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.quality_task:2.0.0#qualityTaskId",
       "label": "qualityTaskId",
       "kind": "Property",
       "preferredName": "Quality Task ID",
-      "description": "A unique quality task identifier within the Catena-X dataspace. The unique id uses the Catena-X UUID trait."
+      "description": "A unique quality task identifier within the Catena-X dataspace. The unique id uses the Catena-X UUID trait.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "UuidV4Trait",
+          "target_model": "shared.uuid@1.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.quality_task:2.0.0#status",
@@ -107,7 +131,15 @@
       "label": "title",
       "kind": "Property",
       "preferredName": "Title",
-      "description": "Working title for this qTask"
+      "description": "Working title for this qTask",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.quality_task:2.0.0#listOfCompanies",
@@ -121,35 +153,75 @@
       "label": "selectionCriteria",
       "kind": "Property",
       "preferredName": "Selection criteria",
-      "description": "Describes the selection criteria a Catena-X data provider has applied to create this data set."
+      "description": "Describes the selection criteria a Catena-X data provider has applied to create this data set.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.quality_task:2.0.0#selectionStart",
       "label": "selectionStart",
       "kind": "Property",
       "preferredName": "Selection start",
-      "description": "Describes the starting point for providing records in this data set."
+      "description": "Describes the starting point for providing records in this data set.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.quality_task:2.0.0#selectionEnd",
       "label": "selectionEnd",
       "kind": "Property",
       "preferredName": "Selection end",
-      "description": "Describes the end point for providing records in this data set."
+      "description": "Describes the end point for providing records in this data set.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.quality_task:2.0.0#cxBusinessPartnerNumber",
       "label": "cxBusinessPartnerNumber",
       "kind": "Property",
       "preferredName": "Catena-X Business partner number",
-      "description": "The Catena-X business partner number for this company."
+      "description": "The Catena-X business partner number for this company.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "BpnlTrait",
+          "target_model": "shared.business_partner_number@1.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.quality_task:2.0.0#name",
       "label": "name",
       "kind": "Property",
       "preferredName": "Company name",
-      "description": "Name of the company"
+      "description": "Name of the company",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.quality_task:2.0.0#QualityTaskList",
@@ -177,7 +249,15 @@
       "label": "Date",
       "kind": "Characteristic",
       "preferredName": "Date",
-      "description": "Describes a Property which contains the date and time with an optional timezone."
+      "description": "Describes a Property which contains the date and time with an optional timezone.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "date",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.quality_task:2.0.0#SingleQualityTask",
@@ -198,28 +278,60 @@
       "label": "Company",
       "kind": "Entity",
       "preferredName": "Company",
-      "description": "One company involved in this qTask"
+      "description": "One company involved in this qTask",
+      "external_refs": [
+        {
+          "predicate": "properties",
+          "target_local": "email",
+          "target_model": "shared.contact_information@3.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.quality_task:2.0.0#RecordStatusEnumeration",
       "label": "RecordStatusEnumeration",
       "kind": "Characteristic",
       "preferredName": "Record status enumeration",
-      "description": "Defining the enumeration for the record status"
+      "description": "Defining the enumeration for the record status",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.quality_task:2.0.0#DataDeletionEnumeration",
       "label": "DataDeletionEnumeration",
       "kind": "Characteristic",
       "preferredName": "Data deletion",
-      "description": "Enumeration of possible data deletions entries."
+      "description": "Enumeration of possible data deletions entries.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.quality_task:2.0.0#StatusCharacteristic",
       "label": "StatusCharacteristic",
       "kind": "Characteristic",
       "preferredName": "Status Characteristic",
-      "description": "Enumeration of the different status values"
+      "description": "Enumeration of the different status values",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     }
   ],
   "links": [

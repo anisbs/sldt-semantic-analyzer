@@ -66,21 +66,81 @@
       "label": "Document",
       "kind": "Entity",
       "preferredName": null,
-      "description": "A single handover document."
+      "description": "A single handover document.",
+      "external_refs": [
+        {
+          "predicate": "properties",
+          "target_local": "documentIds",
+          "target_model": "handover_documentation@2.0.0",
+          "target_source": "idta"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "documentClassifications",
+          "target_model": "handover_documentation@2.0.0",
+          "target_source": "idta"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.admin-shell.idta.batterypass.handover_documentation:1.0.0#DocumentVersion",
       "label": "DocumentVersion",
       "kind": "Entity",
       "preferredName": "Dokumenten-Version",
-      "description": null
+      "description": null,
+      "external_refs": [
+        {
+          "predicate": "properties",
+          "target_local": "languages",
+          "target_model": "shared@3.1.0",
+          "target_source": "idta"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "version",
+          "target_model": "handover_documentation@2.0.0",
+          "target_source": "idta"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "title",
+          "target_model": "handover_documentation@2.0.0",
+          "target_source": "idta"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "subtitle",
+          "target_model": "handover_documentation@2.0.0",
+          "target_source": "idta"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "description",
+          "target_model": "handover_documentation@2.0.0",
+          "target_source": "idta"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "digitalFiles",
+          "target_model": "handover_documentation@2.0.0",
+          "target_source": "idta"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.admin-shell.idta.batterypass.handover_documentation:1.0.0#DocumentVersionsTrait",
       "label": "DocumentVersionsTrait",
       "kind": "Characteristic",
       "preferredName": null,
-      "description": null
+      "description": null,
+      "external_refs": [
+        {
+          "predicate": "constraint",
+          "target_local": "CardinalityOneToMany",
+          "target_model": "shared@3.1.0",
+          "target_source": "idta"
+        }
+      ]
     }
   ],
   "links": [

@@ -38,14 +38,30 @@
       "label": "simulationId",
       "kind": "Property",
       "preferredName": "Simulation ID",
-      "description": "The simulation ID uniquely identifies a simulation scenario. All aspects that belong to the same simulation scenario share a simulation ID"
+      "description": "The simulation ID uniquely identifies a simulation scenario. All aspects that belong to the same simulation scenario share a simulation ID",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "UuidV4Trait",
+          "target_model": "shared.uuid@2.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.simulated_week_based_material_demand:1.0.0#simulatedWeekBasedMaterialDemandId",
       "label": "simulatedWeekBasedMaterialDemandId",
       "kind": "Property",
       "preferredName": "Simulated Material Demand ID",
-      "description": "The simulated capacity group ID uniquely identifies the simulated material demand within the business relationship between a customer and its supplier."
+      "description": "The simulated capacity group ID uniquely identifies the simulated material demand within the business relationship between a customer and its supplier.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "UuidV4Trait",
+          "target_model": "shared.uuid@2.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.simulated_week_based_material_demand:1.0.0#simulationPriority",
@@ -59,14 +75,30 @@
       "label": "simulationDueDate",
       "kind": "Property",
       "preferredName": "Simulation Due Date",
-      "description": "The simulation due date allows the customer to indicate to the supplier the date until the evaluation of the simulation scenario should be finished."
+      "description": "The simulation due date allows the customer to indicate to the supplier the date until the evaluation of the simulation scenario should be finished.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Timestamp",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.simulated_week_based_material_demand:1.0.0#simulationChangedAt",
       "label": "simulationChangedAt",
       "kind": "Property",
       "preferredName": "Simulation Changed At",
-      "description": "Point in time when the content (any property according to the data model) of the simulated material demand was changed, at the customer, either by a human user or an automated process."
+      "description": "Point in time when the content (any property according to the data model) of the simulated material demand was changed, at the customer, either by a human user or an automated process.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Timestamp",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.simulated_week_based_material_demand:1.0.0#listOfWeekBasedMaterialDemand",
@@ -80,14 +112,96 @@
       "label": "SimulationPriorityCharacteristic",
       "kind": "Characteristic",
       "preferredName": "Simulation Priority Characteristic",
-      "description": "Values for simulation priority."
+      "description": "Values for simulation priority.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.simulated_week_based_material_demand:1.0.0#WeekBasedMaterialDemand",
       "label": "WeekBasedMaterialDemand",
       "kind": "Entity",
       "preferredName": "WeekBasedMaterialDemand",
-      "description": "An existing WeekBasedMaterialDemand, potentially modified, used to spell out a simulation scenario."
+      "description": "An existing WeekBasedMaterialDemand, potentially modified, used to spell out a simulation scenario.",
+      "external_refs": [
+        {
+          "predicate": "properties",
+          "target_local": "demandSeries",
+          "target_model": "week_based_material_demand@3.0.1",
+          "target_source": "catenax"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "materialGlobalAssetId",
+          "target_model": "week_based_material_demand@3.0.1",
+          "target_source": "catenax"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "materialDemandId",
+          "target_model": "week_based_material_demand@3.0.1",
+          "target_source": "catenax"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "supplier",
+          "target_model": "week_based_material_demand@3.0.1",
+          "target_source": "catenax"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "customer",
+          "target_model": "week_based_material_demand@3.0.1",
+          "target_source": "catenax"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "materialDemandIsInactive",
+          "target_model": "week_based_material_demand@3.0.1",
+          "target_source": "catenax"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "unitOfMeasureIsOmitted",
+          "target_model": "week_based_material_demand@3.0.1",
+          "target_source": "catenax"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "materialNumberSupplier",
+          "target_model": "week_based_material_demand@3.0.1",
+          "target_source": "catenax"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "materialNumberCustomer",
+          "target_model": "week_based_material_demand@3.0.1",
+          "target_source": "catenax"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "materialDescriptionCustomer",
+          "target_model": "week_based_material_demand@3.0.1",
+          "target_source": "catenax"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "unitOfMeasure",
+          "target_model": "week_based_material_demand@3.0.1",
+          "target_source": "catenax"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "changedAt",
+          "target_model": "week_based_material_demand@3.0.1",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.simulated_week_based_material_demand:1.0.0#ListOfWeekBasedMaterialDemandCollection",

@@ -32,28 +32,60 @@
       "label": "productCommodity",
       "kind": "Property",
       "preferredName": "Product Commodity",
-      "description": "Free-text description for commodity of a product affected by an incident in the context of ESS (Environmental and Social Standards)"
+      "description": "Free-text description for commodity of a product affected by an incident in the context of ESS (Environmental and Social Standards)",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.essincident:2.0.0#productDescription",
       "label": "productDescription",
       "kind": "Property",
       "preferredName": "Product Description",
-      "description": "Description of product or component affected by an incident in the context of ESS (Environmental and Social Standards) "
+      "description": "Description of product or component affected by an incident in the context of ESS (Environmental and Social Standards) ",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.essincident:2.0.0#partNumber",
       "label": "partNumber",
       "kind": "Property",
       "preferredName": "Part Number",
-      "description": "Part number that is affected by an incident in the context of ESS (Environmental and Social Standards) "
+      "description": "Part number that is affected by an incident in the context of ESS (Environmental and Social Standards) ",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.essincident:2.0.0#rawMaterial",
       "label": "rawMaterial",
       "kind": "Property",
       "preferredName": "Raw Material",
-      "description": "Raw material that causes an incident in the context of ESS (Environmental and Social Standards)"
+      "description": "Raw material that causes an incident in the context of ESS (Environmental and Social Standards)",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.essincident:2.0.0#industry",
@@ -81,49 +113,105 @@
       "label": "incidentSubject",
       "kind": "Property",
       "preferredName": "Incident Subject",
-      "description": "Title/ subject of an incident in the context of ESS (Environmental and Social Standards)"
+      "description": "Title/ subject of an incident in the context of ESS (Environmental and Social Standards)",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.essincident:2.0.0#incidentExternalSubject",
       "label": "incidentExternalSubject",
       "kind": "Property",
       "preferredName": "External Subject",
-      "description": "Replaces Incident Subject for external communication"
+      "description": "Replaces Incident Subject for external communication",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.essincident:2.0.0#incidentDescription",
       "label": "incidentDescription",
       "kind": "Property",
       "preferredName": "Incident Description",
-      "description": "Full text description of an incident in the context of ESS (Environmental and Social Standards)"
+      "description": "Full text description of an incident in the context of ESS (Environmental and Social Standards)",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.essincident:2.0.0#incidentExternalNotes",
       "label": "incidentExternalNotes",
       "kind": "Property",
       "preferredName": "External Notes",
-      "description": "Incident description for external communication"
+      "description": "Incident description for external communication",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.essincident:2.0.0#incidentAttachment",
       "label": "incidentAttachment",
       "kind": "Property",
       "preferredName": "Incident Attachment",
-      "description": "Picture(s) about the reported incident in the context of ESS (Environmental and Social Standards)"
+      "description": "Picture(s) about the reported incident in the context of ESS (Environmental and Social Standards)",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "ResourcePath",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.essincident:2.0.0#systemDate",
       "label": "systemDate",
       "kind": "Property",
       "preferredName": "System Date",
-      "description": "System created timestamp when the incident in the context of ESS (Environmental and Social Standards) was issued and saved"
+      "description": "System created timestamp when the incident in the context of ESS (Environmental and Social Standards) was issued and saved",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Timestamp",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.essincident:2.0.0#incidentDate",
       "label": "incidentDate",
       "kind": "Property",
       "preferredName": "Date of Incident",
-      "description": "Date and time information when an incident in the context of ESS (Environmental and Social Standards) occurred"
+      "description": "Date and time information when an incident in the context of ESS (Environmental and Social Standards) occurred",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Timestamp",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.essincident:2.0.0#incidentId",
@@ -144,7 +232,15 @@
       "label": "incidentDisplayId",
       "kind": "Property",
       "preferredName": "Display ID",
-      "description": "Human readable format of Incident ID"
+      "description": "Human readable format of Incident ID",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.essincident:2.0.0#incidentStatusInformation",
@@ -158,35 +254,75 @@
       "label": "incidentShareFlag",
       "kind": "Property",
       "preferredName": "Incident Share Flag",
-      "description": "Flag, that can be set to true in order to request to publish the incident, default value is false"
+      "description": "Flag, that can be set to true in order to request to publish the incident, default value is false",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Boolean",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.essincident:2.0.0#subCaseOpCoIds",
       "label": "subCaseOpCoIds",
       "kind": "Property",
       "preferredName": "Sub Case Operating Company Incident Ids",
-      "description": "Incident Ids that belong to a Master Operating Company Incident Id"
+      "description": "Incident Ids that belong to a Master Operating Company Incident Id",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.essincident:2.0.0#incidentSystemId",
       "label": "incidentSystemId",
       "kind": "Property",
       "preferredName": "Incident System Id",
-      "description": "System Id that defines the tenant"
+      "description": "System Id that defines the tenant",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.essincident:2.0.0#essOriginatorCompanyName",
       "label": "essOriginatorCompanyName",
       "kind": "Property",
       "preferredName": "ESS Originator Company Name",
-      "description": "Name of a company / an organisation that is the originator of an incident in the context of ESS (Environmental and Social Standards)"
+      "description": "Name of a company / an organisation that is the originator of an incident in the context of ESS (Environmental and Social Standards)",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.essincident:2.0.0#essOriginatorAddress",
       "label": "essOriginatorAddress",
       "kind": "Property",
       "preferredName": "Ess Originator Address",
-      "description": "Address of ESS Originator "
+      "description": "Address of ESS Originator ",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "PostalAddress",
+          "target_model": "shared.address_characteristic@3.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.essincident:2.0.0#essOriginatorBpnL",
@@ -221,7 +357,15 @@
       "label": "essIncidentIssuerFirstName",
       "kind": "Property",
       "preferredName": "ESS Incident Issuer First Name",
-      "description": "First name of ESS incident issuer"
+      "description": "First name of ESS incident issuer",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.essincident:2.0.0#essIncidentIssuerEmailAddress",
@@ -235,14 +379,30 @@
       "label": "essIncidentIssuerPhoneNo",
       "kind": "Property",
       "preferredName": "ESS Incident Issuer Phone No",
-      "description": "Phone number of ESS incident issuer"
+      "description": "Phone number of ESS incident issuer",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.essincident:2.0.0#flagAnonymous",
       "label": "flagAnonymous",
       "kind": "Property",
       "preferredName": "Flag anonymous",
-      "description": "Flag that Incident issuer wants to be anonymous"
+      "description": "Flag that Incident issuer wants to be anonymous",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Boolean",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.essincident:2.0.0#essIncidentIssuerId",
@@ -256,28 +416,60 @@
       "label": "essIncidentIssuerAddress",
       "kind": "Property",
       "preferredName": "Ess Incident Issuer Address",
-      "description": "Simple form of an address which can belong to a person, organisation, company etc."
+      "description": "Simple form of an address which can belong to a person, organisation, company etc.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "PostalAddress",
+          "target_model": "shared.address_characteristic@3.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.essincident:2.0.0#essIncidentIssuerLastName",
       "label": "essIncidentIssuerLastName",
       "kind": "Property",
       "preferredName": "ESS Incident Issuer Last Name",
-      "description": "Last name of ESS incident Issuer"
+      "description": "Last name of ESS incident Issuer",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.essincident:2.0.0#essOriginatorCountrySubdivision",
       "label": "essOriginatorCountrySubdivision",
       "kind": "Property",
       "preferredName": "ESS Originator Country Subdivision",
-      "description": "Region within a country of ESS Originator"
+      "description": "Region within a country of ESS Originator",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.essincident:2.0.0#essIncidentIssuerCountrySubdivision",
       "label": "essIncidentIssuerCountrySubdivision",
       "kind": "Property",
       "preferredName": "ESS Incident Issuer Country Subdivision",
-      "description": "Region within a country of ESS Incident Issuer"
+      "description": "Region within a country of ESS Incident Issuer",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.essincident:2.0.0#longitude",
@@ -298,28 +490,60 @@
       "label": "IndustryCharacteristic",
       "kind": "Characteristic",
       "preferredName": "Industry characteristic",
-      "description": "Industry Characteristic"
+      "description": "Industry Characteristic",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.essincident:2.0.0#IncidentCategoryCharacteristic",
       "label": "IncidentCategoryCharacteristic",
       "kind": "Characteristic",
       "preferredName": "Incident Category Characteristic",
-      "description": "Characteristic for defining an incident category in the context of ESS (Environmental and Social Standards)."
+      "description": "Characteristic for defining an incident category in the context of ESS (Environmental and Social Standards).",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.essincident:2.0.0#IncidentSubcategories",
       "label": "IncidentSubcategories",
       "kind": "Characteristic",
       "preferredName": "Incident Subcategories",
-      "description": "Characteristic for defining subcategories of an incident in the context of ESS (Environmental and Social Standards)."
+      "description": "Characteristic for defining subcategories of an incident in the context of ESS (Environmental and Social Standards).",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.essincident:2.0.0#IncidentStatusCharacteristic",
       "label": "IncidentStatusCharacteristic",
       "kind": "Characteristic",
       "preferredName": "Incident Status",
-      "description": "Incident status as defined in a list, defalut value = new"
+      "description": "Incident status as defined in a list, defalut value = new",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.essincident:2.0.0#IdTrait",
@@ -382,42 +606,90 @@
       "label": "UUIDv4",
       "kind": "Characteristic",
       "preferredName": "UUIDv4",
-      "description": "A version 4 UUID is a universally unique identifier generated using random 32 hexadecimal characters."
+      "description": "A version 4 UUID is a universally unique identifier generated using random 32 hexadecimal characters.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.essincident:2.0.0#BpnLCharacteristic",
       "label": "BpnLCharacteristic",
       "kind": "Characteristic",
       "preferredName": "BPNL Characteristic",
-      "description": "BPNL Characteristic"
+      "description": "BPNL Characteristic",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.essincident:2.0.0#BpnSCharacteristic",
       "label": "BpnSCharacteristic",
       "kind": "Characteristic",
       "preferredName": "BPNS Characteristic",
-      "description": "BPNS Characteristic"
+      "description": "BPNS Characteristic",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.essincident:2.0.0#BpnACharacteristic",
       "label": "BpnACharacteristic",
       "kind": "Characteristic",
       "preferredName": "BPNA Characteristic",
-      "description": "BPNA Characteristic"
+      "description": "BPNA Characteristic",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.essincident:2.0.0#LongitudeCharacteristic",
       "label": "LongitudeCharacteristic",
       "kind": "Characteristic",
       "preferredName": "Longitude Characteristic",
-      "description": "Characteristic for longitude information of geographic coordinates."
+      "description": "Characteristic for longitude information of geographic coordinates.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.essincident:2.0.0#LatitudeCharacteristic",
       "label": "LatitudeCharacteristic",
       "kind": "Characteristic",
       "preferredName": "Latitude Characteristic",
-      "description": "Characteristic for latitude information of geographic coordinates."
+      "description": "Characteristic for latitude information of geographic coordinates.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.essincident:2.0.0#RegularExpressionUUIDv4",

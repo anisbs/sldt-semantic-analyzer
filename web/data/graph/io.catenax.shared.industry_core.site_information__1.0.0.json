@@ -38,7 +38,15 @@
       "label": "siteId",
       "kind": "Property",
       "preferredName": "site identifier",
-      "description": "The identifier of the site according to BPDM. The siteId must be a valid BPN. The BPN is a unique, unchangeable identifier for Business Partners / company locations from foundation to closure, regardless of the different business relationships / structures between or within the Business Partners or company locations."
+      "description": "The identifier of the site according to BPDM. The siteId must be a valid BPN. The BPN is a unique, unchangeable identifier for Business Partners / company locations from foundation to closure, regardless of the different business relationships / structures between or within the Business Partners or company locations.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "BpnsTrait",
+          "target_model": "shared.business_partner_number@2.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.shared.industry_core.site_information:1.0.0#function",
@@ -66,7 +74,15 @@
       "label": "FunctionCharacteristic",
       "kind": "Characteristic",
       "preferredName": "Function Characteristic",
-      "description": "Describes the characteristics of the function for a site related to the respective part."
+      "description": "Describes the characteristics of the function for a site related to the respective part.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     }
   ],
   "links": [

@@ -32,7 +32,15 @@
       "label": "certificate",
       "kind": "Property",
       "preferredName": "Certificate",
-      "description": "A property of the model, named certificate."
+      "description": "A property of the model, named certificate.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "RecyclingStrategyCertificateCharacteristic",
+          "target_model": "shared.recycling_strategy_certificate@2.0.0",
+          "target_source": "catenax"
+        }
+      ]
     }
   ],
   "links": [

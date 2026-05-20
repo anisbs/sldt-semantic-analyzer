@@ -80,7 +80,15 @@
       "label": "qualityTaskId",
       "kind": "Property",
       "preferredName": "Quality Task ID",
-      "description": "A unique quality task identifier within this data-space."
+      "description": "A unique quality task identifier within this data-space.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "UuidV4Trait",
+          "target_model": "shared.uuid@2.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.shared.quality_core:1.0.0#countryCode",
@@ -122,7 +130,15 @@
       "label": "supplierName",
       "kind": "Property",
       "preferredName": "Supplier Name",
-      "description": "The name of one supplier company."
+      "description": "The name of one supplier company.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.shared.quality_core:1.0.0#additionalInformationList",
@@ -136,63 +152,135 @@
       "label": "selectionCriteria",
       "kind": "Property",
       "preferredName": "Selection criteria",
-      "description": "Describes the selection criteria a Catena-X data provider has applied to create this data set."
+      "description": "Describes the selection criteria a Catena-X data provider has applied to create this data set.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.shared.quality_core:1.0.0#selectionStart",
       "label": "selectionStart",
       "kind": "Property",
       "preferredName": "Selection start",
-      "description": "Describes the starting point for providing records in this data set."
+      "description": "Describes the starting point for providing records in this data set.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.shared.quality_core:1.0.0#selectionEnd",
       "label": "selectionEnd",
       "kind": "Property",
       "preferredName": "Selection end",
-      "description": "Describes the end point for providing records in this data set."
+      "description": "Describes the end point for providing records in this data set.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.shared.quality_core:1.0.0#partName",
       "label": "partName",
       "kind": "Property",
       "preferredName": "OEM part name",
-      "description": "The name of a part. A part name is not unique - same kinds of parts can have the same part name."
+      "description": "The name of a part. A part name is not unique - same kinds of parts can have the same part name.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.shared.quality_core:1.0.0#partDescription",
       "label": "partDescription",
       "kind": "Property",
       "preferredName": "Part Description",
-      "description": "A textual description of the part."
+      "description": "A textual description of the part.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.shared.quality_core:1.0.0#assemblyPartNumberVersion",
       "label": "assemblyPartNumberVersion",
       "kind": "Property",
       "preferredName": "Assembly part number version",
-      "description": "Often vehicle manufacturer specific: An assembly part number version. Assembly parts are often produced by a supplier that combines his own parts with other parts from other suppliers and ships as one assembly to a vehicle manufacturer."
+      "description": "Often vehicle manufacturer specific: An assembly part number version. Assembly parts are often produced by a supplier that combines his own parts with other parts from other suppliers and ships as one assembly to a vehicle manufacturer.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.shared.quality_core:1.0.0#batchNumber",
       "label": "batchNumber",
       "kind": "Property",
       "preferredName": "Batch Number",
-      "description": "A batch number describes all parts that were manufactured in the same run."
+      "description": "A batch number describes all parts that were manufactured in the same run.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.shared.quality_core:1.0.0#calibrationInformation",
       "label": "calibrationInformation",
       "kind": "Property",
       "preferredName": "Calibration information",
-      "description": "Calibration for this ECU. This could be the result of a calibration process."
+      "description": "Calibration for this ECU. This could be the result of a calibration process.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.shared.quality_core:1.0.0#partId",
       "label": "partId",
       "kind": "Property",
       "preferredName": "Part identifier",
-      "description": "A unique part identifier in this data-space. Property is optional as of now not all parts have this identifier."
+      "description": "A unique part identifier in this data-space. Property is optional as of now not all parts have this identifier.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "UuidV4Trait",
+          "target_model": "shared.uuid@2.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.shared.quality_core:1.0.0#dataMatrixCode",
@@ -213,7 +301,15 @@
       "label": "hwVersion",
       "kind": "Property",
       "preferredName": "Hardware version",
-      "description": "The hardware version of this part."
+      "description": "The hardware version of this part.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.shared.quality_core:1.0.0#orderNumber",
@@ -227,14 +323,30 @@
       "label": "partNumber",
       "kind": "Property",
       "preferredName": "Part number",
-      "description": "The number of a physical part. A part number is not unique - same kinds of parts can have same part numbers. Part numbers and part description normally relate to each other."
+      "description": "The number of a physical part. A part number is not unique - same kinds of parts can have same part numbers. Part numbers and part description normally relate to each other.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.shared.quality_core:1.0.0#partVersion",
       "label": "partVersion",
       "kind": "Property",
       "preferredName": "Part version",
-      "description": "The version of this hardware part."
+      "description": "The version of this hardware part.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.shared.quality_core:1.0.0#serialNumber",
@@ -248,21 +360,45 @@
       "label": "swPartNumber",
       "kind": "Property",
       "preferredName": "ECU SW part number",
-      "description": "Software number installed in this electronic control unit."
+      "description": "Software number installed in this electronic control unit.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.shared.quality_core:1.0.0#swVersion",
       "label": "swVersion",
       "kind": "Property",
       "preferredName": "ECU SW version",
-      "description": "Software version installed in this electronic control unit."
+      "description": "Software version installed in this electronic control unit.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.shared.quality_core:1.0.0#variantInfomation",
       "label": "variantInfomation",
       "kind": "Property",
       "preferredName": "Variant information",
-      "description": "An electronic control unit has many parameters that have to be set to work correctly: Examples are target market (which functions need to be activated for the target market) or the equipment of the vehicle (e.g. navigation system is installed)."
+      "description": "An electronic control unit has many parameters that have to be set to work correctly: Examples are target market (which functions need to be activated for the target market) or the equipment of the vehicle (e.g. navigation system is installed).",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.shared.quality_core:1.0.0#plantIdentifier",
@@ -276,14 +412,30 @@
       "label": "plantDescription",
       "kind": "Property",
       "preferredName": "Vehicle production plant name",
-      "description": "Long name of the production plant."
+      "description": "Long name of the production plant.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.shared.quality_core:1.0.0#plantBPNS",
       "label": "plantBPNS",
       "kind": "Property",
       "preferredName": "Plant BPNS",
-      "description": "A unique plant identifier according BPNS definition. This property is optional as of now not all plants have assigned BPNS identifiers."
+      "description": "A unique plant identifier according BPNS definition. This property is optional as of now not all plants have assigned BPNS identifiers.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "BpnsTrait",
+          "target_model": "shared.business_partner_number@2.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.shared.quality_core:1.0.0#plantCountryCode",
@@ -304,7 +456,15 @@
       "label": "vehicleId",
       "kind": "Property",
       "preferredName": "Vehicle identifier",
-      "description": "A unique identifier for this vehicle in data-space. This property is optional as of now not all vehicles have this identifier assigned."
+      "description": "A unique identifier for this vehicle in data-space. This property is optional as of now not all vehicles have this identifier assigned.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "UuidV4Trait",
+          "target_model": "shared.uuid@2.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.shared.quality_core:1.0.0#mileage",
@@ -360,14 +520,30 @@
       "label": "key",
       "kind": "Property",
       "preferredName": "Key id",
-      "description": "Key identifier for this additional information"
+      "description": "Key identifier for this additional information",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.shared.quality_core:1.0.0#value",
       "label": "value",
       "kind": "Property",
       "preferredName": "Value",
-      "description": "Value for this additional information"
+      "description": "Value for this additional information",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.shared.quality_core:1.0.0#GeneralInformationCharacteristic",
@@ -416,35 +592,75 @@
       "label": "UniqueID",
       "kind": "Characteristic",
       "preferredName": "unique ID",
-      "description": "This Characteristic is linked to a property that is unique. Please see description of the linked property to get more details about uniqueness."
+      "description": "This Characteristic is linked to a property that is unique. Please see description of the linked property to get more details about uniqueness.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.shared.quality_core:1.0.0#CountryCodeCharacteristic",
       "label": "CountryCodeCharacteristic",
       "kind": "Characteristic",
       "preferredName": "Country Code Characteristic",
-      "description": "ISO 3166-1 alpha-3 ? three-letter country codes "
+      "description": "ISO 3166-1 alpha-3 ? three-letter country codes ",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.shared.quality_core:1.0.0#HexCodeCharacteristic",
       "label": "HexCodeCharacteristic",
       "kind": "Characteristic",
       "preferredName": "Hex code characteristic",
-      "description": "Describing a hex code: 0-9, a-f, A-F, optional 0x"
+      "description": "Describing a hex code: 0-9, a-f, A-F, optional 0x",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.shared.quality_core:1.0.0#Integer",
       "label": "Integer",
       "kind": "Characteristic",
       "preferredName": "Integer number",
-      "description": "An integer number."
+      "description": "An integer number.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "int",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.shared.quality_core:1.0.0#Float",
       "label": "Float",
       "kind": "Characteristic",
       "preferredName": "Float",
-      "description": "Characteristic of a float value."
+      "description": "Characteristic of a float value.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "float",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.shared.quality_core:1.0.0#General",
@@ -542,14 +758,30 @@
       "label": "RecordStatusEnumeration",
       "kind": "Characteristic",
       "preferredName": "Record status enumeration",
-      "description": "Defining the enumeration for the record status"
+      "description": "Defining the enumeration for the record status",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.shared.quality_core:1.0.0#MileageUnit",
       "label": "MileageUnit",
       "kind": "Characteristic",
       "preferredName": "Mileage Unit",
-      "description": "Either km or mi."
+      "description": "Either km or mi.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.shared.quality_core:1.0.0#AdditionalInformationList",

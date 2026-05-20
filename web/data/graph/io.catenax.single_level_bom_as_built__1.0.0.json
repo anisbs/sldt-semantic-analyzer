@@ -39,7 +39,15 @@
       "label": "createdOn",
       "kind": "Property",
       "preferredName": "Created On",
-      "description": "Timestamp when the relation between the parent item and the child item was created, e.g. when the serialized child part was assembled into the given part."
+      "description": "Timestamp when the relation between the parent item and the child item was created, e.g. when the serialized child part was assembled into the given part.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Timestamp",
+          "target_model": "io.openmanufacturing:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.single_level_bom_as_built:1.0.0#quantity",
@@ -53,7 +61,15 @@
       "label": "lastModifiedOn",
       "kind": "Property",
       "preferredName": "Last Modification Date",
-      "description": "Timestamp when the assembly relationship between parent item and child item was last modified."
+      "description": "Timestamp when the assembly relationship between parent item and child item was last modified.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Timestamp",
+          "target_model": "io.openmanufacturing:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.single_level_bom_as_built:1.0.0#businessPartner",
@@ -74,7 +90,15 @@
       "label": "measurementUnit",
       "kind": "Property",
       "preferredName": null,
-      "description": "Unit of Measurement for the quantity of serialized objects"
+      "description": "Unit of Measurement for the quantity of serialized objects",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "UnitReference",
+          "target_model": "io.openmanufacturing:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.single_level_bom_as_built:1.0.0#CatenaXIdTraitCharacteristic",
@@ -102,21 +126,45 @@
       "label": "Uuidv4Characteristic",
       "kind": "Characteristic",
       "preferredName": "UUID v4 Characteristic",
-      "description": "A version 4 UUID is a universally unique identifier that is generated using random 32 hexadecimal characters."
+      "description": "A version 4 UUID is a universally unique identifier that is generated using random 32 hexadecimal characters.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.single_level_bom_as_built:1.0.0#BpnCharacteristic",
       "label": "BpnCharacteristic",
       "kind": "Characteristic",
       "preferredName": "BPN Characteristic",
-      "description": null
+      "description": null,
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.single_level_bom_as_built:1.0.0#NumberOfObjects",
       "label": "NumberOfObjects",
       "kind": "Characteristic",
       "preferredName": null,
-      "description": "Quantifiable number of objects in reference to the measurementUnit"
+      "description": "Quantifiable number of objects in reference to the measurementUnit",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "double",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.single_level_bom_as_built:1.0.0#Uuidv4RegularExpression",

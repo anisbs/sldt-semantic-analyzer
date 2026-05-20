@@ -46,7 +46,15 @@
       "label": "sentDateTime",
       "kind": "Property",
       "preferredName": "Sent Date Time",
-      "description": "Time zone aware timestamp holding the date and the time the message was sent by the sending party. The value MUST be formatted according to the ISO 8601 standard"
+      "description": "Time zone aware timestamp holding the date and the time the message was sent by the sending party. The value MUST be formatted according to the ISO 8601 standard",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Timestamp",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.shared.message_header:1.0.0#senderBpn",
@@ -67,7 +75,15 @@
       "label": "expectedResponseBy",
       "kind": "Property",
       "preferredName": "Expected Response By",
-      "description": "Time zone aware timestamp holding the date and time by which the sending party expects a certain type of response from the receiving party. The meaning and interpretation of the fields's value are context-bound and MUST therefore be defined by any business domain or platform capability making use of it. The value MUST be formatted according to the ISO 8601 standard"
+      "description": "Time zone aware timestamp holding the date and time by which the sending party expects a certain type of response from the receiving party. The meaning and interpretation of the fields's value are context-bound and MUST therefore be defined by any business domain or platform capability making use of it. The value MUST be formatted according to the ISO 8601 standard",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Timestamp",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.shared.message_header:1.0.0#relatedMessageId",
@@ -95,28 +111,60 @@
       "label": "UuidCharacteristic",
       "kind": "Characteristic",
       "preferredName": "UUID Characteristic",
-      "description": "Structured Value for defining a property which requires an UUID"
+      "description": "Structured Value for defining a property which requires an UUID",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.shared.message_header:1.0.0#ContextCharacteristic",
       "label": "ContextCharacteristic",
       "kind": "Characteristic",
       "preferredName": "Context Characteristic",
-      "description": "Defining a string value for the context"
+      "description": "Defining a string value for the context",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.shared.message_header:1.0.0#BpnCharacteristic",
       "label": "BpnCharacteristic",
       "kind": "Characteristic",
       "preferredName": "BPN Characteristic",
-      "description": "Characteristic for defining BPN values"
+      "description": "Characteristic for defining BPN values",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.shared.message_header:1.0.0#VersionCharacteristic",
       "label": "VersionCharacteristic",
       "kind": "Characteristic",
       "preferredName": "Version Characteristic",
-      "description": "Characteristic defining the value of version."
+      "description": "Characteristic defining the value of version.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.shared.message_header:1.0.0#MessageHeader",

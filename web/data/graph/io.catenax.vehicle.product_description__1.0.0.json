@@ -88,21 +88,45 @@
       "label": "code",
       "kind": "Property",
       "preferredName": "code",
-      "description": "The equipment variants code"
+      "description": "The equipment variants code",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "io.openmanufacturing:characteristic@1.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.vehicle.product_description:1.0.0#description",
       "label": "description",
       "kind": "Property",
       "preferredName": "description",
-      "description": "The equipment variants description"
+      "description": "The equipment variants description",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "io.openmanufacturing:characteristic@1.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.vehicle.product_description:1.0.0#group",
       "label": "group",
       "kind": "Property",
       "preferredName": "group",
-      "description": "The equipment variants group"
+      "description": "The equipment variants group",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "io.openmanufacturing:characteristic@1.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.vehicle.product_description:1.0.0#equipmentVariants",
@@ -123,21 +147,45 @@
       "label": "vehicleModel",
       "kind": "Property",
       "preferredName": "vehicle model",
-      "description": "base model / basic vehicle type"
+      "description": "base model / basic vehicle type",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "io.openmanufacturing:characteristic@1.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.vehicle.product_description:1.0.0#anonymisedIdentifier",
       "label": "anonymisedIdentifier",
       "kind": "Property",
       "preferredName": "anonymisedIdentifier",
-      "description": "anonymised IdentifierVehicle. Can be an anonymised number converted from a VIN"
+      "description": "anonymised IdentifierVehicle. Can be an anonymised number converted from a VIN",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "io.openmanufacturing:characteristic@1.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.vehicle.product_description:1.0.0#DateTimestamp",
       "label": "DateTimestamp",
       "kind": "Characteristic",
       "preferredName": "Date Timestamp",
-      "description": "Characteristic to describe a time stamp"
+      "description": "Characteristic to describe a time stamp",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "date",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.vehicle.product_description:1.0.0#EngineCharacteristic",
@@ -172,28 +220,60 @@
       "label": "CubicCapacity",
       "kind": "Characteristic",
       "preferredName": "Cubic Capacity",
-      "description": "cubic capacity of the engine"
+      "description": "cubic capacity of the engine",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "integer",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.vehicle.product_description:1.0.0#EnginePower",
       "label": "EnginePower",
       "kind": "Characteristic",
       "preferredName": "Engine Power",
-      "description": "engine power expressed in kilowatt"
+      "description": "engine power expressed in kilowatt",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "integer",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.vehicle.product_description:1.0.0#Distance",
       "label": "Distance",
       "kind": "Characteristic",
       "preferredName": "Distance",
-      "description": "distance in kilometre"
+      "description": "distance in kilometre",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "integer",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.vehicle.product_description:1.0.0#Weight",
       "label": "Weight",
       "kind": "Characteristic",
       "preferredName": "Weight",
-      "description": "weight of an object"
+      "description": "weight of an object",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "double",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.vehicle.product_description:1.0.0#MileageCharacteristic",
@@ -214,21 +294,45 @@
       "label": "LifecyclePhases",
       "kind": "Characteristic",
       "preferredName": "Lifecycle phases",
-      "description": "temporary definition of lifecycle phases as following in enumeration for: as specified by OEM, as built by OEM, as maintained by workshop, as recieved by dismantling"
+      "description": "temporary definition of lifecycle phases as following in enumeration for: as specified by OEM, as built by OEM, as maintained by workshop, as recieved by dismantling",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.vehicle.product_description:1.0.0#FuelType",
       "label": "FuelType",
       "kind": "Characteristic",
       "preferredName": "fuel type",
-      "description": "enumeration of possible fuel types of a vehicle"
+      "description": "enumeration of possible fuel types of a vehicle",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.vehicle.product_description:1.0.0#KbaVariant",
       "label": "KbaVariant",
       "kind": "Characteristic",
       "preferredName": "KBA Variant",
-      "description": "Current version of the Enumeration is sub-set of list defined from the German Federal Office for motor vehicles. "
+      "description": "Current version of the Enumeration is sub-set of list defined from the German Federal Office for motor vehicles. ",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.vehicle.product_description:1.0.0#ProductDescription",

@@ -31,14 +31,30 @@
       "label": "JustInSequencePart",
       "kind": "Aspect",
       "preferredName": "Just in Sequence Part",
-      "description": "A just-in-sequence part is an instantiation of a (design-) part, where the particular instantiation can be uniquely identified by means of a combination of several IDs related to a just-in-sequence process."
+      "description": "A just-in-sequence part is an instantiation of a (design-) part, where the particular instantiation can be uniquely identified by means of a combination of several IDs related to a just-in-sequence process.",
+      "external_refs": [
+        {
+          "predicate": "properties",
+          "target_local": "sites",
+          "target_model": "shared.part_site_information_as_built@1.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.just_in_sequence_part:2.0.0#catenaXId",
       "label": "catenaXId",
       "kind": "Property",
       "preferredName": "Catena-X Identifier",
-      "description": "The fully anonymous Catena-X ID of the just-in-sequence part, valid for the Catena-X dataspace."
+      "description": "The fully anonymous Catena-X ID of the just-in-sequence part, valid for the Catena-X dataspace.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "UuidV4Trait",
+          "target_model": "shared.uuid@1.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.just_in_sequence_part:2.0.0#localIdentifiers",
@@ -80,7 +96,15 @@
       "label": "date",
       "kind": "Property",
       "preferredName": "Production Date",
-      "description": "Timestamp of the manufacturing date as the final step in production process (e.g. final quality check, ready-for-shipment event)"
+      "description": "Timestamp of the manufacturing date as the final step in production process (e.g. final quality check, ready-for-shipment event)",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Timestamp",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.just_in_sequence_part:2.0.0#country",
@@ -150,35 +174,75 @@
       "label": "KeyCharacteristic",
       "kind": "Characteristic",
       "preferredName": "Key Characteristic",
-      "description": "The key characteristic of a local identifier. A specific subset of keys is predefined, but additionally any other custom key is allowed. Predefined keys (to be used when applicable):\n- \"manufacturerId\" - The Business Partner Number (BPN) of the manufacturer. Value: BPN-Nummer\n- \"jisNumber\" - a number that is used to identify the call-off that can be assumed unique within the specific just-in-sequence process. This is typically not the sequence number, but the call-off number.\n- \"jisCallDate\" the date of the just-in-sequence call-off as stated on the call-off document itself. Value: following the ISO 8601 format as follows: \"YYYY-MM-DD\" or \"YYYY-MM-DDThh:mm:ss\" or \"YYYY-MM-DDThh:mm:ss?hh:mm\"\n- \"parentOrderNumber\" - a number identifying the just-in-sequence- part's destination parent part. The parent part is typically known upfront to the supplier for just-in-sequence parts. This might be a temporary unique identifier.\nNot all keys might be relevant for all just-in-sequence parts. It must be ensured that a combination of these identifiers and the optional manufacturer part ID or customer part ID leads to a unique just-in-sequence part."
+      "description": "The key characteristic of a local identifier. A specific subset of keys is predefined, but additionally any other custom key is allowed. Predefined keys (to be used when applicable):\n- \"manufacturerId\" - The Business Partner Number (BPN) of the manufacturer. Value: BPN-Nummer\n- \"jisNumber\" - a number that is used to identify the call-off that can be assumed unique within the specific just-in-sequence process. This is typically not the sequence number, but the call-off number.\n- \"jisCallDate\" the date of the just-in-sequence call-off as stated on the call-off document itself. Value: following the ISO 8601 format as follows: \"YYYY-MM-DD\" or \"YYYY-MM-DDThh:mm:ss\" or \"YYYY-MM-DDThh:mm:ss?hh:mm\"\n- \"parentOrderNumber\" - a number identifying the just-in-sequence- part's destination parent part. The parent part is typically known upfront to the supplier for just-in-sequence parts. This might be a temporary unique identifier.\nNot all keys might be relevant for all just-in-sequence parts. It must be ensured that a combination of these identifiers and the optional manufacturer part ID or customer part ID leads to a unique just-in-sequence part.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.just_in_sequence_part:2.0.0#ValueCharacteristic",
       "label": "ValueCharacteristic",
       "kind": "Characteristic",
       "preferredName": "Value Characteristic",
-      "description": "The value of an identifier."
+      "description": "The value of an identifier.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.just_in_sequence_part:2.0.0#PartIdCharacteristic",
       "label": "PartIdCharacteristic",
       "kind": "Characteristic",
       "preferredName": "Part ID Characteristic",
-      "description": "The part ID is a multi-character string, usually assigned by an ERP system. Alternatively the ID of the part family can be used if no specific part ID exists."
+      "description": "The part ID is a multi-character string, usually assigned by an ERP system. Alternatively the ID of the part family can be used if no specific part ID exists.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.just_in_sequence_part:2.0.0#PartNameCharacteristic",
       "label": "PartNameCharacteristic",
       "kind": "Characteristic",
       "preferredName": "Part Name Characteristic",
-      "description": "Part Name in string format from the respective system in the value chain"
+      "description": "Part Name in string format from the respective system in the value chain",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.just_in_sequence_part:2.0.0#CountryCodeCharacteristic",
       "label": "CountryCodeCharacteristic",
       "kind": "Characteristic",
       "preferredName": "Country Code Characteristic",
-      "description": "ISO 3166-1 alpha-3 - three-letter country codes "
+      "description": "ISO 3166-1 alpha-3 - three-letter country codes ",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.just_in_sequence_part:2.0.0#KeyValueList",
@@ -213,7 +277,15 @@
       "label": "ClassificationCharacteristic",
       "kind": "Characteristic",
       "preferredName": "Classification Characteristic",
-      "description": "A part type must be placed into one of the following classes: 'component', 'product', 'software', 'assembly', 'tool', or 'raw material'."
+      "description": "A part type must be placed into one of the following classes: 'component', 'product', 'software', 'assembly', 'tool', or 'raw material'.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.just_in_sequence_part:2.0.0#CountryCodeRegularExpression",

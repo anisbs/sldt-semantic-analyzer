@@ -92,28 +92,60 @@
       "label": "itemDescription",
       "kind": "Property",
       "preferredName": "Item Description",
-      "description": "Describes the item in the packing list."
+      "description": "Describes the item in the packing list.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.packing_list:1.0.0#itemName",
       "label": "itemName",
       "kind": "Property",
       "preferredName": "Item Name",
-      "description": "Name of the item seen in the packing list."
+      "description": "Name of the item seen in the packing list.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.packing_list:1.0.0#catenaXId",
       "label": "catenaXId",
       "kind": "Property",
       "preferredName": "Catena-X ID",
-      "description": "The Catena-X ID of the given part (e.g. the assembly), valid for the Catena-X dataspace."
+      "description": "The Catena-X ID of the given part (e.g. the assembly), valid for the Catena-X dataspace.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "UuidV4Trait",
+          "target_model": "shared.uuid@2.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.packing_list:1.0.0#DateCharacteristic",
       "label": "DateCharacteristic",
       "kind": "Characteristic",
       "preferredName": "DateCharacteristic",
-      "description": "Describes the date in the following format: YYYY-MM-DD."
+      "description": "Describes the date in the following format: YYYY-MM-DD.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "date",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.packing_list:1.0.0#SenderAddressCharacteristic",
@@ -141,7 +173,15 @@
       "label": "PositionCharacteristic",
       "kind": "Characteristic",
       "preferredName": "Position Characteristic",
-      "description": "Describes the position in a numeric form. "
+      "description": "Describes the position in a numeric form. ",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "int",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.packing_list:1.0.0#SetOfListItems",
@@ -162,21 +202,45 @@
       "label": "SenderAddressEntity",
       "kind": "Entity",
       "preferredName": "Sender Address Entity",
-      "description": "Entity encapsulating the BPNA information from the Sender."
+      "description": "Entity encapsulating the BPNA information from the Sender.",
+      "external_refs": [
+        {
+          "predicate": "properties",
+          "target_local": "bpnaProperty",
+          "target_model": "shared.business_partner_number@2.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.packing_list:1.0.0#ReceiverAddressEntity",
       "label": "ReceiverAddressEntity",
       "kind": "Entity",
       "preferredName": "Receiver Address Entity",
-      "description": "Entity encapsulating the BPNA information from the Receiver."
+      "description": "Entity encapsulating the BPNA information from the Receiver.",
+      "external_refs": [
+        {
+          "predicate": "properties",
+          "target_local": "bpnaProperty",
+          "target_model": "shared.business_partner_number@2.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.packing_list:1.0.0#Quantity",
       "label": "Quantity",
       "kind": "Entity",
       "preferredName": "Quantity",
-      "description": "Comprises the value of objects and the unit of measurement for the respective items."
+      "description": "Comprises the value of objects and the unit of measurement for the respective items.",
+      "external_refs": [
+        {
+          "predicate": "properties",
+          "target_local": "itemQuantityProperty",
+          "target_model": "shared.quantity@2.0.0",
+          "target_source": "catenax"
+        }
+      ]
     }
   ],
   "links": [

@@ -46,7 +46,15 @@
       "label": "materialDemandId",
       "kind": "Property",
       "preferredName": "Material Demand ID",
-      "description": "The Material Demand ID uniquely identifies the material demand the supplier requests an update for within the business relationship between the customer and its supplier."
+      "description": "The Material Demand ID uniquely identifies the material demand the supplier requests an update for within the business relationship between the customer and its supplier.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "UuidV4Trait",
+          "target_model": "shared.uuid@1.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.id_based_request_for_update:2.0.0#changedAt",
@@ -60,7 +68,15 @@
       "label": "capacityGroupId",
       "kind": "Property",
       "preferredName": "Capacity Group ID",
-      "description": "The Capacity Group ID uniquely identifies the capacity group the supplier requests an update for within the business relationship between the supplier and its customer."
+      "description": "The Capacity Group ID uniquely identifies the capacity group the supplier requests an update for within the business relationship between the supplier and its customer.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "UuidV4Trait",
+          "target_model": "shared.uuid@1.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.id_based_request_for_update:2.0.0#MaterialDemandCharacteristic",
@@ -95,7 +111,15 @@
       "label": "Timestamp",
       "kind": "Characteristic",
       "preferredName": "Timestamp",
-      "description": "Describes a Property which contains the date and time with an optional timezone."
+      "description": "Describes a Property which contains the date and time with an optional timezone.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "dateTime",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     }
   ],
   "links": [

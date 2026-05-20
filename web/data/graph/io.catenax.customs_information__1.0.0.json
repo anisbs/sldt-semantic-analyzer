@@ -39,7 +39,15 @@
       "label": "catenaXId",
       "kind": "Property",
       "preferredName": "Catena-X Identifier",
-      "description": "The fully anonymous Catena-X ID of the corresponding part, valid for the Catena-X dataspace."
+      "description": "The fully anonymous Catena-X ID of the corresponding part, valid for the Catena-X dataspace.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "UuidV4Trait",
+          "target_model": "shared.uuid@2.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.customs_information:1.0.0#originInformation",
@@ -235,7 +243,15 @@
       "label": "DateCharacteristic",
       "kind": "Characteristic",
       "preferredName": "Date Characteristic",
-      "description": "Characteristic to define the date for one or more properties."
+      "description": "Characteristic to define the date for one or more properties.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "date",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.customs_information:1.0.0#TracedWorthCharacteristic",
@@ -263,91 +279,195 @@
       "label": "TradeRelationCharacteristic",
       "kind": "Characteristic",
       "preferredName": "Trade Relation Characteristic",
-      "description": "Characteristic of the trade relation property defined as String with Regular Expression."
+      "description": "Characteristic of the trade relation property defined as String with Regular Expression.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.customs_information:1.0.0#CommercialCountryOfOriginCharacteristic",
       "label": "CommercialCountryOfOriginCharacteristic",
       "kind": "Characteristic",
       "preferredName": "Commercial Country Of Origin Characteristic",
-      "description": "Characteristic of the commercial country of origin property defined as String with Regular Expression."
+      "description": "Characteristic of the commercial country of origin property defined as String with Regular Expression.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.customs_information:1.0.0#ValueCharacteristic",
       "label": "ValueCharacteristic",
       "kind": "Characteristic",
       "preferredName": "Value Characteristic",
-      "description": "Characteristic of the value property defined as double. "
+      "description": "Characteristic of the value property defined as double. ",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "double",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.customs_information:1.0.0#ContactPersionCharacteristic",
       "label": "ContactPersionCharacteristic",
       "kind": "Characteristic",
       "preferredName": "Contact Persion Characteristic",
-      "description": "Characteristic of the contact person defined as String."
+      "description": "Characteristic of the contact person defined as String.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.customs_information:1.0.0#JobTitleCharacteristic",
       "label": "JobTitleCharacteristic",
       "kind": "Characteristic",
       "preferredName": "Job Title Characteristic",
-      "description": "Characteristic of the job title defined as String."
+      "description": "Characteristic of the job title defined as String.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.customs_information:1.0.0#EmailCharacteristic",
       "label": "EmailCharacteristic",
       "kind": "Characteristic",
       "preferredName": "Email Characteristic",
-      "description": "Characteristic of the e-mail defined as String."
+      "description": "Characteristic of the e-mail defined as String.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.customs_information:1.0.0#PhoneNumberCharacteristic",
       "label": "PhoneNumberCharacteristic",
       "kind": "Characteristic",
       "preferredName": "Phone Number Characteristic",
-      "description": "Characteristic of the phone number defined as String."
+      "description": "Characteristic of the phone number defined as String.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.customs_information:1.0.0#LongitudeAndLatitudeCharacteristic",
       "label": "LongitudeAndLatitudeCharacteristic",
       "kind": "Characteristic",
       "preferredName": "Longitude And Latitude Characteristic",
-      "description": "Characteristic of the geological position for the manufacturing origin defined as double. "
+      "description": "Characteristic of the geological position for the manufacturing origin defined as double. ",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "double",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.customs_information:1.0.0#CurrencyCharacteristic",
       "label": "CurrencyCharacteristic",
       "kind": "Characteristic",
       "preferredName": "Currency Characteristic",
-      "description": "Characteristic of the currency property defined as String."
+      "description": "Characteristic of the currency property defined as String.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.customs_information:1.0.0#TypeEnumaration",
       "label": "TypeEnumaration",
       "kind": "Characteristic",
       "preferredName": "Type Enumaration",
-      "description": "Characteristic of the type property defined as an Enumeration."
+      "description": "Characteristic of the type property defined as an Enumeration.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.customs_information:1.0.0#StatusEnumeration",
       "label": "StatusEnumeration",
       "kind": "Characteristic",
       "preferredName": "Status Enumeration",
-      "description": "Characteristic of the status property defined as an Enumeration."
+      "description": "Characteristic of the status property defined as an Enumeration.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.customs_information:1.0.0#PreferredStatusEnumeration",
       "label": "PreferredStatusEnumeration",
       "kind": "Characteristic",
       "preferredName": "Preferred Status Enumeration",
-      "description": "Characteristic of the preferred status property defined as an enumeration."
+      "description": "Characteristic of the preferred status property defined as an enumeration.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.customs_information:1.0.0#FederalStateEnumeration",
       "label": "FederalStateEnumeration",
       "kind": "Characteristic",
       "preferredName": "Federal State Enumeration",
-      "description": "Characteristic of the federal state property defined as Enumeration with Regular Expression."
+      "description": "Characteristic of the federal state property defined as Enumeration with Regular Expression.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.customs_information:1.0.0#TradeRelationTrait",

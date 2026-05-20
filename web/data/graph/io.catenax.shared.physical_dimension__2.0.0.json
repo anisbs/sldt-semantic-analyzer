@@ -60,14 +60,30 @@
       "label": "MillimetreCharacteristic",
       "kind": "Characteristic",
       "preferredName": "millimetre characteristic",
-      "description": "a measurement for a lenght given in the unit millimetre"
+      "description": "a measurement for a lenght given in the unit millimetre",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "double",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.shared.physical_dimension:2.0.0#KilogramCharacteristic",
       "label": "KilogramCharacteristic",
       "kind": "Characteristic",
       "preferredName": "kilogram characteristic",
-      "description": "a measurement value given in the unit kilogram"
+      "description": "a measurement value given in the unit kilogram",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "double",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.shared.physical_dimension:2.0.0#PhysicalDimensions",

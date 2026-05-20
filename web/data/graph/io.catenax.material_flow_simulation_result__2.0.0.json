@@ -53,7 +53,15 @@
       "label": "expirationTimestamp",
       "kind": "Property",
       "preferredName": "ExpirationTimestamp",
-      "description": "Date and time when the simulation is expired"
+      "description": "Date and time when the simulation is expired",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Timestamp",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.material_flow_simulation_result:2.0.0#owner",
@@ -81,14 +89,30 @@
       "label": "timestamp",
       "kind": "Property",
       "preferredName": "Timestamp",
-      "description": "Timestamp of simulation run"
+      "description": "Timestamp of simulation run",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Timestamp",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.material_flow_simulation_result:2.0.0#shipmentId",
       "label": "shipmentId",
       "kind": "Property",
       "preferredName": "Shipment Id",
-      "description": "ID to identify the shipment"
+      "description": "ID to identify the shipment",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.material_flow_simulation_result:2.0.0#destination",
@@ -102,7 +126,15 @@
       "label": "destinationTimestamp",
       "kind": "Property",
       "preferredName": "Destination Timestamp",
-      "description": "Time when delivery arrives or is ready at goods issue"
+      "description": "Time when delivery arrives or is ready at goods issue",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Timestamp",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.material_flow_simulation_result:2.0.0#recipient",
@@ -116,14 +148,30 @@
       "label": "recipientTimestampPlanned",
       "kind": "Property",
       "preferredName": "Recipient Timestamp Planned",
-      "description": "Planned delivery time"
+      "description": "Planned delivery time",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Timestamp",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.material_flow_simulation_result:2.0.0#splittingAllowed",
       "label": "splittingAllowed",
       "kind": "Property",
       "preferredName": "Splitting Allowed",
-      "description": "Permission to split the shipment into individual deliveries"
+      "description": "Permission to split the shipment into individual deliveries",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Boolean",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.material_flow_simulation_result:2.0.0#logistics",
@@ -214,14 +262,30 @@
       "label": "materialHazardousGoods",
       "kind": "Property",
       "preferredName": "Material Hazardous Goods",
-      "description": "Flags hazardous goods"
+      "description": "Flags hazardous goods",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Boolean",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.material_flow_simulation_result:2.0.0#batchExpirationTimestamp",
       "label": "batchExpirationTimestamp",
       "kind": "Property",
       "preferredName": "Batch Expiration Timestamp",
-      "description": "Expiration date of batch"
+      "description": "Expiration date of batch",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Timestamp",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.material_flow_simulation_result:2.0.0#quantity",
@@ -263,14 +327,30 @@
       "label": "Text",
       "kind": "Characteristic",
       "preferredName": "Text",
-      "description": "Describes a Property which contains plain text. This is intended exclusively for human readable strings, not for identifiers, measurement values, etc."
+      "description": "Describes a Property which contains plain text. This is intended exclusively for human readable strings, not for identifiers, measurement values, etc.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.material_flow_simulation_result:2.0.0#QuantityCharacteristic",
       "label": "QuantityCharacteristic",
       "kind": "Characteristic",
       "preferredName": "Quantity Characteristic",
-      "description": "Number of materials contained within a handling unit"
+      "description": "Number of materials contained within a handling unit",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "float",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.material_flow_simulation_result:2.0.0#MaterialFlowSimulationResult",
@@ -284,7 +364,15 @@
       "label": "BusinessPartnerSite",
       "kind": "Entity",
       "preferredName": "Business Partner Site",
-      "description": "Identifier for the physical location of a business partner plant or site, (e.g. BPNS in Catena-X context)"
+      "description": "Identifier for the physical location of a business partner plant or site, (e.g. BPNS in Catena-X context)",
+      "external_refs": [
+        {
+          "predicate": "properties",
+          "target_local": "nil",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.material_flow_simulation_result:2.0.0#Shipment",
@@ -347,14 +435,30 @@
       "label": "DataQualityOptions",
       "kind": "Characteristic",
       "preferredName": "Data Quality Options",
-      "description": "Possible values determining data quality"
+      "description": "Possible values determining data quality",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "nonNegativeInteger",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.material_flow_simulation_result:2.0.0#UnitOfMeasurementCharacteristic",
       "label": "UnitOfMeasurementCharacteristic",
       "kind": "Characteristic",
       "preferredName": "Unit Of Measurement Characteristic",
-      "description": "Possible options for units of measurement"
+      "description": "Possible options for units of measurement",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.material_flow_simulation_result:2.0.0#ShipmentList",
@@ -382,21 +486,45 @@
       "label": "VolumeCharacteristic",
       "kind": "Characteristic",
       "preferredName": "Volume Characteristic",
-      "description": "Volumetric value determining the volume of the handling unit"
+      "description": "Volumetric value determining the volume of the handling unit",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "float",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.material_flow_simulation_result:2.0.0#WeightCharacteristic",
       "label": "WeightCharacteristic",
       "kind": "Characteristic",
       "preferredName": "Weight Characteristic",
-      "description": "Amount of weight of the handling unit"
+      "description": "Amount of weight of the handling unit",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "float",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.material_flow_simulation_result:2.0.0#AmountCharacteristic",
       "label": "AmountCharacteristic",
       "kind": "Characteristic",
       "preferredName": "Amount Characteristic",
-      "description": "Number describing handling units with identical pieces"
+      "description": "Number describing handling units with identical pieces",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "positiveInteger",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     }
   ],
   "links": [

@@ -37,14 +37,30 @@
       "label": "addressInformation",
       "kind": "Property",
       "preferredName": "Addresse des Herstellers",
-      "description": "The manufacturer information postal address, indicating a single contact point. Web address, if available; and web address, if available.\n\n DIN DKE Spec 99100 chapter reference: 6.1.2.3"
+      "description": "The manufacturer information postal address, indicating a single contact point. Web address, if available; and web address, if available.\n\n DIN DKE Spec 99100 chapter reference: 6.1.2.3",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "AddressInformationCharacteristic",
+          "target_model": "digital_nameplate@3.0.0",
+          "target_source": "idta"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.admin-shell.idta.batterypass.digital_nameplate:1.0.0#BatteryStatusEnumeration",
       "label": "BatteryStatusEnumeration",
       "kind": "Characteristic",
       "preferredName": null,
-      "description": "Lifecycle status of the battery. Status defined from a list, with the options suggested as follows: 'original', 'repurposed', 'reused', 'remanufactured', 'waste'\n\nEUBR: Annex XIII (4c)"
+      "description": "Lifecycle status of the battery. Status defined from a list, with the options suggested as follows: 'original', 'repurposed', 'reused', 'remanufactured', 'waste'\n\nEUBR: Annex XIII (4c)",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     }
   ],
   "links": []

@@ -31,7 +31,21 @@
       "label": "SingleLevelUsageAsBuilt",
       "kind": "Aspect",
       "preferredName": "single level usage as built",
-      "description": "The aspect provides the information in which parent part(s)/product(s)the given item is assembled in. Could be a 1:1 relationship in terms of an e.g. a brake component or 1:n for e.g. coatings. The parent item must refer to an object from as-built lifecycle phase, i.e. a batch or a serialized part."
+      "description": "The aspect provides the information in which parent part(s)/product(s)the given item is assembled in. Could be a 1:1 relationship in terms of an e.g. a brake component or 1:n for e.g. coatings. The parent item must refer to an object from as-built lifecycle phase, i.e. a batch or a serialized part.",
+      "external_refs": [
+        {
+          "predicate": "properties",
+          "target_local": "customers",
+          "target_model": "shared.industry_core.common@1.0.0",
+          "target_source": "catenax"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "globalAssetId",
+          "target_model": "shared.industry_core.common@1.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.single_level_usage_as_built:4.0.0#parentItems",
@@ -45,14 +59,30 @@
       "label": "quantity",
       "kind": "Property",
       "preferredName": "quantity",
-      "description": "Quantity of which the child part is assembled into the parent part. In general it is '1' for serialized parts."
+      "description": "Quantity of which the child part is assembled into the parent part. In general it is '1' for serialized parts.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "ItemQuantityCharacteristic",
+          "target_model": "shared.quantity@3.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.single_level_usage_as_built:4.0.0#isOnlyPotentialParent",
       "label": "isOnlyPotentialParent",
       "kind": "Property",
       "preferredName": "is only potential parent",
-      "description": "Expresses the certainty whether the part has been used as component or input material in the produced item. If the value is false, it can be assumed that the part has been used. If the value is true, there are alternatives for that part, and it is unknown if this part item or an alternative part item has been used.\nThis is the case when, e.g. the same item is supplied by two suppliers, and the item is only tracked by a customer part ID during assembly. Thus, these items cannot be differentiated from each other.\n"
+      "description": "Expresses the certainty whether the part has been used as component or input material in the produced item. If the value is false, it can be assumed that the part has been used. If the value is true, there are alternatives for that part, and it is unknown if this part item or an alternative part item has been used.\nThis is the case when, e.g. the same item is supplied by two suppliers, and the item is only tracked by a customer part ID during assembly. Thus, these items cannot be differentiated from each other.\n",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Boolean",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.single_level_usage_as_built:4.0.0#SetOfParentItemsCharacteristic",
@@ -66,7 +96,33 @@
       "label": "ParentData",
       "kind": "Entity",
       "preferredName": "parent data",
-      "description": "Catena-X ID and meta data of the parent item."
+      "description": "Catena-X ID and meta data of the parent item.",
+      "external_refs": [
+        {
+          "predicate": "properties",
+          "target_local": "businessPartner",
+          "target_model": "shared.industry_core.common@1.0.0",
+          "target_source": "catenax"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "createdOn",
+          "target_model": "shared.industry_core.common@1.0.0",
+          "target_source": "catenax"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "lastModifiedOn",
+          "target_model": "shared.industry_core.common@1.0.0",
+          "target_source": "catenax"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "globalAssetId",
+          "target_model": "shared.industry_core.common@1.0.0",
+          "target_source": "catenax"
+        }
+      ]
     }
   ],
   "links": [

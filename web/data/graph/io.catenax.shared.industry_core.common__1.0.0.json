@@ -52,42 +52,90 @@
       "label": "value",
       "kind": "Property",
       "preferredName": "identifier value",
-      "description": "The value of an identifier."
+      "description": "The value of an identifier.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.shared.industry_core.common:1.0.0#nameAtManufacturer",
       "label": "nameAtManufacturer",
       "kind": "Property",
       "preferredName": "name at manufacturer",
-      "description": "Name of the part as assigned by the manufacturer"
+      "description": "Name of the part as assigned by the manufacturer",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.shared.industry_core.common:1.0.0#lastModifiedOn",
       "label": "lastModifiedOn",
       "kind": "Property",
       "preferredName": "last modification date and time",
-      "description": "Timestamp when the assembly or usage relationship between parent part and child part was last modified."
+      "description": "Timestamp when the assembly or usage relationship between parent part and child part was last modified.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Timestamp",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.shared.industry_core.common:1.0.0#validFrom",
       "label": "validFrom",
       "kind": "Property",
       "preferredName": "valid from",
-      "description": "Start date and time of validity period."
+      "description": "Start date and time of validity period.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Timestamp",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.shared.industry_core.common:1.0.0#businessPartner",
       "label": "businessPartner",
       "kind": "Property",
       "preferredName": "business partner",
-      "description": "The supplier of the given child item."
+      "description": "The supplier of the given child item.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "BpnlTrait",
+          "target_model": "shared.business_partner_number@2.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.shared.industry_core.common:1.0.0#customerPartId",
       "label": "customerPartId",
       "kind": "Property",
       "preferredName": "customer part identifier",
-      "description": "Part ID as assigned by the customer of the part. The customer Part ID identifies the part (as designed)in the customer`s dataspace. The Part ID does not reference a specific instance of a part and thus should not be confused with the serial number or any other instance IDs. \nIf no specific part ID exists a part family ID may be substituted for it."
+      "description": "Part ID as assigned by the customer of the part. The customer Part ID identifies the part (as designed)in the customer`s dataspace. The Part ID does not reference a specific instance of a part and thus should not be confused with the serial number or any other instance IDs. \nIf no specific part ID exists a part family ID may be substituted for it.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.shared.industry_core.common:1.0.0#validityPeriod",
@@ -108,28 +156,60 @@
       "label": "validTo",
       "kind": "Property",
       "preferredName": "valid to",
-      "description": "End date of validity period."
+      "description": "End date of validity period.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Timestamp",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.shared.industry_core.common:1.0.0#nameAtCustomer",
       "label": "nameAtCustomer",
       "kind": "Property",
       "preferredName": "name at customer",
-      "description": "Name of the part as assigned by the customer"
+      "description": "Name of the part as assigned by the customer",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.shared.industry_core.common:1.0.0#createdOn",
       "label": "createdOn",
       "kind": "Property",
       "preferredName": "created on",
-      "description": "Timestamp when the relation between the parent part and the child part was created"
+      "description": "Timestamp when the relation between the parent part and the child part was created",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Timestamp",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.shared.industry_core.common:1.0.0#globalAssetId",
       "label": "globalAssetId",
       "kind": "Property",
       "preferredName": "data space identifier",
-      "description": "The fully anonymous ID in the dataspace of the part."
+      "description": "The fully anonymous ID in the dataspace of the part.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "UuidV4Trait",
+          "target_model": "shared.uuid@2.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.shared.industry_core.common:1.0.0#key",
@@ -143,7 +223,15 @@
       "label": "manufacturerPartId",
       "kind": "Property",
       "preferredName": "manufacturer part identifier",
-      "description": "Part ID as assigned by the manufacturer of the part. The Part ID identifies the part (as designed) in the manufacturer`s dataspace. The Part ID does not reference a specific instance of a part and thus should not be confused with the serial number or batch number."
+      "description": "Part ID as assigned by the manufacturer of the part. The Part ID identifies the part (as designed) in the manufacturer`s dataspace. The Part ID does not reference a specific instance of a part and thus should not be confused with the serial number or batch number.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.shared.industry_core.common:1.0.0#localIdentifiers",
@@ -171,7 +259,15 @@
       "label": "AllowedKeys",
       "kind": "Characteristic",
       "preferredName": "key characteristic",
-      "description": "The key characteristic of a local identifier. A specific subset of keys is predefined. Custom keys are not allowed. Predefined keys:\n- \"manufacturerId\" - The Business Partner Number (BPN) of the manufacturer. Value: BPN-Nummer\n- \"batchId\" - The identifier of the batch, to which the serialized part belongs"
+      "description": "The key characteristic of a local identifier. A specific subset of keys is predefined. Custom keys are not allowed. Predefined keys:\n- \"manufacturerId\" - The Business Partner Number (BPN) of the manufacturer. Value: BPN-Nummer\n- \"batchId\" - The identifier of the batch, to which the serialized part belongs",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     }
   ],
   "links": [

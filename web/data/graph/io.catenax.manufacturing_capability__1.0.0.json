@@ -88,14 +88,30 @@
       "label": "productLabel",
       "kind": "Property",
       "preferredName": "Product Label",
-      "description": "Human readable label of a product, e.g. the name."
+      "description": "Human readable label of a product, e.g. the name.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "MultiLanguageText",
+          "target_model": "io.openmanufacturing:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.manufacturing_capability:1.0.0#capabilityLabel",
       "label": "capabilityLabel",
       "kind": "Property",
       "preferredName": "Capability Label",
-      "description": "Human readable label of a capability"
+      "description": "Human readable label of a capability",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "MultiLanguageText",
+          "target_model": "io.openmanufacturing:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.manufacturing_capability:1.0.0#references",
@@ -109,7 +125,15 @@
       "label": "propertyLabel",
       "kind": "Property",
       "preferredName": "Property Label",
-      "description": "Human readable label of a property."
+      "description": "Human readable label of a property.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "MultiLanguageText",
+          "target_model": "io.openmanufacturing:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.manufacturing_capability:1.0.0#propertySet",

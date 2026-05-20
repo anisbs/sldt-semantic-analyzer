@@ -129,7 +129,15 @@
       "label": "hazardAssessmentDocumentation",
       "kind": "Property",
       "preferredName": "Hazard Assessment Documentation",
-      "description": "Documentation providing hazard assessment information for ensuring the safe management of chemical materials throughout their lifecycle."
+      "description": "Documentation providing hazard assessment information for ensuring the safe management of chemical materials throughout their lifecycle.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "DocumentList",
+          "target_model": "generic.digital_product_passport@4.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.material.chemical_material_passport:1.0.0#productTransport",
@@ -150,14 +158,30 @@
       "label": "disposalBeforeUse",
       "kind": "Property",
       "preferredName": "Disposal Before Use",
-      "description": "Management and disposal practices for chemicals that are no longer needed or deemed unsuitable for their intended purpose. This information can be provided as a document, detailing the properties of waste that render it hazardous, along with disposal and recovery operations or recommendations, and accidental release measures."
+      "description": "Management and disposal practices for chemicals that are no longer needed or deemed unsuitable for their intended purpose. This information can be provided as a document, detailing the properties of waste that render it hazardous, along with disposal and recovery operations or recommendations, and accidental release measures.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "DocumentList",
+          "target_model": "generic.digital_product_passport@4.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.material.chemical_material_passport:1.0.0#disposalAfterUse",
       "label": "disposalAfterUse",
       "kind": "Property",
       "preferredName": "Disposal After Use",
-      "description": "Chemical Management and Disposal Guides post-usage as document."
+      "description": "Chemical Management and Disposal Guides post-usage as document.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "DocumentList",
+          "target_model": "generic.digital_product_passport@4.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.material.chemical_material_passport:1.0.0#disposalWasteCode",
@@ -171,14 +195,30 @@
       "label": "disposalPackagingInformation",
       "kind": "Property",
       "preferredName": "Disposal Packaging Information",
-      "description": "Guidelines and instructions regarding the proper management and disposal of packaging materials after use. Includes instructions on separation, reuse, and recycling."
+      "description": "Guidelines and instructions regarding the proper management and disposal of packaging materials after use. Includes instructions on separation, reuse, and recycling.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "DocumentList",
+          "target_model": "generic.digital_product_passport@4.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.material.chemical_material_passport:1.0.0#safetyDocument",
       "label": "safetyDocument",
       "kind": "Property",
       "preferredName": "Safety Document",
-      "description": "Safety measure information in a document that outlines safety protocols, procedures, and guidelines to be followed in specific situations involving the product. It provides clear instructions on accident prevention, how to respond to emergencies, and mitigate potential hazards. Examples include exposure scenarios, safety data sheets, risk assessments, and information on safety equipment and personal protective equipment (PPE)."
+      "description": "Safety measure information in a document that outlines safety protocols, procedures, and guidelines to be followed in specific situations involving the product. It provides clear instructions on accident prevention, how to respond to emergencies, and mitigate potential hazards. Examples include exposure scenarios, safety data sheets, risk assessments, and information on safety equipment and personal protective equipment (PPE).",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "DocumentList",
+          "target_model": "generic.digital_product_passport@4.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.material.chemical_material_passport:1.0.0#emergencyPhone",
@@ -192,7 +232,15 @@
       "label": "firstAidDocument",
       "kind": "Property",
       "preferredName": "First Aid Document",
-      "description": "Information on how to proceed in case of an emergency is essential. It includes guidance on providing initial assistance or immediate care to a person who has been injured before professional medical help arrives."
+      "description": "Information on how to proceed in case of an emergency is essential. It includes guidance on providing initial assistance or immediate care to a person who has been injured before professional medical help arrives.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "DocumentList",
+          "target_model": "generic.digital_product_passport@4.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.material.chemical_material_passport:1.0.0#complianceCountry",
@@ -213,7 +261,15 @@
       "label": "complianceResult",
       "kind": "Property",
       "preferredName": "Compliance Result",
-      "description": "The statement indicates whether the product complies with the aforementioned regulations."
+      "description": "The statement indicates whether the product complies with the aforementioned regulations.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Boolean",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.material.chemical_material_passport:1.0.0#complianceReasonForExemption",
@@ -227,35 +283,75 @@
       "label": "complianceRemark",
       "kind": "Property",
       "preferredName": "Compliance Remark",
-      "description": "If necessary, any remarks that provide relevant information for compliance. Further clarification supplements the compliance information, offering additional context or details to ensure thorough understanding and adherence to regulatory requirements."
+      "description": "If necessary, any remarks that provide relevant information for compliance. Further clarification supplements the compliance information, offering additional context or details to ensure thorough understanding and adherence to regulatory requirements.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.material.chemical_material_passport:1.0.0#productParameterName",
       "label": "productParameterName",
       "kind": "Property",
       "preferredName": "Product Parameter Name",
-      "description": "The name of the parameter for the product tested and presented, for instance, in the Certificate of Analysis or Safety Data Sheet, found in Section 9. Parameters for chemical products usually encompass their chemical composition, physical properties, performance characteristics, and toxicological aspects. These parameters vary depending on the chemical's nature, its intended use, and relevant safety or regulatory considerations."
+      "description": "The name of the parameter for the product tested and presented, for instance, in the Certificate of Analysis or Safety Data Sheet, found in Section 9. Parameters for chemical products usually encompass their chemical composition, physical properties, performance characteristics, and toxicological aspects. These parameters vary depending on the chemical's nature, its intended use, and relevant safety or regulatory considerations.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.material.chemical_material_passport:1.0.0#productParameterValue",
       "label": "productParameterValue",
       "kind": "Property",
       "preferredName": "Product Parameter Value",
-      "description": "The value resulting from the tested parameter is typically presented in Section 9 of the Safety Data Sheet or Certificate of Analysis."
+      "description": "The value resulting from the tested parameter is typically presented in Section 9 of the Safety Data Sheet or Certificate of Analysis.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.material.chemical_material_passport:1.0.0#productParameterUnit",
       "label": "productParameterUnit",
       "kind": "Property",
       "preferredName": "Product Parameter Unit",
-      "description": "The unit of measurement for the parameter value presented in Section 9 of the Safety Data Sheet or Certificate of Analysis varies depending on the specific parameter being reported."
+      "description": "The unit of measurement for the parameter value presented in Section 9 of the Safety Data Sheet or Certificate of Analysis varies depending on the specific parameter being reported.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.material.chemical_material_passport:1.0.0#productParameterResult",
       "label": "productParameterResult",
       "kind": "Property",
       "preferredName": "productParameterResult",
-      "description": "Other types of results, if not numerical values, for parameters presented in Section 9 of the Safety Data Sheet or Certificate of Analysis may include qualitative descriptions like \"pass\" or \"fail,\" as well as ranges, thresholds, or classifications."
+      "description": "Other types of results, if not numerical values, for parameters presented in Section 9 of the Safety Data Sheet or Certificate of Analysis may include qualitative descriptions like \"pass\" or \"fail,\" as well as ranges, thresholds, or classifications.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.material.chemical_material_passport:1.0.0#productParameterMethod",
@@ -269,7 +365,15 @@
       "label": "productParameterRemark",
       "kind": "Property",
       "preferredName": "Product Parameter Remark",
-      "description": "Commentary on the test/parameter presented in the Certificate of Analysis or Safety Data Sheet in Section 9. Selecting \"not applicable\" is also an option."
+      "description": "Commentary on the test/parameter presented in the Certificate of Analysis or Safety Data Sheet in Section 9. Selecting \"not applicable\" is also an option.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.material.chemical_material_passport:1.0.0#parameterClassificationStatement",
@@ -283,35 +387,75 @@
       "label": "parameterTestGLPCompliance",
       "kind": "Property",
       "preferredName": "Parameter Test GLP Compliance",
-      "description": "Statement indicating whether the test for the parameter was conducted in accordance with the Good Laboratory Practice (GLP) standard, as outlined in ISO/IEC 17025:2017, which specifies general requirements for the competence of testing and calibration laboratories."
+      "description": "Statement indicating whether the test for the parameter was conducted in accordance with the Good Laboratory Practice (GLP) standard, as outlined in ISO/IEC 17025:2017, which specifies general requirements for the competence of testing and calibration laboratories.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Boolean",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.material.chemical_material_passport:1.0.0#parameterDocumentation",
       "label": "parameterDocumentation",
       "kind": "Property",
       "preferredName": "Parameter Documentation",
-      "description": "Reference to the confirmation of the result typically includes a link to the document containing the confirmation, such as the Certificate of Analysis (CoA)."
+      "description": "Reference to the confirmation of the result typically includes a link to the document containing the confirmation, such as the Certificate of Analysis (CoA).",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "DocumentList",
+          "target_model": "generic.digital_product_passport@4.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.material.chemical_material_passport:1.0.0#parameterAfterUseDocumentation",
       "label": "parameterAfterUseDocumentation",
       "kind": "Property",
       "preferredName": "Parameter After Use Documentation",
-      "description": "Parameters of a product that may change or become relevant after its intended use are often documented as post-application characteristics. This data can be found in documents such as \"Technical Documentation.\""
+      "description": "Parameters of a product that may change or become relevant after its intended use are often documented as post-application characteristics. This data can be found in documents such as \"Technical Documentation.\"",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "DocumentList",
+          "target_model": "generic.digital_product_passport@4.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.material.chemical_material_passport:1.0.0#classificationRule",
       "label": "classificationRule",
       "kind": "Property",
       "preferredName": "Classification Rule",
-      "description": "Name of the classification rule under which the hazard assessment has been prepared."
+      "description": "Name of the classification rule under which the hazard assessment has been prepared.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.material.chemical_material_passport:1.0.0#classificationHazardInfo",
       "label": "classificationHazardInfo",
       "kind": "Property",
       "preferredName": "classification Hazard Info",
-      "description": "Information if the product is hazardous or not, according to the connected rule."
+      "description": "Information if the product is hazardous or not, according to the connected rule.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Boolean",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.material.chemical_material_passport:1.0.0#classificationHazardClassRoute",
@@ -325,7 +469,15 @@
       "label": "classificationRemark",
       "kind": "Property",
       "preferredName": "Classification Remark",
-      "description": "Additional remarks for classification information supplement the classification details for a particular chemical material. These remarks assist stakeholders in making informed decisions regarding safety, handling, and regulatory compliance."
+      "description": "Additional remarks for classification information supplement the classification details for a particular chemical material. These remarks assist stakeholders in making informed decisions regarding safety, handling, and regulatory compliance.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.material.chemical_material_passport:1.0.0#signalWord",
@@ -381,14 +533,30 @@
       "label": "transportOtherInformation",
       "kind": "Property",
       "preferredName": "Transport Other Information",
-      "description": "Additional information related to the transport of the product. Relevant details that could aid in making decisions regarding the shipping of the product."
+      "description": "Additional information related to the transport of the product. Relevant details that could aid in making decisions regarding the shipping of the product.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.material.chemical_material_passport:1.0.0#controlTemperature",
       "label": "controlTemperature",
       "kind": "Property",
       "preferredName": "Control Temperature",
-      "description": "The controlled temperature for transportation refers to the range of values within which the temperature conditions of goods or products are monitored and regulated during transportation in degree celcius. This information is crucial for mitigating risks associated with temperature-sensitive products, ensuring their integrity and quality throughout the shipping process."
+      "description": "The controlled temperature for transportation refers to the range of values within which the temperature conditions of goods or products are monitored and regulated during transportation in degree celcius. This information is crucial for mitigating risks associated with temperature-sensitive products, ensuring their integrity and quality throughout the shipping process.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.material.chemical_material_passport:1.0.0#transportPictogram",
@@ -402,7 +570,15 @@
       "label": "transportRegulation",
       "kind": "Property",
       "preferredName": "Transport Regulation",
-      "description": "Indicate regulations for transportation for example: Land transport (ADR/RID), Inland waterway transport (ADN), Sea transport (IMDG), Air transport (ICAO-TI/IATA-DGR) and so on."
+      "description": "Indicate regulations for transportation for example: Land transport (ADR/RID), Inland waterway transport (ADN), Sea transport (IMDG), Air transport (ICAO-TI/IATA-DGR) and so on.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.material.chemical_material_passport:1.0.0#unNumber",
@@ -416,7 +592,15 @@
       "label": "unShippingName",
       "kind": "Property",
       "preferredName": "UN Shipping Name",
-      "description": "The proper shipping name is provided in column 2, \"Name and description,\" of Table A of Chapter 3.2 Dangerous Goods List of the UN Regulations."
+      "description": "The proper shipping name is provided in column 2, \"Name and description,\" of Table A of Chapter 3.2 Dangerous Goods List of the UN Regulations.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.material.chemical_material_passport:1.0.0#unHazardClassCode",
@@ -430,7 +614,15 @@
       "label": "unHazardClassName",
       "kind": "Property",
       "preferredName": "UN Hazard Class Name",
-      "description": "The classified dangerous group in transportation refers to the classification of hazardous materials or dangerous goods according to the United Nations (UN) Globally Harmonized System of Classification and Labelling of Chemicals (GHS) and the UN Model Regulations for the Transport of Dangerous Goods."
+      "description": "The classified dangerous group in transportation refers to the classification of hazardous materials or dangerous goods according to the United Nations (UN) Globally Harmonized System of Classification and Labelling of Chemicals (GHS) and the UN Model Regulations for the Transport of Dangerous Goods.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.material.chemical_material_passport:1.0.0#unPackagingGroup",
@@ -472,49 +664,105 @@
       "label": "unLimitedQuantityUnit",
       "kind": "Property",
       "preferredName": "UN Limited Quantity Unit",
-      "description": "Unit of the limited quantity value."
+      "description": "Unit of the limited quantity value.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "ItemUnitEnumeration",
+          "target_model": "shared.quantity@2.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.material.chemical_material_passport:1.0.0#wasteCodeDescription",
       "label": "wasteCodeDescription",
       "kind": "Property",
       "preferredName": "Waste Code Description",
-      "description": "Description of the related waste code."
+      "description": "Description of the related waste code.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.material.chemical_material_passport:1.0.0#wasteCodeRegulation",
       "label": "wasteCodeRegulation",
       "kind": "Property",
       "preferredName": "Waste Code Regulation",
-      "description": "The name of the regulation that applies to waste codes can vary depending on the region or jurisdiction. Examples include Regulation (EC) No 1013/2006 in the European Union or Annex VIII of the Basel Convention."
+      "description": "The name of the regulation that applies to waste codes can vary depending on the region or jurisdiction. Examples include Regulation (EC) No 1013/2006 in the European Union or Annex VIII of the Basel Convention.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.material.chemical_material_passport:1.0.0#wasteCode",
       "label": "wasteCode",
       "kind": "Property",
       "preferredName": "Waste Code",
-      "description": "A waste code is used to identify the type of waste."
+      "description": "A waste code is used to identify the type of waste.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.material.chemical_material_passport:1.0.0#emergencyAvailability",
       "label": "emergencyAvailability",
       "kind": "Property",
       "preferredName": "Emergency Availability",
-      "description": "The period of time when emergency phone numbers are available."
+      "description": "The period of time when emergency phone numbers are available.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.material.chemical_material_passport:1.0.0#emergencyPhoneNumber",
       "label": "emergencyPhoneNumber",
       "kind": "Property",
       "preferredName": "Emergency Phone Number",
-      "description": "The phone number in case of an emergency."
+      "description": "The phone number in case of an emergency.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.material.chemical_material_passport:1.0.0#parameterMethodName",
       "label": "parameterMethodName",
       "kind": "Property",
       "preferredName": "Parameter Method Name",
-      "description": "The name of the testing method or standard used for testing parameters can vary depending on the context and industry. It might be referred to by a specific code, standard name, or regulation/directive."
+      "description": "The name of the testing method or standard used for testing parameters can vary depending on the context and industry. It might be referred to by a specific code, standard name, or regulation/directive.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.material.chemical_material_passport:1.0.0#parameterMethod",
@@ -528,7 +776,15 @@
       "label": "hazardPictogramCode",
       "kind": "Property",
       "preferredName": "Hazard Pictogram Code",
-      "description": "The code of a pictogram refers to a set of symbols used to visually represent and communicate information about the hazards associated with a chemical material."
+      "description": "The code of a pictogram refers to a set of symbols used to visually represent and communicate information about the hazards associated with a chemical material.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.material.chemical_material_passport:1.0.0#hazardPictogramImage",
@@ -542,21 +798,45 @@
       "label": "hazardPictogramName",
       "kind": "Property",
       "preferredName": "Hazard Pictogram Name",
-      "description": "The meaning or description of a pictogram is the explanation that accompanies it, providing information and context about its purpose and the hazards it represents."
+      "description": "The meaning or description of a pictogram is the explanation that accompanies it, providing information and context about its purpose and the hazards it represents.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.material.chemical_material_passport:1.0.0#hazardStatementCode",
       "label": "hazardStatementCode",
       "kind": "Property",
       "preferredName": "Hazard Statement Code",
-      "description": "According to CLP Regulation (EC) No 1272/2008, each hazard statement is designated a code, starting with the letter H followed by three digits. These codes can be associated with multiple hazard statements or be assigned to a single statement."
+      "description": "According to CLP Regulation (EC) No 1272/2008, each hazard statement is designated a code, starting with the letter H followed by three digits. These codes can be associated with multiple hazard statements or be assigned to a single statement.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.material.chemical_material_passport:1.0.0#hazardStatementText",
       "label": "hazardStatementText",
       "kind": "Property",
       "preferredName": "Hazard Statement Text",
-      "description": "Definition from CLP Regulation (EC) No 1272/2008 ‘hazard statement’ means a phrase assigned to a hazard class and category that describes the nature of the hazards of a hazardous substance or mixture, including, where appropriate, the degree of hazard;"
+      "description": "Definition from CLP Regulation (EC) No 1272/2008 ‘hazard statement’ means a phrase assigned to a hazard class and category that describes the nature of the hazards of a hazardous substance or mixture, including, where appropriate, the degree of hazard;",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.material.chemical_material_passport:1.0.0#precautionaryCode",
@@ -570,21 +850,45 @@
       "label": "precautionaryText",
       "kind": "Property",
       "preferredName": "Precautionary Text",
-      "description": "Definition from CLP Regulation (EC) No 1272/2008: ‘precautionary statement’ means a phrase that describes recommended measure(s) to minimise or prevent adverse effects resulting from exposure to a hazardous substance or mixture due to its use or disposal."
+      "description": "Definition from CLP Regulation (EC) No 1272/2008: ‘precautionary statement’ means a phrase that describes recommended measure(s) to minimise or prevent adverse effects resulting from exposure to a hazardous substance or mixture due to its use or disposal.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.material.chemical_material_passport:1.0.0#supplementalRequirementsCode",
       "label": "supplementalRequirementsCode",
       "kind": "Property",
       "preferredName": "Supplemental Requirements Code",
-      "description": "Supplemental codes used for labeling statements provide additional information or context about the hazards, handling, or regulatory requirements associated with chemical materials. This data can be helpful for stakeholders in managing chemical materials by offering further guidance on safe handling practices, storage conditions, emergency response procedures, or regulatory compliance measures."
+      "description": "Supplemental codes used for labeling statements provide additional information or context about the hazards, handling, or regulatory requirements associated with chemical materials. This data can be helpful for stakeholders in managing chemical materials by offering further guidance on safe handling practices, storage conditions, emergency response procedures, or regulatory compliance measures.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.material.chemical_material_passport:1.0.0#supplementalRequirementsText",
       "label": "supplementalRequirementsText",
       "kind": "Property",
       "preferredName": "Supplemental Requirements Text",
-      "description": "Any supplemental text used for labeling provides data that could be helpful for stakeholders in managing chemical materials."
+      "description": "Any supplemental text used for labeling provides data that could be helpful for stakeholders in managing chemical materials.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.material.chemical_material_passport:1.0.0#supplementalRequirementsPictogram",
@@ -598,7 +902,15 @@
       "label": "productLabelingNotes",
       "kind": "Property",
       "preferredName": "Product Labeling Notes",
-      "description": "Labeling notes consist of statements that provide additional information regarding hazardous possible reactions or other important considerations related to the chemical material. These notes help stakeholders understand potential risks and take appropriate precautions when handling, storing, or using the material."
+      "description": "Labeling notes consist of statements that provide additional information regarding hazardous possible reactions or other important considerations related to the chemical material. These notes help stakeholders understand potential risks and take appropriate precautions when handling, storing, or using the material.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.material.chemical_material_passport:1.0.0#specialProvisionsCode",
@@ -612,21 +924,45 @@
       "label": "specialProvisionsInfo",
       "kind": "Property",
       "preferredName": "Special Provisions Info",
-      "description": "Text aligned with special provisions under UN transport regulation Chapter 3.3."
+      "description": "Text aligned with special provisions under UN transport regulation Chapter 3.3.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.material.chemical_material_passport:1.0.0#parameterMethodConditions",
       "label": "parameterMethodConditions",
       "kind": "Property",
       "preferredName": "Parameter Method Conditions",
-      "description": "The relevant conditions for conducting a measurement or analysis of a chemical parameter ensure the accuracy, reliability, and consistency of the results obtained from the method used. These conditions are typically presented in the Certificate of Analysis or Safety Data Sheet, specifically in Section 9."
+      "description": "The relevant conditions for conducting a measurement or analysis of a chemical parameter ensure the accuracy, reliability, and consistency of the results obtained from the method used. These conditions are typically presented in the Certificate of Analysis or Safety Data Sheet, specifically in Section 9.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.material.chemical_material_passport:1.0.0#parameterMethodDescription",
       "label": "parameterMethodDescription",
       "kind": "Property",
       "preferredName": "Parameter Method Description",
-      "description": "Short description of the method used to determine parameter presented in Certificate of Analysis or Safety Data Sheet in Section 9."
+      "description": "Short description of the method used to determine parameter presented in Certificate of Analysis or Safety Data Sheet in Section 9.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.material.chemical_material_passport:1.0.0#SpecificCharacteristic",
@@ -731,14 +1067,30 @@
       "label": "LinkCharacteristic",
       "kind": "Characteristic",
       "preferredName": "Link Characteristic",
-      "description": "Characteristic for a simple web link."
+      "description": "Characteristic for a simple web link.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.material.chemical_material_passport:1.0.0#IntegerCharacteristic",
       "label": "IntegerCharacteristic",
       "kind": "Characteristic",
       "preferredName": "Integer Characteristic",
-      "description": "Characteristic for integer values."
+      "description": "Characteristic for integer values.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "integer",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.material.chemical_material_passport:1.0.0#SpecificEntity",
@@ -752,7 +1104,57 @@
       "label": "UnspecificEntity",
       "kind": "Entity",
       "preferredName": "Unspecific Entity",
-      "description": "Entity for the product unspecific parameters."
+      "description": "Entity for the product unspecific parameters.",
+      "external_refs": [
+        {
+          "predicate": "properties",
+          "target_local": "identification",
+          "target_model": "generic.digital_product_passport@4.0.0",
+          "target_source": "catenax"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "operation",
+          "target_model": "generic.digital_product_passport@4.0.0",
+          "target_source": "catenax"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "characteristics",
+          "target_model": "generic.digital_product_passport@4.0.0",
+          "target_source": "catenax"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "commercial",
+          "target_model": "generic.digital_product_passport@4.0.0",
+          "target_source": "catenax"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "materials",
+          "target_model": "generic.digital_product_passport@4.0.0",
+          "target_source": "catenax"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "sources",
+          "target_model": "generic.digital_product_passport@4.0.0",
+          "target_source": "catenax"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "sustainability",
+          "target_model": "generic.digital_product_passport@4.0.0",
+          "target_source": "catenax"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "metadata",
+          "target_model": "generic.digital_product_passport@4.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.material.chemical_material_passport:1.0.0#ParameterEntity",
@@ -808,14 +1210,42 @@
       "label": "ParameterAfterUseEntity",
       "kind": "Entity",
       "preferredName": "Parameter After Use Entity",
-      "description": "Characteristic for parameters of the chemical material after use."
+      "description": "Characteristic for parameters of the chemical material after use.",
+      "external_refs": [
+        {
+          "predicate": "properties",
+          "target_local": "applicable",
+          "target_model": "generic.digital_product_passport@4.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.material.chemical_material_passport:1.0.0#ClassificationEntity",
       "label": "ClassificationEntity",
       "kind": "Entity",
       "preferredName": "Classification Entity",
-      "description": "Entity for the hazard classification."
+      "description": "Entity for the hazard classification.",
+      "external_refs": [
+        {
+          "predicate": "properties",
+          "target_local": "hazardCategory",
+          "target_model": "generic.digital_product_passport@4.0.0",
+          "target_source": "catenax"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "hazardClass",
+          "target_model": "generic.digital_product_passport@4.0.0",
+          "target_source": "catenax"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "hazardStatement",
+          "target_model": "generic.digital_product_passport@4.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.material.chemical_material_passport:1.0.0#LabelingEntity",
@@ -906,35 +1336,75 @@
       "label": "MaterialEnumeration",
       "kind": "Characteristic",
       "preferredName": "Material Enumeration",
-      "description": "Enumeration with the values substance, mixture and article."
+      "description": "Enumeration with the values substance, mixture and article.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.material.chemical_material_passport:1.0.0#RouteEnumeration",
       "label": "RouteEnumeration",
       "kind": "Characteristic",
       "preferredName": "Route Enumeration",
-      "description": "Enumeration with oral, dermal, inhalation gas, inhalation vapour, inhalation dust/mist/fume and not applicable"
+      "description": "Enumeration with oral, dermal, inhalation gas, inhalation vapour, inhalation dust/mist/fume and not applicable",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.material.chemical_material_passport:1.0.0#SignalWordEnumeration",
       "label": "SignalWordEnumeration",
       "kind": "Characteristic",
       "preferredName": "Signal Word Enumeration",
-      "description": "Enumeration with Danger and Warning."
+      "description": "Enumeration with Danger and Warning.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.material.chemical_material_passport:1.0.0#PackagingGroupEnumeration",
       "label": "PackagingGroupEnumeration",
       "kind": "Characteristic",
       "preferredName": "Packaging Group Enumeration",
-      "description": "Enumeration to match \"I\", \"II\", \"III\", or \"not applicable\"."
+      "description": "Enumeration to match \"I\", \"II\", \"III\", or \"not applicable\".",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.material.chemical_material_passport:1.0.0#QuantityCodeEnumeration",
       "label": "QuantityCodeEnumeration",
       "kind": "Characteristic",
       "preferredName": "Quantity Code Enumeration",
-      "description": "Enumeration for the codes E0, E1, E2, E3, E4, and E5."
+      "description": "Enumeration for the codes E0, E1, E2, E3, E4, and E5.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.material.chemical_material_passport:1.0.0#ParameterBeforeUseList",
@@ -962,7 +1432,15 @@
       "label": "StringList",
       "kind": "Characteristic",
       "preferredName": "String List",
-      "description": "List of text strings."
+      "description": "List of text strings.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.material.chemical_material_passport:1.0.0#ParameterMethodList",
@@ -1053,14 +1531,30 @@
       "label": "CelsiusDegreeMeasurement",
       "kind": "Characteristic",
       "preferredName": "Celsius Degree Measurement",
-      "description": "Measurement as float in celsius degree."
+      "description": "Measurement as float in celsius degree.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "float",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.material.chemical_material_passport:1.0.0#FloatQuantityValue",
       "label": "FloatQuantityValue",
       "kind": "Characteristic",
       "preferredName": "Float Quantity Value",
-      "description": "Value as float."
+      "description": "Value as float.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "float",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     }
   ],
   "links": [

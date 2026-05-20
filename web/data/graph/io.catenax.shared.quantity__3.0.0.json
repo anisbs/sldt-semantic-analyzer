@@ -137,56 +137,120 @@
       "label": "TimeUnitEnumeration",
       "kind": "Characteristic",
       "preferredName": "time unit enumeration",
-      "description": "Enumeration for time units."
+      "description": "Enumeration for time units.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "curie",
+          "target_model": "org.eclipse.esmf.samm:meta-model@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.shared.quantity:3.0.0#MassUnitEnumeration",
       "label": "MassUnitEnumeration",
       "kind": "Characteristic",
       "preferredName": "mass unit enumeration",
-      "description": "Enumeration for mass units."
+      "description": "Enumeration for mass units.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "curie",
+          "target_model": "org.eclipse.esmf.samm:meta-model@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.shared.quantity:3.0.0#VolumeUnitEnumeration",
       "label": "VolumeUnitEnumeration",
       "kind": "Characteristic",
       "preferredName": "volume unit enumeration",
-      "description": "Enumeration for volume units."
+      "description": "Enumeration for volume units.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "curie",
+          "target_model": "org.eclipse.esmf.samm:meta-model@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.shared.quantity:3.0.0#MiscUnitEnumeration",
       "label": "MiscUnitEnumeration",
       "kind": "Characteristic",
       "preferredName": "count unit enumeration",
-      "description": "Enumeration for miscellaneous units."
+      "description": "Enumeration for miscellaneous units.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "curie",
+          "target_model": "org.eclipse.esmf.samm:meta-model@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.shared.quantity:3.0.0#LinearUnitEnumeration",
       "label": "LinearUnitEnumeration",
       "kind": "Characteristic",
       "preferredName": "linear unit enumeration",
-      "description": "The unit of a linear attribute that may be used for height, width, length and diameter."
+      "description": "The unit of a linear attribute that may be used for height, width, length and diameter.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "curie",
+          "target_model": "org.eclipse.esmf.samm:meta-model@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.shared.quantity:3.0.0#CountUnitEnumeration",
       "label": "CountUnitEnumeration",
       "kind": "Characteristic",
       "preferredName": "count unit enumeration",
-      "description": "Enumeration for count units."
+      "description": "Enumeration for count units.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "curie",
+          "target_model": "org.eclipse.esmf.samm:meta-model@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.shared.quantity:3.0.0#AreaUnitEnumeration",
       "label": "AreaUnitEnumeration",
       "kind": "Characteristic",
       "preferredName": "area unit enumeration",
-      "description": "The unit of an area attribute."
+      "description": "The unit of an area attribute.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "curie",
+          "target_model": "org.eclipse.esmf.samm:meta-model@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.shared.quantity:3.0.0#ItemUnitEnumeration",
       "label": "ItemUnitEnumeration",
       "kind": "Characteristic",
       "preferredName": "item unit enumeration",
-      "description": "Enumeration for common item units."
+      "description": "Enumeration for common item units.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "curie",
+          "target_model": "org.eclipse.esmf.samm:meta-model@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.shared.quantity:3.0.0#TimeEntity",
@@ -305,7 +369,15 @@
       "label": "QuantityValueCharacteristic",
       "kind": "Characteristic",
       "preferredName": "quantity value characteristic",
-      "description": "The quantity value associated with the unit expressed as float."
+      "description": "The quantity value associated with the unit expressed as float.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "float",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     }
   ],
   "links": [

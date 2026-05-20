@@ -45,7 +45,15 @@
       "label": "messageId",
       "kind": "Property",
       "preferredName": "Message ID",
-      "description": "Unique ID identifying the message. The purpose of the ID is to uniquely identify a single message, therefore it MUST not be reused."
+      "description": "Unique ID identifying the message. The purpose of the ID is to uniquely identify a single message, therefore it MUST not be reused.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "UuidV4Trait",
+          "target_model": "shared.uuid@1.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.shared.message_header:2.0.0#context",
@@ -59,35 +67,75 @@
       "label": "sentDateTime",
       "kind": "Property",
       "preferredName": "Sent Date Time",
-      "description": "Time zone aware timestamp holding the date and the time the message was sent by the sending party. The value MUST be formatted according to the ISO 8601 standard"
+      "description": "Time zone aware timestamp holding the date and the time the message was sent by the sending party. The value MUST be formatted according to the ISO 8601 standard",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Timestamp",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.shared.message_header:2.0.0#senderBpn",
       "label": "senderBpn",
       "kind": "Property",
       "preferredName": "Sender BPN",
-      "description": "The Business Partner Number of the sending party. The value MUST be a valid BPN. BPNA and BPNS are not allowed. Applicable constraints are defined in the corresponding standard"
+      "description": "The Business Partner Number of the sending party. The value MUST be a valid BPN. BPNA and BPNS are not allowed. Applicable constraints are defined in the corresponding standard",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "BpnlTrait",
+          "target_model": "shared.business_partner_number@1.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.shared.message_header:2.0.0#receiverBpn",
       "label": "receiverBpn",
       "kind": "Property",
       "preferredName": "Receiver BPN",
-      "description": "The Business Partner Number of the receiving party. The value MUST be a valid BPN. BPNA and BPNS are not allowed. Applicable constraints are defined in the corresponding standard."
+      "description": "The Business Partner Number of the receiving party. The value MUST be a valid BPN. BPNA and BPNS are not allowed. Applicable constraints are defined in the corresponding standard.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "BpnlTrait",
+          "target_model": "shared.business_partner_number@1.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.shared.message_header:2.0.0#expectedResponseBy",
       "label": "expectedResponseBy",
       "kind": "Property",
       "preferredName": "Expected Response By",
-      "description": "Time zone aware timestamp holding the date and time by which the sending party expects a certain type of response from the receiving party. The meaning and interpretation of the fields's value are context-bound and MUST therefore be defined by any business domain or platform capability making use of it. The value MUST be formatted according to the ISO 8601 standard"
+      "description": "Time zone aware timestamp holding the date and time by which the sending party expects a certain type of response from the receiving party. The meaning and interpretation of the fields's value are context-bound and MUST therefore be defined by any business domain or platform capability making use of it. The value MUST be formatted according to the ISO 8601 standard",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Timestamp",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.shared.message_header:2.0.0#relatedMessageId",
       "label": "relatedMessageId",
       "kind": "Property",
       "preferredName": "Related Message ID",
-      "description": "Unique ID identifying a message somehow related to the current one"
+      "description": "Unique ID identifying a message somehow related to the current one",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "UuidV4Trait",
+          "target_model": "shared.uuid@1.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.shared.message_header:2.0.0#version",
@@ -108,14 +156,30 @@
       "label": "ContextCharacteristic",
       "kind": "Characteristic",
       "preferredName": "Context Characteristic",
-      "description": "Defining a string value for the context"
+      "description": "Defining a string value for the context",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.shared.message_header:2.0.0#VersionCharacteristic",
       "label": "VersionCharacteristic",
       "kind": "Characteristic",
       "preferredName": "Version Characteristic",
-      "description": "Characteristic defining the value of version."
+      "description": "Characteristic defining the value of version.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.shared.message_header:2.0.0#MessageHeader",

@@ -44,7 +44,15 @@
       "label": "dismantlingAndRemovalInformation",
       "kind": "Property",
       "preferredName": "dismantling and removal information",
-      "description": "\n   Dismantling and Removal information, including at least:\n   * Exploded diagrams of the battery system/pack showing the location of battery cells\n   * Disassembly sequences\n   * Type and number of fastening techniques to be unlocked\n   * Tools required for disassembly\n   * Warnings if risk of damaging parts exists\n   * Amount of cells used and layout. \n   \n   BR Annex XIII (2c)\n\nDIN DKE Spec 99100 chapter reference: 6.6.1.2\n   \n    > NOTE: For more information on the document identified by its document ID please refer to the Handover Documentation of the battery.\n\t"
+      "description": "\n   Dismantling and Removal information, including at least:\n   * Exploded diagrams of the battery system/pack showing the location of battery cells\n   * Disassembly sequences\n   * Type and number of fastening techniques to be unlocked\n   * Tools required for disassembly\n   * Warnings if risk of damaging parts exists\n   * Amount of cells used and layout. \n   \n   BR Annex XIII (2c)\n\nDIN DKE Spec 99100 chapter reference: 6.6.1.2\n   \n    > NOTE: For more information on the document identified by its document ID please refer to the Handover Documentation of the battery.\n\t",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "DocumentIdentifierSet",
+          "target_model": "shared@3.1.0",
+          "target_source": "idta"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#sparePartSources",
@@ -86,7 +94,15 @@
       "label": "nameOfSupplier",
       "kind": "Property",
       "preferredName": "name of supplier",
-      "description": "Name of Supplier"
+      "description": "Name of Supplier",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.2.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#addressOfSupplier",
@@ -100,7 +116,15 @@
       "label": "supplierWebAddress",
       "kind": "Property",
       "preferredName": "WEB address of supplier",
-      "description": "Web address of supplier for spare parts."
+      "description": "Web address of supplier for spare parts.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "ResourcePath",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.2.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#components",
@@ -135,7 +159,15 @@
       "label": "safetyInstructions",
       "kind": "Property",
       "preferredName": "safety instructions",
-      "description": "Necessary safety instructions to handle waste batteries, including in relation to the risks associated with, and the handling of, batteries containing lithium."
+      "description": "Necessary safety instructions to handle waste batteries, including in relation to the risks associated with, and the handling of, batteries containing lithium.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "DocumentIdentifierSet",
+          "target_model": "shared@3.1.0",
+          "target_source": "idta"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#extinguishingAgents",
@@ -149,28 +181,60 @@
       "label": "wastePrevention",
       "kind": "Property",
       "preferredName": "waste prevention",
-      "description": "Prevention and management of waste batteries: Point (a) of Article 60(1): Information on the role of end-users in contributing to waste prevention, including by information on good practices and recommendations concerning the use of batteries aiming at extending their use phase and the possibilities of re-use, preparing for re-use, preparing for repurpose, repurposing and remanufacturing"
+      "description": "Prevention and management of waste batteries: Point (a) of Article 60(1): Information on the role of end-users in contributing to waste prevention, including by information on good practices and recommendations concerning the use of batteries aiming at extending their use phase and the possibilities of re-use, preparing for re-use, preparing for repurpose, repurposing and remanufacturing",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "DocumentIdentifierSet",
+          "target_model": "shared@3.1.0",
+          "target_source": "idta"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#separateCollection",
       "label": "separateCollection",
       "kind": "Property",
       "preferredName": "separate collection",
-      "description": "Prevention and management of waste batteries: Point (b) of Article 60(1): Information on the role of end-users in contributing to the separate collection of waste batteries in accordance with their obligations under Article 51 so as to allow their treatment"
+      "description": "Prevention and management of waste batteries: Point (b) of Article 60(1): Information on the role of end-users in contributing to the separate collection of waste batteries in accordance with their obligations under Article 51 so as to allow their treatment",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "DocumentIdentifierSet",
+          "target_model": "shared@3.1.0",
+          "target_source": "idta"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#informationOnCollection",
       "label": "informationOnCollection",
       "kind": "Property",
       "preferredName": "information on collection",
-      "description": "Prevention and management of waste batteries: Point (c) of Article 60(1): information on the separate collection, the take back, the collection points and preparing for re-use, preparing for repurposing, and recycling operations available for waste batteries"
+      "description": "Prevention and management of waste batteries: Point (c) of Article 60(1): information on the separate collection, the take back, the collection points and preparing for re-use, preparing for repurposing, and recycling operations available for waste batteries",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "DocumentIdentifierSet",
+          "target_model": "shared@3.1.0",
+          "target_source": "idta"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#partName",
       "label": "partName",
       "kind": "Property",
       "preferredName": "part name",
-      "description": "Name of the part."
+      "description": "Name of the part.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.2.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#partNumber",
@@ -233,28 +297,72 @@
       "label": "RenewableContent",
       "kind": "Characteristic",
       "preferredName": "renewable content",
-      "description": null
+      "description": null,
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "float",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#PreConsumerShare",
       "label": "PreConsumerShare",
       "kind": "Characteristic",
       "preferredName": "pre consumer share",
-      "description": null
+      "description": null,
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "float",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#PostConsumerShare",
       "label": "PostConsumerShare",
       "kind": "Characteristic",
       "preferredName": "post consumer share",
-      "description": null
+      "description": null,
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "float",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#SparePartSupplier",
       "label": "SparePartSupplier",
       "kind": "Entity",
       "preferredName": "spare part supplier",
-      "description": "The part numbers for components should be provided together with the postal address, e-mail address and web address of the sources for spare parts. \n\nDIN DKE Spec 99100 chapter reference: 6.6.1.3"
+      "description": "The part numbers for components should be provided together with the postal address, e-mail address and web address of the sources for spare parts. \n\nDIN DKE Spec 99100 chapter reference: 6.6.1.3",
+      "external_refs": [
+        {
+          "predicate": "properties",
+          "target_local": "company",
+          "target_model": "contact_information@1.0.0",
+          "target_source": "idta"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "email",
+          "target_model": "contact_information@1.0.0",
+          "target_source": "idta"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "addressOfAdditionalLink",
+          "target_model": "contact_information@1.0.0",
+          "target_source": "idta"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#RecycledContent",
@@ -282,7 +390,27 @@
       "label": "PostalAddress",
       "kind": "Entity",
       "preferredName": "postal address",
-      "description": "Postal address."
+      "description": "Postal address.",
+      "external_refs": [
+        {
+          "predicate": "properties",
+          "target_local": "nationalCode",
+          "target_model": "contact_information@1.0.0",
+          "target_source": "idta"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "postalCode",
+          "target_model": "contact_information@1.0.0",
+          "target_source": "idta"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "street",
+          "target_model": "contact_information@1.0.0",
+          "target_source": "idta"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#Component",
@@ -310,14 +438,30 @@
       "label": "RecycledMaterial",
       "kind": "Characteristic",
       "preferredName": null,
-      "description": null
+      "description": null,
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#ExtinguishingAgent",
       "label": "ExtinguishingAgent",
       "kind": "Characteristic",
       "preferredName": "extinguishing agent",
-      "description": "Extinguishing agent."
+      "description": "Extinguishing agent.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#ConsumerShareRange",
@@ -331,7 +475,15 @@
       "label": "PartNumber",
       "kind": "Characteristic",
       "preferredName": null,
-      "description": null
+      "description": null,
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     }
   ],
   "links": [
@@ -525,6 +677,42 @@
       "source": "urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#PostConsumerShareTrait",
       "target": "urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#ConsumerShareRange",
       "label": "constraint",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#Circularity",
+      "target": "urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#dismantlingAndRemovalInformation",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#Circularity",
+      "target": "urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#sparePartSources",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#Circularity",
+      "target": "urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#recycledContent",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#Circularity",
+      "target": "urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#safetyMeasures",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#Circularity",
+      "target": "urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#endOfLifeInformation",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#Circularity",
+      "target": "urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#renewableContent",
+      "label": "properties",
       "optional": false
     }
   ]

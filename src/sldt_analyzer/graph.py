@@ -26,7 +26,7 @@ from pathlib import Path
 
 from sldt_analyzer.issues import build_issues
 from sldt_analyzer.parser import (
-    Dependency, Edge, Element, ParsedModel, parse_directory,
+    Dependency, Edge, Element, ExternalRef, ParsedModel, parse_directory,
 )
 
 logger = logging.getLogger("sldt.graph")
@@ -123,6 +123,27 @@ def _gen_artifacts(model: ParsedModel, models_dir: Path) -> dict:
     out = {"base": stem_dir.as_posix()}
     for key, suf in _GEN_SUFFIXES.items():
         out[key] = (models_dir / (str(stem_dir) + suf)).is_file()
+
+    # Multi-aspect case (Feature 21) : when the version folder hosts more
+    # than one `<Stem>.html`, expose ALL of them so the front can offer an
+    # Aspect picker in the Generated docs tab (material_accounting/1.0.0 = 6
+    # Aspects, shared/3.1.0 = 2 Aspects). For 0/1 .html, `aspects` is absent
+    # — front falls back to the original `base`/booleans.
+    try:
+        all_htmls = sorted(gen_dir.glob("*.html"))
+    except OSError:
+        all_htmls = []
+    if len(all_htmls) > 1:
+        aspects = []
+        for h in all_htmls:
+            sd = rel.parent / "gen" / h.stem
+            aspects.append({
+                "name": h.stem,
+                "base": sd.as_posix(),
+                **{k: (models_dir / (str(sd) + suf)).is_file()
+                   for k, suf in _GEN_SUFFIXES.items()},
+            })
+        out["aspects"] = aspects
     return out
 
 
@@ -177,6 +198,31 @@ def merge_models(models: list[ParsedModel]) -> list[ParsedModel]:
                     continue
                 seen_edges.add(k)
                 edges.append(ed)
+
+        # Promotion des `external_refs` en `Edge` : un .ttl peut avoir
+        # référencé un URN défini dans un **.ttl frère** du même namespace
+        # (cas IDTA dominant : Aspect dans `Foo.ttl` pointe vers une Property
+        # de `Foo_shared.ttl`). Au parse de `Foo.ttl` c'était un external_ref
+        # (cible absente de `seen`) ; après fusion, la cible est dans le
+        # modèle agrégé -> on promeut en Edge et on retire la ref.
+        # NB : on mute les Element en place (acceptable, ils ne sont plus
+        # utilisés après `merge_models`).
+        known_urns = set(elems_by_urn.keys())
+        for el in elems_by_urn.values():
+            if not el.external_refs:
+                continue
+            keep: list[ExternalRef] = []
+            for r in el.external_refs:
+                if r.target_urn in known_urns:
+                    k = (el.urn, r.target_urn, r.predicate)
+                    if k not in seen_edges:
+                        seen_edges.add(k)
+                        edges.append(Edge(
+                            el.urn, r.target_urn, r.predicate, r.optional,
+                        ))
+                else:
+                    keep.append(r)
+            el.external_refs = keep
 
         # Union dépendances par (name, version).
         seen_deps: set[tuple[str, str]] = set()
@@ -247,6 +293,18 @@ def _short_desc(text: str | None, limit: int = 240) -> str | None:
 
 def model_to_graph(model: ParsedModel) -> dict:
     """Convertit un ParsedModel en {meta, nodes, links} pour D3."""
+    def _refs(e):
+        # Omis si vide pour ne pas alourdir le JSON (la grande majorité des
+        # éléments n'a pas d'external_refs).
+        if not e.external_refs:
+            return None
+        return [
+            {"predicate": r.predicate,
+             "target_local": r.target_local,
+             "target_model": r.target_model,
+             "target_source": r.target_source}
+            for r in e.external_refs
+        ]
     nodes = [
         {
             "id": e.urn,
@@ -254,6 +312,7 @@ def model_to_graph(model: ParsedModel) -> dict:
             "kind": e.kind,
             "preferredName": e.preferred_name,
             "description": e.description,
+            **({"external_refs": refs} if (refs := _refs(e)) else {}),
         }
         for e in model.elements
     ]

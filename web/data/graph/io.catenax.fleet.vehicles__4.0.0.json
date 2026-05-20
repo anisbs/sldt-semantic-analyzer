@@ -25,7 +25,15 @@
       "label": "Vehicles",
       "kind": "Aspect",
       "preferredName": "Vehicles",
-      "description": "For Catena-X(CX) business case Quality Management. Supported technical features: delta update feature, meta information feature and additionalInformationList key-value pairs. The supported model features are described in detail in the Catena-X Quality KIT. FleetVehicles data model is used to exchange basic vehicle information - mainly how the vehicle was built - with all installed equipments and engines in the car. In addition, there is built and sold date + country were the vehicle was sold to better restrict the area of the problem or to exclude regional areas from the problem."
+      "description": "For Catena-X(CX) business case Quality Management. Supported technical features: delta update feature, meta information feature and additionalInformationList key-value pairs. The supported model features are described in detail in the Catena-X Quality KIT. FleetVehicles data model is used to exchange basic vehicle information - mainly how the vehicle was built - with all installed equipments and engines in the car. In addition, there is built and sold date + country were the vehicle was sold to better restrict the area of the problem or to exclude regional areas from the problem.",
+      "external_refs": [
+        {
+          "predicate": "properties",
+          "target_local": "metaInformation",
+          "target_model": "shared.quality_core@1.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.fleet.vehicles:4.0.0#vehicles",
@@ -39,21 +47,45 @@
       "label": "productionDate",
       "kind": "Property",
       "preferredName": "Production Date",
-      "description": "Date when this part was produced."
+      "description": "Date when this part was produced.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "ISO8601LocalDate",
+          "target_model": "shared.quality_core@1.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.fleet.vehicles:4.0.0#soldDate",
       "label": "soldDate",
       "kind": "Property",
       "preferredName": "Vehicle Sold Date",
-      "description": "Sold date of the vehicle = warranty start date for this vehicle"
+      "description": "Sold date of the vehicle = warranty start date for this vehicle",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "ISO8601LocalDate",
+          "target_model": "shared.quality_core@1.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.fleet.vehicles:4.0.0#class",
       "label": "class",
       "kind": "Property",
       "preferredName": "Vehicle Class",
-      "description": "Class of the vehicle."
+      "description": "Class of the vehicle.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.fleet.vehicles:4.0.0#parts",
@@ -95,14 +127,30 @@
       "label": "modelDescription",
       "kind": "Property",
       "preferredName": "Vehicle Model",
-      "description": "Detail vehicle model like \"Golf VIII\""
+      "description": "Detail vehicle model like \"Golf VIII\"",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.fleet.vehicles:4.0.0#modelIdentifier",
       "label": "modelIdentifier",
       "kind": "Property",
       "preferredName": "Model Identifier",
-      "description": "Vehicle manufacturer-specific model identifier or Vehicle manufacturer-specific project name."
+      "description": "Vehicle manufacturer-specific model identifier or Vehicle manufacturer-specific project name.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.fleet.vehicles:4.0.0#powerTrainType",
@@ -116,28 +164,60 @@
       "label": "softwareCategory",
       "kind": "Property",
       "preferredName": "Software Category",
-      "description": "Some Vehicle manufacturers bring in the software as complete package for all systems:To identify this software: software category and software version is needed.Software category when this car was built."
+      "description": "Some Vehicle manufacturers bring in the software as complete package for all systems:To identify this software: software category and software version is needed.Software category when this car was built.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.fleet.vehicles:4.0.0#softwareVersion",
       "label": "softwareVersion",
       "kind": "Property",
       "preferredName": "Software Version",
-      "description": "Some Vehicle manufacturers brings in the software as complete package for all systems:To identify this software: software category and software version is needed.Software version when this car was built."
+      "description": "Some Vehicle manufacturers brings in the software as complete package for all systems:To identify this software: software category and software version is needed.Software version when this car was built.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.fleet.vehicles:4.0.0#soldCountryCode",
       "label": "soldCountryCode",
       "kind": "Property",
       "preferredName": "Sold Country Code",
-      "description": "The country code in 3 letter format where this vehicle was sold."
+      "description": "The country code in 3 letter format where this vehicle was sold.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "CountryCodeTrait",
+          "target_model": "shared.quality_core@1.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.fleet.vehicles:4.0.0#soldCountryGroup",
       "label": "soldCountryGroup",
       "kind": "Property",
       "preferredName": "Vehicle Sold Region",
-      "description": "The region where this car was sold."
+      "description": "The region where this car was sold.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.fleet.vehicles:4.0.0#steeringPos",
@@ -151,7 +231,15 @@
       "label": "vehicleSeries",
       "kind": "Property",
       "preferredName": "Vehicle Series",
-      "description": "vehicle series, normally one level above model. E.g. vehicle series =\"Golf\", vehicle model=\"Golf VIII\""
+      "description": "vehicle series, normally one level above model. E.g. vehicle series =\"Golf\", vehicle model=\"Golf VIII\"",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.fleet.vehicles:4.0.0#wmiCode",
@@ -165,7 +253,15 @@
       "label": "wmiNameNHTSA",
       "kind": "Property",
       "preferredName": "World Manufacturer Index (WMI) name according NHTSA",
-      "description": "Name of the vehicle manufacturer according NHTSA: use https://vpic.nhtsa.dot.gov/api/vehicles/decodewmi/WVW?format=json - entry to be used is CommonName."
+      "description": "Name of the vehicle manufacturer according NHTSA: use https://vpic.nhtsa.dot.gov/api/vehicles/decodewmi/WVW?format=json - entry to be used is CommonName.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.fleet.vehicles:4.0.0#transmissions",
@@ -179,21 +275,45 @@
       "label": "engineId",
       "kind": "Property",
       "preferredName": "Engine Identifier",
-      "description": "Vehicle manufacturer-specific identifier/type of the installed engine"
+      "description": "Vehicle manufacturer-specific identifier/type of the installed engine",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "UniqueID",
+          "target_model": "shared.quality_core@1.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.fleet.vehicles:4.0.0#engineDescription",
       "label": "engineDescription",
       "kind": "Property",
       "preferredName": "Engine Description",
-      "description": "Description of the engine"
+      "description": "Description of the engine",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.fleet.vehicles:4.0.0#engineSeries",
       "label": "engineSeries",
       "kind": "Property",
       "preferredName": "Vehicle Engine Series",
-      "description": "Engine series as defined by Vehicle manufacturer"
+      "description": "Engine series as defined by Vehicle manufacturer",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.fleet.vehicles:4.0.0#engineSize",
@@ -214,7 +334,15 @@
       "label": "installDate",
       "kind": "Property",
       "preferredName": "Install Date",
-      "description": "Date when a part was installed in the vehicle."
+      "description": "Date when a part was installed in the vehicle.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "ISO8601LocalDate",
+          "target_model": "shared.quality_core@1.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.fleet.vehicles:4.0.0#nhtsaFuelType",
@@ -228,42 +356,90 @@
       "label": "equipmentIdentifier",
       "kind": "Property",
       "preferredName": "Equipment Identifier",
-      "description": "The identifier of a specific equipment."
+      "description": "The identifier of a specific equipment.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "UniqueID",
+          "target_model": "shared.quality_core@1.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.fleet.vehicles:4.0.0#equipmentDescription",
       "label": "equipmentDescription",
       "kind": "Property",
       "preferredName": "Equipment Description",
-      "description": "The equipment variants description."
+      "description": "The equipment variants description.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.fleet.vehicles:4.0.0#group",
       "label": "group",
       "kind": "Property",
       "preferredName": "Equipment Group",
-      "description": "Bundles all equipment-oriented information into categories like Interior"
+      "description": "Bundles all equipment-oriented information into categories like Interior",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.fleet.vehicles:4.0.0#transmissionId",
       "label": "transmissionId",
       "kind": "Property",
       "preferredName": "Transmission Identifier",
-      "description": "Vehicle manufacturer-specific identifier/type of the installed transmission"
+      "description": "Vehicle manufacturer-specific identifier/type of the installed transmission",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "UniqueID",
+          "target_model": "shared.quality_core@1.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.fleet.vehicles:4.0.0#transmissionDescription",
       "label": "transmissionDescription",
       "kind": "Property",
       "preferredName": "Transmission Description",
-      "description": "Description of the transmission."
+      "description": "Description of the transmission.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.fleet.vehicles:4.0.0#transmissionSeries",
       "label": "transmissionSeries",
       "kind": "Property",
       "preferredName": "Vehicle Transmission Series",
-      "description": "Transmission series as defined by vehicle manufacturer."
+      "description": "Transmission series as defined by vehicle manufacturer.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.fleet.vehicles:4.0.0#transmissionSize",
@@ -312,14 +488,54 @@
       "label": "Vehicle",
       "kind": "Entity",
       "preferredName": "Vehicle",
-      "description": "Vehicle data that does not fit into one of the other entities."
+      "description": "Vehicle data that does not fit into one of the other entities.",
+      "external_refs": [
+        {
+          "predicate": "properties",
+          "target_local": "anonymizedVIN",
+          "target_model": "shared.quality_core@1.0.0",
+          "target_source": "catenax"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "vehicleId",
+          "target_model": "shared.quality_core@1.0.0",
+          "target_source": "catenax"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "plant",
+          "target_model": "shared.quality_core@1.0.0",
+          "target_source": "catenax"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "recordStatus",
+          "target_model": "shared.quality_core@1.0.0",
+          "target_source": "catenax"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "additionalInformationList",
+          "target_model": "shared.quality_core@1.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.fleet.vehicles:4.0.0#SinglePart",
       "label": "SinglePart",
       "kind": "Entity",
       "preferredName": "Single Part",
-      "description": "A single part installed in the vehicle."
+      "description": "A single part installed in the vehicle.",
+      "external_refs": [
+        {
+          "predicate": "properties",
+          "target_local": "nil",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.fleet.vehicles:4.0.0#Engine",
@@ -347,49 +563,105 @@
       "label": "EnginePower",
       "kind": "Characteristic",
       "preferredName": "Engine Power",
-      "description": "Engine power expressed in kilowatt."
+      "description": "Engine power expressed in kilowatt.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "integer",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.fleet.vehicles:4.0.0#CubicCapacity",
       "label": "CubicCapacity",
       "kind": "Characteristic",
       "preferredName": "Cubic Capacity",
-      "description": "Cubic capacity of the engine."
+      "description": "Cubic capacity of the engine.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "integer",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.fleet.vehicles:4.0.0#TorqueMeasurement",
       "label": "TorqueMeasurement",
       "kind": "Characteristic",
       "preferredName": "Torque Measurement",
-      "description": "Measurement of the torque."
+      "description": "Measurement of the torque.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "integer",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.fleet.vehicles:4.0.0#DriveTypeNHTSA",
       "label": "DriveTypeNHTSA",
       "kind": "Characteristic",
       "preferredName": "Drive type(NHTSA)",
-      "description": "Enumeration of drive type according NHTSA, table [vPICList_lite].[dbo].[DriveType]"
+      "description": "Enumeration of drive type according NHTSA, table [vPICList_lite].[dbo].[DriveType]",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.fleet.vehicles:4.0.0#PowerTrainTypes",
       "label": "PowerTrainTypes",
       "kind": "Characteristic",
       "preferredName": "Powertrain Types",
-      "description": "This enumeration comes from NHTSA (US authority) database. Table [vPICList_lite].[dbo].[ElectrificationLevel] extended by Gasoline and Diesel as entry."
+      "description": "This enumeration comes from NHTSA (US authority) database. Table [vPICList_lite].[dbo].[ElectrificationLevel] extended by Gasoline and Diesel as entry.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.fleet.vehicles:4.0.0#VehicleSteeringPos",
       "label": "VehicleSteeringPos",
       "kind": "Characteristic",
       "preferredName": "Vehicle Steering Position(NHTSA)",
-      "description": "Vehicle steering position enumeration from NHTSA, see table [vPICList_lite].[dbo].[Steering]"
+      "description": "Vehicle steering position enumeration from NHTSA, see table [vPICList_lite].[dbo].[Steering]",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.fleet.vehicles:4.0.0#FuelTypesNHTSA",
       "label": "FuelTypesNHTSA",
       "kind": "Characteristic",
       "preferredName": "Fuel Types (NHTSA)",
-      "description": "Enumeration from NHTSA vpic database, table [vPICList_lite].[dbo].[FuelType]"
+      "description": "Enumeration from NHTSA vpic database, table [vPICList_lite].[dbo].[FuelType]",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.fleet.vehicles:4.0.0#OemShortNameTrait",

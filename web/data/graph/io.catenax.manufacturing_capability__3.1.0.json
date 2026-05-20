@@ -109,7 +109,15 @@
       "label": "capabilityLabel",
       "kind": "Property",
       "preferredName": "Capability Label",
-      "description": "Label of a capability."
+      "description": "Label of a capability.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "MultiLanguageText",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.manufacturing_capability:3.1.0#canProcessMaterials",
@@ -130,7 +138,15 @@
       "label": "label",
       "kind": "Property",
       "preferredName": "Label",
-      "description": "Multilanguage label of an element."
+      "description": "Multilanguage label of an element.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "MultiLanguageText",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.manufacturing_capability:3.1.0#specializes",
@@ -186,7 +202,15 @@
       "label": "propertyLabel",
       "kind": "Property",
       "preferredName": "Property Label",
-      "description": "Human readable label of a property."
+      "description": "Human readable label of a property.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "MultiLanguageText",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.manufacturing_capability:3.1.0#propertyValue",
@@ -284,7 +308,15 @@
       "label": "BoPEntity",
       "kind": "Entity",
       "preferredName": "BoP Entity",
-      "description": "Element containing a bill of process identifier."
+      "description": "Element containing a bill of process identifier.",
+      "external_refs": [
+        {
+          "predicate": "properties",
+          "target_local": "billOfProcessIdentification",
+          "target_model": "shared.bill_of_process@1.1.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.manufacturing_capability:3.1.0#MachineEntity",
@@ -298,7 +330,15 @@
       "label": "ProductEntity",
       "kind": "Entity",
       "preferredName": "Product Entity",
-      "description": "Element containing the SAMM properties of a product."
+      "description": "Element containing the SAMM properties of a product.",
+      "external_refs": [
+        {
+          "predicate": "properties",
+          "target_local": "nil",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.manufacturing_capability:3.1.0#CapabilityEntity",
@@ -319,7 +359,15 @@
       "label": "CertificateEntity",
       "kind": "Entity",
       "preferredName": "Certificate Entity",
-      "description": "Element containing the SAMM properties of a certificate."
+      "description": "Element containing the SAMM properties of a certificate.",
+      "external_refs": [
+        {
+          "predicate": "properties",
+          "target_local": "nil",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.manufacturing_capability:3.1.0#CapabilityConstraintEntity",
@@ -361,7 +409,15 @@
       "label": "MaterialFamilyEntity",
       "kind": "Entity",
       "preferredName": "Material Family Entity",
-      "description": "Element containing the SAMM properties of a material family."
+      "description": "Element containing the SAMM properties of a material family.",
+      "external_refs": [
+        {
+          "predicate": "properties",
+          "target_local": "nil",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.manufacturing_capability:3.1.0#ElementAbstractEntity",
@@ -382,14 +438,30 @@
       "label": "IdCharacteristic",
       "kind": "Characteristic",
       "preferredName": "Identifier Characteristic",
-      "description": "Characteristic for identifiers."
+      "description": "Characteristic for identifiers.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.manufacturing_capability:3.1.0#HierarchyElementIdCharacteristic",
       "label": "HierarchyElementIdCharacteristic",
       "kind": "Characteristic",
       "preferredName": "Hierarchy Element Id Characteristic",
-      "description": "Characteristic for an identifier of a hierarcy element."
+      "description": "Characteristic for an identifier of a hierarcy element.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.manufacturing_capability:3.1.0#MaterialCharacteristic",
@@ -403,7 +475,15 @@
       "label": "PropertyValueCharacteristic",
       "kind": "Characteristic",
       "preferredName": "Property Value Characteristic",
-      "description": "Characteristic for a property value."
+      "description": "Characteristic for a property value.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     }
   ],
   "links": [

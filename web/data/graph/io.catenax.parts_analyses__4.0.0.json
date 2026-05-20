@@ -25,7 +25,15 @@
       "label": "PartsAnalyses",
       "kind": "Aspect",
       "preferredName": "Parts Analysis",
-      "description": "For Catena-X(CX) business case Quality Management. Supported technical features: delta update feature, meta information feature and additionalInformationList key-value pairs. The supported model features are described in detail in the Catena-X Quality KIT. PartsAnalyses (hint: analyses is plural of one analysis) data model is usd to exchange analysis results of parts. Assumption: If a Quality Task exist a random sample of parts are sent to parts manufacturer to analyze these parts for potential malfunction."
+      "description": "For Catena-X(CX) business case Quality Management. Supported technical features: delta update feature, meta information feature and additionalInformationList key-value pairs. The supported model features are described in detail in the Catena-X Quality KIT. PartsAnalyses (hint: analyses is plural of one analysis) data model is usd to exchange analysis results of parts. Assumption: If a Quality Task exist a random sample of parts are sent to parts manufacturer to analyze these parts for potential malfunction.",
+      "external_refs": [
+        {
+          "predicate": "properties",
+          "target_local": "metaInformation",
+          "target_model": "shared.quality_core@1.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.parts_analyses:4.0.0#partsAnalyses",
@@ -39,28 +47,60 @@
       "label": "isDefect",
       "kind": "Property",
       "preferredName": "Part Defect Flag",
-      "description": "True: Analysis turned out that analysed part is defect according part's specification."
+      "description": "True: Analysis turned out that analysed part is defect according part's specification.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Boolean",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.parts_analyses:4.0.0#componentManufacturerAnalysisID",
       "label": "componentManufacturerAnalysisID",
       "kind": "Property",
       "preferredName": "Component Manufacturer Analysis Identifier",
-      "description": "Internal identifier for this analysis inside component manufacturer company."
+      "description": "Internal identifier for this analysis inside component manufacturer company.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "UniqueID",
+          "target_model": "shared.quality_core@1.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.parts_analyses:4.0.0#catenaXPartnerAnalysisID",
       "label": "catenaXPartnerAnalysisID",
       "kind": "Property",
       "preferredName": "Catena-X Partner Analysis Identifier",
-      "description": "The analysis identifier of your Catena-X partner company. Catena-X partner could be a vehicle manufacturer."
+      "description": "The analysis identifier of your Catena-X partner company. Catena-X partner could be a vehicle manufacturer.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "UniqueID",
+          "target_model": "shared.quality_core@1.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.parts_analyses:4.0.0#resultsDescription",
       "label": "resultsDescription",
       "kind": "Property",
       "preferredName": "Results Description",
-      "description": "Detailed description of part analysis results."
+      "description": "Detailed description of part analysis results.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.parts_analyses:4.0.0#status",
@@ -81,14 +121,48 @@
       "label": "PartAnalysis",
       "kind": "Entity",
       "preferredName": "Part Analysis",
-      "description": "The analysis results of ONE part"
+      "description": "The analysis results of ONE part",
+      "external_refs": [
+        {
+          "predicate": "properties",
+          "target_local": "anonymizedVIN",
+          "target_model": "shared.quality_core@1.0.0",
+          "target_source": "catenax"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "qualityTaskId",
+          "target_model": "shared.quality_core@1.0.0",
+          "target_source": "catenax"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "recordStatus",
+          "target_model": "shared.quality_core@1.0.0",
+          "target_source": "catenax"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "additionalInformationList",
+          "target_model": "shared.quality_core@1.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.parts_analyses:4.0.0#StatusCharacteristic",
       "label": "StatusCharacteristic",
       "kind": "Characteristic",
       "preferredName": "Status Characteristic",
-      "description": "Enumeration of the different status values"
+      "description": "Enumeration of the different status values",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     }
   ],
   "links": [

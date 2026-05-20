@@ -31,21 +31,51 @@
       "label": "SpecialCharacteristicsMeasurement",
       "kind": "Aspect",
       "preferredName": "SpecialCharacteristicsMeasurment",
-      "description": "Special Characteristics are measureable and these measurements are of interest for a consumer who defined these characteristics. The proposal is a data model \"result\" which represents a measurement related to a specific measurement and product. A measurement result is identified by the identification of a characteristic and the product."
+      "description": "Special Characteristics are measureable and these measurements are of interest for a consumer who defined these characteristics. The proposal is a data model \"result\" which represents a measurement related to a specific measurement and product. A measurement result is identified by the identification of a characteristic and the product.",
+      "external_refs": [
+        {
+          "predicate": "properties",
+          "target_local": "localIdentifiers",
+          "target_model": "serial_part@3.0.0",
+          "target_source": "catenax"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "customerPartId",
+          "target_model": "serial_part@3.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.special_characteristics.measurement:2.0.0#manufacturerId",
       "label": "manufacturerId",
       "kind": "Property",
       "preferredName": "Manufacturere Business Partner Number",
-      "description": "The business partner number of the manufacturer of the related product."
+      "description": "The business partner number of the manufacturer of the related product.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "BpnlTrait",
+          "target_model": "shared.business_partner_number@2.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.special_characteristics.measurement:2.0.0#characteristicId",
       "label": "characteristicId",
       "kind": "Property",
       "preferredName": "characteristicId",
-      "description": "Identifier of the special characteristic in relation to a specified part."
+      "description": "Identifier of the special characteristic in relation to a specified part.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.special_characteristics.measurement:2.0.0#results",
@@ -59,28 +89,60 @@
       "label": "measurementType",
       "kind": "Property",
       "preferredName": "Measurement Type",
-      "description": "This optional attribute hints the type of the measurement."
+      "description": "This optional attribute hints the type of the measurement.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.special_characteristics.measurement:2.0.0#revisionIndex",
       "label": "revisionIndex",
       "kind": "Property",
       "preferredName": "Revision Index",
-      "description": "This attribute contains the revision index of the special characteristic, it is necessary to identify a special characteristic."
+      "description": "This attribute contains the revision index of the special characteristic, it is necessary to identify a special characteristic.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.special_characteristics.measurement:2.0.0#identifier",
       "label": "identifier",
       "kind": "Property",
       "preferredName": "Identifier",
-      "description": "Identifier of the individual measurement object. "
+      "description": "Identifier of the individual measurement object. ",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.special_characteristics.measurement:2.0.0#measurementTimestamp",
       "label": "measurementTimestamp",
       "kind": "Property",
       "preferredName": "Measurement Timestamp",
-      "description": "Timestamp when the measurement was taken"
+      "description": "Timestamp when the measurement was taken",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Timestamp",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.special_characteristics.measurement:2.0.0#value",
@@ -94,14 +156,30 @@
       "label": "unit",
       "kind": "Property",
       "preferredName": "Unit ",
-      "description": "The unique unit of the measurement object. "
+      "description": "The unique unit of the measurement object. ",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "UnitReference",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.special_characteristics.measurement:2.0.0#description",
       "label": "description",
       "kind": "Property",
       "preferredName": "Description",
-      "description": "Detailed description of the measurement object. "
+      "description": "Detailed description of the measurement object. ",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.special_characteristics.measurement:2.0.0#ResultList",
@@ -122,7 +200,15 @@
       "label": "ValueCharacteristic",
       "kind": "Characteristic",
       "preferredName": "Value Characteristic",
-      "description": "The datatype of the measurement value defined as string. "
+      "description": "The datatype of the measurement value defined as string. ",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     }
   ],
   "links": [

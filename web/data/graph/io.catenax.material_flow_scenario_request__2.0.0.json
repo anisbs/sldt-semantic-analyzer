@@ -60,28 +60,60 @@
       "label": "scenarioId",
       "kind": "Property",
       "preferredName": "Scenario ID",
-      "description": "ID of scenario header"
+      "description": "ID of scenario header",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.material_flow_scenario_request:2.0.0#scenarioTitle",
       "label": "scenarioTitle",
       "kind": "Property",
       "preferredName": "Scenario Title",
-      "description": "Title of scenario"
+      "description": "Title of scenario",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.material_flow_scenario_request:2.0.0#scenarioCreationTimestamp",
       "label": "scenarioCreationTimestamp",
       "kind": "Property",
       "preferredName": "Scenario Creation Timestamp",
-      "description": "Date and Time of scenario creation"
+      "description": "Date and Time of scenario creation",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Timestamp",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.material_flow_scenario_request:2.0.0#scenarioExpirationTimestamp",
       "label": "scenarioExpirationTimestamp",
       "kind": "Property",
       "preferredName": "Scenario Expiration Timestamp",
-      "description": "Date and Time of validity expiration"
+      "description": "Date and Time of validity expiration",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Timestamp",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.material_flow_scenario_request:2.0.0#scenarioOwner",
@@ -102,28 +134,60 @@
       "label": "scenarioDescription",
       "kind": "Property",
       "preferredName": "Scenario Description",
-      "description": "Description of the scenario"
+      "description": "Description of the scenario",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.material_flow_scenario_request:2.0.0#parameterId",
       "label": "parameterId",
       "kind": "Property",
       "preferredName": "Parameter ID",
-      "description": "Identifier of scenario parameter"
+      "description": "Identifier of scenario parameter",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.material_flow_scenario_request:2.0.0#parameterDeliveryDateInitial",
       "label": "parameterDeliveryDateInitial",
       "kind": "Property",
       "preferredName": "Parameter Delivery Date Initial",
-      "description": "Delivery date initial (without scenario changes), optional, NULL when initially not set"
+      "description": "Delivery date initial (without scenario changes), optional, NULL when initially not set",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Timestamp",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.material_flow_scenario_request:2.0.0#parameterDeliveryDateUpdated",
       "label": "parameterDeliveryDateUpdated",
       "kind": "Property",
       "preferredName": "Parameter Delivery Date Updated",
-      "description": "Delivery date updated (with scenario changes)"
+      "description": "Delivery date updated (with scenario changes)",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Timestamp",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.material_flow_scenario_request:2.0.0#parameterQuantityInitial",
@@ -144,21 +208,45 @@
       "label": "parameterOrderId",
       "kind": "Property",
       "preferredName": "Parameter Order Id",
-      "description": "ID of the order"
+      "description": "ID of the order",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.material_flow_scenario_request:2.0.0#parameterComment",
       "label": "parameterComment",
       "kind": "Property",
       "preferredName": "Parameter Comment",
-      "description": "Optional description of parameters"
+      "description": "Optional description of parameters",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.material_flow_scenario_request:2.0.0#resultOwnId",
       "label": "resultOwnId",
       "kind": "Property",
       "preferredName": "Result Own Id",
-      "description": "ID of scenario result own"
+      "description": "ID of scenario result own",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.material_flow_scenario_request:2.0.0#resultOwnSimRunInitial",
@@ -200,21 +288,45 @@
       "label": "ScenarioOwnerCharacteristic",
       "kind": "Characteristic",
       "preferredName": "Scenario Owner Characteristic",
-      "description": "Characteristic describing the Scenario Owner"
+      "description": "Characteristic describing the Scenario Owner",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "BusinessPartnerSite",
+          "target_model": "material_flow_simulation_result@3.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.material_flow_scenario_request:2.0.0#QuantityCharacteristic",
       "label": "QuantityCharacteristic",
       "kind": "Characteristic",
       "preferredName": "Quantity Characteristic",
-      "description": "Describes a property which is a Float"
+      "description": "Describes a property which is a Float",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "float",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.material_flow_scenario_request:2.0.0#SimResult",
       "label": "SimResult",
       "kind": "Characteristic",
       "preferredName": "Sim Result",
-      "description": "Characteristic describing the property for a Material Flow Simulation Result"
+      "description": "Characteristic describing the property for a Material Flow Simulation Result",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "MaterialFlowSimulationResult",
+          "target_model": "material_flow_simulation_result@3.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.material_flow_scenario_request:2.0.0#MaterialFlowScenarioRequest",
@@ -235,7 +347,27 @@
       "label": "ScenarioParameter",
       "kind": "Entity",
       "preferredName": "Scenario Parameter",
-      "description": "Parameters which are used to describe a material flow scenario request"
+      "description": "Parameters which are used to describe a material flow scenario request",
+      "external_refs": [
+        {
+          "predicate": "properties",
+          "target_local": "materialNumber",
+          "target_model": "material_flow_simulation_result@3.0.0",
+          "target_source": "catenax"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "materialName",
+          "target_model": "material_flow_simulation_result@3.0.0",
+          "target_source": "catenax"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "unitOfMeasurement",
+          "target_model": "material_flow_simulation_result@3.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.material_flow_scenario_request:2.0.0#ScenarioSimResults",
@@ -256,7 +388,15 @@
       "label": "ScenarioOwnerRoleCharacteristic",
       "kind": "Characteristic",
       "preferredName": "Scenario Owner Role Characteristic",
-      "description": "Characteristic describing possible values for the role of the scenario owner"
+      "description": "Characteristic describing possible values for the role of the scenario owner",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     }
   ],
   "links": [

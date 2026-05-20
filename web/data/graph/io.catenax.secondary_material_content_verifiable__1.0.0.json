@@ -25,7 +25,21 @@
       "label": "SecondaryMaterialContentVerifiable",
       "kind": "Aspect",
       "preferredName": "Secondary Material Content Verifiable",
-      "description": "This model refers to a built part containing one or more different materials. It references the actual share on primary and secondary materials and relevant details."
+      "description": "This model refers to a built part containing one or more different materials. It references the actual share on primary and secondary materials and relevant details.",
+      "external_refs": [
+        {
+          "predicate": "properties",
+          "target_local": "secondaryMaterialContent",
+          "target_model": "shared.secondary_material_content@1.0.0",
+          "target_source": "catenax"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "orderNumber",
+          "target_model": "shared.secondary_material_content@1.0.0",
+          "target_source": "catenax"
+        }
+      ]
     }
   ],
   "links": []

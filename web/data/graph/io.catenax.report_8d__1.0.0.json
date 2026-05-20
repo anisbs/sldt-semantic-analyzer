@@ -114,35 +114,75 @@
       "label": "complaintDate",
       "kind": "Property",
       "preferredName": "Complaint date",
-      "description": "The date of claim is the specific date on which the claim was filed."
+      "description": "The date of claim is the specific date on which the claim was filed.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "ISO8601LocalDate",
+          "target_model": "shared.quality_core@1.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.report_8d:1.0.0#lastRevisionDate",
       "label": "lastRevisionDate",
       "kind": "Property",
       "preferredName": "Last revision date",
-      "description": "The date of last revision refers to the most recent date on which the document was updated."
+      "description": "The date of last revision refers to the most recent date on which the document was updated.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "ISO8601LocalDate",
+          "target_model": "shared.quality_core@1.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.report_8d:1.0.0#title",
       "label": "title",
       "kind": "Property",
       "preferredName": "Title",
-      "description": "The title of the 8D report is the official title given to the 8D report."
+      "description": "The title of the 8D report is the official title given to the 8D report.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.report_8d:1.0.0#customerComplaintId",
       "label": "customerComplaintId",
       "kind": "Property",
       "preferredName": "CustomerComplaint ID",
-      "description": "The customer specific ID of the complaint process is the identifier assigned to the complaint process by the customer."
+      "description": "The customer specific ID of the complaint process is the identifier assigned to the complaint process by the customer.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.report_8d:1.0.0#supplierComplaintId",
       "label": "supplierComplaintId",
       "kind": "Property",
       "preferredName": "Supplier Complaint ID",
-      "description": "The supplier specific ID of the complaint process is the identifier assigned to the complaint process by the supplier."
+      "description": "The supplier specific ID of the complaint process is the identifier assigned to the complaint process by the supplier.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.report_8d:1.0.0#customerContact",
@@ -170,7 +210,15 @@
       "label": "complaintLocation",
       "kind": "Property",
       "preferredName": "Complaint Location",
-      "description": "Defines the location of the complaint"
+      "description": "Defines the location of the complaint",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.report_8d:1.0.0#sponsor",
@@ -205,49 +253,105 @@
       "label": "symptomDescription",
       "kind": "Property",
       "preferredName": "Symptom Description",
-      "description": "Describes which symptoms lead to the claim"
+      "description": "Describes which symptoms lead to the claim",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.report_8d:1.0.0#problemDescription",
       "label": "problemDescription",
       "kind": "Property",
       "preferredName": "Problem Description",
-      "description": "Describes the problem of the complaint and the consequences that arise from it"
+      "description": "Describes the problem of the complaint and the consequences that arise from it",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.report_8d:1.0.0#errorType",
       "label": "errorType",
       "kind": "Property",
       "preferredName": "Error Type",
-      "description": "Describes the error type to be classified"
+      "description": "Describes the error type to be classified",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.report_8d:1.0.0#riskAssessmentStarted",
       "label": "riskAssessmentStarted",
       "kind": "Property",
       "preferredName": "Risk Assessment Started",
-      "description": "Describes at what point the risk assessment was started - the date as yyyy-mm-dd"
+      "description": "Describes at what point the risk assessment was started - the date as yyyy-mm-dd",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "ISO8601LocalDate",
+          "target_model": "shared.quality_core@1.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.report_8d:1.0.0#riskAssessmentUpdated",
       "label": "riskAssessmentUpdated",
       "kind": "Property",
       "preferredName": "Risk Assessment Updated",
-      "description": "Describes at what point the risk assessment was updated - the date as yyyy-mm-dd"
+      "description": "Describes at what point the risk assessment was updated - the date as yyyy-mm-dd",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "ISO8601LocalDate",
+          "target_model": "shared.quality_core@1.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.report_8d:1.0.0#qualityTaskAttachmentId",
       "label": "qualityTaskAttachmentId",
       "kind": "Property",
       "preferredName": "Quality Task Attachment ID",
-      "description": "Allows to link an quality task attachment with added information about the complaint e.g. dimensions, photos, production data,…."
+      "description": "Allows to link an quality task attachment with added information about the complaint e.g. dimensions, photos, production data,….",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "UniqueID",
+          "target_model": "shared.quality_core@1.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.report_8d:1.0.0#errorLocation",
       "label": "errorLocation",
       "kind": "Property",
       "preferredName": "Error Location",
-      "description": "Describes at which component or location the error occurred"
+      "description": "Describes at which component or location the error occurred",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.report_8d:1.0.0#descriptionOfInterimContainmentActions",
@@ -289,14 +393,30 @@
       "label": "resultAssesment",
       "kind": "Property",
       "preferredName": "Result Assesment",
-      "description": "Allows a summary of the measure and a final statement on its effectiveness"
+      "description": "Allows a summary of the measure and a final statement on its effectiveness",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.report_8d:1.0.0#closingDate",
       "label": "closingDate",
       "kind": "Property",
       "preferredName": "Closing Date",
-      "description": "Determining the time of 8D completion"
+      "description": "Determining the time of 8D completion",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "ISO8601LocalDate",
+          "target_model": "shared.quality_core@1.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.report_8d:1.0.0#defineEmergencyResponseAction",
@@ -310,84 +430,180 @@
       "label": "companyName",
       "kind": "Property",
       "preferredName": "Company name",
-      "description": "The name of the buyer company is the official registered name of the buyer's business."
+      "description": "The name of the buyer company is the official registered name of the buyer's business.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.report_8d:1.0.0#street",
       "label": "street",
       "kind": "Property",
       "preferredName": "Street",
-      "description": "The street of the contact refers to the street address where the contact's business is located."
+      "description": "The street of the contact refers to the street address where the contact's business is located.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.report_8d:1.0.0#city",
       "label": "city",
       "kind": "Property",
       "preferredName": "City",
-      "description": "The location of the contact indicates the city or town where the contact operates."
+      "description": "The location of the contact indicates the city or town where the contact operates.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.report_8d:1.0.0#postalCode",
       "label": "postalCode",
       "kind": "Property",
       "preferredName": "Postal code",
-      "description": "The postal code of the contact is the ZIP or postal code for the contact's address."
+      "description": "The postal code of the contact is the ZIP or postal code for the contact's address.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.report_8d:1.0.0#country",
       "label": "country",
       "kind": "Property",
       "preferredName": "Country",
-      "description": "The country of the contact specifies the nation where the contact's business is based."
+      "description": "The country of the contact specifies the nation where the contact's business is based.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.report_8d:1.0.0#supplierPartNumber",
       "label": "supplierPartNumber",
       "kind": "Property",
       "preferredName": "Supplier Part Number",
-      "description": "The part number of the supplier is the identifier assigned to the part by the supplier."
+      "description": "The part number of the supplier is the identifier assigned to the part by the supplier.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.report_8d:1.0.0#customerPartNumber",
       "label": "customerPartNumber",
       "kind": "Property",
       "preferredName": "Customer Part Number",
-      "description": "The part number of the customer is the identifier assigned to the part by the customer."
+      "description": "The part number of the customer is the identifier assigned to the part by the customer.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.report_8d:1.0.0#orderNumber",
       "label": "orderNumber",
       "kind": "Property",
       "preferredName": "Order number",
-      "description": "The order number of the part is the number associated with the purchase order for the part."
+      "description": "The order number of the part is the number associated with the purchase order for the part.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.report_8d:1.0.0#name",
       "label": "name",
       "kind": "Property",
       "preferredName": "Name",
-      "description": "The name of the person working on the 8D-report"
+      "description": "The name of the person working on the 8D-report",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.report_8d:1.0.0#department",
       "label": "department",
       "kind": "Property",
       "preferredName": "Department",
-      "description": "The department of the person working on the 8D-report"
+      "description": "The department of the person working on the 8D-report",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.report_8d:1.0.0#role",
       "label": "role",
       "kind": "Property",
       "preferredName": "Role",
-      "description": "The role in the company of the person working on the 8D-report"
+      "description": "The role in the company of the person working on the 8D-report",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.report_8d:1.0.0#proofOfEffectiveness",
       "label": "proofOfEffectiveness",
       "kind": "Property",
       "preferredName": "Proof Of Effectiveness",
-      "description": "Explain how the effectiveness of this measure has been validated"
+      "description": "Explain how the effectiveness of this measure has been validated",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.report_8d:1.0.0#effectivenessResult",
@@ -401,28 +617,60 @@
       "label": "introductionDate",
       "kind": "Property",
       "preferredName": "Introduction Date",
-      "description": "Definition of the date of introduction of the immediate measures - the date as yyyy-mm-dd"
+      "description": "Definition of the date of introduction of the immediate measures - the date as yyyy-mm-dd",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "ISO8601LocalDate",
+          "target_model": "shared.quality_core@1.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.report_8d:1.0.0#responsiblePerson",
       "label": "responsiblePerson",
       "kind": "Property",
       "preferredName": "Responsible Person",
-      "description": "Person responsible for the implementation of the planned corrective measure"
+      "description": "Person responsible for the implementation of the planned corrective measure",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.report_8d:1.0.0#riskOfImmediateMeasure",
       "label": "riskOfImmediateMeasure",
       "kind": "Property",
       "preferredName": "Risk Of Immediate Measure",
-      "description": "Describes the risk of introduction an immediate measure"
+      "description": "Describes the risk of introduction an immediate measure",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.report_8d:1.0.0#methodForEffectivenessCheck",
       "label": "methodForEffectivenessCheck",
       "kind": "Property",
       "preferredName": "Method For Effectiveness Check",
-      "description": "Describes the method for testing and demonstrating effectiveness"
+      "description": "Describes the method for testing and demonstrating effectiveness",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.report_8d:1.0.0#typeOfCauses",
@@ -436,56 +684,120 @@
       "label": "causeHypothesisDescription",
       "kind": "Property",
       "preferredName": "Cause Hypothesis Description",
-      "description": "Describes the causal hypothesis"
+      "description": "Describes the causal hypothesis",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.report_8d:1.0.0#verificationBy",
       "label": "verificationBy",
       "kind": "Property",
       "preferredName": "Verification By",
-      "description": "Name the person responsible for investigating the hypothesis"
+      "description": "Name the person responsible for investigating the hypothesis",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.report_8d:1.0.0#clarificationDate",
       "label": "clarificationDate",
       "kind": "Property",
       "preferredName": "Clarification Date",
-      "description": "Determination of the date of clarification of the cause - the date as yyyy-mm-dd"
+      "description": "Determination of the date of clarification of the cause - the date as yyyy-mm-dd",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "ISO8601LocalDate",
+          "target_model": "shared.quality_core@1.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.report_8d:1.0.0#result",
       "label": "result",
       "kind": "Property",
       "preferredName": "Result",
-      "description": "The result describes the outcome of a causal hypothesis"
+      "description": "The result describes the outcome of a causal hypothesis",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.report_8d:1.0.0#method",
       "label": "method",
       "kind": "Property",
       "preferredName": "Method",
-      "description": "Describes the method for forming the causal hypothesis"
+      "description": "Describes the method for forming the causal hypothesis",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.report_8d:1.0.0#report",
       "label": "report",
       "kind": "Property",
       "preferredName": "Report",
-      "description": "Describes in detail the result of the investigated root cause hypothesis"
+      "description": "Describes in detail the result of the investigated root cause hypothesis",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.report_8d:1.0.0#errorCauseCategory",
       "label": "errorCauseCategory",
       "kind": "Property",
       "preferredName": "Error Cause Category",
-      "description": "Describes the error cause category (ID) according to the VDA error catalog"
+      "description": "Describes the error cause category (ID) according to the VDA error catalog",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.report_8d:1.0.0#causeAssignment",
       "label": "causeAssignment",
       "kind": "Property",
       "preferredName": "Cause Assignment",
-      "description": "Define for which root cause the measure is relevant"
+      "description": "Define for which root cause the measure is relevant",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.report_8d:1.0.0#status",
@@ -499,7 +811,15 @@
       "label": "measure",
       "kind": "Property",
       "preferredName": "Measure",
-      "description": "Plan technical measure to resolve the quality problem permanently"
+      "description": "Plan technical measure to resolve the quality problem permanently",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.report_8d:1.0.0#HeaderCharacteristic",
@@ -590,7 +910,33 @@
       "label": "HeaderEntity",
       "kind": "Entity",
       "preferredName": "Header entity",
-      "description": "Entity for the property Header"
+      "description": "Entity for the property Header",
+      "external_refs": [
+        {
+          "predicate": "properties",
+          "target_local": "supplierId",
+          "target_model": "shared.quality_core@1.0.0",
+          "target_source": "catenax"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "supplierName",
+          "target_model": "shared.quality_core@1.0.0",
+          "target_source": "catenax"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "qualityTaskId",
+          "target_model": "shared.quality_core@1.0.0",
+          "target_source": "catenax"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "additionalInformationList",
+          "target_model": "shared.quality_core@1.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.report_8d:1.0.0#StepD1Entity",
@@ -604,42 +950,90 @@
       "label": "StepD2Entity",
       "kind": "Entity",
       "preferredName": "Step D2 Entity",
-      "description": "Entity for the Characteristic Step D2"
+      "description": "Entity for the Characteristic Step D2",
+      "external_refs": [
+        {
+          "predicate": "properties",
+          "target_local": "additionalInformationList",
+          "target_model": "shared.quality_core@1.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.report_8d:1.0.0#StepD3Entity",
       "label": "StepD3Entity",
       "kind": "Entity",
       "preferredName": "Step D3 Entity",
-      "description": "Entity for the Characteristic Step D3"
+      "description": "Entity for the Characteristic Step D3",
+      "external_refs": [
+        {
+          "predicate": "properties",
+          "target_local": "additionalInformationList",
+          "target_model": "shared.quality_core@1.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.report_8d:1.0.0#StepD4Entity",
       "label": "StepD4Entity",
       "kind": "Entity",
       "preferredName": "Step D4 Entity",
-      "description": "Entity for the Characteristic Step D4"
+      "description": "Entity for the Characteristic Step D4",
+      "external_refs": [
+        {
+          "predicate": "properties",
+          "target_local": "additionalInformationList",
+          "target_model": "shared.quality_core@1.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.report_8d:1.0.0#StepD5Entity",
       "label": "StepD5Entity",
       "kind": "Entity",
       "preferredName": "Step D5 Entity",
-      "description": "Entity for the Characteristic Step D5"
+      "description": "Entity for the Characteristic Step D5",
+      "external_refs": [
+        {
+          "predicate": "properties",
+          "target_local": "additionalInformationList",
+          "target_model": "shared.quality_core@1.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.report_8d:1.0.0#StepD6Entity",
       "label": "StepD6Entity",
       "kind": "Entity",
       "preferredName": "Step D6 Entity",
-      "description": "Entity for the Characteristic D6"
+      "description": "Entity for the Characteristic D6",
+      "external_refs": [
+        {
+          "predicate": "properties",
+          "target_local": "additionalInformationList",
+          "target_model": "shared.quality_core@1.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.report_8d:1.0.0#StepD7Entity",
       "label": "StepD7Entity",
       "kind": "Entity",
       "preferredName": "Step D7 Entity",
-      "description": "Entity for the Characteristic Step D7"
+      "description": "Entity for the Characteristic Step D7",
+      "external_refs": [
+        {
+          "predicate": "properties",
+          "target_local": "additionalInformationList",
+          "target_model": "shared.quality_core@1.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.report_8d:1.0.0#StepD8Entity",
@@ -653,28 +1047,102 @@
       "label": "StepD0Entity",
       "kind": "Entity",
       "preferredName": "Step D0 Entity",
-      "description": "Entity for the Characteristic Step D0"
+      "description": "Entity for the Characteristic Step D0",
+      "external_refs": [
+        {
+          "predicate": "properties",
+          "target_local": "additionalInformationList",
+          "target_model": "shared.quality_core@1.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.report_8d:1.0.0#ContactEntity",
       "label": "ContactEntity",
       "kind": "Entity",
       "preferredName": "Contact Entity",
-      "description": "Entity describing contacts"
+      "description": "Entity describing contacts",
+      "external_refs": [
+        {
+          "predicate": "properties",
+          "target_local": "bpnlProperty",
+          "target_model": "shared.business_partner_number@2.0.0",
+          "target_source": "catenax"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "email",
+          "target_model": "shared.contact_information@4.0.0",
+          "target_source": "catenax"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "phoneNumber",
+          "target_model": "shared.contact_information@4.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.report_8d:1.0.0#PartEntity",
       "label": "PartEntity",
       "kind": "Entity",
       "preferredName": "Part Entity",
-      "description": "Entity of the Characteristic PartCharacteristic"
+      "description": "Entity of the Characteristic PartCharacteristic",
+      "external_refs": [
+        {
+          "predicate": "properties",
+          "target_local": "serialNumber",
+          "target_model": "shared.quality_core@1.0.0",
+          "target_source": "catenax"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "batchNumber",
+          "target_model": "shared.quality_core@1.0.0",
+          "target_source": "catenax"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "partName",
+          "target_model": "shared.quality_core@1.0.0",
+          "target_source": "catenax"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "hwVersion",
+          "target_model": "shared.quality_core@1.0.0",
+          "target_source": "catenax"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "partId",
+          "target_model": "shared.quality_core@1.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.report_8d:1.0.0#PersonEntity",
       "label": "PersonEntity",
       "kind": "Entity",
       "preferredName": "Person Entity",
-      "description": "Entity containing information of one specific person"
+      "description": "Entity containing information of one specific person",
+      "external_refs": [
+        {
+          "predicate": "properties",
+          "target_local": "phoneNumber",
+          "target_model": "shared.contact_information@4.0.0",
+          "target_source": "catenax"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "email",
+          "target_model": "shared.contact_information@4.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.report_8d:1.0.0#DescriptionofInterimContainmentAction",
@@ -737,21 +1205,45 @@
       "label": "Percentage",
       "kind": "Characteristic",
       "preferredName": "Percentage",
-      "description": "A number between 0 and 100"
+      "description": "A number between 0 and 100",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "int",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.report_8d:1.0.0#TypeOfCausesEnumeration",
       "label": "TypeOfCausesEnumeration",
       "kind": "Characteristic",
       "preferredName": "Type Of Causes Enumeration",
-      "description": "Describes the valid inputs for the aspect typeOfCausesEnumeration"
+      "description": "Describes the valid inputs for the aspect typeOfCausesEnumeration",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.report_8d:1.0.0#StatusEnumeration",
       "label": "StatusEnumeration",
       "kind": "Characteristic",
       "preferredName": "Status Enumeration",
-      "description": "Defines valid values for the field Status"
+      "description": "Defines valid values for the field Status",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     }
   ],
   "links": [

@@ -45,7 +45,147 @@
       "label": "AdressInformation",
       "kind": "Entity",
       "preferredName": null,
-      "description": "Contains information on how to contact the manufacturer or an authorised service provider, e.g. when a maintenance service is required."
+      "description": "Contains information on how to contact the manufacturer or an authorised service provider, e.g. when a maintenance service is required.",
+      "external_refs": [
+        {
+          "predicate": "properties",
+          "target_local": "roleOfContactPerson",
+          "target_model": "contact_information@1.0.0",
+          "target_source": "idta"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "nationalCode",
+          "target_model": "contact_information@1.0.0",
+          "target_source": "idta"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "languages",
+          "target_model": "shared@3.1.0",
+          "target_source": "idta"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "timeZone",
+          "target_model": "contact_information@1.0.0",
+          "target_source": "idta"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "cityTown",
+          "target_model": "contact_information@1.0.0",
+          "target_source": "idta"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "company",
+          "target_model": "contact_information@1.0.0",
+          "target_source": "idta"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "department",
+          "target_model": "contact_information@1.0.0",
+          "target_source": "idta"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "phone",
+          "target_model": "contact_information@1.0.0",
+          "target_source": "idta"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "fax",
+          "target_model": "contact_information@1.0.0",
+          "target_source": "idta"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "email",
+          "target_model": "contact_information@1.0.0",
+          "target_source": "idta"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "ipCommunicationChannels",
+          "target_model": "contact_information@1.0.0",
+          "target_source": "idta"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "street",
+          "target_model": "contact_information@1.0.0",
+          "target_source": "idta"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "zipCode",
+          "target_model": "contact_information@1.0.0",
+          "target_source": "idta"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "poBox",
+          "target_model": "contact_information@1.0.0",
+          "target_source": "idta"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "zipCodeOfPoBox",
+          "target_model": "contact_information@1.0.0",
+          "target_source": "idta"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "stateCounty",
+          "target_model": "contact_information@1.0.0",
+          "target_source": "idta"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "nameOfContact",
+          "target_model": "contact_information@1.0.0",
+          "target_source": "idta"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "firstName",
+          "target_model": "contact_information@1.0.0",
+          "target_source": "idta"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "middleNames",
+          "target_model": "contact_information@1.0.0",
+          "target_source": "idta"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "title",
+          "target_model": "contact_information@1.0.0",
+          "target_source": "idta"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "academicTitle",
+          "target_model": "contact_information@1.0.0",
+          "target_source": "idta"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "furtherDetailsOfContact",
+          "target_model": "contact_information@1.0.0",
+          "target_source": "idta"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "addressOfAdditionalLink",
+          "target_model": "contact_information@1.0.0",
+          "target_source": "idta"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.admin-shell.idta.digital_nameplate:3.0.0#Nameplate",
@@ -66,63 +206,135 @@
       "label": "manufacturerName",
       "kind": "Property",
       "preferredName": "manufacturer name",
-      "description": "Legally valid designation of the natural or judicial person which is directly responsible for the design, production, packaging and labeling of a product in respect to its being brought into circulation."
+      "description": "Legally valid designation of the natural or judicial person which is directly responsible for the design, production, packaging and labeling of a product in respect to its being brought into circulation.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "MultiLanguageTexts",
+          "target_model": "shared@3.1.0",
+          "target_source": "idta"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.admin-shell.idta.digital_nameplate:3.0.0#manufacturerProductDesignation",
       "label": "manufacturerProductDesignation",
       "kind": "Property",
       "preferredName": "Herstellerproduktbezeichnung",
-      "description": "Short description of the product (short text), third or lowest level of a 3 level manufacturer specific product hierarchy."
+      "description": "Short description of the product (short text), third or lowest level of a 3 level manufacturer specific product hierarchy.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "MultiLanguageTexts",
+          "target_model": "shared@3.1.0",
+          "target_source": "idta"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.admin-shell.idta.digital_nameplate:3.0.0#manufacturerProductRoot",
       "label": "manufacturerProductRoot",
       "kind": "Property",
       "preferredName": "manufacturer Product Root",
-      "description": "Top level of a 3 level manufacturer specific product hierarchy."
+      "description": "Top level of a 3 level manufacturer specific product hierarchy.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "MultiLanguageTexts",
+          "target_model": "shared@3.1.0",
+          "target_source": "idta"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.admin-shell.idta.digital_nameplate:3.0.0#manufacturerProductFamily",
       "label": "manufacturerProductFamily",
       "kind": "Property",
       "preferredName": "manufacturer product family",
-      "description": "Produktfamilie des Produkts."
+      "description": "Produktfamilie des Produkts.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "MultiLanguageTexts",
+          "target_model": "shared@3.1.0",
+          "target_source": "idta"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.admin-shell.idta.digital_nameplate:3.0.0#manufacturerProductType",
       "label": "manufacturerProductType",
       "kind": "Property",
       "preferredName": "Produktausprägungen",
-      "description": "Ausprägung für das Produkt, um unterschiedliche Einzelprodukte einer Produktfamilie zu unterscheiden."
+      "description": "Ausprägung für das Produkt, um unterschiedliche Einzelprodukte einer Produktfamilie zu unterscheiden.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.2.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.admin-shell.idta.digital_nameplate:3.0.0#orderCodeOfManufacturer",
       "label": "orderCodeOfManufacturer",
       "kind": "Property",
       "preferredName": "Bestellcode des Produkts",
-      "description": "Eindeutige Zahlen- und Buchstabenkombination um das Produkt eindeutig für die Bestellung zu identifizieren."
+      "description": "Eindeutige Zahlen- und Buchstabenkombination um das Produkt eindeutig für die Bestellung zu identifizieren.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.2.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.admin-shell.idta.digital_nameplate:3.0.0#productArticleNumberOfManufacturer",
       "label": "productArticleNumberOfManufacturer",
       "kind": "Property",
       "preferredName": "Artikelnummer des Produkts",
-      "description": "Eindeutige Artikelnummer des Herstellers."
+      "description": "Eindeutige Artikelnummer des Herstellers.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.2.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.admin-shell.idta.digital_nameplate:3.0.0#serialNumber",
       "label": "serialNumber",
       "kind": "Property",
       "preferredName": "Seriennummer",
-      "description": "Die Seriennummer des Produkts."
+      "description": "Die Seriennummer des Produkts.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.2.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.admin-shell.idta.digital_nameplate:3.0.0#yearOfConstruction",
       "label": "yearOfConstruction",
       "kind": "Property",
       "preferredName": "year of construction",
-      "description": "Year in which the manufacturing process is completed."
+      "description": "Year in which the manufacturing process is completed.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.2.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.admin-shell.idta.digital_nameplate:3.0.0#dateOfManufacture",
@@ -136,63 +348,135 @@
       "label": "hardwareVersion",
       "kind": "Property",
       "preferredName": "hardware version",
-      "description": "Version of the hardware supplied with the device."
+      "description": "Version of the hardware supplied with the device.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.2.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.admin-shell.idta.digital_nameplate:3.0.0#firmwareVersion",
       "label": "firmwareVersion",
       "kind": "Property",
       "preferredName": "firmware version",
-      "description": "Version of the firmware supplied with the device."
+      "description": "Version of the firmware supplied with the device.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.2.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.admin-shell.idta.digital_nameplate:3.0.0#softwareVersion",
       "label": "softwareVersion",
       "kind": "Property",
       "preferredName": "software version",
-      "description": "Version of the software used by the device."
+      "description": "Version of the software used by the device.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.2.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.admin-shell.idta.digital_nameplate:3.0.0#markings",
       "label": "markings",
       "kind": "Property",
       "preferredName": "markings",
-      "description": "Produktkennzeichnungen"
+      "description": "Produktkennzeichnungen",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Markings",
+          "target_model": "shared@3.1.0",
+          "target_source": "idta"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.admin-shell.idta.digital_nameplate:3.0.0#countryOfOrigin",
       "label": "countryOfOrigin",
       "kind": "Property",
       "preferredName": "country of Origin",
-      "description": "Country where the product was manufactured. Note: Country codes defined accord. to DIN EN ISO 3166-1 alpha-2 codes."
+      "description": "Country where the product was manufactured. Note: Country codes defined accord. to DIN EN ISO 3166-1 alpha-2 codes.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.2.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.admin-shell.idta.digital_nameplate:3.0.0#uniqueFacilityIdentifier",
       "label": "uniqueFacilityIdentifier",
       "kind": "Property",
       "preferredName": "unique Identifier of a facility",
-      "description": "Unique string of characters for the identification of locations or buildings involved in a product’s value chain or used by actors involved in a product’s value chain."
+      "description": "Unique string of characters for the identification of locations or buildings involved in a product’s value chain or used by actors involved in a product’s value chain.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.2.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.admin-shell.idta.digital_nameplate:3.0.0#logoCompany",
       "label": "logoCompany",
       "kind": "Property",
       "preferredName": "Firmenlogo",
-      "description": "Das Firmenlogo des Produkts."
+      "description": "Das Firmenlogo des Produkts.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "ResourcePath",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.2.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.admin-shell.idta.digital_nameplate:3.0.0#Uri",
       "label": "Uri",
       "kind": "Characteristic",
       "preferredName": null,
-      "description": null
+      "description": null,
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "anyURI",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.admin-shell.idta.digital_nameplate:3.0.0#Date",
       "label": "Date",
       "kind": "Characteristic",
       "preferredName": null,
-      "description": null
+      "description": null,
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "date",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     }
   ],
   "links": [
@@ -326,6 +610,12 @@
       "source": "urn:samm:io.admin-shell.idta.digital_nameplate:3.0.0#dateOfManufacture",
       "target": "urn:samm:io.admin-shell.idta.digital_nameplate:3.0.0#Date",
       "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.digital_nameplate:3.0.0#Nameplate",
+      "target": "urn:samm:io.admin-shell.idta.digital_nameplate:3.0.0#addressInformation",
+      "label": "properties",
       "optional": false
     }
   ]

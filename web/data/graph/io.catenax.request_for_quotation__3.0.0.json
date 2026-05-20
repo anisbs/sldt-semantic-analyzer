@@ -296,14 +296,30 @@
       "label": "quantityNumber",
       "kind": "Property",
       "preferredName": "Quantity Number",
-      "description": "The number of objects related to the measurement unit"
+      "description": "The number of objects related to the measurement unit",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "QuantityValueCharacteristic",
+          "target_model": "shared.quantity@2.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.request_for_quotation:3.0.0#measurementUnit",
       "label": "measurementUnit",
       "kind": "Property",
       "preferredName": "Measurement Unit",
-      "description": "Unit of Measurement for the quantity of serialized objects"
+      "description": "Unit of Measurement for the quantity of serialized objects",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "UnitReference",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.request_for_quotation:3.0.0#materialProperties",
@@ -366,42 +382,90 @@
       "label": "CXHeaderCharacteristic",
       "kind": "Characteristic",
       "preferredName": "catena-X header characteristic",
-      "description": "header information by Catena-X"
+      "description": "header information by Catena-X",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "MessageHeader",
+          "target_model": "shared.message_header@3.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.request_for_quotation:3.0.0#SourceCharacteristic",
       "label": "SourceCharacteristic",
       "kind": "Characteristic",
       "preferredName": "source characteristic",
-      "description": "digital address of the sender (e.g.token, IP address, link, user account)"
+      "description": "digital address of the sender (e.g.token, IP address, link, user account)",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.request_for_quotation:3.0.0#IdCharacteristic",
       "label": "IdCharacteristic",
       "kind": "Characteristic",
       "preferredName": "id characteristic",
-      "description": "internal identifier in user account"
+      "description": "internal identifier in user account",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.request_for_quotation:3.0.0#NameCharacteristic",
       "label": "NameCharacteristic",
       "kind": "Characteristic",
       "preferredName": "name characteristic",
-      "description": "name for the request for user account management (usually name of the part to be manufactured)"
+      "description": "name for the request for user account management (usually name of the part to be manufactured)",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.request_for_quotation:3.0.0#DateTimeCharacteristic",
       "label": "DateTimeCharacteristic",
       "kind": "Characteristic",
       "preferredName": "date time characteristic",
-      "description": "date and time of the request in user account"
+      "description": "date and time of the request in user account",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "dateTime",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.request_for_quotation:3.0.0#RFQVersionCharacteristic",
       "label": "RFQVersionCharacteristic",
       "kind": "Characteristic",
       "preferredName": "RFQ version characteristic",
-      "description": "version of this request in case there were any changes"
+      "description": "version of this request in case there were any changes",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.request_for_quotation:3.0.0#FileCharacteristic",
@@ -422,14 +486,30 @@
       "label": "DeliveryDateCharacteristic",
       "kind": "Characteristic",
       "preferredName": "delivery date characteristic",
-      "description": "delivery date"
+      "description": "delivery date",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "date",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.request_for_quotation:3.0.0#CommentCharacteristic",
       "label": "CommentCharacteristic",
       "kind": "Characteristic",
       "preferredName": "comment characteristic",
-      "description": "placeholder for any kind of additional comments"
+      "description": "placeholder for any kind of additional comments",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.request_for_quotation:3.0.0#SetOfFilesCharacteristic",
@@ -450,77 +530,165 @@
       "label": "SenderNameCharacteristic",
       "kind": "Characteristic",
       "preferredName": "sender name characteristic",
-      "description": "name of the sender"
+      "description": "name of the sender",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.request_for_quotation:3.0.0#SenderAddressCharacteristic",
       "label": "SenderAddressCharacteristic",
       "kind": "Characteristic",
       "preferredName": "sender address characteristic",
-      "description": "address of sender"
+      "description": "address of sender",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.request_for_quotation:3.0.0#SenderCompanyNameCharacteristic",
       "label": "SenderCompanyNameCharacteristic",
       "kind": "Characteristic",
       "preferredName": "sender company name characteristic",
-      "description": "company name of sender"
+      "description": "company name of sender",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.request_for_quotation:3.0.0#SenderEMailCharacteristic",
       "label": "SenderEMailCharacteristic",
       "kind": "Characteristic",
       "preferredName": "sender eMail characteristic",
-      "description": " e-mail address of sender"
+      "description": " e-mail address of sender",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.request_for_quotation:3.0.0#SenderPhoneNumberCharacteristic",
       "label": "SenderPhoneNumberCharacteristic",
       "kind": "Characteristic",
       "preferredName": "sender phone number characteristic",
-      "description": "phone number of sender"
+      "description": "phone number of sender",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.request_for_quotation:3.0.0#SenderAccountAddressCharacteristic",
       "label": "SenderAccountAddressCharacteristic",
       "kind": "Characteristic",
       "preferredName": "sender account address characteristic",
-      "description": "address of sender for account"
+      "description": "address of sender for account",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.request_for_quotation:3.0.0#SenderDeliveryAddressCharacteristic",
       "label": "SenderDeliveryAddressCharacteristic",
       "kind": "Characteristic",
       "preferredName": "sender delivery address characteristic",
-      "description": "address of sender for delivery"
+      "description": "address of sender for delivery",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.request_for_quotation:3.0.0#DeliveryRequirementsCharacteristic",
       "label": "DeliveryRequirementsCharacteristic",
       "kind": "Characteristic",
       "preferredName": "delivery requirements characteristic",
-      "description": "any kind of delivery requirements"
+      "description": "any kind of delivery requirements",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.request_for_quotation:3.0.0#FileTypeCharacteristic",
       "label": "FileTypeCharacteristic",
       "kind": "Characteristic",
       "preferredName": "file type characteristic",
-      "description": "file format"
+      "description": "file format",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.request_for_quotation:3.0.0#FilePathCharacteristic",
       "label": "FilePathCharacteristic",
       "kind": "Characteristic",
       "preferredName": "file path characteristic",
-      "description": "path or address to the file "
+      "description": "path or address to the file ",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.request_for_quotation:3.0.0#FileNameCharacteristic",
       "label": "FileNameCharacteristic",
       "kind": "Characteristic",
       "preferredName": "file name characteristic",
-      "description": "name of the file"
+      "description": "name of the file",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.request_for_quotation:3.0.0#FileObjectCharacteristic",
@@ -534,35 +702,75 @@
       "label": "PartIdCharacteristic",
       "kind": "Characteristic",
       "preferredName": "part Id Characteristic",
-      "description": "identifier of the part from CAD File"
+      "description": "identifier of the part from CAD File",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.request_for_quotation:3.0.0#PartNameCharacteristic",
       "label": "PartNameCharacteristic",
       "kind": "Characteristic",
       "preferredName": "part name characteristic",
-      "description": "name of the part in CAD file. In case the CAD file has only one part, this could also be the file name"
+      "description": "name of the part in CAD file. In case the CAD file has only one part, this could also be the file name",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.request_for_quotation:3.0.0#ManufacturingDomainCharacteristic",
       "label": "ManufacturingDomainCharacteristic",
       "kind": "Characteristic",
       "preferredName": "manufacturing domain characteristic",
-      "description": "domain of required process (e.g. subtractive manufacturing, additive manufacturing, assembly)"
+      "description": "domain of required process (e.g. subtractive manufacturing, additive manufacturing, assembly)",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.request_for_quotation:3.0.0#GeneralToleranceCharacteristic",
       "label": "GeneralToleranceCharacteristic",
       "kind": "Characteristic",
       "preferredName": "general tolerance characteristic",
-      "description": "selection of defined tolerance classes"
+      "description": "selection of defined tolerance classes",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.request_for_quotation:3.0.0#AdditionalQualityRequirementsCharacteristic",
       "label": "AdditionalQualityRequirementsCharacteristic",
       "kind": "Characteristic",
       "preferredName": "additional quality requirements charakteristic",
-      "description": "specific requirements to guarantee quality"
+      "description": "specific requirements to guarantee quality",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.request_for_quotation:3.0.0#MaterialCharacteristic",
@@ -583,7 +791,15 @@
       "label": "BillOfProcessCharacteristic",
       "kind": "Characteristic",
       "preferredName": "bill of process characteristic",
-      "description": "reference to SharedBillOfProcess Model"
+      "description": "reference to SharedBillOfProcess Model",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "BillOfProcess",
+          "target_model": "shared.bill_of_process@1.1.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.request_for_quotation:3.0.0#SetMaterialPropertiesCharacteristic",
@@ -597,28 +813,60 @@
       "label": "PartMaterialGroupCharacteristic",
       "kind": "Characteristic",
       "preferredName": "part material group characteristic",
-      "description": "definition of material group for preselection"
+      "description": "definition of material group for preselection",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.request_for_quotation:3.0.0#ValueCharacteristic",
       "label": "ValueCharacteristic",
       "kind": "Characteristic",
       "preferredName": "value characteristic",
-      "description": "value to detail the part material item"
+      "description": "value to detail the part material item",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.request_for_quotation:3.0.0#ValueTypeCharacteristic",
       "label": "ValueTypeCharacteristic",
       "kind": "Characteristic",
       "preferredName": " value type characteristic",
-      "description": "value type to specify the property value"
+      "description": "value type to specify the property value",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.request_for_quotation:3.0.0#PropertyNameCharacteristic",
       "label": "PropertyNameCharacteristic",
       "kind": "Characteristic",
       "preferredName": "property name characteristic",
-      "description": "name of the property"
+      "description": "name of the property",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.request_for_quotation:3.0.0#RFQIdentificationData",
@@ -667,7 +915,15 @@
       "label": "File",
       "kind": "Entity",
       "preferredName": "file",
-      "description": "a file in a defined format (fileType)"
+      "description": "a file in a defined format (fileType)",
+      "external_refs": [
+        {
+          "predicate": "properties",
+          "target_local": "nil",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.request_for_quotation:3.0.0#MaterialData",

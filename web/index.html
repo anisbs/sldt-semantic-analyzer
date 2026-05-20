@@ -268,9 +268,15 @@
     .ch .cn { flex: 1; font-weight: 600; }
     .ch .cs { font-weight: 400; color: var(--text-3); font-size: var(--fs-sm); }
     .ch .cs b { color: var(--st-release); font-weight: 600; }
-    .cvs { display: none; padding: var(--sp-1) 0 var(--sp-2);
-      background: var(--surface-2); }
-    .crow.open .cvs { display: block; }
+    /* Accordion animation : grid-template-rows 0fr ↔ 1fr lets the panel
+       expand from 0 to its natural content height without a hard `max-height`
+       cap. Requires a single child (.cvs-inner) that owns the actual content
+       and `overflow: hidden` to clip during the transition. */
+    .cvs { display: grid; grid-template-rows: 0fr;
+      background: var(--surface-2);
+      transition: grid-template-rows var(--dur) var(--ease); }
+    .cvs-inner { overflow: hidden; padding: var(--sp-1) 0 var(--sp-2); }
+    .crow.open .cvs { grid-template-rows: 1fr; }
     .cv {
       display: flex; align-items: center; gap: var(--sp-3); cursor: pointer;
       padding: var(--sp-2) var(--sp-4) var(--sp-2) 33px; font-size: var(--fs-sm);
@@ -325,11 +331,14 @@
       font-size: var(--fs-sm); color: var(--text-3); }
     #mv-badges { font-size: var(--fs-sm); color: var(--text-2);
       display: flex; align-items: center; gap: var(--sp-2); }
-    #mv-github { font-size: var(--fs-sm); color: var(--accent);
+    #mv-github, #mv-export { font-size: var(--fs-sm); color: var(--accent);
       text-decoration: none; padding: 4px 9px;
       border: 1px solid var(--border-strong); border-radius: var(--r-sm);
+      background: var(--surface); cursor: pointer; font-family: inherit;
       transition: background-color var(--dur) var(--ease); }
-    #mv-github:hover { background: var(--accent-weak); }
+    #mv-github:hover, #mv-export:hover { background: var(--accent-weak); }
+    #mv-export:focus { outline: none; border-color: var(--accent);
+      box-shadow: 0 0 0 3px var(--accent-weak); }
     #subtabs { display: flex; gap: 2px; padding: 6px var(--sp-3) 0;
       border-bottom: 1px solid var(--border); background: var(--surface); }
     .subtab {
@@ -363,6 +372,11 @@
       font-size: var(--fs-sm);
     }
     #docs-title { font-weight: 600; color: var(--text); }
+    #docs-aspect { font-size: var(--fs-sm); padding: 3px 6px;
+      border: 1px solid var(--border-strong); border-radius: var(--r-sm);
+      background: var(--surface); color: var(--text); }
+    #docs-aspect:focus { outline: none; border-color: var(--accent);
+      box-shadow: 0 0 0 3px var(--accent-weak); }
     #docs-bar a { color: var(--accent); text-decoration: none; }
     #docs-bar a:hover { text-decoration: underline; }
     #docs-links a { margin-right: var(--sp-3); }
@@ -564,6 +578,38 @@
       transition: opacity .1s; z-index: 10; box-shadow: var(--shadow-lg);
     }
     #tooltip .k { color: #9cf; }
+
+    /* ---- Responsive : < 720px (mobile portrait, small tablets) -----------
+       Pas d'overhaul, juste les ajustements qui rendent la page utilisable
+       sur un téléphone : conteneurs verticaux, padding réduit, onglets
+       scrollables horizontalement, contrôles plus larges. */
+    @media (max-width: 720px) {
+      #home, #issues { padding: var(--sp-3); gap: var(--sp-3); }
+      #appbar { padding: var(--sp-2) var(--sp-3); gap: var(--sp-2); }
+      .brand .bs { display: none; }                    /* hide the subtitle to save space */
+      #tabs, #subtabs { overflow-x: auto; flex-wrap: nowrap; }
+      .tab, .subtab { flex: none; }
+      #catalog-head { flex-direction: column; align-items: stretch;
+        gap: var(--sp-2); }
+      #search { max-width: 100%; }
+      #cat-source, #sr-status, #sr-kinds, #sr-source,
+      #iss-status, #iss-source { font-size: var(--fs-sm); }
+      #mv-head { flex-direction: column; align-items: stretch;
+        padding: var(--sp-2) var(--sp-3); gap: var(--sp-2); }
+      #mv-head label, #mv-head select, #mv-model { width: 100%; }
+      #mv-model { max-width: none; }
+      #mv-badges { flex-wrap: wrap; }
+      #mv-github { align-self: flex-start; }
+      #sr-head { flex-direction: column; align-items: stretch;
+        gap: var(--sp-2); }
+      #sr-q { max-width: 100%; }
+      .sr-row .loc { margin-left: 0; }
+      /* Graph SVGs : keep at least a few hundred pixels tall so they remain
+         interactive on small viewports. */
+      #graph, #depgraph { min-height: 420px; }
+      .ov { padding: var(--sp-2) var(--sp-3); }
+      .ov .val { font-size: var(--fs-lg); }
+    }
   </style>
 </head>
 <body>
@@ -663,6 +709,8 @@
         <span id="mv-badges"></span>
         <a id="mv-github" target="_blank" rel="noopener" style="display:none">
           View on GitHub ↗</a>
+        <button id="mv-export" type="button" style="display:none">
+          Export PNG ↓</button>
       </div>
       <div id="subtabs">
         <div class="subtab active" data-sub="sv-graph">Graph</div>
@@ -689,6 +737,7 @@
         <div id="sv-docs" class="subview">
           <div id="docs-bar">
             <span id="docs-title"></span>
+            <select id="docs-aspect" style="display:none"></select>
             <span id="docs-links"></span>
             <a id="docs-open" target="_blank" rel="noopener" style="display:none">Open full page ↗</a>
           </div>
@@ -1141,10 +1190,32 @@ function draw(g) {
 
   node.append("circle").attr("r", 9).attr("fill", d => color(d.kind))
     .on("mouseover", (e, d) => {
+      // External refs : arêtes sortantes vers un autre modèle (ou un
+      // bloc tiers connu). Apparaît surtout sur les éléments IDTA qui
+      // délèguent à shared@3.1.0 ou pointent vers Catena-X.
+      let refs = "";
+      if (d.external_refs && d.external_refs.length) {
+        const items = d.external_refs.slice(0, 6).map(r =>
+          `<div><span class="k">${r.predicate}</span> → ` +
+          `<b>${escapeHtml(r.target_local)}</b>` +
+          (r.target_model
+            ? ` <span class="badge" style="background:` +
+              `${sourceColor(r.target_source)};padding:0 5px;font-size:10px">` +
+              `${escapeHtml(r.target_model)}</span>`
+            : "") +
+          `</div>`).join("");
+        const more = d.external_refs.length > 6
+          ? `<div style="opacity:.7;font-size:11px">+${d.external_refs.length - 6} more</div>`
+          : "";
+        refs = `<div style="margin-top:6px;border-top:1px solid #555;` +
+               `padding-top:5px;font-size:12px"><b>External refs ` +
+               `(${d.external_refs.length})</b>${items}${more}</div>`;
+      }
       tooltip.style("opacity", 1).html(
         `<span class="k">${d.kind}</span> — <b>${d.label}</b><br>` +
         (d.preferredName ? `<i>${d.preferredName}</i><br>` : "") +
-        (d.description ? d.description.slice(0, 280) : ""));
+        (d.description ? d.description.slice(0, 280) : "") +
+        refs);
     })
     .on("mousemove", e =>
       tooltip.style("left", (e.pageX + 14) + "px").style("top", (e.pageY + 8) + "px"))
@@ -1524,6 +1595,90 @@ function badges(e) {
       ? `<span>· released ${curGraph.meta.release_date}</span>` : "");
 }
 
+// ---- Export PNG of the currently-visible graph (Feature 22) --------------
+// Two routes : Graph (#graph, element graph) or Dependency graph (#depgraph),
+// both are inline SVG. The CSS-driven appearance (KIND_COLORS, statusColor,
+// crossSource dashed edges…) must be inlined into the cloned SVG before
+// rendering it through a Canvas, otherwise the PNG would be unstyled.
+const _EXPORT_STYLE_PROPS = [
+  "fill", "stroke", "stroke-width", "stroke-dasharray", "stroke-opacity",
+  "fill-opacity", "opacity", "font-size", "font-family", "font-weight",
+  "color",
+];
+
+function _inlineStyles(src, dst) {
+  // Walk both trees in lockstep ; copy computed style of relevant props onto
+  // the clone. Works because cloneNode preserves child order.
+  const cs = window.getComputedStyle(src);
+  for (const p of _EXPORT_STYLE_PROPS) {
+    const v = cs.getPropertyValue(p);
+    if (v) dst.style.setProperty(p, v);
+  }
+  const sc = src.children, dc = dst.children;
+  for (let i = 0; i < sc.length; i++) _inlineStyles(sc[i], dc[i]);
+}
+
+function exportCurrentGraphPng() {
+  const svgId = activeSub === "sv-graph" ? "graph"
+              : activeSub === "sv-dep" ? "depgraph" : null;
+  if (!svgId || !curEntry) return;
+  const svg = document.getElementById(svgId);
+  if (!svg) return;
+  const { width, height } = svg.getBoundingClientRect();
+  const w = Math.max(1, Math.round(width));
+  const h = Math.max(1, Math.round(height));
+
+  // Clone + inline styles so the rasterized image keeps its look.
+  const clone = svg.cloneNode(true);
+  _inlineStyles(svg, clone);
+  clone.setAttribute("xmlns", "http://www.w3.org/2000/svg");
+  clone.setAttribute("width", w);
+  clone.setAttribute("height", h);
+  clone.setAttribute("viewBox", `0 0 ${w} ${h}`);
+  // Solid background so PNG isn't transparent on slides / shares.
+  const bg = getComputedStyle(document.body).backgroundColor || "#fff";
+  const rect = document.createElementNS("http://www.w3.org/2000/svg", "rect");
+  rect.setAttribute("width", "100%");
+  rect.setAttribute("height", "100%");
+  rect.setAttribute("fill", bg);
+  clone.insertBefore(rect, clone.firstChild);
+
+  const xml = new XMLSerializer().serializeToString(clone);
+  const url = URL.createObjectURL(
+    new Blob([xml], { type: "image/svg+xml;charset=utf-8" }));
+
+  const img = new Image();
+  img.onload = () => {
+    const dpr = Math.min(window.devicePixelRatio || 1, 2);  // cap at 2× to
+                                                              // keep PNG sane
+    const canvas = document.createElement("canvas");
+    canvas.width = w * dpr;
+    canvas.height = h * dpr;
+    const ctx = canvas.getContext("2d");
+    ctx.scale(dpr, dpr);
+    ctx.drawImage(img, 0, 0, w, h);
+    URL.revokeObjectURL(url);
+    canvas.toBlob(blob => {
+      const dl = document.createElement("a");
+      dl.href = URL.createObjectURL(blob);
+      dl.download =
+        `${curEntry.id}_${svgId === "graph" ? "graph" : "dep"}.png`;
+      document.body.appendChild(dl); dl.click(); dl.remove();
+      setTimeout(() => URL.revokeObjectURL(dl.href), 1000);
+    }, "image/png");
+  };
+  img.onerror = () => {
+    URL.revokeObjectURL(url);
+    alert("PNG export failed — could not rasterize the graph.");
+  };
+  img.src = url;
+}
+
+(function bindExport() {
+  const btn = document.getElementById("mv-export");
+  if (btn) btn.addEventListener("click", exportCurrentGraphPng);
+})();
+
 function loadEntry(e) {
   curEntry = e;
   document.getElementById("mv-badges").innerHTML = "";
@@ -1546,6 +1701,12 @@ function loadEntry(e) {
 // Render whatever sub-tab is active for the current selection.
 function renderSub() {
   if (document.getElementById("modelviewer").className.indexOf("active") === -1) return;
+  // The "Export PNG" button only makes sense for the two SVG-based sub-tabs.
+  const exportBtn = document.getElementById("mv-export");
+  if (exportBtn) {
+    const onSvg = (activeSub === "sv-graph" || activeSub === "sv-dep");
+    exportBtn.style.display = (onSvg && curEntry) ? "" : "none";
+  }
   if (activeSub === "sv-graph") {
     if (curGraph) draw(curGraph);
     else document.getElementById("mv-empty").style.display = "";
@@ -1718,7 +1879,21 @@ function renderIssuesSub() {
 // No self-hosting — the doc is self-contained (inline SVG). The Blob URL is
 // only for the external "Open full page" link (real tab, renders fine).
 // CDN base is picked per source (catenax vs idta) via `cdnFor(curEntry)`.
-let docState = { id: null, text: null, url: null, ctrl: null };
+// docState.aspectBase = currently selected gen.aspects[] item (Feature 21).
+// Cache key is `${entry.id}|${aspectBase}` so different aspects of the same
+// model don't clobber each other.
+let docState = { id: null, text: null, url: null, ctrl: null,
+                 aspectBase: null, cacheKey: null };
+
+// Picks which gen artifact (base + bools) to render. For 1-Aspect models we
+// keep the legacy `g` object (base/html/schema/...). For multi-Aspect models
+// we pick the selected aspect from `g.aspects` (or default to the first).
+function pickAspect(g, selectedBase) {
+  if (g && Array.isArray(g.aspects) && g.aspects.length > 1) {
+    return g.aspects.find(a => a.base === selectedBase) || g.aspects[0];
+  }
+  return g;          // single-aspect / no-aspect : the legacy shape works
+}
 
 function renderDocs() {
   const msg = document.getElementById("docs-msg");
@@ -1726,35 +1901,64 @@ function renderDocs() {
   const open = document.getElementById("docs-open");
   const links = document.getElementById("docs-links");
   const title = document.getElementById("docs-title");
+  const sel = document.getElementById("docs-aspect");
   const show = (el, on) => { el.style.display = on ? "" : "none"; };
 
   const g = curEntry && curEntry.gen;
   if (!curEntry) {
     title.textContent = ""; links.innerHTML = ""; show(open, false);
-    show(frame, false); show(msg, true);
+    show(sel, false); show(frame, false); show(msg, true);
     msg.textContent = "Pick a model and version above.";
     return;
   }
   title.textContent = `${curEntry.model_name} v${curEntry.version}`;
   const cdn = cdnFor(curEntry);
 
+  // Build / update the Aspect picker for multi-Aspect models.
+  const hasMulti = g && Array.isArray(g.aspects) && g.aspects.length > 1;
+  if (hasMulti) {
+    // (Re)build options only when the entry's aspect list changed —
+    // otherwise we'd reset the user's selection on every re-render.
+    if (sel.dataset.entryId !== curEntry.id) {
+      sel.innerHTML = g.aspects.map(a =>
+        `<option value="${a.base}">${escapeHtml(a.name)}</option>`).join("");
+      sel.value = g.aspects[0].base;
+      sel.dataset.entryId = curEntry.id;
+      docState.aspectBase = sel.value;
+    } else if (!docState.aspectBase) {
+      docState.aspectBase = sel.value;
+    }
+    show(sel, true);
+  } else {
+    sel.innerHTML = "";
+    sel.removeAttribute("data-entry-id");
+    show(sel, false);
+    docState.aspectBase = null;
+  }
+
+  const a = pickAspect(g, docState.aspectBase);
+  const baseUrl = a && a.base;
+
   // Companion artifacts (open in a new tab on jsDelivr).
   const arts = [["schema", "JSON Schema", "-schema.json"],
                 ["payload", "Sample payload", ".json"],
                 ["openapi", "OpenAPI", ".yml"]];
   links.innerHTML = arts
-    .filter(([k]) => g && g[k])
+    .filter(([k]) => a && a[k])
     .map(([, label, suf]) =>
-      `<a href="${cdn}${g.base}${suf}" target="_blank" rel="noopener">${label}</a>`)
+      `<a href="${cdn}${baseUrl}${suf}" target="_blank" rel="noopener">${label}</a>`)
     .join("");
 
-  if (!g || !g.html) {
+  if (!a || !a.html) {
     frame.srcdoc = ""; show(open, false); show(frame, false); show(msg, true);
     msg.textContent = "No generated documentation upstream for this model+version.";
     return;
   }
 
-  if (docState.id === curEntry.id && docState.text != null) {  // cached
+  // Cache key includes the aspect so switching between aspects re-fetches
+  // (but switching back uses the cache).
+  const cacheKey = `${curEntry.id}|${baseUrl}`;
+  if (docState.cacheKey === cacheKey && docState.text != null) {
     frame.srcdoc = docState.text;
     open.href = docState.url; show(open, true);
     show(msg, false); show(frame, true);
@@ -1764,19 +1968,22 @@ function renderDocs() {
   if (docState.ctrl) docState.ctrl.abort();
   const ctrl = new AbortController();
   docState.ctrl = ctrl;
-  const wantId = curEntry.id;
+  const wantKey = cacheKey;
   frame.srcdoc = ""; show(open, false); show(frame, false); show(msg, true);
   msg.textContent = "Loading generated doc… (can be a few MB)";
 
-  fetch(`${cdn}${g.base}.html`, { signal: ctrl.signal })
+  fetch(`${cdn}${baseUrl}.html`, { signal: ctrl.signal })
     .then(r => r.ok ? r.text() : Promise.reject("HTTP " + r.status))
     .then(htmlText => {
-      if (ctrl.signal.aborted || !curEntry || curEntry.id !== wantId) return;
+      // wantKey check guards against stale fetches when the user switches
+      // entry / aspect mid-flight.
+      if (ctrl.signal.aborted || !curEntry || cacheKey !== wantKey) return;
       if (docState.url) URL.revokeObjectURL(docState.url);
       docState.text = htmlText;
       docState.url = URL.createObjectURL(
         new Blob([htmlText], { type: "text/html" }));
-      docState.id = wantId;
+      docState.id = curEntry.id;
+      docState.cacheKey = wantKey;
       frame.srcdoc = htmlText;
       open.href = docState.url; show(open, true);
       show(msg, false); show(frame, true);
@@ -1787,6 +1994,15 @@ function renderDocs() {
       msg.textContent = `Could not load the generated doc (${err}).`;
     });
 }
+
+// React to the user picking another Aspect — re-render with the new selection.
+(function bindDocsAspect() {
+  const sel = document.getElementById("docs-aspect");
+  if (sel) sel.addEventListener("change", function () {
+    docState.aspectBase = this.value;
+    renderDocs();
+  });
+})();
 
 // Select a model (auto-loads its latest version; notes are model-level).
 function selectModel(name) {
@@ -2043,7 +2259,11 @@ function renderCatalog() {
     });
 
     // One clickable line per version (newest first) -> open in Model Viewer.
-    const vs = row.append("div").attr("class", "cvs");
+    // The .cvs-inner wrapper is required for the grid-template-rows accordion
+    // animation (cf. CSS) — `.cvs` is the animated grid container, .cvs-inner
+    // is the single grid item that clips its overflow during the transition.
+    const vs = row.append("div").attr("class", "cvs")
+                  .append("div").attr("class", "cvs-inner");
     g.entries.forEach(e => {
       const v = vs.append("div").attr("class", "cv").on("click", () => openEntry(e));
       v.append("span").attr("class", "vv").text("v" + e.version);

@@ -32,7 +32,15 @@
       "label": "supplier",
       "kind": "Property",
       "preferredName": "supplier",
-      "description": "Name of supplier which provides the customer with a product or a service"
+      "description": "Name of supplier which provides the customer with a product or a service",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.sbom:1.0.0#sbom",
@@ -74,7 +82,15 @@
       "label": "StatusCharacteristic",
       "kind": "Characteristic",
       "preferredName": "status characteristic",
-      "description": "The value range for the status"
+      "description": "The value range for the status",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.sbom:1.0.0#SbomFile",
@@ -88,7 +104,15 @@
       "label": "FormatVersionBaseCharacteristic",
       "kind": "Characteristic",
       "preferredName": "format version characteristic",
-      "description": "The value range for the format version (here, vers. 3 or higher)"
+      "description": "The value range for the format version (here, vers. 3 or higher)",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.sbom:1.0.0#File",
