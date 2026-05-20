@@ -295,10 +295,29 @@ Model Viewer directly on its **Issues** sub-tab.
 
 ## Data source & license
 
-The semantic models analyzed here belong to the upstream Eclipse Tractus-X
-project
-[`eclipse-tractusx/sldt-semantic-models`](https://github.com/eclipse-tractusx/sldt-semantic-models)
-and are distributed under that project's own license. This analyzer only
-fetches, parses and visualizes them; it does not redistribute the models
-(the upstream clone is git-ignored). No separate license file is currently
-set for this repository.
+This analyzer is published under the **MIT License** — see
+[`LICENSE`](LICENSE). It covers the **code** in this repository (Python
+backend, HTML/CSS/JS front, workflows).
+
+The **semantic models** themselves are not part of this repository. They
+are fetched from two upstream catalogs at build time and remain under
+their own licenses:
+
+- [`eclipse-tractusx/sldt-semantic-models`](https://github.com/eclipse-tractusx/sldt-semantic-models)
+  (Catena-X) — see that repository's own LICENSE.
+- [`admin-shell-io/smt-semantic-models`](https://github.com/admin-shell-io/smt-semantic-models)
+  (IDTA) — published under **CC BY 4.0**.
+
+The upstream clones are git-ignored under `data/`. The generated JSON
+graphs committed to `web/data/graph/` are derived artifacts of those
+upstream models and inherit their respective licenses; the MIT license
+of this repository applies only to the code that produced them.
+
+## Analytics
+
+The deployed site uses [GoatCounter](https://www.goatcounter.com/) for
+basic page-view stats: total visitors, referrers, top pages. No cookies,
+no fingerprinting, no personal data — GDPR-compliant out of the box,
+no banner needed. The tracking endpoint
+(`https://anisbs.goatcounter.com/count`) is loaded asynchronously and
+each internal navigation (hash change) is counted as a separate view.

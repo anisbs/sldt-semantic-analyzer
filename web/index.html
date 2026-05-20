@@ -16,6 +16,12 @@
 <head>
   <meta charset="utf-8" />
   <title>Semantic Models Analyser</title>
+  <!-- GoatCounter analytics : privacy-friendly, no cookies, no PII. The
+       script auto-counts the initial pageview ; per-view counts on internal
+       navigation (location.hash) are sent manually via the hashchange
+       listener at the bottom of the main script. -->
+  <script data-goatcounter="https://anisbs.goatcounter.com/count"
+          async src="//gc.zgo.at/count.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js"></script>
   <script>
     /* Resolve theme before first paint (no flash). Stored choice wins;
@@ -907,6 +913,19 @@ function applyHash() {
 }
 
 window.addEventListener("hashchange", applyHash);
+// GoatCounter analytics — manually count each internal navigation as a
+// new pageview, since location.hash changes never reload the page (the
+// auto-count only fires once, at initial load). `window.goatcounter` is
+// populated by the async script in <head> ; we guard against it being
+// undefined if the script hasn't loaded yet (the first few hashchanges
+// after a slow CDN are then silently dropped — acceptable).
+window.addEventListener("hashchange", () => {
+  if (window.goatcounter && window.goatcounter.count) {
+    window.goatcounter.count({
+      path: location.pathname + location.search + location.hash,
+    });
+  }
+});
 // Early sync of the active tab so the user sees the right view immediately —
 // data-dependent state (model entry, issue type) will be reapplied once the
 // fetches resolve and call applyHash() again.
