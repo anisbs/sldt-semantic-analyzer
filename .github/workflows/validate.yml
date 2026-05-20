@@ -1,0 +1,87 @@
+name: Validate (PR + push)
+
+# Validation rapide à chaque PR et chaque push sur main : compile Python,
+# tourne les tests unitaires, vérifie la syntaxe JS inline + l'équilibrage
+# des balises HTML du front. Aucun accès au clone amont (pas de fetch des
+# .ttl) : les tests utilisent des fixtures synthétiques pour rester rapides
+# et déterministes. La régénération réelle des graphes vit dans
+# `update-models.yml` (cron hebdo).
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: validate-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install Python deps (runtime + dev)
+        run: pip install -e ".[dev]"
+
+      - name: Python — syntaxe (compileall)
+        run: python -m compileall -q src scripts tests
+
+      - name: Python — tests unitaires (pytest)
+        run: pytest -v
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Front — équilibrage des balises + node --check sur les <script>
+        run: |
+          python <<'PY'
+          import re, subprocess, sys, tempfile
+          html = open("web/index.html").read()
+
+          # Balises auto-fermantes ignorées (input/img/br/hr/meta/link).
+          # Le pattern `<tag(?:\s|>)` couvre `<tag>`, `<tag attr=...>` et
+          # `<tag />` — important pour `<script src=...>` notamment.
+          def opens(tag):
+              return len(re.findall(rf"<{tag}(?:\s|>)", html))
+          checks = {
+              "div":     (opens("div"),     html.count('</div>')),
+              "span":    (opens("span"),    html.count('</span>')),
+              "script":  (opens("script"),  html.count('</script>')),
+              "style":   (opens("style"),   html.count('</style>')),
+              "details": (opens("details"), html.count('</details>')),
+              "button":  (opens("button"),  html.count('</button>')),
+          }
+          ok = True
+          for tag, (o, c) in checks.items():
+              status = "OK" if o == c else "MISMATCH"
+              print(f"  <{tag}>: open={o} close={c} {status}")
+              if o != c:
+                  ok = False
+
+          # node --check sur chaque bloc <script> inline (anti-flash + main).
+          scripts = re.findall(r"<script>(.*?)</script>", html, flags=re.DOTALL)
+          for i, body in enumerate(scripts):
+              with tempfile.NamedTemporaryFile(
+                  "w", suffix=".js", delete=False) as fh:
+                  fh.write(body)
+                  path = fh.name
+              r = subprocess.run(["node", "--check", path],
+                                 capture_output=True, text=True)
+              print(f"  script #{i}: {'OK' if r.returncode == 0 else 'FAIL'}")
+              if r.returncode != 0:
+                  print(r.stderr)
+                  ok = False
+
+          sys.exit(0 if ok else 1)
+          PY

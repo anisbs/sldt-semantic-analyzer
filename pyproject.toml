@@ -1,12 +1,19 @@
 [project]
 name = "sldt-semantic-analyzer"
 version = "0.1.0"
-description = "Analyseur sémantique des modèles SLDT (eclipse-tractusx/sldt-semantic-models)"
+description = "Semantic analyser for SAMM models (Catena-X + IDTA)"
 requires-python = ">=3.11"
 # Feature 1 (rapatriement) : aucune dépendance externe (git + stdlib).
 # rdflib sera utilisé dès la feature 2 (parsing .ttl).
 dependencies = [
     "rdflib>=7.0",
+]
+
+[project.optional-dependencies]
+# Test runner — used by `pytest` locally and by .github/workflows/validate.yml
+# (CI on PR). Feature 20.
+dev = [
+    "pytest>=7.0",
 ]
 
 [build-system]
@@ -15,3 +22,9 @@ build-backend = "setuptools.build_meta"
 
 [tool.setuptools.packages.find]
 where = ["src"]
+
+[tool.pytest.ini_options]
+# `pythonpath = src` lets tests import `sldt_analyzer.*` without prepending
+# PYTHONPATH=src on every call.
+testpaths = ["tests"]
+pythonpath = ["src"]
