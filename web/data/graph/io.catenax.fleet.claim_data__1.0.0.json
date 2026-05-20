@@ -1,0 +1,513 @@
+{
+  "meta": {
+    "namespace": "urn:bamm:io.catenax.fleet.claim_data:1.0.0#",
+    "meta_model": "BAMM 2.0.0",
+    "model_family": "BAMM",
+    "model_name": "fleet.claim_data",
+    "model_version": "1.0.0",
+    "source": "catenax",
+    "status": "deprecated",
+    "release_date": "2022-12-13 -> deprecated",
+    "release_notes": "# Changelog\nAll notable changes to this model will be documented in this file.\n\n## [Unreleased]\n\n## [3.0.0] - 2025-07-07\nA conversion table from previous version 2.0.0 to 3.0.0 of this model is provided with the updated KIT Quality Management for CX release Saturn.\n\n### Added\n- model feature additionalInformation key:value pair added\n\n### Changed\n- to reduce redundancies in modelling some properties are now used form share quality core model\n- listOfClaims from version 2.0.0 has changed to claims only\n- using parts definition from shared quality core model (via samm:extends) to unify part's properties for claimed parts and spare parts\n- at least one primary identifier per entity is now mandatory\n- claims_anonymizedVIN, claims_countryCode, claims_qualityTaskId are now mandatory properties\n\n### Removed\n- listOfClaims_repairCountryCode: redundant property\n\n## [2.0.0] - 2024-01-29\n### Added\n- metaInformation property added to root entity\n- integration of the shared UUID characteristic and RegEx for Catena-X identifiers\n- introducing new characteristic for unique identifiers\n\n### Changed\n- changed all properties to optional except one unique identifier per entity\n- spare part entity is now child of a claimed part\n- properties of ClaimPart and SparePart entity are aligned with ManufacturedQualityPartInformation aspect model\n\n### Removed\n- Vehicle entity -> all properties are now located on claim entity\n\n## [1.0.0] - 2022-12-13 -> deprecated\n### Added\n- initial version of this model\n\n### Changed\nn/a\n\n### Removed",
+    "dependencies": [],
+    "path": "data/sldt-semantic-models/io.catenax.fleet.claim_data/1.0.0/ClaimData.ttl"
+  },
+  "nodes": [
+    {
+      "id": "urn:bamm:io.catenax.fleet.claim_data:1.0.0#ClaimData",
+      "label": "ClaimData",
+      "kind": "Aspect",
+      "preferredName": "ClaimData",
+      "description": "Claim data from a fleet"
+    },
+    {
+      "id": "urn:bamm:io.catenax.fleet.claim_data:1.0.0#listOfClaims",
+      "label": "listOfClaims",
+      "kind": "Property",
+      "preferredName": "listOfClaims",
+      "description": "List of Claims"
+    },
+    {
+      "id": "urn:bamm:io.catenax.fleet.claim_data:1.0.0#listOfDiagnosticSessionId",
+      "label": "listOfDiagnosticSessionId",
+      "kind": "Property",
+      "preferredName": "ListOfDiagnosticSessionId",
+      "description": "references to a list of diagnostic session IDs"
+    },
+    {
+      "id": "urn:bamm:io.catenax.fleet.claim_data:1.0.0#repairMileage",
+      "label": "repairMileage",
+      "kind": "Property",
+      "preferredName": "Repair mileage",
+      "description": "mileage of the car when the claim was reported"
+    },
+    {
+      "id": "urn:bamm:io.catenax.fleet.claim_data:1.0.0#repairDate",
+      "label": "repairDate",
+      "kind": "Property",
+      "preferredName": "RepairDate",
+      "description": "references the date when claim was initially reported"
+    },
+    {
+      "id": "urn:bamm:io.catenax.fleet.claim_data:1.0.0#technicianComment",
+      "label": "technicianComment",
+      "kind": "Property",
+      "preferredName": "TechnicianComment",
+      "description": "short description of the claim from the technicians"
+    },
+    {
+      "id": "urn:bamm:io.catenax.fleet.claim_data:1.0.0#customerComment",
+      "label": "customerComment",
+      "kind": "Property",
+      "preferredName": "CustomerComment",
+      "description": "short description of the claim from customer view"
+    },
+    {
+      "id": "urn:bamm:io.catenax.fleet.claim_data:1.0.0#claimId",
+      "label": "claimId",
+      "kind": "Property",
+      "preferredName": "ClaimID",
+      "description": "Claim ID: Unique for each OEM"
+    },
+    {
+      "id": "urn:bamm:io.catenax.fleet.claim_data:1.0.0#vehicleIdentifiers",
+      "label": "vehicleIdentifiers",
+      "kind": "Property",
+      "preferredName": "vehicle identifiers",
+      "description": "one single vehicle"
+    },
+    {
+      "id": "urn:bamm:io.catenax.fleet.claim_data:1.0.0#listOfParts",
+      "label": "listOfParts",
+      "kind": "Property",
+      "preferredName": "ListOfParts",
+      "description": "a list of parts which will be replaced or repaired"
+    },
+    {
+      "id": "urn:bamm:io.catenax.fleet.claim_data:1.0.0#damageCode",
+      "label": "damageCode",
+      "kind": "Property",
+      "preferredName": "DamageCode",
+      "description": "OEM-specific damage code"
+    },
+    {
+      "id": "urn:bamm:io.catenax.fleet.claim_data:1.0.0#vehicleCatenaXId",
+      "label": "vehicleCatenaXId",
+      "kind": "Property",
+      "preferredName": "vehicleCatenaXId",
+      "description": "Catena-X car ID /digital twin of car"
+    },
+    {
+      "id": "urn:bamm:io.catenax.fleet.claim_data:1.0.0#anonymizedVIN",
+      "label": "anonymizedVIN",
+      "kind": "Property",
+      "preferredName": "Anonymized Vin",
+      "description": "OEM-specific hashed VIN; link to car data over pseydomized/hashed VIN or Catena-X unique digital twin identifier"
+    },
+    {
+      "id": "urn:bamm:io.catenax.fleet.claim_data:1.0.0#isPartReplaced",
+      "label": "isPartReplaced",
+      "kind": "Property",
+      "preferredName": "IsPartReplaced",
+      "description": "flag is set if part was replaced\nTrue: replaced\nFalse: not replaced"
+    },
+    {
+      "id": "urn:bamm:io.catenax.fleet.claim_data:1.0.0#isPartCausal",
+      "label": "isPartCausal",
+      "kind": "Property",
+      "preferredName": "IsPartCausal",
+      "description": "flag set to True if part was causing the problem\nTrue: part caused the problem\nFalse: part didn't cause the problem\n"
+    },
+    {
+      "id": "urn:bamm:io.catenax.fleet.claim_data:1.0.0#amountOfReplacedParts",
+      "label": "amountOfReplacedParts",
+      "kind": "Property",
+      "preferredName": "AmountOfReplacedParts",
+      "description": "counter for non-serial parts which have been replaced"
+    },
+    {
+      "id": "urn:bamm:io.catenax.fleet.claim_data:1.0.0#replacedPart",
+      "label": "replacedPart",
+      "kind": "Property",
+      "preferredName": "ReplacedPart",
+      "description": "the part which was affected and replaced"
+    },
+    {
+      "id": "urn:bamm:io.catenax.fleet.claim_data:1.0.0#sparePart",
+      "label": "sparePart",
+      "kind": "Property",
+      "preferredName": "Spare Part",
+      "description": "the part which has been built in"
+    },
+    {
+      "id": "urn:bamm:io.catenax.fleet.claim_data:1.0.0#number",
+      "label": "number",
+      "kind": "Property",
+      "preferredName": "Number",
+      "description": "OEM specific partnumber"
+    },
+    {
+      "id": "urn:bamm:io.catenax.fleet.claim_data:1.0.0#name",
+      "label": "name",
+      "kind": "Property",
+      "preferredName": "Name",
+      "description": "OEM specific name of the part"
+    },
+    {
+      "id": "urn:bamm:io.catenax.fleet.claim_data:1.0.0#serialNumber",
+      "label": "serialNumber",
+      "kind": "Property",
+      "preferredName": "SerialNumber",
+      "description": "OEM serial part number of the part - only available for serial parts"
+    },
+    {
+      "id": "urn:bamm:io.catenax.fleet.claim_data:1.0.0#catenaXId",
+      "label": "catenaXId",
+      "kind": "Property",
+      "preferredName": "Catena-X Identifier",
+      "description": "The fully anonymous Catena-X ID of the part, valid for the Catena-X dataspace."
+    },
+    {
+      "id": "urn:bamm:io.catenax.fleet.claim_data:1.0.0#supplierId",
+      "label": "supplierId",
+      "kind": "Property",
+      "preferredName": "SupplierID",
+      "description": "OEM-specific ID of the supplier that manufactured the part that was put out - available if known"
+    },
+    {
+      "id": "urn:bamm:io.catenax.fleet.claim_data:1.0.0#qualityTaskId",
+      "label": "qualityTaskId",
+      "kind": "Property",
+      "preferredName": "QualityTaskID",
+      "description": "Reference to  Quality Task: A unique identifier. The company creating this quality task sets this identifer. The identifier should contain the BPN to make it unique inside CX network"
+    },
+    {
+      "id": "urn:bamm:io.catenax.fleet.claim_data:1.0.0#ListOfClaims",
+      "label": "ListOfClaims",
+      "kind": "Characteristic",
+      "preferredName": "ListOfClaims",
+      "description": "List of Claims"
+    },
+    {
+      "id": "urn:bamm:io.catenax.fleet.claim_data:1.0.0#ListOfDiagnosticSessions",
+      "label": "ListOfDiagnosticSessions",
+      "kind": "Characteristic",
+      "preferredName": "List of diagnostic Sessions",
+      "description": "references to a list of diagnostic session IDs - only present if matching between diag session and claim is possible"
+    },
+    {
+      "id": "urn:bamm:io.catenax.fleet.claim_data:1.0.0#Claim",
+      "label": "Claim",
+      "kind": "Entity",
+      "preferredName": "Text",
+      "description": "everything to describe a claim"
+    },
+    {
+      "id": "urn:bamm:io.catenax.fleet.claim_data:1.0.0#VehicleIdentifiers",
+      "label": "VehicleIdentifiers",
+      "kind": "Entity",
+      "preferredName": "Vehicle identifiers",
+      "description": "one single vehicle"
+    },
+    {
+      "id": "urn:bamm:io.catenax.fleet.claim_data:1.0.0#ClaimedPart",
+      "label": "ClaimedPart",
+      "kind": "Entity",
+      "preferredName": "Part",
+      "description": "one specific part"
+    },
+    {
+      "id": "urn:bamm:io.catenax.fleet.claim_data:1.0.0#Part",
+      "label": "Part",
+      "kind": "Entity",
+      "preferredName": "Part",
+      "description": "a generic description of part of the car"
+    },
+    {
+      "id": "urn:bamm:io.catenax.fleet.claim_data:1.0.0#Mileage",
+      "label": "Mileage",
+      "kind": "Characteristic",
+      "preferredName": "Mileage",
+      "description": null
+    },
+    {
+      "id": "urn:bamm:io.catenax.fleet.claim_data:1.0.0#VehicleIdentifiersCharacteristic",
+      "label": "VehicleIdentifiersCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Vehicle",
+      "description": "one single vehicle"
+    },
+    {
+      "id": "urn:bamm:io.catenax.fleet.claim_data:1.0.0#AmountOfReplacedPartsCharacteristic",
+      "label": "AmountOfReplacedPartsCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Amount of replaced Parts",
+      "description": "counter for non-serial parts"
+    },
+    {
+      "id": "urn:bamm:io.catenax.fleet.claim_data:1.0.0#UUIDv4",
+      "label": "UUIDv4",
+      "kind": "Characteristic",
+      "preferredName": "UUIDv4",
+      "description": "A version 4 UUID is a universally unique identifier that is generated using random 32 hexadecimal characters."
+    },
+    {
+      "id": "urn:bamm:io.catenax.fleet.claim_data:1.0.0#ListOfPartsCharacteristic",
+      "label": "ListOfPartsCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "ListOfPartsCharacteristic",
+      "description": "a list of parts"
+    },
+    {
+      "id": "urn:bamm:io.catenax.fleet.claim_data:1.0.0#PartCharacteristic",
+      "label": "PartCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Part Characteristic",
+      "description": "the characteristics of a part"
+    },
+    {
+      "id": "urn:bamm:io.catenax.fleet.claim_data:1.0.0#CatenaXIdTrait",
+      "label": "CatenaXIdTrait",
+      "kind": "Characteristic",
+      "preferredName": "Catena-X ID Trait",
+      "description": "Trait to ensure data format for Catena-X ID"
+    },
+    {
+      "id": "urn:bamm:io.catenax.fleet.claim_data:1.0.0#UUIDv4RegularExpression",
+      "label": "UUIDv4RegularExpression",
+      "kind": "Characteristic",
+      "preferredName": "Catena-X Id Regular Expression",
+      "description": "The provided regular expression ensures that the UUID is composed of five groups of characters separated by hyphens, in the form 8-4-4-4-12 for a total of 36 characters (32 hexadecimal characters and 4 hyphens), optionally prefixed by \\\"urn:uuid:\\\" to make it an IRI."
+    }
+  ],
+  "links": [
+    {
+      "source": "urn:bamm:io.catenax.fleet.claim_data:1.0.0#ClaimData",
+      "target": "urn:bamm:io.catenax.fleet.claim_data:1.0.0#listOfClaims",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.fleet.claim_data:1.0.0#Claim",
+      "target": "urn:bamm:io.catenax.fleet.claim_data:1.0.0#listOfDiagnosticSessionId",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:bamm:io.catenax.fleet.claim_data:1.0.0#Claim",
+      "target": "urn:bamm:io.catenax.fleet.claim_data:1.0.0#repairMileage",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.fleet.claim_data:1.0.0#Claim",
+      "target": "urn:bamm:io.catenax.fleet.claim_data:1.0.0#repairDate",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.fleet.claim_data:1.0.0#Claim",
+      "target": "urn:bamm:io.catenax.fleet.claim_data:1.0.0#technicianComment",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.fleet.claim_data:1.0.0#Claim",
+      "target": "urn:bamm:io.catenax.fleet.claim_data:1.0.0#customerComment",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:bamm:io.catenax.fleet.claim_data:1.0.0#Claim",
+      "target": "urn:bamm:io.catenax.fleet.claim_data:1.0.0#claimId",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.fleet.claim_data:1.0.0#Claim",
+      "target": "urn:bamm:io.catenax.fleet.claim_data:1.0.0#vehicleIdentifiers",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.fleet.claim_data:1.0.0#Claim",
+      "target": "urn:bamm:io.catenax.fleet.claim_data:1.0.0#listOfParts",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.fleet.claim_data:1.0.0#Claim",
+      "target": "urn:bamm:io.catenax.fleet.claim_data:1.0.0#qualityTaskId",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.fleet.claim_data:1.0.0#Claim",
+      "target": "urn:bamm:io.catenax.fleet.claim_data:1.0.0#damageCode",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:bamm:io.catenax.fleet.claim_data:1.0.0#VehicleIdentifiers",
+      "target": "urn:bamm:io.catenax.fleet.claim_data:1.0.0#vehicleCatenaXId",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:bamm:io.catenax.fleet.claim_data:1.0.0#VehicleIdentifiers",
+      "target": "urn:bamm:io.catenax.fleet.claim_data:1.0.0#anonymizedVIN",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.fleet.claim_data:1.0.0#ClaimedPart",
+      "target": "urn:bamm:io.catenax.fleet.claim_data:1.0.0#isPartReplaced",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.fleet.claim_data:1.0.0#ClaimedPart",
+      "target": "urn:bamm:io.catenax.fleet.claim_data:1.0.0#isPartCausal",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.fleet.claim_data:1.0.0#ClaimedPart",
+      "target": "urn:bamm:io.catenax.fleet.claim_data:1.0.0#amountOfReplacedParts",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:bamm:io.catenax.fleet.claim_data:1.0.0#ClaimedPart",
+      "target": "urn:bamm:io.catenax.fleet.claim_data:1.0.0#replacedPart",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.fleet.claim_data:1.0.0#ClaimedPart",
+      "target": "urn:bamm:io.catenax.fleet.claim_data:1.0.0#sparePart",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.fleet.claim_data:1.0.0#Part",
+      "target": "urn:bamm:io.catenax.fleet.claim_data:1.0.0#number",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.fleet.claim_data:1.0.0#Part",
+      "target": "urn:bamm:io.catenax.fleet.claim_data:1.0.0#name",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.fleet.claim_data:1.0.0#Part",
+      "target": "urn:bamm:io.catenax.fleet.claim_data:1.0.0#serialNumber",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:bamm:io.catenax.fleet.claim_data:1.0.0#Part",
+      "target": "urn:bamm:io.catenax.fleet.claim_data:1.0.0#catenaXId",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:bamm:io.catenax.fleet.claim_data:1.0.0#Part",
+      "target": "urn:bamm:io.catenax.fleet.claim_data:1.0.0#supplierId",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:bamm:io.catenax.fleet.claim_data:1.0.0#listOfClaims",
+      "target": "urn:bamm:io.catenax.fleet.claim_data:1.0.0#ListOfClaims",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.fleet.claim_data:1.0.0#listOfDiagnosticSessionId",
+      "target": "urn:bamm:io.catenax.fleet.claim_data:1.0.0#ListOfDiagnosticSessions",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.fleet.claim_data:1.0.0#repairMileage",
+      "target": "urn:bamm:io.catenax.fleet.claim_data:1.0.0#Mileage",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.fleet.claim_data:1.0.0#vehicleIdentifiers",
+      "target": "urn:bamm:io.catenax.fleet.claim_data:1.0.0#VehicleIdentifiersCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.fleet.claim_data:1.0.0#listOfParts",
+      "target": "urn:bamm:io.catenax.fleet.claim_data:1.0.0#ListOfPartsCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.fleet.claim_data:1.0.0#vehicleCatenaXId",
+      "target": "urn:bamm:io.catenax.fleet.claim_data:1.0.0#CatenaXIdTrait",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.fleet.claim_data:1.0.0#catenaXId",
+      "target": "urn:bamm:io.catenax.fleet.claim_data:1.0.0#CatenaXIdTrait",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.fleet.claim_data:1.0.0#amountOfReplacedParts",
+      "target": "urn:bamm:io.catenax.fleet.claim_data:1.0.0#AmountOfReplacedPartsCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.fleet.claim_data:1.0.0#replacedPart",
+      "target": "urn:bamm:io.catenax.fleet.claim_data:1.0.0#PartCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.fleet.claim_data:1.0.0#sparePart",
+      "target": "urn:bamm:io.catenax.fleet.claim_data:1.0.0#PartCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.fleet.claim_data:1.0.0#ListOfClaims",
+      "target": "urn:bamm:io.catenax.fleet.claim_data:1.0.0#Claim",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.fleet.claim_data:1.0.0#VehicleIdentifiersCharacteristic",
+      "target": "urn:bamm:io.catenax.fleet.claim_data:1.0.0#VehicleIdentifiers",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.fleet.claim_data:1.0.0#ListOfPartsCharacteristic",
+      "target": "urn:bamm:io.catenax.fleet.claim_data:1.0.0#ClaimedPart",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.fleet.claim_data:1.0.0#PartCharacteristic",
+      "target": "urn:bamm:io.catenax.fleet.claim_data:1.0.0#Part",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.fleet.claim_data:1.0.0#CatenaXIdTrait",
+      "target": "urn:bamm:io.catenax.fleet.claim_data:1.0.0#UUIDv4RegularExpression",
+      "label": "constraint",
+      "optional": false
+    }
+  ]
+}

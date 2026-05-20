@@ -1,0 +1,91 @@
+{
+  "meta": {
+    "namespace": "urn:samm:io.catenax.single_level_usage_as_planned:3.0.0#",
+    "meta_model": "SAMM 2.1.0",
+    "model_family": "SAMM",
+    "model_name": "single_level_usage_as_planned",
+    "model_version": "3.0.0",
+    "source": "catenax",
+    "status": "release",
+    "release_date": null,
+    "release_notes": "## Changelog\n\nAll notable changes to this model will be documented in this file.\n\n## [4.0.0] 25.12\n\n### Changed\n\n- introduced `io.catenax.shared.industry_core.common:1.0.0` and `io.catenax.shared.quantity:3.0.0` as a shared model\n- renamed `catenaXId` to `globalAssetId`\n\n## [2.0.0] - 2024-02-26\n\n### Added\n\n- added new `customers` property as child of the `SingleLevelUsageAsPlanned` aspect property including its `ListOfCustomersCharactersistics` and `Customer` entity\n- added new `businessPartner` property with its `BpnlTrait` of the shared business_partner_number 2.0.0 aspect model\n- added new links from the `customers` entity to the `businesspartner`, `createdOn` and `lastModifiedOn` properties\n\n### Changed\n\n- changed `parentCatenaXId` to `catenaXId` to be conform with the data chain template\n- renamed `parentParts` property to be `parentItems`\n- changed `parentItems` property to be a mandatory child of the `SingleLevelUsageBuilt` aspect property instead of a child of the `customers` property\n- replaced the `quantityNumber` and `measurementUnit` properties with the `itemUnit` and `quantityValue` properties of the shared quantity 2.0.0 aspect model\n- replaced the existing `Timestamp` characteristics of `validFrom` and `validTo` with a new `DateTimeTrait`, to permit date information excluding time\n- replaced the whole `CatenaXIdTraitCharacteristi`c and its childs with the `UuidV4Trait` of the shared uuid 2.0.0 aspect model\n- description of some objects were adjusted\n\n## [1.1.0]\n\n### Added\n\n- optional validity period for child-parent relation\n\n### Changed\n\n- descriptions to more explicitly describe handling of versions of child parts\n- updated reference for SAMM Unit Catalog to a more stable one\n- all characteristics, entities, and constraints now have proper names, preferred names and descriptions\n- fixed some typos in preferred names and descriptions\n\n### Removed\n\n## [1.0.0] - 2022-12-07\n\n### Added\n\n- initial model\n\n### Changed\n\nn/a\n\n### Removed",
+    "dependencies": [
+      {
+        "name": "shared.industry_core.common",
+        "version": "1.0.0",
+        "family": "SAMM",
+        "source": "catenax"
+      },
+      {
+        "name": "shared.quantity",
+        "version": "3.0.0",
+        "family": "SAMM",
+        "source": "catenax"
+      }
+    ],
+    "path": "data/sldt-semantic-models/io.catenax.single_level_usage_as_planned/3.0.0/SingleLevelUsageAsPlanned.ttl"
+  },
+  "nodes": [
+    {
+      "id": "urn:samm:io.catenax.single_level_usage_as_planned:3.0.0#SingleLevelUsageAsPlanned",
+      "label": "SingleLevelUsageAsPlanned",
+      "kind": "Aspect",
+      "preferredName": "single level usage as planned",
+      "description": "The aspect provides the information in which parent part(s)/product(s)the given item is to be assembled into or used. This could be a 1:1 relationship in terms of a e.g. a brake component or 1:n for e.g. coatings. The given item as well as the parent item must refer to an object from the as-planned lifecycle phase.\nIf multiple versions of parent parts exist that the child part can be assembled into or used, all versions of the parent part are included in the usage list."
+    },
+    {
+      "id": "urn:samm:io.catenax.single_level_usage_as_planned:3.0.0#parentItems",
+      "label": "parentItems",
+      "kind": "Property",
+      "preferredName": "parent items",
+      "description": "Set of parent parts, in which the given child object will be assembled into or used (one structural level up)."
+    },
+    {
+      "id": "urn:samm:io.catenax.single_level_usage_as_planned:3.0.0#quantity",
+      "label": "quantity",
+      "kind": "Property",
+      "preferredName": "quantity",
+      "description": "Quantity of which the child part will be assembled into or used in the parent part."
+    },
+    {
+      "id": "urn:samm:io.catenax.single_level_usage_as_planned:3.0.0#SetOfParentItemsCharacteristic",
+      "label": "SetOfParentItemsCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "set of parent items",
+      "description": "Set of parent items the given child object will be assembled into or used (one structural level up)."
+    },
+    {
+      "id": "urn:samm:io.catenax.single_level_usage_as_planned:3.0.0#ParentData",
+      "label": "ParentData",
+      "kind": "Entity",
+      "preferredName": "parent data",
+      "description": "globalAssetId and meta data of the parent part."
+    }
+  ],
+  "links": [
+    {
+      "source": "urn:samm:io.catenax.single_level_usage_as_planned:3.0.0#SingleLevelUsageAsPlanned",
+      "target": "urn:samm:io.catenax.single_level_usage_as_planned:3.0.0#parentItems",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.single_level_usage_as_planned:3.0.0#ParentData",
+      "target": "urn:samm:io.catenax.single_level_usage_as_planned:3.0.0#quantity",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.single_level_usage_as_planned:3.0.0#parentItems",
+      "target": "urn:samm:io.catenax.single_level_usage_as_planned:3.0.0#SetOfParentItemsCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.single_level_usage_as_planned:3.0.0#SetOfParentItemsCharacteristic",
+      "target": "urn:samm:io.catenax.single_level_usage_as_planned:3.0.0#ParentData",
+      "label": "dataType",
+      "optional": false
+    }
+  ]
+}

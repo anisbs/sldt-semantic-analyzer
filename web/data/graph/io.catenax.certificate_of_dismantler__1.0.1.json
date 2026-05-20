@@ -1,0 +1,201 @@
+{
+  "meta": {
+    "namespace": "urn:bamm:io.catenax.certificate_of_dismantler:1.0.1#",
+    "meta_model": "BAMM 1.0.0",
+    "model_family": "BAMM",
+    "model_name": "certificate_of_dismantler",
+    "model_version": "1.0.1",
+    "source": "catenax",
+    "status": "draft",
+    "release_date": "2022-09-15",
+    "release_notes": "# Changelog\nAll notable changes to this model will be documented in this file.\n\n## [Unreleased]\n\n## [1.0.1] - 2022-09-15\n### Added\n- initial model\n- fix in example value\n\n### Changed\nn/a\n\n### Removed",
+    "dependencies": [
+      {
+        "name": "shared.address_characteristic",
+        "version": "1.0.1",
+        "family": "BAMM",
+        "source": "catenax"
+      },
+      {
+        "name": "shared.contact_information",
+        "version": "1.0.0",
+        "family": "BAMM",
+        "source": "catenax"
+      }
+    ],
+    "path": "data/sldt-semantic-models/io.catenax.certificate_of_dismantler/1.0.1/CertificateOfDismantler.ttl"
+  },
+  "nodes": [
+    {
+      "id": "urn:bamm:io.catenax.certificate_of_dismantler:1.0.1#governmentAddress",
+      "label": "governmentAddress",
+      "kind": "Property",
+      "preferredName": "government address",
+      "description": "the address of the responsible government agency"
+    },
+    {
+      "id": "urn:bamm:io.catenax.certificate_of_dismantler:1.0.1#certificateNumber",
+      "label": "certificateNumber",
+      "kind": "Property",
+      "preferredName": "certificate number",
+      "description": "license number of the license"
+    },
+    {
+      "id": "urn:bamm:io.catenax.certificate_of_dismantler:1.0.1#issueDate",
+      "label": "issueDate",
+      "kind": "Property",
+      "preferredName": "issue date",
+      "description": "issue date of the license"
+    },
+    {
+      "id": "urn:bamm:io.catenax.certificate_of_dismantler:1.0.1#expiryDate",
+      "label": "expiryDate",
+      "kind": "Property",
+      "preferredName": "expiry date",
+      "description": "expiration date of the license"
+    },
+    {
+      "id": "urn:bamm:io.catenax.certificate_of_dismantler:1.0.1#producerNumber",
+      "label": "producerNumber",
+      "kind": "Property",
+      "preferredName": "producer number",
+      "description": "describes the identification of the producing company"
+    },
+    {
+      "id": "urn:bamm:io.catenax.certificate_of_dismantler:1.0.1#carrierIdentification",
+      "label": "carrierIdentification",
+      "kind": "Property",
+      "preferredName": "carrier identification",
+      "description": "describes the identification of the transporting company"
+    },
+    {
+      "id": "urn:bamm:io.catenax.certificate_of_dismantler:1.0.1#disposerNumber",
+      "label": "disposerNumber",
+      "kind": "Property",
+      "preferredName": "disposer number",
+      "description": "describes the identification of the disposal company"
+    },
+    {
+      "id": "urn:bamm:io.catenax.certificate_of_dismantler:1.0.1#dismantlerContact",
+      "label": "dismantlerContact",
+      "kind": "Property",
+      "preferredName": "dismantling company contact",
+      "description": "dismantling company contact information"
+    },
+    {
+      "id": "urn:bamm:io.catenax.certificate_of_dismantler:1.0.1#auditorAddress",
+      "label": "auditorAddress",
+      "kind": "Property",
+      "preferredName": "auditor address",
+      "description": "the address of the auditor"
+    },
+    {
+      "id": "urn:bamm:io.catenax.certificate_of_dismantler:1.0.1#dismantlerAddress",
+      "label": "dismantlerAddress",
+      "kind": "Property",
+      "preferredName": "dismantler address",
+      "description": "address data for the dismantling company"
+    },
+    {
+      "id": "urn:bamm:io.catenax.certificate_of_dismantler:1.0.1#auditorContact",
+      "label": "auditorContact",
+      "kind": "Property",
+      "preferredName": "auditor contact",
+      "description": "the address of the auditor"
+    },
+    {
+      "id": "urn:bamm:io.catenax.certificate_of_dismantler:1.0.1#CertificateOfDismantler",
+      "label": "CertificateOfDismantler",
+      "kind": "Aspect",
+      "preferredName": "Certificate of Dismantler",
+      "description": "Represents the certificate of dismanter (Bescheinigung gemäß § 5 Abs. 3 Altfahrzeug-Verordnung) which is required in Germany to legally dismantle vehicles"
+    },
+    {
+      "id": "urn:bamm:io.catenax.certificate_of_dismantler:1.0.1#DateCharacteristic",
+      "label": "DateCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "date Characteristic",
+      "description": "characteristic to describe a date"
+    }
+  ],
+  "links": [
+    {
+      "source": "urn:bamm:io.catenax.certificate_of_dismantler:1.0.1#CertificateOfDismantler",
+      "target": "urn:bamm:io.catenax.certificate_of_dismantler:1.0.1#dismantlerAddress",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.certificate_of_dismantler:1.0.1#CertificateOfDismantler",
+      "target": "urn:bamm:io.catenax.certificate_of_dismantler:1.0.1#certificateNumber",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.certificate_of_dismantler:1.0.1#CertificateOfDismantler",
+      "target": "urn:bamm:io.catenax.certificate_of_dismantler:1.0.1#issueDate",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.certificate_of_dismantler:1.0.1#CertificateOfDismantler",
+      "target": "urn:bamm:io.catenax.certificate_of_dismantler:1.0.1#expiryDate",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.certificate_of_dismantler:1.0.1#CertificateOfDismantler",
+      "target": "urn:bamm:io.catenax.certificate_of_dismantler:1.0.1#producerNumber",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:bamm:io.catenax.certificate_of_dismantler:1.0.1#CertificateOfDismantler",
+      "target": "urn:bamm:io.catenax.certificate_of_dismantler:1.0.1#carrierIdentification",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:bamm:io.catenax.certificate_of_dismantler:1.0.1#CertificateOfDismantler",
+      "target": "urn:bamm:io.catenax.certificate_of_dismantler:1.0.1#disposerNumber",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.certificate_of_dismantler:1.0.1#CertificateOfDismantler",
+      "target": "urn:bamm:io.catenax.certificate_of_dismantler:1.0.1#dismantlerContact",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.certificate_of_dismantler:1.0.1#CertificateOfDismantler",
+      "target": "urn:bamm:io.catenax.certificate_of_dismantler:1.0.1#auditorAddress",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.certificate_of_dismantler:1.0.1#CertificateOfDismantler",
+      "target": "urn:bamm:io.catenax.certificate_of_dismantler:1.0.1#governmentAddress",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.certificate_of_dismantler:1.0.1#CertificateOfDismantler",
+      "target": "urn:bamm:io.catenax.certificate_of_dismantler:1.0.1#auditorContact",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.certificate_of_dismantler:1.0.1#issueDate",
+      "target": "urn:bamm:io.catenax.certificate_of_dismantler:1.0.1#DateCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.certificate_of_dismantler:1.0.1#expiryDate",
+      "target": "urn:bamm:io.catenax.certificate_of_dismantler:1.0.1#DateCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    }
+  ]
+}

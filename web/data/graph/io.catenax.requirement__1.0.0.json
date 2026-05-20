@@ -1,0 +1,806 @@
+{
+  "meta": {
+    "namespace": "urn:samm:io.catenax.requirement:1.0.0#",
+    "meta_model": "SAMM 2.1.0",
+    "model_family": "SAMM",
+    "model_name": "requirement",
+    "model_version": "1.0.0",
+    "source": "catenax",
+    "status": "release",
+    "release_date": "2025-07-29",
+    "release_notes": "# Changelog\nAll notable changes to this model will be documented in this file.\n\n## [1.0.0] - 2025-07-29\n### Added\n- initial version of model\n\n### Changed\nn/a\n\n### Removed\nn/a",
+    "dependencies": [
+      {
+        "name": "shared.uuid",
+        "version": "2.0.0",
+        "family": "SAMM",
+        "source": "catenax"
+      }
+    ],
+    "path": "data/sldt-semantic-models/io.catenax.requirement/1.0.0/Requirement.ttl"
+  },
+  "nodes": [
+    {
+      "id": "urn:samm:io.catenax.requirement:1.0.0#Requirement",
+      "label": "Requirement",
+      "kind": "Aspect",
+      "preferredName": "Requirement",
+      "description": "Aspect model for requirements."
+    },
+    {
+      "id": "urn:samm:io.catenax.requirement:1.0.0#requirementId",
+      "label": "requirementId",
+      "kind": "Property",
+      "preferredName": "Requirement Id",
+      "description": "The identifier of a requirement represented by a UUID, valid for the Catena-X dataspace."
+    },
+    {
+      "id": "urn:samm:io.catenax.requirement:1.0.0#requirementInformation",
+      "label": "requirementInformation",
+      "kind": "Property",
+      "preferredName": "Requirement Information",
+      "description": "Mainnode for all the Requirement related information"
+    },
+    {
+      "id": "urn:samm:io.catenax.requirement:1.0.0#requirementStatus",
+      "label": "requirementStatus",
+      "kind": "Property",
+      "preferredName": "Requirement Status",
+      "description": "Status of the Requirement"
+    },
+    {
+      "id": "urn:samm:io.catenax.requirement:1.0.0#requirementRelations",
+      "label": "requirementRelations",
+      "kind": "Property",
+      "preferredName": "Requirement Relations",
+      "description": "Links to related requirements"
+    },
+    {
+      "id": "urn:samm:io.catenax.requirement:1.0.0#reqIfName",
+      "label": "reqIfName",
+      "kind": "Property",
+      "preferredName": "ReqIF Name",
+      "description": "Name of the requirement (from ReqIF)."
+    },
+    {
+      "id": "urn:samm:io.catenax.requirement:1.0.0#reqIfType",
+      "label": "reqIfType",
+      "kind": "Property",
+      "preferredName": "ReqIF Type",
+      "description": "Type of the requirement (e.g., 'Functional', 'Non-Functional')."
+    },
+    {
+      "id": "urn:samm:io.catenax.requirement:1.0.0#version",
+      "label": "version",
+      "kind": "Property",
+      "preferredName": "Version",
+      "description": "Version of the requirement with it's predecessor"
+    },
+    {
+      "id": "urn:samm:io.catenax.requirement:1.0.0#description",
+      "label": "description",
+      "kind": "Property",
+      "preferredName": "Description",
+      "description": "Textual description of the requirement."
+    },
+    {
+      "id": "urn:samm:io.catenax.requirement:1.0.0#creationDate",
+      "label": "creationDate",
+      "kind": "Property",
+      "preferredName": "Creationdate",
+      "description": "Date of requirement/version creation."
+    },
+    {
+      "id": "urn:samm:io.catenax.requirement:1.0.0#author",
+      "label": "author",
+      "kind": "Property",
+      "preferredName": "Author",
+      "description": "Company that created the requirement. "
+    },
+    {
+      "id": "urn:samm:io.catenax.requirement:1.0.0#foreignId",
+      "label": "foreignId",
+      "kind": "Property",
+      "preferredName": "Foreign Id",
+      "description": "Identifier from an external system (e.g. the chapter in a set of requirements)"
+    },
+    {
+      "id": "urn:samm:io.catenax.requirement:1.0.0#longname",
+      "label": "longname",
+      "kind": "Property",
+      "preferredName": "Longname",
+      "description": "Descriptive name for the requirement."
+    },
+    {
+      "id": "urn:samm:io.catenax.requirement:1.0.0#metadata",
+      "label": "metadata",
+      "kind": "Property",
+      "preferredName": "Metadata",
+      "description": "Additional metadata that is associated with the requirement and not standardized in the aspect model."
+    },
+    {
+      "id": "urn:samm:io.catenax.requirement:1.0.0#specification",
+      "label": "specification",
+      "kind": "Property",
+      "preferredName": "Specification",
+      "description": "Link to the specification document."
+    },
+    {
+      "id": "urn:samm:io.catenax.requirement:1.0.0#versionPredecessor",
+      "label": "versionPredecessor",
+      "kind": "Property",
+      "preferredName": "Version Predecessor",
+      "description": "Includes the informaiton to identifiy predecessor requirement (e.g., ID and Version)."
+    },
+    {
+      "id": "urn:samm:io.catenax.requirement:1.0.0#statusValue",
+      "label": "statusValue",
+      "kind": "Property",
+      "preferredName": "Status Value",
+      "description": "Overall status of the requirement"
+    },
+    {
+      "id": "urn:samm:io.catenax.requirement:1.0.0#statusTimestamp",
+      "label": "statusTimestamp",
+      "kind": "Property",
+      "preferredName": "Status Timestamp",
+      "description": "Timestamp of the status change."
+    },
+    {
+      "id": "urn:samm:io.catenax.requirement:1.0.0#customerStatus",
+      "label": "customerStatus",
+      "kind": "Property",
+      "preferredName": "Customer Status",
+      "description": "Property for the requirement status of customer"
+    },
+    {
+      "id": "urn:samm:io.catenax.requirement:1.0.0#supplierStatus",
+      "label": "supplierStatus",
+      "kind": "Property",
+      "preferredName": "Supplier Status",
+      "description": "Property for the requirement status of supplier"
+    },
+    {
+      "id": "urn:samm:io.catenax.requirement:1.0.0#relatedRequirementId",
+      "label": "relatedRequirementId",
+      "kind": "Property",
+      "preferredName": "Related Requirement Identifier",
+      "description": "Id of related requirement in form of a UUID"
+    },
+    {
+      "id": "urn:samm:io.catenax.requirement:1.0.0#requirementRelationshipType",
+      "label": "requirementRelationshipType",
+      "kind": "Property",
+      "preferredName": "Requiremement Relationship Type",
+      "description": "The type of relationship of the two related requirements"
+    },
+    {
+      "id": "urn:samm:io.catenax.requirement:1.0.0#versionNumber",
+      "label": "versionNumber",
+      "kind": "Property",
+      "preferredName": "Version Number",
+      "description": "Semantic version of the requirement"
+    },
+    {
+      "id": "urn:samm:io.catenax.requirement:1.0.0#versionId",
+      "label": "versionId",
+      "kind": "Property",
+      "preferredName": "Version Id",
+      "description": "The identifier of this exact version of the requirement represented by a UUID, valid for the Catena-X dataspace."
+    },
+    {
+      "id": "urn:samm:io.catenax.requirement:1.0.0#key",
+      "label": "key",
+      "kind": "Property",
+      "preferredName": "Key",
+      "description": "The key may contain only letters, digits, underscores, and hyphens."
+    },
+    {
+      "id": "urn:samm:io.catenax.requirement:1.0.0#value",
+      "label": "value",
+      "kind": "Property",
+      "preferredName": "Value",
+      "description": "Value string for the associated metadata"
+    },
+    {
+      "id": "urn:samm:io.catenax.requirement:1.0.0#metadataDescription",
+      "label": "metadataDescription",
+      "kind": "Property",
+      "preferredName": "Metadata Description",
+      "description": "Description of the associated metadata"
+    },
+    {
+      "id": "urn:samm:io.catenax.requirement:1.0.0#versionPredecessorNumber",
+      "label": "versionPredecessorNumber",
+      "kind": "Property",
+      "preferredName": "Version Predecessor Number",
+      "description": "https://semver.org/"
+    },
+    {
+      "id": "urn:samm:io.catenax.requirement:1.0.0#versionPredecessorId",
+      "label": "versionPredecessorId",
+      "kind": "Property",
+      "preferredName": "Version Predecessor Id",
+      "description": "The identifier of the predecessor version of the requirement represented by a UUID, valid for the Catena-X dataspace."
+    },
+    {
+      "id": "urn:samm:io.catenax.requirement:1.0.0#customerStatusValue",
+      "label": "customerStatusValue",
+      "kind": "Property",
+      "preferredName": "Customer Status Value",
+      "description": "Value for customer status"
+    },
+    {
+      "id": "urn:samm:io.catenax.requirement:1.0.0#customerStatusComment",
+      "label": "customerStatusComment",
+      "kind": "Property",
+      "preferredName": "Customer Status Comment",
+      "description": "Comment from the customer."
+    },
+    {
+      "id": "urn:samm:io.catenax.requirement:1.0.0#customerStatusTimestamp",
+      "label": "customerStatusTimestamp",
+      "kind": "Property",
+      "preferredName": "Customer Status Timestamp ",
+      "description": "Property for the customer status timestamp"
+    },
+    {
+      "id": "urn:samm:io.catenax.requirement:1.0.0#supplierStatusValue",
+      "label": "supplierStatusValue",
+      "kind": "Property",
+      "preferredName": "Supplier Status Value",
+      "description": "Value for the supplier status"
+    },
+    {
+      "id": "urn:samm:io.catenax.requirement:1.0.0#supplierStatusComment",
+      "label": "supplierStatusComment",
+      "kind": "Property",
+      "preferredName": "Supplier Status Comment",
+      "description": "Comment from the supplier."
+    },
+    {
+      "id": "urn:samm:io.catenax.requirement:1.0.0#supplierStatusTimestamp",
+      "label": "supplierStatusTimestamp",
+      "kind": "Property",
+      "preferredName": "Supplier Status Timestamp",
+      "description": "Property for the supplier status timestamp"
+    },
+    {
+      "id": "urn:samm:io.catenax.requirement:1.0.0#RequirementInformationCharacteristic",
+      "label": "RequirementInformationCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Requirement Information",
+      "description": "Mainnode for all the Requirement related information"
+    },
+    {
+      "id": "urn:samm:io.catenax.requirement:1.0.0#RequirementStatusCharacteristic",
+      "label": "RequirementStatusCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Requirement Status Characteristic",
+      "description": "Status of the Requirement"
+    },
+    {
+      "id": "urn:samm:io.catenax.requirement:1.0.0#VersionCharacteristic",
+      "label": "VersionCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Version Characteristic",
+      "description": "Characteristic for the version"
+    },
+    {
+      "id": "urn:samm:io.catenax.requirement:1.0.0#VersionPredecessorCharacteristic",
+      "label": "VersionPredecessorCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Version Predecessor Characteristic",
+      "description": "Describes the version of the predecessor of the requirement."
+    },
+    {
+      "id": "urn:samm:io.catenax.requirement:1.0.0#RequirementRelationSet",
+      "label": "RequirementRelationSet",
+      "kind": "Characteristic",
+      "preferredName": "Requirement Relation Entity",
+      "description": "Entity for relations between requirements."
+    },
+    {
+      "id": "urn:samm:io.catenax.requirement:1.0.0#RequirementInformationEntity",
+      "label": "RequirementInformationEntity",
+      "kind": "Entity",
+      "preferredName": "Requirement Information Entity",
+      "description": "Entity to describe all information for a requirement"
+    },
+    {
+      "id": "urn:samm:io.catenax.requirement:1.0.0#StatusEntity",
+      "label": "StatusEntity",
+      "kind": "Entity",
+      "preferredName": "Status Entity",
+      "description": "Entity which defines the status of a requirement"
+    },
+    {
+      "id": "urn:samm:io.catenax.requirement:1.0.0#RequirementRelationEntity",
+      "label": "RequirementRelationEntity",
+      "kind": "Entity",
+      "preferredName": "Requirement Relation Entity",
+      "description": "Entity to link to related requirements"
+    },
+    {
+      "id": "urn:samm:io.catenax.requirement:1.0.0#VersionEntity",
+      "label": "VersionEntity",
+      "kind": "Entity",
+      "preferredName": "Version Entity",
+      "description": "Entity for requirement version"
+    },
+    {
+      "id": "urn:samm:io.catenax.requirement:1.0.0#MetadataEntity",
+      "label": "MetadataEntity",
+      "kind": "Entity",
+      "preferredName": "Metadata Entity",
+      "description": "Entity for key and value of requirement metadata."
+    },
+    {
+      "id": "urn:samm:io.catenax.requirement:1.0.0#VersionPredecessorEntity",
+      "label": "VersionPredecessorEntity",
+      "kind": "Entity",
+      "preferredName": "Version Predecessor Entity",
+      "description": "Entity containing information about the version of the predecessor of the requirement."
+    },
+    {
+      "id": "urn:samm:io.catenax.requirement:1.0.0#CustomerStatusEntity",
+      "label": "CustomerStatusEntity",
+      "kind": "Entity",
+      "preferredName": "Customer Status",
+      "description": "Entity for the customer status"
+    },
+    {
+      "id": "urn:samm:io.catenax.requirement:1.0.0#SupplierStatusEntity",
+      "label": "SupplierStatusEntity",
+      "kind": "Entity",
+      "preferredName": "Supplier Status",
+      "description": "Entity for the supplier status"
+    },
+    {
+      "id": "urn:samm:io.catenax.requirement:1.0.0#ReqIFTypeEnum",
+      "label": "ReqIFTypeEnum",
+      "kind": "Characteristic",
+      "preferredName": "ReqIF Type Characteristic",
+      "description": "Enumeration of requirement types."
+    },
+    {
+      "id": "urn:samm:io.catenax.requirement:1.0.0#StatusValueEnum",
+      "label": "StatusValueEnum",
+      "kind": "Characteristic",
+      "preferredName": "Status Value Characteristic",
+      "description": "Characteristic for the status"
+    },
+    {
+      "id": "urn:samm:io.catenax.requirement:1.0.0#CustomerStatusValueEnum",
+      "label": "CustomerStatusValueEnum",
+      "kind": "Characteristic",
+      "preferredName": "Customer Status Value Enum",
+      "description": "Characteristic for the value of customer status"
+    },
+    {
+      "id": "urn:samm:io.catenax.requirement:1.0.0#SupplierStatusValueEnum",
+      "label": "SupplierStatusValueEnum",
+      "kind": "Characteristic",
+      "preferredName": "Supplier Status Value Characteristic",
+      "description": "Characteristic for the value of supplier status"
+    },
+    {
+      "id": "urn:samm:io.catenax.requirement:1.0.0#MetadataList",
+      "label": "MetadataList",
+      "kind": "Characteristic",
+      "preferredName": "Metadata List",
+      "description": "List of additional metadata that is associated with the requirement and not standardized in the aspect model."
+    },
+    {
+      "id": "urn:samm:io.catenax.requirement:1.0.0#SpecificationList",
+      "label": "SpecificationList",
+      "kind": "Characteristic",
+      "preferredName": "Specification List",
+      "description": "A list of all related specifications (e.g. norms)"
+    },
+    {
+      "id": "urn:samm:io.catenax.requirement:1.0.0#CustomerStatusList",
+      "label": "CustomerStatusList",
+      "kind": "Characteristic",
+      "preferredName": "Customer Status Characteristic",
+      "description": "Characteristic for the customer status"
+    },
+    {
+      "id": "urn:samm:io.catenax.requirement:1.0.0#SupplierStatusList",
+      "label": "SupplierStatusList",
+      "kind": "Characteristic",
+      "preferredName": "Supplier Status Characteristic",
+      "description": "Characteristic for the supplier status"
+    },
+    {
+      "id": "urn:samm:io.catenax.requirement:1.0.0#VersionNumberTrait",
+      "label": "VersionNumberTrait",
+      "kind": "Characteristic",
+      "preferredName": "Version Number Trait",
+      "description": "String that is semantic versioning compatible"
+    },
+    {
+      "id": "urn:samm:io.catenax.requirement:1.0.0#KeyTrait",
+      "label": "KeyTrait",
+      "kind": "Characteristic",
+      "preferredName": "Key Trait",
+      "description": "Key that only contains letters, digits, underscores, and hyphens."
+    },
+    {
+      "id": "urn:samm:io.catenax.requirement:1.0.0#VersionRegularExpression",
+      "label": "VersionRegularExpression",
+      "kind": "Characteristic",
+      "preferredName": "Version Regular Expression",
+      "description": "Version number in semantic versioning"
+    },
+    {
+      "id": "urn:samm:io.catenax.requirement:1.0.0#KeyConstraint",
+      "label": "KeyConstraint",
+      "kind": "Characteristic",
+      "preferredName": "Key Constraint",
+      "description": "Ensure that the key only contains letters, digits, underscores, and hyphens"
+    }
+  ],
+  "links": [
+    {
+      "source": "urn:samm:io.catenax.requirement:1.0.0#Requirement",
+      "target": "urn:samm:io.catenax.requirement:1.0.0#requirementId",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.requirement:1.0.0#Requirement",
+      "target": "urn:samm:io.catenax.requirement:1.0.0#requirementInformation",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.requirement:1.0.0#Requirement",
+      "target": "urn:samm:io.catenax.requirement:1.0.0#requirementStatus",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.requirement:1.0.0#Requirement",
+      "target": "urn:samm:io.catenax.requirement:1.0.0#requirementRelations",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.requirement:1.0.0#RequirementInformationEntity",
+      "target": "urn:samm:io.catenax.requirement:1.0.0#reqIfName",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.requirement:1.0.0#RequirementInformationEntity",
+      "target": "urn:samm:io.catenax.requirement:1.0.0#reqIfType",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.requirement:1.0.0#RequirementInformationEntity",
+      "target": "urn:samm:io.catenax.requirement:1.0.0#version",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.requirement:1.0.0#RequirementInformationEntity",
+      "target": "urn:samm:io.catenax.requirement:1.0.0#description",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.requirement:1.0.0#RequirementInformationEntity",
+      "target": "urn:samm:io.catenax.requirement:1.0.0#creationDate",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.requirement:1.0.0#RequirementInformationEntity",
+      "target": "urn:samm:io.catenax.requirement:1.0.0#author",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.requirement:1.0.0#RequirementInformationEntity",
+      "target": "urn:samm:io.catenax.requirement:1.0.0#foreignId",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.requirement:1.0.0#RequirementInformationEntity",
+      "target": "urn:samm:io.catenax.requirement:1.0.0#longname",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.requirement:1.0.0#RequirementInformationEntity",
+      "target": "urn:samm:io.catenax.requirement:1.0.0#metadata",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.requirement:1.0.0#RequirementInformationEntity",
+      "target": "urn:samm:io.catenax.requirement:1.0.0#specification",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.requirement:1.0.0#RequirementInformationEntity",
+      "target": "urn:samm:io.catenax.requirement:1.0.0#versionPredecessor",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.requirement:1.0.0#StatusEntity",
+      "target": "urn:samm:io.catenax.requirement:1.0.0#statusValue",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.requirement:1.0.0#StatusEntity",
+      "target": "urn:samm:io.catenax.requirement:1.0.0#statusTimestamp",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.requirement:1.0.0#StatusEntity",
+      "target": "urn:samm:io.catenax.requirement:1.0.0#customerStatus",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.requirement:1.0.0#StatusEntity",
+      "target": "urn:samm:io.catenax.requirement:1.0.0#supplierStatus",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.requirement:1.0.0#RequirementRelationEntity",
+      "target": "urn:samm:io.catenax.requirement:1.0.0#relatedRequirementId",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.requirement:1.0.0#RequirementRelationEntity",
+      "target": "urn:samm:io.catenax.requirement:1.0.0#requirementRelationshipType",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.requirement:1.0.0#VersionEntity",
+      "target": "urn:samm:io.catenax.requirement:1.0.0#versionNumber",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.requirement:1.0.0#VersionEntity",
+      "target": "urn:samm:io.catenax.requirement:1.0.0#versionId",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.requirement:1.0.0#MetadataEntity",
+      "target": "urn:samm:io.catenax.requirement:1.0.0#key",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.requirement:1.0.0#MetadataEntity",
+      "target": "urn:samm:io.catenax.requirement:1.0.0#value",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.requirement:1.0.0#MetadataEntity",
+      "target": "urn:samm:io.catenax.requirement:1.0.0#metadataDescription",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.requirement:1.0.0#VersionPredecessorEntity",
+      "target": "urn:samm:io.catenax.requirement:1.0.0#versionPredecessorNumber",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.requirement:1.0.0#VersionPredecessorEntity",
+      "target": "urn:samm:io.catenax.requirement:1.0.0#versionPredecessorId",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.requirement:1.0.0#CustomerStatusEntity",
+      "target": "urn:samm:io.catenax.requirement:1.0.0#customerStatusValue",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.requirement:1.0.0#CustomerStatusEntity",
+      "target": "urn:samm:io.catenax.requirement:1.0.0#customerStatusComment",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.requirement:1.0.0#CustomerStatusEntity",
+      "target": "urn:samm:io.catenax.requirement:1.0.0#customerStatusTimestamp",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.requirement:1.0.0#SupplierStatusEntity",
+      "target": "urn:samm:io.catenax.requirement:1.0.0#supplierStatusValue",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.requirement:1.0.0#SupplierStatusEntity",
+      "target": "urn:samm:io.catenax.requirement:1.0.0#supplierStatusComment",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.requirement:1.0.0#SupplierStatusEntity",
+      "target": "urn:samm:io.catenax.requirement:1.0.0#supplierStatusTimestamp",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.requirement:1.0.0#requirementInformation",
+      "target": "urn:samm:io.catenax.requirement:1.0.0#RequirementInformationCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.requirement:1.0.0#requirementStatus",
+      "target": "urn:samm:io.catenax.requirement:1.0.0#RequirementStatusCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.requirement:1.0.0#requirementRelations",
+      "target": "urn:samm:io.catenax.requirement:1.0.0#RequirementRelationSet",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.requirement:1.0.0#reqIfType",
+      "target": "urn:samm:io.catenax.requirement:1.0.0#ReqIFTypeEnum",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.requirement:1.0.0#version",
+      "target": "urn:samm:io.catenax.requirement:1.0.0#VersionCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.requirement:1.0.0#metadata",
+      "target": "urn:samm:io.catenax.requirement:1.0.0#MetadataList",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.requirement:1.0.0#specification",
+      "target": "urn:samm:io.catenax.requirement:1.0.0#SpecificationList",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.requirement:1.0.0#versionPredecessor",
+      "target": "urn:samm:io.catenax.requirement:1.0.0#VersionPredecessorCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.requirement:1.0.0#statusValue",
+      "target": "urn:samm:io.catenax.requirement:1.0.0#StatusValueEnum",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.requirement:1.0.0#customerStatus",
+      "target": "urn:samm:io.catenax.requirement:1.0.0#CustomerStatusList",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.requirement:1.0.0#supplierStatus",
+      "target": "urn:samm:io.catenax.requirement:1.0.0#SupplierStatusList",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.requirement:1.0.0#versionNumber",
+      "target": "urn:samm:io.catenax.requirement:1.0.0#VersionNumberTrait",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.requirement:1.0.0#versionPredecessorNumber",
+      "target": "urn:samm:io.catenax.requirement:1.0.0#VersionNumberTrait",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.requirement:1.0.0#key",
+      "target": "urn:samm:io.catenax.requirement:1.0.0#KeyTrait",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.requirement:1.0.0#customerStatusValue",
+      "target": "urn:samm:io.catenax.requirement:1.0.0#CustomerStatusValueEnum",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.requirement:1.0.0#supplierStatusValue",
+      "target": "urn:samm:io.catenax.requirement:1.0.0#SupplierStatusValueEnum",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.requirement:1.0.0#RequirementInformationCharacteristic",
+      "target": "urn:samm:io.catenax.requirement:1.0.0#RequirementInformationEntity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.requirement:1.0.0#RequirementStatusCharacteristic",
+      "target": "urn:samm:io.catenax.requirement:1.0.0#StatusEntity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.requirement:1.0.0#RequirementRelationSet",
+      "target": "urn:samm:io.catenax.requirement:1.0.0#RequirementRelationEntity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.requirement:1.0.0#VersionCharacteristic",
+      "target": "urn:samm:io.catenax.requirement:1.0.0#VersionEntity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.requirement:1.0.0#MetadataList",
+      "target": "urn:samm:io.catenax.requirement:1.0.0#MetadataEntity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.requirement:1.0.0#VersionPredecessorCharacteristic",
+      "target": "urn:samm:io.catenax.requirement:1.0.0#VersionPredecessorEntity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.requirement:1.0.0#CustomerStatusList",
+      "target": "urn:samm:io.catenax.requirement:1.0.0#CustomerStatusEntity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.requirement:1.0.0#SupplierStatusList",
+      "target": "urn:samm:io.catenax.requirement:1.0.0#SupplierStatusEntity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.requirement:1.0.0#VersionNumberTrait",
+      "target": "urn:samm:io.catenax.requirement:1.0.0#VersionRegularExpression",
+      "label": "constraint",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.requirement:1.0.0#KeyTrait",
+      "target": "urn:samm:io.catenax.requirement:1.0.0#KeyConstraint",
+      "label": "constraint",
+      "optional": false
+    }
+  ]
+}

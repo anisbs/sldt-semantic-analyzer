@@ -1,0 +1,271 @@
+{
+  "meta": {
+    "namespace": "urn:samm:io.catenax.single_level_bom_as_planned:3.0.0#",
+    "meta_model": "SAMM 2.1.0",
+    "model_family": "SAMM",
+    "model_name": "single_level_bom_as_planned",
+    "model_version": "3.0.0",
+    "source": "catenax",
+    "status": "release",
+    "release_date": null,
+    "release_notes": "# Changelog\n\nAll notable changes to this model will be documented in this file.\n\n## [4.0.0] 25.12\n\n### Changed\n\n- introduced `io.catenax.shared.industry_core.common:1.0.0` and `io.catenax.shared.quantity:3.0.0` as a shared model\n- renamed `catenaXId` to `globalAssetId`\n\n## [3.0.0] 2024-02-26\n\n### Changed\n\n- replaced the `quantityNumber` and `measurementUnit` properties with the `itemUnit` and `quantityValue` properties of the shared quantity 2.0.0 aspect model\n- replaced the whole `CatenaXIdTraitCharacteristic` and its childs with the `UuidV4Trait` of the shared uuid 2.0.0 aspect model\n- replaced the whole `BpnTrait` and its childs with the `BpnlTrait` of the shared business_partner_number 2.0.0 aspect model\n- replaced the existing `Timestamp` characteristics of `validFrom` and `validTo` with a new `DateTimeTrait`, to permit date information excluding time\n- description of some objects were adjusted\n\n## [2.0.0] 2023-09-01\n\n### Added\n\n- mandatory `businessPartner` to each child item\n\n### Changed\n\n- changed `childCatenaXId` to `catenaXId`\n- changed `childParts` to `childItems`\n- changed several descriptions to use `item` instead of `part` where applicable\n- updated reference for SAMM Unit Catalog to a more readable one\n\n### Removed\n\nn/a\n\n## [1.1.0]\n\n### Added\n\n- optional validity period for child-parent relation\n\n### Changed\n\n- descriptions to more explicitly describe handling of versions of child parts\n- updated reference for SAMM Unit Catalog to a more stable one\n- all characteristics, entities, and constraints now have proper names, preferred names and descriptions\n- fixed some typos in preferred names and descriptions\n\n### Removed\n\n## [1.0.1] 2022-08-11\n\n### Added\n\n- initial version of model\n- small bugfix\n\n### Changed\n\nn/a\n\n### Removed",
+    "dependencies": [
+      {
+        "name": "shared.business_partner_number",
+        "version": "2.0.0",
+        "family": "SAMM",
+        "source": "catenax"
+      },
+      {
+        "name": "shared.quantity",
+        "version": "2.0.0",
+        "family": "SAMM",
+        "source": "catenax"
+      },
+      {
+        "name": "shared.uuid",
+        "version": "2.0.0",
+        "family": "SAMM",
+        "source": "catenax"
+      }
+    ],
+    "path": "data/sldt-semantic-models/io.catenax.single_level_bom_as_planned/3.0.0/SingleLevelBomAsPlanned.ttl"
+  },
+  "nodes": [
+    {
+      "id": "urn:samm:io.catenax.single_level_bom_as_planned:3.0.0#SingleLevelBomAsPlanned",
+      "label": "SingleLevelBomAsPlanned",
+      "kind": "Aspect",
+      "preferredName": "Single Level Bill of Material as Planned",
+      "description": "The single-level bill of material (BoM)represents one sub-level of an assembly and does not include any lower-level subassemblies. In the As-Planned lifecycle state all variants are covered (\"120% BoM\").\nIf multiple versions of child parts exist that can be assembled into the same parent part, all versions of the child part are included in the BoM.\nIf there are multiple suppliers for the same child part, each supplier has an entry for their child part in the BoM."
+    },
+    {
+      "id": "urn:samm:io.catenax.single_level_bom_as_planned:3.0.0#catenaXId",
+      "label": "catenaXId",
+      "kind": "Property",
+      "preferredName": "Catena-X Identifier",
+      "description": "The Catena-X ID of the given part (e.g. the component), valid for the Catena-X dataspace."
+    },
+    {
+      "id": "urn:samm:io.catenax.single_level_bom_as_planned:3.0.0#childItems",
+      "label": "childItems",
+      "kind": "Property",
+      "preferredName": "Child Items",
+      "description": "Set of child items in As-Planned lifecycle phase, of which the given parent object is assembled by (one structural level down)."
+    },
+    {
+      "id": "urn:samm:io.catenax.single_level_bom_as_planned:3.0.0#createdOn",
+      "label": "createdOn",
+      "kind": "Property",
+      "preferredName": "Created on",
+      "description": "Timestamp when the relation between the parent part and the child part was created"
+    },
+    {
+      "id": "urn:samm:io.catenax.single_level_bom_as_planned:3.0.0#quantity",
+      "label": "quantity",
+      "kind": "Property",
+      "preferredName": "Quantity",
+      "description": "Quantity of which the child part will be assembled into the parent part."
+    },
+    {
+      "id": "urn:samm:io.catenax.single_level_bom_as_planned:3.0.0#lastModifiedOn",
+      "label": "lastModifiedOn",
+      "kind": "Property",
+      "preferredName": "Last Modified on",
+      "description": "Timestamp when the relationship between parent part and child part was last modified."
+    },
+    {
+      "id": "urn:samm:io.catenax.single_level_bom_as_planned:3.0.0#validityPeriod",
+      "label": "validityPeriod",
+      "kind": "Property",
+      "preferredName": "Validity Period",
+      "description": "The period of time during which the parent-child relation is valid. This relates to whether a child part can be built into the parent part at a given time.\nIf no validity period is given the relation is considered valid at any point in time."
+    },
+    {
+      "id": "urn:samm:io.catenax.single_level_bom_as_planned:3.0.0#businessPartner",
+      "label": "businessPartner",
+      "kind": "Property",
+      "preferredName": "Business Partner",
+      "description": "The supplier of the given child item."
+    },
+    {
+      "id": "urn:samm:io.catenax.single_level_bom_as_planned:3.0.0#validFrom",
+      "label": "validFrom",
+      "kind": "Property",
+      "preferredName": "Valid from",
+      "description": "Start date of validity period."
+    },
+    {
+      "id": "urn:samm:io.catenax.single_level_bom_as_planned:3.0.0#validTo",
+      "label": "validTo",
+      "kind": "Property",
+      "preferredName": "Valid to",
+      "description": "End date of validity period."
+    },
+    {
+      "id": "urn:samm:io.catenax.single_level_bom_as_planned:3.0.0#SetOfChildItemsCharacteristic",
+      "label": "SetOfChildItemsCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Set of Child Items",
+      "description": "Set of child items the parent object will be assembled by (one structural level down)."
+    },
+    {
+      "id": "urn:samm:io.catenax.single_level_bom_as_planned:3.0.0#ChildData",
+      "label": "ChildData",
+      "kind": "Entity",
+      "preferredName": "Child Data",
+      "description": "Catena-X ID and meta data of the assembled child item."
+    },
+    {
+      "id": "urn:samm:io.catenax.single_level_bom_as_planned:3.0.0#ValidityPeriodEntity",
+      "label": "ValidityPeriodEntity",
+      "kind": "Entity",
+      "preferredName": "Validity Period Entity",
+      "description": "If a validity period only has a start that means that the period is valid from the start date without a (yet)defined enddate and vice versa."
+    },
+    {
+      "id": "urn:samm:io.catenax.single_level_bom_as_planned:3.0.0#DateTimeTrait",
+      "label": "DateTimeTrait",
+      "kind": "Characteristic",
+      "preferredName": "Date Time Trait",
+      "description": "Trait to ensure regular expressions with different date and time(zone)formats."
+    },
+    {
+      "id": "urn:samm:io.catenax.single_level_bom_as_planned:3.0.0#ValidityPeriodCharacteristic",
+      "label": "ValidityPeriodCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Validity Period Characteristic",
+      "description": "Characteristic for a validity period defined by an (optional)start and an (optional)end timestamp."
+    },
+    {
+      "id": "urn:samm:io.catenax.single_level_bom_as_planned:3.0.0#DateTimeCharacteristic",
+      "label": "DateTimeCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Date Time Characteristic",
+      "description": "Describes a property which contains the date and time with an optional timezone."
+    },
+    {
+      "id": "urn:samm:io.catenax.single_level_bom_as_planned:3.0.0#DateTimeRegularExpression",
+      "label": "DateTimeRegularExpression",
+      "kind": "Characteristic",
+      "preferredName": "Date Time Regular Expression",
+      "description": "Regular Expression to enable UTC and Timezone formats and the possibility to exclude time information."
+    }
+  ],
+  "links": [
+    {
+      "source": "urn:samm:io.catenax.single_level_bom_as_planned:3.0.0#SingleLevelBomAsPlanned",
+      "target": "urn:samm:io.catenax.single_level_bom_as_planned:3.0.0#catenaXId",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.single_level_bom_as_planned:3.0.0#SingleLevelBomAsPlanned",
+      "target": "urn:samm:io.catenax.single_level_bom_as_planned:3.0.0#childItems",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.single_level_bom_as_planned:3.0.0#ChildData",
+      "target": "urn:samm:io.catenax.single_level_bom_as_planned:3.0.0#createdOn",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.single_level_bom_as_planned:3.0.0#ChildData",
+      "target": "urn:samm:io.catenax.single_level_bom_as_planned:3.0.0#quantity",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.single_level_bom_as_planned:3.0.0#ChildData",
+      "target": "urn:samm:io.catenax.single_level_bom_as_planned:3.0.0#lastModifiedOn",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.single_level_bom_as_planned:3.0.0#ChildData",
+      "target": "urn:samm:io.catenax.single_level_bom_as_planned:3.0.0#validityPeriod",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.single_level_bom_as_planned:3.0.0#ChildData",
+      "target": "urn:samm:io.catenax.single_level_bom_as_planned:3.0.0#businessPartner",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.single_level_bom_as_planned:3.0.0#ChildData",
+      "target": "urn:samm:io.catenax.single_level_bom_as_planned:3.0.0#catenaXId",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.single_level_bom_as_planned:3.0.0#ValidityPeriodEntity",
+      "target": "urn:samm:io.catenax.single_level_bom_as_planned:3.0.0#validFrom",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.single_level_bom_as_planned:3.0.0#ValidityPeriodEntity",
+      "target": "urn:samm:io.catenax.single_level_bom_as_planned:3.0.0#validTo",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.single_level_bom_as_planned:3.0.0#childItems",
+      "target": "urn:samm:io.catenax.single_level_bom_as_planned:3.0.0#SetOfChildItemsCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.single_level_bom_as_planned:3.0.0#createdOn",
+      "target": "urn:samm:io.catenax.single_level_bom_as_planned:3.0.0#DateTimeTrait",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.single_level_bom_as_planned:3.0.0#lastModifiedOn",
+      "target": "urn:samm:io.catenax.single_level_bom_as_planned:3.0.0#DateTimeTrait",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.single_level_bom_as_planned:3.0.0#validFrom",
+      "target": "urn:samm:io.catenax.single_level_bom_as_planned:3.0.0#DateTimeTrait",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.single_level_bom_as_planned:3.0.0#validTo",
+      "target": "urn:samm:io.catenax.single_level_bom_as_planned:3.0.0#DateTimeTrait",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.single_level_bom_as_planned:3.0.0#validityPeriod",
+      "target": "urn:samm:io.catenax.single_level_bom_as_planned:3.0.0#ValidityPeriodCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.single_level_bom_as_planned:3.0.0#SetOfChildItemsCharacteristic",
+      "target": "urn:samm:io.catenax.single_level_bom_as_planned:3.0.0#ChildData",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.single_level_bom_as_planned:3.0.0#ValidityPeriodCharacteristic",
+      "target": "urn:samm:io.catenax.single_level_bom_as_planned:3.0.0#ValidityPeriodEntity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.single_level_bom_as_planned:3.0.0#DateTimeTrait",
+      "target": "urn:samm:io.catenax.single_level_bom_as_planned:3.0.0#DateTimeRegularExpression",
+      "label": "constraint",
+      "optional": false
+    }
+  ]
+}

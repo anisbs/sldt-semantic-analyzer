@@ -1,0 +1,168 @@
+{
+  "meta": {
+    "namespace": "urn:samm:io.admin-shell.idta.batterypass.carbon_footprint:1.0.0#",
+    "meta_model": "SAMM 2.2.0",
+    "model_family": "SAMM",
+    "model_name": "batterypass.carbon_footprint",
+    "model_version": "1.0.0",
+    "source": "idta",
+    "status": "undefined",
+    "release_date": null,
+    "release_notes": null,
+    "dependencies": [
+      {
+        "name": "carbon_footprint",
+        "version": "1.0.0",
+        "family": "SAMM",
+        "source": "idta"
+      },
+      {
+        "name": "contact_information",
+        "version": "1.0.0",
+        "family": "SAMM",
+        "source": "idta"
+      },
+      {
+        "name": "pcf",
+        "version": "8.0.0",
+        "family": "SAMM",
+        "source": "catenax"
+      },
+      {
+        "name": "shared",
+        "version": "3.1.0",
+        "family": "SAMM",
+        "source": "idta"
+      }
+    ],
+    "path": "data/smt-semantic-models/io.admin-shell.idta.batterypass.carbon_footprint/1.0.0/CarbonFootprintBattery.ttl"
+  },
+  "nodes": [
+    {
+      "id": "urn:samm:io.admin-shell.idta.batterypass.carbon_footprint:1.0.0#CarbonFootprintBattery",
+      "label": "CarbonFootprintBattery",
+      "kind": "Aspect",
+      "preferredName": "Carbon Footprint for Battery Passport",
+      "description": "Provides the means to access the Carbon Footprint of the asset in the context of a Battery Passport."
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.batterypass.carbon_footprint:1.0.0#productCarbonFootprints",
+      "label": "productCarbonFootprints",
+      "kind": "Property",
+      "preferredName": "product carbon footprints",
+      "description": "(Set) Balance of greenhouse gas emissions along the entire life cycle of a product in a defined application and in relation to a defined unit of use."
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.batterypass.carbon_footprint:1.0.0#pcfCo2eq",
+      "label": "pcfCo2eq",
+      "kind": "Property",
+      "preferredName": "CO2 eq Climate Change",
+      "description": "sum of all greenhouse gas emissions of a product according to the quantification requirements of the standard\n\n DIN DKE Spec 99100 chapter reference: 6.3.2"
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.batterypass.carbon_footprint:1.0.0#referenceImpactUnitForCalculation",
+      "label": "referenceImpactUnitForCalculation",
+      "kind": "Property",
+      "preferredName": "reference value for calculation",
+      "description": "Quantity unit of the product to which the PCF information on the CO2 footprint refers.\n\n If a normalized product carbon footprint (PCF) value is provided, the reference value for calculation should be a specific unit such as 'kWh'. If the total PCF value is provided the reference value for calculation should be 'piece'."
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.batterypass.carbon_footprint:1.0.0#quantityOfMeasureForCalculation",
+      "label": "quantityOfMeasureForCalculation",
+      "kind": "Property",
+      "preferredName": "quantity of measure for calculation",
+      "description": "Provides the quantity number of pieces or mass or volume to compute the impact of climate change or product carbon footprint.\n\n If a normalized product carbon footprint (PCF) value is provided, the quantity of measure for calculation should be 1.\n If the total PCF value is provided the quantity of measure for calculation should be 1."
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.batterypass.carbon_footprint:1.0.0#lifeCyclePhases",
+      "label": "lifeCyclePhases",
+      "kind": "Property",
+      "preferredName": "life cycle phases",
+      "description": "Life cycle stages of the product according to the quantification requirements of the standard to which the PCF carbon footprint statement refers.\n\nThe string value in the value list is based on DIN DKE SPEC 99100: 'A1 - raw material supply (and upstream production)' (6.3.5 required lify cycle mapping), 'A3 - production' (6.3.4 Contribution of main product production/manufacturing lifecycle stage), 'A4 - transport to final destination' (6.3.5 Contribution of distribution lifecycle stage), 'C3 - recycling, waste treatment' (6.3.6 Contribution of end of life and recycling lifecycle stage)\n\nPlease note that the model should always contain at least one Product Carbon Footprint entry that reflects the total PCF value (including all life cycle phases) of the battery."
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.batterypass.carbon_footprint:1.0.0#performanceClass",
+      "label": "performanceClass",
+      "kind": "Property",
+      "preferredName": "carbon footprint performance class",
+      "description": "The battery passport must include the carbon footprint performance class in accordance with the entry into force of the delegated and implementing acts on the carbon footprint performance classes per Article7 of the Battery Regulation.\n\n DIN DKE Spec 99100 chapter reference: 6.3.7 "
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.batterypass.carbon_footprint:1.0.0#webLinkToPublicCarbonFootprintStudy",
+      "label": "webLinkToPublicCarbonFootprintStudy",
+      "kind": "Property",
+      "preferredName": "web link to public carbon footprint study",
+      "description": "One or more document identifiers (depending, for example, on the translation) of a specific document, which can be found in the 'HandoverDocumentation' model.\n\n DIN DKE Spec 99100 chapter reference: 6.3.8"
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.batterypass.carbon_footprint:1.0.0#ProductCarbonFootprintSet",
+      "label": "ProductCarbonFootprintSet",
+      "kind": "Characteristic",
+      "preferredName": null,
+      "description": null
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.batterypass.carbon_footprint:1.0.0#ProductCarbonFootprint",
+      "label": "ProductCarbonFootprint",
+      "kind": "Entity",
+      "preferredName": "carbon footprint of a product",
+      "description": "Balance of greenhouse gas emissions along the entire life cycle of a product in a defined application and in relation to a defined unit of use."
+    }
+  ],
+  "links": [
+    {
+      "source": "urn:samm:io.admin-shell.idta.batterypass.carbon_footprint:1.0.0#CarbonFootprintBattery",
+      "target": "urn:samm:io.admin-shell.idta.batterypass.carbon_footprint:1.0.0#productCarbonFootprints",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.batterypass.carbon_footprint:1.0.0#ProductCarbonFootprint",
+      "target": "urn:samm:io.admin-shell.idta.batterypass.carbon_footprint:1.0.0#pcfCo2eq",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.batterypass.carbon_footprint:1.0.0#ProductCarbonFootprint",
+      "target": "urn:samm:io.admin-shell.idta.batterypass.carbon_footprint:1.0.0#referenceImpactUnitForCalculation",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.batterypass.carbon_footprint:1.0.0#ProductCarbonFootprint",
+      "target": "urn:samm:io.admin-shell.idta.batterypass.carbon_footprint:1.0.0#quantityOfMeasureForCalculation",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.batterypass.carbon_footprint:1.0.0#ProductCarbonFootprint",
+      "target": "urn:samm:io.admin-shell.idta.batterypass.carbon_footprint:1.0.0#lifeCyclePhases",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.batterypass.carbon_footprint:1.0.0#ProductCarbonFootprint",
+      "target": "urn:samm:io.admin-shell.idta.batterypass.carbon_footprint:1.0.0#performanceClass",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.batterypass.carbon_footprint:1.0.0#ProductCarbonFootprint",
+      "target": "urn:samm:io.admin-shell.idta.batterypass.carbon_footprint:1.0.0#webLinkToPublicCarbonFootprintStudy",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.batterypass.carbon_footprint:1.0.0#productCarbonFootprints",
+      "target": "urn:samm:io.admin-shell.idta.batterypass.carbon_footprint:1.0.0#ProductCarbonFootprintSet",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.batterypass.carbon_footprint:1.0.0#ProductCarbonFootprintSet",
+      "target": "urn:samm:io.admin-shell.idta.batterypass.carbon_footprint:1.0.0#ProductCarbonFootprint",
+      "label": "dataType",
+      "optional": false
+    }
+  ]
+}

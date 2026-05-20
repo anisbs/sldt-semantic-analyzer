@@ -1,8 +1,15 @@
-"""Feature 2 — Parsing des modèles .ttl (SAMM & BAMM).
+"""Feature 2 — Parsing des modèles .ttl (SAMM & BAMM, Catena-X & IDTA).
 
-Le dépôt mélange deux vocabulaires (mêmes concepts, namespaces différents) :
+Vocabulaires gérés (mêmes concepts, namespaces différents) :
   - SAMM : urn:samm:org.eclipse.esmf.samm:meta-model:<v>#   (récent)
   - BAMM : urn:bamm:io.openmanufacturing:meta-model:<v>#     (ancien)
+
+Référentiels (sources) gérés — distingués au niveau du modèle ET de chaque
+dépendance via le champ `source` :
+  - `catenax`     : modèles dont l'URN commence par `io.catenax.`
+  - `idta`        : modèles dont l'URN commence par `io.admin-shell.idta.`
+  - `external`    : dépendance vers un référentiel tiers connu mais non
+                    présent dans notre catalogue (ex. `io.BatteryPass.*`)
 
 Le parseur détecte le méta-modèle via les @prefix puis travaille sur les URI
 complètes, donc il est indépendant du vocabulaire.
@@ -75,6 +82,7 @@ class Dependency:
     family: str             # SAMM | BAMM
     name: str               # ex. "generic.digital_product_passport"
     version: str            # ex. "5.0.0"
+    source: str = "unknown" # catenax | idta | external (référentiel tiers connu)
 
 
 @dataclass
@@ -83,8 +91,9 @@ class ParsedModel:
     namespace: str          # urn propre du modèle (@prefix : ...)
     meta_model: str         # ex. "SAMM 2.1.0" / "BAMM 1.0.0" (version de la SPEC)
     model_family: str = ""  # SAMM | BAMM (issu de l'urn du modèle)
-    model_name: str = ""    # ex. "batch" (namespace sans "io.catenax.")
+    model_name: str = ""    # ex. "batch" (namespace sans préfixe org)
     model_version: str = "" # ex. "2.0.0" (version DU MODÈLE, ≠ meta_model)
+    source: str = "unknown" # catenax | idta (référentiel d'origine du modèle)
     status: str = "undefined"  # release | deprecated | draft | undefined
     release_date: str | None = None   # date de la section RELEASE_NOTES.md
     release_notes: str | None = None  # corps markdown de la section version
@@ -99,6 +108,13 @@ class ParsedModel:
     # une `samm:properties` (collection ou wrapper bnode). Calculé pendant le
     # parse car nécessite la collection RDF complète.
     unused_property_urns: list[str] = field(default_factory=list)
+    # URNs **référencées** par une `samm:properties` dans ce fichier (peuvent
+    # vivre dans un autre fichier du même namespace — cas IDTA : Aspect ici,
+    # Property dans le _shared.ttl voisin). Exposé pour permettre de fusionner
+    # plusieurs ParsedModel d'un même namespace et de recalculer
+    # `unused_property` à l'échelle du modèle complet (sinon faux positifs
+    # massifs côté IDTA).
+    used_property_urns: list[str] = field(default_factory=list)
 
 
 def _local_name(uri: str) -> str:
@@ -120,56 +136,97 @@ def _detect_meta_model(graph: Graph) -> tuple[str, str] | None:
     return None
 
 
-def _model_namespace(graph: Graph) -> str:
-    """urn propre du modèle = namespace lié au préfixe par défaut ('')."""
+# Fallback texte si rdflib ne nous rend pas le préfixe par défaut. Cas
+# observé côté IDTA : quand `@prefix : <X>` ET `@prefix bp: <X>` pointent
+# vers la même URN, rdflib peut ne garder que `bp:` et perdre le préfixe vide.
+_DEFAULT_NS_RE = re.compile(r"^\s*@prefix\s*:\s*<([^>]+)>\s*\.", re.MULTILINE)
+
+
+def _model_namespace(graph: Graph, path: Path | None = None) -> str:
+    """urn propre du modèle = namespace lié au préfixe par défaut ('').
+    Si rdflib l'a perdu (préfixe collision : un autre prefix pointant vers la
+    même URN), fallback en lisant la ligne `@prefix : <...>` du fichier."""
     for prefix, ns in graph.namespaces():
         if prefix == "":
             return str(ns)
-    return ""
+    if path is None:
+        return ""
+    try:
+        raw = Path(path).read_bytes()
+        try:
+            text = raw.decode("utf-8")
+        except UnicodeDecodeError:
+            text = raw.decode("latin-1")
+    except OSError:
+        return ""
+    m = _DEFAULT_NS_RE.search(text)
+    return m.group(1) if m else ""
 
 
 # urn:<famille>:<namespace>:<version>#  (le @prefix : ... sans nom)
 _URN_RE = re.compile(r"^urn:(?P<family>[^:]+):(?P<ns>.+):(?P<version>[^:#]+)#?$")
-_ORG_PREFIXES = ("io.catenax.", "io.openmanufacturing.")
+
+# Préfixes de namespace qu'on reconnaît comme « URN de modèle » (par opposition
+# au méta-modèle, dont le segment ns contient `:meta-model` / `:characteristic`
+# / etc., avec un `:` au lieu d'un `.`). On strip le préfixe pour obtenir le
+# `model_name` court, et on associe une `source`. Ordre = priorité de match.
+_ORG_SOURCES: tuple[tuple[str, str], ...] = (
+    ("io.catenax.",         "catenax"),
+    ("io.openmanufacturing.", "catenax"),   # legacy BAMM (jamais utilisé en pratique mais défensif)
+    ("io.admin-shell.idta.", "idta"),
+)
+# Référentiels tiers que nos modèles peuvent référencer mais qu'on n'ingère
+# pas (= absents du catalogue). On les surface en `Dependency(source="external")`
+# pour que le front les affiche en "absent du catalogue" plutôt que de les
+# perdre silencieusement (utile pour les ponts IDTA -> BatteryPass).
+_EXTERNAL_SOURCES: tuple[tuple[str, str], ...] = (
+    ("io.BatteryPass.",     "external"),
+)
+_ALL_ORG_SOURCES = _ORG_SOURCES + _EXTERNAL_SOURCES
+_ALL_ORG_PREFIXES = tuple(p for p, _ in _ALL_ORG_SOURCES)
 
 
-def _parse_model_urn(namespace: str) -> tuple[str, str, str]:
-    """'urn:samm:io.catenax.batch:2.0.0#' -> ('SAMM', 'batch', '2.0.0').
+def _source_for_ns_segment(ns_segment: str) -> tuple[str, str]:
+    """('io.catenax.batch') -> ('catenax', 'batch'). Inconnu -> ('unknown', ns_segment)."""
+    for prefix, source in _ALL_ORG_SOURCES:
+        if ns_segment.startswith(prefix):
+            return source, ns_segment[len(prefix):]
+    return ("unknown", ns_segment)
+
+
+def _parse_model_urn(namespace: str) -> tuple[str, str, str, str]:
+    """'urn:samm:io.catenax.batch:2.0.0#' -> ('SAMM', 'batch', '2.0.0', 'catenax').
     Repli sûr (jamais d'exception) si la forme est inattendue."""
     m = _URN_RE.match((namespace or "").strip())
     if not m:
-        return ("", (namespace or "").rstrip("#"), "")
+        return ("", (namespace or "").rstrip("#"), "", "unknown")
     family = m.group("family").upper()        # samm/bamm -> SAMM/BAMM
-    name = m.group("ns")
-    for org in _ORG_PREFIXES:
-        if name.startswith(org):
-            name = name[len(org):]
-            break
-    return (family, name, m.group("version"))
+    source, name = _source_for_ns_segment(m.group("ns"))
+    return (family, name, m.group("version"), source)
 
 
 def _dependencies(
     graph: Graph, own_ns: str, own_name: str, own_version: str
 ) -> list[Dependency]:
     """Modèles dont CE .ttl dépend, déduits des `@prefix` pointant vers un
-    autre namespace de modèle Catena-X (`urn:samm|bamm:io.catenax.…:<v>#`).
+    namespace de modèle reconnu (Catena-X, IDTA, ou référentiel tiers connu).
 
     On exclut le préfixe par défaut (le modèle lui-même), le namespace propre
-    et les namespaces du méta-modèle (`org.eclipse.esmf.samm:…`,
-    `io.openmanufacturing:meta-model…` : le segment ns ne commence pas par
-    `io.catenax.`/`io.openmanufacturing.`). Dédupliqué par (name, version)."""
+    et les namespaces du méta-modèle (segment ns en `:meta-model` /
+    `:characteristic` / etc., dont aucun ne commence par un des préfixes d'org
+    avec un `.` à la fin). Dédupliqué par (name, version)."""
     deps: dict[tuple[str, str], Dependency] = {}
     for prefix, ns in graph.namespaces():
         ns = str(ns)
         if prefix == "" or ns == own_ns:
             continue
         m = _URN_RE.match(ns.strip())
-        if not m or not m.group("ns").startswith(_ORG_PREFIXES):
+        if not m or not m.group("ns").startswith(_ALL_ORG_PREFIXES):
             continue  # méta-modèle ou URN non-modèle : pas une dépendance
-        family, name, version = _parse_model_urn(ns)
+        family, name, version, source = _parse_model_urn(ns)
         if (name, version) == (own_name, own_version):
             continue  # alias vers soi-même
-        deps.setdefault((name, version), Dependency(family, name, version))
+        deps.setdefault((name, version), Dependency(family, name, version, source))
     return sorted(deps.values(), key=lambda d: (d.name, d.version))
 
 
@@ -265,8 +322,8 @@ def parse_file(path: Path) -> ParsedModel | None:
         return None
     meta_ns, meta_label = detected
 
-    ns = _model_namespace(graph)
-    family, name, version = _parse_model_urn(ns)
+    ns = _model_namespace(graph, path)
+    family, name, version, source = _parse_model_urn(ns)
     rdate, rnotes = _read_release_notes(path, version)
     model = ParsedModel(
         path=str(path),
@@ -275,6 +332,7 @@ def parse_file(path: Path) -> ParsedModel | None:
         model_family=family,
         model_name=name,
         model_version=version,
+        source=source,
         status=_read_status(path),
         release_date=rdate,
         release_notes=rnotes,
@@ -359,6 +417,7 @@ def parse_file(path: Path) -> ParsedModel | None:
         e.urn for e in model.elements
         if e.kind == "Property" and e.urn not in used_property_uris
     )
+    model.used_property_urns = sorted(used_property_uris)
 
     # Prédicats à scanner : couple (URIRef du prédicat, libellé d'arête).
     edge_preds: list[tuple[URIRef, str]] = [
@@ -414,27 +473,37 @@ def parse_directory(root: Path) -> list[ParsedModel]:
     return models
 
 
+_DEFAULT_DIRS = (
+    Path("data/sldt-semantic-models"),   # Catena-X
+    Path("data/smt-semantic-models"),    # IDTA
+)
+
+
 def main(argv: list[str] | None = None) -> int:
     import argparse
     from collections import Counter
 
     parser = argparse.ArgumentParser(
-        description="Parse tous les modèles SLDT (.ttl) et résume."
+        description="Parse tous les modèles (.ttl) et résume."
     )
     parser.add_argument(
-        "--dir", type=Path,
-        default=Path("data/sldt-semantic-models"),
-        help="Répertoire des modèles (défaut : data/sldt-semantic-models)",
+        "--dir", type=Path, action="append", default=None,
+        help="Répertoire des modèles (peut être répété ; "
+             "défaut : data/sldt-semantic-models + data/smt-semantic-models)",
     )
     args = parser.parse_args(argv)
 
     logging.basicConfig(
         level=logging.INFO, format="%(levelname)-7s %(message)s"
     )
-    models = parse_directory(args.dir)
+    dirs = args.dir or [d for d in _DEFAULT_DIRS if d.exists()]
+    models: list[ParsedModel] = []
+    for d in dirs:
+        models.extend(parse_directory(d))
 
     meta = Counter(m.meta_model for m in models)
     families = Counter(m.model_family for m in models)
+    sources = Counter(m.source for m in models)
     statuses = Counter(m.status for m in models)
     kinds: Counter = Counter()
     n_edges = 0
@@ -443,14 +512,17 @@ def main(argv: list[str] | None = None) -> int:
         n_edges += len(m.edges)
     n_deps = sum(1 for m in models if m.dependencies)
     n_dep_edges = sum(len(m.dependencies) for m in models)
+    dep_sources = Counter(d.source for m in models for d in m.dependencies)
     n_notes = sum(1 for m in models if m.release_notes)  # versions dont le modèle a un RELEASE_NOTES.md
     logger.info("Vocabulaires : %s", dict(meta))
     logger.info("Familles     : %s", dict(families))
+    logger.info("Sources      : %s", dict(sources))
     logger.info("Statuts      : %s", dict(statuses))
     logger.info("Release notes: %d/%d versions dont le modèle a un RELEASE_NOTES.md", n_notes, len(models))
     logger.info("Éléments     : %d %s", sum(kinds.values()), dict(kinds))
     logger.info("Arêtes       : %d", n_edges)
-    logger.info("Dépendances  : %d fichiers en ont (%d arêtes inter-modèles)", n_deps, n_dep_edges)
+    logger.info("Dépendances  : %d fichiers en ont (%d arêtes inter-modèles) — par source : %s",
+                n_deps, n_dep_edges, dict(dep_sources))
     return 0
 
 

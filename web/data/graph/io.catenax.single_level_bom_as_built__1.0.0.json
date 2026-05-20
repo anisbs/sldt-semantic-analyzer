@@ -1,0 +1,267 @@
+{
+  "meta": {
+    "namespace": "urn:bamm:io.catenax.single_level_bom_as_built:1.0.0#",
+    "meta_model": "BAMM 2.0.0",
+    "model_family": "BAMM",
+    "model_name": "single_level_bom_as_built",
+    "model_version": "1.0.0",
+    "source": "catenax",
+    "status": "deprecated",
+    "release_date": null,
+    "release_notes": "# Changelog\n\nAll notable changes to this model will be documented in this file.\n\n## [4.0.0] 25.12\n\n### Changed\n\n- introduced `io.catenax.shared.industry_core.common:1.0.0` and `io.catenax.shared.quantity:3.0.0` as a shared model\n- renamed `catenaXId` to `globalAssetId`\n\n## [3.0.0] 2024-02-26\n\n### Changed\n\n- replaced the `quantityNumber` and `measurementUnit` properties with the `itemUnit` and `quantityValue` properties of the shared quantity 2.0.0 aspect model\n- replaced the whole `CatenaXIdTraitCharacteristic` and its childs with the `UuidV4Trait` of the shared uuid 2.0.0 aspect model\n- replaced the whole `BpnTrait` and its childs with the `BpnlTrait` of the shared business_partner_number 2.0.0 aspect model\n- description of some objects were adjusted\n\n## [2.0.0] 25.09.2023\n\n### Added\n\n- property called hasAlternative\n- Boolean characteristic\n\n### Changed\n\n- Description of the main property 'SingleLevelBomAsBuil' was adapted to the new requirements of the model\n\n## [1.0.0]\n\n### Added\n\n- renamed model from `io.catenax.assembly_part_relationship:1.1.1#AssemblyPartRelationship`\n- optional business partner reference (BPNL) for each child item\n\n### Changed\n\n- changed several descriptions due to aspect renaming\n- changed `childCatenaXId` to `catenaXId`\n- changed `childParts` to `childItems`\n- changed several descriptions to use `item` instead of `part` where applicable\n- fixed camelCase for `NumberOfObjects` characteristic\n\n### Removed\n\n- removed lifecycle context property from child item",
+    "dependencies": [],
+    "path": "data/sldt-semantic-models/io.catenax.single_level_bom_as_built/1.0.0/SingleLevelBomAsBuilt.ttl"
+  },
+  "nodes": [
+    {
+      "id": "urn:bamm:io.catenax.single_level_bom_as_built:1.0.0#SingleLevelBomAsBuilt",
+      "label": "SingleLevelBomAsBuilt",
+      "kind": "Aspect",
+      "preferredName": "Single Level Bill of Material as Built",
+      "description": "The single-level bill of material represents one sub-level of an assembly and does not include any lower-level subassemblies. The as-built lifecycle references all child items as manufactured by the manufacturer referencing only child items in an as built lifecycle themselves, e.g. serial parts or batches."
+    },
+    {
+      "id": "urn:bamm:io.catenax.single_level_bom_as_built:1.0.0#catenaXId",
+      "label": "catenaXId",
+      "kind": "Property",
+      "preferredName": "Catena-X ID",
+      "description": "The Catena-X ID of the given part (e.g. the assembly), valid for the Catena-X dataspace."
+    },
+    {
+      "id": "urn:bamm:io.catenax.single_level_bom_as_built:1.0.0#childItems",
+      "label": "childItems",
+      "kind": "Property",
+      "preferredName": "Child Items",
+      "description": "Set of child items, of which the given parent item is assembled by (one structural level down)."
+    },
+    {
+      "id": "urn:bamm:io.catenax.single_level_bom_as_built:1.0.0#createdOn",
+      "label": "createdOn",
+      "kind": "Property",
+      "preferredName": "Created On",
+      "description": "Timestamp when the relation between the parent item and the child item was created, e.g. when the serialized child part was assembled into the given part."
+    },
+    {
+      "id": "urn:bamm:io.catenax.single_level_bom_as_built:1.0.0#quantity",
+      "label": "quantity",
+      "kind": "Property",
+      "preferredName": "Quantity",
+      "description": "Quantity of which the child item is assembled into the parent item. In general it is '1' for serialized parts."
+    },
+    {
+      "id": "urn:bamm:io.catenax.single_level_bom_as_built:1.0.0#lastModifiedOn",
+      "label": "lastModifiedOn",
+      "kind": "Property",
+      "preferredName": "Last Modification Date",
+      "description": "Timestamp when the assembly relationship between parent item and child item was last modified."
+    },
+    {
+      "id": "urn:bamm:io.catenax.single_level_bom_as_built:1.0.0#businessPartner",
+      "label": "businessPartner",
+      "kind": "Property",
+      "preferredName": "Business Partner",
+      "description": "The supplier of the given child item."
+    },
+    {
+      "id": "urn:bamm:io.catenax.single_level_bom_as_built:1.0.0#quantityNumber",
+      "label": "quantityNumber",
+      "kind": "Property",
+      "preferredName": "Quantity Number",
+      "description": "The number of objects related to the measurement unit"
+    },
+    {
+      "id": "urn:bamm:io.catenax.single_level_bom_as_built:1.0.0#measurementUnit",
+      "label": "measurementUnit",
+      "kind": "Property",
+      "preferredName": null,
+      "description": "Unit of Measurement for the quantity of serialized objects"
+    },
+    {
+      "id": "urn:bamm:io.catenax.single_level_bom_as_built:1.0.0#CatenaXIdTraitCharacteristic",
+      "label": "CatenaXIdTraitCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": null,
+      "description": "Trait to ensure UUID v4 data format"
+    },
+    {
+      "id": "urn:bamm:io.catenax.single_level_bom_as_built:1.0.0#BpnTrait",
+      "label": "BpnTrait",
+      "kind": "Characteristic",
+      "preferredName": "BPN Business Partner Number Trait",
+      "description": null
+    },
+    {
+      "id": "urn:bamm:io.catenax.single_level_bom_as_built:1.0.0#SetOfChildItemsCharacteristic",
+      "label": "SetOfChildItemsCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Set of Child Items",
+      "description": "Set of child items the parent item is assembled by (one structural level down)."
+    },
+    {
+      "id": "urn:bamm:io.catenax.single_level_bom_as_built:1.0.0#Uuidv4Characteristic",
+      "label": "Uuidv4Characteristic",
+      "kind": "Characteristic",
+      "preferredName": "UUID v4 Characteristic",
+      "description": "A version 4 UUID is a universally unique identifier that is generated using random 32 hexadecimal characters."
+    },
+    {
+      "id": "urn:bamm:io.catenax.single_level_bom_as_built:1.0.0#BpnCharacteristic",
+      "label": "BpnCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "BPN Characteristic",
+      "description": null
+    },
+    {
+      "id": "urn:bamm:io.catenax.single_level_bom_as_built:1.0.0#NumberOfObjects",
+      "label": "NumberOfObjects",
+      "kind": "Characteristic",
+      "preferredName": null,
+      "description": "Quantifiable number of objects in reference to the measurementUnit"
+    },
+    {
+      "id": "urn:bamm:io.catenax.single_level_bom_as_built:1.0.0#Uuidv4RegularExpression",
+      "label": "Uuidv4RegularExpression",
+      "kind": "Characteristic",
+      "preferredName": "Catena-X Id Regular Expression",
+      "description": "The provided regular expression ensures that the UUID is composed of five groups of characters separated by hyphens, in the form 8-4-4-4-12 for a total of 36 characters (32 hexadecimal characters and 4 hyphens), optionally prefixed by \"urn:uuid:\" to make it an IRI."
+    },
+    {
+      "id": "urn:bamm:io.catenax.single_level_bom_as_built:1.0.0#BpnConstraint",
+      "label": "BpnConstraint",
+      "kind": "Characteristic",
+      "preferredName": "BPN Constraint",
+      "description": "Business Partner Number Regular Expression allowing only BPNL which stands for a legal entity."
+    },
+    {
+      "id": "urn:bamm:io.catenax.single_level_bom_as_built:1.0.0#ChildData",
+      "label": "ChildData",
+      "kind": "Entity",
+      "preferredName": "Child Data",
+      "description": "Catena-X ID and meta data of the assembled child item."
+    },
+    {
+      "id": "urn:bamm:io.catenax.single_level_bom_as_built:1.0.0#Quantity",
+      "label": "Quantity",
+      "kind": "Entity",
+      "preferredName": null,
+      "description": "Comprises the number of objects and the unit of measurement for the respective child objects"
+    },
+    {
+      "id": "urn:bamm:io.catenax.single_level_bom_as_built:1.0.0#QuantityCharacteristic",
+      "label": "QuantityCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": null,
+      "description": "Describes the quantity in which the child item is assembled in the given parent item by providing a quantity value and the measurement unit in which the quantity is measured."
+    }
+  ],
+  "links": [
+    {
+      "source": "urn:bamm:io.catenax.single_level_bom_as_built:1.0.0#SingleLevelBomAsBuilt",
+      "target": "urn:bamm:io.catenax.single_level_bom_as_built:1.0.0#catenaXId",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.single_level_bom_as_built:1.0.0#SingleLevelBomAsBuilt",
+      "target": "urn:bamm:io.catenax.single_level_bom_as_built:1.0.0#childItems",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.single_level_bom_as_built:1.0.0#ChildData",
+      "target": "urn:bamm:io.catenax.single_level_bom_as_built:1.0.0#createdOn",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.single_level_bom_as_built:1.0.0#ChildData",
+      "target": "urn:bamm:io.catenax.single_level_bom_as_built:1.0.0#quantity",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.single_level_bom_as_built:1.0.0#ChildData",
+      "target": "urn:bamm:io.catenax.single_level_bom_as_built:1.0.0#lastModifiedOn",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:bamm:io.catenax.single_level_bom_as_built:1.0.0#ChildData",
+      "target": "urn:bamm:io.catenax.single_level_bom_as_built:1.0.0#catenaXId",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.single_level_bom_as_built:1.0.0#ChildData",
+      "target": "urn:bamm:io.catenax.single_level_bom_as_built:1.0.0#businessPartner",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:bamm:io.catenax.single_level_bom_as_built:1.0.0#Quantity",
+      "target": "urn:bamm:io.catenax.single_level_bom_as_built:1.0.0#quantityNumber",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.single_level_bom_as_built:1.0.0#Quantity",
+      "target": "urn:bamm:io.catenax.single_level_bom_as_built:1.0.0#measurementUnit",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.single_level_bom_as_built:1.0.0#catenaXId",
+      "target": "urn:bamm:io.catenax.single_level_bom_as_built:1.0.0#CatenaXIdTraitCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.single_level_bom_as_built:1.0.0#childItems",
+      "target": "urn:bamm:io.catenax.single_level_bom_as_built:1.0.0#SetOfChildItemsCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.single_level_bom_as_built:1.0.0#quantity",
+      "target": "urn:bamm:io.catenax.single_level_bom_as_built:1.0.0#QuantityCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.single_level_bom_as_built:1.0.0#businessPartner",
+      "target": "urn:bamm:io.catenax.single_level_bom_as_built:1.0.0#BpnTrait",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.single_level_bom_as_built:1.0.0#quantityNumber",
+      "target": "urn:bamm:io.catenax.single_level_bom_as_built:1.0.0#NumberOfObjects",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.single_level_bom_as_built:1.0.0#SetOfChildItemsCharacteristic",
+      "target": "urn:bamm:io.catenax.single_level_bom_as_built:1.0.0#ChildData",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.single_level_bom_as_built:1.0.0#QuantityCharacteristic",
+      "target": "urn:bamm:io.catenax.single_level_bom_as_built:1.0.0#Quantity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.single_level_bom_as_built:1.0.0#CatenaXIdTraitCharacteristic",
+      "target": "urn:bamm:io.catenax.single_level_bom_as_built:1.0.0#Uuidv4RegularExpression",
+      "label": "constraint",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.single_level_bom_as_built:1.0.0#BpnTrait",
+      "target": "urn:bamm:io.catenax.single_level_bom_as_built:1.0.0#BpnConstraint",
+      "label": "constraint",
+      "optional": false
+    }
+  ]
+}

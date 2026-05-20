@@ -1,0 +1,117 @@
+{
+  "meta": {
+    "namespace": "urn:samm:io.catenax.shared.material_classification:1.0.0#",
+    "meta_model": "SAMM 2.1.0",
+    "model_family": "SAMM",
+    "model_name": "shared.material_classification",
+    "model_version": "1.0.0",
+    "source": "catenax",
+    "status": "release",
+    "release_date": null,
+    "release_notes": "# Changelog\n\nAll notable changes to this model will be documented in this file.\n\n## [1.0.0] 26.03\n\n### Added\n\n- initial version of the aspect model for material classification",
+    "dependencies": [],
+    "path": "data/sldt-semantic-models/io.catenax.shared.material_classification/1.0.0/MaterialClassification.ttl"
+  },
+  "nodes": [
+    {
+      "id": "urn:samm:io.catenax.shared.material_classification:1.0.0#materialCategory",
+      "label": "materialCategory",
+      "kind": "Property",
+      "preferredName": "material category",
+      "description": "The highest-level classification that groups materials into broad, fundamental classes based on their overall nature and fundamental properties."
+    },
+    {
+      "id": "urn:samm:io.catenax.shared.material_classification:1.0.0#materialGroup",
+      "label": "materialGroup",
+      "kind": "Property",
+      "preferredName": "material group",
+      "description": "A more specific subdivision within a Material Category. It organizes materials into technical families that share similar composition, structure, and performance characteristics."
+    },
+    {
+      "id": "urn:samm:io.catenax.shared.material_classification:1.0.0#materialSubgroup",
+      "label": "materialSubgroup",
+      "kind": "Property",
+      "preferredName": "material subgroup",
+      "description": "A refined subset of a Material Group that classifies materials according to detailed technical distinctions such as alloying type, polymer family, manufacturing process, or functional properties."
+    },
+    {
+      "id": "urn:samm:io.catenax.shared.material_classification:1.0.0#materialClassification",
+      "label": "materialClassification",
+      "kind": "Property",
+      "preferredName": "material classification",
+      "description": "Classification of the material according to defined standards."
+    },
+    {
+      "id": "urn:samm:io.catenax.shared.material_classification:1.0.0#classificationStandard",
+      "label": "classificationStandard",
+      "kind": "Property",
+      "preferredName": "classification standard",
+      "description": "Standard according to which the material is classified."
+    },
+    {
+      "id": "urn:samm:io.catenax.shared.material_classification:1.0.0#ClassificationStandardEnumeration",
+      "label": "ClassificationStandardEnumeration",
+      "kind": "Characteristic",
+      "preferredName": "classification standard enumeration",
+      "description": "This enumeration assures that only allowed classification standards are used."
+    },
+    {
+      "id": "urn:samm:io.catenax.shared.material_classification:1.0.0#MaterialClassificationCharacteristic",
+      "label": "MaterialClassificationCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "material classification characteristic",
+      "description": "This characteristic binds the MaterialClassificationEntity to the materialClassification property."
+    },
+    {
+      "id": "urn:samm:io.catenax.shared.material_classification:1.0.0#MaterialClassificationEntity",
+      "label": "MaterialClassificationEntity",
+      "kind": "Entity",
+      "preferredName": "material classification entity",
+      "description": "This entity groups material classification properties."
+    }
+  ],
+  "links": [
+    {
+      "source": "urn:samm:io.catenax.shared.material_classification:1.0.0#MaterialClassificationEntity",
+      "target": "urn:samm:io.catenax.shared.material_classification:1.0.0#materialSubgroup",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.shared.material_classification:1.0.0#MaterialClassificationEntity",
+      "target": "urn:samm:io.catenax.shared.material_classification:1.0.0#materialGroup",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.shared.material_classification:1.0.0#MaterialClassificationEntity",
+      "target": "urn:samm:io.catenax.shared.material_classification:1.0.0#materialCategory",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.shared.material_classification:1.0.0#MaterialClassificationEntity",
+      "target": "urn:samm:io.catenax.shared.material_classification:1.0.0#classificationStandard",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.shared.material_classification:1.0.0#materialClassification",
+      "target": "urn:samm:io.catenax.shared.material_classification:1.0.0#MaterialClassificationCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.shared.material_classification:1.0.0#classificationStandard",
+      "target": "urn:samm:io.catenax.shared.material_classification:1.0.0#ClassificationStandardEnumeration",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.shared.material_classification:1.0.0#MaterialClassificationCharacteristic",
+      "target": "urn:samm:io.catenax.shared.material_classification:1.0.0#MaterialClassificationEntity",
+      "label": "dataType",
+      "optional": false
+    }
+  ]
+}

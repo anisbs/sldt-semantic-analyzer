@@ -1,0 +1,182 @@
+{
+  "meta": {
+    "namespace": "urn:samm:io.catenax.binary_exchange:1.0.0#",
+    "meta_model": "SAMM 2.1.0",
+    "model_family": "SAMM",
+    "model_name": "binary_exchange",
+    "model_version": "1.0.0",
+    "source": "catenax",
+    "status": "release",
+    "release_date": "2025-08-11",
+    "release_notes": "# Changelog\nAll notable changes to this model will be documented in this file.\n\n## [1.0.0] - 2025-08-11\n### Added\n- initial model",
+    "dependencies": [],
+    "path": "data/sldt-semantic-models/io.catenax.binary_exchange/1.0.0/BinaryExchange.ttl"
+  },
+  "nodes": [
+    {
+      "id": "urn:samm:io.catenax.binary_exchange:1.0.0#BinaryExchange",
+      "label": "BinaryExchange",
+      "kind": "Aspect",
+      "preferredName": "binary exchange",
+      "description": "Metadata for exchanging a binary file. Access of the binary file via the dataspace protocol (DSP) is supported."
+    },
+    {
+      "id": "urn:samm:io.catenax.binary_exchange:1.0.0#mappingRuleId",
+      "label": "mappingRuleId",
+      "kind": "Property",
+      "preferredName": "mapping rule id",
+      "description": "Unique identifier of the document specifying the mapping rules used for creating and reading the binary file."
+    },
+    {
+      "id": "urn:samm:io.catenax.binary_exchange:1.0.0#fileContentDescriptionId",
+      "label": "fileContentDescriptionId",
+      "kind": "Property",
+      "preferredName": "file content description ID",
+      "description": "Unique identifier of the semantic model describing the content of the binary file."
+    },
+    {
+      "id": "urn:samm:io.catenax.binary_exchange:1.0.0#binaryFile",
+      "label": "binaryFile",
+      "kind": "Property",
+      "preferredName": "binary file",
+      "description": "Binary File to be exchanged."
+    },
+    {
+      "id": "urn:samm:io.catenax.binary_exchange:1.0.0#dspInformation",
+      "label": "dspInformation",
+      "kind": "Property",
+      "preferredName": "dsp information",
+      "description": "DSP information."
+    },
+    {
+      "id": "urn:samm:io.catenax.binary_exchange:1.0.0#resourceValue",
+      "label": "resourceValue",
+      "kind": "Property",
+      "preferredName": "resource value",
+      "description": "Path and name of the file (with file extension).\\n\\nThe path can be absolute or relative."
+    },
+    {
+      "id": "urn:samm:io.catenax.binary_exchange:1.0.0#contentType",
+      "label": "contentType",
+      "kind": "Property",
+      "preferredName": "content type",
+      "description": "Content type of that file."
+    },
+    {
+      "id": "urn:samm:io.catenax.binary_exchange:1.0.0#controlPlaneUrl",
+      "label": "controlPlaneUrl",
+      "kind": "Property",
+      "preferredName": "control plane URL",
+      "description": "Control plane URL for accessing the binary file."
+    },
+    {
+      "id": "urn:samm:io.catenax.binary_exchange:1.0.0#dspAssetId",
+      "label": "dspAssetId",
+      "kind": "Property",
+      "preferredName": "dsp asset ID",
+      "description": "DSP asset ID of the binary file."
+    },
+    {
+      "id": "urn:samm:io.catenax.binary_exchange:1.0.0#FileWithContentType",
+      "label": "FileWithContentType",
+      "kind": "Characteristic",
+      "preferredName": "file with content type",
+      "description": "Characteristic for handling binary file."
+    },
+    {
+      "id": "urn:samm:io.catenax.binary_exchange:1.0.0#DspInformationCharacteristic",
+      "label": "DspInformationCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "DSP information characteristic",
+      "description": "DSP Information Characteristic"
+    },
+    {
+      "id": "urn:samm:io.catenax.binary_exchange:1.0.0#ResourceWithContentType",
+      "label": "ResourceWithContentType",
+      "kind": "Entity",
+      "preferredName": "file with content type",
+      "description": "A file is a data element that represents an address to a file (a locator). The value is a URI that can represent an absolute or relative path."
+    },
+    {
+      "id": "urn:samm:io.catenax.binary_exchange:1.0.0#DspInformationEntity",
+      "label": "DspInformationEntity",
+      "kind": "Entity",
+      "preferredName": "DSP information entity",
+      "description": "DSP Information Entity to group DSP information."
+    }
+  ],
+  "links": [
+    {
+      "source": "urn:samm:io.catenax.binary_exchange:1.0.0#BinaryExchange",
+      "target": "urn:samm:io.catenax.binary_exchange:1.0.0#mappingRuleId",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.binary_exchange:1.0.0#BinaryExchange",
+      "target": "urn:samm:io.catenax.binary_exchange:1.0.0#fileContentDescriptionId",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.binary_exchange:1.0.0#BinaryExchange",
+      "target": "urn:samm:io.catenax.binary_exchange:1.0.0#binaryFile",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.binary_exchange:1.0.0#BinaryExchange",
+      "target": "urn:samm:io.catenax.binary_exchange:1.0.0#dspInformation",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.binary_exchange:1.0.0#ResourceWithContentType",
+      "target": "urn:samm:io.catenax.binary_exchange:1.0.0#resourceValue",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.binary_exchange:1.0.0#ResourceWithContentType",
+      "target": "urn:samm:io.catenax.binary_exchange:1.0.0#contentType",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.binary_exchange:1.0.0#DspInformationEntity",
+      "target": "urn:samm:io.catenax.binary_exchange:1.0.0#controlPlaneUrl",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.binary_exchange:1.0.0#DspInformationEntity",
+      "target": "urn:samm:io.catenax.binary_exchange:1.0.0#dspAssetId",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.binary_exchange:1.0.0#binaryFile",
+      "target": "urn:samm:io.catenax.binary_exchange:1.0.0#FileWithContentType",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.binary_exchange:1.0.0#dspInformation",
+      "target": "urn:samm:io.catenax.binary_exchange:1.0.0#DspInformationCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.binary_exchange:1.0.0#FileWithContentType",
+      "target": "urn:samm:io.catenax.binary_exchange:1.0.0#ResourceWithContentType",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.binary_exchange:1.0.0#DspInformationCharacteristic",
+      "target": "urn:samm:io.catenax.binary_exchange:1.0.0#DspInformationEntity",
+      "label": "dataType",
+      "optional": false
+    }
+  ]
+}

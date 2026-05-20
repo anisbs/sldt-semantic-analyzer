@@ -1,0 +1,84 @@
+{
+  "meta": {
+    "namespace": "urn:samm:io.catenax.serial_part:4.0.0#",
+    "meta_model": "SAMM 2.1.0",
+    "model_family": "SAMM",
+    "model_name": "serial_part",
+    "model_version": "4.0.0",
+    "source": "catenax",
+    "status": "release",
+    "release_date": null,
+    "release_notes": "# Changelog\n\nAll notable changes to this model will be documented in this file.\n\n## [4.0.0] 26.03\n\n### Changed\n\n- introduced `io.catenax.shared.industry_core.common:1.0.0`, `io.catenax.shared.industry_core.manufacturing_information:1.0.0` and `io.catenax.shared.industry_core.part_classification:1.0.0` as shared models\n- renamed `catenaXId` to `globalAssetId`\n- renamed `catenaXsiteId` to `siteId`\n- renamed `classificationID` to `classificationId`\n- renamed `date` to `productionDate`\n\n## [3.0.1] 2025-09-26\n\n- Fixed example value of \"date\" to match the regular expression\n\n## [3.0.0] 2024-02-05\n\n### Added\n\n- Integration of the new shared PartClassifcation 1.0.0 aspect model as child-property of the PartTypeInformation\n- Added possibility to add date information excluding time\n- Include additional RegEx values for the local identifier key\n\n### Changed\n\n- Change (shared) partSiteInformation to be a child-porperty of the manufacturerInformation\n\n  \n## [2.0.0] 2023-12-04\n\n### Added\n\n- integration of the sites property and its childtree of the shared PartSiteInformationAsBuilt (1.0.0) aspect model as optional content\n- integration of the shared UUID characteristic and RegEx for the catenaXId property\n\n### Changed\n\n- migrated current aspect model from BAMM to SAMM\n\n### Removed\n\n- removed existing characteristic and RegEx of the catenaXId property and replaced it with content of the shared UUID aspect model (see added information)\n\n## [1.0.1]\n\n### Added\n\nn/a\n\n### Changed\n\n- fixed casing in example value for `key` of `localIdentifier` to lower case\n\n### Removed\n\nn/a\n\n## [1.0.0]\n\n### Added\n\n- renamed model from `io.catenax.serial_part_typization:2.0.0#SerialPartTypization`\n\n### Changed\n\n- changed several descriptions due to aspect renaming\n\n### Removed\n\nn/a",
+    "dependencies": [
+      {
+        "name": "shared.industry_core.common",
+        "version": "1.0.0",
+        "family": "SAMM",
+        "source": "catenax"
+      },
+      {
+        "name": "shared.industry_core.manufacturing_information",
+        "version": "1.0.0",
+        "family": "SAMM",
+        "source": "catenax"
+      },
+      {
+        "name": "shared.industry_core.part_classification",
+        "version": "1.0.0",
+        "family": "SAMM",
+        "source": "catenax"
+      }
+    ],
+    "path": "data/sldt-semantic-models/io.catenax.serial_part/4.0.0/SerialPart.ttl"
+  },
+  "nodes": [
+    {
+      "id": "urn:samm:io.catenax.serial_part:4.0.0#SerialPart",
+      "label": "SerialPart",
+      "kind": "Aspect",
+      "preferredName": "serial part",
+      "description": "A serialized part is an instantiation of a (design-)part, where the particular instantiation can be uniquely identified by means of a serial number or a similar identifier (e.g. VAN)or a combination of multiple identifiers (e.g. combination of manufacturer, date and number)"
+    },
+    {
+      "id": "urn:samm:io.catenax.serial_part:4.0.0#partTypeInformation",
+      "label": "partTypeInformation",
+      "kind": "Property",
+      "preferredName": "part type information",
+      "description": "The part type from which the serialized part has been instantiated"
+    },
+    {
+      "id": "urn:samm:io.catenax.serial_part:4.0.0#PartTypeInformationCharacteristic",
+      "label": "PartTypeInformationCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "part type information characteristic",
+      "description": "The characteristics of the part type"
+    },
+    {
+      "id": "urn:samm:io.catenax.serial_part:4.0.0#PartTypeInformationEntity",
+      "label": "PartTypeInformationEntity",
+      "kind": "Entity",
+      "preferredName": "part type information entity",
+      "description": "Encapsulation for data related to the part type"
+    }
+  ],
+  "links": [
+    {
+      "source": "urn:samm:io.catenax.serial_part:4.0.0#SerialPart",
+      "target": "urn:samm:io.catenax.serial_part:4.0.0#partTypeInformation",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.serial_part:4.0.0#partTypeInformation",
+      "target": "urn:samm:io.catenax.serial_part:4.0.0#PartTypeInformationCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.serial_part:4.0.0#PartTypeInformationCharacteristic",
+      "target": "urn:samm:io.catenax.serial_part:4.0.0#PartTypeInformationEntity",
+      "label": "dataType",
+      "optional": false
+    }
+  ]
+}

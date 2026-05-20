@@ -1,0 +1,227 @@
+{
+  "meta": {
+    "namespace": "urn:samm:io.catenax.quality_task:3.0.0#",
+    "meta_model": "SAMM 2.1.0",
+    "model_family": "SAMM",
+    "model_name": "quality_task",
+    "model_version": "3.0.0",
+    "source": "catenax",
+    "status": "release",
+    "release_date": "2025-05-13",
+    "release_notes": "# Changelog\nAll notable changes to this model will be documented in this file.\n\n## [Purpose of this model]\nThis aspect model was created in the Catena-X use case quality. The purpose of this aspect model is to describe a quality task between companies.\n\n## [3.0.0] - 2025-05-13\n### Added\n- model feature additionalInformation key:value pair added\n\n### Changed\n- to reduce redundancies in modelling some properties are now used form share quality core model\n- listOfQualityTasks from version 2.0.0 has changed to qualityTasks only\n- qualityTasks_creationDate is now mandatory\n- qualityTasks_companies_name now mandatory\n\n### Removed\n\n\n## [2.0.0] - 2024-01-22\n### Added\n- metaInformation added to root entity: Gives data consumer necessary information how data provider created this data set\n- integration of shared UUID characteristic and RegEx for the vehicle Catena-X identifier\n- integration of the shared BPNL trait\n- integration of shared e-Mail trait\n- using of Catena-X UUID as qualityTaskId\n\n### Changed\n- qTask aspect model is now able to held also lists of qTasks\n- changed all properties to optional except one unique identifier per entity\n- change property cxbpn cxBusinessPartnerNumber\n\n### Removed\n\n## [1.0.0] - 2022-12-13\n### Added\n- initial version of this model\n\n### Changed\nn/a\n\n### Removed",
+    "dependencies": [
+      {
+        "name": "shared.business_partner_number",
+        "version": "2.0.0",
+        "family": "SAMM",
+        "source": "catenax"
+      },
+      {
+        "name": "shared.contact_information",
+        "version": "4.0.0",
+        "family": "SAMM",
+        "source": "catenax"
+      },
+      {
+        "name": "shared.quality_core",
+        "version": "1.0.0",
+        "family": "SAMM",
+        "source": "catenax"
+      }
+    ],
+    "path": "data/sldt-semantic-models/io.catenax.quality_task/3.0.0/QualityTask.ttl"
+  },
+  "nodes": [
+    {
+      "id": "urn:samm:io.catenax.quality_task:3.0.0#QualityTask",
+      "label": "QualityTask",
+      "kind": "Aspect",
+      "preferredName": "QualityTasks",
+      "description": "For Catena-X business case Quality Management. Supported technical features: delta update feature, meta information feature and can be used along the supply chain - also for supplier-to-supplier data exchange. The supported model features are described in detail in the Catena-X Quality KIT. This model is used to exchange quality tasks. A quality task is used to link  information from different Catena-X Quality Management data models together."
+    },
+    {
+      "id": "urn:samm:io.catenax.quality_task:3.0.0#qualityTasks",
+      "label": "qualityTasks",
+      "kind": "Property",
+      "preferredName": "List of quality tasks",
+      "description": "Property for the list of quality tasks."
+    },
+    {
+      "id": "urn:samm:io.catenax.quality_task:3.0.0#creationDate",
+      "label": "creationDate",
+      "kind": "Property",
+      "preferredName": "Creation Date",
+      "description": "Timestamp when this quality task was created in ISO8601 local date notation."
+    },
+    {
+      "id": "urn:samm:io.catenax.quality_task:3.0.0#dataDeletion",
+      "label": "dataDeletion",
+      "kind": "Property",
+      "preferredName": "Deletion policy",
+      "description": "What should be done with the data after this quality task is closed"
+    },
+    {
+      "id": "urn:samm:io.catenax.quality_task:3.0.0#description",
+      "label": "description",
+      "kind": "Property",
+      "preferredName": "Description",
+      "description": "Description what should be done in this quality task"
+    },
+    {
+      "id": "urn:samm:io.catenax.quality_task:3.0.0#status",
+      "label": "status",
+      "kind": "Property",
+      "preferredName": "Status",
+      "description": "Status of this quality task"
+    },
+    {
+      "id": "urn:samm:io.catenax.quality_task:3.0.0#title",
+      "label": "title",
+      "kind": "Property",
+      "preferredName": "Title",
+      "description": "Working title for this quality task"
+    },
+    {
+      "id": "urn:samm:io.catenax.quality_task:3.0.0#companies",
+      "label": "companies",
+      "kind": "Property",
+      "preferredName": "List of companies",
+      "description": "A list of companies involved in this quality task"
+    },
+    {
+      "id": "urn:samm:io.catenax.quality_task:3.0.0#name",
+      "label": "name",
+      "kind": "Property",
+      "preferredName": "Company name",
+      "description": "Name of the company"
+    },
+    {
+      "id": "urn:samm:io.catenax.quality_task:3.0.0#QualityTaskList",
+      "label": "QualityTaskList",
+      "kind": "Characteristic",
+      "preferredName": "List of quality tasks",
+      "description": "The list of quality tasks itself."
+    },
+    {
+      "id": "urn:samm:io.catenax.quality_task:3.0.0#Companies",
+      "label": "Companies",
+      "kind": "Characteristic",
+      "preferredName": "Companies",
+      "description": "A list of all companies involved in this quality task"
+    },
+    {
+      "id": "urn:samm:io.catenax.quality_task:3.0.0#SingleQualityTask",
+      "label": "SingleQualityTask",
+      "kind": "Entity",
+      "preferredName": "Single quality task",
+      "description": "A single quality task defines why data is exchanged between 2 or more companies and what insights should be generated out of the transferred data. In addition there is a flag, what happens with the transferred data when this quality task is closed"
+    },
+    {
+      "id": "urn:samm:io.catenax.quality_task:3.0.0#Company",
+      "label": "Company",
+      "kind": "Entity",
+      "preferredName": "Company",
+      "description": "One company involved in this quality task"
+    },
+    {
+      "id": "urn:samm:io.catenax.quality_task:3.0.0#DataDeletionEnumeration",
+      "label": "DataDeletionEnumeration",
+      "kind": "Characteristic",
+      "preferredName": "Data deletion",
+      "description": "Enumeration of possible data deletions entries."
+    },
+    {
+      "id": "urn:samm:io.catenax.quality_task:3.0.0#StatusCharacteristic",
+      "label": "StatusCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Status Characteristic",
+      "description": "Enumeration of the different status values"
+    }
+  ],
+  "links": [
+    {
+      "source": "urn:samm:io.catenax.quality_task:3.0.0#QualityTask",
+      "target": "urn:samm:io.catenax.quality_task:3.0.0#qualityTasks",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.quality_task:3.0.0#SingleQualityTask",
+      "target": "urn:samm:io.catenax.quality_task:3.0.0#creationDate",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.quality_task:3.0.0#SingleQualityTask",
+      "target": "urn:samm:io.catenax.quality_task:3.0.0#dataDeletion",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.quality_task:3.0.0#SingleQualityTask",
+      "target": "urn:samm:io.catenax.quality_task:3.0.0#description",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.quality_task:3.0.0#SingleQualityTask",
+      "target": "urn:samm:io.catenax.quality_task:3.0.0#status",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.quality_task:3.0.0#SingleQualityTask",
+      "target": "urn:samm:io.catenax.quality_task:3.0.0#title",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.quality_task:3.0.0#SingleQualityTask",
+      "target": "urn:samm:io.catenax.quality_task:3.0.0#companies",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.quality_task:3.0.0#Company",
+      "target": "urn:samm:io.catenax.quality_task:3.0.0#name",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.quality_task:3.0.0#qualityTasks",
+      "target": "urn:samm:io.catenax.quality_task:3.0.0#QualityTaskList",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.quality_task:3.0.0#dataDeletion",
+      "target": "urn:samm:io.catenax.quality_task:3.0.0#DataDeletionEnumeration",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.quality_task:3.0.0#status",
+      "target": "urn:samm:io.catenax.quality_task:3.0.0#StatusCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.quality_task:3.0.0#companies",
+      "target": "urn:samm:io.catenax.quality_task:3.0.0#Companies",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.quality_task:3.0.0#QualityTaskList",
+      "target": "urn:samm:io.catenax.quality_task:3.0.0#SingleQualityTask",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.quality_task:3.0.0#Companies",
+      "target": "urn:samm:io.catenax.quality_task:3.0.0#Company",
+      "label": "dataType",
+      "optional": false
+    }
+  ]
+}

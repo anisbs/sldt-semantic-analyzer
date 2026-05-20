@@ -1,0 +1,273 @@
+{
+  "meta": {
+    "namespace": "urn:bamm:io.catenax.time_series_reference:1.0.0#",
+    "meta_model": "BAMM 2.0.0",
+    "model_family": "BAMM",
+    "model_name": "time_series_reference",
+    "model_version": "1.0.0",
+    "source": "catenax",
+    "status": "deprecated",
+    "release_date": "2023-03-20",
+    "release_notes": "# Changelog\nAll notable changes to this model will be documented in this file.\n\n## [Unreleased]\n\n## [1.0.0] - 2023-03-20\n### Added\n- initial version of this model\n\n### Changed\nn/a\n\n### Removed",
+    "dependencies": [],
+    "path": "data/sldt-semantic-models/io.catenax.time_series_reference/1.0.0/TimeSeriesReference.ttl"
+  },
+  "nodes": [
+    {
+      "id": "urn:bamm:io.catenax.time_series_reference:1.0.0#TimeSeriesReference",
+      "label": "TimeSeriesReference",
+      "kind": "Aspect",
+      "preferredName": "Time Series Reference",
+      "description": "Aspect to describe a reference to a file which contains time series data."
+    },
+    {
+      "id": "urn:bamm:io.catenax.time_series_reference:1.0.0#decimalSeperator",
+      "label": "decimalSeperator",
+      "kind": "Property",
+      "preferredName": "Decimal Seperator",
+      "description": "Indicates whether a dot or comma is used to separate the decimal place in the source file."
+    },
+    {
+      "id": "urn:bamm:io.catenax.time_series_reference:1.0.0#sourceFile",
+      "label": "sourceFile",
+      "kind": "Property",
+      "preferredName": "Source File",
+      "description": "Contains the URI to the referenced time series file."
+    },
+    {
+      "id": "urn:bamm:io.catenax.time_series_reference:1.0.0#fileExtension",
+      "label": "fileExtension",
+      "kind": "Property",
+      "preferredName": "File Extension",
+      "description": "Indicates whether csv, none or txt is used as file extension."
+    },
+    {
+      "id": "urn:bamm:io.catenax.time_series_reference:1.0.0#delimiter",
+      "label": "delimiter",
+      "kind": "Property",
+      "preferredName": "Delimiter",
+      "description": "Indicates whether a semicolon, comma or tab is used as a deliniter between datapoints."
+    },
+    {
+      "id": "urn:bamm:io.catenax.time_series_reference:1.0.0#payload",
+      "label": "payload",
+      "kind": "Property",
+      "preferredName": "Payload",
+      "description": "Contains the information about variable names and their units as well as the name of the time column."
+    },
+    {
+      "id": "urn:bamm:io.catenax.time_series_reference:1.0.0#units",
+      "label": "units",
+      "kind": "Property",
+      "preferredName": "Units",
+      "description": "Lists the unit for each datapoint."
+    },
+    {
+      "id": "urn:bamm:io.catenax.time_series_reference:1.0.0#variableNames",
+      "label": "variableNames",
+      "kind": "Property",
+      "preferredName": "Variable Names",
+      "description": "Lists the name for each datapoint."
+    },
+    {
+      "id": "urn:bamm:io.catenax.time_series_reference:1.0.0#timeColumnName",
+      "label": "timeColumnName",
+      "kind": "Property",
+      "preferredName": "Time Column Name",
+      "description": "Specifies the name of the Variable Names entry which contains the time column."
+    },
+    {
+      "id": "urn:bamm:io.catenax.time_series_reference:1.0.0#unit",
+      "label": "unit",
+      "kind": "Property",
+      "preferredName": "Unit Property",
+      "description": "The unit of a column."
+    },
+    {
+      "id": "urn:bamm:io.catenax.time_series_reference:1.0.0#DecimalSeperator",
+      "label": "DecimalSeperator",
+      "kind": "Characteristic",
+      "preferredName": "Decimal Separator Enumeration",
+      "description": "Indicates whether a dot or comma is used to separate the decimal place in the source file."
+    },
+    {
+      "id": "urn:bamm:io.catenax.time_series_reference:1.0.0#FileExtension",
+      "label": "FileExtension",
+      "kind": "Characteristic",
+      "preferredName": "File Extension Enumeration",
+      "description": "Indicates whether csv, none or txt is used as file extension."
+    },
+    {
+      "id": "urn:bamm:io.catenax.time_series_reference:1.0.0#Delimiter",
+      "label": "Delimiter",
+      "kind": "Characteristic",
+      "preferredName": "Delimiter Enumeration",
+      "description": "Indicates whether a semicolon, comma or tab is used as a deliniter between datapoints."
+    },
+    {
+      "id": "urn:bamm:io.catenax.time_series_reference:1.0.0#TimeColumnChoice",
+      "label": "TimeColumnChoice",
+      "kind": "Characteristic",
+      "preferredName": "time column name",
+      "description": "Specifies the name of the time colums variable."
+    },
+    {
+      "id": "urn:bamm:io.catenax.time_series_reference:1.0.0#ResourcePath",
+      "label": "ResourcePath",
+      "kind": "Characteristic",
+      "preferredName": "Resource Path",
+      "description": "The path of a resource."
+    },
+    {
+      "id": "urn:bamm:io.catenax.time_series_reference:1.0.0#PayloadCharacteristic",
+      "label": "PayloadCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "payload characteristic",
+      "description": "Contains the information about variable names and their units as well as the name of the time column."
+    },
+    {
+      "id": "urn:bamm:io.catenax.time_series_reference:1.0.0#PayloadEntity",
+      "label": "PayloadEntity",
+      "kind": "Entity",
+      "preferredName": "Payload Entity",
+      "description": "Contains the information about variable names and their units as well as the name of the time column."
+    },
+    {
+      "id": "urn:bamm:io.catenax.time_series_reference:1.0.0#UnitEntity",
+      "label": "UnitEntity",
+      "kind": "Entity",
+      "preferredName": "Unit Entity",
+      "description": "The unit of a column."
+    },
+    {
+      "id": "urn:bamm:io.catenax.time_series_reference:1.0.0#VariableListCharacteristic",
+      "label": "VariableListCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": null,
+      "description": "Lists the name for each datapoint."
+    },
+    {
+      "id": "urn:bamm:io.catenax.time_series_reference:1.0.0#UnitsListCharacteristic",
+      "label": "UnitsListCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Units List Characteristic",
+      "description": "Lists the unit for each datapoint."
+    }
+  ],
+  "links": [
+    {
+      "source": "urn:bamm:io.catenax.time_series_reference:1.0.0#TimeSeriesReference",
+      "target": "urn:bamm:io.catenax.time_series_reference:1.0.0#decimalSeperator",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.time_series_reference:1.0.0#TimeSeriesReference",
+      "target": "urn:bamm:io.catenax.time_series_reference:1.0.0#sourceFile",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.time_series_reference:1.0.0#TimeSeriesReference",
+      "target": "urn:bamm:io.catenax.time_series_reference:1.0.0#fileExtension",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.time_series_reference:1.0.0#TimeSeriesReference",
+      "target": "urn:bamm:io.catenax.time_series_reference:1.0.0#delimiter",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.time_series_reference:1.0.0#TimeSeriesReference",
+      "target": "urn:bamm:io.catenax.time_series_reference:1.0.0#payload",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.time_series_reference:1.0.0#PayloadEntity",
+      "target": "urn:bamm:io.catenax.time_series_reference:1.0.0#units",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.time_series_reference:1.0.0#PayloadEntity",
+      "target": "urn:bamm:io.catenax.time_series_reference:1.0.0#variableNames",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.time_series_reference:1.0.0#PayloadEntity",
+      "target": "urn:bamm:io.catenax.time_series_reference:1.0.0#timeColumnName",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.time_series_reference:1.0.0#UnitEntity",
+      "target": "urn:bamm:io.catenax.time_series_reference:1.0.0#unit",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.time_series_reference:1.0.0#decimalSeperator",
+      "target": "urn:bamm:io.catenax.time_series_reference:1.0.0#DecimalSeperator",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.time_series_reference:1.0.0#sourceFile",
+      "target": "urn:bamm:io.catenax.time_series_reference:1.0.0#ResourcePath",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.time_series_reference:1.0.0#fileExtension",
+      "target": "urn:bamm:io.catenax.time_series_reference:1.0.0#FileExtension",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.time_series_reference:1.0.0#delimiter",
+      "target": "urn:bamm:io.catenax.time_series_reference:1.0.0#Delimiter",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.time_series_reference:1.0.0#payload",
+      "target": "urn:bamm:io.catenax.time_series_reference:1.0.0#PayloadCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.time_series_reference:1.0.0#units",
+      "target": "urn:bamm:io.catenax.time_series_reference:1.0.0#UnitsListCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.time_series_reference:1.0.0#variableNames",
+      "target": "urn:bamm:io.catenax.time_series_reference:1.0.0#VariableListCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.time_series_reference:1.0.0#timeColumnName",
+      "target": "urn:bamm:io.catenax.time_series_reference:1.0.0#TimeColumnChoice",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.time_series_reference:1.0.0#PayloadCharacteristic",
+      "target": "urn:bamm:io.catenax.time_series_reference:1.0.0#PayloadEntity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.time_series_reference:1.0.0#UnitsListCharacteristic",
+      "target": "urn:bamm:io.catenax.time_series_reference:1.0.0#UnitEntity",
+      "label": "dataType",
+      "optional": false
+    }
+  ]
+}

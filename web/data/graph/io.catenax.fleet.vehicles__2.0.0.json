@@ -1,0 +1,882 @@
+{
+  "meta": {
+    "namespace": "urn:samm:io.catenax.fleet.vehicles:2.0.0#",
+    "meta_model": "SAMM 2.1.0",
+    "model_family": "SAMM",
+    "model_name": "fleet.vehicles",
+    "model_version": "2.0.0",
+    "source": "catenax",
+    "status": "deprecated",
+    "release_date": "2024-01-22 -> deprecated",
+    "release_notes": "# Changelog\nAll notable changes to this model will be documented in this file.\n\n## [Unreleased]\n- Version 2.0.0 of model is deprecated. It has a wrong regex for BPNS validation from the old shared model for BPNS trait.\n\n## [4.0.0] - 2025-07-07\nA conversion table from previous version 3.0.0 to 4.0.0 of this model is provided with the updated KIT Quality Management for CX release Saturn.\n\n### Added\n- model feature additionalInformation key:value pair added\n- vehicles_transmissions entity added\n\n### Changed\n- to reduce redundancies in modelling some properties are now used form share quality core model\n- using parts definition from shared quality core model (via samm:extends) to unify previous components list\n- at least one primary identifier per entity is now mandatory\n- vehicles_soldDate is now mandatory properties\n\n### Removed\n- vehicles_components: replaced by vehicles_parts\n\n\n## [3.0.0] - 2024-04-29\n### Added\n- Added optional property components: to be able to store focus components in the semantic model as requested by BMW\n\n### Changed\n\n\n### Removed\n\n## [2.1.0] - 2024-02-19 -> deprecated\n### Added\n\n### Changed\n- reference to shared aspect model for BPNS was changed to latest version\n\n### Removed\n\n\n## [2.0.0] - 2024-01-22 -> deprecated\n### Added\n- metaInformation added to root entity: Gives data consumer necessary information how data provider created this data set\n- integration of shared UUID characteristic and RegEx for the vehicle Catena-X identifier\n- introducing new characteristic to mark unique identifiers\n- integration of separate aspect model Vehicle.ProductDescription:3.0.0 into this model to do necessary adaptions that were decided in Catena-X Quality use case team: Most of the properties should be set to optional\n\n### Changed\n- changed all properties to optional except one unique identifier per entity\n- properties that were linked to OEM entity are now one level up \n- fuel type property now linked to engine property\n- entity production was renamed to productionPlant to increase clarity\n\n### Removed\n- link to Vehicle.ProductDescription:3.0.0: Previous linked model now integrated and adapted\nStreamlining of aspect model:\n- remove of body entity + body properties as it was never used\n- remove of all KBA properties: Focusing on NHTSA properties only \n- remove of oem entity: Properties now located on vehicle level\n- remove of fuel entity: Properties now located on vehicle and engines level\n- remove of sale entity: Properties now located on vehicle level\n- remove of production entity: Properties now located on vehicle level\n\n## [1.0.0] - 2023-05-15 -> deprecated\n### Added\n- initial version of this model\n\n### Changed\nn/a\n\n### Removed",
+    "dependencies": [
+      {
+        "name": "shared.business_partner_number",
+        "version": "1.0.0",
+        "family": "SAMM",
+        "source": "catenax"
+      },
+      {
+        "name": "shared.uuid",
+        "version": "1.0.0",
+        "family": "SAMM",
+        "source": "catenax"
+      }
+    ],
+    "path": "data/sldt-semantic-models/io.catenax.fleet.vehicles/2.0.0/Vehicles.ttl"
+  },
+  "nodes": [
+    {
+      "id": "urn:samm:io.catenax.fleet.vehicles:2.0.0#Vehicles",
+      "label": "Vehicles",
+      "kind": "Aspect",
+      "preferredName": "Vehicles",
+      "description": "This aspect model was created in the Catena-X use case quality. The purpose of this aspect model is to transfer general information of a list/fleet of vehicles - primarily how the vehicles are equipped, when they were built and which engines are installed."
+    },
+    {
+      "id": "urn:samm:io.catenax.fleet.vehicles:2.0.0#listOfVehicles",
+      "label": "listOfVehicles",
+      "kind": "Property",
+      "preferredName": "listOfVehicles",
+      "description": "List of Vehicle.ProductDescription"
+    },
+    {
+      "id": "urn:samm:io.catenax.fleet.vehicles:2.0.0#metaInformation",
+      "label": "metaInformation",
+      "kind": "Property",
+      "preferredName": "Meta information",
+      "description": "This meta information is valid for all entries in this data set. The meta information is used to tell the data consumer which selection criteria were applied by the data provider. "
+    },
+    {
+      "id": "urn:samm:io.catenax.fleet.vehicles:2.0.0#recordStatus",
+      "label": "recordStatus",
+      "kind": "Property",
+      "preferredName": "Record status",
+      "description": "The record operation enumeration can be used to realize delta update concept.\nDelta update concept means:\n- You transfer an initial load of data\n- After the first week only the delta to the initial load is transferred\n\n\nThe record status describes whether this record is:\n- new=>This record is transferred the first time\n- update=> Some properties of this record have changed compared to a previous transfer\n- delete=> This record was transferred in the initial load or in a previous delta update, but is not used any more and therefore it should be deleted on data consumer side\n- same=> This record was transferred in the initial load or in a previous delta update"
+    },
+    {
+      "id": "urn:samm:io.catenax.fleet.vehicles:2.0.0#anonymizedVin",
+      "label": "anonymizedVin",
+      "kind": "Property",
+      "preferredName": "Anonymized VIN",
+      "description": "OEM-specific hashed VIN; link to car data over pseydomized/hashed VIN or Catena-X unique digital twin identifier."
+    },
+    {
+      "id": "urn:samm:io.catenax.fleet.vehicles:2.0.0#catenaXVehicleId",
+      "label": "catenaXVehicleId",
+      "kind": "Property",
+      "preferredName": "Vehicle Catena-X Identifier",
+      "description": "A unique identifier for the vehicle in the Catena-X data space."
+    },
+    {
+      "id": "urn:samm:io.catenax.fleet.vehicles:2.0.0#class",
+      "label": "class",
+      "kind": "Property",
+      "preferredName": "Vehicle class",
+      "description": "Class of the vehicle."
+    },
+    {
+      "id": "urn:samm:io.catenax.fleet.vehicles:2.0.0#driveSystemPower",
+      "label": "driveSystemPower",
+      "kind": "Property",
+      "preferredName": "Complete system power",
+      "description": "Complete power of this vehicle in KW. This sums up the power of each individual engine installed in this vehicle."
+    },
+    {
+      "id": "urn:samm:io.catenax.fleet.vehicles:2.0.0#driveType",
+      "label": "driveType",
+      "kind": "Property",
+      "preferredName": "Drive type",
+      "description": "Drive type of a vehicle according enumeration."
+    },
+    {
+      "id": "urn:samm:io.catenax.fleet.vehicles:2.0.0#powerTrainType",
+      "label": "powerTrainType",
+      "kind": "Property",
+      "preferredName": "Powertrain Type",
+      "description": "Describes the installed powertrain in the vehicle."
+    },
+    {
+      "id": "urn:samm:io.catenax.fleet.vehicles:2.0.0#modelDescription",
+      "label": "modelDescription",
+      "kind": "Property",
+      "preferredName": "Vehicle model",
+      "description": "Detail vehicle model like \"Golf VIII\""
+    },
+    {
+      "id": "urn:samm:io.catenax.fleet.vehicles:2.0.0#modelIdentifier",
+      "label": "modelIdentifier",
+      "kind": "Property",
+      "preferredName": "Model identifier",
+      "description": "OEM-specific model identifier or OEM-specific project name."
+    },
+    {
+      "id": "urn:samm:io.catenax.fleet.vehicles:2.0.0#plantCatenaXId",
+      "label": "plantCatenaXId",
+      "kind": "Property",
+      "preferredName": "Plant Catena-X ID",
+      "description": "Unique Catena-X plant identifier, also called BPNS."
+    },
+    {
+      "id": "urn:samm:io.catenax.fleet.vehicles:2.0.0#plantCountryCode",
+      "label": "plantCountryCode",
+      "kind": "Property",
+      "preferredName": "Plant country",
+      "description": "Country code of the plant, where the vehicle was produced."
+    },
+    {
+      "id": "urn:samm:io.catenax.fleet.vehicles:2.0.0#plantDescription",
+      "label": "plantDescription",
+      "kind": "Property",
+      "preferredName": "Vehicle production plant name",
+      "description": "Long name of the production plant of the vehicle"
+    },
+    {
+      "id": "urn:samm:io.catenax.fleet.vehicles:2.0.0#plantIdentifier",
+      "label": "plantIdentifier",
+      "kind": "Property",
+      "preferredName": "Production plant id",
+      "description": "Plant id of the final assembly of the vehicle"
+    },
+    {
+      "id": "urn:samm:io.catenax.fleet.vehicles:2.0.0#productionDate",
+      "label": "productionDate",
+      "kind": "Property",
+      "preferredName": "Vehicle production Date",
+      "description": "Production date of the vehicle"
+    },
+    {
+      "id": "urn:samm:io.catenax.fleet.vehicles:2.0.0#softwareCategory",
+      "label": "softwareCategory",
+      "kind": "Property",
+      "preferredName": "Software category",
+      "description": "Some OEMs bring in the software as complete package for all systems:\nTo identify this software: software category and software version is needed.\nSoftware category when this car was built."
+    },
+    {
+      "id": "urn:samm:io.catenax.fleet.vehicles:2.0.0#softwareVersion",
+      "label": "softwareVersion",
+      "kind": "Property",
+      "preferredName": "Software version",
+      "description": "Some OEMs brings in the software as complete package for all systems:\nTo identify this software: software category and software version is needed.\nSoftware version when this car was built\n."
+    },
+    {
+      "id": "urn:samm:io.catenax.fleet.vehicles:2.0.0#soldCountryCode",
+      "label": "soldCountryCode",
+      "kind": "Property",
+      "preferredName": "Sold country code",
+      "description": "The country code in 3 letter format where this vehicle was sold."
+    },
+    {
+      "id": "urn:samm:io.catenax.fleet.vehicles:2.0.0#soldCountryGroup",
+      "label": "soldCountryGroup",
+      "kind": "Property",
+      "preferredName": "Vehicle sold region",
+      "description": "The region where this car was sold."
+    },
+    {
+      "id": "urn:samm:io.catenax.fleet.vehicles:2.0.0#soldDate",
+      "label": "soldDate",
+      "kind": "Property",
+      "preferredName": "Vehicle sold date:",
+      "description": "Sold date of the vehicle = warranty start date for this vehicle"
+    },
+    {
+      "id": "urn:samm:io.catenax.fleet.vehicles:2.0.0#steeringPos",
+      "label": "steeringPos",
+      "kind": "Property",
+      "preferredName": "Vehicle steering pos",
+      "description": "Position of vehicle steering wheel, Left or right."
+    },
+    {
+      "id": "urn:samm:io.catenax.fleet.vehicles:2.0.0#vehicleSeries",
+      "label": "vehicleSeries",
+      "kind": "Property",
+      "preferredName": "Vehicle series",
+      "description": "vehicle series, normally one level above model. E.g. vehicle series =\"Golf\", vehicle model=\"Golf VIII\""
+    },
+    {
+      "id": "urn:samm:io.catenax.fleet.vehicles:2.0.0#wmiCode",
+      "label": "wmiCode",
+      "kind": "Property",
+      "preferredName": "WMI Code",
+      "description": "The world manufacturer index are the first 3 letters of the VIN. IT describes a code for the vehicle manufacturer. Also see the description from NTHSA."
+    },
+    {
+      "id": "urn:samm:io.catenax.fleet.vehicles:2.0.0#wmiNameNHTSA",
+      "label": "wmiNameNHTSA",
+      "kind": "Property",
+      "preferredName": "WMI name according NHTSA",
+      "description": "Name of the vehicle manufacturer according NHTSA: use https://vpic.nhtsa.dot.gov/api/vehicles/decodewmi/WVW?format=json - entry to be used is CommonName."
+    },
+    {
+      "id": "urn:samm:io.catenax.fleet.vehicles:2.0.0#engines",
+      "label": "engines",
+      "kind": "Property",
+      "preferredName": "Engines",
+      "description": "List of installed engines in the vehicle."
+    },
+    {
+      "id": "urn:samm:io.catenax.fleet.vehicles:2.0.0#equipments",
+      "label": "equipments",
+      "kind": "Property",
+      "preferredName": "Equipments",
+      "description": "Equipments."
+    },
+    {
+      "id": "urn:samm:io.catenax.fleet.vehicles:2.0.0#selectionCriteria",
+      "label": "selectionCriteria",
+      "kind": "Property",
+      "preferredName": "Selection criteria",
+      "description": "Describes the selection criteria a Catena-X data provider has applied to create this data set."
+    },
+    {
+      "id": "urn:samm:io.catenax.fleet.vehicles:2.0.0#selectionStart",
+      "label": "selectionStart",
+      "kind": "Property",
+      "preferredName": "Selection start",
+      "description": "Describes the starting point for providing records in this data set."
+    },
+    {
+      "id": "urn:samm:io.catenax.fleet.vehicles:2.0.0#selectionEnd",
+      "label": "selectionEnd",
+      "kind": "Property",
+      "preferredName": "Selection end",
+      "description": "Describes the end point for providing records in this data set."
+    },
+    {
+      "id": "urn:samm:io.catenax.fleet.vehicles:2.0.0#engineId",
+      "label": "engineId",
+      "kind": "Property",
+      "preferredName": "Engine ID:",
+      "description": "OEM-specific identifier/type of the installed engine"
+    },
+    {
+      "id": "urn:samm:io.catenax.fleet.vehicles:2.0.0#engineDescription",
+      "label": "engineDescription",
+      "kind": "Property",
+      "preferredName": "Engine Description",
+      "description": "Description of the engine"
+    },
+    {
+      "id": "urn:samm:io.catenax.fleet.vehicles:2.0.0#engineSeries",
+      "label": "engineSeries",
+      "kind": "Property",
+      "preferredName": "Vehicle engine series",
+      "description": "Engine series as defined by OEM"
+    },
+    {
+      "id": "urn:samm:io.catenax.fleet.vehicles:2.0.0#serialNumber",
+      "label": "serialNumber",
+      "kind": "Property",
+      "preferredName": "Engine serial number",
+      "description": "Serial number of the installed engine"
+    },
+    {
+      "id": "urn:samm:io.catenax.fleet.vehicles:2.0.0#size",
+      "label": "size",
+      "kind": "Property",
+      "preferredName": "Engine size",
+      "description": "Cubic capacity in a combustion engine  - not available in battery-electric vehicles"
+    },
+    {
+      "id": "urn:samm:io.catenax.fleet.vehicles:2.0.0#power",
+      "label": "power",
+      "kind": "Property",
+      "preferredName": "Engine power",
+      "description": "Engine power is the power that an engine can put out"
+    },
+    {
+      "id": "urn:samm:io.catenax.fleet.vehicles:2.0.0#engineProductionDate",
+      "label": "engineProductionDate",
+      "kind": "Property",
+      "preferredName": "Engine production date",
+      "description": "Date when the engine was produced"
+    },
+    {
+      "id": "urn:samm:io.catenax.fleet.vehicles:2.0.0#installDate",
+      "label": "installDate",
+      "kind": "Property",
+      "preferredName": "Engine install date",
+      "description": "Date when the engine was installed"
+    },
+    {
+      "id": "urn:samm:io.catenax.fleet.vehicles:2.0.0#nhtsaFuelType",
+      "label": "nhtsaFuelType",
+      "kind": "Property",
+      "preferredName": "Fuel type(NHTSA)",
+      "description": "Description of the fuel according US NHTSA"
+    },
+    {
+      "id": "urn:samm:io.catenax.fleet.vehicles:2.0.0#equipmentIdentifier",
+      "label": "equipmentIdentifier",
+      "kind": "Property",
+      "preferredName": "Equipment Id",
+      "description": "The identifier of a specific equipment."
+    },
+    {
+      "id": "urn:samm:io.catenax.fleet.vehicles:2.0.0#equipmentDescription",
+      "label": "equipmentDescription",
+      "kind": "Property",
+      "preferredName": "Equipment description",
+      "description": "The equipment variants description."
+    },
+    {
+      "id": "urn:samm:io.catenax.fleet.vehicles:2.0.0#group",
+      "label": "group",
+      "kind": "Property",
+      "preferredName": "Equipment group",
+      "description": "Bundels all equipment-oriented information into categories like Interior"
+    },
+    {
+      "id": "urn:samm:io.catenax.fleet.vehicles:2.0.0#VehiclesList",
+      "label": "VehiclesList",
+      "kind": "Characteristic",
+      "preferredName": "List of vehicles",
+      "description": "List of vehicles"
+    },
+    {
+      "id": "urn:samm:io.catenax.fleet.vehicles:2.0.0#EnginesList",
+      "label": "EnginesList",
+      "kind": "Characteristic",
+      "preferredName": "Engines",
+      "description": "A list of all installed engines in the vehicle"
+    },
+    {
+      "id": "urn:samm:io.catenax.fleet.vehicles:2.0.0#EquipmentsList",
+      "label": "EquipmentsList",
+      "kind": "Characteristic",
+      "preferredName": "Equipment List",
+      "description": "List of equipments installed in the vehicle."
+    },
+    {
+      "id": "urn:samm:io.catenax.fleet.vehicles:2.0.0#MetaCharacteristic",
+      "label": "MetaCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "MetaCharacteristic",
+      "description": "Characteristic for the meta information."
+    },
+    {
+      "id": "urn:samm:io.catenax.fleet.vehicles:2.0.0#UniqueID",
+      "label": "UniqueID",
+      "kind": "Characteristic",
+      "preferredName": "unique ID",
+      "description": "This Characteristic describes a property that is truly unique either inside the Company that is providing the data or even in Catena-X dataspace. Only one property in a semantic entity should be a uniqueID. Unique ids can be used to link a data set with other semantic models."
+    },
+    {
+      "id": "urn:samm:io.catenax.fleet.vehicles:2.0.0#CountryCodeCharacteristic",
+      "label": "CountryCodeCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Country Code Characteristic",
+      "description": "ISO 3166-1 alpha-3 ? three-letter country codes "
+    },
+    {
+      "id": "urn:samm:io.catenax.fleet.vehicles:2.0.0#Vehicle",
+      "label": "Vehicle",
+      "kind": "Entity",
+      "preferredName": "Vehicle",
+      "description": "Vehicle data that does not fit into one of the other entities."
+    },
+    {
+      "id": "urn:samm:io.catenax.fleet.vehicles:2.0.0#MetaInformation",
+      "label": "MetaInformation",
+      "kind": "Entity",
+      "preferredName": "Meta Information",
+      "description": "This entity groups all meta information properties. Meta information properties give hints for a Catena-X data consumer to better understand, how this data set was created on the Catena-X data provider side."
+    },
+    {
+      "id": "urn:samm:io.catenax.fleet.vehicles:2.0.0#Engine",
+      "label": "Engine",
+      "kind": "Entity",
+      "preferredName": "Engine Entity",
+      "description": "Describing one installed engine"
+    },
+    {
+      "id": "urn:samm:io.catenax.fleet.vehicles:2.0.0#Equipment",
+      "label": "Equipment",
+      "kind": "Entity",
+      "preferredName": "Equipment",
+      "description": "One equipment of the vehicle."
+    },
+    {
+      "id": "urn:samm:io.catenax.fleet.vehicles:2.0.0#RecordStatusEnumeration",
+      "label": "RecordStatusEnumeration",
+      "kind": "Characteristic",
+      "preferredName": "Record status enumeration",
+      "description": "Defining the enumeration for the record status"
+    },
+    {
+      "id": "urn:samm:io.catenax.fleet.vehicles:2.0.0#DriveTypeNHTSA",
+      "label": "DriveTypeNHTSA",
+      "kind": "Characteristic",
+      "preferredName": "Drive type(NHTSA)",
+      "description": "Enumeration of drive type according NHTSA, table [vPICList_lite].[dbo].[DriveType]"
+    },
+    {
+      "id": "urn:samm:io.catenax.fleet.vehicles:2.0.0#PowerTrainTypes",
+      "label": "PowerTrainTypes",
+      "kind": "Characteristic",
+      "preferredName": "Powertrain types ",
+      "description": "This enumeration comes from NHTSA (US authority) database. Table [vPICList_lite].[dbo].[ElectrificationLevel] extended by Gasoline and Diesel as entry."
+    },
+    {
+      "id": "urn:samm:io.catenax.fleet.vehicles:2.0.0#VehicleSteeringPos",
+      "label": "VehicleSteeringPos",
+      "kind": "Characteristic",
+      "preferredName": "Vehicle steering position(NHTSA)",
+      "description": "Vehicle steering position enumeration from NHTSA, see table [vPICList_lite].[dbo].[Steering]"
+    },
+    {
+      "id": "urn:samm:io.catenax.fleet.vehicles:2.0.0#FuelTypesNHTSA",
+      "label": "FuelTypesNHTSA",
+      "kind": "Characteristic",
+      "preferredName": "Fuel types (NHTSA)",
+      "description": "Enumeration from NHTSA vpic database, table [vPICList_lite].[dbo].[FuelType]"
+    },
+    {
+      "id": "urn:samm:io.catenax.fleet.vehicles:2.0.0#EnginePower",
+      "label": "EnginePower",
+      "kind": "Characteristic",
+      "preferredName": "Engine Power",
+      "description": "Engine power expressed in kilowatt."
+    },
+    {
+      "id": "urn:samm:io.catenax.fleet.vehicles:2.0.0#CubicCapacity",
+      "label": "CubicCapacity",
+      "kind": "Characteristic",
+      "preferredName": "Cubic Capacity",
+      "description": "Cubic capacity of the engine"
+    },
+    {
+      "id": "urn:samm:io.catenax.fleet.vehicles:2.0.0#CountryCodeTrait",
+      "label": "CountryCodeTrait",
+      "kind": "Characteristic",
+      "preferredName": null,
+      "description": null
+    },
+    {
+      "id": "urn:samm:io.catenax.fleet.vehicles:2.0.0#OemShortNameTrait",
+      "label": "OemShortNameTrait",
+      "kind": "Characteristic",
+      "preferredName": null,
+      "description": null
+    },
+    {
+      "id": "urn:samm:io.catenax.fleet.vehicles:2.0.0#CountryCodeRegularExpression",
+      "label": "CountryCodeRegularExpression",
+      "kind": "Characteristic",
+      "preferredName": "Country Code Regular Expression",
+      "description": "Regular Expression that ensures a three-letter code "
+    },
+    {
+      "id": "urn:samm:io.catenax.fleet.vehicles:2.0.0#WorldManufacturerInformationCodeLength",
+      "label": "WorldManufacturerInformationCodeLength",
+      "kind": "Characteristic",
+      "preferredName": "Length restriction for WMI",
+      "description": "Restricts the length of wmiCode to exactly 3 chars."
+    }
+  ],
+  "links": [
+    {
+      "source": "urn:samm:io.catenax.fleet.vehicles:2.0.0#Vehicles",
+      "target": "urn:samm:io.catenax.fleet.vehicles:2.0.0#listOfVehicles",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.vehicles:2.0.0#Vehicles",
+      "target": "urn:samm:io.catenax.fleet.vehicles:2.0.0#metaInformation",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.vehicles:2.0.0#Vehicle",
+      "target": "urn:samm:io.catenax.fleet.vehicles:2.0.0#recordStatus",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.vehicles:2.0.0#Vehicle",
+      "target": "urn:samm:io.catenax.fleet.vehicles:2.0.0#anonymizedVin",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.vehicles:2.0.0#Vehicle",
+      "target": "urn:samm:io.catenax.fleet.vehicles:2.0.0#catenaXVehicleId",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.vehicles:2.0.0#Vehicle",
+      "target": "urn:samm:io.catenax.fleet.vehicles:2.0.0#class",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.vehicles:2.0.0#Vehicle",
+      "target": "urn:samm:io.catenax.fleet.vehicles:2.0.0#driveSystemPower",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.vehicles:2.0.0#Vehicle",
+      "target": "urn:samm:io.catenax.fleet.vehicles:2.0.0#driveType",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.vehicles:2.0.0#Vehicle",
+      "target": "urn:samm:io.catenax.fleet.vehicles:2.0.0#powerTrainType",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.vehicles:2.0.0#Vehicle",
+      "target": "urn:samm:io.catenax.fleet.vehicles:2.0.0#modelDescription",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.vehicles:2.0.0#Vehicle",
+      "target": "urn:samm:io.catenax.fleet.vehicles:2.0.0#modelIdentifier",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.vehicles:2.0.0#Vehicle",
+      "target": "urn:samm:io.catenax.fleet.vehicles:2.0.0#plantCatenaXId",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.vehicles:2.0.0#Vehicle",
+      "target": "urn:samm:io.catenax.fleet.vehicles:2.0.0#plantCountryCode",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.vehicles:2.0.0#Vehicle",
+      "target": "urn:samm:io.catenax.fleet.vehicles:2.0.0#plantDescription",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.vehicles:2.0.0#Vehicle",
+      "target": "urn:samm:io.catenax.fleet.vehicles:2.0.0#plantIdentifier",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.vehicles:2.0.0#Vehicle",
+      "target": "urn:samm:io.catenax.fleet.vehicles:2.0.0#productionDate",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.vehicles:2.0.0#Vehicle",
+      "target": "urn:samm:io.catenax.fleet.vehicles:2.0.0#softwareCategory",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.vehicles:2.0.0#Vehicle",
+      "target": "urn:samm:io.catenax.fleet.vehicles:2.0.0#softwareVersion",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.vehicles:2.0.0#Vehicle",
+      "target": "urn:samm:io.catenax.fleet.vehicles:2.0.0#soldCountryCode",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.vehicles:2.0.0#Vehicle",
+      "target": "urn:samm:io.catenax.fleet.vehicles:2.0.0#soldCountryGroup",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.vehicles:2.0.0#Vehicle",
+      "target": "urn:samm:io.catenax.fleet.vehicles:2.0.0#soldDate",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.vehicles:2.0.0#Vehicle",
+      "target": "urn:samm:io.catenax.fleet.vehicles:2.0.0#steeringPos",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.vehicles:2.0.0#Vehicle",
+      "target": "urn:samm:io.catenax.fleet.vehicles:2.0.0#vehicleSeries",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.vehicles:2.0.0#Vehicle",
+      "target": "urn:samm:io.catenax.fleet.vehicles:2.0.0#wmiCode",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.vehicles:2.0.0#Vehicle",
+      "target": "urn:samm:io.catenax.fleet.vehicles:2.0.0#wmiNameNHTSA",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.vehicles:2.0.0#Vehicle",
+      "target": "urn:samm:io.catenax.fleet.vehicles:2.0.0#engines",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.vehicles:2.0.0#Vehicle",
+      "target": "urn:samm:io.catenax.fleet.vehicles:2.0.0#equipments",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.vehicles:2.0.0#MetaInformation",
+      "target": "urn:samm:io.catenax.fleet.vehicles:2.0.0#selectionCriteria",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.vehicles:2.0.0#MetaInformation",
+      "target": "urn:samm:io.catenax.fleet.vehicles:2.0.0#selectionStart",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.vehicles:2.0.0#MetaInformation",
+      "target": "urn:samm:io.catenax.fleet.vehicles:2.0.0#selectionEnd",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.vehicles:2.0.0#Engine",
+      "target": "urn:samm:io.catenax.fleet.vehicles:2.0.0#engineId",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.vehicles:2.0.0#Engine",
+      "target": "urn:samm:io.catenax.fleet.vehicles:2.0.0#engineDescription",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.vehicles:2.0.0#Engine",
+      "target": "urn:samm:io.catenax.fleet.vehicles:2.0.0#engineSeries",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.vehicles:2.0.0#Engine",
+      "target": "urn:samm:io.catenax.fleet.vehicles:2.0.0#serialNumber",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.vehicles:2.0.0#Engine",
+      "target": "urn:samm:io.catenax.fleet.vehicles:2.0.0#size",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.vehicles:2.0.0#Engine",
+      "target": "urn:samm:io.catenax.fleet.vehicles:2.0.0#power",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.vehicles:2.0.0#Engine",
+      "target": "urn:samm:io.catenax.fleet.vehicles:2.0.0#engineProductionDate",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.vehicles:2.0.0#Engine",
+      "target": "urn:samm:io.catenax.fleet.vehicles:2.0.0#installDate",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.vehicles:2.0.0#Engine",
+      "target": "urn:samm:io.catenax.fleet.vehicles:2.0.0#nhtsaFuelType",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.vehicles:2.0.0#Equipment",
+      "target": "urn:samm:io.catenax.fleet.vehicles:2.0.0#equipmentIdentifier",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.vehicles:2.0.0#Equipment",
+      "target": "urn:samm:io.catenax.fleet.vehicles:2.0.0#equipmentDescription",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.vehicles:2.0.0#Equipment",
+      "target": "urn:samm:io.catenax.fleet.vehicles:2.0.0#group",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.vehicles:2.0.0#listOfVehicles",
+      "target": "urn:samm:io.catenax.fleet.vehicles:2.0.0#VehiclesList",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.vehicles:2.0.0#metaInformation",
+      "target": "urn:samm:io.catenax.fleet.vehicles:2.0.0#MetaCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.vehicles:2.0.0#recordStatus",
+      "target": "urn:samm:io.catenax.fleet.vehicles:2.0.0#RecordStatusEnumeration",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.vehicles:2.0.0#anonymizedVin",
+      "target": "urn:samm:io.catenax.fleet.vehicles:2.0.0#UniqueID",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.vehicles:2.0.0#plantIdentifier",
+      "target": "urn:samm:io.catenax.fleet.vehicles:2.0.0#UniqueID",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.vehicles:2.0.0#engineId",
+      "target": "urn:samm:io.catenax.fleet.vehicles:2.0.0#UniqueID",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.vehicles:2.0.0#equipmentIdentifier",
+      "target": "urn:samm:io.catenax.fleet.vehicles:2.0.0#UniqueID",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.vehicles:2.0.0#driveSystemPower",
+      "target": "urn:samm:io.catenax.fleet.vehicles:2.0.0#EnginePower",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.vehicles:2.0.0#power",
+      "target": "urn:samm:io.catenax.fleet.vehicles:2.0.0#EnginePower",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.vehicles:2.0.0#driveType",
+      "target": "urn:samm:io.catenax.fleet.vehicles:2.0.0#DriveTypeNHTSA",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.vehicles:2.0.0#powerTrainType",
+      "target": "urn:samm:io.catenax.fleet.vehicles:2.0.0#PowerTrainTypes",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.vehicles:2.0.0#plantCountryCode",
+      "target": "urn:samm:io.catenax.fleet.vehicles:2.0.0#CountryCodeTrait",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.vehicles:2.0.0#soldCountryCode",
+      "target": "urn:samm:io.catenax.fleet.vehicles:2.0.0#CountryCodeTrait",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.vehicles:2.0.0#steeringPos",
+      "target": "urn:samm:io.catenax.fleet.vehicles:2.0.0#VehicleSteeringPos",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.vehicles:2.0.0#wmiCode",
+      "target": "urn:samm:io.catenax.fleet.vehicles:2.0.0#OemShortNameTrait",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.vehicles:2.0.0#engines",
+      "target": "urn:samm:io.catenax.fleet.vehicles:2.0.0#EnginesList",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.vehicles:2.0.0#equipments",
+      "target": "urn:samm:io.catenax.fleet.vehicles:2.0.0#EquipmentsList",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.vehicles:2.0.0#size",
+      "target": "urn:samm:io.catenax.fleet.vehicles:2.0.0#CubicCapacity",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.vehicles:2.0.0#nhtsaFuelType",
+      "target": "urn:samm:io.catenax.fleet.vehicles:2.0.0#FuelTypesNHTSA",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.vehicles:2.0.0#VehiclesList",
+      "target": "urn:samm:io.catenax.fleet.vehicles:2.0.0#Vehicle",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.vehicles:2.0.0#MetaCharacteristic",
+      "target": "urn:samm:io.catenax.fleet.vehicles:2.0.0#MetaInformation",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.vehicles:2.0.0#EnginesList",
+      "target": "urn:samm:io.catenax.fleet.vehicles:2.0.0#Engine",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.vehicles:2.0.0#EquipmentsList",
+      "target": "urn:samm:io.catenax.fleet.vehicles:2.0.0#Equipment",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.vehicles:2.0.0#CountryCodeTrait",
+      "target": "urn:samm:io.catenax.fleet.vehicles:2.0.0#CountryCodeRegularExpression",
+      "label": "constraint",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.vehicles:2.0.0#OemShortNameTrait",
+      "target": "urn:samm:io.catenax.fleet.vehicles:2.0.0#WorldManufacturerInformationCodeLength",
+      "label": "constraint",
+      "optional": false
+    }
+  ]
+}

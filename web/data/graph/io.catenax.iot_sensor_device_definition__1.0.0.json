@@ -1,0 +1,176 @@
+{
+  "meta": {
+    "namespace": "urn:bamm:io.catenax.iot_sensor_device_definition:1.0.0#",
+    "meta_model": "BAMM 2.0.0",
+    "model_family": "BAMM",
+    "model_name": "iot_sensor_device_definition",
+    "model_version": "1.0.0",
+    "source": "catenax",
+    "status": "deprecated",
+    "release_date": "2023-02-22",
+    "release_notes": "# Changelog\r\nAll notable changes to this model will be documented in this file.\r\n\r\n## [Unreleased]\r\n## [2.0.0] - 2023-11-20\r\n### Added\r\nN/A\r\n### Changed\r\n* Converted BAMM to SAMM\r\n* Changed to use shared aspects for the UUID and BPNL.\r\n### Removed\r\nN/A\r\n\r\n## [Unreleased]\r\n## [1.0.0] - 2023-02-22\r\n### Added\r\n- initial model\r\n### Changed\r\n### Removed",
+    "dependencies": [],
+    "path": "data/sldt-semantic-models/io.catenax.iot_sensor_device_definition/1.0.0/IotSensorDeviceDefinition.ttl"
+  },
+  "nodes": [
+    {
+      "id": "urn:bamm:io.catenax.iot_sensor_device_definition:1.0.0#catenaXId",
+      "label": "catenaXId",
+      "kind": "Property",
+      "preferredName": "Catena-X Identifier",
+      "description": "The fully anonymous Catena-X ID of the serialized part, valid for the Catena-X dataspace."
+    },
+    {
+      "id": "urn:bamm:io.catenax.iot_sensor_device_definition:1.0.0#manufacturer",
+      "label": "manufacturer",
+      "kind": "Property",
+      "preferredName": "Manufacturer",
+      "description": "Manufacturer of the IoT sensor device."
+    },
+    {
+      "id": "urn:bamm:io.catenax.iot_sensor_device_definition:1.0.0#type",
+      "label": "type",
+      "kind": "Property",
+      "preferredName": "IoT Sensor  Device Type",
+      "description": "The type of the IoT sensor device."
+    },
+    {
+      "id": "urn:bamm:io.catenax.iot_sensor_device_definition:1.0.0#serialNumber",
+      "label": "serialNumber",
+      "kind": "Property",
+      "preferredName": "IoT Sensor Device Serial Number",
+      "description": "The serial number of the IoT sensor device, as assigned by the manufacturer of the device."
+    },
+    {
+      "id": "urn:bamm:io.catenax.iot_sensor_device_definition:1.0.0#ownerID",
+      "label": "ownerID",
+      "kind": "Property",
+      "preferredName": "IoT Sensor Device Owner",
+      "description": "The Catena-X BPNL of the device owner."
+    },
+    {
+      "id": "urn:bamm:io.catenax.iot_sensor_device_definition:1.0.0#CatenaXIdTrait",
+      "label": "CatenaXIdTrait",
+      "kind": "Characteristic",
+      "preferredName": "Catena-X ID Trait",
+      "description": "Trait to ensure data format for Catena-X ID"
+    },
+    {
+      "id": "urn:bamm:io.catenax.iot_sensor_device_definition:1.0.0#UUIDv4",
+      "label": "UUIDv4",
+      "kind": "Characteristic",
+      "preferredName": "UUIDv4",
+      "description": "A version 4 UUID is a universally unique identifier that is generated using random 32 hexadecimal characters."
+    },
+    {
+      "id": "urn:bamm:io.catenax.iot_sensor_device_definition:1.0.0#ManufacturerCharacteristic",
+      "label": "ManufacturerCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "IoT Device Manufacturer Name",
+      "description": "Characteristic describing the property manufacturer."
+    },
+    {
+      "id": "urn:bamm:io.catenax.iot_sensor_device_definition:1.0.0#TypeCharacteristic",
+      "label": "TypeCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "IoT Device Type",
+      "description": "Describes the characteristics of the given type of device."
+    },
+    {
+      "id": "urn:bamm:io.catenax.iot_sensor_device_definition:1.0.0#SerialNumberCharacteristic",
+      "label": "SerialNumberCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "IoT Device Serial Number",
+      "description": "Describes the characteristic of the property serial number."
+    },
+    {
+      "id": "urn:bamm:io.catenax.iot_sensor_device_definition:1.0.0#OwnerIDCharacteristic",
+      "label": "OwnerIDCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "IoT Device Owner Characteristic",
+      "description": "Describes the Characteristic of the property ownerID."
+    },
+    {
+      "id": "urn:bamm:io.catenax.iot_sensor_device_definition:1.0.0#UUIDv4RegularExpression",
+      "label": "UUIDv4RegularExpression",
+      "kind": "Characteristic",
+      "preferredName": "Catena-X Id Regular Expression",
+      "description": "The provided regular expression ensures that the UUID is composed of five groups of characters separated by hyphens, in the form 8-4-4-4-12 for a total of 36 characters (32 hexadecimal characters and 4 hyphens), optionally prefixed by \"urn:uuid:\" to make it an IRI."
+    },
+    {
+      "id": "urn:bamm:io.catenax.iot_sensor_device_definition:1.0.0#IotSensorDeviceDefinition",
+      "label": "IotSensorDeviceDefinition",
+      "kind": "Aspect",
+      "preferredName": "IoT Sensor Device Definition",
+      "description": "Permanent characteristics of the individual IoT sensor device."
+    }
+  ],
+  "links": [
+    {
+      "source": "urn:bamm:io.catenax.iot_sensor_device_definition:1.0.0#IotSensorDeviceDefinition",
+      "target": "urn:bamm:io.catenax.iot_sensor_device_definition:1.0.0#catenaXId",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.iot_sensor_device_definition:1.0.0#IotSensorDeviceDefinition",
+      "target": "urn:bamm:io.catenax.iot_sensor_device_definition:1.0.0#manufacturer",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.iot_sensor_device_definition:1.0.0#IotSensorDeviceDefinition",
+      "target": "urn:bamm:io.catenax.iot_sensor_device_definition:1.0.0#type",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.iot_sensor_device_definition:1.0.0#IotSensorDeviceDefinition",
+      "target": "urn:bamm:io.catenax.iot_sensor_device_definition:1.0.0#serialNumber",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.iot_sensor_device_definition:1.0.0#IotSensorDeviceDefinition",
+      "target": "urn:bamm:io.catenax.iot_sensor_device_definition:1.0.0#ownerID",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.iot_sensor_device_definition:1.0.0#catenaXId",
+      "target": "urn:bamm:io.catenax.iot_sensor_device_definition:1.0.0#CatenaXIdTrait",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.iot_sensor_device_definition:1.0.0#manufacturer",
+      "target": "urn:bamm:io.catenax.iot_sensor_device_definition:1.0.0#ManufacturerCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.iot_sensor_device_definition:1.0.0#type",
+      "target": "urn:bamm:io.catenax.iot_sensor_device_definition:1.0.0#TypeCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.iot_sensor_device_definition:1.0.0#serialNumber",
+      "target": "urn:bamm:io.catenax.iot_sensor_device_definition:1.0.0#SerialNumberCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.iot_sensor_device_definition:1.0.0#ownerID",
+      "target": "urn:bamm:io.catenax.iot_sensor_device_definition:1.0.0#OwnerIDCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.iot_sensor_device_definition:1.0.0#CatenaXIdTrait",
+      "target": "urn:bamm:io.catenax.iot_sensor_device_definition:1.0.0#UUIDv4RegularExpression",
+      "label": "constraint",
+      "optional": false
+    }
+  ]
+}

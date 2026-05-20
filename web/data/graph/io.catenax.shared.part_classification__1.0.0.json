@@ -1,0 +1,130 @@
+{
+  "meta": {
+    "namespace": "urn:samm:io.catenax.shared.part_classification:1.0.0#",
+    "meta_model": "SAMM 2.1.0",
+    "model_family": "SAMM",
+    "model_name": "shared.part_classification",
+    "model_version": "1.0.0",
+    "source": "catenax",
+    "status": "deprecated",
+    "release_date": "2024-01-23",
+    "release_notes": "# Changelog\n\nAll notable changes to this model will be documented in this file.\n\n**Note**: Deprecated by `io.catenax.shared.industry_core.part_classification`.\n\n## [1.0.0] 2024-02-19\n\n> Note Non-incremental change\n\n### Changed\n\n- fixed misleading example values\n- fixed formatting for these release notes\n\n## [1.0.0] - 2024-01-23\n\n### Added\n\n- initial model",
+    "dependencies": [],
+    "path": "data/sldt-semantic-models/io.catenax.shared.part_classification/1.0.0/PartClassification.ttl"
+  },
+  "nodes": [
+    {
+      "id": "urn:samm:io.catenax.shared.part_classification:1.0.0#PartClassification",
+      "label": "PartClassification",
+      "kind": "Aspect",
+      "preferredName": "PartClassification",
+      "description": "This model is used as a shared aspect, that integrates classification properties into the models of the industry core. it should be reused once models handle part related data. Mainly, as it provides the possibility for data providers to chose which classification standards for components or parts to use and therefore enables the network to have a broader acceptance towards the various classification standards used in the industry. Moreover, multiple standards can be used for one part these range from E-Class, to ISO, IEC, or STEP."
+    },
+    {
+      "id": "urn:samm:io.catenax.shared.part_classification:1.0.0#partClassification",
+      "label": "partClassification",
+      "kind": "Property",
+      "preferredName": "Part Classification",
+      "description": "Property describing the classification of a part."
+    },
+    {
+      "id": "urn:samm:io.catenax.shared.part_classification:1.0.0#classificationStandard",
+      "label": "classificationStandard",
+      "kind": "Property",
+      "preferredName": "Classification Standard",
+      "description": "Identified classification standards that align to the Catena-X needs."
+    },
+    {
+      "id": "urn:samm:io.catenax.shared.part_classification:1.0.0#classificationID",
+      "label": "classificationID",
+      "kind": "Property",
+      "preferredName": "Classification ID",
+      "description": "The classification ID of the part type according to the corresponding standard definition mentioned in the key value pair."
+    },
+    {
+      "id": "urn:samm:io.catenax.shared.part_classification:1.0.0#classificationDescription",
+      "label": "classificationDescription",
+      "kind": "Property",
+      "preferredName": "Classification Description",
+      "description": "Optional property describing the classification standard."
+    },
+    {
+      "id": "urn:samm:io.catenax.shared.part_classification:1.0.0#ClassificationCharacteristic",
+      "label": "ClassificationCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Classification Characteristic",
+      "description": "Classification characteristic enabling a set of further properties."
+    },
+    {
+      "id": "urn:samm:io.catenax.shared.part_classification:1.0.0#ClassificationEntity",
+      "label": "ClassificationEntity",
+      "kind": "Entity",
+      "preferredName": "ClassificationEntity",
+      "description": "Encapsulates data related to the classification of the part."
+    },
+    {
+      "id": "urn:samm:io.catenax.shared.part_classification:1.0.0#ClassificationStandardCharacteristic",
+      "label": "ClassificationStandardCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Classification Standard Characteristic",
+      "description": "Identified classification standards that align to the Catena-X needs."
+    },
+    {
+      "id": "urn:samm:io.catenax.shared.part_classification:1.0.0#ClassificationIDCharacteristic",
+      "label": "ClassificationIDCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Classification ID characteristic",
+      "description": "It can be numeric or a string, depending on the chosen classification standard."
+    }
+  ],
+  "links": [
+    {
+      "source": "urn:samm:io.catenax.shared.part_classification:1.0.0#PartClassification",
+      "target": "urn:samm:io.catenax.shared.part_classification:1.0.0#partClassification",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.shared.part_classification:1.0.0#ClassificationEntity",
+      "target": "urn:samm:io.catenax.shared.part_classification:1.0.0#classificationStandard",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.shared.part_classification:1.0.0#ClassificationEntity",
+      "target": "urn:samm:io.catenax.shared.part_classification:1.0.0#classificationID",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.shared.part_classification:1.0.0#ClassificationEntity",
+      "target": "urn:samm:io.catenax.shared.part_classification:1.0.0#classificationDescription",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.shared.part_classification:1.0.0#partClassification",
+      "target": "urn:samm:io.catenax.shared.part_classification:1.0.0#ClassificationCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.shared.part_classification:1.0.0#classificationStandard",
+      "target": "urn:samm:io.catenax.shared.part_classification:1.0.0#ClassificationStandardCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.shared.part_classification:1.0.0#classificationID",
+      "target": "urn:samm:io.catenax.shared.part_classification:1.0.0#ClassificationIDCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.shared.part_classification:1.0.0#ClassificationCharacteristic",
+      "target": "urn:samm:io.catenax.shared.part_classification:1.0.0#ClassificationEntity",
+      "label": "dataType",
+      "optional": false
+    }
+  ]
+}

@@ -1,0 +1,320 @@
+{
+  "meta": {
+    "namespace": "urn:samm:io.catenax.material.technical_information:1.0.0#",
+    "meta_model": "SAMM 2.1.0",
+    "model_family": "SAMM",
+    "model_name": "material.technical_information",
+    "model_version": "1.0.0",
+    "source": "catenax",
+    "status": "release",
+    "release_date": "2025-05-23",
+    "release_notes": "# Changelog\n\nAll notable changes to this model will be documented in this file.\n\n## [Purpose of this model]\n\nTechnical Instructions provide information on handling goods, especially chemical substances or mixtures, and with the given data model, it can be exchanged efficiently between value chain partners in both fully digital formats and traditional PDF-based formats, supporting modern interoperability while maintaining compatibility with legacy systems.\n\n## [1.0.0] - 2025-05-23\n\n### Added\n\n- initial model\n\n### Changed\n\nn/a\n\n### Removed",
+    "dependencies": [],
+    "path": "data/sldt-semantic-models/io.catenax.material.technical_information/1.0.0/TechnicalInformation.ttl"
+  },
+  "nodes": [
+    {
+      "id": "urn:samm:io.catenax.material.technical_information:1.0.0#TechnicalInformation",
+      "label": "TechnicalInformation",
+      "kind": "Aspect",
+      "preferredName": "Technical Information Model",
+      "description": "Model that represents the Technical Information of Chemical Materials."
+    },
+    {
+      "id": "urn:samm:io.catenax.material.technical_information:1.0.0#technicalInformationLink",
+      "label": "technicalInformationLink",
+      "kind": "Property",
+      "preferredName": "technical information link",
+      "description": "Property that references the link representation of the Technical Information."
+    },
+    {
+      "id": "urn:samm:io.catenax.material.technical_information:1.0.0#technicalInformationBinary",
+      "label": "technicalInformationBinary",
+      "kind": "Property",
+      "preferredName": "technical information binary",
+      "description": "Property that references the binary representation of the Technical Information."
+    },
+    {
+      "id": "urn:samm:io.catenax.material.technical_information:1.0.0#link",
+      "label": "link",
+      "kind": "Property",
+      "preferredName": "link",
+      "description": "HTTP(S) address according to RFC 3986"
+    },
+    {
+      "id": "urn:samm:io.catenax.material.technical_information:1.0.0#payload",
+      "label": "payload",
+      "kind": "Property",
+      "preferredName": "payload",
+      "description": "Base64-encoded string of PDF file"
+    },
+    {
+      "id": "urn:samm:io.catenax.material.technical_information:1.0.0#issueVersion",
+      "label": "issueVersion",
+      "kind": "Property",
+      "preferredName": "issue version",
+      "description": "Versioning information of the Technical Information"
+    },
+    {
+      "id": "urn:samm:io.catenax.material.technical_information:1.0.0#appliesToCountry",
+      "label": "appliesToCountry",
+      "kind": "Property",
+      "preferredName": "applies to country",
+      "description": "Relationship between the Technical Information and the country to which it applies for."
+    },
+    {
+      "id": "urn:samm:io.catenax.material.technical_information:1.0.0#issueDate",
+      "label": "issueDate",
+      "kind": "Property",
+      "preferredName": "issue date",
+      "description": "Issue date of Technical Information"
+    },
+    {
+      "id": "urn:samm:io.catenax.material.technical_information:1.0.0#language",
+      "label": "language",
+      "kind": "Property",
+      "preferredName": "language",
+      "description": "ISO-639-2/B code of language"
+    },
+    {
+      "id": "urn:samm:io.catenax.material.technical_information:1.0.0#hasAlpha3Code",
+      "label": "hasAlpha3Code",
+      "kind": "Property",
+      "preferredName": "has alpha3 code",
+      "description": "Country code consisting of three capital letters according to ISO 3166."
+    },
+    {
+      "id": "urn:samm:io.catenax.material.technical_information:1.0.0#label",
+      "label": "label",
+      "kind": "Property",
+      "preferredName": "label",
+      "description": "Country name."
+    },
+    {
+      "id": "urn:samm:io.catenax.material.technical_information:1.0.0#TechnicalInformationCharacteristicList",
+      "label": "TechnicalInformationCharacteristicList",
+      "kind": "Characteristic",
+      "preferredName": "technical information characteristic list",
+      "description": "Characteristic to describe the properties of the link representation of the Technical Information."
+    },
+    {
+      "id": "urn:samm:io.catenax.material.technical_information:1.0.0#TechnicalInformationBinaryCharacteristicList",
+      "label": "TechnicalInformationBinaryCharacteristicList",
+      "kind": "Characteristic",
+      "preferredName": "technical information binary characteristic list",
+      "description": "Characteristic to describe the properties of the binary representation of the Technical Information."
+    },
+    {
+      "id": "urn:samm:io.catenax.material.technical_information:1.0.0#TechnicalInformationLinkEntity",
+      "label": "TechnicalInformationLinkEntity",
+      "kind": "Entity",
+      "preferredName": "technical information link",
+      "description": "Allows referencing a Technical Information document via a (publically available) URL."
+    },
+    {
+      "id": "urn:samm:io.catenax.material.technical_information:1.0.0#TechnicalInformationBinaryEntity",
+      "label": "TechnicalInformationBinaryEntity",
+      "kind": "Entity",
+      "preferredName": "technical information binary",
+      "description": "Represents a base64 encoded Technical Information document. The binary PDF file will be encoded by the binary-to-text encoding \"Base64\" which is common to be transported safely throughout systems that may only support text characters."
+    },
+    {
+      "id": "urn:samm:io.catenax.material.technical_information:1.0.0#CountryEntity",
+      "label": "CountryEntity",
+      "kind": "Entity",
+      "preferredName": "country",
+      "description": "A country is a distinct territorial body or political entity."
+    },
+    {
+      "id": "urn:samm:io.catenax.material.technical_information:1.0.0#TechnicalInformationAbstractEntity",
+      "label": "TechnicalInformationAbstractEntity",
+      "kind": "AbstractEntity",
+      "preferredName": "technical information",
+      "description": "Represents the Technical Information document usually supplied via paper or digitally as PDF."
+    },
+    {
+      "id": "urn:samm:io.catenax.material.technical_information:1.0.0#PayloadCharacteristic",
+      "label": "PayloadCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "payload characteristic",
+      "description": "Describes a Property which contains the Base64-encoded payload representation of the Technical Information."
+    },
+    {
+      "id": "urn:samm:io.catenax.material.technical_information:1.0.0#IssueDateCharacteristic",
+      "label": "IssueDateCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "issue date characteristic",
+      "description": "Describes the date of the Property."
+    },
+    {
+      "id": "urn:samm:io.catenax.material.technical_information:1.0.0#CountryTrait",
+      "label": "CountryTrait",
+      "kind": "Characteristic",
+      "preferredName": "Country Trait",
+      "description": "Trait to ensure that the Technical Information document is applicable to at least one country."
+    },
+    {
+      "id": "urn:samm:io.catenax.material.technical_information:1.0.0#Alpha3CodeTrait",
+      "label": "Alpha3CodeTrait",
+      "kind": "Characteristic",
+      "preferredName": "Alpha 3 Code Trait",
+      "description": "Trait to ensure standard data format for country code."
+    },
+    {
+      "id": "urn:samm:io.catenax.material.technical_information:1.0.0#CountrySet",
+      "label": "CountrySet",
+      "kind": "Characteristic",
+      "preferredName": "country characteristic set",
+      "description": "Set of countries where the Technical Information is applicable."
+    },
+    {
+      "id": "urn:samm:io.catenax.material.technical_information:1.0.0#CountryConstraint",
+      "label": "CountryConstraint",
+      "kind": "Characteristic",
+      "preferredName": "Country Constraint",
+      "description": "Limits the set of countries to at least to one element."
+    },
+    {
+      "id": "urn:samm:io.catenax.material.technical_information:1.0.0#Alpha3CodeCharacteristic",
+      "label": "Alpha3CodeCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Alpha 3 Code",
+      "description": "Three letter country code defined in ISO 3166"
+    },
+    {
+      "id": "urn:samm:io.catenax.material.technical_information:1.0.0#ISO3166CodeConstraint",
+      "label": "ISO3166CodeConstraint",
+      "kind": "Characteristic",
+      "preferredName": "ISO 3166 code constraint",
+      "description": "Constrainst the value to only three capital letters to represent the country code according to ISO 3166."
+    }
+  ],
+  "links": [
+    {
+      "source": "urn:samm:io.catenax.material.technical_information:1.0.0#TechnicalInformation",
+      "target": "urn:samm:io.catenax.material.technical_information:1.0.0#technicalInformationLink",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material.technical_information:1.0.0#TechnicalInformation",
+      "target": "urn:samm:io.catenax.material.technical_information:1.0.0#technicalInformationBinary",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material.technical_information:1.0.0#TechnicalInformationLinkEntity",
+      "target": "urn:samm:io.catenax.material.technical_information:1.0.0#link",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material.technical_information:1.0.0#TechnicalInformationBinaryEntity",
+      "target": "urn:samm:io.catenax.material.technical_information:1.0.0#payload",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material.technical_information:1.0.0#TechnicalInformationAbstractEntity",
+      "target": "urn:samm:io.catenax.material.technical_information:1.0.0#issueVersion",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.material.technical_information:1.0.0#TechnicalInformationAbstractEntity",
+      "target": "urn:samm:io.catenax.material.technical_information:1.0.0#appliesToCountry",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material.technical_information:1.0.0#TechnicalInformationAbstractEntity",
+      "target": "urn:samm:io.catenax.material.technical_information:1.0.0#issueDate",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.material.technical_information:1.0.0#TechnicalInformationAbstractEntity",
+      "target": "urn:samm:io.catenax.material.technical_information:1.0.0#language",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material.technical_information:1.0.0#CountryEntity",
+      "target": "urn:samm:io.catenax.material.technical_information:1.0.0#hasAlpha3Code",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material.technical_information:1.0.0#CountryEntity",
+      "target": "urn:samm:io.catenax.material.technical_information:1.0.0#label",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material.technical_information:1.0.0#technicalInformationLink",
+      "target": "urn:samm:io.catenax.material.technical_information:1.0.0#TechnicalInformationCharacteristicList",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material.technical_information:1.0.0#technicalInformationBinary",
+      "target": "urn:samm:io.catenax.material.technical_information:1.0.0#TechnicalInformationBinaryCharacteristicList",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material.technical_information:1.0.0#payload",
+      "target": "urn:samm:io.catenax.material.technical_information:1.0.0#PayloadCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material.technical_information:1.0.0#appliesToCountry",
+      "target": "urn:samm:io.catenax.material.technical_information:1.0.0#CountryTrait",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material.technical_information:1.0.0#issueDate",
+      "target": "urn:samm:io.catenax.material.technical_information:1.0.0#IssueDateCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material.technical_information:1.0.0#hasAlpha3Code",
+      "target": "urn:samm:io.catenax.material.technical_information:1.0.0#Alpha3CodeTrait",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material.technical_information:1.0.0#TechnicalInformationCharacteristicList",
+      "target": "urn:samm:io.catenax.material.technical_information:1.0.0#TechnicalInformationLinkEntity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material.technical_information:1.0.0#TechnicalInformationBinaryCharacteristicList",
+      "target": "urn:samm:io.catenax.material.technical_information:1.0.0#TechnicalInformationBinaryEntity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material.technical_information:1.0.0#CountrySet",
+      "target": "urn:samm:io.catenax.material.technical_information:1.0.0#CountryEntity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material.technical_information:1.0.0#CountryTrait",
+      "target": "urn:samm:io.catenax.material.technical_information:1.0.0#CountryConstraint",
+      "label": "constraint",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material.technical_information:1.0.0#Alpha3CodeTrait",
+      "target": "urn:samm:io.catenax.material.technical_information:1.0.0#ISO3166CodeConstraint",
+      "label": "constraint",
+      "optional": false
+    }
+  ]
+}

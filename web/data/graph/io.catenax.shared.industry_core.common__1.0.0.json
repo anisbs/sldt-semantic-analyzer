@@ -1,0 +1,239 @@
+{
+  "meta": {
+    "namespace": "urn:samm:io.catenax.shared.industry_core.common:1.0.0#",
+    "meta_model": "SAMM 2.1.0",
+    "model_family": "SAMM",
+    "model_name": "shared.industry_core.common",
+    "model_version": "1.0.0",
+    "source": "catenax",
+    "status": "release",
+    "release_date": null,
+    "release_notes": "# Changelog\n\nAll notable changes to this model will be documented in this file.\n\n## [1.0.0] 26.03\n\n### Added\n\n- initial version of this model\n\n### Changed\n\nn/a\n\n### Removed\n\nn/a",
+    "dependencies": [
+      {
+        "name": "shared.business_partner_number",
+        "version": "2.0.0",
+        "family": "SAMM",
+        "source": "catenax"
+      },
+      {
+        "name": "shared.uuid",
+        "version": "2.0.0",
+        "family": "SAMM",
+        "source": "catenax"
+      }
+    ],
+    "path": "data/sldt-semantic-models/io.catenax.shared.industry_core.common/1.0.0/Common.ttl"
+  },
+  "nodes": [
+    {
+      "id": "urn:samm:io.catenax.shared.industry_core.common:1.0.0#KeyValueList",
+      "label": "KeyValueList",
+      "kind": "Entity",
+      "preferredName": "key value list",
+      "description": "A list of key value pairs for local identifiers, which are composed of a key and a corresponding value."
+    },
+    {
+      "id": "urn:samm:io.catenax.shared.industry_core.common:1.0.0#ValidityPeriodEntity",
+      "label": "ValidityPeriodEntity",
+      "kind": "Entity",
+      "preferredName": "validity period entity",
+      "description": "If a validity period only has a start that means that the period is valid from the start date without a (yet)defined end date and vice versa."
+    },
+    {
+      "id": "urn:samm:io.catenax.shared.industry_core.common:1.0.0#ValidityPeriodCharacteristic",
+      "label": "ValidityPeriodCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "validity period characteristic",
+      "description": "Characteristic  for a validity period defined by an (optional)start and an (optional)end timestamp."
+    },
+    {
+      "id": "urn:samm:io.catenax.shared.industry_core.common:1.0.0#value",
+      "label": "value",
+      "kind": "Property",
+      "preferredName": "identifier value",
+      "description": "The value of an identifier."
+    },
+    {
+      "id": "urn:samm:io.catenax.shared.industry_core.common:1.0.0#nameAtManufacturer",
+      "label": "nameAtManufacturer",
+      "kind": "Property",
+      "preferredName": "name at manufacturer",
+      "description": "Name of the part as assigned by the manufacturer"
+    },
+    {
+      "id": "urn:samm:io.catenax.shared.industry_core.common:1.0.0#lastModifiedOn",
+      "label": "lastModifiedOn",
+      "kind": "Property",
+      "preferredName": "last modification date and time",
+      "description": "Timestamp when the assembly or usage relationship between parent part and child part was last modified."
+    },
+    {
+      "id": "urn:samm:io.catenax.shared.industry_core.common:1.0.0#validFrom",
+      "label": "validFrom",
+      "kind": "Property",
+      "preferredName": "valid from",
+      "description": "Start date and time of validity period."
+    },
+    {
+      "id": "urn:samm:io.catenax.shared.industry_core.common:1.0.0#businessPartner",
+      "label": "businessPartner",
+      "kind": "Property",
+      "preferredName": "business partner",
+      "description": "The supplier of the given child item."
+    },
+    {
+      "id": "urn:samm:io.catenax.shared.industry_core.common:1.0.0#customerPartId",
+      "label": "customerPartId",
+      "kind": "Property",
+      "preferredName": "customer part identifier",
+      "description": "Part ID as assigned by the customer of the part. The customer Part ID identifies the part (as designed)in the customer`s dataspace. The Part ID does not reference a specific instance of a part and thus should not be confused with the serial number or any other instance IDs. \nIf no specific part ID exists a part family ID may be substituted for it."
+    },
+    {
+      "id": "urn:samm:io.catenax.shared.industry_core.common:1.0.0#validityPeriod",
+      "label": "validityPeriod",
+      "kind": "Property",
+      "preferredName": "validity period",
+      "description": "The period of time during which the parent-child relation is valid. This relates to whether a child part can be built into or used in the production of the parent part at a given time.\nIf no validity period is given the relation is considered valid at any point in time."
+    },
+    {
+      "id": "urn:samm:io.catenax.shared.industry_core.common:1.0.0#customers",
+      "label": "customers",
+      "kind": "Property",
+      "preferredName": "customers",
+      "description": "A list of all customers of this item. If the parent items in which this item is assembled into are known, they should be listed as well.\n\nFor serialized items the list should contain only one customer with one parent item.\nAs different subsets of a batch might be sold to different customers this is a list."
+    },
+    {
+      "id": "urn:samm:io.catenax.shared.industry_core.common:1.0.0#validTo",
+      "label": "validTo",
+      "kind": "Property",
+      "preferredName": "valid to",
+      "description": "End date of validity period."
+    },
+    {
+      "id": "urn:samm:io.catenax.shared.industry_core.common:1.0.0#nameAtCustomer",
+      "label": "nameAtCustomer",
+      "kind": "Property",
+      "preferredName": "name at customer",
+      "description": "Name of the part as assigned by the customer"
+    },
+    {
+      "id": "urn:samm:io.catenax.shared.industry_core.common:1.0.0#createdOn",
+      "label": "createdOn",
+      "kind": "Property",
+      "preferredName": "created on",
+      "description": "Timestamp when the relation between the parent part and the child part was created"
+    },
+    {
+      "id": "urn:samm:io.catenax.shared.industry_core.common:1.0.0#globalAssetId",
+      "label": "globalAssetId",
+      "kind": "Property",
+      "preferredName": "data space identifier",
+      "description": "The fully anonymous ID in the dataspace of the part."
+    },
+    {
+      "id": "urn:samm:io.catenax.shared.industry_core.common:1.0.0#key",
+      "label": "key",
+      "kind": "Property",
+      "preferredName": "identifier key",
+      "description": "The key of a local identifier."
+    },
+    {
+      "id": "urn:samm:io.catenax.shared.industry_core.common:1.0.0#manufacturerPartId",
+      "label": "manufacturerPartId",
+      "kind": "Property",
+      "preferredName": "manufacturer part identifier",
+      "description": "Part ID as assigned by the manufacturer of the part. The Part ID identifies the part (as designed) in the manufacturer`s dataspace. The Part ID does not reference a specific instance of a part and thus should not be confused with the serial number or batch number."
+    },
+    {
+      "id": "urn:samm:io.catenax.shared.industry_core.common:1.0.0#localIdentifiers",
+      "label": "localIdentifiers",
+      "kind": "Property",
+      "preferredName": "local identifiers",
+      "description": "A local identifier enables identification of a part in a specific dataspace, but is not unique in the Catena-X dataspace. Multiple local identifiers may exist."
+    },
+    {
+      "id": "urn:samm:io.catenax.shared.industry_core.common:1.0.0#ListOfCustomers",
+      "label": "ListOfCustomers",
+      "kind": "Characteristic",
+      "preferredName": "list of customers characteristic",
+      "description": "A list of customers and their related parent items."
+    },
+    {
+      "id": "urn:samm:io.catenax.shared.industry_core.common:1.0.0#LocalIdentifierCharacteristic",
+      "label": "LocalIdentifierCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "local identifier characteristic",
+      "description": "A part may have multiple attributes, which uniquely identify that part in a specific dataspace (e.g., the manufacturer's dataspace)"
+    },
+    {
+      "id": "urn:samm:io.catenax.shared.industry_core.common:1.0.0#AllowedKeys",
+      "label": "AllowedKeys",
+      "kind": "Characteristic",
+      "preferredName": "key characteristic",
+      "description": "The key characteristic of a local identifier. A specific subset of keys is predefined. Custom keys are not allowed. Predefined keys:\n- \"manufacturerId\" - The Business Partner Number (BPN) of the manufacturer. Value: BPN-Nummer\n- \"batchId\" - The identifier of the batch, to which the serialized part belongs"
+    }
+  ],
+  "links": [
+    {
+      "source": "urn:samm:io.catenax.shared.industry_core.common:1.0.0#KeyValueList",
+      "target": "urn:samm:io.catenax.shared.industry_core.common:1.0.0#key",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.shared.industry_core.common:1.0.0#KeyValueList",
+      "target": "urn:samm:io.catenax.shared.industry_core.common:1.0.0#value",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.shared.industry_core.common:1.0.0#ValidityPeriodEntity",
+      "target": "urn:samm:io.catenax.shared.industry_core.common:1.0.0#validTo",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.shared.industry_core.common:1.0.0#ValidityPeriodEntity",
+      "target": "urn:samm:io.catenax.shared.industry_core.common:1.0.0#validFrom",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.shared.industry_core.common:1.0.0#validityPeriod",
+      "target": "urn:samm:io.catenax.shared.industry_core.common:1.0.0#ValidityPeriodCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.shared.industry_core.common:1.0.0#customers",
+      "target": "urn:samm:io.catenax.shared.industry_core.common:1.0.0#ListOfCustomers",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.shared.industry_core.common:1.0.0#key",
+      "target": "urn:samm:io.catenax.shared.industry_core.common:1.0.0#AllowedKeys",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.shared.industry_core.common:1.0.0#localIdentifiers",
+      "target": "urn:samm:io.catenax.shared.industry_core.common:1.0.0#LocalIdentifierCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.shared.industry_core.common:1.0.0#ValidityPeriodCharacteristic",
+      "target": "urn:samm:io.catenax.shared.industry_core.common:1.0.0#ValidityPeriodEntity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.shared.industry_core.common:1.0.0#LocalIdentifierCharacteristic",
+      "target": "urn:samm:io.catenax.shared.industry_core.common:1.0.0#KeyValueList",
+      "label": "dataType",
+      "optional": false
+    }
+  ]
+}

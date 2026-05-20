@@ -1,0 +1,371 @@
+{
+  "meta": {
+    "namespace": "urn:samm:io.catenax.parts_analyses:2.0.0#",
+    "meta_model": "SAMM 2.0.0",
+    "model_family": "SAMM",
+    "model_name": "parts_analyses",
+    "model_version": "2.0.0",
+    "source": "catenax",
+    "status": "deprecated",
+    "release_date": "2023-06-23 -> deprecated",
+    "release_notes": "# Changelog\nAll notable changes to this model will be documented in this file.\n\n## [Unreleased]\n- Version 1.0.0 is now set to deprecated: Some important attributes were missing. Use version 2.0.0 instead\n\n## [4.0.0] - 2025-07-07\nA conversion table from previous version 3.0.0 to 4.0.0 of this model is provided with the updated KIT Quality Management for CX release Saturn.\n\n### Added\n\n### Changed\n- to reduce redundancies in modelling some properties are now used form share quality core model\n- listOfPartAnalyses from version 3.0.0 has changed to partsAnalyses only\n- using parts definition from shared quality core model (via samm:extends) to unify properties of analyzed parts\n- at least one primary identifier per entity is now mandatory\n- partsAnalyses_partName and partsAnalyses_supplierAnalysisID are now mandatory properties\n- listOfPartAnalyses_parentAnalysisID changed to partsAnalyses_vehicleManufacturerAnalysisID\n\n\n### Removed\n- listOfPartAnalyses_parentPartNumber,listOfPartAnalyses_parentSerialNumber are removed: The properties for part coming from shared core model cover that information \n\n\n## [3.0.0] - 2024-01-22\n### Added\n- metaInformation property added to root entity\n- integration of the shared UUID characteristic and RegEx for the vehicle Catena-X identifie\n- introducing new characteristic for unique identifiers\n- introduced new prarent properties that could be used for Tier-n collaboration\n\n### Changed\n- changed all properties to optional except one unique identifier per entity\n\n### Removed\n- oem properties -> replaced by parent properties\n\n## [2.0.0] - 2023-06-23 -> deprecated\n### Added\n- property manufacturerAnalysisID: ID of internal system from manufacturer\n- property customerAnalysisID: ID of internal system from customer\n- property anonymizedVin to match PartsAnalyses data with Vehilce.ProductDescription data\n- additionalInformation: a key/value list to add additional data\n\n### Changed\n- catenaXIdentifier renamed to catenaXPartId: To emphasize that this is a CX part ID (not CX vehicle ID)\n- customerPartIdentifier renamed to customerPartNumber: to avoid confusion because this property is not unique \n- manufacturerPartIdentifier renamed to manufacturerPartNumber: to avoid confusion because this property is not unique\n- nameAtManufacturer to manufacturerPartName: All properties from manufacturer have no the prefix manufacturer for better readability\n\n### Removed\n\n## [1.0.0] - 2022-12-13 -> deprecated\n### Added\n- initial version of this model\n\n### Changed\nn/a\n\n### Removed",
+    "dependencies": [],
+    "path": "data/sldt-semantic-models/io.catenax.parts_analyses/2.0.0/PartsAnalyses.ttl"
+  },
+  "nodes": [
+    {
+      "id": "urn:samm:io.catenax.parts_analyses:2.0.0#PartsAnalyses",
+      "label": "PartsAnalyses",
+      "kind": "Aspect",
+      "preferredName": "Parts Analysis",
+      "description": "Parts analysis that are related to one quality task"
+    },
+    {
+      "id": "urn:samm:io.catenax.parts_analyses:2.0.0#listOfPartAnalyses",
+      "label": "listOfPartAnalyses",
+      "kind": "Property",
+      "preferredName": "List Of several Part Analyses",
+      "description": "A list of several part analyses"
+    },
+    {
+      "id": "urn:samm:io.catenax.parts_analyses:2.0.0#manufacturerAnalysisID",
+      "label": "manufacturerAnalysisID",
+      "kind": "Property",
+      "preferredName": "Manufacturer Analysis ID",
+      "description": "Internal identifier for this analysis at manufacturer."
+    },
+    {
+      "id": "urn:samm:io.catenax.parts_analyses:2.0.0#qualityTaskId",
+      "label": "qualityTaskId",
+      "kind": "Property",
+      "preferredName": "Quality Task ID",
+      "description": "A unique quality task identifier where these list of parts analysis belong to."
+    },
+    {
+      "id": "urn:samm:io.catenax.parts_analyses:2.0.0#anonymizedVin",
+      "label": "anonymizedVin",
+      "kind": "Property",
+      "preferredName": "Anonymized VIN",
+      "description": "Reference to vehicle. OEM-specific hashed VIN. This property is the link to the vehicle from which the analyzed part came from."
+    },
+    {
+      "id": "urn:samm:io.catenax.parts_analyses:2.0.0#status",
+      "label": "status",
+      "kind": "Property",
+      "preferredName": "Status",
+      "description": "Status of this part analysis"
+    },
+    {
+      "id": "urn:samm:io.catenax.parts_analyses:2.0.0#isDefect",
+      "label": "isDefect",
+      "kind": "Property",
+      "preferredName": "Part defect flag",
+      "description": "True: Analysis turned out that analyzed part is defect accroding part's specification."
+    },
+    {
+      "id": "urn:samm:io.catenax.parts_analyses:2.0.0#resultsDescription",
+      "label": "resultsDescription",
+      "kind": "Property",
+      "preferredName": "Several results of analysis",
+      "description": "Detailed description of part analysis results."
+    },
+    {
+      "id": "urn:samm:io.catenax.parts_analyses:2.0.0#manufacturerSerialPartNumber",
+      "label": "manufacturerSerialPartNumber",
+      "kind": "Property",
+      "preferredName": "Manufacturer serial part number",
+      "description": "Serial Part Number of the analyzed part as assigned by the manufacturer of the part. The serial part number is unique for each serial part. Not available for all kinds of parts."
+    },
+    {
+      "id": "urn:samm:io.catenax.parts_analyses:2.0.0#manufacturerPartNumber",
+      "label": "manufacturerPartNumber",
+      "kind": "Property",
+      "preferredName": "Manufacturer Part Number",
+      "description": "Part number property for parts. This part number is not unique. Same parts have normally same part number."
+    },
+    {
+      "id": "urn:samm:io.catenax.parts_analyses:2.0.0#manufacturerPartName",
+      "label": "manufacturerPartName",
+      "kind": "Property",
+      "preferredName": "Manufacturer part name",
+      "description": "Name of the analyzed part as assigned by the manufacturer of the part."
+    },
+    {
+      "id": "urn:samm:io.catenax.parts_analyses:2.0.0#catenaXPartId",
+      "label": "catenaXPartId",
+      "kind": "Property",
+      "preferredName": "Catena-X Part ID",
+      "description": "The fully anonymous Catena-X ID of the analyzed part - only available after digital twin registry is fully operational."
+    },
+    {
+      "id": "urn:samm:io.catenax.parts_analyses:2.0.0#customerAnalysisID",
+      "label": "customerAnalysisID",
+      "kind": "Property",
+      "preferredName": "Customer Analysis ID",
+      "description": "Internal identifier for this analysis at customer."
+    },
+    {
+      "id": "urn:samm:io.catenax.parts_analyses:2.0.0#customerPartNumber",
+      "label": "customerPartNumber",
+      "kind": "Property",
+      "preferredName": "Customer part number",
+      "description": "Part number from original manufacturer equipment (OEM). This part number is normally not unique."
+    },
+    {
+      "id": "urn:samm:io.catenax.parts_analyses:2.0.0#addtionalInformation",
+      "label": "addtionalInformation",
+      "kind": "Property",
+      "preferredName": "Additional information",
+      "description": "You can use this key:value list for additional properties that were not defined in this aspect model."
+    },
+    {
+      "id": "urn:samm:io.catenax.parts_analyses:2.0.0#keys",
+      "label": "keys",
+      "kind": "Property",
+      "preferredName": "Keys",
+      "description": "a list of keys"
+    },
+    {
+      "id": "urn:samm:io.catenax.parts_analyses:2.0.0#values",
+      "label": "values",
+      "kind": "Property",
+      "preferredName": "Values",
+      "description": "Values for the keys defined"
+    },
+    {
+      "id": "urn:samm:io.catenax.parts_analyses:2.0.0#ListOfPartsAnalyses",
+      "label": "ListOfPartsAnalyses",
+      "kind": "Characteristic",
+      "preferredName": "Part Analyses",
+      "description": "A list for multiple part analyses"
+    },
+    {
+      "id": "urn:samm:io.catenax.parts_analyses:2.0.0#Keys",
+      "label": "Keys",
+      "kind": "Characteristic",
+      "preferredName": "Keys",
+      "description": "A list of additional keys. Togther with the values list this list forms the additional data information."
+    },
+    {
+      "id": "urn:samm:io.catenax.parts_analyses:2.0.0#Values",
+      "label": "Values",
+      "kind": "Characteristic",
+      "preferredName": "Values",
+      "description": "A list of additional values that forms the additional data. Togther with the keys list this list forms the additional data information."
+    },
+    {
+      "id": "urn:samm:io.catenax.parts_analyses:2.0.0#PartAnalysis",
+      "label": "PartAnalysis",
+      "kind": "Entity",
+      "preferredName": "Part Analysis",
+      "description": "The analysis results of ONE part"
+    },
+    {
+      "id": "urn:samm:io.catenax.parts_analyses:2.0.0#AdditionalInformation",
+      "label": "AdditionalInformation",
+      "kind": "Entity",
+      "preferredName": "Additional information",
+      "description": "Additional information is stored as list of keys and list of values"
+    },
+    {
+      "id": "urn:samm:io.catenax.parts_analyses:2.0.0#UniqueID",
+      "label": "UniqueID",
+      "kind": "Characteristic",
+      "preferredName": "unique ID",
+      "description": "Characteristic for a unique id: every linked property to this characteristic is a unique ID"
+    },
+    {
+      "id": "urn:samm:io.catenax.parts_analyses:2.0.0#Text",
+      "label": "Text",
+      "kind": "Characteristic",
+      "preferredName": "Text",
+      "description": "Describes a Property which contains plain text. This is intended exclusively for human readable strings, not for identifiers, measurement values, etc."
+    },
+    {
+      "id": "urn:samm:io.catenax.parts_analyses:2.0.0#UUIDv4",
+      "label": "UUIDv4",
+      "kind": "Characteristic",
+      "preferredName": "UUIDv4",
+      "description": "A version 4 UUID is a universally unique identifier that is generated using random 32 hexadecimal characters."
+    },
+    {
+      "id": "urn:samm:io.catenax.parts_analyses:2.0.0#StatusCharacteristic",
+      "label": "StatusCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "StatusCharacteristic",
+      "description": "Enumeration of the different status values"
+    },
+    {
+      "id": "urn:samm:io.catenax.parts_analyses:2.0.0#CatenaXIdTrait",
+      "label": "CatenaXIdTrait",
+      "kind": "Characteristic",
+      "preferredName": "Catena-X ID Trait",
+      "description": "Trait to ensure data format for Catena-X ID"
+    },
+    {
+      "id": "urn:samm:io.catenax.parts_analyses:2.0.0#UUIDv4RegularExpression",
+      "label": "UUIDv4RegularExpression",
+      "kind": "Characteristic",
+      "preferredName": "Catena-X Id Regular Expression",
+      "description": "The provided regular expression ensures that the UUID is composed of five groups of characters separated by hyphens, in the form 8-4-4-4-12 for a total of 36 characters (32 hexadecimal characters and 4 hyphens), optionally prefixed by \"urn:uuid:\" to make it an IRI."
+    }
+  ],
+  "links": [
+    {
+      "source": "urn:samm:io.catenax.parts_analyses:2.0.0#PartsAnalyses",
+      "target": "urn:samm:io.catenax.parts_analyses:2.0.0#listOfPartAnalyses",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.parts_analyses:2.0.0#PartAnalysis",
+      "target": "urn:samm:io.catenax.parts_analyses:2.0.0#manufacturerAnalysisID",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.parts_analyses:2.0.0#PartAnalysis",
+      "target": "urn:samm:io.catenax.parts_analyses:2.0.0#qualityTaskId",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.parts_analyses:2.0.0#PartAnalysis",
+      "target": "urn:samm:io.catenax.parts_analyses:2.0.0#anonymizedVin",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.parts_analyses:2.0.0#PartAnalysis",
+      "target": "urn:samm:io.catenax.parts_analyses:2.0.0#status",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.parts_analyses:2.0.0#PartAnalysis",
+      "target": "urn:samm:io.catenax.parts_analyses:2.0.0#isDefect",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.parts_analyses:2.0.0#PartAnalysis",
+      "target": "urn:samm:io.catenax.parts_analyses:2.0.0#resultsDescription",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.parts_analyses:2.0.0#PartAnalysis",
+      "target": "urn:samm:io.catenax.parts_analyses:2.0.0#manufacturerSerialPartNumber",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.parts_analyses:2.0.0#PartAnalysis",
+      "target": "urn:samm:io.catenax.parts_analyses:2.0.0#manufacturerPartNumber",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.parts_analyses:2.0.0#PartAnalysis",
+      "target": "urn:samm:io.catenax.parts_analyses:2.0.0#manufacturerPartName",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.parts_analyses:2.0.0#PartAnalysis",
+      "target": "urn:samm:io.catenax.parts_analyses:2.0.0#catenaXPartId",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.parts_analyses:2.0.0#PartAnalysis",
+      "target": "urn:samm:io.catenax.parts_analyses:2.0.0#customerAnalysisID",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.parts_analyses:2.0.0#PartAnalysis",
+      "target": "urn:samm:io.catenax.parts_analyses:2.0.0#customerPartNumber",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.parts_analyses:2.0.0#PartAnalysis",
+      "target": "urn:samm:io.catenax.parts_analyses:2.0.0#addtionalInformation",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.parts_analyses:2.0.0#AdditionalInformation",
+      "target": "urn:samm:io.catenax.parts_analyses:2.0.0#keys",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.parts_analyses:2.0.0#AdditionalInformation",
+      "target": "urn:samm:io.catenax.parts_analyses:2.0.0#values",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.parts_analyses:2.0.0#listOfPartAnalyses",
+      "target": "urn:samm:io.catenax.parts_analyses:2.0.0#ListOfPartsAnalyses",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.parts_analyses:2.0.0#manufacturerAnalysisID",
+      "target": "urn:samm:io.catenax.parts_analyses:2.0.0#UniqueID",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.parts_analyses:2.0.0#status",
+      "target": "urn:samm:io.catenax.parts_analyses:2.0.0#StatusCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.parts_analyses:2.0.0#catenaXPartId",
+      "target": "urn:samm:io.catenax.parts_analyses:2.0.0#CatenaXIdTrait",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.parts_analyses:2.0.0#addtionalInformation",
+      "target": "urn:samm:io.catenax.parts_analyses:2.0.0#Text",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.parts_analyses:2.0.0#keys",
+      "target": "urn:samm:io.catenax.parts_analyses:2.0.0#Keys",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.parts_analyses:2.0.0#values",
+      "target": "urn:samm:io.catenax.parts_analyses:2.0.0#Values",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.parts_analyses:2.0.0#ListOfPartsAnalyses",
+      "target": "urn:samm:io.catenax.parts_analyses:2.0.0#PartAnalysis",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.parts_analyses:2.0.0#Text",
+      "target": "urn:samm:io.catenax.parts_analyses:2.0.0#AdditionalInformation",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.parts_analyses:2.0.0#CatenaXIdTrait",
+      "target": "urn:samm:io.catenax.parts_analyses:2.0.0#UUIDv4RegularExpression",
+      "label": "constraint",
+      "optional": false
+    }
+  ]
+}

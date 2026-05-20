@@ -1,0 +1,91 @@
+{
+  "meta": {
+    "namespace": "urn:samm:io.catenax.shared.industry_core.manufacturing_information:1.0.0#",
+    "meta_model": "SAMM 2.1.0",
+    "model_family": "SAMM",
+    "model_name": "shared.industry_core.manufacturing_information",
+    "model_version": "1.0.0",
+    "source": "catenax",
+    "status": "release",
+    "release_date": null,
+    "release_notes": "# Changelog\n\nAll notable changes to this model will be documented in this file.\n\n## [1.0.0] 26.03\n\n### Added\n\n- initial version of this model\n\n### Changed\n\nn/a\n\n### Removed\n\nn/a",
+    "dependencies": [
+      {
+        "name": "shared.industry_core.site_information",
+        "version": "1.0.0",
+        "family": "SAMM",
+        "source": "catenax"
+      },
+      {
+        "name": "shared.standard_codes",
+        "version": "1.0.0",
+        "family": "SAMM",
+        "source": "catenax"
+      }
+    ],
+    "path": "data/sldt-semantic-models/io.catenax.shared.industry_core.manufacturing_information/1.0.0/ManufacturingInformation.ttl"
+  },
+  "nodes": [
+    {
+      "id": "urn:samm:io.catenax.shared.industry_core.manufacturing_information:1.0.0#manufacturingInformation",
+      "label": "manufacturingInformation",
+      "kind": "Property",
+      "preferredName": "manufacturing information",
+      "description": "Information from manufacturing process, such as manufacturing date and manufacturing country"
+    },
+    {
+      "id": "urn:samm:io.catenax.shared.industry_core.manufacturing_information:1.0.0#productionDate",
+      "label": "productionDate",
+      "kind": "Property",
+      "preferredName": "production date",
+      "description": "Timestamp of the manufacturing date as the final step in production process (e.g. final quality check, ready-for-shipment event)"
+    },
+    {
+      "id": "urn:samm:io.catenax.shared.industry_core.manufacturing_information:1.0.0#ManufacturingCharacteristic",
+      "label": "ManufacturingCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "manufacturing characteristic",
+      "description": "Characteristic to describe manufacturing related data"
+    },
+    {
+      "id": "urn:samm:io.catenax.shared.industry_core.manufacturing_information:1.0.0#ManufacturingEntity",
+      "label": "ManufacturingEntity",
+      "kind": "Entity",
+      "preferredName": "manufacturing entity",
+      "description": "Encapsulates the manufacturing relevant attributes"
+    },
+    {
+      "id": "urn:samm:io.catenax.shared.industry_core.manufacturing_information:1.0.0#DateCharacteristic",
+      "label": "DateCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "date characteristic",
+      "description": "Date Characteristic"
+    }
+  ],
+  "links": [
+    {
+      "source": "urn:samm:io.catenax.shared.industry_core.manufacturing_information:1.0.0#ManufacturingEntity",
+      "target": "urn:samm:io.catenax.shared.industry_core.manufacturing_information:1.0.0#productionDate",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.shared.industry_core.manufacturing_information:1.0.0#manufacturingInformation",
+      "target": "urn:samm:io.catenax.shared.industry_core.manufacturing_information:1.0.0#ManufacturingCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.shared.industry_core.manufacturing_information:1.0.0#productionDate",
+      "target": "urn:samm:io.catenax.shared.industry_core.manufacturing_information:1.0.0#DateCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.shared.industry_core.manufacturing_information:1.0.0#ManufacturingCharacteristic",
+      "target": "urn:samm:io.catenax.shared.industry_core.manufacturing_information:1.0.0#ManufacturingEntity",
+      "label": "dataType",
+      "optional": false
+    }
+  ]
+}

@@ -1,0 +1,155 @@
+{
+  "meta": {
+    "namespace": "urn:samm:io.catenax.traction_battery_code:2.0.0#",
+    "meta_model": "SAMM 2.1.0",
+    "model_family": "SAMM",
+    "model_name": "traction_battery_code",
+    "model_version": "2.0.0",
+    "source": "catenax",
+    "status": "release",
+    "release_date": null,
+    "release_notes": "# Changelog\nAll notable changes to this model will be documented in this file.\n\n## [Unreleased]\n\n\n## [2.0.0][2024-02-02]\n### Added\nn/a\n\n### Changed\n- Migrated the Model to SAMM Meta Version 2.1.0\n\n### Removed\nn/a\n\n## [1.0.0]\n### Added\n- initial model\n\n### Changed\nn/a\n\n### Removed\nn/a",
+    "dependencies": [],
+    "path": "data/sldt-semantic-models/io.catenax.traction_battery_code/2.0.0/TractionBatteryCode.ttl"
+  },
+  "nodes": [
+    {
+      "id": "urn:samm:io.catenax.traction_battery_code:2.0.0#TractionBatteryCode",
+      "label": "TractionBatteryCode",
+      "kind": "Aspect",
+      "preferredName": "Traction Battery Code",
+      "description": "The traction battery code is an identification code for any automotive traction battery, ultracapacitor and other reachargeble energy storage device. It allows to carry information as required by the National Standard of the People's Republic of China according to GB/T 34014-2017 published by the Standardization Administration of China (SAC)."
+    },
+    {
+      "id": "urn:samm:io.catenax.traction_battery_code:2.0.0#tractionBatteryCode",
+      "label": "tractionBatteryCode",
+      "kind": "Property",
+      "preferredName": "Traction Battery Code",
+      "description": "Traction Battery Code identifying a single traction battery component like a pack, module or cell. "
+    },
+    {
+      "id": "urn:samm:io.catenax.traction_battery_code:2.0.0#subcomponents",
+      "label": "subcomponents",
+      "kind": "Property",
+      "preferredName": "Subcomponents",
+      "description": "Subcomponents of the component, if applicable. The relationship between traction battery codes are as follows:\n\nIf this traction battery code is given for a cell subcomponents are not required. \nIf this traction battery code is given for a battery module a list of cells are required to be registered as subcomponents.\nIf this traction battery code is given for a battery pack a list of modules are required to be registered as subcomponents (containing each a list of cell subcomponents respectively)."
+    },
+    {
+      "id": "urn:samm:io.catenax.traction_battery_code:2.0.0#productType",
+      "label": "productType",
+      "kind": "Property",
+      "preferredName": "Product Type",
+      "description": "The type of the battery component, e.g. a pack, a module or a cell."
+    },
+    {
+      "id": "urn:samm:io.catenax.traction_battery_code:2.0.0#TractionBatteryCodeTrait",
+      "label": "TractionBatteryCodeTrait",
+      "kind": "Characteristic",
+      "preferredName": null,
+      "description": null
+    },
+    {
+      "id": "urn:samm:io.catenax.traction_battery_code:2.0.0#ComponentList",
+      "label": "ComponentList",
+      "kind": "Characteristic",
+      "preferredName": "List of Components",
+      "description": "A list of battery components like modules or cells."
+    },
+    {
+      "id": "urn:samm:io.catenax.traction_battery_code:2.0.0#ComponentTypeCharacterstic",
+      "label": "ComponentTypeCharacterstic",
+      "kind": "Characteristic",
+      "preferredName": "Component Type Characterstic",
+      "description": null
+    },
+    {
+      "id": "urn:samm:io.catenax.traction_battery_code:2.0.0#TractionBatteryCodeCharacteristic",
+      "label": "TractionBatteryCodeCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Batery Code Characteristic",
+      "description": "A code identifying a traction battery component like a pack, module or cell."
+    },
+    {
+      "id": "urn:samm:io.catenax.traction_battery_code:2.0.0#TractionBatteryCodeRegularExpression",
+      "label": "TractionBatteryCodeRegularExpression",
+      "kind": "Characteristic",
+      "preferredName": "Traction Battery Code Regular Expression",
+      "description": "The traction battery code as required by the National Standard of the People's Republic of China according to GB/T 34014-2017 published by the Standardization Administration of China (SAC). It can have a length of either 24 or 18 characters."
+    },
+    {
+      "id": "urn:samm:io.catenax.traction_battery_code:2.0.0#TractionBatteryComponent",
+      "label": "TractionBatteryComponent",
+      "kind": "Entity",
+      "preferredName": "Battery Component",
+      "description": "A battery component like a cell or a module."
+    }
+  ],
+  "links": [
+    {
+      "source": "urn:samm:io.catenax.traction_battery_code:2.0.0#TractionBatteryCode",
+      "target": "urn:samm:io.catenax.traction_battery_code:2.0.0#tractionBatteryCode",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.traction_battery_code:2.0.0#TractionBatteryCode",
+      "target": "urn:samm:io.catenax.traction_battery_code:2.0.0#subcomponents",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.traction_battery_code:2.0.0#TractionBatteryCode",
+      "target": "urn:samm:io.catenax.traction_battery_code:2.0.0#productType",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.traction_battery_code:2.0.0#TractionBatteryComponent",
+      "target": "urn:samm:io.catenax.traction_battery_code:2.0.0#tractionBatteryCode",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.traction_battery_code:2.0.0#TractionBatteryComponent",
+      "target": "urn:samm:io.catenax.traction_battery_code:2.0.0#subcomponents",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.traction_battery_code:2.0.0#TractionBatteryComponent",
+      "target": "urn:samm:io.catenax.traction_battery_code:2.0.0#productType",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.traction_battery_code:2.0.0#tractionBatteryCode",
+      "target": "urn:samm:io.catenax.traction_battery_code:2.0.0#TractionBatteryCodeTrait",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.traction_battery_code:2.0.0#subcomponents",
+      "target": "urn:samm:io.catenax.traction_battery_code:2.0.0#ComponentList",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.traction_battery_code:2.0.0#productType",
+      "target": "urn:samm:io.catenax.traction_battery_code:2.0.0#ComponentTypeCharacterstic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.traction_battery_code:2.0.0#ComponentList",
+      "target": "urn:samm:io.catenax.traction_battery_code:2.0.0#TractionBatteryComponent",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.traction_battery_code:2.0.0#TractionBatteryCodeTrait",
+      "target": "urn:samm:io.catenax.traction_battery_code:2.0.0#TractionBatteryCodeRegularExpression",
+      "label": "constraint",
+      "optional": false
+    }
+  ]
+}

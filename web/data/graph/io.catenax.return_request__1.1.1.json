@@ -1,0 +1,513 @@
+{
+  "meta": {
+    "namespace": "urn:bamm:io.catenax.return_request:1.1.1#",
+    "meta_model": "BAMM 1.0.0",
+    "model_family": "BAMM",
+    "model_name": "return_request",
+    "model_version": "1.1.1",
+    "source": "catenax",
+    "status": "deprecated",
+    "release_date": "2022-12-02",
+    "release_notes": "# Changelog\nAll notable changes to this model will be documented in this file.\n\n## [2.0.0] - 2024-02-05\n### Added\n- Upgrade from BAMM model to SAMM model\n- Update attributes\n- link several models\n\n### Changed\n- eclipse from 2.0.0 to 2.1.0\n\n### Removed\n- property \"unitOfMeasure\" \n\n## [1.1.2] - 2023-01-30\n### Added\n- \n\n### Changed\n- requestDate excluded explicit mentioning of timezone in description\n- latestReturnDate excluded explicit mentioning of timezone in description\n\n### Removed\n\n\n## [1.1.1] - 2022-12-02\n### Added\n- removed some example values with inproper data types\n\n### Changed\nn/a\n\n### Removed\n\n## [1.1.0] - 2022-07-01\n### Added\n- initial model\n- incremental additions of properties\n- small bugfixes\n\n### Changed\nn/a\n\n### Removed",
+    "dependencies": [],
+    "path": "data/sldt-semantic-models/io.catenax.return_request/1.1.1/ReturnRequest.ttl"
+  },
+  "nodes": [
+    {
+      "id": "urn:bamm:io.catenax.return_request:1.1.1#ReturnRequest",
+      "label": "ReturnRequest",
+      "kind": "Aspect",
+      "preferredName": "return request",
+      "description": "Aspect to indicate if there is a return request for a product."
+    },
+    {
+      "id": "urn:bamm:io.catenax.return_request:1.1.1#needsReturn",
+      "label": "needsReturn",
+      "kind": "Property",
+      "preferredName": "needs return",
+      "description": "Describes the fact whether a vehicle, assembly or part needs to be returned to requestor."
+    },
+    {
+      "id": "urn:bamm:io.catenax.return_request:1.1.1#returnConditions",
+      "label": "returnConditions",
+      "kind": "Property",
+      "preferredName": "return conditions",
+      "description": "Describes WHY a vehicle, assembly or part needs to be returned to the requestor and under which conditions."
+    },
+    {
+      "id": "urn:bamm:io.catenax.return_request:1.1.1#requestDate",
+      "label": "requestDate",
+      "kind": "Property",
+      "preferredName": "request date",
+      "description": "Describes date when the return request was placed in GMT timezone."
+    },
+    {
+      "id": "urn:bamm:io.catenax.return_request:1.1.1#latestReturnDate",
+      "label": "latestReturnDate",
+      "kind": "Property",
+      "preferredName": "latest return date",
+      "description": "Describes until when the return request is valid in GMT timezone."
+    },
+    {
+      "id": "urn:bamm:io.catenax.return_request:1.1.1#productConditions",
+      "label": "productConditions",
+      "kind": "Property",
+      "preferredName": "product conditions",
+      "description": "textual description of the product conditions"
+    },
+    {
+      "id": "urn:bamm:io.catenax.return_request:1.1.1#title",
+      "label": "title",
+      "kind": "Property",
+      "preferredName": "title",
+      "description": "The request name to be used by the buyer to navigate through the list of demand requests."
+    },
+    {
+      "id": "urn:bamm:io.catenax.return_request:1.1.1#marketplaceProduct",
+      "label": "marketplaceProduct",
+      "kind": "Property",
+      "preferredName": "marketplace product",
+      "description": "The description of the product within the marketplace that might differ from the digital twin."
+    },
+    {
+      "id": "urn:bamm:io.catenax.return_request:1.1.1#quantity",
+      "label": "quantity",
+      "kind": "Property",
+      "preferredName": "quantity",
+      "description": "The desired quantity of the on the marketplace offered product in SKU."
+    },
+    {
+      "id": "urn:bamm:io.catenax.return_request:1.1.1#unitOfMeasure",
+      "label": "unitOfMeasure",
+      "kind": "Property",
+      "preferredName": "unit of measure",
+      "description": "The unit of measure (related to quantity)."
+    },
+    {
+      "id": "urn:bamm:io.catenax.return_request:1.1.1#validityPeriod",
+      "label": "validityPeriod",
+      "kind": "Property",
+      "preferredName": "validity period",
+      "description": "Specifies the time period when the need exists"
+    },
+    {
+      "id": "urn:bamm:io.catenax.return_request:1.1.1#priceRange",
+      "label": "priceRange",
+      "kind": "Property",
+      "preferredName": "price range",
+      "description": "Range of monetary values."
+    },
+    {
+      "id": "urn:bamm:io.catenax.return_request:1.1.1#isRecall",
+      "label": "isRecall",
+      "kind": "Property",
+      "preferredName": "is recall",
+      "description": "Depicts if the manufacturer issued a recall (e.g. for security reasons). In concjunction with property needsReturn it can be expressed if the item has to be returned or can directly be destroyed."
+    },
+    {
+      "id": "urn:bamm:io.catenax.return_request:1.1.1#startDate",
+      "label": "startDate",
+      "kind": "Property",
+      "preferredName": "start date",
+      "description": "The first day of the period"
+    },
+    {
+      "id": "urn:bamm:io.catenax.return_request:1.1.1#endDate",
+      "label": "endDate",
+      "kind": "Property",
+      "preferredName": "end date",
+      "description": "The last day of the period."
+    },
+    {
+      "id": "urn:bamm:io.catenax.return_request:1.1.1#minPrice",
+      "label": "minPrice",
+      "kind": "Property",
+      "preferredName": "minimum price",
+      "description": "The minimum price that a buyer is ready to pay to get an item (motivating sellers to sell)."
+    },
+    {
+      "id": "urn:bamm:io.catenax.return_request:1.1.1#maxPrice",
+      "label": "maxPrice",
+      "kind": "Property",
+      "preferredName": "maximum price",
+      "description": "The maximum price until which a demand request is relevant."
+    },
+    {
+      "id": "urn:bamm:io.catenax.return_request:1.1.1#value",
+      "label": "value",
+      "kind": "Property",
+      "preferredName": "value",
+      "description": "The nominal value."
+    },
+    {
+      "id": "urn:bamm:io.catenax.return_request:1.1.1#currency",
+      "label": "currency",
+      "kind": "Property",
+      "preferredName": "currency",
+      "description": "Currency of the price of the return request conform to the ISO4217 in numerical codes."
+    },
+    {
+      "id": "urn:bamm:io.catenax.return_request:1.1.1#missingParts",
+      "label": "missingParts",
+      "kind": "Property",
+      "preferredName": "missing parts",
+      "description": "Completeness of the product, e.g. missing parts are not acceptable."
+    },
+    {
+      "id": "urn:bamm:io.catenax.return_request:1.1.1#dismantled",
+      "label": "dismantled",
+      "kind": "Property",
+      "preferredName": "dismantled",
+      "description": "Information on whether the product has been dismantled."
+    },
+    {
+      "id": "urn:bamm:io.catenax.return_request:1.1.1#mechanicalDamage",
+      "label": "mechanicalDamage",
+      "kind": "Property",
+      "preferredName": "mechanical damage",
+      "description": "Information on mechanical damage to the part, e.g. two broken ribs or part deformation indicate mechanical damage."
+    },
+    {
+      "id": "urn:bamm:io.catenax.return_request:1.1.1#corroded",
+      "label": "corroded",
+      "kind": "Property",
+      "preferredName": "corroded",
+      "description": "Information on whether the product has corrosion."
+    },
+    {
+      "id": "urn:bamm:io.catenax.return_request:1.1.1#discolored",
+      "label": "discolored",
+      "kind": "Property",
+      "preferredName": "discolored",
+      "description": "Information on whether the product has been discoloured."
+    },
+    {
+      "id": "urn:bamm:io.catenax.return_request:1.1.1#QuantityCharacteristic",
+      "label": "QuantityCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "quantity characteristic",
+      "description": "Characteristic describing the quantity"
+    },
+    {
+      "id": "urn:bamm:io.catenax.return_request:1.1.1#DateTimestamp",
+      "label": "DateTimestamp",
+      "kind": "Characteristic",
+      "preferredName": "date timestamp",
+      "description": "Timestamp for dates"
+    },
+    {
+      "id": "urn:bamm:io.catenax.return_request:1.1.1#ProductConditionsCharacteristic",
+      "label": "ProductConditionsCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "product conditions characteristic",
+      "description": "Criteria describing the state of a product on the marketplace."
+    },
+    {
+      "id": "urn:bamm:io.catenax.return_request:1.1.1#PriceRangeCharacteristic",
+      "label": "PriceRangeCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "price range characteristic",
+      "description": "Characteristic to define range of monetary values."
+    },
+    {
+      "id": "urn:bamm:io.catenax.return_request:1.1.1#PriceCharacteristic",
+      "label": "PriceCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Price Characteristic",
+      "description": "Characteristic to describe the price. Different currencies are possible"
+    },
+    {
+      "id": "urn:bamm:io.catenax.return_request:1.1.1#ValueCharacteristic",
+      "label": "ValueCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Value Characteristic",
+      "description": "Characteristic to describe the value in a float type."
+    },
+    {
+      "id": "urn:bamm:io.catenax.return_request:1.1.1#CurrencyCharacteristic",
+      "label": "CurrencyCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "CurrencyCharacteristic",
+      "description": "Characteristic to represent the iso-code conform curreny entries as defined in the ISO4217 for numerical codes."
+    },
+    {
+      "id": "urn:bamm:io.catenax.return_request:1.1.1#TimePeriod",
+      "label": "TimePeriod",
+      "kind": "Characteristic",
+      "preferredName": "time period",
+      "description": "Depicts a time period by specifying start and end date"
+    },
+    {
+      "id": "urn:bamm:io.catenax.return_request:1.1.1#TimePeriodEntity",
+      "label": "TimePeriodEntity",
+      "kind": "Entity",
+      "preferredName": "time period",
+      "description": "Entity defining a range of dates to define a time period."
+    },
+    {
+      "id": "urn:bamm:io.catenax.return_request:1.1.1#PriceRangeEntity",
+      "label": "PriceRangeEntity",
+      "kind": "Entity",
+      "preferredName": "price range entity",
+      "description": "Entity encapsulating the min and max value of the range of monetary values."
+    },
+    {
+      "id": "urn:bamm:io.catenax.return_request:1.1.1#Price",
+      "label": "Price",
+      "kind": "Entity",
+      "preferredName": "Price",
+      "description": "price of the returned article"
+    },
+    {
+      "id": "urn:bamm:io.catenax.return_request:1.1.1#ProductConditionsEntity",
+      "label": "ProductConditionsEntity",
+      "kind": "Entity",
+      "preferredName": "product conditions entity",
+      "description": "Entity encapsulating the conditions the product is in."
+    },
+    {
+      "id": "urn:bamm:io.catenax.return_request:1.1.1#CurrencyTrait",
+      "label": "CurrencyTrait",
+      "kind": "Characteristic",
+      "preferredName": null,
+      "description": null
+    },
+    {
+      "id": "urn:bamm:io.catenax.return_request:1.1.1#CurrencyConstraint",
+      "label": "CurrencyConstraint",
+      "kind": "Characteristic",
+      "preferredName": null,
+      "description": "reduces the possible entry to three entries from A-Z"
+    }
+  ],
+  "links": [
+    {
+      "source": "urn:bamm:io.catenax.return_request:1.1.1#ReturnRequest",
+      "target": "urn:bamm:io.catenax.return_request:1.1.1#needsReturn",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.return_request:1.1.1#ReturnRequest",
+      "target": "urn:bamm:io.catenax.return_request:1.1.1#returnConditions",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.return_request:1.1.1#ReturnRequest",
+      "target": "urn:bamm:io.catenax.return_request:1.1.1#requestDate",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.return_request:1.1.1#ReturnRequest",
+      "target": "urn:bamm:io.catenax.return_request:1.1.1#latestReturnDate",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.return_request:1.1.1#ReturnRequest",
+      "target": "urn:bamm:io.catenax.return_request:1.1.1#productConditions",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.return_request:1.1.1#ReturnRequest",
+      "target": "urn:bamm:io.catenax.return_request:1.1.1#title",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.return_request:1.1.1#ReturnRequest",
+      "target": "urn:bamm:io.catenax.return_request:1.1.1#marketplaceProduct",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.return_request:1.1.1#ReturnRequest",
+      "target": "urn:bamm:io.catenax.return_request:1.1.1#quantity",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.return_request:1.1.1#ReturnRequest",
+      "target": "urn:bamm:io.catenax.return_request:1.1.1#unitOfMeasure",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.return_request:1.1.1#ReturnRequest",
+      "target": "urn:bamm:io.catenax.return_request:1.1.1#validityPeriod",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.return_request:1.1.1#ReturnRequest",
+      "target": "urn:bamm:io.catenax.return_request:1.1.1#priceRange",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.return_request:1.1.1#ReturnRequest",
+      "target": "urn:bamm:io.catenax.return_request:1.1.1#isRecall",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.return_request:1.1.1#TimePeriodEntity",
+      "target": "urn:bamm:io.catenax.return_request:1.1.1#startDate",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.return_request:1.1.1#TimePeriodEntity",
+      "target": "urn:bamm:io.catenax.return_request:1.1.1#endDate",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.return_request:1.1.1#PriceRangeEntity",
+      "target": "urn:bamm:io.catenax.return_request:1.1.1#minPrice",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:bamm:io.catenax.return_request:1.1.1#PriceRangeEntity",
+      "target": "urn:bamm:io.catenax.return_request:1.1.1#maxPrice",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.return_request:1.1.1#Price",
+      "target": "urn:bamm:io.catenax.return_request:1.1.1#value",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.return_request:1.1.1#Price",
+      "target": "urn:bamm:io.catenax.return_request:1.1.1#currency",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.return_request:1.1.1#ProductConditionsEntity",
+      "target": "urn:bamm:io.catenax.return_request:1.1.1#missingParts",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:bamm:io.catenax.return_request:1.1.1#ProductConditionsEntity",
+      "target": "urn:bamm:io.catenax.return_request:1.1.1#dismantled",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:bamm:io.catenax.return_request:1.1.1#ProductConditionsEntity",
+      "target": "urn:bamm:io.catenax.return_request:1.1.1#mechanicalDamage",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:bamm:io.catenax.return_request:1.1.1#ProductConditionsEntity",
+      "target": "urn:bamm:io.catenax.return_request:1.1.1#corroded",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:bamm:io.catenax.return_request:1.1.1#ProductConditionsEntity",
+      "target": "urn:bamm:io.catenax.return_request:1.1.1#discolored",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:bamm:io.catenax.return_request:1.1.1#requestDate",
+      "target": "urn:bamm:io.catenax.return_request:1.1.1#DateTimestamp",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.return_request:1.1.1#latestReturnDate",
+      "target": "urn:bamm:io.catenax.return_request:1.1.1#DateTimestamp",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.return_request:1.1.1#productConditions",
+      "target": "urn:bamm:io.catenax.return_request:1.1.1#ProductConditionsCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.return_request:1.1.1#quantity",
+      "target": "urn:bamm:io.catenax.return_request:1.1.1#QuantityCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.return_request:1.1.1#validityPeriod",
+      "target": "urn:bamm:io.catenax.return_request:1.1.1#TimePeriod",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.return_request:1.1.1#priceRange",
+      "target": "urn:bamm:io.catenax.return_request:1.1.1#PriceRangeCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.return_request:1.1.1#minPrice",
+      "target": "urn:bamm:io.catenax.return_request:1.1.1#PriceCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.return_request:1.1.1#maxPrice",
+      "target": "urn:bamm:io.catenax.return_request:1.1.1#PriceCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.return_request:1.1.1#value",
+      "target": "urn:bamm:io.catenax.return_request:1.1.1#ValueCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.return_request:1.1.1#currency",
+      "target": "urn:bamm:io.catenax.return_request:1.1.1#CurrencyTrait",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.return_request:1.1.1#ProductConditionsCharacteristic",
+      "target": "urn:bamm:io.catenax.return_request:1.1.1#ProductConditionsEntity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.return_request:1.1.1#TimePeriod",
+      "target": "urn:bamm:io.catenax.return_request:1.1.1#TimePeriodEntity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.return_request:1.1.1#PriceRangeCharacteristic",
+      "target": "urn:bamm:io.catenax.return_request:1.1.1#PriceRangeEntity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.return_request:1.1.1#PriceCharacteristic",
+      "target": "urn:bamm:io.catenax.return_request:1.1.1#Price",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.return_request:1.1.1#CurrencyTrait",
+      "target": "urn:bamm:io.catenax.return_request:1.1.1#CurrencyConstraint",
+      "label": "constraint",
+      "optional": false
+    }
+  ]
+}

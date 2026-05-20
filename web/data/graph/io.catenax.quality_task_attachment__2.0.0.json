@@ -1,0 +1,345 @@
+{
+  "meta": {
+    "namespace": "urn:samm:io.catenax.quality_task_attachment:2.0.0#",
+    "meta_model": "SAMM 2.1.0",
+    "model_family": "SAMM",
+    "model_name": "quality_task_attachment",
+    "model_version": "2.0.0",
+    "source": "catenax",
+    "status": "release",
+    "release_date": "2024-02-19",
+    "release_notes": "# Changelog\nAll notable changes to this model will be documented in this file.\n\n## [Unreleased]\n\n## [1.0.0] - 2023-07-10\n### Added\n- initial version of this model\n\n### Changed\nn/a\n\n### Removed\n\n## [2.0.0] - 2024-02-19\n### Added\n\n\n### Changed\n- fixed wrong example value for \"unit\"\n- updated SAMM Version from 2.0.0 to 2.1.0\n\n### Removed\n\n## [3.0.0] - 2025-07-01\n### Added\n- added qualityTaskAttachmentId to identify attachments\n\n### Changed\n- changed referenced model description from enumeration to definition via namespace, ttl file name and version\n- moved model reference to file level instead of top level\n- usage of quality core model (e.g., for the qualityTaskId)\n\n\n### Removed",
+    "dependencies": [
+      {
+        "name": "shared.uuid",
+        "version": "2.0.0",
+        "family": "SAMM",
+        "source": "catenax"
+      }
+    ],
+    "path": "data/sldt-semantic-models/io.catenax.quality_task_attachment/2.0.0/QualityTaskAttachment.ttl"
+  },
+  "nodes": [
+    {
+      "id": "urn:samm:io.catenax.quality_task_attachment:2.0.0#QualityTaskAttachment",
+      "label": "QualityTaskAttachment",
+      "kind": "Aspect",
+      "preferredName": "Quality task attachment",
+      "description": "Additional data for quality task"
+    },
+    {
+      "id": "urn:samm:io.catenax.quality_task_attachment:2.0.0#qualityTaskId",
+      "label": "qualityTaskId",
+      "kind": "Property",
+      "preferredName": "Quality Task ID",
+      "description": "The fully anonymous and unique Catena-X ID of this quality task. This id is unique inside Catena-X data space."
+    },
+    {
+      "id": "urn:samm:io.catenax.quality_task_attachment:2.0.0#relatedModelType",
+      "label": "relatedModelType",
+      "kind": "Property",
+      "preferredName": "relatedModelType",
+      "description": "Indicates which aspect model these additional files are to be added to"
+    },
+    {
+      "id": "urn:samm:io.catenax.quality_task_attachment:2.0.0#files",
+      "label": "files",
+      "kind": "Property",
+      "preferredName": "files",
+      "description": "A list of files within the ZIP-folder, which are needed for a specific quality task"
+    },
+    {
+      "id": "urn:samm:io.catenax.quality_task_attachment:2.0.0#fileName",
+      "label": "fileName",
+      "kind": "Property",
+      "preferredName": "file name",
+      "description": "The name of the described file"
+    },
+    {
+      "id": "urn:samm:io.catenax.quality_task_attachment:2.0.0#schema",
+      "label": "schema",
+      "kind": "Property",
+      "preferredName": "schema",
+      "description": "schema definition for file"
+    },
+    {
+      "id": "urn:samm:io.catenax.quality_task_attachment:2.0.0#filePath",
+      "label": "filePath",
+      "kind": "Property",
+      "preferredName": "File Path",
+      "description": "Indicates where the file is located within the ZIP-folder"
+    },
+    {
+      "id": "urn:samm:io.catenax.quality_task_attachment:2.0.0#sizeInKbProperty",
+      "label": "sizeInKbProperty",
+      "kind": "Property",
+      "preferredName": "Size in Kilobyte",
+      "description": "Indicates the size of the file"
+    },
+    {
+      "id": "urn:samm:io.catenax.quality_task_attachment:2.0.0#fileDescription",
+      "label": "fileDescription",
+      "kind": "Property",
+      "preferredName": "File Description",
+      "description": "A description of the file content"
+    },
+    {
+      "id": "urn:samm:io.catenax.quality_task_attachment:2.0.0#fileExtension",
+      "label": "fileExtension",
+      "kind": "Property",
+      "preferredName": "File Extension",
+      "description": "Indicates which file format the file has"
+    },
+    {
+      "id": "urn:samm:io.catenax.quality_task_attachment:2.0.0#decimalSeperator",
+      "label": "decimalSeperator",
+      "kind": "Property",
+      "preferredName": "Decimal Separator Enumeration",
+      "description": "Enumeration types to be used for the decimal separators"
+    },
+    {
+      "id": "urn:samm:io.catenax.quality_task_attachment:2.0.0#delimiter",
+      "label": "delimiter",
+      "kind": "Property",
+      "preferredName": "Delimiter",
+      "description": "Indicates whether a semicolon, comma or tab is used as a delimiter between data points"
+    },
+    {
+      "id": "urn:samm:io.catenax.quality_task_attachment:2.0.0#variablesProperty",
+      "label": "variablesProperty",
+      "kind": "Property",
+      "preferredName": "VariablesProperty",
+      "description": "A list describing the variables contained in the file"
+    },
+    {
+      "id": "urn:samm:io.catenax.quality_task_attachment:2.0.0#variableName",
+      "label": "variableName",
+      "kind": "Property",
+      "preferredName": "Variable name",
+      "description": "The name of the column"
+    },
+    {
+      "id": "urn:samm:io.catenax.quality_task_attachment:2.0.0#dataType",
+      "label": "dataType",
+      "kind": "Property",
+      "preferredName": "Variable data type",
+      "description": "The data type of the data contained in the column"
+    },
+    {
+      "id": "urn:samm:io.catenax.quality_task_attachment:2.0.0#unit",
+      "label": "unit",
+      "kind": "Property",
+      "preferredName": "Unit",
+      "description": "The unit of the data contained in the column (used for numeric values)"
+    },
+    {
+      "id": "urn:samm:io.catenax.quality_task_attachment:2.0.0#variableDescription",
+      "label": "variableDescription",
+      "kind": "Property",
+      "preferredName": "Variable description",
+      "description": "A description of the data contained in the column"
+    },
+    {
+      "id": "urn:samm:io.catenax.quality_task_attachment:2.0.0#QualityModelType",
+      "label": "QualityModelType",
+      "kind": "Characteristic",
+      "preferredName": "QualityModelType",
+      "description": "Enumeration of released quality aspect models"
+    },
+    {
+      "id": "urn:samm:io.catenax.quality_task_attachment:2.0.0#ListOfFiles",
+      "label": "ListOfFiles",
+      "kind": "Characteristic",
+      "preferredName": "List of files",
+      "description": "List of files attached to a quality task"
+    },
+    {
+      "id": "urn:samm:io.catenax.quality_task_attachment:2.0.0#Variables",
+      "label": "Variables",
+      "kind": "Characteristic",
+      "preferredName": "Variables",
+      "description": "A list describing the variables contained in the file"
+    },
+    {
+      "id": "urn:samm:io.catenax.quality_task_attachment:2.0.0#File",
+      "label": "File",
+      "kind": "Entity",
+      "preferredName": "File",
+      "description": "One file attached to the quality task"
+    },
+    {
+      "id": "urn:samm:io.catenax.quality_task_attachment:2.0.0#SchemaDefinition",
+      "label": "SchemaDefinition",
+      "kind": "Entity",
+      "preferredName": "Schema",
+      "description": "Schema for the file entities"
+    },
+    {
+      "id": "urn:samm:io.catenax.quality_task_attachment:2.0.0#VariableAttribute",
+      "label": "VariableAttribute",
+      "kind": "Entity",
+      "preferredName": "VariableAttribute",
+      "description": "A list describing the variables contained in the file"
+    },
+    {
+      "id": "urn:samm:io.catenax.quality_task_attachment:2.0.0#schemaCharacteristic",
+      "label": "schemaCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "SchemaCharacteristic",
+      "description": "Describes the schema of the values contained in the file"
+    },
+    {
+      "id": "urn:samm:io.catenax.quality_task_attachment:2.0.0#SizeInKb",
+      "label": "SizeInKb",
+      "kind": "Characteristic",
+      "preferredName": "Size in Kilobyte",
+      "description": "Indicates the size of the file"
+    }
+  ],
+  "links": [
+    {
+      "source": "urn:samm:io.catenax.quality_task_attachment:2.0.0#QualityTaskAttachment",
+      "target": "urn:samm:io.catenax.quality_task_attachment:2.0.0#qualityTaskId",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.quality_task_attachment:2.0.0#QualityTaskAttachment",
+      "target": "urn:samm:io.catenax.quality_task_attachment:2.0.0#relatedModelType",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.quality_task_attachment:2.0.0#QualityTaskAttachment",
+      "target": "urn:samm:io.catenax.quality_task_attachment:2.0.0#files",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.quality_task_attachment:2.0.0#File",
+      "target": "urn:samm:io.catenax.quality_task_attachment:2.0.0#fileName",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.quality_task_attachment:2.0.0#File",
+      "target": "urn:samm:io.catenax.quality_task_attachment:2.0.0#schema",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.quality_task_attachment:2.0.0#File",
+      "target": "urn:samm:io.catenax.quality_task_attachment:2.0.0#filePath",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.quality_task_attachment:2.0.0#File",
+      "target": "urn:samm:io.catenax.quality_task_attachment:2.0.0#sizeInKbProperty",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.quality_task_attachment:2.0.0#File",
+      "target": "urn:samm:io.catenax.quality_task_attachment:2.0.0#fileDescription",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.quality_task_attachment:2.0.0#File",
+      "target": "urn:samm:io.catenax.quality_task_attachment:2.0.0#fileExtension",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.quality_task_attachment:2.0.0#SchemaDefinition",
+      "target": "urn:samm:io.catenax.quality_task_attachment:2.0.0#decimalSeperator",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.quality_task_attachment:2.0.0#SchemaDefinition",
+      "target": "urn:samm:io.catenax.quality_task_attachment:2.0.0#delimiter",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.quality_task_attachment:2.0.0#SchemaDefinition",
+      "target": "urn:samm:io.catenax.quality_task_attachment:2.0.0#variablesProperty",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.quality_task_attachment:2.0.0#VariableAttribute",
+      "target": "urn:samm:io.catenax.quality_task_attachment:2.0.0#variableName",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.quality_task_attachment:2.0.0#VariableAttribute",
+      "target": "urn:samm:io.catenax.quality_task_attachment:2.0.0#dataType",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.quality_task_attachment:2.0.0#VariableAttribute",
+      "target": "urn:samm:io.catenax.quality_task_attachment:2.0.0#unit",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.quality_task_attachment:2.0.0#VariableAttribute",
+      "target": "urn:samm:io.catenax.quality_task_attachment:2.0.0#variableDescription",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.quality_task_attachment:2.0.0#relatedModelType",
+      "target": "urn:samm:io.catenax.quality_task_attachment:2.0.0#QualityModelType",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.quality_task_attachment:2.0.0#files",
+      "target": "urn:samm:io.catenax.quality_task_attachment:2.0.0#ListOfFiles",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.quality_task_attachment:2.0.0#schema",
+      "target": "urn:samm:io.catenax.quality_task_attachment:2.0.0#schemaCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.quality_task_attachment:2.0.0#sizeInKbProperty",
+      "target": "urn:samm:io.catenax.quality_task_attachment:2.0.0#SizeInKb",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.quality_task_attachment:2.0.0#variablesProperty",
+      "target": "urn:samm:io.catenax.quality_task_attachment:2.0.0#Variables",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.quality_task_attachment:2.0.0#ListOfFiles",
+      "target": "urn:samm:io.catenax.quality_task_attachment:2.0.0#File",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.quality_task_attachment:2.0.0#schemaCharacteristic",
+      "target": "urn:samm:io.catenax.quality_task_attachment:2.0.0#SchemaDefinition",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.quality_task_attachment:2.0.0#Variables",
+      "target": "urn:samm:io.catenax.quality_task_attachment:2.0.0#VariableAttribute",
+      "label": "dataType",
+      "optional": false
+    }
+  ]
+}

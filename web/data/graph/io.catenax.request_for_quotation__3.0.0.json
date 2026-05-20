@@ -1,0 +1,1259 @@
+{
+  "meta": {
+    "namespace": "urn:samm:io.catenax.request_for_quotation:3.0.0#",
+    "meta_model": "SAMM 2.1.0",
+    "model_family": "SAMM",
+    "model_name": "request_for_quotation",
+    "model_version": "3.0.0",
+    "source": "catenax",
+    "status": "release",
+    "release_date": "24-03-04",
+    "release_notes": "# Changelog\n\nAll notable changes to this model will be documented in this file.\n\n## [Unreleased]\n\n## [3.0.0] - 24-03-04\n\n### Changed\n\n- Replaced the previous description of process steps (Property 'processes') with Shared.bill_of_process (referencing MP's model) (Property 'billOfProcess')\n\n## [2.0.0] - 2023-12-04\n\n- Standardization of Request for Quotation exclusively for individual parts.\n- No longer a need for a detailed parts list.\n\n## [1.0.0] - 2023-10-30\n\n### Added\n\n- initial model\n\n### Changed\n\nn/a\n\n### Removed",
+    "dependencies": [
+      {
+        "name": "shared.bill_of_process",
+        "version": "1.1.0",
+        "family": "SAMM",
+        "source": "catenax"
+      },
+      {
+        "name": "shared.message_header",
+        "version": "3.0.0",
+        "family": "SAMM",
+        "source": "catenax"
+      },
+      {
+        "name": "shared.quantity",
+        "version": "2.0.0",
+        "family": "SAMM",
+        "source": "catenax"
+      }
+    ],
+    "path": "data/sldt-semantic-models/io.catenax.request_for_quotation/3.0.0/RequestForQuotation.ttl"
+  },
+  "nodes": [
+    {
+      "id": "urn:samm:io.catenax.request_for_quotation:3.0.0#RequestForQuotation",
+      "label": "RequestForQuotation",
+      "kind": "Aspect",
+      "preferredName": "Request For Quotation",
+      "description": "The request for quotation represents the data structure to configure a manufacturing request and send this to a supplier receive a quotation"
+    },
+    {
+      "id": "urn:samm:io.catenax.request_for_quotation:3.0.0#rfqIdentification",
+      "label": "rfqIdentification",
+      "kind": "Property",
+      "preferredName": "RFQ identification",
+      "description": "all properties necessary for identification of the request for quotation"
+    },
+    {
+      "id": "urn:samm:io.catenax.request_for_quotation:3.0.0#rfqConfiguration",
+      "label": "rfqConfiguration",
+      "kind": "Property",
+      "preferredName": "RFQ configuration",
+      "description": "all information to configure a request for quotation"
+    },
+    {
+      "id": "urn:samm:io.catenax.request_for_quotation:3.0.0#rfqSender",
+      "label": "rfqSender",
+      "kind": "Property",
+      "preferredName": "RFQ sender",
+      "description": "all data about sender of request for quotation, important for offer and delivery"
+    },
+    {
+      "id": "urn:samm:io.catenax.request_for_quotation:3.0.0#cxHeader",
+      "label": "cxHeader",
+      "kind": "Property",
+      "preferredName": "catena-X header",
+      "description": "header information by Catena-X"
+    },
+    {
+      "id": "urn:samm:io.catenax.request_for_quotation:3.0.0#rfqSource",
+      "label": "rfqSource",
+      "kind": "Property",
+      "preferredName": "RFQ source",
+      "description": "RFQ-Identification: digital address of the sender (e.g.token, IP address, link, user account)"
+    },
+    {
+      "id": "urn:samm:io.catenax.request_for_quotation:3.0.0#rfqId",
+      "label": "rfqId",
+      "kind": "Property",
+      "preferredName": "RFQ identifier",
+      "description": "RFQ-Identification: internal identifier in user account"
+    },
+    {
+      "id": "urn:samm:io.catenax.request_for_quotation:3.0.0#rfqName",
+      "label": "rfqName",
+      "kind": "Property",
+      "preferredName": "RFQ name",
+      "description": "RFQ-Identification: name for the request for user account management (usually name of the product to be manufactured)"
+    },
+    {
+      "id": "urn:samm:io.catenax.request_for_quotation:3.0.0#rfqDateTime",
+      "label": "rfqDateTime",
+      "kind": "Property",
+      "preferredName": "RFQ date time",
+      "description": "RFQ-Identification: date and time of the request in user account"
+    },
+    {
+      "id": "urn:samm:io.catenax.request_for_quotation:3.0.0#rfqVersion",
+      "label": "rfqVersion",
+      "kind": "Property",
+      "preferredName": "RFQ version",
+      "description": "RFQ-Identification: version of this request in case there were any changes"
+    },
+    {
+      "id": "urn:samm:io.catenax.request_for_quotation:3.0.0#cadFile",
+      "label": "cadFile",
+      "kind": "Property",
+      "preferredName": "cad file",
+      "description": "RFQ-Configuration: CAD file as geometry definition, e.g. step file"
+    },
+    {
+      "id": "urn:samm:io.catenax.request_for_quotation:3.0.0#parts",
+      "label": "parts",
+      "kind": "Property",
+      "preferredName": "parts",
+      "description": "RFQ-Configuration: list of parts contained in the CAD file"
+    },
+    {
+      "id": "urn:samm:io.catenax.request_for_quotation:3.0.0#firstDeliveryDate",
+      "label": "firstDeliveryDate",
+      "kind": "Property",
+      "preferredName": "first delivery date",
+      "description": "RFQ-Configuration: Date of desired, first, but not must delivery"
+    },
+    {
+      "id": "urn:samm:io.catenax.request_for_quotation:3.0.0#lastDeliveryDate",
+      "label": "lastDeliveryDate",
+      "kind": "Property",
+      "preferredName": "last delivery date",
+      "description": "RFQ-Configuration: date of required and last acceptable delivery"
+    },
+    {
+      "id": "urn:samm:io.catenax.request_for_quotation:3.0.0#additionalComments",
+      "label": "additionalComments",
+      "kind": "Property",
+      "preferredName": "additional comments",
+      "description": "RFQ-Configuration: placeholder for any kind of additional comments"
+    },
+    {
+      "id": "urn:samm:io.catenax.request_for_quotation:3.0.0#additionalFiles",
+      "label": "additionalFiles",
+      "kind": "Property",
+      "preferredName": "Additional Files",
+      "description": "RFQ-Configuration: in case there are additional documents or files to share (like e.g. technical drawings)"
+    },
+    {
+      "id": "urn:samm:io.catenax.request_for_quotation:3.0.0#orderQuantity",
+      "label": "orderQuantity",
+      "kind": "Property",
+      "preferredName": "order quantity",
+      "description": "RFQ-Configuration: quantity at all, valid for complete order (usually number of products to be ordered)"
+    },
+    {
+      "id": "urn:samm:io.catenax.request_for_quotation:3.0.0#senderName",
+      "label": "senderName",
+      "kind": "Property",
+      "preferredName": "sender name",
+      "description": "RFQ-Sender: name of the sender"
+    },
+    {
+      "id": "urn:samm:io.catenax.request_for_quotation:3.0.0#senderAdress",
+      "label": "senderAdress",
+      "kind": "Property",
+      "preferredName": "sender address",
+      "description": "RFQ-Sender: BPDM/ or fill in by the customer, address of sender"
+    },
+    {
+      "id": "urn:samm:io.catenax.request_for_quotation:3.0.0#senderCompanyName",
+      "label": "senderCompanyName",
+      "kind": "Property",
+      "preferredName": "sender company name",
+      "description": "RFQ-Sender: BPDM/ or fill in by the customer, company name of sender"
+    },
+    {
+      "id": "urn:samm:io.catenax.request_for_quotation:3.0.0#senderEMail",
+      "label": "senderEMail",
+      "kind": "Property",
+      "preferredName": "sender eMail",
+      "description": "RFQ-Sender: BPDM/ or fill in by the customer, e-mail address of sender"
+    },
+    {
+      "id": "urn:samm:io.catenax.request_for_quotation:3.0.0#senderPhoneNumber",
+      "label": "senderPhoneNumber",
+      "kind": "Property",
+      "preferredName": "sender phone number",
+      "description": "RFQ-Sender: BPDM/ or fill in by the customer, phone number of sender"
+    },
+    {
+      "id": "urn:samm:io.catenax.request_for_quotation:3.0.0#senderAccountAddress",
+      "label": "senderAccountAddress",
+      "kind": "Property",
+      "preferredName": "sender account address",
+      "description": "RFQ-Sender: BPDM/ or fill in by the customer, address of sender for account"
+    },
+    {
+      "id": "urn:samm:io.catenax.request_for_quotation:3.0.0#senderDeliveryAddress",
+      "label": "senderDeliveryAddress",
+      "kind": "Property",
+      "preferredName": "sender delivery address",
+      "description": "RFQ-Sender: BPDM/ or fill in by the customer, address of sender for delivery"
+    },
+    {
+      "id": "urn:samm:io.catenax.request_for_quotation:3.0.0#deliveryRequirements",
+      "label": "deliveryRequirements",
+      "kind": "Property",
+      "preferredName": "delivery requirements",
+      "description": "RFQ-Sender: filled by customer, any kind of delivery requirements"
+    },
+    {
+      "id": "urn:samm:io.catenax.request_for_quotation:3.0.0#fileType",
+      "label": "fileType",
+      "kind": "Property",
+      "preferredName": "file type",
+      "description": "RFQ-Configuration: file format"
+    },
+    {
+      "id": "urn:samm:io.catenax.request_for_quotation:3.0.0#filePath",
+      "label": "filePath",
+      "kind": "Property",
+      "preferredName": "file path",
+      "description": "path or address to the file "
+    },
+    {
+      "id": "urn:samm:io.catenax.request_for_quotation:3.0.0#fileName",
+      "label": "fileName",
+      "kind": "Property",
+      "preferredName": "file name",
+      "description": "name of the file"
+    },
+    {
+      "id": "urn:samm:io.catenax.request_for_quotation:3.0.0#fileObject",
+      "label": "fileObject",
+      "kind": "Property",
+      "preferredName": "file object",
+      "description": "the file object itself, in case this could be sent via the API"
+    },
+    {
+      "id": "urn:samm:io.catenax.request_for_quotation:3.0.0#partId",
+      "label": "partId",
+      "kind": "Property",
+      "preferredName": "part Id",
+      "description": "RFQ-PartConfiguration: identifier of the part from CAD File"
+    },
+    {
+      "id": "urn:samm:io.catenax.request_for_quotation:3.0.0#partName",
+      "label": "partName",
+      "kind": "Property",
+      "preferredName": "part name",
+      "description": "RFQ-PartConfiguration: name of the part in CAD file. In case the CAD file has only one part, this could also be the file name."
+    },
+    {
+      "id": "urn:samm:io.catenax.request_for_quotation:3.0.0#manufacturingDomain",
+      "label": "manufacturingDomain",
+      "kind": "Property",
+      "preferredName": "manufacturing domain",
+      "description": "RFQ-PartConfiguration: domain of required process (e.g. subtractive manufacturing, additive manufacturing, assembly)"
+    },
+    {
+      "id": "urn:samm:io.catenax.request_for_quotation:3.0.0#generalTolerance",
+      "label": "generalTolerance",
+      "kind": "Property",
+      "preferredName": "general tolerance",
+      "description": "RFQ-PartConfiguration: selection of defined tolerance classes"
+    },
+    {
+      "id": "urn:samm:io.catenax.request_for_quotation:3.0.0#additionalRequirements",
+      "label": "additionalRequirements",
+      "kind": "Property",
+      "preferredName": "additional requirements",
+      "description": "RFQ-PartConfiguration: specific requirements e.g. to guarantee quality, like premium quality check or standard quality check or test part required (makes only sense for batch)"
+    },
+    {
+      "id": "urn:samm:io.catenax.request_for_quotation:3.0.0#material",
+      "label": "material",
+      "kind": "Property",
+      "preferredName": "part material",
+      "description": "RFQ-PartConfiguration: material definition with further information"
+    },
+    {
+      "id": "urn:samm:io.catenax.request_for_quotation:3.0.0#partQuantity",
+      "label": "partQuantity",
+      "kind": "Property",
+      "preferredName": "part quantity",
+      "description": "RFQ-PartConfiguration: Quantity of which the part item is assembled into the parent item (within the CAD File). In general it is '1' for serialized parts."
+    },
+    {
+      "id": "urn:samm:io.catenax.request_for_quotation:3.0.0#billOfProcess",
+      "label": "billOfProcess",
+      "kind": "Property",
+      "preferredName": "bill of process",
+      "description": "RFQ-PartConfiguration: list of process steps for part to be manufactured"
+    },
+    {
+      "id": "urn:samm:io.catenax.request_for_quotation:3.0.0#quantityNumber",
+      "label": "quantityNumber",
+      "kind": "Property",
+      "preferredName": "Quantity Number",
+      "description": "The number of objects related to the measurement unit"
+    },
+    {
+      "id": "urn:samm:io.catenax.request_for_quotation:3.0.0#measurementUnit",
+      "label": "measurementUnit",
+      "kind": "Property",
+      "preferredName": "Measurement Unit",
+      "description": "Unit of Measurement for the quantity of serialized objects"
+    },
+    {
+      "id": "urn:samm:io.catenax.request_for_quotation:3.0.0#materialProperties",
+      "label": "materialProperties",
+      "kind": "Property",
+      "preferredName": "material properties",
+      "description": "material definition with additional detail properties with name, value and value type, like name= density, value=2.7, type=g/m3 or name= chemical term, value=AlMgMn, type=periodic table"
+    },
+    {
+      "id": "urn:samm:io.catenax.request_for_quotation:3.0.0#materialFamily",
+      "label": "materialFamily",
+      "kind": "Property",
+      "preferredName": "material family",
+      "description": "definition of material family for preselection"
+    },
+    {
+      "id": "urn:samm:io.catenax.request_for_quotation:3.0.0#value",
+      "label": "value",
+      "kind": "Property",
+      "preferredName": "value",
+      "description": "value to detail the part material item"
+    },
+    {
+      "id": "urn:samm:io.catenax.request_for_quotation:3.0.0#valueType",
+      "label": "valueType",
+      "kind": "Property",
+      "preferredName": "value type",
+      "description": "value type to specify the value of the property"
+    },
+    {
+      "id": "urn:samm:io.catenax.request_for_quotation:3.0.0#propertyName",
+      "label": "propertyName",
+      "kind": "Property",
+      "preferredName": "property name",
+      "description": "name of the property"
+    },
+    {
+      "id": "urn:samm:io.catenax.request_for_quotation:3.0.0#RFQIdentificationCharacteristic",
+      "label": "RFQIdentificationCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "RFQ identification characteristic",
+      "description": "all properties necessary for identification of the request for quotation"
+    },
+    {
+      "id": "urn:samm:io.catenax.request_for_quotation:3.0.0#RFQConfigurationCharacteristic",
+      "label": "RFQConfigurationCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "RFQ configuration characteristic",
+      "description": "all information to configure a request for quotation"
+    },
+    {
+      "id": "urn:samm:io.catenax.request_for_quotation:3.0.0#RFQSenderCharacteristic",
+      "label": "RFQSenderCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "RFQ sender characteristic",
+      "description": "all data about sender of request for quotation, important for offer and delivery"
+    },
+    {
+      "id": "urn:samm:io.catenax.request_for_quotation:3.0.0#CXHeaderCharacteristic",
+      "label": "CXHeaderCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "catena-X header characteristic",
+      "description": "header information by Catena-X"
+    },
+    {
+      "id": "urn:samm:io.catenax.request_for_quotation:3.0.0#SourceCharacteristic",
+      "label": "SourceCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "source characteristic",
+      "description": "digital address of the sender (e.g.token, IP address, link, user account)"
+    },
+    {
+      "id": "urn:samm:io.catenax.request_for_quotation:3.0.0#IdCharacteristic",
+      "label": "IdCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "id characteristic",
+      "description": "internal identifier in user account"
+    },
+    {
+      "id": "urn:samm:io.catenax.request_for_quotation:3.0.0#NameCharacteristic",
+      "label": "NameCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "name characteristic",
+      "description": "name for the request for user account management (usually name of the part to be manufactured)"
+    },
+    {
+      "id": "urn:samm:io.catenax.request_for_quotation:3.0.0#DateTimeCharacteristic",
+      "label": "DateTimeCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "date time characteristic",
+      "description": "date and time of the request in user account"
+    },
+    {
+      "id": "urn:samm:io.catenax.request_for_quotation:3.0.0#RFQVersionCharacteristic",
+      "label": "RFQVersionCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "RFQ version characteristic",
+      "description": "version of this request in case there were any changes"
+    },
+    {
+      "id": "urn:samm:io.catenax.request_for_quotation:3.0.0#FileCharacteristic",
+      "label": "FileCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "file characteristic",
+      "description": "CAD file as geometry definition, e.g. step file"
+    },
+    {
+      "id": "urn:samm:io.catenax.request_for_quotation:3.0.0#SetOfPartsCharacteristic",
+      "label": "SetOfPartsCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "set of parts characteristic",
+      "description": "list of parts contained in the CAD file, to be defined in RFQ configuration"
+    },
+    {
+      "id": "urn:samm:io.catenax.request_for_quotation:3.0.0#DeliveryDateCharacteristic",
+      "label": "DeliveryDateCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "delivery date characteristic",
+      "description": "delivery date"
+    },
+    {
+      "id": "urn:samm:io.catenax.request_for_quotation:3.0.0#CommentCharacteristic",
+      "label": "CommentCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "comment characteristic",
+      "description": "placeholder for any kind of additional comments"
+    },
+    {
+      "id": "urn:samm:io.catenax.request_for_quotation:3.0.0#SetOfFilesCharacteristic",
+      "label": "SetOfFilesCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "set of files characteristic",
+      "description": "in case there are additional documents or files to share"
+    },
+    {
+      "id": "urn:samm:io.catenax.request_for_quotation:3.0.0#OrderQuantityCharacteristic",
+      "label": "OrderQuantityCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "order quantity characteristic",
+      "description": "quantity to be ordered"
+    },
+    {
+      "id": "urn:samm:io.catenax.request_for_quotation:3.0.0#SenderNameCharacteristic",
+      "label": "SenderNameCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "sender name characteristic",
+      "description": "name of the sender"
+    },
+    {
+      "id": "urn:samm:io.catenax.request_for_quotation:3.0.0#SenderAddressCharacteristic",
+      "label": "SenderAddressCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "sender address characteristic",
+      "description": "address of sender"
+    },
+    {
+      "id": "urn:samm:io.catenax.request_for_quotation:3.0.0#SenderCompanyNameCharacteristic",
+      "label": "SenderCompanyNameCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "sender company name characteristic",
+      "description": "company name of sender"
+    },
+    {
+      "id": "urn:samm:io.catenax.request_for_quotation:3.0.0#SenderEMailCharacteristic",
+      "label": "SenderEMailCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "sender eMail characteristic",
+      "description": " e-mail address of sender"
+    },
+    {
+      "id": "urn:samm:io.catenax.request_for_quotation:3.0.0#SenderPhoneNumberCharacteristic",
+      "label": "SenderPhoneNumberCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "sender phone number characteristic",
+      "description": "phone number of sender"
+    },
+    {
+      "id": "urn:samm:io.catenax.request_for_quotation:3.0.0#SenderAccountAddressCharacteristic",
+      "label": "SenderAccountAddressCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "sender account address characteristic",
+      "description": "address of sender for account"
+    },
+    {
+      "id": "urn:samm:io.catenax.request_for_quotation:3.0.0#SenderDeliveryAddressCharacteristic",
+      "label": "SenderDeliveryAddressCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "sender delivery address characteristic",
+      "description": "address of sender for delivery"
+    },
+    {
+      "id": "urn:samm:io.catenax.request_for_quotation:3.0.0#DeliveryRequirementsCharacteristic",
+      "label": "DeliveryRequirementsCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "delivery requirements characteristic",
+      "description": "any kind of delivery requirements"
+    },
+    {
+      "id": "urn:samm:io.catenax.request_for_quotation:3.0.0#FileTypeCharacteristic",
+      "label": "FileTypeCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "file type characteristic",
+      "description": "file format"
+    },
+    {
+      "id": "urn:samm:io.catenax.request_for_quotation:3.0.0#FilePathCharacteristic",
+      "label": "FilePathCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "file path characteristic",
+      "description": "path or address to the file "
+    },
+    {
+      "id": "urn:samm:io.catenax.request_for_quotation:3.0.0#FileNameCharacteristic",
+      "label": "FileNameCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "file name characteristic",
+      "description": "name of the file"
+    },
+    {
+      "id": "urn:samm:io.catenax.request_for_quotation:3.0.0#FileObjectCharacteristic",
+      "label": "FileObjectCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "file object characteristic",
+      "description": "the file object itself, in case this could be sent via the API"
+    },
+    {
+      "id": "urn:samm:io.catenax.request_for_quotation:3.0.0#PartIdCharacteristic",
+      "label": "PartIdCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "part Id Characteristic",
+      "description": "identifier of the part from CAD File"
+    },
+    {
+      "id": "urn:samm:io.catenax.request_for_quotation:3.0.0#PartNameCharacteristic",
+      "label": "PartNameCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "part name characteristic",
+      "description": "name of the part in CAD file. In case the CAD file has only one part, this could also be the file name"
+    },
+    {
+      "id": "urn:samm:io.catenax.request_for_quotation:3.0.0#ManufacturingDomainCharacteristic",
+      "label": "ManufacturingDomainCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "manufacturing domain characteristic",
+      "description": "domain of required process (e.g. subtractive manufacturing, additive manufacturing, assembly)"
+    },
+    {
+      "id": "urn:samm:io.catenax.request_for_quotation:3.0.0#GeneralToleranceCharacteristic",
+      "label": "GeneralToleranceCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "general tolerance characteristic",
+      "description": "selection of defined tolerance classes"
+    },
+    {
+      "id": "urn:samm:io.catenax.request_for_quotation:3.0.0#AdditionalQualityRequirementsCharacteristic",
+      "label": "AdditionalQualityRequirementsCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "additional quality requirements charakteristic",
+      "description": "specific requirements to guarantee quality"
+    },
+    {
+      "id": "urn:samm:io.catenax.request_for_quotation:3.0.0#MaterialCharacteristic",
+      "label": "MaterialCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "material characteristic",
+      "description": "material definition with further information"
+    },
+    {
+      "id": "urn:samm:io.catenax.request_for_quotation:3.0.0#PartQuantityCharacteristic",
+      "label": "PartQuantityCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "part quantity characteristic",
+      "description": "Describes the quantity in which the part item is assembled in the given parent item by providing a quantity value and the measurement unit in which the quantity is measured."
+    },
+    {
+      "id": "urn:samm:io.catenax.request_for_quotation:3.0.0#BillOfProcessCharacteristic",
+      "label": "BillOfProcessCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "bill of process characteristic",
+      "description": "reference to SharedBillOfProcess Model"
+    },
+    {
+      "id": "urn:samm:io.catenax.request_for_quotation:3.0.0#SetMaterialPropertiesCharacteristic",
+      "label": "SetMaterialPropertiesCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "set of material properties characteristic",
+      "description": "set of property data to detail material properties "
+    },
+    {
+      "id": "urn:samm:io.catenax.request_for_quotation:3.0.0#PartMaterialGroupCharacteristic",
+      "label": "PartMaterialGroupCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "part material group characteristic",
+      "description": "definition of material group for preselection"
+    },
+    {
+      "id": "urn:samm:io.catenax.request_for_quotation:3.0.0#ValueCharacteristic",
+      "label": "ValueCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "value characteristic",
+      "description": "value to detail the part material item"
+    },
+    {
+      "id": "urn:samm:io.catenax.request_for_quotation:3.0.0#ValueTypeCharacteristic",
+      "label": "ValueTypeCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": " value type characteristic",
+      "description": "value type to specify the property value"
+    },
+    {
+      "id": "urn:samm:io.catenax.request_for_quotation:3.0.0#PropertyNameCharacteristic",
+      "label": "PropertyNameCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "property name characteristic",
+      "description": "name of the property"
+    },
+    {
+      "id": "urn:samm:io.catenax.request_for_quotation:3.0.0#RFQIdentificationData",
+      "label": "RFQIdentificationData",
+      "kind": "Entity",
+      "preferredName": "RFQ identification data",
+      "description": "all properties necessary for identification of the request for quotation"
+    },
+    {
+      "id": "urn:samm:io.catenax.request_for_quotation:3.0.0#RFQConfigurationData",
+      "label": "RFQConfigurationData",
+      "kind": "Entity",
+      "preferredName": "RFQ configuration data",
+      "description": "all information to configure a request for quotation"
+    },
+    {
+      "id": "urn:samm:io.catenax.request_for_quotation:3.0.0#RFQSenderData",
+      "label": "RFQSenderData",
+      "kind": "Entity",
+      "preferredName": "RFQ sender data",
+      "description": "all data about sender of request for quotation, important for offer and delivery"
+    },
+    {
+      "id": "urn:samm:io.catenax.request_for_quotation:3.0.0#FileData",
+      "label": "FileData",
+      "kind": "Entity",
+      "preferredName": "file data",
+      "description": "file data information including optionally the file object itself, or how to get access to the file by filePath, fileName and fileType"
+    },
+    {
+      "id": "urn:samm:io.catenax.request_for_quotation:3.0.0#PartObject",
+      "label": "PartObject",
+      "kind": "Entity",
+      "preferredName": "part object",
+      "description": "part contained in the CAD file, to be defined in RFQ configuration"
+    },
+    {
+      "id": "urn:samm:io.catenax.request_for_quotation:3.0.0#Quantity",
+      "label": "Quantity",
+      "kind": "Entity",
+      "preferredName": "quantity",
+      "description": "Comprises the number of objects and the unit of measurement for the respective child objects"
+    },
+    {
+      "id": "urn:samm:io.catenax.request_for_quotation:3.0.0#File",
+      "label": "File",
+      "kind": "Entity",
+      "preferredName": "file",
+      "description": "a file in a defined format (fileType)"
+    },
+    {
+      "id": "urn:samm:io.catenax.request_for_quotation:3.0.0#MaterialData",
+      "label": "MaterialData",
+      "kind": "Entity",
+      "preferredName": "material data",
+      "description": "object with all informations about material of a part to be manufactured"
+    },
+    {
+      "id": "urn:samm:io.catenax.request_for_quotation:3.0.0#Property",
+      "label": "Property",
+      "kind": "Entity",
+      "preferredName": "property ",
+      "description": "property is used to detail the description by several items with name, value and value type"
+    }
+  ],
+  "links": [
+    {
+      "source": "urn:samm:io.catenax.request_for_quotation:3.0.0#RequestForQuotation",
+      "target": "urn:samm:io.catenax.request_for_quotation:3.0.0#rfqIdentification",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.request_for_quotation:3.0.0#RequestForQuotation",
+      "target": "urn:samm:io.catenax.request_for_quotation:3.0.0#rfqConfiguration",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.request_for_quotation:3.0.0#RequestForQuotation",
+      "target": "urn:samm:io.catenax.request_for_quotation:3.0.0#rfqSender",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.request_for_quotation:3.0.0#RequestForQuotation",
+      "target": "urn:samm:io.catenax.request_for_quotation:3.0.0#cxHeader",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.request_for_quotation:3.0.0#RFQIdentificationData",
+      "target": "urn:samm:io.catenax.request_for_quotation:3.0.0#rfqSource",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.request_for_quotation:3.0.0#RFQIdentificationData",
+      "target": "urn:samm:io.catenax.request_for_quotation:3.0.0#rfqId",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.request_for_quotation:3.0.0#RFQIdentificationData",
+      "target": "urn:samm:io.catenax.request_for_quotation:3.0.0#rfqName",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.request_for_quotation:3.0.0#RFQIdentificationData",
+      "target": "urn:samm:io.catenax.request_for_quotation:3.0.0#rfqDateTime",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.request_for_quotation:3.0.0#RFQIdentificationData",
+      "target": "urn:samm:io.catenax.request_for_quotation:3.0.0#rfqVersion",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.request_for_quotation:3.0.0#RFQConfigurationData",
+      "target": "urn:samm:io.catenax.request_for_quotation:3.0.0#cadFile",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.request_for_quotation:3.0.0#RFQConfigurationData",
+      "target": "urn:samm:io.catenax.request_for_quotation:3.0.0#parts",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.request_for_quotation:3.0.0#RFQConfigurationData",
+      "target": "urn:samm:io.catenax.request_for_quotation:3.0.0#firstDeliveryDate",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.request_for_quotation:3.0.0#RFQConfigurationData",
+      "target": "urn:samm:io.catenax.request_for_quotation:3.0.0#lastDeliveryDate",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.request_for_quotation:3.0.0#RFQConfigurationData",
+      "target": "urn:samm:io.catenax.request_for_quotation:3.0.0#additionalComments",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.request_for_quotation:3.0.0#RFQConfigurationData",
+      "target": "urn:samm:io.catenax.request_for_quotation:3.0.0#additionalFiles",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.request_for_quotation:3.0.0#RFQConfigurationData",
+      "target": "urn:samm:io.catenax.request_for_quotation:3.0.0#orderQuantity",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.request_for_quotation:3.0.0#RFQSenderData",
+      "target": "urn:samm:io.catenax.request_for_quotation:3.0.0#senderName",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.request_for_quotation:3.0.0#RFQSenderData",
+      "target": "urn:samm:io.catenax.request_for_quotation:3.0.0#senderAdress",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.request_for_quotation:3.0.0#RFQSenderData",
+      "target": "urn:samm:io.catenax.request_for_quotation:3.0.0#senderCompanyName",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.request_for_quotation:3.0.0#RFQSenderData",
+      "target": "urn:samm:io.catenax.request_for_quotation:3.0.0#senderEMail",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.request_for_quotation:3.0.0#RFQSenderData",
+      "target": "urn:samm:io.catenax.request_for_quotation:3.0.0#senderPhoneNumber",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.request_for_quotation:3.0.0#RFQSenderData",
+      "target": "urn:samm:io.catenax.request_for_quotation:3.0.0#senderAccountAddress",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.request_for_quotation:3.0.0#RFQSenderData",
+      "target": "urn:samm:io.catenax.request_for_quotation:3.0.0#senderDeliveryAddress",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.request_for_quotation:3.0.0#RFQSenderData",
+      "target": "urn:samm:io.catenax.request_for_quotation:3.0.0#deliveryRequirements",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.request_for_quotation:3.0.0#FileData",
+      "target": "urn:samm:io.catenax.request_for_quotation:3.0.0#fileType",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.request_for_quotation:3.0.0#FileData",
+      "target": "urn:samm:io.catenax.request_for_quotation:3.0.0#filePath",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.request_for_quotation:3.0.0#FileData",
+      "target": "urn:samm:io.catenax.request_for_quotation:3.0.0#fileName",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.request_for_quotation:3.0.0#FileData",
+      "target": "urn:samm:io.catenax.request_for_quotation:3.0.0#fileObject",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.request_for_quotation:3.0.0#PartObject",
+      "target": "urn:samm:io.catenax.request_for_quotation:3.0.0#partId",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.request_for_quotation:3.0.0#PartObject",
+      "target": "urn:samm:io.catenax.request_for_quotation:3.0.0#partName",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.request_for_quotation:3.0.0#PartObject",
+      "target": "urn:samm:io.catenax.request_for_quotation:3.0.0#manufacturingDomain",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.request_for_quotation:3.0.0#PartObject",
+      "target": "urn:samm:io.catenax.request_for_quotation:3.0.0#generalTolerance",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.request_for_quotation:3.0.0#PartObject",
+      "target": "urn:samm:io.catenax.request_for_quotation:3.0.0#additionalRequirements",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.request_for_quotation:3.0.0#PartObject",
+      "target": "urn:samm:io.catenax.request_for_quotation:3.0.0#material",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.request_for_quotation:3.0.0#PartObject",
+      "target": "urn:samm:io.catenax.request_for_quotation:3.0.0#partQuantity",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.request_for_quotation:3.0.0#PartObject",
+      "target": "urn:samm:io.catenax.request_for_quotation:3.0.0#billOfProcess",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.request_for_quotation:3.0.0#Quantity",
+      "target": "urn:samm:io.catenax.request_for_quotation:3.0.0#quantityNumber",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.request_for_quotation:3.0.0#Quantity",
+      "target": "urn:samm:io.catenax.request_for_quotation:3.0.0#measurementUnit",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.request_for_quotation:3.0.0#MaterialData",
+      "target": "urn:samm:io.catenax.request_for_quotation:3.0.0#materialProperties",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.request_for_quotation:3.0.0#MaterialData",
+      "target": "urn:samm:io.catenax.request_for_quotation:3.0.0#materialFamily",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.request_for_quotation:3.0.0#Property",
+      "target": "urn:samm:io.catenax.request_for_quotation:3.0.0#value",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.request_for_quotation:3.0.0#Property",
+      "target": "urn:samm:io.catenax.request_for_quotation:3.0.0#valueType",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.request_for_quotation:3.0.0#Property",
+      "target": "urn:samm:io.catenax.request_for_quotation:3.0.0#propertyName",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.request_for_quotation:3.0.0#rfqIdentification",
+      "target": "urn:samm:io.catenax.request_for_quotation:3.0.0#RFQIdentificationCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.request_for_quotation:3.0.0#rfqConfiguration",
+      "target": "urn:samm:io.catenax.request_for_quotation:3.0.0#RFQConfigurationCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.request_for_quotation:3.0.0#rfqSender",
+      "target": "urn:samm:io.catenax.request_for_quotation:3.0.0#RFQSenderCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.request_for_quotation:3.0.0#cxHeader",
+      "target": "urn:samm:io.catenax.request_for_quotation:3.0.0#CXHeaderCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.request_for_quotation:3.0.0#rfqSource",
+      "target": "urn:samm:io.catenax.request_for_quotation:3.0.0#SourceCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.request_for_quotation:3.0.0#rfqId",
+      "target": "urn:samm:io.catenax.request_for_quotation:3.0.0#IdCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.request_for_quotation:3.0.0#rfqName",
+      "target": "urn:samm:io.catenax.request_for_quotation:3.0.0#NameCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.request_for_quotation:3.0.0#rfqDateTime",
+      "target": "urn:samm:io.catenax.request_for_quotation:3.0.0#DateTimeCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.request_for_quotation:3.0.0#rfqVersion",
+      "target": "urn:samm:io.catenax.request_for_quotation:3.0.0#RFQVersionCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.request_for_quotation:3.0.0#cadFile",
+      "target": "urn:samm:io.catenax.request_for_quotation:3.0.0#FileCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.request_for_quotation:3.0.0#parts",
+      "target": "urn:samm:io.catenax.request_for_quotation:3.0.0#SetOfPartsCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.request_for_quotation:3.0.0#firstDeliveryDate",
+      "target": "urn:samm:io.catenax.request_for_quotation:3.0.0#DeliveryDateCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.request_for_quotation:3.0.0#lastDeliveryDate",
+      "target": "urn:samm:io.catenax.request_for_quotation:3.0.0#DeliveryDateCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.request_for_quotation:3.0.0#additionalComments",
+      "target": "urn:samm:io.catenax.request_for_quotation:3.0.0#CommentCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.request_for_quotation:3.0.0#additionalFiles",
+      "target": "urn:samm:io.catenax.request_for_quotation:3.0.0#SetOfFilesCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.request_for_quotation:3.0.0#orderQuantity",
+      "target": "urn:samm:io.catenax.request_for_quotation:3.0.0#OrderQuantityCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.request_for_quotation:3.0.0#senderName",
+      "target": "urn:samm:io.catenax.request_for_quotation:3.0.0#SenderNameCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.request_for_quotation:3.0.0#senderAdress",
+      "target": "urn:samm:io.catenax.request_for_quotation:3.0.0#SenderAddressCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.request_for_quotation:3.0.0#senderCompanyName",
+      "target": "urn:samm:io.catenax.request_for_quotation:3.0.0#SenderCompanyNameCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.request_for_quotation:3.0.0#senderEMail",
+      "target": "urn:samm:io.catenax.request_for_quotation:3.0.0#SenderEMailCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.request_for_quotation:3.0.0#senderPhoneNumber",
+      "target": "urn:samm:io.catenax.request_for_quotation:3.0.0#SenderPhoneNumberCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.request_for_quotation:3.0.0#senderAccountAddress",
+      "target": "urn:samm:io.catenax.request_for_quotation:3.0.0#SenderAccountAddressCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.request_for_quotation:3.0.0#senderDeliveryAddress",
+      "target": "urn:samm:io.catenax.request_for_quotation:3.0.0#SenderDeliveryAddressCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.request_for_quotation:3.0.0#deliveryRequirements",
+      "target": "urn:samm:io.catenax.request_for_quotation:3.0.0#DeliveryRequirementsCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.request_for_quotation:3.0.0#fileType",
+      "target": "urn:samm:io.catenax.request_for_quotation:3.0.0#FileTypeCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.request_for_quotation:3.0.0#filePath",
+      "target": "urn:samm:io.catenax.request_for_quotation:3.0.0#FilePathCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.request_for_quotation:3.0.0#fileName",
+      "target": "urn:samm:io.catenax.request_for_quotation:3.0.0#FileNameCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.request_for_quotation:3.0.0#fileObject",
+      "target": "urn:samm:io.catenax.request_for_quotation:3.0.0#FileObjectCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.request_for_quotation:3.0.0#partId",
+      "target": "urn:samm:io.catenax.request_for_quotation:3.0.0#PartIdCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.request_for_quotation:3.0.0#partName",
+      "target": "urn:samm:io.catenax.request_for_quotation:3.0.0#PartNameCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.request_for_quotation:3.0.0#manufacturingDomain",
+      "target": "urn:samm:io.catenax.request_for_quotation:3.0.0#ManufacturingDomainCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.request_for_quotation:3.0.0#generalTolerance",
+      "target": "urn:samm:io.catenax.request_for_quotation:3.0.0#GeneralToleranceCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.request_for_quotation:3.0.0#additionalRequirements",
+      "target": "urn:samm:io.catenax.request_for_quotation:3.0.0#AdditionalQualityRequirementsCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.request_for_quotation:3.0.0#material",
+      "target": "urn:samm:io.catenax.request_for_quotation:3.0.0#MaterialCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.request_for_quotation:3.0.0#partQuantity",
+      "target": "urn:samm:io.catenax.request_for_quotation:3.0.0#PartQuantityCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.request_for_quotation:3.0.0#billOfProcess",
+      "target": "urn:samm:io.catenax.request_for_quotation:3.0.0#BillOfProcessCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.request_for_quotation:3.0.0#materialProperties",
+      "target": "urn:samm:io.catenax.request_for_quotation:3.0.0#SetMaterialPropertiesCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.request_for_quotation:3.0.0#materialFamily",
+      "target": "urn:samm:io.catenax.request_for_quotation:3.0.0#PartMaterialGroupCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.request_for_quotation:3.0.0#value",
+      "target": "urn:samm:io.catenax.request_for_quotation:3.0.0#ValueCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.request_for_quotation:3.0.0#valueType",
+      "target": "urn:samm:io.catenax.request_for_quotation:3.0.0#ValueTypeCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.request_for_quotation:3.0.0#propertyName",
+      "target": "urn:samm:io.catenax.request_for_quotation:3.0.0#PropertyNameCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.request_for_quotation:3.0.0#RFQIdentificationCharacteristic",
+      "target": "urn:samm:io.catenax.request_for_quotation:3.0.0#RFQIdentificationData",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.request_for_quotation:3.0.0#RFQConfigurationCharacteristic",
+      "target": "urn:samm:io.catenax.request_for_quotation:3.0.0#RFQConfigurationData",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.request_for_quotation:3.0.0#RFQSenderCharacteristic",
+      "target": "urn:samm:io.catenax.request_for_quotation:3.0.0#RFQSenderData",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.request_for_quotation:3.0.0#FileCharacteristic",
+      "target": "urn:samm:io.catenax.request_for_quotation:3.0.0#FileData",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.request_for_quotation:3.0.0#SetOfFilesCharacteristic",
+      "target": "urn:samm:io.catenax.request_for_quotation:3.0.0#FileData",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.request_for_quotation:3.0.0#SetOfPartsCharacteristic",
+      "target": "urn:samm:io.catenax.request_for_quotation:3.0.0#PartObject",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.request_for_quotation:3.0.0#OrderQuantityCharacteristic",
+      "target": "urn:samm:io.catenax.request_for_quotation:3.0.0#Quantity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.request_for_quotation:3.0.0#PartQuantityCharacteristic",
+      "target": "urn:samm:io.catenax.request_for_quotation:3.0.0#Quantity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.request_for_quotation:3.0.0#FileObjectCharacteristic",
+      "target": "urn:samm:io.catenax.request_for_quotation:3.0.0#File",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.request_for_quotation:3.0.0#MaterialCharacteristic",
+      "target": "urn:samm:io.catenax.request_for_quotation:3.0.0#MaterialData",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.request_for_quotation:3.0.0#SetMaterialPropertiesCharacteristic",
+      "target": "urn:samm:io.catenax.request_for_quotation:3.0.0#Property",
+      "label": "dataType",
+      "optional": false
+    }
+  ]
+}

@@ -1,0 +1,1068 @@
+{
+  "meta": {
+    "namespace": "urn:bamm:io.catenax.market_place_offer:1.2.0#",
+    "meta_model": "BAMM 1.0.0",
+    "model_family": "BAMM",
+    "model_name": "market_place_offer",
+    "model_version": "1.2.0",
+    "source": "catenax",
+    "status": "deprecated",
+    "release_date": null,
+    "release_notes": "# Changelog\nAll notable changes to this model will be documented in this file.\n\n## [2.0.0] - 2024-02-05\n### Added\n- new aspect based on shared aspect \"recycling strategy certificate\"\n- other new aspects\n- link several more models\n\n### Changed\n- Upgrade from BAMM model to SAMM model\n- some aspects\n\n### Removed\n- 2 aspects\n\n## [1.4.0] - 2023-01-30\n### Added\nn/a\n\n### Changed\n- attachment changed to set already\n- quantity description changed\n\n### Removed\n- status\n- certificate\n\n## [1.3.0] - 2022-10-28\n### Added\n- initial model\n- incremental additions of properties\n\n### Changed\nn/a\n\n### Removed\nn/a",
+    "dependencies": [],
+    "path": "data/sldt-semantic-models/io.catenax.market_place_offer/1.2.0/MarketplaceOffer.ttl"
+  },
+  "nodes": [
+    {
+      "id": "urn:bamm:io.catenax.market_place_offer:1.2.0#MarketplaceOffer",
+      "label": "MarketplaceOffer",
+      "kind": "Aspect",
+      "preferredName": "Marketplace Offer",
+      "description": "Description of all needed information to place a market place offer on the marketplace."
+    },
+    {
+      "id": "urn:bamm:io.catenax.market_place_offer:1.2.0#sku",
+      "label": "sku",
+      "kind": "Property",
+      "preferredName": null,
+      "description": "Stock Keeping Unit is an unique identifier of the dealer providing the product."
+    },
+    {
+      "id": "urn:bamm:io.catenax.market_place_offer:1.2.0#quantity",
+      "label": "quantity",
+      "kind": "Property",
+      "preferredName": null,
+      "description": "The available quantity of the on the offered product in SKU."
+    },
+    {
+      "id": "urn:bamm:io.catenax.market_place_offer:1.2.0#unitOfMeasure",
+      "label": "unitOfMeasure",
+      "kind": "Property",
+      "preferredName": null,
+      "description": "The unit of measure (related to quantity)."
+    },
+    {
+      "id": "urn:bamm:io.catenax.market_place_offer:1.2.0#condition",
+      "label": "condition",
+      "kind": "Property",
+      "preferredName": null,
+      "description": "The condition of the offered product."
+    },
+    {
+      "id": "urn:bamm:io.catenax.market_place_offer:1.2.0#pickupLocation",
+      "label": "pickupLocation",
+      "kind": "Property",
+      "preferredName": null,
+      "description": "The pickup location for the offered item."
+    },
+    {
+      "id": "urn:bamm:io.catenax.market_place_offer:1.2.0#incoterms",
+      "label": "incoterms",
+      "kind": "Property",
+      "preferredName": null,
+      "description": "The incoterms."
+    },
+    {
+      "id": "urn:bamm:io.catenax.market_place_offer:1.2.0#price",
+      "label": "price",
+      "kind": "Property",
+      "preferredName": null,
+      "description": "The price of the product."
+    },
+    {
+      "id": "urn:bamm:io.catenax.market_place_offer:1.2.0#image",
+      "label": "image",
+      "kind": "Property",
+      "preferredName": null,
+      "description": "Images of the product."
+    },
+    {
+      "id": "urn:bamm:io.catenax.market_place_offer:1.2.0#attachment",
+      "label": "attachment",
+      "kind": "Property",
+      "preferredName": null,
+      "description": "Attachments related to the product."
+    },
+    {
+      "id": "urn:bamm:io.catenax.market_place_offer:1.2.0#bundleOffer",
+      "label": "bundleOffer",
+      "kind": "Property",
+      "preferredName": "bundle offer",
+      "description": "If this is a single product or a lot of products (group) not being necessarly of the same part number."
+    },
+    {
+      "id": "urn:bamm:io.catenax.market_place_offer:1.2.0#status",
+      "label": "status",
+      "kind": "Property",
+      "preferredName": "status",
+      "description": "The status of the offer."
+    },
+    {
+      "id": "urn:bamm:io.catenax.market_place_offer:1.2.0#certificate",
+      "label": "certificate",
+      "kind": "Property",
+      "preferredName": "certificate",
+      "description": "Certificates related to the product."
+    },
+    {
+      "id": "urn:bamm:io.catenax.market_place_offer:1.2.0#marketplaceProduct",
+      "label": "marketplaceProduct",
+      "kind": "Property",
+      "preferredName": "marketplace product",
+      "description": "The description of the product within the marketplace that might differ from the digital twin."
+    },
+    {
+      "id": "urn:bamm:io.catenax.market_place_offer:1.2.0#missingParts",
+      "label": "missingParts",
+      "kind": "Property",
+      "preferredName": "missing parts",
+      "description": "Completeness of the product, e.g. missing parts are not acceptable."
+    },
+    {
+      "id": "urn:bamm:io.catenax.market_place_offer:1.2.0#dismantled",
+      "label": "dismantled",
+      "kind": "Property",
+      "preferredName": "dismantled",
+      "description": "Information on whether the product has been dismantled."
+    },
+    {
+      "id": "urn:bamm:io.catenax.market_place_offer:1.2.0#mechanicalDamage",
+      "label": "mechanicalDamage",
+      "kind": "Property",
+      "preferredName": "mechanical damage",
+      "description": "Information on mechanical damage to the part, e.g. two broken ribs or part deformation indicate mechanical damage."
+    },
+    {
+      "id": "urn:bamm:io.catenax.market_place_offer:1.2.0#corroded",
+      "label": "corroded",
+      "kind": "Property",
+      "preferredName": "corroded",
+      "description": "Information on whether the product has corrosion."
+    },
+    {
+      "id": "urn:bamm:io.catenax.market_place_offer:1.2.0#discolored",
+      "label": "discolored",
+      "kind": "Property",
+      "preferredName": "discolored",
+      "description": "Information on whether the product has been discoloured."
+    },
+    {
+      "id": "urn:bamm:io.catenax.market_place_offer:1.2.0#availabilityDate",
+      "label": "availabilityDate",
+      "kind": "Property",
+      "preferredName": "availability date",
+      "description": "The availability date when the product is in stock."
+    },
+    {
+      "id": "urn:bamm:io.catenax.market_place_offer:1.2.0#mileage",
+      "label": "mileage",
+      "kind": "Property",
+      "preferredName": "mileage",
+      "description": "The mileage the item was ins use."
+    },
+    {
+      "id": "urn:bamm:io.catenax.market_place_offer:1.2.0#burned",
+      "label": "burned",
+      "kind": "Property",
+      "preferredName": "burned",
+      "description": "Information on whether the product has been fired and suffered damage from heat."
+    },
+    {
+      "id": "urn:bamm:io.catenax.market_place_offer:1.2.0#longitude",
+      "label": "longitude",
+      "kind": "Property",
+      "preferredName": "longitude",
+      "description": "The longitude of the 2D sphere coordinates."
+    },
+    {
+      "id": "urn:bamm:io.catenax.market_place_offer:1.2.0#latitude",
+      "label": "latitude",
+      "kind": "Property",
+      "preferredName": "latitude",
+      "description": "The latitude of the 2D sphere coordinates."
+    },
+    {
+      "id": "urn:bamm:io.catenax.market_place_offer:1.2.0#value",
+      "label": "value",
+      "kind": "Property",
+      "preferredName": "value",
+      "description": "The absolute value of the price."
+    },
+    {
+      "id": "urn:bamm:io.catenax.market_place_offer:1.2.0#currency",
+      "label": "currency",
+      "kind": "Property",
+      "preferredName": null,
+      "description": "The currency of the price."
+    },
+    {
+      "id": "urn:bamm:io.catenax.market_place_offer:1.2.0#name",
+      "label": "name",
+      "kind": "Property",
+      "preferredName": "name",
+      "description": "Name or title of the object."
+    },
+    {
+      "id": "urn:bamm:io.catenax.market_place_offer:1.2.0#location",
+      "label": "location",
+      "kind": "Property",
+      "preferredName": "location",
+      "description": "Location of the object."
+    },
+    {
+      "id": "urn:bamm:io.catenax.market_place_offer:1.2.0#certificateNumber",
+      "label": "certificateNumber",
+      "kind": "Property",
+      "preferredName": "certificate number",
+      "description": "The number of the certificate."
+    },
+    {
+      "id": "urn:bamm:io.catenax.market_place_offer:1.2.0#issue",
+      "label": "issue",
+      "kind": "Property",
+      "preferredName": "issue",
+      "description": "The issue of the certificate."
+    },
+    {
+      "id": "urn:bamm:io.catenax.market_place_offer:1.2.0#publicationYear",
+      "label": "publicationYear",
+      "kind": "Property",
+      "preferredName": "publication year",
+      "description": "Year the certificate was published."
+    },
+    {
+      "id": "urn:bamm:io.catenax.market_place_offer:1.2.0#effectiveDate",
+      "label": "effectiveDate",
+      "kind": "Property",
+      "preferredName": "effective date",
+      "description": "The date the certificate becomes effective."
+    },
+    {
+      "id": "urn:bamm:io.catenax.market_place_offer:1.2.0#expirationDate",
+      "label": "expirationDate",
+      "kind": "Property",
+      "preferredName": "expiration date",
+      "description": "The date the certificate expires."
+    },
+    {
+      "id": "urn:bamm:io.catenax.market_place_offer:1.2.0#productDescription",
+      "label": "productDescription",
+      "kind": "Property",
+      "preferredName": "product description",
+      "description": "The description of the product on the marketplace."
+    },
+    {
+      "id": "urn:bamm:io.catenax.market_place_offer:1.2.0#brand",
+      "label": "brand",
+      "kind": "Property",
+      "preferredName": "brand",
+      "description": "The brandname of the offered product."
+    },
+    {
+      "id": "urn:bamm:io.catenax.market_place_offer:1.2.0#category",
+      "label": "category",
+      "kind": "Property",
+      "preferredName": "category",
+      "description": "Category within the marketplace for classification of listings."
+    },
+    {
+      "id": "urn:bamm:io.catenax.market_place_offer:1.2.0#originalManufacturer",
+      "label": "originalManufacturer",
+      "kind": "Property",
+      "preferredName": "original manufacturer",
+      "description": "The original manufacturer of a product."
+    },
+    {
+      "id": "urn:bamm:io.catenax.market_place_offer:1.2.0#manufacturerPartNumber",
+      "label": "manufacturerPartNumber",
+      "kind": "Property",
+      "preferredName": "manufacturer part number",
+      "description": "The unique identifier of the product from the manufacturer."
+    },
+    {
+      "id": "urn:bamm:io.catenax.market_place_offer:1.2.0#productLink",
+      "label": "productLink",
+      "kind": "Property",
+      "preferredName": "product link",
+      "description": "A link to either the product on the original marketplace/webshop or a link to the product specifications document."
+    },
+    {
+      "id": "urn:bamm:io.catenax.market_place_offer:1.2.0#oeNumber",
+      "label": "oeNumber",
+      "kind": "Property",
+      "preferredName": "original equipment number",
+      "description": "The original equipment number."
+    },
+    {
+      "id": "urn:bamm:io.catenax.market_place_offer:1.2.0#technicalSpecification",
+      "label": "technicalSpecification",
+      "kind": "Property",
+      "preferredName": "technical specification",
+      "description": "Further technical specifications."
+    },
+    {
+      "id": "urn:bamm:io.catenax.market_place_offer:1.2.0#mainCategory",
+      "label": "mainCategory",
+      "kind": "Property",
+      "preferredName": "main category",
+      "description": null
+    },
+    {
+      "id": "urn:bamm:io.catenax.market_place_offer:1.2.0#subCategory",
+      "label": "subCategory",
+      "kind": "Property",
+      "preferredName": "sub category",
+      "description": null
+    },
+    {
+      "id": "urn:bamm:io.catenax.market_place_offer:1.2.0#key",
+      "label": "key",
+      "kind": "Property",
+      "preferredName": "key",
+      "description": "The key of the key value pair."
+    },
+    {
+      "id": "urn:bamm:io.catenax.market_place_offer:1.2.0#technicalValue",
+      "label": "technicalValue",
+      "kind": "Property",
+      "preferredName": "technical value",
+      "description": "The value of the key value pair."
+    },
+    {
+      "id": "urn:bamm:io.catenax.market_place_offer:1.2.0#ConditionCharacteristic",
+      "label": "ConditionCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Condition Characteristic",
+      "description": "Condition of the article as enumeration."
+    },
+    {
+      "id": "urn:bamm:io.catenax.market_place_offer:1.2.0#Status",
+      "label": "Status",
+      "kind": "Characteristic",
+      "preferredName": "Status",
+      "description": null
+    },
+    {
+      "id": "urn:bamm:io.catenax.market_place_offer:1.2.0#GeographicalCoordinates",
+      "label": "GeographicalCoordinates",
+      "kind": "Characteristic",
+      "preferredName": "geographical coordinates",
+      "description": null
+    },
+    {
+      "id": "urn:bamm:io.catenax.market_place_offer:1.2.0#Price",
+      "label": "Price",
+      "kind": "Characteristic",
+      "preferredName": "price",
+      "description": null
+    },
+    {
+      "id": "urn:bamm:io.catenax.market_place_offer:1.2.0#ImageFile",
+      "label": "ImageFile",
+      "kind": "Characteristic",
+      "preferredName": "ImageFile",
+      "description": "Image of the object."
+    },
+    {
+      "id": "urn:bamm:io.catenax.market_place_offer:1.2.0#Attachment",
+      "label": "Attachment",
+      "kind": "Characteristic",
+      "preferredName": "Attachment",
+      "description": "Links the referenced attachment."
+    },
+    {
+      "id": "urn:bamm:io.catenax.market_place_offer:1.2.0#BundleOffer",
+      "label": "BundleOffer",
+      "kind": "Characteristic",
+      "preferredName": "bundle offer",
+      "description": null
+    },
+    {
+      "id": "urn:bamm:io.catenax.market_place_offer:1.2.0#ProductCharacteristic",
+      "label": "ProductCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "product characteristic",
+      "description": null
+    },
+    {
+      "id": "urn:bamm:io.catenax.market_place_offer:1.2.0#Boolean",
+      "label": "Boolean",
+      "kind": "Characteristic",
+      "preferredName": "boolean",
+      "description": null
+    },
+    {
+      "id": "urn:bamm:io.catenax.market_place_offer:1.2.0#AvailabilityDateCharacteristic",
+      "label": "AvailabilityDateCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "availability date characteristic",
+      "description": "The availability date when the product is in stock."
+    },
+    {
+      "id": "urn:bamm:io.catenax.market_place_offer:1.2.0#LongitudeCharacteristic",
+      "label": "LongitudeCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "longitude characteristic",
+      "description": null
+    },
+    {
+      "id": "urn:bamm:io.catenax.market_place_offer:1.2.0#LatitudeCharacteristic",
+      "label": "LatitudeCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "latitude characteristic",
+      "description": null
+    },
+    {
+      "id": "urn:bamm:io.catenax.market_place_offer:1.2.0#Value",
+      "label": "Value",
+      "kind": "Characteristic",
+      "preferredName": "value",
+      "description": null
+    },
+    {
+      "id": "urn:bamm:io.catenax.market_place_offer:1.2.0#LocationCharacteristic",
+      "label": "LocationCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Location characteristic",
+      "description": "Location with an URI."
+    },
+    {
+      "id": "urn:bamm:io.catenax.market_place_offer:1.2.0#Timestamp",
+      "label": "Timestamp",
+      "kind": "Characteristic",
+      "preferredName": null,
+      "description": "Describes a Property which contains the date and time with an optional timezone."
+    },
+    {
+      "id": "urn:bamm:io.catenax.market_place_offer:1.2.0#CategoryCharacteristic",
+      "label": "CategoryCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "category characteristic",
+      "description": "The category of the listing within the marketplace."
+    },
+    {
+      "id": "urn:bamm:io.catenax.market_place_offer:1.2.0#ProductLinkCharacteristic",
+      "label": "ProductLinkCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "product link characteristic",
+      "description": null
+    },
+    {
+      "id": "urn:bamm:io.catenax.market_place_offer:1.2.0#Certificates",
+      "label": "Certificates",
+      "kind": "Characteristic",
+      "preferredName": "certificates",
+      "description": null
+    },
+    {
+      "id": "urn:bamm:io.catenax.market_place_offer:1.2.0#TechnicalSpecification",
+      "label": "TechnicalSpecification",
+      "kind": "Characteristic",
+      "preferredName": "technical specification",
+      "description": null
+    },
+    {
+      "id": "urn:bamm:io.catenax.market_place_offer:1.2.0#MileageCharacteristic",
+      "label": "MileageCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "mileage characteristic",
+      "description": "The value describing the mileage of the item."
+    },
+    {
+      "id": "urn:bamm:io.catenax.market_place_offer:1.2.0#GeographicalCoordinate",
+      "label": "GeographicalCoordinate",
+      "kind": "Entity",
+      "preferredName": "geographical coordinate",
+      "description": null
+    },
+    {
+      "id": "urn:bamm:io.catenax.market_place_offer:1.2.0#PriceEntity",
+      "label": "PriceEntity",
+      "kind": "Entity",
+      "preferredName": "price",
+      "description": null
+    },
+    {
+      "id": "urn:bamm:io.catenax.market_place_offer:1.2.0#File",
+      "label": "File",
+      "kind": "Entity",
+      "preferredName": "File",
+      "description": "Image file of the object."
+    },
+    {
+      "id": "urn:bamm:io.catenax.market_place_offer:1.2.0#AttachmentEntity",
+      "label": "AttachmentEntity",
+      "kind": "Entity",
+      "preferredName": "AttachmentEntity",
+      "description": "attachment for the article."
+    },
+    {
+      "id": "urn:bamm:io.catenax.market_place_offer:1.2.0#CertificateEntity",
+      "label": "CertificateEntity",
+      "kind": "Entity",
+      "preferredName": "certificate entity",
+      "description": "Certificates that come with the product in the listing."
+    },
+    {
+      "id": "urn:bamm:io.catenax.market_place_offer:1.2.0#ProductEntity",
+      "label": "ProductEntity",
+      "kind": "Entity",
+      "preferredName": "product entity",
+      "description": null
+    },
+    {
+      "id": "urn:bamm:io.catenax.market_place_offer:1.2.0#CategoryEntity",
+      "label": "CategoryEntity",
+      "kind": "Entity",
+      "preferredName": "category entity",
+      "description": null
+    },
+    {
+      "id": "urn:bamm:io.catenax.market_place_offer:1.2.0#TechnicalSpecificationEntity",
+      "label": "TechnicalSpecificationEntity",
+      "kind": "Entity",
+      "preferredName": "technical specification",
+      "description": null
+    },
+    {
+      "id": "urn:bamm:io.catenax.market_place_offer:1.2.0#Year",
+      "label": "Year",
+      "kind": "Characteristic",
+      "preferredName": null,
+      "description": null
+    },
+    {
+      "id": "urn:bamm:io.catenax.market_place_offer:1.2.0#MainCategory",
+      "label": "MainCategory",
+      "kind": "Characteristic",
+      "preferredName": "main category",
+      "description": null
+    },
+    {
+      "id": "urn:bamm:io.catenax.market_place_offer:1.2.0#SubCategory",
+      "label": "SubCategory",
+      "kind": "Characteristic",
+      "preferredName": "sub category",
+      "description": null
+    },
+    {
+      "id": "urn:bamm:io.catenax.market_place_offer:1.2.0#QuantityCharacteristic",
+      "label": "QuantityCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "quantity characteristic",
+      "description": "The available quantity of the on the offered product in SKU."
+    }
+  ],
+  "links": [
+    {
+      "source": "urn:bamm:io.catenax.market_place_offer:1.2.0#MarketplaceOffer",
+      "target": "urn:bamm:io.catenax.market_place_offer:1.2.0#sku",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:bamm:io.catenax.market_place_offer:1.2.0#MarketplaceOffer",
+      "target": "urn:bamm:io.catenax.market_place_offer:1.2.0#quantity",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.market_place_offer:1.2.0#MarketplaceOffer",
+      "target": "urn:bamm:io.catenax.market_place_offer:1.2.0#unitOfMeasure",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.market_place_offer:1.2.0#MarketplaceOffer",
+      "target": "urn:bamm:io.catenax.market_place_offer:1.2.0#condition",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:bamm:io.catenax.market_place_offer:1.2.0#MarketplaceOffer",
+      "target": "urn:bamm:io.catenax.market_place_offer:1.2.0#pickupLocation",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.market_place_offer:1.2.0#MarketplaceOffer",
+      "target": "urn:bamm:io.catenax.market_place_offer:1.2.0#incoterms",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:bamm:io.catenax.market_place_offer:1.2.0#MarketplaceOffer",
+      "target": "urn:bamm:io.catenax.market_place_offer:1.2.0#price",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.market_place_offer:1.2.0#MarketplaceOffer",
+      "target": "urn:bamm:io.catenax.market_place_offer:1.2.0#image",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:bamm:io.catenax.market_place_offer:1.2.0#MarketplaceOffer",
+      "target": "urn:bamm:io.catenax.market_place_offer:1.2.0#attachment",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:bamm:io.catenax.market_place_offer:1.2.0#MarketplaceOffer",
+      "target": "urn:bamm:io.catenax.market_place_offer:1.2.0#bundleOffer",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.market_place_offer:1.2.0#MarketplaceOffer",
+      "target": "urn:bamm:io.catenax.market_place_offer:1.2.0#status",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:bamm:io.catenax.market_place_offer:1.2.0#MarketplaceOffer",
+      "target": "urn:bamm:io.catenax.market_place_offer:1.2.0#certificate",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:bamm:io.catenax.market_place_offer:1.2.0#MarketplaceOffer",
+      "target": "urn:bamm:io.catenax.market_place_offer:1.2.0#marketplaceProduct",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.market_place_offer:1.2.0#MarketplaceOffer",
+      "target": "urn:bamm:io.catenax.market_place_offer:1.2.0#missingParts",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:bamm:io.catenax.market_place_offer:1.2.0#MarketplaceOffer",
+      "target": "urn:bamm:io.catenax.market_place_offer:1.2.0#dismantled",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:bamm:io.catenax.market_place_offer:1.2.0#MarketplaceOffer",
+      "target": "urn:bamm:io.catenax.market_place_offer:1.2.0#mechanicalDamage",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:bamm:io.catenax.market_place_offer:1.2.0#MarketplaceOffer",
+      "target": "urn:bamm:io.catenax.market_place_offer:1.2.0#corroded",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:bamm:io.catenax.market_place_offer:1.2.0#MarketplaceOffer",
+      "target": "urn:bamm:io.catenax.market_place_offer:1.2.0#discolored",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:bamm:io.catenax.market_place_offer:1.2.0#MarketplaceOffer",
+      "target": "urn:bamm:io.catenax.market_place_offer:1.2.0#availabilityDate",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:bamm:io.catenax.market_place_offer:1.2.0#MarketplaceOffer",
+      "target": "urn:bamm:io.catenax.market_place_offer:1.2.0#mileage",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:bamm:io.catenax.market_place_offer:1.2.0#MarketplaceOffer",
+      "target": "urn:bamm:io.catenax.market_place_offer:1.2.0#burned",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:bamm:io.catenax.market_place_offer:1.2.0#GeographicalCoordinate",
+      "target": "urn:bamm:io.catenax.market_place_offer:1.2.0#longitude",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.market_place_offer:1.2.0#GeographicalCoordinate",
+      "target": "urn:bamm:io.catenax.market_place_offer:1.2.0#latitude",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.market_place_offer:1.2.0#PriceEntity",
+      "target": "urn:bamm:io.catenax.market_place_offer:1.2.0#value",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.market_place_offer:1.2.0#PriceEntity",
+      "target": "urn:bamm:io.catenax.market_place_offer:1.2.0#currency",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.market_place_offer:1.2.0#File",
+      "target": "urn:bamm:io.catenax.market_place_offer:1.2.0#name",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.market_place_offer:1.2.0#File",
+      "target": "urn:bamm:io.catenax.market_place_offer:1.2.0#location",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.market_place_offer:1.2.0#AttachmentEntity",
+      "target": "urn:bamm:io.catenax.market_place_offer:1.2.0#name",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.market_place_offer:1.2.0#AttachmentEntity",
+      "target": "urn:bamm:io.catenax.market_place_offer:1.2.0#location",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.market_place_offer:1.2.0#CertificateEntity",
+      "target": "urn:bamm:io.catenax.market_place_offer:1.2.0#name",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.market_place_offer:1.2.0#CertificateEntity",
+      "target": "urn:bamm:io.catenax.market_place_offer:1.2.0#location",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.market_place_offer:1.2.0#CertificateEntity",
+      "target": "urn:bamm:io.catenax.market_place_offer:1.2.0#certificateNumber",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.market_place_offer:1.2.0#CertificateEntity",
+      "target": "urn:bamm:io.catenax.market_place_offer:1.2.0#issue",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.market_place_offer:1.2.0#CertificateEntity",
+      "target": "urn:bamm:io.catenax.market_place_offer:1.2.0#publicationYear",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.market_place_offer:1.2.0#CertificateEntity",
+      "target": "urn:bamm:io.catenax.market_place_offer:1.2.0#effectiveDate",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.market_place_offer:1.2.0#CertificateEntity",
+      "target": "urn:bamm:io.catenax.market_place_offer:1.2.0#expirationDate",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.market_place_offer:1.2.0#ProductEntity",
+      "target": "urn:bamm:io.catenax.market_place_offer:1.2.0#productDescription",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.market_place_offer:1.2.0#ProductEntity",
+      "target": "urn:bamm:io.catenax.market_place_offer:1.2.0#brand",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.market_place_offer:1.2.0#ProductEntity",
+      "target": "urn:bamm:io.catenax.market_place_offer:1.2.0#category",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.market_place_offer:1.2.0#ProductEntity",
+      "target": "urn:bamm:io.catenax.market_place_offer:1.2.0#originalManufacturer",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:bamm:io.catenax.market_place_offer:1.2.0#ProductEntity",
+      "target": "urn:bamm:io.catenax.market_place_offer:1.2.0#manufacturerPartNumber",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:bamm:io.catenax.market_place_offer:1.2.0#ProductEntity",
+      "target": "urn:bamm:io.catenax.market_place_offer:1.2.0#productLink",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:bamm:io.catenax.market_place_offer:1.2.0#ProductEntity",
+      "target": "urn:bamm:io.catenax.market_place_offer:1.2.0#oeNumber",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:bamm:io.catenax.market_place_offer:1.2.0#ProductEntity",
+      "target": "urn:bamm:io.catenax.market_place_offer:1.2.0#technicalSpecification",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.market_place_offer:1.2.0#CategoryEntity",
+      "target": "urn:bamm:io.catenax.market_place_offer:1.2.0#mainCategory",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.market_place_offer:1.2.0#CategoryEntity",
+      "target": "urn:bamm:io.catenax.market_place_offer:1.2.0#subCategory",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.market_place_offer:1.2.0#TechnicalSpecificationEntity",
+      "target": "urn:bamm:io.catenax.market_place_offer:1.2.0#key",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.market_place_offer:1.2.0#TechnicalSpecificationEntity",
+      "target": "urn:bamm:io.catenax.market_place_offer:1.2.0#technicalValue",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.market_place_offer:1.2.0#quantity",
+      "target": "urn:bamm:io.catenax.market_place_offer:1.2.0#QuantityCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.market_place_offer:1.2.0#condition",
+      "target": "urn:bamm:io.catenax.market_place_offer:1.2.0#ConditionCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.market_place_offer:1.2.0#pickupLocation",
+      "target": "urn:bamm:io.catenax.market_place_offer:1.2.0#GeographicalCoordinates",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.market_place_offer:1.2.0#price",
+      "target": "urn:bamm:io.catenax.market_place_offer:1.2.0#Price",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.market_place_offer:1.2.0#image",
+      "target": "urn:bamm:io.catenax.market_place_offer:1.2.0#ImageFile",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.market_place_offer:1.2.0#attachment",
+      "target": "urn:bamm:io.catenax.market_place_offer:1.2.0#Attachment",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.market_place_offer:1.2.0#bundleOffer",
+      "target": "urn:bamm:io.catenax.market_place_offer:1.2.0#BundleOffer",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.market_place_offer:1.2.0#status",
+      "target": "urn:bamm:io.catenax.market_place_offer:1.2.0#Status",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.market_place_offer:1.2.0#certificate",
+      "target": "urn:bamm:io.catenax.market_place_offer:1.2.0#Certificates",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.market_place_offer:1.2.0#marketplaceProduct",
+      "target": "urn:bamm:io.catenax.market_place_offer:1.2.0#ProductCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.market_place_offer:1.2.0#missingParts",
+      "target": "urn:bamm:io.catenax.market_place_offer:1.2.0#Boolean",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.market_place_offer:1.2.0#dismantled",
+      "target": "urn:bamm:io.catenax.market_place_offer:1.2.0#Boolean",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.market_place_offer:1.2.0#mechanicalDamage",
+      "target": "urn:bamm:io.catenax.market_place_offer:1.2.0#Boolean",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.market_place_offer:1.2.0#corroded",
+      "target": "urn:bamm:io.catenax.market_place_offer:1.2.0#Boolean",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.market_place_offer:1.2.0#discolored",
+      "target": "urn:bamm:io.catenax.market_place_offer:1.2.0#Boolean",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.market_place_offer:1.2.0#burned",
+      "target": "urn:bamm:io.catenax.market_place_offer:1.2.0#Boolean",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.market_place_offer:1.2.0#availabilityDate",
+      "target": "urn:bamm:io.catenax.market_place_offer:1.2.0#AvailabilityDateCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.market_place_offer:1.2.0#mileage",
+      "target": "urn:bamm:io.catenax.market_place_offer:1.2.0#MileageCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.market_place_offer:1.2.0#longitude",
+      "target": "urn:bamm:io.catenax.market_place_offer:1.2.0#LongitudeCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.market_place_offer:1.2.0#latitude",
+      "target": "urn:bamm:io.catenax.market_place_offer:1.2.0#LatitudeCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.market_place_offer:1.2.0#value",
+      "target": "urn:bamm:io.catenax.market_place_offer:1.2.0#Value",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.market_place_offer:1.2.0#location",
+      "target": "urn:bamm:io.catenax.market_place_offer:1.2.0#LocationCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.market_place_offer:1.2.0#publicationYear",
+      "target": "urn:bamm:io.catenax.market_place_offer:1.2.0#Year",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.market_place_offer:1.2.0#expirationDate",
+      "target": "urn:bamm:io.catenax.market_place_offer:1.2.0#Timestamp",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.market_place_offer:1.2.0#category",
+      "target": "urn:bamm:io.catenax.market_place_offer:1.2.0#CategoryCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.market_place_offer:1.2.0#productLink",
+      "target": "urn:bamm:io.catenax.market_place_offer:1.2.0#ProductLinkCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.market_place_offer:1.2.0#technicalSpecification",
+      "target": "urn:bamm:io.catenax.market_place_offer:1.2.0#TechnicalSpecification",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.market_place_offer:1.2.0#mainCategory",
+      "target": "urn:bamm:io.catenax.market_place_offer:1.2.0#MainCategory",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.market_place_offer:1.2.0#subCategory",
+      "target": "urn:bamm:io.catenax.market_place_offer:1.2.0#SubCategory",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.market_place_offer:1.2.0#GeographicalCoordinates",
+      "target": "urn:bamm:io.catenax.market_place_offer:1.2.0#GeographicalCoordinate",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.market_place_offer:1.2.0#Price",
+      "target": "urn:bamm:io.catenax.market_place_offer:1.2.0#PriceEntity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.market_place_offer:1.2.0#ImageFile",
+      "target": "urn:bamm:io.catenax.market_place_offer:1.2.0#File",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.market_place_offer:1.2.0#Attachment",
+      "target": "urn:bamm:io.catenax.market_place_offer:1.2.0#AttachmentEntity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.market_place_offer:1.2.0#Certificates",
+      "target": "urn:bamm:io.catenax.market_place_offer:1.2.0#CertificateEntity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.market_place_offer:1.2.0#ProductCharacteristic",
+      "target": "urn:bamm:io.catenax.market_place_offer:1.2.0#ProductEntity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.market_place_offer:1.2.0#CategoryCharacteristic",
+      "target": "urn:bamm:io.catenax.market_place_offer:1.2.0#CategoryEntity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.market_place_offer:1.2.0#TechnicalSpecification",
+      "target": "urn:bamm:io.catenax.market_place_offer:1.2.0#TechnicalSpecificationEntity",
+      "label": "dataType",
+      "optional": false
+    }
+  ]
+}

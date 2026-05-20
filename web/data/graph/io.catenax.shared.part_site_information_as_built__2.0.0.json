@@ -1,0 +1,130 @@
+{
+  "meta": {
+    "namespace": "urn:samm:io.catenax.shared.part_site_information_as_built:2.0.0#",
+    "meta_model": "SAMM 2.1.0",
+    "model_family": "SAMM",
+    "model_name": "shared.part_site_information_as_built",
+    "model_version": "2.0.0",
+    "source": "catenax",
+    "status": "deprecated",
+    "release_date": null,
+    "release_notes": "# Changelog\n\nAll notable changes to this model will be documented in this file.\n\n**Note**: Deprecated by `io.catenax.shared.industry_core.site_information`.\n\n## [2.0.0] 2024-02-01\n\n- Reference to BPNS Trait updated\n- Reference to BPN 2.0.0\n- Reference to UUIDV4 2.0.0\n- Update to SAMM 2.1.0\n\n## [1.0.0] 2023-11-27\n\n- Initial version of the shared aspect model for PartSiteInformationAsBuilt (formely PartSiteInformationAsPlanned)",
+    "dependencies": [
+      {
+        "name": "shared.business_partner_number",
+        "version": "2.0.0",
+        "family": "SAMM",
+        "source": "catenax"
+      },
+      {
+        "name": "shared.uuid",
+        "version": "2.0.0",
+        "family": "SAMM",
+        "source": "catenax"
+      }
+    ],
+    "path": "data/sldt-semantic-models/io.catenax.shared.part_site_information_as_built/2.0.0/PartSiteInformationAsBuilt.ttl"
+  },
+  "nodes": [
+    {
+      "id": "urn:samm:io.catenax.shared.part_site_information_as_built:2.0.0#PartSiteInformationAsBuilt",
+      "label": "PartSiteInformationAsBuilt",
+      "kind": "Aspect",
+      "preferredName": "Part Site Information As Built",
+      "description": "The aspect provides site related information for a given item(i.e. a part type or part instance that is uniquely identifiable within Catena-X via its Catena-X ID). A site is a delimited geographical area where a legal entity does business. In this context all potentially related sites are listed including all sites where e.g. production of this part(type)."
+    },
+    {
+      "id": "urn:samm:io.catenax.shared.part_site_information_as_built:2.0.0#sites",
+      "label": "sites",
+      "kind": "Property",
+      "preferredName": "Sites",
+      "description": "A site is a delimited geographical area where a legal entity does business(geographical address with geo coordinates).A site always has a primary physical address. It is possible that further physical addresses are specified for the site. P.O. box details are only possible in addition to the physical address. A site has a 1:n relation to addresses, means at least 1 address is necessary and multiple addresses are possible."
+    },
+    {
+      "id": "urn:samm:io.catenax.shared.part_site_information_as_built:2.0.0#catenaXId",
+      "label": "catenaXId",
+      "kind": "Property",
+      "preferredName": "Catena-X Identifier",
+      "description": "The Catena-X ID of the given item(i.e. a part type or part instance), valid for the Catena-X dataspace."
+    },
+    {
+      "id": "urn:samm:io.catenax.shared.part_site_information_as_built:2.0.0#catenaXsiteId",
+      "label": "catenaXsiteId",
+      "kind": "Property",
+      "preferredName": "Catena-X site identifier",
+      "description": "The identifier of the site according to Catena-X BPDM. The catenaXsiteId must be a valid Catena-X BPN. The BPN is a unique, unchangeable identifier for Business Partners / company locations from foundation to closure, regardless of the different business relationships / structures between or within the Business Partners or company locations."
+    },
+    {
+      "id": "urn:samm:io.catenax.shared.part_site_information_as_built:2.0.0#function",
+      "label": "function",
+      "kind": "Property",
+      "preferredName": "Function",
+      "description": "The function of the site in relation to the part(i.e. the activity within the value chain of the part that is performed at the site)"
+    },
+    {
+      "id": "urn:samm:io.catenax.shared.part_site_information_as_built:2.0.0#SitesCharacteristic",
+      "label": "SitesCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Sites Characteristic",
+      "description": "Sites Characteristic"
+    },
+    {
+      "id": "urn:samm:io.catenax.shared.part_site_information_as_built:2.0.0#SitesEntity",
+      "label": "SitesEntity",
+      "kind": "Entity",
+      "preferredName": "Site Entity",
+      "description": "Describes the ID and function of a site for the associated part in the AsBuilt context(e.g. SerialPart, Batch, jIS)."
+    },
+    {
+      "id": "urn:samm:io.catenax.shared.part_site_information_as_built:2.0.0#FunctionCharacteristic",
+      "label": "FunctionCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Function Characteristic",
+      "description": "Describes the characteristics of the function for a site related to the respective part."
+    }
+  ],
+  "links": [
+    {
+      "source": "urn:samm:io.catenax.shared.part_site_information_as_built:2.0.0#PartSiteInformationAsBuilt",
+      "target": "urn:samm:io.catenax.shared.part_site_information_as_built:2.0.0#sites",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.shared.part_site_information_as_built:2.0.0#PartSiteInformationAsBuilt",
+      "target": "urn:samm:io.catenax.shared.part_site_information_as_built:2.0.0#catenaXId",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.shared.part_site_information_as_built:2.0.0#SitesEntity",
+      "target": "urn:samm:io.catenax.shared.part_site_information_as_built:2.0.0#catenaXsiteId",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.shared.part_site_information_as_built:2.0.0#SitesEntity",
+      "target": "urn:samm:io.catenax.shared.part_site_information_as_built:2.0.0#function",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.shared.part_site_information_as_built:2.0.0#sites",
+      "target": "urn:samm:io.catenax.shared.part_site_information_as_built:2.0.0#SitesCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.shared.part_site_information_as_built:2.0.0#function",
+      "target": "urn:samm:io.catenax.shared.part_site_information_as_built:2.0.0#FunctionCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.shared.part_site_information_as_built:2.0.0#SitesCharacteristic",
+      "target": "urn:samm:io.catenax.shared.part_site_information_as_built:2.0.0#SitesEntity",
+      "label": "dataType",
+      "optional": false
+    }
+  ]
+}

@@ -1,0 +1,266 @@
+{
+  "meta": {
+    "namespace": "urn:samm:io.catenax.shopfloor_information.provide_production_forecast:2.0.0#",
+    "meta_model": "SAMM 2.1.0",
+    "model_family": "SAMM",
+    "model_name": "shopfloor_information.provide_production_forecast",
+    "model_version": "2.0.0",
+    "source": "catenax",
+    "status": "release",
+    "release_date": null,
+    "release_notes": "# Changelog\n\nAll notable changes to this model will be documented in this file.\n\n## [1.0.0]\n\n- initial version of the aspect model for ProvideProductionForecast\n\n## [2.0.0] 29.01.2024\n\n- Message Header, shopfloor_information_types updated to latest version 2.0.0",
+    "dependencies": [
+      {
+        "name": "shared.message_header",
+        "version": "2.0.0",
+        "family": "SAMM",
+        "source": "catenax"
+      },
+      {
+        "name": "shared.shopfloor_information_types",
+        "version": "2.0.0",
+        "family": "SAMM",
+        "source": "catenax"
+      },
+      {
+        "name": "shared.uuid",
+        "version": "1.0.0",
+        "family": "SAMM",
+        "source": "catenax"
+      }
+    ],
+    "path": "data/sldt-semantic-models/io.catenax.shopfloor_information.provide_production_forecast/2.0.0/ProvideProductionForecast.ttl"
+  },
+  "nodes": [
+    {
+      "id": "urn:samm:io.catenax.shopfloor_information.provide_production_forecast:2.0.0#ProvideProductionForecast",
+      "label": "ProvideProductionForecast",
+      "kind": "Aspect",
+      "preferredName": "Provide Production Forecast",
+      "description": "Answer to a customer with all information about the requested items"
+    },
+    {
+      "id": "urn:samm:io.catenax.shopfloor_information.provide_production_forecast:2.0.0#productionForecastResponse",
+      "label": "productionForecastResponse",
+      "kind": "Property",
+      "preferredName": "Production Forecast Response",
+      "description": "The concrete information about a production forecast"
+    },
+    {
+      "id": "urn:samm:io.catenax.shopfloor_information.provide_production_forecast:2.0.0#listOfForecastItems",
+      "label": "listOfForecastItems",
+      "kind": "Property",
+      "preferredName": "List Of Forecast Items",
+      "description": "List of ForecastItems matching the items to an order"
+    },
+    {
+      "id": "urn:samm:io.catenax.shopfloor_information.provide_production_forecast:2.0.0#iterationNumber",
+      "label": "iterationNumber",
+      "kind": "Property",
+      "preferredName": "Iteration Number",
+      "description": "Only set in CommunicationMode == \"notification/cyclic\" to be able to check the order of the notifications. \n\nNot required for communication mode = \"synchronous\""
+    },
+    {
+      "id": "urn:samm:io.catenax.shopfloor_information.provide_production_forecast:2.0.0#positionId",
+      "label": "positionId",
+      "kind": "Property",
+      "preferredName": "Position Id",
+      "description": "Identifier of a position of an order"
+    },
+    {
+      "id": "urn:samm:io.catenax.shopfloor_information.provide_production_forecast:2.0.0#productionForecast",
+      "label": "productionForecast",
+      "kind": "Property",
+      "preferredName": "Production Forecast",
+      "description": "Date of completion"
+    },
+    {
+      "id": "urn:samm:io.catenax.shopfloor_information.provide_production_forecast:2.0.0#precisionOfForecast",
+      "label": "precisionOfForecast",
+      "kind": "Property",
+      "preferredName": "Precision Of Forecast",
+      "description": "Accuracy of the prediction"
+    },
+    {
+      "id": "urn:samm:io.catenax.shopfloor_information.provide_production_forecast:2.0.0#productionStatus",
+      "label": "productionStatus",
+      "kind": "Property",
+      "preferredName": "Production Status",
+      "description": "Status of the order/position within MP"
+    },
+    {
+      "id": "urn:samm:io.catenax.shopfloor_information.provide_production_forecast:2.0.0#reasonsForDelay",
+      "label": "reasonsForDelay",
+      "kind": "Property",
+      "preferredName": "Reasons For Delay",
+      "description": "Optional field to provide information to the customer why a delivery date is not met"
+    },
+    {
+      "id": "urn:samm:io.catenax.shopfloor_information.provide_production_forecast:2.0.0#returnCode",
+      "label": "returnCode",
+      "kind": "Property",
+      "preferredName": "Return Code",
+      "description": "Return code that indicates whether a single item of an order matches the customers desired request"
+    },
+    {
+      "id": "urn:samm:io.catenax.shopfloor_information.provide_production_forecast:2.0.0#forecastDate",
+      "label": "forecastDate",
+      "kind": "Property",
+      "preferredName": "Forecast Date",
+      "description": "Date/time of the forecast calculation"
+    },
+    {
+      "id": "urn:samm:io.catenax.shopfloor_information.provide_production_forecast:2.0.0#ProductionForecastCharacteristic",
+      "label": "ProductionForecastCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Production Forecast Characteristic",
+      "description": "All Data that is related to a production forecast"
+    },
+    {
+      "id": "urn:samm:io.catenax.shopfloor_information.provide_production_forecast:2.0.0#ProductionForecastItem",
+      "label": "ProductionForecastItem",
+      "kind": "Entity",
+      "preferredName": "Production Forecast Item",
+      "description": "Datamodel of the concrete production forecast for one forecast item"
+    },
+    {
+      "id": "urn:samm:io.catenax.shopfloor_information.provide_production_forecast:2.0.0#ForecastItem",
+      "label": "ForecastItem",
+      "kind": "Entity",
+      "preferredName": "Forecast Item",
+      "description": "ForecastItem entry for the requested order"
+    },
+    {
+      "id": "urn:samm:io.catenax.shopfloor_information.provide_production_forecast:2.0.0#ForecastItemList",
+      "label": "ForecastItemList",
+      "kind": "Characteristic",
+      "preferredName": "Forecast Item List",
+      "description": "List with the forecast items"
+    },
+    {
+      "id": "urn:samm:io.catenax.shopfloor_information.provide_production_forecast:2.0.0#ProductionStatusEnum",
+      "label": "ProductionStatusEnum",
+      "kind": "Characteristic",
+      "preferredName": "Production Status Enumeration",
+      "description": "Enumeration with all possible states of an order within modular production"
+    },
+    {
+      "id": "urn:samm:io.catenax.shopfloor_information.provide_production_forecast:2.0.0#ReasonsForDelayEnum",
+      "label": "ReasonsForDelayEnum",
+      "kind": "Characteristic",
+      "preferredName": "Reasons for Delay Enum",
+      "description": "Enum that specifies reasons for a delay of an order"
+    },
+    {
+      "id": "urn:samm:io.catenax.shopfloor_information.provide_production_forecast:2.0.0#ReturnCodeEnum",
+      "label": "ReturnCodeEnum",
+      "kind": "Characteristic",
+      "preferredName": "Return Code Enumeration",
+      "description": "Enumeration with all Return Codes"
+    }
+  ],
+  "links": [
+    {
+      "source": "urn:samm:io.catenax.shopfloor_information.provide_production_forecast:2.0.0#ProvideProductionForecast",
+      "target": "urn:samm:io.catenax.shopfloor_information.provide_production_forecast:2.0.0#productionForecastResponse",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.shopfloor_information.provide_production_forecast:2.0.0#ProductionForecastItem",
+      "target": "urn:samm:io.catenax.shopfloor_information.provide_production_forecast:2.0.0#listOfForecastItems",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.shopfloor_information.provide_production_forecast:2.0.0#ProductionForecastItem",
+      "target": "urn:samm:io.catenax.shopfloor_information.provide_production_forecast:2.0.0#iterationNumber",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.shopfloor_information.provide_production_forecast:2.0.0#ForecastItem",
+      "target": "urn:samm:io.catenax.shopfloor_information.provide_production_forecast:2.0.0#positionId",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.shopfloor_information.provide_production_forecast:2.0.0#ForecastItem",
+      "target": "urn:samm:io.catenax.shopfloor_information.provide_production_forecast:2.0.0#productionForecast",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.shopfloor_information.provide_production_forecast:2.0.0#ForecastItem",
+      "target": "urn:samm:io.catenax.shopfloor_information.provide_production_forecast:2.0.0#precisionOfForecast",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.shopfloor_information.provide_production_forecast:2.0.0#ForecastItem",
+      "target": "urn:samm:io.catenax.shopfloor_information.provide_production_forecast:2.0.0#productionStatus",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.shopfloor_information.provide_production_forecast:2.0.0#ForecastItem",
+      "target": "urn:samm:io.catenax.shopfloor_information.provide_production_forecast:2.0.0#reasonsForDelay",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.shopfloor_information.provide_production_forecast:2.0.0#ForecastItem",
+      "target": "urn:samm:io.catenax.shopfloor_information.provide_production_forecast:2.0.0#returnCode",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.shopfloor_information.provide_production_forecast:2.0.0#ForecastItem",
+      "target": "urn:samm:io.catenax.shopfloor_information.provide_production_forecast:2.0.0#forecastDate",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.shopfloor_information.provide_production_forecast:2.0.0#productionForecastResponse",
+      "target": "urn:samm:io.catenax.shopfloor_information.provide_production_forecast:2.0.0#ProductionForecastCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.shopfloor_information.provide_production_forecast:2.0.0#listOfForecastItems",
+      "target": "urn:samm:io.catenax.shopfloor_information.provide_production_forecast:2.0.0#ForecastItemList",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.shopfloor_information.provide_production_forecast:2.0.0#productionStatus",
+      "target": "urn:samm:io.catenax.shopfloor_information.provide_production_forecast:2.0.0#ProductionStatusEnum",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.shopfloor_information.provide_production_forecast:2.0.0#reasonsForDelay",
+      "target": "urn:samm:io.catenax.shopfloor_information.provide_production_forecast:2.0.0#ReasonsForDelayEnum",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.shopfloor_information.provide_production_forecast:2.0.0#returnCode",
+      "target": "urn:samm:io.catenax.shopfloor_information.provide_production_forecast:2.0.0#ReturnCodeEnum",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.shopfloor_information.provide_production_forecast:2.0.0#ProductionForecastCharacteristic",
+      "target": "urn:samm:io.catenax.shopfloor_information.provide_production_forecast:2.0.0#ProductionForecastItem",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.shopfloor_information.provide_production_forecast:2.0.0#ForecastItemList",
+      "target": "urn:samm:io.catenax.shopfloor_information.provide_production_forecast:2.0.0#ForecastItem",
+      "label": "dataType",
+      "optional": false
+    }
+  ]
+}

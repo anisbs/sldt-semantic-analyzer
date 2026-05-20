@@ -1,0 +1,531 @@
+{
+  "meta": {
+    "namespace": "urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#",
+    "meta_model": "SAMM 2.2.0",
+    "model_family": "SAMM",
+    "model_name": "batterypass.circularity",
+    "model_version": "1.0.0",
+    "source": "idta",
+    "status": "undefined",
+    "release_date": null,
+    "release_notes": null,
+    "dependencies": [
+      {
+        "name": "handover_documentation",
+        "version": "2.0.0",
+        "family": "SAMM",
+        "source": "idta"
+      },
+      {
+        "name": "shared",
+        "version": "3.1.0",
+        "family": "SAMM",
+        "source": "idta"
+      },
+      {
+        "name": "contact_information",
+        "version": "1.0.0",
+        "family": "SAMM",
+        "source": "idta"
+      }
+    ],
+    "path": "data/smt-semantic-models/io.admin-shell.idta.batterypass.circularity/1.0.0/Circularity.ttl"
+  },
+  "nodes": [
+    {
+      "id": "urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#Circularity",
+      "label": "Circularity",
+      "kind": "Aspect",
+      "preferredName": null,
+      "description": "Dismantling information (including at least: exploded diagrams of the battery system/pack showing the location of battery cells; disassembly sequences; type and number of fastening techniques to be unlocked; tools required for disassembly; warnings if risk of damaging parts exists; amount of cells used and layout); part numbers for components and contact details of sources for replacement spares; safety measures \n   \n   (Annex XIII (2b-d)); usable extinguishing agent (Annex VI, Part A(9))."
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#dismantlingAndRemovalInformation",
+      "label": "dismantlingAndRemovalInformation",
+      "kind": "Property",
+      "preferredName": "dismantling and removal information",
+      "description": "\n   Dismantling and Removal information, including at least:\n   * Exploded diagrams of the battery system/pack showing the location of battery cells\n   * Disassembly sequences\n   * Type and number of fastening techniques to be unlocked\n   * Tools required for disassembly\n   * Warnings if risk of damaging parts exists\n   * Amount of cells used and layout. \n   \n   BR Annex XIII (2c)\n\nDIN DKE Spec 99100 chapter reference: 6.6.1.2\n   \n    > NOTE: For more information on the document identified by its document ID please refer to the Handover Documentation of the battery.\n\t"
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#sparePartSources",
+      "label": "sparePartSources",
+      "kind": "Property",
+      "preferredName": "spare part sources",
+      "description": "Contact details of sources for replacement spares. Postal address, including name and brand names, postal code and place, street and number, country, telephone, if any. BR Annex XIII (2b)\n\nDIN DKE Spec 99100 chapter reference: 6.6.1.3"
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#recycledContent",
+      "label": "recycledContent",
+      "kind": "Property",
+      "preferredName": "recycled content",
+      "description": "Share of material recovered from waste present in active materials for each battery model per year and per manufacturing plant.\n\nDIN DKE Spec 99100 chapter reference:  6.6.2.3 - 6.6.2.10"
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#safetyMeasures",
+      "label": "safetyMeasures",
+      "kind": "Property",
+      "preferredName": "safety measures",
+      "description": "Safety measures and instructions should also take past negative and extreme events as well as the separate data attributes 'battery status' and 'battery composition/chemistry' into account.\n\nDIN DKE Spec 99100 chapter reference: 6.6.1.5"
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#endOfLifeInformation",
+      "label": "endOfLifeInformation",
+      "kind": "Property",
+      "preferredName": "end of life information",
+      "description": "Producer or producer responsibility organisations shall make information available to distributors and end-users on: the role of end-users in contributing to waste prevention, including by information on good practices and recommendations concerning the use of batteries aiming at extending their use phase and the possibilities of re-use, preparing for re-use, preparing for repurpose, repurposing and remanufacturing.\n\nDIN DKE Spec 99100 chapter reference: 6.6.3.2 - 6.6.3.4"
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#renewableContent",
+      "label": "renewableContent",
+      "kind": "Property",
+      "preferredName": "renewable content",
+      "description": "Share of renewable material content. A renewable material is a material made of natural resources that can be replenished. \n\nDIN DKE Spec 99100 chapter reference: 6.6.2.11"
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#nameOfSupplier",
+      "label": "nameOfSupplier",
+      "kind": "Property",
+      "preferredName": "name of supplier",
+      "description": "Name of Supplier"
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#addressOfSupplier",
+      "label": "addressOfSupplier",
+      "kind": "Property",
+      "preferredName": "address of supplier",
+      "description": "Postal address of supplier for spare parts."
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#supplierWebAddress",
+      "label": "supplierWebAddress",
+      "kind": "Property",
+      "preferredName": "WEB address of supplier",
+      "description": "Web address of supplier for spare parts."
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#components",
+      "label": "components",
+      "kind": "Property",
+      "preferredName": "components",
+      "description": "Components available at supplier"
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#preConsumerShare",
+      "label": "preConsumerShare",
+      "kind": "Property",
+      "preferredName": "pre consumer share",
+      "description": "Recycled material share from pre-consumer waste (manufacturing waste, excluding run-around scrap) of the active material."
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#recycledMaterial",
+      "label": "recycledMaterial",
+      "kind": "Property",
+      "preferredName": "recycled material",
+      "description": "Name of recycled material"
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#postConsumerShare",
+      "label": "postConsumerShare",
+      "kind": "Property",
+      "preferredName": "post consumer share",
+      "description": "Recycled material share from post-consumer waste (end-of-life scrap) of the active material."
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#safetyInstructions",
+      "label": "safetyInstructions",
+      "kind": "Property",
+      "preferredName": "safety instructions",
+      "description": "Necessary safety instructions to handle waste batteries, including in relation to the risks associated with, and the handling of, batteries containing lithium."
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#extinguishingAgents",
+      "label": "extinguishingAgents",
+      "kind": "Property",
+      "preferredName": "extinguishing agents",
+      "description": "Usable extinguishing agents refering to classes of extinguishers (A, B, C, D, K). EUBR: Annex XIII (1a), Annex VI Part A (9)"
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#wastePrevention",
+      "label": "wastePrevention",
+      "kind": "Property",
+      "preferredName": "waste prevention",
+      "description": "Prevention and management of waste batteries: Point (a) of Article 60(1): Information on the role of end-users in contributing to waste prevention, including by information on good practices and recommendations concerning the use of batteries aiming at extending their use phase and the possibilities of re-use, preparing for re-use, preparing for repurpose, repurposing and remanufacturing"
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#separateCollection",
+      "label": "separateCollection",
+      "kind": "Property",
+      "preferredName": "separate collection",
+      "description": "Prevention and management of waste batteries: Point (b) of Article 60(1): Information on the role of end-users in contributing to the separate collection of waste batteries in accordance with their obligations under Article 51 so as to allow their treatment"
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#informationOnCollection",
+      "label": "informationOnCollection",
+      "kind": "Property",
+      "preferredName": "information on collection",
+      "description": "Prevention and management of waste batteries: Point (c) of Article 60(1): information on the separate collection, the take back, the collection points and preparing for re-use, preparing for repurposing, and recycling operations available for waste batteries"
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#partName",
+      "label": "partName",
+      "kind": "Property",
+      "preferredName": "part name",
+      "description": "Name of the part."
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#partNumber",
+      "label": "partNumber",
+      "kind": "Property",
+      "preferredName": "part number",
+      "description": "Part number of Component."
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#SparePartSourcesList",
+      "label": "SparePartSourcesList",
+      "kind": "Characteristic",
+      "preferredName": null,
+      "description": null
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#RecycledContentList",
+      "label": "RecycledContentList",
+      "kind": "Characteristic",
+      "preferredName": null,
+      "description": null
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#ComponentList",
+      "label": "ComponentList",
+      "kind": "Characteristic",
+      "preferredName": null,
+      "description": "List of components available at supplier"
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#ExtinguishingAgentsList",
+      "label": "ExtinguishingAgentsList",
+      "kind": "Characteristic",
+      "preferredName": null,
+      "description": null
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#SafetyMeasures",
+      "label": "SafetyMeasures",
+      "kind": "Characteristic",
+      "preferredName": "safety measures",
+      "description": null
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#EndOfLifeInformation",
+      "label": "EndOfLifeInformation",
+      "kind": "Characteristic",
+      "preferredName": "end of life information",
+      "description": null
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#AddressOfSupplier",
+      "label": "AddressOfSupplier",
+      "kind": "Characteristic",
+      "preferredName": null,
+      "description": null
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#RenewableContent",
+      "label": "RenewableContent",
+      "kind": "Characteristic",
+      "preferredName": "renewable content",
+      "description": null
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#PreConsumerShare",
+      "label": "PreConsumerShare",
+      "kind": "Characteristic",
+      "preferredName": "pre consumer share",
+      "description": null
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#PostConsumerShare",
+      "label": "PostConsumerShare",
+      "kind": "Characteristic",
+      "preferredName": "post consumer share",
+      "description": null
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#SparePartSupplier",
+      "label": "SparePartSupplier",
+      "kind": "Entity",
+      "preferredName": "spare part supplier",
+      "description": "The part numbers for components should be provided together with the postal address, e-mail address and web address of the sources for spare parts. \n\nDIN DKE Spec 99100 chapter reference: 6.6.1.3"
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#RecycledContent",
+      "label": "RecycledContent",
+      "kind": "Entity",
+      "preferredName": "recycled content",
+      "description": "A battery passport must include recycled content information.\n\nThe content information must include the percentage share of nickel that is present in active materials and that has been recovered from battery manufacturing waste, for each battery model per year and per manufacturing plant."
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#SafetyMeasuresEntity",
+      "label": "SafetyMeasuresEntity",
+      "kind": "Entity",
+      "preferredName": "safety measures",
+      "description": "The safety measures should be provided via the instruction manual as URL linking to PDF."
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#EndOfLifeInformationEntity",
+      "label": "EndOfLifeInformationEntity",
+      "kind": "Entity",
+      "preferredName": "end of life information",
+      "description": null
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#PostalAddress",
+      "label": "PostalAddress",
+      "kind": "Entity",
+      "preferredName": "postal address",
+      "description": "Postal address."
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#Component",
+      "label": "Component",
+      "kind": "Entity",
+      "preferredName": null,
+      "description": null
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#PreConsumerShareTrait",
+      "label": "PreConsumerShareTrait",
+      "kind": "Characteristic",
+      "preferredName": null,
+      "description": null
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#PostConsumerShareTrait",
+      "label": "PostConsumerShareTrait",
+      "kind": "Characteristic",
+      "preferredName": null,
+      "description": null
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#RecycledMaterial",
+      "label": "RecycledMaterial",
+      "kind": "Characteristic",
+      "preferredName": null,
+      "description": null
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#ExtinguishingAgent",
+      "label": "ExtinguishingAgent",
+      "kind": "Characteristic",
+      "preferredName": "extinguishing agent",
+      "description": "Extinguishing agent."
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#ConsumerShareRange",
+      "label": "ConsumerShareRange",
+      "kind": "Characteristic",
+      "preferredName": null,
+      "description": null
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#PartNumber",
+      "label": "PartNumber",
+      "kind": "Characteristic",
+      "preferredName": null,
+      "description": null
+    }
+  ],
+  "links": [
+    {
+      "source": "urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#SparePartSupplier",
+      "target": "urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#addressOfSupplier",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#SparePartSupplier",
+      "target": "urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#components",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#RecycledContent",
+      "target": "urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#preConsumerShare",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#RecycledContent",
+      "target": "urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#recycledMaterial",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#RecycledContent",
+      "target": "urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#postConsumerShare",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#SafetyMeasuresEntity",
+      "target": "urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#safetyInstructions",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#SafetyMeasuresEntity",
+      "target": "urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#extinguishingAgents",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#EndOfLifeInformationEntity",
+      "target": "urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#wastePrevention",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#EndOfLifeInformationEntity",
+      "target": "urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#separateCollection",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#EndOfLifeInformationEntity",
+      "target": "urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#informationOnCollection",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#Component",
+      "target": "urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#partName",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#Component",
+      "target": "urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#partNumber",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#sparePartSources",
+      "target": "urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#SparePartSourcesList",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#recycledContent",
+      "target": "urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#RecycledContentList",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#safetyMeasures",
+      "target": "urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#SafetyMeasures",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#endOfLifeInformation",
+      "target": "urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#EndOfLifeInformation",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#renewableContent",
+      "target": "urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#RenewableContent",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#addressOfSupplier",
+      "target": "urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#AddressOfSupplier",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#components",
+      "target": "urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#ComponentList",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#preConsumerShare",
+      "target": "urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#PreConsumerShareTrait",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#recycledMaterial",
+      "target": "urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#RecycledMaterial",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#postConsumerShare",
+      "target": "urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#PostConsumerShareTrait",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#extinguishingAgents",
+      "target": "urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#ExtinguishingAgentsList",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#partNumber",
+      "target": "urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#PartNumber",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#SparePartSourcesList",
+      "target": "urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#SparePartSupplier",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#RecycledContentList",
+      "target": "urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#RecycledContent",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#SafetyMeasures",
+      "target": "urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#SafetyMeasuresEntity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#EndOfLifeInformation",
+      "target": "urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#EndOfLifeInformationEntity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#AddressOfSupplier",
+      "target": "urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#PostalAddress",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#ComponentList",
+      "target": "urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#Component",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#PreConsumerShareTrait",
+      "target": "urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#ConsumerShareRange",
+      "label": "constraint",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#PostConsumerShareTrait",
+      "target": "urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#ConsumerShareRange",
+      "label": "constraint",
+      "optional": false
+    }
+  ]
+}

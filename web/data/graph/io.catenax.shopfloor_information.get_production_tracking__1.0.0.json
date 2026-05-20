@@ -1,0 +1,431 @@
+{
+  "meta": {
+    "namespace": "urn:samm:io.catenax.shopfloor_information.get_production_tracking:1.0.0#",
+    "meta_model": "SAMM 2.1.0",
+    "model_family": "SAMM",
+    "model_name": "shopfloor_information.get_production_tracking",
+    "model_version": "1.0.0",
+    "source": "catenax",
+    "status": "release",
+    "release_date": null,
+    "release_notes": "# Changelog\n\nAll notable changes to this model will be documented in this file.\n\n## [1.0.0] 05.02.2024\n\n- initial version of the aspect model for GetProductionTrackingData",
+    "dependencies": [
+      {
+        "name": "serial_part",
+        "version": "3.0.0",
+        "family": "SAMM",
+        "source": "catenax"
+      },
+      {
+        "name": "shared.business_partner_number",
+        "version": "2.0.0",
+        "family": "SAMM",
+        "source": "catenax"
+      },
+      {
+        "name": "shared.message_header",
+        "version": "2.0.0",
+        "family": "SAMM",
+        "source": "catenax"
+      }
+    ],
+    "path": "data/sldt-semantic-models/io.catenax.shopfloor_information.get_production_tracking/1.0.0/GetProductionTracking.ttl"
+  },
+  "nodes": [
+    {
+      "id": "urn:samm:io.catenax.shopfloor_information.get_production_tracking:1.0.0#GetProductionTracking",
+      "label": "GetProductionTracking",
+      "kind": "Aspect",
+      "preferredName": "Get Production Tracking",
+      "description": "Aspect to request product specific data from modular production"
+    },
+    {
+      "id": "urn:samm:io.catenax.shopfloor_information.get_production_tracking:1.0.0#request",
+      "label": "request",
+      "kind": "Property",
+      "preferredName": "Request",
+      "description": "Contains the data for the production tracking request"
+    },
+    {
+      "id": "urn:samm:io.catenax.shopfloor_information.get_production_tracking:1.0.0#stepIdentifierList",
+      "label": "stepIdentifierList",
+      "kind": "Property",
+      "preferredName": "Step Identifier List",
+      "description": "List of manufacturing steps from which a set of parameter is requested. The manufacturing steps are either determined by a capability or a process step identifier"
+    },
+    {
+      "id": "urn:samm:io.catenax.shopfloor_information.get_production_tracking:1.0.0#processReferenceType",
+      "label": "processReferenceType",
+      "kind": "Property",
+      "preferredName": "Process Reference Type",
+      "description": "Value of an enumeration that determines whether the request is based on concrete process steps (Bill of process) or capabilities"
+    },
+    {
+      "id": "urn:samm:io.catenax.shopfloor_information.get_production_tracking:1.0.0#billOfProcessId",
+      "label": "billOfProcessId",
+      "kind": "Property",
+      "preferredName": "Bill of Process Identifier",
+      "description": "Id to identify an instance of the bill of process data model "
+    },
+    {
+      "id": "urn:samm:io.catenax.shopfloor_information.get_production_tracking:1.0.0#customerId",
+      "label": "customerId",
+      "kind": "Property",
+      "preferredName": "customer Identification",
+      "description": "Internal customer Identification"
+    },
+    {
+      "id": "urn:samm:io.catenax.shopfloor_information.get_production_tracking:1.0.0#capabilityId",
+      "label": "capabilityId",
+      "kind": "Property",
+      "preferredName": "Capability Identifier",
+      "description": "Identifier of a capability that is required in case of a capability based request"
+    },
+    {
+      "id": "urn:samm:io.catenax.shopfloor_information.get_production_tracking:1.0.0#billOfMaterialId",
+      "label": "billOfMaterialId",
+      "kind": "Property",
+      "preferredName": "Bill of Material Identifier",
+      "description": "Identifier for a bill of material, which is known by both partners"
+    },
+    {
+      "id": "urn:samm:io.catenax.shopfloor_information.get_production_tracking:1.0.0#processStepId",
+      "label": "processStepId",
+      "kind": "Property",
+      "preferredName": "Process Step Identifier",
+      "description": "Id of a process Step, specified within an instance of a bill of process data model that is known to both partners"
+    },
+    {
+      "id": "urn:samm:io.catenax.shopfloor_information.get_production_tracking:1.0.0#processParameterList",
+      "label": "processParameterList",
+      "kind": "Property",
+      "preferredName": "Process Parameter List",
+      "description": "List of requested Process parameter"
+    },
+    {
+      "id": "urn:samm:io.catenax.shopfloor_information.get_production_tracking:1.0.0#partInstanceLevel",
+      "label": "partInstanceLevel",
+      "kind": "Property",
+      "preferredName": "Part Instance Level",
+      "description": "Specifies for the case of a  capability based request, whether the parts are identified with a serial number or with a bill of material "
+    },
+    {
+      "id": "urn:samm:io.catenax.shopfloor_information.get_production_tracking:1.0.0#partInstanceId",
+      "label": "partInstanceId",
+      "kind": "Property",
+      "preferredName": "Part Instance Identifier",
+      "description": "Identifies an instance of a part in case that the partInstanceLevel property has the value partInstanceId "
+    },
+    {
+      "id": "urn:samm:io.catenax.shopfloor_information.get_production_tracking:1.0.0#billOfMaterialElementId",
+      "label": "billOfMaterialElementId",
+      "kind": "Property",
+      "preferredName": "Bill of Material Element Identifier",
+      "description": "Identifier of an element that is part of the bill of material, referenced by the bill of material Id "
+    },
+    {
+      "id": "urn:samm:io.catenax.shopfloor_information.get_production_tracking:1.0.0#processParameterName",
+      "label": "processParameterName",
+      "kind": "Property",
+      "preferredName": "Process Parameter Name",
+      "description": "Name of a process parameter"
+    },
+    {
+      "id": "urn:samm:io.catenax.shopfloor_information.get_production_tracking:1.0.0#processParameterSemanticId",
+      "label": "processParameterSemanticId",
+      "kind": "Property",
+      "preferredName": "Process Parameter Semantic Identifier",
+      "description": "Reference to a semantic that defines the unit and the data type of the parameter"
+    },
+    {
+      "id": "urn:samm:io.catenax.shopfloor_information.get_production_tracking:1.0.0#identifierType",
+      "label": "identifierType",
+      "kind": "Property",
+      "preferredName": "Identifier Type",
+      "description": "Identifies a product based on an identifier and distinguishes whether the request is based on a bill of material, part instance identifier oder a batch identifier."
+    },
+    {
+      "id": "urn:samm:io.catenax.shopfloor_information.get_production_tracking:1.0.0#identifierNumber",
+      "label": "identifierNumber",
+      "kind": "Property",
+      "preferredName": "Identifier Number",
+      "description": "Identifier number of a product"
+    },
+    {
+      "id": "urn:samm:io.catenax.shopfloor_information.get_production_tracking:1.0.0#RequestCharacteristic",
+      "label": "RequestCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Request Characteristic",
+      "description": "Characteristic for the production tracking request"
+    },
+    {
+      "id": "urn:samm:io.catenax.shopfloor_information.get_production_tracking:1.0.0#StringCharacteristic",
+      "label": "StringCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "String Characteristic",
+      "description": "Characteristic to express string values"
+    },
+    {
+      "id": "urn:samm:io.catenax.shopfloor_information.get_production_tracking:1.0.0#ProductionTrackingRequest",
+      "label": "ProductionTrackingRequest",
+      "kind": "Entity",
+      "preferredName": "Production Tracking Request",
+      "description": "Entity that describes the request for the production tracking "
+    },
+    {
+      "id": "urn:samm:io.catenax.shopfloor_information.get_production_tracking:1.0.0#ProcessIdentifier",
+      "label": "ProcessIdentifier",
+      "kind": "Entity",
+      "preferredName": "Process Identifier",
+      "description": "Concrete identifier of a manufacturing step, either based on a process step identifier or a capability"
+    },
+    {
+      "id": "urn:samm:io.catenax.shopfloor_information.get_production_tracking:1.0.0#ProcessParameter",
+      "label": "ProcessParameter",
+      "kind": "Entity",
+      "preferredName": "Process Parameter",
+      "description": "Entity to define process parameters"
+    },
+    {
+      "id": "urn:samm:io.catenax.shopfloor_information.get_production_tracking:1.0.0#ProcessStepIdentifierCharacteristic",
+      "label": "ProcessStepIdentifierCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Process Step Identifier Characteristic",
+      "description": "List characteristic to define the set of manufacturing steps."
+    },
+    {
+      "id": "urn:samm:io.catenax.shopfloor_information.get_production_tracking:1.0.0#ProcessPartameterListCharacteristic",
+      "label": "ProcessPartameterListCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Process Partameter List Characteristic",
+      "description": "List of process parameters, whose values the requester wants to receive from the provider "
+    },
+    {
+      "id": "urn:samm:io.catenax.shopfloor_information.get_production_tracking:1.0.0#ProcessReferenceTypeCharacteristic",
+      "label": "ProcessReferenceTypeCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Process Reference Type Characteristic",
+      "description": "Enumeration to distinguish between a request based on process steps or a request based on capabilities"
+    },
+    {
+      "id": "urn:samm:io.catenax.shopfloor_information.get_production_tracking:1.0.0#PartInstanceLevelCharacteristic",
+      "label": "PartInstanceLevelCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Part Instance Level Characteristic",
+      "description": "Enumeration that contains two values, bom and partInstanceId. It is used to determine whether the optinal field bill of materialId and billOfMaterialElementId or partInstanceId become mandatory"
+    },
+    {
+      "id": "urn:samm:io.catenax.shopfloor_information.get_production_tracking:1.0.0#IdentifierTypeCharacteristic",
+      "label": "IdentifierTypeCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Identifier Type Characteristic",
+      "description": "Used to distinguish between a part instanceId, batchId or bill of materialId based identification of a product"
+    }
+  ],
+  "links": [
+    {
+      "source": "urn:samm:io.catenax.shopfloor_information.get_production_tracking:1.0.0#GetProductionTracking",
+      "target": "urn:samm:io.catenax.shopfloor_information.get_production_tracking:1.0.0#request",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.shopfloor_information.get_production_tracking:1.0.0#ProductionTrackingRequest",
+      "target": "urn:samm:io.catenax.shopfloor_information.get_production_tracking:1.0.0#stepIdentifierList",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.shopfloor_information.get_production_tracking:1.0.0#ProductionTrackingRequest",
+      "target": "urn:samm:io.catenax.shopfloor_information.get_production_tracking:1.0.0#processReferenceType",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.shopfloor_information.get_production_tracking:1.0.0#ProductionTrackingRequest",
+      "target": "urn:samm:io.catenax.shopfloor_information.get_production_tracking:1.0.0#billOfProcessId",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.shopfloor_information.get_production_tracking:1.0.0#ProductionTrackingRequest",
+      "target": "urn:samm:io.catenax.shopfloor_information.get_production_tracking:1.0.0#customerId",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.shopfloor_information.get_production_tracking:1.0.0#ProductionTrackingRequest",
+      "target": "urn:samm:io.catenax.shopfloor_information.get_production_tracking:1.0.0#identifierType",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.shopfloor_information.get_production_tracking:1.0.0#ProductionTrackingRequest",
+      "target": "urn:samm:io.catenax.shopfloor_information.get_production_tracking:1.0.0#identifierNumber",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.shopfloor_information.get_production_tracking:1.0.0#ProcessIdentifier",
+      "target": "urn:samm:io.catenax.shopfloor_information.get_production_tracking:1.0.0#capabilityId",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.shopfloor_information.get_production_tracking:1.0.0#ProcessIdentifier",
+      "target": "urn:samm:io.catenax.shopfloor_information.get_production_tracking:1.0.0#billOfMaterialId",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.shopfloor_information.get_production_tracking:1.0.0#ProcessIdentifier",
+      "target": "urn:samm:io.catenax.shopfloor_information.get_production_tracking:1.0.0#processStepId",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.shopfloor_information.get_production_tracking:1.0.0#ProcessIdentifier",
+      "target": "urn:samm:io.catenax.shopfloor_information.get_production_tracking:1.0.0#processParameterList",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.shopfloor_information.get_production_tracking:1.0.0#ProcessIdentifier",
+      "target": "urn:samm:io.catenax.shopfloor_information.get_production_tracking:1.0.0#partInstanceLevel",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.shopfloor_information.get_production_tracking:1.0.0#ProcessIdentifier",
+      "target": "urn:samm:io.catenax.shopfloor_information.get_production_tracking:1.0.0#partInstanceId",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.shopfloor_information.get_production_tracking:1.0.0#ProcessIdentifier",
+      "target": "urn:samm:io.catenax.shopfloor_information.get_production_tracking:1.0.0#billOfMaterialElementId",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.shopfloor_information.get_production_tracking:1.0.0#ProcessParameter",
+      "target": "urn:samm:io.catenax.shopfloor_information.get_production_tracking:1.0.0#processParameterName",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.shopfloor_information.get_production_tracking:1.0.0#ProcessParameter",
+      "target": "urn:samm:io.catenax.shopfloor_information.get_production_tracking:1.0.0#processParameterSemanticId",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.shopfloor_information.get_production_tracking:1.0.0#request",
+      "target": "urn:samm:io.catenax.shopfloor_information.get_production_tracking:1.0.0#RequestCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.shopfloor_information.get_production_tracking:1.0.0#stepIdentifierList",
+      "target": "urn:samm:io.catenax.shopfloor_information.get_production_tracking:1.0.0#ProcessStepIdentifierCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.shopfloor_information.get_production_tracking:1.0.0#processReferenceType",
+      "target": "urn:samm:io.catenax.shopfloor_information.get_production_tracking:1.0.0#ProcessReferenceTypeCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.shopfloor_information.get_production_tracking:1.0.0#billOfProcessId",
+      "target": "urn:samm:io.catenax.shopfloor_information.get_production_tracking:1.0.0#StringCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.shopfloor_information.get_production_tracking:1.0.0#capabilityId",
+      "target": "urn:samm:io.catenax.shopfloor_information.get_production_tracking:1.0.0#StringCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.shopfloor_information.get_production_tracking:1.0.0#billOfMaterialId",
+      "target": "urn:samm:io.catenax.shopfloor_information.get_production_tracking:1.0.0#StringCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.shopfloor_information.get_production_tracking:1.0.0#processStepId",
+      "target": "urn:samm:io.catenax.shopfloor_information.get_production_tracking:1.0.0#StringCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.shopfloor_information.get_production_tracking:1.0.0#partInstanceId",
+      "target": "urn:samm:io.catenax.shopfloor_information.get_production_tracking:1.0.0#StringCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.shopfloor_information.get_production_tracking:1.0.0#billOfMaterialElementId",
+      "target": "urn:samm:io.catenax.shopfloor_information.get_production_tracking:1.0.0#StringCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.shopfloor_information.get_production_tracking:1.0.0#processParameterName",
+      "target": "urn:samm:io.catenax.shopfloor_information.get_production_tracking:1.0.0#StringCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.shopfloor_information.get_production_tracking:1.0.0#processParameterSemanticId",
+      "target": "urn:samm:io.catenax.shopfloor_information.get_production_tracking:1.0.0#StringCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.shopfloor_information.get_production_tracking:1.0.0#identifierNumber",
+      "target": "urn:samm:io.catenax.shopfloor_information.get_production_tracking:1.0.0#StringCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.shopfloor_information.get_production_tracking:1.0.0#processParameterList",
+      "target": "urn:samm:io.catenax.shopfloor_information.get_production_tracking:1.0.0#ProcessPartameterListCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.shopfloor_information.get_production_tracking:1.0.0#partInstanceLevel",
+      "target": "urn:samm:io.catenax.shopfloor_information.get_production_tracking:1.0.0#PartInstanceLevelCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.shopfloor_information.get_production_tracking:1.0.0#identifierType",
+      "target": "urn:samm:io.catenax.shopfloor_information.get_production_tracking:1.0.0#IdentifierTypeCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.shopfloor_information.get_production_tracking:1.0.0#RequestCharacteristic",
+      "target": "urn:samm:io.catenax.shopfloor_information.get_production_tracking:1.0.0#ProductionTrackingRequest",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.shopfloor_information.get_production_tracking:1.0.0#ProcessStepIdentifierCharacteristic",
+      "target": "urn:samm:io.catenax.shopfloor_information.get_production_tracking:1.0.0#ProcessIdentifier",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.shopfloor_information.get_production_tracking:1.0.0#ProcessPartameterListCharacteristic",
+      "target": "urn:samm:io.catenax.shopfloor_information.get_production_tracking:1.0.0#ProcessParameter",
+      "label": "dataType",
+      "optional": false
+    }
+  ]
+}

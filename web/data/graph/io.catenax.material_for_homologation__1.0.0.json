@@ -1,0 +1,413 @@
+{
+  "meta": {
+    "namespace": "urn:bamm:io.catenax.material_for_homologation:1.0.0#",
+    "meta_model": "BAMM 1.0.0",
+    "model_family": "BAMM",
+    "model_name": "material_for_homologation",
+    "model_version": "1.0.0",
+    "source": "catenax",
+    "status": "release",
+    "release_date": "2022-06-22",
+    "release_notes": "# Changelog\nAll notable changes to this model will be documented in this file.\n\n## [Unreleased]\n\n## [2.0.0] - 2024-02-15\nThis model is in status draft, as this is just the conversion of existing model from bamm to samm and not released model.\nThis version can still be considered for updates.\n\n## [1.0.0] - 2022-06-22\n### Added\n- initial model\n\n### Changed\nn/a\n\n### Removed",
+    "dependencies": [
+      {
+        "name": "shared.address_characteristic",
+        "version": "1.0.0",
+        "family": "BAMM",
+        "source": "catenax"
+      }
+    ],
+    "path": "data/sldt-semantic-models/io.catenax.material_for_homologation/1.0.0/MaterialForHomologation.ttl"
+  },
+  "nodes": [
+    {
+      "id": "urn:bamm:io.catenax.material_for_homologation:1.0.0#share",
+      "label": "share",
+      "kind": "Property",
+      "preferredName": "share",
+      "description": "Proportion of the material."
+    },
+    {
+      "id": "urn:bamm:io.catenax.material_for_homologation:1.0.0#name",
+      "label": "name",
+      "kind": "Property",
+      "preferredName": "name",
+      "description": "Designation of the material."
+    },
+    {
+      "id": "urn:bamm:io.catenax.material_for_homologation:1.0.0#itemNumber",
+      "label": "itemNumber",
+      "kind": "Property",
+      "preferredName": "item number",
+      "description": "Individual component to which the materials belong (no materials are assigned to nodes)."
+    },
+    {
+      "id": "urn:bamm:io.catenax.material_for_homologation:1.0.0#mainGroup",
+      "label": "mainGroup",
+      "kind": "Property",
+      "preferredName": "main group",
+      "description": "Main group according to material classification VDA 231-10."
+    },
+    {
+      "id": "urn:bamm:io.catenax.material_for_homologation:1.0.0#subgroup",
+      "label": "subgroup",
+      "kind": "Property",
+      "preferredName": "subgroup",
+      "description": "First subgroup according to material classification VDA 231-11."
+    },
+    {
+      "id": "urn:bamm:io.catenax.material_for_homologation:1.0.0#standard",
+      "label": "standard",
+      "kind": "Property",
+      "preferredName": "standard",
+      "description": "Standard in which the material is listed."
+    },
+    {
+      "id": "urn:bamm:io.catenax.material_for_homologation:1.0.0#materialNumber",
+      "label": "materialNumber",
+      "kind": "Property",
+      "preferredName": "material number",
+      "description": "The number of the material in the standard."
+    },
+    {
+      "id": "urn:bamm:io.catenax.material_for_homologation:1.0.0#materialForHomologation",
+      "label": "materialForHomologation",
+      "kind": "Property",
+      "preferredName": "material for homologation",
+      "description": "Property that references the material that describes and calculate the recycling quota for the homologation of a vehicle type."
+    },
+    {
+      "id": "urn:bamm:io.catenax.material_for_homologation:1.0.0#vdaStandardId",
+      "label": "vdaStandardId",
+      "kind": "Property",
+      "preferredName": "vda standard id",
+      "description": "German quality management system standard."
+    },
+    {
+      "id": "urn:bamm:io.catenax.material_for_homologation:1.0.0#ShareCharacteristic",
+      "label": "ShareCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "share characteristic",
+      "description": "Characteristic to represent the proportion of the material."
+    },
+    {
+      "id": "urn:bamm:io.catenax.material_for_homologation:1.0.0#NameTrait1",
+      "label": "NameTrait1",
+      "kind": "Characteristic",
+      "preferredName": null,
+      "description": null
+    },
+    {
+      "id": "urn:bamm:io.catenax.material_for_homologation:1.0.0#ItemNumber1Trait",
+      "label": "ItemNumber1Trait",
+      "kind": "Characteristic",
+      "preferredName": null,
+      "description": null
+    },
+    {
+      "id": "urn:bamm:io.catenax.material_for_homologation:1.0.0#MainGroupTrait1",
+      "label": "MainGroupTrait1",
+      "kind": "Characteristic",
+      "preferredName": null,
+      "description": null
+    },
+    {
+      "id": "urn:bamm:io.catenax.material_for_homologation:1.0.0#SubgroupTrait1",
+      "label": "SubgroupTrait1",
+      "kind": "Characteristic",
+      "preferredName": null,
+      "description": null
+    },
+    {
+      "id": "urn:bamm:io.catenax.material_for_homologation:1.0.0#StandardTrait1",
+      "label": "StandardTrait1",
+      "kind": "Characteristic",
+      "preferredName": null,
+      "description": null
+    },
+    {
+      "id": "urn:bamm:io.catenax.material_for_homologation:1.0.0#MaterialNumberTrait1",
+      "label": "MaterialNumberTrait1",
+      "kind": "Characteristic",
+      "preferredName": null,
+      "description": null
+    },
+    {
+      "id": "urn:bamm:io.catenax.material_for_homologation:1.0.0#NameCharacteristic",
+      "label": "NameCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "name characteristic",
+      "description": "Characteristic to designate the material."
+    },
+    {
+      "id": "urn:bamm:io.catenax.material_for_homologation:1.0.0#ItemNumberCharacteristic",
+      "label": "ItemNumberCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "item number characteristic",
+      "description": "Characteristic to describe the individual component to which the materials belong."
+    },
+    {
+      "id": "urn:bamm:io.catenax.material_for_homologation:1.0.0#MainGroupCharacteristic",
+      "label": "MainGroupCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "main group characteristic",
+      "description": "Characteristic to describe the main group classification of the VDA standard 231-10."
+    },
+    {
+      "id": "urn:bamm:io.catenax.material_for_homologation:1.0.0#SubgroupCharacteristic",
+      "label": "SubgroupCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "subgroup characteristic",
+      "description": "Characteristic to describe the first subgroup classification of the VDA standard 231-11."
+    },
+    {
+      "id": "urn:bamm:io.catenax.material_for_homologation:1.0.0#StandardCharacteristic",
+      "label": "StandardCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "standard characteristic",
+      "description": "Describes the standard in which the material is listed."
+    },
+    {
+      "id": "urn:bamm:io.catenax.material_for_homologation:1.0.0#MaterialNumberCharacteristic",
+      "label": "MaterialNumberCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "material number characteristic",
+      "description": "Characteristic to represent the number of the material in the standard."
+    },
+    {
+      "id": "urn:bamm:io.catenax.material_for_homologation:1.0.0#VDAStandardIdCharacteristic",
+      "label": "VDAStandardIdCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "vda standard id characteristic",
+      "description": "Characteristic to describe the classification of a VDA standard ID."
+    },
+    {
+      "id": "urn:bamm:io.catenax.material_for_homologation:1.0.0#NameConstraint",
+      "label": "NameConstraint",
+      "kind": "Characteristic",
+      "preferredName": "name constraint",
+      "description": null
+    },
+    {
+      "id": "urn:bamm:io.catenax.material_for_homologation:1.0.0#ItemNumberConstraint",
+      "label": "ItemNumberConstraint",
+      "kind": "Characteristic",
+      "preferredName": "item number constraint",
+      "description": null
+    },
+    {
+      "id": "urn:bamm:io.catenax.material_for_homologation:1.0.0#MainGroupConstraint",
+      "label": "MainGroupConstraint",
+      "kind": "Characteristic",
+      "preferredName": "main group constraint",
+      "description": null
+    },
+    {
+      "id": "urn:bamm:io.catenax.material_for_homologation:1.0.0#SubgroupConstraint",
+      "label": "SubgroupConstraint",
+      "kind": "Characteristic",
+      "preferredName": "subgroup constraint",
+      "description": null
+    },
+    {
+      "id": "urn:bamm:io.catenax.material_for_homologation:1.0.0#StandardConstraint",
+      "label": "StandardConstraint",
+      "kind": "Characteristic",
+      "preferredName": "standard constraint",
+      "description": null
+    },
+    {
+      "id": "urn:bamm:io.catenax.material_for_homologation:1.0.0#MaterialConstraint",
+      "label": "MaterialConstraint",
+      "kind": "Characteristic",
+      "preferredName": "material constraint",
+      "description": null
+    },
+    {
+      "id": "urn:bamm:io.catenax.material_for_homologation:1.0.0#MaterialForHomologation",
+      "label": "MaterialForHomologation",
+      "kind": "Aspect",
+      "preferredName": "material for homologation",
+      "description": "Model to depict materials that describe and calculate the recycling quota for the homologation of a vehicle type."
+    },
+    {
+      "id": "urn:bamm:io.catenax.material_for_homologation:1.0.0#MaterialForHomologationCharacteristic",
+      "label": "MaterialForHomologationCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "material for homologation characteristic",
+      "description": "Characteristic to describe a set of materials that describe and calculate the recycling quota for the homologation of a vehicle type."
+    },
+    {
+      "id": "urn:bamm:io.catenax.material_for_homologation:1.0.0#VDAStandardIdEntity",
+      "label": "VDAStandardIdEntity",
+      "kind": "Entity",
+      "preferredName": "vda standard id entity",
+      "description": "Entity to classify a VDA standard ID."
+    },
+    {
+      "id": "urn:bamm:io.catenax.material_for_homologation:1.0.0#MaterialForHomologationEntity",
+      "label": "MaterialForHomologationEntity",
+      "kind": "Entity",
+      "preferredName": "material for homologation entity",
+      "description": "Entity that represents the material that describes and calculates the recycling quota for the homologation of a vehicle type."
+    }
+  ],
+  "links": [
+    {
+      "source": "urn:bamm:io.catenax.material_for_homologation:1.0.0#MaterialForHomologation",
+      "target": "urn:bamm:io.catenax.material_for_homologation:1.0.0#materialForHomologation",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.material_for_homologation:1.0.0#VDAStandardIdEntity",
+      "target": "urn:bamm:io.catenax.material_for_homologation:1.0.0#mainGroup",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.material_for_homologation:1.0.0#VDAStandardIdEntity",
+      "target": "urn:bamm:io.catenax.material_for_homologation:1.0.0#subgroup",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.material_for_homologation:1.0.0#MaterialForHomologationEntity",
+      "target": "urn:bamm:io.catenax.material_for_homologation:1.0.0#itemNumber",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.material_for_homologation:1.0.0#MaterialForHomologationEntity",
+      "target": "urn:bamm:io.catenax.material_for_homologation:1.0.0#share",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.material_for_homologation:1.0.0#MaterialForHomologationEntity",
+      "target": "urn:bamm:io.catenax.material_for_homologation:1.0.0#vdaStandardId",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.material_for_homologation:1.0.0#MaterialForHomologationEntity",
+      "target": "urn:bamm:io.catenax.material_for_homologation:1.0.0#name",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.material_for_homologation:1.0.0#MaterialForHomologationEntity",
+      "target": "urn:bamm:io.catenax.material_for_homologation:1.0.0#standard",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.material_for_homologation:1.0.0#MaterialForHomologationEntity",
+      "target": "urn:bamm:io.catenax.material_for_homologation:1.0.0#materialNumber",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.material_for_homologation:1.0.0#share",
+      "target": "urn:bamm:io.catenax.material_for_homologation:1.0.0#ShareCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.material_for_homologation:1.0.0#name",
+      "target": "urn:bamm:io.catenax.material_for_homologation:1.0.0#NameTrait1",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.material_for_homologation:1.0.0#itemNumber",
+      "target": "urn:bamm:io.catenax.material_for_homologation:1.0.0#ItemNumber1Trait",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.material_for_homologation:1.0.0#mainGroup",
+      "target": "urn:bamm:io.catenax.material_for_homologation:1.0.0#MainGroupTrait1",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.material_for_homologation:1.0.0#subgroup",
+      "target": "urn:bamm:io.catenax.material_for_homologation:1.0.0#SubgroupTrait1",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.material_for_homologation:1.0.0#standard",
+      "target": "urn:bamm:io.catenax.material_for_homologation:1.0.0#StandardTrait1",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.material_for_homologation:1.0.0#materialNumber",
+      "target": "urn:bamm:io.catenax.material_for_homologation:1.0.0#MaterialNumberTrait1",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.material_for_homologation:1.0.0#materialForHomologation",
+      "target": "urn:bamm:io.catenax.material_for_homologation:1.0.0#MaterialForHomologationCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.material_for_homologation:1.0.0#vdaStandardId",
+      "target": "urn:bamm:io.catenax.material_for_homologation:1.0.0#VDAStandardIdCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.material_for_homologation:1.0.0#MaterialForHomologationCharacteristic",
+      "target": "urn:bamm:io.catenax.material_for_homologation:1.0.0#MaterialForHomologationEntity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.material_for_homologation:1.0.0#VDAStandardIdCharacteristic",
+      "target": "urn:bamm:io.catenax.material_for_homologation:1.0.0#VDAStandardIdEntity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.material_for_homologation:1.0.0#NameTrait1",
+      "target": "urn:bamm:io.catenax.material_for_homologation:1.0.0#NameConstraint",
+      "label": "constraint",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.material_for_homologation:1.0.0#ItemNumber1Trait",
+      "target": "urn:bamm:io.catenax.material_for_homologation:1.0.0#ItemNumberConstraint",
+      "label": "constraint",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.material_for_homologation:1.0.0#MainGroupTrait1",
+      "target": "urn:bamm:io.catenax.material_for_homologation:1.0.0#MainGroupConstraint",
+      "label": "constraint",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.material_for_homologation:1.0.0#SubgroupTrait1",
+      "target": "urn:bamm:io.catenax.material_for_homologation:1.0.0#SubgroupConstraint",
+      "label": "constraint",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.material_for_homologation:1.0.0#StandardTrait1",
+      "target": "urn:bamm:io.catenax.material_for_homologation:1.0.0#StandardConstraint",
+      "label": "constraint",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.material_for_homologation:1.0.0#MaterialNumberTrait1",
+      "target": "urn:bamm:io.catenax.material_for_homologation:1.0.0#MaterialConstraint",
+      "label": "constraint",
+      "optional": false
+    }
+  ]
+}

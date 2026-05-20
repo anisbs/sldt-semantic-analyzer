@@ -1,0 +1,375 @@
+{
+  "meta": {
+    "namespace": "urn:samm:io.catenax.planned_production_output:1.0.0#",
+    "meta_model": "SAMM 2.0.0",
+    "model_family": "SAMM",
+    "model_name": "planned_production_output",
+    "model_version": "1.0.0",
+    "source": "catenax",
+    "status": "release",
+    "release_date": "2023-11-20",
+    "release_notes": "# Changelog\nAll notable changes to this model will be documented in this file.\n\n## [2.0.0] - 2024-02-19\n### Added\nn/a\n\n### Changed\n- Update Collections to Set for stronger semantics\n  - PositionsCollection -> PositionsSet\n  - AllocatedPlannedProductionOutputCollection -> AllocatedPlannedProductionOutputSet\n- lastUpdatedOnDateTime\n  - move from position to AllocatedPlannedProductionOutput\n  - use samm datatype instead of custom Characteristic\n- estimatedTimeOfCompletion -> use samm datatype instead of custom Characteristic\n- updated dependencies\n  - io.catenax.shared.uuid\n  - io.catenax.shared.quantity\n  - io.catenax.shared.business_partner_number\n- migrated samm version from 2.0.0 to 2.1.0\n- updated materialGlobalAssetId description to point to part type twin\n- make materialGlobalAssetId mandatory\n\n### Removed\n- Harmonization for Industry Core\n  - materialNumberSupplier\n  - materialNumberCustomer\n\n## [1.0.0] - 2023-11-20\n### Added\n- initial model",
+    "dependencies": [
+      {
+        "name": "shared.business_partner_number",
+        "version": "1.0.0",
+        "family": "SAMM",
+        "source": "catenax"
+      },
+      {
+        "name": "shared.quantity",
+        "version": "1.0.0",
+        "family": "SAMM",
+        "source": "catenax"
+      },
+      {
+        "name": "shared.uuid",
+        "version": "1.0.0",
+        "family": "SAMM",
+        "source": "catenax"
+      }
+    ],
+    "path": "data/sldt-semantic-models/io.catenax.planned_production_output/1.0.0/PlannedProductionOutput.ttl"
+  },
+  "nodes": [
+    {
+      "id": "urn:samm:io.catenax.planned_production_output:1.0.0#PlannedProductionOutput",
+      "label": "PlannedProductionOutput",
+      "kind": "Aspect",
+      "preferredName": "Planned Production Output of a Supplier",
+      "description": "This aspect represents the remaining and planned production outputs of a supplier allocated to a customer. An allocated planned production output is described by a quantity, the site of the supplier and the date with time at which a production of a certain material for a certain customer is planned to be finished. The allocated planned production outputs may be linked to customer order position they have been scheduled for."
+    },
+    {
+      "id": "urn:samm:io.catenax.planned_production_output:1.0.0#positions",
+      "label": "positions",
+      "kind": "Property",
+      "preferredName": "Positions",
+      "description": "The positions refer to positions within an order of the given product (see material number supplier, materialNumber customer and material global Asset Id) for which the production outputs are transferred. The positions can be differentiated by the order position reference. If no order position reference is given, then there is only one position containing all planned production outputs of the product."
+    },
+    {
+      "id": "urn:samm:io.catenax.planned_production_output:1.0.0#materialNumberCustomer",
+      "label": "materialNumberCustomer",
+      "kind": "Property",
+      "preferredName": "Customer Material Number",
+      "description": "Material identifier as assigned by the customer. This material number identifies the material (as planned) in the customer's database. For standard parts (e.g. screws) for which a customer does not have an own number, the material number supplier should be set in this field, too."
+    },
+    {
+      "id": "urn:samm:io.catenax.planned_production_output:1.0.0#materialGlobalAssetId",
+      "label": "materialGlobalAssetId",
+      "kind": "Property",
+      "preferredName": "Material Number UUID of the Customer's Twin",
+      "description": "Material identifier used uniquely to identify the Material (e.g. PartAsPlanned)."
+    },
+    {
+      "id": "urn:samm:io.catenax.planned_production_output:1.0.0#materialNumberSupplier",
+      "label": "materialNumberSupplier",
+      "kind": "Property",
+      "preferredName": "Supplier Material Number",
+      "description": "Material identifier as assigned by the supplier. This material number identifies the material (as planned) in the supplier's database."
+    },
+    {
+      "id": "urn:samm:io.catenax.planned_production_output:1.0.0#orderPositionReference",
+      "label": "orderPositionReference",
+      "kind": "Property",
+      "preferredName": "Order Position Reference",
+      "description": "The order position reference contains information to identify a position within an order."
+    },
+    {
+      "id": "urn:samm:io.catenax.planned_production_output:1.0.0#lastUpdatedOnDateTime",
+      "label": "lastUpdatedOnDateTime",
+      "kind": "Property",
+      "preferredName": "Lasted Updated on Date",
+      "description": "Date and time at which the position has been updated by the supplier's systems. Date and time are set according to the timezone."
+    },
+    {
+      "id": "urn:samm:io.catenax.planned_production_output:1.0.0#allocatedPlannedProductionOutputs",
+      "label": "allocatedPlannedProductionOutputs",
+      "kind": "Property",
+      "preferredName": "Planned and Allocated Production Outputs",
+      "description": "Planned Production Outputs already allocated to the customer."
+    },
+    {
+      "id": "urn:samm:io.catenax.planned_production_output:1.0.0#supplierOrderId",
+      "label": "supplierOrderId",
+      "kind": "Property",
+      "preferredName": "Supplier Order ID",
+      "description": "This is the order number on the supplier side that is given by e.g., the supplier's enterprise resource planning system."
+    },
+    {
+      "id": "urn:samm:io.catenax.planned_production_output:1.0.0#customerOrderId",
+      "label": "customerOrderId",
+      "kind": "Property",
+      "preferredName": "Customer Order ID",
+      "description": "This is the order number on the customer side that can be given by e.g., the customer's enterprise resource planning system."
+    },
+    {
+      "id": "urn:samm:io.catenax.planned_production_output:1.0.0#customerOrderPositionId",
+      "label": "customerOrderPositionId",
+      "kind": "Property",
+      "preferredName": "Customer Order Position ID",
+      "description": "This is an identifier for the position of an order defined by the customer. It's not a technical identifier, such as an UUID. This identifier is used within the business context when talking about the position."
+    },
+    {
+      "id": "urn:samm:io.catenax.planned_production_output:1.0.0#plannedProductionQuantity",
+      "label": "plannedProductionQuantity",
+      "kind": "Property",
+      "preferredName": "Planned Production Quantity",
+      "description": "Quantity of a product that a supplier plans to produce on a certain date and time for a specific customer (that means that it will be allocated to a specific customer's \"allocated item stock\").\nQuantities that have already been produced are put on stock or are considered for delivery. Therefore those quantities MUST NOT be considered in the allocated production output to build a consistent view on the supply situation. "
+    },
+    {
+      "id": "urn:samm:io.catenax.planned_production_output:1.0.0#productionSiteBpns",
+      "label": "productionSiteBpns",
+      "kind": "Property",
+      "preferredName": "BPNS of Supplier's Production Site",
+      "description": "One planned and allocated production output has always one site. The site is identified by the BPNS."
+    },
+    {
+      "id": "urn:samm:io.catenax.planned_production_output:1.0.0#estimatedTimeOfCompletion",
+      "label": "estimatedTimeOfCompletion",
+      "kind": "Property",
+      "preferredName": "Estimated Time of Completion",
+      "description": "Date and time on which the planned and allocated production output is estimated to be completed. Date and time are set according to a timezone."
+    },
+    {
+      "id": "urn:samm:io.catenax.planned_production_output:1.0.0#PositionsCollection",
+      "label": "PositionsCollection",
+      "kind": "Characteristic",
+      "preferredName": "Positions Collection",
+      "description": "If any production for the customer is planned, then there is at least one position. If the supplier does differentiate the planned production according to the order positions (an OrderPositionReference is set), then multiple positions can be given. Among the positions, there could be only one position without an OrderPositionReference to either report the planned production independently of orders or to report internal stock orders planned for the customer."
+    },
+    {
+      "id": "urn:samm:io.catenax.planned_production_output:1.0.0#AllocatedPlannedProductionOutputCollection",
+      "label": "AllocatedPlannedProductionOutputCollection",
+      "kind": "Characteristic",
+      "preferredName": "Planned and Allocated Production Output Collection",
+      "description": "Collection of planned and allocated production outputs that may relate to different production locations and estimated time of completions."
+    },
+    {
+      "id": "urn:samm:io.catenax.planned_production_output:1.0.0#MaterialNumberCharacteristic",
+      "label": "MaterialNumberCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Material Number",
+      "description": "The material number is a multi-character string, usually assigned by an ERP system."
+    },
+    {
+      "id": "urn:samm:io.catenax.planned_production_output:1.0.0#OrderPositionReferenceCharacteristic",
+      "label": "OrderPositionReferenceCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Order Position Reference Characteristic",
+      "description": "The order position reference includes reference numbers for the order and the position. As these information are meant for the customer, the customer reference numbers are mandatory."
+    },
+    {
+      "id": "urn:samm:io.catenax.planned_production_output:1.0.0#DateTimeStamp",
+      "label": "DateTimeStamp",
+      "kind": "Characteristic",
+      "preferredName": "Date Time Stamp Characteristic",
+      "description": "The Date with the timezone."
+    },
+    {
+      "id": "urn:samm:io.catenax.planned_production_output:1.0.0#OrderIdCharacteristic",
+      "label": "OrderIdCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Order ID Characteristic",
+      "description": "This is a proprietary order ID, generated by either the supplier side or customer side."
+    },
+    {
+      "id": "urn:samm:io.catenax.planned_production_output:1.0.0#OrderPositionIdCharacteristic",
+      "label": "OrderPositionIdCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Position ID within Order",
+      "description": "The position ID is unique for an order and used within business context to refer to a position."
+    },
+    {
+      "id": "urn:samm:io.catenax.planned_production_output:1.0.0#Position",
+      "label": "Position",
+      "kind": "Entity",
+      "preferredName": "Position",
+      "description": "The Position can be planned for production at several sites. A position may be anonymous or may reference a position within an order."
+    },
+    {
+      "id": "urn:samm:io.catenax.planned_production_output:1.0.0#OrderPositionReference",
+      "label": "OrderPositionReference",
+      "kind": "Entity",
+      "preferredName": "Reference to Order Position",
+      "description": "Encapsulates the references to identify a position within an order."
+    },
+    {
+      "id": "urn:samm:io.catenax.planned_production_output:1.0.0#AllocatedPlannedProductionOutput",
+      "label": "AllocatedPlannedProductionOutput",
+      "kind": "Entity",
+      "preferredName": "Planned and Allocated Production Output",
+      "description": "Quantity, site of the supplier and date with time at which a production of a certain material for a certain customer is planned to be finished."
+    },
+    {
+      "id": "urn:samm:io.catenax.planned_production_output:1.0.0#QuantityCharacteristic",
+      "label": "QuantityCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Quantity Characteristic",
+      "description": "Describes the quantity and the unit of measure with which the planned and allocated production output is measured."
+    }
+  ],
+  "links": [
+    {
+      "source": "urn:samm:io.catenax.planned_production_output:1.0.0#PlannedProductionOutput",
+      "target": "urn:samm:io.catenax.planned_production_output:1.0.0#positions",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.planned_production_output:1.0.0#PlannedProductionOutput",
+      "target": "urn:samm:io.catenax.planned_production_output:1.0.0#materialNumberCustomer",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.planned_production_output:1.0.0#PlannedProductionOutput",
+      "target": "urn:samm:io.catenax.planned_production_output:1.0.0#materialGlobalAssetId",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.planned_production_output:1.0.0#PlannedProductionOutput",
+      "target": "urn:samm:io.catenax.planned_production_output:1.0.0#materialNumberSupplier",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.planned_production_output:1.0.0#Position",
+      "target": "urn:samm:io.catenax.planned_production_output:1.0.0#orderPositionReference",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.planned_production_output:1.0.0#Position",
+      "target": "urn:samm:io.catenax.planned_production_output:1.0.0#lastUpdatedOnDateTime",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.planned_production_output:1.0.0#Position",
+      "target": "urn:samm:io.catenax.planned_production_output:1.0.0#allocatedPlannedProductionOutputs",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.planned_production_output:1.0.0#OrderPositionReference",
+      "target": "urn:samm:io.catenax.planned_production_output:1.0.0#supplierOrderId",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.planned_production_output:1.0.0#OrderPositionReference",
+      "target": "urn:samm:io.catenax.planned_production_output:1.0.0#customerOrderId",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.planned_production_output:1.0.0#OrderPositionReference",
+      "target": "urn:samm:io.catenax.planned_production_output:1.0.0#customerOrderPositionId",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.planned_production_output:1.0.0#AllocatedPlannedProductionOutput",
+      "target": "urn:samm:io.catenax.planned_production_output:1.0.0#plannedProductionQuantity",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.planned_production_output:1.0.0#AllocatedPlannedProductionOutput",
+      "target": "urn:samm:io.catenax.planned_production_output:1.0.0#productionSiteBpns",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.planned_production_output:1.0.0#AllocatedPlannedProductionOutput",
+      "target": "urn:samm:io.catenax.planned_production_output:1.0.0#estimatedTimeOfCompletion",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.planned_production_output:1.0.0#positions",
+      "target": "urn:samm:io.catenax.planned_production_output:1.0.0#PositionsCollection",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.planned_production_output:1.0.0#materialNumberCustomer",
+      "target": "urn:samm:io.catenax.planned_production_output:1.0.0#MaterialNumberCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.planned_production_output:1.0.0#materialNumberSupplier",
+      "target": "urn:samm:io.catenax.planned_production_output:1.0.0#MaterialNumberCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.planned_production_output:1.0.0#orderPositionReference",
+      "target": "urn:samm:io.catenax.planned_production_output:1.0.0#OrderPositionReferenceCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.planned_production_output:1.0.0#lastUpdatedOnDateTime",
+      "target": "urn:samm:io.catenax.planned_production_output:1.0.0#DateTimeStamp",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.planned_production_output:1.0.0#estimatedTimeOfCompletion",
+      "target": "urn:samm:io.catenax.planned_production_output:1.0.0#DateTimeStamp",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.planned_production_output:1.0.0#allocatedPlannedProductionOutputs",
+      "target": "urn:samm:io.catenax.planned_production_output:1.0.0#AllocatedPlannedProductionOutputCollection",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.planned_production_output:1.0.0#supplierOrderId",
+      "target": "urn:samm:io.catenax.planned_production_output:1.0.0#OrderIdCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.planned_production_output:1.0.0#customerOrderId",
+      "target": "urn:samm:io.catenax.planned_production_output:1.0.0#OrderIdCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.planned_production_output:1.0.0#customerOrderPositionId",
+      "target": "urn:samm:io.catenax.planned_production_output:1.0.0#OrderPositionIdCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.planned_production_output:1.0.0#plannedProductionQuantity",
+      "target": "urn:samm:io.catenax.planned_production_output:1.0.0#QuantityCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.planned_production_output:1.0.0#PositionsCollection",
+      "target": "urn:samm:io.catenax.planned_production_output:1.0.0#Position",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.planned_production_output:1.0.0#OrderPositionReferenceCharacteristic",
+      "target": "urn:samm:io.catenax.planned_production_output:1.0.0#OrderPositionReference",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.planned_production_output:1.0.0#AllocatedPlannedProductionOutputCollection",
+      "target": "urn:samm:io.catenax.planned_production_output:1.0.0#AllocatedPlannedProductionOutput",
+      "label": "dataType",
+      "optional": false
+    }
+  ]
+}

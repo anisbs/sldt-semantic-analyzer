@@ -1,0 +1,124 @@
+{
+  "meta": {
+    "namespace": "urn:samm:io.catenax.manufactured_parts_quality_information:3.0.0#",
+    "meta_model": "SAMM 2.1.0",
+    "model_family": "SAMM",
+    "model_name": "manufactured_parts_quality_information",
+    "model_version": "3.0.0",
+    "source": "catenax",
+    "status": "release",
+    "release_date": "2025-07-07",
+    "release_notes": "# Changelog\nAll notable changes to this model will be documented in this file.\n\n## [Unreleased]\n- Version 2.0.0 of model is deprecated. It has a wrong regex for BPNS validation from the old shared model for BPNS trait.\n\n## [3.0.0] - 2025-07-07\nA conversion table from previous version 2.1.0 to 3.0.0 of this model is provided with the updated KIT Quality Management for CX release Saturn.\n\n### Added\n\n### Changed\n- to reduce redundancies in modelling some properties are now used form share quality core model\n- listOfManufacturedParts\n from version 2.1.0 has changed to manufacturedParts only\n- using parts definition from shared quality core model (via samm:extends) to unify manufacturedParts properties \n- at least one primary identifier per entity is now mandatory\n- manufacturedParts_partName and manufacturedParts_plant_plantIdentifier are now mandatory properties\n\n### Removed\n- listOfManufacturedParts_parentPartNumber,listOfManufacturedParts_parentSerialNumber,listOfManufacturedParts_productionLine\n\n\n## [2.1.0] - 2024-02-19\n### Added\n- optional properties added: parentSerialNumber and parentPartNumber\n\n### Changed\n- reference to shared aspect model for BPNS was changed to latest version\n\n### Removed\n\n## [2.0.0] - 2024-01-29 -> deprecated\n### Added\n- metaInformation property added to root entity\n- integration of the shared UUID characteristic and RegEx for Catena-X identifiers\n- integration of BPNS as additional plant identifier using BPNS trait from shared aspect model\n- introducing new characteristic for unique identifiers\n\n### Changed\n- changed all properties to optional except one unique identifier per entity\n\n### Removed\n- Manufacturing entity -> all properties are now located on ManufacturedPart entity\n\n## [1.0.0] - 2022-12-13 -> deprecated\n### Added\n- initial version of this model\n\n### Changed\nn/a\n\n### Removed",
+    "dependencies": [
+      {
+        "name": "shared.quality_core",
+        "version": "1.0.0",
+        "family": "SAMM",
+        "source": "catenax"
+      }
+    ],
+    "path": "data/sldt-semantic-models/io.catenax.manufactured_parts_quality_information/3.0.0/ManufacturedPartsQualityInformation.ttl"
+  },
+  "nodes": [
+    {
+      "id": "urn:samm:io.catenax.manufactured_parts_quality_information:3.0.0#ManufacturedPartsQualityInformation",
+      "label": "ManufacturedPartsQualityInformation",
+      "kind": "Aspect",
+      "preferredName": "Manufactured Parts Quality Information Aspect Model",
+      "description": "For Catena-X(CX) business case Quality Management. Supported technical features: delta update feature, meta information feature and additionalInformationList key-value pairs. The supported model features are described in detail in the Catena-X Quality KIT. Manufactured parts quality information data model is used to exchange information how a list of parts was manufactured with focus on information that might help to better understand the root cause for the quality task."
+    },
+    {
+      "id": "urn:samm:io.catenax.manufactured_parts_quality_information:3.0.0#manufacturedParts",
+      "label": "manufacturedParts",
+      "kind": "Property",
+      "preferredName": "Manufactured Parts",
+      "description": "A list of manufactured parts and their properties"
+    },
+    {
+      "id": "urn:samm:io.catenax.manufactured_parts_quality_information:3.0.0#productionDate",
+      "label": "productionDate",
+      "kind": "Property",
+      "preferredName": "Production Date",
+      "description": "Date of production for this specific part."
+    },
+    {
+      "id": "urn:samm:io.catenax.manufactured_parts_quality_information:3.0.0#hasBeenReworked",
+      "label": "hasBeenReworked",
+      "kind": "Property",
+      "preferredName": "Has Been Reworked",
+      "description": "Indicator whether this part was reworked during manufacturing."
+    },
+    {
+      "id": "urn:samm:io.catenax.manufactured_parts_quality_information:3.0.0#numberOfConductedEndOfLineTests",
+      "label": "numberOfConductedEndOfLineTests",
+      "kind": "Property",
+      "preferredName": "Number Of Conducted End-Of-Line Tests",
+      "description": "Number of conducted end-of-production-line tests. For some production lines there are several tests to be conducted (electrical tests, mechanical tests, functional tests, ...)."
+    },
+    {
+      "id": "urn:samm:io.catenax.manufactured_parts_quality_information:3.0.0#ManufacturedPartsList",
+      "label": "ManufacturedPartsList",
+      "kind": "Characteristic",
+      "preferredName": "Manufactured Parts List",
+      "description": "A list of manufactured parts."
+    },
+    {
+      "id": "urn:samm:io.catenax.manufactured_parts_quality_information:3.0.0#ManufacturedPart",
+      "label": "ManufacturedPart",
+      "kind": "Entity",
+      "preferredName": "Manufactured Part",
+      "description": "Manufacturing information of one part. Important properties to identify the manufactured part are coming from central shared quality core model. Besides that there is a key:value list to exchange additional, non-standardized properties for this part."
+    },
+    {
+      "id": "urn:samm:io.catenax.manufactured_parts_quality_information:3.0.0#PositiveNumber",
+      "label": "PositiveNumber",
+      "kind": "Characteristic",
+      "preferredName": "Positive Number Characteristic",
+      "description": "This Characteristic describes a positive number. 0 is not included."
+    }
+  ],
+  "links": [
+    {
+      "source": "urn:samm:io.catenax.manufactured_parts_quality_information:3.0.0#ManufacturedPartsQualityInformation",
+      "target": "urn:samm:io.catenax.manufactured_parts_quality_information:3.0.0#manufacturedParts",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.manufactured_parts_quality_information:3.0.0#ManufacturedPart",
+      "target": "urn:samm:io.catenax.manufactured_parts_quality_information:3.0.0#productionDate",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.manufactured_parts_quality_information:3.0.0#ManufacturedPart",
+      "target": "urn:samm:io.catenax.manufactured_parts_quality_information:3.0.0#hasBeenReworked",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.manufactured_parts_quality_information:3.0.0#ManufacturedPart",
+      "target": "urn:samm:io.catenax.manufactured_parts_quality_information:3.0.0#numberOfConductedEndOfLineTests",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.manufactured_parts_quality_information:3.0.0#manufacturedParts",
+      "target": "urn:samm:io.catenax.manufactured_parts_quality_information:3.0.0#ManufacturedPartsList",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.manufactured_parts_quality_information:3.0.0#numberOfConductedEndOfLineTests",
+      "target": "urn:samm:io.catenax.manufactured_parts_quality_information:3.0.0#PositiveNumber",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.manufactured_parts_quality_information:3.0.0#ManufacturedPartsList",
+      "target": "urn:samm:io.catenax.manufactured_parts_quality_information:3.0.0#ManufacturedPart",
+      "label": "dataType",
+      "optional": false
+    }
+  ]
+}

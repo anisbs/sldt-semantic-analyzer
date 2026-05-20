@@ -1,0 +1,767 @@
+{
+  "meta": {
+    "namespace": "urn:bamm:io.catenax.material_flow_simulation_result:1.0.0#",
+    "meta_model": "BAMM 2.0.0",
+    "model_family": "BAMM",
+    "model_name": "material_flow_simulation_result",
+    "model_version": "1.0.0",
+    "source": "catenax",
+    "status": "release",
+    "release_date": null,
+    "release_notes": "# Changelog\n\nAll notable changes to this model will be documented in this file.\n\n## [3.0.0] 2024-05-21\n\n- Add BPNS as entity with properties\n- Update header\n- Replace `batchID` with `batchSerialNumber`\n\n## [2.0.0] 2023-10-16\n\n### Added\n\n- Entity containing the properties of a Material Flow Simulation Result\n\n## [1.0.0]\n\n- initial version of the aspect model for Material Flow Simulation Result",
+    "dependencies": [],
+    "path": "data/sldt-semantic-models/io.catenax.material_flow_simulation_result/1.0.0/MaterialFlowSimulationResult.ttl"
+  },
+  "nodes": [
+    {
+      "id": "urn:bamm:io.catenax.material_flow_simulation_result:1.0.0#MaterialFlowSimulationResult",
+      "label": "MaterialFlowSimulationResult",
+      "kind": "Aspect",
+      "preferredName": "Material Flow Simulation Result",
+      "description": "Result of a Material Flow Simulation"
+    },
+    {
+      "id": "urn:bamm:io.catenax.material_flow_simulation_result:1.0.0#timestamp",
+      "label": "timestamp",
+      "kind": "Property",
+      "preferredName": "Timestamp",
+      "description": "Timestamp of simulation run"
+    },
+    {
+      "id": "urn:bamm:io.catenax.material_flow_simulation_result:1.0.0#shipments",
+      "label": "shipments",
+      "kind": "Property",
+      "preferredName": "Shipments",
+      "description": "List of shipments"
+    },
+    {
+      "id": "urn:bamm:io.catenax.material_flow_simulation_result:1.0.0#dataQuality",
+      "label": "dataQuality",
+      "kind": "Property",
+      "preferredName": "Data Quality",
+      "description": "Information on quality of simulation results"
+    },
+    {
+      "id": "urn:bamm:io.catenax.material_flow_simulation_result:1.0.0#comment",
+      "label": "comment",
+      "kind": "Property",
+      "preferredName": "Comment",
+      "description": "Additional comments"
+    },
+    {
+      "id": "urn:bamm:io.catenax.material_flow_simulation_result:1.0.0#expirationTimestamp",
+      "label": "expirationTimestamp",
+      "kind": "Property",
+      "preferredName": "ExpirationTimestamp",
+      "description": "Date and time when the simulation is expired"
+    },
+    {
+      "id": "urn:bamm:io.catenax.material_flow_simulation_result:1.0.0#runId",
+      "label": "runId",
+      "kind": "Property",
+      "preferredName": "RunId",
+      "description": "Id of the simulation run"
+    },
+    {
+      "id": "urn:bamm:io.catenax.material_flow_simulation_result:1.0.0#owner",
+      "label": "owner",
+      "kind": "Property",
+      "preferredName": "Owner",
+      "description": "Site identifier of the simulation originator"
+    },
+    {
+      "id": "urn:bamm:io.catenax.material_flow_simulation_result:1.0.0#description",
+      "label": "description",
+      "kind": "Property",
+      "preferredName": "Description",
+      "description": "Verbal description"
+    },
+    {
+      "id": "urn:bamm:io.catenax.material_flow_simulation_result:1.0.0#shipmentId",
+      "label": "shipmentId",
+      "kind": "Property",
+      "preferredName": "Shipment Id",
+      "description": "ID to identify the shipment"
+    },
+    {
+      "id": "urn:bamm:io.catenax.material_flow_simulation_result:1.0.0#destination",
+      "label": "destination",
+      "kind": "Property",
+      "preferredName": "Destination",
+      "description": "Address where the shipment is immediately delivered to (by logistician) or provided for pickup (by producer)"
+    },
+    {
+      "id": "urn:bamm:io.catenax.material_flow_simulation_result:1.0.0#destinationTimestamp",
+      "label": "destinationTimestamp",
+      "kind": "Property",
+      "preferredName": "Destination Timestamp",
+      "description": "Time when delivery arrives or is ready at goods issue"
+    },
+    {
+      "id": "urn:bamm:io.catenax.material_flow_simulation_result:1.0.0#recipient",
+      "label": "recipient",
+      "kind": "Property",
+      "preferredName": "Recipient",
+      "description": "Address of final recipient of shipment"
+    },
+    {
+      "id": "urn:bamm:io.catenax.material_flow_simulation_result:1.0.0#recipientTimestampPlanned",
+      "label": "recipientTimestampPlanned",
+      "kind": "Property",
+      "preferredName": "Recipient Timestamp Planned",
+      "description": "Planned delivery time"
+    },
+    {
+      "id": "urn:bamm:io.catenax.material_flow_simulation_result:1.0.0#splittingAllowed",
+      "label": "splittingAllowed",
+      "kind": "Property",
+      "preferredName": "Splitting Allowed",
+      "description": "Permission to split the shipment into individual deliveries"
+    },
+    {
+      "id": "urn:bamm:io.catenax.material_flow_simulation_result:1.0.0#logistics",
+      "label": "logistics",
+      "kind": "Property",
+      "preferredName": "Logistics",
+      "description": "Address of logistician executing the shipment"
+    },
+    {
+      "id": "urn:bamm:io.catenax.material_flow_simulation_result:1.0.0#preceding",
+      "label": "preceding",
+      "kind": "Property",
+      "preferredName": "Preceding",
+      "description": "Reference ID of a preceding shipment"
+    },
+    {
+      "id": "urn:bamm:io.catenax.material_flow_simulation_result:1.0.0#handlingUnits",
+      "label": "handlingUnits",
+      "kind": "Property",
+      "preferredName": "Handling Units",
+      "description": "List of Handling Units"
+    },
+    {
+      "id": "urn:bamm:io.catenax.material_flow_simulation_result:1.0.0#handlingUnitId",
+      "label": "handlingUnitId",
+      "kind": "Property",
+      "preferredName": "Handling Unit Id",
+      "description": "ID of the handling unit"
+    },
+    {
+      "id": "urn:bamm:io.catenax.material_flow_simulation_result:1.0.0#name",
+      "label": "name",
+      "kind": "Property",
+      "preferredName": "Name",
+      "description": "Name of the type of handling unit"
+    },
+    {
+      "id": "urn:bamm:io.catenax.material_flow_simulation_result:1.0.0#volume",
+      "label": "volume",
+      "kind": "Property",
+      "preferredName": "Volume",
+      "description": "Volume of the handling unit"
+    },
+    {
+      "id": "urn:bamm:io.catenax.material_flow_simulation_result:1.0.0#weight",
+      "label": "weight",
+      "kind": "Property",
+      "preferredName": "Weight",
+      "description": "Weight of the handling unit"
+    },
+    {
+      "id": "urn:bamm:io.catenax.material_flow_simulation_result:1.0.0#amount",
+      "label": "amount",
+      "kind": "Property",
+      "preferredName": "Amount",
+      "description": "Number of handling units with identical content"
+    },
+    {
+      "id": "urn:bamm:io.catenax.material_flow_simulation_result:1.0.0#batches",
+      "label": "batches",
+      "kind": "Property",
+      "preferredName": "Batches",
+      "description": "List of material batches contained within a handling unit"
+    },
+    {
+      "id": "urn:bamm:io.catenax.material_flow_simulation_result:1.0.0#batchId",
+      "label": "batchId",
+      "kind": "Property",
+      "preferredName": "Batch Id",
+      "description": "ID for the material batch"
+    },
+    {
+      "id": "urn:bamm:io.catenax.material_flow_simulation_result:1.0.0#materialNumber",
+      "label": "materialNumber",
+      "kind": "Property",
+      "preferredName": "Material Number",
+      "description": "ID of the material contained in the batch"
+    },
+    {
+      "id": "urn:bamm:io.catenax.material_flow_simulation_result:1.0.0#materialName",
+      "label": "materialName",
+      "kind": "Property",
+      "preferredName": "Material Name",
+      "description": "Name of the material"
+    },
+    {
+      "id": "urn:bamm:io.catenax.material_flow_simulation_result:1.0.0#hazardousGoods",
+      "label": "hazardousGoods",
+      "kind": "Property",
+      "preferredName": "Hazardous Goods",
+      "description": "Flags hazardous goods"
+    },
+    {
+      "id": "urn:bamm:io.catenax.material_flow_simulation_result:1.0.0#batchExpirationTimestamp",
+      "label": "batchExpirationTimestamp",
+      "kind": "Property",
+      "preferredName": "Batch Expiration Timestamp",
+      "description": "Expiration date of batch"
+    },
+    {
+      "id": "urn:bamm:io.catenax.material_flow_simulation_result:1.0.0#quantity",
+      "label": "quantity",
+      "kind": "Property",
+      "preferredName": "Quantity",
+      "description": "Amount of materials"
+    },
+    {
+      "id": "urn:bamm:io.catenax.material_flow_simulation_result:1.0.0#unitOfMeasurement",
+      "label": "unitOfMeasurement",
+      "kind": "Property",
+      "preferredName": "UnitOfMeasurement",
+      "description": "Unit used for measuring the quantity"
+    },
+    {
+      "id": "urn:bamm:io.catenax.material_flow_simulation_result:1.0.0#batchNumber",
+      "label": "batchNumber",
+      "kind": "Property",
+      "preferredName": "Batch Number",
+      "description": "Number of the batch, generated by originator (e.g. from ERP system, no uuid)"
+    },
+    {
+      "id": "urn:bamm:io.catenax.material_flow_simulation_result:1.0.0#batchOrderId",
+      "label": "batchOrderId",
+      "kind": "Property",
+      "preferredName": "Batch Order Id",
+      "description": "Order ID to which the batch belongs"
+    },
+    {
+      "id": "urn:bamm:io.catenax.material_flow_simulation_result:1.0.0#ShipmentList",
+      "label": "ShipmentList",
+      "kind": "Characteristic",
+      "preferredName": "Shipment List",
+      "description": "List of shipments contained in the simulation"
+    },
+    {
+      "id": "urn:bamm:io.catenax.material_flow_simulation_result:1.0.0#HandlingUnitList",
+      "label": "HandlingUnitList",
+      "kind": "Characteristic",
+      "preferredName": "Handling Unit List",
+      "description": "List of handling units included in the shipment"
+    },
+    {
+      "id": "urn:bamm:io.catenax.material_flow_simulation_result:1.0.0#BatchList",
+      "label": "BatchList",
+      "kind": "Characteristic",
+      "preferredName": "Batch List",
+      "description": "List of material batches"
+    },
+    {
+      "id": "urn:bamm:io.catenax.material_flow_simulation_result:1.0.0#DataQualityOptions",
+      "label": "DataQualityOptions",
+      "kind": "Characteristic",
+      "preferredName": "Data Quality Options",
+      "description": "Possible values determining data quality"
+    },
+    {
+      "id": "urn:bamm:io.catenax.material_flow_simulation_result:1.0.0#UnitOfMeasurementCharacteristic",
+      "label": "UnitOfMeasurementCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Unit Of Measurement Characteristic",
+      "description": "Possible options for units of measurement"
+    },
+    {
+      "id": "urn:bamm:io.catenax.material_flow_simulation_result:1.0.0#Text",
+      "label": "Text",
+      "kind": "Characteristic",
+      "preferredName": "Text",
+      "description": "Describes a Property which contains plain text. This is intended exclusively for human readable strings, not for identifiers, measurement values, etc."
+    },
+    {
+      "id": "urn:bamm:io.catenax.material_flow_simulation_result:1.0.0#QuantityCharacteristic",
+      "label": "QuantityCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Quantity Characteristic",
+      "description": "Number of materials contained within a handling unit"
+    },
+    {
+      "id": "urn:bamm:io.catenax.material_flow_simulation_result:1.0.0#OwnerCharacteristic",
+      "label": "OwnerCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Owner Characteristic",
+      "description": "Site identifier of the simulation originator"
+    },
+    {
+      "id": "urn:bamm:io.catenax.material_flow_simulation_result:1.0.0#DestinationCharacteristic",
+      "label": "DestinationCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Destination Characteristic",
+      "description": "Address where the shipment is immediately delivered to (by logistician) or provided for pickup (by producer)"
+    },
+    {
+      "id": "urn:bamm:io.catenax.material_flow_simulation_result:1.0.0#RecipientCharacteristic",
+      "label": "RecipientCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Recipient Characteristic",
+      "description": "Location identifier of the final recipient of the shipment"
+    },
+    {
+      "id": "urn:bamm:io.catenax.material_flow_simulation_result:1.0.0#LogisticsCharacteristic",
+      "label": "LogisticsCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Logistics Characteristic",
+      "description": "Site identifier of the logistician executing the shipment"
+    },
+    {
+      "id": "urn:bamm:io.catenax.material_flow_simulation_result:1.0.0#PrecedingCharacteristic",
+      "label": "PrecedingCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Preceding Characteristic",
+      "description": "Reference of preceding shipments"
+    },
+    {
+      "id": "urn:bamm:io.catenax.material_flow_simulation_result:1.0.0#Shipment",
+      "label": "Shipment",
+      "kind": "Entity",
+      "preferredName": "Shipment",
+      "description": "Delivery item from a sender to a recipient containing goods"
+    },
+    {
+      "id": "urn:bamm:io.catenax.material_flow_simulation_result:1.0.0#BusinessPartnerSite",
+      "label": "BusinessPartnerSite",
+      "kind": "Entity",
+      "preferredName": "Business Partner Site",
+      "description": "Identifier for the physical location of a business partner plant or site, (e.g. BPNS in Catena-X context)"
+    },
+    {
+      "id": "urn:bamm:io.catenax.material_flow_simulation_result:1.0.0#HandlingUnit",
+      "label": "HandlingUnit",
+      "kind": "Entity",
+      "preferredName": "Handling Unit",
+      "description": "Handling Unit is the smallest shipment unit and cannot be divided into several shipments"
+    },
+    {
+      "id": "urn:bamm:io.catenax.material_flow_simulation_result:1.0.0#MaterialBatch",
+      "label": "MaterialBatch",
+      "kind": "Entity",
+      "preferredName": "Material Batch",
+      "description": "Material Batches are part of a handling unit"
+    },
+    {
+      "id": "urn:bamm:io.catenax.material_flow_simulation_result:1.0.0#VolumeCharacteristic",
+      "label": "VolumeCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Volume Characteristic",
+      "description": "Volumetric value determining the volume of the handling unit"
+    },
+    {
+      "id": "urn:bamm:io.catenax.material_flow_simulation_result:1.0.0#WeightCharacteristic",
+      "label": "WeightCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Weight Characteristic",
+      "description": "Amount of weight of the handling unit"
+    },
+    {
+      "id": "urn:bamm:io.catenax.material_flow_simulation_result:1.0.0#AmountCharacteristic",
+      "label": "AmountCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Amount Characteristic",
+      "description": "Number describing handling units with identical pieces"
+    }
+  ],
+  "links": [
+    {
+      "source": "urn:bamm:io.catenax.material_flow_simulation_result:1.0.0#MaterialFlowSimulationResult",
+      "target": "urn:bamm:io.catenax.material_flow_simulation_result:1.0.0#timestamp",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.material_flow_simulation_result:1.0.0#MaterialFlowSimulationResult",
+      "target": "urn:bamm:io.catenax.material_flow_simulation_result:1.0.0#shipments",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.material_flow_simulation_result:1.0.0#MaterialFlowSimulationResult",
+      "target": "urn:bamm:io.catenax.material_flow_simulation_result:1.0.0#dataQuality",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.material_flow_simulation_result:1.0.0#MaterialFlowSimulationResult",
+      "target": "urn:bamm:io.catenax.material_flow_simulation_result:1.0.0#comment",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.material_flow_simulation_result:1.0.0#MaterialFlowSimulationResult",
+      "target": "urn:bamm:io.catenax.material_flow_simulation_result:1.0.0#expirationTimestamp",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.material_flow_simulation_result:1.0.0#MaterialFlowSimulationResult",
+      "target": "urn:bamm:io.catenax.material_flow_simulation_result:1.0.0#runId",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.material_flow_simulation_result:1.0.0#MaterialFlowSimulationResult",
+      "target": "urn:bamm:io.catenax.material_flow_simulation_result:1.0.0#owner",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.material_flow_simulation_result:1.0.0#MaterialFlowSimulationResult",
+      "target": "urn:bamm:io.catenax.material_flow_simulation_result:1.0.0#description",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.material_flow_simulation_result:1.0.0#Shipment",
+      "target": "urn:bamm:io.catenax.material_flow_simulation_result:1.0.0#shipmentId",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.material_flow_simulation_result:1.0.0#Shipment",
+      "target": "urn:bamm:io.catenax.material_flow_simulation_result:1.0.0#destination",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.material_flow_simulation_result:1.0.0#Shipment",
+      "target": "urn:bamm:io.catenax.material_flow_simulation_result:1.0.0#destinationTimestamp",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.material_flow_simulation_result:1.0.0#Shipment",
+      "target": "urn:bamm:io.catenax.material_flow_simulation_result:1.0.0#recipient",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.material_flow_simulation_result:1.0.0#Shipment",
+      "target": "urn:bamm:io.catenax.material_flow_simulation_result:1.0.0#recipientTimestampPlanned",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.material_flow_simulation_result:1.0.0#Shipment",
+      "target": "urn:bamm:io.catenax.material_flow_simulation_result:1.0.0#splittingAllowed",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.material_flow_simulation_result:1.0.0#Shipment",
+      "target": "urn:bamm:io.catenax.material_flow_simulation_result:1.0.0#logistics",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.material_flow_simulation_result:1.0.0#Shipment",
+      "target": "urn:bamm:io.catenax.material_flow_simulation_result:1.0.0#preceding",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.material_flow_simulation_result:1.0.0#Shipment",
+      "target": "urn:bamm:io.catenax.material_flow_simulation_result:1.0.0#handlingUnits",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.material_flow_simulation_result:1.0.0#HandlingUnit",
+      "target": "urn:bamm:io.catenax.material_flow_simulation_result:1.0.0#handlingUnitId",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.material_flow_simulation_result:1.0.0#HandlingUnit",
+      "target": "urn:bamm:io.catenax.material_flow_simulation_result:1.0.0#name",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.material_flow_simulation_result:1.0.0#HandlingUnit",
+      "target": "urn:bamm:io.catenax.material_flow_simulation_result:1.0.0#volume",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.material_flow_simulation_result:1.0.0#HandlingUnit",
+      "target": "urn:bamm:io.catenax.material_flow_simulation_result:1.0.0#weight",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.material_flow_simulation_result:1.0.0#HandlingUnit",
+      "target": "urn:bamm:io.catenax.material_flow_simulation_result:1.0.0#amount",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.material_flow_simulation_result:1.0.0#HandlingUnit",
+      "target": "urn:bamm:io.catenax.material_flow_simulation_result:1.0.0#batches",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.material_flow_simulation_result:1.0.0#MaterialBatch",
+      "target": "urn:bamm:io.catenax.material_flow_simulation_result:1.0.0#batchId",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.material_flow_simulation_result:1.0.0#MaterialBatch",
+      "target": "urn:bamm:io.catenax.material_flow_simulation_result:1.0.0#materialNumber",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.material_flow_simulation_result:1.0.0#MaterialBatch",
+      "target": "urn:bamm:io.catenax.material_flow_simulation_result:1.0.0#materialName",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.material_flow_simulation_result:1.0.0#MaterialBatch",
+      "target": "urn:bamm:io.catenax.material_flow_simulation_result:1.0.0#hazardousGoods",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.material_flow_simulation_result:1.0.0#MaterialBatch",
+      "target": "urn:bamm:io.catenax.material_flow_simulation_result:1.0.0#batchExpirationTimestamp",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.material_flow_simulation_result:1.0.0#MaterialBatch",
+      "target": "urn:bamm:io.catenax.material_flow_simulation_result:1.0.0#quantity",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.material_flow_simulation_result:1.0.0#MaterialBatch",
+      "target": "urn:bamm:io.catenax.material_flow_simulation_result:1.0.0#unitOfMeasurement",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.material_flow_simulation_result:1.0.0#MaterialBatch",
+      "target": "urn:bamm:io.catenax.material_flow_simulation_result:1.0.0#batchNumber",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.material_flow_simulation_result:1.0.0#MaterialBatch",
+      "target": "urn:bamm:io.catenax.material_flow_simulation_result:1.0.0#batchOrderId",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.material_flow_simulation_result:1.0.0#shipments",
+      "target": "urn:bamm:io.catenax.material_flow_simulation_result:1.0.0#ShipmentList",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.material_flow_simulation_result:1.0.0#dataQuality",
+      "target": "urn:bamm:io.catenax.material_flow_simulation_result:1.0.0#DataQualityOptions",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.material_flow_simulation_result:1.0.0#comment",
+      "target": "urn:bamm:io.catenax.material_flow_simulation_result:1.0.0#Text",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.material_flow_simulation_result:1.0.0#runId",
+      "target": "urn:bamm:io.catenax.material_flow_simulation_result:1.0.0#Text",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.material_flow_simulation_result:1.0.0#description",
+      "target": "urn:bamm:io.catenax.material_flow_simulation_result:1.0.0#Text",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.material_flow_simulation_result:1.0.0#handlingUnitId",
+      "target": "urn:bamm:io.catenax.material_flow_simulation_result:1.0.0#Text",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.material_flow_simulation_result:1.0.0#name",
+      "target": "urn:bamm:io.catenax.material_flow_simulation_result:1.0.0#Text",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.material_flow_simulation_result:1.0.0#batchId",
+      "target": "urn:bamm:io.catenax.material_flow_simulation_result:1.0.0#Text",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.material_flow_simulation_result:1.0.0#materialNumber",
+      "target": "urn:bamm:io.catenax.material_flow_simulation_result:1.0.0#Text",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.material_flow_simulation_result:1.0.0#materialName",
+      "target": "urn:bamm:io.catenax.material_flow_simulation_result:1.0.0#Text",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.material_flow_simulation_result:1.0.0#batchNumber",
+      "target": "urn:bamm:io.catenax.material_flow_simulation_result:1.0.0#Text",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.material_flow_simulation_result:1.0.0#batchOrderId",
+      "target": "urn:bamm:io.catenax.material_flow_simulation_result:1.0.0#Text",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.material_flow_simulation_result:1.0.0#owner",
+      "target": "urn:bamm:io.catenax.material_flow_simulation_result:1.0.0#OwnerCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.material_flow_simulation_result:1.0.0#destination",
+      "target": "urn:bamm:io.catenax.material_flow_simulation_result:1.0.0#DestinationCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.material_flow_simulation_result:1.0.0#recipient",
+      "target": "urn:bamm:io.catenax.material_flow_simulation_result:1.0.0#RecipientCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.material_flow_simulation_result:1.0.0#logistics",
+      "target": "urn:bamm:io.catenax.material_flow_simulation_result:1.0.0#LogisticsCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.material_flow_simulation_result:1.0.0#preceding",
+      "target": "urn:bamm:io.catenax.material_flow_simulation_result:1.0.0#PrecedingCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.material_flow_simulation_result:1.0.0#handlingUnits",
+      "target": "urn:bamm:io.catenax.material_flow_simulation_result:1.0.0#HandlingUnitList",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.material_flow_simulation_result:1.0.0#volume",
+      "target": "urn:bamm:io.catenax.material_flow_simulation_result:1.0.0#VolumeCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.material_flow_simulation_result:1.0.0#weight",
+      "target": "urn:bamm:io.catenax.material_flow_simulation_result:1.0.0#WeightCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.material_flow_simulation_result:1.0.0#amount",
+      "target": "urn:bamm:io.catenax.material_flow_simulation_result:1.0.0#AmountCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.material_flow_simulation_result:1.0.0#batches",
+      "target": "urn:bamm:io.catenax.material_flow_simulation_result:1.0.0#BatchList",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.material_flow_simulation_result:1.0.0#quantity",
+      "target": "urn:bamm:io.catenax.material_flow_simulation_result:1.0.0#QuantityCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.material_flow_simulation_result:1.0.0#unitOfMeasurement",
+      "target": "urn:bamm:io.catenax.material_flow_simulation_result:1.0.0#UnitOfMeasurementCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.material_flow_simulation_result:1.0.0#ShipmentList",
+      "target": "urn:bamm:io.catenax.material_flow_simulation_result:1.0.0#Shipment",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.material_flow_simulation_result:1.0.0#OwnerCharacteristic",
+      "target": "urn:bamm:io.catenax.material_flow_simulation_result:1.0.0#BusinessPartnerSite",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.material_flow_simulation_result:1.0.0#DestinationCharacteristic",
+      "target": "urn:bamm:io.catenax.material_flow_simulation_result:1.0.0#BusinessPartnerSite",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.material_flow_simulation_result:1.0.0#RecipientCharacteristic",
+      "target": "urn:bamm:io.catenax.material_flow_simulation_result:1.0.0#BusinessPartnerSite",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.material_flow_simulation_result:1.0.0#LogisticsCharacteristic",
+      "target": "urn:bamm:io.catenax.material_flow_simulation_result:1.0.0#BusinessPartnerSite",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.material_flow_simulation_result:1.0.0#PrecedingCharacteristic",
+      "target": "urn:bamm:io.catenax.material_flow_simulation_result:1.0.0#BusinessPartnerSite",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.material_flow_simulation_result:1.0.0#HandlingUnitList",
+      "target": "urn:bamm:io.catenax.material_flow_simulation_result:1.0.0#HandlingUnit",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.material_flow_simulation_result:1.0.0#BatchList",
+      "target": "urn:bamm:io.catenax.material_flow_simulation_result:1.0.0#MaterialBatch",
+      "label": "dataType",
+      "optional": false
+    }
+  ]
+}

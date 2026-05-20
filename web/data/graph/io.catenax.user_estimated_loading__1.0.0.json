@@ -1,0 +1,581 @@
+{
+  "meta": {
+    "namespace": "urn:bamm:io.catenax.user_estimated_loading:1.0.0#",
+    "meta_model": "BAMM 2.0.0",
+    "model_family": "BAMM",
+    "model_name": "user_estimated_loading",
+    "model_version": "1.0.0",
+    "source": "catenax",
+    "status": "release",
+    "release_date": "2023-06-26",
+    "release_notes": "# Changelog\nAll notable changes to this model will be documented in this file.\n\n## [Unreleased]\n\n## [2.0.0] - 2024-02-15\nThis model is in status draft, as this is just the conversion of existing model from bamm to samm and not released model.\nThis version can still be considered for updates.\n\n## [1.0.0] - 2023-06-26\n### Added\nmodel created\n\n### Changed\nn/a\n\n### Removed\nn/a",
+    "dependencies": [],
+    "path": "data/sldt-semantic-models/io.catenax.user_estimated_loading/1.0.0/UserEstimatedLoading.ttl"
+  },
+  "nodes": [
+    {
+      "id": "urn:bamm:io.catenax.user_estimated_loading:1.0.0#UserEstimatedLoading",
+      "label": "UserEstimatedLoading",
+      "kind": "Aspect",
+      "preferredName": "User defined loading",
+      "description": "User defined list of usage with percentage, driving style, eniviroment (hilliness, city_use, trailer_use)"
+    },
+    {
+      "id": "urn:bamm:io.catenax.user_estimated_loading:1.0.0#vehicleStatus",
+      "label": "vehicleStatus",
+      "kind": "Property",
+      "preferredName": "Current status of vehicle",
+      "description": "Current status of vehicle: age, mileage"
+    },
+    {
+      "id": "urn:bamm:io.catenax.user_estimated_loading:1.0.0#vehicleData",
+      "label": "vehicleData",
+      "kind": "Property",
+      "preferredName": "Technical vehicle data",
+      "description": "Basic technical data of the vehicle"
+    },
+    {
+      "id": "urn:bamm:io.catenax.user_estimated_loading:1.0.0#history",
+      "label": "history",
+      "kind": "Property",
+      "preferredName": "History user profiles",
+      "description": "User profiles of previous use"
+    },
+    {
+      "id": "urn:bamm:io.catenax.user_estimated_loading:1.0.0#future",
+      "label": "future",
+      "kind": "Property",
+      "preferredName": "Future usage",
+      "description": "Collection of future usages"
+    },
+    {
+      "id": "urn:bamm:io.catenax.user_estimated_loading:1.0.0#mileage",
+      "label": "mileage",
+      "kind": "Property",
+      "preferredName": "Mileage @en",
+      "description": "Distance the vehicle has travelled in kilometre"
+    },
+    {
+      "id": "urn:bamm:io.catenax.user_estimated_loading:1.0.0#ageInMonth",
+      "label": "ageInMonth",
+      "kind": "Property",
+      "preferredName": "Vehicle age",
+      "description": "Age of the vehicle in month"
+    },
+    {
+      "id": "urn:bamm:io.catenax.user_estimated_loading:1.0.0#vehicleType",
+      "label": "vehicleType",
+      "kind": "Property",
+      "preferredName": "Vehicle variant",
+      "description": "Vehicle variant - body shapes like SUV, Van, Limousine"
+    },
+    {
+      "id": "urn:bamm:io.catenax.user_estimated_loading:1.0.0#numberOfDriveAxle",
+      "label": "numberOfDriveAxle",
+      "kind": "Property",
+      "preferredName": "Number of drive axles",
+      "description": "Identification of 4WD, default 1: 2WD"
+    },
+    {
+      "id": "urn:bamm:io.catenax.user_estimated_loading:1.0.0#energySourceCode",
+      "label": "energySourceCode",
+      "kind": "Property",
+      "preferredName": "Energy source code",
+      "description": "The code for the energy source respectively fuel type of the vehicle according to KBA list"
+    },
+    {
+      "id": "urn:bamm:io.catenax.user_estimated_loading:1.0.0#powerKW",
+      "label": "powerKW",
+      "kind": "Property",
+      "preferredName": "Power @en",
+      "description": "Engine power is the power that an engine can put out in kW"
+    },
+    {
+      "id": "urn:bamm:io.catenax.user_estimated_loading:1.0.0#grossVehicleWeightKG",
+      "label": "grossVehicleWeightKG",
+      "kind": "Property",
+      "preferredName": "Gross vehicle weight",
+      "description": "Technical permissable maximum weight of the vehicle in kg"
+    },
+    {
+      "id": "urn:bamm:io.catenax.user_estimated_loading:1.0.0#percentage",
+      "label": "percentage",
+      "kind": "Property",
+      "preferredName": "Weightfactor in percantage",
+      "description": "Weighfactor of the different profiles, a user has. Different profiles indicates different user as well as different usages of like profiles for daily work routes or for caravan holiday."
+    },
+    {
+      "id": "urn:bamm:io.catenax.user_estimated_loading:1.0.0#trailerUse",
+      "label": "trailerUse",
+      "kind": "Property",
+      "preferredName": "Trailer use switch",
+      "description": "Usage of trailer like caravan. "
+    },
+    {
+      "id": "urn:bamm:io.catenax.user_estimated_loading:1.0.0#cityDriving",
+      "label": "cityDriving",
+      "kind": "Property",
+      "preferredName": "City driving switch",
+      "description": "City driving means a short distances."
+    },
+    {
+      "id": "urn:bamm:io.catenax.user_estimated_loading:1.0.0#drivingStyle",
+      "label": "drivingStyle",
+      "kind": "Property",
+      "preferredName": "Driving style assessment",
+      "description": "Numerical value between 1 and 100 describing the driving style. 1 for extreme economic driving, about 30 for normal driving, about 65 for sportive driving, 100 for aggressive driving."
+    },
+    {
+      "id": "urn:bamm:io.catenax.user_estimated_loading:1.0.0#hilliness",
+      "label": "hilliness",
+      "kind": "Property",
+      "preferredName": "Hilliness assessment",
+      "description": "Numerical value between 1 and 100 to describe the hilliness.\n1: absolut flat region, 100 steep mountain roads"
+    },
+    {
+      "id": "urn:bamm:io.catenax.user_estimated_loading:1.0.0#curviness",
+      "label": "curviness",
+      "kind": "Property",
+      "preferredName": "Curviness assessment",
+      "description": "Numerical value between 1 and 100 describing the curviness (1: straight road ... 100: very curvy road."
+    },
+    {
+      "id": "urn:bamm:io.catenax.user_estimated_loading:1.0.0#futureScenario",
+      "label": "futureScenario",
+      "kind": "Property",
+      "preferredName": "Future scenario",
+      "description": "The future scenario cotains one or more future usage profiles where the sum of percentage is 100"
+    },
+    {
+      "id": "urn:bamm:io.catenax.user_estimated_loading:1.0.0#futureScenarioId",
+      "label": "futureScenarioId",
+      "kind": "Property",
+      "preferredName": "Future scenario ID",
+      "description": "Identification number of future scenarios"
+    },
+    {
+      "id": "urn:bamm:io.catenax.user_estimated_loading:1.0.0#VehicleStatusCharacteristic",
+      "label": "VehicleStatusCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Vehicle status characteristic",
+      "description": "Characteristic decribing the vehicle status"
+    },
+    {
+      "id": "urn:bamm:io.catenax.user_estimated_loading:1.0.0#VehicleDataCharacteristic",
+      "label": "VehicleDataCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Vehicle data characteristic",
+      "description": "Characteristic describing the basic technical data of the vehicle "
+    },
+    {
+      "id": "urn:bamm:io.catenax.user_estimated_loading:1.0.0#NumberOfDriveAxle",
+      "label": "NumberOfDriveAxle",
+      "kind": "Characteristic",
+      "preferredName": "Number of drive axles",
+      "description": "Characteristic of number of drive axles"
+    },
+    {
+      "id": "urn:bamm:io.catenax.user_estimated_loading:1.0.0#Percentage",
+      "label": "Percentage",
+      "kind": "Characteristic",
+      "preferredName": null,
+      "description": null
+    },
+    {
+      "id": "urn:bamm:io.catenax.user_estimated_loading:1.0.0#WeightFactor",
+      "label": "WeightFactor",
+      "kind": "Characteristic",
+      "preferredName": null,
+      "description": "Weightfactor is a number between 1 and 100 weightening the hilliness or curviness or driving style."
+    },
+    {
+      "id": "urn:bamm:io.catenax.user_estimated_loading:1.0.0#PositiveInteger",
+      "label": "PositiveInteger",
+      "kind": "Characteristic",
+      "preferredName": "Positive integer",
+      "description": "Positive integer number without unit"
+    },
+    {
+      "id": "urn:bamm:io.catenax.user_estimated_loading:1.0.0#HistoryProfileList",
+      "label": "HistoryProfileList",
+      "kind": "Characteristic",
+      "preferredName": "History profile list",
+      "description": "Characteristic of historie profile list\n"
+    },
+    {
+      "id": "urn:bamm:io.catenax.user_estimated_loading:1.0.0#FutureList",
+      "label": "FutureList",
+      "kind": "Characteristic",
+      "preferredName": "Future usage list",
+      "description": "Characteristic of future usages"
+    },
+    {
+      "id": "urn:bamm:io.catenax.user_estimated_loading:1.0.0#VehicleStatusEntity",
+      "label": "VehicleStatusEntity",
+      "kind": "Entity",
+      "preferredName": "Vehicle status entity",
+      "description": "Vehicle status is basically described by mileage and age"
+    },
+    {
+      "id": "urn:bamm:io.catenax.user_estimated_loading:1.0.0#VehicleDataEntity",
+      "label": "VehicleDataEntity",
+      "kind": "Entity",
+      "preferredName": "Vehicle data entity",
+      "description": "Basic technical data of the vehicle as specified in KBA data"
+    },
+    {
+      "id": "urn:bamm:io.catenax.user_estimated_loading:1.0.0#HistoryProfilesEnity",
+      "label": "HistoryProfilesEnity",
+      "kind": "Entity",
+      "preferredName": "History profiles entity",
+      "description": "Collection of previous usage profiles "
+    },
+    {
+      "id": "urn:bamm:io.catenax.user_estimated_loading:1.0.0#FutureScenarioEntity",
+      "label": "FutureScenarioEntity",
+      "kind": "Entity",
+      "preferredName": "Future scenario list entity",
+      "description": "List of future scenarios"
+    },
+    {
+      "id": "urn:bamm:io.catenax.user_estimated_loading:1.0.0#FutureProfilesEntity",
+      "label": "FutureProfilesEntity",
+      "kind": "Entity",
+      "preferredName": "Future profiles entity",
+      "description": "Future scenario: collection of usage profiles"
+    },
+    {
+      "id": "urn:bamm:io.catenax.user_estimated_loading:1.0.0#Mileage",
+      "label": "Mileage",
+      "kind": "Characteristic",
+      "preferredName": "Mileage @en",
+      "description": "Distance in kilometre"
+    },
+    {
+      "id": "urn:bamm:io.catenax.user_estimated_loading:1.0.0#EnginePowerKW",
+      "label": "EnginePowerKW",
+      "kind": "Characteristic",
+      "preferredName": "Engine Power @en",
+      "description": "Engine power expressed in kilowatt"
+    },
+    {
+      "id": "urn:bamm:io.catenax.user_estimated_loading:1.0.0#Weight",
+      "label": "Weight",
+      "kind": "Characteristic",
+      "preferredName": "Weight",
+      "description": "Weight of an object"
+    },
+    {
+      "id": "urn:bamm:io.catenax.user_estimated_loading:1.0.0#AgeInMonths",
+      "label": "AgeInMonths",
+      "kind": "Characteristic",
+      "preferredName": "Age in months",
+      "description": "Age of vehicle in month"
+    },
+    {
+      "id": "urn:bamm:io.catenax.user_estimated_loading:1.0.0#KbaVariant",
+      "label": "KbaVariant",
+      "kind": "Characteristic",
+      "preferredName": "KBA Variant @en",
+      "description": "Current version of the Enumeration is sub-set of list defined from the German Federal Office for motor vehicles."
+    },
+    {
+      "id": "urn:bamm:io.catenax.user_estimated_loading:1.0.0#EnergySource",
+      "label": "EnergySource",
+      "kind": "Characteristic",
+      "preferredName": "Energy Source",
+      "description": "Enumeration of possible energy sources/fuel types of a vehicle. The list is defined from the German Federal Office for motor vehicles."
+    },
+    {
+      "id": "urn:bamm:io.catenax.user_estimated_loading:1.0.0#FutureScenarioList",
+      "label": "FutureScenarioList",
+      "kind": "Characteristic",
+      "preferredName": "Future scenario list",
+      "description": "Characteristic of future scenario"
+    }
+  ],
+  "links": [
+    {
+      "source": "urn:bamm:io.catenax.user_estimated_loading:1.0.0#UserEstimatedLoading",
+      "target": "urn:bamm:io.catenax.user_estimated_loading:1.0.0#vehicleStatus",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.user_estimated_loading:1.0.0#UserEstimatedLoading",
+      "target": "urn:bamm:io.catenax.user_estimated_loading:1.0.0#vehicleData",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.user_estimated_loading:1.0.0#UserEstimatedLoading",
+      "target": "urn:bamm:io.catenax.user_estimated_loading:1.0.0#history",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.user_estimated_loading:1.0.0#UserEstimatedLoading",
+      "target": "urn:bamm:io.catenax.user_estimated_loading:1.0.0#future",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.user_estimated_loading:1.0.0#VehicleStatusEntity",
+      "target": "urn:bamm:io.catenax.user_estimated_loading:1.0.0#mileage",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:bamm:io.catenax.user_estimated_loading:1.0.0#VehicleStatusEntity",
+      "target": "urn:bamm:io.catenax.user_estimated_loading:1.0.0#ageInMonth",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:bamm:io.catenax.user_estimated_loading:1.0.0#VehicleDataEntity",
+      "target": "urn:bamm:io.catenax.user_estimated_loading:1.0.0#vehicleType",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:bamm:io.catenax.user_estimated_loading:1.0.0#VehicleDataEntity",
+      "target": "urn:bamm:io.catenax.user_estimated_loading:1.0.0#numberOfDriveAxle",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:bamm:io.catenax.user_estimated_loading:1.0.0#VehicleDataEntity",
+      "target": "urn:bamm:io.catenax.user_estimated_loading:1.0.0#energySourceCode",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:bamm:io.catenax.user_estimated_loading:1.0.0#VehicleDataEntity",
+      "target": "urn:bamm:io.catenax.user_estimated_loading:1.0.0#powerKW",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.user_estimated_loading:1.0.0#VehicleDataEntity",
+      "target": "urn:bamm:io.catenax.user_estimated_loading:1.0.0#grossVehicleWeightKG",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.user_estimated_loading:1.0.0#HistoryProfilesEnity",
+      "target": "urn:bamm:io.catenax.user_estimated_loading:1.0.0#percentage",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.user_estimated_loading:1.0.0#HistoryProfilesEnity",
+      "target": "urn:bamm:io.catenax.user_estimated_loading:1.0.0#trailerUse",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:bamm:io.catenax.user_estimated_loading:1.0.0#HistoryProfilesEnity",
+      "target": "urn:bamm:io.catenax.user_estimated_loading:1.0.0#cityDriving",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:bamm:io.catenax.user_estimated_loading:1.0.0#HistoryProfilesEnity",
+      "target": "urn:bamm:io.catenax.user_estimated_loading:1.0.0#drivingStyle",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.user_estimated_loading:1.0.0#HistoryProfilesEnity",
+      "target": "urn:bamm:io.catenax.user_estimated_loading:1.0.0#hilliness",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.user_estimated_loading:1.0.0#HistoryProfilesEnity",
+      "target": "urn:bamm:io.catenax.user_estimated_loading:1.0.0#curviness",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.user_estimated_loading:1.0.0#FutureScenarioEntity",
+      "target": "urn:bamm:io.catenax.user_estimated_loading:1.0.0#futureScenario",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.user_estimated_loading:1.0.0#FutureScenarioEntity",
+      "target": "urn:bamm:io.catenax.user_estimated_loading:1.0.0#futureScenarioId",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.user_estimated_loading:1.0.0#FutureProfilesEntity",
+      "target": "urn:bamm:io.catenax.user_estimated_loading:1.0.0#curviness",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.user_estimated_loading:1.0.0#FutureProfilesEntity",
+      "target": "urn:bamm:io.catenax.user_estimated_loading:1.0.0#hilliness",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.user_estimated_loading:1.0.0#FutureProfilesEntity",
+      "target": "urn:bamm:io.catenax.user_estimated_loading:1.0.0#drivingStyle",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.user_estimated_loading:1.0.0#FutureProfilesEntity",
+      "target": "urn:bamm:io.catenax.user_estimated_loading:1.0.0#cityDriving",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:bamm:io.catenax.user_estimated_loading:1.0.0#FutureProfilesEntity",
+      "target": "urn:bamm:io.catenax.user_estimated_loading:1.0.0#trailerUse",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:bamm:io.catenax.user_estimated_loading:1.0.0#FutureProfilesEntity",
+      "target": "urn:bamm:io.catenax.user_estimated_loading:1.0.0#percentage",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.user_estimated_loading:1.0.0#vehicleStatus",
+      "target": "urn:bamm:io.catenax.user_estimated_loading:1.0.0#VehicleStatusCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.user_estimated_loading:1.0.0#vehicleData",
+      "target": "urn:bamm:io.catenax.user_estimated_loading:1.0.0#VehicleDataCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.user_estimated_loading:1.0.0#history",
+      "target": "urn:bamm:io.catenax.user_estimated_loading:1.0.0#HistoryProfileList",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.user_estimated_loading:1.0.0#future",
+      "target": "urn:bamm:io.catenax.user_estimated_loading:1.0.0#FutureList",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.user_estimated_loading:1.0.0#mileage",
+      "target": "urn:bamm:io.catenax.user_estimated_loading:1.0.0#Mileage",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.user_estimated_loading:1.0.0#ageInMonth",
+      "target": "urn:bamm:io.catenax.user_estimated_loading:1.0.0#AgeInMonths",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.user_estimated_loading:1.0.0#vehicleType",
+      "target": "urn:bamm:io.catenax.user_estimated_loading:1.0.0#KbaVariant",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.user_estimated_loading:1.0.0#numberOfDriveAxle",
+      "target": "urn:bamm:io.catenax.user_estimated_loading:1.0.0#NumberOfDriveAxle",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.user_estimated_loading:1.0.0#energySourceCode",
+      "target": "urn:bamm:io.catenax.user_estimated_loading:1.0.0#EnergySource",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.user_estimated_loading:1.0.0#powerKW",
+      "target": "urn:bamm:io.catenax.user_estimated_loading:1.0.0#EnginePowerKW",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.user_estimated_loading:1.0.0#grossVehicleWeightKG",
+      "target": "urn:bamm:io.catenax.user_estimated_loading:1.0.0#Weight",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.user_estimated_loading:1.0.0#percentage",
+      "target": "urn:bamm:io.catenax.user_estimated_loading:1.0.0#Percentage",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.user_estimated_loading:1.0.0#drivingStyle",
+      "target": "urn:bamm:io.catenax.user_estimated_loading:1.0.0#WeightFactor",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.user_estimated_loading:1.0.0#hilliness",
+      "target": "urn:bamm:io.catenax.user_estimated_loading:1.0.0#WeightFactor",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.user_estimated_loading:1.0.0#curviness",
+      "target": "urn:bamm:io.catenax.user_estimated_loading:1.0.0#WeightFactor",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.user_estimated_loading:1.0.0#futureScenario",
+      "target": "urn:bamm:io.catenax.user_estimated_loading:1.0.0#FutureScenarioList",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.user_estimated_loading:1.0.0#futureScenarioId",
+      "target": "urn:bamm:io.catenax.user_estimated_loading:1.0.0#PositiveInteger",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.user_estimated_loading:1.0.0#VehicleStatusCharacteristic",
+      "target": "urn:bamm:io.catenax.user_estimated_loading:1.0.0#VehicleStatusEntity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.user_estimated_loading:1.0.0#VehicleDataCharacteristic",
+      "target": "urn:bamm:io.catenax.user_estimated_loading:1.0.0#VehicleDataEntity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.user_estimated_loading:1.0.0#HistoryProfileList",
+      "target": "urn:bamm:io.catenax.user_estimated_loading:1.0.0#HistoryProfilesEnity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.user_estimated_loading:1.0.0#FutureList",
+      "target": "urn:bamm:io.catenax.user_estimated_loading:1.0.0#FutureScenarioEntity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.user_estimated_loading:1.0.0#FutureScenarioList",
+      "target": "urn:bamm:io.catenax.user_estimated_loading:1.0.0#FutureProfilesEntity",
+      "label": "dataType",
+      "optional": false
+    }
+  ]
+}

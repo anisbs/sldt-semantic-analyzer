@@ -1,0 +1,91 @@
+{
+  "meta": {
+    "namespace": "urn:samm:io.catenax.shared.industry_core.part_classification:1.0.0#",
+    "meta_model": "SAMM 2.1.0",
+    "model_family": "SAMM",
+    "model_name": "shared.industry_core.part_classification",
+    "model_version": "1.0.0",
+    "source": "catenax",
+    "status": "release",
+    "release_date": null,
+    "release_notes": "# Changelog\n\nAll notable changes to this model will be documented in this file.\n\n## [1.0.0] 26.03\n\n### Added\n\n- this model is a successor of `io.catenax.shared.part_classification`\n- initial version of this model\n\n### Changed\n\nn/a\n\n### Removed\n\nn/a",
+    "dependencies": [],
+    "path": "data/sldt-semantic-models/io.catenax.shared.industry_core.part_classification/1.0.0/PartClassification.ttl"
+  },
+  "nodes": [
+    {
+      "id": "urn:samm:io.catenax.shared.industry_core.part_classification:1.0.0#ClassificationEntity",
+      "label": "ClassificationEntity",
+      "kind": "Entity",
+      "preferredName": "ClassificationEntity",
+      "description": "Encapsulates data related to the classification of the part."
+    },
+    {
+      "id": "urn:samm:io.catenax.shared.industry_core.part_classification:1.0.0#description",
+      "label": "description",
+      "kind": "Property",
+      "preferredName": "classification description",
+      "description": "Optional property describing the classification standard."
+    },
+    {
+      "id": "urn:samm:io.catenax.shared.industry_core.part_classification:1.0.0#id",
+      "label": "id",
+      "kind": "Property",
+      "preferredName": "classification identifier",
+      "description": "The classification ID of the part type according to the corresponding standard definition mentioned in the key value pair."
+    },
+    {
+      "id": "urn:samm:io.catenax.shared.industry_core.part_classification:1.0.0#partClassification",
+      "label": "partClassification",
+      "kind": "Property",
+      "preferredName": "part classification",
+      "description": "Property describing the classification of a part."
+    },
+    {
+      "id": "urn:samm:io.catenax.shared.industry_core.part_classification:1.0.0#standard",
+      "label": "standard",
+      "kind": "Property",
+      "preferredName": "classification standard",
+      "description": "Identified classification standards"
+    },
+    {
+      "id": "urn:samm:io.catenax.shared.industry_core.part_classification:1.0.0#PartClassificationCharacteristic",
+      "label": "PartClassificationCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "part classification characteristic",
+      "description": "Classification characteristic enabling a set of further properties."
+    }
+  ],
+  "links": [
+    {
+      "source": "urn:samm:io.catenax.shared.industry_core.part_classification:1.0.0#ClassificationEntity",
+      "target": "urn:samm:io.catenax.shared.industry_core.part_classification:1.0.0#standard",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.shared.industry_core.part_classification:1.0.0#ClassificationEntity",
+      "target": "urn:samm:io.catenax.shared.industry_core.part_classification:1.0.0#id",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.shared.industry_core.part_classification:1.0.0#ClassificationEntity",
+      "target": "urn:samm:io.catenax.shared.industry_core.part_classification:1.0.0#description",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.shared.industry_core.part_classification:1.0.0#partClassification",
+      "target": "urn:samm:io.catenax.shared.industry_core.part_classification:1.0.0#PartClassificationCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.shared.industry_core.part_classification:1.0.0#PartClassificationCharacteristic",
+      "target": "urn:samm:io.catenax.shared.industry_core.part_classification:1.0.0#ClassificationEntity",
+      "label": "dataType",
+      "optional": false
+    }
+  ]
+}

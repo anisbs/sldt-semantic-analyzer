@@ -1,0 +1,1297 @@
+{
+  "meta": {
+    "namespace": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#",
+    "meta_model": "SAMM 2.1.0",
+    "model_family": "SAMM",
+    "model_name": "fleet.diagnostic_data",
+    "model_version": "2.0.0",
+    "source": "catenax",
+    "status": "release",
+    "release_date": "2024-01-29",
+    "release_notes": "# Changelog\nAll notable changes to this model will be documented in this file.\n\n## [Unreleased]\n\n## [3.0.0] - 2025-07-07\nA conversion table from previous version 2.0.0 to 3.0.0 of this model is provided with the updated KIT Quality Management for CX release Saturn.\n\n### Added\n- model feature additionalInformation key:value pair added\n\n### Changed\n- to reduce redundancies in modelling some properties are now used form share quality core model\n- using parts definition from shared quality core model (via samm:extends) to unify ECU properties \n- at least one primary identifier per entity is now mandatory\n- diagnosticSessions_anonymizedVIN, diagnosticSessions_sessionStart, diagnosticSessions_qualityTaskId are now mandatory properties\n\n### Removed\n- diagnosticSessions_ecuList_hwPartNumber\n redundant property to diagnosticSessions_ecus_partNumber\n\n\n\n\n## [2.0.0] - 2024-01-29\n### Added\n- metaInformation property added to root entity\n- integration of the shared UUID characteristic and RegEx for Catena-X identifiers\n- introducing new characteristic for unique identifiers\n- end date of a diagnostic session added\n- procedures entity added to support failure-tree-based analysis in the workshop: Procedures can have sub-procedures could also be linked to ecuList\n- for Ecus: calibration and variant coding properties\n\n### Changed\n- changed all properties to optional except unique identifier per entity\n- Clear structure: session has ecuList as child, ecuList has dtcList as child, dtcList has envConditionList as child\n\n### Removed\n- vehicle entity: Properties now located one level up on DiagnosticSession\n- eventList: Removed completely - instead procedures list was introduced\n\n## [1.0.0] - 2022-12-13 -> deprecated\n### Added\n- initial version of this model\n\n### Changed\nn/a\n\n### Removed",
+    "dependencies": [
+      {
+        "name": "shared.uuid",
+        "version": "1.0.0",
+        "family": "SAMM",
+        "source": "catenax"
+      }
+    ],
+    "path": "data/sldt-semantic-models/io.catenax.fleet.diagnostic_data/2.0.0/DiagnosticData.ttl"
+  },
+  "nodes": [
+    {
+      "id": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#DiagnosticData",
+      "label": "DiagnosticData",
+      "kind": "Aspect",
+      "preferredName": null,
+      "description": "A Catena-X semantic data model for a list of vehicle diagnostic sessions."
+    },
+    {
+      "id": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#diagnosticSessions",
+      "label": "diagnosticSessions",
+      "kind": "Property",
+      "preferredName": "Diagnostic sessions",
+      "description": "A list of diagnostic sessions."
+    },
+    {
+      "id": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#metaInformation",
+      "label": "metaInformation",
+      "kind": "Property",
+      "preferredName": "Meta information",
+      "description": "This meta information is valid for all entries in this data set. The meta information is used to tell the data consumer which selection criteria were applied by the data provider. "
+    },
+    {
+      "id": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#recordStatus",
+      "label": "recordStatus",
+      "kind": "Property",
+      "preferredName": "Record status",
+      "description": "The record operation enumeration can be used to realize delta update concept.\nDelta update concept means:\n- You transfer an initial load of data\n- After the first week only the delta to the initial load is transferred\n\n\nThe record status describes whether this record is:\n- new=>This record is transferred the first time\n- update=> Some properties of this record have changed compared to a previous transfer\n- delete=> This record was transferred in the initial load or in a previous delta update, but is not used any more and therefore it should be deleted on data consumer side\n- same=> This record was transferred in the initial load or in a previous delta update"
+    },
+    {
+      "id": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#sessionId",
+      "label": "sessionId",
+      "kind": "Property",
+      "preferredName": "Session identifier",
+      "description": "A oem-specific session identifier that is unique in this company."
+    },
+    {
+      "id": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#anonymizedVIN",
+      "label": "anonymizedVIN",
+      "kind": "Property",
+      "preferredName": "Anonymized VIN",
+      "description": "OEM-specific hashed VIN. Unique within OEM."
+    },
+    {
+      "id": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#catenaXQualityTaskId",
+      "label": "catenaXQualityTaskId",
+      "kind": "Property",
+      "preferredName": "Quality Task ID",
+      "description": "The fully anonymous and unique Catena-X ID of this quality task. This id is unique inside Catena-X data space."
+    },
+    {
+      "id": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#catenaXVehicleId",
+      "label": "catenaXVehicleId",
+      "kind": "Property",
+      "preferredName": "Vehicle Catena-X Identifier",
+      "description": "A unique identifier for the vehicle in the Catena-X data space."
+    },
+    {
+      "id": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#countryCode",
+      "label": "countryCode",
+      "kind": "Property",
+      "preferredName": "Country code",
+      "description": "Country code in  ISO 3166-1 alpha-3 codes where this session took place"
+    },
+    {
+      "id": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#diagnosticSoftwareName",
+      "label": "diagnosticSoftwareName",
+      "kind": "Property",
+      "preferredName": "Diagnostic Software",
+      "description": "The name of the diagnostic software that was used."
+    },
+    {
+      "id": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#diagnosticSoftwareVersion",
+      "label": "diagnosticSoftwareVersion",
+      "kind": "Property",
+      "preferredName": "Diagnostic software version",
+      "description": "The version of the used diagnostic software"
+    },
+    {
+      "id": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#mileage",
+      "label": "mileage",
+      "kind": "Property",
+      "preferredName": "Mileage",
+      "description": "Mileage counter of the car."
+    },
+    {
+      "id": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#sessionEnd",
+      "label": "sessionEnd",
+      "kind": "Property",
+      "preferredName": "Selection end timestamp",
+      "description": "Describes the end point for this diagnostic session."
+    },
+    {
+      "id": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#sessionStart",
+      "label": "sessionStart",
+      "kind": "Property",
+      "preferredName": "Selection start timestamp",
+      "description": "Describes the starting point for this diagnostic session."
+    },
+    {
+      "id": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#vehicleSoftwareCategory",
+      "label": "vehicleSoftwareCategory",
+      "kind": "Property",
+      "preferredName": "Vehicle software category",
+      "description": "Software category of this car during the session - only available for OEMs that have a software category on vehicle level."
+    },
+    {
+      "id": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#vehicleSoftwareVersion",
+      "label": "vehicleSoftwareVersion",
+      "kind": "Property",
+      "preferredName": "Vehicle software version",
+      "description": "Software version of this car during the session - only available for OEMs that have a software category on vehicle level."
+    },
+    {
+      "id": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#workshop",
+      "label": "workshop",
+      "kind": "Property",
+      "preferredName": "Workshop",
+      "description": "Groups workshop-related properties"
+    },
+    {
+      "id": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#ecuList",
+      "label": "ecuList",
+      "kind": "Property",
+      "preferredName": "ECU list",
+      "description": "List of ECUs that had an entry in its internal failure memory during the diagnostic session"
+    },
+    {
+      "id": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#procedures",
+      "label": "procedures",
+      "kind": "Property",
+      "preferredName": "Procedures",
+      "description": "List of procedures / sub-procedures."
+    },
+    {
+      "id": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#selectionCriteria",
+      "label": "selectionCriteria",
+      "kind": "Property",
+      "preferredName": "Selection criteria",
+      "description": "Describes the selection criteria a Catena-X data provider has applied to create this data set."
+    },
+    {
+      "id": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#selectionStart",
+      "label": "selectionStart",
+      "kind": "Property",
+      "preferredName": "Selection start",
+      "description": "Describes the starting point for providing records in this data set."
+    },
+    {
+      "id": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#selectionEnd",
+      "label": "selectionEnd",
+      "kind": "Property",
+      "preferredName": "Selection end",
+      "description": "Describes the end point for providing records in this data set."
+    },
+    {
+      "id": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#workShopId",
+      "label": "workShopId",
+      "kind": "Property",
+      "preferredName": "OEM Workshop ID",
+      "description": "OEM-specific identifier for a workshop."
+    },
+    {
+      "id": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#latitude",
+      "label": "latitude",
+      "kind": "Property",
+      "preferredName": "Latitude",
+      "description": "Latitude property for GPS coordinates."
+    },
+    {
+      "id": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#longitude",
+      "label": "longitude",
+      "kind": "Property",
+      "preferredName": "Longitude",
+      "description": "Longitude property for GPS coordinates."
+    },
+    {
+      "id": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#oemSerialNumber",
+      "label": "oemSerialNumber",
+      "kind": "Property",
+      "preferredName": "OEM serial number",
+      "description": "Serial part number of the original equipment manufacturer (OEM). Typically the OEM is installing the part in the car. A serial part number is unique for every single part."
+    },
+    {
+      "id": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#assemblyPartNumberVersion",
+      "label": "assemblyPartNumberVersion",
+      "kind": "Property",
+      "preferredName": "ECU assembly part number version",
+      "description": "OEM-specific ecu assembly version"
+    },
+    {
+      "id": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#catenaXPartId",
+      "label": "catenaXPartId",
+      "kind": "Property",
+      "preferredName": "Catena-X Identifier of this part",
+      "description": "The fully anonymous and unique Catena-X ID of this part. This id is unique inside Catena-X data space."
+    },
+    {
+      "id": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#calibrationVersion",
+      "label": "calibrationVersion",
+      "kind": "Property",
+      "preferredName": "Calibration version",
+      "description": "Calibration version that was put on this ecu. A calibration file works like a parameter file for the ecu software."
+    },
+    {
+      "id": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#hwPartNumber",
+      "label": "hwPartNumber",
+      "kind": "Property",
+      "preferredName": "ECU HW part number",
+      "description": "hardware part number of ECU"
+    },
+    {
+      "id": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#hwVersion",
+      "label": "hwVersion",
+      "kind": "Property",
+      "preferredName": "ECU HW version",
+      "description": "hardware version of ECU"
+    },
+    {
+      "id": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#oemPartName",
+      "label": "oemPartName",
+      "kind": "Property",
+      "preferredName": "Oem part name",
+      "description": "Part name as defined by the original equipment manufacturer (OEM). Typically the OEM is installing the part in the car."
+    },
+    {
+      "id": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#oemPartNumber",
+      "label": "oemPartNumber",
+      "kind": "Property",
+      "preferredName": "OEM part number",
+      "description": "Part number of the original equipment manufacturer (OEM). Typically the OEM is installing the part in the car. A part number is NOT unique: All parts of the same kind share the same part number."
+    },
+    {
+      "id": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#readOutDate",
+      "label": "readOutDate",
+      "kind": "Property",
+      "preferredName": "Read out date",
+      "description": "Date when this ECU information was read out from the diagnostic session"
+    },
+    {
+      "id": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#swPartNumber",
+      "label": "swPartNumber",
+      "kind": "Property",
+      "preferredName": "ECU SW part number",
+      "description": "SW part number of this ecu"
+    },
+    {
+      "id": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#swVersion",
+      "label": "swVersion",
+      "kind": "Property",
+      "preferredName": "ECU SW version",
+      "description": "current version of the software on this ecu"
+    },
+    {
+      "id": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#variantCoding",
+      "label": "variantCoding",
+      "kind": "Property",
+      "preferredName": "Variant coding",
+      "description": "Variant coding that was put on this ecu. Variant coding tells the ecus software how to behave."
+    },
+    {
+      "id": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#dtcs",
+      "label": "dtcs",
+      "kind": "Property",
+      "preferredName": null,
+      "description": "list of diagnostic trouble codes"
+    },
+    {
+      "id": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#procedureID",
+      "label": "procedureID",
+      "kind": "Property",
+      "preferredName": "Procedure identifier",
+      "description": "A unique identifier for this procedure/sub-procedure call"
+    },
+    {
+      "id": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#procedureDescription",
+      "label": "procedureDescription",
+      "kind": "Property",
+      "preferredName": "Procedure Description",
+      "description": "An optional description for this procedure"
+    },
+    {
+      "id": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#procedureEnd",
+      "label": "procedureEnd",
+      "kind": "Property",
+      "preferredName": "Procedure end",
+      "description": "End date and time for this procedure call."
+    },
+    {
+      "id": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#procedureStart",
+      "label": "procedureStart",
+      "kind": "Property",
+      "preferredName": "Procedure start",
+      "description": "Start date and time for this procedure call."
+    },
+    {
+      "id": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#procedureResult",
+      "label": "procedureResult",
+      "kind": "Property",
+      "preferredName": "Procedure result",
+      "description": "Result of the procedure"
+    },
+    {
+      "id": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#subProcedures",
+      "label": "subProcedures",
+      "kind": "Property",
+      "preferredName": "Sub procedures",
+      "description": "A list of sub-procedures"
+    },
+    {
+      "id": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#dtcHexValue",
+      "label": "dtcHexValue",
+      "kind": "Property",
+      "preferredName": "Hex",
+      "description": "Hex value of this DTC"
+    },
+    {
+      "id": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#faultPath",
+      "label": "faultPath",
+      "kind": "Property",
+      "preferredName": "DTC fault path",
+      "description": "OEM-specific: Fault path for this DTC. Allows further analysis"
+    },
+    {
+      "id": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#faultPathDescription",
+      "label": "faultPathDescription",
+      "kind": "Property",
+      "preferredName": "DTC fault path description",
+      "description": "OEM-specific description of DTC fault path"
+    },
+    {
+      "id": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#freezeFrame",
+      "label": "freezeFrame",
+      "kind": "Property",
+      "preferredName": "DTC freeze frame",
+      "description": "freeze frame from ecu. The freeze frame records many parameters of the DTC and surrounding parameters like outside temperature when the DTC was set. It is a very long HEX string with many OEM-specific and ECU-specific content in"
+    },
+    {
+      "id": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#fullDescription",
+      "label": "fullDescription",
+      "kind": "Property",
+      "preferredName": "DTC description",
+      "description": "description of DTC and failure byte. Both description strings are concatenated using a \"-\" as separator"
+    },
+    {
+      "id": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#fullName",
+      "label": "fullName",
+      "kind": "Property",
+      "preferredName": "DTC full name:",
+      "description": "Combined string of DTC name  plus the so called DTC sub type or DTC failure byte. DTC name starts with B|C|P|U + 4 hex chars + separator \"-\" + DTC failure byte: 2 hex chars. As this only applies for standardized DTCs there is no enforcement. "
+    },
+    {
+      "id": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#isMilOn",
+      "label": "isMilOn",
+      "kind": "Property",
+      "preferredName": "Is MIL On",
+      "description": "describes whether this DTC set the MIL (malfunction indicator light)  in the dashboard"
+    },
+    {
+      "id": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#occurenceCounterTotal",
+      "label": "occurenceCounterTotal",
+      "kind": "Property",
+      "preferredName": "Occurence counter",
+      "description": "Counter how often this DTC was set in total"
+    },
+    {
+      "id": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#occurenceMileage",
+      "label": "occurenceMileage",
+      "kind": "Property",
+      "preferredName": "DTC first occurence mileage",
+      "description": "mileage in km when the DTC occurred the first time "
+    },
+    {
+      "id": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#occurenceTimeStamp",
+      "label": "occurenceTimeStamp",
+      "kind": "Property",
+      "preferredName": "DTC first occurence",
+      "description": "date and time when the DTC occured the first time/was recorded the first time in the ECU"
+    },
+    {
+      "id": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#state",
+      "label": "state",
+      "kind": "Property",
+      "preferredName": "DTC state",
+      "description": "OEM-specific state of DTC: 0;1 (permanent/temporary/intermediate), could also be a string with permanent, temporary, intermediate, ...."
+    },
+    {
+      "id": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#type",
+      "label": "type",
+      "kind": "Property",
+      "preferredName": "Type",
+      "description": "Indicator whether this DTC was stored as Error or Info"
+    },
+    {
+      "id": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#envConditionList",
+      "label": "envConditionList",
+      "kind": "Property",
+      "preferredName": "Environment Conditions",
+      "description": "A list of environment conditions: E.g. outside temperature measured by the vehicle, a specific value measured by on ECU, ...."
+    },
+    {
+      "id": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#conditionId",
+      "label": "conditionId",
+      "kind": "Property",
+      "preferredName": "Id",
+      "description": "OEM-specific: Primary key for this condition consists of unique identifier of env. condition and DTC"
+    },
+    {
+      "id": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#conditionCreationTimeStamp",
+      "label": "conditionCreationTimeStamp",
+      "kind": "Property",
+      "preferredName": "Condition Creation Timestamp",
+      "description": "Date and time when this condition/information was created."
+    },
+    {
+      "id": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#conditionDescription",
+      "label": "conditionDescription",
+      "kind": "Property",
+      "preferredName": "Description",
+      "description": "The description of the environment condition/information"
+    },
+    {
+      "id": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#conditionValue",
+      "label": "conditionValue",
+      "kind": "Property",
+      "preferredName": "Value",
+      "description": "The numeric value of the condition as double."
+    },
+    {
+      "id": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#measurementUnit",
+      "label": "measurementUnit",
+      "kind": "Property",
+      "preferredName": "DTC fault path",
+      "description": "The unit of measurement for the environment condition value."
+    },
+    {
+      "id": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#SessionList",
+      "label": "SessionList",
+      "kind": "Characteristic",
+      "preferredName": "Diagnostic sessions",
+      "description": "A list of diagnostic sessions coming from multiple vehicles."
+    },
+    {
+      "id": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#EcuList",
+      "label": "EcuList",
+      "kind": "Characteristic",
+      "preferredName": "ECU List",
+      "description": "A list of electronic control units in this diagnostic session."
+    },
+    {
+      "id": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#ProcedureList",
+      "label": "ProcedureList",
+      "kind": "Characteristic",
+      "preferredName": "Procedures",
+      "description": "A list of procedure calls in the diagnostic software."
+    },
+    {
+      "id": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#DTCList",
+      "label": "DTCList",
+      "kind": "Characteristic",
+      "preferredName": "DTC List",
+      "description": "A list of DTCs that are present in this diagnostic session."
+    },
+    {
+      "id": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#SubProceduresList",
+      "label": "SubProceduresList",
+      "kind": "Characteristic",
+      "preferredName": "List of sub-procedures",
+      "description": "A list of sub-procedures"
+    },
+    {
+      "id": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#EnvironmentConditions",
+      "label": "EnvironmentConditions",
+      "kind": "Characteristic",
+      "preferredName": "Environment Conditions",
+      "description": "A list of environment conditions, like surrounding temperature, rpm, ..."
+    },
+    {
+      "id": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#MetaCharacteristic",
+      "label": "MetaCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "MetaCharacteristic",
+      "description": "Characteristic for the meta information."
+    },
+    {
+      "id": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#UniqueID",
+      "label": "UniqueID",
+      "kind": "Characteristic",
+      "preferredName": "unique ID",
+      "description": "This Characteristic describes a property that is truly unque either inside the Company that is providing the data or even in Catena-X dataspace. Only one property in a semantic entity should be a uniqueID. Unique ids can be used to link a data set with other semantic models."
+    },
+    {
+      "id": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#WorkshopCharacteristic",
+      "label": "WorkshopCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Workshop properties",
+      "description": "Groups all workshop properties."
+    },
+    {
+      "id": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#CountryCodeCharacteristic",
+      "label": "CountryCodeCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Country Code Characteristic",
+      "description": "ISO 3166-1 alpha-3 – three-letter country codes "
+    },
+    {
+      "id": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#Float",
+      "label": "Float",
+      "kind": "Characteristic",
+      "preferredName": "Float",
+      "description": "Characteristic of a float value."
+    },
+    {
+      "id": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#Long",
+      "label": "Long",
+      "kind": "Characteristic",
+      "preferredName": "Long",
+      "description": "Characteristic for a long value."
+    },
+    {
+      "id": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#HexCodeCharacteristic",
+      "label": "HexCodeCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Hex code characteristic",
+      "description": "Describing a hex code: 0-9, a-f, A-F, optional 0x"
+    },
+    {
+      "id": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#DiagnosticSession",
+      "label": "DiagnosticSession",
+      "kind": "Entity",
+      "preferredName": "Diagnostic Session",
+      "description": "One diagnostic session of one vehicle: Either this is a diagnostic session done in a workshop or via over-the-air diagnostic."
+    },
+    {
+      "id": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#MetaInformation",
+      "label": "MetaInformation",
+      "kind": "Entity",
+      "preferredName": "Meta Information",
+      "description": "This entity groups all meta information properties. Meta information properties give hints for a Catena-X data consumer to better understand, how this data set was created on the Catena-X data provider side."
+    },
+    {
+      "id": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#WorkshopProperties",
+      "label": "WorkshopProperties",
+      "kind": "Entity",
+      "preferredName": "Workshop Properties",
+      "description": "All properties to clearly identify a workshop."
+    },
+    {
+      "id": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#ECU",
+      "label": "ECU",
+      "kind": "Entity",
+      "preferredName": "ECU",
+      "description": "A single ECU that is present/has a DTC set in the diagnostic session"
+    },
+    {
+      "id": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#ProcedureCall",
+      "label": "ProcedureCall",
+      "kind": "Entity",
+      "preferredName": "Procedure Call",
+      "description": "One procedure call in the diagnostic software."
+    },
+    {
+      "id": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#DiagnosticTroubleCode",
+      "label": "DiagnosticTroubleCode",
+      "kind": "Entity",
+      "preferredName": "DTC",
+      "description": "diagnostic trouble codes or short DTCs are used inside ECUs to monitor failures. They were introduced for measuring vehicle emissions. Major DTCs for emissions are standardized by ISO standard ISO 15031-6:2015 - so called OBD2 standard. Over time DTCs were also introduced in other ECUs also besides engine and emission control. Many DTCs are vehicle manufacturer specific.\n"
+    },
+    {
+      "id": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#EnvironmentCondition",
+      "label": "EnvironmentCondition",
+      "kind": "Entity",
+      "preferredName": "Environment Condition",
+      "description": "One environment condition like temperature, rpm,...\nIf the environment condition was measured on vehicle level -> ecuSerialPartNumber is empty"
+    },
+    {
+      "id": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#RecordStatusEnumeration",
+      "label": "RecordStatusEnumeration",
+      "kind": "Characteristic",
+      "preferredName": "Record status enumeration",
+      "description": "Defining the enumeration for the record status"
+    },
+    {
+      "id": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#ProcedureResultCharacterisitc",
+      "label": "ProcedureResultCharacterisitc",
+      "kind": "Characteristic",
+      "preferredName": "Procedure Result Characterisitc",
+      "description": "Characteristic for procedure results."
+    },
+    {
+      "id": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#TypeEnumumeration",
+      "label": "TypeEnumumeration",
+      "kind": "Characteristic",
+      "preferredName": "Type enumeration",
+      "description": "Enumeration for a DTC."
+    },
+    {
+      "id": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#CountryCodeTrait",
+      "label": "CountryCodeTrait",
+      "kind": "Characteristic",
+      "preferredName": "Production Country Code Trait",
+      "description": "Trait to ensure standard data format for country code"
+    },
+    {
+      "id": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#LatitudeTrait",
+      "label": "LatitudeTrait",
+      "kind": "Characteristic",
+      "preferredName": "Latitude Trait",
+      "description": "Trait to define the latitude."
+    },
+    {
+      "id": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#LongitudeTrait",
+      "label": "LongitudeTrait",
+      "kind": "Characteristic",
+      "preferredName": "Longitude Trait",
+      "description": "Trait to define the longitude."
+    },
+    {
+      "id": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#HexValueTrait",
+      "label": "HexValueTrait",
+      "kind": "Characteristic",
+      "preferredName": "Hex Value Trait",
+      "description": "This trait allows 0-9, a-f, A-F in a string value. Optional prefix is \"0x\"."
+    },
+    {
+      "id": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#MileageCounter",
+      "label": "MileageCounter",
+      "kind": "Characteristic",
+      "preferredName": "Mileage",
+      "description": "The mileage counter of the car."
+    },
+    {
+      "id": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#CountryCodeRegularExpression",
+      "label": "CountryCodeRegularExpression",
+      "kind": "Characteristic",
+      "preferredName": "Country Code Regular Expression",
+      "description": "Regular Expression that ensures a three-letter code "
+    },
+    {
+      "id": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#HexRegularExpression",
+      "label": "HexRegularExpression",
+      "kind": "Characteristic",
+      "preferredName": "Hex regular expression",
+      "description": "This regular expression enforces a hex string. It ensures 0-9, a-f, A-F with an optional prefix 0x.\nValid examples:\n- 0x0123456789abcdefABCDEF\n- 0123456789abcdefABCDEF\n"
+    },
+    {
+      "id": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#ConstraintLatitude",
+      "label": "ConstraintLatitude",
+      "kind": "Characteristic",
+      "preferredName": null,
+      "description": null
+    },
+    {
+      "id": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#ConstraintLongitude",
+      "label": "ConstraintLongitude",
+      "kind": "Characteristic",
+      "preferredName": null,
+      "description": null
+    },
+    {
+      "id": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#Double",
+      "label": "Double",
+      "kind": "Characteristic",
+      "preferredName": "Double",
+      "description": "A double value"
+    }
+  ],
+  "links": [
+    {
+      "source": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#DiagnosticData",
+      "target": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#diagnosticSessions",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#DiagnosticData",
+      "target": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#metaInformation",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#DiagnosticSession",
+      "target": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#recordStatus",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#DiagnosticSession",
+      "target": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#sessionId",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#DiagnosticSession",
+      "target": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#anonymizedVIN",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#DiagnosticSession",
+      "target": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#catenaXQualityTaskId",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#DiagnosticSession",
+      "target": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#catenaXVehicleId",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#DiagnosticSession",
+      "target": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#countryCode",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#DiagnosticSession",
+      "target": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#diagnosticSoftwareName",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#DiagnosticSession",
+      "target": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#diagnosticSoftwareVersion",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#DiagnosticSession",
+      "target": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#mileage",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#DiagnosticSession",
+      "target": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#sessionEnd",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#DiagnosticSession",
+      "target": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#sessionStart",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#DiagnosticSession",
+      "target": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#vehicleSoftwareCategory",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#DiagnosticSession",
+      "target": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#vehicleSoftwareVersion",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#DiagnosticSession",
+      "target": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#workshop",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#DiagnosticSession",
+      "target": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#ecuList",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#DiagnosticSession",
+      "target": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#procedures",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#MetaInformation",
+      "target": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#selectionCriteria",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#MetaInformation",
+      "target": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#selectionStart",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#MetaInformation",
+      "target": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#selectionEnd",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#WorkshopProperties",
+      "target": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#workShopId",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#WorkshopProperties",
+      "target": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#latitude",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#WorkshopProperties",
+      "target": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#longitude",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#ECU",
+      "target": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#oemSerialNumber",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#ECU",
+      "target": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#assemblyPartNumberVersion",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#ECU",
+      "target": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#catenaXPartId",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#ECU",
+      "target": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#calibrationVersion",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#ECU",
+      "target": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#hwPartNumber",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#ECU",
+      "target": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#hwVersion",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#ECU",
+      "target": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#oemPartName",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#ECU",
+      "target": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#oemPartNumber",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#ECU",
+      "target": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#readOutDate",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#ECU",
+      "target": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#swPartNumber",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#ECU",
+      "target": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#swVersion",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#ECU",
+      "target": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#variantCoding",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#ECU",
+      "target": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#dtcs",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#ProcedureCall",
+      "target": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#procedureID",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#ProcedureCall",
+      "target": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#procedureDescription",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#ProcedureCall",
+      "target": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#procedureDescription",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#ProcedureCall",
+      "target": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#procedureEnd",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#ProcedureCall",
+      "target": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#procedureStart",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#ProcedureCall",
+      "target": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#procedureResult",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#ProcedureCall",
+      "target": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#ecuList",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#ProcedureCall",
+      "target": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#subProcedures",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#DiagnosticTroubleCode",
+      "target": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#dtcHexValue",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#DiagnosticTroubleCode",
+      "target": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#faultPath",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#DiagnosticTroubleCode",
+      "target": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#faultPathDescription",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#DiagnosticTroubleCode",
+      "target": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#freezeFrame",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#DiagnosticTroubleCode",
+      "target": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#fullDescription",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#DiagnosticTroubleCode",
+      "target": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#fullName",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#DiagnosticTroubleCode",
+      "target": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#isMilOn",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#DiagnosticTroubleCode",
+      "target": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#occurenceCounterTotal",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#DiagnosticTroubleCode",
+      "target": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#occurenceMileage",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#DiagnosticTroubleCode",
+      "target": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#occurenceTimeStamp",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#DiagnosticTroubleCode",
+      "target": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#state",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#DiagnosticTroubleCode",
+      "target": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#type",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#DiagnosticTroubleCode",
+      "target": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#envConditionList",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#EnvironmentCondition",
+      "target": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#conditionId",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#EnvironmentCondition",
+      "target": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#conditionCreationTimeStamp",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#EnvironmentCondition",
+      "target": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#conditionDescription",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#EnvironmentCondition",
+      "target": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#conditionValue",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#EnvironmentCondition",
+      "target": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#measurementUnit",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#diagnosticSessions",
+      "target": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#SessionList",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#metaInformation",
+      "target": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#MetaCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#recordStatus",
+      "target": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#RecordStatusEnumeration",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#sessionId",
+      "target": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#UniqueID",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#anonymizedVIN",
+      "target": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#UniqueID",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#workShopId",
+      "target": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#UniqueID",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#oemSerialNumber",
+      "target": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#UniqueID",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#procedureID",
+      "target": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#UniqueID",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#conditionId",
+      "target": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#UniqueID",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#countryCode",
+      "target": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#CountryCodeTrait",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#mileage",
+      "target": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#MileageCounter",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#occurenceMileage",
+      "target": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#MileageCounter",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#workshop",
+      "target": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#WorkshopCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#ecuList",
+      "target": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#EcuList",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#procedures",
+      "target": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#ProcedureList",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#latitude",
+      "target": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#LatitudeTrait",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#longitude",
+      "target": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#LongitudeTrait",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#dtcs",
+      "target": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#DTCList",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#procedureResult",
+      "target": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#ProcedureResultCharacterisitc",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#subProcedures",
+      "target": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#SubProceduresList",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#dtcHexValue",
+      "target": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#HexValueTrait",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#freezeFrame",
+      "target": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#HexValueTrait",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#occurenceCounterTotal",
+      "target": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#Long",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#type",
+      "target": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#TypeEnumumeration",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#envConditionList",
+      "target": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#EnvironmentConditions",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#conditionValue",
+      "target": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#Double",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#SessionList",
+      "target": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#DiagnosticSession",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#MetaCharacteristic",
+      "target": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#MetaInformation",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#WorkshopCharacteristic",
+      "target": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#WorkshopProperties",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#EcuList",
+      "target": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#ECU",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#ProcedureList",
+      "target": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#ProcedureCall",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#SubProceduresList",
+      "target": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#ProcedureCall",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#DTCList",
+      "target": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#DiagnosticTroubleCode",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#EnvironmentConditions",
+      "target": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#EnvironmentCondition",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#CountryCodeTrait",
+      "target": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#CountryCodeRegularExpression",
+      "label": "constraint",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#LatitudeTrait",
+      "target": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#ConstraintLatitude",
+      "label": "constraint",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#LongitudeTrait",
+      "target": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#ConstraintLongitude",
+      "label": "constraint",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#HexValueTrait",
+      "target": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#HexRegularExpression",
+      "label": "constraint",
+      "optional": false
+    }
+  ]
+}

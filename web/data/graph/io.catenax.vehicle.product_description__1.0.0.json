@@ -1,0 +1,435 @@
+{
+  "meta": {
+    "namespace": "urn:bamm:io.catenax.vehicle.product_description:1.0.0#",
+    "meta_model": "BAMM 1.0.0",
+    "model_family": "BAMM",
+    "model_name": "vehicle.product_description",
+    "model_version": "1.0.0",
+    "source": "catenax",
+    "status": "deprecated",
+    "release_date": "2022-03-30",
+    "release_notes": "# Changelog\nAll notable changes to this model will be documented in this file.\n\n## [Unreleased]\n\n## [3.0.0] - 2023-06-26\n### Added\nModel in version 3.0.0 updated to SAMM version 2.0.0\n- model now uses SAMM 2.0\n- linkage between entities changed: Vehicle entity is now root, enties OEM, Body,Equipment, Production, Sale, Engines and Fuel are children of Vehicle\n\n\n## [2.0.0] - 2022-12-13\n### Added\nThe new aspect model enhances the version 1.0.0 with\n- model now uses BAMM 2.0\n- model now uses entites OEM, Vehicle, Body, Equipment, Production, Sale, Engine and Fuel to group similar properties\n- current mileage is removed from aspect model (was available in 1.x.x): The aspect model presents the vehicle when it was handed over to the end-customer\n\n## [1.0.0] - 2022-03-30\n### Added\n- initial version of model\n\n### Changed\nn/a\n\n### Removed",
+    "dependencies": [],
+    "path": "data/sldt-semantic-models/io.catenax.vehicle.product_description/1.0.0/ProductDescription.ttl"
+  },
+  "nodes": [
+    {
+      "id": "urn:bamm:io.catenax.vehicle.product_description:1.0.0#productionDateGMT",
+      "label": "productionDateGMT",
+      "kind": "Property",
+      "preferredName": "production Date GMT",
+      "description": "the production data in GMT time zone"
+    },
+    {
+      "id": "urn:bamm:io.catenax.vehicle.product_description:1.0.0#engine",
+      "label": "engine",
+      "kind": "Property",
+      "preferredName": "engine",
+      "description": "engine of the vehicle"
+    },
+    {
+      "id": "urn:bamm:io.catenax.vehicle.product_description:1.0.0#size",
+      "label": "size",
+      "kind": "Property",
+      "preferredName": "size",
+      "description": "size of the engine in cubic capacity"
+    },
+    {
+      "id": "urn:bamm:io.catenax.vehicle.product_description:1.0.0#power",
+      "label": "power",
+      "kind": "Property",
+      "preferredName": "power",
+      "description": "engine power is the power that an engine can put out"
+    },
+    {
+      "id": "urn:bamm:io.catenax.vehicle.product_description:1.0.0#mileage",
+      "label": "mileage",
+      "kind": "Property",
+      "preferredName": "mileage",
+      "description": "mileage of the vehicle"
+    },
+    {
+      "id": "urn:bamm:io.catenax.vehicle.product_description:1.0.0#mileageDistance",
+      "label": "mileageDistance",
+      "kind": "Property",
+      "preferredName": "mileage distance",
+      "description": "distance the vehicle has travelled"
+    },
+    {
+      "id": "urn:bamm:io.catenax.vehicle.product_description:1.0.0#mileagePhase",
+      "label": "mileagePhase",
+      "kind": "Property",
+      "preferredName": "mileage phase",
+      "description": "Lifecycle phase in which the mileage was measured."
+    },
+    {
+      "id": "urn:bamm:io.catenax.vehicle.product_description:1.0.0#mileageTimestamp",
+      "label": "mileageTimestamp",
+      "kind": "Property",
+      "preferredName": "mileage timestamp",
+      "description": "timestamp when the mileage was measured"
+    },
+    {
+      "id": "urn:bamm:io.catenax.vehicle.product_description:1.0.0#fuel",
+      "label": "fuel",
+      "kind": "Property",
+      "preferredName": "fuel",
+      "description": "the fuel type of the vehicle"
+    },
+    {
+      "id": "urn:bamm:io.catenax.vehicle.product_description:1.0.0#emptyWeight",
+      "label": "emptyWeight",
+      "kind": "Property",
+      "preferredName": "empty weight",
+      "description": "The empty weight of the vehicle in kg as specified. For motor vehicles of class M1 registered up to December 31, 1996: Empty weight according to vehicle registration certificate or registration certificate Part I minus weight of tank contents at 90 percent filling. For motor vehicles of category M1 registered on or after January 1, 1997: Empty weight according to vehicle registration certificate or registration certificate Part I minus weight of tank contents at 90 percent filling and minus weight of driver (75 kg). For motor vehicles of class N1: empty weight according to the vehicle registration document or registration certificate Part I minus the weight of the tank contents with a 90 percent filling and minus the weight of the driver (75 kg)."
+    },
+    {
+      "id": "urn:bamm:io.catenax.vehicle.product_description:1.0.0#code",
+      "label": "code",
+      "kind": "Property",
+      "preferredName": "code",
+      "description": "The equipment variants code"
+    },
+    {
+      "id": "urn:bamm:io.catenax.vehicle.product_description:1.0.0#description",
+      "label": "description",
+      "kind": "Property",
+      "preferredName": "description",
+      "description": "The equipment variants description"
+    },
+    {
+      "id": "urn:bamm:io.catenax.vehicle.product_description:1.0.0#group",
+      "label": "group",
+      "kind": "Property",
+      "preferredName": "group",
+      "description": "The equipment variants group"
+    },
+    {
+      "id": "urn:bamm:io.catenax.vehicle.product_description:1.0.0#equipmentVariants",
+      "label": "equipmentVariants",
+      "kind": "Property",
+      "preferredName": "equipment variants",
+      "description": "equipment variants which are build into a specific vehicle"
+    },
+    {
+      "id": "urn:bamm:io.catenax.vehicle.product_description:1.0.0#bodyVariant",
+      "label": "bodyVariant",
+      "kind": "Property",
+      "preferredName": "body variant",
+      "description": "vehicle variant - Body shapes: Sedan, station wagon, hatchback, coupe, convertible, SUV, pickup, Doka (double cab), etc. Also special models that may differ from the basic shapes (e.g. BMW M-series, Audi S-series, Long version, right-hand drive, special vehicles (armor). etc. )."
+    },
+    {
+      "id": "urn:bamm:io.catenax.vehicle.product_description:1.0.0#vehicleModel",
+      "label": "vehicleModel",
+      "kind": "Property",
+      "preferredName": "vehicle model",
+      "description": "base model / basic vehicle type"
+    },
+    {
+      "id": "urn:bamm:io.catenax.vehicle.product_description:1.0.0#anonymisedIdentifier",
+      "label": "anonymisedIdentifier",
+      "kind": "Property",
+      "preferredName": "anonymisedIdentifier",
+      "description": "anonymised IdentifierVehicle. Can be an anonymised number converted from a VIN"
+    },
+    {
+      "id": "urn:bamm:io.catenax.vehicle.product_description:1.0.0#DateTimestamp",
+      "label": "DateTimestamp",
+      "kind": "Characteristic",
+      "preferredName": "Date Timestamp",
+      "description": "Characteristic to describe a time stamp"
+    },
+    {
+      "id": "urn:bamm:io.catenax.vehicle.product_description:1.0.0#EngineCharacteristic",
+      "label": "EngineCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Engine Characteristic",
+      "description": "Characteristic to describe the more specific details of the engine"
+    },
+    {
+      "id": "urn:bamm:io.catenax.vehicle.product_description:1.0.0#EngineEntity",
+      "label": "EngineEntity",
+      "kind": "Entity",
+      "preferredName": "Engine Entity",
+      "description": "Engine with power and cubic size"
+    },
+    {
+      "id": "urn:bamm:io.catenax.vehicle.product_description:1.0.0#MileageEntity",
+      "label": "MileageEntity",
+      "kind": "Entity",
+      "preferredName": "mileage entity",
+      "description": "definition of mileage attributes"
+    },
+    {
+      "id": "urn:bamm:io.catenax.vehicle.product_description:1.0.0#EquipmentVariantEntity",
+      "label": "EquipmentVariantEntity",
+      "kind": "Entity",
+      "preferredName": "Variant Entity",
+      "description": "describes different vehicle equipment variants"
+    },
+    {
+      "id": "urn:bamm:io.catenax.vehicle.product_description:1.0.0#CubicCapacity",
+      "label": "CubicCapacity",
+      "kind": "Characteristic",
+      "preferredName": "Cubic Capacity",
+      "description": "cubic capacity of the engine"
+    },
+    {
+      "id": "urn:bamm:io.catenax.vehicle.product_description:1.0.0#EnginePower",
+      "label": "EnginePower",
+      "kind": "Characteristic",
+      "preferredName": "Engine Power",
+      "description": "engine power expressed in kilowatt"
+    },
+    {
+      "id": "urn:bamm:io.catenax.vehicle.product_description:1.0.0#Distance",
+      "label": "Distance",
+      "kind": "Characteristic",
+      "preferredName": "Distance",
+      "description": "distance in kilometre"
+    },
+    {
+      "id": "urn:bamm:io.catenax.vehicle.product_description:1.0.0#Weight",
+      "label": "Weight",
+      "kind": "Characteristic",
+      "preferredName": "Weight",
+      "description": "weight of an object"
+    },
+    {
+      "id": "urn:bamm:io.catenax.vehicle.product_description:1.0.0#MileageCharacteristic",
+      "label": "MileageCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "MileageCharacteristic",
+      "description": "definition of mileage of a vehicle"
+    },
+    {
+      "id": "urn:bamm:io.catenax.vehicle.product_description:1.0.0#EquipmentVariantCharacteristic",
+      "label": "EquipmentVariantCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "equipment characteristic",
+      "description": "Characteristic to describe a set of equipment codes identified by a code, group and description. The list will undergo further standardization in upcoming versions."
+    },
+    {
+      "id": "urn:bamm:io.catenax.vehicle.product_description:1.0.0#LifecyclePhases",
+      "label": "LifecyclePhases",
+      "kind": "Characteristic",
+      "preferredName": "Lifecycle phases",
+      "description": "temporary definition of lifecycle phases as following in enumeration for: as specified by OEM, as built by OEM, as maintained by workshop, as recieved by dismantling"
+    },
+    {
+      "id": "urn:bamm:io.catenax.vehicle.product_description:1.0.0#FuelType",
+      "label": "FuelType",
+      "kind": "Characteristic",
+      "preferredName": "fuel type",
+      "description": "enumeration of possible fuel types of a vehicle"
+    },
+    {
+      "id": "urn:bamm:io.catenax.vehicle.product_description:1.0.0#KbaVariant",
+      "label": "KbaVariant",
+      "kind": "Characteristic",
+      "preferredName": "KBA Variant",
+      "description": "Current version of the Enumeration is sub-set of list defined from the German Federal Office for motor vehicles. "
+    },
+    {
+      "id": "urn:bamm:io.catenax.vehicle.product_description:1.0.0#ProductDescription",
+      "label": "ProductDescription",
+      "kind": "Aspect",
+      "preferredName": "Product Description",
+      "description": "vehicle specific data"
+    }
+  ],
+  "links": [
+    {
+      "source": "urn:bamm:io.catenax.vehicle.product_description:1.0.0#EngineEntity",
+      "target": "urn:bamm:io.catenax.vehicle.product_description:1.0.0#size",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.vehicle.product_description:1.0.0#EngineEntity",
+      "target": "urn:bamm:io.catenax.vehicle.product_description:1.0.0#power",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.vehicle.product_description:1.0.0#MileageEntity",
+      "target": "urn:bamm:io.catenax.vehicle.product_description:1.0.0#mileageDistance",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.vehicle.product_description:1.0.0#MileageEntity",
+      "target": "urn:bamm:io.catenax.vehicle.product_description:1.0.0#mileagePhase",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.vehicle.product_description:1.0.0#MileageEntity",
+      "target": "urn:bamm:io.catenax.vehicle.product_description:1.0.0#mileageTimestamp",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.vehicle.product_description:1.0.0#EquipmentVariantEntity",
+      "target": "urn:bamm:io.catenax.vehicle.product_description:1.0.0#code",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.vehicle.product_description:1.0.0#EquipmentVariantEntity",
+      "target": "urn:bamm:io.catenax.vehicle.product_description:1.0.0#description",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.vehicle.product_description:1.0.0#EquipmentVariantEntity",
+      "target": "urn:bamm:io.catenax.vehicle.product_description:1.0.0#group",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:bamm:io.catenax.vehicle.product_description:1.0.0#ProductDescription",
+      "target": "urn:bamm:io.catenax.vehicle.product_description:1.0.0#equipmentVariants",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.vehicle.product_description:1.0.0#ProductDescription",
+      "target": "urn:bamm:io.catenax.vehicle.product_description:1.0.0#productionDateGMT",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.vehicle.product_description:1.0.0#ProductDescription",
+      "target": "urn:bamm:io.catenax.vehicle.product_description:1.0.0#engine",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.vehicle.product_description:1.0.0#ProductDescription",
+      "target": "urn:bamm:io.catenax.vehicle.product_description:1.0.0#mileage",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.vehicle.product_description:1.0.0#ProductDescription",
+      "target": "urn:bamm:io.catenax.vehicle.product_description:1.0.0#fuel",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.vehicle.product_description:1.0.0#ProductDescription",
+      "target": "urn:bamm:io.catenax.vehicle.product_description:1.0.0#emptyWeight",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.vehicle.product_description:1.0.0#ProductDescription",
+      "target": "urn:bamm:io.catenax.vehicle.product_description:1.0.0#vehicleModel",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.vehicle.product_description:1.0.0#ProductDescription",
+      "target": "urn:bamm:io.catenax.vehicle.product_description:1.0.0#bodyVariant",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.vehicle.product_description:1.0.0#ProductDescription",
+      "target": "urn:bamm:io.catenax.vehicle.product_description:1.0.0#anonymisedIdentifier",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.vehicle.product_description:1.0.0#productionDateGMT",
+      "target": "urn:bamm:io.catenax.vehicle.product_description:1.0.0#DateTimestamp",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.vehicle.product_description:1.0.0#mileageTimestamp",
+      "target": "urn:bamm:io.catenax.vehicle.product_description:1.0.0#DateTimestamp",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.vehicle.product_description:1.0.0#engine",
+      "target": "urn:bamm:io.catenax.vehicle.product_description:1.0.0#EngineCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.vehicle.product_description:1.0.0#size",
+      "target": "urn:bamm:io.catenax.vehicle.product_description:1.0.0#CubicCapacity",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.vehicle.product_description:1.0.0#power",
+      "target": "urn:bamm:io.catenax.vehicle.product_description:1.0.0#EnginePower",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.vehicle.product_description:1.0.0#mileage",
+      "target": "urn:bamm:io.catenax.vehicle.product_description:1.0.0#MileageCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.vehicle.product_description:1.0.0#mileageDistance",
+      "target": "urn:bamm:io.catenax.vehicle.product_description:1.0.0#Distance",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.vehicle.product_description:1.0.0#mileagePhase",
+      "target": "urn:bamm:io.catenax.vehicle.product_description:1.0.0#LifecyclePhases",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.vehicle.product_description:1.0.0#fuel",
+      "target": "urn:bamm:io.catenax.vehicle.product_description:1.0.0#FuelType",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.vehicle.product_description:1.0.0#emptyWeight",
+      "target": "urn:bamm:io.catenax.vehicle.product_description:1.0.0#Weight",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.vehicle.product_description:1.0.0#equipmentVariants",
+      "target": "urn:bamm:io.catenax.vehicle.product_description:1.0.0#EquipmentVariantCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.vehicle.product_description:1.0.0#bodyVariant",
+      "target": "urn:bamm:io.catenax.vehicle.product_description:1.0.0#KbaVariant",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.vehicle.product_description:1.0.0#EngineCharacteristic",
+      "target": "urn:bamm:io.catenax.vehicle.product_description:1.0.0#EngineEntity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.vehicle.product_description:1.0.0#MileageCharacteristic",
+      "target": "urn:bamm:io.catenax.vehicle.product_description:1.0.0#MileageEntity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.vehicle.product_description:1.0.0#EquipmentVariantCharacteristic",
+      "target": "urn:bamm:io.catenax.vehicle.product_description:1.0.0#EquipmentVariantEntity",
+      "label": "dataType",
+      "optional": false
+    }
+  ]
+}

@@ -1,0 +1,614 @@
+{
+  "meta": {
+    "namespace": "urn:samm:io.catenax.shared.quantity:1.0.0#",
+    "meta_model": "SAMM 2.0.0",
+    "model_family": "SAMM",
+    "model_name": "shared.quantity",
+    "model_version": "1.0.0",
+    "source": "catenax",
+    "status": "deprecated",
+    "release_date": null,
+    "release_notes": "# Changelog\n\nAll notable changes to this model will be documented in this file.\n\n## [3.0.0] 26.03\n\n### Added\n\n- added unit:mile to LinearUnitEnumeration\n\n### Changed\n\n### Removed\n\n- removed Aspect to make the model a shared model and not an aspect model anymore\n\n## [2.0.0] 2024-01-30\n\n### Added\n\nn/a\n\n### Changed\n\n- updated example from quantityValue from 20.5 to 20.0 to not run into semantically wrong examples (e.g. 20.5 pieces)\n- increased SAMM version from 2.0.0 to 2.1.0\n\n### Removed\n\nn/a\n\n## [1.0.0] 2023-10-23\n\n### Added\n\n- initial model created\n\n### Changed\n\nn/a\n\n### Removed\n\nn/a",
+    "dependencies": [],
+    "path": "data/sldt-semantic-models/io.catenax.shared.quantity/1.0.0/Quantity.ttl"
+  },
+  "nodes": [
+    {
+      "id": "urn:samm:io.catenax.shared.quantity:1.0.0#Quantity",
+      "label": "Quantity",
+      "kind": "Aspect",
+      "preferredName": "Quantity with Unit of Measure",
+      "description": "The aspect may be reused whenever any kind of Quantity and / or unit of measure is used. One can use all defined units via the item unit or differentiate via mass, miscellaneous, countable, linear, area and volume units."
+    },
+    {
+      "id": "urn:samm:io.catenax.shared.quantity:1.0.0#massProperty",
+      "label": "massProperty",
+      "kind": "Property",
+      "preferredName": "Mass related property",
+      "description": "This property defines unit and value for mass related properties."
+    },
+    {
+      "id": "urn:samm:io.catenax.shared.quantity:1.0.0#linearProperty",
+      "label": "linearProperty",
+      "kind": "Property",
+      "preferredName": "Linear property",
+      "description": "This property defines unit and value for linear properties."
+    },
+    {
+      "id": "urn:samm:io.catenax.shared.quantity:1.0.0#areaProperty",
+      "label": "areaProperty",
+      "kind": "Property",
+      "preferredName": "Area related property",
+      "description": "This property defines unit and value for area related properties."
+    },
+    {
+      "id": "urn:samm:io.catenax.shared.quantity:1.0.0#volumeProperty",
+      "label": "volumeProperty",
+      "kind": "Property",
+      "preferredName": "Volume related property",
+      "description": "This property defines unit and value for volume related properties."
+    },
+    {
+      "id": "urn:samm:io.catenax.shared.quantity:1.0.0#countProperty",
+      "label": "countProperty",
+      "kind": "Property",
+      "preferredName": "Countable property",
+      "description": "This property defines unit and value for countable properties."
+    },
+    {
+      "id": "urn:samm:io.catenax.shared.quantity:1.0.0#timeProperty",
+      "label": "timeProperty",
+      "kind": "Property",
+      "preferredName": "Time related property",
+      "description": "This property defines unit and value for time related properties."
+    },
+    {
+      "id": "urn:samm:io.catenax.shared.quantity:1.0.0#miscProperty",
+      "label": "miscProperty",
+      "kind": "Property",
+      "preferredName": "Miscellaneous unit property",
+      "description": "This property defines unit and value for miscellaneous properties."
+    },
+    {
+      "id": "urn:samm:io.catenax.shared.quantity:1.0.0#itemQuantityProperty",
+      "label": "itemQuantityProperty",
+      "kind": "Property",
+      "preferredName": "Item Quantity property",
+      "description": "This property defines common units and the value for items. Items may be measured as mass, countable, miscellaneous, linear, area or volume."
+    },
+    {
+      "id": "urn:samm:io.catenax.shared.quantity:1.0.0#quantityValue",
+      "label": "quantityValue",
+      "kind": "Property",
+      "preferredName": "Quantity Value",
+      "description": "The quantity value associated with the unit."
+    },
+    {
+      "id": "urn:samm:io.catenax.shared.quantity:1.0.0#massUnit",
+      "label": "massUnit",
+      "kind": "Property",
+      "preferredName": "Mass Unit",
+      "description": "The unit of a mass related attribute."
+    },
+    {
+      "id": "urn:samm:io.catenax.shared.quantity:1.0.0#linearUnit",
+      "label": "linearUnit",
+      "kind": "Property",
+      "preferredName": "Linear Unit",
+      "description": "The unit of a linear attribute."
+    },
+    {
+      "id": "urn:samm:io.catenax.shared.quantity:1.0.0#areaUnit",
+      "label": "areaUnit",
+      "kind": "Property",
+      "preferredName": "Area Unit",
+      "description": "The unit of a area related attribute."
+    },
+    {
+      "id": "urn:samm:io.catenax.shared.quantity:1.0.0#volumeUnit",
+      "label": "volumeUnit",
+      "kind": "Property",
+      "preferredName": "Volume Unit",
+      "description": "The unit of a volume related attribute."
+    },
+    {
+      "id": "urn:samm:io.catenax.shared.quantity:1.0.0#countUnit",
+      "label": "countUnit",
+      "kind": "Property",
+      "preferredName": "Count Unit",
+      "description": "The unit of a countable attribute."
+    },
+    {
+      "id": "urn:samm:io.catenax.shared.quantity:1.0.0#timeUnit",
+      "label": "timeUnit",
+      "kind": "Property",
+      "preferredName": "Time Unit",
+      "description": "The unit of a time attribute."
+    },
+    {
+      "id": "urn:samm:io.catenax.shared.quantity:1.0.0#miscUnit",
+      "label": "miscUnit",
+      "kind": "Property",
+      "preferredName": "Misc Unit",
+      "description": "The unit of a miscellaneous attribute."
+    },
+    {
+      "id": "urn:samm:io.catenax.shared.quantity:1.0.0#itemUnit",
+      "label": "itemUnit",
+      "kind": "Property",
+      "preferredName": "Item Unit",
+      "description": "The unit of an item. Common units may be related to mass, count, linear, area, volume or misc."
+    },
+    {
+      "id": "urn:samm:io.catenax.shared.quantity:1.0.0#MassCharacteristic",
+      "label": "MassCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Mass Characteristic",
+      "description": "Characteristic for mass measurements of an item."
+    },
+    {
+      "id": "urn:samm:io.catenax.shared.quantity:1.0.0#LinearCharacteristic",
+      "label": "LinearCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Linear Characteristic",
+      "description": "Characteristic for linear measurements of an item."
+    },
+    {
+      "id": "urn:samm:io.catenax.shared.quantity:1.0.0#AreaCharacteristic",
+      "label": "AreaCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Area Characteristic",
+      "description": "Characteristic for area measurements of an item."
+    },
+    {
+      "id": "urn:samm:io.catenax.shared.quantity:1.0.0#VolumeCharacteristic",
+      "label": "VolumeCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Volume Characteristic",
+      "description": "Characteristic for volume measurements of an item."
+    },
+    {
+      "id": "urn:samm:io.catenax.shared.quantity:1.0.0#CountQuantityCharacteristic",
+      "label": "CountQuantityCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Count Quantity Characteristic",
+      "description": "Characteristic for countable measurements of an item."
+    },
+    {
+      "id": "urn:samm:io.catenax.shared.quantity:1.0.0#TimeCharacteristic",
+      "label": "TimeCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Time Characteristic",
+      "description": "Characteristic for time measurements of an item."
+    },
+    {
+      "id": "urn:samm:io.catenax.shared.quantity:1.0.0#MiscQuantityCharacteristic",
+      "label": "MiscQuantityCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Miscellaneous Quantity Characteristic",
+      "description": "Characteristic for miscellaneous measurements of an item."
+    },
+    {
+      "id": "urn:samm:io.catenax.shared.quantity:1.0.0#ItemQuantityCharacteristic",
+      "label": "ItemQuantityCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Item Quantity Characteristic",
+      "description": "Characteristic for measurements of an item (mass, count, linear, area, volume, misc)."
+    },
+    {
+      "id": "urn:samm:io.catenax.shared.quantity:1.0.0#QuantityValueCharacteristic",
+      "label": "QuantityValueCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Quantity Value Characteristic",
+      "description": "The quantity value associated with the unit expressed as float."
+    },
+    {
+      "id": "urn:samm:io.catenax.shared.quantity:1.0.0#MassEntity",
+      "label": "MassEntity",
+      "kind": "Entity",
+      "preferredName": "Mass Entity",
+      "description": "Entity for mass measurements of an item with an unit and value."
+    },
+    {
+      "id": "urn:samm:io.catenax.shared.quantity:1.0.0#LinearEntity",
+      "label": "LinearEntity",
+      "kind": "Entity",
+      "preferredName": "Linear Entity",
+      "description": "Entity for linear measurements of an item with an unit and value."
+    },
+    {
+      "id": "urn:samm:io.catenax.shared.quantity:1.0.0#AreaEntity",
+      "label": "AreaEntity",
+      "kind": "Entity",
+      "preferredName": "Area Entity",
+      "description": "Entity for area measurements of an item with an unit and value."
+    },
+    {
+      "id": "urn:samm:io.catenax.shared.quantity:1.0.0#VolumeEntity",
+      "label": "VolumeEntity",
+      "kind": "Entity",
+      "preferredName": "Volume Entity",
+      "description": "Entity for volume measurements of an item with an unit and value."
+    },
+    {
+      "id": "urn:samm:io.catenax.shared.quantity:1.0.0#ItemQuantityEntity",
+      "label": "ItemQuantityEntity",
+      "kind": "Entity",
+      "preferredName": "Item Quantity Entity",
+      "description": "Entity for common measurements of an item (mass, count, linear, area, volume, misc) with an unit and a value."
+    },
+    {
+      "id": "urn:samm:io.catenax.shared.quantity:1.0.0#CountQuantityEntity",
+      "label": "CountQuantityEntity",
+      "kind": "Entity",
+      "preferredName": "Count Quantity Entity",
+      "description": "Entity for countable measurements of an item with an unit and a value."
+    },
+    {
+      "id": "urn:samm:io.catenax.shared.quantity:1.0.0#TimeEntity",
+      "label": "TimeEntity",
+      "kind": "Entity",
+      "preferredName": "Time Entity",
+      "description": "Entity for time measurements of an item with an unit and a value."
+    },
+    {
+      "id": "urn:samm:io.catenax.shared.quantity:1.0.0#MiscQuantityEntity",
+      "label": "MiscQuantityEntity",
+      "kind": "Entity",
+      "preferredName": "Miscellaneous Quantity Entity",
+      "description": "Entity for miscellaneous measurements of an item with an unit and a value."
+    },
+    {
+      "id": "urn:samm:io.catenax.shared.quantity:1.0.0#MassUnitEnumeration",
+      "label": "MassUnitEnumeration",
+      "kind": "Characteristic",
+      "preferredName": "Mass Unit Enumeration",
+      "description": "Enumeration for mass units."
+    },
+    {
+      "id": "urn:samm:io.catenax.shared.quantity:1.0.0#LinearUnitEnumeration",
+      "label": "LinearUnitEnumeration",
+      "kind": "Characteristic",
+      "preferredName": "Linear Unit Enumeration",
+      "description": "The unit of a linear attribute that may be used for height, width, length and diameter."
+    },
+    {
+      "id": "urn:samm:io.catenax.shared.quantity:1.0.0#AreaUnitEnumeration",
+      "label": "AreaUnitEnumeration",
+      "kind": "Characteristic",
+      "preferredName": "Area Unit Enumeration",
+      "description": "The unit of an area attribute."
+    },
+    {
+      "id": "urn:samm:io.catenax.shared.quantity:1.0.0#VolumeUnitEnumeration",
+      "label": "VolumeUnitEnumeration",
+      "kind": "Characteristic",
+      "preferredName": "Volume Unit Enumeration",
+      "description": "Enumeration for volume units."
+    },
+    {
+      "id": "urn:samm:io.catenax.shared.quantity:1.0.0#CountUnitEnumeration",
+      "label": "CountUnitEnumeration",
+      "kind": "Characteristic",
+      "preferredName": "Count Unit Enumeration",
+      "description": "Enumeration for count units."
+    },
+    {
+      "id": "urn:samm:io.catenax.shared.quantity:1.0.0#TimeUnitEnumeration",
+      "label": "TimeUnitEnumeration",
+      "kind": "Characteristic",
+      "preferredName": "Time Unit Enumeration",
+      "description": "Enumeration for time units."
+    },
+    {
+      "id": "urn:samm:io.catenax.shared.quantity:1.0.0#MiscUnitEnumeration",
+      "label": "MiscUnitEnumeration",
+      "kind": "Characteristic",
+      "preferredName": "Count Unit Enumeration",
+      "description": "Enumeration for miscellaneous units."
+    },
+    {
+      "id": "urn:samm:io.catenax.shared.quantity:1.0.0#ItemUnitEnumeration",
+      "label": "ItemUnitEnumeration",
+      "kind": "Characteristic",
+      "preferredName": "Item Unit Enumeration",
+      "description": "Enumeration for common item units."
+    }
+  ],
+  "links": [
+    {
+      "source": "urn:samm:io.catenax.shared.quantity:1.0.0#Quantity",
+      "target": "urn:samm:io.catenax.shared.quantity:1.0.0#massProperty",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.shared.quantity:1.0.0#Quantity",
+      "target": "urn:samm:io.catenax.shared.quantity:1.0.0#linearProperty",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.shared.quantity:1.0.0#Quantity",
+      "target": "urn:samm:io.catenax.shared.quantity:1.0.0#areaProperty",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.shared.quantity:1.0.0#Quantity",
+      "target": "urn:samm:io.catenax.shared.quantity:1.0.0#volumeProperty",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.shared.quantity:1.0.0#Quantity",
+      "target": "urn:samm:io.catenax.shared.quantity:1.0.0#countProperty",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.shared.quantity:1.0.0#Quantity",
+      "target": "urn:samm:io.catenax.shared.quantity:1.0.0#timeProperty",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.shared.quantity:1.0.0#Quantity",
+      "target": "urn:samm:io.catenax.shared.quantity:1.0.0#miscProperty",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.shared.quantity:1.0.0#Quantity",
+      "target": "urn:samm:io.catenax.shared.quantity:1.0.0#itemQuantityProperty",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.shared.quantity:1.0.0#MassEntity",
+      "target": "urn:samm:io.catenax.shared.quantity:1.0.0#quantityValue",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.shared.quantity:1.0.0#MassEntity",
+      "target": "urn:samm:io.catenax.shared.quantity:1.0.0#massUnit",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.shared.quantity:1.0.0#LinearEntity",
+      "target": "urn:samm:io.catenax.shared.quantity:1.0.0#quantityValue",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.shared.quantity:1.0.0#LinearEntity",
+      "target": "urn:samm:io.catenax.shared.quantity:1.0.0#linearUnit",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.shared.quantity:1.0.0#AreaEntity",
+      "target": "urn:samm:io.catenax.shared.quantity:1.0.0#quantityValue",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.shared.quantity:1.0.0#AreaEntity",
+      "target": "urn:samm:io.catenax.shared.quantity:1.0.0#areaUnit",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.shared.quantity:1.0.0#VolumeEntity",
+      "target": "urn:samm:io.catenax.shared.quantity:1.0.0#quantityValue",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.shared.quantity:1.0.0#VolumeEntity",
+      "target": "urn:samm:io.catenax.shared.quantity:1.0.0#volumeUnit",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.shared.quantity:1.0.0#ItemQuantityEntity",
+      "target": "urn:samm:io.catenax.shared.quantity:1.0.0#quantityValue",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.shared.quantity:1.0.0#ItemQuantityEntity",
+      "target": "urn:samm:io.catenax.shared.quantity:1.0.0#itemUnit",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.shared.quantity:1.0.0#CountQuantityEntity",
+      "target": "urn:samm:io.catenax.shared.quantity:1.0.0#quantityValue",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.shared.quantity:1.0.0#CountQuantityEntity",
+      "target": "urn:samm:io.catenax.shared.quantity:1.0.0#countUnit",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.shared.quantity:1.0.0#TimeEntity",
+      "target": "urn:samm:io.catenax.shared.quantity:1.0.0#quantityValue",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.shared.quantity:1.0.0#TimeEntity",
+      "target": "urn:samm:io.catenax.shared.quantity:1.0.0#timeUnit",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.shared.quantity:1.0.0#MiscQuantityEntity",
+      "target": "urn:samm:io.catenax.shared.quantity:1.0.0#quantityValue",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.shared.quantity:1.0.0#MiscQuantityEntity",
+      "target": "urn:samm:io.catenax.shared.quantity:1.0.0#miscUnit",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.shared.quantity:1.0.0#massProperty",
+      "target": "urn:samm:io.catenax.shared.quantity:1.0.0#MassCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.shared.quantity:1.0.0#linearProperty",
+      "target": "urn:samm:io.catenax.shared.quantity:1.0.0#LinearCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.shared.quantity:1.0.0#areaProperty",
+      "target": "urn:samm:io.catenax.shared.quantity:1.0.0#AreaCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.shared.quantity:1.0.0#volumeProperty",
+      "target": "urn:samm:io.catenax.shared.quantity:1.0.0#VolumeCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.shared.quantity:1.0.0#countProperty",
+      "target": "urn:samm:io.catenax.shared.quantity:1.0.0#CountQuantityCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.shared.quantity:1.0.0#timeProperty",
+      "target": "urn:samm:io.catenax.shared.quantity:1.0.0#TimeCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.shared.quantity:1.0.0#miscProperty",
+      "target": "urn:samm:io.catenax.shared.quantity:1.0.0#MiscQuantityCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.shared.quantity:1.0.0#itemQuantityProperty",
+      "target": "urn:samm:io.catenax.shared.quantity:1.0.0#ItemQuantityCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.shared.quantity:1.0.0#quantityValue",
+      "target": "urn:samm:io.catenax.shared.quantity:1.0.0#QuantityValueCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.shared.quantity:1.0.0#massUnit",
+      "target": "urn:samm:io.catenax.shared.quantity:1.0.0#MassUnitEnumeration",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.shared.quantity:1.0.0#linearUnit",
+      "target": "urn:samm:io.catenax.shared.quantity:1.0.0#LinearUnitEnumeration",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.shared.quantity:1.0.0#areaUnit",
+      "target": "urn:samm:io.catenax.shared.quantity:1.0.0#AreaUnitEnumeration",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.shared.quantity:1.0.0#volumeUnit",
+      "target": "urn:samm:io.catenax.shared.quantity:1.0.0#VolumeUnitEnumeration",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.shared.quantity:1.0.0#countUnit",
+      "target": "urn:samm:io.catenax.shared.quantity:1.0.0#CountUnitEnumeration",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.shared.quantity:1.0.0#timeUnit",
+      "target": "urn:samm:io.catenax.shared.quantity:1.0.0#TimeUnitEnumeration",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.shared.quantity:1.0.0#miscUnit",
+      "target": "urn:samm:io.catenax.shared.quantity:1.0.0#MiscUnitEnumeration",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.shared.quantity:1.0.0#itemUnit",
+      "target": "urn:samm:io.catenax.shared.quantity:1.0.0#ItemUnitEnumeration",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.shared.quantity:1.0.0#MassCharacteristic",
+      "target": "urn:samm:io.catenax.shared.quantity:1.0.0#MassEntity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.shared.quantity:1.0.0#LinearCharacteristic",
+      "target": "urn:samm:io.catenax.shared.quantity:1.0.0#LinearEntity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.shared.quantity:1.0.0#AreaCharacteristic",
+      "target": "urn:samm:io.catenax.shared.quantity:1.0.0#AreaEntity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.shared.quantity:1.0.0#VolumeCharacteristic",
+      "target": "urn:samm:io.catenax.shared.quantity:1.0.0#VolumeEntity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.shared.quantity:1.0.0#CountQuantityCharacteristic",
+      "target": "urn:samm:io.catenax.shared.quantity:1.0.0#CountQuantityEntity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.shared.quantity:1.0.0#TimeCharacteristic",
+      "target": "urn:samm:io.catenax.shared.quantity:1.0.0#TimeEntity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.shared.quantity:1.0.0#MiscQuantityCharacteristic",
+      "target": "urn:samm:io.catenax.shared.quantity:1.0.0#MiscQuantityEntity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.shared.quantity:1.0.0#ItemQuantityCharacteristic",
+      "target": "urn:samm:io.catenax.shared.quantity:1.0.0#ItemQuantityEntity",
+      "label": "dataType",
+      "optional": false
+    }
+  ]
+}

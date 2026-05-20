@@ -1,0 +1,474 @@
+{
+  "meta": {
+    "namespace": "urn:samm:io.catenax.material_flow_scenario_request:1.0.0#",
+    "meta_model": "SAMM 2.0.0",
+    "model_family": "SAMM",
+    "model_name": "material_flow_scenario_request",
+    "model_version": "1.0.0",
+    "source": "catenax",
+    "status": "release",
+    "release_date": null,
+    "release_notes": "# Changelog\n\nAll notable changes to this model will be documented in this file.\n\n## [2.0.0] 2024-05-21\n\n- Instead of one scenario parameter we can now define a set of scenario parameters\n- Change scenario owner characteristic to BusinessPartnerSite\n\n## [1.0.0] 2023-10-23\n\n- initial version of the aspect model for Scenario Simulation Request",
+    "dependencies": [
+      {
+        "name": "material_flow_simulation_result",
+        "version": "2.0.0",
+        "family": "SAMM",
+        "source": "catenax"
+      }
+    ],
+    "path": "data/sldt-semantic-models/io.catenax.material_flow_scenario_request/1.0.0/MaterialFlowScenarioRequestAspect.ttl"
+  },
+  "nodes": [
+    {
+      "id": "urn:samm:io.catenax.material_flow_scenario_request:1.0.0#MaterialFlowScenarioRequestAspect",
+      "label": "MaterialFlowScenarioRequestAspect",
+      "kind": "Aspect",
+      "preferredName": "Material Flow Scenario Request Aspect",
+      "description": "Aspect model describing the Material Flow Scenario Request"
+    },
+    {
+      "id": "urn:samm:io.catenax.material_flow_scenario_request:1.0.0#materialFlowScenarioRequest",
+      "label": "materialFlowScenarioRequest",
+      "kind": "Property",
+      "preferredName": "materialFlowScenarioRequest",
+      "description": "Contains standardized attributes for the content of the Material Flow Scenario Request"
+    },
+    {
+      "id": "urn:samm:io.catenax.material_flow_scenario_request:1.0.0#scenarioHeader",
+      "label": "scenarioHeader",
+      "kind": "Property",
+      "preferredName": "scenarioHeader",
+      "description": "Required parameters for the scenario header"
+    },
+    {
+      "id": "urn:samm:io.catenax.material_flow_scenario_request:1.0.0#scenarioParameter",
+      "label": "scenarioParameter",
+      "kind": "Property",
+      "preferredName": "scenarioParameter",
+      "description": "Required parameters for the material flow scenario request"
+    },
+    {
+      "id": "urn:samm:io.catenax.material_flow_scenario_request:1.0.0#scenarioSimResults",
+      "label": "scenarioSimResults",
+      "kind": "Property",
+      "preferredName": "scenarioSimResults",
+      "description": "Simulation results of the scenario"
+    },
+    {
+      "id": "urn:samm:io.catenax.material_flow_scenario_request:1.0.0#scenarioId",
+      "label": "scenarioId",
+      "kind": "Property",
+      "preferredName": "scenarioId",
+      "description": "ID of scenario header"
+    },
+    {
+      "id": "urn:samm:io.catenax.material_flow_scenario_request:1.0.0#scenarioTitle",
+      "label": "scenarioTitle",
+      "kind": "Property",
+      "preferredName": "scenarioTitle",
+      "description": "Title of scenario"
+    },
+    {
+      "id": "urn:samm:io.catenax.material_flow_scenario_request:1.0.0#scenarioCreationTimestamp",
+      "label": "scenarioCreationTimestamp",
+      "kind": "Property",
+      "preferredName": "scenarioCreationTimestamp",
+      "description": "Date and Time of scenario creation"
+    },
+    {
+      "id": "urn:samm:io.catenax.material_flow_scenario_request:1.0.0#scenarioExpirationTimestamp",
+      "label": "scenarioExpirationTimestamp",
+      "kind": "Property",
+      "preferredName": "scenarioExpirationTimestamp",
+      "description": "Date and Time of validity expiration"
+    },
+    {
+      "id": "urn:samm:io.catenax.material_flow_scenario_request:1.0.0#scenarioOwner",
+      "label": "scenarioOwner",
+      "kind": "Property",
+      "preferredName": "scenarioOwner",
+      "description": "Owner of the simulation scenario"
+    },
+    {
+      "id": "urn:samm:io.catenax.material_flow_scenario_request:1.0.0#scenarioOwnerRole",
+      "label": "scenarioOwnerRole",
+      "kind": "Property",
+      "preferredName": "scenarioOwnerRole",
+      "description": "Role of the scenario owner"
+    },
+    {
+      "id": "urn:samm:io.catenax.material_flow_scenario_request:1.0.0#scenarioDescription",
+      "label": "scenarioDescription",
+      "kind": "Property",
+      "preferredName": "scenarioDescription",
+      "description": "Description of the scenario"
+    },
+    {
+      "id": "urn:samm:io.catenax.material_flow_scenario_request:1.0.0#parameterId",
+      "label": "parameterId",
+      "kind": "Property",
+      "preferredName": "parameterId",
+      "description": "Identifier of scenario parameter"
+    },
+    {
+      "id": "urn:samm:io.catenax.material_flow_scenario_request:1.0.0#parameterDeliveryDateInitial",
+      "label": "parameterDeliveryDateInitial",
+      "kind": "Property",
+      "preferredName": "parameterDeliveryDateInitial",
+      "description": "Delivery date initial (without scenario changes), optional, NULL when initially not set"
+    },
+    {
+      "id": "urn:samm:io.catenax.material_flow_scenario_request:1.0.0#parameterDeliveryDateUpdated",
+      "label": "parameterDeliveryDateUpdated",
+      "kind": "Property",
+      "preferredName": "parameterDeliveryDateUpdated",
+      "description": "Delivery date updated (with scenario changes)"
+    },
+    {
+      "id": "urn:samm:io.catenax.material_flow_scenario_request:1.0.0#parameterQuantityInitial",
+      "label": "parameterQuantityInitial",
+      "kind": "Property",
+      "preferredName": "parameterQuantityInitial",
+      "description": "Amount initial (without scenario changes), optional, NULL, when initially not set"
+    },
+    {
+      "id": "urn:samm:io.catenax.material_flow_scenario_request:1.0.0#parameterQuantityUpdated",
+      "label": "parameterQuantityUpdated",
+      "kind": "Property",
+      "preferredName": "parameterQuantityUpdated",
+      "description": "Amount updated (with scenario changes)"
+    },
+    {
+      "id": "urn:samm:io.catenax.material_flow_scenario_request:1.0.0#parameterOrderId",
+      "label": "parameterOrderId",
+      "kind": "Property",
+      "preferredName": "parameterOrderId",
+      "description": "ID of the order"
+    },
+    {
+      "id": "urn:samm:io.catenax.material_flow_scenario_request:1.0.0#parameterScenario",
+      "label": "parameterScenario",
+      "kind": "Property",
+      "preferredName": "parameterScenario",
+      "description": "Foreign key to scenario header"
+    },
+    {
+      "id": "urn:samm:io.catenax.material_flow_scenario_request:1.0.0#parameterComment",
+      "label": "parameterComment",
+      "kind": "Property",
+      "preferredName": "parameterComment",
+      "description": "Optional description of parameters"
+    },
+    {
+      "id": "urn:samm:io.catenax.material_flow_scenario_request:1.0.0#resultOwnId",
+      "label": "resultOwnId",
+      "kind": "Property",
+      "preferredName": "resultOwnId",
+      "description": "ID of scenario result own"
+    },
+    {
+      "id": "urn:samm:io.catenax.material_flow_scenario_request:1.0.0#resultOwnSimRunInitial",
+      "label": "resultOwnSimRunInitial",
+      "kind": "Property",
+      "preferredName": "resultOwnSimRunInitial",
+      "description": "Foreign key to simulation result based on initial parameters"
+    },
+    {
+      "id": "urn:samm:io.catenax.material_flow_scenario_request:1.0.0#resultOwnSimRunUpdated",
+      "label": "resultOwnSimRunUpdated",
+      "kind": "Property",
+      "preferredName": "resultOwnSimRunUpdated",
+      "description": "Foreign key to simulation result based on updated parameter (scenario)"
+    },
+    {
+      "id": "urn:samm:io.catenax.material_flow_scenario_request:1.0.0#MaterialFlowScenarioRequestCharacteristic",
+      "label": "MaterialFlowScenarioRequestCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Material Flow Scenario Request Characteristic",
+      "description": "Characteristic describing the aspect Material Flow Scenario Request"
+    },
+    {
+      "id": "urn:samm:io.catenax.material_flow_scenario_request:1.0.0#ScenarioHeaderCharacteristic",
+      "label": "ScenarioHeaderCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Scenario Header Characteristic",
+      "description": "Characteristic describing the parameter for a scenario header"
+    },
+    {
+      "id": "urn:samm:io.catenax.material_flow_scenario_request:1.0.0#ScenarioParameterCharacteristic",
+      "label": "ScenarioParameterCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Scenario Parameter Characteristic",
+      "description": "Characteristic describing the scenario parameter"
+    },
+    {
+      "id": "urn:samm:io.catenax.material_flow_scenario_request:1.0.0#ScenarioSimResultsCharacteristic",
+      "label": "ScenarioSimResultsCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Scenario Simulation Results Characteristic",
+      "description": "Characteristic for simulation results"
+    },
+    {
+      "id": "urn:samm:io.catenax.material_flow_scenario_request:1.0.0#QuantityCharacteristic",
+      "label": "QuantityCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Quantity Characteristic",
+      "description": "Describes a property which is a Float"
+    },
+    {
+      "id": "urn:samm:io.catenax.material_flow_scenario_request:1.0.0#SimResult",
+      "label": "SimResult",
+      "kind": "Characteristic",
+      "preferredName": "Sim Result",
+      "description": "Characteristic describing the property for a Material Flow Simulation Result"
+    },
+    {
+      "id": "urn:samm:io.catenax.material_flow_scenario_request:1.0.0#MaterialFlowScenarioRequest",
+      "label": "MaterialFlowScenarioRequest",
+      "kind": "Entity",
+      "preferredName": "Material Flow Scenario Request",
+      "description": "The Material Flow Scenario Request contains standardized attributes for exchanging scenario requests and the resulting simulation results between two OSIM Manager Instances"
+    },
+    {
+      "id": "urn:samm:io.catenax.material_flow_scenario_request:1.0.0#ScenarioHeader",
+      "label": "ScenarioHeader",
+      "kind": "Entity",
+      "preferredName": "Scenario Header",
+      "description": "Headers required for every exchange"
+    },
+    {
+      "id": "urn:samm:io.catenax.material_flow_scenario_request:1.0.0#ScenarioParameter",
+      "label": "ScenarioParameter",
+      "kind": "Entity",
+      "preferredName": "Scenario Parameter",
+      "description": "Parameters which are used to describe a material flow scenario request"
+    },
+    {
+      "id": "urn:samm:io.catenax.material_flow_scenario_request:1.0.0#ScenarioSimResults",
+      "label": "ScenarioSimResults",
+      "kind": "Entity",
+      "preferredName": "Scenario Simulation Results",
+      "description": "Attached to a scenario simulation results of the feedback requestor"
+    },
+    {
+      "id": "urn:samm:io.catenax.material_flow_scenario_request:1.0.0#ScenarioOwnerRoleCharacteristic",
+      "label": "ScenarioOwnerRoleCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Scenario Owner Role Characteristic",
+      "description": "Characteristic describing possible values for the role of the scenario owner"
+    }
+  ],
+  "links": [
+    {
+      "source": "urn:samm:io.catenax.material_flow_scenario_request:1.0.0#MaterialFlowScenarioRequestAspect",
+      "target": "urn:samm:io.catenax.material_flow_scenario_request:1.0.0#materialFlowScenarioRequest",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material_flow_scenario_request:1.0.0#MaterialFlowScenarioRequest",
+      "target": "urn:samm:io.catenax.material_flow_scenario_request:1.0.0#scenarioHeader",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material_flow_scenario_request:1.0.0#MaterialFlowScenarioRequest",
+      "target": "urn:samm:io.catenax.material_flow_scenario_request:1.0.0#scenarioParameter",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.material_flow_scenario_request:1.0.0#MaterialFlowScenarioRequest",
+      "target": "urn:samm:io.catenax.material_flow_scenario_request:1.0.0#scenarioSimResults",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material_flow_scenario_request:1.0.0#ScenarioHeader",
+      "target": "urn:samm:io.catenax.material_flow_scenario_request:1.0.0#scenarioId",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material_flow_scenario_request:1.0.0#ScenarioHeader",
+      "target": "urn:samm:io.catenax.material_flow_scenario_request:1.0.0#scenarioTitle",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material_flow_scenario_request:1.0.0#ScenarioHeader",
+      "target": "urn:samm:io.catenax.material_flow_scenario_request:1.0.0#scenarioCreationTimestamp",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material_flow_scenario_request:1.0.0#ScenarioHeader",
+      "target": "urn:samm:io.catenax.material_flow_scenario_request:1.0.0#scenarioExpirationTimestamp",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material_flow_scenario_request:1.0.0#ScenarioHeader",
+      "target": "urn:samm:io.catenax.material_flow_scenario_request:1.0.0#scenarioOwner",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material_flow_scenario_request:1.0.0#ScenarioHeader",
+      "target": "urn:samm:io.catenax.material_flow_scenario_request:1.0.0#scenarioOwnerRole",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material_flow_scenario_request:1.0.0#ScenarioHeader",
+      "target": "urn:samm:io.catenax.material_flow_scenario_request:1.0.0#scenarioDescription",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.material_flow_scenario_request:1.0.0#ScenarioParameter",
+      "target": "urn:samm:io.catenax.material_flow_scenario_request:1.0.0#parameterId",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material_flow_scenario_request:1.0.0#ScenarioParameter",
+      "target": "urn:samm:io.catenax.material_flow_scenario_request:1.0.0#parameterDeliveryDateInitial",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material_flow_scenario_request:1.0.0#ScenarioParameter",
+      "target": "urn:samm:io.catenax.material_flow_scenario_request:1.0.0#parameterDeliveryDateUpdated",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material_flow_scenario_request:1.0.0#ScenarioParameter",
+      "target": "urn:samm:io.catenax.material_flow_scenario_request:1.0.0#parameterQuantityInitial",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material_flow_scenario_request:1.0.0#ScenarioParameter",
+      "target": "urn:samm:io.catenax.material_flow_scenario_request:1.0.0#parameterQuantityUpdated",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material_flow_scenario_request:1.0.0#ScenarioParameter",
+      "target": "urn:samm:io.catenax.material_flow_scenario_request:1.0.0#parameterOrderId",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material_flow_scenario_request:1.0.0#ScenarioParameter",
+      "target": "urn:samm:io.catenax.material_flow_scenario_request:1.0.0#parameterScenario",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material_flow_scenario_request:1.0.0#ScenarioParameter",
+      "target": "urn:samm:io.catenax.material_flow_scenario_request:1.0.0#parameterComment",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material_flow_scenario_request:1.0.0#ScenarioSimResults",
+      "target": "urn:samm:io.catenax.material_flow_scenario_request:1.0.0#resultOwnId",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material_flow_scenario_request:1.0.0#ScenarioSimResults",
+      "target": "urn:samm:io.catenax.material_flow_scenario_request:1.0.0#resultOwnSimRunInitial",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.material_flow_scenario_request:1.0.0#ScenarioSimResults",
+      "target": "urn:samm:io.catenax.material_flow_scenario_request:1.0.0#resultOwnSimRunUpdated",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.material_flow_scenario_request:1.0.0#materialFlowScenarioRequest",
+      "target": "urn:samm:io.catenax.material_flow_scenario_request:1.0.0#MaterialFlowScenarioRequestCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material_flow_scenario_request:1.0.0#scenarioHeader",
+      "target": "urn:samm:io.catenax.material_flow_scenario_request:1.0.0#ScenarioHeaderCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material_flow_scenario_request:1.0.0#scenarioParameter",
+      "target": "urn:samm:io.catenax.material_flow_scenario_request:1.0.0#ScenarioParameterCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material_flow_scenario_request:1.0.0#scenarioSimResults",
+      "target": "urn:samm:io.catenax.material_flow_scenario_request:1.0.0#ScenarioSimResultsCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material_flow_scenario_request:1.0.0#scenarioOwnerRole",
+      "target": "urn:samm:io.catenax.material_flow_scenario_request:1.0.0#ScenarioOwnerRoleCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material_flow_scenario_request:1.0.0#parameterQuantityInitial",
+      "target": "urn:samm:io.catenax.material_flow_scenario_request:1.0.0#QuantityCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material_flow_scenario_request:1.0.0#parameterQuantityUpdated",
+      "target": "urn:samm:io.catenax.material_flow_scenario_request:1.0.0#QuantityCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material_flow_scenario_request:1.0.0#resultOwnSimRunInitial",
+      "target": "urn:samm:io.catenax.material_flow_scenario_request:1.0.0#SimResult",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material_flow_scenario_request:1.0.0#resultOwnSimRunUpdated",
+      "target": "urn:samm:io.catenax.material_flow_scenario_request:1.0.0#SimResult",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material_flow_scenario_request:1.0.0#MaterialFlowScenarioRequestCharacteristic",
+      "target": "urn:samm:io.catenax.material_flow_scenario_request:1.0.0#MaterialFlowScenarioRequest",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material_flow_scenario_request:1.0.0#ScenarioHeaderCharacteristic",
+      "target": "urn:samm:io.catenax.material_flow_scenario_request:1.0.0#ScenarioHeader",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material_flow_scenario_request:1.0.0#ScenarioParameterCharacteristic",
+      "target": "urn:samm:io.catenax.material_flow_scenario_request:1.0.0#ScenarioParameter",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material_flow_scenario_request:1.0.0#ScenarioSimResultsCharacteristic",
+      "target": "urn:samm:io.catenax.material_flow_scenario_request:1.0.0#ScenarioSimResults",
+      "label": "dataType",
+      "optional": false
+    }
+  ]
+}

@@ -184,8 +184,10 @@ ISSUE_TYPES = [
      "label": "Uses an older SAMM/BAMM meta-model version",
      "description": (
          "The model uses an older SAMM/BAMM meta-model version than the "
-         "newest one observed in the catalog. Consider migrating to the "
-         "current meta-model (e.g. SAMM 2.0.0 → 2.1.0).")},
+         "newest one observed in the SAME source (Catena-X and IDTA are "
+         "compared independently — they have their own migration cadence). "
+         "Consider migrating to the current meta-model (e.g. SAMM 2.0.0 → "
+         "2.1.0 inside Catena-X).")},
 
     # ---- Gouvernance documentaire (NEW) ------------------------------------
     {"id": "missing_release_notes", "severity": "warning",
@@ -205,7 +207,16 @@ ISSUE_TYPES = [
          "model+version. The Generated docs sub-tab will be empty.")},
 ]
 
-_ORG_PREFIXES = ("io.catenax.", "io.openmanufacturing.")
+# Préfixes d'org reconnus pour les modèles de catalogue (Catena-X + IDTA).
+# Utilisés pour : (i) filtrer les dossiers à scanner en FS et (ii) strip le
+# préfixe pour obtenir le `model_name` court. Le segment URN attendu côté
+# `namespace_mismatch` dépend de la source (voir `_EXPECTED_ORG_BY_SOURCE`).
+_ORG_PREFIXES = ("io.catenax.", "io.openmanufacturing.", "io.admin-shell.idta.")
+# Segment d'org à insérer dans l'URN attendu, par source.
+_EXPECTED_ORG_BY_SOURCE = {
+    "catenax": "io.catenax.",
+    "idta":    "io.admin-shell.idta.",
+}
 # Sous-dossiers d'un dossier modèle qui ne sont PAS des dossiers de version.
 _NOT_VERSION_DIRS = {"gen"}
 _SEMVER_RE = re.compile(r"^\d+\.\d+\.\d+$")
@@ -554,10 +565,12 @@ def _element_issues(model: ParsedModel) -> dict[str, list[dict]]:
 
 # ---- Issues fichiers (scan du clone amont) -------------------------------
 
-def _missing_files(models_dir: Path) -> dict[str, list[str]]:
+def _missing_files(models_dir: Path, source: str = "catenax") -> dict[str, list[str]]:
     """Scan disque : par clé `name@version`, fichiers manquants parmi
     `metadata.json` / `ttl`. Modèle sans aucun dossier de version -> clé
-    `name@` avec `version`. Jamais d'exception."""
+    `name@` avec `version`. `metadata.json` est attendu **uniquement** pour
+    `catenax` (IDTA n'a pas ce fichier par convention amont — ne pas le
+    flagger pour éviter ~80 faux positifs). Jamais d'exception."""
     out: dict[str, list[str]] = {}
     try:
         model_dirs = sorted(
@@ -568,6 +581,8 @@ def _missing_files(models_dir: Path) -> dict[str, list[str]]:
         logger.warning("Scan missing_files impossible (%s) : %s",
                         models_dir, exc)
         return out
+
+    expect_metadata = (source == "catenax")
 
     for mdir in model_dirs:
         name = _strip_org(mdir.name)
@@ -585,13 +600,13 @@ def _missing_files(models_dir: Path) -> dict[str, list[str]]:
                 names = set()
             has_ttl = any(n.endswith(".ttl") for n in names)
             has_meta = "metadata.json" in names
-            if not (has_ttl or has_meta):
+            if not (has_ttl or (expect_metadata and has_meta)):
                 continue
             version_dirs.append(d.name)
             miss = []
             if not has_ttl:
                 miss.append("ttl")
-            if not has_meta:
+            if expect_metadata and not has_meta:
                 miss.append("metadata.json")
             if miss:
                 out[_key(name, d.name)] = miss
@@ -627,21 +642,28 @@ def _non_semver_versions(models_dir: Path) -> list[tuple[str, str]]:
 
 # ---- Issues métadonnée (URN ↔ fichier, stem, méta-modèle, doc) ----------
 
-def _expected_urn_segment(name: str, version: str) -> str:
-    """Segment urn attendu pour `name@version` (sans famille ni `#`)."""
-    return f"io.catenax.{name}:{version}"
+def _expected_urn_segment(name: str, version: str, source: str = "catenax") -> str:
+    """Segment urn attendu pour `name@version` (sans famille ni `#`),
+    dépendant de la source (catenax -> `io.catenax.X:V`, idta ->
+    `io.admin-shell.idta.X:V`). Source inconnue -> on retombe sur catenax."""
+    org = _EXPECTED_ORG_BY_SOURCE.get(source, "io.catenax.")
+    return f"{org}{name}:{version}"
 
 
 def _model_level_issues(
-    models: list[ParsedModel], models_dir: Path
+    models: list[ParsedModel],
 ) -> dict[str, dict[str, dict]]:
     """Issues calculées par .ttl mais au niveau clé `name@version` :
     namespace_mismatch / stem_name_mismatch / meta_model_drift /
     missing_release_notes / missing_release_date / missing_gen_docs."""
     out: dict[str, dict[str, dict]] = {}
 
-    # Latest meta-model par famille (pour `meta_model_drift`).
-    latest_meta: dict[str, str] = {}
+    # Latest meta-model par (source, famille) — `meta_model_drift`. Calculé
+    # par source pour ne pas pénaliser Catena-X (SAMM 2.1.0) sous prétexte
+    # qu'IDTA est passé à SAMM 2.2.0 : les deux référentiels ont leur propre
+    # cadence de migration et le drift n'a de sens qu'à l'intérieur d'un
+    # même référentiel.
+    latest_meta: dict[tuple[str, str], str] = {}
     for m in models:
         if not m.meta_model:
             continue
@@ -650,17 +672,19 @@ def _model_level_issues(
             fam, ver = m.meta_model.split(" ", 1)
         except ValueError:
             continue
-        cur = latest_meta.get(fam)
+        key = (m.source, fam)
+        cur = latest_meta.get(key)
         if cur is None or _vkey(ver) > _vkey(cur):
-            latest_meta[fam] = ver
+            latest_meta[key] = ver
 
     for m in models:
         k = _key(m.model_name, m.model_version)
         bucket = out.setdefault(k, {})
 
         # namespace_mismatch : segment urn vs chemin disque.
-        # m.namespace ex. "urn:samm:io.catenax.batch:2.0.0#"
-        expected = _expected_urn_segment(m.model_name, m.model_version)
+        # m.namespace ex. "urn:samm:io.catenax.batch:2.0.0#" (catenax)
+        #                "urn:samm:io.admin-shell.idta.shared:3.1.0#" (idta)
+        expected = _expected_urn_segment(m.model_name, m.model_version, m.source)
         if expected not in (m.namespace or ""):
             bucket.setdefault("namespace_mismatch", {"count": 0, "detail": []})
             bucket["namespace_mismatch"]["detail"].append({
@@ -682,11 +706,12 @@ def _model_level_issues(
                 })
                 bucket["stem_name_mismatch"]["count"] += 1
 
-        # meta_model_drift : version SAMM/BAMM utilisée < dernière du catalogue.
+        # meta_model_drift : version SAMM/BAMM utilisée < dernière de la
+        # MÊME source (et famille). Catena-X et IDTA ont chacun leur "latest".
         if m.meta_model:
             try:
                 fam, ver = m.meta_model.split(" ", 1)
-                latest = latest_meta.get(fam)
+                latest = latest_meta.get((m.source, fam))
                 if latest and _vkey(ver) < _vkey(latest):
                     bucket["meta_model_drift"] = {
                         "count": 1,
@@ -724,18 +749,41 @@ def _model_level_issues(
 # ---- Assemblage ----------------------------------------------------------
 
 def build_issues(
-    models: list[ParsedModel], models_dir: Path, deps_out: dict
+    models: list[ParsedModel],
+    raw_models: list[ParsedModel],
+    dirs_by_source: list[tuple[Path, str]],
+    deps_out: dict,
 ) -> dict:
-    """Construit le dict `issues.json` complet."""
-    # Statut & famille par clé.
+    """Construit le dict `issues.json` complet.
+
+    Deux listes en entrée :
+      - `models`     : ParsedModel FUSIONNÉS (1 par modèle+version, cf.
+        `graph.merge_models`). Utilisés pour les checks-éléments (orphelins,
+        doc, naming, structure, `unused_property` — qui ne peut être correct
+        qu'à l'échelle du modèle complet) et pour le `_catalog_issues`.
+      - `raw_models` : ParsedModel BRUTS (1 par .ttl). Utilisés pour les
+        checks au niveau fichier : `namespace_mismatch`, `stem_name_mismatch`,
+        `meta_model_drift`, `missing_release_*`, `missing_gen_docs` — où
+        chaque `.ttl` est évalué individuellement (un dossier multi-`.ttl`
+        peut avoir des stems qui matchent l'Aspect porteur mais pas les
+        helpers `*_shared.ttl`, ce qui est correct).
+
+    `dirs_by_source` : liste de `(models_dir, source_key)` à scanner pour
+    les checks FS (missing_files, non_semver_version). Le tag de source
+    propagé aux issues conditionne aussi le préfixe URN attendu pour
+    `namespace_mismatch` (déduit par `m.source` sur chaque ParsedModel)."""
+    # Statut, famille, source par clé.
     status_by_key: dict[str, str] = {}
     family_by_key: dict[str, str] = {}
+    source_by_key: dict[str, str] = {}
     for m in models:
         k = _key(m.model_name, m.model_version)
         if k not in status_by_key or status_by_key[k] == "undefined":
             status_by_key[k] = m.status
         if not family_by_key.get(k):
             family_by_key[k] = m.model_family
+        if not source_by_key.get(k):
+            source_by_key[k] = m.source
 
     # On enrichit status_by_key avec les clés présentes dans deps_out qui ne
     # sont pas dans models (cas limite : un modèle parsé mais sans path normal)
@@ -761,34 +809,39 @@ def build_issues(
         for iid, payload in issues.items():
             add(k, iid, payload["count"], payload["detail"])
 
-    # 3) Issues éléments (orphelins + doc + struct), agrégées par clé,
-    #    union des `.ttl` du dossier de version.
-    elem_acc: dict[str, dict[str, list]] = {}
+    # 3) Issues éléments (orphelins + doc + struct), calculées sur le
+    #    ParsedModel FUSIONNÉ -> 1 entrée par modèle+version, pas de
+    #    faux positifs IDTA sur les Property du `_shared.ttl`.
     for m in models:
         k = _key(m.model_name, m.model_version)
-        per = _element_issues(m)
-        bucket = elem_acc.setdefault(k, {iid: [] for iid in per})
-        for iid, items in per.items():
-            bucket.setdefault(iid, []).extend(items)
-    for k, b in elem_acc.items():
-        for iid, items in b.items():
+        for iid, items in _element_issues(m).items():
             add(k, iid, len(items), items)
 
-    # 4) Fichiers manquants (scan disque).
-    for k, miss in _missing_files(models_dir).items():
-        add(k, "missing_files", len(miss), miss)
+    # 4) Fichiers manquants (scan disque, par source). On propage la source
+    #    du scan vers `source_by_key` pour les clés `name@` (modèles sans
+    #    aucun dossier de version, donc sans ParsedModel associé).
+    for d, src in dirs_by_source:
+        for k, miss in _missing_files(d, src).items():
+            source_by_key.setdefault(k, src)
+            add(k, "missing_files", len(miss), miss)
 
-    # 5) Versions non semver.
-    for name, vdir in _non_semver_versions(models_dir):
-        add(_key(name, vdir), "non_semver_version", 1, [vdir])
+    # 5) Versions non semver (par source).
+    for d, src in dirs_by_source:
+        for name, vdir in _non_semver_versions(d):
+            k = _key(name, vdir)
+            source_by_key.setdefault(k, src)
+            add(k, "non_semver_version", 1, [vdir])
 
-    # 6) Issues niveau modèle+version (URN / stem / meta-model drift / docs).
-    for k, issues in _model_level_issues(models, models_dir).items():
+    # 6) Issues niveau fichier (URN / stem / meta-model drift / docs).
+    #    Calculées sur la liste BRUTE : un fichier mal nommé du groupe est
+    #    encore flaggé individuellement (utile pour identifier le .ttl
+    #    fautif dans un dossier multi-fichiers).
+    for k, issues in _model_level_issues(raw_models).items():
         for iid, payload in issues.items():
             add(k, iid, payload["count"], payload["detail"])
 
-    # Sérialisation : on enrichit chaque clé avec name/version/family/status
-    # pour rendre issues.json autonome.
+    # Sérialisation : on enrichit chaque clé avec name/version/family/source/
+    # status pour rendre issues.json autonome.
     out_models: dict[str, dict] = {}
     for k in sorted(acc):
         at = k.rfind("@")
@@ -799,6 +852,7 @@ def build_issues(
             "name": name,
             "version": version,
             "family": family_by_key.get(k, ""),
+            "source": source_by_key.get(k, "unknown"),
             "status": status_by_key.get(k, "undefined"),
             "total": sum(v["count"] for v in issues.values()),
             "issues": issues,

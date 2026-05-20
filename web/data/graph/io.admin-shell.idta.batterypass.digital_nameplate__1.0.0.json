@@ -1,0 +1,51 @@
+{
+  "meta": {
+    "namespace": "urn:samm:io.admin-shell.idta.batterypass.digital_nameplate:1.0.0#",
+    "meta_model": "SAMM 2.2.0",
+    "model_family": "SAMM",
+    "model_name": "batterypass.digital_nameplate",
+    "model_version": "1.0.0",
+    "source": "idta",
+    "status": "undefined",
+    "release_date": null,
+    "release_notes": null,
+    "dependencies": [
+      {
+        "name": "contact_information",
+        "version": "1.0.0",
+        "family": "SAMM",
+        "source": "idta"
+      },
+      {
+        "name": "digital_nameplate",
+        "version": "3.0.0",
+        "family": "SAMM",
+        "source": "idta"
+      },
+      {
+        "name": "shared",
+        "version": "3.1.0",
+        "family": "SAMM",
+        "source": "idta"
+      }
+    ],
+    "path": "data/smt-semantic-models/io.admin-shell.idta.batterypass.digital_nameplate/1.0.0/AddressInformation_shared.ttl"
+  },
+  "nodes": [
+    {
+      "id": "urn:samm:io.admin-shell.idta.batterypass.digital_nameplate:1.0.0#addressInformation",
+      "label": "addressInformation",
+      "kind": "Property",
+      "preferredName": "Addresse des Herstellers",
+      "description": "The manufacturer information postal address, indicating a single contact point. Web address, if available; and web address, if available.\n\n DIN DKE Spec 99100 chapter reference: 6.1.2.3"
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.batterypass.digital_nameplate:1.0.0#BatteryStatusEnumeration",
+      "label": "BatteryStatusEnumeration",
+      "kind": "Characteristic",
+      "preferredName": null,
+      "description": "Lifecycle status of the battery. Status defined from a list, with the options suggested as follows: 'original', 'repurposed', 'reused', 'remanufactured', 'waste'\n\nEUBR: Annex XIII (4c)"
+    }
+  ],
+  "links": []
+}

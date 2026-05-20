@@ -1,0 +1,498 @@
+{
+  "meta": {
+    "namespace": "urn:samm:io.admin-shell.idta.carbon_footprint:1.0.0#",
+    "meta_model": "SAMM 2.2.0",
+    "model_family": "SAMM",
+    "model_name": "carbon_footprint",
+    "model_version": "1.0.0",
+    "source": "idta",
+    "status": "undefined",
+    "release_date": null,
+    "release_notes": null,
+    "dependencies": [
+      {
+        "name": "contact_information",
+        "version": "1.0.0",
+        "family": "SAMM",
+        "source": "idta"
+      },
+      {
+        "name": "pcf",
+        "version": "8.0.0",
+        "family": "SAMM",
+        "source": "catenax"
+      },
+      {
+        "name": "shared",
+        "version": "3.1.0",
+        "family": "SAMM",
+        "source": "idta"
+      }
+    ],
+    "path": "data/smt-semantic-models/io.admin-shell.idta.carbon_footprint/1.0.0/CarbonFootprint.ttl"
+  },
+  "nodes": [
+    {
+      "id": "urn:samm:io.admin-shell.idta.carbon_footprint:1.0.0#CarbonFootprint",
+      "label": "CarbonFootprint",
+      "kind": "Aspect",
+      "preferredName": "Carbon Footprint",
+      "description": "Provides the means to access the Carbon Footprint of the asset."
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.carbon_footprint:1.0.0#productCarbonFootprints",
+      "label": "productCarbonFootprints",
+      "kind": "Property",
+      "preferredName": "product carbon footprints",
+      "description": "(Set) Balance of greenhouse gas emissions along the entire life cycle of a product in a defined application and in relation to a defined unit of use."
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.carbon_footprint:1.0.0#expirationDate",
+      "label": "expirationDate",
+      "kind": "Property",
+      "preferredName": "expiration date",
+      "description": "End date up to which a study or data collection for calculating an ecological footprint is considered current and valid before an update or new calculation is required."
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.carbon_footprint:1.0.0#publicationDate",
+      "label": "publicationDate",
+      "kind": "Property",
+      "preferredName": "publication date",
+      "description": "Time at which something was first published or made available."
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.carbon_footprint:1.0.0#goodsHandoverAddress",
+      "label": "goodsHandoverAddress",
+      "kind": "Property",
+      "preferredName": "goods address hand-over",
+      "description": "Indicates the hand-over address of the goods transport."
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.carbon_footprint:1.0.0#explanatoryStatement",
+      "label": "explanatoryStatement",
+      "kind": "Property",
+      "preferredName": "explanatory statement",
+      "description": "Explanation required or provided to ensure that a footprint communication can be properly understood by a purchaser, potential purchaser, or user of the product."
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.carbon_footprint:1.0.0#lifeCyclePhases",
+      "label": "lifeCyclePhases",
+      "kind": "Property",
+      "preferredName": "life cycle phases",
+      "description": "Life cycle stages of the product according to the quantification requirements of the standard to which the PCF carbon footprint statement refers."
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.carbon_footprint:1.0.0#quantityOfMeasureForCalculation",
+      "label": "quantityOfMeasureForCalculation",
+      "kind": "Property",
+      "preferredName": "quantity of measure for calculation",
+      "description": "Provides the quantity number of pieces or mass or volume to compute the impact of climate change or product carbon footprint."
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.carbon_footprint:1.0.0#referenceImpactUnitForCalculation",
+      "label": "referenceImpactUnitForCalculation",
+      "kind": "Property",
+      "preferredName": "reference value for calculation",
+      "description": "Quantity unit of the product to which the PCF information on the CO2 footprint refers."
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.carbon_footprint:1.0.0#pcfCo2eq",
+      "label": "pcfCo2eq",
+      "kind": "Property",
+      "preferredName": "CO2 eq Climate Change",
+      "description": "Sum of all greenhouse gas emissions of a product according to the quantification requirements of the standard."
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.carbon_footprint:1.0.0#pcfCalculationMethods",
+      "label": "pcfCalculationMethods",
+      "kind": "Property",
+      "preferredName": "impact assessment method / calculation method",
+      "description": "Standards, methods for determining the greenhouse gas emissions of a product."
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.carbon_footprint:1.0.0#ProductCarbonFootprintSet",
+      "label": "ProductCarbonFootprintSet",
+      "kind": "Characteristic",
+      "preferredName": null,
+      "description": null
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.carbon_footprint:1.0.0#LifeCyclePhaseSet",
+      "label": "LifeCyclePhaseSet",
+      "kind": "Characteristic",
+      "preferredName": null,
+      "description": null
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.carbon_footprint:1.0.0#PcfCalculationMethodSet",
+      "label": "PcfCalculationMethodSet",
+      "kind": "Characteristic",
+      "preferredName": null,
+      "description": null
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.carbon_footprint:1.0.0#ProductCarbonFootprint",
+      "label": "ProductCarbonFootprint",
+      "kind": "Entity",
+      "preferredName": "carbon footprint of a product",
+      "description": "Balance of greenhouse gas emissions along the entire life cycle of a product in a defined application and in relation to a defined unit of use."
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.carbon_footprint:1.0.0#ContactAddressCharacteristic",
+      "label": "ContactAddressCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": null,
+      "description": null
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.carbon_footprint:1.0.0#QuantityOfMeasureForCalculationCharacteristic",
+      "label": "QuantityOfMeasureForCalculationCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": null,
+      "description": null
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.carbon_footprint:1.0.0#PcfCo2eqCharacteristic",
+      "label": "PcfCo2eqCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": null,
+      "description": null
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.carbon_footprint:1.0.0#PcfCalculationMethodCharacteristic",
+      "label": "PcfCalculationMethodCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Folgenabschätzungsmethode / Berechnungsmethode",
+      "description": "Standard, method for determining the greenhouse gas emissions of a product. Multiple standards can be listed in case these standards are all applied to the respective PCF calculation."
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.carbon_footprint:1.0.0#ProductOrSectorSpecificCarbonFootprintEntity",
+      "label": "ProductOrSectorSpecificCarbonFootprintEntity",
+      "kind": "Entity",
+      "preferredName": "product or sector specific carbon footprint",
+      "description": "Product Carbon Footprint, which is determined in accordance with sector or product group-specific rules or guidelines and covers the life cycle or parts of a product life cycle."
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.carbon_footprint:1.0.0#ProductOrSectorSpecificPcfInformationEntity",
+      "label": "ProductOrSectorSpecificPcfInformationEntity",
+      "kind": "Entity",
+      "preferredName": null,
+      "description": null
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.carbon_footprint:1.0.0#productOrSectorSpecificPcfInformation",
+      "label": "productOrSectorSpecificPcfInformation",
+      "kind": "Property",
+      "preferredName": "PCF information",
+      "description": "A section in which further content is listed according to the calculation method for the Product Carbon Footprint."
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.carbon_footprint:1.0.0#ProductOrSectorSpecificPcfInformationCharacteristic",
+      "label": "ProductOrSectorSpecificPcfInformationCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": null,
+      "description": null
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.carbon_footprint:1.0.0#productOrSectorSpecificCarbonFootprints",
+      "label": "productOrSectorSpecificCarbonFootprints",
+      "kind": "Property",
+      "preferredName": "product or sector specific carbon footprints",
+      "description": "Product carbon footprints, which are determined in accordance with sector or product group-specific rules or guidelines and cover the life cycle or parts of a product life cycle."
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.carbon_footprint:1.0.0#productOrSectorSpecificPcfCalculationMethods",
+      "label": "productOrSectorSpecificPcfCalculationMethods",
+      "kind": "Property",
+      "preferredName": "Folgenabschätzungsmethode / Berechnungsmethode",
+      "description": "Standard, method for determining the greenhouse gas emissions of a product. Multiple standards can be listed in case these standards are all applied to the respective PCF calculation."
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.carbon_footprint:1.0.0#productOrSectorSpecificRule",
+      "label": "productOrSectorSpecificRule",
+      "kind": "Property",
+      "preferredName": "product or sector specific rules",
+      "description": "Contains further information on the product-specific or sector-specific rules used to calculate the carbon footprint."
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.carbon_footprint:1.0.0#externalPcfApi",
+      "label": "externalPcfApi",
+      "kind": "Property",
+      "preferredName": "external API for PCF information",
+      "description": "An external service that provides carbon footprint information via an interface, allowing on-demand retrieval of this data when required."
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.carbon_footprint:1.0.0#pcfApiEndpoint",
+      "label": "pcfApiEndpoint",
+      "kind": "Property",
+      "preferredName": "endpoint",
+      "description": "Specific URL or address that can be used to retrieve data from external sources to calculate the carbon footprint of a product."
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.carbon_footprint:1.0.0#pcfApiQuery",
+      "label": "pcfApiQuery",
+      "kind": "Property",
+      "preferredName": "query",
+      "description": "Specific query that can be used to retrieve data from external sources to calculate the carbon footprint of a product."
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.carbon_footprint:1.0.0#pcfRuleOperator",
+      "label": "pcfRuleOperator",
+      "kind": "Property",
+      "preferredName": "operator of the PCF calculation method",
+      "description": "Organization that defines and implements specific instructions and methods for calculating and monitoring the carbon footprint of a product or sector."
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.carbon_footprint:1.0.0#pcfRuleName",
+      "label": "pcfRuleName",
+      "kind": "Property",
+      "preferredName": "name of the PCF calculation method",
+      "description": "Standard, method for determining the greenhouse gas emissions of a product."
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.carbon_footprint:1.0.0#pcfRuleVersion",
+      "label": "pcfRuleVersion",
+      "kind": "Property",
+      "preferredName": "version of the PCF calculation method",
+      "description": "Specific version or revision of the rule used to calculate the carbon footprint of a product."
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.carbon_footprint:1.0.0#pcfRuleOnlineReference",
+      "label": "pcfRuleOnlineReference",
+      "kind": "Property",
+      "preferredName": "online reference to the PCF calculation method",
+      "description": "Online PCF calculation methodology reference that provides detailed instructions and guidelines for calculating a product's carbon footprint."
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.carbon_footprint:1.0.0#ProductOrSectorSpecificCarbonFootprintSet",
+      "label": "ProductOrSectorSpecificCarbonFootprintSet",
+      "kind": "Characteristic",
+      "preferredName": null,
+      "description": null
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.carbon_footprint:1.0.0#ProductOrSectorSpecificRuleCharacteristic",
+      "label": "ProductOrSectorSpecificRuleCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": null,
+      "description": null
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.carbon_footprint:1.0.0#ProductOrSectorSpecificRuleEntity",
+      "label": "ProductOrSectorSpecificRuleEntity",
+      "kind": "Entity",
+      "preferredName": null,
+      "description": null
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.carbon_footprint:1.0.0#ExternalPcfApiEntity",
+      "label": "ExternalPcfApiEntity",
+      "kind": "Entity",
+      "preferredName": "external API for PCF information",
+      "description": "An external service that provides carbon footprint information via an interface, allowing on-demand retrieval of this data when required."
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.carbon_footprint:1.0.0#ExternalPcfApiCharacteristic",
+      "label": "ExternalPcfApiCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": null,
+      "description": null
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.carbon_footprint:1.0.0#LifeCyclePhaseEnum",
+      "label": "LifeCyclePhaseEnum",
+      "kind": "Characteristic",
+      "preferredName": "life cycle phases",
+      "description": null
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.carbon_footprint:1.0.0#ReferenceImpactUnitForCalculationEnum",
+      "label": "ReferenceImpactUnitForCalculationEnum",
+      "kind": "Characteristic",
+      "preferredName": "reference values for calculation",
+      "description": null
+    }
+  ],
+  "links": [
+    {
+      "source": "urn:samm:io.admin-shell.idta.carbon_footprint:1.0.0#ProductCarbonFootprint",
+      "target": "urn:samm:io.admin-shell.idta.carbon_footprint:1.0.0#pcfCalculationMethods",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.carbon_footprint:1.0.0#ProductCarbonFootprint",
+      "target": "urn:samm:io.admin-shell.idta.carbon_footprint:1.0.0#pcfCo2eq",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.carbon_footprint:1.0.0#ProductCarbonFootprint",
+      "target": "urn:samm:io.admin-shell.idta.carbon_footprint:1.0.0#referenceImpactUnitForCalculation",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.carbon_footprint:1.0.0#ProductCarbonFootprint",
+      "target": "urn:samm:io.admin-shell.idta.carbon_footprint:1.0.0#quantityOfMeasureForCalculation",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.carbon_footprint:1.0.0#ProductCarbonFootprint",
+      "target": "urn:samm:io.admin-shell.idta.carbon_footprint:1.0.0#lifeCyclePhases",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.carbon_footprint:1.0.0#ProductCarbonFootprint",
+      "target": "urn:samm:io.admin-shell.idta.carbon_footprint:1.0.0#explanatoryStatement",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.carbon_footprint:1.0.0#ProductCarbonFootprint",
+      "target": "urn:samm:io.admin-shell.idta.carbon_footprint:1.0.0#goodsHandoverAddress",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.carbon_footprint:1.0.0#ProductCarbonFootprint",
+      "target": "urn:samm:io.admin-shell.idta.carbon_footprint:1.0.0#publicationDate",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.carbon_footprint:1.0.0#ProductCarbonFootprint",
+      "target": "urn:samm:io.admin-shell.idta.carbon_footprint:1.0.0#expirationDate",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.carbon_footprint:1.0.0#productCarbonFootprints",
+      "target": "urn:samm:io.admin-shell.idta.carbon_footprint:1.0.0#ProductCarbonFootprintSet",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.carbon_footprint:1.0.0#goodsHandoverAddress",
+      "target": "urn:samm:io.admin-shell.idta.carbon_footprint:1.0.0#ContactAddressCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.carbon_footprint:1.0.0#lifeCyclePhases",
+      "target": "urn:samm:io.admin-shell.idta.carbon_footprint:1.0.0#LifeCyclePhaseSet",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.carbon_footprint:1.0.0#quantityOfMeasureForCalculation",
+      "target": "urn:samm:io.admin-shell.idta.carbon_footprint:1.0.0#QuantityOfMeasureForCalculationCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.carbon_footprint:1.0.0#pcfCo2eq",
+      "target": "urn:samm:io.admin-shell.idta.carbon_footprint:1.0.0#PcfCo2eqCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.carbon_footprint:1.0.0#pcfCalculationMethods",
+      "target": "urn:samm:io.admin-shell.idta.carbon_footprint:1.0.0#PcfCalculationMethodSet",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.carbon_footprint:1.0.0#ProductCarbonFootprintSet",
+      "target": "urn:samm:io.admin-shell.idta.carbon_footprint:1.0.0#ProductCarbonFootprint",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.carbon_footprint:1.0.0#ProductOrSectorSpecificCarbonFootprintEntity",
+      "target": "urn:samm:io.admin-shell.idta.carbon_footprint:1.0.0#productOrSectorSpecificPcfInformation",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.carbon_footprint:1.0.0#productOrSectorSpecificPcfInformation",
+      "target": "urn:samm:io.admin-shell.idta.carbon_footprint:1.0.0#ProductOrSectorSpecificPcfInformationCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.carbon_footprint:1.0.0#ProductOrSectorSpecificPcfInformationCharacteristic",
+      "target": "urn:samm:io.admin-shell.idta.carbon_footprint:1.0.0#ProductOrSectorSpecificPcfInformationEntity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.carbon_footprint:1.0.0#ProductOrSectorSpecificRuleEntity",
+      "target": "urn:samm:io.admin-shell.idta.carbon_footprint:1.0.0#pcfRuleOperator",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.carbon_footprint:1.0.0#ProductOrSectorSpecificRuleEntity",
+      "target": "urn:samm:io.admin-shell.idta.carbon_footprint:1.0.0#pcfRuleName",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.carbon_footprint:1.0.0#ProductOrSectorSpecificRuleEntity",
+      "target": "urn:samm:io.admin-shell.idta.carbon_footprint:1.0.0#pcfRuleVersion",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.carbon_footprint:1.0.0#ProductOrSectorSpecificRuleEntity",
+      "target": "urn:samm:io.admin-shell.idta.carbon_footprint:1.0.0#pcfRuleOnlineReference",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.carbon_footprint:1.0.0#ExternalPcfApiEntity",
+      "target": "urn:samm:io.admin-shell.idta.carbon_footprint:1.0.0#pcfApiEndpoint",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.carbon_footprint:1.0.0#ExternalPcfApiEntity",
+      "target": "urn:samm:io.admin-shell.idta.carbon_footprint:1.0.0#pcfApiQuery",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.carbon_footprint:1.0.0#productOrSectorSpecificCarbonFootprints",
+      "target": "urn:samm:io.admin-shell.idta.carbon_footprint:1.0.0#ProductOrSectorSpecificCarbonFootprintSet",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.carbon_footprint:1.0.0#productOrSectorSpecificRule",
+      "target": "urn:samm:io.admin-shell.idta.carbon_footprint:1.0.0#ProductOrSectorSpecificRuleCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.carbon_footprint:1.0.0#externalPcfApi",
+      "target": "urn:samm:io.admin-shell.idta.carbon_footprint:1.0.0#ExternalPcfApiCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.carbon_footprint:1.0.0#ProductOrSectorSpecificRuleCharacteristic",
+      "target": "urn:samm:io.admin-shell.idta.carbon_footprint:1.0.0#ProductOrSectorSpecificRuleEntity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.carbon_footprint:1.0.0#ExternalPcfApiCharacteristic",
+      "target": "urn:samm:io.admin-shell.idta.carbon_footprint:1.0.0#ExternalPcfApiEntity",
+      "label": "dataType",
+      "optional": false
+    }
+  ]
+}

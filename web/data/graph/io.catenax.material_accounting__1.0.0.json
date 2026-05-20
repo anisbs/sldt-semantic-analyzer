@@ -1,0 +1,1259 @@
+{
+  "meta": {
+    "namespace": "urn:samm:io.catenax.material_accounting:1.0.0#",
+    "meta_model": "SAMM 2.1.0",
+    "model_family": "SAMM",
+    "model_name": "material_accounting",
+    "model_version": "1.0.0",
+    "source": "catenax",
+    "status": "release",
+    "release_date": null,
+    "release_notes": "# Changelog\n\nAll notable changes to this model will be documented in this file.\n\n## [1.0.0] 26.03\n\n### Added\n\n- initial version of the aspect models in the material namespace for material accounting",
+    "dependencies": [
+      {
+        "name": "shared.industry_core.common",
+        "version": "1.0.0",
+        "family": "SAMM",
+        "source": "catenax"
+      },
+      {
+        "name": "shared.material_classification",
+        "version": "1.0.0",
+        "family": "SAMM",
+        "source": "catenax"
+      },
+      {
+        "name": "shared.business_partner_number",
+        "version": "2.0.0",
+        "family": "SAMM",
+        "source": "catenax"
+      }
+    ],
+    "path": "data/sldt-semantic-models/io.catenax.material_accounting/1.0.0/Composition.ttl"
+  },
+  "nodes": [
+    {
+      "id": "urn:samm:io.catenax.material_accounting:1.0.0#Composition",
+      "label": "Composition",
+      "kind": "Aspect",
+      "preferredName": "composition",
+      "description": "The Composition aspect model defines a standardized and interoperable representation of material compositions, capturing material shares of a digital twin in a consistent and machine-readable manner."
+    },
+    {
+      "id": "urn:samm:io.catenax.material_accounting:1.0.0#materials",
+      "label": "materials",
+      "kind": "Property",
+      "preferredName": "materials",
+      "description": "List of all materials."
+    },
+    {
+      "id": "urn:samm:io.catenax.material_accounting:1.0.0#materialWeight",
+      "label": "materialWeight",
+      "kind": "Property",
+      "preferredName": "material weight",
+      "description": "Weight of a material in a part."
+    },
+    {
+      "id": "urn:samm:io.catenax.material_accounting:1.0.0#MaterialsCharacteristic",
+      "label": "MaterialsCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "materials characteristic",
+      "description": "materials characteristic"
+    },
+    {
+      "id": "urn:samm:io.catenax.material_accounting:1.0.0#MaterialEntity",
+      "label": "MaterialEntity",
+      "kind": "Entity",
+      "preferredName": "material entity",
+      "description": "Materials shares of a digital twin."
+    },
+    {
+      "id": "urn:samm:io.catenax.material_accounting:1.0.0#WeightCharacteristic",
+      "label": "WeightCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "weight characteristic",
+      "description": "Weight Characteristic"
+    },
+    {
+      "id": "urn:samm:io.catenax.material_accounting:1.0.0#Material",
+      "label": "Material",
+      "kind": "Aspect",
+      "preferredName": "material",
+      "description": "The Material aspect model defines a standardized and interoperable representation based on VDA material classification and also covering chemical, thermal, and physical properties as well as material states, formats, and uncertainty information, in a consistent and machine-readable manner."
+    },
+    {
+      "id": "urn:samm:io.catenax.material_accounting:1.0.0#thermalCharacterization",
+      "label": "thermalCharacterization",
+      "kind": "Property",
+      "preferredName": "thermal characterization",
+      "description": "Characterisation of Materials Thermal: Information about the material's behaviour under various thermal conditions."
+    },
+    {
+      "id": "urn:samm:io.catenax.material_accounting:1.0.0#chemicalCharacterization",
+      "label": "chemicalCharacterization",
+      "kind": "Property",
+      "preferredName": "chemical characterization",
+      "description": "Characterisation of Materials Chemical: Description of the chemical composition and properties of the material."
+    },
+    {
+      "id": "urn:samm:io.catenax.material_accounting:1.0.0#physicalState",
+      "label": "physicalState",
+      "kind": "Property",
+      "preferredName": "physical state",
+      "description": "The physical state of the material."
+    },
+    {
+      "id": "urn:samm:io.catenax.material_accounting:1.0.0#materialFormat",
+      "label": "materialFormat",
+      "kind": "Property",
+      "preferredName": "material format",
+      "description": "Format of material in the process step."
+    },
+    {
+      "id": "urn:samm:io.catenax.material_accounting:1.0.0#materialStatus",
+      "label": "materialStatus",
+      "kind": "Property",
+      "preferredName": "material status",
+      "description": "Status of the material in the process step"
+    },
+    {
+      "id": "urn:samm:io.catenax.material_accounting:1.0.0#rangeOfUncertainty",
+      "label": "rangeOfUncertainty",
+      "kind": "Property",
+      "preferredName": "range of uncertainty",
+      "description": "Tolerance specification in material composition"
+    },
+    {
+      "id": "urn:samm:io.catenax.material_accounting:1.0.0#PhysicalStateEnum",
+      "label": "PhysicalStateEnum",
+      "kind": "Characteristic",
+      "preferredName": "physical state enum",
+      "description": "physical state enum"
+    },
+    {
+      "id": "urn:samm:io.catenax.material_accounting:1.0.0#RecyclingBatch",
+      "label": "RecyclingBatch",
+      "kind": "Aspect",
+      "preferredName": "recycling batch",
+      "description": "The RecyclingBatch aspect model defines a standardized and interoperable representation containing information about involved actors, process steps, and batch-specific details such as identifiers and container-related properties, in a consistent and machine-readable manner."
+    },
+    {
+      "id": "urn:samm:io.catenax.material_accounting:1.0.0#recyclingBatchId",
+      "label": "recyclingBatchId",
+      "kind": "Property",
+      "preferredName": "recycling batch identifier",
+      "description": "Identifier of the recycling batch."
+    },
+    {
+      "id": "urn:samm:io.catenax.material_accounting:1.0.0#container",
+      "label": "container",
+      "kind": "Property",
+      "preferredName": "container",
+      "description": "Properties of a container."
+    },
+    {
+      "id": "urn:samm:io.catenax.material_accounting:1.0.0#childProcessSteps",
+      "label": "childProcessSteps",
+      "kind": "Property",
+      "preferredName": "child process steps",
+      "description": "List of child process steps performed on the recycling batch."
+    },
+    {
+      "id": "urn:samm:io.catenax.material_accounting:1.0.0#processInformation",
+      "label": "processInformation",
+      "kind": "Property",
+      "preferredName": "process information",
+      "description": "Single Entity of process information."
+    },
+    {
+      "id": "urn:samm:io.catenax.material_accounting:1.0.0#receiver",
+      "label": "receiver",
+      "kind": "Property",
+      "preferredName": "receiver",
+      "description": "Receiver of the RecyclingBatch."
+    },
+    {
+      "id": "urn:samm:io.catenax.material_accounting:1.0.0#sender",
+      "label": "sender",
+      "kind": "Property",
+      "preferredName": "sender",
+      "description": "Sender of the RecyclingBatch."
+    },
+    {
+      "id": "urn:samm:io.catenax.material_accounting:1.0.0#operator",
+      "label": "operator",
+      "kind": "Property",
+      "preferredName": "operator",
+      "description": "Operator of the transport process."
+    },
+    {
+      "id": "urn:samm:io.catenax.material_accounting:1.0.0#containerWeight",
+      "label": "containerWeight",
+      "kind": "Property",
+      "preferredName": "container weight",
+      "description": "Empty weight of the container based on the scale display"
+    },
+    {
+      "id": "urn:samm:io.catenax.material_accounting:1.0.0#containerVolume",
+      "label": "containerVolume",
+      "kind": "Property",
+      "preferredName": "container volume",
+      "description": "Volume of the container type according to AVAL"
+    },
+    {
+      "id": "urn:samm:io.catenax.material_accounting:1.0.0#containerDescription",
+      "label": "containerDescription",
+      "kind": "Property",
+      "preferredName": "container description",
+      "description": "Standardized description of the container type according to AVAL."
+    },
+    {
+      "id": "urn:samm:io.catenax.material_accounting:1.0.0#containerTypeId",
+      "label": "containerTypeId",
+      "kind": "Property",
+      "preferredName": "container type identifier",
+      "description": "Standardized number for the container type which contains compositions / components / materials according to AVAL"
+    },
+    {
+      "id": "urn:samm:io.catenax.material_accounting:1.0.0#startTimestamp",
+      "label": "startTimestamp",
+      "kind": "Property",
+      "preferredName": "start timestamp",
+      "description": "Start of the specific process step."
+    },
+    {
+      "id": "urn:samm:io.catenax.material_accounting:1.0.0#endTimestamp",
+      "label": "endTimestamp",
+      "kind": "Property",
+      "preferredName": "end timestamp",
+      "description": "End of the specific process step."
+    },
+    {
+      "id": "urn:samm:io.catenax.material_accounting:1.0.0#inputNetMass",
+      "label": "inputNetMass",
+      "kind": "Property",
+      "preferredName": "input net mass",
+      "description": "Incoming net weight in the specific process step."
+    },
+    {
+      "id": "urn:samm:io.catenax.material_accounting:1.0.0#outputNetMass",
+      "label": "outputNetMass",
+      "kind": "Property",
+      "preferredName": "output net mass",
+      "description": "Outgoing net weight of the specific process step."
+    },
+    {
+      "id": "urn:samm:io.catenax.material_accounting:1.0.0#measurementType",
+      "label": "measurementType",
+      "kind": "Property",
+      "preferredName": "measurement type",
+      "description": "Measuring instrument for material share/weight determination."
+    },
+    {
+      "id": "urn:samm:io.catenax.material_accounting:1.0.0#measurementTimestamp",
+      "label": "measurementTimestamp",
+      "kind": "Property",
+      "preferredName": "measurement timestamp",
+      "description": "timestamp of the specific time of measurement."
+    },
+    {
+      "id": "urn:samm:io.catenax.material_accounting:1.0.0#processLoss",
+      "label": "processLoss",
+      "kind": "Property",
+      "preferredName": "process loss",
+      "description": "Weight of loss within the specific childProcessStep."
+    },
+    {
+      "id": "urn:samm:io.catenax.material_accounting:1.0.0#weighingSlip",
+      "label": "weighingSlip",
+      "kind": "Property",
+      "preferredName": "weighing slip",
+      "description": "Official document that records the result of weighing (of composition / components / materials) on a scale."
+    },
+    {
+      "id": "urn:samm:io.catenax.material_accounting:1.0.0#lossType",
+      "label": "lossType",
+      "kind": "Property",
+      "preferredName": "loss type",
+      "description": "Specification of loss within the specific process step."
+    },
+    {
+      "id": "urn:samm:io.catenax.material_accounting:1.0.0#childProcessType",
+      "label": "childProcessType",
+      "kind": "Property",
+      "preferredName": "child process type",
+      "description": "Type of child process."
+    },
+    {
+      "id": "urn:samm:io.catenax.material_accounting:1.0.0#treatmentProcedure",
+      "label": "treatmentProcedure",
+      "kind": "Property",
+      "preferredName": "treatment procedure",
+      "description": "Process that is used to handle waste according to the choosen strategy."
+    },
+    {
+      "id": "urn:samm:io.catenax.material_accounting:1.0.0#mechanicalRecycling",
+      "label": "mechanicalRecycling",
+      "kind": "Property",
+      "preferredName": "mechanical recycling",
+      "description": "Materials that have undergone mechanical recycling (true or false)."
+    },
+    {
+      "id": "urn:samm:io.catenax.material_accounting:1.0.0#chemicalRecycling",
+      "label": "chemicalRecycling",
+      "kind": "Property",
+      "preferredName": "chemical recycling",
+      "description": "Materials that have undergone chemical recycling (true or false)."
+    },
+    {
+      "id": "urn:samm:io.catenax.material_accounting:1.0.0#processType",
+      "label": "processType",
+      "kind": "Property",
+      "preferredName": "process type",
+      "description": "The process reflects the current processing phase in the reverse chain of a vehicle, its composition, components, and materials."
+    },
+    {
+      "id": "urn:samm:io.catenax.material_accounting:1.0.0#actorNumber",
+      "label": "actorNumber",
+      "kind": "Property",
+      "preferredName": "actor number",
+      "description": "Operating number of the actor."
+    },
+    {
+      "id": "urn:samm:io.catenax.material_accounting:1.0.0#actorRole",
+      "label": "actorRole",
+      "kind": "Property",
+      "preferredName": "actor role",
+      "description": "Type of the actor in the recycling process."
+    },
+    {
+      "id": "urn:samm:io.catenax.material_accounting:1.0.0#transferId",
+      "label": "transferId",
+      "kind": "Property",
+      "preferredName": "transfer identifier",
+      "description": "Identifier for the transport of compositions / components / materials between two actors."
+    },
+    {
+      "id": "urn:samm:io.catenax.material_accounting:1.0.0#ContainerCharacteristic",
+      "label": "ContainerCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "container Characteristic",
+      "description": "This characteristic binds the ContainerEntity to the container property."
+    },
+    {
+      "id": "urn:samm:io.catenax.material_accounting:1.0.0#ChildProcessStepsList",
+      "label": "ChildProcessStepsList",
+      "kind": "Characteristic",
+      "preferredName": "child process steps list",
+      "description": "List of child process steps."
+    },
+    {
+      "id": "urn:samm:io.catenax.material_accounting:1.0.0#ProcessInformationSingleEntity",
+      "label": "ProcessInformationSingleEntity",
+      "kind": "Characteristic",
+      "preferredName": "process information single entity",
+      "description": "Process Information SingleEntity."
+    },
+    {
+      "id": "urn:samm:io.catenax.material_accounting:1.0.0#ActorSingleEntity",
+      "label": "ActorSingleEntity",
+      "kind": "Characteristic",
+      "preferredName": "actor single entity",
+      "description": "Single entity describing an actor involved in the recycling batch."
+    },
+    {
+      "id": "urn:samm:io.catenax.material_accounting:1.0.0#OperatorSingleEntity",
+      "label": "OperatorSingleEntity",
+      "kind": "Characteristic",
+      "preferredName": "operator single entity",
+      "description": "Operator Single Entity"
+    },
+    {
+      "id": "urn:samm:io.catenax.material_accounting:1.0.0#ContainerEntity",
+      "label": "ContainerEntity",
+      "kind": "Entity",
+      "preferredName": "container entity",
+      "description": "Description of the properties of a container."
+    },
+    {
+      "id": "urn:samm:io.catenax.material_accounting:1.0.0#ProcessStep",
+      "label": "ProcessStep",
+      "kind": "Entity",
+      "preferredName": "process step",
+      "description": "Single entity of a process step."
+    },
+    {
+      "id": "urn:samm:io.catenax.material_accounting:1.0.0#ProcessInformationEntity",
+      "label": "ProcessInformationEntity",
+      "kind": "Entity",
+      "preferredName": "process information entity",
+      "description": "Entity of process information"
+    },
+    {
+      "id": "urn:samm:io.catenax.material_accounting:1.0.0#ActorEntity",
+      "label": "ActorEntity",
+      "kind": "Entity",
+      "preferredName": "actor entity",
+      "description": "Single Entity of an Actor"
+    },
+    {
+      "id": "urn:samm:io.catenax.material_accounting:1.0.0#OperatorEntity",
+      "label": "OperatorEntity",
+      "kind": "Entity",
+      "preferredName": "operator entity",
+      "description": "Entity of operator"
+    },
+    {
+      "id": "urn:samm:io.catenax.material_accounting:1.0.0#MassCharacteristic",
+      "label": "MassCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "mass characteristic",
+      "description": "Characteric for mass data (in kg)."
+    },
+    {
+      "id": "urn:samm:io.catenax.material_accounting:1.0.0#VolumeCharacteristic",
+      "label": "VolumeCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "volume characteristic",
+      "description": "Characteristic describing the volume."
+    },
+    {
+      "id": "urn:samm:io.catenax.material_accounting:1.0.0#ChildProcessEnum",
+      "label": "ChildProcessEnum",
+      "kind": "Characteristic",
+      "preferredName": "child process enum",
+      "description": "Enumeration of valid child process types."
+    },
+    {
+      "id": "urn:samm:io.catenax.material_accounting:1.0.0#DisposalCodeEnum",
+      "label": "DisposalCodeEnum",
+      "kind": "Characteristic",
+      "preferredName": "disposal code enum",
+      "description": "Enumreation valid disposal codes."
+    },
+    {
+      "id": "urn:samm:io.catenax.material_accounting:1.0.0#ProcessTypeEnum",
+      "label": "ProcessTypeEnum",
+      "kind": "Characteristic",
+      "preferredName": "process type enum",
+      "description": "Enumeration of valid process type values."
+    },
+    {
+      "id": "urn:samm:io.catenax.material_accounting:1.0.0#ActorRoleEnumeration",
+      "label": "ActorRoleEnumeration",
+      "kind": "Characteristic",
+      "preferredName": "actor role enumeration",
+      "description": "Enums of the actor role."
+    },
+    {
+      "id": "urn:samm:io.catenax.material_accounting:1.0.0#RecyclingInformation",
+      "label": "RecyclingInformation",
+      "kind": "Aspect",
+      "preferredName": "recycling information",
+      "description": "The RecyclingInformation aspect model defines a standardized and interoperable representation of recycling-related material shares, including material origin, reutilization, pre- and post-consumer shares, and primary and secondary material sources, in a consistent and machine-readable manner."
+    },
+    {
+      "id": "urn:samm:io.catenax.material_accounting:1.0.0#reutilizationMaterialShare",
+      "label": "reutilizationMaterialShare",
+      "kind": "Property",
+      "preferredName": "reutilization material share",
+      "description": "Material share from reutilization of materials such as rework, regrind, or scrap materials generated within the process and capable of being reused within the same process that generated it."
+    },
+    {
+      "id": "urn:samm:io.catenax.material_accounting:1.0.0#origin",
+      "label": "origin",
+      "kind": "Property",
+      "preferredName": "origin",
+      "description": "Information on material origin."
+    },
+    {
+      "id": "urn:samm:io.catenax.material_accounting:1.0.0#preConsumerShares",
+      "label": "preConsumerShares",
+      "kind": "Property",
+      "preferredName": "pre consumer shares",
+      "description": "Set of pre consumer material shares."
+    },
+    {
+      "id": "urn:samm:io.catenax.material_accounting:1.0.0#postConsumerShares",
+      "label": "postConsumerShares",
+      "kind": "Property",
+      "preferredName": "post consumer shares",
+      "description": "Set of post consumer material shares."
+    },
+    {
+      "id": "urn:samm:io.catenax.material_accounting:1.0.0#materialSourceShares",
+      "label": "materialSourceShares",
+      "kind": "Property",
+      "preferredName": "material source shares",
+      "description": "Shares of primary and secondary materials"
+    },
+    {
+      "id": "urn:samm:io.catenax.material_accounting:1.0.0#otherInformation",
+      "label": "otherInformation",
+      "kind": "Property",
+      "preferredName": "other information",
+      "description": "Document or evidence verifying the origin, quality, or compliance of a material"
+    },
+    {
+      "id": "urn:samm:io.catenax.material_accounting:1.0.0#automotive",
+      "label": "automotive",
+      "kind": "Property",
+      "preferredName": "automotive",
+      "description": "Share of automotive material"
+    },
+    {
+      "id": "urn:samm:io.catenax.material_accounting:1.0.0#nonAutomotive",
+      "label": "nonAutomotive",
+      "kind": "Property",
+      "preferredName": "non automotive",
+      "description": "Share of non-automotive material."
+    },
+    {
+      "id": "urn:samm:io.catenax.material_accounting:1.0.0#secondaryMaterial",
+      "label": "secondaryMaterial",
+      "kind": "Property",
+      "preferredName": "secondary material",
+      "description": "Material share from all materials obtained from waste, by-products and production residues sources. In the material cycle diagrams, this corresponds to the material flows PrC, PoC and ReU-M.  This includes substances and mixtures of substances that are intended for the manufacture of products. This can include both secondary raw materials and more highly processed substances and mixtures of substances. Secondary material can be used as a substitute for primary material in processes."
+    },
+    {
+      "id": "urn:samm:io.catenax.material_accounting:1.0.0#primaryMaterial",
+      "label": "primaryMaterial",
+      "kind": "Property",
+      "preferredName": "primary material",
+      "description": "Material share from Substances and mixtures of substances intended for the manufacture of products and used for the first time in a production process. "
+    },
+    {
+      "id": "urn:samm:io.catenax.material_accounting:1.0.0#MaterialShareTrait",
+      "label": "MaterialShareTrait",
+      "kind": "Characteristic",
+      "preferredName": "material share trait",
+      "description": "material share trait"
+    },
+    {
+      "id": "urn:samm:io.catenax.material_accounting:1.0.0#OriginEnumeration",
+      "label": "OriginEnumeration",
+      "kind": "Characteristic",
+      "preferredName": "enum of origins",
+      "description": "Enum of origins"
+    },
+    {
+      "id": "urn:samm:io.catenax.material_accounting:1.0.0#ConsumerShareCharacteristic",
+      "label": "ConsumerShareCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "consumer share characteristic",
+      "description": "Set of shares from automotive and non automotive material shares."
+    },
+    {
+      "id": "urn:samm:io.catenax.material_accounting:1.0.0#MaterialSourceSingleEntity",
+      "label": "MaterialSourceSingleEntity",
+      "kind": "Characteristic",
+      "preferredName": "material source single entity",
+      "description": "Material Source SingleEntity"
+    },
+    {
+      "id": "urn:samm:io.catenax.material_accounting:1.0.0#MaterialPercentageCharacteristic",
+      "label": "MaterialPercentageCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "material percentage characteristic",
+      "description": null
+    },
+    {
+      "id": "urn:samm:io.catenax.material_accounting:1.0.0#MaterialShareConstraint",
+      "label": "MaterialShareConstraint",
+      "kind": "Characteristic",
+      "preferredName": "material share constraint",
+      "description": "limits the values for material shares to 0-100"
+    },
+    {
+      "id": "urn:samm:io.catenax.material_accounting:1.0.0#ConsumerShareEntity",
+      "label": "ConsumerShareEntity",
+      "kind": "Entity",
+      "preferredName": "consumer share entity",
+      "description": "Set of shares from automotive and non automotive material shares."
+    },
+    {
+      "id": "urn:samm:io.catenax.material_accounting:1.0.0#MaterialSourceEntity",
+      "label": "MaterialSourceEntity",
+      "kind": "Entity",
+      "preferredName": "material source entity",
+      "description": "Material Source Entity."
+    },
+    {
+      "id": "urn:samm:io.catenax.material_accounting:1.0.0#VehicleInformation",
+      "label": "VehicleInformation",
+      "kind": "Aspect",
+      "preferredName": "vehicle information",
+      "description": "The VehicleInformation aspect model defines a standardized and interoperable set of vehicle attributes, including identification data, technical properties and classification information, to describe a vehicle in a consistent and machine-readable manner."
+    },
+    {
+      "id": "urn:samm:io.catenax.material_accounting:1.0.0#vehicleCondition",
+      "label": "vehicleCondition",
+      "kind": "Property",
+      "preferredName": "vehicle condition",
+      "description": "Condition of the actual vehicle."
+    },
+    {
+      "id": "urn:samm:io.catenax.material_accounting:1.0.0#driveType",
+      "label": "driveType",
+      "kind": "Property",
+      "preferredName": "drive type",
+      "description": "Drive type of a vehicle according enumeration."
+    },
+    {
+      "id": "urn:samm:io.catenax.material_accounting:1.0.0#modelIdentifier",
+      "label": "modelIdentifier",
+      "kind": "Property",
+      "preferredName": "model identifier",
+      "description": "OEM-specific model identifier or OEM-specific project name."
+    },
+    {
+      "id": "urn:samm:io.catenax.material_accounting:1.0.0#vehicleSeries",
+      "label": "vehicleSeries",
+      "kind": "Property",
+      "preferredName": "vehicle series",
+      "description": "Series information of the vehicle model that needs to be processed."
+    },
+    {
+      "id": "urn:samm:io.catenax.material_accounting:1.0.0#oem",
+      "label": "oem",
+      "kind": "Property",
+      "preferredName": "original equipment manufacturer",
+      "description": "Original equipment manufacturer."
+    },
+    {
+      "id": "urn:samm:io.catenax.material_accounting:1.0.0#emptyWeight",
+      "label": "emptyWeight",
+      "kind": "Property",
+      "preferredName": "empty weight",
+      "description": "The empty weight of the vehicle in kg as specified."
+    },
+    {
+      "id": "urn:samm:io.catenax.material_accounting:1.0.0#productionDate",
+      "label": "productionDate",
+      "kind": "Property",
+      "preferredName": "production date",
+      "description": "Production date of the vehicle."
+    },
+    {
+      "id": "urn:samm:io.catenax.material_accounting:1.0.0#vehicleType",
+      "label": "vehicleType",
+      "kind": "Property",
+      "preferredName": "vehicle type",
+      "description": "A vehicle type is a classification of a vehicle based on its design, construction, and purpose."
+    },
+    {
+      "id": "urn:samm:io.catenax.material_accounting:1.0.0#anonymizedVin",
+      "label": "anonymizedVin",
+      "kind": "Property",
+      "preferredName": "anonymized VIN",
+      "description": "OEM-specific hashed VIN."
+    },
+    {
+      "id": "urn:samm:io.catenax.material_accounting:1.0.0#Date",
+      "label": "Date",
+      "kind": "Characteristic",
+      "preferredName": "date characteristic",
+      "description": "Characteristic to ensure a consistent structure for date-related properties."
+    },
+    {
+      "id": "urn:samm:io.catenax.material_accounting:1.0.0#VehicleTypeEnum",
+      "label": "VehicleTypeEnum",
+      "kind": "Characteristic",
+      "preferredName": "vehicle type enum",
+      "description": "Enumeration of vehicle types according to EG Vehicle Classification."
+    },
+    {
+      "id": "urn:samm:io.catenax.material_accounting:1.0.0#WasteCode",
+      "label": "WasteCode",
+      "kind": "Aspect",
+      "preferredName": "waste code",
+      "description": "The WasteCode aspect model defines a standardized and interoperable representation of waste categorization information, including European Waste Catalogue (EWC) codes and their descriptions, to classify vehicles, parts or materials in a consistent and machine-readable manner."
+    },
+    {
+      "id": "urn:samm:io.catenax.material_accounting:1.0.0#wasteCode",
+      "label": "wasteCode",
+      "kind": "Property",
+      "preferredName": "waste code",
+      "description": "The waste code is used to identify the type of waste on part or material level."
+    },
+    {
+      "id": "urn:samm:io.catenax.material_accounting:1.0.0#WasteCodeEnum",
+      "label": "WasteCodeEnum",
+      "kind": "Characteristic",
+      "preferredName": "waste code enum",
+      "description": "Enumeration of waste codes according to EWC (european waste directory)."
+    }
+  ],
+  "links": [
+    {
+      "source": "urn:samm:io.catenax.material_accounting:1.0.0#Composition",
+      "target": "urn:samm:io.catenax.material_accounting:1.0.0#materials",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material_accounting:1.0.0#MaterialEntity",
+      "target": "urn:samm:io.catenax.material_accounting:1.0.0#materialWeight",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material_accounting:1.0.0#materials",
+      "target": "urn:samm:io.catenax.material_accounting:1.0.0#MaterialsCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material_accounting:1.0.0#materialWeight",
+      "target": "urn:samm:io.catenax.material_accounting:1.0.0#WeightCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material_accounting:1.0.0#MaterialsCharacteristic",
+      "target": "urn:samm:io.catenax.material_accounting:1.0.0#MaterialEntity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material_accounting:1.0.0#Material",
+      "target": "urn:samm:io.catenax.material_accounting:1.0.0#thermalCharacterization",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material_accounting:1.0.0#Material",
+      "target": "urn:samm:io.catenax.material_accounting:1.0.0#chemicalCharacterization",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material_accounting:1.0.0#Material",
+      "target": "urn:samm:io.catenax.material_accounting:1.0.0#physicalState",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material_accounting:1.0.0#Material",
+      "target": "urn:samm:io.catenax.material_accounting:1.0.0#materialFormat",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material_accounting:1.0.0#Material",
+      "target": "urn:samm:io.catenax.material_accounting:1.0.0#materialStatus",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material_accounting:1.0.0#Material",
+      "target": "urn:samm:io.catenax.material_accounting:1.0.0#rangeOfUncertainty",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material_accounting:1.0.0#physicalState",
+      "target": "urn:samm:io.catenax.material_accounting:1.0.0#PhysicalStateEnum",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material_accounting:1.0.0#RecyclingBatch",
+      "target": "urn:samm:io.catenax.material_accounting:1.0.0#recyclingBatchId",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material_accounting:1.0.0#RecyclingBatch",
+      "target": "urn:samm:io.catenax.material_accounting:1.0.0#container",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material_accounting:1.0.0#RecyclingBatch",
+      "target": "urn:samm:io.catenax.material_accounting:1.0.0#childProcessSteps",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material_accounting:1.0.0#RecyclingBatch",
+      "target": "urn:samm:io.catenax.material_accounting:1.0.0#processInformation",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material_accounting:1.0.0#RecyclingBatch",
+      "target": "urn:samm:io.catenax.material_accounting:1.0.0#receiver",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material_accounting:1.0.0#RecyclingBatch",
+      "target": "urn:samm:io.catenax.material_accounting:1.0.0#sender",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material_accounting:1.0.0#RecyclingBatch",
+      "target": "urn:samm:io.catenax.material_accounting:1.0.0#operator",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material_accounting:1.0.0#ContainerEntity",
+      "target": "urn:samm:io.catenax.material_accounting:1.0.0#containerWeight",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material_accounting:1.0.0#ContainerEntity",
+      "target": "urn:samm:io.catenax.material_accounting:1.0.0#containerVolume",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material_accounting:1.0.0#ContainerEntity",
+      "target": "urn:samm:io.catenax.material_accounting:1.0.0#containerDescription",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material_accounting:1.0.0#ContainerEntity",
+      "target": "urn:samm:io.catenax.material_accounting:1.0.0#containerTypeId",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material_accounting:1.0.0#ProcessStep",
+      "target": "urn:samm:io.catenax.material_accounting:1.0.0#startTimestamp",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material_accounting:1.0.0#ProcessStep",
+      "target": "urn:samm:io.catenax.material_accounting:1.0.0#endTimestamp",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material_accounting:1.0.0#ProcessStep",
+      "target": "urn:samm:io.catenax.material_accounting:1.0.0#inputNetMass",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material_accounting:1.0.0#ProcessStep",
+      "target": "urn:samm:io.catenax.material_accounting:1.0.0#outputNetMass",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material_accounting:1.0.0#ProcessStep",
+      "target": "urn:samm:io.catenax.material_accounting:1.0.0#measurementType",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material_accounting:1.0.0#ProcessStep",
+      "target": "urn:samm:io.catenax.material_accounting:1.0.0#measurementTimestamp",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material_accounting:1.0.0#ProcessStep",
+      "target": "urn:samm:io.catenax.material_accounting:1.0.0#processLoss",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material_accounting:1.0.0#ProcessStep",
+      "target": "urn:samm:io.catenax.material_accounting:1.0.0#weighingSlip",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material_accounting:1.0.0#ProcessStep",
+      "target": "urn:samm:io.catenax.material_accounting:1.0.0#lossType",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material_accounting:1.0.0#ProcessStep",
+      "target": "urn:samm:io.catenax.material_accounting:1.0.0#childProcessType",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material_accounting:1.0.0#ProcessInformationEntity",
+      "target": "urn:samm:io.catenax.material_accounting:1.0.0#treatmentProcedure",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material_accounting:1.0.0#ProcessInformationEntity",
+      "target": "urn:samm:io.catenax.material_accounting:1.0.0#mechanicalRecycling",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material_accounting:1.0.0#ProcessInformationEntity",
+      "target": "urn:samm:io.catenax.material_accounting:1.0.0#chemicalRecycling",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material_accounting:1.0.0#ProcessInformationEntity",
+      "target": "urn:samm:io.catenax.material_accounting:1.0.0#processType",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material_accounting:1.0.0#ActorEntity",
+      "target": "urn:samm:io.catenax.material_accounting:1.0.0#actorNumber",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material_accounting:1.0.0#ActorEntity",
+      "target": "urn:samm:io.catenax.material_accounting:1.0.0#actorRole",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material_accounting:1.0.0#OperatorEntity",
+      "target": "urn:samm:io.catenax.material_accounting:1.0.0#transferId",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material_accounting:1.0.0#container",
+      "target": "urn:samm:io.catenax.material_accounting:1.0.0#ContainerCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material_accounting:1.0.0#childProcessSteps",
+      "target": "urn:samm:io.catenax.material_accounting:1.0.0#ChildProcessStepsList",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material_accounting:1.0.0#processInformation",
+      "target": "urn:samm:io.catenax.material_accounting:1.0.0#ProcessInformationSingleEntity",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material_accounting:1.0.0#receiver",
+      "target": "urn:samm:io.catenax.material_accounting:1.0.0#ActorSingleEntity",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material_accounting:1.0.0#sender",
+      "target": "urn:samm:io.catenax.material_accounting:1.0.0#ActorSingleEntity",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material_accounting:1.0.0#operator",
+      "target": "urn:samm:io.catenax.material_accounting:1.0.0#OperatorSingleEntity",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material_accounting:1.0.0#containerWeight",
+      "target": "urn:samm:io.catenax.material_accounting:1.0.0#MassCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material_accounting:1.0.0#inputNetMass",
+      "target": "urn:samm:io.catenax.material_accounting:1.0.0#MassCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material_accounting:1.0.0#outputNetMass",
+      "target": "urn:samm:io.catenax.material_accounting:1.0.0#MassCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material_accounting:1.0.0#processLoss",
+      "target": "urn:samm:io.catenax.material_accounting:1.0.0#MassCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material_accounting:1.0.0#containerVolume",
+      "target": "urn:samm:io.catenax.material_accounting:1.0.0#VolumeCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material_accounting:1.0.0#childProcessType",
+      "target": "urn:samm:io.catenax.material_accounting:1.0.0#ChildProcessEnum",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material_accounting:1.0.0#treatmentProcedure",
+      "target": "urn:samm:io.catenax.material_accounting:1.0.0#DisposalCodeEnum",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material_accounting:1.0.0#processType",
+      "target": "urn:samm:io.catenax.material_accounting:1.0.0#ProcessTypeEnum",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material_accounting:1.0.0#actorRole",
+      "target": "urn:samm:io.catenax.material_accounting:1.0.0#ActorRoleEnumeration",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material_accounting:1.0.0#ContainerCharacteristic",
+      "target": "urn:samm:io.catenax.material_accounting:1.0.0#ContainerEntity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material_accounting:1.0.0#ChildProcessStepsList",
+      "target": "urn:samm:io.catenax.material_accounting:1.0.0#ProcessStep",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material_accounting:1.0.0#ProcessInformationSingleEntity",
+      "target": "urn:samm:io.catenax.material_accounting:1.0.0#ProcessInformationEntity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material_accounting:1.0.0#ActorSingleEntity",
+      "target": "urn:samm:io.catenax.material_accounting:1.0.0#ActorEntity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material_accounting:1.0.0#OperatorSingleEntity",
+      "target": "urn:samm:io.catenax.material_accounting:1.0.0#OperatorEntity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material_accounting:1.0.0#RecyclingInformation",
+      "target": "urn:samm:io.catenax.material_accounting:1.0.0#reutilizationMaterialShare",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material_accounting:1.0.0#RecyclingInformation",
+      "target": "urn:samm:io.catenax.material_accounting:1.0.0#origin",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material_accounting:1.0.0#RecyclingInformation",
+      "target": "urn:samm:io.catenax.material_accounting:1.0.0#preConsumerShares",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material_accounting:1.0.0#RecyclingInformation",
+      "target": "urn:samm:io.catenax.material_accounting:1.0.0#postConsumerShares",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material_accounting:1.0.0#RecyclingInformation",
+      "target": "urn:samm:io.catenax.material_accounting:1.0.0#materialSourceShares",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material_accounting:1.0.0#RecyclingInformation",
+      "target": "urn:samm:io.catenax.material_accounting:1.0.0#otherInformation",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material_accounting:1.0.0#ConsumerShareEntity",
+      "target": "urn:samm:io.catenax.material_accounting:1.0.0#automotive",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material_accounting:1.0.0#ConsumerShareEntity",
+      "target": "urn:samm:io.catenax.material_accounting:1.0.0#nonAutomotive",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material_accounting:1.0.0#MaterialSourceEntity",
+      "target": "urn:samm:io.catenax.material_accounting:1.0.0#secondaryMaterial",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material_accounting:1.0.0#MaterialSourceEntity",
+      "target": "urn:samm:io.catenax.material_accounting:1.0.0#primaryMaterial",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material_accounting:1.0.0#reutilizationMaterialShare",
+      "target": "urn:samm:io.catenax.material_accounting:1.0.0#MaterialShareTrait",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material_accounting:1.0.0#automotive",
+      "target": "urn:samm:io.catenax.material_accounting:1.0.0#MaterialShareTrait",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material_accounting:1.0.0#nonAutomotive",
+      "target": "urn:samm:io.catenax.material_accounting:1.0.0#MaterialShareTrait",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material_accounting:1.0.0#secondaryMaterial",
+      "target": "urn:samm:io.catenax.material_accounting:1.0.0#MaterialShareTrait",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material_accounting:1.0.0#primaryMaterial",
+      "target": "urn:samm:io.catenax.material_accounting:1.0.0#MaterialShareTrait",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material_accounting:1.0.0#origin",
+      "target": "urn:samm:io.catenax.material_accounting:1.0.0#OriginEnumeration",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material_accounting:1.0.0#preConsumerShares",
+      "target": "urn:samm:io.catenax.material_accounting:1.0.0#ConsumerShareCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material_accounting:1.0.0#postConsumerShares",
+      "target": "urn:samm:io.catenax.material_accounting:1.0.0#ConsumerShareCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material_accounting:1.0.0#materialSourceShares",
+      "target": "urn:samm:io.catenax.material_accounting:1.0.0#MaterialSourceSingleEntity",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material_accounting:1.0.0#ConsumerShareCharacteristic",
+      "target": "urn:samm:io.catenax.material_accounting:1.0.0#ConsumerShareEntity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material_accounting:1.0.0#MaterialSourceSingleEntity",
+      "target": "urn:samm:io.catenax.material_accounting:1.0.0#MaterialSourceEntity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material_accounting:1.0.0#MaterialShareTrait",
+      "target": "urn:samm:io.catenax.material_accounting:1.0.0#MaterialShareConstraint",
+      "label": "constraint",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material_accounting:1.0.0#VehicleInformation",
+      "target": "urn:samm:io.catenax.material_accounting:1.0.0#vehicleCondition",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material_accounting:1.0.0#VehicleInformation",
+      "target": "urn:samm:io.catenax.material_accounting:1.0.0#driveType",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material_accounting:1.0.0#VehicleInformation",
+      "target": "urn:samm:io.catenax.material_accounting:1.0.0#modelIdentifier",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material_accounting:1.0.0#VehicleInformation",
+      "target": "urn:samm:io.catenax.material_accounting:1.0.0#vehicleSeries",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material_accounting:1.0.0#VehicleInformation",
+      "target": "urn:samm:io.catenax.material_accounting:1.0.0#oem",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material_accounting:1.0.0#VehicleInformation",
+      "target": "urn:samm:io.catenax.material_accounting:1.0.0#emptyWeight",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material_accounting:1.0.0#VehicleInformation",
+      "target": "urn:samm:io.catenax.material_accounting:1.0.0#productionDate",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material_accounting:1.0.0#VehicleInformation",
+      "target": "urn:samm:io.catenax.material_accounting:1.0.0#vehicleType",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material_accounting:1.0.0#VehicleInformation",
+      "target": "urn:samm:io.catenax.material_accounting:1.0.0#anonymizedVin",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material_accounting:1.0.0#productionDate",
+      "target": "urn:samm:io.catenax.material_accounting:1.0.0#Date",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material_accounting:1.0.0#vehicleType",
+      "target": "urn:samm:io.catenax.material_accounting:1.0.0#VehicleTypeEnum",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material_accounting:1.0.0#WasteCode",
+      "target": "urn:samm:io.catenax.material_accounting:1.0.0#wasteCode",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material_accounting:1.0.0#wasteCode",
+      "target": "urn:samm:io.catenax.material_accounting:1.0.0#WasteCodeEnum",
+      "label": "characteristic",
+      "optional": false
+    }
+  ]
+}

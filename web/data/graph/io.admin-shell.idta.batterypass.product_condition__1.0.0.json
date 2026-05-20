@@ -1,0 +1,1054 @@
+{
+  "meta": {
+    "namespace": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#",
+    "meta_model": "SAMM 2.2.0",
+    "model_family": "SAMM",
+    "model_name": "batterypass.product_condition",
+    "model_version": "1.0.0",
+    "source": "idta",
+    "status": "undefined",
+    "release_date": null,
+    "release_notes": null,
+    "dependencies": [
+      {
+        "name": "handover_documentation",
+        "version": "2.0.0",
+        "family": "SAMM",
+        "source": "idta"
+      },
+      {
+        "name": "shared",
+        "version": "3.1.0",
+        "family": "SAMM",
+        "source": "idta"
+      }
+    ],
+    "path": "data/smt-semantic-models/io.admin-shell.idta.batterypass.product_condition/1.0.0/ProductCondition.ttl"
+  },
+  "nodes": [
+    {
+      "id": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#ProductCondition",
+      "label": "ProductCondition",
+      "kind": "Aspect",
+      "preferredName": "product condition",
+      "description": "Covers all battery lifetime relevant properties."
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#informationOnAccidents",
+      "label": "informationOnAccidents",
+      "kind": "Property",
+      "preferredName": "information on accidents",
+      "description": "The battery passport must contain information and data resulting from its use such as accidents. \n\nDIN DKE Spec 99100 chapter reference: 6.7.8.4"
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#lastUpdate",
+      "label": "lastUpdate",
+      "kind": "Property",
+      "preferredName": "last update",
+      "description": "Timestamp for dynamic data attributes show the last update time.\n\n   Defined time within a time range, measured from the start time of the time range.\n   "
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#energyThroughput",
+      "label": "energyThroughput",
+      "kind": "Property",
+      "preferredName": "energy throughput",
+      "description": "The data attribute should be reported as measured for further potential processing. In addition, the normalisation by capacity may add a further useful value that ensures comparability among battery sizes.\n\nDIN DKE Spec 99100 chapter reference: 6.7.6.7"
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#energyThroughputValue",
+      "label": "energyThroughputValue",
+      "kind": "Property",
+      "preferredName": "energy throughput",
+      "description": "Overall sum of the energy throughput over the battery lifetime (data attribute should be reported as measured for further potential processing. In addition, the normalisation by usable battery energy could add a further useful value that ensures comparability among battery sizes)."
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#capacityThroughput",
+      "label": "capacityThroughput",
+      "kind": "Property",
+      "preferredName": null,
+      "description": "The data attribute should be reported as measured for further potential processing. In addition, the normalisation by capacity may add a further useful value that ensures comparability among battery sizes.\n\nDIN DKE Spec 99100 chapter reference: 6.7.6.8"
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#capacityThroughputValue",
+      "label": "capacityThroughputValue",
+      "kind": "Property",
+      "preferredName": "capacity throughput",
+      "description": "Overall sum of the capacity throughput over the battery lifetime (data attribute should be reported as measured for further potential processing. In addition, the normalisation by capacity could add a further useful value that ensures comparability among battery sizes)."
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#numberOfFullCycles",
+      "label": "numberOfFullCycles",
+      "kind": "Property",
+      "preferredName": "number of full cycles",
+      "description": "Number of (full) charging and discharging cycles.\n\nDIN DKE Spec 99100 chapter reference: 6.7.6.4"
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#numberOfFullCyclesValue",
+      "label": "numberOfFullCyclesValue",
+      "kind": "Property",
+      "preferredName": "number of full cycles",
+      "description": "Total count of times a battery has been fully charged from empty to full capacity and then fully discharged, used as an indicator of the battery's usage and lifespan."
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#stateOfCertifiedEnergy",
+      "label": "stateOfCertifiedEnergy",
+      "kind": "Property",
+      "preferredName": "SOCE",
+      "description": "Definition based on UNECE GTR 22: The measured or on-board UBE performance at a specific point in its lifetime, expressed as a percentage of the certified usable battery energy.\n\nDIN DKE Spec 99100 chapter reference: 6.7.2.7"
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#stateOfCertifiedEnergyValue",
+      "label": "stateOfCertifiedEnergyValue",
+      "kind": "Property",
+      "preferredName": "state of certified energy",
+      "description": "Measured or on-board UBE performance at a specific point in its lifetime, expressed as a percentage of the certified usable battery energy."
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#remainingEnergy",
+      "label": "remainingEnergy",
+      "kind": "Property",
+      "preferredName": "remaining energy",
+      "description": "Definition from UNECE GTR 22, applicable only to EVs.\nThe energy supplied by the battery from the beginning of the test procedure used for certification until the applicable break-off criterion of the test procedure used for certification is reached.\n\nDIN DKE Spec 99100 chapter reference: 6.7.2.6"
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#remainingEnergyValue",
+      "label": "remainingEnergyValue",
+      "kind": "Property",
+      "preferredName": "remaining energy",
+      "description": "UBE determined at the present point in the lifetime of the vehicle by the test procedure used for certification."
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#remainingCapacity",
+      "label": "remainingCapacity",
+      "kind": "Property",
+      "preferredName": "remaining capacity",
+      "description": "The in-use data attribute on capacity, corresponding with the definition of rated capacity.\n\nDIN DKE Spec 99100 chapter reference: 6.7.2.3"
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#remainingCapacityValue",
+      "label": "remainingCapacityValue",
+      "kind": "Property",
+      "preferredName": "remaining capacity",
+      "description": "In-use data attribute on capacity, corresponding with the definition of rated capacity."
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#negativeEvents",
+      "label": "negativeEvents",
+      "kind": "Property",
+      "preferredName": "negative events",
+      "description": "The battery passport must contain information and data resulting from its use such as accidents. \n\nDIN DKE Spec 99100 chapter reference: 6.7.8.4"
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#negativeEventValue",
+      "label": "negativeEventValue",
+      "kind": "Property",
+      "preferredName": "negative event",
+      "description": "Negative event, such as an accident. No further definition provided by regulation."
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#temperatureInformation",
+      "label": "temperatureInformation",
+      "kind": "Property",
+      "preferredName": "temperature information",
+      "description": "The battery passport must include periodically recorded information on the operating environmental conditions, including temperature.\n\nDIN DKE Spec 99100 chapter reference: 6.7.7.5 - 8"
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#timeExtremeHighTemp",
+      "label": "timeExtremeHighTemp",
+      "kind": "Property",
+      "preferredName": "time extreme high temperature",
+      "description": "Cumulated time spent above the given upper boundary of temperature."
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#timeExtremeLowTemp",
+      "label": "timeExtremeLowTemp",
+      "kind": "Property",
+      "preferredName": "time extreme low temperature",
+      "description": "Cumulated time spent below the given lower boundary of temperature."
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#timeExtremeHighTempCharging",
+      "label": "timeExtremeHighTempCharging",
+      "kind": "Property",
+      "preferredName": "time extreme high temperature charging",
+      "description": "Cumulated time spent above the given upper boundary of temperature during Charging."
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#timeExtremeLowTempCharging",
+      "label": "timeExtremeLowTempCharging",
+      "kind": "Property",
+      "preferredName": "time extreme low temperature charging",
+      "description": "Cumulated time spent below the given lower boundary of temperature during charging."
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#remainingPowerCapability",
+      "label": "remainingPowerCapability",
+      "kind": "Property",
+      "preferredName": "remaining power capability",
+      "description": "Original power capability (in Watts) and limits, with temperature range when relevant.\n- The amount of energy that a battery is capable to provide over a given period of time under reference conditions.\n- Power capability at 80% and 20% state of charge.\n\nDIN DKE Spec 99100 chapter reference: 6.7.3.3"
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#remainingPowerCapabilityValue",
+      "label": "remainingPowerCapabilityValue",
+      "kind": "Property",
+      "preferredName": "remaining power capability value",
+      "description": "Remaining power capability value."
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#atSoC",
+      "label": "atSoC",
+      "kind": "Property",
+      "preferredName": "at SoC",
+      "description": "Available capacity in a battery expressed as a percentage of remaining capacity."
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#powerCapabilityAt",
+      "label": "powerCapabilityAt",
+      "kind": "Property",
+      "preferredName": "power capability at",
+      "description": "Defined by 'pre-use power capability (definition of power capability as given in Battery Regulation."
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#rPCLastUpdated",
+      "label": "rPCLastUpdated",
+      "kind": "Property",
+      "preferredName": "RPC last updated",
+      "description": "RPC last updated."
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#evolutionOfSelfDischarge",
+      "label": "evolutionOfSelfDischarge",
+      "kind": "Property",
+      "preferredName": "evolution of self discharge",
+      "description": "Evolution of self-discharge rates is the change of self-discharge over time and usage, as percentage calculated from the initial and current self-discharge rate.\n\nDIN DKE Spec 99100 chapter reference: 6.7.4.8"
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#evolutionOfSelfDischargeValue",
+      "label": "evolutionOfSelfDischargeValue",
+      "kind": "Property",
+      "preferredName": "evolution of self discharge value",
+      "description": "Total count of times a battery has been fully charged from empty to full capacity and then fully discharged, used as an indicator of the battery's usage and lifespan."
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#currentSelfDischargingRate",
+      "label": "currentSelfDischargingRate",
+      "kind": "Property",
+      "preferredName": "current self discharge rate",
+      "description": "The current self-discharge rate is the change of the self-discharge rate in an idle state of the battery in reference conditions (temperature etc.) at aging parameter x, e.g. after a certain amount of storage time or, number of cycles.\n\nDIN DKE Spec 99100 chapter reference: 6.7.4.7"
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#currentSelfDischargingRateValue",
+      "label": "currentSelfDischargingRateValue",
+      "kind": "Property",
+      "preferredName": "current self discharge rate value",
+      "description": "Current self-discharge in % of capacity per unit of time in defined conditions (temperature range) during the use phase."
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#stateOfCharge",
+      "label": "stateOfCharge",
+      "kind": "Property",
+      "preferredName": "state of charge (SoC)",
+      "description": "Available capacity in a battery expressed as a percentage of remaining capacity.  \n\nDIN DKE Spec 99100 chapter reference: 6.7.2.8 (changed: available energy or charge in a battery expressed as a percentage of rated capacity as declared by the manufacturer, or, when the battery’s state of health is no longer equal to its initial condition, of the maximum energy or charge that can be stored in the battery at the time of charging)"
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#stateOfChargeValue",
+      "label": "stateOfChargeValue",
+      "kind": "Property",
+      "preferredName": "state of charge value",
+      "description": "Available capacity in a battery expressed as a percentage of remaining capacity."
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#remainingRoundTripEnergyEfficiency",
+      "label": "remainingRoundTripEnergyEfficiency",
+      "kind": "Property",
+      "preferredName": "remaining round trip energy efficiency",
+      "description": "The battery passport shall include information, where possible, about the remaining round trip energy efficiency as information on the state of health of the battery \n\nThe update frequency of remaining round trip energy efficiency should be aligned with the update frequency of round trip energy efficiency fade and should be provided upon change of the battery status.\n\nDIN DKE Spec 99100 chapter reference: 6.7.4.4"
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#remainingRoundTripEnergyEfficiencyValue",
+      "label": "remainingRoundTripEnergyEfficiencyValue",
+      "kind": "Property",
+      "preferredName": "remaining round trip energy efficiency value",
+      "description": "Percentage of energy that can be recovered and used after a full charge and discharge cycle, reflecting the battery's ability to retain and return energy efficiently over time."
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#EnergyThroughput",
+      "label": "EnergyThroughput",
+      "kind": "Characteristic",
+      "preferredName": null,
+      "description": null
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#CapacityThroughput",
+      "label": "CapacityThroughput",
+      "kind": "Characteristic",
+      "preferredName": null,
+      "description": "Capacity throughput."
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#NumberOfFullCycles",
+      "label": "NumberOfFullCycles",
+      "kind": "Characteristic",
+      "preferredName": null,
+      "description": "- Information and data as a result of its use, including the number of charging and discharging cycles."
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#StateOfCertifiedEnergy",
+      "label": "StateOfCertifiedEnergy",
+      "kind": "Characteristic",
+      "preferredName": null,
+      "description": null
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#RemainingEnergy",
+      "label": "RemainingEnergy",
+      "kind": "Characteristic",
+      "preferredName": null,
+      "description": null
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#RemainingCapacity",
+      "label": "RemainingCapacity",
+      "kind": "Characteristic",
+      "preferredName": null,
+      "description": null
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#TemperatureInformation",
+      "label": "TemperatureInformation",
+      "kind": "Characteristic",
+      "preferredName": null,
+      "description": null
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#RemainingPowerCapability",
+      "label": "RemainingPowerCapability",
+      "kind": "Characteristic",
+      "preferredName": null,
+      "description": null
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#RemainingPowerCapabilityValue",
+      "label": "RemainingPowerCapabilityValue",
+      "kind": "Characteristic",
+      "preferredName": "remaining power capability value",
+      "description": null
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#EvolutionOfSelfDischarge",
+      "label": "EvolutionOfSelfDischarge",
+      "kind": "Characteristic",
+      "preferredName": null,
+      "description": null
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#CurrentSelfDischargingRate",
+      "label": "CurrentSelfDischargingRate",
+      "kind": "Characteristic",
+      "preferredName": null,
+      "description": null
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#StateOfCharge",
+      "label": "StateOfCharge",
+      "kind": "Characteristic",
+      "preferredName": "state of charge",
+      "description": null
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#RemainingRoundTripEnergyEfficiency",
+      "label": "RemainingRoundTripEnergyEfficiency",
+      "kind": "Characteristic",
+      "preferredName": "remaining round trip energy efficiency",
+      "description": null
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#EnergyThroughputEntity",
+      "label": "EnergyThroughputEntity",
+      "kind": "Entity",
+      "preferredName": "energy throughput",
+      "description": "Energy throughput, last update."
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#CapacityThroughputEntity",
+      "label": "CapacityThroughputEntity",
+      "kind": "Entity",
+      "preferredName": "capacity throughput",
+      "description": "Capacity throughput, last update."
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#NumberOfFullCyclesEntity",
+      "label": "NumberOfFullCyclesEntity",
+      "kind": "Entity",
+      "preferredName": "number of full cycles",
+      "description": "Number of full cycles, last update."
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#StateOfCertifiedEnergyEntity",
+      "label": "StateOfCertifiedEnergyEntity",
+      "kind": "Entity",
+      "preferredName": "state of certified energy",
+      "description": "State of certified energy, last update."
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#RemainingEnergyEntity",
+      "label": "RemainingEnergyEntity",
+      "kind": "Entity",
+      "preferredName": "remaining energy",
+      "description": "Remaining energy, last update."
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#RemainingCapacityEntity",
+      "label": "RemainingCapacityEntity",
+      "kind": "Entity",
+      "preferredName": "remaining capacity",
+      "description": "Remaining capacity, last update."
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#NegativeEvent",
+      "label": "NegativeEvent",
+      "kind": "Entity",
+      "preferredName": "negative event",
+      "description": "Negative event, last update."
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#TemperatureConditionsEntity",
+      "label": "TemperatureConditionsEntity",
+      "kind": "Entity",
+      "preferredName": "temperature conditions",
+      "description": "Temperature conditions, last update."
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#RemainingPowerCapabilityEntity",
+      "label": "RemainingPowerCapabilityEntity",
+      "kind": "Entity",
+      "preferredName": "remaining power capability",
+      "description": "Remaining power capability, last update."
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#RemainingPowerCapabilityDynamicAt",
+      "label": "RemainingPowerCapabilityDynamicAt",
+      "kind": "Entity",
+      "preferredName": "remaining power capability dynamic at",
+      "description": "Remaining power capability dynamic at."
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#PowerCapabilityAtEntity",
+      "label": "PowerCapabilityAtEntity",
+      "kind": "Entity",
+      "preferredName": "power capability at",
+      "description": "Power capability at."
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#EvolutionOfSelfDischargeEntity",
+      "label": "EvolutionOfSelfDischargeEntity",
+      "kind": "Entity",
+      "preferredName": "evolution of self discharge",
+      "description": "Evolution of self discharge, last update."
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#CurrentSelfDischargingRateEntity",
+      "label": "CurrentSelfDischargingRateEntity",
+      "kind": "Entity",
+      "preferredName": "current self discharging rate",
+      "description": "Current self discharging rate."
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#StateOfChargeEntity",
+      "label": "StateOfChargeEntity",
+      "kind": "Entity",
+      "preferredName": "state of charge",
+      "description": "State of charge."
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#RemainingRoundTripEnergyEfficiencyEntity",
+      "label": "RemainingRoundTripEnergyEfficiencyEntity",
+      "kind": "Entity",
+      "preferredName": "remaining round trip energy efficiency",
+      "description": "Remaining round trip energy efficiency."
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#EnergyThroughputValue",
+      "label": "EnergyThroughputValue",
+      "kind": "Characteristic",
+      "preferredName": null,
+      "description": null
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#CapacityThroughputValue",
+      "label": "CapacityThroughputValue",
+      "kind": "Characteristic",
+      "preferredName": null,
+      "description": null
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#NumberOfFullCyclesValue",
+      "label": "NumberOfFullCyclesValue",
+      "kind": "Characteristic",
+      "preferredName": null,
+      "description": null
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#StateOfCertifiedEnergyValue",
+      "label": "StateOfCertifiedEnergyValue",
+      "kind": "Characteristic",
+      "preferredName": null,
+      "description": null
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#UBERemainingValue",
+      "label": "UBERemainingValue",
+      "kind": "Characteristic",
+      "preferredName": null,
+      "description": null
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#RemainingCapacityValue",
+      "label": "RemainingCapacityValue",
+      "kind": "Characteristic",
+      "preferredName": null,
+      "description": null
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#TimeExtremeHighTemp",
+      "label": "TimeExtremeHighTemp",
+      "kind": "Characteristic",
+      "preferredName": null,
+      "description": null
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#TimeExtremeLowTemp",
+      "label": "TimeExtremeLowTemp",
+      "kind": "Characteristic",
+      "preferredName": null,
+      "description": null
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#TimeExtremeHighTempCharging",
+      "label": "TimeExtremeHighTempCharging",
+      "kind": "Characteristic",
+      "preferredName": null,
+      "description": null
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#TimeExtremeLowTempCharging",
+      "label": "TimeExtremeLowTempCharging",
+      "kind": "Characteristic",
+      "preferredName": null,
+      "description": null
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#AtSoC",
+      "label": "AtSoC",
+      "kind": "Characteristic",
+      "preferredName": null,
+      "description": null
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#PowerCapabilityAtSoc",
+      "label": "PowerCapabilityAtSoc",
+      "kind": "Characteristic",
+      "preferredName": null,
+      "description": null
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#EvolutionOfSelfDischargeEntityValue",
+      "label": "EvolutionOfSelfDischargeEntityValue",
+      "kind": "Characteristic",
+      "preferredName": null,
+      "description": null
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#CurrentSelfDischargingRateValue",
+      "label": "CurrentSelfDischargingRateValue",
+      "kind": "Characteristic",
+      "preferredName": null,
+      "description": null
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#StateOfChargeValue",
+      "label": "StateOfChargeValue",
+      "kind": "Characteristic",
+      "preferredName": "Value",
+      "description": null
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#RemainingRoundTripEnergyEfficiencyValue",
+      "label": "RemainingRoundTripEnergyEfficiencyValue",
+      "kind": "Characteristic",
+      "preferredName": null,
+      "description": null
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#NegativeEvents",
+      "label": "NegativeEvents",
+      "kind": "Characteristic",
+      "preferredName": null,
+      "description": null
+    }
+  ],
+  "links": [
+    {
+      "source": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#ProductCondition",
+      "target": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#informationOnAccidents",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#EnergyThroughputEntity",
+      "target": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#energyThroughputValue",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#EnergyThroughputEntity",
+      "target": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#lastUpdate",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#CapacityThroughputEntity",
+      "target": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#capacityThroughputValue",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#CapacityThroughputEntity",
+      "target": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#lastUpdate",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#NumberOfFullCyclesEntity",
+      "target": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#numberOfFullCyclesValue",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#NumberOfFullCyclesEntity",
+      "target": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#lastUpdate",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#StateOfCertifiedEnergyEntity",
+      "target": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#stateOfCertifiedEnergyValue",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#StateOfCertifiedEnergyEntity",
+      "target": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#lastUpdate",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#RemainingEnergyEntity",
+      "target": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#remainingEnergyValue",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#RemainingEnergyEntity",
+      "target": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#lastUpdate",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#RemainingCapacityEntity",
+      "target": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#remainingCapacityValue",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#RemainingCapacityEntity",
+      "target": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#lastUpdate",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#NegativeEvent",
+      "target": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#negativeEventValue",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#NegativeEvent",
+      "target": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#lastUpdate",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#TemperatureConditionsEntity",
+      "target": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#timeExtremeHighTemp",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#TemperatureConditionsEntity",
+      "target": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#timeExtremeLowTemp",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#TemperatureConditionsEntity",
+      "target": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#timeExtremeHighTempCharging",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#TemperatureConditionsEntity",
+      "target": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#timeExtremeLowTempCharging",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#TemperatureConditionsEntity",
+      "target": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#lastUpdate",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#RemainingPowerCapabilityEntity",
+      "target": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#remainingPowerCapabilityValue",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#RemainingPowerCapabilityEntity",
+      "target": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#lastUpdate",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#RemainingPowerCapabilityDynamicAt",
+      "target": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#rPCLastUpdated",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#PowerCapabilityAtEntity",
+      "target": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#atSoC",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#PowerCapabilityAtEntity",
+      "target": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#powerCapabilityAt",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#EvolutionOfSelfDischargeEntity",
+      "target": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#evolutionOfSelfDischargeValue",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#EvolutionOfSelfDischargeEntity",
+      "target": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#lastUpdate",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#CurrentSelfDischargingRateEntity",
+      "target": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#currentSelfDischargingRateValue",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#CurrentSelfDischargingRateEntity",
+      "target": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#lastUpdate",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#StateOfChargeEntity",
+      "target": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#stateOfChargeValue",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#StateOfChargeEntity",
+      "target": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#lastUpdate",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#RemainingRoundTripEnergyEfficiencyEntity",
+      "target": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#remainingRoundTripEnergyEfficiencyValue",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#RemainingRoundTripEnergyEfficiencyEntity",
+      "target": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#lastUpdate",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#energyThroughput",
+      "target": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#EnergyThroughput",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#energyThroughputValue",
+      "target": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#EnergyThroughputValue",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#capacityThroughput",
+      "target": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#CapacityThroughput",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#capacityThroughputValue",
+      "target": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#CapacityThroughputValue",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#numberOfFullCycles",
+      "target": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#NumberOfFullCycles",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#numberOfFullCyclesValue",
+      "target": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#NumberOfFullCyclesValue",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#stateOfCertifiedEnergy",
+      "target": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#StateOfCertifiedEnergy",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#stateOfCertifiedEnergyValue",
+      "target": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#StateOfCertifiedEnergyValue",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#remainingEnergy",
+      "target": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#RemainingEnergy",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#remainingEnergyValue",
+      "target": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#UBERemainingValue",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#remainingCapacity",
+      "target": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#RemainingCapacity",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#remainingCapacityValue",
+      "target": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#RemainingCapacityValue",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#negativeEvents",
+      "target": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#NegativeEvents",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#temperatureInformation",
+      "target": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#TemperatureInformation",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#timeExtremeHighTemp",
+      "target": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#TimeExtremeHighTemp",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#timeExtremeLowTemp",
+      "target": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#TimeExtremeLowTemp",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#timeExtremeHighTempCharging",
+      "target": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#TimeExtremeHighTempCharging",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#timeExtremeLowTempCharging",
+      "target": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#TimeExtremeLowTempCharging",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#remainingPowerCapability",
+      "target": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#RemainingPowerCapability",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#remainingPowerCapabilityValue",
+      "target": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#RemainingPowerCapabilityValue",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#atSoC",
+      "target": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#AtSoC",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#powerCapabilityAt",
+      "target": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#PowerCapabilityAtSoc",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#evolutionOfSelfDischarge",
+      "target": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#EvolutionOfSelfDischarge",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#evolutionOfSelfDischargeValue",
+      "target": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#EvolutionOfSelfDischargeEntityValue",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#currentSelfDischargingRate",
+      "target": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#CurrentSelfDischargingRate",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#currentSelfDischargingRateValue",
+      "target": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#CurrentSelfDischargingRateValue",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#stateOfCharge",
+      "target": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#StateOfCharge",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#stateOfChargeValue",
+      "target": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#StateOfChargeValue",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#remainingRoundTripEnergyEfficiency",
+      "target": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#RemainingRoundTripEnergyEfficiency",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#remainingRoundTripEnergyEfficiencyValue",
+      "target": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#RemainingRoundTripEnergyEfficiencyValue",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#EnergyThroughput",
+      "target": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#EnergyThroughputEntity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#CapacityThroughput",
+      "target": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#CapacityThroughputEntity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#NumberOfFullCycles",
+      "target": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#NumberOfFullCyclesEntity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#StateOfCertifiedEnergy",
+      "target": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#StateOfCertifiedEnergyEntity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#RemainingEnergy",
+      "target": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#RemainingEnergyEntity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#RemainingCapacity",
+      "target": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#RemainingCapacityEntity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#NegativeEvents",
+      "target": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#NegativeEvent",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#TemperatureInformation",
+      "target": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#TemperatureConditionsEntity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#RemainingPowerCapability",
+      "target": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#RemainingPowerCapabilityEntity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#RemainingPowerCapabilityValue",
+      "target": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#RemainingPowerCapabilityDynamicAt",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#EvolutionOfSelfDischarge",
+      "target": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#EvolutionOfSelfDischargeEntity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#CurrentSelfDischargingRate",
+      "target": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#CurrentSelfDischargingRateEntity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#StateOfCharge",
+      "target": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#StateOfChargeEntity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#RemainingRoundTripEnergyEfficiency",
+      "target": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#RemainingRoundTripEnergyEfficiencyEntity",
+      "label": "dataType",
+      "optional": false
+    }
+  ]
+}

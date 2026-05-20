@@ -1,0 +1,709 @@
+{
+  "meta": {
+    "namespace": "urn:samm:io.catenax.us_tariff_information:1.0.0#",
+    "meta_model": "SAMM 2.1.0",
+    "model_family": "SAMM",
+    "model_name": "us_tariff_information",
+    "model_version": "1.0.0",
+    "source": "catenax",
+    "status": "release",
+    "release_date": "2025-07-17",
+    "release_notes": "# Changelog\nAll notable changes to this model will be documented in this file.\n\n## [2.0.0] - 2025-12-16\n### Added\n- partName\n- partOriginCountry\n- partValue\n- active\n\n### Changed\n- htsCode --> customClassificationCode\n- htsCodingSystem --> customClassificationCodingSystem\n- value --> partValue.amount\n- currency --> partValue.currency\n- processingCountry uses 3 letter country code instead of 2 letter code\n- originWeight --> kg is unit by default\n- partWeight --> kg is unit by default\n- materialClassification --> is now imported from a shared model --> requires three levels of classification instead of one\n- ProcessingTypeCharacteristic --> fixed typo in values (Pourring --> Pouring)\n- originCountry --> materialOriginCountry\n- certificateId --> documentID\n\n### Removed\n- processing.successor\n\n\n## [1.0.0] - 2025-07-17\n### Added\n- initial model\n\n### Changed\nn/a\n\n### Removed\nn/a",
+    "dependencies": [
+      {
+        "name": "shared.quantity",
+        "version": "2.0.0",
+        "family": "SAMM",
+        "source": "catenax"
+      },
+      {
+        "name": "shared.uuid",
+        "version": "2.0.0",
+        "family": "SAMM",
+        "source": "catenax"
+      }
+    ],
+    "path": "data/sldt-semantic-models/io.catenax.us_tariff_information/1.0.0/UsTariffInformation.ttl"
+  },
+  "nodes": [
+    {
+      "id": "urn:samm:io.catenax.us_tariff_information:1.0.0#UsTariffInformation",
+      "label": "UsTariffInformation",
+      "kind": "Aspect",
+      "preferredName": "Us Tariff Information",
+      "description": "Information required for US tariff declaration"
+    },
+    {
+      "id": "urn:samm:io.catenax.us_tariff_information:1.0.0#materialList",
+      "label": "materialList",
+      "kind": "Property",
+      "preferredName": "Material List",
+      "description": "Includes all materials required by the data consumer to submit a U.S. tariff declaration for their component."
+    },
+    {
+      "id": "urn:samm:io.catenax.us_tariff_information:1.0.0#partId",
+      "label": "partId",
+      "kind": "Property",
+      "preferredName": "partId",
+      "description": "The fully anonymous partId (catenaxId) of the serialized part, valid for the Catena-X dataspace."
+    },
+    {
+      "id": "urn:samm:io.catenax.us_tariff_information:1.0.0#partWeight",
+      "label": "partWeight",
+      "kind": "Property",
+      "preferredName": "Part Weight",
+      "description": "Total weight of the part"
+    },
+    {
+      "id": "urn:samm:io.catenax.us_tariff_information:1.0.0#processing",
+      "label": "processing",
+      "kind": "Property",
+      "preferredName": "Processing",
+      "description": "processing details all operations performed during the production of the part."
+    },
+    {
+      "id": "urn:samm:io.catenax.us_tariff_information:1.0.0#origin",
+      "label": "origin",
+      "kind": "Property",
+      "preferredName": "Origin",
+      "description": "List the countries of origin from which the material originates"
+    },
+    {
+      "id": "urn:samm:io.catenax.us_tariff_information:1.0.0#currency",
+      "label": "currency",
+      "kind": "Property",
+      "preferredName": "Currency",
+      "description": "Currency in which the value is specified."
+    },
+    {
+      "id": "urn:samm:io.catenax.us_tariff_information:1.0.0#value",
+      "label": "value",
+      "kind": "Property",
+      "preferredName": "Value",
+      "description": "Total value of material"
+    },
+    {
+      "id": "urn:samm:io.catenax.us_tariff_information:1.0.0#material",
+      "label": "material",
+      "kind": "Property",
+      "preferredName": "Material",
+      "description": "Material the part is made of"
+    },
+    {
+      "id": "urn:samm:io.catenax.us_tariff_information:1.0.0#htsCode",
+      "label": "htsCode",
+      "kind": "Property",
+      "preferredName": "HTS Code",
+      "description": "Harmonized Tariff Schedule (HTS) code"
+    },
+    {
+      "id": "urn:samm:io.catenax.us_tariff_information:1.0.0#referenceNumber",
+      "label": "referenceNumber",
+      "kind": "Property",
+      "preferredName": "Reference numnber",
+      "description": "Latest PO Number  (or ASN)"
+    },
+    {
+      "id": "urn:samm:io.catenax.us_tariff_information:1.0.0#htsCodingSystem",
+      "label": "htsCodingSystem",
+      "kind": "Property",
+      "preferredName": "HTS Coding System",
+      "description": "Coding system according to which the Harmonized Tariff Schedule (HTS) code was created"
+    },
+    {
+      "id": "urn:samm:io.catenax.us_tariff_information:1.0.0#processingCountry",
+      "label": "processingCountry",
+      "kind": "Property",
+      "preferredName": "Processing Country",
+      "description": "Processing Country (two letter country code that must conform to data type ISO 3166CC)"
+    },
+    {
+      "id": "urn:samm:io.catenax.us_tariff_information:1.0.0#successor",
+      "label": "successor",
+      "kind": "Property",
+      "preferredName": "Successor",
+      "description": "Sucessor(s) of the processing step"
+    },
+    {
+      "id": "urn:samm:io.catenax.us_tariff_information:1.0.0#processingType",
+      "label": "processingType",
+      "kind": "Property",
+      "preferredName": "Processing Type",
+      "description": "Description of the processing type"
+    },
+    {
+      "id": "urn:samm:io.catenax.us_tariff_information:1.0.0#processingId",
+      "label": "processingId",
+      "kind": "Property",
+      "preferredName": "Processing Id",
+      "description": "Identifier of the processing step"
+    },
+    {
+      "id": "urn:samm:io.catenax.us_tariff_information:1.0.0#certificateId",
+      "label": "certificateId",
+      "kind": "Property",
+      "preferredName": "Certificate Id",
+      "description": "Certificate of the processing site"
+    },
+    {
+      "id": "urn:samm:io.catenax.us_tariff_information:1.0.0#originWeight",
+      "label": "originWeight",
+      "kind": "Property",
+      "preferredName": "Origin Weight",
+      "description": "Total weight of the material for one originCountry"
+    },
+    {
+      "id": "urn:samm:io.catenax.us_tariff_information:1.0.0#valuePercentage",
+      "label": "valuePercentage",
+      "kind": "Property",
+      "preferredName": "Value Percentage",
+      "description": "Percentage of the total value is attributed to origin property"
+    },
+    {
+      "id": "urn:samm:io.catenax.us_tariff_information:1.0.0#originCountry",
+      "label": "originCountry",
+      "kind": "Property",
+      "preferredName": "Origin Country",
+      "description": "Country of origin for the material (two letter country code that must conform to data type ISO 3166CC)"
+    },
+    {
+      "id": "urn:samm:io.catenax.us_tariff_information:1.0.0#classificationType",
+      "label": "classificationType",
+      "kind": "Property",
+      "preferredName": "Classification type",
+      "description": "Standard according to which the material is classified"
+    },
+    {
+      "id": "urn:samm:io.catenax.us_tariff_information:1.0.0#classificationId",
+      "label": "classificationId",
+      "kind": "Property",
+      "preferredName": "ClassificationId",
+      "description": "Classification code of the material according to the classificationType property"
+    },
+    {
+      "id": "urn:samm:io.catenax.us_tariff_information:1.0.0#materialName",
+      "label": "materialName",
+      "kind": "Property",
+      "preferredName": "Material name",
+      "description": "Name of the material"
+    },
+    {
+      "id": "urn:samm:io.catenax.us_tariff_information:1.0.0#successorId",
+      "label": "successorId",
+      "kind": "Property",
+      "preferredName": "Successor Id",
+      "description": "Identifier of the successor"
+    },
+    {
+      "id": "urn:samm:io.catenax.us_tariff_information:1.0.0#MaterialListCollection",
+      "label": "MaterialListCollection",
+      "kind": "Characteristic",
+      "preferredName": "Material List Collection",
+      "description": "Characteristic of the materialList property defined as a Collection."
+    },
+    {
+      "id": "urn:samm:io.catenax.us_tariff_information:1.0.0#ProcessingListCollection",
+      "label": "ProcessingListCollection",
+      "kind": "Characteristic",
+      "preferredName": "Processing List Collection",
+      "description": "Characteristic of the processing information property  defined as a Collection."
+    },
+    {
+      "id": "urn:samm:io.catenax.us_tariff_information:1.0.0#OriginListCollection",
+      "label": "OriginListCollection",
+      "kind": "Characteristic",
+      "preferredName": "Origin List Collection",
+      "description": "Characteristic of the origin property defined as a Collection."
+    },
+    {
+      "id": "urn:samm:io.catenax.us_tariff_information:1.0.0#SuccessorListCollection",
+      "label": "SuccessorListCollection",
+      "kind": "Characteristic",
+      "preferredName": "Successor List Collection",
+      "description": "Characteristic of the successor property defined as a Collection."
+    },
+    {
+      "id": "urn:samm:io.catenax.us_tariff_information:1.0.0#MaterialListEntity",
+      "label": "MaterialListEntity",
+      "kind": "Entity",
+      "preferredName": "Material List Entity",
+      "description": "Entity of the materialList Entity"
+    },
+    {
+      "id": "urn:samm:io.catenax.us_tariff_information:1.0.0#ProcessingListEntity",
+      "label": "ProcessingListEntity",
+      "kind": "Entity",
+      "preferredName": "Processing List Entity",
+      "description": "Entity of the processing property"
+    },
+    {
+      "id": "urn:samm:io.catenax.us_tariff_information:1.0.0#OriginListEntity",
+      "label": "OriginListEntity",
+      "kind": "Entity",
+      "preferredName": "Origin List Entity",
+      "description": "Entity of the origin property"
+    },
+    {
+      "id": "urn:samm:io.catenax.us_tariff_information:1.0.0#MaterialEntity",
+      "label": "MaterialEntity",
+      "kind": "Entity",
+      "preferredName": "Material Entity",
+      "description": "Entity of the material property"
+    },
+    {
+      "id": "urn:samm:io.catenax.us_tariff_information:1.0.0#SuccessorListEntity",
+      "label": "SuccessorListEntity",
+      "kind": "Entity",
+      "preferredName": "Successor List Entity",
+      "description": "Entity of the successor entity"
+    },
+    {
+      "id": "urn:samm:io.catenax.us_tariff_information:1.0.0#CurrencyTrait",
+      "label": "CurrencyTrait",
+      "kind": "Characteristic",
+      "preferredName": null,
+      "description": null
+    },
+    {
+      "id": "urn:samm:io.catenax.us_tariff_information:1.0.0#HtsTrait",
+      "label": "HtsTrait",
+      "kind": "Characteristic",
+      "preferredName": "HTS Trait",
+      "description": "Harmonized Tariff Schedule (HTS) Trait"
+    },
+    {
+      "id": "urn:samm:io.catenax.us_tariff_information:1.0.0#CountryTrait",
+      "label": "CountryTrait",
+      "kind": "Characteristic",
+      "preferredName": "Country Trait",
+      "description": "Trait representing a country, using ISO 3166 country codes."
+    },
+    {
+      "id": "urn:samm:io.catenax.us_tariff_information:1.0.0#ValueCharacteristic",
+      "label": "ValueCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Value Characteristic",
+      "description": "Characteristic of the value property"
+    },
+    {
+      "id": "urn:samm:io.catenax.us_tariff_information:1.0.0#MaterialCharacteristic",
+      "label": "MaterialCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Material Characteristic",
+      "description": "Characteristic of the material property"
+    },
+    {
+      "id": "urn:samm:io.catenax.us_tariff_information:1.0.0#ReferenceNumberCharacteristic",
+      "label": "ReferenceNumberCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Reference Number Characteristic",
+      "description": "Characteristic of the Reference Number"
+    },
+    {
+      "id": "urn:samm:io.catenax.us_tariff_information:1.0.0#HtsCodingsSytemCharacteristic",
+      "label": "HtsCodingsSytemCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "HTS Codings Sytem Characteristic",
+      "description": "Characteristic of the Harmonized Tariff Schedule (HTS) Codings System."
+    },
+    {
+      "id": "urn:samm:io.catenax.us_tariff_information:1.0.0#CurrencyCharacteristic",
+      "label": "CurrencyCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Currency Characteristic",
+      "description": "Characteristic of the currency property defined as String."
+    },
+    {
+      "id": "urn:samm:io.catenax.us_tariff_information:1.0.0#HtsCharacteristic",
+      "label": "HtsCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "HTS Characteristic",
+      "description": "Characteristic of the HTS property"
+    },
+    {
+      "id": "urn:samm:io.catenax.us_tariff_information:1.0.0#ProcessingIdCharacteristic",
+      "label": "ProcessingIdCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Processing Id Characteristic",
+      "description": "Characteristic of a processing Id"
+    },
+    {
+      "id": "urn:samm:io.catenax.us_tariff_information:1.0.0#CertificateIdCharacteristic",
+      "label": "CertificateIdCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Certificate Id Characteristic",
+      "description": "Characteristic of the Certificate Id"
+    },
+    {
+      "id": "urn:samm:io.catenax.us_tariff_information:1.0.0#ClassificationIdCharacteristic",
+      "label": "ClassificationIdCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Classification Id Characteristic",
+      "description": "Characteristic of the classification Id property"
+    },
+    {
+      "id": "urn:samm:io.catenax.us_tariff_information:1.0.0#MaterialNameCharacteristic",
+      "label": "MaterialNameCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Material name characteristic",
+      "description": "Characteristic of materialName property"
+    },
+    {
+      "id": "urn:samm:io.catenax.us_tariff_information:1.0.0#CountryCharacteristic",
+      "label": "CountryCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Country of Origin",
+      "description": "Characteristic of a country property"
+    },
+    {
+      "id": "urn:samm:io.catenax.us_tariff_information:1.0.0#CurrencyRegularExpression",
+      "label": "CurrencyRegularExpression",
+      "kind": "Characteristic",
+      "preferredName": "Currency Regular Expression",
+      "description": "Regular expression to restrict the currency based on the ISO 4217."
+    },
+    {
+      "id": "urn:samm:io.catenax.us_tariff_information:1.0.0#HtsRegularExpression",
+      "label": "HtsRegularExpression",
+      "kind": "Characteristic",
+      "preferredName": "HTS Regular Expression",
+      "description": "HTS Regular Expression"
+    },
+    {
+      "id": "urn:samm:io.catenax.us_tariff_information:1.0.0#CountryRegularExpression",
+      "label": "CountryRegularExpression",
+      "kind": "Characteristic",
+      "preferredName": "Country Regular Expression",
+      "description": "Regular expression to restrict a country code or federal state based on the ISO 3166."
+    },
+    {
+      "id": "urn:samm:io.catenax.us_tariff_information:1.0.0#ProcessingTypeCharacteristic",
+      "label": "ProcessingTypeCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Processing Type Characteristic",
+      "description": "Enumeration of processingTypes"
+    },
+    {
+      "id": "urn:samm:io.catenax.us_tariff_information:1.0.0#ClassificationTypeEnumeration",
+      "label": "ClassificationTypeEnumeration",
+      "kind": "Characteristic",
+      "preferredName": "Enumeration for the Classification Type",
+      "description": "Enumeration of the classification Type property"
+    },
+    {
+      "id": "urn:samm:io.catenax.us_tariff_information:1.0.0#ValuePercentageCharacteristic",
+      "label": "ValuePercentageCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Value Percentage Characteristic",
+      "description": "Characteristic of the valuePercentage property"
+    }
+  ],
+  "links": [
+    {
+      "source": "urn:samm:io.catenax.us_tariff_information:1.0.0#UsTariffInformation",
+      "target": "urn:samm:io.catenax.us_tariff_information:1.0.0#materialList",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.us_tariff_information:1.0.0#UsTariffInformation",
+      "target": "urn:samm:io.catenax.us_tariff_information:1.0.0#partId",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.us_tariff_information:1.0.0#UsTariffInformation",
+      "target": "urn:samm:io.catenax.us_tariff_information:1.0.0#partWeight",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.us_tariff_information:1.0.0#MaterialListEntity",
+      "target": "urn:samm:io.catenax.us_tariff_information:1.0.0#processing",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.us_tariff_information:1.0.0#MaterialListEntity",
+      "target": "urn:samm:io.catenax.us_tariff_information:1.0.0#origin",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.us_tariff_information:1.0.0#MaterialListEntity",
+      "target": "urn:samm:io.catenax.us_tariff_information:1.0.0#currency",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.us_tariff_information:1.0.0#MaterialListEntity",
+      "target": "urn:samm:io.catenax.us_tariff_information:1.0.0#value",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.us_tariff_information:1.0.0#MaterialListEntity",
+      "target": "urn:samm:io.catenax.us_tariff_information:1.0.0#material",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.us_tariff_information:1.0.0#MaterialListEntity",
+      "target": "urn:samm:io.catenax.us_tariff_information:1.0.0#htsCode",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.us_tariff_information:1.0.0#MaterialListEntity",
+      "target": "urn:samm:io.catenax.us_tariff_information:1.0.0#referenceNumber",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.us_tariff_information:1.0.0#MaterialListEntity",
+      "target": "urn:samm:io.catenax.us_tariff_information:1.0.0#htsCodingSystem",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.us_tariff_information:1.0.0#ProcessingListEntity",
+      "target": "urn:samm:io.catenax.us_tariff_information:1.0.0#processingCountry",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.us_tariff_information:1.0.0#ProcessingListEntity",
+      "target": "urn:samm:io.catenax.us_tariff_information:1.0.0#successor",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.us_tariff_information:1.0.0#ProcessingListEntity",
+      "target": "urn:samm:io.catenax.us_tariff_information:1.0.0#processingType",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.us_tariff_information:1.0.0#ProcessingListEntity",
+      "target": "urn:samm:io.catenax.us_tariff_information:1.0.0#processingId",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.us_tariff_information:1.0.0#ProcessingListEntity",
+      "target": "urn:samm:io.catenax.us_tariff_information:1.0.0#certificateId",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.us_tariff_information:1.0.0#OriginListEntity",
+      "target": "urn:samm:io.catenax.us_tariff_information:1.0.0#originWeight",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.us_tariff_information:1.0.0#OriginListEntity",
+      "target": "urn:samm:io.catenax.us_tariff_information:1.0.0#valuePercentage",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.us_tariff_information:1.0.0#OriginListEntity",
+      "target": "urn:samm:io.catenax.us_tariff_information:1.0.0#originCountry",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.us_tariff_information:1.0.0#MaterialEntity",
+      "target": "urn:samm:io.catenax.us_tariff_information:1.0.0#classificationType",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.us_tariff_information:1.0.0#MaterialEntity",
+      "target": "urn:samm:io.catenax.us_tariff_information:1.0.0#classificationId",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.us_tariff_information:1.0.0#MaterialEntity",
+      "target": "urn:samm:io.catenax.us_tariff_information:1.0.0#materialName",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.us_tariff_information:1.0.0#SuccessorListEntity",
+      "target": "urn:samm:io.catenax.us_tariff_information:1.0.0#successorId",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.us_tariff_information:1.0.0#materialList",
+      "target": "urn:samm:io.catenax.us_tariff_information:1.0.0#MaterialListCollection",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.us_tariff_information:1.0.0#processing",
+      "target": "urn:samm:io.catenax.us_tariff_information:1.0.0#ProcessingListCollection",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.us_tariff_information:1.0.0#origin",
+      "target": "urn:samm:io.catenax.us_tariff_information:1.0.0#OriginListCollection",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.us_tariff_information:1.0.0#currency",
+      "target": "urn:samm:io.catenax.us_tariff_information:1.0.0#CurrencyTrait",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.us_tariff_information:1.0.0#value",
+      "target": "urn:samm:io.catenax.us_tariff_information:1.0.0#ValueCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.us_tariff_information:1.0.0#material",
+      "target": "urn:samm:io.catenax.us_tariff_information:1.0.0#MaterialCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.us_tariff_information:1.0.0#htsCode",
+      "target": "urn:samm:io.catenax.us_tariff_information:1.0.0#HtsTrait",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.us_tariff_information:1.0.0#referenceNumber",
+      "target": "urn:samm:io.catenax.us_tariff_information:1.0.0#ReferenceNumberCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.us_tariff_information:1.0.0#htsCodingSystem",
+      "target": "urn:samm:io.catenax.us_tariff_information:1.0.0#HtsCodingsSytemCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.us_tariff_information:1.0.0#processingCountry",
+      "target": "urn:samm:io.catenax.us_tariff_information:1.0.0#CountryTrait",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.us_tariff_information:1.0.0#originCountry",
+      "target": "urn:samm:io.catenax.us_tariff_information:1.0.0#CountryTrait",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.us_tariff_information:1.0.0#successor",
+      "target": "urn:samm:io.catenax.us_tariff_information:1.0.0#SuccessorListCollection",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.us_tariff_information:1.0.0#processingType",
+      "target": "urn:samm:io.catenax.us_tariff_information:1.0.0#ProcessingTypeCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.us_tariff_information:1.0.0#processingId",
+      "target": "urn:samm:io.catenax.us_tariff_information:1.0.0#ProcessingIdCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.us_tariff_information:1.0.0#successorId",
+      "target": "urn:samm:io.catenax.us_tariff_information:1.0.0#ProcessingIdCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.us_tariff_information:1.0.0#certificateId",
+      "target": "urn:samm:io.catenax.us_tariff_information:1.0.0#CertificateIdCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.us_tariff_information:1.0.0#valuePercentage",
+      "target": "urn:samm:io.catenax.us_tariff_information:1.0.0#ValuePercentageCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.us_tariff_information:1.0.0#classificationType",
+      "target": "urn:samm:io.catenax.us_tariff_information:1.0.0#ClassificationTypeEnumeration",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.us_tariff_information:1.0.0#classificationId",
+      "target": "urn:samm:io.catenax.us_tariff_information:1.0.0#ClassificationIdCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.us_tariff_information:1.0.0#materialName",
+      "target": "urn:samm:io.catenax.us_tariff_information:1.0.0#MaterialNameCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.us_tariff_information:1.0.0#MaterialListCollection",
+      "target": "urn:samm:io.catenax.us_tariff_information:1.0.0#MaterialListEntity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.us_tariff_information:1.0.0#ProcessingListCollection",
+      "target": "urn:samm:io.catenax.us_tariff_information:1.0.0#ProcessingListEntity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.us_tariff_information:1.0.0#OriginListCollection",
+      "target": "urn:samm:io.catenax.us_tariff_information:1.0.0#OriginListEntity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.us_tariff_information:1.0.0#MaterialCharacteristic",
+      "target": "urn:samm:io.catenax.us_tariff_information:1.0.0#MaterialEntity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.us_tariff_information:1.0.0#SuccessorListCollection",
+      "target": "urn:samm:io.catenax.us_tariff_information:1.0.0#SuccessorListEntity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.us_tariff_information:1.0.0#CurrencyTrait",
+      "target": "urn:samm:io.catenax.us_tariff_information:1.0.0#CurrencyRegularExpression",
+      "label": "constraint",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.us_tariff_information:1.0.0#HtsTrait",
+      "target": "urn:samm:io.catenax.us_tariff_information:1.0.0#HtsRegularExpression",
+      "label": "constraint",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.us_tariff_information:1.0.0#CountryTrait",
+      "target": "urn:samm:io.catenax.us_tariff_information:1.0.0#CountryRegularExpression",
+      "label": "constraint",
+      "optional": false
+    }
+  ]
+}

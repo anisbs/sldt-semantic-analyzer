@@ -1,0 +1,402 @@
+{
+  "meta": {
+    "namespace": "urn:samm:io.catenax.single_level_scene_node:1.0.0#",
+    "meta_model": "SAMM 2.1.0",
+    "model_family": "SAMM",
+    "model_name": "single_level_scene_node",
+    "model_version": "1.0.0",
+    "source": "catenax",
+    "status": "release",
+    "release_date": "2025-10-08",
+    "release_notes": "# Changelog\nAll notable changes to this model will be documented in this file.\n\n## [1.0.0] - 2025-10-08\n### Added\n- initial version of model\n\n### Changed\nn/a\n\n### Removed\nn/a",
+    "dependencies": [
+      {
+        "name": "shared.uuid",
+        "version": "2.0.0",
+        "family": "SAMM",
+        "source": "catenax"
+      }
+    ],
+    "path": "data/sldt-semantic-models/io.catenax.single_level_scene_node/1.0.0/SingleLevelSceneNode.ttl"
+  },
+  "nodes": [
+    {
+      "id": "urn:samm:io.catenax.single_level_scene_node:1.0.0#SingleLevelSceneNode",
+      "label": "SingleLevelSceneNode",
+      "kind": "Aspect",
+      "preferredName": "Single Level Scene Node",
+      "description": "The Single Level Scene Node for geometry Data "
+    },
+    {
+      "id": "urn:samm:io.catenax.single_level_scene_node:1.0.0#catenaXId",
+      "label": "catenaXId",
+      "kind": "Property",
+      "preferredName": "Catena-X ID",
+      "description": "The Catena-X ID of the given part valid for the Catena-X dataspace."
+    },
+    {
+      "id": "urn:samm:io.catenax.single_level_scene_node:1.0.0#childItems",
+      "label": "childItems",
+      "kind": "Property",
+      "preferredName": "Child Items",
+      "description": "Set of child items, of which the given parent item is assembled by (one structural level down)."
+    },
+    {
+      "id": "urn:samm:io.catenax.single_level_scene_node:1.0.0#localTransform",
+      "label": "localTransform",
+      "kind": "Property",
+      "preferredName": "Local Transform",
+      "description": "The local transformation (position, rotation, scale) of the node relative to its parent."
+    },
+    {
+      "id": "urn:samm:io.catenax.single_level_scene_node:1.0.0#boundingVolume",
+      "label": "boundingVolume",
+      "kind": "Property",
+      "preferredName": "Bounding Volume",
+      "description": "The bounding volume that encloses the geometry object or node."
+    },
+    {
+      "id": "urn:samm:io.catenax.single_level_scene_node:1.0.0#modelItems",
+      "label": "modelItems",
+      "kind": "Property",
+      "preferredName": "Model Items",
+      "description": "The set of geometry model items associated with this node."
+    },
+    {
+      "id": "urn:samm:io.catenax.single_level_scene_node:1.0.0#semanticTags",
+      "label": "semanticTags",
+      "kind": "Property",
+      "preferredName": "Semantic Tags",
+      "description": "Used to identify the type of the linked geometry data"
+    },
+    {
+      "id": "urn:samm:io.catenax.single_level_scene_node:1.0.0#customTags",
+      "label": "customTags",
+      "kind": "Property",
+      "preferredName": "Custom Tags",
+      "description": "Is used to use custom identifier of the geometry data"
+    },
+    {
+      "id": "urn:samm:io.catenax.single_level_scene_node:1.0.0#matrix4x4",
+      "label": "matrix4x4",
+      "kind": "Property",
+      "preferredName": "Matrix 4x4",
+      "description": "Defines a 4x4 transformation matrix for the geometry object or node."
+    },
+    {
+      "id": "urn:samm:io.catenax.single_level_scene_node:1.0.0#minPoint",
+      "label": "minPoint",
+      "kind": "Property",
+      "preferredName": "Minimum Point",
+      "description": "The minimum corner point of the bounding box."
+    },
+    {
+      "id": "urn:samm:io.catenax.single_level_scene_node:1.0.0#maxPoint",
+      "label": "maxPoint",
+      "kind": "Property",
+      "preferredName": "Maximum Point",
+      "description": "The maximum corner point of the bounding box."
+    },
+    {
+      "id": "urn:samm:io.catenax.single_level_scene_node:1.0.0#SetOfChildItemsCharacteristic",
+      "label": "SetOfChildItemsCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Set of Child Items",
+      "description": "Set of child items the parent item is assembled by (one structural level down)."
+    },
+    {
+      "id": "urn:samm:io.catenax.single_level_scene_node:1.0.0#SetOfModelItemsCharacteristic",
+      "label": "SetOfModelItemsCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Set of Model Items",
+      "description": "Set of geometry model items associated with a node."
+    },
+    {
+      "id": "urn:samm:io.catenax.single_level_scene_node:1.0.0#SetOfSemanticTagsCharacteristic",
+      "label": "SetOfSemanticTagsCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Semantic Tags Characteristic",
+      "description": "Set of Standardised Semantic Tags"
+    },
+    {
+      "id": "urn:samm:io.catenax.single_level_scene_node:1.0.0#SetOfCustomTagsCharacteristic",
+      "label": "SetOfCustomTagsCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Custom Tags Characteristic",
+      "description": "Set of Custom Tags to define custom identifiers of geometry model type"
+    },
+    {
+      "id": "urn:samm:io.catenax.single_level_scene_node:1.0.0#LocalTransformCharacteristic",
+      "label": "LocalTransformCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Local Transform Characteristic",
+      "description": "Characteristic describing the local transformation of a node."
+    },
+    {
+      "id": "urn:samm:io.catenax.single_level_scene_node:1.0.0#BoundingVolumeCharacteristic",
+      "label": "BoundingVolumeCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Bounding Volume Characteristic",
+      "description": "Characteristic describing the bounding volume of a node."
+    },
+    {
+      "id": "urn:samm:io.catenax.single_level_scene_node:1.0.0#FloatCharacteristic",
+      "label": "FloatCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Float Characteristic",
+      "description": "Characteristic for a float value."
+    },
+    {
+      "id": "urn:samm:io.catenax.single_level_scene_node:1.0.0#ChildData",
+      "label": "ChildData",
+      "kind": "Entity",
+      "preferredName": "Child Data",
+      "description": "Catena-X ID and meta data of the assembled child item."
+    },
+    {
+      "id": "urn:samm:io.catenax.single_level_scene_node:1.0.0#MatrixTransform",
+      "label": "MatrixTransform",
+      "kind": "Entity",
+      "preferredName": "Matrix Transform",
+      "description": "Describes a transformation matrix"
+    },
+    {
+      "id": "urn:samm:io.catenax.single_level_scene_node:1.0.0#BoundingBox",
+      "label": "BoundingBox",
+      "kind": "Entity",
+      "preferredName": "Bounding Box",
+      "description": "Axis-aligned bounding box enclosing a geometry object or node."
+    },
+    {
+      "id": "urn:samm:io.catenax.single_level_scene_node:1.0.0#ExternalBinaryModelData",
+      "label": "ExternalBinaryModelData",
+      "kind": "Entity",
+      "preferredName": "External Binary Model Data",
+      "description": "Links to io.catenax.binary_exchange"
+    },
+    {
+      "id": "urn:samm:io.catenax.single_level_scene_node:1.0.0#MatrixTrait",
+      "label": "MatrixTrait",
+      "kind": "Characteristic",
+      "preferredName": "Matrix Trait",
+      "description": null
+    },
+    {
+      "id": "urn:samm:io.catenax.single_level_scene_node:1.0.0#Vector3Trait",
+      "label": "Vector3Trait",
+      "kind": "Characteristic",
+      "preferredName": "Vector3 Trait",
+      "description": null
+    },
+    {
+      "id": "urn:samm:io.catenax.single_level_scene_node:1.0.0#MatrixCharacteristic",
+      "label": "MatrixCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Matrix Characteristic",
+      "description": "Matrix4x4 (list of 16 floats)"
+    },
+    {
+      "id": "urn:samm:io.catenax.single_level_scene_node:1.0.0#Vector3ListCharacteristic",
+      "label": "Vector3ListCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Vector3 List Characteristic",
+      "description": "Vector3 (list of 3 floats)"
+    },
+    {
+      "id": "urn:samm:io.catenax.single_level_scene_node:1.0.0#MatrixConstraint",
+      "label": "MatrixConstraint",
+      "kind": "Characteristic",
+      "preferredName": "Matrix Constraint",
+      "description": "Requires the matrix list to have exactly 16 elements."
+    },
+    {
+      "id": "urn:samm:io.catenax.single_level_scene_node:1.0.0#Vector3Constraint",
+      "label": "Vector3Constraint",
+      "kind": "Characteristic",
+      "preferredName": "Vector3 Constraint",
+      "description": "Requires the vector to have exactly 3 elements."
+    }
+  ],
+  "links": [
+    {
+      "source": "urn:samm:io.catenax.single_level_scene_node:1.0.0#SingleLevelSceneNode",
+      "target": "urn:samm:io.catenax.single_level_scene_node:1.0.0#catenaXId",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.single_level_scene_node:1.0.0#SingleLevelSceneNode",
+      "target": "urn:samm:io.catenax.single_level_scene_node:1.0.0#childItems",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.single_level_scene_node:1.0.0#SingleLevelSceneNode",
+      "target": "urn:samm:io.catenax.single_level_scene_node:1.0.0#localTransform",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.single_level_scene_node:1.0.0#SingleLevelSceneNode",
+      "target": "urn:samm:io.catenax.single_level_scene_node:1.0.0#boundingVolume",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.single_level_scene_node:1.0.0#SingleLevelSceneNode",
+      "target": "urn:samm:io.catenax.single_level_scene_node:1.0.0#modelItems",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.single_level_scene_node:1.0.0#ChildData",
+      "target": "urn:samm:io.catenax.single_level_scene_node:1.0.0#catenaXId",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.single_level_scene_node:1.0.0#ChildData",
+      "target": "urn:samm:io.catenax.single_level_scene_node:1.0.0#semanticTags",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.single_level_scene_node:1.0.0#ChildData",
+      "target": "urn:samm:io.catenax.single_level_scene_node:1.0.0#customTags",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.single_level_scene_node:1.0.0#ChildData",
+      "target": "urn:samm:io.catenax.single_level_scene_node:1.0.0#localTransform",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.single_level_scene_node:1.0.0#MatrixTransform",
+      "target": "urn:samm:io.catenax.single_level_scene_node:1.0.0#matrix4x4",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.single_level_scene_node:1.0.0#BoundingBox",
+      "target": "urn:samm:io.catenax.single_level_scene_node:1.0.0#minPoint",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.single_level_scene_node:1.0.0#BoundingBox",
+      "target": "urn:samm:io.catenax.single_level_scene_node:1.0.0#maxPoint",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.single_level_scene_node:1.0.0#ExternalBinaryModelData",
+      "target": "urn:samm:io.catenax.single_level_scene_node:1.0.0#semanticTags",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.single_level_scene_node:1.0.0#ExternalBinaryModelData",
+      "target": "urn:samm:io.catenax.single_level_scene_node:1.0.0#customTags",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.single_level_scene_node:1.0.0#ExternalBinaryModelData",
+      "target": "urn:samm:io.catenax.single_level_scene_node:1.0.0#catenaXId",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.single_level_scene_node:1.0.0#childItems",
+      "target": "urn:samm:io.catenax.single_level_scene_node:1.0.0#SetOfChildItemsCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.single_level_scene_node:1.0.0#localTransform",
+      "target": "urn:samm:io.catenax.single_level_scene_node:1.0.0#LocalTransformCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.single_level_scene_node:1.0.0#boundingVolume",
+      "target": "urn:samm:io.catenax.single_level_scene_node:1.0.0#BoundingVolumeCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.single_level_scene_node:1.0.0#modelItems",
+      "target": "urn:samm:io.catenax.single_level_scene_node:1.0.0#SetOfModelItemsCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.single_level_scene_node:1.0.0#semanticTags",
+      "target": "urn:samm:io.catenax.single_level_scene_node:1.0.0#SetOfSemanticTagsCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.single_level_scene_node:1.0.0#customTags",
+      "target": "urn:samm:io.catenax.single_level_scene_node:1.0.0#SetOfCustomTagsCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.single_level_scene_node:1.0.0#matrix4x4",
+      "target": "urn:samm:io.catenax.single_level_scene_node:1.0.0#MatrixTrait",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.single_level_scene_node:1.0.0#minPoint",
+      "target": "urn:samm:io.catenax.single_level_scene_node:1.0.0#Vector3Trait",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.single_level_scene_node:1.0.0#maxPoint",
+      "target": "urn:samm:io.catenax.single_level_scene_node:1.0.0#Vector3Trait",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.single_level_scene_node:1.0.0#SetOfChildItemsCharacteristic",
+      "target": "urn:samm:io.catenax.single_level_scene_node:1.0.0#ChildData",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.single_level_scene_node:1.0.0#LocalTransformCharacteristic",
+      "target": "urn:samm:io.catenax.single_level_scene_node:1.0.0#MatrixTransform",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.single_level_scene_node:1.0.0#BoundingVolumeCharacteristic",
+      "target": "urn:samm:io.catenax.single_level_scene_node:1.0.0#BoundingBox",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.single_level_scene_node:1.0.0#SetOfModelItemsCharacteristic",
+      "target": "urn:samm:io.catenax.single_level_scene_node:1.0.0#ExternalBinaryModelData",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.single_level_scene_node:1.0.0#MatrixTrait",
+      "target": "urn:samm:io.catenax.single_level_scene_node:1.0.0#MatrixConstraint",
+      "label": "constraint",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.single_level_scene_node:1.0.0#Vector3Trait",
+      "target": "urn:samm:io.catenax.single_level_scene_node:1.0.0#Vector3Constraint",
+      "label": "constraint",
+      "optional": false
+    }
+  ]
+}

@@ -1,0 +1,298 @@
+{
+  "meta": {
+    "namespace": "urn:samm:io.catenax.packing_list:1.0.0#",
+    "meta_model": "SAMM 2.1.0",
+    "model_family": "SAMM",
+    "model_name": "packing_list",
+    "model_version": "1.0.0",
+    "source": "catenax",
+    "status": "release",
+    "release_date": "2024-02-05",
+    "release_notes": "# Changelog\nAll notable changes to this model will be documented in this file.\n\n## [1.0.0] - 2024-02-05\n### Added\n- initial model\n\n### Changed\nn/a\n\n### Removed",
+    "dependencies": [
+      {
+        "name": "shared.address_characteristic",
+        "version": "3.0.0",
+        "family": "SAMM",
+        "source": "catenax"
+      },
+      {
+        "name": "shared.business_partner_number",
+        "version": "2.0.0",
+        "family": "SAMM",
+        "source": "catenax"
+      },
+      {
+        "name": "shared.quantity",
+        "version": "2.0.0",
+        "family": "SAMM",
+        "source": "catenax"
+      },
+      {
+        "name": "shared.uuid",
+        "version": "2.0.0",
+        "family": "SAMM",
+        "source": "catenax"
+      }
+    ],
+    "path": "data/sldt-semantic-models/io.catenax.packing_list/1.0.0/PackingList.ttl"
+  },
+  "nodes": [
+    {
+      "id": "urn:samm:io.catenax.packing_list:1.0.0#PackingList",
+      "label": "PackingList",
+      "kind": "Aspect",
+      "preferredName": "Packing List",
+      "description": "This model represents a commonly used packing list used in logistics and shipment of goods. It displays goods and their corresponding quantity, as well as, if given the Catena-X Id of the good."
+    },
+    {
+      "id": "urn:samm:io.catenax.packing_list:1.0.0#shippingDate",
+      "label": "shippingDate",
+      "kind": "Property",
+      "preferredName": "Shipping Date",
+      "description": "Date once item(s) are shipped."
+    },
+    {
+      "id": "urn:samm:io.catenax.packing_list:1.0.0#listItems",
+      "label": "listItems",
+      "kind": "Property",
+      "preferredName": "List Items",
+      "description": "Set of items part of the packing list."
+    },
+    {
+      "id": "urn:samm:io.catenax.packing_list:1.0.0#senderAddress",
+      "label": "senderAddress",
+      "kind": "Property",
+      "preferredName": "Sender Address",
+      "description": "Sender of the delivery, including the name and address."
+    },
+    {
+      "id": "urn:samm:io.catenax.packing_list:1.0.0#receiverAddress",
+      "label": "receiverAddress",
+      "kind": "Property",
+      "preferredName": "Receiver Address",
+      "description": "Receiver of the delivery, including the name and address."
+    },
+    {
+      "id": "urn:samm:io.catenax.packing_list:1.0.0#quantity",
+      "label": "quantity",
+      "kind": "Property",
+      "preferredName": "Quantity",
+      "description": "Quantity of the item."
+    },
+    {
+      "id": "urn:samm:io.catenax.packing_list:1.0.0#position",
+      "label": "position",
+      "kind": "Property",
+      "preferredName": "Position",
+      "description": "Numbering of all positions or items in the packing list."
+    },
+    {
+      "id": "urn:samm:io.catenax.packing_list:1.0.0#itemDescription",
+      "label": "itemDescription",
+      "kind": "Property",
+      "preferredName": "Item Description",
+      "description": "Describes the item in the packing list."
+    },
+    {
+      "id": "urn:samm:io.catenax.packing_list:1.0.0#itemName",
+      "label": "itemName",
+      "kind": "Property",
+      "preferredName": "Item Name",
+      "description": "Name of the item seen in the packing list."
+    },
+    {
+      "id": "urn:samm:io.catenax.packing_list:1.0.0#catenaXId",
+      "label": "catenaXId",
+      "kind": "Property",
+      "preferredName": "Catena-X ID",
+      "description": "The Catena-X ID of the given part (e.g. the assembly), valid for the Catena-X dataspace."
+    },
+    {
+      "id": "urn:samm:io.catenax.packing_list:1.0.0#DateCharacteristic",
+      "label": "DateCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "DateCharacteristic",
+      "description": "Describes the date in the following format: YYYY-MM-DD."
+    },
+    {
+      "id": "urn:samm:io.catenax.packing_list:1.0.0#SenderAddressCharacteristic",
+      "label": "SenderAddressCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Sender Address Characteristic",
+      "description": "Characteristic for the Sender Address."
+    },
+    {
+      "id": "urn:samm:io.catenax.packing_list:1.0.0#ReceiverAddressCharacteristic",
+      "label": "ReceiverAddressCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Receiver Address Characteristic",
+      "description": "Characteristic for the Receiver Address."
+    },
+    {
+      "id": "urn:samm:io.catenax.packing_list:1.0.0#QuantityCharacteristic",
+      "label": "QuantityCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Quantity Characteristic",
+      "description": "Describes the quantity of the itemby providing a quantity value and the measurement unit in which the quantity is measured."
+    },
+    {
+      "id": "urn:samm:io.catenax.packing_list:1.0.0#PositionCharacteristic",
+      "label": "PositionCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Position Characteristic",
+      "description": "Describes the position in a numeric form. "
+    },
+    {
+      "id": "urn:samm:io.catenax.packing_list:1.0.0#SetOfListItems",
+      "label": "SetOfListItems",
+      "kind": "Characteristic",
+      "preferredName": "Set Of List Items",
+      "description": "Set Of List Items of the packing list."
+    },
+    {
+      "id": "urn:samm:io.catenax.packing_list:1.0.0#ListData",
+      "label": "ListData",
+      "kind": "Entity",
+      "preferredName": "List Data",
+      "description": "Catena-X ID and data of the packing list item."
+    },
+    {
+      "id": "urn:samm:io.catenax.packing_list:1.0.0#SenderAddressEntity",
+      "label": "SenderAddressEntity",
+      "kind": "Entity",
+      "preferredName": "Sender Address Entity",
+      "description": "Entity encapsulating the BPNA information from the Sender."
+    },
+    {
+      "id": "urn:samm:io.catenax.packing_list:1.0.0#ReceiverAddressEntity",
+      "label": "ReceiverAddressEntity",
+      "kind": "Entity",
+      "preferredName": "Receiver Address Entity",
+      "description": "Entity encapsulating the BPNA information from the Receiver."
+    },
+    {
+      "id": "urn:samm:io.catenax.packing_list:1.0.0#Quantity",
+      "label": "Quantity",
+      "kind": "Entity",
+      "preferredName": "Quantity",
+      "description": "Comprises the value of objects and the unit of measurement for the respective items."
+    }
+  ],
+  "links": [
+    {
+      "source": "urn:samm:io.catenax.packing_list:1.0.0#PackingList",
+      "target": "urn:samm:io.catenax.packing_list:1.0.0#shippingDate",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.packing_list:1.0.0#PackingList",
+      "target": "urn:samm:io.catenax.packing_list:1.0.0#listItems",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.packing_list:1.0.0#PackingList",
+      "target": "urn:samm:io.catenax.packing_list:1.0.0#senderAddress",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.packing_list:1.0.0#PackingList",
+      "target": "urn:samm:io.catenax.packing_list:1.0.0#receiverAddress",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.packing_list:1.0.0#ListData",
+      "target": "urn:samm:io.catenax.packing_list:1.0.0#quantity",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.packing_list:1.0.0#ListData",
+      "target": "urn:samm:io.catenax.packing_list:1.0.0#position",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.packing_list:1.0.0#ListData",
+      "target": "urn:samm:io.catenax.packing_list:1.0.0#itemDescription",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.packing_list:1.0.0#ListData",
+      "target": "urn:samm:io.catenax.packing_list:1.0.0#itemName",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.packing_list:1.0.0#ListData",
+      "target": "urn:samm:io.catenax.packing_list:1.0.0#catenaXId",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.packing_list:1.0.0#shippingDate",
+      "target": "urn:samm:io.catenax.packing_list:1.0.0#DateCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.packing_list:1.0.0#listItems",
+      "target": "urn:samm:io.catenax.packing_list:1.0.0#SetOfListItems",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.packing_list:1.0.0#senderAddress",
+      "target": "urn:samm:io.catenax.packing_list:1.0.0#SenderAddressCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.packing_list:1.0.0#receiverAddress",
+      "target": "urn:samm:io.catenax.packing_list:1.0.0#ReceiverAddressCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.packing_list:1.0.0#quantity",
+      "target": "urn:samm:io.catenax.packing_list:1.0.0#QuantityCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.packing_list:1.0.0#position",
+      "target": "urn:samm:io.catenax.packing_list:1.0.0#PositionCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.packing_list:1.0.0#SetOfListItems",
+      "target": "urn:samm:io.catenax.packing_list:1.0.0#ListData",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.packing_list:1.0.0#SenderAddressCharacteristic",
+      "target": "urn:samm:io.catenax.packing_list:1.0.0#SenderAddressEntity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.packing_list:1.0.0#ReceiverAddressCharacteristic",
+      "target": "urn:samm:io.catenax.packing_list:1.0.0#ReceiverAddressEntity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.packing_list:1.0.0#QuantityCharacteristic",
+      "target": "urn:samm:io.catenax.packing_list:1.0.0#Quantity",
+      "label": "dataType",
+      "optional": false
+    }
+  ]
+}

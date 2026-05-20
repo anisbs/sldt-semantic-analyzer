@@ -1,12 +1,19 @@
-"""Feature 1 — Rapatriement des modèles SLDT.
+"""Feature 1 — Rapatriement des modèles sémantiques.
 
-Clone (ou resynchronise) le dépôt eclipse-tractusx/sldt-semantic-models en
-local, en clone superficiel (--depth 1), puis résume les .ttl trouvés.
+Clone (ou resynchronise) en local les dépôts amont qui hébergent les .ttl
+qu'on visualise. Deux sources gérées :
+
+  - catenax : eclipse-tractusx/sldt-semantic-models      (modèles Catena-X)
+  - idta    : admin-shell-io/smt-semantic-models         (modèles IDTA)
+
+Clone superficiel (`--depth 1`), résumé du nombre de .ttl trouvés.
 
 Usage :
-    python -m sldt_analyzer.fetch                # clone ou resync data/sldt-semantic-models
-    python -m sldt_analyzer.fetch --force        # supprime et re-clone proprement
-    python -m sldt_analyzer.fetch --dest /chemin --branch main -v
+    python -m sldt_analyzer.fetch                       # rapatrie TOUTES les sources
+    python -m sldt_analyzer.fetch --source catenax      # Catena-X seul
+    python -m sldt_analyzer.fetch --source idta         # IDTA seul
+    python -m sldt_analyzer.fetch --force               # supprime et re-clone proprement
+    python -m sldt_analyzer.fetch --source idta --dest /chemin --branch main -v
 """
 
 from __future__ import annotations
@@ -15,12 +22,36 @@ import argparse
 import logging
 import shutil
 import subprocess
+from dataclasses import dataclass
 from pathlib import Path
 
-REPO_URL = "https://github.com/eclipse-tractusx/sldt-semantic-models.git"
-DEFAULT_DEST = Path("data/sldt-semantic-models")
-
 logger = logging.getLogger("sldt.fetch")
+
+
+@dataclass(frozen=True)
+class Source:
+    key: str
+    url: str
+    default_dest: Path
+    label: str
+
+
+# Registre des sources connues. Pour en ajouter une (ex. BatteryPass), il
+# suffit d'ajouter une entrée ici — `fetch_models` et la CLI suivent.
+SOURCES: dict[str, Source] = {
+    "catenax": Source(
+        key="catenax",
+        url="https://github.com/eclipse-tractusx/sldt-semantic-models.git",
+        default_dest=Path("data/sldt-semantic-models"),
+        label="Catena-X",
+    ),
+    "idta": Source(
+        key="idta",
+        url="https://github.com/admin-shell-io/smt-semantic-models.git",
+        default_dest=Path("data/smt-semantic-models"),
+        label="IDTA",
+    ),
+}
 
 
 def _run(cmd: list[str]) -> str:
@@ -33,12 +64,12 @@ def _is_git_repo(path: Path) -> bool:
     return (path / ".git").is_dir()
 
 
-def clone(dest: Path, branch: str | None) -> None:
-    logger.info("Clone superficiel %s -> %s", REPO_URL, dest)
+def clone(url: str, dest: Path, branch: str | None) -> None:
+    logger.info("Clone superficiel %s -> %s", url, dest)
     cmd = ["git", "clone", "--depth", "1"]
     if branch:
         cmd += ["--branch", branch]
-    cmd += [REPO_URL, str(dest)]
+    cmd += [url, str(dest)]
     _run(cmd)
 
 
@@ -54,12 +85,20 @@ def count_ttl(dest: Path) -> int:
 
 
 def fetch_models(
-    dest: Path = DEFAULT_DEST,
+    source: str = "catenax",
+    dest: Path | None = None,
     branch: str | None = None,
     force: bool = False,
 ) -> Path:
-    """Garantit une copie locale à jour du dépôt. Retourne le chemin du dépôt."""
-    dest = dest.resolve()
+    """Garantit une copie locale à jour de la source. Retourne le chemin du dépôt."""
+    if source not in SOURCES:
+        raise ValueError(
+            f"Source inconnue: {source!r} (connues: {sorted(SOURCES)})"
+        )
+    src = SOURCES[source]
+    dest = (dest or src.default_dest).resolve()
+
+    logger.info("Source %s (%s) -> %s", src.label, src.key, dest)
 
     if force and dest.exists():
         logger.info("--force : suppression de %s", dest)
@@ -76,7 +115,7 @@ def fetch_models(
             logger.warning("%s existe mais n'est pas un dépôt git, remplacement", dest)
             shutil.rmtree(dest)
         dest.parent.mkdir(parents=True, exist_ok=True)
-        clone(dest, branch)
+        clone(src.url, dest, branch)
 
     n = count_ttl(dest)
     logger.info("OK — %d fichiers .ttl disponibles sous %s", n, dest)
@@ -85,11 +124,16 @@ def fetch_models(
 
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(
-        description="Rapatrie les modèles SLDT (.ttl) en local."
+        description="Rapatrie les modèles sémantiques (.ttl) en local."
     )
     parser.add_argument(
-        "--dest", type=Path, default=DEFAULT_DEST,
-        help=f"Répertoire cible (défaut : {DEFAULT_DEST})",
+        "--source", choices=[*sorted(SOURCES), "all"], default="all",
+        help="Source à rapatrier (défaut : all)",
+    )
+    parser.add_argument(
+        "--dest", type=Path, default=None,
+        help="Répertoire cible (défaut : data/<repo> selon la source ; "
+             "incompatible avec --source all)",
     )
     parser.add_argument(
         "--branch", default=None,
@@ -110,13 +154,21 @@ def main(argv: list[str] | None = None) -> int:
         datefmt="%H:%M:%S",
     )
 
-    try:
-        fetch_models(dest=args.dest, branch=args.branch, force=args.force)
-    except subprocess.CalledProcessError as exc:
-        detail = exc.stderr.strip() if exc.stderr else exc
-        logger.error("Commande git échouée : %s", detail)
-        return 1
-    return 0
+    if args.source == "all" and args.dest is not None:
+        parser.error("--dest ne peut pas être utilisé avec --source all")
+
+    sources = sorted(SOURCES) if args.source == "all" else [args.source]
+    rc = 0
+    for key in sources:
+        try:
+            fetch_models(
+                source=key, dest=args.dest, branch=args.branch, force=args.force,
+            )
+        except subprocess.CalledProcessError as exc:
+            detail = exc.stderr.strip() if exc.stderr else exc
+            logger.error("[%s] commande git échouée : %s", key, detail)
+            rc = 1
+    return rc
 
 
 if __name__ == "__main__":

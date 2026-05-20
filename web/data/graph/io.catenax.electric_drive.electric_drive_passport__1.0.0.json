@@ -1,0 +1,1411 @@
+{
+  "meta": {
+    "namespace": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#",
+    "meta_model": "SAMM 2.1.0",
+    "model_family": "SAMM",
+    "model_name": "electric_drive.electric_drive_passport",
+    "model_version": "1.0.0",
+    "source": "catenax",
+    "status": "release",
+    "release_date": "2024-03-25",
+    "release_notes": "# Changelog\nAll notable changes to this model will be documented in this file.\n\n## [Unreleased]\n\n## [2.0.0] - 2024-05-21\n### Changed\n- connection update to @prefix ext-passport: <urn:samm:io.catenax.generic.digital_product_passport:5.0.0#>\n- connection update to @prefix ext-pass: <urn:samm:io.catenax.transmission.transmission_pass:3.0.0#>\n- changed payload name from unspecific to generic on highest level\n- min and maxOilPressure are dynamic and will be changed to rated - structure changed below\n- added connections to transmission_pass:3.0.0 in \"power\" and \"torque\" to have more similarities\n\n## [1.0.0] - 2024-03-25\n### Added\n- initial model in SAMM 2.1.0\n\n### Changed\nn/a\n\n### Removed\nn/a",
+    "dependencies": [
+      {
+        "name": "generic.digital_product_passport",
+        "version": "4.0.0",
+        "family": "SAMM",
+        "source": "catenax"
+      },
+      {
+        "name": "shared.quantity",
+        "version": "2.0.0",
+        "family": "SAMM",
+        "source": "catenax"
+      },
+      {
+        "name": "transmission.transmission_pass",
+        "version": "2.0.0",
+        "family": "SAMM",
+        "source": "catenax"
+      }
+    ],
+    "path": "data/sldt-semantic-models/io.catenax.electric_drive.electric_drive_passport/1.0.0/ElectricDrivePassport.ttl"
+  },
+  "nodes": [
+    {
+      "id": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#ElectricDrivePassport",
+      "label": "ElectricDrivePassport",
+      "kind": "Aspect",
+      "preferredName": "Electric Drive Passport",
+      "description": "The E-Drive Passport is a data record that summarizes the components, materials and chemical substances or information on repairability, spare parts or professional disposal for an E-Drive. The data comes from all phases of the product life cycle and can be used for various purposes in all these phases (design, production, use, disposal). Structuring environmental data in a standardized, comparable format enables all actors in the value and supply chain to work together towards a circular economy. This data model is based on the new proposed Ecodesign Regulation (ESPR-2022) and the product specific requirements collected from different manufacturers and users of the product."
+    },
+    {
+      "id": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#productSpecificParameters",
+      "label": "productSpecificParameters",
+      "kind": "Property",
+      "preferredName": "Product Specific Parameters",
+      "description": "Product specific parameters of the electric drive."
+    },
+    {
+      "id": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#productUnspecificParameters",
+      "label": "productUnspecificParameters",
+      "kind": "Property",
+      "preferredName": "Product Unspecific Parameters",
+      "description": "The product unspecific parameters. These are defined by the Digital Product Passport proposal from the ESPR. The main basis is provided by the document \"Proposal for a REGULATION OF THE EUROPEAN PARLIAMENT AND OF THE COUNCIL establishing a framework for setting ecodesign requirements for sustainable products and repealing Directive 2009/125/EC\" from March 30th, 2022. The latest version of the document was the provisional agreement between the EU Council and the Parliament from January 9th, 2024."
+    },
+    {
+      "id": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#generalInformation",
+      "label": "generalInformation",
+      "kind": "Property",
+      "preferredName": "General Information",
+      "description": "General information to the eDrive system, including additional information in comparison to the identification category such as the service history and compatible vehicle types."
+    },
+    {
+      "id": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#eMachine",
+      "label": "eMachine",
+      "kind": "Property",
+      "preferredName": "E-Machine",
+      "description": "Data of the e-Machine built into the eDrive, including information E-Machine model and technology (type), and the permanent magnet types / materials."
+    },
+    {
+      "id": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#coolingAndLubricants",
+      "label": "coolingAndLubricants",
+      "kind": "Property",
+      "preferredName": "Cooling and Lubricants",
+      "description": "Information about the used lubricants and coolants, including liquid specifications and built-in technical lubricant systems."
+    },
+    {
+      "id": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#inverter",
+      "label": "inverter",
+      "kind": "Property",
+      "preferredName": "Inverter",
+      "description": "Inverter related data, that could be used in case of replacing or updating an inverter."
+    },
+    {
+      "id": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#systemAndPerformance",
+      "label": "systemAndPerformance",
+      "kind": "Property",
+      "preferredName": "System and Performance",
+      "description": "System and Performance information of the entire eDrive system."
+    },
+    {
+      "id": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#transmission",
+      "label": "transmission",
+      "kind": "Property",
+      "preferredName": "Transmission",
+      "description": "Information about the transmission built into the eDrive, including technical data."
+    },
+    {
+      "id": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#electricDriveDocuments",
+      "label": "electricDriveDocuments",
+      "kind": "Property",
+      "preferredName": "Electric Drive Documents",
+      "description": "Documents pertaining to the removal, replacement, disassembly or dismantling of the entire eDrive."
+    },
+    {
+      "id": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#compatibleVehicleTypes",
+      "label": "compatibleVehicleTypes",
+      "kind": "Property",
+      "preferredName": "Compatible Vehicle Types",
+      "description": "The vehicle types, in which the eDrive of this passport can be used. Possible selections are \"battery-electric vehicle\", \"hybrid-electric vehicle\", \"fuel-cell-electric vehicle\"."
+    },
+    {
+      "id": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#service",
+      "label": "service",
+      "kind": "Property",
+      "preferredName": "Service",
+      "description": "The eDrive service history."
+    },
+    {
+      "id": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#eMachineId",
+      "label": "eMachineId",
+      "kind": "Property",
+      "preferredName": "E-Machine Id",
+      "description": "The unique serial ID of the e-Machine built into the eDrive of this passport; defined and provided by the owner/economic operator of the passport."
+    },
+    {
+      "id": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#permanentMagnetType",
+      "label": "permanentMagnetType",
+      "kind": "Property",
+      "preferredName": "Permanent Magnet Type",
+      "description": "The permanent magnet type describes the material composition of the permanent magnet in use. In case of SSM e-Motors, no permanent magnets are used, requiring the input of a default value. Possible selections:\n- No permanent magnets used (SSM motor): \"None\"\n- AlNiCo: \"Aluminum-Nickel-Cobalt\"\n- Ceramic: \"Ceramic\"\n- Ferrite: \"Ferrite\"\n- Flexible: \"Flexible Rubber\"\n- SmCo: \"Samarium Cobalt\"\n- NdFeB: \"Neodymium Iron Boron\""
+    },
+    {
+      "id": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#ratedSpeed",
+      "label": "ratedSpeed",
+      "kind": "Property",
+      "preferredName": "Rated Speed",
+      "description": "Rated speed determined by the electronics and measured in RPM, limited through software or physical limits (e.g. maximum power)."
+    },
+    {
+      "id": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#statorDiameter",
+      "label": "statorDiameter",
+      "kind": "Property",
+      "preferredName": "Stator Diameter",
+      "description": "Diameter of the E-Machine stator, measured in millimetres."
+    },
+    {
+      "id": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#eMachineTechnology",
+      "label": "eMachineTechnology",
+      "kind": "Property",
+      "preferredName": "E-Machine Technology",
+      "description": "The type of the e-machine built into the eDrive. Possible values are \"ASM\" (Asynchronous motor), \"PSM\" (Permanently excited synchronous motor) and \"ESM\" (Electrically-excited synchronous motor). This should not  be confused with an electrical machine integrated in a transmission."
+    },
+    {
+      "id": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#eMachineWeight",
+      "label": "eMachineWeight",
+      "kind": "Property",
+      "preferredName": "E-Machine Weight",
+      "description": "Net weight, component weight without packaging, of the electrical machine, which is built into the eDrive."
+    },
+    {
+      "id": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#coolingTopology",
+      "label": "coolingTopology",
+      "kind": "Property",
+      "preferredName": "Cooling Topology",
+      "description": "General cooling topology, which can be either one of the types: \"air-cooled\", \"water-cooled\" or \"oil-cooled\"."
+    },
+    {
+      "id": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#oilCapacityEdrive",
+      "label": "oilCapacityEdrive",
+      "kind": "Property",
+      "preferredName": "Oil Capacity eDrive",
+      "description": "The defined oil volume in the eDrive, measured in cubic decimetres. In case of a combined oil circuit for both the eDrive and the built-in transmission, the value must be identical to the oil capacity value of the transmission."
+    },
+    {
+      "id": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#oilTypeEdrive",
+      "label": "oilTypeEdrive",
+      "kind": "Property",
+      "preferredName": "Oil Type eDrive",
+      "description": "The type of the oil for the eDrive defined by the manufacturer. In case of a combined oil circuit for both the eDrive and the built-in transmission, the value must be identical to the oil type value of the transmission."
+    },
+    {
+      "id": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#minimumOilPressure",
+      "label": "minimumOilPressure",
+      "kind": "Property",
+      "preferredName": "Minimum Oil Pressure",
+      "description": "Minimum oil pressure to date during the usage of the eDrive, as measured through the oil pump, measured in bar."
+    },
+    {
+      "id": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#maximumOilPressure",
+      "label": "maximumOilPressure",
+      "kind": "Property",
+      "preferredName": "Maximum Oil Pressure",
+      "description": "Maximum oil pressure to date during the usage of the eDrive, as measured through the oil pump, measured in bar."
+    },
+    {
+      "id": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#oilModule",
+      "label": "oilModule",
+      "kind": "Property",
+      "preferredName": "Oil Module",
+      "description": "Flag indicating the availability or absence of an oil module. An oil module is an umbrella term for devices that are manipulating the oil flow and the temperature in the product and incorporate cooler, pump, valves (pressure regulation valve)."
+    },
+    {
+      "id": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#maximumOilTemperature",
+      "label": "maximumOilTemperature",
+      "kind": "Property",
+      "preferredName": "Maximum Oil Temperature",
+      "description": "The maximum oil temperature to safely operate the eDrive, measured in celsius on the oil temperature sensor. Please note the oil temperature can vary in other positions within the lubrication circuit."
+    },
+    {
+      "id": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#inverterCurrent",
+      "label": "inverterCurrent",
+      "kind": "Property",
+      "preferredName": "Inverter Current",
+      "description": "Electric current flowing through the inverter, measured in ampere."
+    },
+    {
+      "id": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#maximumPhaseCurrent",
+      "label": "maximumPhaseCurrent",
+      "kind": "Property",
+      "preferredName": "Maximum Phase Current",
+      "description": "The maximum allowable current to pass through the phases, measured in ampere."
+    },
+    {
+      "id": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#softwareVersion",
+      "label": "softwareVersion",
+      "kind": "Property",
+      "preferredName": "Software Version",
+      "description": "Indicates the software version of the inverter."
+    },
+    {
+      "id": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#systemVoltage",
+      "label": "systemVoltage",
+      "kind": "Property",
+      "preferredName": "System Voltage",
+      "description": "The characterizing voltage level in the vehicle in volts, to which the battery and electric drive are adjusted to."
+    },
+    {
+      "id": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#power",
+      "label": "power",
+      "kind": "Property",
+      "preferredName": "Power",
+      "description": "Technical power figures in kilowatt."
+    },
+    {
+      "id": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#torque",
+      "label": "torque",
+      "kind": "Property",
+      "preferredName": "Torque",
+      "description": "Technical torque figures."
+    },
+    {
+      "id": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#gearRatio",
+      "label": "gearRatio",
+      "kind": "Property",
+      "preferredName": "Gear Ratio",
+      "description": "Gear ratio calculated by dividing the angular or rotational speed of the output shaft by the angular speed of the input shaft. It can also be calculated by dividing the total driving gear’s teeth by the total driven gear’s teeth."
+    },
+    {
+      "id": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#transmissionId",
+      "label": "transmissionId",
+      "kind": "Property",
+      "preferredName": "Transmission Id",
+      "description": "Transmission ID of the transmission i.e. serial number allowing for unequivocal identification of the transmission."
+    },
+    {
+      "id": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#gearboxStructure",
+      "label": "gearboxStructure",
+      "kind": "Property",
+      "preferredName": "Gearbox Structure",
+      "description": "Short description of the gearbox design, e.g. layshaft or planetary, depending on the technical design of the car."
+    },
+    {
+      "id": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#technicalDismantlingInstructions",
+      "label": "technicalDismantlingInstructions",
+      "kind": "Property",
+      "preferredName": "Technical Dismantling Instructions",
+      "description": "Document containing information and instructions, including steps, diagrams and illustrations of removing or replacing the eDrive or dismantling it."
+    },
+    {
+      "id": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#requiredToolsForDismantling",
+      "label": "requiredToolsForDismantling",
+      "kind": "Property",
+      "preferredName": "Required Tools For Dismantling",
+      "description": "Document containing information and instructions for required tools or technologies pertaining to the removal, replacement or dismantling of the eDrive."
+    },
+    {
+      "id": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#serviceHistory",
+      "label": "serviceHistory",
+      "kind": "Property",
+      "preferredName": "Service History",
+      "description": "The dates of putting the eDrive into service."
+    },
+    {
+      "id": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#lastServiceDate",
+      "label": "lastServiceDate",
+      "kind": "Property",
+      "preferredName": "Last Service Date",
+      "description": "The date of the last service."
+    },
+    {
+      "id": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#oilTimeStamp",
+      "label": "oilTimeStamp",
+      "kind": "Property",
+      "preferredName": "Oil Time Stamp",
+      "description": "Measuring timestamp, when the oil pressure during the usage of the eDrive was measured last."
+    },
+    {
+      "id": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#oilValue",
+      "label": "oilValue",
+      "kind": "Property",
+      "preferredName": "Oil Value",
+      "description": "Oil pressure to date during the usage of the eDrive, as measured through the oil pump, measured in bar."
+    },
+    {
+      "id": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#maximumPower",
+      "label": "maximumPower",
+      "kind": "Property",
+      "preferredName": "Maximum Power",
+      "description": "The maximum output power in kilowatts for a specified time period."
+    },
+    {
+      "id": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#continuousPower",
+      "label": "continuousPower",
+      "kind": "Property",
+      "preferredName": "Continuous Power",
+      "description": "The output power in kilowatts that can be delivered continuously."
+    },
+    {
+      "id": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#continuousRegeneratedPower",
+      "label": "continuousRegeneratedPower",
+      "kind": "Property",
+      "preferredName": "Continuous Regenerated Power",
+      "description": "The amount of power, which can be regenerated continuously, within the bounds of normal operation, in kilowatts."
+    },
+    {
+      "id": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#maximumRegeneratedPower",
+      "label": "maximumRegeneratedPower",
+      "kind": "Property",
+      "preferredName": "Maximum Regenerated Power",
+      "description": "The maximum possible value that can be regenerated at a given time in kilowatts."
+    },
+    {
+      "id": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#maximumTorque",
+      "label": "maximumTorque",
+      "kind": "Property",
+      "preferredName": "Maximum Torque",
+      "description": "The maximum torque the system delivers over a specific measurement time period."
+    },
+    {
+      "id": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#continuousTorque",
+      "label": "continuousTorque",
+      "kind": "Property",
+      "preferredName": "Continuous Torque",
+      "description": "The torque that can theoretically be delivered constantly without a time limit."
+    },
+    {
+      "id": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#maximumAxleTorque",
+      "label": "maximumAxleTorque",
+      "kind": "Property",
+      "preferredName": "Maximum Axle Torque",
+      "description": "Maximum motor torque multiplied by the gear ratio."
+    },
+    {
+      "id": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#maxValue",
+      "label": "maxValue",
+      "kind": "Property",
+      "preferredName": "Max Value",
+      "description": "The maximum value in kilowatts for a specified time period."
+    },
+    {
+      "id": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#maxPeriod",
+      "label": "maxPeriod",
+      "kind": "Property",
+      "preferredName": "Max Period",
+      "description": "Specified time period measurement in seconds."
+    },
+    {
+      "id": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#maxPowerECER85",
+      "label": "maxPowerECER85",
+      "kind": "Property",
+      "preferredName": "Max Power ECER85",
+      "description": "Maximum power in kilowatts, measured according to the ECER85 regulatory requirements."
+    },
+    {
+      "id": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#torqueValue",
+      "label": "torqueValue",
+      "kind": "Property",
+      "preferredName": "Torque Value",
+      "description": "Measured torque value in newton metre."
+    },
+    {
+      "id": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#SpecificCharacteristic",
+      "label": "SpecificCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Specific Characteristic",
+      "description": "The Characteristic to describe product specific parameters of the electric drive."
+    },
+    {
+      "id": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#UnspecificCharacteristic",
+      "label": "UnspecificCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Unspecific Characteristic",
+      "description": "Characteristic for the product unspecific parameters."
+    },
+    {
+      "id": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#GeneralCharacteristic",
+      "label": "GeneralCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "General Characteristic",
+      "description": "Characteristic for general information."
+    },
+    {
+      "id": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#EMachineCharacteristic",
+      "label": "EMachineCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "E-Machine Characteristic",
+      "description": "Characteristic for e-machine values."
+    },
+    {
+      "id": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#LiquidsCharacteristic",
+      "label": "LiquidsCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Liquids Characteristic",
+      "description": "Entity for cooling and lubricants."
+    },
+    {
+      "id": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#InverterCharacteristic",
+      "label": "InverterCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Inverter Characteristic",
+      "description": "Characteristic for inverter values."
+    },
+    {
+      "id": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#SystemCharacteristic",
+      "label": "SystemCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "System Characteristic",
+      "description": "Characteristic for performance and system values."
+    },
+    {
+      "id": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#TransmissionCharacteristic",
+      "label": "TransmissionCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Transmission Characteristic",
+      "description": "Characteristic for transmission values."
+    },
+    {
+      "id": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#ElectricDriveDocumentsCharacteristic",
+      "label": "ElectricDriveDocumentsCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Electric Drive Documents Characteristic",
+      "description": "Characteristic for specific documents of the electric drive."
+    },
+    {
+      "id": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#ServiceCharacteristic",
+      "label": "ServiceCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Service Characteristic",
+      "description": "Characteristic for the service dates."
+    },
+    {
+      "id": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#IdentifierCharacteristic",
+      "label": "IdentifierCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Identifier Characteristic",
+      "description": "Characteristic for identifiers of components in the electrical drive."
+    },
+    {
+      "id": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#OilPressureCharacteristic",
+      "label": "OilPressureCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Oil Pressure Characteristic",
+      "description": "Characteristic for oil pressure values."
+    },
+    {
+      "id": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#PowerCharacteristic",
+      "label": "PowerCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Power Characteristic",
+      "description": "Characteristic for power values."
+    },
+    {
+      "id": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#TorqueCharacteristic",
+      "label": "TorqueCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Torque Characteristic",
+      "description": "Entity for torque values."
+    },
+    {
+      "id": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#DateCharacteristic",
+      "label": "DateCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Date Characteristic",
+      "description": "Characteristic for values in the data type date."
+    },
+    {
+      "id": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#MaximumPowerCharacteristic",
+      "label": "MaximumPowerCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Maximum Power Characteristic",
+      "description": "Characteristic with maximum power values."
+    },
+    {
+      "id": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#MaximumRegeneratedPowerCharacteristic",
+      "label": "MaximumRegeneratedPowerCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Maximum Regenerated Power Characteristic",
+      "description": "Characteristic for maximum regenerated power values."
+    },
+    {
+      "id": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#MaximumTorqueCharacteristic",
+      "label": "MaximumTorqueCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Maximum Torque Characteristic",
+      "description": "Characteristic for maximum torque values."
+    },
+    {
+      "id": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#SpecificEntity",
+      "label": "SpecificEntity",
+      "kind": "Entity",
+      "preferredName": "Specific Entity",
+      "description": "The Entity for product specific parameters of the electric drive."
+    },
+    {
+      "id": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#UnspecificEntity",
+      "label": "UnspecificEntity",
+      "kind": "Entity",
+      "preferredName": "Unspecific Entity",
+      "description": "Entity for the product unspecific parameters."
+    },
+    {
+      "id": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#GeneralEntity",
+      "label": "GeneralEntity",
+      "kind": "Entity",
+      "preferredName": "General Entity",
+      "description": "Entity for general information."
+    },
+    {
+      "id": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#EMachineEntity",
+      "label": "EMachineEntity",
+      "kind": "Entity",
+      "preferredName": "E-Machine Entity",
+      "description": "Entity for e-machine values."
+    },
+    {
+      "id": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#LiquidsEntity",
+      "label": "LiquidsEntity",
+      "kind": "Entity",
+      "preferredName": "Liquids Entity",
+      "description": "Entity for cooling and lubricants."
+    },
+    {
+      "id": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#InverterEntity",
+      "label": "InverterEntity",
+      "kind": "Entity",
+      "preferredName": "Inverter Entity",
+      "description": "Entity for inverter values."
+    },
+    {
+      "id": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#SystemEntity",
+      "label": "SystemEntity",
+      "kind": "Entity",
+      "preferredName": "System Entity",
+      "description": "Entity for performance and system values."
+    },
+    {
+      "id": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#TransmissionEntity",
+      "label": "TransmissionEntity",
+      "kind": "Entity",
+      "preferredName": "Transmission Entity",
+      "description": "Entity for transmission values."
+    },
+    {
+      "id": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#ElectricDriveDocumentsEntity",
+      "label": "ElectricDriveDocumentsEntity",
+      "kind": "Entity",
+      "preferredName": "Electric Drive Documents Entity",
+      "description": "Entity for specific documents of the electric drive."
+    },
+    {
+      "id": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#ServiceEntity",
+      "label": "ServiceEntity",
+      "kind": "Entity",
+      "preferredName": "Service Entity",
+      "description": "Entity for the service dates."
+    },
+    {
+      "id": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#OilPressureEntity",
+      "label": "OilPressureEntity",
+      "kind": "Entity",
+      "preferredName": "Oil Pressure Entity",
+      "description": "Entity for oil pressure values."
+    },
+    {
+      "id": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#PowerEntity",
+      "label": "PowerEntity",
+      "kind": "Entity",
+      "preferredName": "Power Entity",
+      "description": "Entity for power values."
+    },
+    {
+      "id": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#TorqueEntity",
+      "label": "TorqueEntity",
+      "kind": "Entity",
+      "preferredName": "Torque Entity",
+      "description": "Entity for torque values."
+    },
+    {
+      "id": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#MaximumPowerEntity",
+      "label": "MaximumPowerEntity",
+      "kind": "Entity",
+      "preferredName": "Maximum Power Entity",
+      "description": "Entity with maximum power values."
+    },
+    {
+      "id": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#MaximumRegeneratedPowerEntity",
+      "label": "MaximumRegeneratedPowerEntity",
+      "kind": "Entity",
+      "preferredName": "Maximum Regenerated Power Entity",
+      "description": "Entity for maximum regenerated power values."
+    },
+    {
+      "id": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#MaximumTorqueEntity",
+      "label": "MaximumTorqueEntity",
+      "kind": "Entity",
+      "preferredName": "Maximum Torque Entity",
+      "description": "Entity for maximum torque values."
+    },
+    {
+      "id": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#CompatibleVehicleTypesTrait",
+      "label": "CompatibleVehicleTypesTrait",
+      "kind": "Characteristic",
+      "preferredName": "Compatible Vehicle Types Trait",
+      "description": "Trait to restrict values."
+    },
+    {
+      "id": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#RevolutionsMeasurement",
+      "label": "RevolutionsMeasurement",
+      "kind": "Characteristic",
+      "preferredName": "Revolutions Measurement",
+      "description": "Measurement of revolutions per minute as float value."
+    },
+    {
+      "id": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#MillimetreMeasurement",
+      "label": "MillimetreMeasurement",
+      "kind": "Characteristic",
+      "preferredName": "Millimetre Measurement",
+      "description": "Measurement of millimetre as float value."
+    },
+    {
+      "id": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#CubicDecimetreMeasurement",
+      "label": "CubicDecimetreMeasurement",
+      "kind": "Characteristic",
+      "preferredName": "Cubic Decimetre Measurement",
+      "description": "Measurement of cubic decimetre as float value."
+    },
+    {
+      "id": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#CelsiusMeasurement",
+      "label": "CelsiusMeasurement",
+      "kind": "Characteristic",
+      "preferredName": "Celsius Measurement",
+      "description": "Measurement in celsius as float value."
+    },
+    {
+      "id": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#AmpereMeasurement",
+      "label": "AmpereMeasurement",
+      "kind": "Characteristic",
+      "preferredName": "Ampere Measurement",
+      "description": "Measurement of ampere as float value."
+    },
+    {
+      "id": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#VoltMeasurement",
+      "label": "VoltMeasurement",
+      "kind": "Characteristic",
+      "preferredName": "Volt Measurement",
+      "description": "Measurement in volt as float value."
+    },
+    {
+      "id": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#BarMeasurement",
+      "label": "BarMeasurement",
+      "kind": "Characteristic",
+      "preferredName": "Bar Measurement",
+      "description": "Measurement of the pressure in bar as float value."
+    },
+    {
+      "id": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#KilowattMeasurement",
+      "label": "KilowattMeasurement",
+      "kind": "Characteristic",
+      "preferredName": "Kilowatt Measurement",
+      "description": "Measurement in kilowatt as float value."
+    },
+    {
+      "id": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#NewtonMetreMeasurement",
+      "label": "NewtonMetreMeasurement",
+      "kind": "Characteristic",
+      "preferredName": "Newton Metre Measurement",
+      "description": "Measurement in newton metre as decimal value."
+    },
+    {
+      "id": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#SecondsMeasurement",
+      "label": "SecondsMeasurement",
+      "kind": "Characteristic",
+      "preferredName": "Seconds Measurement",
+      "description": "Measurement in seconds as integer value."
+    },
+    {
+      "id": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#TechnologyEnumeration",
+      "label": "TechnologyEnumeration",
+      "kind": "Characteristic",
+      "preferredName": "Technology Enumeration",
+      "description": "Enumeration for the e-machine technology."
+    },
+    {
+      "id": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#CoolingEnumeration",
+      "label": "CoolingEnumeration",
+      "kind": "Characteristic",
+      "preferredName": "Cooling Enumeration",
+      "description": "Enumeration of cooling technology."
+    },
+    {
+      "id": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#StringList",
+      "label": "StringList",
+      "kind": "Characteristic",
+      "preferredName": "String List",
+      "description": "A list of values in the data type string."
+    },
+    {
+      "id": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#DateList",
+      "label": "DateList",
+      "kind": "Characteristic",
+      "preferredName": "Date List",
+      "description": "A list of values in the data type date."
+    },
+    {
+      "id": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#VehicleTypesConstraint",
+      "label": "VehicleTypesConstraint",
+      "kind": "Characteristic",
+      "preferredName": "Vehicle Types Constraint",
+      "description": "Constraint for the three possible vehicle types. A selection of multiple is possible."
+    }
+  ],
+  "links": [
+    {
+      "source": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#ElectricDrivePassport",
+      "target": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#productSpecificParameters",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#ElectricDrivePassport",
+      "target": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#productUnspecificParameters",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#SpecificEntity",
+      "target": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#generalInformation",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#SpecificEntity",
+      "target": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#eMachine",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#SpecificEntity",
+      "target": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#coolingAndLubricants",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#SpecificEntity",
+      "target": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#inverter",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#SpecificEntity",
+      "target": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#systemAndPerformance",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#SpecificEntity",
+      "target": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#transmission",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#SpecificEntity",
+      "target": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#electricDriveDocuments",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#GeneralEntity",
+      "target": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#compatibleVehicleTypes",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#GeneralEntity",
+      "target": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#service",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#EMachineEntity",
+      "target": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#eMachineId",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#EMachineEntity",
+      "target": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#permanentMagnetType",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#EMachineEntity",
+      "target": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#ratedSpeed",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#EMachineEntity",
+      "target": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#statorDiameter",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#EMachineEntity",
+      "target": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#eMachineTechnology",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#EMachineEntity",
+      "target": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#eMachineWeight",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#LiquidsEntity",
+      "target": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#coolingTopology",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#LiquidsEntity",
+      "target": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#oilCapacityEdrive",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#LiquidsEntity",
+      "target": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#oilTypeEdrive",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#LiquidsEntity",
+      "target": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#minimumOilPressure",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#LiquidsEntity",
+      "target": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#maximumOilPressure",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#LiquidsEntity",
+      "target": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#oilModule",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#LiquidsEntity",
+      "target": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#maximumOilTemperature",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#InverterEntity",
+      "target": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#inverterCurrent",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#InverterEntity",
+      "target": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#maximumPhaseCurrent",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#InverterEntity",
+      "target": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#softwareVersion",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#SystemEntity",
+      "target": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#systemVoltage",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#SystemEntity",
+      "target": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#power",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#SystemEntity",
+      "target": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#torque",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#SystemEntity",
+      "target": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#gearRatio",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#TransmissionEntity",
+      "target": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#transmissionId",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#TransmissionEntity",
+      "target": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#gearboxStructure",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#ElectricDriveDocumentsEntity",
+      "target": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#technicalDismantlingInstructions",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#ElectricDriveDocumentsEntity",
+      "target": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#requiredToolsForDismantling",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#ServiceEntity",
+      "target": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#serviceHistory",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#ServiceEntity",
+      "target": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#lastServiceDate",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#OilPressureEntity",
+      "target": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#oilTimeStamp",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#OilPressureEntity",
+      "target": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#oilValue",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#PowerEntity",
+      "target": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#maximumPower",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#PowerEntity",
+      "target": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#continuousPower",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#PowerEntity",
+      "target": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#continuousRegeneratedPower",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#PowerEntity",
+      "target": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#maximumRegeneratedPower",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#TorqueEntity",
+      "target": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#maximumTorque",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#TorqueEntity",
+      "target": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#continuousTorque",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#TorqueEntity",
+      "target": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#maximumAxleTorque",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#MaximumPowerEntity",
+      "target": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#maxValue",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#MaximumPowerEntity",
+      "target": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#maxPeriod",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#MaximumPowerEntity",
+      "target": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#maxPowerECER85",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#MaximumRegeneratedPowerEntity",
+      "target": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#maxValue",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#MaximumRegeneratedPowerEntity",
+      "target": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#maxPeriod",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#MaximumTorqueEntity",
+      "target": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#torqueValue",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#MaximumTorqueEntity",
+      "target": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#maxPeriod",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#productSpecificParameters",
+      "target": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#SpecificCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#productUnspecificParameters",
+      "target": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#UnspecificCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#generalInformation",
+      "target": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#GeneralCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#eMachine",
+      "target": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#EMachineCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#coolingAndLubricants",
+      "target": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#LiquidsCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#inverter",
+      "target": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#InverterCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#systemAndPerformance",
+      "target": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#SystemCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#transmission",
+      "target": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#TransmissionCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#electricDriveDocuments",
+      "target": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#ElectricDriveDocumentsCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#compatibleVehicleTypes",
+      "target": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#CompatibleVehicleTypesTrait",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#service",
+      "target": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#ServiceCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#eMachineId",
+      "target": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#IdentifierCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#transmissionId",
+      "target": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#IdentifierCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#ratedSpeed",
+      "target": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#RevolutionsMeasurement",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#gearRatio",
+      "target": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#RevolutionsMeasurement",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#statorDiameter",
+      "target": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#MillimetreMeasurement",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#eMachineTechnology",
+      "target": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#TechnologyEnumeration",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#coolingTopology",
+      "target": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#CoolingEnumeration",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#oilCapacityEdrive",
+      "target": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#CubicDecimetreMeasurement",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#minimumOilPressure",
+      "target": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#OilPressureCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#maximumOilPressure",
+      "target": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#OilPressureCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#maximumOilTemperature",
+      "target": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#CelsiusMeasurement",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#inverterCurrent",
+      "target": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#AmpereMeasurement",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#maximumPhaseCurrent",
+      "target": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#AmpereMeasurement",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#systemVoltage",
+      "target": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#VoltMeasurement",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#power",
+      "target": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#PowerCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#torque",
+      "target": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#TorqueCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#serviceHistory",
+      "target": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#DateList",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#lastServiceDate",
+      "target": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#DateCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#oilValue",
+      "target": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#BarMeasurement",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#maximumPower",
+      "target": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#MaximumPowerCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#continuousPower",
+      "target": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#KilowattMeasurement",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#continuousRegeneratedPower",
+      "target": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#KilowattMeasurement",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#maxValue",
+      "target": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#KilowattMeasurement",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#maxPowerECER85",
+      "target": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#KilowattMeasurement",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#maximumRegeneratedPower",
+      "target": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#MaximumRegeneratedPowerCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#maximumTorque",
+      "target": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#MaximumTorqueCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#maximumAxleTorque",
+      "target": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#MaximumTorqueCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#continuousTorque",
+      "target": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#NewtonMetreMeasurement",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#torqueValue",
+      "target": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#NewtonMetreMeasurement",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#maxPeriod",
+      "target": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#SecondsMeasurement",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#SpecificCharacteristic",
+      "target": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#SpecificEntity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#UnspecificCharacteristic",
+      "target": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#UnspecificEntity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#GeneralCharacteristic",
+      "target": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#GeneralEntity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#EMachineCharacteristic",
+      "target": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#EMachineEntity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#LiquidsCharacteristic",
+      "target": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#LiquidsEntity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#InverterCharacteristic",
+      "target": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#InverterEntity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#SystemCharacteristic",
+      "target": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#SystemEntity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#TransmissionCharacteristic",
+      "target": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#TransmissionEntity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#ElectricDriveDocumentsCharacteristic",
+      "target": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#ElectricDriveDocumentsEntity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#ServiceCharacteristic",
+      "target": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#ServiceEntity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#OilPressureCharacteristic",
+      "target": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#OilPressureEntity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#PowerCharacteristic",
+      "target": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#PowerEntity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#TorqueCharacteristic",
+      "target": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#TorqueEntity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#MaximumPowerCharacteristic",
+      "target": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#MaximumPowerEntity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#MaximumRegeneratedPowerCharacteristic",
+      "target": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#MaximumRegeneratedPowerEntity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#MaximumTorqueCharacteristic",
+      "target": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#MaximumTorqueEntity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#CompatibleVehicleTypesTrait",
+      "target": "urn:samm:io.catenax.electric_drive.electric_drive_passport:1.0.0#VehicleTypesConstraint",
+      "label": "constraint",
+      "optional": false
+    }
+  ]
+}

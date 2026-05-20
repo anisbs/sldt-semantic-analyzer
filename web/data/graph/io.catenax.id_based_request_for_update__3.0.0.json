@@ -1,0 +1,169 @@
+{
+  "meta": {
+    "namespace": "urn:samm:io.catenax.id_based_request_for_update:3.0.0#",
+    "meta_model": "SAMM 2.1.0",
+    "model_family": "SAMM",
+    "model_name": "id_based_request_for_update",
+    "model_version": "3.0.0",
+    "source": "catenax",
+    "status": "release",
+    "release_date": "2024-03-11",
+    "release_notes": "# Changelog\n\nAll notable changes to this model will be documented in this file.\n\n## [3.0.0] - 2024-03-11\n\n### Added\n\nn/a\n\n### Changed\n\n- migrated from SAMM version `2.0.0` to `2.1.0`\n- renamed property `materialDemand` to `weekBasedMaterialDemand`\n- updated external references of `urn:samm:io.catenax.shared.uuid` to version `2.0.0`\n\n### Removed\n\nn/a\n\n## [2.0.0] - 2023-11-13\n\n### Added\n\nn/a\n\n### Changed\n\n- renamed property `weekBasedMaterialDemand` to `materialDemand`\n- use [`io.catenax.shared.uuid`](https://github.com/eclipse-tractusx/sldt-semantic-models/blob/main/io.catenax.shared.uuid/1.0.0/Uuid.ttl) trait for UUIDs\n\n### Removed\n\nn/a\n\n## [1.0.0] - 2023-05-08\n\n### Added\n\n- initial version of this model\n\n### Changed\n\nn/a\n\n### Removed\n\nn/a",
+    "dependencies": [
+      {
+        "name": "shared.uuid",
+        "version": "2.0.0",
+        "family": "SAMM",
+        "source": "catenax"
+      }
+    ],
+    "path": "data/sldt-semantic-models/io.catenax.id_based_request_for_update/3.0.0/IdBasedRequestForUpdate.ttl"
+  },
+  "nodes": [
+    {
+      "id": "urn:samm:io.catenax.id_based_request_for_update:3.0.0#IdBasedRequestForUpdate",
+      "label": "IdBasedRequestForUpdate",
+      "kind": "Aspect",
+      "preferredName": "ID Based Request For Update",
+      "description": "The requirements for a request for update from another Catena-X Partner of a specific entity.\nIf within the payload, no specific object type is defined (Payload empty), than an update of all objects within the sender receiver relation is requested)."
+    },
+    {
+      "id": "urn:samm:io.catenax.id_based_request_for_update:3.0.0#weekBasedMaterialDemand",
+      "label": "weekBasedMaterialDemand",
+      "kind": "Property",
+      "preferredName": "Week Based Material Demand List",
+      "description": "Material demands the supplier requests an update for.\nIf within the array, no specific ID (array empty), than an update of all IDs is requested)."
+    },
+    {
+      "id": "urn:samm:io.catenax.id_based_request_for_update:3.0.0#weekBasedCapacityGroup",
+      "label": "weekBasedCapacityGroup",
+      "kind": "Property",
+      "preferredName": "Week Based Capacity Group List",
+      "description": "Capacity groups the customer requests an update for.\nIf within the array, no specific ID (array empty), than an update of all IDs is requested)."
+    },
+    {
+      "id": "urn:samm:io.catenax.id_based_request_for_update:3.0.0#materialDemandId",
+      "label": "materialDemandId",
+      "kind": "Property",
+      "preferredName": "Material Demand ID",
+      "description": "The Material Demand ID uniquely identifies the material demand the supplier requests an update for within the business relationship between the customer and its supplier."
+    },
+    {
+      "id": "urn:samm:io.catenax.id_based_request_for_update:3.0.0#changedAt",
+      "label": "changedAt",
+      "kind": "Property",
+      "preferredName": "Changed At",
+      "description": "Point in time of the last update known to the requesting business partner. If the requested entity has been changed more recently, the requested party should resend the data. If the changedAt property is not given, the latest entity should be send without precondition."
+    },
+    {
+      "id": "urn:samm:io.catenax.id_based_request_for_update:3.0.0#capacityGroupId",
+      "label": "capacityGroupId",
+      "kind": "Property",
+      "preferredName": "Capacity Group ID",
+      "description": "The Capacity Group ID uniquely identifies the capacity group the supplier requests an update for within the business relationship between the supplier and its customer."
+    },
+    {
+      "id": "urn:samm:io.catenax.id_based_request_for_update:3.0.0#WeekBasedMaterialDemandCharacteristic",
+      "label": "WeekBasedMaterialDemandCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Week Based Material Demand Characteristic",
+      "description": "A list of material demand UUIDs without duplicates an update is requested for."
+    },
+    {
+      "id": "urn:samm:io.catenax.id_based_request_for_update:3.0.0#WeekBasedCapacityGroupCharacteristic",
+      "label": "WeekBasedCapacityGroupCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Week Based Capacity Group Characteristic",
+      "description": "A list of capacity group UUIDs without duplicates an update is requested for."
+    },
+    {
+      "id": "urn:samm:io.catenax.id_based_request_for_update:3.0.0#WeekBasedMaterialDemandEntity",
+      "label": "WeekBasedMaterialDemandEntity",
+      "kind": "Entity",
+      "preferredName": "Week Based Material Demand Entity",
+      "description": "Encapsulates the information that is necessary for an update request."
+    },
+    {
+      "id": "urn:samm:io.catenax.id_based_request_for_update:3.0.0#WeekBasedCapacityGroupEntity",
+      "label": "WeekBasedCapacityGroupEntity",
+      "kind": "Entity",
+      "preferredName": "Week Based Capacity Group Entity",
+      "description": "Encapsulates the information that is necessary for an update request."
+    },
+    {
+      "id": "urn:samm:io.catenax.id_based_request_for_update:3.0.0#Timestamp",
+      "label": "Timestamp",
+      "kind": "Characteristic",
+      "preferredName": "Timestamp",
+      "description": "Describes a Property which contains the date and time with an optional timezone."
+    }
+  ],
+  "links": [
+    {
+      "source": "urn:samm:io.catenax.id_based_request_for_update:3.0.0#IdBasedRequestForUpdate",
+      "target": "urn:samm:io.catenax.id_based_request_for_update:3.0.0#weekBasedMaterialDemand",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.id_based_request_for_update:3.0.0#IdBasedRequestForUpdate",
+      "target": "urn:samm:io.catenax.id_based_request_for_update:3.0.0#weekBasedCapacityGroup",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.id_based_request_for_update:3.0.0#WeekBasedMaterialDemandEntity",
+      "target": "urn:samm:io.catenax.id_based_request_for_update:3.0.0#materialDemandId",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.id_based_request_for_update:3.0.0#WeekBasedMaterialDemandEntity",
+      "target": "urn:samm:io.catenax.id_based_request_for_update:3.0.0#changedAt",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.id_based_request_for_update:3.0.0#WeekBasedCapacityGroupEntity",
+      "target": "urn:samm:io.catenax.id_based_request_for_update:3.0.0#capacityGroupId",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.id_based_request_for_update:3.0.0#WeekBasedCapacityGroupEntity",
+      "target": "urn:samm:io.catenax.id_based_request_for_update:3.0.0#changedAt",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.id_based_request_for_update:3.0.0#weekBasedMaterialDemand",
+      "target": "urn:samm:io.catenax.id_based_request_for_update:3.0.0#WeekBasedMaterialDemandCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.id_based_request_for_update:3.0.0#weekBasedCapacityGroup",
+      "target": "urn:samm:io.catenax.id_based_request_for_update:3.0.0#WeekBasedCapacityGroupCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.id_based_request_for_update:3.0.0#changedAt",
+      "target": "urn:samm:io.catenax.id_based_request_for_update:3.0.0#Timestamp",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.id_based_request_for_update:3.0.0#WeekBasedMaterialDemandCharacteristic",
+      "target": "urn:samm:io.catenax.id_based_request_for_update:3.0.0#WeekBasedMaterialDemandEntity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.id_based_request_for_update:3.0.0#WeekBasedCapacityGroupCharacteristic",
+      "target": "urn:samm:io.catenax.id_based_request_for_update:3.0.0#WeekBasedCapacityGroupEntity",
+      "label": "dataType",
+      "optional": false
+    }
+  ]
+}

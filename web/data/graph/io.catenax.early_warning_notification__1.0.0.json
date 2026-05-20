@@ -1,0 +1,306 @@
+{
+  "meta": {
+    "namespace": "urn:samm:io.catenax.early_warning_notification:1.0.0#",
+    "meta_model": "SAMM 2.1.0",
+    "model_family": "SAMM",
+    "model_name": "early_warning_notification",
+    "model_version": "1.0.0",
+    "source": "catenax",
+    "status": "release",
+    "release_date": "2024-02-26",
+    "release_notes": "# Changelog\nAll notable changes to this model will be documented in this file.\n\n## [Unreleased]\n## [1.0.0] - 2024-02-26\n\n### Added\n- initial model\n\n### Changed\nn/a\n\n### Removed",
+    "dependencies": [
+      {
+        "name": "shared.uuid",
+        "version": "2.0.0",
+        "family": "SAMM",
+        "source": "catenax"
+      }
+    ],
+    "path": "data/sldt-semantic-models/io.catenax.early_warning_notification/1.0.0/EarlyWarningNotification.ttl"
+  },
+  "nodes": [
+    {
+      "id": "urn:samm:io.catenax.early_warning_notification:1.0.0#EarlyWarningNotification",
+      "label": "EarlyWarningNotification",
+      "kind": "Aspect",
+      "preferredName": "Early Warning Notification",
+      "description": null
+    },
+    {
+      "id": "urn:samm:io.catenax.early_warning_notification:1.0.0#notificationId",
+      "label": "notificationId",
+      "kind": "Property",
+      "preferredName": "Notification Id",
+      "description": "A unique ID for the EW notification "
+    },
+    {
+      "id": "urn:samm:io.catenax.early_warning_notification:1.0.0#relatedQualityTaskID",
+      "label": "relatedQualityTaskID",
+      "kind": "Property",
+      "preferredName": "Related Quality Task ID",
+      "description": "An ID to reference an existing early warning project and its data"
+    },
+    {
+      "id": "urn:samm:io.catenax.early_warning_notification:1.0.0#information",
+      "label": "information",
+      "kind": "Property",
+      "preferredName": "Information",
+      "description": "Some text describing the detected anomaly in the data"
+    },
+    {
+      "id": "urn:samm:io.catenax.early_warning_notification:1.0.0#status",
+      "label": "status",
+      "kind": "Property",
+      "preferredName": "Status",
+      "description": "A status information about the current status of the quality process triggered by this notification."
+    },
+    {
+      "id": "urn:samm:io.catenax.early_warning_notification:1.0.0#severity",
+      "label": "severity",
+      "kind": "Property",
+      "preferredName": "Severity",
+      "description": "A flag indicating the severity of the quality issue"
+    },
+    {
+      "id": "urn:samm:io.catenax.early_warning_notification:1.0.0#listOfAffectedItems",
+      "label": "listOfAffectedItems",
+      "kind": "Property",
+      "preferredName": "List Of Affected Items",
+      "description": "List of unique identifiers to explicitly specify parts or vehicles exhibiting the issue described in the property \"Information\""
+    },
+    {
+      "id": "urn:samm:io.catenax.early_warning_notification:1.0.0#poulationFilterList",
+      "label": "poulationFilterList",
+      "kind": "Property",
+      "preferredName": "Population Filter List",
+      "description": "A set of Population Filters"
+    },
+    {
+      "id": "urn:samm:io.catenax.early_warning_notification:1.0.0#earlyWarningAttachmentLink",
+      "label": "earlyWarningAttachmentLink",
+      "kind": "Property",
+      "preferredName": "Additional Quality Data Link",
+      "description": "This property provides a reference to an EDC asset that will contain a zip file organized according to the specification CX-0092 and the model defined in io.catenax.quality_task_attachment:1.0.0. The zip file will contain additional data describing the early warning case."
+    },
+    {
+      "id": "urn:samm:io.catenax.early_warning_notification:1.0.0#catenaXId",
+      "label": "catenaXId",
+      "kind": "Property",
+      "preferredName": "Catena-X ID",
+      "description": "A unique identifier for a part or a vehicle. The identifier relates to a Catena-X digital twin"
+    },
+    {
+      "id": "urn:samm:io.catenax.early_warning_notification:1.0.0#aspectProperty",
+      "label": "aspectProperty",
+      "kind": "Property",
+      "preferredName": "Aspect Property",
+      "description": "A property from the aspect model referenced by \"aspectModel\""
+    },
+    {
+      "id": "urn:samm:io.catenax.early_warning_notification:1.0.0#aspectModel",
+      "label": "aspectModel",
+      "kind": "Property",
+      "preferredName": "Aspect Model",
+      "description": "A reference to an aspect model standardized by Catena-X for the quality use case"
+    },
+    {
+      "id": "urn:samm:io.catenax.early_warning_notification:1.0.0#rangeFrom",
+      "label": "rangeFrom",
+      "kind": "Property",
+      "preferredName": "Value Range From",
+      "description": "Start value of a value range for an aspect property "
+    },
+    {
+      "id": "urn:samm:io.catenax.early_warning_notification:1.0.0#rangeTo",
+      "label": "rangeTo",
+      "kind": "Property",
+      "preferredName": "Value Range To",
+      "description": "End value of a value range for an aspect property "
+    },
+    {
+      "id": "urn:samm:io.catenax.early_warning_notification:1.0.0#valueList",
+      "label": "valueList",
+      "kind": "Property",
+      "preferredName": "List of Values",
+      "description": "A list of values for the aspect property"
+    },
+    {
+      "id": "urn:samm:io.catenax.early_warning_notification:1.0.0#Status",
+      "label": "Status",
+      "kind": "Characteristic",
+      "preferredName": "Status  ",
+      "description": "A status infomration d´selected from a predefined set of possible states."
+    },
+    {
+      "id": "urn:samm:io.catenax.early_warning_notification:1.0.0#Severity",
+      "label": "Severity",
+      "kind": "Characteristic",
+      "preferredName": "Severity",
+      "description": "Describes the severity of a quality issue."
+    },
+    {
+      "id": "urn:samm:io.catenax.early_warning_notification:1.0.0#AffectedItemsCharacteristic",
+      "label": "AffectedItemsCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Affected Items Characteristic",
+      "description": "Characteristic for the UIDs defining the affected items"
+    },
+    {
+      "id": "urn:samm:io.catenax.early_warning_notification:1.0.0#PopulationFilterListCharacteristic",
+      "label": "PopulationFilterListCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Population Filter List Characteristic",
+      "description": "Characteristic for a List of Population Filters"
+    },
+    {
+      "id": "urn:samm:io.catenax.early_warning_notification:1.0.0#ValuesCharacteristic",
+      "label": "ValuesCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Values Characteristic",
+      "description": "Characteristic for the values in the value list"
+    },
+    {
+      "id": "urn:samm:io.catenax.early_warning_notification:1.0.0#Items",
+      "label": "Items",
+      "kind": "Entity",
+      "preferredName": "Items",
+      "description": "A unique identifier"
+    },
+    {
+      "id": "urn:samm:io.catenax.early_warning_notification:1.0.0#PopulationFilter",
+      "label": "PopulationFilter",
+      "kind": "Entity",
+      "preferredName": "Population Filter",
+      "description": "Population filter for the early warning data"
+    }
+  ],
+  "links": [
+    {
+      "source": "urn:samm:io.catenax.early_warning_notification:1.0.0#EarlyWarningNotification",
+      "target": "urn:samm:io.catenax.early_warning_notification:1.0.0#notificationId",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.early_warning_notification:1.0.0#EarlyWarningNotification",
+      "target": "urn:samm:io.catenax.early_warning_notification:1.0.0#relatedQualityTaskID",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.early_warning_notification:1.0.0#EarlyWarningNotification",
+      "target": "urn:samm:io.catenax.early_warning_notification:1.0.0#information",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.early_warning_notification:1.0.0#EarlyWarningNotification",
+      "target": "urn:samm:io.catenax.early_warning_notification:1.0.0#status",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.early_warning_notification:1.0.0#EarlyWarningNotification",
+      "target": "urn:samm:io.catenax.early_warning_notification:1.0.0#severity",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.early_warning_notification:1.0.0#EarlyWarningNotification",
+      "target": "urn:samm:io.catenax.early_warning_notification:1.0.0#listOfAffectedItems",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.early_warning_notification:1.0.0#EarlyWarningNotification",
+      "target": "urn:samm:io.catenax.early_warning_notification:1.0.0#poulationFilterList",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.early_warning_notification:1.0.0#EarlyWarningNotification",
+      "target": "urn:samm:io.catenax.early_warning_notification:1.0.0#earlyWarningAttachmentLink",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.early_warning_notification:1.0.0#Items",
+      "target": "urn:samm:io.catenax.early_warning_notification:1.0.0#catenaXId",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.early_warning_notification:1.0.0#PopulationFilter",
+      "target": "urn:samm:io.catenax.early_warning_notification:1.0.0#aspectProperty",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.early_warning_notification:1.0.0#PopulationFilter",
+      "target": "urn:samm:io.catenax.early_warning_notification:1.0.0#aspectModel",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.early_warning_notification:1.0.0#PopulationFilter",
+      "target": "urn:samm:io.catenax.early_warning_notification:1.0.0#rangeFrom",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.early_warning_notification:1.0.0#PopulationFilter",
+      "target": "urn:samm:io.catenax.early_warning_notification:1.0.0#rangeTo",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.early_warning_notification:1.0.0#PopulationFilter",
+      "target": "urn:samm:io.catenax.early_warning_notification:1.0.0#valueList",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.early_warning_notification:1.0.0#status",
+      "target": "urn:samm:io.catenax.early_warning_notification:1.0.0#Status",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.early_warning_notification:1.0.0#severity",
+      "target": "urn:samm:io.catenax.early_warning_notification:1.0.0#Severity",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.early_warning_notification:1.0.0#listOfAffectedItems",
+      "target": "urn:samm:io.catenax.early_warning_notification:1.0.0#AffectedItemsCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.early_warning_notification:1.0.0#poulationFilterList",
+      "target": "urn:samm:io.catenax.early_warning_notification:1.0.0#PopulationFilterListCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.early_warning_notification:1.0.0#valueList",
+      "target": "urn:samm:io.catenax.early_warning_notification:1.0.0#ValuesCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.early_warning_notification:1.0.0#AffectedItemsCharacteristic",
+      "target": "urn:samm:io.catenax.early_warning_notification:1.0.0#Items",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.early_warning_notification:1.0.0#PopulationFilterListCharacteristic",
+      "target": "urn:samm:io.catenax.early_warning_notification:1.0.0#PopulationFilter",
+      "label": "dataType",
+      "optional": false
+    }
+  ]
+}

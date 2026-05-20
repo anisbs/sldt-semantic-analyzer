@@ -1,0 +1,46 @@
+{
+  "meta": {
+    "namespace": "urn:samm:io.catenax.refurbishing_certificate:2.0.0#",
+    "meta_model": "SAMM 2.0.0",
+    "model_family": "SAMM",
+    "model_name": "refurbishing_certificate",
+    "model_version": "2.0.0",
+    "source": "catenax",
+    "status": "release",
+    "release_date": "2023-12-04",
+    "release_notes": "# Changelog\nAll notable changes to this model will be documented in this file.\n\n## [Unreleased]\n\n## [3.0.0] - 2024-03-11\n### Changed\n- Update based on shared aspect \"recycling strategy certificate\"\n\n### Added\n- New Feature : partInstanceId\n\n### Removed\n\n## [2.0.0] - 2023-12-04\n### Added\n- Upgrade from BAMM model to SAMM model\n- Update based on shared aspect \"recycling strategy certificate\"\n\n### Changed\n\n### Removed\n\n## [1.0.0] - 2022-03-30\n### Added\n- initial model\n\n### Changed\nn/a\n\n### Removed",
+    "dependencies": [
+      {
+        "name": "shared.recycling_strategy_certificate",
+        "version": "2.0.0",
+        "family": "SAMM",
+        "source": "catenax"
+      }
+    ],
+    "path": "data/sldt-semantic-models/io.catenax.refurbishing_certificate/2.0.0/RefurbishingCertificate.ttl"
+  },
+  "nodes": [
+    {
+      "id": "urn:samm:io.catenax.refurbishing_certificate:2.0.0#RefurbishingCertificate",
+      "label": "RefurbishingCertificate",
+      "kind": "Aspect",
+      "preferredName": "Refurbishing certificate",
+      "description": "The certificate marks the point in time at which an asset irrevocably enters a new life. The eol (end of life) phase is completed and a new product life cycle is started."
+    },
+    {
+      "id": "urn:samm:io.catenax.refurbishing_certificate:2.0.0#certificate",
+      "label": "certificate",
+      "kind": "Property",
+      "preferredName": "Certificate",
+      "description": "A property of the model, named certificate."
+    }
+  ],
+  "links": [
+    {
+      "source": "urn:samm:io.catenax.refurbishing_certificate:2.0.0#RefurbishingCertificate",
+      "target": "urn:samm:io.catenax.refurbishing_certificate:2.0.0#certificate",
+      "label": "properties",
+      "optional": false
+    }
+  ]
+}

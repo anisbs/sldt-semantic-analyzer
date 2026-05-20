@@ -1,0 +1,273 @@
+{
+  "meta": {
+    "namespace": "urn:samm:io.catenax.part_as_planned:2.0.0#",
+    "meta_model": "SAMM 2.0.0",
+    "model_family": "SAMM",
+    "model_name": "part_as_planned",
+    "model_version": "2.0.0",
+    "source": "catenax",
+    "status": "release",
+    "release_date": "2023-12-04",
+    "release_notes": "# Changelog\nAll notable changes to this model will be documented in this file.\n\n## [2.0.0] - 2023-12-04\n### Added\n- added all relevant part site information of the PartSiteInforamtionAsPlanned aspect model, that will be deprecated\n\n### Changed\n- replaced existing BPNCharacteristic with the BPNCharacterstic of the shared BusinessPartnerNumber aspect model\n\n### Removed\n- removed the whole validityPeriod abstract property with its respective child properties and characteristics\n\n## [1.0.1]\n### Added\nn/a\n\n### Changed\n- PartAsPlanned aspect element and manufacturerPartID property elements have improved descriptions , more explicitly mentioning versioning information of a part as planned\n- all characteristics, entities, and constraints now have proper names, preferred names and descriptions\n- validFrom and validTo properties now have more meaningful example values.\n- fixed some typos in preferred names and descriptions.\n\n### Removed\nn/a\n\n## [1.0.0] - 2022-08-06\n### Added\n- initial model\n\n### Changed\nn/a\n\n### Removed",
+    "dependencies": [
+      {
+        "name": "shared.business_partner_number",
+        "version": "1.0.0",
+        "family": "SAMM",
+        "source": "catenax"
+      },
+      {
+        "name": "shared.uuid",
+        "version": "1.0.0",
+        "family": "SAMM",
+        "source": "catenax"
+      }
+    ],
+    "path": "data/sldt-semantic-models/io.catenax.part_as_planned/2.0.0/PartAsPlanned.ttl"
+  },
+  "nodes": [
+    {
+      "id": "urn:samm:io.catenax.part_as_planned:2.0.0#PartAsPlanned",
+      "label": "PartAsPlanned",
+      "kind": "Aspect",
+      "preferredName": "Part as Planned",
+      "description": "A Part as Planned represents an item in the Catena-X Bill of Material(BOM) in As-Planned lifecycle status in a specific version. "
+    },
+    {
+      "id": "urn:samm:io.catenax.part_as_planned:2.0.0#catenaXId",
+      "label": "catenaXId",
+      "kind": "Property",
+      "preferredName": "Catena-X ID",
+      "description": "The fully anonymous Catena-X ID of the serialized part, valid for the Catena-X dataspace."
+    },
+    {
+      "id": "urn:samm:io.catenax.part_as_planned:2.0.0#partTypeInformation",
+      "label": "partTypeInformation",
+      "kind": "Property",
+      "preferredName": "Part Type Information",
+      "description": "The part type from which the serialized part has been instantiated"
+    },
+    {
+      "id": "urn:samm:io.catenax.part_as_planned:2.0.0#partSitesInformationAsPlanned",
+      "label": "partSitesInformationAsPlanned",
+      "kind": "Property",
+      "preferredName": "Part Sites Information as Planned",
+      "description": "A site is a delimited geographical area where a legal entity does business(geographical address with geo coordinates).A site always has a primary physical address. It is possible that further physical addresses are specified for the site. P.O. box details are only possible in addition to the physical address. A site has a 1:n relation to addresses, means at least 1 address is necessary and multiple addresses are possible."
+    },
+    {
+      "id": "urn:samm:io.catenax.part_as_planned:2.0.0#manufacturerPartId",
+      "label": "manufacturerPartId",
+      "kind": "Property",
+      "preferredName": "Manufacturer Part ID",
+      "description": "Part ID as assigned by the manufacturer of the part. The Part ID identifies the part in the manufacturer`s dataspace. The Part ID references a specific version of a part. The version number must be included in the Part ID if it is available.\n\nThe Part ID does not reference a specific instance of a part and must not be confused with the serial number."
+    },
+    {
+      "id": "urn:samm:io.catenax.part_as_planned:2.0.0#nameAtManufacturer",
+      "label": "nameAtManufacturer",
+      "kind": "Property",
+      "preferredName": "Name at manufacturer",
+      "description": "Name of the part as assigned by the manufacturer"
+    },
+    {
+      "id": "urn:samm:io.catenax.part_as_planned:2.0.0#classification",
+      "label": "classification",
+      "kind": "Property",
+      "preferredName": "Classification",
+      "description": "The classification of the part type according to STEP standard definition"
+    },
+    {
+      "id": "urn:samm:io.catenax.part_as_planned:2.0.0#catenaXsiteId",
+      "label": "catenaXsiteId",
+      "kind": "Property",
+      "preferredName": "Catena-X site identifier",
+      "description": "The identifier of the site according to Catena-X BPDM. The catenaXsiteId must be a valid Catena-X BPN. The BPN is a unique, unchangeable identifier for Business Partners / company locations from foundation to closure, regardless of the different business relationships / structures between or within the Business Partners or company locations."
+    },
+    {
+      "id": "urn:samm:io.catenax.part_as_planned:2.0.0#function",
+      "label": "function",
+      "kind": "Property",
+      "preferredName": "Function",
+      "description": "The function of the site in relation to the part(i.e. the activity within the value chain of the part that is performed at the site)"
+    },
+    {
+      "id": "urn:samm:io.catenax.part_as_planned:2.0.0#functionValidFrom",
+      "label": "functionValidFrom",
+      "kind": "Property",
+      "preferredName": "Function valid from",
+      "description": "Timestamp, from when the site has the specified function for the given part"
+    },
+    {
+      "id": "urn:samm:io.catenax.part_as_planned:2.0.0#functionValidUntil",
+      "label": "functionValidUntil",
+      "kind": "Property",
+      "preferredName": "Function valid until",
+      "description": "Timestamp, until when the site has the specified function for the given part"
+    },
+    {
+      "id": "urn:samm:io.catenax.part_as_planned:2.0.0#PartTypeInformationCharacteristic",
+      "label": "PartTypeInformationCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Part Type Information Characteristic",
+      "description": "The characteristics of the part type"
+    },
+    {
+      "id": "urn:samm:io.catenax.part_as_planned:2.0.0#PartIdCharacteristic",
+      "label": "PartIdCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Part ID characteristic",
+      "description": "The part ID is a multi-character string, usually assigned by an ERP system"
+    },
+    {
+      "id": "urn:samm:io.catenax.part_as_planned:2.0.0#PartNameCharacteristic",
+      "label": "PartNameCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Part Name characteristic",
+      "description": "Part Name in string format from the respective system in the value chain"
+    },
+    {
+      "id": "urn:samm:io.catenax.part_as_planned:2.0.0#partSitesInformationAsPlannedCharacteristic",
+      "label": "partSitesInformationAsPlannedCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Part Sites Information as Planned Characteristic",
+      "description": "The characteristic of the part site information that represents a set of possible site to a repective part. "
+    },
+    {
+      "id": "urn:samm:io.catenax.part_as_planned:2.0.0#PartTypeInformationEntity",
+      "label": "PartTypeInformationEntity",
+      "kind": "Entity",
+      "preferredName": "Part Type Information Entity",
+      "description": "Encapsulation for data related to the part type"
+    },
+    {
+      "id": "urn:samm:io.catenax.part_as_planned:2.0.0#partSitesInformationAsPlannedEntity",
+      "label": "partSitesInformationAsPlannedEntity",
+      "kind": "Entity",
+      "preferredName": "Part Sites Information as Planned Entity",
+      "description": "Describes the ID, function and validity date of a site for the associated part in the AsPlanned context."
+    },
+    {
+      "id": "urn:samm:io.catenax.part_as_planned:2.0.0#ClassificationEnumerationCharacteristic",
+      "label": "ClassificationEnumerationCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Classification enumeration characteristic",
+      "description": "A part type must be placed into one of the following classes: 'component', 'product', 'software', ?assembly?, 'tool', or 'raw material'."
+    },
+    {
+      "id": "urn:samm:io.catenax.part_as_planned:2.0.0#FunctionCharacteristic",
+      "label": "FunctionCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Function characteristic",
+      "description": "Describes the characteristics of the function for a site related to the respective part"
+    }
+  ],
+  "links": [
+    {
+      "source": "urn:samm:io.catenax.part_as_planned:2.0.0#PartAsPlanned",
+      "target": "urn:samm:io.catenax.part_as_planned:2.0.0#catenaXId",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.part_as_planned:2.0.0#PartAsPlanned",
+      "target": "urn:samm:io.catenax.part_as_planned:2.0.0#partTypeInformation",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.part_as_planned:2.0.0#PartAsPlanned",
+      "target": "urn:samm:io.catenax.part_as_planned:2.0.0#partSitesInformationAsPlanned",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.part_as_planned:2.0.0#PartTypeInformationEntity",
+      "target": "urn:samm:io.catenax.part_as_planned:2.0.0#manufacturerPartId",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.part_as_planned:2.0.0#PartTypeInformationEntity",
+      "target": "urn:samm:io.catenax.part_as_planned:2.0.0#nameAtManufacturer",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.part_as_planned:2.0.0#PartTypeInformationEntity",
+      "target": "urn:samm:io.catenax.part_as_planned:2.0.0#classification",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.part_as_planned:2.0.0#partSitesInformationAsPlannedEntity",
+      "target": "urn:samm:io.catenax.part_as_planned:2.0.0#catenaXsiteId",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.part_as_planned:2.0.0#partSitesInformationAsPlannedEntity",
+      "target": "urn:samm:io.catenax.part_as_planned:2.0.0#function",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.part_as_planned:2.0.0#partSitesInformationAsPlannedEntity",
+      "target": "urn:samm:io.catenax.part_as_planned:2.0.0#functionValidFrom",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.part_as_planned:2.0.0#partSitesInformationAsPlannedEntity",
+      "target": "urn:samm:io.catenax.part_as_planned:2.0.0#functionValidUntil",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.part_as_planned:2.0.0#partTypeInformation",
+      "target": "urn:samm:io.catenax.part_as_planned:2.0.0#PartTypeInformationCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.part_as_planned:2.0.0#partSitesInformationAsPlanned",
+      "target": "urn:samm:io.catenax.part_as_planned:2.0.0#partSitesInformationAsPlannedCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.part_as_planned:2.0.0#manufacturerPartId",
+      "target": "urn:samm:io.catenax.part_as_planned:2.0.0#PartIdCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.part_as_planned:2.0.0#nameAtManufacturer",
+      "target": "urn:samm:io.catenax.part_as_planned:2.0.0#PartNameCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.part_as_planned:2.0.0#classification",
+      "target": "urn:samm:io.catenax.part_as_planned:2.0.0#ClassificationEnumerationCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.part_as_planned:2.0.0#function",
+      "target": "urn:samm:io.catenax.part_as_planned:2.0.0#FunctionCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.part_as_planned:2.0.0#PartTypeInformationCharacteristic",
+      "target": "urn:samm:io.catenax.part_as_planned:2.0.0#PartTypeInformationEntity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.part_as_planned:2.0.0#partSitesInformationAsPlannedCharacteristic",
+      "target": "urn:samm:io.catenax.part_as_planned:2.0.0#partSitesInformationAsPlannedEntity",
+      "label": "dataType",
+      "optional": false
+    }
+  ]
+}

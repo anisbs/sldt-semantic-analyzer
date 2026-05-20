@@ -1,0 +1,842 @@
+{
+  "meta": {
+    "namespace": "urn:samm:io.catenax.waste:2.0.0#",
+    "meta_model": "SAMM 2.1.0",
+    "model_family": "SAMM",
+    "model_name": "waste",
+    "model_version": "2.0.0",
+    "source": "catenax",
+    "status": "draft",
+    "release_date": "2024-02-15",
+    "release_notes": "# Changelog\nAll notable changes to this model will be documented in this file.\n\n## [Unreleased]\n\n## [2.0.0] - 2024-02-15\nThis model is in status draft, as this is just the conversion of existing model from bamm to samm and not released model.\nThis version can still be considered for updates.\n\n## [1.0.0] - 2022-07-19\n### Added\n- initial version of model\n\n### Changed\nn/a\n\n### Removed",
+    "dependencies": [],
+    "path": "data/sldt-semantic-models/io.catenax.waste/2.0.0/Waste.ttl"
+  },
+  "nodes": [
+    {
+      "id": "urn:samm:io.catenax.waste:2.0.0#Waste",
+      "label": "Waste",
+      "kind": "Aspect",
+      "preferredName": "waste",
+      "description": "Waste materials which occurs from disassembly or production waste."
+    },
+    {
+      "id": "urn:samm:io.catenax.waste:2.0.0#identification",
+      "label": "identification",
+      "kind": "Property",
+      "preferredName": "identification",
+      "description": "Identification and description of waste"
+    },
+    {
+      "id": "urn:samm:io.catenax.waste:2.0.0#materialProperties",
+      "label": "materialProperties",
+      "kind": "Property",
+      "preferredName": "material properties",
+      "description": "The composition and materials waste consists of."
+    },
+    {
+      "id": "urn:samm:io.catenax.waste:2.0.0#currentMarketPrice",
+      "label": "currentMarketPrice",
+      "kind": "Property",
+      "preferredName": "current market price",
+      "description": "The current market price for a material (not to be mistaken with the actual offer price of the waste material)."
+    },
+    {
+      "id": "urn:samm:io.catenax.waste:2.0.0#packagingType",
+      "label": "packagingType",
+      "kind": "Property",
+      "preferredName": "packaging type",
+      "description": "Packaging type for the product."
+    },
+    {
+      "id": "urn:samm:io.catenax.waste:2.0.0#riskPotential",
+      "label": "riskPotential",
+      "kind": "Property",
+      "preferredName": "risk potential",
+      "description": "Potential risks of the waste like hazardusness, odor and pH value."
+    },
+    {
+      "id": "urn:samm:io.catenax.waste:2.0.0#formFactor",
+      "label": "formFactor",
+      "kind": "Property",
+      "preferredName": "form factor",
+      "description": "The product form factor."
+    },
+    {
+      "id": "urn:samm:io.catenax.waste:2.0.0#wasteDisposalDate",
+      "label": "wasteDisposalDate",
+      "kind": "Property",
+      "preferredName": "waste disposal date",
+      "description": "Date on which waste was incurred"
+    },
+    {
+      "id": "urn:samm:io.catenax.waste:2.0.0#wasteCode",
+      "label": "wasteCode",
+      "kind": "Property",
+      "preferredName": "Waste code",
+      "description": "The waste code identifying the waste type"
+    },
+    {
+      "id": "urn:samm:io.catenax.waste:2.0.0#wasteCodeDescription",
+      "label": "wasteCodeDescription",
+      "kind": "Property",
+      "preferredName": "Waste Code Description",
+      "description": "The waste code description"
+    },
+    {
+      "id": "urn:samm:io.catenax.waste:2.0.0#metalScrapIdentificationCode",
+      "label": "metalScrapIdentificationCode",
+      "kind": "Property",
+      "preferredName": "waste code jurisdiction",
+      "description": "The jurisdiction in which the waste code is valid (country, EU,...)"
+    },
+    {
+      "id": "urn:samm:io.catenax.waste:2.0.0#wasteCodeJurisdiction",
+      "label": "wasteCodeJurisdiction",
+      "kind": "Property",
+      "preferredName": "waste code jurisdiction",
+      "description": "The jurisdiction in which the waste code is valid (country, EU,...)"
+    },
+    {
+      "id": "urn:samm:io.catenax.waste:2.0.0#productComposition",
+      "label": "productComposition",
+      "kind": "Property",
+      "preferredName": "Product Composition",
+      "description": "Product material composition."
+    },
+    {
+      "id": "urn:samm:io.catenax.waste:2.0.0#productPurity",
+      "label": "productPurity",
+      "kind": "Property",
+      "preferredName": "product purity",
+      "description": "Material purity"
+    },
+    {
+      "id": "urn:samm:io.catenax.waste:2.0.0#density",
+      "label": "density",
+      "kind": "Property",
+      "preferredName": "Density",
+      "description": "The product density."
+    },
+    {
+      "id": "urn:samm:io.catenax.waste:2.0.0#marketIndexMaterialPrice",
+      "label": "marketIndexMaterialPrice",
+      "kind": "Property",
+      "preferredName": "Market Index Material Price",
+      "description": "The market index for a material predominating material composition of a product (relevant for production waste/scrap)."
+    },
+    {
+      "id": "urn:samm:io.catenax.waste:2.0.0#marketIndexCurrency",
+      "label": "marketIndexCurrency",
+      "kind": "Property",
+      "preferredName": "Market Index Currency",
+      "description": "The currency in which market index is calculated. According to: ISO 4217"
+    },
+    {
+      "id": "urn:samm:io.catenax.waste:2.0.0#hazardousness",
+      "label": "hazardousness",
+      "kind": "Property",
+      "preferredName": "Hazardousness",
+      "description": "If the product can be classified as hazardous"
+    },
+    {
+      "id": "urn:samm:io.catenax.waste:2.0.0#phValue",
+      "label": "phValue",
+      "kind": "Property",
+      "preferredName": "Ph-Value",
+      "description": "The pH-value for liquids."
+    },
+    {
+      "id": "urn:samm:io.catenax.waste:2.0.0#odor",
+      "label": "odor",
+      "kind": "Property",
+      "preferredName": "Odor",
+      "description": "The product odor."
+    },
+    {
+      "id": "urn:samm:io.catenax.waste:2.0.0#contamination",
+      "label": "contamination",
+      "kind": "Property",
+      "preferredName": "Contamination",
+      "description": "Possible contamination, e.g. with oil"
+    },
+    {
+      "id": "urn:samm:io.catenax.waste:2.0.0#materialName",
+      "label": "materialName",
+      "kind": "Property",
+      "preferredName": "material name",
+      "description": "Name of the material"
+    },
+    {
+      "id": "urn:samm:io.catenax.waste:2.0.0#materialWeightPercentage",
+      "label": "materialWeightPercentage",
+      "kind": "Property",
+      "preferredName": "material weight percentage",
+      "description": "The weight percentage of a specific material of the waste in percent."
+    },
+    {
+      "id": "urn:samm:io.catenax.waste:2.0.0#pricePerWeightInGram",
+      "label": "pricePerWeightInGram",
+      "kind": "Property",
+      "preferredName": "price per weight in gram",
+      "description": "Price per weight in gram of waste material"
+    },
+    {
+      "id": "urn:samm:io.catenax.waste:2.0.0#pricePerWeightInKiloGram",
+      "label": "pricePerWeightInKiloGram",
+      "kind": "Property",
+      "preferredName": "price per weight in kilo gram",
+      "description": "Price per weight in kilo gram of waste material"
+    },
+    {
+      "id": "urn:samm:io.catenax.waste:2.0.0#pricePerVolumeInLitre",
+      "label": "pricePerVolumeInLitre",
+      "kind": "Property",
+      "preferredName": "price per volume in litre",
+      "description": "Price per volume in litre of waste material"
+    },
+    {
+      "id": "urn:samm:io.catenax.waste:2.0.0#pricePerVolumeInMillilitre",
+      "label": "pricePerVolumeInMillilitre",
+      "kind": "Property",
+      "preferredName": "price per volume in millilitre",
+      "description": "Price per volume in millilitre of waste material"
+    },
+    {
+      "id": "urn:samm:io.catenax.waste:2.0.0#pricePerAreaInSquareMeter",
+      "label": "pricePerAreaInSquareMeter",
+      "kind": "Property",
+      "preferredName": "price per area in square meter",
+      "description": "Price per area in square meter of waste material"
+    },
+    {
+      "id": "urn:samm:io.catenax.waste:2.0.0#pricePerAreaInSquareMillimeter",
+      "label": "pricePerAreaInSquareMillimeter",
+      "kind": "Property",
+      "preferredName": "price per area in square millimeter",
+      "description": "Price per area in square millimeter of waste material"
+    },
+    {
+      "id": "urn:samm:io.catenax.waste:2.0.0#pricePerLengthInMeter",
+      "label": "pricePerLengthInMeter",
+      "kind": "Property",
+      "preferredName": "price per length in meter",
+      "description": "Price per length in meter of waste material"
+    },
+    {
+      "id": "urn:samm:io.catenax.waste:2.0.0#pricePerLengthInMillimeter",
+      "label": "pricePerLengthInMillimeter",
+      "kind": "Property",
+      "preferredName": "price per length in millimeter",
+      "description": "Price per length in millimeter of waste material"
+    },
+    {
+      "id": "urn:samm:io.catenax.waste:2.0.0#pricePerPiece",
+      "label": "pricePerPiece",
+      "kind": "Property",
+      "preferredName": "price per piece",
+      "description": "Price per piece of waste material"
+    },
+    {
+      "id": "urn:samm:io.catenax.waste:2.0.0#IdentificationCharacteristic",
+      "label": "IdentificationCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "identification",
+      "description": "Identification and description of waste"
+    },
+    {
+      "id": "urn:samm:io.catenax.waste:2.0.0#MaterialPropertiesCharacterisitc",
+      "label": "MaterialPropertiesCharacterisitc",
+      "kind": "Characteristic",
+      "preferredName": "material properties",
+      "description": "The composition and materials waste consists of."
+    },
+    {
+      "id": "urn:samm:io.catenax.waste:2.0.0#CurrentMarketPriceCharacteristic",
+      "label": "CurrentMarketPriceCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "current market price",
+      "description": "The current market price for a material (not to be mistaken with the actual offer price of the waste material)."
+    },
+    {
+      "id": "urn:samm:io.catenax.waste:2.0.0#Text",
+      "label": "Text",
+      "kind": "Characteristic",
+      "preferredName": null,
+      "description": "Describes a Property which contains plain text. This is intended exclusively for human readable strings, not for identifiers, measurement values, etc."
+    },
+    {
+      "id": "urn:samm:io.catenax.waste:2.0.0#RiskPotentialCharacterisitc",
+      "label": "RiskPotentialCharacterisitc",
+      "kind": "Characteristic",
+      "preferredName": "risk potential",
+      "description": "Potential risks of the waste like hazardusness, odor and pH value."
+    },
+    {
+      "id": "urn:samm:io.catenax.waste:2.0.0#DateStamp",
+      "label": "DateStamp",
+      "kind": "Characteristic",
+      "preferredName": "date stamp",
+      "description": "Date on which waste was incurred"
+    },
+    {
+      "id": "urn:samm:io.catenax.waste:2.0.0#ProductPurityCharacteristic",
+      "label": "ProductPurityCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "product purity",
+      "description": "Material purity"
+    },
+    {
+      "id": "urn:samm:io.catenax.waste:2.0.0#MarketIndexMaterialPriceCharacterisitic",
+      "label": "MarketIndexMaterialPriceCharacterisitic",
+      "kind": "Characteristic",
+      "preferredName": "market index material price",
+      "description": null
+    },
+    {
+      "id": "urn:samm:io.catenax.waste:2.0.0#PhValueCharacterisitc",
+      "label": "PhValueCharacterisitc",
+      "kind": "Characteristic",
+      "preferredName": "pH value",
+      "description": null
+    },
+    {
+      "id": "urn:samm:io.catenax.waste:2.0.0#PricePerWeightInGramCharacteristic",
+      "label": "PricePerWeightInGramCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "price per weight in gram",
+      "description": "Price per weight in gram of waste material"
+    },
+    {
+      "id": "urn:samm:io.catenax.waste:2.0.0#PricePerWeightInKiloGramCharacterisitic",
+      "label": "PricePerWeightInKiloGramCharacterisitic",
+      "kind": "Characteristic",
+      "preferredName": "price per weight in kilo gram",
+      "description": "Price per weight in kilo gram of waste material"
+    },
+    {
+      "id": "urn:samm:io.catenax.waste:2.0.0#PricePerVolumeInLitreCharacteristic",
+      "label": "PricePerVolumeInLitreCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "price per volume in litre",
+      "description": "Price per volume in litre gram of waste material"
+    },
+    {
+      "id": "urn:samm:io.catenax.waste:2.0.0#PricePerVolumeInMillilitreCharacteristic",
+      "label": "PricePerVolumeInMillilitreCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "price per volume in millilitre",
+      "description": "Price per volume in millilitre of waste material"
+    },
+    {
+      "id": "urn:samm:io.catenax.waste:2.0.0#PricePerAreaInSquareMeterCharacteristic",
+      "label": "PricePerAreaInSquareMeterCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "price per area in square meter",
+      "description": "Price per area in square meter of waste material"
+    },
+    {
+      "id": "urn:samm:io.catenax.waste:2.0.0#PricePerAreaInSquareMillimeterCharacteristic",
+      "label": "PricePerAreaInSquareMillimeterCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "price per area in square millimeter",
+      "description": "Price per area in square millimeter of waste material"
+    },
+    {
+      "id": "urn:samm:io.catenax.waste:2.0.0#PricePerLengthInMeterCharacteristic",
+      "label": "PricePerLengthInMeterCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Price per length in meter of waste material",
+      "description": "Price per length in meter of waste material"
+    },
+    {
+      "id": "urn:samm:io.catenax.waste:2.0.0#PricePerLengthInMillimeterCharacteristic",
+      "label": "PricePerLengthInMillimeterCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "price per length in millimeter",
+      "description": "Price per length in millimeter of waste material"
+    },
+    {
+      "id": "urn:samm:io.catenax.waste:2.0.0#PricePerPieceCharacteristic",
+      "label": "PricePerPieceCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "price per piece",
+      "description": "Price per piece of waste material"
+    },
+    {
+      "id": "urn:samm:io.catenax.waste:2.0.0#IdentificationEntity",
+      "label": "IdentificationEntity",
+      "kind": "Entity",
+      "preferredName": "identification",
+      "description": "Entity encapsulating the describing details of waste"
+    },
+    {
+      "id": "urn:samm:io.catenax.waste:2.0.0#MaterialPropertiesEntity",
+      "label": "MaterialPropertiesEntity",
+      "kind": "Entity",
+      "preferredName": "material properties",
+      "description": "Entity encapsulating the details of the material properties of waste."
+    },
+    {
+      "id": "urn:samm:io.catenax.waste:2.0.0#CurrentMarketPriceEntity",
+      "label": "CurrentMarketPriceEntity",
+      "kind": "Entity",
+      "preferredName": "current market price",
+      "description": "Entity encapsulating the details of the price of waste."
+    },
+    {
+      "id": "urn:samm:io.catenax.waste:2.0.0#RiskPotentialEntity",
+      "label": "RiskPotentialEntity",
+      "kind": "Entity",
+      "preferredName": "risk potential",
+      "description": "Entity encapsulating the details of the risk potential of waste."
+    },
+    {
+      "id": "urn:samm:io.catenax.waste:2.0.0#ProductCompositionEntity",
+      "label": "ProductCompositionEntity",
+      "kind": "Entity",
+      "preferredName": "product composition",
+      "description": "Entity encapsulating the details of the product material properties (name and weight percentage) the waste consists of"
+    },
+    {
+      "id": "urn:samm:io.catenax.waste:2.0.0#MarketIndexMaterialPriceEntity",
+      "label": "MarketIndexMaterialPriceEntity",
+      "kind": "Entity",
+      "preferredName": "market index material price",
+      "description": "Entity encapsulating the details of the price of waste in regards of weight, volume, area or piece/amount."
+    },
+    {
+      "id": "urn:samm:io.catenax.waste:2.0.0#ProductCompositionCharacteristic",
+      "label": "ProductCompositionCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "product composition",
+      "description": "Product material composition."
+    },
+    {
+      "id": "urn:samm:io.catenax.waste:2.0.0#DensityCharacteristic",
+      "label": "DensityCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": null,
+      "description": null
+    },
+    {
+      "id": "urn:samm:io.catenax.waste:2.0.0#PercentCharacterisitic",
+      "label": "PercentCharacterisitic",
+      "kind": "Characteristic",
+      "preferredName": "percent characterisitic",
+      "description": null
+    },
+    {
+      "id": "urn:samm:io.catenax.waste:2.0.0#MarketIndexCurrencyTrait",
+      "label": "MarketIndexCurrencyTrait",
+      "kind": "Characteristic",
+      "preferredName": null,
+      "description": null
+    },
+    {
+      "id": "urn:samm:io.catenax.waste:2.0.0#LengthConstraint",
+      "label": "LengthConstraint",
+      "kind": "Characteristic",
+      "preferredName": "length constraint",
+      "description": null
+    }
+  ],
+  "links": [
+    {
+      "source": "urn:samm:io.catenax.waste:2.0.0#Waste",
+      "target": "urn:samm:io.catenax.waste:2.0.0#identification",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.waste:2.0.0#Waste",
+      "target": "urn:samm:io.catenax.waste:2.0.0#materialProperties",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.waste:2.0.0#Waste",
+      "target": "urn:samm:io.catenax.waste:2.0.0#currentMarketPrice",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.waste:2.0.0#Waste",
+      "target": "urn:samm:io.catenax.waste:2.0.0#packagingType",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.waste:2.0.0#Waste",
+      "target": "urn:samm:io.catenax.waste:2.0.0#riskPotential",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.waste:2.0.0#Waste",
+      "target": "urn:samm:io.catenax.waste:2.0.0#formFactor",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.waste:2.0.0#Waste",
+      "target": "urn:samm:io.catenax.waste:2.0.0#wasteDisposalDate",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.waste:2.0.0#IdentificationEntity",
+      "target": "urn:samm:io.catenax.waste:2.0.0#wasteCode",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.waste:2.0.0#IdentificationEntity",
+      "target": "urn:samm:io.catenax.waste:2.0.0#wasteCodeDescription",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.waste:2.0.0#IdentificationEntity",
+      "target": "urn:samm:io.catenax.waste:2.0.0#metalScrapIdentificationCode",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.waste:2.0.0#IdentificationEntity",
+      "target": "urn:samm:io.catenax.waste:2.0.0#wasteCodeJurisdiction",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.waste:2.0.0#MaterialPropertiesEntity",
+      "target": "urn:samm:io.catenax.waste:2.0.0#productComposition",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.waste:2.0.0#MaterialPropertiesEntity",
+      "target": "urn:samm:io.catenax.waste:2.0.0#productPurity",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.waste:2.0.0#MaterialPropertiesEntity",
+      "target": "urn:samm:io.catenax.waste:2.0.0#density",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.waste:2.0.0#CurrentMarketPriceEntity",
+      "target": "urn:samm:io.catenax.waste:2.0.0#marketIndexMaterialPrice",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.waste:2.0.0#CurrentMarketPriceEntity",
+      "target": "urn:samm:io.catenax.waste:2.0.0#marketIndexCurrency",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.waste:2.0.0#RiskPotentialEntity",
+      "target": "urn:samm:io.catenax.waste:2.0.0#hazardousness",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.waste:2.0.0#RiskPotentialEntity",
+      "target": "urn:samm:io.catenax.waste:2.0.0#phValue",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.waste:2.0.0#RiskPotentialEntity",
+      "target": "urn:samm:io.catenax.waste:2.0.0#odor",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.waste:2.0.0#RiskPotentialEntity",
+      "target": "urn:samm:io.catenax.waste:2.0.0#contamination",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.waste:2.0.0#ProductCompositionEntity",
+      "target": "urn:samm:io.catenax.waste:2.0.0#materialName",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.waste:2.0.0#ProductCompositionEntity",
+      "target": "urn:samm:io.catenax.waste:2.0.0#materialWeightPercentage",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.waste:2.0.0#MarketIndexMaterialPriceEntity",
+      "target": "urn:samm:io.catenax.waste:2.0.0#pricePerWeightInGram",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.waste:2.0.0#MarketIndexMaterialPriceEntity",
+      "target": "urn:samm:io.catenax.waste:2.0.0#pricePerWeightInKiloGram",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.waste:2.0.0#MarketIndexMaterialPriceEntity",
+      "target": "urn:samm:io.catenax.waste:2.0.0#pricePerVolumeInLitre",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.waste:2.0.0#MarketIndexMaterialPriceEntity",
+      "target": "urn:samm:io.catenax.waste:2.0.0#pricePerVolumeInMillilitre",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.waste:2.0.0#MarketIndexMaterialPriceEntity",
+      "target": "urn:samm:io.catenax.waste:2.0.0#pricePerAreaInSquareMeter",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.waste:2.0.0#MarketIndexMaterialPriceEntity",
+      "target": "urn:samm:io.catenax.waste:2.0.0#pricePerAreaInSquareMillimeter",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.waste:2.0.0#MarketIndexMaterialPriceEntity",
+      "target": "urn:samm:io.catenax.waste:2.0.0#pricePerLengthInMeter",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.waste:2.0.0#MarketIndexMaterialPriceEntity",
+      "target": "urn:samm:io.catenax.waste:2.0.0#pricePerLengthInMillimeter",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.waste:2.0.0#MarketIndexMaterialPriceEntity",
+      "target": "urn:samm:io.catenax.waste:2.0.0#pricePerPiece",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.waste:2.0.0#identification",
+      "target": "urn:samm:io.catenax.waste:2.0.0#IdentificationCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.waste:2.0.0#materialProperties",
+      "target": "urn:samm:io.catenax.waste:2.0.0#MaterialPropertiesCharacterisitc",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.waste:2.0.0#currentMarketPrice",
+      "target": "urn:samm:io.catenax.waste:2.0.0#CurrentMarketPriceCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.waste:2.0.0#packagingType",
+      "target": "urn:samm:io.catenax.waste:2.0.0#Text",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.waste:2.0.0#formFactor",
+      "target": "urn:samm:io.catenax.waste:2.0.0#Text",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.waste:2.0.0#wasteCodeJurisdiction",
+      "target": "urn:samm:io.catenax.waste:2.0.0#Text",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.waste:2.0.0#odor",
+      "target": "urn:samm:io.catenax.waste:2.0.0#Text",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.waste:2.0.0#contamination",
+      "target": "urn:samm:io.catenax.waste:2.0.0#Text",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.waste:2.0.0#materialName",
+      "target": "urn:samm:io.catenax.waste:2.0.0#Text",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.waste:2.0.0#riskPotential",
+      "target": "urn:samm:io.catenax.waste:2.0.0#RiskPotentialCharacterisitc",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.waste:2.0.0#wasteDisposalDate",
+      "target": "urn:samm:io.catenax.waste:2.0.0#DateStamp",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.waste:2.0.0#productComposition",
+      "target": "urn:samm:io.catenax.waste:2.0.0#ProductCompositionCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.waste:2.0.0#productPurity",
+      "target": "urn:samm:io.catenax.waste:2.0.0#ProductPurityCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.waste:2.0.0#density",
+      "target": "urn:samm:io.catenax.waste:2.0.0#DensityCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.waste:2.0.0#marketIndexMaterialPrice",
+      "target": "urn:samm:io.catenax.waste:2.0.0#MarketIndexMaterialPriceCharacterisitic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.waste:2.0.0#marketIndexCurrency",
+      "target": "urn:samm:io.catenax.waste:2.0.0#MarketIndexCurrencyTrait",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.waste:2.0.0#phValue",
+      "target": "urn:samm:io.catenax.waste:2.0.0#PhValueCharacterisitc",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.waste:2.0.0#materialWeightPercentage",
+      "target": "urn:samm:io.catenax.waste:2.0.0#PercentCharacterisitic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.waste:2.0.0#pricePerWeightInGram",
+      "target": "urn:samm:io.catenax.waste:2.0.0#PricePerWeightInGramCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.waste:2.0.0#pricePerWeightInKiloGram",
+      "target": "urn:samm:io.catenax.waste:2.0.0#PricePerWeightInKiloGramCharacterisitic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.waste:2.0.0#pricePerVolumeInLitre",
+      "target": "urn:samm:io.catenax.waste:2.0.0#PricePerVolumeInLitreCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.waste:2.0.0#pricePerVolumeInMillilitre",
+      "target": "urn:samm:io.catenax.waste:2.0.0#PricePerVolumeInMillilitreCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.waste:2.0.0#pricePerAreaInSquareMeter",
+      "target": "urn:samm:io.catenax.waste:2.0.0#PricePerAreaInSquareMeterCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.waste:2.0.0#pricePerAreaInSquareMillimeter",
+      "target": "urn:samm:io.catenax.waste:2.0.0#PricePerAreaInSquareMillimeterCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.waste:2.0.0#pricePerLengthInMeter",
+      "target": "urn:samm:io.catenax.waste:2.0.0#PricePerLengthInMeterCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.waste:2.0.0#pricePerLengthInMillimeter",
+      "target": "urn:samm:io.catenax.waste:2.0.0#PricePerLengthInMillimeterCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.waste:2.0.0#pricePerPiece",
+      "target": "urn:samm:io.catenax.waste:2.0.0#PricePerPieceCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.waste:2.0.0#IdentificationCharacteristic",
+      "target": "urn:samm:io.catenax.waste:2.0.0#IdentificationEntity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.waste:2.0.0#MaterialPropertiesCharacterisitc",
+      "target": "urn:samm:io.catenax.waste:2.0.0#MaterialPropertiesEntity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.waste:2.0.0#CurrentMarketPriceCharacteristic",
+      "target": "urn:samm:io.catenax.waste:2.0.0#CurrentMarketPriceEntity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.waste:2.0.0#RiskPotentialCharacterisitc",
+      "target": "urn:samm:io.catenax.waste:2.0.0#RiskPotentialEntity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.waste:2.0.0#ProductCompositionCharacteristic",
+      "target": "urn:samm:io.catenax.waste:2.0.0#ProductCompositionEntity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.waste:2.0.0#ProductPurityCharacteristic",
+      "target": "urn:samm:io.catenax.waste:2.0.0#ProductCompositionEntity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.waste:2.0.0#MarketIndexMaterialPriceCharacterisitic",
+      "target": "urn:samm:io.catenax.waste:2.0.0#MarketIndexMaterialPriceEntity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.waste:2.0.0#MarketIndexCurrencyTrait",
+      "target": "urn:samm:io.catenax.waste:2.0.0#LengthConstraint",
+      "label": "constraint",
+      "optional": false
+    }
+  ]
+}

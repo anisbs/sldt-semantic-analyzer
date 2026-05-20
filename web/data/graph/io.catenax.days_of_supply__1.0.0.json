@@ -1,0 +1,221 @@
+{
+  "meta": {
+    "namespace": "urn:samm:io.catenax.days_of_supply:1.0.0#",
+    "meta_model": "SAMM 2.1.0",
+    "model_family": "SAMM",
+    "model_name": "days_of_supply",
+    "model_version": "1.0.0",
+    "source": "catenax",
+    "status": "deprecated",
+    "release_date": "2024-02-12",
+    "release_notes": "# Changelog\nAll notable changes to this model will be documented in this file.\n\n## [1.0.0] - 2024-02-12\n### Added\ninitial model adjusted from product stock model 1.0.0.\nremoved positions collection and refined allocatedStocks into allocatedDaysOfSupply\nQuantityCharacteristic changed from Collection to SortedSet to reflect the date-daysOfSupply sorted pair\ndefinitions for aspect model provided\n\n## [2.0.0] - 2024-03-04\n### Added\nlastUpdatedOnDateTime property (samm-c:Timestamp) to describe when the data was last updated",
+    "dependencies": [
+      {
+        "name": "shared.business_partner_number",
+        "version": "2.0.0",
+        "family": "SAMM",
+        "source": "catenax"
+      },
+      {
+        "name": "shared.uuid",
+        "version": "2.0.0",
+        "family": "SAMM",
+        "source": "catenax"
+      }
+    ],
+    "path": "data/sldt-semantic-models/io.catenax.days_of_supply/1.0.0/DaysOfSupply.ttl"
+  },
+  "nodes": [
+    {
+      "id": "urn:samm:io.catenax.days_of_supply:1.0.0#DaysOfSupply",
+      "label": "DaysOfSupply",
+      "kind": "Aspect",
+      "preferredName": "Days of Supply",
+      "description": "Days of Supply refers to the amount of days where item stock is sufficient for the demand. The incoming deliveries are not considered in the main days-of-supply-equation, but they can still be included in the projection of days-of-supply for the future days."
+    },
+    {
+      "id": "urn:samm:io.catenax.days_of_supply:1.0.0#materialGlobalAssetId",
+      "label": "materialGlobalAssetId",
+      "kind": "Property",
+      "preferredName": "UUID of the Part Type Twin",
+      "description": "Identifier used uniquely to identify part type twin."
+    },
+    {
+      "id": "urn:samm:io.catenax.days_of_supply:1.0.0#direction",
+      "label": "direction",
+      "kind": "Property",
+      "preferredName": "Direction of Stock",
+      "description": "Direction of the stock from data provider perspective."
+    },
+    {
+      "id": "urn:samm:io.catenax.days_of_supply:1.0.0#allocatedDaysOfSupply",
+      "label": "allocatedDaysOfSupply",
+      "kind": "Property",
+      "preferredName": "Allocated Days of Supply",
+      "description": "Days of supply that have been already allocated to the customer. "
+    },
+    {
+      "id": "urn:samm:io.catenax.days_of_supply:1.0.0#amountOfAllocatedDaysOfSupply",
+      "label": "amountOfAllocatedDaysOfSupply",
+      "kind": "Property",
+      "preferredName": "Amount of Allocated Days Of Supply",
+      "description": "Amount of Days of supply of a given allocated item stock in a given location."
+    },
+    {
+      "id": "urn:samm:io.catenax.days_of_supply:1.0.0#stockLocationBPNS",
+      "label": "stockLocationBPNS",
+      "kind": "Property",
+      "preferredName": "BPNS of Stock Location",
+      "description": "BPNS identifying the site the stock is located at. One stock has always one location."
+    },
+    {
+      "id": "urn:samm:io.catenax.days_of_supply:1.0.0#stockLocationBPNA",
+      "label": "stockLocationBPNA",
+      "kind": "Property",
+      "preferredName": "BPNA of Stock Location",
+      "description": "BPNA identifying the address the stock is located at. One stock has always one location."
+    },
+    {
+      "id": "urn:samm:io.catenax.days_of_supply:1.0.0#date",
+      "label": "date",
+      "kind": "Property",
+      "preferredName": "Date of Days of Supply",
+      "description": "Date refers to the specific calendar day (current or projected) associated with the measured (or expected) inventory level. It serves as a timestamp for calculating Days of Supply, indicating when the inventory count was taken or projected."
+    },
+    {
+      "id": "urn:samm:io.catenax.days_of_supply:1.0.0#daysOfSupply",
+      "label": "daysOfSupply",
+      "kind": "Property",
+      "preferredName": "Days of Supply",
+      "description": "Amount of days, before the current stock is expected to be exhausted. Days of supply of a customer: Number of days where; (Stock) - Σ(daily Demand) >= 0; Days of supply of a supplier: Number of days where; (Stock) - Σ(daily Outgoing Shipments) >= 0"
+    },
+    {
+      "id": "urn:samm:io.catenax.days_of_supply:1.0.0#DirectionCharacteristic",
+      "label": "DirectionCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Direction of Stock Characteristic",
+      "description": "If a supplier provides stock information to a customer, use \"OUTBOUND\".\nIf a customer provides stock information to a supplier, use \"INBOUND\"."
+    },
+    {
+      "id": "urn:samm:io.catenax.days_of_supply:1.0.0#AllocatedDaysOfSupplySet",
+      "label": "AllocatedDaysOfSupplySet",
+      "kind": "Characteristic",
+      "preferredName": "Allocated Days of Supply Set",
+      "description": "Set of allocated Days of Supply that may relate to different stock locations."
+    },
+    {
+      "id": "urn:samm:io.catenax.days_of_supply:1.0.0#AllocatedDaysOfSupply",
+      "label": "AllocatedDaysOfSupply",
+      "kind": "Entity",
+      "preferredName": "Days Of Supply Allocated to a Partner",
+      "description": "This defines the number of days with allocated supply for an item stock in a given location that is available for the use in production or deliveries. \nThe allocated days of supply are not available for other customers."
+    },
+    {
+      "id": "urn:samm:io.catenax.days_of_supply:1.0.0#QuantityOfDaysOfSupply",
+      "label": "QuantityOfDaysOfSupply",
+      "kind": "Entity",
+      "preferredName": "Quantity of Days of Supply",
+      "description": "Days of supply for a specific date."
+    },
+    {
+      "id": "urn:samm:io.catenax.days_of_supply:1.0.0#QuantityCharacteristic",
+      "label": "QuantityCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Quantity Characteristic",
+      "description": "List of quantity of days of supply. It MUST include at least current date and it is recommended to include future dates."
+    },
+    {
+      "id": "urn:samm:io.catenax.days_of_supply:1.0.0#DaysOfSupplyCharacteristic",
+      "label": "DaysOfSupplyCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Days of Supply Characteristic",
+      "description": "Provides days of supply"
+    }
+  ],
+  "links": [
+    {
+      "source": "urn:samm:io.catenax.days_of_supply:1.0.0#DaysOfSupply",
+      "target": "urn:samm:io.catenax.days_of_supply:1.0.0#materialGlobalAssetId",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.days_of_supply:1.0.0#DaysOfSupply",
+      "target": "urn:samm:io.catenax.days_of_supply:1.0.0#direction",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.days_of_supply:1.0.0#DaysOfSupply",
+      "target": "urn:samm:io.catenax.days_of_supply:1.0.0#allocatedDaysOfSupply",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.days_of_supply:1.0.0#AllocatedDaysOfSupply",
+      "target": "urn:samm:io.catenax.days_of_supply:1.0.0#amountOfAllocatedDaysOfSupply",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.days_of_supply:1.0.0#AllocatedDaysOfSupply",
+      "target": "urn:samm:io.catenax.days_of_supply:1.0.0#stockLocationBPNS",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.days_of_supply:1.0.0#AllocatedDaysOfSupply",
+      "target": "urn:samm:io.catenax.days_of_supply:1.0.0#stockLocationBPNA",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.days_of_supply:1.0.0#QuantityOfDaysOfSupply",
+      "target": "urn:samm:io.catenax.days_of_supply:1.0.0#date",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.days_of_supply:1.0.0#QuantityOfDaysOfSupply",
+      "target": "urn:samm:io.catenax.days_of_supply:1.0.0#daysOfSupply",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.days_of_supply:1.0.0#direction",
+      "target": "urn:samm:io.catenax.days_of_supply:1.0.0#DirectionCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.days_of_supply:1.0.0#allocatedDaysOfSupply",
+      "target": "urn:samm:io.catenax.days_of_supply:1.0.0#AllocatedDaysOfSupplySet",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.days_of_supply:1.0.0#amountOfAllocatedDaysOfSupply",
+      "target": "urn:samm:io.catenax.days_of_supply:1.0.0#QuantityCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.days_of_supply:1.0.0#daysOfSupply",
+      "target": "urn:samm:io.catenax.days_of_supply:1.0.0#DaysOfSupplyCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.days_of_supply:1.0.0#AllocatedDaysOfSupplySet",
+      "target": "urn:samm:io.catenax.days_of_supply:1.0.0#AllocatedDaysOfSupply",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.days_of_supply:1.0.0#QuantityCharacteristic",
+      "target": "urn:samm:io.catenax.days_of_supply:1.0.0#QuantityOfDaysOfSupply",
+      "label": "dataType",
+      "optional": false
+    }
+  ]
+}

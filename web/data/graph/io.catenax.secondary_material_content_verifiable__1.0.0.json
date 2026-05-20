@@ -1,0 +1,32 @@
+{
+  "meta": {
+    "namespace": "urn:samm:io.catenax.secondary_material_content_verifiable:1.0.0#",
+    "meta_model": "SAMM 2.1.0",
+    "model_family": "SAMM",
+    "model_name": "secondary_material_content_verifiable",
+    "model_version": "1.0.0",
+    "source": "catenax",
+    "status": "release",
+    "release_date": "2023-12-18",
+    "release_notes": "# Changelog\nAll notable changes to this model will be documented in this file.\n\n## [1.0.0] - 2023-12-18\n### Added\n- initial model\n- reference to shared aspect\n\n### Changed\nn/a\n\n### Removed",
+    "dependencies": [
+      {
+        "name": "shared.secondary_material_content",
+        "version": "1.0.0",
+        "family": "SAMM",
+        "source": "catenax"
+      }
+    ],
+    "path": "data/sldt-semantic-models/io.catenax.secondary_material_content_verifiable/1.0.0/SecondaryMaterialContentVerifiable.ttl"
+  },
+  "nodes": [
+    {
+      "id": "urn:samm:io.catenax.secondary_material_content_verifiable:1.0.0#SecondaryMaterialContentVerifiable",
+      "label": "SecondaryMaterialContentVerifiable",
+      "kind": "Aspect",
+      "preferredName": "Secondary Material Content Verifiable",
+      "description": "This model refers to a built part containing one or more different materials. It references the actual share on primary and secondary materials and relevant details."
+    }
+  ],
+  "links": []
+}

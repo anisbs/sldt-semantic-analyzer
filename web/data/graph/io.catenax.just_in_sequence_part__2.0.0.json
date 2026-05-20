@@ -1,0 +1,396 @@
+{
+  "meta": {
+    "namespace": "urn:samm:io.catenax.just_in_sequence_part:2.0.0#",
+    "meta_model": "SAMM 2.0.0",
+    "model_family": "SAMM",
+    "model_name": "just_in_sequence_part",
+    "model_version": "2.0.0",
+    "source": "catenax",
+    "status": "deprecated",
+    "release_date": null,
+    "release_notes": "# Changelog\n\nAll notable changes to this model will be documented in this file.\n\n## [4.0.0] 26.03\n\n### Changed\n\n- introduced `io.catenax.shared.industry_core.common:1.0.0`, `io.catenax.shared.industry_core.manufacturing_information:1.0.0` and `io.catenax.shared.industry_core.part_classification:1.0.0` as shared models\n- renamed `catenaXId` to `globalAssetId`\n- renamed `catenaXsiteId` to `siteId`\n- renamed `classificationID` to `classificationId`\n- renamed `date` to `productionDate`\n\n## [3.0.0] 2024-02-05\n\n### Added\n\n- Integration of the new shared PartClassification 1.0.0 aspect model as child-property of the PartTypeInformation\n- Added possibility to add date information excluding time\n- Include additional RegEx values for the local identifier key\n\n### Changed\n\n- Change (shared) partSiteInformation to be a child-property of the manufacturerInformation\n\n## [2.0.0] 2023-11-30\n\n### Added\n\n- integration of the sites property and its childtree of the shared PartSiteInformationAsBuilt (1.0.0) aspect model as optional content\n- integration of the shared UUID characteristic and RegEx for the catenaXId property\n\n### Changed\n\n- migrated current aspect model from BAMM to SAMM\n\n### Removed\n\n- removed existing characteristic and RegEx of the catenaXId property and replaced it with content of the shared UUID aspect model (see added information)\n\n## [1.0.0]\n\n### Added\n\n- initial version of model\n\n### Changed\n\nn/a\n\n### Removed",
+    "dependencies": [
+      {
+        "name": "shared.part_site_information_as_built",
+        "version": "1.0.0",
+        "family": "SAMM",
+        "source": "catenax"
+      },
+      {
+        "name": "shared.uuid",
+        "version": "1.0.0",
+        "family": "SAMM",
+        "source": "catenax"
+      }
+    ],
+    "path": "data/sldt-semantic-models/io.catenax.just_in_sequence_part/2.0.0/JustInSequencePart.ttl"
+  },
+  "nodes": [
+    {
+      "id": "urn:samm:io.catenax.just_in_sequence_part:2.0.0#JustInSequencePart",
+      "label": "JustInSequencePart",
+      "kind": "Aspect",
+      "preferredName": "Just in Sequence Part",
+      "description": "A just-in-sequence part is an instantiation of a (design-) part, where the particular instantiation can be uniquely identified by means of a combination of several IDs related to a just-in-sequence process."
+    },
+    {
+      "id": "urn:samm:io.catenax.just_in_sequence_part:2.0.0#catenaXId",
+      "label": "catenaXId",
+      "kind": "Property",
+      "preferredName": "Catena-X Identifier",
+      "description": "The fully anonymous Catena-X ID of the just-in-sequence part, valid for the Catena-X dataspace."
+    },
+    {
+      "id": "urn:samm:io.catenax.just_in_sequence_part:2.0.0#localIdentifiers",
+      "label": "localIdentifiers",
+      "kind": "Property",
+      "preferredName": "Local Identifiers",
+      "description": "A local identifier enables identification of a part in a specific dataspace, but is not unique in Catena-X dataspace. Multiple local identifiers may exist."
+    },
+    {
+      "id": "urn:samm:io.catenax.just_in_sequence_part:2.0.0#manufacturingInformation",
+      "label": "manufacturingInformation",
+      "kind": "Property",
+      "preferredName": "Manufacturing Information",
+      "description": "Information from manufacturing process, such as manufacturing date and manufacturing country"
+    },
+    {
+      "id": "urn:samm:io.catenax.just_in_sequence_part:2.0.0#partTypeInformation",
+      "label": "partTypeInformation",
+      "kind": "Property",
+      "preferredName": "Part Type Information",
+      "description": "The part type or part family from which the just-in-sequence part has been instantiated."
+    },
+    {
+      "id": "urn:samm:io.catenax.just_in_sequence_part:2.0.0#key",
+      "label": "key",
+      "kind": "Property",
+      "preferredName": "Identifier Key",
+      "description": "The key of a local identifier. "
+    },
+    {
+      "id": "urn:samm:io.catenax.just_in_sequence_part:2.0.0#value",
+      "label": "value",
+      "kind": "Property",
+      "preferredName": "Identifier Value",
+      "description": "The value of an identifier."
+    },
+    {
+      "id": "urn:samm:io.catenax.just_in_sequence_part:2.0.0#date",
+      "label": "date",
+      "kind": "Property",
+      "preferredName": "Production Date",
+      "description": "Timestamp of the manufacturing date as the final step in production process (e.g. final quality check, ready-for-shipment event)"
+    },
+    {
+      "id": "urn:samm:io.catenax.just_in_sequence_part:2.0.0#country",
+      "label": "country",
+      "kind": "Property",
+      "preferredName": "Country code",
+      "description": "Country code where the part was manufactured"
+    },
+    {
+      "id": "urn:samm:io.catenax.just_in_sequence_part:2.0.0#manufacturerPartId",
+      "label": "manufacturerPartId",
+      "kind": "Property",
+      "preferredName": "Manufacturer Part ID",
+      "description": "Part ID as assigned by the manufacturer of the part. The manufacturer Part ID identifies the part (as designed) in the manufacturer`s dataspace. The Part ID does not reference a specific instance of a part and thus should not be confused with the serial number or any other instance IDs. \nIf no specific part ID exists a part family ID may be substituted for it."
+    },
+    {
+      "id": "urn:samm:io.catenax.just_in_sequence_part:2.0.0#customerPartId",
+      "label": "customerPartId",
+      "kind": "Property",
+      "preferredName": "Customer Part ID",
+      "description": "Part ID as assigned by the customer of the part. The customer Part ID identifies the part (as designed) in the customer`s dataspace. The Part ID does not reference a specific instance of a part and thus should not be confused with the serial number or any other instance IDs. \nIf no specific part ID exists a part family ID may be substituted for it.\n"
+    },
+    {
+      "id": "urn:samm:io.catenax.just_in_sequence_part:2.0.0#nameAtManufacturer",
+      "label": "nameAtManufacturer",
+      "kind": "Property",
+      "preferredName": "Name at Manufacturer",
+      "description": "Name of the part as assigned by the manufacturer"
+    },
+    {
+      "id": "urn:samm:io.catenax.just_in_sequence_part:2.0.0#nameAtCustomer",
+      "label": "nameAtCustomer",
+      "kind": "Property",
+      "preferredName": "Name at Customer",
+      "description": "Name of the part as assigned by the customer"
+    },
+    {
+      "id": "urn:samm:io.catenax.just_in_sequence_part:2.0.0#classification",
+      "label": "classification",
+      "kind": "Property",
+      "preferredName": "Classification",
+      "description": "The classification of the part type according to STEP standard definition"
+    },
+    {
+      "id": "urn:samm:io.catenax.just_in_sequence_part:2.0.0#LocalIdentifierCharacteristic",
+      "label": "LocalIdentifierCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Local Identifier Characteristic",
+      "description": "A single just-in-sequence part may have multiple attributes, that uniquely identify a that part in a specific dataspace (e.g. the manufacturer`s dataspace)"
+    },
+    {
+      "id": "urn:samm:io.catenax.just_in_sequence_part:2.0.0#ManufacturingCharacteristic",
+      "label": "ManufacturingCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Manufacturing Characteristic",
+      "description": "Characteristic to describe manufacturing related data"
+    },
+    {
+      "id": "urn:samm:io.catenax.just_in_sequence_part:2.0.0#PartTypeInformationCharacteristic",
+      "label": "PartTypeInformationCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Part Type Information Characteristic",
+      "description": "The characteristics of the part type"
+    },
+    {
+      "id": "urn:samm:io.catenax.just_in_sequence_part:2.0.0#KeyCharacteristic",
+      "label": "KeyCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Key Characteristic",
+      "description": "The key characteristic of a local identifier. A specific subset of keys is predefined, but additionally any other custom key is allowed. Predefined keys (to be used when applicable):\n- \"manufacturerId\" - The Business Partner Number (BPN) of the manufacturer. Value: BPN-Nummer\n- \"jisNumber\" - a number that is used to identify the call-off that can be assumed unique within the specific just-in-sequence process. This is typically not the sequence number, but the call-off number.\n- \"jisCallDate\" the date of the just-in-sequence call-off as stated on the call-off document itself. Value: following the ISO 8601 format as follows: \"YYYY-MM-DD\" or \"YYYY-MM-DDThh:mm:ss\" or \"YYYY-MM-DDThh:mm:ss?hh:mm\"\n- \"parentOrderNumber\" - a number identifying the just-in-sequence- part's destination parent part. The parent part is typically known upfront to the supplier for just-in-sequence parts. This might be a temporary unique identifier.\nNot all keys might be relevant for all just-in-sequence parts. It must be ensured that a combination of these identifiers and the optional manufacturer part ID or customer part ID leads to a unique just-in-sequence part."
+    },
+    {
+      "id": "urn:samm:io.catenax.just_in_sequence_part:2.0.0#ValueCharacteristic",
+      "label": "ValueCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Value Characteristic",
+      "description": "The value of an identifier."
+    },
+    {
+      "id": "urn:samm:io.catenax.just_in_sequence_part:2.0.0#PartIdCharacteristic",
+      "label": "PartIdCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Part ID Characteristic",
+      "description": "The part ID is a multi-character string, usually assigned by an ERP system. Alternatively the ID of the part family can be used if no specific part ID exists."
+    },
+    {
+      "id": "urn:samm:io.catenax.just_in_sequence_part:2.0.0#PartNameCharacteristic",
+      "label": "PartNameCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Part Name Characteristic",
+      "description": "Part Name in string format from the respective system in the value chain"
+    },
+    {
+      "id": "urn:samm:io.catenax.just_in_sequence_part:2.0.0#CountryCodeCharacteristic",
+      "label": "CountryCodeCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Country Code Characteristic",
+      "description": "ISO 3166-1 alpha-3 - three-letter country codes "
+    },
+    {
+      "id": "urn:samm:io.catenax.just_in_sequence_part:2.0.0#KeyValueList",
+      "label": "KeyValueList",
+      "kind": "Entity",
+      "preferredName": "Key Value List",
+      "description": "A list of key value pairs for local identifiers, which are composed of a key and a corresponding value."
+    },
+    {
+      "id": "urn:samm:io.catenax.just_in_sequence_part:2.0.0#ManufacturingEntity",
+      "label": "ManufacturingEntity",
+      "kind": "Entity",
+      "preferredName": "Manufacturing Entity",
+      "description": "Encapsulates the manufacturing relevant attributes"
+    },
+    {
+      "id": "urn:samm:io.catenax.just_in_sequence_part:2.0.0#PartTypeInformationEntity",
+      "label": "PartTypeInformationEntity",
+      "kind": "Entity",
+      "preferredName": "Part Type Information Entity",
+      "description": "Encapsulation for data related to the part type"
+    },
+    {
+      "id": "urn:samm:io.catenax.just_in_sequence_part:2.0.0#ProductionCountryCodeTrait",
+      "label": "ProductionCountryCodeTrait",
+      "kind": "Characteristic",
+      "preferredName": "Production Country Code Trait",
+      "description": "Trait to ensure standard data format for country code"
+    },
+    {
+      "id": "urn:samm:io.catenax.just_in_sequence_part:2.0.0#ClassificationCharacteristic",
+      "label": "ClassificationCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Classification Characteristic",
+      "description": "A part type must be placed into one of the following classes: 'component', 'product', 'software', 'assembly', 'tool', or 'raw material'."
+    },
+    {
+      "id": "urn:samm:io.catenax.just_in_sequence_part:2.0.0#CountryCodeRegularExpression",
+      "label": "CountryCodeRegularExpression",
+      "kind": "Characteristic",
+      "preferredName": "Country Code Regular Expression",
+      "description": "Regular Expression that ensures a three-letter code "
+    }
+  ],
+  "links": [
+    {
+      "source": "urn:samm:io.catenax.just_in_sequence_part:2.0.0#JustInSequencePart",
+      "target": "urn:samm:io.catenax.just_in_sequence_part:2.0.0#catenaXId",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.just_in_sequence_part:2.0.0#JustInSequencePart",
+      "target": "urn:samm:io.catenax.just_in_sequence_part:2.0.0#localIdentifiers",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.just_in_sequence_part:2.0.0#JustInSequencePart",
+      "target": "urn:samm:io.catenax.just_in_sequence_part:2.0.0#manufacturingInformation",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.just_in_sequence_part:2.0.0#JustInSequencePart",
+      "target": "urn:samm:io.catenax.just_in_sequence_part:2.0.0#partTypeInformation",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.just_in_sequence_part:2.0.0#KeyValueList",
+      "target": "urn:samm:io.catenax.just_in_sequence_part:2.0.0#key",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.just_in_sequence_part:2.0.0#KeyValueList",
+      "target": "urn:samm:io.catenax.just_in_sequence_part:2.0.0#value",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.just_in_sequence_part:2.0.0#ManufacturingEntity",
+      "target": "urn:samm:io.catenax.just_in_sequence_part:2.0.0#date",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.just_in_sequence_part:2.0.0#ManufacturingEntity",
+      "target": "urn:samm:io.catenax.just_in_sequence_part:2.0.0#country",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.just_in_sequence_part:2.0.0#PartTypeInformationEntity",
+      "target": "urn:samm:io.catenax.just_in_sequence_part:2.0.0#manufacturerPartId",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.just_in_sequence_part:2.0.0#PartTypeInformationEntity",
+      "target": "urn:samm:io.catenax.just_in_sequence_part:2.0.0#customerPartId",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.just_in_sequence_part:2.0.0#PartTypeInformationEntity",
+      "target": "urn:samm:io.catenax.just_in_sequence_part:2.0.0#nameAtManufacturer",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.just_in_sequence_part:2.0.0#PartTypeInformationEntity",
+      "target": "urn:samm:io.catenax.just_in_sequence_part:2.0.0#nameAtCustomer",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.just_in_sequence_part:2.0.0#PartTypeInformationEntity",
+      "target": "urn:samm:io.catenax.just_in_sequence_part:2.0.0#classification",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.just_in_sequence_part:2.0.0#localIdentifiers",
+      "target": "urn:samm:io.catenax.just_in_sequence_part:2.0.0#LocalIdentifierCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.just_in_sequence_part:2.0.0#manufacturingInformation",
+      "target": "urn:samm:io.catenax.just_in_sequence_part:2.0.0#ManufacturingCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.just_in_sequence_part:2.0.0#partTypeInformation",
+      "target": "urn:samm:io.catenax.just_in_sequence_part:2.0.0#PartTypeInformationCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.just_in_sequence_part:2.0.0#key",
+      "target": "urn:samm:io.catenax.just_in_sequence_part:2.0.0#KeyCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.just_in_sequence_part:2.0.0#value",
+      "target": "urn:samm:io.catenax.just_in_sequence_part:2.0.0#ValueCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.just_in_sequence_part:2.0.0#country",
+      "target": "urn:samm:io.catenax.just_in_sequence_part:2.0.0#ProductionCountryCodeTrait",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.just_in_sequence_part:2.0.0#manufacturerPartId",
+      "target": "urn:samm:io.catenax.just_in_sequence_part:2.0.0#PartIdCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.just_in_sequence_part:2.0.0#customerPartId",
+      "target": "urn:samm:io.catenax.just_in_sequence_part:2.0.0#PartIdCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.just_in_sequence_part:2.0.0#nameAtManufacturer",
+      "target": "urn:samm:io.catenax.just_in_sequence_part:2.0.0#PartNameCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.just_in_sequence_part:2.0.0#nameAtCustomer",
+      "target": "urn:samm:io.catenax.just_in_sequence_part:2.0.0#PartNameCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.just_in_sequence_part:2.0.0#classification",
+      "target": "urn:samm:io.catenax.just_in_sequence_part:2.0.0#ClassificationCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.just_in_sequence_part:2.0.0#LocalIdentifierCharacteristic",
+      "target": "urn:samm:io.catenax.just_in_sequence_part:2.0.0#KeyValueList",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.just_in_sequence_part:2.0.0#ManufacturingCharacteristic",
+      "target": "urn:samm:io.catenax.just_in_sequence_part:2.0.0#ManufacturingEntity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.just_in_sequence_part:2.0.0#PartTypeInformationCharacteristic",
+      "target": "urn:samm:io.catenax.just_in_sequence_part:2.0.0#PartTypeInformationEntity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.just_in_sequence_part:2.0.0#ProductionCountryCodeTrait",
+      "target": "urn:samm:io.catenax.just_in_sequence_part:2.0.0#CountryCodeRegularExpression",
+      "label": "constraint",
+      "optional": false
+    }
+  ]
+}

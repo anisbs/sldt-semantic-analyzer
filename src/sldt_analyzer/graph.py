@@ -4,39 +4,74 @@ Approche « simple » (option 1) : un graphe **par modèle**, sans résoudre les
 références inter-fichiers (`ext-*:`). Le format JSON produit est directement
 consommable par un force-directed D3 (feature 4).
 
-Sortie : un dossier `data/graph/` contenant
-  - `index.json`      : liste des modèles { id, name, meta_model, n_nodes, ... }
+Multi-sources (Feature 3b) : on agrège dans la même sortie les modèles des
+référentiels Catena-X et IDTA. Chaque entrée porte un champ `source` pour
+permettre au front (Home/Search/Issues) de distinguer les deux. Aucune
+collision de clé `name@version` entre les sources (vérifié sur les données).
+
+Sortie : un dossier `web/data/graph/` contenant
+  - `index.json`      : liste des modèles { id, source, name, status, ... }
   - `<id>.json`       : un graphe { meta, nodes[], links[] } par modèle
+  - `deps.json`       : carte name@version -> deps (avec source des deps)
   - `search.json`     : index plat des éléments cherchables (Feature 6C)
+  - `issues.json`     : qualité pré-calculée (Feature 8)
 """
 
 from __future__ import annotations
 
 import json
 import logging
+from dataclasses import dataclass
 from pathlib import Path
 
 from sldt_analyzer.issues import build_issues
-from sldt_analyzer.parser import ParsedModel, parse_directory
+from sldt_analyzer.parser import (
+    Dependency, Edge, Element, ParsedModel, parse_directory,
+)
 
 logger = logging.getLogger("sldt.graph")
 
-DEFAULT_MODELS_DIR = Path("data/sldt-semantic-models")
+
+@dataclass(frozen=True)
+class Source:
+    key: str             # catenax | idta
+    models_dir: Path     # où vivent les .ttl clonés en local
+    repo: str            # owner/repo GitHub (pour les URLs jsDelivr côté front)
+
+
+# Registre des sources connues, miroir de `fetch.SOURCES`. Ordre = ordre de
+# parcours (Catena-X en premier => ses IDs de fichier de graphe restent en
+# tête comme avant, le diff git reste minimal).
+SOURCES: tuple[Source, ...] = (
+    Source("catenax", Path("data/sldt-semantic-models"),
+           "eclipse-tractusx/sldt-semantic-models"),
+    Source("idta",    Path("data/smt-semantic-models"),
+           "admin-shell-io/smt-semantic-models"),
+)
+
 # Sortie sous web/ pour être commitée et servie par GitHub Pages (le gros
 # clone des .ttl reste, lui, sous data/ qui est git-ignored).
 DEFAULT_OUT_DIR = Path("web/data/graph")
 
 
 def _model_id(model: ParsedModel, models_dir: Path) -> str:
-    """Identifiant unique par FICHIER (un dossier de version peut contenir
-    plusieurs .ttl) : 'io.catenax.batch__4.0.0__Batch'."""
+    """Identifiant unique par MODÈLE+VERSION (les .ttl frères d'un même dossier
+    de version sont fusionnés, cf. `merge_models`) : 'io.catenax.batch__4.0.0'
+    ou 'io.admin-shell.idta.batterypass.circularity__1.0.0'.
+
+    Calculé depuis le chemin du .ttl (porteur d'Aspect en priorité) : on prend
+    le dossier de version (= parent direct) et son parent (= dossier de
+    modèle), pour rester en phase avec la convention amont
+    `<io.X.modèle>/<version>/`."""
     try:
-        rel = Path(model.path).resolve().relative_to(
-            models_dir.resolve()
-        ).with_suffix("")
-        return str(rel).replace("/", "__")
+        rel = Path(model.path).resolve().relative_to(models_dir.resolve())
     except ValueError:  # chemin hors du dossier modèles : repli sur le nom
         return Path(model.path).stem
+    # rel = io.<...>/<version>/<File>.ttl  -> id = io.<...>__<version>
+    parts = rel.parts
+    if len(parts) >= 3:
+        return f"{parts[0]}__{parts[1]}"
+    return str(rel.with_suffix("")).replace("/", "__")
 
 
 # Artefacts générés voisins du .ttl : <dir>/gen/<Stem><suffixe>. Servis tels
@@ -54,17 +89,143 @@ def _gen_artifacts(model: ParsedModel, models_dir: Path) -> dict:
 
     Retourne `{ "base": "<chemin-repo-relatif>/gen/<Stem>", "html": bool,
     "schema": bool, "payload": bool, "openapi": bool }` ; `base` est en
-    séparateurs POSIX (URL jsDelivr). Repli sûr si chemin inattendu."""
+    séparateurs POSIX (URL jsDelivr). Repli sûr si chemin inattendu.
+
+    Fallback (cas IDTA `batterypass.*`) : si aucun `gen/<Stem>.html` ne
+    matche le nom du .ttl porteur (ex. `.ttl=Circularity` mais doc générée
+    en `CircularityBattery.html`), on scanne le dossier `gen/` et on prend
+    le premier `<X>.html` trouvé comme nouveau Stem — sinon ~10 modèles
+    IDTA seraient à tort `gen.html=False`."""
     try:
         rel = Path(model.path).resolve().relative_to(
             models_dir.resolve()
         ).with_suffix("")
     except ValueError:
         return {"base": None, **{k: False for k in _GEN_SUFFIXES}}
+    gen_dir = models_dir / rel.parent / "gen"
     gen_rel = rel.parent / "gen" / rel.name
-    out = {"base": gen_rel.as_posix()}
+
+    # Path-based first (Catena-X convention : <Stem>.ttl ↔ gen/<Stem>.*).
+    if (models_dir / (str(gen_rel) + ".html")).is_file():
+        stem_dir = gen_rel
+    else:
+        # Fallback : pick the first .html present in gen/ as the new stem.
+        # Convention IDTA met parfois un suffixe métier dans le nom de la doc
+        # (`Circularity.ttl` → `gen/CircularityBattery.html`).
+        try:
+            htmls = sorted(gen_dir.glob("*.html"))
+        except OSError:
+            htmls = []
+        if htmls:
+            stem_dir = rel.parent / "gen" / htmls[0].stem
+        else:
+            stem_dir = gen_rel  # nothing found — keep the original base
+    out = {"base": stem_dir.as_posix()}
     for key, suf in _GEN_SUFFIXES.items():
-        out[key] = (models_dir / (str(gen_rel) + suf)).is_file()
+        out[key] = (models_dir / (str(stem_dir) + suf)).is_file()
+    return out
+
+
+def merge_models(models: list[ParsedModel]) -> list[ParsedModel]:
+    """Fusionne les `ParsedModel` partageant `(source, model_name, model_version)`
+    en un seul ParsedModel agrégé. Un dossier de version contient typiquement
+    un Aspect + N helpers dans le MÊME namespace (`Circularity.ttl` +
+    `Circularity_shared.ttl` + `Namespace.ttl` côté IDTA, ou 6 Aspects qui
+    cohabitent dans `material_accounting/` côté Catena-X) ; ces fichiers
+    décrivent UN seul modèle morcelé. La fusion produit le graphe complet.
+
+    Choix de design :
+      - `path` du fusionné = path du **porteur d'Aspect** (1er si plusieurs ;
+        1er du groupe si aucun Aspect). Sert ensuite à `_gen_artifacts` et aux
+        chemins relatifs.
+      - éléments dédupliqués par `urn` (on garde le premier vu).
+      - arêtes dédupliquées par `(source, target, label)`.
+      - dépendances dédupliquées par `(name, version)`.
+      - `used_property_urns` = union (utilisé pour recalculer
+        `unused_property_urns` à l'échelle du groupe).
+      - `aspects_empty_properties` = union (un Aspect n'est défini que dans
+        un seul .ttl ; l'union ne dédoublonne pas en pratique).
+      - statut/release_*/meta_model/dependencies viennent du leader (porteur
+        d'Aspect)."""
+    groups: dict[tuple[str, str, str], list[ParsedModel]] = {}
+    for m in models:
+        key = (m.source, m.model_name, m.model_version)
+        groups.setdefault(key, []).append(m)
+
+    out: list[ParsedModel] = []
+    for key, grp in groups.items():
+        if len(grp) == 1:
+            out.append(grp[0])
+            continue
+
+        with_aspect = [m for m in grp if any(e.kind == "Aspect" for e in m.elements)]
+        leader = with_aspect[0] if with_aspect else grp[0]
+
+        # Union éléments par urn (premier vu gagne).
+        elems_by_urn: dict[str, Element] = {}
+        for m in grp:
+            for e in m.elements:
+                elems_by_urn.setdefault(e.urn, e)
+
+        # Union arêtes par (source, target, label).
+        seen_edges: set[tuple[str, str, str]] = set()
+        edges: list[Edge] = []
+        for m in grp:
+            for ed in m.edges:
+                k = (ed.source, ed.target, ed.label)
+                if k in seen_edges:
+                    continue
+                seen_edges.add(k)
+                edges.append(ed)
+
+        # Union dépendances par (name, version).
+        seen_deps: set[tuple[str, str]] = set()
+        deps: list[Dependency] = []
+        for m in grp:
+            for d in m.dependencies:
+                dk = (d.name, d.version)
+                if dk in seen_deps:
+                    continue
+                seen_deps.add(dk)
+                deps.append(d)
+
+        # Property URN référencées par toutes les `samm:properties` du groupe.
+        merged_used: set[str] = set()
+        for m in grp:
+            merged_used.update(m.used_property_urns)
+        # Recalcul `unused_property_urns` à l'échelle du groupe : une Property
+        # n'est "unused" QUE si aucun .ttl du groupe ne la référence. Ça
+        # élimine les faux positifs IDTA (Property dans `_shared.ttl`,
+        # référencée par l'Aspect dans le .ttl frère).
+        merged_unused = sorted(
+            e.urn for e in elems_by_urn.values()
+            if e.kind == "Property" and e.urn not in merged_used
+        )
+
+        # Empty-aspects : union (un Aspect ne vit que dans un .ttl, pas de
+        # collision possible).
+        merged_empty: list[str] = sorted({
+            urn for m in grp for urn in m.aspects_empty_properties
+        })
+
+        out.append(ParsedModel(
+            path=leader.path,
+            namespace=leader.namespace,
+            meta_model=leader.meta_model,
+            model_family=leader.model_family,
+            model_name=leader.model_name,
+            model_version=leader.model_version,
+            source=leader.source,
+            status=leader.status,
+            release_date=leader.release_date,
+            release_notes=leader.release_notes,
+            elements=list(elems_by_urn.values()),
+            edges=edges,
+            dependencies=deps,
+            aspects_empty_properties=merged_empty,
+            unused_property_urns=merged_unused,
+            used_property_urns=sorted(merged_used),
+        ))
     return out
 
 
@@ -112,11 +273,13 @@ def model_to_graph(model: ParsedModel) -> dict:
             "model_family": model.model_family,
             "model_name": model.model_name,
             "model_version": model.model_version,
+            "source": model.source,
             "status": model.status,
             "release_date": model.release_date,
             "release_notes": model.release_notes,
             "dependencies": [
-                {"name": d.name, "version": d.version, "family": d.family}
+                {"name": d.name, "version": d.version,
+                 "family": d.family, "source": d.source}
                 for d in model.dependencies
             ],
             "path": model.path,
@@ -127,36 +290,60 @@ def model_to_graph(model: ParsedModel) -> dict:
 
 
 def build_graphs(
-    models_dir: Path = DEFAULT_MODELS_DIR,
+    sources: tuple[Source, ...] = SOURCES,
     out_dir: Path = DEFAULT_OUT_DIR,
 ) -> Path:
-    """Parse tous les modèles et écrit un graphe JSON par modèle + un index."""
-    models = parse_directory(models_dir)
+    """Parse tous les modèles (toutes sources), **fusionne** les .ttl frères
+    d'un même dossier de version (cf. `merge_models`) et écrit les JSON
+    consommés par le front : 1 graphe par modèle+version, `index.json`,
+    `deps.json`, `search.json`, `issues.json`. Les sources absentes du disque
+    sont skip avec un WARNING."""
     out_dir = Path(out_dir)
     out_dir.mkdir(parents=True, exist_ok=True)
 
     index = []
     search: list[dict] = []  # Feature 6C — éléments cherchables (cross-modèles)
-    # Dépendances agrégées AU NIVEAU (model_name, version) : un dossier de
-    # version peut contenir plusieurs .ttl, chacun avec ses `ext-*:`. Le front
-    # raisonne par modèle+version -> on fait l'UNION de leurs dépendances.
     deps_map: dict[str, dict] = {}
-    for model in models:
-        gid = _model_id(model, Path(models_dir))
+
+    # On garde 2 listes :
+    #   - `raw_models`  : un ParsedModel par .ttl (utilisé par `issues.py`
+    #                     pour les checks **par fichier** : URN ↔ chemin,
+    #                     stem ↔ Aspect, missing_gen_docs, meta_model_drift…).
+    #   - `all_models`  : la version FUSIONNÉE (1 par modèle+version),
+    #                     utilisée pour la sortie graphe ET pour les checks
+    #                     **au niveau modèle** (orphelins, doc, naming,
+    #                     `unused_property` recalculé à l'échelle du groupe).
+    raw_models: list[ParsedModel] = []
+    dirs_for_issues: list[tuple[Path, str]] = []
+    # Couple (model fusionné, source) pour retrouver le models_dir → `_model_id`
+    # et `_gen_artifacts` ont besoin du dossier de leur source.
+    fused_with_dir: list[tuple[ParsedModel, Path]] = []
+
+    for src in sources:
+        if not src.models_dir.is_dir():
+            logger.warning("Source %s : %s absent, ignoré", src.key, src.models_dir)
+            continue
+        models = parse_directory(src.models_dir)
+        raw_models.extend(models)
+        dirs_for_issues.append((src.models_dir, src.key))
+        for fm in merge_models(models):
+            fused_with_dir.append((fm, src.models_dir))
+
+    all_models = [fm for fm, _ in fused_with_dir]
+
+    for model, models_dir in fused_with_dir:
+        gid = _model_id(model, models_dir)
         graph = model_to_graph(model)
         key = f"{model.model_name}@{model.model_version}"
-        entry = deps_map.setdefault(
-            key,
-            {
-                "name": model.model_name,
-                "version": model.model_version,
-                "family": model.model_family,
-                "deps": set(),
-            },
-        )
-        entry["deps"].update(
-            f"{d.name}@{d.version}" for d in model.dependencies
-        )
+        deps_map[key] = {
+            "name": model.model_name,
+            "version": model.model_version,
+            "family": model.model_family,
+            "source": model.source,
+            "deps": sorted({
+                f"{d.name}@{d.version}" for d in model.dependencies
+            }),
+        }
         (out_dir / f"{gid}.json").write_text(
             json.dumps(graph, ensure_ascii=False, indent=2), encoding="utf-8"
         )
@@ -171,24 +358,45 @@ def build_graphs(
                 "model_name": model.model_name,
                 "version": model.model_version,
                 "family": model.model_family,
+                "source": model.source,
                 "status": model.status,
                 "id": gid,
             })
-        aspect = next((n for n in graph["nodes"] if n["kind"] == "Aspect"), None)
+        aspects = [n for n in graph["nodes"] if n["kind"] == "Aspect"]
+        # Nom affiché : 1 Aspect → son nom, plusieurs → liste compacte, aucun
+        # (cas `shared.*`) → l'id technique.
+        if len(aspects) == 1:
+            display = aspects[0]["label"]
+        elif aspects:
+            display = " · ".join(a["label"] for a in aspects)
+        else:
+            display = gid
+        # Chemin du dossier de version, relatif au repo amont (ex.
+        # `io.catenax.batch/4.0.0`) — sert au front à construire l'URL
+        # "View on GitHub". Le leader's path est `data/<repo>/<rel>/<File>.ttl`,
+        # le dossier de version est son parent.
+        try:
+            rel_ver = (Path(model.path).resolve().relative_to(models_dir.resolve())
+                       .parent.as_posix())
+        except ValueError:
+            rel_ver = None
         index.append(
             {
                 "id": gid,
-                "name": aspect["label"] if aspect else gid,
+                "name": display,
                 "model_name": model.model_name,
                 "version": model.model_version,
                 "family": model.model_family,
+                "source": model.source,
                 "status": model.status,
                 "meta_model": model.meta_model,
                 "n_nodes": len(graph["nodes"]),
                 "n_links": len(graph["links"]),
-                "has_aspect": aspect is not None,
+                "n_aspects": len(aspects),
+                "has_aspect": bool(aspects),
                 "file": f"{gid}.json",
-                "gen": _gen_artifacts(model, Path(models_dir)),
+                "repo_path": rel_ver,
+                "gen": _gen_artifacts(model, models_dir),
             }
         )
 
@@ -197,35 +405,50 @@ def build_graphs(
         json.dumps(index, ensure_ascii=False, indent=2), encoding="utf-8"
     )
 
+    # Nettoyage : supprimer les fichiers de graphe obsolètes (ex. après un
+    # renommage de schéma d'ID — fusion par namespace). On garde tout sauf
+    # les fichiers de graphe absents de l'index courant. Les 4 fichiers
+    # d'agrégation (index/deps/issues/search) ne sont jamais purgés.
+    aggregate = {"index.json", "deps.json", "issues.json", "search.json"}
+    valid_files = {e["file"] for e in index} | aggregate
+    removed = 0
+    for p in out_dir.glob("*.json"):
+        if p.name not in valid_files:
+            p.unlink()
+            removed += 1
+    if removed:
+        logger.info("Nettoyage : %d fichiers de graphe obsolètes supprimés", removed)
+
     # deps.json : carte modèle+version -> dépendances (clé "name@version").
+    # Pas de collision de clé constatée entre Catena-X et IDTA, on garde la
+    # clé telle quelle (le champ `source` lève l'ambiguïté de provenance).
     # Une clé absente = ce modèle+version n'est pas dans le catalogue (cible
     # de dépendance non résolue) ; le front la dessine en "manquant".
-    deps_out = {
-        key: {
-            "name": v["name"],
-            "version": v["version"],
-            "family": v["family"],
-            "deps": sorted(v["deps"]),
-        }
-        for key, v in sorted(deps_map.items())
-    }
+    deps_out = dict(sorted(deps_map.items()))
     (out_dir / "deps.json").write_text(
         json.dumps(deps_out, ensure_ascii=False, indent=2), encoding="utf-8"
     )
     n_with_deps = sum(1 for v in deps_out.values() if v["deps"])
+    by_source = {
+        src.key: sum(1 for m in index if m["source"] == src.key) for src in sources
+    }
     logger.info(
-        "Graphe écrit : %d modèles -> %s (index.json + deps.json + 1 fichier/modèle)",
-        len(index), out_dir,
+        "Graphe écrit : %d modèles fusionnés (par source : %s) -> %s "
+        "[%d .ttl bruts en entrée]",
+        len(index), by_source, out_dir, len(raw_models),
     )
     logger.info(
         "deps.json : %d modèles+version, %d avec dépendances",
         len(deps_out), n_with_deps,
     )
     n_doc = sum(1 for m in index if m["gen"].get("html"))
-    logger.info("gen/ : %d/%d fichiers ont une doc HTML amont", n_doc, len(index))
+    logger.info("gen/ : %d/%d modèles ont une doc HTML amont (porteur d'Aspect)",
+                n_doc, len(index))
 
     # issues.json : qualité des modèles, pré-calculée (site statique).
-    issues = build_issues(models, Path(models_dir), deps_out)
+    # On passe les 2 listes : fusionnée pour les checks-éléments, brute pour
+    # les checks-fichier (URN/stem/gen-html-par-fichier).
+    issues = build_issues(all_models, raw_models, dirs_for_issues, deps_out)
     (out_dir / "issues.json").write_text(
         json.dumps(issues, ensure_ascii=False, indent=2), encoding="utf-8"
     )
@@ -259,16 +482,14 @@ def main(argv: list[str] | None = None) -> int:
     import argparse
 
     parser = argparse.ArgumentParser(
-        description="Génère les graphes JSON (nœuds/arêtes) des modèles SLDT."
+        description="Génère les graphes JSON (nœuds/arêtes) des modèles."
     )
-    parser.add_argument("--dir", type=Path, default=DEFAULT_MODELS_DIR,
-                        help=f"Répertoire des modèles (défaut : {DEFAULT_MODELS_DIR})")
     parser.add_argument("--out", type=Path, default=DEFAULT_OUT_DIR,
                         help=f"Répertoire de sortie (défaut : {DEFAULT_OUT_DIR})")
     args = parser.parse_args(argv)
 
     logging.basicConfig(level=logging.INFO, format="%(levelname)-7s %(message)s")
-    build_graphs(args.dir, args.out)
+    build_graphs(SOURCES, args.out)
     return 0
 
 

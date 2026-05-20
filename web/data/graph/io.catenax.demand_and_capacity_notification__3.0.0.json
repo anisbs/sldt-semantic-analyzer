@@ -1,0 +1,402 @@
+{
+  "meta": {
+    "namespace": "urn:samm:io.catenax.demand_and_capacity_notification:3.0.0#",
+    "meta_model": "SAMM 2.1.0",
+    "model_family": "SAMM",
+    "model_name": "demand_and_capacity_notification",
+    "model_version": "3.0.0",
+    "source": "catenax",
+    "status": "release",
+    "release_date": "2025-06-23",
+    "release_notes": "# Changelog\n\nAll notable changes to this model will be documented in this file.\n\n## [3.0.0] - 2025-06-23\n\n### Added\n\n- added field `resolvingMeasureDescription`\n\n### Changed\n\n- `sourceNotificationId`:\n  - renamed to `sourceNotificationId` and elaborated semantics\n  - now is mandatory\n- `relatedNotificationId`:\n  - changed to be a collection (`relatedNotificationIds`)\n  - added logic when a notification can be considered a related notification\n- `leadingRootCauseEnumeration`: added `insolvency`\n- Introduce a Set of Material Entities with `materialNumberCustomer`, `materialNumberSupplier` and `materialGlobalAssetId`\n  - `materialNumberSupplier` and `materialNumberCustomer` use the `PartIdCharacterstic` from `PartTypeInformation`\n  - `materialGlobalAssetId` uses the UUID characteristic directly\n- `text`:\n  - enhanced semantics to inform about information to set and rules.\n    - MUST be set during creation, update and forwarding\n    - CAN be set during resolving\n\n### Removed\n\n## [2.0.0] - 2024-03-11\n\n### Added\n\n- notificationId: mandatory id for notifications\n- relatedNotificationId: optional id to refer to a notification along the tiers\n\n### Changed\n\n- relatedSourceMessageId: renamed to sourceNotificationId and reframed semantics\n- preferredName of TextLengthConstraint was CamelCase\n\n### Removed\n\n\n## [1.0.0] - 2024-02-19\n### Added\n- initial model",
+    "dependencies": [
+      {
+        "name": "part_type_information",
+        "version": "1.0.0",
+        "family": "SAMM",
+        "source": "catenax"
+      },
+      {
+        "name": "shared.business_partner_number",
+        "version": "2.0.0",
+        "family": "SAMM",
+        "source": "catenax"
+      },
+      {
+        "name": "shared.uuid",
+        "version": "2.0.0",
+        "family": "SAMM",
+        "source": "catenax"
+      }
+    ],
+    "path": "data/sldt-semantic-models/io.catenax.demand_and_capacity_notification/3.0.0/DemandAndCapacityNotification.ttl"
+  },
+  "nodes": [
+    {
+      "id": "urn:samm:io.catenax.demand_and_capacity_notification:3.0.0#DemandAndCapacityNotification",
+      "label": "DemandAndCapacityNotification",
+      "kind": "Aspect",
+      "preferredName": "Demand and Capacity Notification",
+      "description": "This aspect model defines the standard for demand and capacity notification exchange between business partners. Demand and Capacity Notifications refer to specific events within the supply chain which affect production or demand."
+    },
+    {
+      "id": "urn:samm:io.catenax.demand_and_capacity_notification:3.0.0#affectedSitesSender",
+      "label": "affectedSitesSender",
+      "kind": "Property",
+      "preferredName": "Affected sites of the sender",
+      "description": "The affected Business Partner Site Numbers of the sender of the notification. It is RECOMMENDED to set this property.\nWhen resolving the notification (setting status = \"resolved\"), this field MUST be empty."
+    },
+    {
+      "id": "urn:samm:io.catenax.demand_and_capacity_notification:3.0.0#affectedSitesRecipient",
+      "label": "affectedSitesRecipient",
+      "kind": "Property",
+      "preferredName": "Affected sites of the recipient",
+      "description": "The affected Business Partner Site Numbers of the recipient of the notification. It is RECOMMENDED to set this property. It MUST contain only BPNS that belong to the receiver.\nWhen resolving the notification (setting status = \"resolved\"), this field MUST be empty."
+    },
+    {
+      "id": "urn:samm:io.catenax.demand_and_capacity_notification:3.0.0#leadingRootCause",
+      "label": "leadingRootCause",
+      "kind": "Property",
+      "preferredName": "Leading root cause",
+      "description": "The main cause that has or may have an impact on the supply of goods."
+    },
+    {
+      "id": "urn:samm:io.catenax.demand_and_capacity_notification:3.0.0#effect",
+      "label": "effect",
+      "kind": "Property",
+      "preferredName": "Effect",
+      "description": "Effect or impact on the supply of goods as a consequence mentioned in the leadingRootCause. From business perspective demand/capacity reduction are most relevant values in connection with mentioned root causes. For technical completeness demand/capacity increase are also added to the enumeration."
+    },
+    {
+      "id": "urn:samm:io.catenax.demand_and_capacity_notification:3.0.0#text",
+      "label": "text",
+      "kind": "Property",
+      "preferredName": "Text",
+      "description": "Free text to describe the disruption and its handling in the notification (max. 4000 characters). Ensure to not reveal third-party information. Provide information about the disruption, the context within your customer-supplier-relationship, already aligned and taken measures and updates on the progress and changes. MUST be set when creating, updating or forwarding notifications. CAN be set when resolving (set status to “resolved”) a notification."
+    },
+    {
+      "id": "urn:samm:io.catenax.demand_and_capacity_notification:3.0.0#startDateOfEffect",
+      "label": "startDateOfEffect",
+      "kind": "Property",
+      "preferredName": "Start date of the effect.",
+      "description": "This property defines the start date and time of the effect regardless of the time the notification was sent."
+    },
+    {
+      "id": "urn:samm:io.catenax.demand_and_capacity_notification:3.0.0#expectedEndDateOfEffect",
+      "label": "expectedEndDateOfEffect",
+      "kind": "Property",
+      "preferredName": "Expected end date of effect.",
+      "description": "Expected end date of the impact MAY be defined by the sender of the notification."
+    },
+    {
+      "id": "urn:samm:io.catenax.demand_and_capacity_notification:3.0.0#status",
+      "label": "status",
+      "kind": "Property",
+      "preferredName": "Status",
+      "description": "Status \"open\" should be used in the context of an effect which remains active. Status \"resolved\" should be used to inform the partner that the effect of the initial notification stopped or has been resolved."
+    },
+    {
+      "id": "urn:samm:io.catenax.demand_and_capacity_notification:3.0.0#contentChangedAt",
+      "label": "contentChangedAt",
+      "kind": "Property",
+      "preferredName": "Content changed at",
+      "description": "The timestamp of the latest change of this notification. Date and time are set according to a timezone."
+    },
+    {
+      "id": "urn:samm:io.catenax.demand_and_capacity_notification:3.0.0#sourceDisruptionId",
+      "label": "sourceDisruptionId",
+      "kind": "Property",
+      "preferredName": "Source Disruption ID",
+      "description": "Unique ID identifying a source of the disruption to which the notification may relate. The sender of the first disruption notification generates the Source Disruption ID. Multiple notifications may relate to the same disruption ID."
+    },
+    {
+      "id": "urn:samm:io.catenax.demand_and_capacity_notification:3.0.0#notificationId",
+      "label": "notificationId",
+      "kind": "Property",
+      "preferredName": "Notification ID",
+      "description": "Unique ID identifying the notification."
+    },
+    {
+      "id": "urn:samm:io.catenax.demand_and_capacity_notification:3.0.0#relatedNotificationIds",
+      "label": "relatedNotificationIds",
+      "kind": "Property",
+      "preferredName": "Related Notification IDs",
+      "description": "Unique IDs identifying a previously received notification triggering the exchange of the current notification.\n\nA notification MUST be considered a Related Notification ID, if the following fields are equally filled:\n- Source Disruption ID\n- Leading Root Cause\n- Effect"
+    },
+    {
+      "id": "urn:samm:io.catenax.demand_and_capacity_notification:3.0.0#materialsAffected",
+      "label": "materialsAffected",
+      "kind": "Property",
+      "preferredName": "Materials Affected",
+      "description": "Materials affected by the disruption within the customer-supplier-relationship."
+    },
+    {
+      "id": "urn:samm:io.catenax.demand_and_capacity_notification:3.0.0#resolvingMeasureDescription",
+      "label": "resolvingMeasureDescription",
+      "kind": "Property",
+      "preferredName": "Resolving Measure Description",
+      "description": "Measure taken to resolve the disruption. MUST be set when resolving the notification (set status = \"resolved\")."
+    },
+    {
+      "id": "urn:samm:io.catenax.demand_and_capacity_notification:3.0.0#materialGlobalAssetId",
+      "label": "materialGlobalAssetId",
+      "kind": "Property",
+      "preferredName": "UUID of the Part Type Twin",
+      "description": "Identifier used uniquely to identify the part type twin."
+    },
+    {
+      "id": "urn:samm:io.catenax.demand_and_capacity_notification:3.0.0#materialNumberCustomer",
+      "label": "materialNumberCustomer",
+      "kind": "Property",
+      "preferredName": "Material Number Customer",
+      "description": "Material identifier as assigned by the customer. This property identifies the material in the customer's database. For standard materials (e.g. screws) for which a customer does not have an own ID, the manufacturer material ID should be set in this field, too. If the customer is the data provider, sending this property is RECOMMENDED."
+    },
+    {
+      "id": "urn:samm:io.catenax.demand_and_capacity_notification:3.0.0#materialNumberSupplier",
+      "label": "materialNumberSupplier",
+      "kind": "Property",
+      "preferredName": "Material Number Supplier",
+      "description": "Material identifiers as assigned by the supplier or manufacturer. This property identifies the material in the supplier's database. If the supplier is the data provider, sending this property is RECOMMENDED."
+    },
+    {
+      "id": "urn:samm:io.catenax.demand_and_capacity_notification:3.0.0#AffectedSitesCharacteristic",
+      "label": "AffectedSitesCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Affected Sites Characteristic",
+      "description": "A set of Business Partner Number Sites (BPNS) that are affected."
+    },
+    {
+      "id": "urn:samm:io.catenax.demand_and_capacity_notification:3.0.0#NotificationIdSet",
+      "label": "NotificationIdSet",
+      "kind": "Characteristic",
+      "preferredName": "Notification ID Set",
+      "description": "A set of unique Notification IDs."
+    },
+    {
+      "id": "urn:samm:io.catenax.demand_and_capacity_notification:3.0.0#MaterialsSet",
+      "label": "MaterialsSet",
+      "kind": "Characteristic",
+      "preferredName": "Materials Set",
+      "description": "Set providing identification information for materials."
+    },
+    {
+      "id": "urn:samm:io.catenax.demand_and_capacity_notification:3.0.0#LeadingRootCauseEnumeration",
+      "label": "LeadingRootCauseEnumeration",
+      "kind": "Characteristic",
+      "preferredName": "Leading root cause enumeration",
+      "description": "Enumeration of the available leading root causes."
+    },
+    {
+      "id": "urn:samm:io.catenax.demand_and_capacity_notification:3.0.0#EffectEnumeration",
+      "label": "EffectEnumeration",
+      "kind": "Characteristic",
+      "preferredName": "Effect enumeration",
+      "description": "Enumeration of the available effects due to the mentioned leadingRootCause."
+    },
+    {
+      "id": "urn:samm:io.catenax.demand_and_capacity_notification:3.0.0#StatusEnumeration",
+      "label": "StatusEnumeration",
+      "kind": "Characteristic",
+      "preferredName": "Status enumeration.",
+      "description": "Status can be either \"open\" or \"resolved\"."
+    },
+    {
+      "id": "urn:samm:io.catenax.demand_and_capacity_notification:3.0.0#UserInputTrait",
+      "label": "UserInputTrait",
+      "kind": "Characteristic",
+      "preferredName": "User Input Trait",
+      "description": "Trait to ensure correct values for the user input."
+    },
+    {
+      "id": "urn:samm:io.catenax.demand_and_capacity_notification:3.0.0#UserInputCharacteristic",
+      "label": "UserInputCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "User input characteristic",
+      "description": "User input can be any string that is max. 4000 characters."
+    },
+    {
+      "id": "urn:samm:io.catenax.demand_and_capacity_notification:3.0.0#TextLengthConstraint",
+      "label": "TextLengthConstraint",
+      "kind": "Characteristic",
+      "preferredName": "User Input Constraint",
+      "description": "Constraint for a string to be max. 4000 characters long."
+    },
+    {
+      "id": "urn:samm:io.catenax.demand_and_capacity_notification:3.0.0#Material",
+      "label": "Material",
+      "kind": "Entity",
+      "preferredName": "Material",
+      "description": "Specifies the material. A material MUST be identified by at least one of the material numbers:\n- Material Number Customer MUST be set if the customer is the sender.\n- Material Number Supplier MUST be set if the sender is the supplier. It is RECOMMENDED to be set in all cases.\n- Material Global Asset ID MUST be set if a digital twin exists."
+    }
+  ],
+  "links": [
+    {
+      "source": "urn:samm:io.catenax.demand_and_capacity_notification:3.0.0#DemandAndCapacityNotification",
+      "target": "urn:samm:io.catenax.demand_and_capacity_notification:3.0.0#affectedSitesSender",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.demand_and_capacity_notification:3.0.0#DemandAndCapacityNotification",
+      "target": "urn:samm:io.catenax.demand_and_capacity_notification:3.0.0#affectedSitesRecipient",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.demand_and_capacity_notification:3.0.0#DemandAndCapacityNotification",
+      "target": "urn:samm:io.catenax.demand_and_capacity_notification:3.0.0#leadingRootCause",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.demand_and_capacity_notification:3.0.0#DemandAndCapacityNotification",
+      "target": "urn:samm:io.catenax.demand_and_capacity_notification:3.0.0#effect",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.demand_and_capacity_notification:3.0.0#DemandAndCapacityNotification",
+      "target": "urn:samm:io.catenax.demand_and_capacity_notification:3.0.0#text",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.demand_and_capacity_notification:3.0.0#DemandAndCapacityNotification",
+      "target": "urn:samm:io.catenax.demand_and_capacity_notification:3.0.0#startDateOfEffect",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.demand_and_capacity_notification:3.0.0#DemandAndCapacityNotification",
+      "target": "urn:samm:io.catenax.demand_and_capacity_notification:3.0.0#expectedEndDateOfEffect",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.demand_and_capacity_notification:3.0.0#DemandAndCapacityNotification",
+      "target": "urn:samm:io.catenax.demand_and_capacity_notification:3.0.0#status",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.demand_and_capacity_notification:3.0.0#DemandAndCapacityNotification",
+      "target": "urn:samm:io.catenax.demand_and_capacity_notification:3.0.0#contentChangedAt",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.demand_and_capacity_notification:3.0.0#DemandAndCapacityNotification",
+      "target": "urn:samm:io.catenax.demand_and_capacity_notification:3.0.0#sourceDisruptionId",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.demand_and_capacity_notification:3.0.0#DemandAndCapacityNotification",
+      "target": "urn:samm:io.catenax.demand_and_capacity_notification:3.0.0#notificationId",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.demand_and_capacity_notification:3.0.0#DemandAndCapacityNotification",
+      "target": "urn:samm:io.catenax.demand_and_capacity_notification:3.0.0#relatedNotificationIds",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.demand_and_capacity_notification:3.0.0#DemandAndCapacityNotification",
+      "target": "urn:samm:io.catenax.demand_and_capacity_notification:3.0.0#materialsAffected",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.demand_and_capacity_notification:3.0.0#DemandAndCapacityNotification",
+      "target": "urn:samm:io.catenax.demand_and_capacity_notification:3.0.0#resolvingMeasureDescription",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.demand_and_capacity_notification:3.0.0#Material",
+      "target": "urn:samm:io.catenax.demand_and_capacity_notification:3.0.0#materialGlobalAssetId",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.demand_and_capacity_notification:3.0.0#Material",
+      "target": "urn:samm:io.catenax.demand_and_capacity_notification:3.0.0#materialNumberCustomer",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.demand_and_capacity_notification:3.0.0#Material",
+      "target": "urn:samm:io.catenax.demand_and_capacity_notification:3.0.0#materialNumberSupplier",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.demand_and_capacity_notification:3.0.0#affectedSitesSender",
+      "target": "urn:samm:io.catenax.demand_and_capacity_notification:3.0.0#AffectedSitesCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.demand_and_capacity_notification:3.0.0#affectedSitesRecipient",
+      "target": "urn:samm:io.catenax.demand_and_capacity_notification:3.0.0#AffectedSitesCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.demand_and_capacity_notification:3.0.0#leadingRootCause",
+      "target": "urn:samm:io.catenax.demand_and_capacity_notification:3.0.0#LeadingRootCauseEnumeration",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.demand_and_capacity_notification:3.0.0#effect",
+      "target": "urn:samm:io.catenax.demand_and_capacity_notification:3.0.0#EffectEnumeration",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.demand_and_capacity_notification:3.0.0#text",
+      "target": "urn:samm:io.catenax.demand_and_capacity_notification:3.0.0#UserInputTrait",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.demand_and_capacity_notification:3.0.0#resolvingMeasureDescription",
+      "target": "urn:samm:io.catenax.demand_and_capacity_notification:3.0.0#UserInputTrait",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.demand_and_capacity_notification:3.0.0#status",
+      "target": "urn:samm:io.catenax.demand_and_capacity_notification:3.0.0#StatusEnumeration",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.demand_and_capacity_notification:3.0.0#relatedNotificationIds",
+      "target": "urn:samm:io.catenax.demand_and_capacity_notification:3.0.0#NotificationIdSet",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.demand_and_capacity_notification:3.0.0#materialsAffected",
+      "target": "urn:samm:io.catenax.demand_and_capacity_notification:3.0.0#MaterialsSet",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.demand_and_capacity_notification:3.0.0#MaterialsSet",
+      "target": "urn:samm:io.catenax.demand_and_capacity_notification:3.0.0#Material",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.demand_and_capacity_notification:3.0.0#UserInputTrait",
+      "target": "urn:samm:io.catenax.demand_and_capacity_notification:3.0.0#TextLengthConstraint",
+      "label": "constraint",
+      "optional": false
+    }
+  ]
+}

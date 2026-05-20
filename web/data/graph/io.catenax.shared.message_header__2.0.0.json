@@ -1,0 +1,228 @@
+{
+  "meta": {
+    "namespace": "urn:samm:io.catenax.shared.message_header:2.0.0#",
+    "meta_model": "SAMM 2.0.0",
+    "model_family": "SAMM",
+    "model_name": "shared.message_header",
+    "model_version": "2.0.0",
+    "source": "catenax",
+    "status": "release",
+    "release_date": "2023-11-28",
+    "release_notes": "# Changelog\n\nAll notable changes to this model will be documented in this file.\n\n### [3.0.0] - 2024-01-30\n- migrated from samm 2.0.0 to samm 2.1.0\n\n## [2.0.0] - 2023-11-28\n### Added\n- add / integrate shared UUID characteristic and RegEx for the properties messageId and relatedMessageId\n- add / integrate shared BPN-L characteristic and RegEx for the properties senderBpn and receiverBpn\n\n### Changed\n- fixed bug of missing connection between messageId property and the idTrait to link the UUIDv4 RegEx\n- fixed bug of missing connection between relatedMessageId property and the idTrait to link the UUIDv4 RegEx\n- fixed bug of missing connection between version property and the SemanticVersioningTrait to link the semVer RegEx\n\n### Removed\n- removed existing characteristic of the properties messageId and relatedMessageId and replaced it with content of shared aspect models (see added information)\n- removed existing characteristic of the properties senderBpn and reveiverBpn and replaced it with content of shared aspect models (see added information)\n\n## [1.0.0] 2023-07-31\n\n- initial version of the aspect model for the Message Header",
+    "dependencies": [
+      {
+        "name": "shared.business_partner_number",
+        "version": "1.0.0",
+        "family": "SAMM",
+        "source": "catenax"
+      },
+      {
+        "name": "shared.uuid",
+        "version": "1.0.0",
+        "family": "SAMM",
+        "source": "catenax"
+      }
+    ],
+    "path": "data/sldt-semantic-models/io.catenax.shared.message_header/2.0.0/MessageHeaderAspect.ttl"
+  },
+  "nodes": [
+    {
+      "id": "urn:samm:io.catenax.shared.message_header:2.0.0#MessageHeaderAspect",
+      "label": "MessageHeaderAspect",
+      "kind": "Aspect",
+      "preferredName": "Message Header Aspect",
+      "description": "Aspect model describing the shared message header."
+    },
+    {
+      "id": "urn:samm:io.catenax.shared.message_header:2.0.0#header",
+      "label": "header",
+      "kind": "Property",
+      "preferredName": "Header",
+      "description": "Contains standardized attributes for message processing common across several use cases."
+    },
+    {
+      "id": "urn:samm:io.catenax.shared.message_header:2.0.0#messageId",
+      "label": "messageId",
+      "kind": "Property",
+      "preferredName": "Message ID",
+      "description": "Unique ID identifying the message. The purpose of the ID is to uniquely identify a single message, therefore it MUST not be reused."
+    },
+    {
+      "id": "urn:samm:io.catenax.shared.message_header:2.0.0#context",
+      "label": "context",
+      "kind": "Property",
+      "preferredName": "Context",
+      "description": "Information about the context the message should be considered in.\nThe value MUST consist of two parts: an identifier of the context (e.g. business domain, etc.) followed by a version number.\nBoth the identifier and the version number MUST correspond to the content of the message.\nIf the content of a message is described by an aspect model available in the Catena-X Semantic Hub, then the unique identifier of this semantic model (e.g. urn:samm:io.catenax.<ASPECT-MODEL-NAME>:1.x.x) MUST be used as a value of the context field. This is considered the default case.\nIn all other cases the value of the context field MUST follow the pattern <domain>-<subdomain>-<object>:<[major] version> (e.g. TRACE-QM-Alert:1.x.x).\nVersioning only refers to major versions in both default and fallback cases.\nNote: The version of the message's header is specified in the version field."
+    },
+    {
+      "id": "urn:samm:io.catenax.shared.message_header:2.0.0#sentDateTime",
+      "label": "sentDateTime",
+      "kind": "Property",
+      "preferredName": "Sent Date Time",
+      "description": "Time zone aware timestamp holding the date and the time the message was sent by the sending party. The value MUST be formatted according to the ISO 8601 standard"
+    },
+    {
+      "id": "urn:samm:io.catenax.shared.message_header:2.0.0#senderBpn",
+      "label": "senderBpn",
+      "kind": "Property",
+      "preferredName": "Sender BPN",
+      "description": "The Business Partner Number of the sending party. The value MUST be a valid BPN. BPNA and BPNS are not allowed. Applicable constraints are defined in the corresponding standard"
+    },
+    {
+      "id": "urn:samm:io.catenax.shared.message_header:2.0.0#receiverBpn",
+      "label": "receiverBpn",
+      "kind": "Property",
+      "preferredName": "Receiver BPN",
+      "description": "The Business Partner Number of the receiving party. The value MUST be a valid BPN. BPNA and BPNS are not allowed. Applicable constraints are defined in the corresponding standard."
+    },
+    {
+      "id": "urn:samm:io.catenax.shared.message_header:2.0.0#expectedResponseBy",
+      "label": "expectedResponseBy",
+      "kind": "Property",
+      "preferredName": "Expected Response By",
+      "description": "Time zone aware timestamp holding the date and time by which the sending party expects a certain type of response from the receiving party. The meaning and interpretation of the fields's value are context-bound and MUST therefore be defined by any business domain or platform capability making use of it. The value MUST be formatted according to the ISO 8601 standard"
+    },
+    {
+      "id": "urn:samm:io.catenax.shared.message_header:2.0.0#relatedMessageId",
+      "label": "relatedMessageId",
+      "kind": "Property",
+      "preferredName": "Related Message ID",
+      "description": "Unique ID identifying a message somehow related to the current one"
+    },
+    {
+      "id": "urn:samm:io.catenax.shared.message_header:2.0.0#version",
+      "label": "version",
+      "kind": "Property",
+      "preferredName": "Version",
+      "description": "The unique identifier of the aspect model defining the structure and the semantics of the message's header. The version number should reflect the versioning schema of aspect models in Catena-X."
+    },
+    {
+      "id": "urn:samm:io.catenax.shared.message_header:2.0.0#HeaderCharacteristic",
+      "label": "HeaderCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Header Characteristic",
+      "description": "Characteristic describing the common shared aspect Message Header"
+    },
+    {
+      "id": "urn:samm:io.catenax.shared.message_header:2.0.0#ContextCharacteristic",
+      "label": "ContextCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Context Characteristic",
+      "description": "Defining a string value for the context"
+    },
+    {
+      "id": "urn:samm:io.catenax.shared.message_header:2.0.0#VersionCharacteristic",
+      "label": "VersionCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Version Characteristic",
+      "description": "Characteristic defining the value of version."
+    },
+    {
+      "id": "urn:samm:io.catenax.shared.message_header:2.0.0#MessageHeader",
+      "label": "MessageHeader",
+      "kind": "Entity",
+      "preferredName": "Message Header",
+      "description": "The Catena-X Message Header contains standardized attributes for message processing that are common across several use cases. It targets a minimal set of aspects that are needed for overall message handling, and not for the processing of the business related payload part. By standardizing the message header structure, we support a harmonized modelling approach and re-use of concepts. The message header originated from discussions on push notifications but has since then been abstracted for overall message handling ? and does not only apply to notification anymore."
+    },
+    {
+      "id": "urn:samm:io.catenax.shared.message_header:2.0.0#SemanticVersioningTrait",
+      "label": "SemanticVersioningTrait",
+      "kind": "Characteristic",
+      "preferredName": "Semantic Versioning Trait",
+      "description": "Trait for defining the Semantic Versioning Characteristic to be SemVer.org compliant."
+    },
+    {
+      "id": "urn:samm:io.catenax.shared.message_header:2.0.0#SemVer",
+      "label": "SemVer",
+      "kind": "Characteristic",
+      "preferredName": "Semantic Versioning Constraint",
+      "description": "Constraint for defining a SemVer version."
+    }
+  ],
+  "links": [
+    {
+      "source": "urn:samm:io.catenax.shared.message_header:2.0.0#MessageHeaderAspect",
+      "target": "urn:samm:io.catenax.shared.message_header:2.0.0#header",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.shared.message_header:2.0.0#MessageHeader",
+      "target": "urn:samm:io.catenax.shared.message_header:2.0.0#messageId",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.shared.message_header:2.0.0#MessageHeader",
+      "target": "urn:samm:io.catenax.shared.message_header:2.0.0#context",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.shared.message_header:2.0.0#MessageHeader",
+      "target": "urn:samm:io.catenax.shared.message_header:2.0.0#sentDateTime",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.shared.message_header:2.0.0#MessageHeader",
+      "target": "urn:samm:io.catenax.shared.message_header:2.0.0#senderBpn",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.shared.message_header:2.0.0#MessageHeader",
+      "target": "urn:samm:io.catenax.shared.message_header:2.0.0#receiverBpn",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.shared.message_header:2.0.0#MessageHeader",
+      "target": "urn:samm:io.catenax.shared.message_header:2.0.0#expectedResponseBy",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.shared.message_header:2.0.0#MessageHeader",
+      "target": "urn:samm:io.catenax.shared.message_header:2.0.0#relatedMessageId",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.shared.message_header:2.0.0#MessageHeader",
+      "target": "urn:samm:io.catenax.shared.message_header:2.0.0#version",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.shared.message_header:2.0.0#header",
+      "target": "urn:samm:io.catenax.shared.message_header:2.0.0#HeaderCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.shared.message_header:2.0.0#context",
+      "target": "urn:samm:io.catenax.shared.message_header:2.0.0#ContextCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.shared.message_header:2.0.0#version",
+      "target": "urn:samm:io.catenax.shared.message_header:2.0.0#SemanticVersioningTrait",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.shared.message_header:2.0.0#HeaderCharacteristic",
+      "target": "urn:samm:io.catenax.shared.message_header:2.0.0#MessageHeader",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.shared.message_header:2.0.0#SemanticVersioningTrait",
+      "target": "urn:samm:io.catenax.shared.message_header:2.0.0#SemVer",
+      "label": "constraint",
+      "optional": false
+    }
+  ]
+}

@@ -1,0 +1,318 @@
+{
+  "meta": {
+    "namespace": "urn:samm:io.catenax.single_level_usage_as_built:2.0.0#",
+    "meta_model": "SAMM 2.0.0",
+    "model_family": "SAMM",
+    "model_name": "single_level_usage_as_built",
+    "model_version": "2.0.0",
+    "source": "catenax",
+    "status": "deprecated",
+    "release_date": null,
+    "release_notes": "# Changelog\n\nAll notable changes to this model will be documented in this file.\n\n## [4.0.0] 25.12\n\n### Changed\n\n- introduced `io.catenax.shared.industry_core.common:1.0.0` and `io.catenax.shared.quantity:3.0.0` as a shared model\n- renamed `catenaXId` to `globalAssetId`\n\n## [3.0.0] 2024-02-26\n\n### Changed\n\n- changed `parentItems` property to be a mandatory child of the `SingleLevelUsageAsBuilt` aspect property instead of a child of the `customers` property\n- changed `customers` property to be a list of BPNL\n- replaced the `quantityNumber` and `measurementUnit` properties with the `itemUnit` and `quantityValue` properties of the shared quantity 2.0.0 aspect model\n- replaced the whole `CatenaXIdTraitCharacteristic` and its childs with the `UuidV4Trait` of the shared uuid 2.0.0 aspect model\n- replaced the whole `BpnTrait` and its childs with the `BpnlTrait` of the shared business_partner_number 2.0.0 aspect model\n- description of some objects were adjusted\n\n## [2.0.0] 2023-09-01\n\n### Added\n\n- added `customers` to reflect that the relation to parent items is not known at all times. Instead a reference to the customer is made.\n- restructured `parentParts` to be enclosed \n- added mandatory `businessPartner` to enable decentralized Digital Twin registry\n\n### Changed\n\n- renamed `parentParts` to `parentItems`\n- made `parentItems` optional to reflect that parent items are not known at all times\n- fixed example value for `measurementUnit`\n- fixed link to samm unit catalogue for `measurementUnit`\n- renamed `parentCatenaXId` to `catenaXId`\n- improved some descriptions to reflect change from `part` to `item`\n- generally improved some descriptions\n\n### Removed\n\n## [1.0.1] 2022-08-11\n\n### Added\n\n- initial version of model\n- small bugfix\n\n### Changed\n\nn/a\n\n### Removed",
+    "dependencies": [],
+    "path": "data/sldt-semantic-models/io.catenax.single_level_usage_as_built/2.0.0/SingleLevelUsageAsBuilt.ttl"
+  },
+  "nodes": [
+    {
+      "id": "urn:samm:io.catenax.single_level_usage_as_built:2.0.0#SingleLevelUsageAsBuilt",
+      "label": "SingleLevelUsageAsBuilt",
+      "kind": "Aspect",
+      "preferredName": "SingleLevelUsageAsBuilt",
+      "description": "The aspect provides the information in which parent part(s)/product(s) the given item is assembled in. Could be a 1:1 relationship in terms of a e.g. a brake component or 1:n for e.g. coatings. The given item as well as the parent item must refer to an object from as-built lifecycle phase, i.e. a batch or a serialized part."
+    },
+    {
+      "id": "urn:samm:io.catenax.single_level_usage_as_built:2.0.0#catenaXId",
+      "label": "catenaXId",
+      "kind": "Property",
+      "preferredName": "Catena-X Identifier",
+      "description": "The Catena-X ID of the given part (e.g. the assembly), valid for the Catena-X dataspace."
+    },
+    {
+      "id": "urn:samm:io.catenax.single_level_usage_as_built:2.0.0#customers",
+      "label": "customers",
+      "kind": "Property",
+      "preferredName": "Customers",
+      "description": "A list of all customers of this item. If the parent items in which this item is assembled into are known, they should be listed as well.\n\nFor serialized items the list should contain only one customer with one parent item.\nAs different subsets of a batch might be sold to different customers this is a list."
+    },
+    {
+      "id": "urn:samm:io.catenax.single_level_usage_as_built:2.0.0#parentItems",
+      "label": "parentItems",
+      "kind": "Property",
+      "preferredName": "Parent Items",
+      "description": "Set of parent items, in which the given child object is assembled in (one structural level up).\n\nFor serialized items the list should contain only one parent item.\nAs different subsets of a batch might be used by a customer in different items this is a list."
+    },
+    {
+      "id": "urn:samm:io.catenax.single_level_usage_as_built:2.0.0#businessPartner",
+      "label": "businessPartner",
+      "kind": "Property",
+      "preferredName": "Business Partner",
+      "description": "The supplier of the given child item."
+    },
+    {
+      "id": "urn:samm:io.catenax.single_level_usage_as_built:2.0.0#createdOn",
+      "label": "createdOn",
+      "kind": "Property",
+      "preferredName": "Created On",
+      "description": "Timestamp when the relation between the parent part and the child part was created, e.g. when the given child part was assembled into the parent part."
+    },
+    {
+      "id": "urn:samm:io.catenax.single_level_usage_as_built:2.0.0#lastModifiedOn",
+      "label": "lastModifiedOn",
+      "kind": "Property",
+      "preferredName": "Last Modification Date",
+      "description": "Timestamp when the assembly relationship between parent part and child part was last modified."
+    },
+    {
+      "id": "urn:samm:io.catenax.single_level_usage_as_built:2.0.0#quantity",
+      "label": "quantity",
+      "kind": "Property",
+      "preferredName": "Quantity",
+      "description": "Quantity of which the child part is assembled into the parent part. In general it is '1' for serialized parts."
+    },
+    {
+      "id": "urn:samm:io.catenax.single_level_usage_as_built:2.0.0#quantityNumber",
+      "label": "quantityNumber",
+      "kind": "Property",
+      "preferredName": "Quantity Number",
+      "description": "The number of objects related to the measurement unit"
+    },
+    {
+      "id": "urn:samm:io.catenax.single_level_usage_as_built:2.0.0#measurementUnit",
+      "label": "measurementUnit",
+      "kind": "Property",
+      "preferredName": null,
+      "description": "Unit of Measurement for the quantity of serialized objects"
+    },
+    {
+      "id": "urn:samm:io.catenax.single_level_usage_as_built:2.0.0#CatenaXIdTraitCharacteristic",
+      "label": "CatenaXIdTraitCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": null,
+      "description": "Trait to ensure UUID v4 data format"
+    },
+    {
+      "id": "urn:samm:io.catenax.single_level_usage_as_built:2.0.0#BpnTrait",
+      "label": "BpnTrait",
+      "kind": "Characteristic",
+      "preferredName": "BPN Business Partner Number Trait",
+      "description": null
+    },
+    {
+      "id": "urn:samm:io.catenax.single_level_usage_as_built:2.0.0#ListOfCustomersCharacteristic",
+      "label": "ListOfCustomersCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "List of Customers Characteristic",
+      "description": "A list of customers and their related parent items."
+    },
+    {
+      "id": "urn:samm:io.catenax.single_level_usage_as_built:2.0.0#UUIDv4Characteristic",
+      "label": "UUIDv4Characteristic",
+      "kind": "Characteristic",
+      "preferredName": "UUID v4",
+      "description": "A version 4 UUID is a universally unique identifier that is generated using random 32 hexadecimal characters."
+    },
+    {
+      "id": "urn:samm:io.catenax.single_level_usage_as_built:2.0.0#BpnCharacteristic",
+      "label": "BpnCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "BPN Characteristic",
+      "description": null
+    },
+    {
+      "id": "urn:samm:io.catenax.single_level_usage_as_built:2.0.0#NumberOfObjects",
+      "label": "NumberOfObjects",
+      "kind": "Characteristic",
+      "preferredName": null,
+      "description": "Quantifiable number of objects in reference to the measurementUnit"
+    },
+    {
+      "id": "urn:samm:io.catenax.single_level_usage_as_built:2.0.0#UUIDv4RegularExpression",
+      "label": "UUIDv4RegularExpression",
+      "kind": "Characteristic",
+      "preferredName": "Catena-X Id Regular Expression",
+      "description": "The provided regular expression ensures that the UUID is composed of five groups of characters separated by hyphens, in the form 8-4-4-4-12 for a total of 36 characters (32 hexadecimal characters and 4 hyphens), optionally prefixed by \"urn:uuid:\" to make it an IRI."
+    },
+    {
+      "id": "urn:samm:io.catenax.single_level_usage_as_built:2.0.0#BpnConstraint",
+      "label": "BpnConstraint",
+      "kind": "Characteristic",
+      "preferredName": "BPN Constraint",
+      "description": "Business Partner Number Regular Expression allowing only BPNL which stands for a legal entity."
+    },
+    {
+      "id": "urn:samm:io.catenax.single_level_usage_as_built:2.0.0#Customer",
+      "label": "Customer",
+      "kind": "Entity",
+      "preferredName": "Customer",
+      "description": "A customer and their related items, if known."
+    },
+    {
+      "id": "urn:samm:io.catenax.single_level_usage_as_built:2.0.0#ParentData",
+      "label": "ParentData",
+      "kind": "Entity",
+      "preferredName": "Parent Data",
+      "description": "Catena-X ID and meta data of the parent item."
+    },
+    {
+      "id": "urn:samm:io.catenax.single_level_usage_as_built:2.0.0#Quantity",
+      "label": "Quantity",
+      "kind": "Entity",
+      "preferredName": null,
+      "description": "Comprises the number of objects and the unit of measurement for the respective child objects"
+    },
+    {
+      "id": "urn:samm:io.catenax.single_level_usage_as_built:2.0.0#SetOfParentItemsCharacteristic",
+      "label": "SetOfParentItemsCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Set of Parent Items",
+      "description": "Set of parent items the given child object is assembled in (one structural level up)."
+    },
+    {
+      "id": "urn:samm:io.catenax.single_level_usage_as_built:2.0.0#QuantityCharacteristic",
+      "label": "QuantityCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": null,
+      "description": "Describes the quantity in which the child part is assembled in the parent object by providing a quantity value and the measurement unit in which the quantity is measured."
+    }
+  ],
+  "links": [
+    {
+      "source": "urn:samm:io.catenax.single_level_usage_as_built:2.0.0#SingleLevelUsageAsBuilt",
+      "target": "urn:samm:io.catenax.single_level_usage_as_built:2.0.0#catenaXId",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.single_level_usage_as_built:2.0.0#SingleLevelUsageAsBuilt",
+      "target": "urn:samm:io.catenax.single_level_usage_as_built:2.0.0#customers",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.single_level_usage_as_built:2.0.0#Customer",
+      "target": "urn:samm:io.catenax.single_level_usage_as_built:2.0.0#parentItems",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.single_level_usage_as_built:2.0.0#Customer",
+      "target": "urn:samm:io.catenax.single_level_usage_as_built:2.0.0#businessPartner",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.single_level_usage_as_built:2.0.0#Customer",
+      "target": "urn:samm:io.catenax.single_level_usage_as_built:2.0.0#createdOn",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.single_level_usage_as_built:2.0.0#Customer",
+      "target": "urn:samm:io.catenax.single_level_usage_as_built:2.0.0#lastModifiedOn",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.single_level_usage_as_built:2.0.0#ParentData",
+      "target": "urn:samm:io.catenax.single_level_usage_as_built:2.0.0#quantity",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.single_level_usage_as_built:2.0.0#ParentData",
+      "target": "urn:samm:io.catenax.single_level_usage_as_built:2.0.0#catenaXId",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.single_level_usage_as_built:2.0.0#ParentData",
+      "target": "urn:samm:io.catenax.single_level_usage_as_built:2.0.0#createdOn",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.single_level_usage_as_built:2.0.0#ParentData",
+      "target": "urn:samm:io.catenax.single_level_usage_as_built:2.0.0#lastModifiedOn",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.single_level_usage_as_built:2.0.0#Quantity",
+      "target": "urn:samm:io.catenax.single_level_usage_as_built:2.0.0#quantityNumber",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.single_level_usage_as_built:2.0.0#Quantity",
+      "target": "urn:samm:io.catenax.single_level_usage_as_built:2.0.0#measurementUnit",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.single_level_usage_as_built:2.0.0#catenaXId",
+      "target": "urn:samm:io.catenax.single_level_usage_as_built:2.0.0#CatenaXIdTraitCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.single_level_usage_as_built:2.0.0#customers",
+      "target": "urn:samm:io.catenax.single_level_usage_as_built:2.0.0#ListOfCustomersCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.single_level_usage_as_built:2.0.0#parentItems",
+      "target": "urn:samm:io.catenax.single_level_usage_as_built:2.0.0#SetOfParentItemsCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.single_level_usage_as_built:2.0.0#businessPartner",
+      "target": "urn:samm:io.catenax.single_level_usage_as_built:2.0.0#BpnTrait",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.single_level_usage_as_built:2.0.0#quantity",
+      "target": "urn:samm:io.catenax.single_level_usage_as_built:2.0.0#QuantityCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.single_level_usage_as_built:2.0.0#quantityNumber",
+      "target": "urn:samm:io.catenax.single_level_usage_as_built:2.0.0#NumberOfObjects",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.single_level_usage_as_built:2.0.0#ListOfCustomersCharacteristic",
+      "target": "urn:samm:io.catenax.single_level_usage_as_built:2.0.0#Customer",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.single_level_usage_as_built:2.0.0#SetOfParentItemsCharacteristic",
+      "target": "urn:samm:io.catenax.single_level_usage_as_built:2.0.0#ParentData",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.single_level_usage_as_built:2.0.0#QuantityCharacteristic",
+      "target": "urn:samm:io.catenax.single_level_usage_as_built:2.0.0#Quantity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.single_level_usage_as_built:2.0.0#CatenaXIdTraitCharacteristic",
+      "target": "urn:samm:io.catenax.single_level_usage_as_built:2.0.0#UUIDv4RegularExpression",
+      "label": "constraint",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.single_level_usage_as_built:2.0.0#BpnTrait",
+      "target": "urn:samm:io.catenax.single_level_usage_as_built:2.0.0#BpnConstraint",
+      "label": "constraint",
+      "optional": false
+    }
+  ]
+}

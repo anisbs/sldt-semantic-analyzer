@@ -1,0 +1,452 @@
+{
+  "meta": {
+    "namespace": "urn:samm:io.catenax.return_request:2.0.0#",
+    "meta_model": "SAMM 2.1.0",
+    "model_family": "SAMM",
+    "model_name": "return_request",
+    "model_version": "2.0.0",
+    "source": "catenax",
+    "status": "release",
+    "release_date": "2024-02-05",
+    "release_notes": "# Changelog\nAll notable changes to this model will be documented in this file.\n\n## [2.0.0] - 2024-02-05\n### Added\n- Upgrade from BAMM model to SAMM model\n- Update attributes\n- link several models\n\n### Changed\n- eclipse from 2.0.0 to 2.1.0\n\n### Removed\n- property \"unitOfMeasure\" \n\n## [1.1.2] - 2023-01-30\n### Added\n- \n\n### Changed\n- requestDate excluded explicit mentioning of timezone in description\n- latestReturnDate excluded explicit mentioning of timezone in description\n\n### Removed\n\n\n## [1.1.1] - 2022-12-02\n### Added\n- removed some example values with inproper data types\n\n### Changed\nn/a\n\n### Removed\n\n## [1.1.0] - 2022-07-01\n### Added\n- initial model\n- incremental additions of properties\n- small bugfixes\n\n### Changed\nn/a\n\n### Removed",
+    "dependencies": [
+      {
+        "name": "serial_part",
+        "version": "3.0.0",
+        "family": "SAMM",
+        "source": "catenax"
+      },
+      {
+        "name": "shared.address_characteristic",
+        "version": "3.0.0",
+        "family": "SAMM",
+        "source": "catenax"
+      },
+      {
+        "name": "shared.part_classification",
+        "version": "1.0.0",
+        "family": "SAMM",
+        "source": "catenax"
+      },
+      {
+        "name": "shared.quantity",
+        "version": "2.0.0",
+        "family": "SAMM",
+        "source": "catenax"
+      }
+    ],
+    "path": "data/sldt-semantic-models/io.catenax.return_request/2.0.0/ReturnRequest.ttl"
+  },
+  "nodes": [
+    {
+      "id": "urn:samm:io.catenax.return_request:2.0.0#ReturnRequest",
+      "label": "ReturnRequest",
+      "kind": "Aspect",
+      "preferredName": "return request",
+      "description": "Aspect to indicate if there is a return request for a product."
+    },
+    {
+      "id": "urn:samm:io.catenax.return_request:2.0.0#needsReturn",
+      "label": "needsReturn",
+      "kind": "Property",
+      "preferredName": "needs return",
+      "description": "Describes the fact whether a vehicle, assembly or part needs to be returned to requestor."
+    },
+    {
+      "id": "urn:samm:io.catenax.return_request:2.0.0#returnConditions",
+      "label": "returnConditions",
+      "kind": "Property",
+      "preferredName": "return conditions",
+      "description": "Describes WHY a vehicle, assembly or part needs to be returned to the requestor and under which conditions."
+    },
+    {
+      "id": "urn:samm:io.catenax.return_request:2.0.0#requestDate",
+      "label": "requestDate",
+      "kind": "Property",
+      "preferredName": "request date",
+      "description": "Describes date when the return request was placed."
+    },
+    {
+      "id": "urn:samm:io.catenax.return_request:2.0.0#latestReturnDate",
+      "label": "latestReturnDate",
+      "kind": "Property",
+      "preferredName": "latest return date",
+      "description": "Describes until when the return request is valid."
+    },
+    {
+      "id": "urn:samm:io.catenax.return_request:2.0.0#productConditions",
+      "label": "productConditions",
+      "kind": "Property",
+      "preferredName": "product conditions",
+      "description": "textual description of the product conditions"
+    },
+    {
+      "id": "urn:samm:io.catenax.return_request:2.0.0#marketplaceProduct",
+      "label": "marketplaceProduct",
+      "kind": "Property",
+      "preferredName": "marketplace product",
+      "description": "The description of the product within the marketplace that might differ from the digital twin."
+    },
+    {
+      "id": "urn:samm:io.catenax.return_request:2.0.0#quantity",
+      "label": "quantity",
+      "kind": "Property",
+      "preferredName": "quantity",
+      "description": "The desired quantity of the on the marketplace offered product in SKU."
+    },
+    {
+      "id": "urn:samm:io.catenax.return_request:2.0.0#validityPeriod",
+      "label": "validityPeriod",
+      "kind": "Property",
+      "preferredName": "validity period",
+      "description": "Specifies the time period when the need exists"
+    },
+    {
+      "id": "urn:samm:io.catenax.return_request:2.0.0#isRecall",
+      "label": "isRecall",
+      "kind": "Property",
+      "preferredName": "is recall",
+      "description": "Depicts if the manufacturer issued a recall (e.g. for security reasons). In conjunction with property needsReturn it can be expressed if the item has to be returned or can directly be destroyed."
+    },
+    {
+      "id": "urn:samm:io.catenax.return_request:2.0.0#identification",
+      "label": "identification",
+      "kind": "Property",
+      "preferredName": "identification",
+      "description": "The unique identifier of the product (via manufacturingPartID, OeNumber and/or serialNumber)\n"
+    },
+    {
+      "id": "urn:samm:io.catenax.return_request:2.0.0#deliveryAddress",
+      "label": "deliveryAddress",
+      "kind": "Property",
+      "preferredName": "delivery address",
+      "description": "The address that the product should be delivered to"
+    },
+    {
+      "id": "urn:samm:io.catenax.return_request:2.0.0#areaOfUsage",
+      "label": "areaOfUsage",
+      "kind": "Property",
+      "preferredName": "area of usage",
+      "description": "Information, in which countries/areas the component has been in use"
+    },
+    {
+      "id": "urn:samm:io.catenax.return_request:2.0.0#arrivalDateAtCustomer",
+      "label": "arrivalDateAtCustomer",
+      "kind": "Property",
+      "preferredName": "arrival date at customer",
+      "description": "Until when should the product arrive (if known)"
+    },
+    {
+      "id": "urn:samm:io.catenax.return_request:2.0.0#missingParts",
+      "label": "missingParts",
+      "kind": "Property",
+      "preferredName": "missing parts",
+      "description": "Completeness of the product, e.g. missing parts are not acceptable."
+    },
+    {
+      "id": "urn:samm:io.catenax.return_request:2.0.0#dismantled",
+      "label": "dismantled",
+      "kind": "Property",
+      "preferredName": "dismantled",
+      "description": "Information on whether the product has been dismantled."
+    },
+    {
+      "id": "urn:samm:io.catenax.return_request:2.0.0#mechanicalDamage",
+      "label": "mechanicalDamage",
+      "kind": "Property",
+      "preferredName": "mechanical damage",
+      "description": "Information on mechanical damage to the part, e.g. two broken ribs or part deformation indicate mechanical damage."
+    },
+    {
+      "id": "urn:samm:io.catenax.return_request:2.0.0#corroded",
+      "label": "corroded",
+      "kind": "Property",
+      "preferredName": "corroded",
+      "description": "Information on whether the product has corrosion."
+    },
+    {
+      "id": "urn:samm:io.catenax.return_request:2.0.0#discolored",
+      "label": "discolored",
+      "kind": "Property",
+      "preferredName": "discolored",
+      "description": "Information on whether the product has been discoloured."
+    },
+    {
+      "id": "urn:samm:io.catenax.return_request:2.0.0#mileage",
+      "label": "mileage",
+      "kind": "Property",
+      "preferredName": "mileage",
+      "description": "Current mileage of the component"
+    },
+    {
+      "id": "urn:samm:io.catenax.return_request:2.0.0#startDate",
+      "label": "startDate",
+      "kind": "Property",
+      "preferredName": "start date",
+      "description": "The first day of the period"
+    },
+    {
+      "id": "urn:samm:io.catenax.return_request:2.0.0#endDate",
+      "label": "endDate",
+      "kind": "Property",
+      "preferredName": "end date",
+      "description": "The last day of the period."
+    },
+    {
+      "id": "urn:samm:io.catenax.return_request:2.0.0#DateTimestamp",
+      "label": "DateTimestamp",
+      "kind": "Characteristic",
+      "preferredName": "date timestamp",
+      "description": "Timestamp for dates"
+    },
+    {
+      "id": "urn:samm:io.catenax.return_request:2.0.0#ProductConditionsCharacteristic",
+      "label": "ProductConditionsCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "product conditions characteristic",
+      "description": "Criteria describing the state of a product on the marketplace."
+    },
+    {
+      "id": "urn:samm:io.catenax.return_request:2.0.0#IdentificationCharacteristic",
+      "label": "IdentificationCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "identification characteristic",
+      "description": "The unique identifier of the product (via manufacturingPartID, OeNumber and/or serialNumber)\n"
+    },
+    {
+      "id": "urn:samm:io.catenax.return_request:2.0.0#TimePeriod",
+      "label": "TimePeriod",
+      "kind": "Characteristic",
+      "preferredName": "time period",
+      "description": "Depicts a time period by specifying start and end date"
+    },
+    {
+      "id": "urn:samm:io.catenax.return_request:2.0.0#ProductConditionsEntity",
+      "label": "ProductConditionsEntity",
+      "kind": "Entity",
+      "preferredName": "product conditions entity",
+      "description": "Entity encapsulating the conditions the product is in."
+    },
+    {
+      "id": "urn:samm:io.catenax.return_request:2.0.0#TimePeriodEntity",
+      "label": "TimePeriodEntity",
+      "kind": "Entity",
+      "preferredName": "time period",
+      "description": "Entity defining a range of dates to define a time period."
+    },
+    {
+      "id": "urn:samm:io.catenax.return_request:2.0.0#IdentificationEntity",
+      "label": "IdentificationEntity",
+      "kind": "Entity",
+      "preferredName": "identification entity",
+      "description": "Entity encapsulating different unique identifier of the product (manufacturingPartID, OeNumber and/or serialNumber)"
+    },
+    {
+      "id": "urn:samm:io.catenax.return_request:2.0.0#NumericValueofMileage",
+      "label": "NumericValueofMileage",
+      "kind": "Characteristic",
+      "preferredName": "value of mileage",
+      "description": "Represents the value of mileage."
+    }
+  ],
+  "links": [
+    {
+      "source": "urn:samm:io.catenax.return_request:2.0.0#ReturnRequest",
+      "target": "urn:samm:io.catenax.return_request:2.0.0#needsReturn",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.return_request:2.0.0#ReturnRequest",
+      "target": "urn:samm:io.catenax.return_request:2.0.0#returnConditions",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.return_request:2.0.0#ReturnRequest",
+      "target": "urn:samm:io.catenax.return_request:2.0.0#requestDate",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.return_request:2.0.0#ReturnRequest",
+      "target": "urn:samm:io.catenax.return_request:2.0.0#latestReturnDate",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.return_request:2.0.0#ReturnRequest",
+      "target": "urn:samm:io.catenax.return_request:2.0.0#productConditions",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.return_request:2.0.0#ReturnRequest",
+      "target": "urn:samm:io.catenax.return_request:2.0.0#marketplaceProduct",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.return_request:2.0.0#ReturnRequest",
+      "target": "urn:samm:io.catenax.return_request:2.0.0#quantity",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.return_request:2.0.0#ReturnRequest",
+      "target": "urn:samm:io.catenax.return_request:2.0.0#validityPeriod",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.return_request:2.0.0#ReturnRequest",
+      "target": "urn:samm:io.catenax.return_request:2.0.0#isRecall",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.return_request:2.0.0#ReturnRequest",
+      "target": "urn:samm:io.catenax.return_request:2.0.0#identification",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.return_request:2.0.0#ReturnRequest",
+      "target": "urn:samm:io.catenax.return_request:2.0.0#deliveryAddress",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.return_request:2.0.0#ReturnRequest",
+      "target": "urn:samm:io.catenax.return_request:2.0.0#areaOfUsage",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.return_request:2.0.0#ReturnRequest",
+      "target": "urn:samm:io.catenax.return_request:2.0.0#arrivalDateAtCustomer",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.return_request:2.0.0#ProductConditionsEntity",
+      "target": "urn:samm:io.catenax.return_request:2.0.0#missingParts",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.return_request:2.0.0#ProductConditionsEntity",
+      "target": "urn:samm:io.catenax.return_request:2.0.0#dismantled",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.return_request:2.0.0#ProductConditionsEntity",
+      "target": "urn:samm:io.catenax.return_request:2.0.0#mechanicalDamage",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.return_request:2.0.0#ProductConditionsEntity",
+      "target": "urn:samm:io.catenax.return_request:2.0.0#corroded",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.return_request:2.0.0#ProductConditionsEntity",
+      "target": "urn:samm:io.catenax.return_request:2.0.0#discolored",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.return_request:2.0.0#ProductConditionsEntity",
+      "target": "urn:samm:io.catenax.return_request:2.0.0#mileage",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.return_request:2.0.0#TimePeriodEntity",
+      "target": "urn:samm:io.catenax.return_request:2.0.0#startDate",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.return_request:2.0.0#TimePeriodEntity",
+      "target": "urn:samm:io.catenax.return_request:2.0.0#endDate",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.return_request:2.0.0#requestDate",
+      "target": "urn:samm:io.catenax.return_request:2.0.0#DateTimestamp",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.return_request:2.0.0#latestReturnDate",
+      "target": "urn:samm:io.catenax.return_request:2.0.0#DateTimestamp",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.return_request:2.0.0#arrivalDateAtCustomer",
+      "target": "urn:samm:io.catenax.return_request:2.0.0#DateTimestamp",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.return_request:2.0.0#startDate",
+      "target": "urn:samm:io.catenax.return_request:2.0.0#DateTimestamp",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.return_request:2.0.0#endDate",
+      "target": "urn:samm:io.catenax.return_request:2.0.0#DateTimestamp",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.return_request:2.0.0#productConditions",
+      "target": "urn:samm:io.catenax.return_request:2.0.0#ProductConditionsCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.return_request:2.0.0#validityPeriod",
+      "target": "urn:samm:io.catenax.return_request:2.0.0#TimePeriod",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.return_request:2.0.0#identification",
+      "target": "urn:samm:io.catenax.return_request:2.0.0#IdentificationCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.return_request:2.0.0#mileage",
+      "target": "urn:samm:io.catenax.return_request:2.0.0#NumericValueofMileage",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.return_request:2.0.0#ProductConditionsCharacteristic",
+      "target": "urn:samm:io.catenax.return_request:2.0.0#ProductConditionsEntity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.return_request:2.0.0#TimePeriod",
+      "target": "urn:samm:io.catenax.return_request:2.0.0#TimePeriodEntity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.return_request:2.0.0#IdentificationCharacteristic",
+      "target": "urn:samm:io.catenax.return_request:2.0.0#IdentificationEntity",
+      "label": "dataType",
+      "optional": false
+    }
+  ]
+}

@@ -1,0 +1,104 @@
+{
+  "meta": {
+    "namespace": "urn:samm:io.catenax.single_level_bom_as_built:4.0.0#",
+    "meta_model": "SAMM 2.1.0",
+    "model_family": "SAMM",
+    "model_name": "single_level_bom_as_built",
+    "model_version": "4.0.0",
+    "source": "catenax",
+    "status": "release",
+    "release_date": null,
+    "release_notes": "# Changelog\n\nAll notable changes to this model will be documented in this file.\n\n## [4.0.0] 25.12\n\n### Changed\n\n- introduced `io.catenax.shared.industry_core.common:1.0.0` and `io.catenax.shared.quantity:3.0.0` as a shared model\n- renamed `catenaXId` to `globalAssetId`\n\n## [3.0.0] 2024-02-26\n\n### Changed\n\n- replaced the `quantityNumber` and `measurementUnit` properties with the `itemUnit` and `quantityValue` properties of the shared quantity 2.0.0 aspect model\n- replaced the whole `CatenaXIdTraitCharacteristic` and its childs with the `UuidV4Trait` of the shared uuid 2.0.0 aspect model\n- replaced the whole `BpnTrait` and its childs with the `BpnlTrait` of the shared business_partner_number 2.0.0 aspect model\n- description of some objects were adjusted\n\n## [2.0.0] 25.09.2023\n\n### Added\n\n- property called hasAlternative\n- Boolean characteristic\n\n### Changed\n\n- Description of the main property 'SingleLevelBomAsBuil' was adapted to the new requirements of the model\n\n## [1.0.0]\n\n### Added\n\n- renamed model from `io.catenax.assembly_part_relationship:1.1.1#AssemblyPartRelationship`\n- optional business partner reference (BPNL) for each child item\n\n### Changed\n\n- changed several descriptions due to aspect renaming\n- changed `childCatenaXId` to `catenaXId`\n- changed `childParts` to `childItems`\n- changed several descriptions to use `item` instead of `part` where applicable\n- fixed camelCase for `NumberOfObjects` characteristic\n\n### Removed\n\n- removed lifecycle context property from child item",
+    "dependencies": [
+      {
+        "name": "shared.industry_core.common",
+        "version": "1.0.0",
+        "family": "SAMM",
+        "source": "catenax"
+      },
+      {
+        "name": "shared.quantity",
+        "version": "3.0.0",
+        "family": "SAMM",
+        "source": "catenax"
+      }
+    ],
+    "path": "data/sldt-semantic-models/io.catenax.single_level_bom_as_built/4.0.0/SingleLevelBomAsBuilt.ttl"
+  },
+  "nodes": [
+    {
+      "id": "urn:samm:io.catenax.single_level_bom_as_built:4.0.0#SingleLevelBomAsBuilt",
+      "label": "SingleLevelBomAsBuilt",
+      "kind": "Aspect",
+      "preferredName": "single level bill of material as built",
+      "description": "The single-level bill of material represents one sub-level of an assembly and does not include any lower-level subassemblies. The as-built lifecycle references all child items as manufactured by the manufacturer referencing only child items in an as-built lifecycle themselves (e.g. serial parts or batches), unless parts can only be tracked by an part ID (on a type level).\n\nIf it is unclear which item has been built-in into the parent item, all potential parts must be listed. This is the case when, e.g. the same item is supplied by two suppliers and the item is only tracked by a customer part ID during assembly, these items can not be differentiated from each other.\n"
+    },
+    {
+      "id": "urn:samm:io.catenax.single_level_bom_as_built:4.0.0#childItems",
+      "label": "childItems",
+      "kind": "Property",
+      "preferredName": "child items",
+      "description": "Set of child items, of which the given parent item was assembled by (one structural level down)."
+    },
+    {
+      "id": "urn:samm:io.catenax.single_level_bom_as_built:4.0.0#quantity",
+      "label": "quantity",
+      "kind": "Property",
+      "preferredName": "quantity",
+      "description": "Quantity of which the child item is assembled into the parent item. In general it is '1' for serialized parts."
+    },
+    {
+      "id": "urn:samm:io.catenax.single_level_bom_as_built:4.0.0#hasAlternatives",
+      "label": "hasAlternatives",
+      "kind": "Property",
+      "preferredName": "has alternatives",
+      "description": "Expresses whether the part is built-in or wether it is one of several options. If the value is false, it can be assumed this exact item is built-in. If the value is true, it is unknown wether this or an alternative item is built-in.\nThis is the case when, e.g. the same item is supplied by two suppliers, the item is only tracked by a customer part ID during assembly. Thus, these items can not be differentiated from each other.\n\n"
+    },
+    {
+      "id": "urn:samm:io.catenax.single_level_bom_as_built:4.0.0#SetOfChildItemsCharacteristic",
+      "label": "SetOfChildItemsCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "set of child items",
+      "description": "Set of child items the parent item was assembled by (one structural level down)."
+    },
+    {
+      "id": "urn:samm:io.catenax.single_level_bom_as_built:4.0.0#ChildData",
+      "label": "ChildData",
+      "kind": "Entity",
+      "preferredName": "child data",
+      "description": "Catena-X ID and meta data of the assembled child item."
+    }
+  ],
+  "links": [
+    {
+      "source": "urn:samm:io.catenax.single_level_bom_as_built:4.0.0#SingleLevelBomAsBuilt",
+      "target": "urn:samm:io.catenax.single_level_bom_as_built:4.0.0#childItems",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.single_level_bom_as_built:4.0.0#ChildData",
+      "target": "urn:samm:io.catenax.single_level_bom_as_built:4.0.0#quantity",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.single_level_bom_as_built:4.0.0#ChildData",
+      "target": "urn:samm:io.catenax.single_level_bom_as_built:4.0.0#hasAlternatives",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.single_level_bom_as_built:4.0.0#childItems",
+      "target": "urn:samm:io.catenax.single_level_bom_as_built:4.0.0#SetOfChildItemsCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.single_level_bom_as_built:4.0.0#SetOfChildItemsCharacteristic",
+      "target": "urn:samm:io.catenax.single_level_bom_as_built:4.0.0#ChildData",
+      "label": "dataType",
+      "optional": false
+    }
+  ]
+}

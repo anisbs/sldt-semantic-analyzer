@@ -1,0 +1,605 @@
+{
+  "meta": {
+    "namespace": "urn:bamm:io.catenax.week_based_capacity_group:1.0.1#",
+    "meta_model": "BAMM 2.0.0",
+    "model_family": "BAMM",
+    "model_name": "week_based_capacity_group",
+    "model_version": "1.0.1",
+    "source": "catenax",
+    "status": "deprecated",
+    "release_date": "2023-05-10",
+    "release_notes": "# Changelog\n\nAll notable changes to this model will be documented in this file.\n\n## [3.0.1] - 2024-10-14\n\n### Changed\n\n- updated descriptions and constraint inconsistencies fixed (no semantic conflicts)\n\n## [3.0.0] - 2024-03-11\n\n### Added\n\n- added `capacityGroupIsInactive` as mandatory flag in aspect model header\n- added `demandVolatilityParameters` as optional entity in aspect model header\n- added `agreedCapacity` as optional property in capacities set\n\n### Changed\n\n- migrated from SAMM version `2.0.0` to `2.1.0`\n- updated external references of `urn:samm:io.catenax.shared.business_partner_number`, `urn:samm:io.catenax.shared.quantity` and `urn:samm:io.catenax.shared.uuid` to version `2.0.0`\n\n## [2.0.0] - 2023-11-07\n\n### Added\n\n- `linkedCapacityGroups` added as optional property in aspect model header\n- added `loadFactor` as optional property in LinkedDemandSeries entity\n- added `unit:secondUnitOfTime`, `unit:minuteUnitOfTime`, `unit:hourUnitOfTime` and `unit:cycle` to list of unit of measure for load information\n- added `deltaProductionResult` as optional property in Capacity entity\n- added `unitOfMeasureIsOmitted` as mandatory property in aspect model header\n\n### Changed\n\n- made `linkedDemandSeries` property optional\n- made `capacities` property optional\n- `unitOfMeasure` uses value list of shared aspect Quantity now. Units are now represented as reference units instead of common codes\n- changed property name of `calendarWeeks` to `pointInTime`\n- migrated from BAMM to SAMM namespace\n\n### Removed\n\n- removed `blank` value in list of `unitOfMeasure`. `unitOfMeasureIsOmitted` flag taking over the function of the `blank` value\n\n## [1.0.1] - 2023-05-10\n\n### Changed\n\n- Changed description for property `changedAt`\n\n## [1.0.0]\n\n- initial version of the aspect model for week-based capacity groups",
+    "dependencies": [],
+    "path": "data/sldt-semantic-models/io.catenax.week_based_capacity_group/1.0.1/WeekBasedCapacityGroup.ttl"
+  },
+  "nodes": [
+    {
+      "id": "urn:bamm:io.catenax.week_based_capacity_group:1.0.1#WeekBasedCapacityGroup",
+      "label": "WeekBasedCapacityGroup",
+      "kind": "Aspect",
+      "preferredName": "Week-Based Capacity Group",
+      "description": "An entity made up of the weekly actual and maximum capacities for a specific customer in a given time period. A capacity group is used to compare demand and capacity data for one or several similar bundled materials in a defined unit of measure."
+    },
+    {
+      "id": "urn:bamm:io.catenax.week_based_capacity_group:1.0.1#capacityGroupId",
+      "label": "capacityGroupId",
+      "kind": "Property",
+      "preferredName": "Capacity Group ID",
+      "description": "The Capacity Group ID uniquely identifies the capacity group within the business relationship between a supplier and its customer."
+    },
+    {
+      "id": "urn:bamm:io.catenax.week_based_capacity_group:1.0.1#name",
+      "label": "name",
+      "kind": "Property",
+      "preferredName": "Capacity Group Name",
+      "description": "Name of the capacity group."
+    },
+    {
+      "id": "urn:bamm:io.catenax.week_based_capacity_group:1.0.1#supplierLocations",
+      "label": "supplierLocations",
+      "kind": "Property",
+      "preferredName": "Supplier Locations",
+      "description": "Set of BPNS indicating the supplier sites that will be fulfilling the demands associated with this capacity group."
+    },
+    {
+      "id": "urn:bamm:io.catenax.week_based_capacity_group:1.0.1#customer",
+      "label": "customer",
+      "kind": "Property",
+      "preferredName": "Customer",
+      "description": "The Business Partner Number (BPNL) of the party requesting materials from a supplier."
+    },
+    {
+      "id": "urn:bamm:io.catenax.week_based_capacity_group:1.0.1#supplier",
+      "label": "supplier",
+      "kind": "Property",
+      "preferredName": "Supplier",
+      "description": "The Business Partner Number (BPNL) of the party providing materials to a customer."
+    },
+    {
+      "id": "urn:bamm:io.catenax.week_based_capacity_group:1.0.1#unitOfMeasure",
+      "label": "unitOfMeasure",
+      "kind": "Property",
+      "preferredName": "Unit of Measure",
+      "description": "Unit of measurement for capacity quantities."
+    },
+    {
+      "id": "urn:bamm:io.catenax.week_based_capacity_group:1.0.1#linkedDemandSeries",
+      "label": "linkedDemandSeries",
+      "kind": "Property",
+      "preferredName": "Linked Demand Series",
+      "description": "Set of demand series assigned to this capacity group."
+    },
+    {
+      "id": "urn:bamm:io.catenax.week_based_capacity_group:1.0.1#capacities",
+      "label": "capacities",
+      "kind": "Property",
+      "preferredName": "Capacities",
+      "description": "A time series with week-based granularity along a given time period containing the capacity values."
+    },
+    {
+      "id": "urn:bamm:io.catenax.week_based_capacity_group:1.0.1#changedAt",
+      "label": "changedAt",
+      "kind": "Property",
+      "preferredName": "Changed At",
+      "description": "Point in time when the content (any property according to the data model) of the capacity group was changed, at the supplier, either by a human user or an automated process."
+    },
+    {
+      "id": "urn:bamm:io.catenax.week_based_capacity_group:1.0.1#materialNumberCustomer",
+      "label": "materialNumberCustomer",
+      "kind": "Property",
+      "preferredName": "Customer Material Number",
+      "description": "Material identifier as assigned by customer. This material number identifies the material (as planned) in the customer's database."
+    },
+    {
+      "id": "urn:bamm:io.catenax.week_based_capacity_group:1.0.1#materialNumberSupplier",
+      "label": "materialNumberSupplier",
+      "kind": "Property",
+      "preferredName": "Supplier Material Number",
+      "description": "Material identifier as assigned by supplier. This material number identifies the material (as planned) in the supplier's database. Used as informational field only, not for assigning demand series to capacity groups."
+    },
+    {
+      "id": "urn:bamm:io.catenax.week_based_capacity_group:1.0.1#customerLocation",
+      "label": "customerLocation",
+      "kind": "Property",
+      "preferredName": "Customer Location",
+      "description": "The BPNS number of the site at which the customer needs the specified material for the referenced demand series."
+    },
+    {
+      "id": "urn:bamm:io.catenax.week_based_capacity_group:1.0.1#demandCategory",
+      "label": "demandCategory",
+      "kind": "Property",
+      "preferredName": "Demand Category",
+      "description": "Type of demand of the referenced demand series."
+    },
+    {
+      "id": "urn:bamm:io.catenax.week_based_capacity_group:1.0.1#calendarWeek",
+      "label": "calendarWeek",
+      "kind": "Property",
+      "preferredName": "Calendar Week",
+      "description": "ISO Calendar Week of the given time series entry. Must be given as date of the Monday in the week."
+    },
+    {
+      "id": "urn:bamm:io.catenax.week_based_capacity_group:1.0.1#actualCapacity",
+      "label": "actualCapacity",
+      "kind": "Property",
+      "preferredName": "Actual Capacity",
+      "description": "The actual capacity is the realistically planned output per calendar week and material for a specific customer in a specific unit of measure, considering all positive or negative impacts on this capacity."
+    },
+    {
+      "id": "urn:bamm:io.catenax.week_based_capacity_group:1.0.1#maximumCapacity",
+      "label": "maximumCapacity",
+      "kind": "Property",
+      "preferredName": "Maximum Capacity",
+      "description": "The supplier maximum capacity is the maximal available output per calendar week and material for a specific customer in a specific unit of measure. The maximum capacity thereby restricts the flexible capacity, as the flexible capacity is obtained from the difference of a suppliers maximum capacity minus actual capacity."
+    },
+    {
+      "id": "urn:bamm:io.catenax.week_based_capacity_group:1.0.1#demandCategoryCode",
+      "label": "demandCategoryCode",
+      "kind": "Property",
+      "preferredName": "Demand Category Code",
+      "description": "The code identifying a demand category."
+    },
+    {
+      "id": "urn:bamm:io.catenax.week_based_capacity_group:1.0.1#demandCategoryName",
+      "label": "demandCategoryName",
+      "kind": "Property",
+      "preferredName": "Demand Category Name",
+      "description": "The name describing a demand category."
+    },
+    {
+      "id": "urn:bamm:io.catenax.week_based_capacity_group:1.0.1#UUIDv4",
+      "label": "UUIDv4",
+      "kind": "Characteristic",
+      "preferredName": "UUIDv4",
+      "description": "A version 4 UUID is a universally unique identifier that is generated using random 32 hexadecimal characters."
+    },
+    {
+      "id": "urn:bamm:io.catenax.week_based_capacity_group:1.0.1#CapacityGroupName",
+      "label": "CapacityGroupName",
+      "kind": "Characteristic",
+      "preferredName": "Capacity Group Name",
+      "description": "The name of a capacity group, used to distinguish it from other capacity groups."
+    },
+    {
+      "id": "urn:bamm:io.catenax.week_based_capacity_group:1.0.1#BPNL",
+      "label": "BPNL",
+      "kind": "Characteristic",
+      "preferredName": "Business Partner Number Legal Entity",
+      "description": "BPNL represents the legal entity of an organization participating in Catena-X."
+    },
+    {
+      "id": "urn:bamm:io.catenax.week_based_capacity_group:1.0.1#Timestamp",
+      "label": "Timestamp",
+      "kind": "Characteristic",
+      "preferredName": "Timestamp",
+      "description": "Point in time."
+    },
+    {
+      "id": "urn:bamm:io.catenax.week_based_capacity_group:1.0.1#MaterialNumber",
+      "label": "MaterialNumber",
+      "kind": "Characteristic",
+      "preferredName": "Material Number",
+      "description": "The material number is a multi-character string, usually assigned by an ERP system."
+    },
+    {
+      "id": "urn:bamm:io.catenax.week_based_capacity_group:1.0.1#BPNS",
+      "label": "BPNS",
+      "kind": "Characteristic",
+      "preferredName": "Business Partner Number Site",
+      "description": "BPNS represents a site which can be a production plant inside one location."
+    },
+    {
+      "id": "urn:bamm:io.catenax.week_based_capacity_group:1.0.1#CalendarWeek",
+      "label": "CalendarWeek",
+      "kind": "Characteristic",
+      "preferredName": "Calendar Week",
+      "description": "An ISO calendar week in which a given capacity will be provided. Must be given as date of the Monday in the week."
+    },
+    {
+      "id": "urn:bamm:io.catenax.week_based_capacity_group:1.0.1#Quantity",
+      "label": "Quantity",
+      "kind": "Characteristic",
+      "preferredName": "Quantity",
+      "description": "Quantity of weekly actual or maximum capacity."
+    },
+    {
+      "id": "urn:bamm:io.catenax.week_based_capacity_group:1.0.1#BPNSSet",
+      "label": "BPNSSet",
+      "kind": "Characteristic",
+      "preferredName": "Business Partner Number Site Set",
+      "description": "Contains a set of BPNS. Each BPNS represents a site which can be a production plant inside one location."
+    },
+    {
+      "id": "urn:bamm:io.catenax.week_based_capacity_group:1.0.1#LinkedDemandSeriesSet",
+      "label": "LinkedDemandSeriesSet",
+      "kind": "Characteristic",
+      "preferredName": "Linked Demand Series Set",
+      "description": "A set of demand series assigned to a certain capacity group."
+    },
+    {
+      "id": "urn:bamm:io.catenax.week_based_capacity_group:1.0.1#UnitOfMeasure",
+      "label": "UnitOfMeasure",
+      "kind": "Characteristic",
+      "preferredName": "Unit of Measure",
+      "description": "The Enumeration lists a selection of allowed units of measure referenced by their official code according to Codes for Units of Measure Used in International Trade"
+    },
+    {
+      "id": "urn:bamm:io.catenax.week_based_capacity_group:1.0.1#DemandCategory",
+      "label": "DemandCategory",
+      "kind": "Characteristic",
+      "preferredName": "Demand Category",
+      "description": "The classification of demands used to prioritize or allocate capacities."
+    },
+    {
+      "id": "urn:bamm:io.catenax.week_based_capacity_group:1.0.1#CapacityTimeSeries",
+      "label": "CapacityTimeSeries",
+      "kind": "Characteristic",
+      "preferredName": "Capacity Time Series",
+      "description": "The weekly actual and maximum capacities in a given time period."
+    },
+    {
+      "id": "urn:bamm:io.catenax.week_based_capacity_group:1.0.1#LinkedDemandSeries",
+      "label": "LinkedDemandSeries",
+      "kind": "Entity",
+      "preferredName": "Linked Demand Series",
+      "description": "Encapsulates information used to reference a specific demand series."
+    },
+    {
+      "id": "urn:bamm:io.catenax.week_based_capacity_group:1.0.1#Capacity",
+      "label": "Capacity",
+      "kind": "Entity",
+      "preferredName": "Capacity",
+      "description": "A supplier's realistically planned output per calendar week and material for a specific customer in a specific unit of measure, considering all positive or negative impacts on this capacity."
+    },
+    {
+      "id": "urn:bamm:io.catenax.week_based_capacity_group:1.0.1#DemandCategoryType",
+      "label": "DemandCategoryType",
+      "kind": "Entity",
+      "preferredName": "Demand Category Type",
+      "description": "Describes the type of a demand category."
+    },
+    {
+      "id": "urn:bamm:io.catenax.week_based_capacity_group:1.0.1#DemandCategoryCode",
+      "label": "DemandCategoryCode",
+      "kind": "Characteristic",
+      "preferredName": "Demand Category Code",
+      "description": "The code identifying a demand category."
+    },
+    {
+      "id": "urn:bamm:io.catenax.week_based_capacity_group:1.0.1#QuantityRange",
+      "label": "QuantityRange",
+      "kind": "Characteristic",
+      "preferredName": "Quantity Range",
+      "description": "Constraint to ensure a non-negative value for quantities."
+    },
+    {
+      "id": "urn:bamm:io.catenax.week_based_capacity_group:1.0.1#BPNSTrait",
+      "label": "BPNSTrait",
+      "kind": "Characteristic",
+      "preferredName": "BPNS Trait",
+      "description": "Trait to ensure data format for BPNS."
+    },
+    {
+      "id": "urn:bamm:io.catenax.week_based_capacity_group:1.0.1#UUIDv4IdTrait",
+      "label": "UUIDv4IdTrait",
+      "kind": "Characteristic",
+      "preferredName": "UUIDv4 Trait",
+      "description": "Trait to ensure data format for UUIDv4."
+    },
+    {
+      "id": "urn:bamm:io.catenax.week_based_capacity_group:1.0.1#BPNLTrait",
+      "label": "BPNLTrait",
+      "kind": "Characteristic",
+      "preferredName": "BPNL Trait",
+      "description": "Trait to ensure data format for BPNL."
+    },
+    {
+      "id": "urn:bamm:io.catenax.week_based_capacity_group:1.0.1#BPNSSetTrait",
+      "label": "BPNSSetTrait",
+      "kind": "Characteristic",
+      "preferredName": "BPNS Set Trait",
+      "description": "Trait to ensure data format for BPNS set."
+    },
+    {
+      "id": "urn:bamm:io.catenax.week_based_capacity_group:1.0.1#QuantityTrait",
+      "label": "QuantityTrait",
+      "kind": "Characteristic",
+      "preferredName": null,
+      "description": null
+    },
+    {
+      "id": "urn:bamm:io.catenax.week_based_capacity_group:1.0.1#BPNSRegularExpression",
+      "label": "BPNSRegularExpression",
+      "kind": "Characteristic",
+      "preferredName": "BPNS Regular Expression",
+      "description": "The provided regular expression ensures that the BPNS is composed of prefix 'BPNS', 10 digits and two uppercase letters."
+    },
+    {
+      "id": "urn:bamm:io.catenax.week_based_capacity_group:1.0.1#UUIDv4RegularExpression",
+      "label": "UUIDv4RegularExpression",
+      "kind": "Characteristic",
+      "preferredName": "UUIDv4 Regular Expression",
+      "description": "The provided regular expression ensures that the UUID is composed of five groups of characters separated by hyphens, in the form 8-4-4-4-12 for a total of 36 characters (32 hexadecimal characters and 4 hyphens)."
+    },
+    {
+      "id": "urn:bamm:io.catenax.week_based_capacity_group:1.0.1#BPNLRegularExpression",
+      "label": "BPNLRegularExpression",
+      "kind": "Characteristic",
+      "preferredName": "BPNL Regular Expression",
+      "description": "The provided regular expression ensures that the BPNL is composed of prefix 'BPNL', 10 digits and two uppercase letters."
+    },
+    {
+      "id": "urn:bamm:io.catenax.week_based_capacity_group:1.0.1#QuantityFixedPoint",
+      "label": "QuantityFixedPoint",
+      "kind": "Characteristic",
+      "preferredName": "Quantity Fixed Point",
+      "description": "Constraint to ensure size of quantities: 12 digits plus 3 decimal places."
+    }
+  ],
+  "links": [
+    {
+      "source": "urn:bamm:io.catenax.week_based_capacity_group:1.0.1#WeekBasedCapacityGroup",
+      "target": "urn:bamm:io.catenax.week_based_capacity_group:1.0.1#capacityGroupId",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.week_based_capacity_group:1.0.1#WeekBasedCapacityGroup",
+      "target": "urn:bamm:io.catenax.week_based_capacity_group:1.0.1#name",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.week_based_capacity_group:1.0.1#WeekBasedCapacityGroup",
+      "target": "urn:bamm:io.catenax.week_based_capacity_group:1.0.1#supplierLocations",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:bamm:io.catenax.week_based_capacity_group:1.0.1#WeekBasedCapacityGroup",
+      "target": "urn:bamm:io.catenax.week_based_capacity_group:1.0.1#customer",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.week_based_capacity_group:1.0.1#WeekBasedCapacityGroup",
+      "target": "urn:bamm:io.catenax.week_based_capacity_group:1.0.1#supplier",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.week_based_capacity_group:1.0.1#WeekBasedCapacityGroup",
+      "target": "urn:bamm:io.catenax.week_based_capacity_group:1.0.1#unitOfMeasure",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.week_based_capacity_group:1.0.1#WeekBasedCapacityGroup",
+      "target": "urn:bamm:io.catenax.week_based_capacity_group:1.0.1#linkedDemandSeries",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.week_based_capacity_group:1.0.1#WeekBasedCapacityGroup",
+      "target": "urn:bamm:io.catenax.week_based_capacity_group:1.0.1#capacities",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.week_based_capacity_group:1.0.1#WeekBasedCapacityGroup",
+      "target": "urn:bamm:io.catenax.week_based_capacity_group:1.0.1#changedAt",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.week_based_capacity_group:1.0.1#LinkedDemandSeries",
+      "target": "urn:bamm:io.catenax.week_based_capacity_group:1.0.1#materialNumberCustomer",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.week_based_capacity_group:1.0.1#LinkedDemandSeries",
+      "target": "urn:bamm:io.catenax.week_based_capacity_group:1.0.1#materialNumberSupplier",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:bamm:io.catenax.week_based_capacity_group:1.0.1#LinkedDemandSeries",
+      "target": "urn:bamm:io.catenax.week_based_capacity_group:1.0.1#customerLocation",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.week_based_capacity_group:1.0.1#LinkedDemandSeries",
+      "target": "urn:bamm:io.catenax.week_based_capacity_group:1.0.1#demandCategory",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.week_based_capacity_group:1.0.1#Capacity",
+      "target": "urn:bamm:io.catenax.week_based_capacity_group:1.0.1#calendarWeek",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.week_based_capacity_group:1.0.1#Capacity",
+      "target": "urn:bamm:io.catenax.week_based_capacity_group:1.0.1#actualCapacity",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.week_based_capacity_group:1.0.1#Capacity",
+      "target": "urn:bamm:io.catenax.week_based_capacity_group:1.0.1#maximumCapacity",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.week_based_capacity_group:1.0.1#DemandCategoryType",
+      "target": "urn:bamm:io.catenax.week_based_capacity_group:1.0.1#demandCategoryCode",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.week_based_capacity_group:1.0.1#DemandCategoryType",
+      "target": "urn:bamm:io.catenax.week_based_capacity_group:1.0.1#demandCategoryName",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.week_based_capacity_group:1.0.1#capacityGroupId",
+      "target": "urn:bamm:io.catenax.week_based_capacity_group:1.0.1#UUIDv4IdTrait",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.week_based_capacity_group:1.0.1#name",
+      "target": "urn:bamm:io.catenax.week_based_capacity_group:1.0.1#CapacityGroupName",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.week_based_capacity_group:1.0.1#supplierLocations",
+      "target": "urn:bamm:io.catenax.week_based_capacity_group:1.0.1#BPNSSetTrait",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.week_based_capacity_group:1.0.1#customer",
+      "target": "urn:bamm:io.catenax.week_based_capacity_group:1.0.1#BPNLTrait",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.week_based_capacity_group:1.0.1#supplier",
+      "target": "urn:bamm:io.catenax.week_based_capacity_group:1.0.1#BPNLTrait",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.week_based_capacity_group:1.0.1#unitOfMeasure",
+      "target": "urn:bamm:io.catenax.week_based_capacity_group:1.0.1#UnitOfMeasure",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.week_based_capacity_group:1.0.1#linkedDemandSeries",
+      "target": "urn:bamm:io.catenax.week_based_capacity_group:1.0.1#LinkedDemandSeriesSet",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.week_based_capacity_group:1.0.1#capacities",
+      "target": "urn:bamm:io.catenax.week_based_capacity_group:1.0.1#CapacityTimeSeries",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.week_based_capacity_group:1.0.1#changedAt",
+      "target": "urn:bamm:io.catenax.week_based_capacity_group:1.0.1#Timestamp",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.week_based_capacity_group:1.0.1#materialNumberCustomer",
+      "target": "urn:bamm:io.catenax.week_based_capacity_group:1.0.1#MaterialNumber",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.week_based_capacity_group:1.0.1#materialNumberSupplier",
+      "target": "urn:bamm:io.catenax.week_based_capacity_group:1.0.1#MaterialNumber",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.week_based_capacity_group:1.0.1#customerLocation",
+      "target": "urn:bamm:io.catenax.week_based_capacity_group:1.0.1#BPNSTrait",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.week_based_capacity_group:1.0.1#demandCategory",
+      "target": "urn:bamm:io.catenax.week_based_capacity_group:1.0.1#DemandCategory",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.week_based_capacity_group:1.0.1#calendarWeek",
+      "target": "urn:bamm:io.catenax.week_based_capacity_group:1.0.1#CalendarWeek",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.week_based_capacity_group:1.0.1#actualCapacity",
+      "target": "urn:bamm:io.catenax.week_based_capacity_group:1.0.1#QuantityTrait",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.week_based_capacity_group:1.0.1#maximumCapacity",
+      "target": "urn:bamm:io.catenax.week_based_capacity_group:1.0.1#QuantityTrait",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.week_based_capacity_group:1.0.1#demandCategoryCode",
+      "target": "urn:bamm:io.catenax.week_based_capacity_group:1.0.1#DemandCategoryCode",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.week_based_capacity_group:1.0.1#LinkedDemandSeriesSet",
+      "target": "urn:bamm:io.catenax.week_based_capacity_group:1.0.1#LinkedDemandSeries",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.week_based_capacity_group:1.0.1#CapacityTimeSeries",
+      "target": "urn:bamm:io.catenax.week_based_capacity_group:1.0.1#Capacity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.week_based_capacity_group:1.0.1#DemandCategory",
+      "target": "urn:bamm:io.catenax.week_based_capacity_group:1.0.1#DemandCategoryType",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.week_based_capacity_group:1.0.1#BPNSTrait",
+      "target": "urn:bamm:io.catenax.week_based_capacity_group:1.0.1#BPNSRegularExpression",
+      "label": "constraint",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.week_based_capacity_group:1.0.1#BPNSSetTrait",
+      "target": "urn:bamm:io.catenax.week_based_capacity_group:1.0.1#BPNSRegularExpression",
+      "label": "constraint",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.week_based_capacity_group:1.0.1#UUIDv4IdTrait",
+      "target": "urn:bamm:io.catenax.week_based_capacity_group:1.0.1#UUIDv4RegularExpression",
+      "label": "constraint",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.week_based_capacity_group:1.0.1#BPNLTrait",
+      "target": "urn:bamm:io.catenax.week_based_capacity_group:1.0.1#BPNLRegularExpression",
+      "label": "constraint",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.week_based_capacity_group:1.0.1#QuantityTrait",
+      "target": "urn:bamm:io.catenax.week_based_capacity_group:1.0.1#QuantityRange",
+      "label": "constraint",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.week_based_capacity_group:1.0.1#QuantityTrait",
+      "target": "urn:bamm:io.catenax.week_based_capacity_group:1.0.1#QuantityFixedPoint",
+      "label": "constraint",
+      "optional": false
+    }
+  ]
+}

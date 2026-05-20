@@ -3,12 +3,14 @@
     "name": "asset_tracker_links",
     "version": "1.0.0",
     "family": "BAMM",
+    "source": "catenax",
     "deps": []
   },
   "asset_tracker_links@2.0.0": {
     "name": "asset_tracker_links",
     "version": "2.0.0",
     "family": "SAMM",
+    "source": "catenax",
     "deps": [
       "shared.uuid@1.0.0"
     ]
@@ -17,18 +19,21 @@
     "name": "batch",
     "version": "1.0.2",
     "family": "BAMM",
+    "source": "catenax",
     "deps": []
   },
   "batch@2.0.0": {
     "name": "batch",
     "version": "2.0.0",
     "family": "SAMM",
+    "source": "catenax",
     "deps": []
   },
   "batch@2.0.1": {
     "name": "batch",
     "version": "2.0.1",
     "family": "SAMM",
+    "source": "catenax",
     "deps": [
       "shared.part_site_information_as_built@1.0.0",
       "shared.uuid@1.0.0"
@@ -38,6 +43,7 @@
     "name": "batch",
     "version": "3.0.0",
     "family": "SAMM",
+    "source": "catenax",
     "deps": [
       "shared.part_classification@1.0.0",
       "shared.part_site_information_as_built@2.0.0",
@@ -48,6 +54,7 @@
     "name": "batch",
     "version": "3.0.1",
     "family": "SAMM",
+    "source": "catenax",
     "deps": [
       "shared.part_classification@1.0.0",
       "shared.part_site_information_as_built@2.0.0",
@@ -58,6 +65,7 @@
     "name": "batch",
     "version": "4.0.0",
     "family": "SAMM",
+    "source": "catenax",
     "deps": [
       "shared.industry_core.common@1.0.0",
       "shared.industry_core.manufacturing_information@1.0.0",
@@ -68,6 +76,7 @@
     "name": "battery.battery_pass",
     "version": "3.0.0",
     "family": "BAMM",
+    "source": "catenax",
     "deps": [
       "shared.address_characteristic@1.0.1",
       "shared.contact_information@1.0.0"
@@ -77,6 +86,7 @@
     "name": "battery.battery_pass",
     "version": "3.0.1",
     "family": "BAMM",
+    "source": "catenax",
     "deps": [
       "shared.address_characteristic@1.0.1",
       "shared.contact_information@1.0.0"
@@ -86,6 +96,7 @@
     "name": "battery.battery_pass",
     "version": "4.0.0",
     "family": "SAMM",
+    "source": "catenax",
     "deps": [
       "generic.digital_product_passport@3.0.0",
       "shared.quantity@1.0.0"
@@ -95,6 +106,7 @@
     "name": "battery.battery_pass",
     "version": "5.0.0",
     "family": "SAMM",
+    "source": "catenax",
     "deps": [
       "generic.digital_product_passport@4.0.0"
     ]
@@ -103,6 +115,7 @@
     "name": "battery.battery_pass",
     "version": "6.0.0",
     "family": "SAMM",
+    "source": "catenax",
     "deps": [
       "generic.digital_product_passport@5.0.0"
     ]
@@ -111,6 +124,7 @@
     "name": "battery.battery_pass",
     "version": "6.1.0",
     "family": "SAMM",
+    "source": "catenax",
     "deps": [
       "generic.digital_product_passport@5.0.0"
     ]
@@ -119,30 +133,140 @@
     "name": "battery.product_description",
     "version": "1.0.1",
     "family": "BAMM",
+    "source": "catenax",
     "deps": []
+  },
+  "batterypass.carbon_footprint@1.0.0": {
+    "name": "batterypass.carbon_footprint",
+    "version": "1.0.0",
+    "family": "SAMM",
+    "source": "idta",
+    "deps": [
+      "carbon_footprint@1.0.0",
+      "contact_information@1.0.0",
+      "pcf@8.0.0",
+      "shared@3.1.0"
+    ]
+  },
+  "batterypass.circularity@1.0.0": {
+    "name": "batterypass.circularity",
+    "version": "1.0.0",
+    "family": "SAMM",
+    "source": "idta",
+    "deps": [
+      "contact_information@1.0.0",
+      "handover_documentation@2.0.0",
+      "shared@3.1.0"
+    ]
+  },
+  "batterypass.digital_nameplate@1.0.0": {
+    "name": "batterypass.digital_nameplate",
+    "version": "1.0.0",
+    "family": "SAMM",
+    "source": "idta",
+    "deps": [
+      "contact_information@1.0.0",
+      "digital_nameplate@3.0.0",
+      "shared@3.1.0"
+    ]
+  },
+  "batterypass.handover_documentation@1.0.0": {
+    "name": "batterypass.handover_documentation",
+    "version": "1.0.0",
+    "family": "SAMM",
+    "source": "idta",
+    "deps": [
+      "handover_documentation@2.0.0",
+      "shared@3.1.0"
+    ]
+  },
+  "batterypass.material_composition@1.0.0": {
+    "name": "batterypass.material_composition",
+    "version": "1.0.0",
+    "family": "SAMM",
+    "source": "idta",
+    "deps": []
+  },
+  "batterypass.material_composition@1.0.1": {
+    "name": "batterypass.material_composition",
+    "version": "1.0.1",
+    "family": "SAMM",
+    "source": "idta",
+    "deps": []
+  },
+  "batterypass.product_condition@1.0.0": {
+    "name": "batterypass.product_condition",
+    "version": "1.0.0",
+    "family": "SAMM",
+    "source": "idta",
+    "deps": [
+      "handover_documentation@2.0.0",
+      "shared@3.1.0"
+    ]
+  },
+  "batterypass.product_condition@1.0.1": {
+    "name": "batterypass.product_condition",
+    "version": "1.0.1",
+    "family": "SAMM",
+    "source": "idta",
+    "deps": [
+      "batterypass.product_condition@1.0.0",
+      "handover_documentation@2.0.0",
+      "shared@3.1.0"
+    ]
+  },
+  "batterypass.technical_data@1.0.0": {
+    "name": "batterypass.technical_data",
+    "version": "1.0.0",
+    "family": "SAMM",
+    "source": "idta",
+    "deps": [
+      "GeneralProductInformation@1.2.0",
+      "Performance@1.2.1",
+      "digital_nameplate@3.0.0",
+      "generic.technical_data@2.0.0",
+      "shared@3.1.0"
+    ]
+  },
+  "batterypass.technical_data@1.0.1": {
+    "name": "batterypass.technical_data",
+    "version": "1.0.1",
+    "family": "SAMM",
+    "source": "idta",
+    "deps": [
+      "GeneralProductInformation@1.2.0",
+      "Performance@1.2.1",
+      "digital_nameplate@3.0.0",
+      "generic.technical_data@2.0.0",
+      "shared@3.1.0"
+    ]
   },
   "binary_exchange@1.0.0": {
     "name": "binary_exchange",
     "version": "1.0.0",
     "family": "SAMM",
+    "source": "catenax",
     "deps": []
   },
   "bom_as_specified@1.0.0": {
     "name": "bom_as_specified",
     "version": "1.0.0",
     "family": "BAMM",
+    "source": "catenax",
     "deps": []
   },
   "bom_as_specified@1.0.1": {
     "name": "bom_as_specified",
     "version": "1.0.1",
     "family": "BAMM",
+    "source": "catenax",
     "deps": []
   },
   "business_partner_certificate@1.0.0": {
     "name": "business_partner_certificate",
     "version": "1.0.0",
     "family": "SAMM",
+    "source": "catenax",
     "deps": [
       "shared.business_partner_number@2.0.0"
     ]
@@ -151,6 +275,7 @@
     "name": "business_partner_certificate",
     "version": "2.0.0",
     "family": "SAMM",
+    "source": "catenax",
     "deps": [
       "shared.business_partner_number@2.0.0"
     ]
@@ -159,6 +284,7 @@
     "name": "business_partner_certificate",
     "version": "3.0.0",
     "family": "SAMM",
+    "source": "catenax",
     "deps": [
       "shared.business_partner_number@2.0.0"
     ]
@@ -167,14 +293,27 @@
     "name": "business_partner_certificate",
     "version": "3.1.0",
     "family": "SAMM",
+    "source": "catenax",
     "deps": [
       "shared.business_partner_number@2.0.0"
+    ]
+  },
+  "carbon_footprint@1.0.0": {
+    "name": "carbon_footprint",
+    "version": "1.0.0",
+    "family": "SAMM",
+    "source": "idta",
+    "deps": [
+      "contact_information@1.0.0",
+      "pcf@8.0.0",
+      "shared@3.1.0"
     ]
   },
   "certificate_of_analysis@1.0.0": {
     "name": "certificate_of_analysis",
     "version": "1.0.0",
     "family": "SAMM",
+    "source": "catenax",
     "deps": [
       "batch@3.0.1",
       "delivery_information@2.0.0",
@@ -186,18 +325,21 @@
     "name": "certificate_of_destruction",
     "version": "1.0.1",
     "family": "BAMM",
+    "source": "catenax",
     "deps": []
   },
   "certificate_of_destruction@2.0.0": {
     "name": "certificate_of_destruction",
     "version": "2.0.0",
     "family": "SAMM",
+    "source": "catenax",
     "deps": []
   },
   "certificate_of_dismantler@1.0.1": {
     "name": "certificate_of_dismantler",
     "version": "1.0.1",
     "family": "BAMM",
+    "source": "catenax",
     "deps": [
       "shared.address_characteristic@1.0.1",
       "shared.contact_information@1.0.0"
@@ -207,24 +349,37 @@
     "name": "certificate_signing_requests",
     "version": "1.0.0",
     "family": "SAMM",
+    "source": "catenax",
     "deps": []
   },
   "classified_load_spectrum@1.0.0": {
     "name": "classified_load_spectrum",
     "version": "1.0.0",
     "family": "BAMM",
+    "source": "catenax",
     "deps": []
   },
   "classified_load_spectrum@2.0.0": {
     "name": "classified_load_spectrum",
     "version": "2.0.0",
     "family": "SAMM",
+    "source": "catenax",
     "deps": []
+  },
+  "contact_information@1.0.0": {
+    "name": "contact_information",
+    "version": "1.0.0",
+    "family": "SAMM",
+    "source": "idta",
+    "deps": [
+      "shared@3.1.0"
+    ]
   },
   "customs_information@1.0.0": {
     "name": "customs_information",
     "version": "1.0.0",
     "family": "SAMM",
+    "source": "catenax",
     "deps": [
       "shared.uuid@2.0.0"
     ]
@@ -233,6 +388,7 @@
     "name": "customs_information",
     "version": "2.0.0",
     "family": "SAMM",
+    "source": "catenax",
     "deps": [
       "shared.contact_information@4.0.0",
       "shared.uuid@2.0.0"
@@ -242,6 +398,7 @@
     "name": "days_of_supply",
     "version": "1.0.0",
     "family": "SAMM",
+    "source": "catenax",
     "deps": [
       "shared.business_partner_number@2.0.0",
       "shared.uuid@2.0.0"
@@ -251,6 +408,7 @@
     "name": "days_of_supply",
     "version": "2.0.0",
     "family": "SAMM",
+    "source": "catenax",
     "deps": [
       "shared.business_partner_number@2.0.0",
       "shared.uuid@2.0.0"
@@ -260,18 +418,21 @@
     "name": "decomissioning_certificate",
     "version": "1.0.0",
     "family": "BAMM",
+    "source": "catenax",
     "deps": []
   },
   "decomissioning_certificate@2.0.0": {
     "name": "decomissioning_certificate",
     "version": "2.0.0",
     "family": "SAMM",
+    "source": "catenax",
     "deps": []
   },
   "delivery_information@1.0.0": {
     "name": "delivery_information",
     "version": "1.0.0",
     "family": "SAMM",
+    "source": "catenax",
     "deps": [
       "shared.business_partner_number@1.0.0",
       "shared.quantity@1.0.0",
@@ -282,6 +443,7 @@
     "name": "delivery_information",
     "version": "2.0.0",
     "family": "SAMM",
+    "source": "catenax",
     "deps": [
       "shared.business_partner_number@2.0.0",
       "shared.quantity@2.0.0",
@@ -292,6 +454,7 @@
     "name": "demand_and_capacity_notification",
     "version": "1.0.0",
     "family": "SAMM",
+    "source": "catenax",
     "deps": [
       "shared.business_partner_number@2.0.0",
       "shared.uuid@2.0.0"
@@ -301,6 +464,7 @@
     "name": "demand_and_capacity_notification",
     "version": "2.0.0",
     "family": "SAMM",
+    "source": "catenax",
     "deps": [
       "shared.business_partner_number@2.0.0",
       "shared.uuid@2.0.0"
@@ -310,6 +474,7 @@
     "name": "demand_and_capacity_notification",
     "version": "3.0.0",
     "family": "SAMM",
+    "source": "catenax",
     "deps": [
       "part_type_information@1.0.0",
       "shared.business_partner_number@2.0.0",
@@ -320,16 +485,28 @@
     "name": "digital_engineering_master_data",
     "version": "1.0.0",
     "family": "SAMM",
+    "source": "catenax",
     "deps": [
       "requirement@1.0.0",
       "shared.business_partner_number@2.0.0",
       "shared.uuid@2.0.0"
     ]
   },
+  "digital_nameplate@3.0.0": {
+    "name": "digital_nameplate",
+    "version": "3.0.0",
+    "family": "SAMM",
+    "source": "idta",
+    "deps": [
+      "contact_information@1.0.0",
+      "shared@3.1.0"
+    ]
+  },
   "early_warning_notification@1.0.0": {
     "name": "early_warning_notification",
     "version": "1.0.0",
     "family": "SAMM",
+    "source": "catenax",
     "deps": [
       "shared.uuid@2.0.0"
     ]
@@ -338,6 +515,7 @@
     "name": "electric_drive.electric_drive_passport",
     "version": "1.0.0",
     "family": "SAMM",
+    "source": "catenax",
     "deps": [
       "generic.digital_product_passport@4.0.0",
       "shared.quantity@2.0.0",
@@ -348,6 +526,7 @@
     "name": "electric_drive.electric_drive_passport",
     "version": "2.0.0",
     "family": "SAMM",
+    "source": "catenax",
     "deps": [
       "generic.digital_product_passport@5.0.0",
       "shared.quantity@2.0.0",
@@ -358,18 +537,21 @@
     "name": "eol_story",
     "version": "1.0.0",
     "family": "BAMM",
+    "source": "catenax",
     "deps": []
   },
   "eol_story@2.0.0": {
     "name": "eol_story",
     "version": "2.0.0",
     "family": "SAMM",
+    "source": "catenax",
     "deps": []
   },
   "essincident@2.0.0": {
     "name": "essincident",
     "version": "2.0.0",
     "family": "SAMM",
+    "source": "catenax",
     "deps": [
       "shared.address_characteristic@3.0.0"
     ]
@@ -378,6 +560,7 @@
     "name": "essincident",
     "version": "3.0.0",
     "family": "SAMM",
+    "source": "catenax",
     "deps": [
       "shared.address_characteristic@4.0.0",
       "shared.business_partner_number@2.0.0",
@@ -388,6 +571,7 @@
     "name": "essincident",
     "version": "4.0.0",
     "family": "SAMM",
+    "source": "catenax",
     "deps": [
       "shared.address_characteristic@4.0.0",
       "shared.business_partner_number@2.0.0",
@@ -398,18 +582,21 @@
     "name": "failure_pattern",
     "version": "1.0.0",
     "family": "SAMM",
+    "source": "catenax",
     "deps": []
   },
   "fleet.claim_data@1.0.0": {
     "name": "fleet.claim_data",
     "version": "1.0.0",
     "family": "BAMM",
+    "source": "catenax",
     "deps": []
   },
   "fleet.claim_data@2.0.0": {
     "name": "fleet.claim_data",
     "version": "2.0.0",
     "family": "SAMM",
+    "source": "catenax",
     "deps": [
       "shared.uuid@1.0.0"
     ]
@@ -418,6 +605,7 @@
     "name": "fleet.claim_data",
     "version": "3.0.0",
     "family": "SAMM",
+    "source": "catenax",
     "deps": [
       "shared.quality_core@1.0.0"
     ]
@@ -426,12 +614,14 @@
     "name": "fleet.diagnostic_data",
     "version": "1.0.0",
     "family": "BAMM",
+    "source": "catenax",
     "deps": []
   },
   "fleet.diagnostic_data@2.0.0": {
     "name": "fleet.diagnostic_data",
     "version": "2.0.0",
     "family": "SAMM",
+    "source": "catenax",
     "deps": [
       "shared.uuid@1.0.0"
     ]
@@ -440,6 +630,7 @@
     "name": "fleet.diagnostic_data",
     "version": "3.0.0",
     "family": "SAMM",
+    "source": "catenax",
     "deps": [
       "shared.quality_core@1.0.0"
     ]
@@ -448,6 +639,7 @@
     "name": "fleet.vehicles",
     "version": "1.0.0",
     "family": "SAMM",
+    "source": "catenax",
     "deps": [
       "vehicle.product_description@3.0.0"
     ]
@@ -456,6 +648,7 @@
     "name": "fleet.vehicles",
     "version": "2.0.0",
     "family": "SAMM",
+    "source": "catenax",
     "deps": [
       "shared.business_partner_number@1.0.0",
       "shared.uuid@1.0.0"
@@ -465,6 +658,7 @@
     "name": "fleet.vehicles",
     "version": "2.1.0",
     "family": "SAMM",
+    "source": "catenax",
     "deps": [
       "shared.business_partner_number@2.0.0",
       "shared.uuid@2.0.0"
@@ -474,6 +668,7 @@
     "name": "fleet.vehicles",
     "version": "3.0.0",
     "family": "SAMM",
+    "source": "catenax",
     "deps": [
       "shared.business_partner_number@2.0.0",
       "shared.uuid@2.0.0"
@@ -483,6 +678,7 @@
     "name": "fleet.vehicles",
     "version": "4.0.0",
     "family": "SAMM",
+    "source": "catenax",
     "deps": [
       "shared.quality_core@1.0.0"
     ]
@@ -491,12 +687,14 @@
     "name": "generic.digital_product_passport",
     "version": "2.0.0",
     "family": "SAMM",
+    "source": "catenax",
     "deps": []
   },
   "generic.digital_product_passport@3.0.0": {
     "name": "generic.digital_product_passport",
     "version": "3.0.0",
     "family": "SAMM",
+    "source": "catenax",
     "deps": [
       "shared.address_characteristic@3.0.0",
       "shared.business_partner_number@1.0.0",
@@ -509,6 +707,7 @@
     "name": "generic.digital_product_passport",
     "version": "4.0.0",
     "family": "SAMM",
+    "source": "catenax",
     "deps": [
       "batch@3.0.0",
       "part_type_information@1.0.0",
@@ -523,6 +722,7 @@
     "name": "generic.digital_product_passport",
     "version": "5.0.0",
     "family": "SAMM",
+    "source": "catenax",
     "deps": [
       "batch@3.0.0",
       "part_type_information@1.0.0",
@@ -537,6 +737,7 @@
     "name": "generic.digital_product_passport",
     "version": "6.0.0",
     "family": "SAMM",
+    "source": "catenax",
     "deps": [
       "batch@3.0.0",
       "part_type_information@1.0.0",
@@ -551,6 +752,7 @@
     "name": "generic.digital_product_passport",
     "version": "6.1.0",
     "family": "SAMM",
+    "source": "catenax",
     "deps": [
       "batch@3.0.1",
       "part_type_information@1.0.0",
@@ -565,6 +767,7 @@
     "name": "generic.digital_product_passport",
     "version": "7.0.0",
     "family": "SAMM",
+    "source": "catenax",
     "deps": [
       "shared.address_characteristic@4.0.0",
       "shared.contact_information@4.0.0",
@@ -574,10 +777,33 @@
       "shared.uuid@2.0.0"
     ]
   },
+  "generic.technical_data@1.2.0": {
+    "name": "generic.technical_data",
+    "version": "1.2.0",
+    "family": "SAMM",
+    "source": "idta",
+    "deps": [
+      "digital_nameplate@3.0.0",
+      "nameplate@3.0.0",
+      "shared@3.1.0"
+    ]
+  },
+  "generic.technical_data@2.0.0": {
+    "name": "generic.technical_data",
+    "version": "2.0.0",
+    "family": "SAMM",
+    "source": "idta",
+    "deps": [
+      "digital_nameplate@3.0.0",
+      "nameplate@3.0.0",
+      "shared@3.1.0"
+    ]
+  },
   "global_transport_label@1.0.0": {
     "name": "global_transport_label",
     "version": "1.0.0",
     "family": "SAMM",
+    "source": "catenax",
     "deps": [
       "shared.address_characteristic@3.0.0",
       "shared.business_partner_number@2.0.0",
@@ -585,10 +811,20 @@
       "shared.uuid@2.0.0"
     ]
   },
+  "handover_documentation@2.0.0": {
+    "name": "handover_documentation",
+    "version": "2.0.0",
+    "family": "SAMM",
+    "source": "idta",
+    "deps": [
+      "shared@3.1.0"
+    ]
+  },
   "id_based_comment@1.0.0": {
     "name": "id_based_comment",
     "version": "1.0.0",
     "family": "SAMM",
+    "source": "catenax",
     "deps": [
       "shared.business_partner_number@1.0.0",
       "shared.uuid@1.0.0"
@@ -598,6 +834,7 @@
     "name": "id_based_comment",
     "version": "1.1.0",
     "family": "SAMM",
+    "source": "catenax",
     "deps": [
       "shared.business_partner_number@2.0.0",
       "shared.uuid@2.0.0"
@@ -607,12 +844,14 @@
     "name": "id_based_request_for_update",
     "version": "1.0.0",
     "family": "SAMM",
+    "source": "catenax",
     "deps": []
   },
   "id_based_request_for_update@2.0.0": {
     "name": "id_based_request_for_update",
     "version": "2.0.0",
     "family": "SAMM",
+    "source": "catenax",
     "deps": [
       "shared.uuid@1.0.0"
     ]
@@ -621,6 +860,7 @@
     "name": "id_based_request_for_update",
     "version": "3.0.0",
     "family": "SAMM",
+    "source": "catenax",
     "deps": [
       "shared.uuid@2.0.0"
     ]
@@ -629,18 +869,21 @@
     "name": "idconversion",
     "version": "1.0.0",
     "family": "BAMM",
+    "source": "catenax",
     "deps": []
   },
   "idconversion@2.0.0": {
     "name": "idconversion",
     "version": "2.0.0",
     "family": "SAMM",
+    "source": "catenax",
     "deps": []
   },
   "individual_asset_definition@1.0.0": {
     "name": "individual_asset_definition",
     "version": "1.0.0",
     "family": "BAMM",
+    "source": "catenax",
     "deps": [
       "shared.physical_dimension@2.0.0"
     ]
@@ -649,6 +892,7 @@
     "name": "individual_asset_definition",
     "version": "2.0.0",
     "family": "SAMM",
+    "source": "catenax",
     "deps": [
       "shared.physical_dimension@3.0.0"
     ]
@@ -657,12 +901,14 @@
     "name": "iot_sensor_data",
     "version": "1.0.0",
     "family": "BAMM",
+    "source": "catenax",
     "deps": []
   },
   "iot_sensor_data@2.0.0": {
     "name": "iot_sensor_data",
     "version": "2.0.0",
     "family": "SAMM",
+    "source": "catenax",
     "deps": [
       "shared.uuid@1.0.0"
     ]
@@ -671,12 +917,14 @@
     "name": "iot_sensor_device_definition",
     "version": "1.0.0",
     "family": "BAMM",
+    "source": "catenax",
     "deps": []
   },
   "iot_sensor_device_definition@2.0.0": {
     "name": "iot_sensor_device_definition",
     "version": "2.0.0",
     "family": "SAMM",
+    "source": "catenax",
     "deps": [
       "shared.business_partner_number@1.0.0",
       "shared.uuid@1.0.0"
@@ -686,6 +934,7 @@
     "name": "item_stock",
     "version": "1.0.0",
     "family": "SAMM",
+    "source": "catenax",
     "deps": [
       "shared.business_partner_number@1.0.0",
       "shared.quantity@1.0.0",
@@ -696,6 +945,7 @@
     "name": "item_stock",
     "version": "2.0.0",
     "family": "SAMM",
+    "source": "catenax",
     "deps": [
       "shared.business_partner_number@2.0.0",
       "shared.quantity@2.0.0",
@@ -706,12 +956,14 @@
     "name": "just_in_sequence_part",
     "version": "1.0.0",
     "family": "BAMM",
+    "source": "catenax",
     "deps": []
   },
   "just_in_sequence_part@2.0.0": {
     "name": "just_in_sequence_part",
     "version": "2.0.0",
     "family": "SAMM",
+    "source": "catenax",
     "deps": [
       "shared.part_site_information_as_built@1.0.0",
       "shared.uuid@1.0.0"
@@ -721,6 +973,7 @@
     "name": "just_in_sequence_part",
     "version": "3.0.0",
     "family": "SAMM",
+    "source": "catenax",
     "deps": [
       "shared.part_classification@1.0.0",
       "shared.part_site_information_as_built@2.0.0",
@@ -731,6 +984,7 @@
     "name": "just_in_sequence_part",
     "version": "4.0.0",
     "family": "SAMM",
+    "source": "catenax",
     "deps": [
       "shared.industry_core.common@1.0.0",
       "shared.industry_core.manufacturing_information@1.0.0",
@@ -741,6 +995,7 @@
     "name": "mandatory_dismantling",
     "version": "1.0.0",
     "family": "SAMM",
+    "source": "catenax",
     "deps": [
       "shared.business_partner_number@2.0.0",
       "shared.quantity@2.0.0",
@@ -751,6 +1006,7 @@
     "name": "mandatory_dismantling",
     "version": "2.0.0",
     "family": "SAMM",
+    "source": "catenax",
     "deps": [
       "shared.business_partner_number@2.0.0",
       "shared.quantity@2.0.0",
@@ -761,12 +1017,14 @@
     "name": "manufactured_parts_quality_information",
     "version": "1.0.0",
     "family": "BAMM",
+    "source": "catenax",
     "deps": []
   },
   "manufactured_parts_quality_information@2.0.0": {
     "name": "manufactured_parts_quality_information",
     "version": "2.0.0",
     "family": "SAMM",
+    "source": "catenax",
     "deps": [
       "shared.business_partner_number@1.0.0",
       "shared.uuid@1.0.0"
@@ -776,6 +1034,7 @@
     "name": "manufactured_parts_quality_information",
     "version": "2.1.0",
     "family": "SAMM",
+    "source": "catenax",
     "deps": [
       "shared.business_partner_number@2.0.0",
       "shared.uuid@2.0.0"
@@ -785,6 +1044,7 @@
     "name": "manufactured_parts_quality_information",
     "version": "3.0.0",
     "family": "SAMM",
+    "source": "catenax",
     "deps": [
       "shared.quality_core@1.0.0"
     ]
@@ -793,18 +1053,21 @@
     "name": "manufacturing_capability",
     "version": "1.0.0",
     "family": "BAMM",
+    "source": "catenax",
     "deps": []
   },
   "manufacturing_capability@2.0.0": {
     "name": "manufacturing_capability",
     "version": "2.0.0",
     "family": "SAMM",
+    "source": "catenax",
     "deps": []
   },
   "manufacturing_capability@3.0.0": {
     "name": "manufacturing_capability",
     "version": "3.0.0",
     "family": "SAMM",
+    "source": "catenax",
     "deps": [
       "shared.bill_of_process@1.0.0"
     ]
@@ -813,6 +1076,7 @@
     "name": "manufacturing_capability",
     "version": "3.1.0",
     "family": "SAMM",
+    "source": "catenax",
     "deps": [
       "shared.bill_of_process@1.1.0"
     ]
@@ -821,18 +1085,21 @@
     "name": "market_place_offer",
     "version": "1.2.0",
     "family": "BAMM",
+    "source": "catenax",
     "deps": []
   },
   "market_place_offer@1.4.0": {
     "name": "market_place_offer",
     "version": "1.4.0",
     "family": "BAMM",
+    "source": "catenax",
     "deps": []
   },
   "market_place_offer@2.0.0": {
     "name": "market_place_offer",
     "version": "2.0.0",
     "family": "SAMM",
+    "source": "catenax",
     "deps": [
       "serial_part@3.0.0",
       "shared.quantity@2.0.0"
@@ -842,12 +1109,14 @@
     "name": "material.certificate_of_analysis",
     "version": "1.0.0",
     "family": "SAMM",
+    "source": "catenax",
     "deps": []
   },
   "material.chemical_material_passport@1.0.0": {
     "name": "material.chemical_material_passport",
     "version": "1.0.0",
     "family": "SAMM",
+    "source": "catenax",
     "deps": [
       "generic.digital_product_passport@4.0.0",
       "shared.quantity@2.0.0"
@@ -857,6 +1126,7 @@
     "name": "material.chemical_material_passport",
     "version": "2.0.0",
     "family": "SAMM",
+    "source": "catenax",
     "deps": [
       "generic.digital_product_passport@5.0.0",
       "shared.quantity@2.0.0"
@@ -866,6 +1136,7 @@
     "name": "material.chemical_material_passport",
     "version": "3.0.0",
     "family": "SAMM",
+    "source": "catenax",
     "deps": [
       "generic.digital_product_passport@6.0.0",
       "material.certificate_of_analysis@1.0.0",
@@ -878,18 +1149,21 @@
     "name": "material.safety_data_sheet",
     "version": "1.0.0",
     "family": "SAMM",
+    "source": "catenax",
     "deps": []
   },
   "material.technical_information@1.0.0": {
     "name": "material.technical_information",
     "version": "1.0.0",
     "family": "SAMM",
+    "source": "catenax",
     "deps": []
   },
   "material_accounting@1.0.0": {
     "name": "material_accounting",
     "version": "1.0.0",
     "family": "SAMM",
+    "source": "catenax",
     "deps": [
       "shared.business_partner_number@2.0.0",
       "shared.industry_core.common@1.0.0",
@@ -900,6 +1174,7 @@
     "name": "material_demand",
     "version": "1.0.0",
     "family": "SAMM",
+    "source": "catenax",
     "deps": [
       "shared.business_partner_number@1.0.0",
       "shared.quantity@1.0.0",
@@ -910,6 +1185,7 @@
     "name": "material_flow_scenario_request",
     "version": "1.0.0",
     "family": "SAMM",
+    "source": "catenax",
     "deps": [
       "material_flow_simulation_result@2.0.0"
     ]
@@ -918,6 +1194,7 @@
     "name": "material_flow_scenario_request",
     "version": "2.0.0",
     "family": "SAMM",
+    "source": "catenax",
     "deps": [
       "material_flow_simulation_result@3.0.0"
     ]
@@ -926,18 +1203,21 @@
     "name": "material_flow_simulation_result",
     "version": "1.0.0",
     "family": "BAMM",
+    "source": "catenax",
     "deps": []
   },
   "material_flow_simulation_result@2.0.0": {
     "name": "material_flow_simulation_result",
     "version": "2.0.0",
     "family": "SAMM",
+    "source": "catenax",
     "deps": []
   },
   "material_flow_simulation_result@3.0.0": {
     "name": "material_flow_simulation_result",
     "version": "3.0.0",
     "family": "SAMM",
+    "source": "catenax",
     "deps": [
       "shared.business_partner_number@2.0.0"
     ]
@@ -946,6 +1226,7 @@
     "name": "material_for_homologation",
     "version": "1.0.0",
     "family": "BAMM",
+    "source": "catenax",
     "deps": [
       "shared.address_characteristic@1.0.0"
     ]
@@ -954,6 +1235,7 @@
     "name": "material_for_homologation",
     "version": "2.0.0",
     "family": "SAMM",
+    "source": "catenax",
     "deps": [
       "shared.address_characteristic@1.0.0"
     ]
@@ -962,6 +1244,7 @@
     "name": "material_recycling_certificate",
     "version": "1.0.0",
     "family": "SAMM",
+    "source": "catenax",
     "deps": [
       "shared.recycling_strategy_certificate@2.0.0"
     ]
@@ -970,6 +1253,7 @@
     "name": "packing_list",
     "version": "1.0.0",
     "family": "SAMM",
+    "source": "catenax",
     "deps": [
       "shared.address_characteristic@3.0.0",
       "shared.business_partner_number@2.0.0",
@@ -981,6 +1265,7 @@
     "name": "part_as_planned",
     "version": "2.0.0",
     "family": "SAMM",
+    "source": "catenax",
     "deps": [
       "shared.business_partner_number@1.0.0",
       "shared.uuid@1.0.0"
@@ -990,36 +1275,42 @@
     "name": "part_as_specified",
     "version": "1.0.0",
     "family": "BAMM",
+    "source": "catenax",
     "deps": []
   },
   "part_as_specified@1.0.1": {
     "name": "part_as_specified",
     "version": "1.0.1",
     "family": "BAMM",
+    "source": "catenax",
     "deps": []
   },
   "part_as_specified@2.0.0": {
     "name": "part_as_specified",
     "version": "2.0.0",
     "family": "BAMM",
+    "source": "catenax",
     "deps": []
   },
   "part_as_specified@3.0.0": {
     "name": "part_as_specified",
     "version": "3.0.0",
     "family": "SAMM",
+    "source": "catenax",
     "deps": []
   },
   "part_site_information_as_planned@1.0.0": {
     "name": "part_site_information_as_planned",
     "version": "1.0.0",
     "family": "BAMM",
+    "source": "catenax",
     "deps": []
   },
   "part_type_information@1.0.0": {
     "name": "part_type_information",
     "version": "1.0.0",
     "family": "SAMM",
+    "source": "catenax",
     "deps": [
       "shared.business_partner_number@2.0.0",
       "shared.part_classification@1.0.0",
@@ -1030,6 +1321,7 @@
     "name": "part_type_information",
     "version": "2.0.0",
     "family": "SAMM",
+    "source": "catenax",
     "deps": [
       "shared.business_partner_number@2.0.0",
       "shared.industry_core.common@1.0.0",
@@ -1040,12 +1332,14 @@
     "name": "parts_analyses",
     "version": "2.0.0",
     "family": "SAMM",
+    "source": "catenax",
     "deps": []
   },
   "parts_analyses@3.0.0": {
     "name": "parts_analyses",
     "version": "3.0.0",
     "family": "SAMM",
+    "source": "catenax",
     "deps": [
       "shared.uuid@1.0.0"
     ]
@@ -1054,6 +1348,7 @@
     "name": "parts_analyses",
     "version": "4.0.0",
     "family": "SAMM",
+    "source": "catenax",
     "deps": [
       "shared.quality_core@1.0.0"
     ]
@@ -1062,30 +1357,35 @@
     "name": "pcf",
     "version": "2.0.0",
     "family": "BAMM",
+    "source": "catenax",
     "deps": []
   },
   "pcf@3.0.0": {
     "name": "pcf",
     "version": "3.0.0",
     "family": "BAMM",
+    "source": "catenax",
     "deps": []
   },
   "pcf@4.0.0": {
     "name": "pcf",
     "version": "4.0.0",
     "family": "BAMM",
+    "source": "catenax",
     "deps": []
   },
   "pcf@4.0.1": {
     "name": "pcf",
     "version": "4.0.1",
     "family": "BAMM",
+    "source": "catenax",
     "deps": []
   },
   "pcf@5.0.0": {
     "name": "pcf",
     "version": "5.0.0",
     "family": "SAMM",
+    "source": "catenax",
     "deps": [
       "shared.uuid@1.0.0"
     ]
@@ -1094,6 +1394,7 @@
     "name": "pcf",
     "version": "6.0.0",
     "family": "SAMM",
+    "source": "catenax",
     "deps": [
       "shared.uuid@2.0.0"
     ]
@@ -1102,6 +1403,7 @@
     "name": "pcf",
     "version": "7.0.0",
     "family": "SAMM",
+    "source": "catenax",
     "deps": [
       "shared.uuid@2.0.0"
     ]
@@ -1110,6 +1412,7 @@
     "name": "pcf",
     "version": "8.0.0",
     "family": "SAMM",
+    "source": "catenax",
     "deps": [
       "shared.uuid@2.0.0"
     ]
@@ -1118,6 +1421,7 @@
     "name": "pcf",
     "version": "9.0.0",
     "family": "SAMM",
+    "source": "catenax",
     "deps": [
       "shared.uuid@2.0.0"
     ]
@@ -1126,6 +1430,7 @@
     "name": "pcf_for_battery_component_supplier",
     "version": "1.0.0",
     "family": "SAMM",
+    "source": "catenax",
     "deps": [
       "pcf@9.0.0",
       "shared.business_partner_number@2.0.0",
@@ -1136,6 +1441,7 @@
     "name": "planned_production_output",
     "version": "1.0.0",
     "family": "SAMM",
+    "source": "catenax",
     "deps": [
       "shared.business_partner_number@1.0.0",
       "shared.quantity@1.0.0",
@@ -1146,6 +1452,7 @@
     "name": "planned_production_output",
     "version": "2.0.0",
     "family": "SAMM",
+    "source": "catenax",
     "deps": [
       "shared.business_partner_number@2.0.0",
       "shared.quantity@2.0.0",
@@ -1156,24 +1463,28 @@
     "name": "product_stock",
     "version": "1.0.0",
     "family": "BAMM",
+    "source": "catenax",
     "deps": []
   },
   "product_stock@2.0.0": {
     "name": "product_stock",
     "version": "2.0.0",
     "family": "SAMM",
+    "source": "catenax",
     "deps": []
   },
   "quality_task@1.0.0": {
     "name": "quality_task",
     "version": "1.0.0",
     "family": "BAMM",
+    "source": "catenax",
     "deps": []
   },
   "quality_task@2.0.0": {
     "name": "quality_task",
     "version": "2.0.0",
     "family": "SAMM",
+    "source": "catenax",
     "deps": [
       "shared.business_partner_number@1.0.0",
       "shared.contact_information@3.0.0",
@@ -1184,6 +1495,7 @@
     "name": "quality_task",
     "version": "3.0.0",
     "family": "SAMM",
+    "source": "catenax",
     "deps": [
       "shared.business_partner_number@2.0.0",
       "shared.contact_information@4.0.0",
@@ -1194,12 +1506,14 @@
     "name": "quality_task_attachment",
     "version": "1.0.0",
     "family": "SAMM",
+    "source": "catenax",
     "deps": []
   },
   "quality_task_attachment@2.0.0": {
     "name": "quality_task_attachment",
     "version": "2.0.0",
     "family": "SAMM",
+    "source": "catenax",
     "deps": [
       "shared.uuid@2.0.0"
     ]
@@ -1208,6 +1522,7 @@
     "name": "quality_task_attachment",
     "version": "3.0.0",
     "family": "SAMM",
+    "source": "catenax",
     "deps": [
       "shared.quality_core@1.0.0"
     ]
@@ -1216,6 +1531,7 @@
     "name": "refurbishing_certificate",
     "version": "1.0.0",
     "family": "BAMM",
+    "source": "catenax",
     "deps": [
       "shared.recycling_strategy_certificate@1.0.0"
     ]
@@ -1224,6 +1540,7 @@
     "name": "refurbishing_certificate",
     "version": "2.0.0",
     "family": "SAMM",
+    "source": "catenax",
     "deps": [
       "shared.recycling_strategy_certificate@2.0.0"
     ]
@@ -1232,6 +1549,7 @@
     "name": "refurbishing_certificate",
     "version": "3.0.0",
     "family": "SAMM",
+    "source": "catenax",
     "deps": [
       "serial_part@3.0.0",
       "shared.recycling_strategy_certificate@3.0.0"
@@ -1241,6 +1559,7 @@
     "name": "remanufacturing_certificate",
     "version": "1.0.0",
     "family": "BAMM",
+    "source": "catenax",
     "deps": [
       "shared.recycling_strategy_certificate@1.0.0"
     ]
@@ -1249,6 +1568,7 @@
     "name": "remanufacturing_certificate",
     "version": "2.0.0",
     "family": "SAMM",
+    "source": "catenax",
     "deps": [
       "shared.recycling_strategy_certificate@2.0.0"
     ]
@@ -1257,6 +1577,7 @@
     "name": "remanufacturing_certificate",
     "version": "3.0.0",
     "family": "SAMM",
+    "source": "catenax",
     "deps": [
       "serial_part@3.0.0",
       "shared.recycling_strategy_certificate@3.0.0"
@@ -1266,6 +1587,7 @@
     "name": "repair_certificate",
     "version": "1.0.0",
     "family": "SAMM",
+    "source": "catenax",
     "deps": [
       "serial_part@3.0.0",
       "shared.recycling_strategy_certificate@3.0.0"
@@ -1275,6 +1597,7 @@
     "name": "report_8d",
     "version": "1.0.0",
     "family": "SAMM",
+    "source": "catenax",
     "deps": [
       "shared.business_partner_number@2.0.0",
       "shared.contact_information@4.0.0",
@@ -1285,6 +1608,7 @@
     "name": "request_for_quotation",
     "version": "1.0.0",
     "family": "SAMM",
+    "source": "catenax",
     "deps": [
       "shared.business_partner_number@1.0.0",
       "shared.uuid@1.0.0"
@@ -1294,6 +1618,7 @@
     "name": "request_for_quotation",
     "version": "2.0.0",
     "family": "SAMM",
+    "source": "catenax",
     "deps": [
       "shared.business_partner_number@1.0.0",
       "shared.message_header@1.0.0",
@@ -1304,6 +1629,7 @@
     "name": "request_for_quotation",
     "version": "3.0.0",
     "family": "SAMM",
+    "source": "catenax",
     "deps": [
       "shared.bill_of_process@1.1.0",
       "shared.message_header@3.0.0",
@@ -1314,6 +1640,7 @@
     "name": "requirement",
     "version": "1.0.0",
     "family": "SAMM",
+    "source": "catenax",
     "deps": [
       "shared.uuid@2.0.0"
     ]
@@ -1322,18 +1649,21 @@
     "name": "return_request",
     "version": "1.1.1",
     "family": "BAMM",
+    "source": "catenax",
     "deps": []
   },
   "return_request@1.1.2": {
     "name": "return_request",
     "version": "1.1.2",
     "family": "BAMM",
+    "source": "catenax",
     "deps": []
   },
   "return_request@2.0.0": {
     "name": "return_request",
     "version": "2.0.0",
     "family": "SAMM",
+    "source": "catenax",
     "deps": [
       "serial_part@3.0.0",
       "shared.address_characteristic@3.0.0",
@@ -1345,6 +1675,7 @@
     "name": "reuse_certificate",
     "version": "1.0.0",
     "family": "BAMM",
+    "source": "catenax",
     "deps": [
       "shared.recycling_strategy_certificate@1.0.0"
     ]
@@ -1353,6 +1684,7 @@
     "name": "reuse_certificate",
     "version": "2.0.0",
     "family": "SAMM",
+    "source": "catenax",
     "deps": [
       "shared.recycling_strategy_certificate@2.0.0"
     ]
@@ -1361,6 +1693,7 @@
     "name": "reuse_certificate",
     "version": "3.0.0",
     "family": "SAMM",
+    "source": "catenax",
     "deps": [
       "serial_part@3.0.0",
       "shared.recycling_strategy_certificate@3.0.0"
@@ -1370,24 +1703,28 @@
     "name": "rul",
     "version": "1.0.0",
     "family": "BAMM",
+    "source": "catenax",
     "deps": []
   },
   "rul@2.0.0": {
     "name": "rul",
     "version": "2.0.0",
     "family": "SAMM",
+    "source": "catenax",
     "deps": []
   },
   "sbom@1.0.0": {
     "name": "sbom",
     "version": "1.0.0",
     "family": "SAMM",
+    "source": "catenax",
     "deps": []
   },
   "sealant.sealant_pass@1.0.0": {
     "name": "sealant.sealant_pass",
     "version": "1.0.0",
     "family": "BAMM",
+    "source": "catenax",
     "deps": [
       "pcf@3.0.0",
       "serial_part_typization@2.0.0"
@@ -1397,12 +1734,14 @@
     "name": "secondary_material_content",
     "version": "1.0.0",
     "family": "SAMM",
+    "source": "catenax",
     "deps": []
   },
   "secondary_material_content_calculated@1.0.0": {
     "name": "secondary_material_content_calculated",
     "version": "1.0.0",
     "family": "SAMM",
+    "source": "catenax",
     "deps": [
       "shared.secondary_material_content@1.0.0"
     ]
@@ -1411,6 +1750,7 @@
     "name": "secondary_material_content_verifiable",
     "version": "1.0.0",
     "family": "SAMM",
+    "source": "catenax",
     "deps": [
       "shared.secondary_material_content@1.0.0"
     ]
@@ -1419,12 +1759,14 @@
     "name": "serial_part",
     "version": "1.0.1",
     "family": "BAMM",
+    "source": "catenax",
     "deps": []
   },
   "serial_part@2.0.0": {
     "name": "serial_part",
     "version": "2.0.0",
     "family": "SAMM",
+    "source": "catenax",
     "deps": [
       "shared.part_site_information_as_built@1.0.0",
       "shared.uuid@1.0.0"
@@ -1434,6 +1776,7 @@
     "name": "serial_part",
     "version": "3.0.0",
     "family": "SAMM",
+    "source": "catenax",
     "deps": [
       "shared.part_classification@1.0.0",
       "shared.part_site_information_as_built@2.0.0",
@@ -1444,6 +1787,7 @@
     "name": "serial_part",
     "version": "3.0.1",
     "family": "SAMM",
+    "source": "catenax",
     "deps": [
       "shared.part_classification@1.0.0",
       "shared.part_site_information_as_built@2.0.0",
@@ -1454,6 +1798,7 @@
     "name": "serial_part",
     "version": "4.0.0",
     "family": "SAMM",
+    "source": "catenax",
     "deps": [
       "shared.industry_core.common@1.0.0",
       "shared.industry_core.manufacturing_information@1.0.0",
@@ -1464,30 +1809,35 @@
     "name": "shared.address_characteristic",
     "version": "1.0.1",
     "family": "BAMM",
+    "source": "catenax",
     "deps": []
   },
   "shared.address_characteristic@2.0.0": {
     "name": "shared.address_characteristic",
     "version": "2.0.0",
     "family": "BAMM",
+    "source": "catenax",
     "deps": []
   },
   "shared.address_characteristic@3.0.0": {
     "name": "shared.address_characteristic",
     "version": "3.0.0",
     "family": "SAMM",
+    "source": "catenax",
     "deps": []
   },
   "shared.address_characteristic@4.0.0": {
     "name": "shared.address_characteristic",
     "version": "4.0.0",
     "family": "SAMM",
+    "source": "catenax",
     "deps": []
   },
   "shared.bill_of_process@1.0.0": {
     "name": "shared.bill_of_process",
     "version": "1.0.0",
     "family": "SAMM",
+    "source": "catenax",
     "deps": [
       "manufacturing_capability@3.0.0",
       "shared.message_header@2.0.0"
@@ -1497,6 +1847,7 @@
     "name": "shared.bill_of_process",
     "version": "1.1.0",
     "family": "SAMM",
+    "source": "catenax",
     "deps": [
       "manufacturing_capability@3.1.0",
       "shared.message_header@3.0.0"
@@ -1506,42 +1857,49 @@
     "name": "shared.business_partner_number",
     "version": "1.0.0",
     "family": "SAMM",
+    "source": "catenax",
     "deps": []
   },
   "shared.business_partner_number@2.0.0": {
     "name": "shared.business_partner_number",
     "version": "2.0.0",
     "family": "SAMM",
+    "source": "catenax",
     "deps": []
   },
   "shared.contact_information@1.0.0": {
     "name": "shared.contact_information",
     "version": "1.0.0",
     "family": "BAMM",
+    "source": "catenax",
     "deps": []
   },
   "shared.contact_information@2.0.0": {
     "name": "shared.contact_information",
     "version": "2.0.0",
     "family": "BAMM",
+    "source": "catenax",
     "deps": []
   },
   "shared.contact_information@3.0.0": {
     "name": "shared.contact_information",
     "version": "3.0.0",
     "family": "SAMM",
+    "source": "catenax",
     "deps": []
   },
   "shared.contact_information@4.0.0": {
     "name": "shared.contact_information",
     "version": "4.0.0",
     "family": "SAMM",
+    "source": "catenax",
     "deps": []
   },
   "shared.industry_core.common@1.0.0": {
     "name": "shared.industry_core.common",
     "version": "1.0.0",
     "family": "SAMM",
+    "source": "catenax",
     "deps": [
       "shared.business_partner_number@2.0.0",
       "shared.uuid@2.0.0"
@@ -1551,6 +1909,7 @@
     "name": "shared.industry_core.manufacturing_information",
     "version": "1.0.0",
     "family": "SAMM",
+    "source": "catenax",
     "deps": [
       "shared.industry_core.site_information@1.0.0",
       "shared.standard_codes@1.0.0"
@@ -1560,12 +1919,14 @@
     "name": "shared.industry_core.part_classification",
     "version": "1.0.0",
     "family": "SAMM",
+    "source": "catenax",
     "deps": []
   },
   "shared.industry_core.site_information@1.0.0": {
     "name": "shared.industry_core.site_information",
     "version": "1.0.0",
     "family": "SAMM",
+    "source": "catenax",
     "deps": [
       "shared.business_partner_number@2.0.0",
       "shared.uuid@2.0.0"
@@ -1575,18 +1936,21 @@
     "name": "shared.material_classification",
     "version": "1.0.0",
     "family": "SAMM",
+    "source": "catenax",
     "deps": []
   },
   "shared.message_header@1.0.0": {
     "name": "shared.message_header",
     "version": "1.0.0",
     "family": "SAMM",
+    "source": "catenax",
     "deps": []
   },
   "shared.message_header@2.0.0": {
     "name": "shared.message_header",
     "version": "2.0.0",
     "family": "SAMM",
+    "source": "catenax",
     "deps": [
       "shared.business_partner_number@1.0.0",
       "shared.uuid@1.0.0"
@@ -1596,6 +1960,7 @@
     "name": "shared.message_header",
     "version": "3.0.0",
     "family": "SAMM",
+    "source": "catenax",
     "deps": [
       "shared.business_partner_number@2.0.0",
       "shared.uuid@2.0.0"
@@ -1605,12 +1970,14 @@
     "name": "shared.part_classification",
     "version": "1.0.0",
     "family": "SAMM",
+    "source": "catenax",
     "deps": []
   },
   "shared.part_site_information_as_built@1.0.0": {
     "name": "shared.part_site_information_as_built",
     "version": "1.0.0",
     "family": "SAMM",
+    "source": "catenax",
     "deps": [
       "shared.business_partner_number@1.0.0",
       "shared.uuid@1.0.0"
@@ -1620,6 +1987,7 @@
     "name": "shared.part_site_information_as_built",
     "version": "2.0.0",
     "family": "SAMM",
+    "source": "catenax",
     "deps": [
       "shared.business_partner_number@2.0.0",
       "shared.uuid@2.0.0"
@@ -1629,24 +1997,28 @@
     "name": "shared.physical_dimension",
     "version": "1.0.0",
     "family": "BAMM",
+    "source": "catenax",
     "deps": []
   },
   "shared.physical_dimension@2.0.0": {
     "name": "shared.physical_dimension",
     "version": "2.0.0",
     "family": "BAMM",
+    "source": "catenax",
     "deps": []
   },
   "shared.physical_dimension@3.0.0": {
     "name": "shared.physical_dimension",
     "version": "3.0.0",
     "family": "SAMM",
+    "source": "catenax",
     "deps": []
   },
   "shared.quality_core@1.0.0": {
     "name": "shared.quality_core",
     "version": "1.0.0",
     "family": "SAMM",
+    "source": "catenax",
     "deps": [
       "shared.business_partner_number@2.0.0",
       "shared.uuid@2.0.0"
@@ -1656,30 +2028,35 @@
     "name": "shared.quantity",
     "version": "1.0.0",
     "family": "SAMM",
+    "source": "catenax",
     "deps": []
   },
   "shared.quantity@2.0.0": {
     "name": "shared.quantity",
     "version": "2.0.0",
     "family": "SAMM",
+    "source": "catenax",
     "deps": []
   },
   "shared.quantity@3.0.0": {
     "name": "shared.quantity",
     "version": "3.0.0",
     "family": "SAMM",
+    "source": "catenax",
     "deps": []
   },
   "shared.recycling_strategy_certificate@1.0.0": {
     "name": "shared.recycling_strategy_certificate",
     "version": "1.0.0",
     "family": "BAMM",
+    "source": "catenax",
     "deps": []
   },
   "shared.recycling_strategy_certificate@2.0.0": {
     "name": "shared.recycling_strategy_certificate",
     "version": "2.0.0",
     "family": "SAMM",
+    "source": "catenax",
     "deps": [
       "shared.business_partner_number@1.0.0",
       "shared.uuid@1.0.0"
@@ -1689,6 +2066,7 @@
     "name": "shared.recycling_strategy_certificate",
     "version": "3.0.0",
     "family": "SAMM",
+    "source": "catenax",
     "deps": [
       "shared.business_partner_number@2.0.0",
       "shared.uuid@2.0.0"
@@ -1698,12 +2076,14 @@
     "name": "shared.secondary_material_content",
     "version": "1.0.0",
     "family": "SAMM",
+    "source": "catenax",
     "deps": []
   },
   "shared.shopfloor_information_types@1.0.0": {
     "name": "shared.shopfloor_information_types",
     "version": "1.0.0",
     "family": "SAMM",
+    "source": "catenax",
     "deps": [
       "shared.message_header@1.0.0"
     ]
@@ -1712,6 +2092,7 @@
     "name": "shared.shopfloor_information_types",
     "version": "2.0.0",
     "family": "SAMM",
+    "source": "catenax",
     "deps": [
       "shared.message_header@2.0.0"
     ]
@@ -1720,24 +2101,37 @@
     "name": "shared.standard_codes",
     "version": "1.0.0",
     "family": "SAMM",
+    "source": "catenax",
     "deps": []
   },
   "shared.uuid@1.0.0": {
     "name": "shared.uuid",
     "version": "1.0.0",
     "family": "SAMM",
+    "source": "catenax",
     "deps": []
   },
   "shared.uuid@2.0.0": {
     "name": "shared.uuid",
     "version": "2.0.0",
     "family": "SAMM",
+    "source": "catenax",
     "deps": []
+  },
+  "shared@3.1.0": {
+    "name": "shared",
+    "version": "3.1.0",
+    "family": "SAMM",
+    "source": "idta",
+    "deps": [
+      "handover_documentation@2.0.0"
+    ]
   },
   "shopfloor_information.get_production_forecast@1.0.0": {
     "name": "shopfloor_information.get_production_forecast",
     "version": "1.0.0",
     "family": "SAMM",
+    "source": "catenax",
     "deps": [
       "shared.message_header@1.0.0",
       "shared.shopfloor_information_types@1.0.0"
@@ -1747,6 +2141,7 @@
     "name": "shopfloor_information.get_production_forecast",
     "version": "2.0.0",
     "family": "SAMM",
+    "source": "catenax",
     "deps": [
       "shared.business_partner_number@1.0.0",
       "shared.message_header@2.0.0",
@@ -1758,6 +2153,7 @@
     "name": "shopfloor_information.get_production_tracking",
     "version": "1.0.0",
     "family": "SAMM",
+    "source": "catenax",
     "deps": [
       "serial_part@3.0.0",
       "shared.business_partner_number@2.0.0",
@@ -1768,6 +2164,7 @@
     "name": "shopfloor_information.provide_production_forecast",
     "version": "1.0.0",
     "family": "SAMM",
+    "source": "catenax",
     "deps": [
       "shared.message_header@1.0.0",
       "shared.shopfloor_information_types@1.0.0"
@@ -1777,6 +2174,7 @@
     "name": "shopfloor_information.provide_production_forecast",
     "version": "2.0.0",
     "family": "SAMM",
+    "source": "catenax",
     "deps": [
       "shared.message_header@2.0.0",
       "shared.shopfloor_information_types@2.0.0",
@@ -1787,6 +2185,7 @@
     "name": "shopfloor_information.provide_production_tracking",
     "version": "1.0.0",
     "family": "SAMM",
+    "source": "catenax",
     "deps": [
       "serial_part@3.0.0",
       "shared.message_header@2.0.0"
@@ -1796,6 +2195,7 @@
     "name": "short_term_material_demand",
     "version": "1.0.0",
     "family": "SAMM",
+    "source": "catenax",
     "deps": [
       "shared.business_partner_number@2.0.0",
       "shared.quantity@2.0.0",
@@ -1806,6 +2206,7 @@
     "name": "simulated_week_based_material_demand",
     "version": "1.0.0",
     "family": "SAMM",
+    "source": "catenax",
     "deps": [
       "shared.uuid@2.0.0",
       "week_based_material_demand@3.0.1"
@@ -1815,18 +2216,21 @@
     "name": "single_level_bom_as_built",
     "version": "1.0.0",
     "family": "BAMM",
+    "source": "catenax",
     "deps": []
   },
   "single_level_bom_as_built@2.0.0": {
     "name": "single_level_bom_as_built",
     "version": "2.0.0",
     "family": "SAMM",
+    "source": "catenax",
     "deps": []
   },
   "single_level_bom_as_built@3.0.0": {
     "name": "single_level_bom_as_built",
     "version": "3.0.0",
     "family": "SAMM",
+    "source": "catenax",
     "deps": [
       "shared.business_partner_number@2.0.0",
       "shared.quantity@2.0.0",
@@ -1837,6 +2241,7 @@
     "name": "single_level_bom_as_built",
     "version": "4.0.0",
     "family": "SAMM",
+    "source": "catenax",
     "deps": [
       "shared.industry_core.common@1.0.0",
       "shared.quantity@3.0.0"
@@ -1846,12 +2251,14 @@
     "name": "single_level_bom_as_planned",
     "version": "2.0.0",
     "family": "SAMM",
+    "source": "catenax",
     "deps": []
   },
   "single_level_bom_as_planned@3.0.0": {
     "name": "single_level_bom_as_planned",
     "version": "3.0.0",
     "family": "SAMM",
+    "source": "catenax",
     "deps": [
       "shared.business_partner_number@2.0.0",
       "shared.quantity@2.0.0",
@@ -1862,6 +2269,7 @@
     "name": "single_level_bom_as_planned",
     "version": "4.0.0",
     "family": "SAMM",
+    "source": "catenax",
     "deps": [
       "shared.industry_core.common@1.0.0",
       "shared.quantity@3.0.0"
@@ -1871,24 +2279,28 @@
     "name": "single_level_bom_as_specified",
     "version": "1.0.0",
     "family": "BAMM",
+    "source": "catenax",
     "deps": []
   },
   "single_level_bom_as_specified@2.0.0": {
     "name": "single_level_bom_as_specified",
     "version": "2.0.0",
     "family": "SAMM",
+    "source": "catenax",
     "deps": []
   },
   "single_level_bom_as_specified@2.0.1": {
     "name": "single_level_bom_as_specified",
     "version": "2.0.1",
     "family": "SAMM",
+    "source": "catenax",
     "deps": []
   },
   "single_level_scene_node@1.0.0": {
     "name": "single_level_scene_node",
     "version": "1.0.0",
     "family": "SAMM",
+    "source": "catenax",
     "deps": [
       "shared.uuid@2.0.0"
     ]
@@ -1897,12 +2309,14 @@
     "name": "single_level_usage_as_built",
     "version": "2.0.0",
     "family": "SAMM",
+    "source": "catenax",
     "deps": []
   },
   "single_level_usage_as_built@3.0.0": {
     "name": "single_level_usage_as_built",
     "version": "3.0.0",
     "family": "SAMM",
+    "source": "catenax",
     "deps": [
       "shared.business_partner_number@2.0.0",
       "shared.quantity@2.0.0",
@@ -1913,6 +2327,7 @@
     "name": "single_level_usage_as_built",
     "version": "4.0.0",
     "family": "SAMM",
+    "source": "catenax",
     "deps": [
       "shared.industry_core.common@1.0.0",
       "shared.quantity@3.0.0"
@@ -1922,12 +2337,14 @@
     "name": "single_level_usage_as_planned",
     "version": "1.1.0",
     "family": "BAMM",
+    "source": "catenax",
     "deps": []
   },
   "single_level_usage_as_planned@2.0.0": {
     "name": "single_level_usage_as_planned",
     "version": "2.0.0",
     "family": "SAMM",
+    "source": "catenax",
     "deps": [
       "shared.business_partner_number@2.0.0",
       "shared.quantity@2.0.0",
@@ -1938,6 +2355,7 @@
     "name": "single_level_usage_as_planned",
     "version": "3.0.0",
     "family": "SAMM",
+    "source": "catenax",
     "deps": [
       "shared.industry_core.common@1.0.0",
       "shared.quantity@3.0.0"
@@ -1947,6 +2365,7 @@
     "name": "software_information",
     "version": "1.0.0",
     "family": "SAMM",
+    "source": "catenax",
     "deps": [
       "shared.uuid@2.0.0"
     ]
@@ -1955,6 +2374,7 @@
     "name": "special_characteristics.measurement",
     "version": "1.0.0",
     "family": "SAMM",
+    "source": "catenax",
     "deps": [
       "serial_part@3.0.0",
       "shared.business_partner_number@2.0.0"
@@ -1964,6 +2384,7 @@
     "name": "special_characteristics.measurement",
     "version": "2.0.0",
     "family": "SAMM",
+    "source": "catenax",
     "deps": [
       "serial_part@3.0.0",
       "shared.business_partner_number@2.0.0"
@@ -1973,24 +2394,28 @@
     "name": "time_series_reference",
     "version": "1.0.0",
     "family": "BAMM",
+    "source": "catenax",
     "deps": []
   },
   "traction_battery_code@1.0.0": {
     "name": "traction_battery_code",
     "version": "1.0.0",
     "family": "BAMM",
+    "source": "catenax",
     "deps": []
   },
   "traction_battery_code@2.0.0": {
     "name": "traction_battery_code",
     "version": "2.0.0",
     "family": "SAMM",
+    "source": "catenax",
     "deps": []
   },
   "transmission.transmission_pass@1.0.0": {
     "name": "transmission.transmission_pass",
     "version": "1.0.0",
     "family": "BAMM",
+    "source": "catenax",
     "deps": [
       "pcf@3.0.0",
       "serial_part_typization@2.0.0",
@@ -2002,6 +2427,7 @@
     "name": "transmission.transmission_pass",
     "version": "2.0.0",
     "family": "SAMM",
+    "source": "catenax",
     "deps": [
       "generic.digital_product_passport@4.0.0"
     ]
@@ -2010,6 +2436,7 @@
     "name": "transmission.transmission_pass",
     "version": "3.0.0",
     "family": "SAMM",
+    "source": "catenax",
     "deps": [
       "generic.digital_product_passport@5.0.0"
     ]
@@ -2018,6 +2445,7 @@
     "name": "transmission.transmission_pass",
     "version": "3.1.0",
     "family": "SAMM",
+    "source": "catenax",
     "deps": [
       "generic.digital_product_passport@5.0.0"
     ]
@@ -2026,6 +2454,7 @@
     "name": "us_tariff_information",
     "version": "1.0.0",
     "family": "SAMM",
+    "source": "catenax",
     "deps": [
       "shared.quantity@2.0.0",
       "shared.uuid@2.0.0"
@@ -2035,6 +2464,7 @@
     "name": "us_tariff_information",
     "version": "2.0.0",
     "family": "SAMM",
+    "source": "catenax",
     "deps": [
       "shared.industry_core.common@1.0.0",
       "shared.material_classification@1.0.0",
@@ -2045,36 +2475,42 @@
     "name": "user_estimated_loading",
     "version": "1.0.0",
     "family": "BAMM",
+    "source": "catenax",
     "deps": []
   },
   "user_estimated_loading@2.0.0": {
     "name": "user_estimated_loading",
     "version": "2.0.0",
     "family": "SAMM",
+    "source": "catenax",
     "deps": []
   },
   "vehicle.product_description@1.0.0": {
     "name": "vehicle.product_description",
     "version": "1.0.0",
     "family": "BAMM",
+    "source": "catenax",
     "deps": []
   },
   "vehicle.product_description@2.0.0": {
     "name": "vehicle.product_description",
     "version": "2.0.0",
     "family": "BAMM",
+    "source": "catenax",
     "deps": []
   },
   "vehicle.product_description@3.0.0": {
     "name": "vehicle.product_description",
     "version": "3.0.0",
     "family": "SAMM",
+    "source": "catenax",
     "deps": []
   },
   "warranty_claim_request@1.0.0": {
     "name": "warranty_claim_request",
     "version": "1.0.0",
     "family": "SAMM",
+    "source": "catenax",
     "deps": [
       "shared.business_partner_number@2.0.0",
       "shared.quality_core@1.0.0"
@@ -2084,6 +2520,7 @@
     "name": "warranty_claim_request_verification",
     "version": "1.0.0",
     "family": "SAMM",
+    "source": "catenax",
     "deps": [
       "shared.business_partner_number@2.0.0",
       "shared.quality_core@1.0.0",
@@ -2094,18 +2531,21 @@
     "name": "waste",
     "version": "1.0.0",
     "family": "BAMM",
+    "source": "catenax",
     "deps": []
   },
   "waste@2.0.0": {
     "name": "waste",
     "version": "2.0.0",
     "family": "SAMM",
+    "source": "catenax",
     "deps": []
   },
   "waste_certificate@1.0.0": {
     "name": "waste_certificate",
     "version": "1.0.0",
     "family": "SAMM",
+    "source": "catenax",
     "deps": [
       "shared.recycling_strategy_certificate@2.0.0"
     ]
@@ -2114,12 +2554,14 @@
     "name": "week_based_capacity_group",
     "version": "1.0.1",
     "family": "BAMM",
+    "source": "catenax",
     "deps": []
   },
   "week_based_capacity_group@2.0.0": {
     "name": "week_based_capacity_group",
     "version": "2.0.0",
     "family": "SAMM",
+    "source": "catenax",
     "deps": [
       "shared.business_partner_number@1.0.0",
       "shared.quantity@1.0.0",
@@ -2130,6 +2572,7 @@
     "name": "week_based_capacity_group",
     "version": "3.0.0",
     "family": "SAMM",
+    "source": "catenax",
     "deps": [
       "shared.business_partner_number@2.0.0",
       "shared.quantity@2.0.0",
@@ -2140,6 +2583,7 @@
     "name": "week_based_capacity_group",
     "version": "3.0.1",
     "family": "SAMM",
+    "source": "catenax",
     "deps": [
       "shared.business_partner_number@2.0.0",
       "shared.quantity@2.0.0",
@@ -2150,24 +2594,28 @@
     "name": "week_based_material_demand",
     "version": "1.0.0",
     "family": "BAMM",
+    "source": "catenax",
     "deps": []
   },
   "week_based_material_demand@1.0.1": {
     "name": "week_based_material_demand",
     "version": "1.0.1",
     "family": "BAMM",
+    "source": "catenax",
     "deps": []
   },
   "week_based_material_demand@2.0.0": {
     "name": "week_based_material_demand",
     "version": "2.0.0",
     "family": "SAMM",
+    "source": "catenax",
     "deps": []
   },
   "week_based_material_demand@3.0.0": {
     "name": "week_based_material_demand",
     "version": "3.0.0",
     "family": "SAMM",
+    "source": "catenax",
     "deps": [
       "shared.business_partner_number@2.0.0",
       "shared.quantity@2.0.0",
@@ -2178,6 +2626,7 @@
     "name": "week_based_material_demand",
     "version": "3.0.1",
     "family": "SAMM",
+    "source": "catenax",
     "deps": [
       "shared.business_partner_number@2.0.0",
       "shared.quantity@2.0.0",

@@ -1,0 +1,451 @@
+{
+  "meta": {
+    "namespace": "urn:samm:io.admin-shell.idta.generic.technical_data:2.0.0#",
+    "meta_model": "SAMM 2.2.0",
+    "model_family": "SAMM",
+    "model_name": "generic.technical_data",
+    "model_version": "2.0.0",
+    "source": "idta",
+    "status": "undefined",
+    "release_date": null,
+    "release_notes": null,
+    "dependencies": [
+      {
+        "name": "digital_nameplate",
+        "version": "3.0.0",
+        "family": "SAMM",
+        "source": "idta"
+      },
+      {
+        "name": "shared",
+        "version": "3.1.0",
+        "family": "SAMM",
+        "source": "idta"
+      },
+      {
+        "name": "nameplate",
+        "version": "3.0.0",
+        "family": "SAMM",
+        "source": "idta"
+      }
+    ],
+    "path": "data/smt-semantic-models/io.admin-shell.idta.generic.technical_data/2.0.0/TechnicalData.ttl"
+  },
+  "nodes": [
+    {
+      "id": "urn:samm:io.admin-shell.idta.generic.technical_data:2.0.0#TechnicalData",
+      "label": "TechnicalData",
+      "kind": "Aspect",
+      "preferredName": null,
+      "description": "Technical data of the asset and associated product classificatons."
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.generic.technical_data:2.0.0#generalInformation",
+      "label": "generalInformation",
+      "kind": "Property",
+      "preferredName": "general information",
+      "description": "General information, for example ordering and manufacturer information."
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.generic.technical_data:2.0.0#productClassifications",
+      "label": "productClassifications",
+      "kind": "Property",
+      "preferredName": "Produkt-Klassifikationen",
+      "description": "Product classifications by association with product classes in common classification systems."
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.generic.technical_data:2.0.0#technicalPropertyAreas",
+      "label": "technicalPropertyAreas",
+      "kind": "Property",
+      "preferredName": "technical property areas",
+      "description": "List of all technical property areas."
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.generic.technical_data:2.0.0#furtherInformation",
+      "label": "furtherInformation",
+      "kind": "Property",
+      "preferredName": null,
+      "description": "Further information on the product, the validity of the information provided and this data record."
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.generic.technical_data:2.0.0#specificDescriptions",
+      "label": "specificDescriptions",
+      "kind": "Property",
+      "preferredName": "specific descriptions",
+      "description": "Specific description areas for multiple use cases or areas of application."
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.generic.technical_data:2.0.0#GeneralInformationCharacteristic",
+      "label": "GeneralInformationCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": null,
+      "description": null
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.generic.technical_data:2.0.0#TechnicalPropertyAreaSet",
+      "label": "TechnicalPropertyAreaSet",
+      "kind": "Characteristic",
+      "preferredName": null,
+      "description": null
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.generic.technical_data:2.0.0#FurtherInformationCharacteristic",
+      "label": "FurtherInformationCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": null,
+      "description": null
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.generic.technical_data:2.0.0#ProductClassificationSet",
+      "label": "ProductClassificationSet",
+      "kind": "Characteristic",
+      "preferredName": null,
+      "description": null
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.generic.technical_data:2.0.0#SpecificDescriptionsSet",
+      "label": "SpecificDescriptionsSet",
+      "kind": "Characteristic",
+      "preferredName": null,
+      "description": null
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.generic.technical_data:2.0.0#FurtherInformationEntity",
+      "label": "FurtherInformationEntity",
+      "kind": "Entity",
+      "preferredName": null,
+      "description": null
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.generic.technical_data:2.0.0#validDate",
+      "label": "validDate",
+      "kind": "Property",
+      "preferredName": "valid date",
+      "description": "Denotes a date on which the data specified in the Submodel was valid from for the associated asset."
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.generic.technical_data:2.0.0#textStatement",
+      "label": "textStatement",
+      "kind": "Property",
+      "preferredName": "text statement",
+      "description": "Statement by the manufacturer in text form, e.g. scope of validity of the statements, scopes of application, conditions of operation"
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.generic.technical_data:2.0.0#GeneralInformationEntity",
+      "label": "GeneralInformationEntity",
+      "kind": "Entity",
+      "preferredName": null,
+      "description": null
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.generic.technical_data:2.0.0#manufacturerName",
+      "label": "manufacturerName",
+      "kind": "Property",
+      "preferredName": "manufacturer name",
+      "description": "Legally valid designation of the natural or judicial person which is directly responsible for the design, production, packaging and labeling of a product in respect to its being brought into circulation."
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.generic.technical_data:2.0.0#companyLogo",
+      "label": "companyLogo",
+      "kind": "Property",
+      "preferredName": "Firmenlogo",
+      "description": "Das Firmenlogo des Produkts."
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.generic.technical_data:2.0.0#manufacturerProductDesignation",
+      "label": "manufacturerProductDesignation",
+      "kind": "Property",
+      "preferredName": "Produktbezeichnung",
+      "description": "Short description of the product (short text), third or lowest level of a 3 level manufacturer specific product hierarchy."
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.generic.technical_data:2.0.0#manufacturerArticleNumber",
+      "label": "manufacturerArticleNumber",
+      "kind": "Property",
+      "preferredName": "Artikelnummer des Produkts",
+      "description": "Unique product identifier of the manufacturer Note: The manufacturer article number is represented as a string, although often a numerical ID."
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.generic.technical_data:2.0.0#manufacturerOrderCode",
+      "label": "manufacturerOrderCode",
+      "kind": "Property",
+      "preferredName": "Bestellcode des Produkts",
+      "description": "Eindeutige Zahlen- und Buchstabenkombination um das Produkt eindeutig für die Bestellung zu identifizieren."
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.generic.technical_data:2.0.0#ProductClassificationEntity",
+      "label": "ProductClassificationEntity",
+      "kind": "Entity",
+      "preferredName": "product classification entity",
+      "description": "Single product classification item by association with product class in a particular classification system or property dictionary."
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.generic.technical_data:2.0.0#productClassificationSystem",
+      "label": "productClassificationSystem",
+      "kind": "Property",
+      "preferredName": "product classification system",
+      "description": "Common name of the classification system.\nNote: Examples for common names for classification systems are \"ECLASS\" or \"IEC CDD\"."
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.generic.technical_data:2.0.0#classificationSystemVersion",
+      "label": "classificationSystemVersion",
+      "kind": "Property",
+      "preferredName": "classification system version",
+      "description": "Common version identifier of the used classification system, in order to distinguish different version of the property dictionary.\nNote: Casing is to be ignored."
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.generic.technical_data:2.0.0#productClassId",
+      "label": "productClassId",
+      "kind": "Property",
+      "preferredName": "product class ID",
+      "description": "Class of the associated product or industrial equipment in the classification system. According to the notation of the system.\nNote: Ideally, the Property/valueId is used to reference the IRI/ IRDI of the product class."
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.generic.technical_data:2.0.0#classificationSystemUrl",
+      "label": "classificationSystemUrl",
+      "kind": "Property",
+      "preferredName": "Classification system URL",
+      "description": "URL of the used classification system."
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.generic.technical_data:2.0.0#productClassCodedName",
+      "label": "productClassCodedName",
+      "kind": "Property",
+      "preferredName": "Product classification coded name",
+      "description": "Unique class code in a classification hierarchy."
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.generic.technical_data:2.0.0#productClassName",
+      "label": "productClassName",
+      "kind": "Property",
+      "preferredName": "Product classification name",
+      "description": "Name of product class in the used classification system."
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.generic.technical_data:2.0.0#referenceToTechnicalPropertyArea",
+      "label": "referenceToTechnicalPropertyArea",
+      "kind": "Property",
+      "preferredName": "reference to technical property area",
+      "description": "Reference to technical property area."
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.generic.technical_data:2.0.0#productImages",
+      "label": "productImages",
+      "kind": "Property",
+      "preferredName": "product images",
+      "description": "Image files for associated product provided in common format (.png, .jpg)."
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.generic.technical_data:2.0.0#imageFile",
+      "label": "imageFile",
+      "kind": "Property",
+      "preferredName": "image file",
+      "description": "Picture of the product (low resolution) 72 dpi / rgb (GIF or JPG)."
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.generic.technical_data:2.0.0#imageNote",
+      "label": "imageNote",
+      "kind": "Property",
+      "preferredName": "image note",
+      "description": "Notes or explanations about the image provided."
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.generic.technical_data:2.0.0#ProductImageSet",
+      "label": "ProductImageSet",
+      "kind": "Characteristic",
+      "preferredName": null,
+      "description": null
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.generic.technical_data:2.0.0#ProductImage",
+      "label": "ProductImage",
+      "kind": "Entity",
+      "preferredName": "product image",
+      "description": "Pictorial representation of the product related to an application."
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.generic.technical_data:2.0.0#SpecificDescriptionEntity",
+      "label": "SpecificDescriptionEntity",
+      "kind": "Entity",
+      "preferredName": null,
+      "description": null
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.generic.technical_data:2.0.0#TechnicalAttributes",
+      "label": "TechnicalAttributes",
+      "kind": "Entity",
+      "preferredName": null,
+      "description": null
+    }
+  ],
+  "links": [
+    {
+      "source": "urn:samm:io.admin-shell.idta.generic.technical_data:2.0.0#TechnicalData",
+      "target": "urn:samm:io.admin-shell.idta.generic.technical_data:2.0.0#generalInformation",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.generic.technical_data:2.0.0#TechnicalData",
+      "target": "urn:samm:io.admin-shell.idta.generic.technical_data:2.0.0#productClassifications",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.generic.technical_data:2.0.0#TechnicalData",
+      "target": "urn:samm:io.admin-shell.idta.generic.technical_data:2.0.0#technicalPropertyAreas",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.generic.technical_data:2.0.0#TechnicalData",
+      "target": "urn:samm:io.admin-shell.idta.generic.technical_data:2.0.0#furtherInformation",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.generic.technical_data:2.0.0#TechnicalData",
+      "target": "urn:samm:io.admin-shell.idta.generic.technical_data:2.0.0#specificDescriptions",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.generic.technical_data:2.0.0#generalInformation",
+      "target": "urn:samm:io.admin-shell.idta.generic.technical_data:2.0.0#GeneralInformationCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.generic.technical_data:2.0.0#productClassifications",
+      "target": "urn:samm:io.admin-shell.idta.generic.technical_data:2.0.0#ProductClassificationSet",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.generic.technical_data:2.0.0#technicalPropertyAreas",
+      "target": "urn:samm:io.admin-shell.idta.generic.technical_data:2.0.0#TechnicalPropertyAreaSet",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.generic.technical_data:2.0.0#furtherInformation",
+      "target": "urn:samm:io.admin-shell.idta.generic.technical_data:2.0.0#FurtherInformationCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.generic.technical_data:2.0.0#specificDescriptions",
+      "target": "urn:samm:io.admin-shell.idta.generic.technical_data:2.0.0#SpecificDescriptionsSet",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.generic.technical_data:2.0.0#FurtherInformationEntity",
+      "target": "urn:samm:io.admin-shell.idta.generic.technical_data:2.0.0#textStatement",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.generic.technical_data:2.0.0#FurtherInformationEntity",
+      "target": "urn:samm:io.admin-shell.idta.generic.technical_data:2.0.0#validDate",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.generic.technical_data:2.0.0#GeneralInformationEntity",
+      "target": "urn:samm:io.admin-shell.idta.generic.technical_data:2.0.0#manufacturerName",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.generic.technical_data:2.0.0#GeneralInformationEntity",
+      "target": "urn:samm:io.admin-shell.idta.generic.technical_data:2.0.0#companyLogo",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.generic.technical_data:2.0.0#GeneralInformationEntity",
+      "target": "urn:samm:io.admin-shell.idta.generic.technical_data:2.0.0#manufacturerProductDesignation",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.generic.technical_data:2.0.0#GeneralInformationEntity",
+      "target": "urn:samm:io.admin-shell.idta.generic.technical_data:2.0.0#manufacturerArticleNumber",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.generic.technical_data:2.0.0#GeneralInformationEntity",
+      "target": "urn:samm:io.admin-shell.idta.generic.technical_data:2.0.0#manufacturerOrderCode",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.generic.technical_data:2.0.0#ProductClassificationEntity",
+      "target": "urn:samm:io.admin-shell.idta.generic.technical_data:2.0.0#productClassificationSystem",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.generic.technical_data:2.0.0#ProductClassificationEntity",
+      "target": "urn:samm:io.admin-shell.idta.generic.technical_data:2.0.0#classificationSystemVersion",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.generic.technical_data:2.0.0#ProductClassificationEntity",
+      "target": "urn:samm:io.admin-shell.idta.generic.technical_data:2.0.0#classificationSystemUrl",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.generic.technical_data:2.0.0#ProductClassificationEntity",
+      "target": "urn:samm:io.admin-shell.idta.generic.technical_data:2.0.0#productClassId",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.generic.technical_data:2.0.0#ProductClassificationEntity",
+      "target": "urn:samm:io.admin-shell.idta.generic.technical_data:2.0.0#productClassCodedName",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.generic.technical_data:2.0.0#ProductClassificationEntity",
+      "target": "urn:samm:io.admin-shell.idta.generic.technical_data:2.0.0#productClassName",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.generic.technical_data:2.0.0#ProductClassificationEntity",
+      "target": "urn:samm:io.admin-shell.idta.generic.technical_data:2.0.0#referenceToTechnicalPropertyArea",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.generic.technical_data:2.0.0#ProductImage",
+      "target": "urn:samm:io.admin-shell.idta.generic.technical_data:2.0.0#imageFile",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.generic.technical_data:2.0.0#ProductImage",
+      "target": "urn:samm:io.admin-shell.idta.generic.technical_data:2.0.0#imageNote",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.generic.technical_data:2.0.0#productImages",
+      "target": "urn:samm:io.admin-shell.idta.generic.technical_data:2.0.0#ProductImageSet",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.generic.technical_data:2.0.0#ProductImageSet",
+      "target": "urn:samm:io.admin-shell.idta.generic.technical_data:2.0.0#ProductImage",
+      "label": "dataType",
+      "optional": false
+    }
+  ]
+}

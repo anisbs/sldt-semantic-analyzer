@@ -1,0 +1,46 @@
+{
+  "meta": {
+    "namespace": "urn:samm:io.catenax.waste_certificate:1.0.0#",
+    "meta_model": "SAMM 2.0.0",
+    "model_family": "SAMM",
+    "model_name": "waste_certificate",
+    "model_version": "1.0.0",
+    "source": "catenax",
+    "status": "release",
+    "release_date": "2023-12-04",
+    "release_notes": "# Changelog\nAll notable changes to this model will be documented in this file.\n\n## [Unreleased]\n\n## [1.0.0] - 2023-12-04\n### Added\n- initial model\n\n### Changed\n\n### Removed",
+    "dependencies": [
+      {
+        "name": "shared.recycling_strategy_certificate",
+        "version": "2.0.0",
+        "family": "SAMM",
+        "source": "catenax"
+      }
+    ],
+    "path": "data/sldt-semantic-models/io.catenax.waste_certificate/1.0.0/WasteCertificate.ttl"
+  },
+  "nodes": [
+    {
+      "id": "urn:samm:io.catenax.waste_certificate:1.0.0#WasteCertificate",
+      "label": "WasteCertificate",
+      "kind": "Aspect",
+      "preferredName": "Waste-Certificate",
+      "description": "\t\nThe Waste-Certificate marks the point in time, respectively status update at which an asset irrevocably enters the status through tranferring to an authorized business partner. Materials send to landfill are mostly inert and are for example slag, waste from thermal recycling and minerals."
+    },
+    {
+      "id": "urn:samm:io.catenax.waste_certificate:1.0.0#certificate",
+      "label": "certificate",
+      "kind": "Property",
+      "preferredName": "Certificate",
+      "description": "A property of the model, named certificate."
+    }
+  ],
+  "links": [
+    {
+      "source": "urn:samm:io.catenax.waste_certificate:1.0.0#WasteCertificate",
+      "target": "urn:samm:io.catenax.waste_certificate:1.0.0#certificate",
+      "label": "properties",
+      "optional": false
+    }
+  ]
+}

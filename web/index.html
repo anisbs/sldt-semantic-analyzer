@@ -53,6 +53,11 @@
       --st-undefined: #9e9e9e;
       --st-warn-text: #b9860b;
 
+      /* Source (catalog origin) — mirrored in JS SOURCE_COLORS for badges */
+      --src-catenax: #0e7c66;        /* Catena-X — teal */
+      --src-idta:    #6a4fbf;        /* IDTA     — purple */
+      --src-external:#8b929c;        /* third-party (BatteryPass…) — grey */
+
       /* Type scale */
       --fs-2xs: 10px; --fs-xs: 11px; --fs-sm: 12px; --fs-md: 13px;
       --fs-base: 14px; --fs-lg: 16px; --fs-xl: 20px; --fs-2xl: 28px;
@@ -193,6 +198,18 @@
       font-variant-numeric: tabular-nums; }
     .kpi .s { font-size: var(--fs-sm); color: var(--text-2);
       text-transform: capitalize; }
+    /* KPI per-source breakdown (Catena-X / IDTA counts under the status). */
+    .kpi .kbd { display: flex; gap: var(--sp-3); margin-top: 6px;
+      font-size: var(--fs-xs); color: var(--text-3);
+      font-variant-numeric: tabular-nums; }
+    .kpi .kbd-src { display: flex; align-items: center; gap: 4px; }
+    .kpi .kbd-src .d { width: 7px; height: 7px; border-radius: 50%;
+      display: inline-block; }
+    #cat-source { display: flex; gap: var(--sp-4); flex-wrap: wrap;
+      align-items: center; font-size: var(--fs-md); }
+    #cat-source .ttl { color: var(--text-2); font-size: var(--fs-sm); }
+    #cat-source label { display: flex; align-items: center; gap: 5px;
+      cursor: pointer; }
     #catalog-head { display: flex; align-items: center; gap: var(--sp-3); }
     #search { flex: 1; max-width: 360px; padding: 7px 10px;
       font-size: var(--fs-md); color: var(--text); background: var(--surface);
@@ -248,6 +265,9 @@
     .cv .vs { flex: 1; display: flex; align-items: center; gap: 6px;
       color: var(--text-2); text-transform: capitalize; }
     .cv .vd { width: 8px; height: 8px; border-radius: 50%; }
+    .cv .vc { color: var(--text-3); font-size: var(--fs-xs);
+      padding: 1px 7px; border: 1px solid var(--border-strong);
+      border-radius: var(--r-pill); }
     .cv .va { color: var(--text-3); }
 
     /* Model Viewer */
@@ -287,6 +307,11 @@
       font-size: var(--fs-sm); color: var(--text-3); }
     #mv-badges { font-size: var(--fs-sm); color: var(--text-2);
       display: flex; align-items: center; gap: var(--sp-2); }
+    #mv-github { font-size: var(--fs-sm); color: var(--accent);
+      text-decoration: none; padding: 4px 9px;
+      border: 1px solid var(--border-strong); border-radius: var(--r-sm);
+      transition: background-color var(--dur) var(--ease); }
+    #mv-github:hover { background: var(--accent-weak); }
     #subtabs { display: flex; gap: 2px; padding: 6px var(--sp-3) 0;
       border-bottom: 1px solid var(--border); background: var(--surface); }
     .subtab {
@@ -345,6 +370,10 @@
       border-radius: 50%; margin-right: 6px; }
     #dep-legend span.ring { width: 11px; height: 11px; border-radius: 50%;
       margin-right: 6px; background: transparent; box-sizing: border-box; }
+    /* Legend swatch for the cross-source dashed edge. */
+    #dep-legend span.cross-dash {
+      width: 18px; height: 0; margin-right: 6px;
+      border-top: 2px dashed var(--accent-strong); }
     #legend .sep, #dep-legend .sep { font-weight: 600; margin-top: 6px; }
     #legend label.kbox { display: flex; align-items: center; margin: 2px 0;
       cursor: pointer; user-select: none; }
@@ -379,6 +408,10 @@
     .node text { font-size: var(--fs-2xs); fill: var(--text);
       pointer-events: none; }
     .link { stroke: #999; stroke-opacity: .6; }
+    /* Cross-source dependency edge (e.g. IDTA model → Catena-X model).
+       Dashed + accent color so the bridge between repositories is obvious. */
+    .link.cross { stroke: var(--accent-strong); stroke-opacity: .85;
+      stroke-dasharray: 6 4; }
     .link.optional { stroke-dasharray: 4 3; }
     .link-label { font-size: 9px; fill: var(--text-3); pointer-events: none; }
     /* Search (top tab) */
@@ -396,12 +429,12 @@
     #sr-q:focus { outline: none; border-color: var(--accent);
       box-shadow: 0 0 0 3px var(--accent-weak); }
     #sr-count { font-size: var(--fs-sm); color: var(--text-3); }
-    #sr-status, #sr-kinds { display: flex; gap: var(--sp-4); flex-wrap: wrap;
-      align-items: center; font-size: var(--fs-md); }
-    #sr-status .ttl, #sr-kinds .ttl { color: var(--text-2);
+    #sr-status, #sr-kinds, #sr-source { display: flex; gap: var(--sp-4);
+      flex-wrap: wrap; align-items: center; font-size: var(--fs-md); }
+    #sr-status .ttl, #sr-kinds .ttl, #sr-source .ttl { color: var(--text-2);
       font-size: var(--fs-sm); }
-    #sr-status label, #sr-kinds label { display: flex; align-items: center;
-      gap: 5px; cursor: pointer; }
+    #sr-status label, #sr-kinds label, #sr-source label {
+      display: flex; align-items: center; gap: 5px; cursor: pointer; }
     #sr-list { display: flex; flex-direction: column; flex: none;
       border: 1px solid var(--border); border-radius: var(--r-md);
       background: var(--surface); box-shadow: var(--shadow-sm);
@@ -429,11 +462,11 @@
       padding: var(--sp-4) var(--sp-5); gap: var(--sp-4); }
     #issues h1 { margin: 0 0 4px; font-size: var(--fs-xl); }
     #issues .sub { font-size: var(--fs-sm); color: var(--text-3); }
-    #iss-status { display: flex; gap: var(--sp-4); flex-wrap: wrap;
+    #iss-status, #iss-source { display: flex; gap: var(--sp-4); flex-wrap: wrap;
       align-items: center; font-size: var(--fs-md); }
-    #iss-status .ttl { color: var(--text-2); font-size: var(--fs-sm); }
-    #iss-status label { display: flex; align-items: center; gap: 5px;
-      cursor: pointer; }
+    #iss-status .ttl, #iss-source .ttl { color: var(--text-2); font-size: var(--fs-sm); }
+    #iss-status label, #iss-source label { display: flex; align-items: center;
+      gap: 5px; cursor: pointer; }
     #iss-kpis { display: grid; gap: var(--sp-3);
       grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); }
     .kpi.iss { border-left-color: var(--border-strong); }
@@ -563,6 +596,7 @@
         <p>Models per status — one entry per version file.</p>
       </div>
       <div id="kpis"></div>
+      <div id="cat-source"><span class="ttl">Source:</span></div>
       <div id="catalog-head">
         <input id="search" placeholder="Filter by model name (family, status, version…)" />
         <span id="count"></span>
@@ -583,6 +617,7 @@
       </div>
       <div id="sr-kinds"><span class="ttl">Type:</span></div>
       <div id="sr-status"><span class="ttl">Model status:</span></div>
+      <div id="sr-source"><span class="ttl">Source:</span></div>
       <div id="sr-list"></div>
     </div>
 
@@ -606,6 +641,8 @@
           </select>
         </label>
         <span id="mv-badges"></span>
+        <a id="mv-github" target="_blank" rel="noopener" style="display:none">
+          View on GitHub ↗</a>
       </div>
       <div id="subtabs">
         <div class="subtab active" data-sub="sv-graph">Graph</div>
@@ -655,6 +692,7 @@
           below (computed offline, served as static JSON).</div>
       </div>
       <div id="iss-status"><span class="ttl">Status:</span></div>
+      <div id="iss-source"><span class="ttl">Source:</span></div>
       <div id="iss-kpis"></div>
       <div id="iss-explain" style="display:none"></div>
       <div id="iss-list-head"></div>
@@ -686,6 +724,39 @@ const STATUS_COLORS = {
 };
 const statusColor = s => STATUS_COLORS[s] || "#9e9e9e";
 const STATUS_ORDER = ["release", "draft", "deprecated", "undefined"];
+
+// Catalog source (origin repository) — Feature 4b. SOURCE_COLORS must mirror
+// the CSS --src-* tokens so the rendered badges match the dark/light theme.
+const SOURCE_COLORS = {
+  catenax: "#0e7c66", idta: "#6a4fbf", external: "#8b929c",
+};
+const SOURCE_LABELS = {
+  catenax: "Catena-X", idta: "IDTA", external: "external",
+};
+const SOURCE_ORDER = ["catenax", "idta"];
+const sourceColor = s => SOURCE_COLORS[s] || SOURCE_COLORS.external;
+const sourceLabel = s => SOURCE_LABELS[s] || s || "?";
+
+// Per-source jsDelivr CDN bases — used by the Generated docs sub-tab to fetch
+// the upstream gen/<Stem>.html (and the companion schema/payload/openapi
+// artifacts) from the right repo. Falls back to Catena-X for unknown sources.
+const CDN_BY_SOURCE = {
+  catenax: "https://cdn.jsdelivr.net/gh/eclipse-tractusx/sldt-semantic-models@main/",
+  idta:    "https://cdn.jsdelivr.net/gh/admin-shell-io/smt-semantic-models@main/",
+};
+const cdnFor = entry => CDN_BY_SOURCE[entry && entry.source] || CDN_BY_SOURCE.catenax;
+
+// Public GitHub repo per source — used to build a "View on GitHub" deep link
+// to the model's version folder (entry.repo_path, set by graph.py).
+const REPO_BY_SOURCE = {
+  catenax: "eclipse-tractusx/sldt-semantic-models",
+  idta:    "admin-shell-io/smt-semantic-models",
+};
+function githubUrlFor(entry) {
+  const repo = REPO_BY_SOURCE[entry && entry.source];
+  return repo && entry.repo_path
+    ? `https://github.com/${repo}/tree/main/${entry.repo_path}` : null;
+}
 
 // Release notes are raw markdown that can contain <, &, > (e.g. urn:<...>).
 const escapeHtml = s => String(s).replace(/[&<>]/g,
@@ -937,6 +1008,9 @@ function depEndpoints(d) {
   ["release", "draft", "deprecated", "undefined"].forEach(s =>
     l.append("div").html(
       `<span class="ring" style="border:3px solid ${statusColor(s)}"></span>${s}`));
+  l.append("div").attr("class", "sep").text("Edge");
+  l.append("div").html(
+    `<span class="cross-dash"></span>Cross-source (e.g. IDTA → Catena-X)`);
 })();
 
 const depKey = e => (e ? `${e.model_name}@${e.version}` : null);
@@ -946,6 +1020,7 @@ const depKey = e => (e ? `${e.model_name}@${e.version}` : null);
 let depDir = "out";
 let revMap = null;                 // built lazily : key -> [keys that use it]
 let statusByKey = null;            // built lazily from index.json : key -> status
+let sourceByKey = null;            // built lazily from index.json : key -> source
 
 function buildRevMap() {
   const r = {};
@@ -954,8 +1029,8 @@ function buildRevMap() {
   return r;
 }
 
-// Status comes from the catalog (index.json, already loaded). A key out of
-// the catalog has none (it's the "Not in catalog" case anyway).
+// Status/source come from the catalog (index.json, already loaded). A key
+// out of the catalog has neither (it's the "Not in catalog" case anyway).
 function keyStatus(k) {
   if (!statusByKey) {
     statusByKey = {};
@@ -965,6 +1040,16 @@ function keyStatus(k) {
     });
   }
   return statusByKey[k] || null;
+}
+function keySource(k) {
+  if (!sourceByKey) {
+    sourceByKey = {};
+    allModels.forEach(e => {
+      const kk = `${e.model_name}@${e.version}`;
+      if (!(kk in sourceByKey)) sourceByKey[kk] = e.source;
+    });
+  }
+  return sourceByKey[k] || null;
 }
 
 // BFS, transitive. `expanded` guards cycles: A→B and B→A both draw an edge,
@@ -980,6 +1065,7 @@ function buildDepGraph(rootKey) {
         name: m ? m.name : k.slice(0, at),
         version: m ? m.version : k.slice(at + 1),
         status: m ? (keyStatus(k) || "undefined") : null,
+        source: m ? keySource(k) : null,
         root: k === rootKey,
       });
     }
@@ -1031,9 +1117,21 @@ function drawDep(rootKey) {
   depSim = makeSim(nodes, links, width, height,
     { distance: 110, charge: -320, collide: 34 });
 
+  // Flag arêtes "cross-source" : source du nœud parent ≠ source du nœud cible
+  // (ex. IDTA -> Catena-X). On le calcule AVANT que d3.forceLink remplace
+  // d.source/d.target par les objets nœuds (la résolution arrive au 1er tick),
+  // pour lire les ids en string et garder l'intention explicite.
+  const nodeById = new Map(nodes.map(n => [n.id, n]));
+  links.forEach(d => {
+    const a = nodeById.get(typeof d.source === "object" ? d.source.id : d.source);
+    const b = nodeById.get(typeof d.target === "object" ? d.target.id : d.target);
+    d.crossSource = !!(a && b && a.source && b.source && a.source !== b.source);
+  });
+
   const link = depContainer.append("g").selectAll("line").data(links).enter()
-    .append("line").attr("class", "link")
-    .attr("stroke-width", 1.4).attr("marker-end", "url(#darrow)");
+    .append("line").attr("class", d => "link" + (d.crossSource ? " cross" : ""))
+    .attr("stroke-width", d => d.crossSource ? 2 : 1.4)
+    .attr("marker-end", "url(#darrow)");
 
   function ticked() {
     link.each(function (d) {
@@ -1062,6 +1160,9 @@ function drawDep(rootKey) {
     .style("cursor", d => d.present ? "pointer" : "default")
     .on("mouseover", (e, d) => tooltip.style("opacity", 1).html(
       `<b>${d.name}</b> <span class="k">v${d.version}</span><br>` +
+      (d.source
+        ? `source: <b style="color:${sourceColor(d.source)}">${sourceLabel(d.source)}</b><br>`
+        : "") +
       (d.status
         ? `status: <b style="color:${statusColor(d.status)}">${d.status}</b><br>`
         : "") +
@@ -1198,9 +1299,13 @@ function fillVersionSelect(entries) {
 }
 
 function badges(e) {
-  return `<span class="badge" style="background:${statusColor(e.status)}">${e.status}</span>` +
+  const multi = e.n_aspects > 1 ? `<span>· ${e.n_aspects} Aspects</span>` : "";
+  return `<span class="badge" style="background:${sourceColor(e.source)}">` +
+    `${sourceLabel(e.source)}</span>` +
+    `<span class="badge" style="background:${statusColor(e.status)}">${e.status}</span>` +
     `<span class="badge" style="background:#607d8b">${e.family}</span>` +
     `<span>${e.meta_model}</span><span>· ${e.n_nodes} nodes · ${e.n_links} links</span>` +
+    multi +
     (curGraph && curGraph.meta && curGraph.meta.release_date
       ? `<span>· released ${curGraph.meta.release_date}</span>` : "");
 }
@@ -1208,6 +1313,12 @@ function badges(e) {
 function loadEntry(e) {
   curEntry = e;
   document.getElementById("mv-badges").innerHTML = "";
+  // "View on GitHub" — show only if we can build a URL (known source +
+  // repo_path present in index.json). Repo_path = version folder.
+  const gh = document.getElementById("mv-github");
+  const url = githubUrlFor(e);
+  if (url) { gh.href = url; gh.style.display = ""; }
+  else gh.style.display = "none";
   fetch(`data/graph/${e.file}`).then(r => r.json()).then(g => {
     curGraph = g;
     // Release notes are identical across a model's versions: cache once.
@@ -1392,7 +1503,7 @@ function renderIssuesSub() {
 // (works in a sandboxed iframe; a blob: URL would be origin-blocked there).
 // No self-hosting — the doc is self-contained (inline SVG). The Blob URL is
 // only for the external "Open full page" link (real tab, renders fine).
-const CDN = "https://cdn.jsdelivr.net/gh/eclipse-tractusx/sldt-semantic-models@main/";
+// CDN base is picked per source (catenax vs idta) via `cdnFor(curEntry)`.
 let docState = { id: null, text: null, url: null, ctrl: null };
 
 function renderDocs() {
@@ -1411,6 +1522,7 @@ function renderDocs() {
     return;
   }
   title.textContent = `${curEntry.model_name} v${curEntry.version}`;
+  const cdn = cdnFor(curEntry);
 
   // Companion artifacts (open in a new tab on jsDelivr).
   const arts = [["schema", "JSON Schema", "-schema.json"],
@@ -1419,7 +1531,7 @@ function renderDocs() {
   links.innerHTML = arts
     .filter(([k]) => g && g[k])
     .map(([, label, suf]) =>
-      `<a href="${CDN}${g.base}${suf}" target="_blank" rel="noopener">${label}</a>`)
+      `<a href="${cdn}${g.base}${suf}" target="_blank" rel="noopener">${label}</a>`)
     .join("");
 
   if (!g || !g.html) {
@@ -1442,7 +1554,7 @@ function renderDocs() {
   frame.srcdoc = ""; show(open, false); show(frame, false); show(msg, true);
   msg.textContent = "Loading generated doc… (can be a few MB)";
 
-  fetch(`${CDN}${g.base}.html`, { signal: ctrl.signal })
+  fetch(`${cdn}${g.base}.html`, { signal: ctrl.signal })
     .then(r => r.ok ? r.text() : Promise.reject("HTTP " + r.status))
     .then(htmlText => {
       if (ctrl.signal.aborted || !curEntry || curEntry.id !== wantId) return;
@@ -1502,16 +1614,19 @@ function entryForKey(key) {
 
 // ---- Home (KPI + catalog) ------------------------------------------------
 let statusFilter = null;
+let catSrcFilter = new Set(SOURCE_ORDER);   // both sources on by default
 const catOpen = new Set();     // model_name of expanded catalog rows
 
 fetch("data/graph/index.json")
   .then(r => r.json())
   .then(idx => {
     allModels = idx;
-    statusByKey = null;            // rebuild status lookup from fresh catalog
+    statusByKey = null;            // rebuild status/source lookups from fresh catalog
+    sourceByKey = null;
     buildGroups();
     setupModelSearch();
     renderKpis();
+    renderSourceFilter();
     renderCatalog();
   })
   .catch(() => {
@@ -1529,22 +1644,63 @@ fetch("data/graph/deps.json")
   .catch(() => { depsMap = null; });
 
 function renderKpis() {
-  const counts = d3.rollup(allModels, v => v.length, d => d.status);
+  // KPIs honor the source filter so the counts match the visible catalog.
+  const scoped = allModels.filter(m => catSrcFilter.has(m.source));
+  const counts = d3.rollup(scoped, v => v.length, d => d.status);
+  // Per-source breakdown (shown only when more than one source is checked,
+  // otherwise the breakdown is just the total and the line is redundant).
+  const showBreakdown = catSrcFilter.size > 1;
+  const perSrc = {};
+  if (showBreakdown) {
+    SOURCE_ORDER.forEach(s => {
+      perSrc[s] = d3.rollup(
+        scoped.filter(m => m.source === s), v => v.length, d => d.status,
+      );
+    });
+  }
   const order = ["release", "draft", "deprecated", "undefined"];
   const keys = order.filter(k => counts.has(k))
     .concat([...counts.keys()].filter(k => !order.includes(k)));
   const box = d3.select("#kpis");
   box.selectAll("*").remove();
   keys.forEach(k => {
+    let html = `<div class="n">${counts.get(k)}</div><div class="s">${k}</div>`;
+    if (showBreakdown) {
+      const parts = SOURCE_ORDER.map(s => {
+        const n = (perSrc[s].get(k) || 0);
+        return `<span class="kbd-src"><span class="d" style="background:` +
+               `${sourceColor(s)}"></span>${sourceLabel(s)} ${n}</span>`;
+      }).join("");
+      html += `<div class="kbd">${parts}</div>`;
+    }
     box.append("div")
       .attr("class", "kpi" + (statusFilter === k ? " sel" : ""))
       .style("border-left-color", statusColor(k))
-      .html(`<div class="n">${counts.get(k)}</div><div class="s">${k}</div>`)
+      .html(html)
       .on("click", () => {
         statusFilter = statusFilter === k ? null : k;
         renderKpis(); renderCatalog();
       });
   });
+}
+
+// Source filter (Home) — built once, toggles the catalog scope.
+function renderSourceFilter() {
+  const box = document.getElementById("cat-source");
+  if (box.dataset.built) return;
+  SOURCE_ORDER.forEach(s => {
+    const lab = document.createElement("label");
+    lab.innerHTML =
+      `<input type="checkbox" ${catSrcFilter.has(s) ? "checked" : ""}>` +
+      `<span class="badge" style="background:${sourceColor(s)}">` +
+      `${sourceLabel(s)}</span>`;
+    lab.querySelector("input").addEventListener("change", function () {
+      if (this.checked) catSrcFilter.add(s); else catSrcFilter.delete(s);
+      renderKpis(); renderCatalog();
+    });
+    box.appendChild(lab);
+  });
+  box.dataset.built = "1";
 }
 
 function renderCatalog() {
@@ -1554,9 +1710,13 @@ function renderCatalog() {
     .map(([name, entries]) => ({ name, entries }))
     .sort((a, b) => a.name.localeCompare(b.name));
 
-  // Status KPI filters the MODELS shown (those having >=1 version of that
-  // status) but never removes versions from a model's dropdown.
+  // Source filter applies BEFORE everything else — a model is dropped from the
+  // catalog if none of its versions come from a selected source. (Names don't
+  // collide across sources, so in practice every model is single-source.)
+  // Then status KPI filters the MODELS shown (those having >=1 version of
+  // that status) but never removes versions from a model's dropdown.
   const visible = list
+    .filter(g => g.entries.some(e => catSrcFilter.has(e.source)))
     .filter(g => !statusFilter || g.entries.some(e => e.status === statusFilter))
     .filter(g =>
       !q ||
@@ -1565,6 +1725,7 @@ function renderCatalog() {
         e.family.toLowerCase().includes(q) ||
         e.status.toLowerCase().includes(q) ||
         e.version.toLowerCase().includes(q) ||
+        e.source.toLowerCase().includes(q) ||
         (e.name || "").toLowerCase().includes(q)));
 
   d3.select("#count").text(
@@ -1581,6 +1742,12 @@ function renderCatalog() {
     const head = row.append("div").attr("class", "ch");
     head.append("span").attr("class", "ct").text("▶");
     head.append("span").attr("class", "cn").text(g.name);
+    // Source badge — model_name is single-source in practice, so we take it
+    // from the first entry. Helps the user spot Catena-X vs IDTA at a glance.
+    const src = g.entries[0].source;
+    head.append("span").attr("class", "badge")
+      .style("background", sourceColor(src))
+      .text(sourceLabel(src));
     head.append("span").attr("class", "cs")
       .html(`${g.entries.length} version${g.entries.length > 1 ? "s" : ""}` +
             (nRel ? ` · <b>${nRel} release</b>` : ""));
@@ -1599,6 +1766,11 @@ function renderCatalog() {
       const st = v.append("span").attr("class", "vs");
       st.append("span").attr("class", "vd").style("background", statusColor(e.status));
       st.append("span").text(e.status);
+      // Aspect count — only when > 1 (the common case is 1 Aspect or 0).
+      // Useful for material_accounting@1.0.0 = 6 Aspects in one graph.
+      if (e.n_aspects > 1)
+        v.append("span").attr("class", "vc")
+          .text(`${e.n_aspects} Aspects`);
       v.append("span").attr("class", "va").text("→");
     });
   });
@@ -1609,6 +1781,7 @@ d3.select("#search").on("input", renderCatalog);
 // ---- Issues (top tab) -----------------------------------------------------
 let issuesData = null;                 // issues.json { issue_types, models }
 let issStatuses = new Set(["release"]);// status scope (release on by default)
+let issSources = new Set(SOURCE_ORDER); // source scope (both on by default)
 let issSelType = null;                 // selected issue type (drives the list)
 
 fetch("data/graph/issues.json")
@@ -1623,6 +1796,7 @@ fetch("data/graph/issues.json")
 function renderIssues() {
   if (activeView !== "issues") return;
   const sbox = document.getElementById("iss-status");
+  const srcbox = document.getElementById("iss-source");
   const kbox = document.getElementById("iss-kpis");
   const expl = document.getElementById("iss-explain");
   const help = document.getElementById("iss-help");
@@ -1654,11 +1828,29 @@ function renderIssues() {
     sbox.dataset.built = "1";
   }
 
+  // Source checkboxes — built once (same pattern as status).
+  if (!srcbox.dataset.built) {
+    SOURCE_ORDER.forEach(s => {
+      const lab = document.createElement("label");
+      lab.innerHTML =
+        `<input type="checkbox" ${issSources.has(s) ? "checked" : ""}>` +
+        `<span class="badge" style="background:${sourceColor(s)}">` +
+        `${sourceLabel(s)}</span>`;
+      lab.querySelector("input").addEventListener("change", function () {
+        if (this.checked) issSources.add(s); else issSources.delete(s);
+        renderIssues();
+      });
+      srcbox.appendChild(lab);
+    });
+    srcbox.dataset.built = "1";
+  }
+
   const types = issuesData.issue_types;
   const M = issuesData.models;
   const labelOf = {};
   types.forEach(t => (labelOf[t.id] = t.label));
-  const inScope = k => issStatuses.has(M[k].status);
+  const inScope = k =>
+    issStatuses.has(M[k].status) && issSources.has(M[k].source);
   const keysFor = id => Object.keys(M).filter(k => inScope(k) && M[k].issues[id]);
 
   // KPI cards : one per issue type, highlighted as soon as count > 0.
@@ -1730,6 +1922,8 @@ function renderIssues() {
     row.innerHTML =
       `<span class="nm">${escapeHtml(m.name)} ` +
       `<small>v${escapeHtml(m.version || "—")}</small></span>` +
+      `<span class="badge" style="background:${sourceColor(m.source)}">` +
+      `${sourceLabel(m.source)}</span>` +
       `<span class="badge" style="background:${statusColor(m.status)}">` +
       `${m.status}</span>` +
       `<span class="det">` +
@@ -1744,6 +1938,7 @@ function renderIssues() {
 // search.json is ~3.6 MB -> lazy-loaded on the first visit of the Search tab.
 let searchData = null, srFetchStarted = false;
 let srStatuses = new Set(["release"]);   // model-status scope (release default)
+let srSources = new Set(SOURCE_ORDER);   // source scope (both on by default)
 const SR_KINDS = ["Aspect", "Property", "Entity"];
 let srKinds = new Set(SR_KINDS);         // kind buckets (all on by default)
 // Element kind -> one of the 3 user-facing buckets (Abstract* fold into
@@ -1768,6 +1963,7 @@ function renderSearch() {
   if (activeView !== "searchview") return;
   const sbox = document.getElementById("sr-status");
   const kbox = document.getElementById("sr-kinds");
+  const srcbox = document.getElementById("sr-source");
   const list = document.getElementById("sr-list");
   const cnt = document.getElementById("sr-count");
 
@@ -1803,6 +1999,23 @@ function renderSearch() {
     kbox.dataset.built = "1";
   }
 
+  // Source checkboxes — built once (catenax / idta).
+  if (!srcbox.dataset.built) {
+    SOURCE_ORDER.forEach(s => {
+      const lab = document.createElement("label");
+      lab.innerHTML =
+        `<input type="checkbox" ${srSources.has(s) ? "checked" : ""}>` +
+        `<span class="badge" style="background:${sourceColor(s)}">` +
+        `${sourceLabel(s)}</span>`;
+      lab.querySelector("input").addEventListener("change", function () {
+        if (this.checked) srSources.add(s); else srSources.delete(s);
+        renderSearch();
+      });
+      srcbox.appendChild(lab);
+    });
+    srcbox.dataset.built = "1";
+  }
+
   if (!searchData) {
     loadSearch();
     cnt.textContent = "";
@@ -1823,6 +2036,7 @@ function renderSearch() {
 
   const hits = searchData.filter(e =>
     srStatuses.has(e.status) &&
+    srSources.has(e.source) &&
     srKinds.has(kindBucket(e.kind)) &&
     (e.name.toLowerCase().includes(q) ||
      (e.preferredName && e.preferredName.toLowerCase().includes(q))));
@@ -1858,6 +2072,8 @@ function renderSearch() {
         `<span class="nm">${escapeHtml(e.name)}</span>` + pn +
         `<span class="loc">${escapeHtml(e.model_name)} · v` +
         `${escapeHtml(e.version)} ` +
+        `<span class="badge" style="background:${sourceColor(e.source)}">` +
+        `${sourceLabel(e.source)}</span> ` +
         `<span class="badge" style="background:${statusColor(e.status)}">` +
         `${e.status}</span></span>` +
       `</div>` +
