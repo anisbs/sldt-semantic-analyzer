@@ -425,23 +425,45 @@
     .node circle.dep-missing { stroke: var(--st-deprecated);
       stroke-dasharray: 3 2; }
     .node circle.dep-status { pointer-events: none; }
-    #dep-controls { position: absolute; top: 10px; right: 14px; z-index: 4;
-      display: flex; box-shadow: var(--shadow-sm); border-radius: var(--r-sm); }
-    #dep-controls button {
+    /* Floating controls overlay on top-right of each graph SVG. One
+       container per sub-tab (#graph-controls for the element graph,
+       #dep-controls for the dep graph), so each appears only when its
+       sub-tab is active. */
+    #dep-controls, #graph-controls {
+      position: absolute; top: 10px; right: 14px; z-index: 4;
+    }
+    /* Element graph : a single dropdown — no need for a wrapper layout. */
+    #graph-controls { display: flex; }
+    /* Dep graph : two rows — Outgoing/Incoming on top (segmented control),
+       Layout dropdown below them. Stretched so the dropdown matches the
+       segmented control's width. */
+    #dep-controls { display: flex; flex-direction: column;
+      gap: var(--sp-2); align-items: stretch; }
+    .dep-buttons { display: flex; box-shadow: var(--shadow-sm);
+      border-radius: var(--r-sm); }
+    .dep-buttons button {
       font-size: var(--fs-sm); padding: 5px 11px;
       border: 1px solid var(--border-strong); background: var(--surface-2);
       color: var(--text-2); cursor: pointer;
       transition: background-color var(--dur) var(--ease),
         color var(--dur) var(--ease);
     }
-    #dep-controls button:first-child {
+    .dep-buttons button[data-dir="out"] {
       border-radius: var(--r-sm) 0 0 var(--r-sm); }
-    #dep-controls button:last-child {
+    .dep-buttons button[data-dir="in"] {
       border-radius: 0 var(--r-sm) var(--r-sm) 0; border-left: none; }
-    #dep-controls button.on { background: var(--surface); color: var(--text);
+    .dep-buttons button.on { background: var(--surface); color: var(--text);
       font-weight: 600; }
-    #dep-controls button:focus-visible { outline: 2px solid var(--accent);
+    .dep-buttons button:focus-visible { outline: 2px solid var(--accent);
       outline-offset: -2px; }
+    #dep-layout, #mv-layout {
+      font-size: var(--fs-sm); padding: 4px 8px;
+      border: 1px solid var(--border-strong); border-radius: var(--r-sm);
+      background: var(--surface-2); color: var(--text); cursor: pointer;
+      box-shadow: var(--shadow-sm);
+    }
+    #dep-layout:focus, #mv-layout:focus { outline: none;
+      border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-weak); }
     .node circle { stroke: #fff; stroke-width: 1.5px; cursor: pointer; }
     .node text { font-size: var(--fs-2xs); fill: var(--text);
       pointer-events: none; }
@@ -703,15 +725,6 @@
         <label>Version
           <select id="mv-version"></select>
         </label>
-        <label>Layout
-          <select id="mv-layout">
-            <option value="freeze" selected>Static (auto-layout)</option>
-            <option value="hier">Hierarchy (layered)</option>
-            <option value="force">Force (animated)</option>
-            <option value="circle">Circle</option>
-            <option value="grid">Grid</option>
-          </select>
-        </label>
         <span id="mv-badges"></span>
         <a id="mv-github" target="_blank" rel="noopener" style="display:none">
           View on GitHub ↗</a>
@@ -728,14 +741,32 @@
       <div id="subviews">
         <div id="sv-graph" class="subview active">
           <div id="legend" style="display:none"></div>
+          <div id="graph-controls">
+            <select id="mv-layout" title="Layout">
+              <option value="freeze" selected>Static (auto-layout)</option>
+              <option value="hier">Hierarchy (layered)</option>
+              <option value="force">Force (animated)</option>
+              <option value="circle">Circle</option>
+              <option value="grid">Grid</option>
+            </select>
+          </div>
           <div id="mv-empty">Pick a model and version above.</div>
           <svg id="graph" width="100%" height="100%"></svg>
         </div>
         <div id="sv-dep" class="subview">
           <div id="dep-legend"></div>
           <div id="dep-controls">
-            <button data-dir="out" class="on">Outgoing (uses →)</button>
-            <button data-dir="in">Incoming (← used by)</button>
+            <div class="dep-buttons">
+              <button data-dir="out" class="on">Outgoing (uses →)</button>
+              <button data-dir="in">Incoming (← used by)</button>
+            </div>
+            <select id="dep-layout" title="Layout">
+              <option value="hier" selected>Hierarchy (layered)</option>
+              <option value="freeze">Static (auto-layout)</option>
+              <option value="force">Force (animated)</option>
+              <option value="circle">Circle</option>
+              <option value="grid">Grid</option>
+            </select>
           </div>
           <div id="dep-empty">Pick a model and version above.</div>
           <svg id="depgraph" width="100%" height="100%"></svg>
@@ -989,15 +1020,26 @@ function showSub(sub) {
 }
 d3.selectAll(".subtab").on("click", function () { showSub(this.dataset.sub); });
 
-// ---- Layout engine (shared by the element graph AND the dependency graph)
-// "freeze" : force-directed computed once then frozen — nothing drifts, a
-//            dragged node stays where you drop it (default)
-// "force"  : live force-directed (keeps animating; drag releases)
-// "circle" : static ring     "grid": static grid   (no simulation at all)
-// "hier"   : layered BFS from root(s). On the element graph, roots = Aspects.
-//            On the dep graph, root = currently selected model+version ; in
-//            Incoming mode the orientation is flipped (root sits on the right).
+// ---- Layout engine (used by the element graph AND the dependency graph)
+// Modes :
+//   "freeze" : force-directed computed once then frozen — nothing drifts, a
+//              dragged node stays where you drop it
+//   "force"  : live force-directed (keeps animating; drag releases)
+//   "circle" : static ring     "grid": static grid   (no simulation at all)
+//   "hier"   : layered BFS from root(s). On the element graph, roots =
+//              Aspects. On the dep graph, root = currently selected
+//              model+version ; in Incoming mode the orientation is flipped
+//              (root sits on the right).
+// Each graph has its own user-controlled mode ; callers (draw / drawDep)
+// write the active value into the global `layoutMode` right before they
+// invoke makeSim/dragger.
+//   - Element graph : dropdown #mv-layout in #mv-head, defaults to "freeze"
+//     (calmer for the element graph which is usually a small tree).
+//   - Dep graph     : dropdown #dep-layout inside #dep-controls, defaults
+//     to "hier" (much more readable than freeze on chains of 10+ deps).
 let layoutMode = "freeze";
+let elementLayoutMode = "freeze";
+let depLayoutMode = "hier";
 
 function placeStatic(nodes, mode, width, height) {
   const n = nodes.length || 1;
@@ -1138,9 +1180,16 @@ function dragger(sim, ticked) {
 }
 
 // Layout selector applies to whichever graph sub-tab is showing.
+// Layout selectors — one per graph. Each writes to its own variable, and
+// the active draw() / drawDep() copies that into the global `layoutMode`
+// right before invoking makeSim.
 document.getElementById("mv-layout").addEventListener("change", function () {
-  layoutMode = this.value;
-  if (activeSub === "sv-graph" || activeSub === "sv-dep") renderSub();
+  elementLayoutMode = this.value;
+  if (activeSub === "sv-graph") renderSub();
+});
+document.getElementById("dep-layout").addEventListener("change", function () {
+  depLayoutMode = this.value;
+  if (activeSub === "sv-dep") renderSub();
 });
 
 // ---- Graph (D3 force-directed) -------------------------------------------
@@ -1178,10 +1227,10 @@ function draw(g) {
   const links = keptLinks.map(d => ({ ...d }));
 
   if (sim) sim.stop();
-  // Hierarchy mode on the element graph : Aspects are the roots.
-  // Multi-aspect models (e.g. material_accounting@1.0.0 with 6) get all
-  // their Aspects stacked in the leftmost column ; their respective subtrees
-  // unfold to the right. No Aspect (shared.* models) -> falls back to freeze.
+  // Element graph honors its own selector (#mv-layout) — defaults to
+  // "freeze". `hierarchy` payload always provided so the "Hierarchy"
+  // option is functional too (roots = Aspects).
+  layoutMode = elementLayoutMode;
   const aspectIds = nodes.filter(n => n.kind === "Aspect").map(n => n.id);
   sim = makeSim(nodes, links, width, height,
     { distance: 70, charge: -180, collide: 22,
@@ -1414,9 +1463,11 @@ function drawDep(rootKey) {
   const nodes = g.nodes, links = g.links.map(d => ({ ...d }));
 
   if (depSim) depSim.stop();
-  // Hierarchy mode on the dep graph : root = selected model+version. In
-  // Incoming, the arrows feed INTO the root, so we mirror columns so the
-  // root sits on the right and ancestors extend to the left.
+  // The dep graph honors its own selector (#dep-layout) — defaults to
+  // "hier". root = selected model+version. In Incoming, the arrows feed
+  // INTO the root, so we mirror columns (root on the right, ancestors
+  // extending to the left).
+  layoutMode = depLayoutMode;
   depSim = makeSim(nodes, links, width, height,
     { distance: 110, charge: -320, collide: 34,
       hierarchy: { rootIds: [rootKey], directionFlip: depDir === "in" } });
