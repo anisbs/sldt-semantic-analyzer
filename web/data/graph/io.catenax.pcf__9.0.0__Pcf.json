@@ -2909,6 +2909,72 @@
       "target": "urn:samm:io.catenax.pcf:9.0.0#PrecedingPfId",
       "label": "dataType",
       "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.pcf:9.0.0#PositiveEmissionsTrait",
+      "target": "urn:samm:io.catenax.pcf:9.0.0#PositiveEmissionConstraint",
+      "label": "constraint",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.pcf:9.0.0#NonEmptyStringTrait",
+      "target": "urn:samm:io.catenax.pcf:9.0.0#NonEmptyString",
+      "label": "constraint",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.pcf:9.0.0#StrictlyPositiveDecimalTrait",
+      "target": "urn:samm:io.catenax.pcf:9.0.0#StrictlyPositiveDecimalConstraint",
+      "label": "constraint",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.pcf:9.0.0#PositiveDecimalWeightTrait",
+      "target": "urn:samm:io.catenax.pcf:9.0.0#PositiveDecimalConstraint",
+      "label": "constraint",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.pcf:9.0.0#PercentTrait",
+      "target": "urn:samm:io.catenax.pcf:9.0.0#PercentConstraint",
+      "label": "constraint",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.pcf:9.0.0#DqiNumberTrait",
+      "target": "urn:samm:io.catenax.pcf:9.0.0#DqiNumberConstraint",
+      "label": "constraint",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.pcf:9.0.0#ProgramCertificationShareTrait",
+      "target": "urn:samm:io.catenax.pcf:9.0.0#ProgramCertificationShareRangeConstraint",
+      "label": "constraint",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.pcf:9.0.0#NegativeEmissionsTrait",
+      "target": "urn:samm:io.catenax.pcf:9.0.0#NegativeEmissionConstraint",
+      "label": "constraint",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.pcf:9.0.0#ExemptedEmissionsPercentTrait",
+      "target": "urn:samm:io.catenax.pcf:9.0.0#ExemptedEmissionsPercentConstraint",
+      "label": "constraint",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.pcf:9.0.0#GeographyCountrySubdivisionTrait",
+      "target": "urn:samm:io.catenax.pcf:9.0.0#GeographyCountrySubdivisionConstraint",
+      "label": "constraint",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.pcf:9.0.0#GeographyCountryTrait",
+      "target": "urn:samm:io.catenax.pcf:9.0.0#GeographyCountryConstraint",
+      "label": "constraint",
+      "optional": false
     }
   ]
 }

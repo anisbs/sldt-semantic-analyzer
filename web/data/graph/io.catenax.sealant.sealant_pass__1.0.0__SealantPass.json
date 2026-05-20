@@ -1760,6 +1760,54 @@
       "target": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#OtherInformationEntity",
       "label": "dataType",
       "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#ReachRegistrationTrait",
+      "target": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#ReachRegistrationRegex",
+      "label": "constraint",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#CasNumberTrait",
+      "target": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#CASNumberConstraint",
+      "label": "constraint",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#EcNumberTrait",
+      "target": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#ECNumberRegex",
+      "label": "constraint",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#IndexNumberTrait",
+      "target": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#IndexNumberRegex",
+      "label": "constraint",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#UsageTrait",
+      "target": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#TelephoneNumberRegex",
+      "label": "constraint",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#DocumentTitleTrait",
+      "target": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#MaxTitleCharacterConstraint",
+      "label": "constraint",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#ProvisioningCountryTrait",
+      "target": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#ISOCodeConstraint",
+      "label": "constraint",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#ChemicalPercentageTrait",
+      "target": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#ChemicalDistribution",
+      "label": "constraint",
+      "optional": false
     }
   ]
 }

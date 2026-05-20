@@ -383,6 +383,18 @@
       "target": "urn:samm:io.catenax.single_level_scene_node:1.0.0#ExternalBinaryModelData",
       "label": "dataType",
       "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.single_level_scene_node:1.0.0#MatrixTrait",
+      "target": "urn:samm:io.catenax.single_level_scene_node:1.0.0#MatrixConstraint",
+      "label": "constraint",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.single_level_scene_node:1.0.0#Vector3Trait",
+      "target": "urn:samm:io.catenax.single_level_scene_node:1.0.0#Vector3Constraint",
+      "label": "constraint",
+      "optional": false
     }
   ]
 }

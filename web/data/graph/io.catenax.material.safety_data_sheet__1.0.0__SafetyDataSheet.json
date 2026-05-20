@@ -419,6 +419,18 @@
       "target": "urn:samm:io.catenax.material.safety_data_sheet:1.0.0#SDSCountryEntity",
       "label": "dataType",
       "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material.safety_data_sheet:1.0.0#CountryTrait",
+      "target": "urn:samm:io.catenax.material.safety_data_sheet:1.0.0#CountryConstraint",
+      "label": "constraint",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material.safety_data_sheet:1.0.0#Alpha3CodeTrait",
+      "target": "urn:samm:io.catenax.material.safety_data_sheet:1.0.0#ISO3166CodeConstraint",
+      "label": "constraint",
+      "optional": false
     }
   ]
 }

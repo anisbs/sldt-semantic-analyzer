@@ -436,6 +436,24 @@
       "target": "urn:samm:io.catenax.customs_information:2.0.0#TracedWorthEntity",
       "label": "dataType",
       "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.customs_information:2.0.0#CountryAndStateCodeTrait",
+      "target": "urn:samm:io.catenax.customs_information:2.0.0#CountryAndStateCodeConstraint",
+      "label": "constraint",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.customs_information:2.0.0#TradeRelationTrait",
+      "target": "urn:samm:io.catenax.customs_information:2.0.0#TradeRelationConstraint",
+      "label": "constraint",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.customs_information:2.0.0#CurrencyTrait",
+      "target": "urn:samm:io.catenax.customs_information:2.0.0#CurrencyRegularExpression",
+      "label": "constraint",
+      "optional": false
     }
   ]
 }

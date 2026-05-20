@@ -999,6 +999,60 @@
       "target": "urn:bamm:io.catenax.pcf:2.0.0#ProductOrSectorSpecificRulesEntity",
       "label": "dataType",
       "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.pcf:2.0.0#IdTrait",
+      "target": "urn:bamm:io.catenax.pcf:2.0.0#IdConstraint",
+      "label": "constraint",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.pcf:2.0.0#SpecVersionTrait",
+      "target": "urn:bamm:io.catenax.pcf:2.0.0#VersionConstraint",
+      "label": "constraint",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.pcf:2.0.0#EmissionsTrait",
+      "target": "urn:bamm:io.catenax.pcf:2.0.0#EmissionConstraint",
+      "label": "constraint",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.pcf:2.0.0#PrimaryDataShareTrait",
+      "target": "urn:bamm:io.catenax.pcf:2.0.0#PrimaryDataShareConstraint",
+      "label": "constraint",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.pcf:2.0.0#GeographyCountrySubdivisionTrait",
+      "target": "urn:bamm:io.catenax.pcf:2.0.0#GeographyCountrySubdivisionConstraint",
+      "label": "constraint",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.pcf:2.0.0#GeographyCountryTrait",
+      "target": "urn:bamm:io.catenax.pcf:2.0.0#GeographyCountryConstraint",
+      "label": "constraint",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.pcf:2.0.0#RuleNamesTrait",
+      "target": "urn:bamm:io.catenax.pcf:2.0.0#RuleNamesConstraint",
+      "label": "constraint",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.pcf:2.0.0#NonEmptyStringTrait",
+      "target": "urn:bamm:io.catenax.pcf:2.0.0#NonEmptyStringConstraint",
+      "label": "constraint",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.pcf:2.0.0#StrictlyPositiveDecimalTrait",
+      "target": "urn:bamm:io.catenax.pcf:2.0.0#StrictlyPositiveDecimalConstraint",
+      "label": "constraint",
+      "optional": false
     }
   ]
 }

@@ -479,6 +479,18 @@
       "target": "urn:samm:io.catenax.week_based_material_demand:3.0.1#Demand",
       "label": "dataType",
       "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.week_based_material_demand:3.0.1#QuantityTrait",
+      "target": "urn:samm:io.catenax.week_based_material_demand:3.0.1#QuantityFixedPoint",
+      "label": "constraint",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.week_based_material_demand:3.0.1#QuantityTrait",
+      "target": "urn:samm:io.catenax.week_based_material_demand:3.0.1#QuantityRange",
+      "label": "constraint",
+      "optional": false
     }
   ]
 }

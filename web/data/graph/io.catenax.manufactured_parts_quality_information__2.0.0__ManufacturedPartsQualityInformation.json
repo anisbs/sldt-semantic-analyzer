@@ -480,6 +480,12 @@
       "target": "urn:samm:io.catenax.manufactured_parts_quality_information:2.0.0#AdditionalInformation",
       "label": "dataType",
       "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.manufactured_parts_quality_information:2.0.0#CountryCodeTrait",
+      "target": "urn:samm:io.catenax.manufactured_parts_quality_information:2.0.0#CountryCodeRegularExpression",
+      "label": "constraint",
+      "optional": false
     }
   ]
 }

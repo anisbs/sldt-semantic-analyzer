@@ -170,6 +170,18 @@
       "target": "urn:samm:io.catenax.shared.contact_information:3.0.0#ContactEntity",
       "label": "dataType",
       "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.shared.contact_information:3.0.0#PhoneNumberTrait",
+      "target": "urn:samm:io.catenax.shared.contact_information:3.0.0#PhoneNumberConstraint",
+      "label": "constraint",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.shared.contact_information:3.0.0#EMailTrait",
+      "target": "urn:samm:io.catenax.shared.contact_information:3.0.0#EMailConstraint",
+      "label": "constraint",
+      "optional": false
     }
   ]
 }

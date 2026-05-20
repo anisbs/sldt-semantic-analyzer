@@ -792,6 +792,48 @@
       "target": "urn:samm:io.catenax.essincident:2.0.0#EssOriginatorCoordinatesEntity",
       "label": "dataType",
       "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.essincident:2.0.0#IdTrait",
+      "target": "urn:samm:io.catenax.essincident:2.0.0#RegularExpressionUUIDv4",
+      "label": "constraint",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.essincident:2.0.0#BPNL",
+      "target": "urn:samm:io.catenax.essincident:2.0.0#BpnLConstraint",
+      "label": "constraint",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.essincident:2.0.0#BPNS",
+      "target": "urn:samm:io.catenax.essincident:2.0.0#BpnSConstraint",
+      "label": "constraint",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.essincident:2.0.0#BPNA",
+      "target": "urn:samm:io.catenax.essincident:2.0.0#BpnAConstraint",
+      "label": "constraint",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.essincident:2.0.0#ContactMailTrait",
+      "target": "urn:samm:io.catenax.essincident:2.0.0#ContactMailConstraint",
+      "label": "constraint",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.essincident:2.0.0#LongitudeTrait",
+      "target": "urn:samm:io.catenax.essincident:2.0.0#LongitudeConstraint",
+      "label": "constraint",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.essincident:2.0.0#LatitudeTrait",
+      "target": "urn:samm:io.catenax.essincident:2.0.0#LatitudeConstraint",
+      "label": "constraint",
+      "optional": false
     }
   ]
 }

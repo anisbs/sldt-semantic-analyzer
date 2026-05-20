@@ -287,6 +287,12 @@
       "target": "urn:bamm:io.catenax.single_level_usage_as_planned:1.1.0#ValidityPeriodEntity",
       "label": "dataType",
       "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.single_level_usage_as_planned:1.1.0#CatenaXIdTraitCharacteristic",
+      "target": "urn:bamm:io.catenax.single_level_usage_as_planned:1.1.0#Uuidv4RegularExpression",
+      "label": "constraint",
+      "optional": false
     }
   ]
 }

@@ -434,7 +434,8 @@
     #iss-status .ttl { color: var(--text-2); font-size: var(--fs-sm); }
     #iss-status label { display: flex; align-items: center; gap: 5px;
       cursor: pointer; }
-    #iss-kpis { display: flex; gap: var(--sp-3); flex-wrap: wrap; }
+    #iss-kpis { display: grid; gap: var(--sp-3);
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); }
     .kpi.iss { border-left-color: var(--border-strong); }
     .kpi.iss .s { text-transform: none; }
     .kpi.iss.zero { opacity: .5; }
@@ -443,6 +444,39 @@
     .kpi.iss.err .n { color: var(--st-deprecated); }
     .kpi.iss.warn { border-left-color: var(--st-draft); }
     .kpi.iss.warn .n { color: var(--st-warn-text); }
+    /* Selected explanation banner — shown above the list when a type is picked. */
+    #iss-explain { background: var(--accent-weak);
+      border: 1px solid var(--border); border-radius: var(--r-md);
+      padding: var(--sp-3) var(--sp-4); font-size: var(--fs-md);
+      color: var(--text); line-height: 1.5; }
+    #iss-explain .head { font-weight: 600; margin-bottom: var(--sp-1);
+      display: flex; align-items: center; gap: var(--sp-2); }
+    #iss-explain .sev { width: 10px; height: 10px; border-radius: 50%;
+      display: inline-block; }
+    #iss-explain.warn .sev { background: var(--st-draft); }
+    #iss-explain.err .sev { background: var(--st-deprecated); }
+    /* Collapsible "About these checks" reference panel. */
+    #iss-help { border: 1px solid var(--border); border-radius: var(--r-md);
+      background: var(--surface); box-shadow: var(--shadow-sm);
+      overflow: hidden; }
+    #iss-help > summary { padding: var(--sp-3) var(--sp-4); cursor: pointer;
+      font-size: var(--fs-md); font-weight: 600; color: var(--text);
+      list-style: none; user-select: none; }
+    #iss-help > summary::-webkit-details-marker { display: none; }
+    #iss-help > summary::before { content: "▸"; display: inline-block;
+      width: 1em; color: var(--text-3); transition: transform var(--dur) var(--ease); }
+    #iss-help[open] > summary::before { transform: rotate(90deg); }
+    #iss-help .body { padding: 0 var(--sp-4) var(--sp-4);
+      display: grid; gap: var(--sp-3);
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); }
+    #iss-help .item { border-left: 3px solid var(--border-strong);
+      padding: var(--sp-2) var(--sp-3); background: var(--surface-2);
+      border-radius: var(--r-sm); font-size: var(--fs-sm); }
+    #iss-help .item.err { border-left-color: var(--st-deprecated); }
+    #iss-help .item.warn { border-left-color: var(--st-draft); }
+    #iss-help .item .lbl { font-weight: 600; color: var(--text);
+      font-size: var(--fs-md); margin-bottom: var(--sp-1); }
+    #iss-help .item .dsc { color: var(--text-2); line-height: 1.5; }
     #iss-list-head { font-size: var(--fs-md); color: var(--text);
       font-weight: 600; }
     #iss-list { display: flex; flex-direction: column; flex: none;
@@ -469,6 +503,8 @@
       display: inline-block; }
     #issues-body .ok-msg { color: var(--st-release); font-size: var(--fs-base); }
     #issues-body .none { color: var(--text-3); }
+    #issues-body .iss-dsc { color: var(--text-2); font-size: var(--fs-sm);
+      margin: 0 0 var(--sp-2); line-height: 1.5; max-width: 720px; }
 
     #tooltip {
       position: absolute; pointer-events: none; background: #1f2329;
@@ -620,8 +656,13 @@
       </div>
       <div id="iss-status"><span class="ttl">Status:</span></div>
       <div id="iss-kpis"></div>
+      <div id="iss-explain" style="display:none"></div>
       <div id="iss-list-head"></div>
       <div id="iss-list"></div>
+      <details id="iss-help">
+        <summary>About these checks</summary>
+        <div class="body"></div>
+      </details>
     </div>
   </div>
 </div>
@@ -1210,30 +1251,106 @@ function renderSub() {
 }
 
 // ---- Issues : detail renderers (shared by the tab list & the sub-tab) -----
-// Short one-liner for a catalog row.
+// Detail shapes by issue id:
+//   deprecated_dep        : [{target, path[]}]
+//   circular_dep          : [key, ...]                  (strings)
+//   unresolved_dep        : [key, ...]                  (strings)
+//   missing_files         : ["ttl"|"metadata.json"|"version", ...]
+//   outdated_dependency   : [{target, latest_release}]
+//   older_release_exists  : [{latest_release}]
+//   dep_on_draft          : [key, ...]                  (strings)
+//   dep_on_undefined      : [key, ...]                  (strings)
+//   orphan_*              : [{name, kind, file}]
+//   missing_*, empty_*    : [{name, kind, file}]
+//   bad_naming_*          : [{name, kind, file}]
+//   aspect_without_props  : [{name, kind, file}]
+//   property_without_char : [{name, kind, file}]
+//   characteristic_no_dt  : [{name, kind, file}]
+//   trait_without_constr  : [{name, kind, file}]
+//   unused_property       : [{name, kind, file}]
+//   namespace_mismatch    : [{file, namespace, expected_segment}]
+//   stem_name_mismatch    : [{file, aspect}]
+//   meta_model_drift      : [{using, latest}]
+//   missing_release_notes : [<path>]                    (strings)
+//   missing_release_date  : [<version>]                 (strings)
+//   missing_gen_docs      : [<stem>]                    (strings)
+//   non_semver_version    : [<version_dir>]             (strings)
+
+// Issue ids whose detail items have {name, kind, file}.
+const ISSUE_ELEMENT_LIST = new Set([
+  "orphan_isolated", "orphan_unreachable",
+  "missing_description", "missing_preferred_name",
+  "empty_description", "description_not_english",
+  "aspect_without_properties", "property_without_characteristic",
+  "characteristic_without_datatype", "trait_without_constraint",
+  "unused_property", "bad_naming_property", "bad_naming_type",
+]);
+// Issue ids whose detail items are bare strings.
+const ISSUE_STRING_LIST = new Set([
+  "circular_dep", "unresolved_dep", "missing_files",
+  "dep_on_draft", "dep_on_undefined",
+  "missing_release_notes", "missing_release_date",
+  "missing_gen_docs", "non_semver_version",
+]);
+
+// Short one-liner for a catalog row (Issues top-tab list).
 function issueSummary(id, p) {
   if (id === "deprecated_dep") return p.detail.map(x => x.target).join(", ");
-  if (id === "circular_dep")   return "cycle with " + p.detail.join(", ");
-  if (id === "unresolved_dep" || id === "missing_files") return p.detail.join(", ");
-  const head = p.detail.slice(0, 6).map(x => `${x.kind} ${x.name}`).join(", ");
-  return head + (p.detail.length > 6 ? ` … (+${p.detail.length - 6})` : "");
+  if (id === "outdated_dependency")
+    return p.detail.map(x => `${x.target} → ${x.latest_release}`).join(", ");
+  if (id === "older_release_exists")
+    return p.detail.map(x => `newer release: ${x.latest_release}`).join(", ");
+  if (id === "circular_dep") return "cycle with " + p.detail.join(", ");
+  if (id === "namespace_mismatch")
+    return p.detail.map(x => `${x.namespace}`).join(", ");
+  if (id === "stem_name_mismatch")
+    return p.detail.map(x => `${x.file}.ttl vs Aspect ${x.aspect}`).join(", ");
+  if (id === "meta_model_drift")
+    return p.detail.map(x => `${x.using} (latest ${x.latest})`).join(", ");
+  if (ISSUE_STRING_LIST.has(id)) return p.detail.join(", ");
+  if (ISSUE_ELEMENT_LIST.has(id)) {
+    const head = p.detail.slice(0, 6).map(x => `${x.kind} ${x.name}`).join(", ");
+    return head + (p.detail.length > 6 ? ` … (+${p.detail.length - 6})` : "");
+  }
+  return "";
 }
 
 // Full <ul> for the sub-tab (everything escaped: names can hold urn:<…>).
 function issueDetailList(id, p) {
+  const E = escapeHtml;
   let items;
   if (id === "deprecated_dep")
     items = p.detail.map(x =>
-      `<li><b>${escapeHtml(x.target)}</b>` +
+      `<li><b>${E(x.target)}</b>` +
       (x.path && x.path.length > 1
-        ? ` <span class="pth">via ${x.path.map(escapeHtml).join(" › ")}</span>`
+        ? ` <span class="pth">via ${x.path.map(E).join(" › ")}</span>`
         : "") + `</li>`);
-  else if (id === "circular_dep" || id === "unresolved_dep" || id === "missing_files")
-    items = p.detail.map(x => `<li>${escapeHtml(x)}</li>`);
-  else
+  else if (id === "outdated_dependency")
     items = p.detail.map(x =>
-      `<li>${escapeHtml(x.kind)} <b>${escapeHtml(x.name)}</b> ` +
-      `<span class="pth">(${escapeHtml(x.file)})</span></li>`);
+      `<li><b>${E(x.target)}</b> ` +
+      `<span class="pth">→ latest release ${E(x.latest_release)}</span></li>`);
+  else if (id === "older_release_exists")
+    items = p.detail.map(x =>
+      `<li>newer release available: <b>${E(x.latest_release)}</b></li>`);
+  else if (id === "namespace_mismatch")
+    items = p.detail.map(x =>
+      `<li><b>${E(x.file)}.ttl</b> declares <code>${E(x.namespace)}</code> ` +
+      `<span class="pth">(expected segment ${E(x.expected_segment)})</span></li>`);
+  else if (id === "stem_name_mismatch")
+    items = p.detail.map(x =>
+      `<li>file <b>${E(x.file)}.ttl</b> vs Aspect <b>${E(x.aspect)}</b></li>`);
+  else if (id === "meta_model_drift")
+    items = p.detail.map(x =>
+      `<li>uses <b>${E(x.using)}</b> ` +
+      `<span class="pth">(latest in catalog: ${E(x.latest)})</span></li>`);
+  else if (ISSUE_STRING_LIST.has(id))
+    items = p.detail.map(x => `<li>${E(x)}</li>`);
+  else if (ISSUE_ELEMENT_LIST.has(id))
+    items = p.detail.map(x =>
+      `<li>${E(x.kind)} <b>${E(x.name)}</b> ` +
+      `<span class="pth">(${E(x.file)})</span></li>`);
+  else
+    items = p.detail.map(x => `<li>${E(typeof x === "string" ? x : JSON.stringify(x))}</li>`);
   return `<ul class="idet">${items.join("")}</ul>`;
 }
 
@@ -1261,8 +1378,10 @@ function renderIssuesSub() {
     const col = t.severity === "warning" ? "#f9a825" : "#b00020";
     html += `<h3><span class="sev" style="background:${col}"></span>` +
       `${escapeHtml(t.label)} ` +
-      `<span style="color:#888;font-weight:400;">(${p.count})</span></h3>` +
-      issueDetailList(t.id, p);
+      `<span style="color:#888;font-weight:400;">(${p.count})</span></h3>`;
+    if (t.description)
+      html += `<div class="iss-dsc">${escapeHtml(t.description)}</div>`;
+    html += issueDetailList(t.id, p);
   });
   el.innerHTML = html;
 }
@@ -1505,11 +1624,15 @@ function renderIssues() {
   if (activeView !== "issues") return;
   const sbox = document.getElementById("iss-status");
   const kbox = document.getElementById("iss-kpis");
+  const expl = document.getElementById("iss-explain");
+  const help = document.getElementById("iss-help");
   const head = document.getElementById("iss-list-head");
   const list = document.getElementById("iss-list");
 
   if (!issuesData) {
     kbox.innerHTML = ""; head.textContent = "";
+    expl.style.display = "none";
+    help.querySelector(".body").innerHTML = "";
     list.innerHTML = `<div class="empty">issues.json not found — ` +
       `run: python -m sldt_analyzer.graph</div>`;
     return;
@@ -1539,6 +1662,7 @@ function renderIssues() {
   const keysFor = id => Object.keys(M).filter(k => inScope(k) && M[k].issues[id]);
 
   // KPI cards : one per issue type, highlighted as soon as count > 0.
+  // `title` attribute = native tooltip on hover with the full description.
   kbox.innerHTML = "";
   types.forEach(t => {
     const n = keysFor(t.id).length;
@@ -1546,6 +1670,7 @@ function renderIssues() {
     card.className = "kpi iss " +
       (n === 0 ? "zero" : t.severity === "warning" ? "warn" : "err") +
       (issSelType === t.id ? " sel" : "");
+    if (t.description) card.title = t.description;
     card.innerHTML =
       `<div class="n">${n}</div><div class="s">${escapeHtml(t.label)}</div>`;
     card.addEventListener("click", () => {
@@ -1555,11 +1680,35 @@ function renderIssues() {
     kbox.appendChild(card);
   });
 
+  // "About these checks" reference panel — built once, then left alone so
+  // the user's open/closed state is preserved across re-renders.
+  const helpBody = help.querySelector(".body");
+  if (!help.dataset.built) {
+    helpBody.innerHTML = types.map(t =>
+      `<div class="item ${t.severity === "warning" ? "warn" : "err"}">` +
+      `<div class="lbl">${escapeHtml(t.label)}</div>` +
+      `<div class="dsc">${escapeHtml(t.description || "")}</div></div>`).join("");
+    help.dataset.built = "1";
+  }
+
   if (!issSelType) {
+    expl.style.display = "none";
     head.textContent = "";
     list.innerHTML = `<div class="empty">Select an issue above to list ` +
       `the affected model+version.</div>`;
     return;
+  }
+
+  // Selected explanation banner — shows the full description above the list.
+  const t = types.find(x => x.id === issSelType);
+  if (t) {
+    expl.className = t.severity === "warning" ? "warn" : "err";
+    expl.style.display = "";
+    expl.innerHTML =
+      `<div class="head"><span class="sev"></span>${escapeHtml(t.label)}</div>` +
+      `<div class="dsc">${escapeHtml(t.description || "")}</div>`;
+  } else {
+    expl.style.display = "none";
   }
 
   const rows = keysFor(issSelType)

@@ -317,6 +317,12 @@
       "target": "urn:samm:io.catenax.demand_and_capacity_notification:1.0.0#MaterialNumberSet",
       "label": "characteristic",
       "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.demand_and_capacity_notification:1.0.0#UserInputTrait",
+      "target": "urn:samm:io.catenax.demand_and_capacity_notification:1.0.0#TextLengthConstraint",
+      "label": "constraint",
+      "optional": false
     }
   ]
 }

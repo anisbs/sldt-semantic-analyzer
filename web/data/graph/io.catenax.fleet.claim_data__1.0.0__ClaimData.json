@@ -501,6 +501,12 @@
       "target": "urn:bamm:io.catenax.fleet.claim_data:1.0.0#Part",
       "label": "dataType",
       "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.fleet.claim_data:1.0.0#CatenaXIdTrait",
+      "target": "urn:bamm:io.catenax.fleet.claim_data:1.0.0#UUIDv4RegularExpression",
+      "label": "constraint",
+      "optional": false
     }
   ]
 }

@@ -1058,6 +1058,36 @@
       "target": "urn:samm:io.catenax.global_transport_label:1.0.0#DateCategoryEntity",
       "label": "dataType",
       "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.global_transport_label:1.0.0#OptionalInformationTrait",
+      "target": "urn:samm:io.catenax.global_transport_label:1.0.0#OptionalInformationConstraint",
+      "label": "constraint",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.global_transport_label:1.0.0#CustomerReference3Trait",
+      "target": "urn:samm:io.catenax.global_transport_label:1.0.0#CustomerReference3Constraint",
+      "label": "constraint",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.global_transport_label:1.0.0#CustomerReference3ContentTrait",
+      "target": "urn:samm:io.catenax.global_transport_label:1.0.0#ContentLengthConstraint",
+      "label": "constraint",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.global_transport_label:1.0.0#LicensePlateTrait",
+      "target": "urn:samm:io.catenax.global_transport_label:1.0.0#LicencePlateRegEx",
+      "label": "constraint",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.global_transport_label:1.0.0#DateTrait",
+      "target": "urn:samm:io.catenax.global_transport_label:1.0.0#DateRegEx",
+      "label": "constraint",
+      "optional": false
     }
   ]
 }

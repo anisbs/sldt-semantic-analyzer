@@ -192,6 +192,12 @@
       "target": "urn:samm:io.catenax.single_level_bom_as_built:3.0.0#ChildData",
       "label": "dataType",
       "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.single_level_bom_as_built:3.0.0#DateTimeTrait",
+      "target": "urn:samm:io.catenax.single_level_bom_as_built:3.0.0#DateTimeRegularExpression",
+      "label": "constraint",
+      "optional": false
     }
   ]
 }

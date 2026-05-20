@@ -359,6 +359,12 @@
       "target": "urn:samm:io.catenax.parts_analyses:2.0.0#AdditionalInformation",
       "label": "dataType",
       "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.parts_analyses:2.0.0#CatenaXIdTrait",
+      "target": "urn:samm:io.catenax.parts_analyses:2.0.0#UUIDv4RegularExpression",
+      "label": "constraint",
+      "optional": false
     }
   ]
 }

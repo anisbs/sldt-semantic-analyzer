@@ -530,6 +530,36 @@
       "target": "urn:samm:io.catenax.week_based_material_demand:2.0.0#Demand",
       "label": "dataType",
       "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.week_based_material_demand:2.0.0#UUIDv4IdTrait",
+      "target": "urn:samm:io.catenax.week_based_material_demand:2.0.0#UUIDv4RegularExpression",
+      "label": "constraint",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.week_based_material_demand:2.0.0#BPNLTrait",
+      "target": "urn:samm:io.catenax.week_based_material_demand:2.0.0#BPNLRegularExpression",
+      "label": "constraint",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.week_based_material_demand:2.0.0#BPNSTrait",
+      "target": "urn:samm:io.catenax.week_based_material_demand:2.0.0#BPNSRegularExpression",
+      "label": "constraint",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.week_based_material_demand:2.0.0#QuantityTrait",
+      "target": "urn:samm:io.catenax.week_based_material_demand:2.0.0#QuantityFixedPoint",
+      "label": "constraint",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.week_based_material_demand:2.0.0#QuantityTrait",
+      "target": "urn:samm:io.catenax.week_based_material_demand:2.0.0#QuantityRange",
+      "label": "constraint",
+      "optional": false
     }
   ]
 }

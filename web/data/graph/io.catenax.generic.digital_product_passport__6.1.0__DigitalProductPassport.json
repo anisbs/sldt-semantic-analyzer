@@ -2957,6 +2957,36 @@
       "target": "urn:samm:io.catenax.generic.digital_product_passport:6.1.0#MaterialIdEntity",
       "label": "dataType",
       "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.generic.digital_product_passport:6.1.0#DateTrait",
+      "target": "urn:samm:io.catenax.generic.digital_product_passport:6.1.0#DateConstraint",
+      "label": "constraint",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.generic.digital_product_passport:6.1.0#HeaderTrait",
+      "target": "urn:samm:io.catenax.generic.digital_product_passport:6.1.0#HeaderConstraint",
+      "label": "constraint",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.generic.digital_product_passport:6.1.0#EoriTrait",
+      "target": "urn:samm:io.catenax.generic.digital_product_passport:6.1.0#EoriConstraint",
+      "label": "constraint",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.generic.digital_product_passport:6.1.0#PositiveTrait",
+      "target": "urn:samm:io.catenax.generic.digital_product_passport:6.1.0#PositiveRangeConstraint",
+      "label": "constraint",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.generic.digital_product_passport:6.1.0#PercentageTrait",
+      "target": "urn:samm:io.catenax.generic.digital_product_passport:6.1.0#PercentageConstraint",
+      "label": "constraint",
+      "optional": false
     }
   ]
 }

@@ -94,6 +94,24 @@
       "target": "urn:samm:io.catenax.shared.standard_codes:1.0.0#CountrySubdivisionTrait",
       "label": "characteristic",
       "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.shared.standard_codes:1.0.0#CountryAlpha3Trait",
+      "target": "urn:samm:io.catenax.shared.standard_codes:1.0.0#ISO31661Alpha3Regex",
+      "label": "constraint",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.shared.standard_codes:1.0.0#CountrySubdivisionTrait",
+      "target": "urn:samm:io.catenax.shared.standard_codes:1.0.0#ISO31662Regex",
+      "label": "constraint",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.shared.standard_codes:1.0.0#CurrencyTrait",
+      "target": "urn:samm:io.catenax.shared.standard_codes:1.0.0#ISO4217Regex",
+      "label": "constraint",
+      "optional": false
     }
   ]
 }

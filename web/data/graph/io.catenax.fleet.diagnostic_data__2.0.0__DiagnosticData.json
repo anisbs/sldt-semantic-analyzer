@@ -1266,6 +1266,30 @@
       "target": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#EnvironmentCondition",
       "label": "dataType",
       "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#CountryCodeTrait",
+      "target": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#CountryCodeRegularExpression",
+      "label": "constraint",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#LatitudeTrait",
+      "target": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#ConstraintLatitude",
+      "label": "constraint",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#LongitudeTrait",
+      "target": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#ConstraintLongitude",
+      "label": "constraint",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#HexValueTrait",
+      "target": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#HexRegularExpression",
+      "label": "constraint",
+      "optional": false
     }
   ]
 }

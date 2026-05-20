@@ -517,6 +517,12 @@
       "target": "urn:samm:io.catenax.delivery_information:2.0.0#Location",
       "label": "dataType",
       "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.delivery_information:2.0.0#TransitEventsTrait",
+      "target": "urn:samm:io.catenax.delivery_information:2.0.0#TransitEventsContstraint",
+      "label": "constraint",
+      "optional": false
     }
   ]
 }

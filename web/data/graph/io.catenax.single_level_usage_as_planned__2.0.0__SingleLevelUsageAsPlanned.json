@@ -282,6 +282,12 @@
       "target": "urn:samm:io.catenax.single_level_usage_as_planned:2.0.0#ValidityPeriodEntity",
       "label": "dataType",
       "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.single_level_usage_as_planned:2.0.0#DateTimeTrait",
+      "target": "urn:samm:io.catenax.single_level_usage_as_planned:2.0.0#DateTimeRegularExpression",
+      "label": "constraint",
+      "optional": false
     }
   ]
 }

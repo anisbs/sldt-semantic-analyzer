@@ -702,6 +702,24 @@
       "target": "urn:samm:io.catenax.essincident:4.0.0#EssOriginatorCoordinatesEntity",
       "label": "dataType",
       "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.essincident:4.0.0#ContactMailTrait",
+      "target": "urn:samm:io.catenax.essincident:4.0.0#ContactMailConstraint",
+      "label": "constraint",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.essincident:4.0.0#LongitudeTrait",
+      "target": "urn:samm:io.catenax.essincident:4.0.0#LongitudeConstraint",
+      "label": "constraint",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.essincident:4.0.0#LatitudeTrait",
+      "target": "urn:samm:io.catenax.essincident:4.0.0#LatitudeConstraint",
+      "label": "constraint",
+      "optional": false
     }
   ]
 }

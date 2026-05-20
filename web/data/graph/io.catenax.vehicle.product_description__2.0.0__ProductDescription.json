@@ -1082,6 +1082,24 @@
       "target": "urn:bamm:io.catenax.vehicle.product_description:2.0.0#Fuel",
       "label": "dataType",
       "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.vehicle.product_description:2.0.0#OemShortNameTrait",
+      "target": "urn:bamm:io.catenax.vehicle.product_description:2.0.0#WorldManufacturerInformationCodeLength",
+      "label": "constraint",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.vehicle.product_description:2.0.0#CatenaXIdTrait",
+      "target": "urn:bamm:io.catenax.vehicle.product_description:2.0.0#UUIDv4RegularExpression",
+      "label": "constraint",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.vehicle.product_description:2.0.0#CountryCodeTrait",
+      "target": "urn:bamm:io.catenax.vehicle.product_description:2.0.0#CountryCodeRegularExpression",
+      "label": "constraint",
+      "optional": false
     }
   ]
 }

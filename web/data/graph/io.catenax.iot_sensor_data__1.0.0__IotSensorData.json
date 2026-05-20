@@ -606,6 +606,12 @@
       "target": "urn:bamm:io.catenax.iot_sensor_data:1.0.0#AnalogSensorEntity",
       "label": "dataType",
       "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.iot_sensor_data:1.0.0#CatenaXIdTrait",
+      "target": "urn:bamm:io.catenax.iot_sensor_data:1.0.0#Constraint1",
+      "label": "constraint",
+      "optional": false
     }
   ]
 }

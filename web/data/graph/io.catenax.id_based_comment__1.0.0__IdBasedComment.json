@@ -285,6 +285,12 @@
       "target": "urn:samm:io.catenax.id_based_comment:1.0.0#ObjectTypeCharacteristic",
       "label": "characteristic",
       "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.id_based_comment:1.0.0#CommentTrait",
+      "target": "urn:samm:io.catenax.id_based_comment:1.0.0#TextRegularExpression",
+      "label": "constraint",
+      "optional": false
     }
   ]
 }

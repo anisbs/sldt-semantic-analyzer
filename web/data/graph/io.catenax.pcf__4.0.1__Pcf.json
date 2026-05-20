@@ -1794,6 +1794,90 @@
       "target": "urn:bamm:io.catenax.pcf:4.0.1#RuleName",
       "label": "dataType",
       "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.pcf:4.0.1#IdTrait",
+      "target": "urn:bamm:io.catenax.pcf:4.0.1#UUIDv4",
+      "label": "constraint",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.pcf:4.0.1#PrecedingPfIdsTrait",
+      "target": "urn:bamm:io.catenax.pcf:4.0.1#PrecedingPfIdsConstraint",
+      "label": "constraint",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.pcf:4.0.1#NonEmptyStringTrait",
+      "target": "urn:bamm:io.catenax.pcf:4.0.1#NonEmptyString",
+      "label": "constraint",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.pcf:4.0.1#CompanyIdsTrait",
+      "target": "urn:bamm:io.catenax.pcf:4.0.1#CompanyIdSetConstraint",
+      "label": "constraint",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.pcf:4.0.1#ProductIdsTrait",
+      "target": "urn:bamm:io.catenax.pcf:4.0.1#ProductIdSetConstraint",
+      "label": "constraint",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.pcf:4.0.1#StrictlyPositiveDecimalTrait",
+      "target": "urn:bamm:io.catenax.pcf:4.0.1#StrictlyPositiveDecimalConstraint",
+      "label": "constraint",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.pcf:4.0.1#PositiveDecimalWeightTrait",
+      "target": "urn:bamm:io.catenax.pcf:4.0.1#PositiveDecimalConstraint",
+      "label": "constraint",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.pcf:4.0.1#ExemptedEmissionsPercentTrait",
+      "target": "urn:bamm:io.catenax.pcf:4.0.1#ExemptedEmissionsPercentConstraint",
+      "label": "constraint",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.pcf:4.0.1#GeographyCountrySubdivisionTrait",
+      "target": "urn:bamm:io.catenax.pcf:4.0.1#GeographyCountrySubdivisionConstraint",
+      "label": "constraint",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.pcf:4.0.1#GeographyCountryTrait",
+      "target": "urn:bamm:io.catenax.pcf:4.0.1#GeographyCountryConstraint",
+      "label": "constraint",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.pcf:4.0.1#PercentTrait",
+      "target": "urn:bamm:io.catenax.pcf:4.0.1#PercentConstraint",
+      "label": "constraint",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.pcf:4.0.1#PositiveEmissionsTrait",
+      "target": "urn:bamm:io.catenax.pcf:4.0.1#PositiveEmissionConstraint",
+      "label": "constraint",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.pcf:4.0.1#RuleNamesTrait",
+      "target": "urn:bamm:io.catenax.pcf:4.0.1#RuleNamesConstraint",
+      "label": "constraint",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.pcf:4.0.1#DqiNumberTrait",
+      "target": "urn:bamm:io.catenax.pcf:4.0.1#DqiNumberConstraint",
+      "label": "constraint",
+      "optional": false
     }
   ]
 }

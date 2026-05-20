@@ -382,6 +382,12 @@
       "target": "urn:samm:io.catenax.serial_part:2.0.0#PartTypeInformationEntity",
       "label": "dataType",
       "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.serial_part:2.0.0#ProductionCountryCodeTrait",
+      "target": "urn:samm:io.catenax.serial_part:2.0.0#CountryCodeRegularExpression",
+      "label": "constraint",
+      "optional": false
     }
   ]
 }

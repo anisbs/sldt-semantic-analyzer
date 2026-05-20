@@ -19,7 +19,7 @@ import re
 from dataclasses import dataclass, field
 from pathlib import Path
 
-from rdflib import RDF, Graph, URIRef
+from rdflib import RDF, Graph, Literal, URIRef
 from rdflib.collection import Collection
 
 logger = logging.getLogger("sldt.parser")
@@ -38,6 +38,12 @@ _EDGE_PREDICATES = {
     "baseCharacteristic": "baseCharacteristic",
     "elementCharacteristic": "elementCharacteristic",
 }
+# Prédicats vivant dans le namespace `samm-c:` (caractéristiques), pas dans
+# le méta-modèle. `samm-c:constraint` relie un Trait à ses Constraint(s) :
+# nécessaire pour détecter `trait_without_constraint`.
+_CHAR_EDGE_PREDICATES = {
+    "constraint": "constraint",
+}
 
 
 @dataclass
@@ -47,6 +53,12 @@ class Element:
     name: str               # nom local (après le '#')
     preferred_name: str | None = None
     description: str | None = None
+    # Langues des `samm:description` rencontrées (tags BCP-47, ex. "en", "de").
+    # Vide si aucune description (différent d'une description sans @lang).
+    description_langs: list[str] = field(default_factory=list)
+    # Tous les `rdf:type` (noms locaux). Permet de distinguer un `Trait`, un
+    # `Enumeration`, etc. d'un `Characteristic` "pur" (qui DOIT avoir dataType).
+    types: list[str] = field(default_factory=list)
 
 
 @dataclass
@@ -79,6 +91,14 @@ class ParsedModel:
     elements: list[Element] = field(default_factory=list)
     edges: list[Edge] = field(default_factory=list)
     dependencies: list[Dependency] = field(default_factory=list)
+    # URNs des Aspects de ce fichier ayant une liste `samm:properties` vide
+    # (différent de "Aspect sans propriétés DANS ce graph" : on tient compte
+    # ici de la collection RDF d'origine, y compris items externes ext-*:).
+    aspects_empty_properties: list[str] = field(default_factory=list)
+    # URNs des Properties définies dans ce fichier mais jamais référencées par
+    # une `samm:properties` (collection ou wrapper bnode). Calculé pendant le
+    # parse car nécessite la collection RDF complète.
+    unused_property_urns: list[str] = field(default_factory=list)
 
 
 def _local_name(uri: str) -> str:
@@ -267,6 +287,7 @@ def parse_file(path: Path) -> ParsedModel | None:
     #    de Characteristic dans le namespace 'characteristic:').
     char_ns = meta_ns.replace("meta-model", "characteristic")
     seen: dict[str, Element] = {}
+    desc_pred = M("description")
     for subj, _, typ in graph.triples((None, RDF.type, None)):
         if not isinstance(subj, URIRef):
             continue
@@ -282,20 +303,71 @@ def parse_file(path: Path) -> ParsedModel | None:
         urn = str(subj)
         if urn in seen:
             continue
+        # On capture TOUS les rdf:type (locaux) pour détecter Trait/Enumeration/
+        # Constraint en aval : un Characteristic "pur" exige `dataType`, un
+        # Trait non (il a `baseCharacteristic` + `constraint`).
+        types: list[str] = []
+        for _, _, t in graph.triples((subj, RDF.type, None)):
+            t_str = str(t)
+            if t_str.startswith(meta_ns) or t_str.startswith(char_ns):
+                types.append(_local_name(t_str))
+        # Langues des descriptions (vide si pas de samm:description du tout).
+        langs: list[str] = []
+        for obj in graph.objects(subj, desc_pred):
+            if isinstance(obj, Literal):
+                langs.append(obj.language or "")
         seen[urn] = Element(
             urn=urn,
             kind=kind,
             name=_local_name(urn),
             preferred_name=_first_literal(graph, subj, M("preferredName")),
-            description=_first_literal(graph, subj, M("description")),
+            description=_first_literal(graph, subj, desc_pred),
+            description_langs=langs,
+            types=types,
         )
     model.elements = list(seen.values())
 
     # 2) Arêtes entre éléments connus.
     prop_pred = M("property")      # dans le wrapper bnode [ samm:property X ; ...]
     optional_pred = M("optional")
-    for local, label in _EDGE_PREDICATES.items():
-        pred = M(local)
+    properties_pred = M("properties")
+    # On note tous les URIs cités via `samm:properties` (collection ou
+    # wrappers) — y compris URIs externes (ext-*:) — pour 2 usages :
+    #  - détecter `unused_property` (Property locale jamais citée)
+    #  - détecter `aspect_without_properties` (collection RDF effectivement vide)
+    used_property_uris: set[str] = set()
+    aspects_with_props: set[str] = set()
+    for subj, _, head in graph.triples((None, properties_pred, None)):
+        # `head` peut être une rdf:Collection ou rdf:nil ; _list_items gère
+        # les 2 (et retourne [] pour autre chose, ce qu'on traite comme vide).
+        items = _list_items(graph, head)
+        src = str(subj)
+        if src in seen and seen[src].kind == "Aspect" and items:
+            aspects_with_props.add(src)
+        for it in items:
+            if isinstance(it, URIRef):
+                used_property_uris.add(str(it))
+            else:  # bnode wrapper [ samm:property X ; ... ]
+                inner = graph.value(it, prop_pred)
+                if isinstance(inner, URIRef):
+                    used_property_uris.add(str(inner))
+    model.aspects_empty_properties = sorted(
+        e.urn for e in model.elements
+        if e.kind == "Aspect" and e.urn not in aspects_with_props
+    )
+    model.unused_property_urns = sorted(
+        e.urn for e in model.elements
+        if e.kind == "Property" and e.urn not in used_property_uris
+    )
+
+    # Prédicats à scanner : couple (URIRef du prédicat, libellé d'arête).
+    edge_preds: list[tuple[URIRef, str]] = [
+        (M(local), label) for local, label in _EDGE_PREDICATES.items()
+    ] + [
+        (URIRef(char_ns + local), label)
+        for local, label in _CHAR_EDGE_PREDICATES.items()
+    ]
+    for pred, label in edge_preds:
         for subj, _, obj in graph.triples((None, pred, None)):
             src = str(subj)
             if src not in seen:  # on ne garde que les arêtes entre éléments connus

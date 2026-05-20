@@ -399,6 +399,18 @@
       "target": "urn:bamm:io.catenax.manufactured_parts_quality_information:1.0.0#AdditionalInformation",
       "label": "dataType",
       "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.manufactured_parts_quality_information:1.0.0#ProductionCountryCodeTrait",
+      "target": "urn:bamm:io.catenax.manufactured_parts_quality_information:1.0.0#CountryCodeRegularExpression",
+      "label": "constraint",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.manufactured_parts_quality_information:1.0.0#CatenaXIdTrait",
+      "target": "urn:bamm:io.catenax.manufactured_parts_quality_information:1.0.0#UUIDv4RegularExpression",
+      "label": "constraint",
+      "optional": false
     }
   ]
 }

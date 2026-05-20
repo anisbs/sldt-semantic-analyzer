@@ -1084,6 +1084,42 @@
       "target": "urn:samm:io.catenax.shared.quality_core:1.0.0#AdditionalInformation",
       "label": "dataType",
       "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.shared.quality_core:1.0.0#CountryCodeTrait",
+      "target": "urn:samm:io.catenax.shared.quality_core:1.0.0#CountryCodeRegularExpression",
+      "label": "constraint",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.shared.quality_core:1.0.0#HexValueTrait",
+      "target": "urn:samm:io.catenax.shared.quality_core:1.0.0#HexRegularExpression",
+      "label": "constraint",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.shared.quality_core:1.0.0#MileageTrait",
+      "target": "urn:samm:io.catenax.shared.quality_core:1.0.0#MileageRangeConstraint",
+      "label": "constraint",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.shared.quality_core:1.0.0#ISO8601LocalDate",
+      "target": "urn:samm:io.catenax.shared.quality_core:1.0.0#DateRegularExpressionNullable",
+      "label": "constraint",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.shared.quality_core:1.0.0#LatitudeTrait",
+      "target": "urn:samm:io.catenax.shared.quality_core:1.0.0#ConstraintLatitude",
+      "label": "constraint",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.shared.quality_core:1.0.0#LongitudeTrait",
+      "target": "urn:samm:io.catenax.shared.quality_core:1.0.0#ConstraintLongitude",
+      "label": "constraint",
+      "optional": false
     }
   ]
 }

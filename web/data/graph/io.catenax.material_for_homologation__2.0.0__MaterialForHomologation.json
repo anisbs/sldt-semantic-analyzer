@@ -370,6 +370,42 @@
       "target": "urn:samm:io.catenax.material_for_homologation:2.0.0#VDAStandardIdEntity",
       "label": "dataType",
       "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material_for_homologation:2.0.0#ItemNumber1Trait",
+      "target": "urn:samm:io.catenax.material_for_homologation:2.0.0#ItemNumberConstraint",
+      "label": "constraint",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material_for_homologation:2.0.0#NameTrait1",
+      "target": "urn:samm:io.catenax.material_for_homologation:2.0.0#NameConstraint",
+      "label": "constraint",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material_for_homologation:2.0.0#StandardTrait1",
+      "target": "urn:samm:io.catenax.material_for_homologation:2.0.0#StandardConstraint",
+      "label": "constraint",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material_for_homologation:2.0.0#MaterialNumberTrait1",
+      "target": "urn:samm:io.catenax.material_for_homologation:2.0.0#MaterialConstraint",
+      "label": "constraint",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material_for_homologation:2.0.0#MainGroupTrait1",
+      "target": "urn:samm:io.catenax.material_for_homologation:2.0.0#MainGroupConstraint",
+      "label": "constraint",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material_for_homologation:2.0.0#SubgroupTrait1",
+      "target": "urn:samm:io.catenax.material_for_homologation:2.0.0#SubgroupConstraint",
+      "label": "constraint",
+      "optional": false
     }
   ]
 }

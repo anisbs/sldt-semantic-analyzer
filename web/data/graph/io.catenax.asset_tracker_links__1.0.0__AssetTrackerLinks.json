@@ -196,6 +196,12 @@
       "target": "urn:bamm:io.catenax.asset_tracker_links:1.0.0#ChildData",
       "label": "dataType",
       "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.asset_tracker_links:1.0.0#CatenaXIdTraitCharacteristic",
+      "target": "urn:bamm:io.catenax.asset_tracker_links:1.0.0#UUIDv4RegularExpression",
+      "label": "constraint",
+      "optional": false
     }
   ]
 }

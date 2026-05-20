@@ -374,6 +374,24 @@
       "target": "urn:samm:io.catenax.batch:2.0.0#PartTypeInformationEntity",
       "label": "dataType",
       "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.batch:2.0.0#CatenaXIdTrait",
+      "target": "urn:samm:io.catenax.batch:2.0.0#UUIDv4RegularExpression",
+      "label": "constraint",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.batch:2.0.0#KeyTrait",
+      "target": "urn:samm:io.catenax.batch:2.0.0#KeyRegularExpression",
+      "label": "constraint",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.batch:2.0.0#ProductionCountryCodeTrait",
+      "target": "urn:samm:io.catenax.batch:2.0.0#CountryCodeRegularExpression",
+      "label": "constraint",
+      "optional": false
     }
   ]
 }

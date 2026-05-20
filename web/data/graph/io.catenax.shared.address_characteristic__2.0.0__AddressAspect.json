@@ -598,6 +598,18 @@
       "target": "urn:bamm:io.catenax.shared.address_characteristic:2.0.0#PostCodeEntity",
       "label": "dataType",
       "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.shared.address_characteristic:2.0.0#PostCodeTrait",
+      "target": "urn:bamm:io.catenax.shared.address_characteristic:2.0.0#PostCodeConstraint",
+      "label": "constraint",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.shared.address_characteristic:2.0.0#CountryTrait",
+      "target": "urn:bamm:io.catenax.shared.address_characteristic:2.0.0#CountryShortNameConstraint",
+      "label": "constraint",
+      "optional": false
     }
   ]
 }

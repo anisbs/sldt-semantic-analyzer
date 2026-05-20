@@ -934,6 +934,12 @@
       "target": "urn:bamm:io.catenax.market_place_offer:1.4.0#TechnicalSpecificationEntity",
       "label": "dataType",
       "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.market_place_offer:1.4.0#CatenaXIdTrait",
+      "target": "urn:bamm:io.catenax.market_place_offer:1.4.0#UUIDv4RegularExpression",
+      "label": "constraint",
+      "optional": false
     }
   ]
 }

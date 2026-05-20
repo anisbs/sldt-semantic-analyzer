@@ -1120,6 +1120,42 @@
       "target": "urn:bamm:io.catenax.fleet.diagnostic_data:1.0.0#Event",
       "label": "dataType",
       "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.fleet.diagnostic_data:1.0.0#CountryCodeTrait",
+      "target": "urn:bamm:io.catenax.fleet.diagnostic_data:1.0.0#CountryCodeRegularExpression",
+      "label": "constraint",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.fleet.diagnostic_data:1.0.0#CatenaXIdTrait",
+      "target": "urn:bamm:io.catenax.fleet.diagnostic_data:1.0.0#UUIDv4RegularExpression",
+      "label": "constraint",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.fleet.diagnostic_data:1.0.0#LatitudeTrait",
+      "target": "urn:bamm:io.catenax.fleet.diagnostic_data:1.0.0#ConstraintLatitude",
+      "label": "constraint",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.fleet.diagnostic_data:1.0.0#LongitudeTrait",
+      "target": "urn:bamm:io.catenax.fleet.diagnostic_data:1.0.0#ConstraintLongitude",
+      "label": "constraint",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.fleet.diagnostic_data:1.0.0#FreezeFrameTrait",
+      "target": "urn:bamm:io.catenax.fleet.diagnostic_data:1.0.0#HexRegex",
+      "label": "constraint",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.fleet.diagnostic_data:1.0.0#FullNameTrait",
+      "target": "urn:bamm:io.catenax.fleet.diagnostic_data:1.0.0#FullDTCRegEx",
+      "label": "constraint",
+      "optional": false
     }
   ]
 }

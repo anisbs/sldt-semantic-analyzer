@@ -398,6 +398,18 @@
       "target": "urn:bamm:io.catenax.batch:1.0.2#PartTypeInformationEntity",
       "label": "dataType",
       "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.batch:1.0.2#ProductionCountryCodeTrait",
+      "target": "urn:bamm:io.catenax.batch:1.0.2#CountryCodeRegularExpression",
+      "label": "constraint",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.batch:1.0.2#CatenaXIdTrait",
+      "target": "urn:bamm:io.catenax.batch:1.0.2#UUIDv4RegularExpression",
+      "label": "constraint",
+      "optional": false
     }
   ]
 }

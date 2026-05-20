@@ -501,6 +501,12 @@
       "target": "urn:bamm:io.catenax.return_request:1.1.1#Price",
       "label": "dataType",
       "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.return_request:1.1.1#CurrencyTrait",
+      "target": "urn:bamm:io.catenax.return_request:1.1.1#CurrencyConstraint",
+      "label": "constraint",
+      "optional": false
     }
   ]
 }

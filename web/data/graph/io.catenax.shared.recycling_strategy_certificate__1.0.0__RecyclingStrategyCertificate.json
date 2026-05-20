@@ -157,6 +157,12 @@
       "target": "urn:bamm:io.catenax.shared.recycling_strategy_certificate:1.0.0#RecyclingStrategyCertificateEntity",
       "label": "dataType",
       "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.shared.recycling_strategy_certificate:1.0.0#CatenaXIdTraitCharacteristic",
+      "target": "urn:bamm:io.catenax.shared.recycling_strategy_certificate:1.0.0#UUIDv4RegularExpression",
+      "label": "constraint",
+      "optional": false
     }
   ]
 }

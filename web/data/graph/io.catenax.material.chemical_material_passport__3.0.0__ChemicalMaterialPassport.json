@@ -2020,6 +2020,24 @@
       "target": "urn:samm:io.catenax.material.chemical_material_passport:3.0.0#SpecialProvisionsCodeEntity",
       "label": "dataType",
       "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material.chemical_material_passport:3.0.0#ProductComplianceCountryTrait",
+      "target": "urn:samm:io.catenax.material.chemical_material_passport:3.0.0#CountryCodeRegEx",
+      "label": "constraint",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material.chemical_material_passport:3.0.0#UNNumberTrait",
+      "target": "urn:samm:io.catenax.material.chemical_material_passport:3.0.0#UNNumberConstraint",
+      "label": "constraint",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material.chemical_material_passport:3.0.0#PrecautionaryCodeTrait",
+      "target": "urn:samm:io.catenax.material.chemical_material_passport:3.0.0#PrecautionaryCodeConstraint",
+      "label": "constraint",
+      "optional": false
     }
   ]
 }

@@ -277,6 +277,12 @@
       "target": "urn:samm:io.catenax.part_type_information:1.0.0#partSitesInformationAsPlannedEntity",
       "label": "dataType",
       "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.part_type_information:1.0.0#DateTrait",
+      "target": "urn:samm:io.catenax.part_type_information:1.0.0#DateTimeRegularExpression",
+      "label": "constraint",
+      "optional": false
     }
   ]
 }

@@ -920,6 +920,18 @@
       "target": "urn:samm:io.catenax.transmission.transmission_pass:2.0.0#MachinePowerEntity",
       "label": "dataType",
       "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.transmission.transmission_pass:2.0.0#DriveTypeTrait",
+      "target": "urn:samm:io.catenax.transmission.transmission_pass:2.0.0#DriveTypeConstraint",
+      "label": "constraint",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.transmission.transmission_pass:2.0.0#GearTrait",
+      "target": "urn:samm:io.catenax.transmission.transmission_pass:2.0.0#GearConstraint",
+      "label": "constraint",
+      "optional": false
     }
   ]
 }

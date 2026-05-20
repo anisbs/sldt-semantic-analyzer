@@ -863,6 +863,24 @@
       "target": "urn:samm:io.catenax.fleet.claim_data:2.0.0#SparePart",
       "label": "dataType",
       "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.claim_data:2.0.0#CountryCodeTrait",
+      "target": "urn:samm:io.catenax.fleet.claim_data:2.0.0#CountryCodeRegularExpression",
+      "label": "constraint",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.claim_data:2.0.0#LatitudeTrait",
+      "target": "urn:samm:io.catenax.fleet.claim_data:2.0.0#ConstraintLatitude",
+      "label": "constraint",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.claim_data:2.0.0#LongitudeTrait",
+      "target": "urn:samm:io.catenax.fleet.claim_data:2.0.0#ConstraintLongitude",
+      "label": "constraint",
+      "optional": false
     }
   ]
 }

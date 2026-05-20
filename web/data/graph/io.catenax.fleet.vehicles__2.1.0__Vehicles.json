@@ -862,6 +862,18 @@
       "target": "urn:samm:io.catenax.fleet.vehicles:2.1.0#Equipment",
       "label": "dataType",
       "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.vehicles:2.1.0#CountryCodeTrait",
+      "target": "urn:samm:io.catenax.fleet.vehicles:2.1.0#CountryCodeRegularExpression",
+      "label": "constraint",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.vehicles:2.1.0#OemShortNameTrait",
+      "target": "urn:samm:io.catenax.fleet.vehicles:2.1.0#WorldManufacturerInformationCodeLength",
+      "label": "constraint",
+      "optional": false
     }
   ]
 }

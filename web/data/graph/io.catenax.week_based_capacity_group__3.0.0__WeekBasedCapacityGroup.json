@@ -875,6 +875,30 @@
       "target": "urn:samm:io.catenax.week_based_capacity_group:3.0.0#RollingHorizonAlertThresholdsEntity",
       "label": "dataType",
       "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.week_based_capacity_group:3.0.0#QuantityTrait",
+      "target": "urn:samm:io.catenax.week_based_capacity_group:3.0.0#QuantityRange",
+      "label": "constraint",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.week_based_capacity_group:3.0.0#QuantityTrait",
+      "target": "urn:samm:io.catenax.week_based_capacity_group:3.0.0#QuantityFixedPoint",
+      "label": "constraint",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.week_based_capacity_group:3.0.0#MeasurementTrait",
+      "target": "urn:samm:io.catenax.week_based_capacity_group:3.0.0#MeasurementParametersRange",
+      "label": "constraint",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.week_based_capacity_group:3.0.0#RelativeNegativeDeviationTrait",
+      "target": "urn:samm:io.catenax.week_based_capacity_group:3.0.0#RelativeNegativeDeviationRange",
+      "label": "constraint",
+      "optional": false
     }
   ]
 }

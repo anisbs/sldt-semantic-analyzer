@@ -302,6 +302,18 @@
       "target": "urn:samm:io.catenax.material.technical_information:1.0.0#CountryEntity",
       "label": "dataType",
       "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material.technical_information:1.0.0#CountryTrait",
+      "target": "urn:samm:io.catenax.material.technical_information:1.0.0#CountryConstraint",
+      "label": "constraint",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material.technical_information:1.0.0#Alpha3CodeTrait",
+      "target": "urn:samm:io.catenax.material.technical_information:1.0.0#ISO3166CodeConstraint",
+      "label": "constraint",
+      "optional": false
     }
   ]
 }

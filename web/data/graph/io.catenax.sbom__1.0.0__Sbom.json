@@ -237,6 +237,30 @@
       "target": "urn:samm:io.catenax.sbom:1.0.0#File",
       "label": "dataType",
       "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.sbom:1.0.0#FormatVersionTrait",
+      "target": "urn:samm:io.catenax.sbom:1.0.0#FormatVersionConstraint",
+      "label": "constraint",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.sbom:1.0.0#FormatTrait",
+      "target": "urn:samm:io.catenax.sbom:1.0.0#FormatConstraint",
+      "label": "constraint",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.sbom:1.0.0#DescriptionFileTrait",
+      "target": "urn:samm:io.catenax.sbom:1.0.0#DescriptionFileConstraint",
+      "label": "constraint",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.sbom:1.0.0#SpdxDataTrait",
+      "target": "urn:samm:io.catenax.sbom:1.0.0#SpdxDataConstraint",
+      "label": "constraint",
+      "optional": false
     }
   ]
 }

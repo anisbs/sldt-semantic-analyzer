@@ -830,6 +830,12 @@
       "target": "urn:bamm:io.catenax.waste:1.0.0#CurrentMarketPriceEntity",
       "label": "dataType",
       "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.waste:1.0.0#MarketIndexCurrencyTrait",
+      "target": "urn:bamm:io.catenax.waste:1.0.0#LengthConstraint",
+      "label": "constraint",
+      "optional": false
     }
   ]
 }

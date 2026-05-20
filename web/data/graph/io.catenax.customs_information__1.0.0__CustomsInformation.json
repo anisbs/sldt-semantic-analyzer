@@ -685,6 +685,30 @@
       "target": "urn:samm:io.catenax.customs_information:1.0.0#OriginOfManufacturingEntity",
       "label": "dataType",
       "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.customs_information:1.0.0#TradeRelationTrait",
+      "target": "urn:samm:io.catenax.customs_information:1.0.0#TradeRelationRegularExpression",
+      "label": "constraint",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.customs_information:1.0.0#CommercialCountryOfOriginTrait",
+      "target": "urn:samm:io.catenax.customs_information:1.0.0#CountryAndStateCodeRegularExpression",
+      "label": "constraint",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.customs_information:1.0.0#FederalStateTrait",
+      "target": "urn:samm:io.catenax.customs_information:1.0.0#CountryAndStateCodeRegularExpression",
+      "label": "constraint",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.customs_information:1.0.0#CurrencyTrait",
+      "target": "urn:samm:io.catenax.customs_information:1.0.0#CurrencyRegularExpression",
+      "label": "constraint",
+      "optional": false
     }
   ]
 }

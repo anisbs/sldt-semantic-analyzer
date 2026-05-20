@@ -300,6 +300,18 @@
       "target": "urn:samm:io.catenax.single_level_usage_as_built:2.0.0#Quantity",
       "label": "dataType",
       "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.single_level_usage_as_built:2.0.0#CatenaXIdTraitCharacteristic",
+      "target": "urn:samm:io.catenax.single_level_usage_as_built:2.0.0#UUIDv4RegularExpression",
+      "label": "constraint",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.single_level_usage_as_built:2.0.0#BpnTrait",
+      "target": "urn:samm:io.catenax.single_level_usage_as_built:2.0.0#BpnConstraint",
+      "label": "constraint",
+      "optional": false
     }
   ]
 }

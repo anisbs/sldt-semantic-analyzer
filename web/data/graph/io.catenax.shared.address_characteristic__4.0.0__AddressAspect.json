@@ -561,6 +561,18 @@
       "target": "urn:samm:io.catenax.shared.address_characteristic:4.0.0#PostCodeEntity",
       "label": "dataType",
       "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.shared.address_characteristic:4.0.0#CountryTrait",
+      "target": "urn:samm:io.catenax.shared.address_characteristic:4.0.0#CountryShortNameConstraint",
+      "label": "constraint",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.shared.address_characteristic:4.0.0#PostCodeTrait",
+      "target": "urn:samm:io.catenax.shared.address_characteristic:4.0.0#PostCodeConstraint",
+      "label": "constraint",
+      "optional": false
     }
   ]
 }

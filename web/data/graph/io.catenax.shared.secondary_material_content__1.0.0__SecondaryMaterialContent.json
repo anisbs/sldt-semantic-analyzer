@@ -960,6 +960,18 @@
       "target": "urn:samm:io.catenax.shared.secondary_material_content:1.0.0#ChemicalRecyclingEntity",
       "label": "dataType",
       "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.shared.secondary_material_content:1.0.0#UnitOfMeasureKeyTrait",
+      "target": "urn:samm:io.catenax.shared.secondary_material_content:1.0.0#AllowMassUnit",
+      "label": "constraint",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.shared.secondary_material_content:1.0.0#PercentageOfMaterialWeightTrait",
+      "target": "urn:samm:io.catenax.shared.secondary_material_content:1.0.0#PercentageConstraint",
+      "label": "constraint",
+      "optional": false
     }
   ]
 }

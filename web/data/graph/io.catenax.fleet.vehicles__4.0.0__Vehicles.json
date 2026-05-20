@@ -746,6 +746,12 @@
       "target": "urn:samm:io.catenax.fleet.vehicles:4.0.0#Transmission",
       "label": "dataType",
       "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.vehicles:4.0.0#OemShortNameTrait",
+      "target": "urn:samm:io.catenax.fleet.vehicles:4.0.0#WorldManufacturerInformationCodeLength",
+      "label": "constraint",
+      "optional": false
     }
   ]
 }

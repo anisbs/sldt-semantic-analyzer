@@ -300,6 +300,12 @@
       "target": "urn:bamm:io.catenax.part_as_specified:2.0.0#PartClassificationEntity",
       "label": "dataType",
       "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.part_as_specified:2.0.0#CatenaXIdTrait",
+      "target": "urn:bamm:io.catenax.part_as_specified:2.0.0#Uuidv4RegularExpression",
+      "label": "constraint",
+      "optional": false
     }
   ]
 }

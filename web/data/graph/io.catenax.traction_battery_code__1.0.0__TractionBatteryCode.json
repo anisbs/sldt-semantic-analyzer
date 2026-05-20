@@ -143,6 +143,12 @@
       "target": "urn:bamm:io.catenax.traction_battery_code:1.0.0#TractionBatteryComponent",
       "label": "dataType",
       "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.traction_battery_code:1.0.0#TractionBatteryCodeTrait",
+      "target": "urn:bamm:io.catenax.traction_battery_code:1.0.0#TractionBatteryCodeRegularExpression",
+      "label": "constraint",
+      "optional": false
     }
   ]
 }

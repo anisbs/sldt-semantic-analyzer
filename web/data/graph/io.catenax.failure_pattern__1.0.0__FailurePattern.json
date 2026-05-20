@@ -610,6 +610,12 @@
       "target": "urn:samm:io.catenax.failure_pattern:1.0.0#AspectModel",
       "label": "dataType",
       "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.failure_pattern:1.0.0#ModelVersionTrait",
+      "target": "urn:samm:io.catenax.failure_pattern:1.0.0#RegexForAspectModelVersions",
+      "label": "constraint",
+      "optional": false
     }
   ]
 }

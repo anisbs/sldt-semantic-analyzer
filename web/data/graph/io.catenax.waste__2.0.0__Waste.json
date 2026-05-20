@@ -830,6 +830,12 @@
       "target": "urn:samm:io.catenax.waste:2.0.0#MarketIndexMaterialPriceEntity",
       "label": "dataType",
       "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.waste:2.0.0#MarketIndexCurrencyTrait",
+      "target": "urn:samm:io.catenax.waste:2.0.0#LengthConstraint",
+      "label": "constraint",
+      "optional": false
     }
   ]
 }

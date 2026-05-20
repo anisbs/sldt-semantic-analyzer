@@ -3153,6 +3153,12 @@
       "target": "urn:samm:io.catenax.battery.battery_pass:4.0.0#RemainingResistanceEntityRecord",
       "label": "dataType",
       "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.battery.battery_pass:4.0.0#SymbolTrait",
+      "target": "urn:samm:io.catenax.battery.battery_pass:4.0.0#SymbolConstraint",
+      "label": "constraint",
+      "optional": false
     }
   ]
 }

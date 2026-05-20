@@ -300,6 +300,12 @@
       "target": "urn:samm:io.catenax.part_as_specified:3.0.0#PartClassificationEntity",
       "label": "dataType",
       "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.part_as_specified:3.0.0#CatenaXIdTrait",
+      "target": "urn:samm:io.catenax.part_as_specified:3.0.0#Uuidv4RegularExpression",
+      "label": "constraint",
+      "optional": false
     }
   ]
 }

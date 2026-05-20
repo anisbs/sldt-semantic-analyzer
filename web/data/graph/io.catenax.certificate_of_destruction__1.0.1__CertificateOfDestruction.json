@@ -872,6 +872,24 @@
       "target": "urn:bamm:io.catenax.certificate_of_destruction:1.0.1#ContactEntity",
       "label": "dataType",
       "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.certificate_of_destruction:1.0.1#ZipTrait",
+      "target": "urn:bamm:io.catenax.certificate_of_destruction:1.0.1#ZipLength",
+      "label": "constraint",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.certificate_of_destruction:1.0.1#CountryCodeTrait",
+      "target": "urn:bamm:io.catenax.certificate_of_destruction:1.0.1#IsoCodeConstraint",
+      "label": "constraint",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.certificate_of_destruction:1.0.1#PhoneTrait",
+      "target": "urn:bamm:io.catenax.certificate_of_destruction:1.0.1#PhoneConstraint",
+      "label": "constraint",
+      "optional": false
     }
   ]
 }

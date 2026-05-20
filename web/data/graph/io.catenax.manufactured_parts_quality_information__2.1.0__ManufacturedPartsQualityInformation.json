@@ -512,6 +512,12 @@
       "target": "urn:samm:io.catenax.manufactured_parts_quality_information:2.1.0#AdditionalInformation",
       "label": "dataType",
       "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.manufactured_parts_quality_information:2.1.0#CountryCodeTrait",
+      "target": "urn:samm:io.catenax.manufactured_parts_quality_information:2.1.0#CountryCodeRegularExpression",
+      "label": "constraint",
+      "optional": false
     }
   ]
 }

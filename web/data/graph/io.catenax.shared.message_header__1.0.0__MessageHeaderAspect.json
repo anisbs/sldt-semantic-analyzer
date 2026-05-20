@@ -255,6 +255,18 @@
       "target": "urn:samm:io.catenax.shared.message_header:1.0.0#MessageHeader",
       "label": "dataType",
       "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.shared.message_header:1.0.0#SemanticVersioningTrait",
+      "target": "urn:samm:io.catenax.shared.message_header:1.0.0#SemVer",
+      "label": "constraint",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.shared.message_header:1.0.0#IdTrait",
+      "target": "urn:samm:io.catenax.shared.message_header:1.0.0#UUIDv4",
+      "label": "constraint",
+      "optional": false
     }
   ]
 }

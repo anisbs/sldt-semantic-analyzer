@@ -1966,6 +1966,24 @@
       "target": "urn:samm:io.catenax.material.chemical_material_passport:1.0.0#ParameterMethodsEntity",
       "label": "dataType",
       "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material.chemical_material_passport:1.0.0#ProductComplianceCountryTrait",
+      "target": "urn:samm:io.catenax.material.chemical_material_passport:1.0.0#CountryCodeRegEx",
+      "label": "constraint",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material.chemical_material_passport:1.0.0#UNNumberTrait",
+      "target": "urn:samm:io.catenax.material.chemical_material_passport:1.0.0#UNNumberConstraint",
+      "label": "constraint",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material.chemical_material_passport:1.0.0#PrecautionaryCodeTrait",
+      "target": "urn:samm:io.catenax.material.chemical_material_passport:1.0.0#PrecautionaryCodeConstraint",
+      "label": "constraint",
+      "optional": false
     }
   ]
 }

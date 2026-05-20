@@ -278,6 +278,12 @@
       "target": "urn:samm:io.catenax.material_accounting:1.0.0#MaterialSourceEntity",
       "label": "dataType",
       "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material_accounting:1.0.0#MaterialShareTrait",
+      "target": "urn:samm:io.catenax.material_accounting:1.0.0#MaterialShareConstraint",
+      "label": "constraint",
+      "optional": false
     }
   ]
 }

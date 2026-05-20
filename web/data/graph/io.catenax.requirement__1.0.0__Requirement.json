@@ -787,6 +787,18 @@
       "target": "urn:samm:io.catenax.requirement:1.0.0#SupplierStatusEntity",
       "label": "dataType",
       "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.requirement:1.0.0#VersionNumberTrait",
+      "target": "urn:samm:io.catenax.requirement:1.0.0#VersionRegularExpression",
+      "label": "constraint",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.requirement:1.0.0#KeyTrait",
+      "target": "urn:samm:io.catenax.requirement:1.0.0#KeyConstraint",
+      "label": "constraint",
+      "optional": false
     }
   ]
 }

@@ -461,6 +461,12 @@
       "target": "urn:bamm:io.catenax.single_level_bom_as_specified:1.0.0#PartClassificationEntity",
       "label": "dataType",
       "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.single_level_bom_as_specified:1.0.0#CatenaXIdTrait",
+      "target": "urn:bamm:io.catenax.single_level_bom_as_specified:1.0.0#Uuidv4RegularExpression",
+      "label": "constraint",
+      "optional": false
     }
   ]
 }

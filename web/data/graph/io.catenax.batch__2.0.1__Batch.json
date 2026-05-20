@@ -358,6 +358,18 @@
       "target": "urn:samm:io.catenax.batch:2.0.1#PartTypeInformationEntity",
       "label": "dataType",
       "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.batch:2.0.1#KeyTrait",
+      "target": "urn:samm:io.catenax.batch:2.0.1#KeyRegularExpression",
+      "label": "constraint",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.batch:2.0.1#ProductionCountryCodeTrait",
+      "target": "urn:samm:io.catenax.batch:2.0.1#CountryCodeRegularExpression",
+      "label": "constraint",
+      "optional": false
     }
   ]
 }

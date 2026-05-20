@@ -444,6 +444,12 @@
       "target": "urn:samm:io.catenax.pcf_for_battery_component_supplier:1.0.0#EntityStageValue",
       "label": "dataType",
       "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.pcf_for_battery_component_supplier:1.0.0#StageValueTrait",
+      "target": "urn:samm:io.catenax.pcf_for_battery_component_supplier:1.0.0#ConstraintGEQ",
+      "label": "constraint",
+      "optional": false
     }
   ]
 }

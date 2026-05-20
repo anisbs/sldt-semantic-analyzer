@@ -476,6 +476,12 @@
       "target": "urn:samm:io.catenax.single_level_bom_as_specified:2.0.0#ItemClassificationEntity",
       "label": "dataType",
       "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.single_level_bom_as_specified:2.0.0#assetIdTrait",
+      "target": "urn:samm:io.catenax.single_level_bom_as_specified:2.0.0#Uuidv4RegularExpression",
+      "label": "constraint",
+      "optional": false
     }
   ]
 }

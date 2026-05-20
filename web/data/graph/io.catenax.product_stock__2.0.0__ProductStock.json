@@ -488,6 +488,12 @@
       "target": "urn:samm:io.catenax.product_stock:2.0.0#LocationId",
       "label": "dataType",
       "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.product_stock:2.0.0#CatenaXIdTraitCharacteristic",
+      "target": "urn:samm:io.catenax.product_stock:2.0.0#Uuidv4RegularExpression",
+      "label": "constraint",
+      "optional": false
     }
   ]
 }
