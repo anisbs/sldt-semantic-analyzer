@@ -782,6 +782,87 @@ function githubUrlFor(entry) {
 const escapeHtml = s => String(s).replace(/[&<>]/g,
   c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;" }[c]));
 
+// ---- Routing (deep links via location.hash) -------------------------------
+// URLs: #/home  #/search?q=…  #/model/<id>[/<sub>]  #/issues[?type=<id>]
+// Push for major navigation (tab / model / issue type) ; replace for live
+// input (Search query). All UI handlers go through setUrl() ; applyHash()
+// does the reverse direction when the URL changes (back/forward, manual edit,
+// initial load).
+const VIEW_BY_URL = { home: "home", search: "searchview",
+                      model: "modelviewer", issues: "issues" };
+const URL_BY_VIEW = { home: "home", searchview: "search",
+                      modelviewer: "model", issues: "issues" };
+let _routing = false;   // true while applyHash mutates state — suppress push
+
+function parseHash() {
+  const h = (location.hash || "").replace(/^#/, "");
+  const [pathPart, queryPart = ""] = h.split("?");
+  const parts = pathPart.replace(/^\//, "").split("/").filter(Boolean);
+  return { parts, params: new URLSearchParams(queryPart) };
+}
+
+function buildHash(viewUrl, path, params) {
+  let h = "#/" + viewUrl;
+  if (path) h += "/" + path;
+  const qs = params && params.toString();
+  if (qs) h += "?" + qs;
+  return h;
+}
+
+function setUrl(hash, { replace = false } = {}) {
+  if (_routing) return;                   // change initiated by applyHash itself
+  if (hash === location.hash) return;
+  if (replace) history.replaceState(null, "", hash);
+  else history.pushState(null, "", hash);
+}
+
+// Reverse direction : URL → UI. Called at load, after every fetch (model/
+// issues need data to resolve), and on hashchange (back/forward).
+function applyHash() {
+  const { parts, params } = parseHash();
+  const urlView = parts[0] || "home";
+  const view = VIEW_BY_URL[urlView] || "home";
+  _routing = true;
+  try {
+    if (view !== activeView) showTab(view);
+
+    if (view === "modelviewer" && parts[1]) {
+      const id = parts[1];
+      const entry = (allModels || []).find(e => e.id === id);
+      if (entry) {
+        // openEntry only if not already on this entry (avoids redundant fetch).
+        if (!curEntry || curEntry.id !== id) openEntry(entry);
+        const sub = parts[2] ? "sv-" + parts[2] : "sv-graph";
+        if (activeSub !== sub) showSub(sub);
+      }
+      // else: index.json not loaded yet — applyHash will be re-called once it arrives.
+    }
+    if (view === "searchview") {
+      const q = params.get("q") || "";
+      const input = document.getElementById("sr-q");
+      if (input && input.value !== q) {
+        input.value = q;
+        if (searchData) renderSearch();
+      }
+    }
+    if (view === "issues") {
+      const t = params.get("type") || null;
+      if (t !== issSelType) {
+        issSelType = t;
+        if (issuesData) renderIssues();
+      }
+    }
+  } finally {
+    _routing = false;
+  }
+}
+
+window.addEventListener("hashchange", applyHash);
+// Early sync of the active tab so the user sees the right view immediately —
+// data-dependent state (model entry, issue type) will be reapplied once the
+// fetches resolve and call applyHash() again.
+window.addEventListener("DOMContentLoaded", applyHash);
+
 // ---- Top tabs -------------------------------------------------------------
 let activeView = "home";
 function showTab(view) {
@@ -791,6 +872,24 @@ function showTab(view) {
   if (view === "modelviewer") renderSub();   // svg needs to be visible to size
   else if (view === "issues") renderIssues();
   else if (view === "searchview") renderSearch();
+  // Push URL for this tab — applyHash sets _routing to skip the push on
+  // reverse navigation. For tabs that carry extra state (model/sub for
+  // modelviewer, type for issues, q for searchview), the dedicated handlers
+  // push more specific URLs ; here we only push the bare tab when there's
+  // nothing more to track yet.
+  if (view === "modelviewer" && curEntry) {
+    setUrl(buildHash(URL_BY_VIEW.modelviewer,
+      `${curEntry.id}/${activeSub.replace(/^sv-/, "")}`));
+  } else if (view === "issues") {
+    const p = issSelType ? new URLSearchParams({ type: issSelType }) : null;
+    setUrl(buildHash(URL_BY_VIEW.issues, "", p));
+  } else if (view === "searchview") {
+    const q = (document.getElementById("sr-q") || {}).value || "";
+    const p = q ? new URLSearchParams({ q }) : null;
+    setUrl(buildHash(URL_BY_VIEW.searchview, "", p));
+  } else {
+    setUrl(buildHash(URL_BY_VIEW[view] || view, ""));
+  }
 }
 d3.selectAll(".tab").on("click", function () { showTab(this.dataset.view); });
 
@@ -812,6 +911,10 @@ try {
 let activeSub = "sv-graph";
 function showSub(sub) {
   activeSub = sub;
+  // Sync URL when a model is open (sub-tab alone has no URL otherwise).
+  if (curEntry)
+    setUrl(buildHash(URL_BY_VIEW.modelviewer,
+      `${curEntry.id}/${sub.replace(/^sv-/, "")}`));
   d3.selectAll(".subtab").classed("active", function () { return this.dataset.sub === sub; });
   d3.selectAll(".subview").classed("active", function () { return this.id === sub; });
   renderSub();
@@ -1710,6 +1813,11 @@ function openEntry(e) {
   const i = curEntries.findIndex(x => x.id === e.id);
   document.getElementById("mv-version").value = i < 0 ? 0 : i;
   curEntry = curEntries[i < 0 ? 0 : i] || null;
+  // Sync URL : #/model/<id>/<sub>. showTab above pushed a stale URL (without
+  // the id) ; this overrides with the precise one.
+  if (curEntry)
+    setUrl(buildHash(URL_BY_VIEW.modelviewer,
+      `${curEntry.id}/${activeSub.replace(/^sv-/, "")}`));
   renderSub();
   loadEntry(curEntries[i < 0 ? 0 : i]);
 }
@@ -1744,6 +1852,7 @@ fetch("data/graph/index.json")
     renderKpis();
     renderSourceFilter();
     renderCatalog();
+    applyHash();                   // resolve #/model/<id> now that allModels is ready
   })
   .catch(() => {
     document.getElementById("catalog").textContent =
@@ -1965,6 +2074,7 @@ fetch("data/graph/issues.json")
   .then(j => {
     issuesData = j;
     renderOverview();             // upgrade "Quality" card from "—" to real count
+    applyHash();                  // resolve #/issues?type=<id> now that data is ready
     if (activeView === "issues") renderIssues();
     else if (activeSub === "sv-issues") renderSub();
   })
@@ -2044,6 +2154,9 @@ function renderIssues() {
       `<div class="n">${n}</div><div class="s">${escapeHtml(t.label)}</div>`;
     card.addEventListener("click", () => {
       issSelType = issSelType === t.id ? null : t.id;
+      // Push URL : #/issues?type=<id> (or bare #/issues if no selection).
+      const p = issSelType ? new URLSearchParams({ type: issSelType }) : null;
+      setUrl(buildHash(URL_BY_VIEW.issues, "", p));
       renderIssues();
     });
     kbox.appendChild(card);
@@ -2265,7 +2378,13 @@ function renderSearch() {
 }
 
 const srInput = document.getElementById("sr-q");
-if (srInput) srInput.addEventListener("input", renderSearch);
+if (srInput) srInput.addEventListener("input", () => {
+  // Live typing = replaceState (don't pollute history). Bare URL when empty.
+  const q = srInput.value || "";
+  const p = q ? new URLSearchParams({ q }) : null;
+  setUrl(buildHash(URL_BY_VIEW.searchview, "", p), { replace: true });
+  renderSearch();
+});
 </script>
 </body>
 </html>
