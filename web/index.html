@@ -182,6 +182,24 @@
     /* Home */
     #home { flex-direction: column; overflow-y: auto;
       padding: var(--sp-4) var(--sp-5); gap: var(--sp-4); }
+    /* Overview strip — compact stats above the status KPIs. */
+    #overview { display: grid; gap: var(--sp-3);
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); }
+    .ov {
+      padding: var(--sp-3) var(--sp-4);
+      border: 1px solid var(--border); border-radius: var(--r-md);
+      background: var(--surface); box-shadow: var(--shadow-sm); }
+    .ov .lbl { font-size: var(--fs-xs); color: var(--text-3);
+      text-transform: uppercase; letter-spacing: .04em; }
+    .ov .val { font-size: var(--fs-xl); font-weight: 700; line-height: 1.2;
+      margin-top: 2px; font-variant-numeric: tabular-nums; }
+    .ov .sub { margin-top: 4px; font-size: var(--fs-xs); color: var(--text-3);
+      display: flex; gap: var(--sp-3); flex-wrap: wrap;
+      font-variant-numeric: tabular-nums; }
+    .ov .sub .d { display: inline-block; width: 7px; height: 7px;
+      border-radius: 50%; margin-right: 4px; vertical-align: 1px; }
+    .ov a { color: var(--accent); text-decoration: none; }
+    .ov a:hover { text-decoration: underline; }
     #kpis { display: flex; gap: var(--sp-3); flex-wrap: wrap; }
     .kpi {
       min-width: 130px; padding: var(--sp-3) var(--sp-4);
@@ -595,6 +613,7 @@
         <h1>Catalog</h1>
         <p>Models per status — one entry per version file.</p>
       </div>
+      <div id="overview"></div>
       <div id="kpis"></div>
       <div id="cat-source"><span class="ttl">Source:</span></div>
       <div id="catalog-head">
@@ -635,6 +654,7 @@
         <label>Layout
           <select id="mv-layout">
             <option value="freeze" selected>Static (auto-layout)</option>
+            <option value="hier">Hierarchy (layered)</option>
             <option value="force">Force (animated)</option>
             <option value="circle">Circle</option>
             <option value="grid">Grid</option>
@@ -803,6 +823,9 @@ d3.selectAll(".subtab").on("click", function () { showSub(this.dataset.sub); });
 //            dragged node stays where you drop it (default)
 // "force"  : live force-directed (keeps animating; drag releases)
 // "circle" : static ring     "grid": static grid   (no simulation at all)
+// "hier"   : layered BFS from root(s). On the element graph, roots = Aspects.
+//            On the dep graph, root = currently selected model+version ; in
+//            Incoming mode the orientation is flipped (root sits on the right).
 let layoutMode = "freeze";
 
 function placeStatic(nodes, mode, width, height) {
@@ -826,6 +849,77 @@ function placeStatic(nodes, mode, width, height) {
   }
 }
 
+// Layered (hierarchical) layout : multi-source BFS from `rootIds` along the
+// arrow direction. Depth -> column ; nodes at the same depth are evenly
+// stacked. Unreached nodes (cycles back, disconnected) land in the rightmost
+// column. `directionFlip=true` mirrors columns horizontally (used for the
+// dep graph in Incoming mode so the selected model sits on the right and
+// "ancestors who use it" extend to the left).
+// Returns `true` when applied, `false` if there are no usable roots (caller
+// should fall back to freeze).
+function placeHierarchical(nodes, links, width, height, opts) {
+  const rootIds = (opts && opts.rootIds) || [];
+  const present = new Set(nodes.map(n => n.id));
+  const usableRoots = rootIds.filter(id => present.has(id));
+  if (!usableRoots.length) return false;
+
+  // Adjacency along arrow direction (source → target). Links are read AFTER
+  // d3.forceLink has resolved its references — they may be either ids or
+  // objects, so we normalize.
+  const adj = new Map(nodes.map(n => [n.id, []]));
+  links.forEach(e => {
+    const s = typeof e.source === "object" ? e.source.id : e.source;
+    const t = typeof e.target === "object" ? e.target.id : e.target;
+    if (adj.has(s)) adj.get(s).push(t);
+  });
+
+  // BFS multi-source.
+  const depth = new Map();
+  const queue = [];
+  usableRoots.forEach(r => { depth.set(r, 0); queue.push(r); });
+  while (queue.length) {
+    const u = queue.shift();
+    const du = depth.get(u);
+    for (const v of adj.get(u) || []) {
+      if (!depth.has(v)) { depth.set(v, du + 1); queue.push(v); }
+    }
+  }
+  // Stragglers go past the last column so they don't overlap reached nodes.
+  let maxD = 0;
+  depth.forEach(d => { if (d > maxD) maxD = d; });
+  nodes.forEach(n => { if (!depth.has(n.id)) depth.set(n.id, maxD + 1); });
+  maxD = Math.max(maxD, ...depth.values());
+
+  // Bucket by depth.
+  const byDepth = new Map();
+  nodes.forEach(n => {
+    const k = depth.get(n.id);
+    if (!byDepth.has(k)) byDepth.set(k, []);
+    byDepth.get(k).push(n);
+  });
+
+  const padX = 60, padY = 30;
+  const usableW = Math.max(width - 2 * padX, 200);
+  const usableH = Math.max(height - 2 * padY, 200);
+  const nCols = maxD + 1;
+  const colW = nCols > 1 ? usableW / (nCols - 1) : 0;
+
+  byDepth.forEach((arr, d) => {
+    const x = opts.directionFlip
+      ? width - padX - d * colW
+      : padX + d * colW;
+    const m = arr.length;
+    const rowH = usableH / Math.max(m, 1);
+    // Slight name sort so the column order is stable.
+    arr.sort((a, b) => (a.label || a.name || "").localeCompare(b.label || b.name || ""));
+    arr.forEach((node, i) => {
+      node.x = node.fx = x;
+      node.y = node.fy = padY + rowH * (i + 0.5);
+    });
+  });
+  return true;
+}
+
 // Build a simulation honoring layoutMode. For freeze/circle/grid it is
 // returned already stopped with x/y/fx/fy set, so the graph never moves on
 // its own and dragging a node only moves that node.
@@ -838,6 +932,13 @@ function makeSim(nodes, links, width, height, opt) {
   if (layoutMode === "circle" || layoutMode === "grid") {
     sim.stop();
     placeStatic(nodes, layoutMode, width, height);
+  } else if (layoutMode === "hier") {
+    sim.stop();
+    const ok = placeHierarchical(nodes, links, width, height, opt.hierarchy || {});
+    if (!ok) {                                          // no roots: freeze fallback
+      for (let i = 0; i < 300; i++) sim.tick();
+      nodes.forEach(d => { d.fx = d.x; d.fy = d.y; });
+    }
   } else if (layoutMode === "freeze") {
     sim.stop();
     for (let i = 0; i < 300; i++) sim.tick();          // settle once…
@@ -847,7 +948,7 @@ function makeSim(nodes, links, width, height, opt) {
 }
 
 // Drag matched to the layout: live force releases the node; every other
-// mode pins it where dropped and repaints just that move.
+// mode (freeze / hier / circle / grid) pins it where dropped.
 function dragger(sim, ticked) {
   const live = layoutMode === "force";
   return d3.drag()
@@ -906,8 +1007,14 @@ function draw(g) {
   const links = keptLinks.map(d => ({ ...d }));
 
   if (sim) sim.stop();
+  // Hierarchy mode on the element graph : Aspects are the roots.
+  // Multi-aspect models (e.g. material_accounting@1.0.0 with 6) get all
+  // their Aspects stacked in the leftmost column ; their respective subtrees
+  // unfold to the right. No Aspect (shared.* models) -> falls back to freeze.
+  const aspectIds = nodes.filter(n => n.kind === "Aspect").map(n => n.id);
   sim = makeSim(nodes, links, width, height,
-    { distance: 70, charge: -180, collide: 22 });
+    { distance: 70, charge: -180, collide: 22,
+      hierarchy: { rootIds: aspectIds, directionFlip: false } });
 
   const link = container.append("g").selectAll("line").data(links).enter()
     .append("line")
@@ -1114,8 +1221,12 @@ function drawDep(rootKey) {
   const nodes = g.nodes, links = g.links.map(d => ({ ...d }));
 
   if (depSim) depSim.stop();
+  // Hierarchy mode on the dep graph : root = selected model+version. In
+  // Incoming, the arrows feed INTO the root, so we mirror columns so the
+  // root sits on the right and ancestors extend to the left.
   depSim = makeSim(nodes, links, width, height,
-    { distance: 110, charge: -320, collide: 34 });
+    { distance: 110, charge: -320, collide: 34,
+      hierarchy: { rootIds: [rootKey], directionFlip: depDir === "in" } });
 
   // Flag arêtes "cross-source" : source du nœud parent ≠ source du nœud cible
   // (ex. IDTA -> Catena-X). On le calcule AVANT que d3.forceLink remplace
@@ -1617,14 +1728,19 @@ let statusFilter = null;
 let catSrcFilter = new Set(SOURCE_ORDER);   // both sources on by default
 const catOpen = new Set();     // model_name of expanded catalog rows
 
+// Last-modified is captured from the response headers (GitHub Pages and
+// http.server both set it) — surfaced in the Overview strip.
+let indexLastModified = null;
+
 fetch("data/graph/index.json")
-  .then(r => r.json())
+  .then(r => { indexLastModified = r.headers.get("last-modified"); return r.json(); })
   .then(idx => {
     allModels = idx;
     statusByKey = null;            // rebuild status/source lookups from fresh catalog
     sourceByKey = null;
     buildGroups();
     setupModelSearch();
+    renderOverview();
     renderKpis();
     renderSourceFilter();
     renderCatalog();
@@ -1635,6 +1751,66 @@ fetch("data/graph/index.json")
     document.getElementById("mv-empty").textContent =
       "index.json not found — generate it: python -m sldt_analyzer.graph";
   });
+
+// Renders the 4 mini-stat cards above the KPIs. Re-called when issues.json
+// arrives so the "Quality" card upgrades from "—" to its real count.
+function renderOverview() {
+  if (!allModels) return;
+  const box = document.getElementById("overview");
+  if (!box) return;
+
+  // (1) Models : total + per-source breakdown.
+  const total = allModels.length;
+  const bySrc = {};
+  SOURCE_ORDER.forEach(s => {
+    bySrc[s] = allModels.filter(m => m.source === s).length;
+  });
+
+  // (2) Family : SAMM / BAMM tally. Note: in index.json the field is `family`
+  // (the meta has `model_family`, but the index summary uses the short name).
+  const fam = {};
+  allModels.forEach(m => (fam[m.family] = (fam[m.family] || 0) + 1));
+
+  // (3) Quality : release models with at least one issue (depends on issues.json).
+  let quality = "—", qualitySub = "loading…";
+  if (issuesData) {
+    const releaseTotal = allModels.filter(m => m.status === "release").length;
+    const flaggedRelease = Object.values(issuesData.models).filter(v =>
+      v.status === "release").length;
+    quality = `${flaggedRelease} / ${releaseTotal}`;
+    qualitySub = "release with ≥1 issue";
+  }
+
+  // (4) Updated : Last-Modified header (raw HTTP date) prettified.
+  const upd = indexLastModified ? new Date(indexLastModified) : null;
+  const updStr = upd
+    ? upd.toLocaleDateString(undefined,
+        { year: "numeric", month: "short", day: "numeric" })
+    : "—";
+
+  const famSub = Object.entries(fam).sort()
+    .map(([k, v]) => `${k} ${v}`).join(" · ");
+  const srcSub = SOURCE_ORDER.map(s =>
+    `<span><span class="d" style="background:${sourceColor(s)}"></span>` +
+    `${sourceLabel(s)} ${bySrc[s]}</span>`).join("");
+
+  box.innerHTML =
+    `<div class="ov"><div class="lbl">Models</div>` +
+      `<div class="val">${total}</div>` +
+      `<div class="sub">${srcSub}</div></div>` +
+    `<div class="ov"><div class="lbl">Family</div>` +
+      `<div class="val">${famSub || "—"}</div>` +
+      `<div class="sub">meta-model breakdown</div></div>` +
+    `<div class="ov"><div class="lbl">Quality</div>` +
+      `<div class="val">${quality}</div>` +
+      `<div class="sub">${qualitySub}</div></div>` +
+    `<div class="ov"><div class="lbl">Updated</div>` +
+      `<div class="val">${updStr}</div>` +
+      `<div class="sub">` +
+        `<a href="https://github.com/${REPO_BY_SOURCE.catenax}" target="_blank" rel="noopener">Catena-X repo ↗</a>` +
+        `<a href="https://github.com/${REPO_BY_SOURCE.idta}" target="_blank" rel="noopener">IDTA repo ↗</a>` +
+      `</div></div>`;
+}
 
 // Dependency map (loaded once). If the Dependency tab is already open when it
 // arrives, re-render it.
@@ -1788,6 +1964,7 @@ fetch("data/graph/issues.json")
   .then(r => r.json())
   .then(j => {
     issuesData = j;
+    renderOverview();             // upgrade "Quality" card from "—" to real count
     if (activeView === "issues") renderIssues();
     else if (activeSub === "sv-issues") renderSub();
   })
