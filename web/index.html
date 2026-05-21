@@ -2517,7 +2517,7 @@ function renderIssues() {
 // ---- Search (cross-model element search, Feature 6C) ---------------------
 // search.json is ~3.6 MB -> lazy-loaded on the first visit of the Search tab.
 let searchData = null, srFetchStarted = false;
-let srStatuses = new Set(["release"]);   // model-status scope (release default)
+let srStatuses = new Set(["release", "undefined"]);   // model-status scope (release + undefined default)
 let srSources = new Set(SOURCE_ORDER);   // source scope (both on by default)
 const SR_KINDS = ["Aspect", "Property", "Entity"];
 let srKinds = new Set(SR_KINDS);         // kind buckets (all on by default)
@@ -2588,7 +2588,20 @@ function renderSearch() {
         `<span class="badge" style="background:${sourceColor(s)}">` +
         `${sourceLabel(s)}</span>`;
       lab.querySelector("input").addEventListener("change", function () {
-        if (this.checked) srSources.add(s); else srSources.delete(s);
+        if (this.checked) {
+          srSources.add(s);
+          // Checking IDTA auto-checks "undefined" status (IDTA models have
+          // no metadata.json upstream, so they all fall under "undefined").
+          if (s === "idta" && !srStatuses.has("undefined")) {
+            srStatuses.add("undefined");
+            const undefInput = sbox.querySelectorAll("label input")[
+              STATUS_ORDER.indexOf("undefined")
+            ];
+            if (undefInput) undefInput.checked = true;
+          }
+        } else {
+          srSources.delete(s);
+        }
         renderSearch();
       });
       srcbox.appendChild(lab);
