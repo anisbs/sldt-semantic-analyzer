@@ -34,6 +34,13 @@ class Source:
     url: str
     default_dest: Path
     label: str
+    # Patterns sparse-checkout (non-cone, format gitignore). Vide = clone
+    # complet. Utilisé pour les gros dépôts dont on ne veut qu'une fraction
+    # (ex. la Standard Library : seulement les .md, pas les assets/images).
+    sparse: tuple[str, ...] = ()
+    # Glob compté dans le résumé final (les .ttl pour les modèles, .md pour
+    # la library de standards).
+    count_glob: str = "*.ttl"
 
 
 # Registre des sources connues. Pour en ajouter une (ex. BatteryPass), il
@@ -51,6 +58,21 @@ SOURCES: dict[str, Source] = {
         default_dest=Path("data/smt-semantic-models"),
         label="IDTA",
     ),
+    # Catena-X Standard Library (Docusaurus) : on n'en veut que les .md des
+    # standards released (sous versioned_docs) pour reconstruire le lien
+    # standards↔modèles. Clone sparse md-only -> ~quelques Mo au lieu de >100.
+    "standards": Source(
+        key="standards",
+        url="https://github.com/catenax-eV/catenax-ev.github.io.git",
+        default_dest=Path("data/cx-standards-library"),
+        label="Catena-X Standard Library",
+        sparse=(
+            "/versions.json",
+            "/versioned_docs/*/standards/*.md",
+            "/versioned_docs/*/standards/*/*.md",
+        ),
+        count_glob="*.md",
+    ),
 }
 
 
@@ -64,8 +86,24 @@ def _is_git_repo(path: Path) -> bool:
     return (path / ".git").is_dir()
 
 
-def clone(url: str, dest: Path, branch: str | None) -> None:
+def clone(url: str, dest: Path, branch: str | None,
+          sparse: tuple[str, ...] = ()) -> None:
     logger.info("Clone superficiel %s -> %s", url, dest)
+    if sparse:
+        # Clone partiel + sparse-checkout : aucun blob non listé n'est
+        # rapatrié (`--filter=blob:none`), et seul un sous-ensemble de
+        # chemins est matérialisé. Idéal pour un gros dépôt (Docusaurus)
+        # dont on ne veut que des .md.
+        cmd = ["git", "clone", "--depth", "1", "--filter=blob:none",
+               "--no-checkout"]
+        if branch:
+            cmd += ["--branch", branch]
+        cmd += [url, str(dest)]
+        _run(cmd)
+        _run(["git", "-C", str(dest), "sparse-checkout", "set",
+              "--no-cone", *sparse])
+        _run(["git", "-C", str(dest), "checkout"])
+        return
     cmd = ["git", "clone", "--depth", "1"]
     if branch:
         cmd += ["--branch", branch]
@@ -80,8 +118,8 @@ def resync(dest: Path) -> None:
     _run(["git", "-C", str(dest), "reset", "--hard", f"origin/{branch}"])
 
 
-def count_ttl(dest: Path) -> int:
-    return sum(1 for _ in dest.rglob("*.ttl"))
+def count_files(dest: Path, glob: str = "*.ttl") -> int:
+    return sum(1 for _ in dest.rglob(glob))
 
 
 def fetch_models(
@@ -115,10 +153,10 @@ def fetch_models(
             logger.warning("%s existe mais n'est pas un dépôt git, remplacement", dest)
             shutil.rmtree(dest)
         dest.parent.mkdir(parents=True, exist_ok=True)
-        clone(src.url, dest, branch)
+        clone(src.url, dest, branch, src.sparse)
 
-    n = count_ttl(dest)
-    logger.info("OK — %d fichiers .ttl disponibles sous %s", n, dest)
+    n = count_files(dest, src.count_glob)
+    logger.info("OK — %d fichiers %s disponibles sous %s", n, src.count_glob, dest)
     return dest
 
 

@@ -28,6 +28,7 @@ from sldt_analyzer.issues import build_issues
 from sldt_analyzer.parser import (
     Dependency, Edge, Element, ExternalRef, ParsedModel, parse_directory,
 )
+from sldt_analyzer.standards import DEFAULT_LIBRARY_DIR, build_standards
 
 logger = logging.getLogger("sldt.graph")
 
@@ -468,7 +469,8 @@ def build_graphs(
     # renommage de schéma d'ID — fusion par namespace). On garde tout sauf
     # les fichiers de graphe absents de l'index courant. Les 4 fichiers
     # d'agrégation (index/deps/issues/search) ne sont jamais purgés.
-    aggregate = {"index.json", "deps.json", "issues.json", "search.json"}
+    aggregate = {"index.json", "deps.json", "issues.json", "search.json",
+                 "standards.json"}
     valid_files = {e["file"] for e in index} | aggregate
     removed = 0
     for p in out_dir.glob("*.json"):
@@ -534,6 +536,32 @@ def build_graphs(
         "search.json : %d éléments cherchables (Aspect/Property/Entity)",
         len(search),
     )
+
+    # standards.json : lien standards Catena-X ↔ modèles, reconstruit depuis
+    # la Standard Library clonée (cf. `standards.py`). Source distincte des
+    # .ttl ; absente -> on skippe avec un WARNING (sans bloquer le reste).
+    std = build_standards(DEFAULT_LIBRARY_DIR)
+    if std is not None:
+        # On ne garde dans la carte inverse que les modèles présents au
+        # catalogue (clé name@version connue) -> "used in standards" exact côté
+        # front ; `unmatched` compte les modèles cités par un standard mais
+        # absents du catalogue (version non ingérée, etc.), pour info.
+        catalog = set(deps_out)
+        std["models"] = {k: v for k, v in std["models"].items() if k in catalog}
+        unmatched = sum(1 for s in std["standards"].values()
+                        for m in s["semantic_models"] if m not in catalog)
+        (out_dir / "standards.json").write_text(
+            json.dumps(std, ensure_ascii=False, indent=2), encoding="utf-8"
+        )
+        logger.info(
+            "standards.json : release %s — %d standards, %d modèles liés au "
+            "catalogue, %d standards dépréciés (%d refs modèle hors catalogue)",
+            std["release"], len(std["standards"]), len(std["models"]),
+            len(std["deprecated_standards"]), unmatched,
+        )
+    else:
+        logger.warning("standards.json non généré (Standard Library absente)")
+
     return out_dir
 
 

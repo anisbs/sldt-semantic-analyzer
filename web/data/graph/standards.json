@@ -1,0 +1,2105 @@
+{
+  "release": "Saturn",
+  "standards": {
+    "CX-0001": {
+      "title": "CX-0001 Participant Agent Registration v1.2",
+      "link": "https://catenax-ev.github.io/docs/standards/CX-0001-ParticipantAgentRegistration",
+      "normative": [],
+      "non_normative": [],
+      "referenced_standards": [
+        "CX-0006",
+        "CX-0010",
+        "CX-0018"
+      ],
+      "deprecated_refs": [],
+      "semantic_models": []
+    },
+    "CX-0002": {
+      "title": "CX-0002 Digital Twins in Catena-X v2.3.0",
+      "link": "https://catenax-ev.github.io/docs/standards/CX-0002-DigitalTwinsInCatenaX",
+      "normative": [],
+      "non_normative": [
+        "CX-0001",
+        "CX-0003",
+        "CX-0018",
+        "CX-0053"
+      ],
+      "referenced_standards": [
+        "CX-0001",
+        "CX-0003",
+        "CX-0018",
+        "CX-0044",
+        "CX-0053"
+      ],
+      "deprecated_refs": [],
+      "semantic_models": [
+        "material_demand@1.0.0"
+      ]
+    },
+    "CX-0003": {
+      "title": "CX-0003 SAMM Aspect Meta Model v1.2.0",
+      "link": "https://catenax-ev.github.io/docs/standards/CX-0003-SAMMSemanticAspectMetaModel",
+      "normative": [
+        "CX-0002"
+      ],
+      "non_normative": [],
+      "referenced_standards": [
+        "CX-0002",
+        "CX-0018"
+      ],
+      "deprecated_refs": [],
+      "semantic_models": [
+        "material_for_recycling@1.0.0"
+      ]
+    },
+    "CX-0005": {
+      "title": "CX-0005 Item Relationship Service API 2.2.0",
+      "link": "https://catenax-ev.github.io/docs/standards/CX-0005-ItemRelationshipServiceAPI",
+      "normative": [
+        "CX-0018",
+        "CX-0125"
+      ],
+      "non_normative": [
+        "CX-0126",
+        "CX-0127"
+      ],
+      "referenced_standards": [
+        "CX-0001",
+        "CX-0002",
+        "CX-0003",
+        "CX-0010",
+        "CX-0018",
+        "CX-0125",
+        "CX-0126",
+        "CX-0127"
+      ],
+      "deprecated_refs": [],
+      "semantic_models": [
+        "just_in_sequence_part@3.0.0",
+        "shared.part_site_information_as_built@2.0.0",
+        "single_level_usage_as_built@3.0.0",
+        "single_level_usage_as_planned@2.0.0"
+      ]
+    },
+    "CX-0006": {
+      "title": "CX-0006 Registration and Initial Onboarding v2.0.1",
+      "link": "https://catenax-ev.github.io/docs/standards/CX-0006-RegistrationAndInitialOnboarding",
+      "normative": [
+        "CX-0009",
+        "CX-0010",
+        "CX-0011",
+        "CX-0013"
+      ],
+      "non_normative": [],
+      "referenced_standards": [
+        "CX-0009",
+        "CX-0010",
+        "CX-0011",
+        "CX-0013"
+      ],
+      "deprecated_refs": [
+        "CX-0013"
+      ],
+      "semantic_models": []
+    },
+    "CX-0007": {
+      "title": "CX-0007 Minimal Data Provider Service Offering v1.1.1",
+      "link": "https://catenax-ev.github.io/docs/standards/CX-0007-MinimalDataProviderServicesOffering",
+      "normative": [
+        "CX-0013",
+        "CX-0018",
+        "CX-0149"
+      ],
+      "non_normative": [],
+      "referenced_standards": [
+        "CX-0002",
+        "CX-0010",
+        "CX-0012",
+        "CX-0013",
+        "CX-0018",
+        "CX-0055",
+        "CX-0126",
+        "CX-0127",
+        "CX-0143",
+        "CX-0149"
+      ],
+      "deprecated_refs": [
+        "CX-0013"
+      ],
+      "semantic_models": []
+    },
+    "CX-0009": {
+      "title": "CX-0009 CX Registration API v2.0.0",
+      "link": "https://catenax-ev.github.io/docs/standards/CX-0009-CXRegistrationAPI",
+      "normative": [],
+      "non_normative": [],
+      "referenced_standards": [
+        "CX-0006"
+      ],
+      "deprecated_refs": [],
+      "semantic_models": []
+    },
+    "CX-0010": {
+      "title": "CX-0010 Business Partner Number v3.0.1",
+      "link": "https://catenax-ev.github.io/docs/standards/CX-0010-BusinessPartnerNumber",
+      "normative": [],
+      "non_normative": [],
+      "referenced_standards": [
+        "CX-0011",
+        "CX-0012",
+        "CX-0074",
+        "CX-0076"
+      ],
+      "deprecated_refs": [],
+      "semantic_models": []
+    },
+    "CX-0012": {
+      "title": "CX-0012 Business Partner Data Pool API v5.1.1",
+      "link": "https://catenax-ev.github.io/docs/standards/CX-0012-BusinessPartnerDataPoolAPI",
+      "normative": [],
+      "non_normative": [],
+      "referenced_standards": [
+        "CX-0010",
+        "CX-0018",
+        "CX-0074",
+        "CX-0076",
+        "CX-0152"
+      ],
+      "deprecated_refs": [],
+      "semantic_models": []
+    },
+    "CX-0014": {
+      "title": "CX-0014 Employees and Technical Users v1.0.1",
+      "link": "https://catenax-ev.github.io/docs/standards/CX-0014-EmployeesAndTechnicalUsers",
+      "normative": [
+        "CX-0015"
+      ],
+      "non_normative": [],
+      "referenced_standards": [
+        "CX-0015"
+      ],
+      "deprecated_refs": [],
+      "semantic_models": []
+    },
+    "CX-0015": {
+      "title": "CX-0015 IAM & Access Control Paradigm for Users and Clients v1.0.1",
+      "link": "https://catenax-ev.github.io/docs/standards/CX-0015-IAMandAccessControlParadigmForUsersAndClients",
+      "normative": [],
+      "non_normative": [],
+      "referenced_standards": [],
+      "deprecated_refs": [],
+      "semantic_models": []
+    },
+    "CX-0018": {
+      "title": "CX-0018 Dataspace Connectivity v.4.1.1",
+      "link": "https://catenax-ev.github.io/docs/standards/CX-0018-DataspaceConnectivity",
+      "normative": [],
+      "non_normative": [],
+      "referenced_standards": [
+        "CX-0049",
+        "CX-0050",
+        "CX-0152"
+      ],
+      "deprecated_refs": [],
+      "semantic_models": []
+    },
+    "CX-0044": {
+      "title": "CX-0044 ECLASS v1.0.2",
+      "link": "https://catenax-ev.github.io/docs/standards/CX-0044-ECLASS",
+      "normative": [],
+      "non_normative": [],
+      "referenced_standards": [
+        "CX-0003"
+      ],
+      "deprecated_refs": [],
+      "semantic_models": []
+    },
+    "CX-0045": {
+      "title": "CX-0045 Aspect Model Data Chain Template v1.3.0",
+      "link": "https://catenax-ev.github.io/docs/standards/CX-0045-AspectModelDataChainTemplate",
+      "normative": [
+        "CX-0002",
+        "CX-0003",
+        "CX-0010"
+      ],
+      "non_normative": [
+        "CX-0001",
+        "CX-0126",
+        "CX-0127"
+      ],
+      "referenced_standards": [
+        "CX-0001",
+        "CX-0002",
+        "CX-0003",
+        "CX-0010",
+        "CX-0126",
+        "CX-0127"
+      ],
+      "deprecated_refs": [],
+      "semantic_models": []
+    },
+    "CX-0049": {
+      "title": "CX-0049 DID Document v2.2.0",
+      "link": "https://catenax-ev.github.io/docs/standards/CX-0049-DIDDocumentSchema",
+      "normative": [],
+      "non_normative": [],
+      "referenced_standards": [
+        "CX-0050",
+        "CX-0149"
+      ],
+      "deprecated_refs": [],
+      "semantic_models": []
+    },
+    "CX-0050": {
+      "title": "CX-0050 CX-Specific Credentials v.2.2.0",
+      "link": "https://catenax-ev.github.io/docs/standards/CX-0050-CXSpecificCredentials",
+      "normative": [],
+      "non_normative": [],
+      "referenced_standards": [
+        "CX-0010"
+      ],
+      "deprecated_refs": [],
+      "semantic_models": []
+    },
+    "CX-0053": {
+      "title": "CX-0053 Discovery Finder and BPN Discovery Service APIs v1.1.1",
+      "link": "https://catenax-ev.github.io/docs/standards/CX-0053-BPNDiscoveryServiceAPIs",
+      "normative": [
+        "CX-0010"
+      ],
+      "non_normative": [
+        "CX-0001",
+        "CX-0002",
+        "CX-0012",
+        "CX-0018"
+      ],
+      "referenced_standards": [
+        "CX-0001",
+        "CX-0002",
+        "CX-0010",
+        "CX-0012",
+        "CX-0018"
+      ],
+      "deprecated_refs": [],
+      "semantic_models": []
+    },
+    "CX-0054": {
+      "title": "CX-0054 Application Service Release v1.0.1",
+      "link": "https://catenax-ev.github.io/docs/standards/CX-0054-ApplicationServiceRelease",
+      "normative": [],
+      "non_normative": [
+        "CX-0006",
+        "CX-0009",
+        "CX-0010",
+        "CX-0011",
+        "CX-0013"
+      ],
+      "referenced_standards": [
+        "CX-0006",
+        "CX-0009",
+        "CX-0010",
+        "CX-0011",
+        "CX-0013"
+      ],
+      "deprecated_refs": [
+        "CX-0013"
+      ],
+      "semantic_models": []
+    },
+    "CX-0055": {
+      "title": "CX-0055 Data Processing Patterns for IT System Integration v1.2.0",
+      "link": "https://catenax-ev.github.io/docs/standards/CX-0055-DataProcessingPatternsforITSystemIntegration",
+      "normative": [
+        "CX-0001",
+        "CX-0002",
+        "CX-0003",
+        "CX-0012",
+        "CX-0018",
+        "CX-0050",
+        "CX-0053",
+        "CX-0067",
+        "CX-0084"
+      ],
+      "non_normative": [],
+      "referenced_standards": [
+        "CX-0001",
+        "CX-0002",
+        "CX-0003",
+        "CX-0012",
+        "CX-0018",
+        "CX-0050",
+        "CX-0053",
+        "CX-0067",
+        "CX-0084"
+      ],
+      "deprecated_refs": [],
+      "semantic_models": []
+    },
+    "CX-0059": {
+      "title": "CX-0059 Use Case Behaviour Twin Endurance Predictor v2.0.1",
+      "link": "https://catenax-ev.github.io/docs/standards/CX-0059-UseCaseBehaviourTwinEndurancePredictor",
+      "normative": [
+        "CX-0023",
+        "CX-0067",
+        "CX-0084",
+        "CX-0152"
+      ],
+      "non_normative": [],
+      "referenced_standards": [
+        "CX-0002",
+        "CX-0003",
+        "CX-0018",
+        "CX-0023",
+        "CX-0056",
+        "CX-0057",
+        "CX-0058",
+        "CX-0067",
+        "CX-0084",
+        "CX-0138",
+        "CX-0152"
+      ],
+      "deprecated_refs": [
+        "CX-0023",
+        "CX-0056",
+        "CX-0057",
+        "CX-0058"
+      ],
+      "semantic_models": []
+    },
+    "CX-0067": {
+      "title": "CX-0067 Ontology Models to realize federated query in Catena-X v1.1.0",
+      "link": "https://catenax-ev.github.io/docs/standards/CX-0067-OntologyModelsToRealizeFederatedQueryInCatenaX",
+      "normative": [],
+      "non_normative": [],
+      "referenced_standards": [
+        "CX-0084"
+      ],
+      "deprecated_refs": [],
+      "semantic_models": []
+    },
+    "CX-0074": {
+      "title": "CX-0074 Business Partner Gate API v4.1.1",
+      "link": "https://catenax-ev.github.io/docs/standards/CX-0074-BusinessPartnerGateAPI",
+      "normative": [],
+      "non_normative": [],
+      "referenced_standards": [
+        "CX-0010",
+        "CX-0012",
+        "CX-0018",
+        "CX-0076",
+        "CX-0152"
+      ],
+      "deprecated_refs": [],
+      "semantic_models": []
+    },
+    "CX-0076": {
+      "title": "CX-0076 - Golden Record End-to-End Requirements Standard v1.5.0",
+      "link": "https://catenax-ev.github.io/docs/standards/CX-0076-GoldenRecordEndtoEndRequirementsStandard",
+      "normative": [],
+      "non_normative": [],
+      "referenced_standards": [
+        "CX-0010",
+        "CX-0012",
+        "CX-0074"
+      ],
+      "deprecated_refs": [],
+      "semantic_models": []
+    },
+    "CX-0077": {
+      "title": "CX-0077 Data Quality Dashboard v1.2.2",
+      "link": "https://catenax-ev.github.io/docs/standards/CX-0077-DataQualityDashboard",
+      "normative": [],
+      "non_normative": [],
+      "referenced_standards": [
+        "CX-0010",
+        "CX-0012",
+        "CX-0018",
+        "CX-0074",
+        "CX-0076",
+        "CX-0152"
+      ],
+      "deprecated_refs": [],
+      "semantic_models": []
+    },
+    "CX-0078": {
+      "title": "CX-0078 Bank Data Verification Dashboard v1.2.2",
+      "link": "https://catenax-ev.github.io/docs/standards/CX-0078-BankDataVerificationDashboard",
+      "normative": [],
+      "non_normative": [],
+      "referenced_standards": [
+        "CX-0010",
+        "CX-0012",
+        "CX-0018",
+        "CX-0074",
+        "CX-0152"
+      ],
+      "deprecated_refs": [],
+      "semantic_models": []
+    },
+    "CX-0079": {
+      "title": "CX-0079 Natural Person Screening Dashboard v1.2.2",
+      "link": "https://catenax-ev.github.io/docs/standards/CX-0079-NaturalPersonScreeningDashboard",
+      "normative": [
+        "CX-0018"
+      ],
+      "non_normative": [],
+      "referenced_standards": [
+        "CX-0010",
+        "CX-0018",
+        "CX-0074",
+        "CX-0152"
+      ],
+      "deprecated_refs": [],
+      "semantic_models": []
+    },
+    "CX-0080": {
+      "title": "CX-0080 BPDM Fraud Prevention Service v1.1.1",
+      "link": "https://catenax-ev.github.io/docs/standards/CX-0080-BPDMFraudPreventionService",
+      "normative": [],
+      "non_normative": [],
+      "referenced_standards": [
+        "CX-0018",
+        "CX-0152"
+      ],
+      "deprecated_refs": [],
+      "semantic_models": []
+    },
+    "CX-0081": {
+      "title": "CX-0081 Country Risk API v1.2.1",
+      "link": "https://catenax-ev.github.io/docs/standards/CX-0081-BPDMCountryRisk",
+      "normative": [],
+      "non_normative": [],
+      "referenced_standards": [
+        "CX-0018",
+        "CX-0074",
+        "CX-0152"
+      ],
+      "deprecated_refs": [],
+      "semantic_models": []
+    },
+    "CX-0084": {
+      "title": "CX-0084 Federated Queries in Data Spaces v1.2.0",
+      "link": "https://catenax-ev.github.io/docs/standards/CX-0084-FederatedQueriesInDataSpaces",
+      "normative": [
+        "CX-0018",
+        "CX-0067"
+      ],
+      "non_normative": [
+        "CX-0059"
+      ],
+      "referenced_standards": [
+        "CX-0018",
+        "CX-0059",
+        "CX-0067"
+      ],
+      "deprecated_refs": [],
+      "semantic_models": []
+    },
+    "CX-0102": {
+      "title": "CX-0102 Functional Mock Up v1.0.0",
+      "link": "https://catenax-ev.github.io/docs/standards/CX-0102-Functional-Mock-Up",
+      "normative": [],
+      "non_normative": [],
+      "referenced_standards": [],
+      "deprecated_refs": [],
+      "semantic_models": []
+    },
+    "CX-0105": {
+      "title": "CX-0105 Asset Tracking Use Case v1.1.0",
+      "link": "https://catenax-ev.github.io/docs/standards/CX-0105-AssetTrackingUseCase",
+      "normative": [
+        "CX-0002",
+        "CX-0018",
+        "CX-0045",
+        "CX-0070",
+        "CX-0083",
+        "CX-0104",
+        "CX-0106"
+      ],
+      "non_normative": [],
+      "referenced_standards": [
+        "CX-0002",
+        "CX-0003",
+        "CX-0018",
+        "CX-0045",
+        "CX-0070",
+        "CX-0083",
+        "CX-0104",
+        "CX-0106"
+      ],
+      "deprecated_refs": [
+        "CX-0070",
+        "CX-0083",
+        "CX-0104",
+        "CX-0106"
+      ],
+      "semantic_models": [
+        "asset_tracker_links@2.0.0",
+        "iot_sensor_data@2.0.0",
+        "iot_sensor_device_definition@2.0.0"
+      ]
+    },
+    "CX-0115": {
+      "title": "CX-0115 Manufacturing Capability Exchange 1.0.1",
+      "link": "https://catenax-ev.github.io/docs/standards/CX-0115-ManufacturingCapabilityExchange",
+      "normative": [
+        "CX-0001",
+        "CX-0002",
+        "CX-0003",
+        "CX-0006",
+        "CX-0010",
+        "CX-0018",
+        "CX-0152"
+      ],
+      "non_normative": [],
+      "referenced_standards": [
+        "CX-0001",
+        "CX-0002",
+        "CX-0003",
+        "CX-0006",
+        "CX-0010",
+        "CX-0018",
+        "CX-0052",
+        "CX-0152"
+      ],
+      "deprecated_refs": [
+        "CX-0052"
+      ],
+      "semantic_models": [
+        "manufacturing_capability@3.1.0"
+      ]
+    },
+    "CX-0116": {
+      "title": "CX-0116 Sanction Party Watchlist Dashboard v1.2.2",
+      "link": "https://catenax-ev.github.io/docs/standards/CX-0116-SanctionWatchlistDashboard",
+      "normative": [],
+      "non_normative": [
+        "CX-0010"
+      ],
+      "referenced_standards": [
+        "CX-0010",
+        "CX-0012",
+        "CX-0018",
+        "CX-0074",
+        "CX-0152"
+      ],
+      "deprecated_refs": [],
+      "semantic_models": []
+    },
+    "CX-0117": {
+      "title": "CX-0117 Use Case Circular Economy - Secondary Marketplace v1.0.0",
+      "link": "https://catenax-ev.github.io/docs/standards/CX-0117-UseCaseCircularEconomySecondaryMarketplace",
+      "normative": [],
+      "non_normative": [],
+      "referenced_standards": [
+        "CX-0001",
+        "CX-0002",
+        "CX-0003",
+        "CX-0006",
+        "CX-0013",
+        "CX-0014",
+        "CX-0015",
+        "CX-0018",
+        "CX-0033",
+        "CX-0034",
+        "CX-0035",
+        "CX-0049",
+        "CX-0050",
+        "CX-0100",
+        "CX-0143",
+        "CX-0152"
+      ],
+      "deprecated_refs": [
+        "CX-0013",
+        "CX-0033",
+        "CX-0034",
+        "CX-0035",
+        "CX-0100"
+      ],
+      "semantic_models": [
+        "battery.battery_pass@5.0.0",
+        "market_place_offer@2.0.0",
+        "return_request@2.0.0"
+      ]
+    },
+    "CX-0118": {
+      "title": "CX-0118 Delivery Information Exchange 2.0.1",
+      "link": "https://catenax-ev.github.io/docs/standards/CX-0118-ActualDeliveryInformationExchange",
+      "normative": [
+        "CX-0001",
+        "CX-0002",
+        "CX-0003",
+        "CX-0006",
+        "CX-0010",
+        "CX-0018",
+        "CX-0053",
+        "CX-0120",
+        "CX-0121",
+        "CX-0122",
+        "CX-0126",
+        "CX-0145",
+        "CX-0146",
+        "CX-0152"
+      ],
+      "non_normative": [],
+      "referenced_standards": [
+        "CX-0001",
+        "CX-0002",
+        "CX-0003",
+        "CX-0006",
+        "CX-0010",
+        "CX-0018",
+        "CX-0053",
+        "CX-0120",
+        "CX-0121",
+        "CX-0122",
+        "CX-0126",
+        "CX-0145",
+        "CX-0146",
+        "CX-0152"
+      ],
+      "deprecated_refs": [],
+      "semantic_models": [
+        "delivery_information@2.0.0"
+      ]
+    },
+    "CX-0120": {
+      "title": "CX-0120 Short-Term Material Demand Exchange 2.0.1",
+      "link": "https://catenax-ev.github.io/docs/standards/CX-0120-ShortTermMaterialDemandExchange",
+      "normative": [
+        "CX-0001",
+        "CX-0002",
+        "CX-0003",
+        "CX-0006",
+        "CX-0010",
+        "CX-0018",
+        "CX-0053",
+        "CX-0118",
+        "CX-0121",
+        "CX-0122",
+        "CX-0126",
+        "CX-0128",
+        "CX-0145",
+        "CX-0146",
+        "CX-0152"
+      ],
+      "non_normative": [],
+      "referenced_standards": [
+        "CX-0001",
+        "CX-0002",
+        "CX-0003",
+        "CX-0006",
+        "CX-0010",
+        "CX-0018",
+        "CX-0053",
+        "CX-0118",
+        "CX-0121",
+        "CX-0122",
+        "CX-0126",
+        "CX-0128",
+        "CX-0145",
+        "CX-0146",
+        "CX-0152"
+      ],
+      "deprecated_refs": [],
+      "semantic_models": [
+        "short_term_material_demand@1.0.0"
+      ]
+    },
+    "CX-0121": {
+      "title": "CX-0121 Planned Production Output Exchange 1.0.1",
+      "link": "https://catenax-ev.github.io/docs/standards/CX-0121-PlannedProductionOutputExchange",
+      "normative": [
+        "CX-0001",
+        "CX-0002",
+        "CX-0003",
+        "CX-0006",
+        "CX-0010",
+        "CX-0018",
+        "CX-0053",
+        "CX-0118",
+        "CX-0120",
+        "CX-0122",
+        "CX-0126",
+        "CX-0128",
+        "CX-0145",
+        "CX-0146",
+        "CX-0152"
+      ],
+      "non_normative": [],
+      "referenced_standards": [
+        "CX-0001",
+        "CX-0002",
+        "CX-0003",
+        "CX-0006",
+        "CX-0010",
+        "CX-0018",
+        "CX-0053",
+        "CX-0118",
+        "CX-0120",
+        "CX-0122",
+        "CX-0126",
+        "CX-0128",
+        "CX-0145",
+        "CX-0146",
+        "CX-0152"
+      ],
+      "deprecated_refs": [],
+      "semantic_models": [
+        "item_stock@2.0.0",
+        "planned_production_output@2.0.0"
+      ]
+    },
+    "CX-0122": {
+      "title": "CX-0122 Item Stock Exchange 2.0.1",
+      "link": "https://catenax-ev.github.io/docs/standards/CX-0122-ItemStockExchange",
+      "normative": [
+        "CX-0001",
+        "CX-0002",
+        "CX-0003",
+        "CX-0006",
+        "CX-0010",
+        "CX-0018",
+        "CX-0053",
+        "CX-0118",
+        "CX-0120",
+        "CX-0121",
+        "CX-0126",
+        "CX-0128",
+        "CX-0145",
+        "CX-0146",
+        "CX-0152"
+      ],
+      "non_normative": [],
+      "referenced_standards": [
+        "CX-0001",
+        "CX-0002",
+        "CX-0003",
+        "CX-0006",
+        "CX-0010",
+        "CX-0018",
+        "CX-0053",
+        "CX-0118",
+        "CX-0120",
+        "CX-0121",
+        "CX-0126",
+        "CX-0128",
+        "CX-0145",
+        "CX-0146",
+        "CX-0152"
+      ],
+      "deprecated_refs": [],
+      "semantic_models": [
+        "item_stock@2.0.0"
+      ]
+    },
+    "CX-0123": {
+      "title": "CX-0123 Quality Use Case Standard v3.0.2",
+      "link": "https://catenax-ev.github.io/docs/standards/CX-0123-QualityUseCaseStandard",
+      "normative": [
+        "CX-0001",
+        "CX-0003",
+        "CX-0018",
+        "CX-0125",
+        "CX-0152"
+      ],
+      "non_normative": [],
+      "referenced_standards": [
+        "CX-0001",
+        "CX-0003",
+        "CX-0018",
+        "CX-0125",
+        "CX-0152"
+      ],
+      "deprecated_refs": [],
+      "semantic_models": [
+        "early_warning_notification@1.0.0",
+        "failure_pattern@1.0.0",
+        "fleet.claim_data@2.0.0",
+        "fleet.claim_data@3.0.0",
+        "fleet.diagnostic_data@2.0.0",
+        "fleet.diagnostic_data@3.0.0",
+        "fleet.vehicles@3.0.0",
+        "fleet.vehicles@4.0.0",
+        "manufactured_parts_quality_information@2.1.0",
+        "manufactured_parts_quality_information@3.0.0",
+        "parts_analyses@3.0.0",
+        "parts_analyses@4.0.0",
+        "quality_task@2.0.0",
+        "quality_task@3.0.0",
+        "quality_task_attachment@2.0.0",
+        "report_8d@1.0.0",
+        "warranty_claim_request@1.0.0",
+        "warranty_claim_request_verification@1.0.0"
+      ]
+    },
+    "CX-0125": {
+      "title": "CX-0125 Traceability Use Case v2.2.1",
+      "link": "https://catenax-ev.github.io/docs/standards/CX-0125-TraceabilityUseCase",
+      "normative": [
+        "CX-0001",
+        "CX-0002",
+        "CX-0003",
+        "CX-0018",
+        "CX-0127",
+        "CX-0152"
+      ],
+      "non_normative": [],
+      "referenced_standards": [
+        "CX-0001",
+        "CX-0002",
+        "CX-0003",
+        "CX-0018",
+        "CX-0127",
+        "CX-0151",
+        "CX-0152"
+      ],
+      "deprecated_refs": [],
+      "semantic_models": [
+        "special_characteristics@1.0.0",
+        "traction_battery_code@2.0.0"
+      ]
+    },
+    "CX-0126": {
+      "title": "CX-0126 Industry Core: Part Type 2.1.1",
+      "link": "https://catenax-ev.github.io/docs/standards/CX-0126-IndustryCorePartType",
+      "normative": [
+        "CX-0001",
+        "CX-0002",
+        "CX-0003",
+        "CX-0018",
+        "CX-0045",
+        "CX-0053",
+        "CX-0152"
+      ],
+      "non_normative": [],
+      "referenced_standards": [
+        "CX-0001",
+        "CX-0002",
+        "CX-0003",
+        "CX-0018",
+        "CX-0045",
+        "CX-0053",
+        "CX-0152"
+      ],
+      "deprecated_refs": [],
+      "semantic_models": [
+        "part_type_information@1.0.0",
+        "single_level_bom_as_planned@3.0.0",
+        "single_level_usage_as_planned@2.0.0"
+      ]
+    },
+    "CX-0127": {
+      "title": "CX-0127 Industry Core: Part Instance 2.0.2",
+      "link": "https://catenax-ev.github.io/docs/standards/CX-0127-IndustryCorePartInstance",
+      "normative": [
+        "CX-0001",
+        "CX-0002",
+        "CX-0003",
+        "CX-0045",
+        "CX-0053",
+        "CX-0152"
+      ],
+      "non_normative": [],
+      "referenced_standards": [
+        "CX-0001",
+        "CX-0002",
+        "CX-0003",
+        "CX-0018",
+        "CX-0045",
+        "CX-0053",
+        "CX-0152"
+      ],
+      "deprecated_refs": [],
+      "semantic_models": [
+        "batch@3.0.0",
+        "just_in_sequence_part@3.0.0",
+        "serial_part@3.0.0",
+        "single_level_bom_as_built@3.0.0",
+        "single_level_usage_as_built@3.0.0"
+      ]
+    },
+    "CX-0128": {
+      "title": "CX-0128 - Demand and Capacity Management Data Exchange v2.2.1",
+      "link": "https://catenax-ev.github.io/docs/standards/CX-0128-DemandandCapacityManagementDataExchange",
+      "normative": [
+        "CX-0001",
+        "CX-0002",
+        "CX-0003",
+        "CX-0010",
+        "CX-0018",
+        "CX-0126",
+        "CX-0146",
+        "CX-0152"
+      ],
+      "non_normative": [],
+      "referenced_standards": [
+        "CX-0001",
+        "CX-0002",
+        "CX-0003",
+        "CX-0010",
+        "CX-0018",
+        "CX-0126",
+        "CX-0146",
+        "CX-0152"
+      ],
+      "deprecated_refs": [],
+      "semantic_models": [
+        "id_based_comment@1.0.0",
+        "id_based_request_for_update@3.0.0",
+        "week_based_capacity_group@2.0.0",
+        "week_based_capacity_group@3.0.1",
+        "week_based_material_demand@3.0.1"
+      ]
+    },
+    "CX-0129": {
+      "title": "CX-0129 Request for Quotation Exchange v2.0.1",
+      "link": "https://catenax-ev.github.io/docs/standards/CX-0129-RequestforQuotationExchange",
+      "normative": [
+        "CX-0001",
+        "CX-0003",
+        "CX-0006",
+        "CX-0010",
+        "CX-0018",
+        "CX-0115",
+        "CX-0142",
+        "CX-0152"
+      ],
+      "non_normative": [],
+      "referenced_standards": [
+        "CX-0001",
+        "CX-0003",
+        "CX-0006",
+        "CX-0010",
+        "CX-0018",
+        "CX-0115",
+        "CX-0142",
+        "CX-0152"
+      ],
+      "deprecated_refs": [],
+      "semantic_models": [
+        "request_for_quotation@3.0.0",
+        "shared.bill_of_process@1.1.0",
+        "shared.message_header@3.0.0"
+      ]
+    },
+    "CX-0131": {
+      "title": "CX-0131 Circularity Core v1.1.1",
+      "link": "https://catenax-ev.github.io/docs/standards/CX-0131-CircularityCore",
+      "normative": [],
+      "non_normative": [],
+      "referenced_standards": [
+        "CX-0001",
+        "CX-0002",
+        "CX-0003",
+        "CX-0006",
+        "CX-0013",
+        "CX-0014",
+        "CX-0015",
+        "CX-0017",
+        "CX-0018",
+        "CX-0049",
+        "CX-0050",
+        "CX-0053",
+        "CX-0126",
+        "CX-0127",
+        "CX-0136",
+        "CX-0152"
+      ],
+      "deprecated_refs": [
+        "CX-0013",
+        "CX-0017"
+      ],
+      "semantic_models": [
+        "battery.battery_pass@5.0.0",
+        "fleet.claim_data@2.0.0",
+        "fleet.diagnostic_data@2.0.0",
+        "fleet.vehicles@2.1.0",
+        "manufactured_parts_quality_information@2.1.0",
+        "market_place_offer@2.0.0",
+        "material_recycling_certificate@1.0.0",
+        "parts_analyses@3.0.0",
+        "quality_task@2.0.0",
+        "quality_task_attachment@2.0.0",
+        "refurbishing_certificate@3.0.0",
+        "remanufacturing_certificate@3.0.0",
+        "repair_certificate@1.0.0",
+        "return_request@2.0.0",
+        "reuse_certificate@3.0.0",
+        "secondary_material_content@1.0.0",
+        "single_level_bom_as_specified@2.0.0",
+        "vehicle.product_description@3.0.0",
+        "waste_certificate@1.0.0"
+      ]
+    },
+    "CX-0133": {
+      "title": "CX-0133 Online Control and Simulation 2.0.1",
+      "link": "https://catenax-ev.github.io/docs/standards/CX-0133-OnlineControlandSimulation",
+      "normative": [
+        "CX-0001",
+        "CX-0003",
+        "CX-0018",
+        "CX-0152"
+      ],
+      "non_normative": [],
+      "referenced_standards": [
+        "CX-0001",
+        "CX-0003",
+        "CX-0018",
+        "CX-0152"
+      ],
+      "deprecated_refs": [],
+      "semantic_models": [
+        "material_flow_scenario_request@2.0.0"
+      ]
+    },
+    "CX-0135": {
+      "title": "CX-0135 Business Partner Company Certificate Management v2.3.2",
+      "link": "https://catenax-ev.github.io/docs/standards/CX-0135-CompanyCertificateManagement",
+      "normative": [
+        "CX-0003",
+        "CX-0010",
+        "CX-0151",
+        "CX-0152"
+      ],
+      "non_normative": [
+        "CX-0001",
+        "CX-0018"
+      ],
+      "referenced_standards": [
+        "CX-0001",
+        "CX-0003",
+        "CX-0010",
+        "CX-0018",
+        "CX-0151",
+        "CX-0152"
+      ],
+      "deprecated_refs": [],
+      "semantic_models": [
+        "business_partner_certificate@3.1.0"
+      ]
+    },
+    "CX-0136": {
+      "title": "CX-0136 Use Case PCF 2.2.1",
+      "link": "https://catenax-ev.github.io/docs/standards/CX-0136-UseCasePCF",
+      "normative": [],
+      "non_normative": [],
+      "referenced_standards": [
+        "CX-0001",
+        "CX-0002",
+        "CX-0003",
+        "CX-0018",
+        "CX-0118",
+        "CX-0126",
+        "CX-0151",
+        "CX-0152"
+      ],
+      "deprecated_refs": [],
+      "semantic_models": [
+        "pcf@7.0.0",
+        "pcf@8.0.0",
+        "pcf@9.0.0"
+      ]
+    },
+    "CX-0138": {
+      "title": "CX-0138 Use Case Behaviour Twin Endurance Estimator v1.0.2",
+      "link": "https://catenax-ev.github.io/docs/standards/CX-0138-UseCaseBehaviourTwinEnduranceEstimator",
+      "normative": [
+        "CX-0003",
+        "CX-0023",
+        "CX-0152"
+      ],
+      "non_normative": [],
+      "referenced_standards": [
+        "CX-0002",
+        "CX-0003",
+        "CX-0018",
+        "CX-0023",
+        "CX-0057",
+        "CX-0088",
+        "CX-0089",
+        "CX-0090",
+        "CX-0152"
+      ],
+      "deprecated_refs": [
+        "CX-0023",
+        "CX-0057",
+        "CX-0088",
+        "CX-0089",
+        "CX-0090"
+      ],
+      "semantic_models": []
+    },
+    "CX-0141": {
+      "title": "CX-0141 Use Case Behaviour Twin Health Indicator v1.0.1",
+      "link": "https://catenax-ev.github.io/docs/standards/CX-0141-HealthIndicatorUseCase",
+      "normative": [
+        "CX-0018",
+        "CX-0067",
+        "CX-0084",
+        "CX-0152"
+      ],
+      "non_normative": [],
+      "referenced_standards": [
+        "CX-0018",
+        "CX-0067",
+        "CX-0084",
+        "CX-0152"
+      ],
+      "deprecated_refs": [],
+      "semantic_models": []
+    },
+    "CX-0142": {
+      "title": "CX-0142 Shop Floor Information Service v1.0.1",
+      "link": "https://catenax-ev.github.io/docs/standards/CX-0142-ShopFloorInformationService",
+      "normative": [
+        "CX-0001",
+        "CX-0003",
+        "CX-0010",
+        "CX-0018",
+        "CX-0152"
+      ],
+      "non_normative": [],
+      "referenced_standards": [
+        "CX-0001",
+        "CX-0003",
+        "CX-0010",
+        "CX-0018",
+        "CX-0068",
+        "CX-0069",
+        "CX-0152"
+      ],
+      "deprecated_refs": [
+        "CX-0068",
+        "CX-0069"
+      ],
+      "semantic_models": [
+        "shared.shopfloor_information_types@2.0.0",
+        "shopfloor_information.get_production_forecast@2.0.0",
+        "shopfloor_information.get_production_tracking@1.0.0",
+        "shopfloor_information.provide_production_forecast@2.0.0",
+        "shopfloor_information.provide_production_tracking@1.0.0"
+      ]
+    },
+    "CX-0143": {
+      "title": "CX-0143 Use Case Circular Economy Digital Product Passport Standard",
+      "link": "https://catenax-ev.github.io/docs/standards/CX-0143-UseCaseCircularEconomyDigitalProductPassportStandard",
+      "normative": [],
+      "non_normative": [],
+      "referenced_standards": [
+        "CX-0001",
+        "CX-0002",
+        "CX-0003",
+        "CX-0005",
+        "CX-0006",
+        "CX-0010",
+        "CX-0013",
+        "CX-0014",
+        "CX-0015",
+        "CX-0018",
+        "CX-0053",
+        "CX-0126",
+        "CX-0127",
+        "CX-0152"
+      ],
+      "deprecated_refs": [
+        "CX-0013"
+      ],
+      "semantic_models": [
+        "battery.battery_pass@5.0.0",
+        "battery.battery_pass@6.1.0",
+        "generic.digital_product_passport@4.0.0",
+        "generic.digital_product_passport@6.1.0",
+        "transmission.transmission_pass@2.0.0",
+        "transmission.transmission_pass@3.1.0"
+      ]
+    },
+    "CX-0144": {
+      "title": "CX-0144 ESS Use Case Standard 1.0.1",
+      "link": "https://catenax-ev.github.io/docs/standards/CX-0144-ESSUseCaseStandard",
+      "normative": [
+        "CX-0001",
+        "CX-0003",
+        "CX-0005",
+        "CX-0006",
+        "CX-0010",
+        "CX-0014",
+        "CX-0015",
+        "CX-0016",
+        "CX-0017",
+        "CX-0018",
+        "CX-0049",
+        "CX-0050",
+        "CX-0053",
+        "CX-0067",
+        "CX-0084",
+        "CX-0152"
+      ],
+      "non_normative": [],
+      "referenced_standards": [
+        "CX-0001",
+        "CX-0003",
+        "CX-0005",
+        "CX-0006",
+        "CX-0010",
+        "CX-0014",
+        "CX-0015",
+        "CX-0016",
+        "CX-0017",
+        "CX-0018",
+        "CX-0049",
+        "CX-0050",
+        "CX-0053",
+        "CX-0067",
+        "CX-0084",
+        "CX-0113",
+        "CX-0152"
+      ],
+      "deprecated_refs": [
+        "CX-0016",
+        "CX-0017",
+        "CX-0113"
+      ],
+      "semantic_models": []
+    },
+    "CX-0145": {
+      "title": "CX-0145 Days of supply Exchange 1.0.1",
+      "link": "https://catenax-ev.github.io/docs/standards/CX-0145-DaysofsupplyExchange",
+      "normative": [
+        "CX-0001",
+        "CX-0002",
+        "CX-0003",
+        "CX-0006",
+        "CX-0010",
+        "CX-0018",
+        "CX-0053",
+        "CX-0118",
+        "CX-0120",
+        "CX-0121",
+        "CX-0122",
+        "CX-0126",
+        "CX-0128",
+        "CX-0146",
+        "CX-0152"
+      ],
+      "non_normative": [],
+      "referenced_standards": [
+        "CX-0001",
+        "CX-0002",
+        "CX-0003",
+        "CX-0006",
+        "CX-0010",
+        "CX-0018",
+        "CX-0053",
+        "CX-0118",
+        "CX-0120",
+        "CX-0121",
+        "CX-0122",
+        "CX-0126",
+        "CX-0128",
+        "CX-0146",
+        "CX-0152"
+      ],
+      "deprecated_refs": [],
+      "semantic_models": [
+        "days_of_supply@2.0.0"
+      ]
+    },
+    "CX-0146": {
+      "title": "CX-0146 Supply Chain Disruption Notifications 2.0.1",
+      "link": "https://catenax-ev.github.io/docs/standards/CX-0146-SupplyChainDisruptionNotifications",
+      "normative": [
+        "CX-0001",
+        "CX-0002",
+        "CX-0003",
+        "CX-0006",
+        "CX-0010",
+        "CX-0018",
+        "CX-0126",
+        "CX-0151",
+        "CX-0152"
+      ],
+      "non_normative": [
+        "CX-0118",
+        "CX-0120",
+        "CX-0121",
+        "CX-0122",
+        "CX-0128",
+        "CX-0145"
+      ],
+      "referenced_standards": [
+        "CX-0001",
+        "CX-0002",
+        "CX-0003",
+        "CX-0006",
+        "CX-0010",
+        "CX-0018",
+        "CX-0118",
+        "CX-0120",
+        "CX-0121",
+        "CX-0122",
+        "CX-0126",
+        "CX-0128",
+        "CX-0145",
+        "CX-0151",
+        "CX-0152"
+      ],
+      "deprecated_refs": [],
+      "semantic_models": [
+        "demand_and_capacity_notification@3.0.0"
+      ]
+    },
+    "CX-0149": {
+      "title": "CX-0149 Wallet Requirements v2.0.0",
+      "link": "https://catenax-ev.github.io/docs/standards/CX-0149-WalletRequirements",
+      "normative": [],
+      "non_normative": [],
+      "referenced_standards": [
+        "CX-0049",
+        "CX-0050"
+      ],
+      "deprecated_refs": [],
+      "semantic_models": []
+    },
+    "CX-0150": {
+      "title": "CX-0150 Logistics Use Case v1.2.1",
+      "link": "https://catenax-ev.github.io/docs/standards/CX-0150-UseCaseLogistics",
+      "normative": [
+        "CX-0001",
+        "CX-0002",
+        "CX-0003",
+        "CX-0018",
+        "CX-0105",
+        "CX-0126",
+        "CX-0127",
+        "CX-0152"
+      ],
+      "non_normative": [],
+      "referenced_standards": [
+        "CX-0001",
+        "CX-0002",
+        "CX-0003",
+        "CX-0018",
+        "CX-0105",
+        "CX-0126",
+        "CX-0127",
+        "CX-0152"
+      ],
+      "deprecated_refs": [],
+      "semantic_models": [
+        "packing_list@1.0.0"
+      ]
+    },
+    "CX-0151": {
+      "title": "CX-0151 Industry Core: Basics v.1.0.0",
+      "link": "https://catenax-ev.github.io/docs/standards/CX-0151-IndustryCoreBasics",
+      "normative": [
+        "CX-0003",
+        "CX-0018"
+      ],
+      "non_normative": [],
+      "referenced_standards": [
+        "CX-0002",
+        "CX-0003",
+        "CX-0018"
+      ],
+      "deprecated_refs": [],
+      "semantic_models": [
+        "shared.message_header@3.0.0"
+      ]
+    },
+    "CX-0152": {
+      "title": "CX-0152 Policy Constraints For Data Exchange v1.0.0",
+      "link": "https://catenax-ev.github.io/docs/standards/CX-0152-PolicyConstrainsForDataExchange",
+      "normative": [],
+      "non_normative": [],
+      "referenced_standards": [
+        "CX-0018",
+        "CX-0050"
+      ],
+      "deprecated_refs": [],
+      "semantic_models": []
+    },
+    "CX-0153": {
+      "title": "CX-0153 Tariffs Use Case v.1.0.2",
+      "link": "https://catenax-ev.github.io/docs/standards/CX-0153-TariffsUseCase",
+      "normative": [
+        "CX-0018",
+        "CX-0126",
+        "CX-0152"
+      ],
+      "non_normative": [],
+      "referenced_standards": [
+        "CX-0003",
+        "CX-0018",
+        "CX-0126",
+        "CX-0152"
+      ],
+      "deprecated_refs": [],
+      "semantic_models": [
+        "us_tariff_information@1.0.0"
+      ]
+    },
+    "CX-0154": {
+      "title": "CX-0154 Digital Master Data v.1.0.1",
+      "link": "https://catenax-ev.github.io/docs/standards/CX-0154-MasterDataManagement",
+      "normative": [
+        "CX-0001",
+        "CX-0002",
+        "CX-0003",
+        "CX-0010",
+        "CX-0018",
+        "CX-0151",
+        "CX-0152"
+      ],
+      "non_normative": [],
+      "referenced_standards": [
+        "CX-0001",
+        "CX-0002",
+        "CX-0003",
+        "CX-0010",
+        "CX-0018",
+        "CX-0126",
+        "CX-0127",
+        "CX-0151",
+        "CX-0152"
+      ],
+      "deprecated_refs": [],
+      "semantic_models": [
+        "digital_engineering_master_data@1.0.0",
+        "masterdatamanagement@1.0.0",
+        "shared.message_header@3.0.0"
+      ]
+    },
+    "CX-0155": {
+      "title": "CX-0155 Requirements Engineering v.1.0.1",
+      "link": "https://catenax-ev.github.io/docs/standards/CX-0155-RequirementsEngineering",
+      "normative": [
+        "CX-0001",
+        "CX-0002",
+        "CX-0003",
+        "CX-0018",
+        "CX-0126",
+        "CX-0151",
+        "CX-0152"
+      ],
+      "non_normative": [],
+      "referenced_standards": [
+        "CX-0001",
+        "CX-0002",
+        "CX-0003",
+        "CX-0018",
+        "CX-0126",
+        "CX-0127",
+        "CX-0151",
+        "CX-0152"
+      ],
+      "deprecated_refs": [],
+      "semantic_models": [
+        "requirement@1.0.0"
+      ]
+    }
+  },
+  "deprecated_standards": {
+    "CX-0013": {
+      "name": "Identity of Member Company",
+      "reason": "Standard deprecated as part of consolidation to simplify the standards landscape and improve user-friendliness.",
+      "deprecated_in": "Saturn"
+    },
+    "CX-0016": {
+      "name": "Company Attribute Verification",
+      "reason": "Merged into CX-0149 Verified Company Identity",
+      "deprecated_in": "Jupiter"
+    },
+    "CX-0017": {
+      "name": "Company Role by the Connector",
+      "reason": "Merged into CX-0149 Verified Company Identity",
+      "deprecated_in": "Jupiter"
+    },
+    "CX-0019": {
+      "name": "SerialPart",
+      "reason": "Merged by CX-0127 Industry Core Part Instance",
+      "deprecated_in": "Jupiter"
+    },
+    "CX-0020": {
+      "name": "Batch",
+      "reason": "Merged by CX-0127 Industry Core Part Instance",
+      "deprecated_in": "Jupiter"
+    },
+    "CX-0021": {
+      "name": "SingleLevelBoMAsBuilt",
+      "reason": "Merged by CX-0127 Industry Core Part Instance",
+      "deprecated_in": "Jupiter"
+    },
+    "CX-0022": {
+      "name": "Notification API",
+      "reason": "Merged by CX-0125 Traceability Use Case",
+      "deprecated_in": "Jupiter"
+    },
+    "CX-0023": {
+      "name": "Notification Process",
+      "reason": "Merged by CX-0125 Traceability Use Case",
+      "deprecated_in": "Jupiter"
+    },
+    "CX-0026": {
+      "name": "PCF Data Model",
+      "reason": "Merged into CX-0136 Use Case PCF",
+      "deprecated_in": "Jupiter"
+    },
+    "CX-0027": {
+      "name": "Product Carbon Footprint Aspect Model",
+      "reason": "Merged into CX-0136 Use Case PCF",
+      "deprecated_in": "Jupiter"
+    },
+    "CX-0028": {
+      "name": "PCF Request API",
+      "reason": "Merged into CX-0136 Use Case PCF",
+      "deprecated_in": "Jupiter"
+    },
+    "CX-0033": {
+      "name": "Data Model ReturnRequest",
+      "reason": "Merged into  CX-0117 Use Case Circular Economy - Secondary Marketplace",
+      "deprecated_in": "Jupiter"
+    },
+    "CX-0034": {
+      "name": "Data Model Battery Pass",
+      "reason": "Merged into CX-0143 Use Case Circular Economy - Digital Product Passport Standard",
+      "deprecated_in": "Jupiter"
+    },
+    "CX-0035": {
+      "name": "Data Model Marketplaceoffer",
+      "reason": "Merged into  CX-0117 Use Case Circular Economy - Secondary Marketplace",
+      "deprecated_in": "Jupiter"
+    },
+    "CX-0036": {
+      "name": "Aspect Model: QualityTask",
+      "reason": "Merged by CX-0131 Circularity Core and CX-0123 Quality Use Case Standards",
+      "deprecated_in": "Jupiter"
+    },
+    "CX-0037": {
+      "name": "Aspect Model: Vehicle.ProductionData",
+      "reason": "Merged by CX-0131 Circularity Core",
+      "deprecated_in": "Jupiter"
+    },
+    "CX-0038": {
+      "name": "Aspect Model: Fleet.DiagnosticData",
+      "reason": "Merged by CX-0131 Circularity Core and CX-0123 Quality Use Case Standards",
+      "deprecated_in": "Jupiter"
+    },
+    "CX-0039": {
+      "name": "Aspect Model: Fleet.ClaimData",
+      "reason": "Merged by CX-0131 Circularity Core and CX-0123 Quality Use Case Standards",
+      "deprecated_in": "Jupiter"
+    },
+    "CX-0040": {
+      "name": "Aspect Model: PartAnalyses",
+      "reason": "Merged by CX-0131 Circularity Core and CX-0123 Quality Use Case Standards",
+      "deprecated_in": "Jupiter"
+    },
+    "CX-0041": {
+      "name": "Aspect Model: ManufacturedPartsQualityInformation",
+      "reason": "Merged by CX-0131 Circularity Core",
+      "deprecated_in": "Jupiter"
+    },
+    "CX-0042": {
+      "name": "Aspect Model - SinglelevelBomAsPlanned",
+      "reason": "Merged by CX-0126 Industry Core Part Type",
+      "deprecated_in": "Jupiter"
+    },
+    "CX-0043": {
+      "name": "Aspect Model - PartAsPlanned",
+      "reason": "Merged by CX-0126 Industry Core Part Type",
+      "deprecated_in": "Jupiter"
+    },
+    "CX-0046": {
+      "name": "Demand and Capacity Management Process and Core Business Logic",
+      "reason": "Merged into CX-0128 Demand and Capacity Data Exchange",
+      "deprecated_in": "Jupiter"
+    },
+    "CX-0047": {
+      "name": "Demand and Capacity Management Data Model Material Demand and Capacity Group",
+      "reason": "Merged into CX-0128 Demand and Capacity Data Exchange",
+      "deprecated_in": "Jupiter"
+    },
+    "CX-0048": {
+      "name": "Demand and Capacity Management API Material Demand and Capacity Group",
+      "reason": "Merged into CX-0128 Demand and Capacity Data Exchange",
+      "deprecated_in": "Jupiter"
+    },
+    "CX-0051": {
+      "name": "Summary Credentials",
+      "reason": "Deprecated with the introduction of IATP (see CX-0018 and CX-0149)",
+      "deprecated_in": "Jupiter"
+    },
+    "CX-0052": {
+      "name": "Manufacturing Capability Aspect Model",
+      "reason": "Merged into CX-0115 Manufacturing Capability Exchange",
+      "deprecated_in": "Jupiter"
+    },
+    "CX-0056": {
+      "name": "Semantic Model: Classified Load Spectrum",
+      "reason": "Merged into CX-0059 Use Case Behaviour Twin Endurance Predictor",
+      "deprecated_in": "Jupiter"
+    },
+    "CX-0057": {
+      "name": "Aspect Model for user estimated loading",
+      "reason": "Merged into CX-0059 and CX-0138 Use Case Behaviour Twin Endurance Estimator",
+      "deprecated_in": "Jupiter"
+    },
+    "CX-0058": {
+      "name": "API: Endurance Predictor",
+      "reason": "Merged into CX-0059 Use Case Behaviour Twin Endurance Predictor",
+      "deprecated_in": "Jupiter"
+    },
+    "CX-0060": {
+      "name": "Tracebility BomAsBuild Triangle",
+      "reason": "Merged by CX-0125 Traceability Use Case",
+      "deprecated_in": "Jupiter"
+    },
+    "CX-0061": {
+      "name": "Triangle Traceability Data Provisioning Digital Twin As Planned",
+      "reason": "Merged into CX-0125 Traceability Use Case",
+      "deprecated_in": "Jupiter"
+    },
+    "CX-0062": {
+      "name": "Traceability Notifications Triangle",
+      "reason": "Merged into CX-0125 Verified Company Identity",
+      "deprecated_in": "Jupiter"
+    },
+    "CX-0063": {
+      "name": "PCF Triangle",
+      "reason": "Merged into CX-0136 Use Case PCF",
+      "deprecated_in": "Jupiter"
+    },
+    "CX-0065": {
+      "name": "Triangle for Dismantling Service",
+      "reason": "Merged by CX-0131 Circularity Core",
+      "deprecated_in": "Jupiter"
+    },
+    "CX-0066": {
+      "name": "Aspect Model: End of Life of Vehicle Compliance",
+      "reason": "Merged by CX-0131 Circularity Core",
+      "deprecated_in": "Jupiter"
+    },
+    "CX-0068": {
+      "name": "MP Shop Floor Information Service API",
+      "reason": "Merged into CX-0142 Shop Floor Information Service",
+      "deprecated_in": "Jupiter"
+    },
+    "CX-0069": {
+      "name": "Shop-Floor-Information-Service Aspect Model",
+      "reason": "Merged into CX-0142 Shop Floor Information Service",
+      "deprecated_in": "Jupiter"
+    },
+    "CX-0070": {
+      "name": "Asset Tracking Platform API Standardization",
+      "reason": "Merged into CX-105 Asset Tracking Use Case Identity",
+      "deprecated_in": "Jupiter"
+    },
+    "CX-0071": {
+      "name": "Triangle Quality Early Warning Field and Root Cause",
+      "reason": "Merged by CX-0123 Quality Use Case Standards",
+      "deprecated_in": "Jupiter"
+    },
+    "CX-0072": {
+      "name": "OSim Process & Core Business Logic",
+      "reason": "Merged into CX-0133 Online Control and Simulation",
+      "deprecated_in": "Jupiter"
+    },
+    "CX-0073": {
+      "name": "OSim API",
+      "reason": "Merged into CX-0133 Online Control and Simulation",
+      "deprecated_in": "Jupiter"
+    },
+    "CX-0075": {
+      "name": "Shop-Floor-Information-Service Process",
+      "reason": "Merged into CX-0142 Shop Floor Information Service",
+      "deprecated_in": "Jupiter"
+    },
+    "CX-0083": {
+      "name": "Aspect Model IotSensorDeviceDefinition",
+      "reason": "Merged into CX-105 Asset Tracking Use Case Identity",
+      "deprecated_in": "Jupiter"
+    },
+    "CX-0085": {
+      "name": "Product Stock Aspect Model",
+      "reason": "Merged into CX-0133 Online Control and Simulation",
+      "deprecated_in": "Jupiter"
+    },
+    "CX-0086": {
+      "name": "Product Stock Exchange API",
+      "reason": "Merged into CX-0133 Online Control and Simulation",
+      "deprecated_in": "Jupiter"
+    },
+    "CX-0087": {
+      "name": "OSim Data Model: Materialflow Simulation Result",
+      "reason": "Merged into CX-0133 Online Control and Simulation",
+      "deprecated_in": "Jupiter"
+    },
+    "CX-0088": {
+      "name": "Aspect Model for Remaining Useful Life data",
+      "reason": "Merged into CX-0138 Use Case Behaviour Twin Endurance Estimator Digital Product Pass",
+      "deprecated_in": "Jupiter"
+    },
+    "CX-0089": {
+      "name": "Triangle Behavioral Twin Endurance Estimator Service",
+      "reason": "Merged into CX-0138 Use Case Behaviour Twin Endurance Estimator Digital Product Pass",
+      "deprecated_in": "Jupiter"
+    },
+    "CX-0090": {
+      "name": "API Endurance Estimator",
+      "reason": "Merged into CX-0138 Use Case Behaviour Twin Endurance Estimator",
+      "deprecated_in": "Jupiter"
+    },
+    "CX-0091": {
+      "name": "Aspect Model: Fleet.Vehicles",
+      "reason": "Merged by CX-0131 Circularity Core and CX-0123 Quality Use Case Standards",
+      "deprecated_in": "Jupiter"
+    },
+    "CX-0092": {
+      "name": "Aspect Model: QualityTaskAttachment",
+      "reason": "Merged by CX-0131 Circularity and CX-0123 Quality Use Case Standards  Core",
+      "deprecated_in": "Jupiter"
+    },
+    "CX-0093": {
+      "name": "Aspect Model Traction Battery Code",
+      "reason": "Merged into CX-0125 Verified Company Identity",
+      "deprecated_in": "Jupiter"
+    },
+    "CX-0095": {
+      "name": "Data Model: Transmission Pass",
+      "reason": "Merged into CX-0143 Use Case Circular Economy - Digital Product Passport Standard",
+      "deprecated_in": "Jupiter"
+    },
+    "CX-0096": {
+      "name": "Triangle For Digital Product Pass",
+      "reason": "Merged into CX-0143 Use Case Circular Economy - Digital Product Passport Standard",
+      "deprecated_in": "Jupiter"
+    },
+    "CX-0098": {
+      "name": "Aspect Model: Secondary Material Content",
+      "reason": "Merged by CX-0131 Circularity Core",
+      "deprecated_in": "Jupiter"
+    },
+    "CX-0099": {
+      "name": "Data Model: Certificate of Decommissioning",
+      "reason": "Merged by CX-0131 Circularity Core",
+      "deprecated_in": "Jupiter"
+    },
+    "CX-0100": {
+      "name": "Triangle for Secondary Marketplace",
+      "reason": "Merged into CX-0117 Use Case Circular Economy - Secondary Marketplace",
+      "deprecated_in": "Jupiter"
+    },
+    "CX-0103": {
+      "name": "Aspect Model Digital Product Passport",
+      "reason": "Merged into CX-0143 Use Case Circular Economy - Digital Product Passport Standard",
+      "deprecated_in": "Jupiter"
+    },
+    "CX-0104": {
+      "name": "Aspect Model AssetTrackerLinks v1.0.0",
+      "reason": "Merged into CX-105 Asset Tracking Use Case Identity",
+      "deprecated_in": "Jupiter"
+    },
+    "CX-0106": {
+      "name": "Aspect Model IotSensorData",
+      "reason": "Merged into CX-105 Asset Tracking Use Case Identity",
+      "deprecated_in": "Jupiter"
+    },
+    "CX-0107": {
+      "name": "Aspect Model: Reuse Certificate",
+      "reason": "Merged by CX-0131 Circularity Core",
+      "deprecated_in": "Jupiter"
+    },
+    "CX-0108": {
+      "name": "Aspect Model: Waste Certificate",
+      "reason": "Merged by CX-0131 Circularity Core",
+      "deprecated_in": "Jupiter"
+    },
+    "CX-0109": {
+      "name": "Aspect Model: Refrubishing Certificate",
+      "reason": "Merged by CX-0131 Circularity Core",
+      "deprecated_in": "Jupiter"
+    },
+    "CX-0111": {
+      "name": "Aspect Model: Remanufacturing Certificate",
+      "reason": "Merged by CX-0131 Circularity Core",
+      "deprecated_in": "Jupiter"
+    },
+    "CX-0112": {
+      "name": "Aspect Model: Material Recycling Certificate",
+      "reason": "Merged by CX-0131 Circularity Core",
+      "deprecated_in": "Jupiter"
+    },
+    "CX-0113": {
+      "name": "Aspect Model ESS Incident Data Model",
+      "reason": "Merged into CX-0144 Shop Floor Information Service",
+      "deprecated_in": "Jupiter"
+    },
+    "CX-0134": {
+      "name": "PCF Calculation Integration",
+      "reason": "Merged into CX-0143 Use Case PCF",
+      "deprecated_in": "Jupiter"
+    },
+    "CX-0139": {
+      "name": "Information as a Service - External Data Provider",
+      "reason": "This standard does not comply with the current CX-Jupiter requirements.",
+      "deprecated_in": "Io"
+    }
+  },
+  "models": {
+    "asset_tracker_links@2.0.0": [
+      "CX-0105"
+    ],
+    "batch@3.0.0": [
+      "CX-0127"
+    ],
+    "battery.battery_pass@5.0.0": [
+      "CX-0117",
+      "CX-0131",
+      "CX-0143"
+    ],
+    "battery.battery_pass@6.1.0": [
+      "CX-0143"
+    ],
+    "business_partner_certificate@3.1.0": [
+      "CX-0135"
+    ],
+    "days_of_supply@2.0.0": [
+      "CX-0145"
+    ],
+    "delivery_information@2.0.0": [
+      "CX-0118"
+    ],
+    "demand_and_capacity_notification@3.0.0": [
+      "CX-0146"
+    ],
+    "digital_engineering_master_data@1.0.0": [
+      "CX-0154"
+    ],
+    "early_warning_notification@1.0.0": [
+      "CX-0123"
+    ],
+    "failure_pattern@1.0.0": [
+      "CX-0123"
+    ],
+    "fleet.claim_data@2.0.0": [
+      "CX-0123",
+      "CX-0131"
+    ],
+    "fleet.claim_data@3.0.0": [
+      "CX-0123"
+    ],
+    "fleet.diagnostic_data@2.0.0": [
+      "CX-0123",
+      "CX-0131"
+    ],
+    "fleet.diagnostic_data@3.0.0": [
+      "CX-0123"
+    ],
+    "fleet.vehicles@2.1.0": [
+      "CX-0131"
+    ],
+    "fleet.vehicles@3.0.0": [
+      "CX-0123"
+    ],
+    "fleet.vehicles@4.0.0": [
+      "CX-0123"
+    ],
+    "generic.digital_product_passport@4.0.0": [
+      "CX-0143"
+    ],
+    "generic.digital_product_passport@6.1.0": [
+      "CX-0143"
+    ],
+    "id_based_comment@1.0.0": [
+      "CX-0128"
+    ],
+    "id_based_request_for_update@3.0.0": [
+      "CX-0128"
+    ],
+    "iot_sensor_data@2.0.0": [
+      "CX-0105"
+    ],
+    "iot_sensor_device_definition@2.0.0": [
+      "CX-0105"
+    ],
+    "item_stock@2.0.0": [
+      "CX-0121",
+      "CX-0122"
+    ],
+    "just_in_sequence_part@3.0.0": [
+      "CX-0005",
+      "CX-0127"
+    ],
+    "manufactured_parts_quality_information@2.1.0": [
+      "CX-0123",
+      "CX-0131"
+    ],
+    "manufactured_parts_quality_information@3.0.0": [
+      "CX-0123"
+    ],
+    "manufacturing_capability@3.1.0": [
+      "CX-0115"
+    ],
+    "market_place_offer@2.0.0": [
+      "CX-0117",
+      "CX-0131"
+    ],
+    "material_demand@1.0.0": [
+      "CX-0002"
+    ],
+    "material_flow_scenario_request@2.0.0": [
+      "CX-0133"
+    ],
+    "material_recycling_certificate@1.0.0": [
+      "CX-0131"
+    ],
+    "packing_list@1.0.0": [
+      "CX-0150"
+    ],
+    "part_type_information@1.0.0": [
+      "CX-0126"
+    ],
+    "parts_analyses@3.0.0": [
+      "CX-0123",
+      "CX-0131"
+    ],
+    "parts_analyses@4.0.0": [
+      "CX-0123"
+    ],
+    "pcf@7.0.0": [
+      "CX-0136"
+    ],
+    "pcf@8.0.0": [
+      "CX-0136"
+    ],
+    "pcf@9.0.0": [
+      "CX-0136"
+    ],
+    "planned_production_output@2.0.0": [
+      "CX-0121"
+    ],
+    "quality_task@2.0.0": [
+      "CX-0123",
+      "CX-0131"
+    ],
+    "quality_task@3.0.0": [
+      "CX-0123"
+    ],
+    "quality_task_attachment@2.0.0": [
+      "CX-0123",
+      "CX-0131"
+    ],
+    "refurbishing_certificate@3.0.0": [
+      "CX-0131"
+    ],
+    "remanufacturing_certificate@3.0.0": [
+      "CX-0131"
+    ],
+    "repair_certificate@1.0.0": [
+      "CX-0131"
+    ],
+    "report_8d@1.0.0": [
+      "CX-0123"
+    ],
+    "request_for_quotation@3.0.0": [
+      "CX-0129"
+    ],
+    "requirement@1.0.0": [
+      "CX-0155"
+    ],
+    "return_request@2.0.0": [
+      "CX-0117",
+      "CX-0131"
+    ],
+    "reuse_certificate@3.0.0": [
+      "CX-0131"
+    ],
+    "secondary_material_content@1.0.0": [
+      "CX-0131"
+    ],
+    "serial_part@3.0.0": [
+      "CX-0127"
+    ],
+    "shared.bill_of_process@1.1.0": [
+      "CX-0129"
+    ],
+    "shared.message_header@3.0.0": [
+      "CX-0129",
+      "CX-0151",
+      "CX-0154"
+    ],
+    "shared.part_site_information_as_built@2.0.0": [
+      "CX-0005"
+    ],
+    "shared.shopfloor_information_types@2.0.0": [
+      "CX-0142"
+    ],
+    "shopfloor_information.get_production_forecast@2.0.0": [
+      "CX-0142"
+    ],
+    "shopfloor_information.get_production_tracking@1.0.0": [
+      "CX-0142"
+    ],
+    "shopfloor_information.provide_production_forecast@2.0.0": [
+      "CX-0142"
+    ],
+    "shopfloor_information.provide_production_tracking@1.0.0": [
+      "CX-0142"
+    ],
+    "short_term_material_demand@1.0.0": [
+      "CX-0120"
+    ],
+    "single_level_bom_as_built@3.0.0": [
+      "CX-0127"
+    ],
+    "single_level_bom_as_planned@3.0.0": [
+      "CX-0126"
+    ],
+    "single_level_bom_as_specified@2.0.0": [
+      "CX-0131"
+    ],
+    "single_level_usage_as_built@3.0.0": [
+      "CX-0005",
+      "CX-0127"
+    ],
+    "single_level_usage_as_planned@2.0.0": [
+      "CX-0005",
+      "CX-0126"
+    ],
+    "traction_battery_code@2.0.0": [
+      "CX-0125"
+    ],
+    "transmission.transmission_pass@2.0.0": [
+      "CX-0143"
+    ],
+    "transmission.transmission_pass@3.1.0": [
+      "CX-0143"
+    ],
+    "us_tariff_information@1.0.0": [
+      "CX-0153"
+    ],
+    "vehicle.product_description@3.0.0": [
+      "CX-0131"
+    ],
+    "warranty_claim_request@1.0.0": [
+      "CX-0123"
+    ],
+    "warranty_claim_request_verification@1.0.0": [
+      "CX-0123"
+    ],
+    "waste_certificate@1.0.0": [
+      "CX-0131"
+    ],
+    "week_based_capacity_group@2.0.0": [
+      "CX-0128"
+    ],
+    "week_based_capacity_group@3.0.1": [
+      "CX-0128"
+    ],
+    "week_based_material_demand@3.0.1": [
+      "CX-0128"
+    ]
+  }
+}
