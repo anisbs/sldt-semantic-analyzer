@@ -137,17 +137,40 @@ ISSUE_TYPES = [
          "names should be `PascalCase` (start uppercase).")},
 
     # ---- Documentation des éléments (NEW) ----------------------------------
+    {"id": "key_element_missing_description", "severity": "warning",
+     "label": "Key element with no description",
+     "description": (
+         "A consumer-facing element that really should be documented has no "
+         "`samm:description`: a `Property`/`Event`/`Operation`, or an "
+         "`Entity` used as the element type of a collection "
+         "(`List`/`Set`/`SortedSet`/`Collection`/`TimeSeries`). These appear "
+         "directly in the payload / generated API, so a blank description "
+         "hurts every consumer. Reported separately from the generic check.")},
+    {"id": "key_element_missing_preferred_name", "severity": "warning",
+     "label": "Key element with no preferredName",
+     "description": (
+         "A consumer-facing element that really should be documented has no "
+         "`samm:preferredName`: a `Property`/`Event`/`Operation`, or an "
+         "`Entity` used as a collection element type. Tooling falls back to "
+         "the raw local name, which is least acceptable exactly on these "
+         "payload-carrying elements. Reported separately from the generic "
+         "check.")},
     {"id": "missing_description", "severity": "warning",
-     "label": "Element with no description",
+     "label": "Element with no description (other)",
      "description": (
          "The element has no `samm:description` literal at all. Generated "
          "documentation (HTML, JSON Schema description, OpenAPI) will be "
-         "blank for this element.")},
+         "blank for this element. Key elements (Property/Event/Operation and "
+         "Entities used as a collection element type) are reported separately "
+         "under their dedicated check.")},
     {"id": "missing_preferred_name", "severity": "warning",
-     "label": "Element with no preferredName",
+     "label": "Element with no preferredName (other)",
      "description": (
          "The element has no `samm:preferredName`. Tooling falls back to "
-         "the raw local name, which is less readable for end users.")},
+         "the raw local name, which is less readable for end users. Key "
+         "elements (Property/Event/Operation and Entities used as a "
+         "collection element type) are reported separately under their "
+         "dedicated check.")},
     {"id": "empty_description", "severity": "warning",
      "label": "Empty/whitespace description",
      "description": (
@@ -234,6 +257,16 @@ _CHAR_NO_DATATYPE_REQUIRED = {
     "RangeConstraint", "EncodingConstraint", "LocaleConstraint",
     "LanguageConstraint", "FixedPointConstraint",
 }
+
+# Sous-types de `Characteristic` qui sont des collections. Une `Entity` ciblée
+# par le `dataType` d'une telle characteristic représente le type de CHAQUE
+# item répété : c'est une structure métier qui « doit vraiment » être
+# documentée (-> issues `key_element_*`).
+_COLLECTION_TYPES = {"Collection", "List", "Set", "SortedSet", "TimeSeries"}
+
+# `kind` des éléments porteurs de payload côté consommateur : ils doivent
+# vraiment porter preferredName/description (-> issues `key_element_*`).
+_KEY_DOC_KINDS = {"Property", "AbstractProperty", "Event", "Operation"}
 
 
 def _key(name: str, version: str) -> str:
@@ -485,6 +518,7 @@ def _element_issues(model: ParsedModel) -> dict[str, list[dict]]:
 
     res: dict[str, list[dict]] = {iid: [] for iid in (
         "orphan_isolated", "orphan_unreachable",
+        "key_element_missing_description", "key_element_missing_preferred_name",
         "missing_description", "missing_preferred_name", "empty_description",
         "description_not_english",
         "aspect_without_properties", "property_without_characteristic",
@@ -514,17 +548,35 @@ def _element_issues(model: ParsedModel) -> dict[str, list[dict]]:
             if e.urn not in seen:
                 res["orphan_unreachable"].append(stub(e))
 
+    # -- éléments « key » (doc vraiment obligatoire) : Property/Event/Operation
+    #    + Entity utilisée comme type d'élément d'une characteristic collection.
+    by_kind = {e.urn: e.kind for e in model.elements}
+    coll_chars = {
+        e.urn for e in model.elements
+        if e.kind == "Characteristic"
+        and any(t in _COLLECTION_TYPES for t in e.types)
+    }
+    key_urns = {e.urn for e in model.elements if e.kind in _KEY_DOC_KINDS}
+    for edge in model.edges:
+        if (edge.label == "dataType" and edge.source in coll_chars
+                and by_kind.get(edge.target) in {"Entity", "AbstractEntity"}):
+            key_urns.add(edge.target)
+
     # -- doc & structure & naming
     empty_aspects = set(model.aspects_empty_properties)
     unused = set(model.unused_property_urns)
     for e in model.elements:
-        # Documentation
+        # Documentation. Les éléments « key » vont dans un seau dédié (mis en
+        # avant) ; les autres restent dans le seau générique. Exclusif.
+        is_key = e.urn in key_urns
         if e.description is None:
-            res["missing_description"].append(stub(e))
+            res["key_element_missing_description" if is_key
+                else "missing_description"].append(stub(e))
         elif not str(e.description).strip():
             res["empty_description"].append(stub(e))
         if e.preferred_name is None:
-            res["missing_preferred_name"].append(stub(e))
+            res["key_element_missing_preferred_name" if is_key
+                else "missing_preferred_name"].append(stub(e))
         if e.description_langs and "en" not in e.description_langs:
             res["description_not_english"].append(stub(e))
 

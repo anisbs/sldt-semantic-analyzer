@@ -103,16 +103,28 @@
       "description": "SAMM convention: Aspect/Entity/Characteristic/Constraint local names should be `PascalCase` (start uppercase)."
     },
     {
+      "id": "key_element_missing_description",
+      "severity": "warning",
+      "label": "Key element with no description",
+      "description": "A consumer-facing element that really should be documented has no `samm:description`: a `Property`/`Event`/`Operation`, or an `Entity` used as the element type of a collection (`List`/`Set`/`SortedSet`/`Collection`/`TimeSeries`). These appear directly in the payload / generated API, so a blank description hurts every consumer. Reported separately from the generic check."
+    },
+    {
+      "id": "key_element_missing_preferred_name",
+      "severity": "warning",
+      "label": "Key element with no preferredName",
+      "description": "A consumer-facing element that really should be documented has no `samm:preferredName`: a `Property`/`Event`/`Operation`, or an `Entity` used as a collection element type. Tooling falls back to the raw local name, which is least acceptable exactly on these payload-carrying elements. Reported separately from the generic check."
+    },
+    {
       "id": "missing_description",
       "severity": "warning",
-      "label": "Element with no description",
-      "description": "The element has no `samm:description` literal at all. Generated documentation (HTML, JSON Schema description, OpenAPI) will be blank for this element."
+      "label": "Element with no description (other)",
+      "description": "The element has no `samm:description` literal at all. Generated documentation (HTML, JSON Schema description, OpenAPI) will be blank for this element. Key elements (Property/Event/Operation and Entities used as a collection element type) are reported separately under their dedicated check."
     },
     {
       "id": "missing_preferred_name",
       "severity": "warning",
-      "label": "Element with no preferredName",
-      "description": "The element has no `samm:preferredName`. Tooling falls back to the raw local name, which is less readable for end users."
+      "label": "Element with no preferredName (other)",
+      "description": "The element has no `samm:preferredName`. Tooling falls back to the raw local name, which is less readable for end users. Key elements (Property/Event/Operation and Entities used as a collection element type) are reported separately under their dedicated check."
     },
     {
       "id": "empty_description",
@@ -1499,14 +1511,19 @@
             }
           ]
         },
-        "missing_preferred_name": {
-          "count": 3,
+        "key_element_missing_preferred_name": {
+          "count": 1,
           "detail": [
             {
               "name": "capacityValue",
               "kind": "Property",
               "file": "BatteryPass"
-            },
+            }
+          ]
+        },
+        "missing_preferred_name": {
+          "count": 2,
+          "detail": [
             {
               "name": "SustainabilityDocumentCharacteristic",
               "kind": "Characteristic",
@@ -2777,8 +2794,28 @@
             }
           ]
         },
+        "key_element_missing_description": {
+          "count": 1,
+          "detail": [
+            {
+              "name": "Component",
+              "kind": "Entity",
+              "file": "Circularity"
+            }
+          ]
+        },
+        "key_element_missing_preferred_name": {
+          "count": 1,
+          "detail": [
+            {
+              "name": "Component",
+              "kind": "Entity",
+              "file": "Circularity"
+            }
+          ]
+        },
         "missing_description": {
-          "count": 16,
+          "count": 15,
           "detail": [
             {
               "name": "SparePartSourcesList",
@@ -2831,11 +2868,6 @@
               "file": "Circularity"
             },
             {
-              "name": "Component",
-              "kind": "Entity",
-              "file": "Circularity"
-            },
-            {
               "name": "PreConsumerShareTrait",
               "kind": "Characteristic",
               "file": "Circularity"
@@ -2863,7 +2895,7 @@
           ]
         },
         "missing_preferred_name": {
-          "count": 12,
+          "count": 11,
           "detail": [
             {
               "name": "Circularity",
@@ -2893,11 +2925,6 @@
             {
               "name": "AddressOfSupplier",
               "kind": "Characteristic",
-              "file": "Circularity"
-            },
-            {
-              "name": "Component",
-              "kind": "Entity",
               "file": "Circularity"
             },
             {
@@ -3156,8 +3183,28 @@
             }
           ]
         },
+        "key_element_missing_description": {
+          "count": 1,
+          "detail": [
+            {
+              "name": "DocumentVersion",
+              "kind": "Entity",
+              "file": "HandoverDocumentation"
+            }
+          ]
+        },
+        "key_element_missing_preferred_name": {
+          "count": 1,
+          "detail": [
+            {
+              "name": "Document",
+              "kind": "Entity",
+              "file": "HandoverDocumentation"
+            }
+          ]
+        },
         "missing_description": {
-          "count": 4,
+          "count": 3,
           "detail": [
             {
               "name": "DocumentSet",
@@ -3167,11 +3214,6 @@
             {
               "name": "DocumentVersions",
               "kind": "Characteristic",
-              "file": "HandoverDocumentation"
-            },
-            {
-              "name": "DocumentVersion",
-              "kind": "Entity",
               "file": "HandoverDocumentation"
             },
             {
@@ -3182,7 +3224,7 @@
           ]
         },
         "missing_preferred_name": {
-          "count": 4,
+          "count": 3,
           "detail": [
             {
               "name": "DocumentSet",
@@ -3192,11 +3234,6 @@
             {
               "name": "DocumentVersions",
               "kind": "Characteristic",
-              "file": "HandoverDocumentation"
-            },
-            {
-              "name": "Document",
-              "kind": "Entity",
               "file": "HandoverDocumentation"
             },
             {
@@ -3258,14 +3295,19 @@
             }
           ]
         },
-        "missing_description": {
-          "count": 8,
+        "key_element_missing_description": {
+          "count": 1,
           "detail": [
             {
               "name": "componentName",
               "kind": "Property",
               "file": "MaterialComposition"
-            },
+            }
+          ]
+        },
+        "missing_description": {
+          "count": 7,
+          "detail": [
             {
               "name": "BatteryMaterialLocation",
               "kind": "Characteristic",
@@ -3450,14 +3492,19 @@
             }
           ]
         },
-        "missing_description": {
-          "count": 8,
+        "key_element_missing_description": {
+          "count": 1,
           "detail": [
             {
               "name": "componentName",
               "kind": "Property",
               "file": "MaterialComposition"
-            },
+            }
+          ]
+        },
+        "missing_description": {
+          "count": 7,
+          "detail": [
             {
               "name": "BatteryMaterialLocation",
               "kind": "Characteristic",
@@ -3659,6 +3706,16 @@
             }
           ]
         },
+        "key_element_missing_preferred_name": {
+          "count": 1,
+          "detail": [
+            {
+              "name": "capacityThroughput",
+              "kind": "Property",
+              "file": "ProductCondition"
+            }
+          ]
+        },
         "missing_description": {
           "count": 28,
           "detail": [
@@ -3805,13 +3862,8 @@
           ]
         },
         "missing_preferred_name": {
-          "count": 27,
+          "count": 26,
           "detail": [
-            {
-              "name": "capacityThroughput",
-              "kind": "Property",
-              "file": "ProductCondition"
-            },
             {
               "name": "EnergyThroughput",
               "kind": "Characteristic",
@@ -4394,6 +4446,16 @@
             }
           ]
         },
+        "key_element_missing_preferred_name": {
+          "count": 1,
+          "detail": [
+            {
+              "name": "capacityThroughput",
+              "kind": "Property",
+              "file": "ProductCondition"
+            }
+          ]
+        },
         "missing_description": {
           "count": 29,
           "detail": [
@@ -4545,13 +4607,8 @@
           ]
         },
         "missing_preferred_name": {
-          "count": 28,
+          "count": 27,
           "detail": [
-            {
-              "name": "capacityThroughput",
-              "kind": "Property",
-              "file": "ProductCondition"
-            },
             {
               "name": "EnergyThroughput",
               "kind": "Characteristic",
@@ -4946,6 +5003,16 @@
             }
           ]
         },
+        "key_element_missing_preferred_name": {
+          "count": 1,
+          "detail": [
+            {
+              "name": "powerFade",
+              "kind": "Property",
+              "file": "TechnicalData"
+            }
+          ]
+        },
         "missing_description": {
           "count": 39,
           "detail": [
@@ -5147,7 +5214,7 @@
           ]
         },
         "missing_preferred_name": {
-          "count": 42,
+          "count": 41,
           "detail": [
             {
               "name": "TechnicalData",
@@ -5182,11 +5249,6 @@
             {
               "name": "BatteryMassMeasurable",
               "kind": "Characteristic",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "powerFade",
-              "kind": "Property",
               "file": "TechnicalData"
             },
             {
@@ -5598,6 +5660,16 @@
             }
           ]
         },
+        "key_element_missing_preferred_name": {
+          "count": 1,
+          "detail": [
+            {
+              "name": "powerFade",
+              "kind": "Property",
+              "file": "TechnicalData"
+            }
+          ]
+        },
         "missing_description": {
           "count": 41,
           "detail": [
@@ -5809,7 +5881,7 @@
           ]
         },
         "missing_preferred_name": {
-          "count": 44,
+          "count": 43,
           "detail": [
             {
               "name": "TechnicalData",
@@ -5854,11 +5926,6 @@
             {
               "name": "BatteryMassMeasurable",
               "kind": "Characteristic",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "powerFade",
-              "kind": "Property",
               "file": "TechnicalData"
             },
             {
@@ -7868,8 +7935,8 @@
       "status": "release",
       "total": 53,
       "issues": {
-        "missing_preferred_name": {
-          "count": 31,
+        "key_element_missing_preferred_name": {
+          "count": 14,
           "detail": [
             {
               "name": "unit",
@@ -7932,6 +7999,21 @@
               "file": "ClassifiedLoadSpectrum"
             },
             {
+              "name": "LoadChannelEntity",
+              "kind": "Entity",
+              "file": "ClassifiedLoadSpectrum"
+            },
+            {
+              "name": "ClassesListEntity",
+              "kind": "Entity",
+              "file": "ClassifiedLoadSpectrum"
+            }
+          ]
+        },
+        "missing_preferred_name": {
+          "count": 17,
+          "detail": [
+            {
               "name": "CountingMethodCharacteristic",
               "kind": "Characteristic",
               "file": "ClassifiedLoadSpectrum"
@@ -7982,17 +8064,7 @@
               "file": "ClassifiedLoadSpectrum"
             },
             {
-              "name": "LoadChannelEntity",
-              "kind": "Entity",
-              "file": "ClassifiedLoadSpectrum"
-            },
-            {
               "name": "BodySets",
-              "kind": "Entity",
-              "file": "ClassifiedLoadSpectrum"
-            },
-            {
-              "name": "ClassesListEntity",
               "kind": "Entity",
               "file": "ClassifiedLoadSpectrum"
             },
@@ -8162,8 +8234,8 @@
       "status": "draft",
       "total": 52,
       "issues": {
-        "missing_preferred_name": {
-          "count": 31,
+        "key_element_missing_preferred_name": {
+          "count": 14,
           "detail": [
             {
               "name": "targetComponentID",
@@ -8226,6 +8298,21 @@
               "file": "ClassifiedLoadSpectrum"
             },
             {
+              "name": "LoadChannelEntity",
+              "kind": "Entity",
+              "file": "ClassifiedLoadSpectrum"
+            },
+            {
+              "name": "ClassesListEntity",
+              "kind": "Entity",
+              "file": "ClassifiedLoadSpectrum"
+            }
+          ]
+        },
+        "missing_preferred_name": {
+          "count": 17,
+          "detail": [
+            {
               "name": "CountedValueCharacteristic",
               "kind": "Characteristic",
               "file": "ClassifiedLoadSpectrum"
@@ -8277,16 +8364,6 @@
             },
             {
               "name": "BodySets",
-              "kind": "Entity",
-              "file": "ClassifiedLoadSpectrum"
-            },
-            {
-              "name": "LoadChannelEntity",
-              "kind": "Entity",
-              "file": "ClassifiedLoadSpectrum"
-            },
-            {
-              "name": "ClassesListEntity",
               "kind": "Entity",
               "file": "ClassifiedLoadSpectrum"
             },
@@ -8523,8 +8600,38 @@
             }
           ]
         },
+        "key_element_missing_description": {
+          "count": 2,
+          "detail": [
+            {
+              "name": "fax",
+              "kind": "Property",
+              "file": "ContactInformations"
+            },
+            {
+              "name": "nameOfContact",
+              "kind": "Property",
+              "file": "ContactInformations"
+            }
+          ]
+        },
+        "key_element_missing_preferred_name": {
+          "count": 2,
+          "detail": [
+            {
+              "name": "ContactInformation",
+              "kind": "Entity",
+              "file": "ContactInformations"
+            },
+            {
+              "name": "phone",
+              "kind": "Property",
+              "file": "ContactInformations"
+            }
+          ]
+        },
         "missing_description": {
-          "count": 14,
+          "count": 12,
           "detail": [
             {
               "name": "ContactRoleEnum",
@@ -8549,16 +8656,6 @@
             {
               "name": "FaxEntity",
               "kind": "Entity",
-              "file": "ContactInformations"
-            },
-            {
-              "name": "fax",
-              "kind": "Property",
-              "file": "ContactInformations"
-            },
-            {
-              "name": "nameOfContact",
-              "kind": "Property",
               "file": "ContactInformations"
             },
             {
@@ -8599,18 +8696,8 @@
           ]
         },
         "missing_preferred_name": {
-          "count": 8,
+          "count": 6,
           "detail": [
-            {
-              "name": "ContactInformation",
-              "kind": "Entity",
-              "file": "ContactInformations"
-            },
-            {
-              "name": "phone",
-              "kind": "Property",
-              "file": "ContactInformations"
-            },
             {
               "name": "PhoneCharacteristic",
               "kind": "Characteristic",
@@ -12578,6 +12665,31 @@
             }
           ]
         },
+        "key_element_missing_preferred_name": {
+          "count": 4,
+          "detail": [
+            {
+              "name": "vehicle",
+              "kind": "Property",
+              "file": "DiagnosticData"
+            },
+            {
+              "name": "workshop",
+              "kind": "Property",
+              "file": "DiagnosticData"
+            },
+            {
+              "name": "dtcList",
+              "kind": "Property",
+              "file": "DiagnosticData"
+            },
+            {
+              "name": "DiagnosticSession",
+              "kind": "Entity",
+              "file": "DiagnosticData"
+            }
+          ]
+        },
         "missing_description": {
           "count": 10,
           "detail": [
@@ -12634,26 +12746,11 @@
           ]
         },
         "missing_preferred_name": {
-          "count": 26,
+          "count": 22,
           "detail": [
             {
               "name": "DiagnosticData",
               "kind": "Aspect",
-              "file": "DiagnosticData"
-            },
-            {
-              "name": "vehicle",
-              "kind": "Property",
-              "file": "DiagnosticData"
-            },
-            {
-              "name": "workshop",
-              "kind": "Property",
-              "file": "DiagnosticData"
-            },
-            {
-              "name": "dtcList",
-              "kind": "Property",
               "file": "DiagnosticData"
             },
             {
@@ -12669,11 +12766,6 @@
             {
               "name": "Events",
               "kind": "Characteristic",
-              "file": "DiagnosticData"
-            },
-            {
-              "name": "DiagnosticSession",
-              "kind": "Entity",
               "file": "DiagnosticData"
             },
             {
@@ -13050,6 +13142,16 @@
             }
           ]
         },
+        "key_element_missing_preferred_name": {
+          "count": 1,
+          "detail": [
+            {
+              "name": "dtcs",
+              "kind": "Property",
+              "file": "DiagnosticData"
+            }
+          ]
+        },
         "missing_description": {
           "count": 2,
           "detail": [
@@ -13066,16 +13168,11 @@
           ]
         },
         "missing_preferred_name": {
-          "count": 4,
+          "count": 3,
           "detail": [
             {
               "name": "DiagnosticData",
               "kind": "Aspect",
-              "file": "DiagnosticData"
-            },
-            {
-              "name": "dtcs",
-              "kind": "Property",
               "file": "DiagnosticData"
             },
             {
@@ -15479,6 +15576,16 @@
             }
           ]
         },
+        "key_element_missing_preferred_name": {
+          "count": 1,
+          "detail": [
+            {
+              "name": "hazardClass",
+              "kind": "Property",
+              "file": "DigitalProductPassport"
+            }
+          ]
+        },
         "missing_description": {
           "count": 1,
           "detail": [
@@ -15490,13 +15597,8 @@
           ]
         },
         "missing_preferred_name": {
-          "count": 2,
+          "count": 1,
           "detail": [
-            {
-              "name": "hazardClass",
-              "kind": "Property",
-              "file": "DigitalProductPassport"
-            },
             {
               "name": "HeaderTrait",
               "kind": "Characteristic",
@@ -17973,6 +18075,21 @@
             "shared@3.1.0"
           ]
         },
+        "key_element_missing_preferred_name": {
+          "count": 2,
+          "detail": [
+            {
+              "name": "furtherInformation",
+              "kind": "Property",
+              "file": "TechnicalData"
+            },
+            {
+              "name": "technicalProperties",
+              "kind": "Property",
+              "file": "TechnicalData"
+            }
+          ]
+        },
         "missing_description": {
           "count": 8,
           "detail": [
@@ -18019,7 +18136,7 @@
           ]
         },
         "missing_preferred_name": {
-          "count": 11,
+          "count": 9,
           "detail": [
             {
               "name": "TechnicalData",
@@ -18029,11 +18146,6 @@
             {
               "name": "GeneralInformationCharacteristic",
               "kind": "Characteristic",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "furtherInformation",
-              "kind": "Property",
               "file": "TechnicalData"
             },
             {
@@ -18059,11 +18171,6 @@
             {
               "name": "ProductImageSet",
               "kind": "Characteristic",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "technicalProperties",
-              "kind": "Property",
               "file": "TechnicalData"
             },
             {
@@ -18168,8 +18275,33 @@
             "shared@3.1.0"
           ]
         },
+        "key_element_missing_description": {
+          "count": 1,
+          "detail": [
+            {
+              "name": "SpecificDescriptionEntity",
+              "kind": "Entity",
+              "file": "TechnicalData"
+            }
+          ]
+        },
+        "key_element_missing_preferred_name": {
+          "count": 2,
+          "detail": [
+            {
+              "name": "furtherInformation",
+              "kind": "Property",
+              "file": "TechnicalData"
+            },
+            {
+              "name": "SpecificDescriptionEntity",
+              "kind": "Entity",
+              "file": "TechnicalData"
+            }
+          ]
+        },
         "missing_description": {
-          "count": 10,
+          "count": 9,
           "detail": [
             {
               "name": "GeneralInformationCharacteristic",
@@ -18209,11 +18341,6 @@
             {
               "name": "ProductImageSet",
               "kind": "Characteristic",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "SpecificDescriptionEntity",
-              "kind": "Entity",
               "file": "TechnicalData"
             },
             {
@@ -18224,16 +18351,11 @@
           ]
         },
         "missing_preferred_name": {
-          "count": 12,
+          "count": 10,
           "detail": [
             {
               "name": "TechnicalData",
               "kind": "Aspect",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "furtherInformation",
-              "kind": "Property",
               "file": "TechnicalData"
             },
             {
@@ -18274,11 +18396,6 @@
             {
               "name": "ProductImageSet",
               "kind": "Characteristic",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "SpecificDescriptionEntity",
-              "kind": "Entity",
               "file": "TechnicalData"
             },
             {
@@ -18820,8 +18937,38 @@
             }
           ]
         },
+        "key_element_missing_description": {
+          "count": 2,
+          "detail": [
+            {
+              "name": "DocumentClassification",
+              "kind": "Entity",
+              "file": "HandoverDocumentation"
+            },
+            {
+              "name": "DocumentVersion",
+              "kind": "Entity",
+              "file": "HandoverDocumentation"
+            }
+          ]
+        },
+        "key_element_missing_preferred_name": {
+          "count": 2,
+          "detail": [
+            {
+              "name": "translationOfEntities",
+              "kind": "Property",
+              "file": "HandoverDocumentation"
+            },
+            {
+              "name": "refersToEntities",
+              "kind": "Property",
+              "file": "HandoverDocumentation"
+            }
+          ]
+        },
         "missing_description": {
-          "count": 11,
+          "count": 9,
           "detail": [
             {
               "name": "DocumentSetTrait",
@@ -18867,32 +19014,12 @@
               "name": "ReferenceSet",
               "kind": "Characteristic",
               "file": "HandoverDocumentation"
-            },
-            {
-              "name": "DocumentClassification",
-              "kind": "Entity",
-              "file": "HandoverDocumentation"
-            },
-            {
-              "name": "DocumentVersion",
-              "kind": "Entity",
-              "file": "HandoverDocumentation"
             }
           ]
         },
         "missing_preferred_name": {
-          "count": 11,
+          "count": 9,
           "detail": [
-            {
-              "name": "translationOfEntities",
-              "kind": "Property",
-              "file": "HandoverDocumentation"
-            },
-            {
-              "name": "refersToEntities",
-              "kind": "Property",
-              "file": "HandoverDocumentation"
-            },
             {
               "name": "DocumentSetTrait",
               "kind": "Characteristic",
@@ -20201,7 +20328,7 @@
             }
           ]
         },
-        "missing_description": {
+        "key_element_missing_description": {
           "count": 1,
           "detail": [
             {
@@ -22053,8 +22180,8 @@
       "status": "deprecated",
       "total": 67,
       "issues": {
-        "missing_description": {
-          "count": 22,
+        "key_element_missing_description": {
+          "count": 3,
           "detail": [
             {
               "name": "mainCategory",
@@ -22066,6 +22193,71 @@
               "kind": "Property",
               "file": "MarketplaceOffer"
             },
+            {
+              "name": "TechnicalSpecificationEntity",
+              "kind": "Entity",
+              "file": "MarketplaceOffer"
+            }
+          ]
+        },
+        "key_element_missing_preferred_name": {
+          "count": 10,
+          "detail": [
+            {
+              "name": "sku",
+              "kind": "Property",
+              "file": "MarketplaceOffer"
+            },
+            {
+              "name": "quantity",
+              "kind": "Property",
+              "file": "MarketplaceOffer"
+            },
+            {
+              "name": "unitOfMeasure",
+              "kind": "Property",
+              "file": "MarketplaceOffer"
+            },
+            {
+              "name": "condition",
+              "kind": "Property",
+              "file": "MarketplaceOffer"
+            },
+            {
+              "name": "pickupLocation",
+              "kind": "Property",
+              "file": "MarketplaceOffer"
+            },
+            {
+              "name": "incoterms",
+              "kind": "Property",
+              "file": "MarketplaceOffer"
+            },
+            {
+              "name": "price",
+              "kind": "Property",
+              "file": "MarketplaceOffer"
+            },
+            {
+              "name": "image",
+              "kind": "Property",
+              "file": "MarketplaceOffer"
+            },
+            {
+              "name": "attachment",
+              "kind": "Property",
+              "file": "MarketplaceOffer"
+            },
+            {
+              "name": "currency",
+              "kind": "Property",
+              "file": "MarketplaceOffer"
+            }
+          ]
+        },
+        "missing_description": {
+          "count": 19,
+          "detail": [
             {
               "name": "Status",
               "kind": "Characteristic",
@@ -22147,11 +22339,6 @@
               "file": "MarketplaceOffer"
             },
             {
-              "name": "TechnicalSpecificationEntity",
-              "kind": "Entity",
-              "file": "MarketplaceOffer"
-            },
-            {
               "name": "Year",
               "kind": "Characteristic",
               "file": "MarketplaceOffer"
@@ -22169,58 +22356,8 @@
           ]
         },
         "missing_preferred_name": {
-          "count": 12,
+          "count": 2,
           "detail": [
-            {
-              "name": "sku",
-              "kind": "Property",
-              "file": "MarketplaceOffer"
-            },
-            {
-              "name": "quantity",
-              "kind": "Property",
-              "file": "MarketplaceOffer"
-            },
-            {
-              "name": "unitOfMeasure",
-              "kind": "Property",
-              "file": "MarketplaceOffer"
-            },
-            {
-              "name": "condition",
-              "kind": "Property",
-              "file": "MarketplaceOffer"
-            },
-            {
-              "name": "pickupLocation",
-              "kind": "Property",
-              "file": "MarketplaceOffer"
-            },
-            {
-              "name": "incoterms",
-              "kind": "Property",
-              "file": "MarketplaceOffer"
-            },
-            {
-              "name": "price",
-              "kind": "Property",
-              "file": "MarketplaceOffer"
-            },
-            {
-              "name": "image",
-              "kind": "Property",
-              "file": "MarketplaceOffer"
-            },
-            {
-              "name": "attachment",
-              "kind": "Property",
-              "file": "MarketplaceOffer"
-            },
-            {
-              "name": "currency",
-              "kind": "Property",
-              "file": "MarketplaceOffer"
-            },
             {
               "name": "Timestamp",
               "kind": "Characteristic",
@@ -22443,8 +22580,8 @@
             }
           ]
         },
-        "missing_description": {
-          "count": 19,
+        "key_element_missing_description": {
+          "count": 3,
           "detail": [
             {
               "name": "mainCategory",
@@ -22456,6 +22593,71 @@
               "kind": "Property",
               "file": "MarketplaceOffer"
             },
+            {
+              "name": "TechnicalSpecificationEntity",
+              "kind": "Entity",
+              "file": "MarketplaceOffer"
+            }
+          ]
+        },
+        "key_element_missing_preferred_name": {
+          "count": 10,
+          "detail": [
+            {
+              "name": "sku",
+              "kind": "Property",
+              "file": "MarketplaceOffer"
+            },
+            {
+              "name": "quantity",
+              "kind": "Property",
+              "file": "MarketplaceOffer"
+            },
+            {
+              "name": "unitOfMeasure",
+              "kind": "Property",
+              "file": "MarketplaceOffer"
+            },
+            {
+              "name": "condition",
+              "kind": "Property",
+              "file": "MarketplaceOffer"
+            },
+            {
+              "name": "pickupLocation",
+              "kind": "Property",
+              "file": "MarketplaceOffer"
+            },
+            {
+              "name": "incoterms",
+              "kind": "Property",
+              "file": "MarketplaceOffer"
+            },
+            {
+              "name": "price",
+              "kind": "Property",
+              "file": "MarketplaceOffer"
+            },
+            {
+              "name": "image",
+              "kind": "Property",
+              "file": "MarketplaceOffer"
+            },
+            {
+              "name": "attachment",
+              "kind": "Property",
+              "file": "MarketplaceOffer"
+            },
+            {
+              "name": "currency",
+              "kind": "Property",
+              "file": "MarketplaceOffer"
+            }
+          ]
+        },
+        "missing_description": {
+          "count": 16,
+          "detail": [
             {
               "name": "GeographicalCoordinates",
               "kind": "Characteristic",
@@ -22527,11 +22729,6 @@
               "file": "MarketplaceOffer"
             },
             {
-              "name": "TechnicalSpecificationEntity",
-              "kind": "Entity",
-              "file": "MarketplaceOffer"
-            },
-            {
               "name": "MainCategory",
               "kind": "Characteristic",
               "file": "MarketplaceOffer"
@@ -22539,61 +22736,6 @@
             {
               "name": "SubCategory",
               "kind": "Characteristic",
-              "file": "MarketplaceOffer"
-            }
-          ]
-        },
-        "missing_preferred_name": {
-          "count": 10,
-          "detail": [
-            {
-              "name": "sku",
-              "kind": "Property",
-              "file": "MarketplaceOffer"
-            },
-            {
-              "name": "quantity",
-              "kind": "Property",
-              "file": "MarketplaceOffer"
-            },
-            {
-              "name": "unitOfMeasure",
-              "kind": "Property",
-              "file": "MarketplaceOffer"
-            },
-            {
-              "name": "condition",
-              "kind": "Property",
-              "file": "MarketplaceOffer"
-            },
-            {
-              "name": "pickupLocation",
-              "kind": "Property",
-              "file": "MarketplaceOffer"
-            },
-            {
-              "name": "incoterms",
-              "kind": "Property",
-              "file": "MarketplaceOffer"
-            },
-            {
-              "name": "price",
-              "kind": "Property",
-              "file": "MarketplaceOffer"
-            },
-            {
-              "name": "image",
-              "kind": "Property",
-              "file": "MarketplaceOffer"
-            },
-            {
-              "name": "attachment",
-              "kind": "Property",
-              "file": "MarketplaceOffer"
-            },
-            {
-              "name": "currency",
-              "kind": "Property",
               "file": "MarketplaceOffer"
             }
           ]
@@ -26077,7 +26219,7 @@
       "status": "deprecated",
       "total": 8,
       "issues": {
-        "missing_description": {
+        "key_element_missing_description": {
           "count": 1,
           "detail": [
             {
@@ -26141,7 +26283,7 @@
       "status": "deprecated",
       "total": 7,
       "issues": {
-        "missing_description": {
+        "key_element_missing_description": {
           "count": 1,
           "detail": [
             {
@@ -31068,7 +31210,7 @@
             }
           ]
         },
-        "missing_description": {
+        "key_element_missing_description": {
           "count": 1,
           "detail": [
             {
@@ -31217,7 +31359,7 @@
             }
           ]
         },
-        "missing_description": {
+        "key_element_missing_description": {
           "count": 1,
           "detail": [
             {
@@ -31659,14 +31801,19 @@
             }
           ]
         },
-        "missing_preferred_name": {
-          "count": 3,
+        "key_element_missing_preferred_name": {
+          "count": 1,
           "detail": [
             {
               "name": "measurementUnit",
               "kind": "Property",
               "file": "RequestForQuotation"
-            },
+            }
+          ]
+        },
+        "missing_preferred_name": {
+          "count": 2,
+          "detail": [
             {
               "name": "NumberOfObjects",
               "kind": "Characteristic",
@@ -32896,7 +33043,7 @@
             }
           ]
         },
-        "missing_description": {
+        "key_element_missing_description": {
           "count": 1,
           "detail": [
             {
@@ -34193,8 +34340,8 @@
             }
           ]
         },
-        "missing_description": {
-          "count": 4,
+        "key_element_missing_description": {
+          "count": 2,
           "detail": [
             {
               "name": "postCode",
@@ -34205,7 +34352,12 @@
               "name": "countryShortName",
               "kind": "Property",
               "file": "AddressAspect"
-            },
+            }
+          ]
+        },
+        "missing_description": {
+          "count": 2,
+          "detail": [
             {
               "name": "PostCodeTrait",
               "kind": "Characteristic",
@@ -34335,8 +34487,8 @@
             }
           ]
         },
-        "missing_description": {
-          "count": 4,
+        "key_element_missing_description": {
+          "count": 2,
           "detail": [
             {
               "name": "postCode",
@@ -34347,7 +34499,12 @@
               "name": "countryShortName",
               "kind": "Property",
               "file": "AddressAspect"
-            },
+            }
+          ]
+        },
+        "missing_description": {
+          "count": 2,
+          "detail": [
             {
               "name": "PostCodeTrait",
               "kind": "Characteristic",
@@ -36731,8 +36888,18 @@
             }
           ]
         },
+        "key_element_missing_description": {
+          "count": 1,
+          "detail": [
+            {
+              "name": "recyclingStrategyCertificateProperty",
+              "kind": "Property",
+              "file": "RecyclingStrategyCertificate"
+            }
+          ]
+        },
         "missing_description": {
-          "count": 4,
+          "count": 3,
           "detail": [
             {
               "name": "IssuerCharacteristic",
@@ -36742,11 +36909,6 @@
             {
               "name": "RecyclingStrategyCertificateCharacteristic",
               "kind": "Characteristic",
-              "file": "RecyclingStrategyCertificate"
-            },
-            {
-              "name": "recyclingStrategyCertificateProperty",
-              "kind": "Property",
               "file": "RecyclingStrategyCertificate"
             },
             {
@@ -37507,22 +37669,12 @@
             }
           ]
         },
-        "missing_description": {
-          "count": 71,
+        "key_element_missing_description": {
+          "count": 32,
           "detail": [
             {
               "name": "annotations",
               "kind": "AbstractProperty",
-              "file": "TestAspect"
-            },
-            {
-              "name": "AasAnnotatedRelationshipElementWithAnnotationsType",
-              "kind": "AbstractEntity",
-              "file": "TestAspect"
-            },
-            {
-              "name": "BasicEventElementType",
-              "kind": "Characteristic",
               "file": "TestAspect"
             },
             {
@@ -37531,23 +37683,8 @@
               "file": "TestAspect"
             },
             {
-              "name": "BlobType",
-              "kind": "Characteristic",
-              "file": "TestAspect"
-            },
-            {
-              "name": "DocumentIdentifierSetTrait",
-              "kind": "Characteristic",
-              "file": "TestAspect"
-            },
-            {
               "name": "statements",
               "kind": "AbstractProperty",
-              "file": "TestAspect"
-            },
-            {
-              "name": "AasEntityWithStatementsType",
-              "kind": "AbstractEntity",
               "file": "TestAspect"
             },
             {
@@ -37561,43 +37698,8 @@
               "file": "TestAspect"
             },
             {
-              "name": "SpecificAssetIdSet",
-              "kind": "Characteristic",
-              "file": "TestAspect"
-            },
-            {
-              "name": "AasEntityCharacteristic",
-              "kind": "Characteristic",
-              "file": "TestAspect"
-            },
-            {
-              "name": "EntityType",
-              "kind": "Characteristic",
-              "file": "TestAspect"
-            },
-            {
-              "name": "FileWithContentType",
-              "kind": "Characteristic",
-              "file": "TestAspect"
-            },
-            {
-              "name": "CardinalityOneToMany",
-              "kind": "Characteristic",
-              "file": "TestAspect"
-            },
-            {
               "name": "Marking",
               "kind": "Entity",
-              "file": "TestAspect"
-            },
-            {
-              "name": "ProductMarkingEnum",
-              "kind": "Characteristic",
-              "file": "TestAspect"
-            },
-            {
-              "name": "RangeFloatTypeCharacteristic",
-              "kind": "Characteristic",
               "file": "TestAspect"
             },
             {
@@ -37611,47 +37713,12 @@
               "file": "TestAspect"
             },
             {
-              "name": "RangeFloatType",
-              "kind": "Entity",
-              "file": "TestAspect"
-            },
-            {
-              "name": "ReferenceType",
-              "kind": "Characteristic",
-              "file": "TestAspect"
-            },
-            {
-              "name": "ModelReferenceType",
-              "kind": "Characteristic",
-              "file": "TestAspect"
-            },
-            {
-              "name": "ExternalReferenceType",
-              "kind": "Characteristic",
-              "file": "TestAspect"
-            },
-            {
-              "name": "ReferenceEntity",
-              "kind": "Entity",
-              "file": "TestAspect"
-            },
-            {
               "name": "KeyEntity",
               "kind": "Entity",
               "file": "TestAspect"
             },
             {
-              "name": "ModelReferenceEntity",
-              "kind": "Entity",
-              "file": "TestAspect"
-            },
-            {
               "name": "ModelReferenceKeyEntity",
-              "kind": "Entity",
-              "file": "TestAspect"
-            },
-            {
-              "name": "ExternalReferenceEntity",
               "kind": "Entity",
               "file": "TestAspect"
             },
@@ -37718,6 +37785,301 @@
             {
               "name": "ExternalReferenceKeyValue",
               "kind": "Property",
+              "file": "TestAspect"
+            },
+            {
+              "name": "first",
+              "kind": "Property",
+              "file": "TestAspect"
+            },
+            {
+              "name": "second",
+              "kind": "Property",
+              "file": "TestAspect"
+            },
+            {
+              "name": "example4Markings",
+              "kind": "Property",
+              "file": "TestAspect"
+            },
+            {
+              "name": "example4documentIdentifierSet",
+              "kind": "Property",
+              "file": "TestAspect"
+            },
+            {
+              "name": "example4specificAssetId",
+              "kind": "Property",
+              "file": "TestAspect"
+            },
+            {
+              "name": "valueOnly4MultiLanguageProperty",
+              "kind": "Property",
+              "file": "TestAspect"
+            },
+            {
+              "name": "exampleStatements",
+              "kind": "Property",
+              "file": "TestAspect"
+            },
+            {
+              "name": "exampleAnnotations",
+              "kind": "Property",
+              "file": "TestAspect"
+            },
+            {
+              "name": "languages",
+              "kind": "Property",
+              "file": "TestAspect"
+            }
+          ]
+        },
+        "key_element_missing_preferred_name": {
+          "count": 29,
+          "detail": [
+            {
+              "name": "annotations",
+              "kind": "AbstractProperty",
+              "file": "TestAspect"
+            },
+            {
+              "name": "observed",
+              "kind": "Property",
+              "file": "TestAspect"
+            },
+            {
+              "name": "statements",
+              "kind": "AbstractProperty",
+              "file": "TestAspect"
+            },
+            {
+              "name": "resourceValue",
+              "kind": "Property",
+              "file": "TestAspect"
+            },
+            {
+              "name": "rangeFloatMin",
+              "kind": "Property",
+              "file": "TestAspect"
+            },
+            {
+              "name": "rangeFloatMax",
+              "kind": "Property",
+              "file": "TestAspect"
+            },
+            {
+              "name": "KeyEntity",
+              "kind": "Entity",
+              "file": "TestAspect"
+            },
+            {
+              "name": "ModelReferenceKeyEntity",
+              "kind": "Entity",
+              "file": "TestAspect"
+            },
+            {
+              "name": "ExternalReferenceKeyEntity",
+              "kind": "Entity",
+              "file": "TestAspect"
+            },
+            {
+              "name": "keys",
+              "kind": "Property",
+              "file": "TestAspect"
+            },
+            {
+              "name": "type",
+              "kind": "Property",
+              "file": "TestAspect"
+            },
+            {
+              "name": "key",
+              "kind": "Property",
+              "file": "TestAspect"
+            },
+            {
+              "name": "keyValue",
+              "kind": "Property",
+              "file": "TestAspect"
+            },
+            {
+              "name": "modelReferenceKeys",
+              "kind": "Property",
+              "file": "TestAspect"
+            },
+            {
+              "name": "modelReferenceType",
+              "kind": "Property",
+              "file": "TestAspect"
+            },
+            {
+              "name": "ModelReferenceKey",
+              "kind": "Property",
+              "file": "TestAspect"
+            },
+            {
+              "name": "ModelReferenceKeyValue",
+              "kind": "Property",
+              "file": "TestAspect"
+            },
+            {
+              "name": "KeysExternalReference",
+              "kind": "Property",
+              "file": "TestAspect"
+            },
+            {
+              "name": "TypeExternalReference",
+              "kind": "Property",
+              "file": "TestAspect"
+            },
+            {
+              "name": "ExternalReferenceKey",
+              "kind": "Property",
+              "file": "TestAspect"
+            },
+            {
+              "name": "ExternalReferenceKeyValue",
+              "kind": "Property",
+              "file": "TestAspect"
+            },
+            {
+              "name": "first",
+              "kind": "Property",
+              "file": "TestAspect"
+            },
+            {
+              "name": "second",
+              "kind": "Property",
+              "file": "TestAspect"
+            },
+            {
+              "name": "example4Markings",
+              "kind": "Property",
+              "file": "TestAspect"
+            },
+            {
+              "name": "example4documentIdentifierSet",
+              "kind": "Property",
+              "file": "TestAspect"
+            },
+            {
+              "name": "example4specificAssetId",
+              "kind": "Property",
+              "file": "TestAspect"
+            },
+            {
+              "name": "exampleStatements",
+              "kind": "Property",
+              "file": "TestAspect"
+            },
+            {
+              "name": "exampleAnnotations",
+              "kind": "Property",
+              "file": "TestAspect"
+            },
+            {
+              "name": "languages",
+              "kind": "Property",
+              "file": "TestAspect"
+            }
+          ]
+        },
+        "missing_description": {
+          "count": 39,
+          "detail": [
+            {
+              "name": "AasAnnotatedRelationshipElementWithAnnotationsType",
+              "kind": "AbstractEntity",
+              "file": "TestAspect"
+            },
+            {
+              "name": "BasicEventElementType",
+              "kind": "Characteristic",
+              "file": "TestAspect"
+            },
+            {
+              "name": "BlobType",
+              "kind": "Characteristic",
+              "file": "TestAspect"
+            },
+            {
+              "name": "DocumentIdentifierSetTrait",
+              "kind": "Characteristic",
+              "file": "TestAspect"
+            },
+            {
+              "name": "AasEntityWithStatementsType",
+              "kind": "AbstractEntity",
+              "file": "TestAspect"
+            },
+            {
+              "name": "SpecificAssetIdSet",
+              "kind": "Characteristic",
+              "file": "TestAspect"
+            },
+            {
+              "name": "AasEntityCharacteristic",
+              "kind": "Characteristic",
+              "file": "TestAspect"
+            },
+            {
+              "name": "EntityType",
+              "kind": "Characteristic",
+              "file": "TestAspect"
+            },
+            {
+              "name": "FileWithContentType",
+              "kind": "Characteristic",
+              "file": "TestAspect"
+            },
+            {
+              "name": "CardinalityOneToMany",
+              "kind": "Characteristic",
+              "file": "TestAspect"
+            },
+            {
+              "name": "ProductMarkingEnum",
+              "kind": "Characteristic",
+              "file": "TestAspect"
+            },
+            {
+              "name": "RangeFloatTypeCharacteristic",
+              "kind": "Characteristic",
+              "file": "TestAspect"
+            },
+            {
+              "name": "RangeFloatType",
+              "kind": "Entity",
+              "file": "TestAspect"
+            },
+            {
+              "name": "ReferenceType",
+              "kind": "Characteristic",
+              "file": "TestAspect"
+            },
+            {
+              "name": "ModelReferenceType",
+              "kind": "Characteristic",
+              "file": "TestAspect"
+            },
+            {
+              "name": "ExternalReferenceType",
+              "kind": "Characteristic",
+              "file": "TestAspect"
+            },
+            {
+              "name": "ReferenceEntity",
+              "kind": "Entity",
+              "file": "TestAspect"
+            },
+            {
+              "name": "ModelReferenceEntity",
+              "kind": "Entity",
+              "file": "TestAspect"
+            },
+            {
+              "name": "ExternalReferenceEntity",
+              "kind": "Entity",
               "file": "TestAspect"
             },
             {
@@ -37771,46 +38133,6 @@
               "file": "TestAspect"
             },
             {
-              "name": "first",
-              "kind": "Property",
-              "file": "TestAspect"
-            },
-            {
-              "name": "second",
-              "kind": "Property",
-              "file": "TestAspect"
-            },
-            {
-              "name": "example4Markings",
-              "kind": "Property",
-              "file": "TestAspect"
-            },
-            {
-              "name": "example4documentIdentifierSet",
-              "kind": "Property",
-              "file": "TestAspect"
-            },
-            {
-              "name": "example4specificAssetId",
-              "kind": "Property",
-              "file": "TestAspect"
-            },
-            {
-              "name": "valueOnly4MultiLanguageProperty",
-              "kind": "Property",
-              "file": "TestAspect"
-            },
-            {
-              "name": "exampleStatements",
-              "kind": "Property",
-              "file": "TestAspect"
-            },
-            {
-              "name": "exampleAnnotations",
-              "kind": "Property",
-              "file": "TestAspect"
-            },
-            {
               "name": "valueOnly4EntityWithStatementsCharacteristic",
               "kind": "Characteristic",
               "file": "TestAspect"
@@ -37851,11 +38173,6 @@
               "file": "TestAspect"
             },
             {
-              "name": "languages",
-              "kind": "Property",
-              "file": "TestAspect"
-            },
-            {
               "name": "LanguageSetTrait",
               "kind": "Characteristic",
               "file": "TestAspect"
@@ -37868,13 +38185,8 @@
           ]
         },
         "missing_preferred_name": {
-          "count": 71,
+          "count": 42,
           "detail": [
-            {
-              "name": "annotations",
-              "kind": "AbstractProperty",
-              "file": "TestAspect"
-            },
             {
               "name": "AasAnnotatedRelationshipElementWithAnnotationsType",
               "kind": "AbstractEntity",
@@ -37891,11 +38203,6 @@
               "file": "TestAspect"
             },
             {
-              "name": "observed",
-              "kind": "Property",
-              "file": "TestAspect"
-            },
-            {
               "name": "BlobType",
               "kind": "Characteristic",
               "file": "TestAspect"
@@ -37903,11 +38210,6 @@
             {
               "name": "DocumentIdentifierSetTrait",
               "kind": "Characteristic",
-              "file": "TestAspect"
-            },
-            {
-              "name": "statements",
-              "kind": "AbstractProperty",
               "file": "TestAspect"
             },
             {
@@ -37936,11 +38238,6 @@
               "file": "TestAspect"
             },
             {
-              "name": "resourceValue",
-              "kind": "Property",
-              "file": "TestAspect"
-            },
-            {
               "name": "FileWithContentType",
               "kind": "Characteristic",
               "file": "TestAspect"
@@ -37958,16 +38255,6 @@
             {
               "name": "RangeFloatTypeCharacteristic",
               "kind": "Characteristic",
-              "file": "TestAspect"
-            },
-            {
-              "name": "rangeFloatMin",
-              "kind": "Property",
-              "file": "TestAspect"
-            },
-            {
-              "name": "rangeFloatMax",
-              "kind": "Property",
               "file": "TestAspect"
             },
             {
@@ -37996,88 +38283,13 @@
               "file": "TestAspect"
             },
             {
-              "name": "KeyEntity",
-              "kind": "Entity",
-              "file": "TestAspect"
-            },
-            {
               "name": "ModelReferenceEntity",
-              "kind": "Entity",
-              "file": "TestAspect"
-            },
-            {
-              "name": "ModelReferenceKeyEntity",
               "kind": "Entity",
               "file": "TestAspect"
             },
             {
               "name": "ExternalReferenceEntity",
               "kind": "Entity",
-              "file": "TestAspect"
-            },
-            {
-              "name": "ExternalReferenceKeyEntity",
-              "kind": "Entity",
-              "file": "TestAspect"
-            },
-            {
-              "name": "keys",
-              "kind": "Property",
-              "file": "TestAspect"
-            },
-            {
-              "name": "type",
-              "kind": "Property",
-              "file": "TestAspect"
-            },
-            {
-              "name": "key",
-              "kind": "Property",
-              "file": "TestAspect"
-            },
-            {
-              "name": "keyValue",
-              "kind": "Property",
-              "file": "TestAspect"
-            },
-            {
-              "name": "modelReferenceKeys",
-              "kind": "Property",
-              "file": "TestAspect"
-            },
-            {
-              "name": "modelReferenceType",
-              "kind": "Property",
-              "file": "TestAspect"
-            },
-            {
-              "name": "ModelReferenceKey",
-              "kind": "Property",
-              "file": "TestAspect"
-            },
-            {
-              "name": "ModelReferenceKeyValue",
-              "kind": "Property",
-              "file": "TestAspect"
-            },
-            {
-              "name": "KeysExternalReference",
-              "kind": "Property",
-              "file": "TestAspect"
-            },
-            {
-              "name": "TypeExternalReference",
-              "kind": "Property",
-              "file": "TestAspect"
-            },
-            {
-              "name": "ExternalReferenceKey",
-              "kind": "Property",
-              "file": "TestAspect"
-            },
-            {
-              "name": "ExternalReferenceKeyValue",
-              "kind": "Property",
               "file": "TestAspect"
             },
             {
@@ -38136,41 +38348,6 @@
               "file": "TestAspect"
             },
             {
-              "name": "first",
-              "kind": "Property",
-              "file": "TestAspect"
-            },
-            {
-              "name": "second",
-              "kind": "Property",
-              "file": "TestAspect"
-            },
-            {
-              "name": "example4Markings",
-              "kind": "Property",
-              "file": "TestAspect"
-            },
-            {
-              "name": "example4documentIdentifierSet",
-              "kind": "Property",
-              "file": "TestAspect"
-            },
-            {
-              "name": "example4specificAssetId",
-              "kind": "Property",
-              "file": "TestAspect"
-            },
-            {
-              "name": "exampleStatements",
-              "kind": "Property",
-              "file": "TestAspect"
-            },
-            {
-              "name": "exampleAnnotations",
-              "kind": "Property",
-              "file": "TestAspect"
-            },
-            {
               "name": "valueOnly4EntityWithStatementsCharacteristic",
               "kind": "Characteristic",
               "file": "TestAspect"
@@ -38208,11 +38385,6 @@
             {
               "name": "ExampleAnnotations",
               "kind": "Entity",
-              "file": "TestAspect"
-            },
-            {
-              "name": "languages",
-              "kind": "Property",
               "file": "TestAspect"
             },
             {
@@ -39091,6 +39263,16 @@
             }
           ]
         },
+        "key_element_missing_preferred_name": {
+          "count": 1,
+          "detail": [
+            {
+              "name": "measurementUnit",
+              "kind": "Property",
+              "file": "SingleLevelBomAsBuilt"
+            }
+          ]
+        },
         "missing_description": {
           "count": 2,
           "detail": [
@@ -39107,13 +39289,8 @@
           ]
         },
         "missing_preferred_name": {
-          "count": 5,
+          "count": 4,
           "detail": [
-            {
-              "name": "measurementUnit",
-              "kind": "Property",
-              "file": "SingleLevelBomAsBuilt"
-            },
             {
               "name": "CatenaXIdTraitCharacteristic",
               "kind": "Characteristic",
@@ -39222,6 +39399,16 @@
             }
           ]
         },
+        "key_element_missing_preferred_name": {
+          "count": 1,
+          "detail": [
+            {
+              "name": "measurementUnit",
+              "kind": "Property",
+              "file": "SingleLevelBomAsBuilt"
+            }
+          ]
+        },
         "missing_description": {
           "count": 2,
           "detail": [
@@ -39238,13 +39425,8 @@
           ]
         },
         "missing_preferred_name": {
-          "count": 5,
+          "count": 4,
           "detail": [
-            {
-              "name": "measurementUnit",
-              "kind": "Property",
-              "file": "SingleLevelBomAsBuilt"
-            },
             {
               "name": "CatenaXIdTraitCharacteristic",
               "kind": "Characteristic",
@@ -40156,6 +40338,16 @@
             }
           ]
         },
+        "key_element_missing_preferred_name": {
+          "count": 1,
+          "detail": [
+            {
+              "name": "measurementUnit",
+              "kind": "Property",
+              "file": "SingleLevelUsageAsBuilt"
+            }
+          ]
+        },
         "missing_description": {
           "count": 2,
           "detail": [
@@ -40172,13 +40364,8 @@
           ]
         },
         "missing_preferred_name": {
-          "count": 5,
+          "count": 4,
           "detail": [
-            {
-              "name": "measurementUnit",
-              "kind": "Property",
-              "file": "SingleLevelUsageAsBuilt"
-            },
             {
               "name": "CatenaXIdTraitCharacteristic",
               "kind": "Characteristic",
@@ -40668,14 +40855,29 @@
             }
           ]
         },
-        "missing_description": {
-          "count": 2,
+        "key_element_missing_description": {
+          "count": 1,
           "detail": [
             {
               "name": "value",
               "kind": "Property",
               "file": "SpecialCharacteristicMeasurement"
-            },
+            }
+          ]
+        },
+        "key_element_missing_preferred_name": {
+          "count": 1,
+          "detail": [
+            {
+              "name": "value",
+              "kind": "Property",
+              "file": "SpecialCharacteristicMeasurement"
+            }
+          ]
+        },
+        "missing_description": {
+          "count": 1,
+          "detail": [
             {
               "name": "ValueCharacteristic",
               "kind": "Characteristic",
@@ -40684,13 +40886,8 @@
           ]
         },
         "missing_preferred_name": {
-          "count": 2,
+          "count": 1,
           "detail": [
-            {
-              "name": "value",
-              "kind": "Property",
-              "file": "SpecialCharacteristicMeasurement"
-            },
             {
               "name": "ValueCharacteristic",
               "kind": "Characteristic",
