@@ -145,7 +145,7 @@ ISSUE_TYPES = [
          "`Entity` used as the element type of a collection "
          "(`List`/`Set`/`SortedSet`/`Collection`/`TimeSeries`). These appear "
          "directly in the payload / generated API, so a blank description "
-         "hurts every consumer. Reported separately from the generic check.")},
+         "hurts every consumer. Other element kinds are not flagged.")},
     {"id": "key_element_missing_preferred_name", "severity": "warning",
      "label": "Key element with no preferredName",
      "description": (
@@ -153,24 +153,7 @@ ISSUE_TYPES = [
          "`samm:preferredName`: a `Property`/`Event`/`Operation`, or an "
          "`Entity` used as a collection element type. Tooling falls back to "
          "the raw local name, which is least acceptable exactly on these "
-         "payload-carrying elements. Reported separately from the generic "
-         "check.")},
-    {"id": "missing_description", "severity": "warning",
-     "label": "Element with no description (other)",
-     "description": (
-         "The element has no `samm:description` literal at all. Generated "
-         "documentation (HTML, JSON Schema description, OpenAPI) will be "
-         "blank for this element. Key elements (Property/Event/Operation and "
-         "Entities used as a collection element type) are reported separately "
-         "under their dedicated check.")},
-    {"id": "missing_preferred_name", "severity": "warning",
-     "label": "Element with no preferredName (other)",
-     "description": (
-         "The element has no `samm:preferredName`. Tooling falls back to "
-         "the raw local name, which is less readable for end users. Key "
-         "elements (Property/Event/Operation and Entities used as a "
-         "collection element type) are reported separately under their "
-         "dedicated check.")},
+         "payload-carrying elements. Other element kinds are not flagged.")},
     {"id": "empty_description", "severity": "warning",
      "label": "Empty/whitespace description",
      "description": (
@@ -519,8 +502,7 @@ def _element_issues(model: ParsedModel) -> dict[str, list[dict]]:
     res: dict[str, list[dict]] = {iid: [] for iid in (
         "orphan_isolated", "orphan_unreachable",
         "key_element_missing_description", "key_element_missing_preferred_name",
-        "missing_description", "missing_preferred_name", "empty_description",
-        "description_not_english",
+        "empty_description", "description_not_english",
         "aspect_without_properties", "property_without_characteristic",
         "characteristic_without_datatype", "trait_without_constraint",
         "unused_property", "bad_naming_property", "bad_naming_type",
@@ -566,17 +548,18 @@ def _element_issues(model: ParsedModel) -> dict[str, list[dict]]:
     empty_aspects = set(model.aspects_empty_properties)
     unused = set(model.unused_property_urns)
     for e in model.elements:
-        # Documentation. Les éléments « key » vont dans un seau dédié (mis en
-        # avant) ; les autres restent dans le seau générique. Exclusif.
+        # Documentation. On ne flagge l'ABSENCE de description/preferredName
+        # que sur les éléments « key » (Property/Event/Operation + Entity de
+        # collection) : ce sont les seuls qui « doivent vraiment » l'avoir.
+        # `empty_description`/`description_not_english` restent eux génériques.
         is_key = e.urn in key_urns
         if e.description is None:
-            res["key_element_missing_description" if is_key
-                else "missing_description"].append(stub(e))
+            if is_key:
+                res["key_element_missing_description"].append(stub(e))
         elif not str(e.description).strip():
             res["empty_description"].append(stub(e))
-        if e.preferred_name is None:
-            res["key_element_missing_preferred_name" if is_key
-                else "missing_preferred_name"].append(stub(e))
+        if e.preferred_name is None and is_key:
+            res["key_element_missing_preferred_name"].append(stub(e))
         if e.description_langs and "en" not in e.description_langs:
             res["description_not_english"].append(stub(e))
 
