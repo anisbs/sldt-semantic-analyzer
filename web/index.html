@@ -206,6 +206,8 @@
       border-radius: 50%; margin-right: 4px; vertical-align: 1px; }
     .ov a { color: var(--accent); text-decoration: none; }
     .ov a:hover { text-decoration: underline; }
+    .ov-link { cursor: pointer; transition: border-color var(--dur) var(--ease); }
+    .ov-link:hover { border-color: var(--accent); }
     #kpis { display: flex; gap: var(--sp-3); flex-wrap: wrap; }
     .kpi {
       min-width: 130px; padding: var(--sp-3) var(--sp-4);
@@ -637,7 +639,107 @@
       #graph, #depgraph { min-height: 420px; }
       .ov { padding: var(--sp-2) var(--sp-3); }
       .ov .val { font-size: var(--fs-lg); }
+      #std-layout { grid-template-columns: 1fr;
+        grid-template-areas: "list" "refs" "graph"; }
+      #std-list { min-height: 200px; max-height: 40vh; }
     }
+
+    /* ---- Standards tab ---------------------------------------------------- */
+    #standardsview { flex-direction: column; overflow-y: auto;
+      padding: var(--sp-4) var(--sp-5); gap: var(--sp-3); }
+    #std-head { display: flex; align-items: center; gap: var(--sp-3);
+      margin: var(--sp-3) 0; }
+    #std-q { flex: 1; max-width: 420px; padding: var(--sp-2) var(--sp-3);
+      border: 1px solid var(--border); border-radius: var(--r-sm);
+      background: var(--surface); color: var(--text); font-size: var(--fs-sm); }
+    #std-count { color: var(--text-3); font-size: var(--fs-xs); }
+    /* List on the left (full height) ; references on top-right, the reference
+       graph right below them — so the standards list keeps its room. */
+    #std-layout { display: grid; gap: var(--sp-3); align-items: start;
+      grid-template-columns: minmax(200px, 300px) 1fr;
+      grid-template-areas: "list refs" "list graph"; }
+    #std-list { grid-area: list; min-height: 320px; max-height: 80vh;
+      overflow: auto; border: 1px solid var(--border);
+      border-radius: var(--r-md); background: var(--surface); }
+    #std-detail { grid-area: refs; }
+    #std-graphwrap { grid-area: graph; }
+    .std-row { padding: var(--sp-2) var(--sp-3);
+      border-bottom: 1px solid var(--border); cursor: pointer;
+      border-left: 3px solid transparent; }
+    .std-row:last-child { border-bottom: 0; }
+    .std-row:hover { background: var(--surface-2); }
+    .std-row.sel { background: var(--surface-2); border-left-color: var(--accent); }
+    .std-row .id { font-weight: 700; font-size: var(--fs-sm); }
+    .std-row .ti { color: var(--text-2); font-size: var(--fs-xs); }
+    .std-row .mt { color: var(--text-3); font-size: var(--fs-2xs);
+      margin-top: 2px; }
+    .std-row .warn { color: var(--st-deprecated); }
+    #std-detail { border: 1px solid var(--border); border-radius: var(--r-md);
+      background: var(--surface); padding: var(--sp-3); }
+    #std-detail.std-ph { color: var(--text-3); text-align: center;
+      min-height: 120px; display: flex; align-items: center;
+      justify-content: center; }
+    #std-d-head { margin-bottom: var(--sp-3); }
+    #std-d-head h2 { margin: 0 0 4px; font-size: var(--fs-lg); }
+    #std-d-head .lk { font-size: var(--fs-sm); }
+    #std-d-head a { color: var(--accent); text-decoration: none; }
+    #std-d-head a:hover { text-decoration: underline; }
+    #std-gctrls { display: flex; align-items: center; flex-wrap: wrap;
+      gap: var(--sp-3); }
+    #std-gctrls .seg { display: flex; box-shadow: var(--shadow-sm);
+      border-radius: var(--r-sm); }
+    #std-gctrls .seg button { font-size: var(--fs-sm); padding: 5px 11px;
+      border: 1px solid var(--border-strong); background: var(--surface-2);
+      color: var(--text-2); cursor: pointer;
+      transition: background-color var(--dur) var(--ease),
+        color var(--dur) var(--ease); }
+    #std-gctrls .seg button:first-child {
+      border-radius: var(--r-sm) 0 0 var(--r-sm); }
+    #std-gctrls .seg button:last-child {
+      border-radius: 0 var(--r-sm) var(--r-sm) 0; }
+    #std-gctrls .seg button:not(:first-child) { border-left: none; }
+    #std-gctrls .seg button.on { background: var(--surface);
+      color: var(--text); font-weight: 600; }
+    #std-layout-sel { font-size: var(--fs-sm); padding: 4px 8px;
+      border: 1px solid var(--border-strong); border-radius: var(--r-sm);
+      background: var(--surface-2); color: var(--text); cursor: pointer;
+      box-shadow: var(--shadow-sm); }
+    #std-gctrls .catf { display: flex; flex-wrap: wrap; align-items: center;
+      gap: var(--sp-2); font-size: var(--fs-xs); color: var(--text-2); }
+    #std-gctrls .catf .lbl { color: var(--text-3); }
+    #std-gctrls .catf label { display: inline-flex; align-items: center;
+      gap: 4px; cursor: pointer; }
+    #stdgraph { width: 100%; height: clamp(420px, 72vh, 920px);
+      border: 1px solid var(--border); border-radius: var(--r-sm);
+      background: var(--bg); margin: var(--sp-2) 0 6px; }
+    #stdgraph .node text { font-size: 11px; fill: var(--text);
+      paint-order: stroke; stroke: var(--surface); stroke-width: 3px; }
+    #stdgraph line.link { stroke: var(--border-strong); }
+    .std-glegend { display: flex; flex-wrap: wrap; gap: var(--sp-3);
+      font-size: var(--fs-2xs); color: var(--text-3); margin: 0 0 var(--sp-2); }
+    .std-glegend span.dot { display: inline-block; width: 10px; height: 10px;
+      border-radius: 50%; margin-right: 4px; vertical-align: -1px; }
+    .std-grp { margin-top: var(--sp-3); }
+    .std-grp > .h { font-weight: 600; font-size: var(--fs-sm);
+      margin-bottom: 6px; color: var(--text-2); }
+    .std-note { font-size: var(--fs-2xs); color: var(--text-3);
+      margin: -2px 0 6px; max-width: 70ch; line-height: 1.4; }
+    .std-chips { display: flex; flex-wrap: wrap; gap: 6px; }
+    .chip { display: inline-flex; align-items: center; gap: 5px;
+      padding: 3px 9px; border: 1px solid var(--border-strong);
+      border-radius: var(--r-pill); font-size: var(--fs-xs);
+      background: var(--surface-2); color: var(--text); cursor: pointer;
+      transition: border-color var(--dur) var(--ease); }
+    .chip:hover { border-color: var(--accent); }
+    .chip.dim { opacity: .55; cursor: default; }
+    .chip.dim:hover { border-color: var(--border-strong); }
+    .chip.dep { border-color: var(--st-deprecated); color: var(--st-deprecated); }
+    .chip .v { color: var(--text-3); }
+    .std-dep-note { margin-top: var(--sp-2); padding: var(--sp-2) var(--sp-3);
+      border-left: 3px solid var(--st-deprecated); background: var(--surface-2);
+      border-radius: var(--r-sm); font-size: var(--fs-xs); color: var(--text-2); }
+    .std-dep-note b { color: var(--st-deprecated); }
+    .std-empty { color: var(--text-3); font-size: var(--fs-xs); }
   </style>
 </head>
 <body>
@@ -677,8 +779,9 @@
   </header>
   <div id="tabs">
     <div class="tab active" data-view="home">Home</div>
-    <div class="tab" data-view="searchview">Search</div>
+    <div class="tab" data-view="searchview">Model search</div>
     <div class="tab" data-view="modelviewer">Model Viewer</div>
+    <div class="tab" data-view="standardsview">Standards</div>
     <div class="tab" data-view="issues">Issues</div>
   </div>
   <div id="views">
@@ -699,7 +802,7 @@
 
     <div id="searchview" class="view">
       <div>
-        <h1>Search</h1>
+        <h1>Model search</h1>
         <div class="sub">Find aspects, properties and entities by name
           across all models — results update as you type.</div>
       </div>
@@ -791,6 +894,25 @@
       </div>
     </div>
 
+    <div id="standardsview" class="view">
+      <div class="view-head">
+        <h1>Standards</h1>
+        <p>Catena-X standards (release <span id="std-release">…</span>) and the
+          semantic models they use — one entry per CX standard.</p>
+      </div>
+      <div id="std-head">
+        <input id="std-q" type="text" autocomplete="off"
+               placeholder="Filter standards by id or title…" />
+        <span id="std-count"></span>
+      </div>
+      <div id="std-layout">
+        <div id="std-list"></div>
+        <div id="std-detail" class="std-ph">Pick a standard to see its
+          references and models.</div>
+        <div id="std-graphwrap"></div>
+      </div>
+    </div>
+
     <div id="issues" class="view">
       <div>
         <h1>Quality issues</h1>
@@ -875,9 +997,11 @@ const escapeHtml = s => String(s).replace(/[&<>]/g,
 // does the reverse direction when the URL changes (back/forward, manual edit,
 // initial load).
 const VIEW_BY_URL = { home: "home", search: "searchview",
-                      model: "modelviewer", issues: "issues" };
+                      model: "modelviewer", standards: "standardsview",
+                      issues: "issues" };
 const URL_BY_VIEW = { home: "home", searchview: "search",
-                      modelviewer: "model", issues: "issues" };
+                      modelviewer: "model", standardsview: "standards",
+                      issues: "issues" };
 let _routing = false;   // true while applyHash mutates state — suppress push
 
 function parseHash() {
@@ -938,6 +1062,13 @@ function applyHash() {
         if (issuesData) renderIssues();
       }
     }
+    if (view === "standardsview") {
+      const id = parts[1] || null;
+      if (id !== stdSelId) {
+        stdSelId = id;
+        if (standardsData) renderStandards();
+      }
+    }
   } finally {
     _routing = false;
   }
@@ -971,6 +1102,7 @@ function showTab(view) {
   if (view === "modelviewer") renderSub();   // svg needs to be visible to size
   else if (view === "issues") renderIssues();
   else if (view === "searchview") renderSearch();
+  else if (view === "standardsview") renderStandards();
   // Push URL for this tab — applyHash sets _routing to skip the push on
   // reverse navigation. For tabs that carry extra state (model/sub for
   // modelviewer, type for issues, q for searchview), the dedicated handlers
@@ -986,6 +1118,8 @@ function showTab(view) {
     const q = (document.getElementById("sr-q") || {}).value || "";
     const p = q ? new URLSearchParams({ q }) : null;
     setUrl(buildHash(URL_BY_VIEW.searchview, "", p));
+  } else if (view === "standardsview") {
+    setUrl(buildHash(URL_BY_VIEW.standardsview, stdSelId || ""));
   } else {
     setUrl(buildHash(URL_BY_VIEW[view] || view, ""));
   }
@@ -2183,6 +2317,16 @@ function renderOverview() {
         { year: "numeric", month: "short", day: "numeric" })
     : "—";
 
+  // (5) Standards : count + how many catalog models are linked to a standard
+  // (depends on standards.json). Clicking opens the Standards tab.
+  let stdVal = "—", stdSub = "loading…";
+  if (standardsData) {
+    const nStd = Object.keys(standardsData.standards || {}).length;
+    const nLinked = Object.keys(standardsData.models || {}).length;
+    stdVal = nStd;
+    stdSub = `${nLinked} models linked · release ${standardsData.release || "?"}`;
+  }
+
   const famSub = Object.entries(fam).sort()
     .map(([k, v]) => `${k} ${v}`).join(" · ");
   const srcSub = SOURCE_ORDER.map(s =>
@@ -2199,12 +2343,20 @@ function renderOverview() {
     `<div class="ov"><div class="lbl">Quality</div>` +
       `<div class="val">${quality}</div>` +
       `<div class="sub">${qualitySub}</div></div>` +
+    `<div class="ov ov-link" data-goto="standardsview"><div class="lbl">Standards</div>` +
+      `<div class="val">${stdVal}</div>` +
+      `<div class="sub">${stdSub}</div></div>` +
     `<div class="ov"><div class="lbl">Updated</div>` +
       `<div class="val">${updStr}</div>` +
       `<div class="sub">` +
         `<a href="https://github.com/${REPO_BY_SOURCE.catenax}" target="_blank" rel="noopener">Catena-X repo ↗</a>` +
         `<a href="https://github.com/${REPO_BY_SOURCE.idta}" target="_blank" rel="noopener">IDTA repo ↗</a>` +
+        `<a href="https://github.com/catenax-eV/catenax-ev.github.io" target="_blank" rel="noopener">Standard Library ↗</a>` +
       `</div></div>`;
+
+  // The Standards card is a shortcut to the Standards tab.
+  const card = box.querySelector('.ov-link[data-goto="standardsview"]');
+  if (card) card.addEventListener("click", () => showTab("standardsview"));
 }
 
 // Dependency map (loaded once). If the Dependency tab is already open when it
@@ -2213,6 +2365,437 @@ fetch("data/graph/deps.json")
   .then(r => r.json())
   .then(m => { depsMap = m; revMap = null; if (activeSub === "sv-dep") renderSub(); })
   .catch(() => { depsMap = null; });
+
+// Standards ↔ models link (loaded once). Powers the Home "Standards" card,
+// the Standards tab, and the model↔standards cross-links. Small (~56 KB) so
+// loaded eagerly like deps.json.
+let standardsData = null;          // standards.json { release, standards, deprecated_standards, models }
+let stdSelId = null;               // currently selected CX-XXXX in the Standards tab
+let stdRevMap = null;              // built lazily : CX-id -> [CX that reference it]
+fetch("data/graph/standards.json")
+  .then(r => r.json())
+  .then(s => {
+    standardsData = s;
+    stdRevMap = null;
+    renderOverview();              // upgrade the "Standards" card from loading…
+    if (activeView === "standardsview") renderStandards();
+    applyHash();                   // resolve #/standards/<id> now that data is ready
+  })
+  .catch(() => { standardsData = null; });
+
+// ---- Standards tab --------------------------------------------------------
+const STD_COLORS = { root: "#4363d8", active: "#3cb44b",
+                     deprecated: "#b00020", absent: "#9e9e9e",
+                     model: "#00897b" };
+let stdDir = "both";       // reference direction in the graph: both | out | in
+let stdLayout = "ego";     // graph layout: ego (sides) | freeze | force | circle | grid | hier
+// Which outgoing reference categories to draw. Normative on by default ; the
+// user can add the others. "models" toggles the semantic-model nodes.
+let stdCats = new Set(["normative", "models"]);
+let stdSim = null;
+
+function buildStdRevMap() {
+  const r = {};
+  const st = (standardsData && standardsData.standards) || {};
+  for (const [cx, s] of Object.entries(st))
+    (s.referenced_standards || []).forEach(t => (r[t] = r[t] || []).push(cx));
+  for (const k in r) r[k].sort();
+  return r;
+}
+const stdIsActive = id =>
+  !!(standardsData && standardsData.standards && standardsData.standards[id]);
+const stdIsDeprecated = id =>
+  !!(standardsData && standardsData.deprecated_standards
+     && standardsData.deprecated_standards[id]);
+
+// Strip the leading "CX-XXXX" from a standard title (the title repeats the id).
+function stripCx(id, title) {
+  if (!title) return "";
+  return title.startsWith(id)
+    ? title.slice(id.length).replace(/^[\s:.\-]+/, "") : title;
+}
+
+function renderStandards() {
+  const rel = document.getElementById("std-release");
+  if (rel) rel.textContent = (standardsData && standardsData.release) || "…";
+  const list = document.getElementById("std-list");
+  if (!standardsData) {
+    if (list) list.innerHTML =
+      '<div class="std-row std-empty">standards.json not found — run: '
+      + 'python -m sldt_analyzer.graph</div>';
+    return;
+  }
+  if (!stdRevMap) stdRevMap = buildStdRevMap();
+  const q = document.getElementById("std-q");
+  if (q && !q.dataset.wired) {
+    q.dataset.wired = "1";
+    q.addEventListener("input", renderStdList);
+  }
+  renderStdList();
+  if (stdSelId) selectStandard(stdSelId);
+}
+
+function renderStdList() {
+  const box = document.getElementById("std-list");
+  const cnt = document.getElementById("std-count");
+  if (!box || !standardsData) return;
+  const term = ((document.getElementById("std-q") || {}).value || "")
+    .trim().toLowerCase();
+  const ids = Object.keys(standardsData.standards).sort();
+  const shown = ids.filter(id => !term || id.toLowerCase().includes(term)
+    || (standardsData.standards[id].title || "").toLowerCase().includes(term));
+  if (cnt) cnt.textContent = `${shown.length} / ${ids.length} standards`;
+  box.innerHTML = "";
+  if (!shown.length) {
+    box.innerHTML = '<div class="std-row std-empty">No standard matches.</div>';
+    return;
+  }
+  shown.forEach(id => {
+    const s = standardsData.standards[id];
+    const nM = (s.semantic_models || []).length;
+    const nR = (s.referenced_standards || []).length;
+    const nD = (s.deprecated_refs || []).length;
+    const row = document.createElement("div");
+    row.className = "std-row" + (id === stdSelId ? " sel" : "");
+    row.innerHTML =
+      `<div class="id">${escapeHtml(id)}</div>` +
+      `<div class="ti">${escapeHtml(stripCx(id, s.title))}</div>` +
+      `<div class="mt">${nM} model${nM === 1 ? "" : "s"} · ` +
+        `${nR} ref${nR === 1 ? "" : "s"}` +
+        (nD ? ` · <span class="warn">${nD} deprecated</span>` : "") + `</div>`;
+    row.addEventListener("click", () => selectStandard(id));
+    box.appendChild(row);
+  });
+}
+
+function highlightStdRow(id) {
+  document.querySelectorAll("#std-list .std-row").forEach(r => {
+    const e = r.querySelector(".id");
+    r.classList.toggle("sel", !!e && e.textContent === id);
+  });
+}
+
+// Detail skeleton built once so the SVG (and its zoom binding) stays stable
+// across selections.
+let sgContainer = null;
+function ensureStdDetailSkeleton() {
+  const d = document.getElementById("std-detail");
+  if (d.dataset.built) return;
+  d.dataset.built = "1";
+  d.classList.remove("std-ph");
+  // References (text) live in #std-detail (top) ; the reference graph lives
+  // in #std-graphwrap (full-width, below) so it gets all the room.
+  d.innerHTML = '<div id="std-d-head"></div><div id="std-d-body"></div>';
+  const gw = document.getElementById("std-graphwrap");
+  gw.innerHTML =
+    '<div id="std-gctrls">' +
+      '<div class="seg">' +
+        `<button data-sdir="both"${stdDir === "both" ? ' class="on"' : ""}>Both</button>` +
+        `<button data-sdir="out"${stdDir === "out" ? ' class="on"' : ""}>Outgoing →</button>` +
+        `<button data-sdir="in"${stdDir === "in" ? ' class="on"' : ""}>← Incoming</button>` +
+      '</div>' +
+      '<select id="std-layout-sel" title="Graph layout">' +
+        '<option value="ego">Sides (in / out)</option>' +
+        '<option value="freeze">Static (auto-layout)</option>' +
+        '<option value="hier">Hierarchy (layered)</option>' +
+        '<option value="force">Force (animated)</option>' +
+        '<option value="circle">Circle</option>' +
+        '<option value="grid">Grid</option>' +
+      '</select>' +
+      '<div class="catf"><span class="lbl">Show:</span>' +
+        `<label><input type="checkbox" data-cat="normative"${stdCats.has("normative") ? " checked" : ""}> Normative</label>` +
+        `<label><input type="checkbox" data-cat="non_normative"${stdCats.has("non_normative") ? " checked" : ""}> Non-norm.</label>` +
+        `<label><input type="checkbox" data-cat="other"${stdCats.has("other") ? " checked" : ""}> Other</label>` +
+        `<label><input type="checkbox" data-cat="models"${stdCats.has("models") ? " checked" : ""}> Models</label>` +
+      '</div>' +
+    '</div>' +
+    '<div class="std-glegend">' +
+      `<span><span class="dot" style="background:${STD_COLORS.root}"></span>selected</span>` +
+      `<span><span class="dot" style="background:${STD_COLORS.active}"></span>active standard</span>` +
+      `<span><span class="dot" style="background:${STD_COLORS.deprecated}"></span>deprecated</span>` +
+      `<span><span class="dot" style="background:${STD_COLORS.absent}"></span>other</span>` +
+      `<span><span class="dot" style="background:${STD_COLORS.model}"></span>model</span>` +
+      '<span>← referenced by · references / models →</span>' +
+    '</div>' +
+    '<svg id="stdgraph"></svg>';
+  const sg = d3.select("#stdgraph");
+  sgContainer = sg.append("g");
+  sg.call(d3.zoom().scaleExtent([0.1, 4]).on("zoom",
+    e => sgContainer.attr("transform", e.transform)));
+  sg.append("defs").append("marker")
+    .attr("id", "sarrow").attr("viewBox", "0 -5 10 10").attr("refX", 10)
+    .attr("markerWidth", 7).attr("markerHeight", 7).attr("orient", "auto")
+    .append("path").attr("d", "M0,-5L10,0L0,5").attr("fill", "#777");
+
+  // Direction toggle + layout selector — redraw the graph for the selection.
+  gw.querySelectorAll("#std-gctrls .seg button").forEach(b =>
+    b.addEventListener("click", () => {
+      stdDir = b.dataset.sdir;
+      gw.querySelectorAll("#std-gctrls .seg button")
+        .forEach(x => x.classList.toggle("on", x.dataset.sdir === stdDir));
+      if (stdSelId) drawStdGraph(stdSelId);
+    }));
+  const sel = gw.querySelector("#std-layout-sel");
+  sel.value = stdLayout;
+  sel.addEventListener("change", function () {
+    stdLayout = this.value;
+    if (stdSelId) drawStdGraph(stdSelId);
+  });
+  gw.querySelectorAll("#std-gctrls .catf input[data-cat]").forEach(cb =>
+    cb.addEventListener("change", () => {
+      if (cb.checked) stdCats.add(cb.dataset.cat);
+      else stdCats.delete(cb.dataset.cat);
+      if (stdSelId) drawStdGraph(stdSelId);
+    }));
+}
+
+function selectStandard(id) {
+  if (!standardsData) return;
+  stdSelId = id;
+  setUrl(buildHash(URL_BY_VIEW.standardsview, id));
+  highlightStdRow(id);
+  ensureStdDetailSkeleton();
+  renderStdDetail(id);
+}
+
+// One reference chip. Clickable when the target is a known (active or
+// deprecated) standard ; otherwise dimmed (referenced but unknown/withdrawn).
+function stdChip(cx) {
+  const dep = stdIsDeprecated(cx), active = stdIsActive(cx);
+  const clickable = active || dep;
+  const cls = "chip" + (dep ? " dep" : (clickable ? "" : " dim"));
+  return `<span class="${cls}"${clickable ? ` data-cx="${escapeHtml(cx)}"` : ""}>`
+    + `${escapeHtml(cx)}</span>`;
+}
+function refGroup(title, arr, desc) {
+  if (!arr || !arr.length) return "";
+  return `<div class="std-grp"><div class="h">${title} (${arr.length})</div>`
+    + (desc ? `<div class="std-note">${desc}</div>` : "")
+    + `<div class="std-chips">${arr.map(stdChip).join("")}</div></div>`;
+}
+function modelGroup(arr) {
+  if (!arr || !arr.length) return "";
+  const chips = arr.map(mk => {
+    const at = mk.lastIndexOf("@");
+    const name = mk.slice(0, at), ver = mk.slice(at + 1);
+    const inCat = !!entryForKey(mk);
+    return `<span class="chip${inCat ? "" : " dim"}"`
+      + `${inCat ? ` data-model="${escapeHtml(mk)}"` : ""}>`
+      + `${escapeHtml(name)} <span class="v">v${escapeHtml(ver)}</span></span>`;
+  }).join("");
+  return `<div class="std-grp"><div class="h">Semantic models (${arr.length})`
+    + `</div><div class="std-chips">${chips}</div></div>`;
+}
+
+function renderStdDetail(id) {
+  const s = standardsData.standards[id];
+  const dep = (standardsData.deprecated_standards || {})[id];
+  const head = document.getElementById("std-d-head");
+  const body = document.getElementById("std-d-body");
+
+  const title = s ? s.title : (dep ? `${id} ${dep.name}` : id);
+  head.innerHTML =
+    `<h2>${escapeHtml(title)}</h2>` +
+    (s && s.link
+      ? `<div class="lk"><a href="${escapeHtml(s.link)}" target="_blank" `
+        + `rel="noopener">Open standard ↗</a></div>` : "") +
+    (dep ? `<div class="std-dep-note"><b>Deprecated</b> in `
+      + `${escapeHtml(dep.deprecated_in)} — ${escapeHtml(dep.reason)}</div>` : "");
+
+  drawStdGraph(id);
+
+  let html = "";
+  if (s) {
+    const inSet = new Set([...(s.normative || []), ...(s.non_normative || [])]);
+    const other = (s.referenced_standards || []).filter(x => !inSet.has(x));
+    html += refGroup("Normative references", s.normative);
+    html += refGroup("Non-normative references", s.non_normative);
+    html += refGroup("Other referenced standards", other,
+      "Standards mentioned elsewhere in the document (e.g. a “standalone "
+      + "standards” list or inline text), not declared under the formal "
+      + "Normative / Non-normative References sections. Collected for "
+      + "completeness, so nothing referenced is missed.");
+    if (s.deprecated_refs && s.deprecated_refs.length) {
+      const items = s.deprecated_refs.map(cx => {
+        const d = (standardsData.deprecated_standards || {})[cx] || {};
+        return `<div class="std-dep-note"><b>${escapeHtml(cx)}</b> `
+          + `${escapeHtml(d.name || "")} — deprecated in `
+          + `${escapeHtml(d.deprecated_in || "?")}: ${escapeHtml(d.reason || "")}`
+          + `</div>`;
+      }).join("");
+      html += `<div class="std-grp"><div class="h">⚠ Deprecated references `
+        + `(${s.deprecated_refs.length})</div>${items}</div>`;
+    }
+    html += modelGroup(s.semantic_models);
+  }
+  html += refGroup("Referenced by", stdRevMap[id] || []);
+  body.innerHTML = html || '<div class="std-empty">No reference data.</div>';
+
+  body.querySelectorAll(".chip[data-cx]").forEach(c =>
+    c.addEventListener("click", () => selectStandard(c.dataset.cx)));
+  body.querySelectorAll(".chip[data-model]").forEach(c =>
+    c.addEventListener("click", () => {
+      const ent = entryForKey(c.dataset.model);
+      if (ent) openEntry(ent);
+    }));
+}
+
+// Ego reference graph : selected standard centered, outgoing references on the
+// right, incoming (referenced-by) on the left. 1 hop ; click an active/
+// deprecated node to re-center.
+function stdNodeColor(d) {
+  if (d.type === "model") return STD_COLORS.model;
+  if (d.side === "root") return STD_COLORS.root;
+  if (stdIsDeprecated(d.id)) return STD_COLORS.deprecated;
+  if (stdIsActive(d.id)) return STD_COLORS.active;
+  return STD_COLORS.absent;
+}
+function stdNodeClickable(d, rootId) {
+  if (d.type === "model") return !!entryForKey(d.mk);
+  return d.id !== rootId && (stdIsActive(d.id) || stdIsDeprecated(d.id));
+}
+function stdNodeTip(d, rootId) {
+  if (d.type === "model") {
+    const mk = d.mk, at = mk.lastIndexOf("@");
+    return `<b>${escapeHtml(mk.slice(0, at))}</b> `
+      + `<span class="k">v${escapeHtml(mk.slice(at + 1))}</span><br>semantic model`
+      + (entryForKey(mk) ? "<br><i>click to open in Model Viewer</i>"
+                         : "<br><i>not in catalog</i>");
+  }
+  const s2 = standardsData.standards[d.id];
+  const dd = (standardsData.deprecated_standards || {})[d.id];
+  return `<b>${escapeHtml(d.id)}</b><br>`
+    + (s2 ? escapeHtml(stripCx(d.id, s2.title))
+          : (dd ? escapeHtml(dd.name) : "<i>unknown standard</i>"))
+    + (dd ? `<br><span style="color:${STD_COLORS.deprecated}">deprecated in `
+        + `${escapeHtml(dd.deprecated_in)}</span>` : "")
+    + (d.id !== rootId && (s2 || dd) ? "<br><i>click to focus</i>" : "");
+}
+function placeEgo(nodes, width, height) {
+  const cx = width / 2, cy = height / 2;
+  const colX = Math.max(110, Math.min(width / 2 - 50, 240));
+  const spread = (arr, x) => {
+    const n = arr.length;
+    arr.forEach((d, i) => {
+      d.x = x;
+      d.y = n <= 1 ? cy
+        : cy - height * 0.42 + (i * height * 0.84) / (n - 1);
+    });
+  };
+  nodes.filter(n => n.side === "root").forEach(d => { d.x = cx; d.y = cy; });
+  spread(nodes.filter(n => n.side === "in"), cx - colX);
+  spread(nodes.filter(n => n.side === "out" || n.side === "both"), cx + colX);
+}
+function drawStdGraph(rootId) {
+  if (!sgContainer) return;
+  sgContainer.selectAll("*").remove();
+  if (stdSim) { stdSim.stop(); stdSim = null; }
+  const svgEl = d3.select("#stdgraph").node();
+  if (!svgEl) return;
+  const { width, height } = svgEl.getBoundingClientRect();
+  if (!width || !height) return;       // tab not visible yet
+
+  const s = standardsData.standards[rootId];
+  const showOut = stdDir === "both" || stdDir === "out";
+  const showIn = stdDir === "both" || stdDir === "in";
+  // Outgoing references restricted to the selected categories (normative on by
+  // default ; non-normative / other are opt-in).
+  let out = [];
+  if (showOut && s) {
+    const norm = s.normative || [], nonn = s.non_normative || [];
+    const inSet = new Set([...norm, ...nonn]);
+    const other = (s.referenced_standards || []).filter(x => !inSet.has(x));
+    const set = new Set();
+    if (stdCats.has("normative")) norm.forEach(x => set.add(x));
+    if (stdCats.has("non_normative")) nonn.forEach(x => set.add(x));
+    if (stdCats.has("other")) other.forEach(x => set.add(x));
+    out = [...set];
+  }
+  const inc = showIn ? (stdRevMap[rootId] || []).filter(x => x !== rootId) : [];
+  const models = (showOut && s && stdCats.has("models"))
+    ? (s.semantic_models || []) : [];
+
+  const nodeMap = new Map();
+  const addStd = (id, side) => {
+    if (!nodeMap.has(id))
+      nodeMap.set(id, { id, side, type: "std", label: id });
+    else if (side === "out" && nodeMap.get(id).side === "in")
+      nodeMap.get(id).side = "both";
+  };
+  nodeMap.set(rootId, { id: rootId, side: "root", type: "std", label: rootId });
+  inc.forEach(id => addStd(id, "in"));
+  out.forEach(id => { if (id !== rootId) addStd(id, "out"); });
+  models.forEach(mk => {
+    const id = "model:" + mk;
+    if (!nodeMap.has(id)) nodeMap.set(id, {
+      id, side: "out", type: "model", mk,
+      label: mk.slice(0, mk.lastIndexOf("@")),
+    });
+  });
+  const nodes = [...nodeMap.values()];
+  const byId = new Map(nodes.map(n => [n.id, n]));
+  let links = [];
+  out.forEach(id => { if (id !== rootId)
+    links.push({ source: rootId, target: id }); });
+  inc.forEach(id => links.push({ source: id, target: rootId }));
+  models.forEach(mk => links.push({ source: rootId, target: "model:" + mk }));
+
+  if (stdLayout === "ego") {
+    placeEgo(nodes, width, height);
+    links.forEach(l => { l.source = byId.get(l.source); l.target = byId.get(l.target); });
+  } else {
+    layoutMode = stdLayout;
+    stdSim = makeSim(nodes, links, width, height,
+      { distance: 95, charge: -300, collide: 30,
+        hierarchy: { rootIds: [rootId], directionFlip: stdDir === "in" } });
+  }
+
+  const R = 13;
+  function endpoints(d) {
+    const sx = d.source.x, sy = d.source.y, tx = d.target.x, ty = d.target.y;
+    let dx = tx - sx, dy = ty - sy;
+    const dist = Math.hypot(dx, dy) || 1; dx /= dist; dy /= dist;
+    const r = Math.max(0, Math.min(R, dist / 2 - 1));
+    return { x1: sx + dx * r, y1: sy + dy * r, x2: tx - dx * r, y2: ty - dy * r };
+  }
+  const link = sgContainer.append("g").selectAll("line").data(links).enter()
+    .append("line").attr("class", "link").attr("stroke-width", 1.4)
+    .attr("marker-end", "url(#sarrow)");
+  function ticked() {
+    link.each(function (d) {
+      const e = endpoints(d);
+      this.setAttribute("x1", e.x1); this.setAttribute("y1", e.y1);
+      this.setAttribute("x2", e.x2); this.setAttribute("y2", e.y2);
+    });
+    node.attr("transform", d => `translate(${d.x},${d.y})`);
+  }
+  const drag = stdLayout === "ego"
+    ? d3.drag()
+        .on("start", (e, d) => { d.fx = d.x; d.fy = d.y; })
+        .on("drag", (e, d) => { d.x = e.x; d.y = e.y; ticked(); })
+        .on("end", () => {})
+    : dragger(stdSim, ticked);
+  const node = sgContainer.append("g").selectAll("g").data(nodes).enter()
+    .append("g").attr("class", "node").call(drag);
+  node.append("circle").attr("r", 11).attr("fill", stdNodeColor)
+    .style("stroke", "var(--surface)").style("stroke-width", "2px")
+    .style("cursor", d => stdNodeClickable(d, rootId) ? "pointer" : "default")
+    .on("mouseover", (e, d) => tooltip.style("opacity", 1).html(stdNodeTip(d, rootId)))
+    .on("mousemove", e => tooltip
+      .style("left", (e.pageX + 14) + "px").style("top", (e.pageY + 8) + "px"))
+    .on("mouseout", () => tooltip.style("opacity", 0))
+    .on("click", (e, d) => {
+      if (d.type === "model") {
+        const ent = entryForKey(d.mk); if (ent) openEntry(ent); return;
+      }
+      if (d.id !== rootId && (stdIsActive(d.id) || stdIsDeprecated(d.id)))
+        selectStandard(d.id);
+    });
+  node.append("text").attr("x", 14).attr("y", 4).text(d => d.label);
+
+  if (stdSim) stdSim.on("tick", ticked);
+  ticked();
+}
 
 function renderKpis() {
   // KPIs honor the source filter so the counts match the visible catalog.
