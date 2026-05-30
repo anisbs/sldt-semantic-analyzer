@@ -198,10 +198,13 @@
     /* Overview strip — compact stats above the status KPIs. */
     #overview { display: grid; gap: var(--sp-3);
       grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); }
+    /* Overview = a quiet, flat context strip (alt surface, no elevation) so it
+       reads as a different layer than the elevated, interactive status KPIs
+       below it (white tiles with a coloured edge + hover lift). */
     .ov {
       padding: var(--sp-3) var(--sp-4); min-width: 0;
       border: 1px solid var(--border); border-radius: var(--r-md);
-      background: var(--surface); box-shadow: var(--shadow-sm); }
+      background: var(--surface-2); }
     .ov .lbl { font-size: var(--fs-xs); color: var(--text-3);
       text-transform: uppercase; letter-spacing: .04em; }
     .ov .val { font-size: var(--fs-xl); font-weight: 700; line-height: 1.2;
