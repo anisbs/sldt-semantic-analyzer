@@ -190,6 +190,9 @@
     .view.active { display: flex; }
 
     /* Home */
+    /* Cap the reading width so the catalog table doesn't sprawl across a wide
+       monitor (name far left, meta far right with a huge void between). */
+    #home > * { max-width: 1200px; width: 100%; }
     #home { flex-direction: column; overflow-y: auto;
       padding: var(--sp-4) var(--sp-5); gap: var(--sp-4); }
     /* Overview strip — compact stats above the status KPIs. */
@@ -874,6 +877,19 @@
     .std-note { font-size: var(--fs-2xs); color: var(--text-3);
       margin: -2px 0 6px; max-width: 70ch; line-height: 1.4; }
     .std-chips { display: flex; flex-wrap: wrap; gap: 6px; }
+    /* Folding : a long chip list (Referenced by, etc.) hides everything past
+       the 12th until "+N more" is clicked, so a heavily-cited standard stays
+       tidy. Cap = 12 → hide the 13th child onward. */
+    .std-chips.foldable:not(.show-all) > .chip:nth-child(n+13) { display: none; }
+    .std-more { margin-top: 6px; font-family: inherit; font-size: var(--fs-xs);
+      cursor: pointer; padding: 2px 9px; border-radius: var(--r-pill);
+      border: 1px solid var(--border-strong); background: var(--surface);
+      color: var(--accent);
+      transition: background-color var(--dur) var(--ease),
+        border-color var(--dur) var(--ease); }
+    .std-more:hover { background: var(--accent-weak); border-color: var(--accent); }
+    .std-more:focus-visible { outline: 2px solid var(--accent);
+      outline-offset: 1px; }
     .chip { display: inline-flex; align-items: center; gap: 5px;
       padding: 3px 9px; border: 1px solid var(--border-strong);
       border-radius: var(--r-pill); font-size: var(--fs-xs);
@@ -2900,11 +2916,22 @@ function stdChip(cx) {
   return `<span class="${cls}"${clickable ? ` data-cx="${escapeHtml(cx)}"` : ""}>`
     + `${escapeHtml(cx)}</span>`;
 }
+const CHIP_FOLD = 12;
+// Wraps a list of chip-HTML strings ; beyond CHIP_FOLD the extras are hidden
+// (CSS nth-child) behind a "+N more" button (wired in renderStdDetail).
+function chipList(chipsHtml) {
+  const foldable = chipsHtml.length > CHIP_FOLD;
+  return `<div class="std-chips${foldable ? " foldable" : ""}">`
+    + `${chipsHtml.join("")}</div>`
+    + (foldable
+      ? `<button type="button" class="std-more">+${chipsHtml.length - CHIP_FOLD} more</button>`
+      : "");
+}
 function refGroup(title, arr, desc) {
   if (!arr || !arr.length) return "";
   return `<div class="std-grp"><div class="h">${title} (${arr.length})</div>`
     + (desc ? `<div class="std-note">${desc}</div>` : "")
-    + `<div class="std-chips">${arr.map(stdChip).join("")}</div></div>`;
+    + chipList(arr.map(stdChip)) + `</div>`;
 }
 // One model chip ("name@version"). Clickable (data-model) when the model is in
 // the catalog ; dimmed otherwise (cited but not ingested).
@@ -2919,7 +2946,7 @@ function modelChip(mk) {
 function modelGroup(arr) {
   if (!arr || !arr.length) return "";
   return `<div class="std-grp"><div class="h">Semantic models (${arr.length})`
-    + `</div><div class="std-chips">${arr.map(modelChip).join("")}</div></div>`;
+    + `</div>` + chipList(arr.map(modelChip)) + `</div>`;
 }
 
 // "Quality issues" section for a standard (Option A). Deprecated standard refs
@@ -2939,7 +2966,7 @@ function qualityIssuesGroup(id) {
           + (d.reason ? `: ${escapeHtml(d.reason)}` : "") + `</div>`;
       }).join("");
     } else {
-      rows = `<div class="std-chips">${t.items.map(modelChip).join("")}</div>`;
+      rows = chipList(t.items.map(modelChip));
     }
     return `<div class="std-iss"><div class="ih">⚠ ${escapeHtml(t.label)} `
       + `(${t.items.length})</div>${rows}</div>`;
@@ -2976,6 +3003,14 @@ function renderStdDetail(id) {
   }
   html += refGroup("Referenced by", stdRevMap[id] || []);
   body.innerHTML = html || '<div class="std-empty">No reference data.</div>';
+
+  // "+N more" reveals the folded chips of its group, then removes itself.
+  body.querySelectorAll(".std-more").forEach(btn =>
+    btn.addEventListener("click", () => {
+      const chips = btn.previousElementSibling;
+      if (chips) chips.classList.add("show-all");
+      btn.remove();
+    }));
 
   body.querySelectorAll(".chip[data-cx]").forEach(c =>
     c.addEventListener("click", () => selectStandard(c.dataset.cx)));
