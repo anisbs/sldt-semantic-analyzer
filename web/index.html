@@ -2745,8 +2745,12 @@ function ensureStdDetailSkeleton() {
       `<span><span class="dot rect" style="background:${STD_COLORS.active}"></span>active</span>` +
       `<span><span class="dot rect" style="background:${STD_COLORS.deprecated}"></span>deprecated</span>` +
       `<span><span class="dot rect" style="background:${STD_COLORS.absent}"></span>other</span>` +
-      '<span class="glab">Models (○):</span>' +
-      `<span><span class="dot" style="background:${STD_COLORS.model}"></span>semantic model</span>` +
+      '<span class="glab">Models (○, ring = status):</span>' +
+      `<span><span class="dot" style="background:${STD_COLORS.model}"></span>model</span>` +
+      `<span><span class="dot ring" style="border-color:${statusColor("release")}"></span>release</span>` +
+      `<span><span class="dot ring" style="border-color:${statusColor("draft")}"></span>draft</span>` +
+      `<span><span class="dot ring" style="border-color:${statusColor("deprecated")}"></span>deprecated</span>` +
+      `<span><span class="dot ring" style="border-color:${statusColor("undefined")}"></span>undefined</span>` +
       '<span class="gsep">← referenced by · references / models →</span>' +
     '</div>' +
     '<svg id="stdgraph"></svg>';
@@ -2994,13 +2998,17 @@ function drawStdGraph(rootId) {
         hierarchy: { rootIds: [rootId], directionFlip: stdDir === "in" } });
   }
 
-  const R = 13;
+  // Trim radius per node : models carry a status ring (outer r≈15.5), so the
+  // arrow must stop a bit further out than for the standard rectangles.
+  const nodeR = d => d && d.type === "model" ? 16 : 14;
   function endpoints(d) {
     const sx = d.source.x, sy = d.source.y, tx = d.target.x, ty = d.target.y;
     let dx = tx - sx, dy = ty - sy;
     const dist = Math.hypot(dx, dy) || 1; dx /= dist; dy /= dist;
-    const r = Math.max(0, Math.min(R, dist / 2 - 1));
-    return { x1: sx + dx * r, y1: sy + dy * r, x2: tx - dx * r, y2: ty - dy * r };
+    const cap = dist / 2 - 1;
+    const rs = Math.max(0, Math.min(nodeR(d.source), cap));
+    const rt = Math.max(0, Math.min(nodeR(d.target), cap));
+    return { x1: sx + dx * rs, y1: sy + dy * rs, x2: tx - dx * rt, y2: ty - dy * rt };
   }
   const link = sgContainer.append("g").selectAll("line").data(links).enter()
     .append("line").attr("class", "link").attr("stroke-width", 1.4)
@@ -3041,9 +3049,17 @@ function drawStdGraph(rootId) {
   const RW = 27, RH = 19;
   node.each(function (d) {
     const g = d3.select(this);
-    if (d.type === "model")
+    if (d.type === "model") {
+      // Like the Dependency graph : fill = role (teal), outer ring = the
+      // model's catalog status. Ring drawn first (behind the fill circle) ;
+      // transparent when the model isn't in the catalog (status unknown).
+      const ent = entryForKey(d.mk);
+      g.append("circle").attr("class", "std-mring").attr("r", 14)
+        .style("fill", "none").style("stroke-width", "3px")
+        .style("stroke", ent && ent.status
+          ? statusColor(ent.status) : "transparent");
       g.append("circle").attr("class", "shape").attr("r", 11);
-    else
+    } else
       g.append("rect").attr("class", "shape")
         .attr("x", -RW / 2).attr("y", -RH / 2)
         .attr("width", RW).attr("height", RH).attr("rx", 4);
