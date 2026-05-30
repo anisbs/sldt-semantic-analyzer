@@ -616,7 +616,15 @@
     #iss-status .ttl, #iss-source .ttl { color: var(--text-2); font-size: var(--fs-sm); }
     #iss-status label, #iss-source label { display: flex; align-items: center;
       gap: 5px; cursor: pointer; }
-    #iss-kpis { display: grid; gap: var(--sp-3);
+    /* KPI cards grouped into categories : a vertical stack of sections, each
+       with a subheader and its own card grid (sorted by count). */
+    #iss-kpis { display: flex; flex-direction: column; gap: var(--sp-5); }
+    .iss-cat-h { display: flex; align-items: baseline; gap: var(--sp-2);
+      margin-bottom: var(--sp-2); font-size: var(--fs-xs); font-weight: 700;
+      color: var(--text-2); text-transform: uppercase; letter-spacing: .05em; }
+    .iss-cat-h .ct { font-weight: 400; text-transform: none; letter-spacing: 0;
+      color: var(--text-3); font-variant-numeric: tabular-nums; }
+    .iss-cat-grid { display: grid; gap: var(--sp-3);
       grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); }
     .kpi.iss { border-left-color: var(--border-strong); }
     .kpi.iss .s { text-transform: none; }
@@ -3412,6 +3420,28 @@ fetch("data/graph/issues.json")
   })
   .catch(() => { issuesData = null; });
 
+// Issue types grouped into a handful of domains so the 28 KPI cards read as a
+// few prioritised sections instead of a flat wall. Any type not listed here
+// (e.g. a new check added upstream) falls into an "Other" group, so nothing is
+// ever silently hidden.
+const ISSUE_CATEGORIES = [
+  { title: "Structure & files", ids: [
+    "aspect_without_properties", "property_without_characteristic",
+    "characteristic_without_datatype", "trait_without_constraint",
+    "unused_property", "orphan_isolated", "orphan_unreachable",
+    "missing_files"] },
+  { title: "Dependencies", ids: [
+    "deprecated_dep", "circular_dep", "unresolved_dep", "outdated_dependency",
+    "older_release_exists", "dep_on_draft", "dep_on_undefined"] },
+  { title: "Naming & versioning", ids: [
+    "bad_naming_property", "bad_naming_type", "namespace_mismatch",
+    "stem_name_mismatch", "non_semver_version", "meta_model_drift"] },
+  { title: "Documentation", ids: [
+    "key_element_missing_description", "key_element_missing_preferred_name",
+    "empty_description", "description_not_english", "missing_release_notes",
+    "missing_release_date", "missing_gen_docs"] },
+];
+
 function renderIssues() {
   if (activeView !== "issues") return;
   const sbox = document.getElementById("iss-status");
@@ -3475,11 +3505,23 @@ function renderIssues() {
     issStatuses.has(M[k].status) && issSources.has(M[k].source);
   const keysFor = id => Object.keys(M).filter(k => inScope(k) && M[k].issues[id]);
 
-  // KPI cards : one per issue type, highlighted as soon as count > 0.
-  // `title` attribute = native tooltip on hover with the full description.
-  kbox.innerHTML = "";
-  types.forEach(t => {
-    const n = keysFor(t.id).length;
+  // Pre-count every type once (in the current status/source scope).
+  const countOf = {};
+  types.forEach(t => (countOf[t.id] = keysFor(t.id).length));
+
+  // Resolve the category groups, routing any uncategorised type into "Other".
+  const byId = new Map(types.map(t => [t.id, t]));
+  const seen = new Set();
+  const cats = ISSUE_CATEGORIES.map(c => ({
+    title: c.title, types: c.ids.map(id => byId.get(id)).filter(Boolean) }));
+  cats.forEach(c => c.types.forEach(t => seen.add(t.id)));
+  const leftover = types.filter(t => !seen.has(t.id));
+  if (leftover.length) cats.push({ title: "Other", types: leftover });
+
+  // One card per type, highlighted as soon as count > 0. `title` = native
+  // tooltip with the full description.
+  const makeCard = t => {
+    const n = countOf[t.id];
     const card = document.createElement("div");
     card.className = "kpi iss " +
       (n === 0 ? "zero" : t.severity === "warning" ? "warn" : "err") +
@@ -3494,7 +3536,28 @@ function renderIssues() {
       setUrl(buildHash(URL_BY_VIEW.issues, "", p));
       renderIssues();
     });
-    kbox.appendChild(card);
+    return card;
+  };
+
+  // KPI grid grouped by category ; within each group, sort by count desc
+  // (most pressing first), errors before warnings on ties.
+  kbox.innerHTML = "";
+  cats.forEach(c => {
+    if (!c.types.length) return;
+    const total = c.types.reduce((s, t) => s + countOf[t.id], 0);
+    const sorted = c.types.slice().sort((a, b) =>
+      countOf[b.id] - countOf[a.id] ||
+      (a.severity === "error" ? 0 : 1) - (b.severity === "error" ? 0 : 1) ||
+      a.label.localeCompare(b.label));
+    const sec = document.createElement("div");
+    sec.className = "iss-cat";
+    sec.innerHTML =
+      `<div class="iss-cat-h">${escapeHtml(c.title)} ` +
+      `<span class="ct">${total.toLocaleString()} issue${total === 1 ? "" : "s"}</span>` +
+      `</div><div class="iss-cat-grid"></div>`;
+    const grid = sec.querySelector(".iss-cat-grid");
+    sorted.forEach(t => grid.appendChild(makeCard(t)));
+    kbox.appendChild(sec);
   });
 
   // "About these checks" reference panel — built once, then left alone so
