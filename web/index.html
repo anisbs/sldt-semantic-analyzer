@@ -2519,14 +2519,17 @@ function renderOverview() {
   const fam = {};
   allModels.forEach(m => (fam[m.family] = (fam[m.family] || 0) + 1));
 
-  // (3) Quality : release models with at least one issue (depends on issues.json).
+  // (3) Quality : total volume of issues across release models (the actionable
+  // signal — it actually moves), not a "flagged / total" fraction that read as
+  // a failing score. Depends on issues.json ; clicking opens the Issues tab.
   let quality = "—", qualitySub = "loading…";
   if (issuesData) {
-    const releaseTotal = allModels.filter(m => m.status === "release").length;
-    const flaggedRelease = Object.values(issuesData.models).filter(v =>
-      v.status === "release").length;
-    quality = `${flaggedRelease} / ${releaseTotal}`;
-    qualitySub = "release with ≥1 issue";
+    const relIssues = Object.values(issuesData.models)
+      .filter(v => v.status === "release");
+    const flaggedRelease = relIssues.length;
+    const totalIssues = relIssues.reduce((s, v) => s + (v.total || 0), 0);
+    quality = totalIssues.toLocaleString();
+    qualitySub = `issues · ${flaggedRelease} release models flagged`;
   }
 
   // (4) Updated : Last-Modified header (raw HTTP date) prettified.
@@ -2559,7 +2562,7 @@ function renderOverview() {
     `<div class="ov"><div class="lbl">Family</div>` +
       `<div class="val">${famSub || "—"}</div>` +
       `<div class="sub">meta-model breakdown</div></div>` +
-    `<div class="ov"><div class="lbl">Quality</div>` +
+    `<div class="ov ov-link" data-goto="issues"><div class="lbl">Quality</div>` +
       `<div class="val">${quality}</div>` +
       `<div class="sub">${qualitySub}</div></div>` +
     `<div class="ov ov-link" data-goto="standardsview"><div class="lbl">Standards</div>` +
@@ -2573,9 +2576,10 @@ function renderOverview() {
         `<a href="https://github.com/catenax-eV/catenax-ev.github.io" target="_blank" rel="noopener">Standard Library ↗</a>` +
       `</div></div>`;
 
-  // The Standards card is a shortcut to the Standards tab.
-  const card = box.querySelector('.ov-link[data-goto="standardsview"]');
-  if (card) card.addEventListener("click", () => showTab("standardsview"));
+  // Overview cards flagged `.ov-link` are shortcuts to another tab
+  // (Quality → Issues, Standards → Standards).
+  box.querySelectorAll(".ov-link[data-goto]").forEach(card =>
+    card.addEventListener("click", () => showTab(card.dataset.goto)));
 }
 
 // Dependency map (loaded once). If the Dependency tab is already open when it
