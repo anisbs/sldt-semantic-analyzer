@@ -603,6 +603,7 @@
     .sr-row .loc { margin-left: auto; color: var(--text-2);
       font-size: var(--fs-sm); font-variant-numeric: tabular-nums; }
     .sr-row .desc { color: var(--text-2); font-size: var(--fs-sm); }
+    .sr-row .vmore { color: var(--text-3); }
     /* Type (kind) badge : a neutral chip with a colour DOT — deliberately a
        different shape than the solid status pill (.badge), so the type and
        status dimensions never read as "the same thing" even when their hues
@@ -3793,25 +3794,41 @@ function renderSearch() {
     (e.name.toLowerCase().includes(q) ||
      (e.preferredName && e.preferredName.toLowerCase().includes(q))));
 
-  hits.sort((a, b) => {
+  // Collapse the same element across versions of the same model (same name +
+  // kind + model) into one row — otherwise a property living in 6 versions
+  // floods the list with 6 near-identical rows. Representative = newest version
+  // ; the row notes "(N versions)".
+  const srGroupsMap = new Map();
+  hits.forEach(e => {
+    const key = e.model_name + " " + e.kind + " " + e.name.toLowerCase();
+    const g = srGroupsMap.get(key);
+    if (!g) { srGroupsMap.set(key, { rep: e, n: 1 }); return; }
+    g.n++;
+    if (cmpVerDesc(e.version, g.rep.version) < 0) g.rep = e;   // keep the newest
+  });
+  const srGroups = [...srGroupsMap.values()];
+
+  srGroups.sort((A, B) => {
+    const a = A.rep, b = B.rep;
     const ap = a.name.toLowerCase().startsWith(q) ? 0 : 1;
     const bp = b.name.toLowerCase().startsWith(q) ? 0 : 1;
     return ap - bp || a.name.localeCompare(b.name) ||
            a.model_name.localeCompare(b.model_name);
   });
 
-  cnt.textContent = hits.length > SR_CAP
-    ? `showing ${SR_CAP} of ${hits.length} matches`
-    : `${hits.length} match${hits.length === 1 ? "" : "es"}`;
+  cnt.textContent = srGroups.length > SR_CAP
+    ? `showing ${SR_CAP} of ${srGroups.length} matches`
+    : `${srGroups.length} match${srGroups.length === 1 ? "" : "es"}`;
 
-  if (!hits.length) {
+  if (!srGroups.length) {
     list.innerHTML = `<div class="empty">No element matches ` +
       `“${escapeHtml(q)}” in the selected type / status scope.</div>`;
     return;
   }
 
   list.innerHTML = "";
-  hits.slice(0, SR_CAP).forEach(e => {
+  srGroups.slice(0, SR_CAP).forEach(g => {
+    const e = g.rep;
     const row = document.createElement("div");
     row.className = "sr-row";
     const pn = e.preferredName &&
@@ -3823,7 +3840,8 @@ function renderSearch() {
         `${color(e.kind)}"></span>${e.kind}</span>` +
         `<span class="nm">${escapeHtml(e.name)}</span>` + pn +
         `<span class="loc">${escapeHtml(e.model_name)} · v` +
-        `${escapeHtml(e.version)} ` +
+        `${escapeHtml(e.version)}` +
+        (g.n > 1 ? ` <span class="vmore">(${g.n} versions)</span>` : "") + ` ` +
         `<span class="badge" style="background:${sourceColor(e.source)}">` +
         `${sourceLabel(e.source)}</span> ` +
         `<span class="badge" style="background:${statusColor(e.status)}">` +
