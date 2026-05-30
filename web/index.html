@@ -603,8 +603,16 @@
     .sr-row .loc { margin-left: auto; color: var(--text-2);
       font-size: var(--fs-sm); font-variant-numeric: tabular-nums; }
     .sr-row .desc { color: var(--text-2); font-size: var(--fs-sm); }
-    .kbadge { font-size: var(--fs-xs); padding: 2px 7px;
-      border-radius: var(--r-pill); color: #fff; }
+    /* Type (kind) badge : a neutral chip with a colour DOT — deliberately a
+       different shape than the solid status pill (.badge), so the type and
+       status dimensions never read as "the same thing" even when their hues
+       coincide (Aspect red vs deprecated red, Property green vs release green).
+       The dot carries the categorical colour, so light kinds stay legible. */
+    .kbadge { display: inline-flex; align-items: center; gap: 5px;
+      font-size: var(--fs-xs); padding: 2px 8px; border-radius: var(--r-pill);
+      color: var(--text-2); background: var(--surface-2);
+      border: 1px solid var(--border); }
+    .kbadge .d { width: 8px; height: 8px; border-radius: 50%; flex: none; }
 
     /* Issues (top tab) */
     #issues { flex-direction: column; overflow-y: auto;
@@ -1118,7 +1126,10 @@
 
 <script>
 const KIND_COLORS = {
-  Aspect: "#e6194b", Property: "#3cb44b", Characteristic: "#4363d8",
+  // Characteristic is an azure (#0288d1) rather than the old #4363d8, which was
+  // the exact UI accent — a Characteristic node now reads distinct from the
+  // accent-blue selection rings / links in the graph.
+  Aspect: "#e6194b", Property: "#3cb44b", Characteristic: "#0288d1",
   Entity: "#f58231", AbstractEntity: "#911eb4", Operation: "#46f0f0",
   Event: "#f032e6", Constraint: "#bcf60c",
 };
@@ -3808,8 +3819,8 @@ function renderSearch() {
         ? `<span class="pn">${escapeHtml(e.preferredName)}</span>` : "";
     row.innerHTML =
       `<div class="top">` +
-        `<span class="kbadge" style="background:${color(e.kind)}">` +
-        `${e.kind}</span>` +
+        `<span class="kbadge"><span class="d" style="background:` +
+        `${color(e.kind)}"></span>${e.kind}</span>` +
         `<span class="nm">${escapeHtml(e.name)}</span>` + pn +
         `<span class="loc">${escapeHtml(e.model_name)} · v` +
         `${escapeHtml(e.version)} ` +
