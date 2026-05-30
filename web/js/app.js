@@ -1603,7 +1603,6 @@ function stdTypeFires(cxid, typeId) {
 // panel. Clicking a card filters the list (left) to those standards.
 function renderStdKpis() {
   const kbox = document.getElementById("std-kpis");
-  const help = document.getElementById("std-help");
   if (!kbox || !standardsData) return;
   const types = standardsData.standard_issue_types || [];
   const ids = Object.keys(standardsData.standards);
@@ -1611,28 +1610,17 @@ function renderStdKpis() {
   types.forEach(t => {
     const n = ids.filter(id =>
       ((standardsData.standards[id][t.field]) || []).length).length;
-    const card = document.createElement("div");
-    card.className = "kpi iss " +
-      (n === 0 ? "zero" : t.severity === "warning" ? "warn" : "err") +
-      (stdSelType === t.id ? " sel" : "");
-    if (t.description) card.title = t.description;
-    card.innerHTML =
-      `<div class="n">${n}</div><div class="s">${escapeHtml(t.label)}</div>`;
-    card.addEventListener("click", () => {
-      stdSelType = stdSelType === t.id ? null : t.id;
-      renderStdKpis(); renderStdList();
-    });
-    kbox.appendChild(card);
+    kbox.appendChild(issueKpiCard({
+      count: n, label: t.label, sev: t.severity, description: t.description,
+      selected: stdSelType === t.id,
+      onClick: () => {
+        stdSelType = stdSelType === t.id ? null : t.id;
+        renderStdKpis(); renderStdList();
+      },
+    }));
   });
-  // "About these checks" panel — built once (preserve open/closed state).
-  const body = help && help.querySelector(".body");
-  if (help && body && !help.dataset.built) {
-    body.innerHTML = types.map(t =>
-      `<div class="item ${t.severity === "warning" ? "warn" : "err"}">` +
-      `<div class="lbl">${escapeHtml(t.label)}</div>` +
-      `<div class="dsc">${escapeHtml(t.description || "")}</div></div>`).join("");
-    help.dataset.built = "1";
-  }
+  // "About these checks" panel — built once (shared helper).
+  buildHelpPanel("#std-help", types);
 }
 
 // Strip the leading "CX-XXXX" from a standard title (the title repeats the id).
@@ -2181,6 +2169,37 @@ function buildPillFilter(box, values, set, opts) {
   });
 }
 
+// Build a .kpi.iss summary card, shared by the Issues and Standards tabs.
+// Severity drives the err/warn tint; a zero count is greyed (.zero); `selected`
+// adds .sel. opts: {count, label, sev, description, selected, onClick}.
+function issueKpiCard(opts) {
+  const card = document.createElement("div");
+  card.className = "kpi iss " +
+    (opts.count === 0 ? "zero" : opts.sev === "warning" ? "warn" : "err") +
+    (opts.selected ? " sel" : "");
+  if (opts.description) card.title = opts.description;
+  card.innerHTML =
+    `<div class="n">${opts.count}</div><div class="s">${escapeHtml(opts.label)}</div>`;
+  card.addEventListener("click", opts.onClick);
+  return card;
+}
+
+// Build the collapsible "About these checks" help panel, shared by the Issues
+// and Standards tabs. Fills `<selector> .body` once (preserving the user's
+// open/closed state across re-renders) with one .item row per type
+// (severity tint + label + description). Callers guard on their data being
+// loaded before calling.
+function buildHelpPanel(selector, types) {
+  const body = document.querySelector(selector + " .body");
+  if (!body || body.dataset.built) return;
+  body.innerHTML = types.map(t =>
+    `<div class="item ${t.severity === "warning" ? "warn" : "err"}">` +
+    `<div class="lbl">${escapeHtml(t.label)}</div>` +
+    `<div class="dsc">${escapeHtml(t.description || "")}</div></div>`
+  ).join("");
+  body.dataset.built = "1";
+}
+
 // Source filter (Home) — built once, toggles the catalog scope.
 function renderSourceFilter() {
   const box = document.getElementById("cat-source");
@@ -2411,24 +2430,18 @@ function renderIssues() {
 
   // One card per type, highlighted as soon as count > 0. `title` = native
   // tooltip with the full description.
-  const makeCard = t => {
-    const n = countOf[t.id];
-    const card = document.createElement("div");
-    card.className = "kpi iss " +
-      (n === 0 ? "zero" : t.severity === "warning" ? "warn" : "err") +
-      (issSelType === t.id ? " sel" : "");
-    if (t.description) card.title = t.description;
-    card.innerHTML =
-      `<div class="n">${n}</div><div class="s">${escapeHtml(t.label)}</div>`;
-    card.addEventListener("click", () => {
-      issSelType = issSelType === t.id ? null : t.id;
-      // Push URL : #/issues?type=<id> (or bare #/issues if no selection).
-      const p = issSelType ? new URLSearchParams({ type: issSelType }) : null;
-      setUrl(buildHash(URL_BY_VIEW.issues, "", p));
-      renderIssues();
+  const makeCard = t =>
+    issueKpiCard({
+      count: countOf[t.id], label: t.label, sev: t.severity,
+      description: t.description, selected: issSelType === t.id,
+      onClick: () => {
+        issSelType = issSelType === t.id ? null : t.id;
+        // Push URL : #/issues?type=<id> (or bare #/issues if no selection).
+        const p = issSelType ? new URLSearchParams({ type: issSelType }) : null;
+        setUrl(buildHash(URL_BY_VIEW.issues, "", p));
+        renderIssues();
+      },
     });
-    return card;
-  };
 
   // KPI grid grouped by category ; within each group, sort by count desc
   // (most pressing first), errors before warnings on ties.
@@ -2451,16 +2464,8 @@ function renderIssues() {
     kbox.appendChild(sec);
   });
 
-  // "About these checks" reference panel — built once, then left alone so
-  // the user's open/closed state is preserved across re-renders.
-  const helpBody = help.querySelector(".body");
-  if (!help.dataset.built) {
-    helpBody.innerHTML = types.map(t =>
-      `<div class="item ${t.severity === "warning" ? "warn" : "err"}">` +
-      `<div class="lbl">${escapeHtml(t.label)}</div>` +
-      `<div class="dsc">${escapeHtml(t.description || "")}</div></div>`).join("");
-    help.dataset.built = "1";
-  }
+  // "About these checks" reference panel — built once (shared helper).
+  buildHelpPanel("#iss-help", types);
 
   if (!issSelType) {
     expl.style.display = "none";
