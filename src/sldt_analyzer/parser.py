@@ -259,13 +259,22 @@ def _dependencies(
 # Quelques metadata.json amont ont la coquille "deprecate".
 _STATUS_FIX = {"deprecate": "deprecated"}
 
+# Statut par défaut quand le metadata.json est absent / illisible / sans statut.
+# IDTA (smt-semantic-models) ne publie QUE des modèles released et ne fournit
+# pas de metadata.json -> on assume `release` au lieu d'`undefined`. Les autres
+# sources restent `undefined` (réellement inconnu). Un statut explicite et
+# valide dans le metadata.json prime toujours sur ce défaut.
+_DEFAULT_STATUS_BY_SOURCE = {"idta": "release"}
 
-def _read_status(ttl_path: Path) -> str:
+
+def _read_status(ttl_path: Path, source: str = "unknown") -> str:
     """`status` du metadata.json voisin (même dossier de version).
-    Absent -> 'undefined' ; illisible/malformé -> WARNING + 'undefined'."""
+    Absent/sans statut -> défaut par source (`release` pour IDTA, sinon
+    'undefined') ; illisible/malformé -> WARNING + défaut par source."""
+    default = _DEFAULT_STATUS_BY_SOURCE.get(source, "undefined")
     meta = Path(ttl_path).parent / "metadata.json"
     if not meta.is_file():
-        return "undefined"
+        return default
     try:
         raw = meta.read_bytes()
         try:
@@ -275,9 +284,9 @@ def _read_status(ttl_path: Path) -> str:
         status = json.loads(txt).get("status")
     except Exception as exc:  # noqa: BLE001 — JSON cassé : on logge et on continue
         logger.warning("metadata.json illisible : %s — %s", meta, exc)
-        return "undefined"
+        return default
     if not isinstance(status, str) or not status.strip():
-        return "undefined"
+        return default
     status = status.strip().lower()
     return _STATUS_FIX.get(status, status)
 
@@ -359,7 +368,7 @@ def parse_file(path: Path) -> ParsedModel | None:
         model_name=name,
         model_version=version,
         source=source,
-        status=_read_status(path),
+        status=_read_status(path, source),
         release_date=rdate,
         release_notes=rnotes,
         dependencies=_dependencies(graph, ns, name, version),

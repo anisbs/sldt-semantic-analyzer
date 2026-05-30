@@ -2588,17 +2588,9 @@
       "version": "1.0.0",
       "family": "SAMM",
       "source": "idta",
-      "status": "undefined",
-      "total": 11,
+      "status": "release",
+      "total": 8,
       "issues": {
-        "dep_on_undefined": {
-          "count": 3,
-          "detail": [
-            "carbon_footprint@1.0.0",
-            "contact_information@1.0.0",
-            "shared@3.1.0"
-          ]
-        },
         "outdated_dependency": {
           "count": 1,
           "detail": [
@@ -2656,17 +2648,9 @@
       "version": "1.0.0",
       "family": "SAMM",
       "source": "idta",
-      "status": "undefined",
-      "total": 34,
+      "status": "release",
+      "total": 31,
       "issues": {
-        "dep_on_undefined": {
-          "count": 3,
-          "detail": [
-            "contact_information@1.0.0",
-            "handover_documentation@2.0.0",
-            "shared@3.1.0"
-          ]
-        },
         "orphan_isolated": {
           "count": 5,
           "detail": [
@@ -2866,17 +2850,9 @@
       "version": "1.0.0",
       "family": "SAMM",
       "source": "idta",
-      "status": "undefined",
-      "total": 10,
+      "status": "release",
+      "total": 7,
       "issues": {
-        "dep_on_undefined": {
-          "count": 3,
-          "detail": [
-            "contact_information@1.0.0",
-            "digital_nameplate@3.0.0",
-            "shared@3.1.0"
-          ]
-        },
         "orphan_isolated": {
           "count": 2,
           "detail": [
@@ -2941,16 +2917,9 @@
       "version": "1.0.0",
       "family": "SAMM",
       "source": "idta",
-      "status": "undefined",
-      "total": 9,
+      "status": "release",
+      "total": 7,
       "issues": {
-        "dep_on_undefined": {
-          "count": 2,
-          "detail": [
-            "handover_documentation@2.0.0",
-            "shared@3.1.0"
-          ]
-        },
         "orphan_unreachable": {
           "count": 2,
           "detail": [
@@ -3015,9 +2984,17 @@
       "version": "1.0.0",
       "family": "SAMM",
       "source": "idta",
-      "status": "undefined",
-      "total": 17,
+      "status": "release",
+      "total": 18,
       "issues": {
+        "older_release_exists": {
+          "count": 1,
+          "detail": [
+            {
+              "latest_release": "batterypass.material_composition@1.0.1"
+            }
+          ]
+        },
         "orphan_isolated": {
           "count": 1,
           "detail": [
@@ -3137,7 +3114,7 @@
       "version": "1.0.1",
       "family": "SAMM",
       "source": "idta",
-      "status": "undefined",
+      "status": "release",
       "total": 17,
       "issues": {
         "orphan_isolated": {
@@ -3259,14 +3236,15 @@
       "version": "1.0.0",
       "family": "SAMM",
       "source": "idta",
-      "status": "undefined",
-      "total": 30,
+      "status": "release",
+      "total": 29,
       "issues": {
-        "dep_on_undefined": {
-          "count": 2,
+        "older_release_exists": {
+          "count": 1,
           "detail": [
-            "handover_documentation@2.0.0",
-            "shared@3.1.0"
+            {
+              "latest_release": "batterypass.product_condition@1.0.1"
+            }
           ]
         },
         "orphan_unreachable": {
@@ -3438,15 +3416,16 @@
       "version": "1.0.1",
       "family": "SAMM",
       "source": "idta",
-      "status": "undefined",
-      "total": 99,
+      "status": "release",
+      "total": 97,
       "issues": {
-        "dep_on_undefined": {
-          "count": 3,
+        "outdated_dependency": {
+          "count": 1,
           "detail": [
-            "batterypass.product_condition@1.0.0",
-            "handover_documentation@2.0.0",
-            "shared@3.1.0"
+            {
+              "target": "batterypass.product_condition@1.0.0",
+              "latest_release": "batterypass.product_condition@1.0.1"
+            }
           ]
         },
         "orphan_unreachable": {
@@ -3963,8 +3942,8 @@
       "version": "1.0.0",
       "family": "SAMM",
       "source": "idta",
-      "status": "undefined",
-      "total": 42,
+      "status": "release",
+      "total": 40,
       "issues": {
         "unresolved_dep": {
           "count": 2,
@@ -3973,12 +3952,12 @@
             "Performance@1.2.1"
           ]
         },
-        "dep_on_undefined": {
-          "count": 3,
+        "older_release_exists": {
+          "count": 1,
           "detail": [
-            "digital_nameplate@3.0.0",
-            "generic.technical_data@2.0.0",
-            "shared@3.1.0"
+            {
+              "latest_release": "batterypass.technical_data@1.0.1"
+            }
           ]
         },
         "orphan_isolated": {
@@ -4210,22 +4189,14 @@
       "version": "1.0.1",
       "family": "SAMM",
       "source": "idta",
-      "status": "undefined",
-      "total": 42,
+      "status": "release",
+      "total": 39,
       "issues": {
         "unresolved_dep": {
           "count": 2,
           "detail": [
             "GeneralProductInformation@1.2.0",
             "Performance@1.2.1"
-          ]
-        },
-        "dep_on_undefined": {
-          "count": 3,
-          "detail": [
-            "digital_nameplate@3.0.0",
-            "generic.technical_data@2.0.0",
-            "shared@3.1.0"
           ]
         },
         "orphan_isolated": {
@@ -5185,16 +5156,9 @@
       "version": "1.0.0",
       "family": "SAMM",
       "source": "idta",
-      "status": "undefined",
-      "total": 26,
+      "status": "release",
+      "total": 24,
       "issues": {
-        "dep_on_undefined": {
-          "count": 2,
-          "detail": [
-            "contact_information@1.0.0",
-            "shared@3.1.0"
-          ]
-        },
         "outdated_dependency": {
           "count": 1,
           "detail": [
@@ -6284,15 +6248,9 @@
       "version": "1.0.0",
       "family": "SAMM",
       "source": "idta",
-      "status": "undefined",
-      "total": 56,
+      "status": "release",
+      "total": 55,
       "issues": {
-        "dep_on_undefined": {
-          "count": 1,
-          "detail": [
-            "shared@3.1.0"
-          ]
-        },
         "orphan_isolated": {
           "count": 5,
           "detail": [
@@ -7894,16 +7852,9 @@
       "version": "3.0.0",
       "family": "SAMM",
       "source": "idta",
-      "status": "undefined",
-      "total": 22,
+      "status": "release",
+      "total": 20,
       "issues": {
-        "dep_on_undefined": {
-          "count": 2,
-          "detail": [
-            "contact_information@1.0.0",
-            "shared@3.1.0"
-          ]
-        },
         "property_without_characteristic": {
           "count": 16,
           "detail": [
@@ -15107,8 +15058,8 @@
       "version": "1.2.0",
       "family": "SAMM",
       "source": "idta",
-      "status": "undefined",
-      "total": 16,
+      "status": "release",
+      "total": 15,
       "issues": {
         "unresolved_dep": {
           "count": 1,
@@ -15116,11 +15067,12 @@
             "nameplate@3.0.0"
           ]
         },
-        "dep_on_undefined": {
-          "count": 2,
+        "older_release_exists": {
+          "count": 1,
           "detail": [
-            "digital_nameplate@3.0.0",
-            "shared@3.1.0"
+            {
+              "latest_release": "generic.technical_data@2.0.0"
+            }
           ]
         },
         "key_element_missing_preferred_name": {
@@ -15212,20 +15164,13 @@
       "version": "2.0.0",
       "family": "SAMM",
       "source": "idta",
-      "status": "undefined",
-      "total": 24,
+      "status": "release",
+      "total": 22,
       "issues": {
         "unresolved_dep": {
           "count": 1,
           "detail": [
             "nameplate@3.0.0"
-          ]
-        },
-        "dep_on_undefined": {
-          "count": 2,
-          "detail": [
-            "digital_nameplate@3.0.0",
-            "shared@3.1.0"
           ]
         },
         "key_element_missing_description": {
@@ -15560,15 +15505,9 @@
       "version": "2.0.0",
       "family": "SAMM",
       "source": "idta",
-      "status": "undefined",
-      "total": 71,
+      "status": "release",
+      "total": 70,
       "issues": {
-        "dep_on_undefined": {
-          "count": 1,
-          "detail": [
-            "shared@3.1.0"
-          ]
-        },
         "circular_dep": {
           "count": 1,
           "detail": [
@@ -32777,15 +32716,9 @@
       "version": "3.1.0",
       "family": "SAMM",
       "source": "idta",
-      "status": "undefined",
-      "total": 121,
+      "status": "release",
+      "total": 120,
       "issues": {
-        "dep_on_undefined": {
-          "count": 1,
-          "detail": [
-            "handover_documentation@2.0.0"
-          ]
-        },
         "circular_dep": {
           "count": 1,
           "detail": [

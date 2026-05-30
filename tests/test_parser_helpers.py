@@ -12,7 +12,7 @@ from __future__ import annotations
 import pytest
 
 from sldt_analyzer.parser import (
-    _parse_model_urn, _source_for_ns_segment,
+    _parse_model_urn, _read_status, _source_for_ns_segment,
 )
 
 
@@ -79,3 +79,35 @@ class TestSourceForNsSegment:
         source, name = _source_for_ns_segment(segment)
         assert source == expected_source
         assert name == expected_name
+
+
+class TestReadStatus:
+    """Statut lu du metadata.json voisin, avec défaut par source : IDTA ne
+    publie que du released et n'a pas de metadata.json -> `release` ; les autres
+    sources restent `undefined`. Un statut explicite et valide prime toujours."""
+
+    def test_idta_defaults_release_when_absent(self, tmp_path):
+        ttl = tmp_path / "Foo.ttl"
+        ttl.write_text("", encoding="utf-8")
+        assert _read_status(ttl, "idta") == "release"
+
+    def test_other_sources_default_undefined_when_absent(self, tmp_path):
+        ttl = tmp_path / "Foo.ttl"
+        ttl.write_text("", encoding="utf-8")
+        assert _read_status(ttl, "catenax") == "undefined"
+        assert _read_status(ttl) == "undefined"   # défaut source 'unknown'
+
+    def test_explicit_status_wins_over_source_default(self, tmp_path):
+        ttl = tmp_path / "Foo.ttl"
+        ttl.write_text("", encoding="utf-8")
+        (tmp_path / "metadata.json").write_text(
+            '{"status": "deprecated"}', encoding="utf-8")
+        # Même pour IDTA, un statut explicite prime sur le défaut `release`.
+        assert _read_status(ttl, "idta") == "deprecated"
+
+    def test_malformed_metadata_falls_back_to_source_default(self, tmp_path):
+        ttl = tmp_path / "Foo.ttl"
+        ttl.write_text("", encoding="utf-8")
+        (tmp_path / "metadata.json").write_text("{not json", encoding="utf-8")
+        assert _read_status(ttl, "idta") == "release"
+        assert _read_status(ttl, "catenax") == "undefined"
