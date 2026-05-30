@@ -507,8 +507,9 @@ function draw(g) {
     .append("g").attr("class", "node")
     .call(dragger(sim, ticked));
 
-  node.append("circle").attr("r", 9).attr("fill", d => color(d.kind))
-    .on("mouseover", (e, d) => {
+  attachTooltip(
+    node.append("circle").attr("r", 9).attr("fill", d => color(d.kind)),
+    d => {
       // External refs : arêtes sortantes vers un autre modèle (ou un
       // bloc tiers connu). Apparaît surtout sur les éléments IDTA qui
       // délèguent à shared@3.1.0 ou pointent vers Catena-X.
@@ -530,15 +531,11 @@ function draw(g) {
                `padding-top:5px;font-size:12px"><b>External refs ` +
                `(${d.external_refs.length})</b>${items}${more}</div>`;
       }
-      tooltip.style("opacity", 1).html(
-        `<span class="k">${d.kind}</span> — <b>${d.label}</b><br>` +
+      return `<span class="k">${d.kind}</span> — <b>${d.label}</b><br>` +
         (d.preferredName ? `<i>${d.preferredName}</i><br>` : "") +
         (d.description ? d.description.slice(0, 280) : "") +
-        refs);
-    })
-    .on("mousemove", e =>
-      tooltip.style("left", (e.pageX + 14) + "px").style("top", (e.pageY + 8) + "px"))
-    .on("mouseout", () => tooltip.style("opacity", 0));
+        refs;
+    });
 
   node.append("text").attr("x", 12).attr("y", 4).text(d => d.label);
 
@@ -666,6 +663,18 @@ function splitKey(k) {
   return [k.slice(0, at), k.slice(at + 1)];
 }
 
+// Wire the shared #tooltip onto a node selection: show htmlFn(d) on hover,
+// follow the cursor (+14/+8 offset), hide on leave. Returns the selection so a
+// further `.on("click", …)` can chain. Factors the identical move/hide handlers
+// across the element / dependency / standards graphs (mouseover HTML differs).
+function attachTooltip(sel, htmlFn) {
+  return sel
+    .on("mouseover", (e, d) => tooltip.style("opacity", 1).html(htmlFn(d)))
+    .on("mousemove", e =>
+      tooltip.style("left", (e.pageX + 14) + "px").style("top", (e.pageY + 8) + "px"))
+    .on("mouseout", () => tooltip.style("opacity", 0));
+}
+
 // BFS, transitive. `expanded` guards cycles: A→B and B→A both draw an edge,
 // but each node is expanded once, so no infinite recursion.
 function buildDepGraph(rootKey) {
@@ -773,12 +782,13 @@ function drawDep(rootKey) {
     .style("fill", "none").style("stroke-width", "3.5px")
     .style("stroke", d => d.status ? statusColor(d.status) : "transparent");
 
-  node.append("circle").attr("r", 12)
-    .attr("class", d => d.root ? "dep-root" : (d.present ? "" : "dep-missing"))
-    .attr("fill", d => d.root ? DEP_COLORS.root
-                              : (d.present ? DEP_COLORS.dep : DEP_COLORS.missing))
-    .style("cursor", d => d.present ? "pointer" : "default")
-    .on("mouseover", (e, d) => tooltip.style("opacity", 1).html(
+  attachTooltip(
+    node.append("circle").attr("r", 12)
+      .attr("class", d => d.root ? "dep-root" : (d.present ? "" : "dep-missing"))
+      .attr("fill", d => d.root ? DEP_COLORS.root
+                                : (d.present ? DEP_COLORS.dep : DEP_COLORS.missing))
+      .style("cursor", d => d.present ? "pointer" : "default"),
+    d =>
       `<b>${d.name}</b> <span class="k">v${d.version}</span><br>` +
       (d.source
         ? `source: <b style="color:${sourceColor(d.source)}">${sourceLabel(d.source)}</b><br>`
@@ -788,10 +798,7 @@ function drawDep(rootKey) {
         : "") +
       (d.root ? "selected model<br><i>click to re-root here</i>"
        : d.present ? "in catalog<br><i>click to re-root here</i>"
-       : "<i>not in catalog (unresolved dependency)</i>")))
-    .on("mousemove", e =>
-      tooltip.style("left", (e.pageX + 14) + "px").style("top", (e.pageY + 8) + "px"))
-    .on("mouseout", () => tooltip.style("opacity", 0))
+       : "<i>not in catalog (unresolved dependency)</i>"))
     .on("click", (e, d) => {
       if (!d.present) return;
       const ent = entryForKey(d.id);
@@ -2054,13 +2061,11 @@ function drawStdGraph(rootId) {
         .on("drag", (e, d) => { d.x = e.x; d.y = e.y; ticked(); })
         .on("end", () => {})
     : dragger(stdSim, ticked);
-  const node = sgContainer.append("g").selectAll("g").data(nodes).enter()
-    .append("g").attr("class", "node").call(drag)
-    .style("cursor", d => stdNodeClickable(d, rootId) ? "pointer" : "default")
-    .on("mouseover", (e, d) => tooltip.style("opacity", 1).html(stdNodeTip(d, rootId)))
-    .on("mousemove", e => tooltip
-      .style("left", (e.pageX + 14) + "px").style("top", (e.pageY + 8) + "px"))
-    .on("mouseout", () => tooltip.style("opacity", 0))
+  const node = attachTooltip(
+    sgContainer.append("g").selectAll("g").data(nodes).enter()
+      .append("g").attr("class", "node").call(drag)
+      .style("cursor", d => stdNodeClickable(d, rootId) ? "pointer" : "default"),
+    d => stdNodeTip(d, rootId))
     .on("click", (e, d) => {
       if (d.type === "model") {
         const ent = entryForKey(d.mk); if (ent) openEntry(ent); return;
