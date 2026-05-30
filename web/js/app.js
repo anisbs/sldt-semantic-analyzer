@@ -2154,22 +2154,40 @@ function renderKpis() {
   });
 }
 
+// Build a row of multi-select filter pills (.fpill) into `box`, one per value,
+// each reflecting/toggling membership in `set`. Factors the six identical
+// "build a pill filter" blocks (Home source, Issues status/source, Search
+// status/kind/source). Options:
+//   color(v)   -> category color (inline --c on the pill)
+//   label(v)   -> visible text (defaults to the value itself)
+//   onToggle(v, checked) -> optional side effect run after the set is updated,
+//                           before re-render (e.g. Search's IDTA→undefined link)
+//   onChange() -> re-render callback run after each toggle
+function buildPillFilter(box, values, set, opts) {
+  const label = opts.label || (v => v);
+  values.forEach(v => {
+    const lab = document.createElement("label");
+    lab.className = "fpill";
+    lab.style.setProperty("--c", opts.color(v));
+    lab.innerHTML =
+      `<input type="checkbox" ${set.has(v) ? "checked" : ""}>` +
+      `<span class="dot"></span><span>${label(v)}</span>`;
+    lab.querySelector("input").addEventListener("change", function () {
+      if (this.checked) set.add(v); else set.delete(v);
+      if (opts.onToggle) opts.onToggle(v, this.checked);
+      opts.onChange();
+    });
+    box.appendChild(lab);
+  });
+}
+
 // Source filter (Home) — built once, toggles the catalog scope.
 function renderSourceFilter() {
   const box = document.getElementById("cat-source");
   if (box.dataset.built) return;
-  SOURCE_ORDER.forEach(s => {
-    const lab = document.createElement("label");
-    lab.className = "fpill";
-    lab.style.setProperty("--c", sourceColor(s));
-    lab.innerHTML =
-      `<input type="checkbox" ${catSrcFilter.has(s) ? "checked" : ""}>` +
-      `<span class="dot"></span><span>${sourceLabel(s)}</span>`;
-    lab.querySelector("input").addEventListener("change", function () {
-      if (this.checked) catSrcFilter.add(s); else catSrcFilter.delete(s);
-      renderKpis(); renderCatalog();
-    });
-    box.appendChild(lab);
+  buildPillFilter(box, SOURCE_ORDER, catSrcFilter, {
+    color: sourceColor, label: sourceLabel,
+    onChange: () => { renderKpis(); renderCatalog(); },
   });
   // "Used in a standard" toggle — far right of the same line (margin-left:auto).
   const stdLab = document.createElement("label");
@@ -2356,36 +2374,16 @@ function renderIssues() {
 
   // Status checkboxes — built once, drive the KPI scope.
   if (!sbox.dataset.built) {
-    STATUS_ORDER.forEach(s => {
-      const lab = document.createElement("label");
-      lab.className = "fpill";
-      lab.style.setProperty("--c", statusColor(s));
-      lab.innerHTML =
-        `<input type="checkbox" ${issStatuses.has(s) ? "checked" : ""}>` +
-        `<span class="dot"></span><span>${s}</span>`;
-      lab.querySelector("input").addEventListener("change", function () {
-        if (this.checked) issStatuses.add(s); else issStatuses.delete(s);
-        renderIssues();
-      });
-      sbox.appendChild(lab);
+    buildPillFilter(sbox, STATUS_ORDER, issStatuses, {
+      color: statusColor, onChange: renderIssues,
     });
     sbox.dataset.built = "1";
   }
 
   // Source checkboxes — built once (same pattern as status).
   if (!srcbox.dataset.built) {
-    SOURCE_ORDER.forEach(s => {
-      const lab = document.createElement("label");
-      lab.className = "fpill";
-      lab.style.setProperty("--c", sourceColor(s));
-      lab.innerHTML =
-        `<input type="checkbox" ${issSources.has(s) ? "checked" : ""}>` +
-        `<span class="dot"></span><span>${sourceLabel(s)}</span>`;
-      lab.querySelector("input").addEventListener("change", function () {
-        if (this.checked) issSources.add(s); else issSources.delete(s);
-        renderIssues();
-      });
-      srcbox.appendChild(lab);
+    buildPillFilter(srcbox, SOURCE_ORDER, issSources, {
+      color: sourceColor, label: sourceLabel, onChange: renderIssues,
     });
     srcbox.dataset.built = "1";
   }
@@ -2578,67 +2576,35 @@ function renderSearch() {
 
   // Status checkboxes — built once (same pattern as the Issues tab).
   if (!sbox.dataset.built) {
-    STATUS_ORDER.forEach(s => {
-      const lab = document.createElement("label");
-      lab.className = "fpill";
-      lab.style.setProperty("--c", statusColor(s));
-      lab.innerHTML =
-        `<input type="checkbox" ${srStatuses.has(s) ? "checked" : ""}>` +
-        `<span class="dot"></span><span>${s}</span>`;
-      lab.querySelector("input").addEventListener("change", function () {
-        if (this.checked) srStatuses.add(s); else srStatuses.delete(s);
-        renderSearch();
-      });
-      sbox.appendChild(lab);
+    buildPillFilter(sbox, STATUS_ORDER, srStatuses, {
+      color: statusColor, onChange: renderSearch,
     });
     sbox.dataset.built = "1";
   }
 
   // Kind checkboxes — built once (Aspect / Property / Entity buckets).
   if (!kbox.dataset.built) {
-    SR_KINDS.forEach(k => {
-      const lab = document.createElement("label");
-      lab.className = "fpill";
-      lab.style.setProperty("--c", color(k));
-      lab.innerHTML =
-        `<input type="checkbox" ${srKinds.has(k) ? "checked" : ""}>` +
-        `<span class="dot"></span><span>${k}</span>`;
-      lab.querySelector("input").addEventListener("change", function () {
-        if (this.checked) srKinds.add(k); else srKinds.delete(k);
-        renderSearch();
-      });
-      kbox.appendChild(lab);
+    buildPillFilter(kbox, SR_KINDS, srKinds, {
+      color: color, onChange: renderSearch,
     });
     kbox.dataset.built = "1";
   }
 
   // Source checkboxes — built once (catenax / idta).
   if (!srcbox.dataset.built) {
-    SOURCE_ORDER.forEach(s => {
-      const lab = document.createElement("label");
-      lab.className = "fpill";
-      lab.style.setProperty("--c", sourceColor(s));
-      lab.innerHTML =
-        `<input type="checkbox" ${srSources.has(s) ? "checked" : ""}>` +
-        `<span class="dot"></span><span>${sourceLabel(s)}</span>`;
-      lab.querySelector("input").addEventListener("change", function () {
-        if (this.checked) {
-          srSources.add(s);
-          // Checking IDTA auto-checks "undefined" status (IDTA models have
-          // no metadata.json upstream, so they all fall under "undefined").
-          if (s === "idta" && !srStatuses.has("undefined")) {
-            srStatuses.add("undefined");
-            const undefInput = sbox.querySelectorAll("label input")[
-              STATUS_ORDER.indexOf("undefined")
-            ];
-            if (undefInput) undefInput.checked = true;
-          }
-        } else {
-          srSources.delete(s);
+    buildPillFilter(srcbox, SOURCE_ORDER, srSources, {
+      color: sourceColor, label: sourceLabel, onChange: renderSearch,
+      onToggle: (v, checked) => {
+        // Checking IDTA auto-checks "undefined" status (IDTA models have no
+        // metadata.json upstream, so they all fall under "undefined").
+        if (checked && v === "idta" && !srStatuses.has("undefined")) {
+          srStatuses.add("undefined");
+          const undefInput = sbox.querySelectorAll("label input")[
+            STATUS_ORDER.indexOf("undefined")
+          ];
+          if (undefInput) undefInput.checked = true;
         }
-        renderSearch();
-      });
-      srcbox.appendChild(lab);
+      },
     });
     srcbox.dataset.built = "1";
   }
