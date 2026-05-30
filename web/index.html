@@ -566,6 +566,27 @@
       overflow: hidden; }
     #sr-list .empty { padding: var(--sp-4); color: var(--text-3);
       font-size: var(--fs-md); }
+    /* Rich empty state (no query yet) : index breakdown + example searches. */
+    #sr-list .sr-hint { padding: var(--sp-5) var(--sp-4);
+      display: flex; flex-direction: column; gap: var(--sp-4); }
+    .sr-hint .stats { display: flex; flex-wrap: wrap; gap: var(--sp-5);
+      font-size: var(--fs-md); color: var(--text-2); }
+    .sr-hint .stats .st { display: flex; align-items: baseline; gap: 7px; }
+    .sr-hint .stats .st .d { width: 9px; height: 9px; border-radius: 50%;
+      align-self: center; }
+    .sr-hint .stats .st b { color: var(--text); font-weight: 700;
+      font-variant-numeric: tabular-nums; }
+    .sr-hint .ex { display: flex; flex-wrap: wrap; align-items: center;
+      gap: var(--sp-2); }
+    .sr-hint .ex .ttl { color: var(--text-3); font-size: var(--fs-sm); }
+    .sr-ex { font-family: inherit; font-size: var(--fs-sm); cursor: pointer;
+      padding: 4px 11px; border-radius: var(--r-pill); color: var(--accent);
+      border: 1px solid var(--border-strong); background: var(--surface);
+      transition: background-color var(--dur) var(--ease),
+        border-color var(--dur) var(--ease); }
+    .sr-ex:hover { background: var(--accent-weak); border-color: var(--accent); }
+    .sr-ex:focus-visible { outline: 2px solid var(--accent);
+      outline-offset: 1px; }
     .sr-row { display: flex; flex-direction: column; gap: 3px;
       cursor: pointer; padding: var(--sp-3) var(--sp-4);
       border-bottom: 1px solid var(--border); font-size: var(--fs-md);
@@ -3528,6 +3549,34 @@ function loadSearch() {
     });
 }
 
+// Candidate example searches for the empty state. Filtered at render time to
+// those that actually return ≥1 hit in the loaded index, so a clicked chip is
+// never a dead end (the corpus can change as upstream models evolve).
+const SR_EXAMPLES = ["battery", "address", "material", "identifier",
+  "temperature", "certificate", "quantity", "serialNumber"];
+
+// Rich empty state shown before any query : per-kind index breakdown + a row
+// of clickable example searches. Returns the inner HTML for #sr-list.
+function searchEmptyHint() {
+  const counts = { Aspect: 0, Property: 0, Entity: 0 };
+  searchData.forEach(e => { counts[kindBucket(e.kind)]++; });
+  const lc = q => q.toLowerCase();
+  const stat = (kind, label) =>
+    `<span class="st"><span class="d" style="background:${color(kind)}"></span>` +
+    `<b>${counts[kind].toLocaleString()}</b> ${label}</span>`;
+  const examples = SR_EXAMPLES
+    .filter(c => searchData.some(e => e.name.toLowerCase().includes(lc(c)) ||
+      (e.preferredName && e.preferredName.toLowerCase().includes(lc(c)))))
+    .slice(0, 6)
+    .map(c => `<button type="button" class="sr-ex" data-q="${c}">${c}</button>`)
+    .join("");
+  return `<div class="sr-hint">` +
+    `<div class="stats">${stat("Aspect", "aspects")}` +
+      `${stat("Property", "properties")}${stat("Entity", "entities")}</div>` +
+    (examples ? `<div class="ex"><span class="ttl">Try:</span>${examples}</div>` : "") +
+    `</div>`;
+}
+
 function renderSearch() {
   if (activeView !== "searchview") return;
   const sbox = document.getElementById("sr-status");
@@ -3615,9 +3664,16 @@ function renderSearch() {
 
   const q = (document.getElementById("sr-q").value || "").trim().toLowerCase();
   if (q.length < 2) {
-    cnt.textContent = `${searchData.length} searchable elements`;
-    list.innerHTML =
-      `<div class="empty">Type at least 2 characters to search names.</div>`;
+    cnt.textContent = `${searchData.length.toLocaleString()} searchable elements`;
+    list.innerHTML = searchEmptyHint();
+    // Example chips prefill the query and run the search via the input handler.
+    list.querySelectorAll(".sr-ex").forEach(b =>
+      b.addEventListener("click", () => {
+        const inp = document.getElementById("sr-q");
+        inp.value = b.dataset.q;
+        inp.dispatchEvent(new Event("input"));
+        inp.focus();
+      }));
     return;
   }
 
