@@ -5,13 +5,14 @@
       "title": "CX-0001 Participant Agent Registration v1.2",
       "link": "https://catenax-ev.github.io/docs/standards/CX-0001-ParticipantAgentRegistration",
       "normative": [],
-      "non_normative": [],
-      "referenced_standards": [
+      "non_normative": [
         "CX-0006",
         "CX-0010",
         "CX-0018"
       ],
       "deprecated_refs": [],
+      "deprecated_models": [],
+      "bamm_models": [],
       "semantic_models": []
     },
     "CX-0002": {
@@ -22,16 +23,12 @@
         "CX-0001",
         "CX-0003",
         "CX-0018",
-        "CX-0053"
-      ],
-      "referenced_standards": [
-        "CX-0001",
-        "CX-0003",
-        "CX-0018",
         "CX-0044",
         "CX-0053"
       ],
       "deprecated_refs": [],
+      "deprecated_models": [],
+      "bamm_models": [],
       "semantic_models": [
         "material_demand@1.0.0"
       ]
@@ -42,12 +39,12 @@
       "normative": [
         "CX-0002"
       ],
-      "non_normative": [],
-      "referenced_standards": [
-        "CX-0002",
+      "non_normative": [
         "CX-0018"
       ],
       "deprecated_refs": [],
+      "deprecated_models": [],
+      "bamm_models": [],
       "semantic_models": [
         "material_for_recycling@1.0.0"
       ]
@@ -56,24 +53,22 @@
       "title": "CX-0005 Item Relationship Service API 2.2.0",
       "link": "https://catenax-ev.github.io/docs/standards/CX-0005-ItemRelationshipServiceAPI",
       "normative": [
+        "CX-0002",
         "CX-0018",
         "CX-0125"
       ],
       "non_normative": [
-        "CX-0126",
-        "CX-0127"
-      ],
-      "referenced_standards": [
         "CX-0001",
-        "CX-0002",
         "CX-0003",
         "CX-0010",
-        "CX-0018",
-        "CX-0125",
         "CX-0126",
         "CX-0127"
       ],
       "deprecated_refs": [],
+      "deprecated_models": [
+        "shared.part_site_information_as_built@2.0.0"
+      ],
+      "bamm_models": [],
       "semantic_models": [
         "just_in_sequence_part@3.0.0",
         "shared.part_site_information_as_built@2.0.0",
@@ -91,15 +86,11 @@
         "CX-0013"
       ],
       "non_normative": [],
-      "referenced_standards": [
-        "CX-0009",
-        "CX-0010",
-        "CX-0011",
-        "CX-0013"
-      ],
       "deprecated_refs": [
         "CX-0013"
       ],
+      "deprecated_models": [],
+      "bamm_models": [],
       "semantic_models": []
     },
     "CX-0007": {
@@ -110,55 +101,54 @@
         "CX-0018",
         "CX-0149"
       ],
-      "non_normative": [],
-      "referenced_standards": [
+      "non_normative": [
         "CX-0002",
         "CX-0010",
         "CX-0012",
-        "CX-0013",
-        "CX-0018",
         "CX-0055",
         "CX-0126",
         "CX-0127",
-        "CX-0143",
-        "CX-0149"
+        "CX-0143"
       ],
       "deprecated_refs": [
         "CX-0013"
       ],
+      "deprecated_models": [],
+      "bamm_models": [],
       "semantic_models": []
     },
     "CX-0009": {
       "title": "CX-0009 CX Registration API v2.0.0",
       "link": "https://catenax-ev.github.io/docs/standards/CX-0009-CXRegistrationAPI",
       "normative": [],
-      "non_normative": [],
-      "referenced_standards": [
+      "non_normative": [
         "CX-0006"
       ],
       "deprecated_refs": [],
+      "deprecated_models": [],
+      "bamm_models": [],
       "semantic_models": []
     },
     "CX-0010": {
       "title": "CX-0010 Business Partner Number v3.0.1",
       "link": "https://catenax-ev.github.io/docs/standards/CX-0010-BusinessPartnerNumber",
       "normative": [],
-      "non_normative": [],
-      "referenced_standards": [
+      "non_normative": [
         "CX-0011",
         "CX-0012",
         "CX-0074",
         "CX-0076"
       ],
       "deprecated_refs": [],
+      "deprecated_models": [],
+      "bamm_models": [],
       "semantic_models": []
     },
     "CX-0012": {
       "title": "CX-0012 Business Partner Data Pool API v5.1.1",
       "link": "https://catenax-ev.github.io/docs/standards/CX-0012-BusinessPartnerDataPoolAPI",
       "normative": [],
-      "non_normative": [],
-      "referenced_standards": [
+      "non_normative": [
         "CX-0010",
         "CX-0018",
         "CX-0074",
@@ -166,6 +156,8 @@
         "CX-0152"
       ],
       "deprecated_refs": [],
+      "deprecated_models": [],
+      "bamm_models": [],
       "semantic_models": []
     },
     "CX-0014": {
@@ -175,10 +167,9 @@
         "CX-0015"
       ],
       "non_normative": [],
-      "referenced_standards": [
-        "CX-0015"
-      ],
       "deprecated_refs": [],
+      "deprecated_models": [],
+      "bamm_models": [],
       "semantic_models": []
     },
     "CX-0015": {
@@ -186,32 +177,35 @@
       "link": "https://catenax-ev.github.io/docs/standards/CX-0015-IAMandAccessControlParadigmForUsersAndClients",
       "normative": [],
       "non_normative": [],
-      "referenced_standards": [],
       "deprecated_refs": [],
+      "deprecated_models": [],
+      "bamm_models": [],
       "semantic_models": []
     },
     "CX-0018": {
       "title": "CX-0018 Dataspace Connectivity v.4.1.1",
       "link": "https://catenax-ev.github.io/docs/standards/CX-0018-DataspaceConnectivity",
       "normative": [],
-      "non_normative": [],
-      "referenced_standards": [
+      "non_normative": [
         "CX-0049",
         "CX-0050",
         "CX-0152"
       ],
       "deprecated_refs": [],
+      "deprecated_models": [],
+      "bamm_models": [],
       "semantic_models": []
     },
     "CX-0044": {
       "title": "CX-0044 ECLASS v1.0.2",
       "link": "https://catenax-ev.github.io/docs/standards/CX-0044-ECLASS",
       "normative": [],
-      "non_normative": [],
-      "referenced_standards": [
+      "non_normative": [
         "CX-0003"
       ],
       "deprecated_refs": [],
+      "deprecated_models": [],
+      "bamm_models": [],
       "semantic_models": []
     },
     "CX-0045": {
@@ -227,38 +221,34 @@
         "CX-0126",
         "CX-0127"
       ],
-      "referenced_standards": [
-        "CX-0001",
-        "CX-0002",
-        "CX-0003",
-        "CX-0010",
-        "CX-0126",
-        "CX-0127"
-      ],
       "deprecated_refs": [],
+      "deprecated_models": [],
+      "bamm_models": [],
       "semantic_models": []
     },
     "CX-0049": {
       "title": "CX-0049 DID Document v2.2.0",
       "link": "https://catenax-ev.github.io/docs/standards/CX-0049-DIDDocumentSchema",
       "normative": [],
-      "non_normative": [],
-      "referenced_standards": [
+      "non_normative": [
         "CX-0050",
         "CX-0149"
       ],
       "deprecated_refs": [],
+      "deprecated_models": [],
+      "bamm_models": [],
       "semantic_models": []
     },
     "CX-0050": {
       "title": "CX-0050 CX-Specific Credentials v.2.2.0",
       "link": "https://catenax-ev.github.io/docs/standards/CX-0050-CXSpecificCredentials",
       "normative": [],
-      "non_normative": [],
-      "referenced_standards": [
+      "non_normative": [
         "CX-0010"
       ],
       "deprecated_refs": [],
+      "deprecated_models": [],
+      "bamm_models": [],
       "semantic_models": []
     },
     "CX-0053": {
@@ -273,14 +263,9 @@
         "CX-0012",
         "CX-0018"
       ],
-      "referenced_standards": [
-        "CX-0001",
-        "CX-0002",
-        "CX-0010",
-        "CX-0012",
-        "CX-0018"
-      ],
       "deprecated_refs": [],
+      "deprecated_models": [],
+      "bamm_models": [],
       "semantic_models": []
     },
     "CX-0054": {
@@ -294,16 +279,11 @@
         "CX-0011",
         "CX-0013"
       ],
-      "referenced_standards": [
-        "CX-0006",
-        "CX-0009",
-        "CX-0010",
-        "CX-0011",
-        "CX-0013"
-      ],
       "deprecated_refs": [
         "CX-0013"
       ],
+      "deprecated_models": [],
+      "bamm_models": [],
       "semantic_models": []
     },
     "CX-0055": {
@@ -321,42 +301,28 @@
         "CX-0084"
       ],
       "non_normative": [],
-      "referenced_standards": [
-        "CX-0001",
-        "CX-0002",
-        "CX-0003",
-        "CX-0012",
-        "CX-0018",
-        "CX-0050",
-        "CX-0053",
-        "CX-0067",
-        "CX-0084"
-      ],
       "deprecated_refs": [],
+      "deprecated_models": [],
+      "bamm_models": [],
       "semantic_models": []
     },
     "CX-0059": {
       "title": "CX-0059 Use Case Behaviour Twin Endurance Predictor v2.0.1",
       "link": "https://catenax-ev.github.io/docs/standards/CX-0059-UseCaseBehaviourTwinEndurancePredictor",
       "normative": [
+        "CX-0018",
         "CX-0023",
         "CX-0067",
         "CX-0084",
         "CX-0152"
       ],
-      "non_normative": [],
-      "referenced_standards": [
+      "non_normative": [
         "CX-0002",
         "CX-0003",
-        "CX-0018",
-        "CX-0023",
         "CX-0056",
         "CX-0057",
         "CX-0058",
-        "CX-0067",
-        "CX-0084",
-        "CX-0138",
-        "CX-0152"
+        "CX-0138"
       ],
       "deprecated_refs": [
         "CX-0023",
@@ -364,25 +330,27 @@
         "CX-0057",
         "CX-0058"
       ],
+      "deprecated_models": [],
+      "bamm_models": [],
       "semantic_models": []
     },
     "CX-0067": {
       "title": "CX-0067 Ontology Models to realize federated query in Catena-X v1.1.0",
       "link": "https://catenax-ev.github.io/docs/standards/CX-0067-OntologyModelsToRealizeFederatedQueryInCatenaX",
       "normative": [],
-      "non_normative": [],
-      "referenced_standards": [
+      "non_normative": [
         "CX-0084"
       ],
       "deprecated_refs": [],
+      "deprecated_models": [],
+      "bamm_models": [],
       "semantic_models": []
     },
     "CX-0074": {
       "title": "CX-0074 Business Partner Gate API v4.1.1",
       "link": "https://catenax-ev.github.io/docs/standards/CX-0074-BusinessPartnerGateAPI",
       "normative": [],
-      "non_normative": [],
-      "referenced_standards": [
+      "non_normative": [
         "CX-0010",
         "CX-0012",
         "CX-0018",
@@ -390,27 +358,29 @@
         "CX-0152"
       ],
       "deprecated_refs": [],
+      "deprecated_models": [],
+      "bamm_models": [],
       "semantic_models": []
     },
     "CX-0076": {
       "title": "CX-0076 - Golden Record End-to-End Requirements Standard v1.5.0",
       "link": "https://catenax-ev.github.io/docs/standards/CX-0076-GoldenRecordEndtoEndRequirementsStandard",
-      "normative": [],
-      "non_normative": [],
-      "referenced_standards": [
+      "normative": [
         "CX-0010",
         "CX-0012",
         "CX-0074"
       ],
+      "non_normative": [],
       "deprecated_refs": [],
+      "deprecated_models": [],
+      "bamm_models": [],
       "semantic_models": []
     },
     "CX-0077": {
       "title": "CX-0077 Data Quality Dashboard v1.2.2",
       "link": "https://catenax-ev.github.io/docs/standards/CX-0077-DataQualityDashboard",
       "normative": [],
-      "non_normative": [],
-      "referenced_standards": [
+      "non_normative": [
         "CX-0010",
         "CX-0012",
         "CX-0018",
@@ -419,14 +389,15 @@
         "CX-0152"
       ],
       "deprecated_refs": [],
+      "deprecated_models": [],
+      "bamm_models": [],
       "semantic_models": []
     },
     "CX-0078": {
       "title": "CX-0078 Bank Data Verification Dashboard v1.2.2",
       "link": "https://catenax-ev.github.io/docs/standards/CX-0078-BankDataVerificationDashboard",
       "normative": [],
-      "non_normative": [],
-      "referenced_standards": [
+      "non_normative": [
         "CX-0010",
         "CX-0012",
         "CX-0018",
@@ -434,6 +405,8 @@
         "CX-0152"
       ],
       "deprecated_refs": [],
+      "deprecated_models": [],
+      "bamm_models": [],
       "semantic_models": []
     },
     "CX-0079": {
@@ -442,39 +415,44 @@
       "normative": [
         "CX-0018"
       ],
-      "non_normative": [],
-      "referenced_standards": [
+      "non_normative": [
         "CX-0010",
-        "CX-0018",
+        "CX-0012",
         "CX-0074",
         "CX-0152"
       ],
       "deprecated_refs": [],
+      "deprecated_models": [],
+      "bamm_models": [],
       "semantic_models": []
     },
     "CX-0080": {
       "title": "CX-0080 BPDM Fraud Prevention Service v1.1.1",
       "link": "https://catenax-ev.github.io/docs/standards/CX-0080-BPDMFraudPreventionService",
       "normative": [],
-      "non_normative": [],
-      "referenced_standards": [
+      "non_normative": [
+        "CX-0012",
         "CX-0018",
+        "CX-0074",
         "CX-0152"
       ],
       "deprecated_refs": [],
+      "deprecated_models": [],
+      "bamm_models": [],
       "semantic_models": []
     },
     "CX-0081": {
       "title": "CX-0081 Country Risk API v1.2.1",
       "link": "https://catenax-ev.github.io/docs/standards/CX-0081-BPDMCountryRisk",
       "normative": [],
-      "non_normative": [],
-      "referenced_standards": [
+      "non_normative": [
         "CX-0018",
         "CX-0074",
         "CX-0152"
       ],
       "deprecated_refs": [],
+      "deprecated_models": [],
+      "bamm_models": [],
       "semantic_models": []
     },
     "CX-0084": {
@@ -487,12 +465,9 @@
       "non_normative": [
         "CX-0059"
       ],
-      "referenced_standards": [
-        "CX-0018",
-        "CX-0059",
-        "CX-0067"
-      ],
       "deprecated_refs": [],
+      "deprecated_models": [],
+      "bamm_models": [],
       "semantic_models": []
     },
     "CX-0102": {
@@ -500,8 +475,9 @@
       "link": "https://catenax-ev.github.io/docs/standards/CX-0102-Functional-Mock-Up",
       "normative": [],
       "non_normative": [],
-      "referenced_standards": [],
       "deprecated_refs": [],
+      "deprecated_models": [],
+      "bamm_models": [],
       "semantic_models": []
     },
     "CX-0105": {
@@ -516,16 +492,8 @@
         "CX-0104",
         "CX-0106"
       ],
-      "non_normative": [],
-      "referenced_standards": [
-        "CX-0002",
-        "CX-0003",
-        "CX-0018",
-        "CX-0045",
-        "CX-0070",
-        "CX-0083",
-        "CX-0104",
-        "CX-0106"
+      "non_normative": [
+        "CX-0003"
       ],
       "deprecated_refs": [
         "CX-0070",
@@ -533,6 +501,8 @@
         "CX-0104",
         "CX-0106"
       ],
+      "deprecated_models": [],
+      "bamm_models": [],
       "semantic_models": [
         "asset_tracker_links@2.0.0",
         "iot_sensor_data@2.0.0",
@@ -551,20 +521,14 @@
         "CX-0018",
         "CX-0152"
       ],
-      "non_normative": [],
-      "referenced_standards": [
-        "CX-0001",
-        "CX-0002",
-        "CX-0003",
-        "CX-0006",
-        "CX-0010",
-        "CX-0018",
-        "CX-0052",
-        "CX-0152"
+      "non_normative": [
+        "CX-0052"
       ],
       "deprecated_refs": [
         "CX-0052"
       ],
+      "deprecated_models": [],
+      "bamm_models": [],
       "semantic_models": [
         "manufacturing_capability@3.1.0"
       ]
@@ -574,9 +538,6 @@
       "link": "https://catenax-ev.github.io/docs/standards/CX-0116-SanctionWatchlistDashboard",
       "normative": [],
       "non_normative": [
-        "CX-0010"
-      ],
-      "referenced_standards": [
         "CX-0010",
         "CX-0012",
         "CX-0018",
@@ -584,14 +545,15 @@
         "CX-0152"
       ],
       "deprecated_refs": [],
+      "deprecated_models": [],
+      "bamm_models": [],
       "semantic_models": []
     },
     "CX-0117": {
       "title": "CX-0117 Use Case Circular Economy - Secondary Marketplace v1.0.0",
       "link": "https://catenax-ev.github.io/docs/standards/CX-0117-UseCaseCircularEconomySecondaryMarketplace",
       "normative": [],
-      "non_normative": [],
-      "referenced_standards": [
+      "non_normative": [
         "CX-0001",
         "CX-0002",
         "CX-0003",
@@ -616,6 +578,8 @@
         "CX-0035",
         "CX-0100"
       ],
+      "deprecated_models": [],
+      "bamm_models": [],
       "semantic_models": [
         "battery.battery_pass@5.0.0",
         "market_place_offer@2.0.0",
@@ -642,23 +606,9 @@
         "CX-0152"
       ],
       "non_normative": [],
-      "referenced_standards": [
-        "CX-0001",
-        "CX-0002",
-        "CX-0003",
-        "CX-0006",
-        "CX-0010",
-        "CX-0018",
-        "CX-0053",
-        "CX-0120",
-        "CX-0121",
-        "CX-0122",
-        "CX-0126",
-        "CX-0145",
-        "CX-0146",
-        "CX-0152"
-      ],
       "deprecated_refs": [],
+      "deprecated_models": [],
+      "bamm_models": [],
       "semantic_models": [
         "delivery_information@2.0.0"
       ]
@@ -684,24 +634,9 @@
         "CX-0152"
       ],
       "non_normative": [],
-      "referenced_standards": [
-        "CX-0001",
-        "CX-0002",
-        "CX-0003",
-        "CX-0006",
-        "CX-0010",
-        "CX-0018",
-        "CX-0053",
-        "CX-0118",
-        "CX-0121",
-        "CX-0122",
-        "CX-0126",
-        "CX-0128",
-        "CX-0145",
-        "CX-0146",
-        "CX-0152"
-      ],
       "deprecated_refs": [],
+      "deprecated_models": [],
+      "bamm_models": [],
       "semantic_models": [
         "short_term_material_demand@1.0.0"
       ]
@@ -727,24 +662,9 @@
         "CX-0152"
       ],
       "non_normative": [],
-      "referenced_standards": [
-        "CX-0001",
-        "CX-0002",
-        "CX-0003",
-        "CX-0006",
-        "CX-0010",
-        "CX-0018",
-        "CX-0053",
-        "CX-0118",
-        "CX-0120",
-        "CX-0122",
-        "CX-0126",
-        "CX-0128",
-        "CX-0145",
-        "CX-0146",
-        "CX-0152"
-      ],
       "deprecated_refs": [],
+      "deprecated_models": [],
+      "bamm_models": [],
       "semantic_models": [
         "item_stock@2.0.0",
         "planned_production_output@2.0.0"
@@ -771,24 +691,9 @@
         "CX-0152"
       ],
       "non_normative": [],
-      "referenced_standards": [
-        "CX-0001",
-        "CX-0002",
-        "CX-0003",
-        "CX-0006",
-        "CX-0010",
-        "CX-0018",
-        "CX-0053",
-        "CX-0118",
-        "CX-0120",
-        "CX-0121",
-        "CX-0126",
-        "CX-0128",
-        "CX-0145",
-        "CX-0146",
-        "CX-0152"
-      ],
       "deprecated_refs": [],
+      "deprecated_models": [],
+      "bamm_models": [],
       "semantic_models": [
         "item_stock@2.0.0"
       ]
@@ -804,14 +709,9 @@
         "CX-0152"
       ],
       "non_normative": [],
-      "referenced_standards": [
-        "CX-0001",
-        "CX-0003",
-        "CX-0018",
-        "CX-0125",
-        "CX-0152"
-      ],
       "deprecated_refs": [],
+      "deprecated_models": [],
+      "bamm_models": [],
       "semantic_models": [
         "early_warning_notification@1.0.0",
         "failure_pattern@1.0.0",
@@ -844,17 +744,12 @@
         "CX-0127",
         "CX-0152"
       ],
-      "non_normative": [],
-      "referenced_standards": [
-        "CX-0001",
-        "CX-0002",
-        "CX-0003",
-        "CX-0018",
-        "CX-0127",
-        "CX-0151",
-        "CX-0152"
+      "non_normative": [
+        "CX-0151"
       ],
       "deprecated_refs": [],
+      "deprecated_models": [],
+      "bamm_models": [],
       "semantic_models": [
         "special_characteristics@1.0.0",
         "traction_battery_code@2.0.0"
@@ -873,16 +768,9 @@
         "CX-0152"
       ],
       "non_normative": [],
-      "referenced_standards": [
-        "CX-0001",
-        "CX-0002",
-        "CX-0003",
-        "CX-0018",
-        "CX-0045",
-        "CX-0053",
-        "CX-0152"
-      ],
       "deprecated_refs": [],
+      "deprecated_models": [],
+      "bamm_models": [],
       "semantic_models": [
         "part_type_information@1.0.0",
         "single_level_bom_as_planned@3.0.0",
@@ -896,21 +784,15 @@
         "CX-0001",
         "CX-0002",
         "CX-0003",
-        "CX-0045",
-        "CX-0053",
-        "CX-0152"
-      ],
-      "non_normative": [],
-      "referenced_standards": [
-        "CX-0001",
-        "CX-0002",
-        "CX-0003",
         "CX-0018",
         "CX-0045",
         "CX-0053",
         "CX-0152"
       ],
+      "non_normative": [],
       "deprecated_refs": [],
+      "deprecated_models": [],
+      "bamm_models": [],
       "semantic_models": [
         "batch@3.0.0",
         "just_in_sequence_part@3.0.0",
@@ -933,17 +815,11 @@
         "CX-0152"
       ],
       "non_normative": [],
-      "referenced_standards": [
-        "CX-0001",
-        "CX-0002",
-        "CX-0003",
-        "CX-0010",
-        "CX-0018",
-        "CX-0126",
-        "CX-0146",
-        "CX-0152"
-      ],
       "deprecated_refs": [],
+      "deprecated_models": [
+        "week_based_capacity_group@2.0.0"
+      ],
+      "bamm_models": [],
       "semantic_models": [
         "id_based_comment@1.0.0",
         "id_based_request_for_update@3.0.0",
@@ -966,17 +842,9 @@
         "CX-0152"
       ],
       "non_normative": [],
-      "referenced_standards": [
-        "CX-0001",
-        "CX-0003",
-        "CX-0006",
-        "CX-0010",
-        "CX-0018",
-        "CX-0115",
-        "CX-0142",
-        "CX-0152"
-      ],
       "deprecated_refs": [],
+      "deprecated_models": [],
+      "bamm_models": [],
       "semantic_models": [
         "request_for_quotation@3.0.0",
         "shared.bill_of_process@1.1.0",
@@ -987,8 +855,7 @@
       "title": "CX-0131 Circularity Core v1.1.1",
       "link": "https://catenax-ev.github.io/docs/standards/CX-0131-CircularityCore",
       "normative": [],
-      "non_normative": [],
-      "referenced_standards": [
+      "non_normative": [
         "CX-0001",
         "CX-0002",
         "CX-0003",
@@ -1010,6 +877,11 @@
         "CX-0013",
         "CX-0017"
       ],
+      "deprecated_models": [
+        "fleet.vehicles@2.1.0",
+        "secondary_material_content@1.0.0"
+      ],
+      "bamm_models": [],
       "semantic_models": [
         "battery.battery_pass@5.0.0",
         "fleet.claim_data@2.0.0",
@@ -1042,13 +914,9 @@
         "CX-0152"
       ],
       "non_normative": [],
-      "referenced_standards": [
-        "CX-0001",
-        "CX-0003",
-        "CX-0018",
-        "CX-0152"
-      ],
       "deprecated_refs": [],
+      "deprecated_models": [],
+      "bamm_models": [],
       "semantic_models": [
         "material_flow_scenario_request@2.0.0"
       ]
@@ -1066,15 +934,9 @@
         "CX-0001",
         "CX-0018"
       ],
-      "referenced_standards": [
-        "CX-0001",
-        "CX-0003",
-        "CX-0010",
-        "CX-0018",
-        "CX-0151",
-        "CX-0152"
-      ],
       "deprecated_refs": [],
+      "deprecated_models": [],
+      "bamm_models": [],
       "semantic_models": [
         "business_partner_certificate@3.1.0"
       ]
@@ -1083,8 +945,7 @@
       "title": "CX-0136 Use Case PCF 2.2.1",
       "link": "https://catenax-ev.github.io/docs/standards/CX-0136-UseCasePCF",
       "normative": [],
-      "non_normative": [],
-      "referenced_standards": [
+      "non_normative": [
         "CX-0001",
         "CX-0002",
         "CX-0003",
@@ -1095,6 +956,8 @@
         "CX-0152"
       ],
       "deprecated_refs": [],
+      "deprecated_models": [],
+      "bamm_models": [],
       "semantic_models": [
         "pcf@7.0.0",
         "pcf@8.0.0",
@@ -1106,20 +969,16 @@
       "link": "https://catenax-ev.github.io/docs/standards/CX-0138-UseCaseBehaviourTwinEnduranceEstimator",
       "normative": [
         "CX-0003",
+        "CX-0018",
         "CX-0023",
         "CX-0152"
       ],
-      "non_normative": [],
-      "referenced_standards": [
+      "non_normative": [
         "CX-0002",
-        "CX-0003",
-        "CX-0018",
-        "CX-0023",
         "CX-0057",
         "CX-0088",
         "CX-0089",
-        "CX-0090",
-        "CX-0152"
+        "CX-0090"
       ],
       "deprecated_refs": [
         "CX-0023",
@@ -1128,6 +987,8 @@
         "CX-0089",
         "CX-0090"
       ],
+      "deprecated_models": [],
+      "bamm_models": [],
       "semantic_models": []
     },
     "CX-0141": {
@@ -1140,13 +1001,9 @@
         "CX-0152"
       ],
       "non_normative": [],
-      "referenced_standards": [
-        "CX-0018",
-        "CX-0067",
-        "CX-0084",
-        "CX-0152"
-      ],
       "deprecated_refs": [],
+      "deprecated_models": [],
+      "bamm_models": [],
       "semantic_models": []
     },
     "CX-0142": {
@@ -1159,20 +1016,16 @@
         "CX-0018",
         "CX-0152"
       ],
-      "non_normative": [],
-      "referenced_standards": [
-        "CX-0001",
-        "CX-0003",
-        "CX-0010",
-        "CX-0018",
+      "non_normative": [
         "CX-0068",
-        "CX-0069",
-        "CX-0152"
+        "CX-0069"
       ],
       "deprecated_refs": [
         "CX-0068",
         "CX-0069"
       ],
+      "deprecated_models": [],
+      "bamm_models": [],
       "semantic_models": [
         "shared.shopfloor_information_types@2.0.0",
         "shopfloor_information.get_production_forecast@2.0.0",
@@ -1185,8 +1038,7 @@
       "title": "CX-0143 Use Case Circular Economy Digital Product Passport Standard",
       "link": "https://catenax-ev.github.io/docs/standards/CX-0143-UseCaseCircularEconomyDigitalProductPassportStandard",
       "normative": [],
-      "non_normative": [],
-      "referenced_standards": [
+      "non_normative": [
         "CX-0001",
         "CX-0002",
         "CX-0003",
@@ -1205,6 +1057,10 @@
       "deprecated_refs": [
         "CX-0013"
       ],
+      "deprecated_models": [
+        "transmission.transmission_pass@2.0.0"
+      ],
+      "bamm_models": [],
       "semantic_models": [
         "battery.battery_pass@5.0.0",
         "battery.battery_pass@6.1.0",
@@ -1235,31 +1091,16 @@
         "CX-0084",
         "CX-0152"
       ],
-      "non_normative": [],
-      "referenced_standards": [
-        "CX-0001",
-        "CX-0003",
-        "CX-0005",
-        "CX-0006",
-        "CX-0010",
-        "CX-0014",
-        "CX-0015",
-        "CX-0016",
-        "CX-0017",
-        "CX-0018",
-        "CX-0049",
-        "CX-0050",
-        "CX-0053",
-        "CX-0067",
-        "CX-0084",
-        "CX-0113",
-        "CX-0152"
+      "non_normative": [
+        "CX-0113"
       ],
       "deprecated_refs": [
         "CX-0016",
         "CX-0017",
         "CX-0113"
       ],
+      "deprecated_models": [],
+      "bamm_models": [],
       "semantic_models": []
     },
     "CX-0145": {
@@ -1283,24 +1124,9 @@
         "CX-0152"
       ],
       "non_normative": [],
-      "referenced_standards": [
-        "CX-0001",
-        "CX-0002",
-        "CX-0003",
-        "CX-0006",
-        "CX-0010",
-        "CX-0018",
-        "CX-0053",
-        "CX-0118",
-        "CX-0120",
-        "CX-0121",
-        "CX-0122",
-        "CX-0126",
-        "CX-0128",
-        "CX-0146",
-        "CX-0152"
-      ],
       "deprecated_refs": [],
+      "deprecated_models": [],
+      "bamm_models": [],
       "semantic_models": [
         "days_of_supply@2.0.0"
       ]
@@ -1327,24 +1153,9 @@
         "CX-0128",
         "CX-0145"
       ],
-      "referenced_standards": [
-        "CX-0001",
-        "CX-0002",
-        "CX-0003",
-        "CX-0006",
-        "CX-0010",
-        "CX-0018",
-        "CX-0118",
-        "CX-0120",
-        "CX-0121",
-        "CX-0122",
-        "CX-0126",
-        "CX-0128",
-        "CX-0145",
-        "CX-0151",
-        "CX-0152"
-      ],
       "deprecated_refs": [],
+      "deprecated_models": [],
+      "bamm_models": [],
       "semantic_models": [
         "demand_and_capacity_notification@3.0.0"
       ]
@@ -1353,12 +1164,13 @@
       "title": "CX-0149 Wallet Requirements v2.0.0",
       "link": "https://catenax-ev.github.io/docs/standards/CX-0149-WalletRequirements",
       "normative": [],
-      "non_normative": [],
-      "referenced_standards": [
+      "non_normative": [
         "CX-0049",
         "CX-0050"
       ],
       "deprecated_refs": [],
+      "deprecated_models": [],
+      "bamm_models": [],
       "semantic_models": []
     },
     "CX-0150": {
@@ -1375,17 +1187,9 @@
         "CX-0152"
       ],
       "non_normative": [],
-      "referenced_standards": [
-        "CX-0001",
-        "CX-0002",
-        "CX-0003",
-        "CX-0018",
-        "CX-0105",
-        "CX-0126",
-        "CX-0127",
-        "CX-0152"
-      ],
       "deprecated_refs": [],
+      "deprecated_models": [],
+      "bamm_models": [],
       "semantic_models": [
         "packing_list@1.0.0"
       ]
@@ -1397,13 +1201,12 @@
         "CX-0003",
         "CX-0018"
       ],
-      "non_normative": [],
-      "referenced_standards": [
-        "CX-0002",
-        "CX-0003",
-        "CX-0018"
+      "non_normative": [
+        "CX-0002"
       ],
       "deprecated_refs": [],
+      "deprecated_models": [],
+      "bamm_models": [],
       "semantic_models": [
         "shared.message_header@3.0.0"
       ]
@@ -1412,12 +1215,13 @@
       "title": "CX-0152 Policy Constraints For Data Exchange v1.0.0",
       "link": "https://catenax-ev.github.io/docs/standards/CX-0152-PolicyConstrainsForDataExchange",
       "normative": [],
-      "non_normative": [],
-      "referenced_standards": [
+      "non_normative": [
         "CX-0018",
         "CX-0050"
       ],
       "deprecated_refs": [],
+      "deprecated_models": [],
+      "bamm_models": [],
       "semantic_models": []
     },
     "CX-0153": {
@@ -1428,14 +1232,12 @@
         "CX-0126",
         "CX-0152"
       ],
-      "non_normative": [],
-      "referenced_standards": [
-        "CX-0003",
-        "CX-0018",
-        "CX-0126",
-        "CX-0152"
+      "non_normative": [
+        "CX-0003"
       ],
       "deprecated_refs": [],
+      "deprecated_models": [],
+      "bamm_models": [],
       "semantic_models": [
         "us_tariff_information@1.0.0"
       ]
@@ -1452,19 +1254,13 @@
         "CX-0151",
         "CX-0152"
       ],
-      "non_normative": [],
-      "referenced_standards": [
-        "CX-0001",
-        "CX-0002",
-        "CX-0003",
-        "CX-0010",
-        "CX-0018",
+      "non_normative": [
         "CX-0126",
-        "CX-0127",
-        "CX-0151",
-        "CX-0152"
+        "CX-0127"
       ],
       "deprecated_refs": [],
+      "deprecated_models": [],
+      "bamm_models": [],
       "semantic_models": [
         "digital_engineering_master_data@1.0.0",
         "masterdatamanagement@1.0.0",
@@ -1483,18 +1279,12 @@
         "CX-0151",
         "CX-0152"
       ],
-      "non_normative": [],
-      "referenced_standards": [
-        "CX-0001",
-        "CX-0002",
-        "CX-0003",
-        "CX-0018",
-        "CX-0126",
-        "CX-0127",
-        "CX-0151",
-        "CX-0152"
+      "non_normative": [
+        "CX-0127"
       ],
       "deprecated_refs": [],
+      "deprecated_models": [],
+      "bamm_models": [],
       "semantic_models": [
         "requirement@1.0.0"
       ]
@@ -1847,6 +1637,63 @@
       "deprecated_in": "Io"
     }
   },
+  "withdrawn_standards": {
+    "CX-0004": {
+      "name": "CX-0004 Governance Process for Aspect models v1.0.1",
+      "last_seen_in": "24.03"
+    },
+    "CX-0008": {
+      "name": "CX-0008 Relevant Standards for Conformity Assessments v1.1.0",
+      "last_seen_in": "Io"
+    },
+    "CX-0011": {
+      "name": "CX-0011 Issuing Agency v1.0.1",
+      "last_seen_in": "Jupiter"
+    },
+    "CX-0029": {
+      "name": "CX-0029 Product Carbon Footprint Rulebook v3.0.0",
+      "last_seen_in": "Jupiter"
+    },
+    "CX-0030": {
+      "name": "CX-0030 Aspect Model BoM As Specified v2.0.0",
+      "last_seen_in": "Io"
+    },
+    "CX-0031": {
+      "name": "CX-0031 Data Model: Material For Homologation v1.1.1",
+      "last_seen_in": "Io"
+    },
+    "CX-0032": {
+      "name": "CX-0032 Data Model: Part As Specified v1.0.1",
+      "last_seen_in": "Io"
+    },
+    "CX-0094": {
+      "name": "CX-0094 Aspect Model: Part Site In Formation As Planned v1.0.0",
+      "last_seen_in": "Io"
+    }
+  },
+  "standard_issue_types": [
+    {
+      "id": "deprecated-standard-ref",
+      "severity": "error",
+      "label": "References a deprecated standard",
+      "field": "deprecated_refs",
+      "description": "The standard cites another Catena-X standard that has been deprecated (listed in a release changelog's Deprecated Standards table). The reference should be updated or removed."
+    },
+    {
+      "id": "deprecated-model-ref",
+      "severity": "error",
+      "label": "References a deprecated semantic model",
+      "field": "deprecated_models",
+      "description": "The standard references a semantic model whose version is marked deprecated in the catalog. Consumers should migrate to a non-deprecated version of that model."
+    },
+    {
+      "id": "bamm-model-ref",
+      "severity": "warning",
+      "label": "References a BAMM model",
+      "field": "bamm_models",
+      "description": "The standard references a model still using the legacy BAMM meta-model (urn:bamm:…) instead of SAMM. Such models are outdated and should be migrated to SAMM."
+    }
+  ],
   "models": {
     "asset_tracker_links@2.0.0": [
       "CX-0105"

@@ -540,7 +540,14 @@ def build_graphs(
     # standards.json : lien standards Catena-X ↔ modèles, reconstruit depuis
     # la Standard Library clonée (cf. `standards.py`). Source distincte des
     # .ttl ; absente -> on skippe avec un WARNING (sans bloquer le reste).
-    std = build_standards(DEFAULT_LIBRARY_DIR)
+    # Catalogue { name@version -> statut/famille } pour les issues standard
+    # (réf. modèle déprécié / réf. modèle BAMM) calculées dans standards.py.
+    catalog_meta = {
+        f"{m['model_name']}@{m['version']}":
+            {"status": m["status"], "family": m["family"]}
+        for m in index
+    }
+    std = build_standards(DEFAULT_LIBRARY_DIR, catalog=catalog_meta)
     if std is not None:
         # On ne garde dans la carte inverse que les modèles présents au
         # catalogue (clé name@version connue) -> "used in standards" exact côté

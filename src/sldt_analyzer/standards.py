@@ -11,13 +11,13 @@ On ne traite que les standards **released** de la **dernière release stable**
 
 Pour chaque standard on extrait :
   - `link`                 : URL publique du standard (release courante)
-  - `normative` /          : refs `CX-XXXX` des sections "Normative" /
-    `non_normative`          "Non-normative References" (best-effort : ces
-                             sections n'existent que ~39/62 standards)
-  - `referenced_standards` : TOUS les `CX-XXXX` cités (robuste, ~60/62) —
-                             couvre les standards qui listent leurs refs hors
-                             section dédiée (ex. CX-0143 : "standalone standards")
-  - `deprecated_refs`      : sous-ensemble de `referenced_standards` qui sont
+  - `normative`            : refs `CX-XXXX` de la section "Normative References"
+                             (best-effort : la section n'existe pas partout)
+  - `non_normative`        : TOUT le reste des `CX-XXXX` cités (ancienne section
+                             "Non-normative References" + refs hors-section type
+                             "standalone standards", ex. CX-0143), fusionné —
+                             c.-à-d. tous les CX cités SAUF les `normative`
+  - `deprecated_refs`      : sous-ensemble (normative ∪ non_normative) qui sont
                              des standards dépréciés
   - `semantic_models`      : modèles cités (`urn:samm:…` -> clé `name@version`)
 
@@ -43,7 +43,15 @@ logger = logging.getLogger("sldt.standards")
 # dernière release sous `/docs/standards/`, sans préfixe de version).
 SITE = "https://catenax-ev.github.io/docs/standards/"
 
-CX_RE = re.compile(r"\bCX-\d{4}\b")
+# Tirets non-ASCII tolérés entre "CX" et le numéro : l'amont écrit parfois
+# `CX–0002` (en-dash), `CX—0002` (em-dash), figure dash, minus… (coquilles).
+# On capture les 4 chiffres et on normalise toujours vers `CX-XXXX` (ASCII).
+CX_RE = re.compile(r"CX[-‐-―−](\d{4})")
+
+
+def _cx_ids(text: str) -> set[str]:
+    """Tous les identifiants CX cités, normalisés au tiret ASCII (`CX-XXXX`)."""
+    return {f"CX-{d}" for d in CX_RE.findall(text)}
 # `\s*` après `urn:samm:` : coquille amont avec un espace
 # (ex. CX-0154 : `urn:samm: io.catenax.digital_engineering_master_data:1.0.0`).
 URN_RE = re.compile(r"urn:samm:\s*([\w.\-]+):(\d+\.\d+\.\d+)")
@@ -56,6 +64,33 @@ _ORG_PREFIXES = ("io.catenax.", "io.openmanufacturing.", "io.admin-shell.idta.")
 
 # Dossier du clone local de la library (git-ignored, peuplé par `fetch.py`).
 DEFAULT_LIBRARY_DIR = Path("data/cx-standards-library")
+
+# Issues qualité AU NIVEAU STANDARD (clé CX-XXXX), distinctes des issues
+# modèle d'`issues.py` (clé name@version). Chaque type pointe le champ de
+# `standards[CX]` qui porte la liste fautive ; le front compte/affiche depuis
+# ces champs. `deprecated_refs` existe déjà ; les deux autres sont calculés
+# ici en croisant `semantic_models` avec le catalogue (statut/famille).
+STANDARD_ISSUE_TYPES = [
+    {"id": "deprecated-standard-ref", "severity": "error",
+     "label": "References a deprecated standard", "field": "deprecated_refs",
+     "description": (
+         "The standard cites another Catena-X standard that has been "
+         "deprecated (listed in a release changelog's Deprecated Standards "
+         "table). The reference should be updated or removed.")},
+    {"id": "deprecated-model-ref", "severity": "error",
+     "label": "References a deprecated semantic model",
+     "field": "deprecated_models",
+     "description": (
+         "The standard references a semantic model whose version is marked "
+         "deprecated in the catalog. Consumers should migrate to a "
+         "non-deprecated version of that model.")},
+    {"id": "bamm-model-ref", "severity": "warning",
+     "label": "References a BAMM model", "field": "bamm_models",
+     "description": (
+         "The standard references a model still using the legacy BAMM "
+         "meta-model (urn:bamm:…) instead of SAMM. Such models are outdated "
+         "and should be migrated to SAMM.")},
+]
 
 
 def _read(path: Path) -> str:
@@ -187,20 +222,89 @@ def _standard_md_files(folder: Path) -> list[Path]:
             if p.name.lower() != "changelog.md"]
 
 
-def build_standards(library_dir: Path = DEFAULT_LIBRARY_DIR) -> dict | None:
+def _release_order(library_dir: Path) -> list[str]:
+    """Releases du + récent au + ancien. `versions.json` donne l'ordre canonique
+    (plus récent en tête) ; les dossiers `version-*` non listés (ex. 24.03) sont
+    ajoutés après (ordre alpha), faute de mieux."""
+    listed: list[str] = []
+    vj = library_dir / "versions.json"
+    if vj.is_file():
+        try:
+            v = json.loads(_read(vj))
+            if isinstance(v, list):
+                listed = [str(x) for x in v]
+        except (ValueError, TypeError) as exc:  # noqa: BLE001
+            logger.warning("versions.json illisible : %s — %s", vj, exc)
+    vd = library_dir / "versioned_docs"
+    try:
+        dirs = sorted(p.name.replace("version-", "")
+                      for p in vd.glob("version-*") if p.is_dir())
+    except OSError:
+        dirs = []
+    return listed + [d for d in dirs if d not in listed]
+
+
+def _withdrawn_standards(library_dir: Path, active_ids: set[str],
+                         deprecated: dict[str, dict]) -> dict[str, dict]:
+    """CX retirés silencieusement : présents dans une release ANTÉRIEURE mais
+    plus dans la release courante, et non marqués dépréciés. CX-id ->
+    {name, last_seen_in}. `last_seen_in` = release la + récente (hors courante)
+    où le dossier existe encore."""
+    vd = library_dir / "versioned_docs"
+    order = _release_order(library_dir)
+    latest = order[0] if order else None
+    out: dict[str, dict] = {}
+    for rel in order:
+        if rel == latest:
+            continue
+        std_dir = vd / f"version-{rel}" / "standards"
+        if not std_dir.is_dir():
+            continue
+        for folder in sorted(std_dir.glob("CX-*")):
+            if not folder.is_dir():
+                continue
+            cxm = CX_RE.search(folder.name)
+            if not cxm:
+                continue
+            cxid = f"CX-{cxm.group(1)}"
+            if cxid in active_ids or cxid in deprecated or cxid in out:
+                continue
+            md = _standard_md_files(folder)
+            secs = _sections(_read(md[0])) if md else []
+            out[cxid] = {
+                "name": _derive_title(folder.name, cxid, secs),
+                "last_seen_in": rel,
+            }
+    return out
+
+
+def build_standards(library_dir: Path = DEFAULT_LIBRARY_DIR,
+                    catalog: dict[str, dict] | None = None) -> dict | None:
     """Construit le dict `standards.json`. Retourne None si la library est
     absente (clone non effectué) — l'appelant skippe alors proprement.
+
+    `catalog` (optionnel) : map `name@version -> {"status", "family"}` issue du
+    catalogue (cf. `graph.py`). Sert à calculer les issues standard `deprecated_
+    models` (modèle cité au statut `deprecated`) et `bamm_models` (modèle cité
+    de famille BAMM). Absent -> ces deux listes restent vides.
 
     Forme :
         {
           "release": "Saturn",
           "standards": { "CX-0126": { title, link, normative[], non_normative[],
-                         referenced_standards[], deprecated_refs[],
+                         deprecated_refs[], deprecated_models[], bamm_models[],
                          semantic_models[] }, ... },
           "deprecated_standards": { "CX-0013": {name, reason, deprecated_in} },
+          "withdrawn_standards": { "CX-0011": {name, last_seen_in} },
+          "standard_issue_types": [ {id, label, field}, ... ],
           "models": { "name@version": ["CX-0126", ...] }   # inverse
         }
+
+    `withdrawn_standards` : CX présents dans une release ANTÉRIEURE mais absents
+    de la release courante ET non déclarés dépréciés (retirés silencieusement
+    en amont, ex. CX-0011). Permet de les distinguer d'un id réellement inconnu.
     """
+    catalog = catalog or {}
     library_dir = Path(library_dir)
     latest = _latest_release(library_dir)
     if latest is None:
@@ -233,22 +337,32 @@ def build_standards(library_dir: Path = DEFAULT_LIBRARY_DIR) -> dict | None:
         title = _derive_title(folder.name, cxid, secs)
         norm_body = _section_body(
             secs, lambda u: "NORMATIVE REFERENCES" in u and "NON-NORMATIVE" not in u)
-        nonnorm_body = _section_body(
-            secs, lambda u: "NON-NORMATIVE REFERENCES" in u)
 
-        normative = sorted(set(CX_RE.findall(norm_body)) - {cxid})
-        non_normative = sorted(set(CX_RE.findall(nonnorm_body)) - {cxid})
-        referenced = sorted(set(CX_RE.findall(text)) - {cxid})
+        normative = sorted(_cx_ids(norm_body) - {cxid})
+        # Deux catégories seulement : `normative` (section dédiée) et
+        # `non_normative` = TOUT le reste des CX cités (ancienne section
+        # "Non-normative References" + refs hors-section, ex-"other"), fusionné.
+        referenced = _cx_ids(text) - {cxid}
+        non_normative = sorted(referenced - set(normative))
         deprecated_refs = sorted(x for x in referenced if x in deprecated)
         models = sorted({_model_key(ns, v) for ns, v in URN_RE.findall(text)})
+        # Issues modèle : on ne juge que les modèles connus du catalogue (on
+        # ignore les refs non ingérées — statut/famille inconnus).
+        deprecated_models = sorted(
+            m for m in models
+            if catalog.get(m, {}).get("status") == "deprecated")
+        bamm_models = sorted(
+            m for m in models
+            if (catalog.get(m, {}).get("family") or "").upper() == "BAMM")
 
         standards[cxid] = {
             "title": title,
             "link": SITE + folder.name,
             "normative": normative,
             "non_normative": non_normative,
-            "referenced_standards": referenced,
             "deprecated_refs": deprecated_refs,
+            "deprecated_models": deprecated_models,
+            "bamm_models": bamm_models,
             "semantic_models": models,
         }
 
@@ -260,10 +374,16 @@ def build_standards(library_dir: Path = DEFAULT_LIBRARY_DIR) -> dict | None:
             inverse.setdefault(mk, []).append(cxid)
     models_map = {k: sorted(v) for k, v in sorted(inverse.items())}
 
+    # Standards retirés silencieusement (présents avant, absents de la release
+    # courante, non dépréciés) — pour distinguer un ref retiré d'un id inconnu.
+    withdrawn = _withdrawn_standards(library_dir, set(standards), deprecated)
+
     return {
         "release": latest,
         "standards": dict(sorted(standards.items())),
         "deprecated_standards": dict(sorted(deprecated.items())),
+        "withdrawn_standards": dict(sorted(withdrawn.items())),
+        "standard_issue_types": STANDARD_ISSUE_TYPES,
         "models": models_map,
     }
 

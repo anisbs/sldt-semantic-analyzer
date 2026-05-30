@@ -111,16 +111,59 @@ class TestBuildStandards:
         assert foo["title"] == "CX-0100 Foo Standard 1.0.0"
         assert foo["semantic_models"] == ["foo@1.0.0"]
         assert foo["normative"] == ["CX-0200"]
-        # referenced = tout CX cité (sauf soi) : CX-0013 + CX-0200.
-        assert foo["referenced_standards"] == ["CX-0013", "CX-0200"]
+        # non_normative = tout CX cité hors normative : CX-0013 (cité en texte
+        # libre) y tombe désormais (ancien "other" fusionné).
+        assert foo["non_normative"] == ["CX-0013"]
+        # plus de champ referenced_standards (schéma simplifié).
+        assert "referenced_standards" not in foo
         # CX-0013 est déprécié (depuis Jupiter) -> deprecated_refs.
         assert foo["deprecated_refs"] == ["CX-0013"]
 
         # Changelog.md d'un standard est ignoré (pas de CX-9999 capté).
-        assert "CX-9999" not in out["standards"]["CX-0200"]["referenced_standards"]
+        assert "CX-9999" not in out["standards"]["CX-0200"]["non_normative"]
         # Titre fallback (pas de H1 avec le CX-id).
         assert out["standards"]["CX-0200"]["title"] == "CX-0200 Bar Baz"
 
         # Table dépréciés + carte inverse modèle -> standards.
         assert out["deprecated_standards"]["CX-0013"]["deprecated_in"] == "Jupiter"
         assert out["models"] == {"foo@1.0.0": ["CX-0100"]}
+
+    def test_standard_issues(self, tmp_path):
+        """Issues standard : un modèle cité au statut `deprecated` tombe dans
+        `deprecated_models` ; de famille BAMM dans `bamm_models`. Sans catalogue,
+        les deux listes restent vides. `standard_issue_types` est exposé."""
+        _make_library(tmp_path)
+        # Sans catalogue : pas d'issue modèle, mais le schéma expose les champs.
+        bare = build_standards(tmp_path)
+        assert bare["standards"]["CX-0100"]["deprecated_models"] == []
+        assert bare["standards"]["CX-0100"]["bamm_models"] == []
+        assert [t["id"] for t in bare["standard_issue_types"]] == [
+            "deprecated-standard-ref", "deprecated-model-ref", "bamm-model-ref"]
+        # foo@1.0.0 marqué déprécié ET BAMM dans le catalogue -> les 2 issues.
+        catalog = {"foo@1.0.0": {"status": "deprecated", "family": "BAMM"}}
+        out = build_standards(tmp_path, catalog=catalog)
+        foo = out["standards"]["CX-0100"]
+        assert foo["deprecated_models"] == ["foo@1.0.0"]
+        assert foo["bamm_models"] == ["foo@1.0.0"]
+        # Modèle hors catalogue (statut/famille inconnus) -> jamais flaggé.
+        catalog2 = {"other@9.9.9": {"status": "deprecated", "family": "BAMM"}}
+        out2 = build_standards(tmp_path, catalog=catalog2)
+        assert out2["standards"]["CX-0100"]["deprecated_models"] == []
+        assert out2["standards"]["CX-0100"]["bamm_models"] == []
+
+    def test_non_ascii_dash_in_cx_id(self, tmp_path):
+        """Coquille amont (vue en réel sur CX-0005 : « CX–0002 ») : un id CX
+        écrit avec un en-dash U+2013 au lieu du tiret ASCII doit être capté ET
+        normalisé en `CX-XXXX` dans la section normative."""
+        endash = chr(0x2013)
+        (tmp_path / "versions.json").write_text('["Saturn"]', encoding="utf-8")
+        sat = tmp_path / "versioned_docs" / "version-Saturn" / "standards"
+        _write(sat / "CX-0300-Dash" / "CX-0300-Dash.md", (
+            "# CX-0300 Dash Standard 1.0.0\n\n"
+            "## 2 Normative References\n"
+            f"- CX{endash}0002 EnDash Ref\n"
+            "- CX-0018 Ascii Ref\n"
+        ))
+        out = build_standards(tmp_path)
+        std = out["standards"]["CX-0300"]
+        assert std["normative"] == ["CX-0002", "CX-0018"]
