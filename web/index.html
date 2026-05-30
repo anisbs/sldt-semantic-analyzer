@@ -709,8 +709,10 @@
     #std-q { flex: 1; max-width: 420px; padding: var(--sp-2) var(--sp-3);
       border: 1px solid var(--border); border-radius: var(--r-sm);
       background: var(--surface); color: var(--text); font-size: var(--fs-sm); }
-    #std-count { color: var(--text-3); font-size: var(--fs-xs); }
-    #std-iss-only { margin-left: auto; white-space: nowrap; }
+    /* Count is the result tally — pushed to the far right ; the "Only with
+       issues" toggle sits next to the search box (a filter beside the filter). */
+    #std-count { margin-left: auto; color: var(--text-3); font-size: var(--fs-xs); }
+    #std-iss-only { white-space: nowrap; }
     /* Standard-issues summary (top of the Standards tab) — mirrors the model
        Issues tab : KPI cards (count of standards per issue type) + a collapsible
        "About these checks" panel. Reuses the `.kpi.iss` card classes. */
@@ -1016,11 +1018,11 @@
       <div id="std-head">
         <input id="std-q" type="text" autocomplete="off"
                placeholder="Filter standards by id or title…" />
-        <span id="std-count"></span>
         <label id="std-iss-only" class="switch"
                title="Show only standards with quality issues">
           <input type="checkbox" /><span class="track"></span>
           <span class="lbl">Only with issues</span></label>
+        <span id="std-count"></span>
       </div>
       <div id="std-layout">
         <div id="std-list"></div>
