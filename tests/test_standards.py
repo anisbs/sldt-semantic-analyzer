@@ -26,14 +26,21 @@ class TestModelKey:
 
 class TestUrnRegex:
     def test_basic(self):
+        # `findall` -> (scheme, ns, version).
         assert URN_RE.findall(
             "urn:samm:io.catenax.part_type_information:1.0.0#PartTypeInformation"
-        ) == [("io.catenax.part_type_information", "1.0.0")]
+        ) == [("samm", "io.catenax.part_type_information", "1.0.0")]
+
+    def test_captures_bamm_scheme(self):
+        # Le méta-modèle legacy `urn:bamm:` doit être capté (groupe = scheme).
+        assert URN_RE.findall("urn:bamm:io.catenax.serial_part:1.0.1#SerialPart") == [
+            ("bamm", "io.catenax.serial_part", "1.0.1")
+        ]
 
     def test_tolerates_space_typo(self):
-        # Coquille amont observée (CX-0154) : espace après `urn:samm:`.
+        # Coquille amont observée (CX-0154) : espace après le schéma.
         assert URN_RE.findall("urn:samm: io.catenax.foo:2.3.4#X") == [
-            ("io.catenax.foo", "2.3.4")
+            ("samm", "io.catenax.foo", "2.3.4")
         ]
 
     def test_requires_full_version(self):
@@ -129,27 +136,45 @@ class TestBuildStandards:
         assert out["models"] == {"foo@1.0.0": ["CX-0100"]}
 
     def test_standard_issues(self, tmp_path):
-        """Issues standard : un modèle cité au statut `deprecated` tombe dans
-        `deprecated_models` ; de famille BAMM dans `bamm_models`. Sans catalogue,
-        les deux listes restent vides. `standard_issue_types` est exposé."""
+        """Issues standard : `deprecated_models` reste catalogue-driven (statut).
+        `bamm_models` vient du schéma `urn:bamm:` (autoritatif) — un modèle cité
+        en `urn:samm:` n'est JAMAIS BAMM, même si le catalogue le prétend.
+        `standard_issue_types` est exposé."""
         _make_library(tmp_path)
-        # Sans catalogue : pas d'issue modèle, mais le schéma expose les champs.
+        # foo est cité en `urn:samm:` -> pas BAMM ; sans catalogue, pas de
+        # statut connu -> pas d'issue modèle, mais les champs sont exposés.
         bare = build_standards(tmp_path)
         assert bare["standards"]["CX-0100"]["deprecated_models"] == []
         assert bare["standards"]["CX-0100"]["bamm_models"] == []
         assert [t["id"] for t in bare["standard_issue_types"]] == [
             "deprecated-standard-ref", "deprecated-model-ref", "bamm-model-ref"]
-        # foo@1.0.0 marqué déprécié ET BAMM dans le catalogue -> les 2 issues.
+        # Catalogue : statut déprécié -> deprecated_models. La `family` BAMM du
+        # catalogue est IGNORÉE pour bamm_models (foo est cité en samm).
         catalog = {"foo@1.0.0": {"status": "deprecated", "family": "BAMM"}}
         out = build_standards(tmp_path, catalog=catalog)
         foo = out["standards"]["CX-0100"]
         assert foo["deprecated_models"] == ["foo@1.0.0"]
-        assert foo["bamm_models"] == ["foo@1.0.0"]
-        # Modèle hors catalogue (statut/famille inconnus) -> jamais flaggé.
-        catalog2 = {"other@9.9.9": {"status": "deprecated", "family": "BAMM"}}
+        assert foo["bamm_models"] == []
+        # Modèle hors catalogue (statut inconnu) -> jamais flaggé déprécié.
+        catalog2 = {"other@9.9.9": {"status": "deprecated"}}
         out2 = build_standards(tmp_path, catalog=catalog2)
         assert out2["standards"]["CX-0100"]["deprecated_models"] == []
-        assert out2["standards"]["CX-0100"]["bamm_models"] == []
+
+    def test_bamm_model_ref_from_scheme(self, tmp_path):
+        """Un modèle cité via `urn:bamm:` tombe dans `bamm_models` ET
+        `semantic_models`, sans aucun catalogue (le schéma est autoritatif)."""
+        (tmp_path / "versions.json").write_text('["Saturn"]', encoding="utf-8")
+        sat = tmp_path / "versioned_docs" / "version-Saturn" / "standards"
+        _write(sat / "CX-0400-Legacy" / "CX-0400-Legacy.md", (
+            "# CX-0400 Legacy Standard 1.0.0\n\n"
+            "## 3 Aspect Models\n"
+            "`urn:samm:io.catenax.modern:2.0.0#Modern`\n"
+            "`urn:bamm:io.catenax.legacy:1.0.0#Legacy`\n"
+        ))
+        out = build_standards(tmp_path)
+        std = out["standards"]["CX-0400"]
+        assert std["semantic_models"] == ["legacy@1.0.0", "modern@2.0.0"]
+        assert std["bamm_models"] == ["legacy@1.0.0"]
 
     def test_non_ascii_dash_in_cx_id(self, tmp_path):
         """Coquille amont (vue en réel sur CX-0005 : « CX–0002 ») : un id CX

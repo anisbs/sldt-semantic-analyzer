@@ -19,7 +19,10 @@ Pour chaque standard on extrait :
                              c.-à-d. tous les CX cités SAUF les `normative`
   - `deprecated_refs`      : sous-ensemble (normative ∪ non_normative) qui sont
                              des standards dépréciés
-  - `semantic_models`      : modèles cités (`urn:samm:…` -> clé `name@version`)
+  - `semantic_models`      : modèles cités (`urn:samm:…` ET `urn:bamm:…` ->
+                             clé `name@version`)
+  - `bamm_models`          : sous-ensemble cité via `urn:bamm:` (méta-modèle
+                             legacy — autoritatif via le schéma d'URN)
 
 Les **standards dépréciés** ne sont plus dans le dossier de la release : on les
 récupère via l'union des tables "Deprecated Standards" des `changelog.md` de
@@ -52,9 +55,12 @@ CX_RE = re.compile(r"CX[-‐-―−](\d{4})")
 def _cx_ids(text: str) -> set[str]:
     """Tous les identifiants CX cités, normalisés au tiret ASCII (`CX-XXXX`)."""
     return {f"CX-{d}" for d in CX_RE.findall(text)}
-# `\s*` après `urn:samm:` : coquille amont avec un espace
+# Capture les deux méta-modèles : `urn:samm:` (récent) ET `urn:bamm:` (legacy).
+# Le schéma EST le méta-modèle (groupe 1) — un modèle cité en `urn:bamm:` est
+# BAMM par construction (cf. `bamm_models`, autoritatif, indépendant du
+# catalogue). `\s*` après le schéma : coquille amont avec un espace
 # (ex. CX-0154 : `urn:samm: io.catenax.digital_engineering_master_data:1.0.0`).
-URN_RE = re.compile(r"urn:samm:\s*([\w.\-]+):(\d+\.\d+\.\d+)")
+URN_RE = re.compile(r"urn:(samm|bamm):\s*([\w.\-]+):(\d+\.\d+\.\d+)")
 H_RE = re.compile(r"^(#{1,6})\s+(.*?)\s*$")
 DEP_ROW = re.compile(r"^\|\s*(CX-\d{4})\s*\|\s*([^|]*?)\s*\|\s*([^|]*?)\s*\|")
 
@@ -68,8 +74,9 @@ DEFAULT_LIBRARY_DIR = Path("data/cx-standards-library")
 # Issues qualité AU NIVEAU STANDARD (clé CX-XXXX), distinctes des issues
 # modèle d'`issues.py` (clé name@version). Chaque type pointe le champ de
 # `standards[CX]` qui porte la liste fautive ; le front compte/affiche depuis
-# ces champs. `deprecated_refs` existe déjà ; les deux autres sont calculés
-# ici en croisant `semantic_models` avec le catalogue (statut/famille).
+# ces champs. `deprecated_refs` existe déjà ; `bamm_models` vient du schéma
+# d'URN (`urn:bamm:`, autoritatif) ; `deprecated_models` croise `semantic_
+# models` avec le statut du catalogue.
 STANDARD_ISSUE_TYPES = [
     {"id": "deprecated-standard-ref", "severity": "error",
      "label": "References a deprecated standard", "field": "deprecated_refs",
@@ -284,9 +291,10 @@ def build_standards(library_dir: Path = DEFAULT_LIBRARY_DIR,
     absente (clone non effectué) — l'appelant skippe alors proprement.
 
     `catalog` (optionnel) : map `name@version -> {"status", "family"}` issue du
-    catalogue (cf. `graph.py`). Sert à calculer les issues standard `deprecated_
-    models` (modèle cité au statut `deprecated`) et `bamm_models` (modèle cité
-    de famille BAMM). Absent -> ces deux listes restent vides.
+    catalogue (cf. `graph.py`). Sert à calculer l'issue standard `deprecated_
+    models` (modèle cité au statut `deprecated`). Absent -> cette liste reste
+    vide. (`bamm_models` ne dépend PAS du catalogue : il vient du schéma
+    `urn:bamm:` de l'URL citée, autoritatif.)
 
     Forme :
         {
@@ -345,15 +353,20 @@ def build_standards(library_dir: Path = DEFAULT_LIBRARY_DIR,
         referenced = _cx_ids(text) - {cxid}
         non_normative = sorted(referenced - set(normative))
         deprecated_refs = sorted(x for x in referenced if x in deprecated)
-        models = sorted({_model_key(ns, v) for ns, v in URN_RE.findall(text)})
-        # Issues modèle : on ne juge que les modèles connus du catalogue (on
-        # ignore les refs non ingérées — statut/famille inconnus).
+        # `findall` -> (scheme, ns, version). `semantic_models` fusionne les
+        # deux méta-modèles ; le schéma sert à isoler les refs BAMM.
+        cited = URN_RE.findall(text)
+        models = sorted({_model_key(ns, v) for _scheme, ns, v in cited})
+        # `bamm_models` : autoritatif via le schéma `urn:bamm:` (le méta-modèle
+        # est dans l'URN, pas besoin du catalogue — attrape même les modèles
+        # non ingérés).
+        bamm_models = sorted({_model_key(ns, v)
+                              for scheme, ns, v in cited if scheme == "bamm"})
+        # `deprecated_models` : catalogue-driven (on ne juge le statut que des
+        # modèles connus du catalogue ; statut inconnu pour les non ingérés).
         deprecated_models = sorted(
             m for m in models
             if catalog.get(m, {}).get("status") == "deprecated")
-        bamm_models = sorted(
-            m for m in models
-            if (catalog.get(m, {}).get("family") or "").upper() == "BAMM")
 
         standards[cxid] = {
             "title": title,
