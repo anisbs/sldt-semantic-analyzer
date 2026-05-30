@@ -210,6 +210,10 @@
     .ov .val { font-size: var(--fs-xl); font-weight: 700; line-height: 1.2;
       margin-top: 2px; font-variant-numeric: tabular-nums;
       overflow-wrap: anywhere; }
+    /* Textual values (Family, Updated) are longer than the numeric ones — a
+       notch smaller so they stay on one line and don't look cramped next to
+       the big tabular numbers. */
+    .ov .val.txt { font-size: var(--fs-lg); }
     .ov .sub { margin-top: 4px; font-size: var(--fs-xs); color: var(--text-3);
       display: flex; gap: var(--sp-3); flex-wrap: wrap;
       font-variant-numeric: tabular-nums; }
@@ -2620,7 +2624,7 @@ function renderOverview() {
       `<div class="val">${total}</div>` +
       `<div class="sub">${srcSub}</div></div>` +
     `<div class="ov"><div class="lbl">Family</div>` +
-      `<div class="val">${famSub || "—"}</div>` +
+      `<div class="val txt">${famSub || "—"}</div>` +
       `<div class="sub">meta-model breakdown</div></div>` +
     `<div class="ov ov-link" data-goto="issues"><div class="lbl">Quality</div>` +
       `<div class="val">${quality}</div>` +
@@ -2629,7 +2633,7 @@ function renderOverview() {
       `<div class="val">${stdVal}</div>` +
       `<div class="sub">${stdSub}</div></div>` +
     `<div class="ov"><div class="lbl">Updated</div>` +
-      `<div class="val">${updStr}</div>` +
+      `<div class="val txt">${updStr}</div>` +
       `<div class="sub">` +
         `<a href="https://github.com/${REPO_BY_SOURCE.catenax}" target="_blank" rel="noopener">Catena-X repo ↗</a>` +
         `<a href="https://github.com/${REPO_BY_SOURCE.idta}" target="_blank" rel="noopener">IDTA repo ↗</a>` +
