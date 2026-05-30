@@ -224,10 +224,13 @@
       font-variant-numeric: tabular-nums; }
     .kpi .s { font-size: var(--fs-sm); color: var(--text-2);
       text-transform: capitalize; }
-    /* KPI per-source breakdown (Catena-X / IDTA counts under the status). */
+    /* KPI per-source breakdown (Catena-X / IDTA counts under the status).
+       `min-height` reserves the line's space even when empty (single source,
+       no breakdown) so the cards keep a constant height and the controls below
+       don't shift when toggling a source. */
     .kpi .kbd { display: flex; gap: var(--sp-3); margin-top: 6px;
-      font-size: var(--fs-xs); color: var(--text-3);
-      font-variant-numeric: tabular-nums; }
+      font-size: var(--fs-xs); color: var(--text-3); line-height: 1.4;
+      min-height: 1.4em; font-variant-numeric: tabular-nums; }
     .kpi .kbd-src { display: flex; align-items: center; gap: 4px; }
     .kpi .kbd-src .d { width: 7px; height: 7px; border-radius: 50%;
       display: inline-block; }
@@ -236,6 +239,9 @@
     #cat-source .ttl { color: var(--text-2); font-size: var(--fs-sm); }
     #cat-source label { display: flex; align-items: center; gap: 5px;
       cursor: pointer; }
+    /* "Used in a standard" toggle — pushed to the far right of the line. */
+    #cat-source label.std-only { margin-left: auto; color: var(--text-2);
+      font-size: var(--fs-sm); }
     #catalog-head { display: flex; align-items: center; gap: var(--sp-3); }
     #search { flex: 1; max-width: 360px; padding: 7px 10px;
       font-size: var(--fs-md); color: var(--text); background: var(--surface);
@@ -260,6 +266,46 @@
     .row .nm small { font-weight: 400; color: var(--text-3); }
     .badge { font-size: var(--fs-xs); padding: 2px 7px;
       border-radius: var(--r-pill); color: #fff; }
+    /* Clickable Catena-X standard chip in the Model Viewer header. */
+    .badge-std { cursor: pointer; background: var(--accent-weak);
+      color: var(--accent); border: 1px solid var(--accent);
+      transition: background var(--dur) var(--ease); }
+    .badge-std:hover { background: var(--accent); color: var(--surface); }
+    .mv-std-lbl { color: var(--text-3); font-size: var(--fs-xs);
+      margin-left: var(--sp-2); }
+    /* ---- Filter controls : pill toggles (multi-select) + switches (boolean).
+       Replace the native checkboxes across Home / Search / Issues / Standards.
+       The hidden <input> still owns the state ; CSS :has() mirrors :checked.
+       `--c` carries the category colour (source/status/kind) ; absent -> accent.
+       The flex layout (dot + label in a row) comes from the container rules. */
+    .fpill { position: relative; display: inline-flex; align-items: center;
+      gap: 6px; cursor: pointer; user-select: none; padding: 3px 11px;
+      border-radius: var(--r-pill); border: 1px solid var(--border-strong);
+      background: var(--surface); color: var(--text-2); font-size: var(--fs-sm);
+      line-height: 1.6;
+      transition: background-color var(--dur) var(--ease),
+        border-color var(--dur) var(--ease), color var(--dur) var(--ease); }
+    .fpill .dot { width: 8px; height: 8px; border-radius: 50%; flex: none;
+      background: var(--c, var(--accent)); }
+    .fpill:hover { border-color: var(--c, var(--accent)); }
+    .fpill:has(input:checked) { background: var(--c, var(--accent));
+      border-color: var(--c, var(--accent)); color: #fff; font-weight: 600; }
+    .fpill:has(input:checked) .dot { background: #fff; }
+    .fpill input, .switch input { position: absolute; width: 1px; height: 1px;
+      margin: -1px; padding: 0; border: 0; opacity: 0; pointer-events: none; }
+    .switch { position: relative; display: inline-flex; align-items: center;
+      gap: 8px; cursor: pointer; user-select: none; color: var(--text-2);
+      font-size: var(--fs-sm); }
+    .switch .track { position: relative; width: 34px; height: 20px; flex: none;
+      background: var(--border-strong); border-radius: var(--r-pill);
+      transition: background-color var(--dur) var(--ease); }
+    .switch .track::after { content: ""; position: absolute; top: 2px; left: 2px;
+      width: 16px; height: 16px; border-radius: 50%; background: #fff;
+      box-shadow: var(--shadow-sm);
+      transition: transform var(--dur) var(--ease); }
+    .switch:has(input:checked) .track { background: var(--accent); }
+    .switch:has(input:checked) .track::after { transform: translateX(14px); }
+    .switch:has(input:checked) .lbl { color: var(--text); }
     /* Home catalog: expandable model rows (versions revealed on click) */
     .crow { border-bottom: 1px solid var(--border); }
     .crow:last-child { border-bottom: none; }
@@ -300,6 +346,17 @@
     .cv .vc { color: var(--text-3); font-size: var(--fs-xs);
       padding: 1px 7px; border: 1px solid var(--border-strong);
       border-radius: var(--r-pill); }
+    /* Linked Catena-X standards for a version row — clickable chips, capped
+       to a few with a "+N" overflow so a heavily-referenced model stays tidy. */
+    .cv .vstd { display: flex; align-items: center; gap: 4px; flex-wrap: wrap;
+      justify-content: flex-end; }
+    .cv .vstd .sc { font-size: var(--fs-2xs); padding: 1px 6px;
+      border-radius: var(--r-pill); background: var(--accent-weak);
+      color: var(--accent); border: 1px solid var(--accent); cursor: pointer;
+      white-space: nowrap; transition: background var(--dur) var(--ease); }
+    .cv .vstd .sc:hover { background: var(--accent); color: var(--surface); }
+    .cv .vstd .more { font-size: var(--fs-2xs); color: var(--text-3);
+      cursor: default; }
     .cv .va { color: var(--text-3); }
 
     /* Model Viewer */
@@ -653,6 +710,37 @@
       border: 1px solid var(--border); border-radius: var(--r-sm);
       background: var(--surface); color: var(--text); font-size: var(--fs-sm); }
     #std-count { color: var(--text-3); font-size: var(--fs-xs); }
+    #std-iss-only { margin-left: auto; white-space: nowrap; }
+    /* Standard-issues summary (top of the Standards tab) — mirrors the model
+       Issues tab : KPI cards (count of standards per issue type) + a collapsible
+       "About these checks" panel. Reuses the `.kpi.iss` card classes. */
+    /* `flex: none` : #standardsview is a fixed-height flex column ; without it
+       these items (esp. #std-help, which clips its overflow) get shrunk to ~0
+       when the list below is tall. */
+    #std-kpis { display: grid; gap: var(--sp-3); flex: none;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); }
+    #std-help { flex: none; border: 1px solid var(--border);
+      border-radius: var(--r-md); background: var(--surface);
+      box-shadow: var(--shadow-sm); overflow: hidden; }
+    #std-help > summary { padding: var(--sp-3) var(--sp-4); cursor: pointer;
+      font-size: var(--fs-md); font-weight: 600; color: var(--text);
+      list-style: none; user-select: none; }
+    #std-help > summary::-webkit-details-marker { display: none; }
+    #std-help > summary::before { content: "▸"; display: inline-block;
+      width: 1em; color: var(--text-3);
+      transition: transform var(--dur) var(--ease); }
+    #std-help[open] > summary::before { transform: rotate(90deg); }
+    #std-help .body { padding: 0 var(--sp-4) var(--sp-4); display: grid;
+      gap: var(--sp-3);
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); }
+    #std-help .item { border-left: 3px solid var(--border-strong);
+      padding: var(--sp-2) var(--sp-3); background: var(--surface-2);
+      border-radius: var(--r-sm); font-size: var(--fs-sm); }
+    #std-help .item.err { border-left-color: var(--st-deprecated); }
+    #std-help .item.warn { border-left-color: var(--st-draft); }
+    #std-help .item .lbl { font-weight: 600; color: var(--text);
+      font-size: var(--fs-md); margin-bottom: var(--sp-1); }
+    #std-help .item .dsc { color: var(--text-2); line-height: 1.5; }
     /* List on the left (full height) ; references on top-right, the reference
        graph right below them — so the standards list keeps its room. */
     #std-layout { display: grid; gap: var(--sp-3); align-items: start;
@@ -674,6 +762,18 @@
     .std-row .mt { color: var(--text-3); font-size: var(--fs-2xs);
       margin-top: 2px; }
     .std-row .warn { color: var(--st-deprecated); }
+    /* ⚠ issue badge on a standard row (right-aligned next to the id line). */
+    .std-row .top { display: flex; align-items: center; gap: var(--sp-2); }
+    .std-row .ibadge { margin-left: auto; font-size: var(--fs-2xs);
+      font-weight: 700; color: var(--st-warn-text); background: var(--st-draft);
+      border-radius: var(--r-pill); padding: 0 7px; white-space: nowrap; }
+    /* "Quality issues" section in the detail panel. */
+    .std-iss { margin-top: var(--sp-2); }
+    .std-iss .ih { font-size: var(--fs-xs); font-weight: 600;
+      color: var(--st-deprecated); margin-bottom: 4px; }
+    .std-iss-row { font-size: var(--fs-2xs); color: var(--text-2);
+      padding: var(--sp-1) 0; }
+    .std-iss-row b { color: var(--st-deprecated); }
     #std-detail { border: 1px solid var(--border); border-radius: var(--r-md);
       background: var(--surface); padding: var(--sp-3); }
     #std-detail.std-ph { color: var(--text-3); text-align: center;
@@ -716,9 +816,17 @@
       paint-order: stroke; stroke: var(--surface); stroke-width: 3px; }
     #stdgraph line.link { stroke: var(--border-strong); }
     .std-glegend { display: flex; flex-wrap: wrap; gap: var(--sp-3);
-      font-size: var(--fs-2xs); color: var(--text-3); margin: 0 0 var(--sp-2); }
+      font-size: var(--fs-2xs); color: var(--text-3);
+      margin: var(--sp-3) 0 var(--sp-2); }
     .std-glegend span.dot { display: inline-block; width: 10px; height: 10px;
       border-radius: 50%; margin-right: 4px; vertical-align: -1px; }
+    /* Shape cues in the legend : rounded rectangle = standard (override the
+       circle), ring = selected node, plain dot (circle) = model. */
+    .std-glegend span.rect { width: 16px; height: 11px; border-radius: 3px; }
+    .std-glegend span.ring { box-sizing: border-box; background: transparent;
+      border-style: solid; border-width: 2px; }
+    .std-glegend .glab { color: var(--text-2); font-weight: 600; }
+    .std-glegend .gsep { color: var(--text-3); }
     .std-grp { margin-top: var(--sp-3); }
     .std-grp > .h { font-weight: 600; font-size: var(--fs-sm);
       margin-bottom: 6px; color: var(--text-2); }
@@ -900,10 +1008,19 @@
         <p>Catena-X standards (release <span id="std-release">…</span>) and the
           semantic models they use — one entry per CX standard.</p>
       </div>
+      <details id="std-help">
+        <summary>About these standard checks</summary>
+        <div class="body"></div>
+      </details>
+      <div id="std-kpis"></div>
       <div id="std-head">
         <input id="std-q" type="text" autocomplete="off"
                placeholder="Filter standards by id or title…" />
         <span id="std-count"></span>
+        <label id="std-iss-only" class="switch"
+               title="Show only standards with quality issues">
+          <input type="checkbox" /><span class="track"></span>
+          <span class="lbl">Only with issues</span></label>
       </div>
       <div id="std-layout">
         <div id="std-list"></div>
@@ -1799,6 +1916,19 @@ function badges(e) {
       ? `<span>· released ${curGraph.meta.release_date}</span>` : "");
 }
 
+// Catena-X standards (current release) that reference this model+version.
+// Data comes from standards.json (models map). Returns clickable chips, or "".
+function standardsBadges(e) {
+  if (!e || !standardsData || !standardsData.models) return "";
+  const ids = standardsData.models[`${e.model_name}@${e.version}`] || [];
+  if (!ids.length) return "";
+  const chips = ids.map(cx =>
+    `<span class="badge badge-std" data-std="${escapeHtml(cx)}" ` +
+    `title="Used in Catena-X standard ${escapeHtml(cx)} — click to open">` +
+    `${escapeHtml(cx)}</span>`).join(" ");
+  return `<span class="mv-std-lbl">Standards:</span> ${chips}`;
+}
+
 // ---- Export PNG of the currently-visible graph (Feature 22) --------------
 // Two routes : Graph (#graph, element graph) or Dependency graph (#depgraph),
 // both are inline SVG. The CSS-driven appearance (KIND_COLORS, statusColor,
@@ -1883,6 +2013,15 @@ function exportCurrentGraphPng() {
   if (btn) btn.addEventListener("click", exportCurrentGraphPng);
 })();
 
+// Clicking a standard chip in the model header opens that Catena-X standard.
+(function bindStdChips() {
+  const box = document.getElementById("mv-badges");
+  if (box) box.addEventListener("click", ev => {
+    const chip = ev.target.closest(".badge-std");
+    if (chip && chip.dataset.std) { selectStandard(chip.dataset.std); showTab("standardsview"); }
+  });
+})();
+
 function loadEntry(e) {
   curEntry = e;
   document.getElementById("mv-badges").innerHTML = "";
@@ -1897,7 +2036,7 @@ function loadEntry(e) {
     // Release notes are identical across a model's versions: cache once.
     if (!notesCache.has(e.model_name))
       notesCache.set(e.model_name, (g.meta && g.meta.release_notes) || null);
-    document.getElementById("mv-badges").innerHTML = badges(e);
+    document.getElementById("mv-badges").innerHTML = badges(e) + standardsBadges(e);
     renderSub();
   });
 }
@@ -2254,7 +2393,15 @@ function entryForKey(key) {
 // ---- Home (KPI + catalog) ------------------------------------------------
 let statusFilter = null;
 let catSrcFilter = new Set(SOURCE_ORDER);   // both sources on by default
+let catStdOnly = false;        // when on, keep only models used in a standard
 const catOpen = new Set();     // model_name of expanded catalog rows
+
+// True when this exact model+version is referenced by a Catena-X standard
+// (standards.json `models` map). False if the standards data isn't loaded yet.
+function inAnyStandard(e) {
+  return !!(standardsData && standardsData.models
+    && standardsData.models[`${e.model_name}@${e.version}`]);
+}
 
 // Last-modified is captured from the response headers (GitHub Pages and
 // http.server both set it) — surfaced in the Overview strip.
@@ -2378,7 +2525,14 @@ fetch("data/graph/standards.json")
     standardsData = s;
     stdRevMap = null;
     renderOverview();              // upgrade the "Standards" card from loading…
+    // Home depends on this data: the "used in a standard" filter and the
+    // per-version standard chips only resolve once standards.json is in.
+    if (allModels) { renderKpis(); renderCatalog(); }
     if (activeView === "standardsview") renderStandards();
+    // Model header chips depend on this data — refresh if a model is already open.
+    if (curEntry)
+      document.getElementById("mv-badges").innerHTML =
+        badges(curEntry) + standardsBadges(curEntry);
     applyHash();                   // resolve #/standards/<id> now that data is ready
   })
   .catch(() => { standardsData = null; });
@@ -2392,13 +2546,16 @@ let stdLayout = "ego";     // graph layout: ego (sides) | freeze | force | circl
 // Which outgoing reference categories to draw. Normative on by default ; the
 // user can add the others. "models" toggles the semantic-model nodes.
 let stdCats = new Set(["normative", "models"]);
+let stdIssuesOnly = false;     // Standards list: keep only flagged standards
+let stdSelType = null;         // selected standard-issue type (filters the list)
 let stdSim = null;
 
 function buildStdRevMap() {
   const r = {};
   const st = (standardsData && standardsData.standards) || {};
   for (const [cx, s] of Object.entries(st))
-    (s.referenced_standards || []).forEach(t => (r[t] = r[t] || []).push(cx));
+    [...(s.normative || []), ...(s.non_normative || [])]
+      .forEach(t => (r[t] = r[t] || []).push(cx));
   for (const k in r) r[k].sort();
   return r;
 }
@@ -2407,6 +2564,66 @@ const stdIsActive = id =>
 const stdIsDeprecated = id =>
   !!(standardsData && standardsData.deprecated_standards
      && standardsData.deprecated_standards[id]);
+
+// Standard-level quality issues, precomputed in standards.json. Returns the
+// firing types as [{id, label, items[]}] (empty items dropped) so the list
+// badge and the detail "Quality issues" section share one source of truth.
+function stdIssues(id) {
+  const s = standardsData && standardsData.standards
+    && standardsData.standards[id];
+  if (!s) return [];
+  return (standardsData.standard_issue_types || [])
+    .map(t => ({ id: t.id, label: t.label, items: s[t.field] || [] }))
+    .filter(t => t.items.length);
+}
+// Total flagged references across all issue types (drives the ⚠ list badge).
+const stdIssueCount = id =>
+  stdIssues(id).reduce((n, t) => n + t.items.length, 0);
+// Does a given standard fire a specific issue type? (drives the KPI filter)
+function stdTypeFires(cxid, typeId) {
+  const s = standardsData && standardsData.standards
+    && standardsData.standards[cxid];
+  if (!s) return false;
+  const t = (standardsData.standard_issue_types || []).find(x => x.id === typeId);
+  return !!(t && (s[t.field] || []).length);
+}
+
+// Aggregated standard-issues summary at the top of the Standards tab : one KPI
+// card per type (count of standards in error) + a collapsible explanation
+// panel. Clicking a card filters the list (left) to those standards.
+function renderStdKpis() {
+  const kbox = document.getElementById("std-kpis");
+  const help = document.getElementById("std-help");
+  if (!kbox || !standardsData) return;
+  const types = standardsData.standard_issue_types || [];
+  const ids = Object.keys(standardsData.standards);
+  kbox.innerHTML = "";
+  types.forEach(t => {
+    const n = ids.filter(id =>
+      ((standardsData.standards[id][t.field]) || []).length).length;
+    const card = document.createElement("div");
+    card.className = "kpi iss " +
+      (n === 0 ? "zero" : t.severity === "warning" ? "warn" : "err") +
+      (stdSelType === t.id ? " sel" : "");
+    if (t.description) card.title = t.description;
+    card.innerHTML =
+      `<div class="n">${n}</div><div class="s">${escapeHtml(t.label)}</div>`;
+    card.addEventListener("click", () => {
+      stdSelType = stdSelType === t.id ? null : t.id;
+      renderStdKpis(); renderStdList();
+    });
+    kbox.appendChild(card);
+  });
+  // "About these checks" panel — built once (preserve open/closed state).
+  const body = help && help.querySelector(".body");
+  if (help && body && !help.dataset.built) {
+    body.innerHTML = types.map(t =>
+      `<div class="item ${t.severity === "warning" ? "warn" : "err"}">` +
+      `<div class="lbl">${escapeHtml(t.label)}</div>` +
+      `<div class="dsc">${escapeHtml(t.description || "")}</div></div>`).join("");
+    help.dataset.built = "1";
+  }
+}
 
 // Strip the leading "CX-XXXX" from a standard title (the title repeats the id).
 function stripCx(id, title) {
@@ -2431,6 +2648,16 @@ function renderStandards() {
     q.dataset.wired = "1";
     q.addEventListener("input", renderStdList);
   }
+  const issOnly = document.querySelector("#std-iss-only input");
+  if (issOnly && !issOnly.dataset.wired) {
+    issOnly.dataset.wired = "1";
+    issOnly.checked = stdIssuesOnly;
+    issOnly.addEventListener("change", function () {
+      stdIssuesOnly = this.checked;
+      renderStdList();
+    });
+  }
+  renderStdKpis();
   renderStdList();
   if (stdSelId) selectStandard(stdSelId);
 }
@@ -2442,8 +2669,11 @@ function renderStdList() {
   const term = ((document.getElementById("std-q") || {}).value || "")
     .trim().toLowerCase();
   const ids = Object.keys(standardsData.standards).sort();
-  const shown = ids.filter(id => !term || id.toLowerCase().includes(term)
-    || (standardsData.standards[id].title || "").toLowerCase().includes(term));
+  const shown = ids
+    .filter(id => !term || id.toLowerCase().includes(term)
+      || (standardsData.standards[id].title || "").toLowerCase().includes(term))
+    .filter(id => !stdIssuesOnly || stdIssueCount(id) > 0)
+    .filter(id => !stdSelType || stdTypeFires(id, stdSelType));
   if (cnt) cnt.textContent = `${shown.length} / ${ids.length} standards`;
   box.innerHTML = "";
   if (!shown.length) {
@@ -2453,16 +2683,17 @@ function renderStdList() {
   shown.forEach(id => {
     const s = standardsData.standards[id];
     const nM = (s.semantic_models || []).length;
-    const nR = (s.referenced_standards || []).length;
-    const nD = (s.deprecated_refs || []).length;
+    const nR = (s.normative || []).length + (s.non_normative || []).length;
+    const nI = stdIssueCount(id);
     const row = document.createElement("div");
     row.className = "std-row" + (id === stdSelId ? " sel" : "");
     row.innerHTML =
-      `<div class="id">${escapeHtml(id)}</div>` +
+      `<div class="top"><span class="id">${escapeHtml(id)}</span>` +
+        (nI ? `<span class="ibadge" title="${nI} quality ` +
+              `issue${nI === 1 ? "" : "s"}">⚠ ${nI}</span>` : "") + `</div>` +
       `<div class="ti">${escapeHtml(stripCx(id, s.title))}</div>` +
       `<div class="mt">${nM} model${nM === 1 ? "" : "s"} · ` +
-        `${nR} ref${nR === 1 ? "" : "s"}` +
-        (nD ? ` · <span class="warn">${nD} deprecated</span>` : "") + `</div>`;
+        `${nR} ref${nR === 1 ? "" : "s"}</div>`;
     row.addEventListener("click", () => selectStandard(id));
     box.appendChild(row);
   });
@@ -2503,19 +2734,20 @@ function ensureStdDetailSkeleton() {
         '<option value="grid">Grid</option>' +
       '</select>' +
       '<div class="catf"><span class="lbl">Show:</span>' +
-        `<label><input type="checkbox" data-cat="normative"${stdCats.has("normative") ? " checked" : ""}> Normative</label>` +
-        `<label><input type="checkbox" data-cat="non_normative"${stdCats.has("non_normative") ? " checked" : ""}> Non-norm.</label>` +
-        `<label><input type="checkbox" data-cat="other"${stdCats.has("other") ? " checked" : ""}> Other</label>` +
-        `<label><input type="checkbox" data-cat="models"${stdCats.has("models") ? " checked" : ""}> Models</label>` +
+        `<label class="fpill"><input type="checkbox" data-cat="normative"${stdCats.has("normative") ? " checked" : ""}><span class="dot"></span><span>Normative</span></label>` +
+        `<label class="fpill"><input type="checkbox" data-cat="non_normative"${stdCats.has("non_normative") ? " checked" : ""}><span class="dot"></span><span>Non-norm.</span></label>` +
+        `<label class="fpill" style="--c:${STD_COLORS.model}"><input type="checkbox" data-cat="models"${stdCats.has("models") ? " checked" : ""}><span class="dot"></span><span>Models</span></label>` +
       '</div>' +
     '</div>' +
     '<div class="std-glegend">' +
-      `<span><span class="dot" style="background:${STD_COLORS.root}"></span>selected</span>` +
-      `<span><span class="dot" style="background:${STD_COLORS.active}"></span>active standard</span>` +
-      `<span><span class="dot" style="background:${STD_COLORS.deprecated}"></span>deprecated</span>` +
-      `<span><span class="dot" style="background:${STD_COLORS.absent}"></span>other</span>` +
-      `<span><span class="dot" style="background:${STD_COLORS.model}"></span>model</span>` +
-      '<span>← referenced by · references / models →</span>' +
+      '<span class="glab">Standards (▭):</span>' +
+      `<span><span class="dot rect ring" style="border-color:${STD_COLORS.root}"></span>selected</span>` +
+      `<span><span class="dot rect" style="background:${STD_COLORS.active}"></span>active</span>` +
+      `<span><span class="dot rect" style="background:${STD_COLORS.deprecated}"></span>deprecated</span>` +
+      `<span><span class="dot rect" style="background:${STD_COLORS.absent}"></span>other</span>` +
+      '<span class="glab">Models (○):</span>' +
+      `<span><span class="dot" style="background:${STD_COLORS.model}"></span>semantic model</span>` +
+      '<span class="gsep">← referenced by · references / models →</span>' +
     '</div>' +
     '<svg id="stdgraph"></svg>';
   const sg = d3.select("#stdgraph");
@@ -2573,18 +2805,45 @@ function refGroup(title, arr, desc) {
     + (desc ? `<div class="std-note">${desc}</div>` : "")
     + `<div class="std-chips">${arr.map(stdChip).join("")}</div></div>`;
 }
+// One model chip ("name@version"). Clickable (data-model) when the model is in
+// the catalog ; dimmed otherwise (cited but not ingested).
+function modelChip(mk) {
+  const at = mk.lastIndexOf("@");
+  const name = mk.slice(0, at), ver = mk.slice(at + 1);
+  const inCat = !!entryForKey(mk);
+  return `<span class="chip${inCat ? "" : " dim"}"`
+    + `${inCat ? ` data-model="${escapeHtml(mk)}"` : ""}>`
+    + `${escapeHtml(name)} <span class="v">v${escapeHtml(ver)}</span></span>`;
+}
 function modelGroup(arr) {
   if (!arr || !arr.length) return "";
-  const chips = arr.map(mk => {
-    const at = mk.lastIndexOf("@");
-    const name = mk.slice(0, at), ver = mk.slice(at + 1);
-    const inCat = !!entryForKey(mk);
-    return `<span class="chip${inCat ? "" : " dim"}"`
-      + `${inCat ? ` data-model="${escapeHtml(mk)}"` : ""}>`
-      + `${escapeHtml(name)} <span class="v">v${escapeHtml(ver)}</span></span>`;
-  }).join("");
   return `<div class="std-grp"><div class="h">Semantic models (${arr.length})`
-    + `</div><div class="std-chips">${chips}</div></div>`;
+    + `</div><div class="std-chips">${arr.map(modelChip).join("")}</div></div>`;
+}
+
+// "Quality issues" section for a standard (Option A). Deprecated standard refs
+// render with their deprecation note ; deprecated/BAMM model refs render as the
+// usual model chips (clickable into the Model Viewer when in the catalog).
+function qualityIssuesGroup(id) {
+  const issues = stdIssues(id);
+  if (!issues.length) return "";
+  const block = issues.map(t => {
+    let rows;
+    if (t.id === "deprecated-standard-ref") {
+      rows = t.items.map(cx => {
+        const d = (standardsData.deprecated_standards || {})[cx] || {};
+        return `<div class="std-iss-row"><b>${escapeHtml(cx)}</b> `
+          + `${escapeHtml(d.name || "")} — deprecated in `
+          + `${escapeHtml(d.deprecated_in || "?")}`
+          + (d.reason ? `: ${escapeHtml(d.reason)}` : "") + `</div>`;
+      }).join("");
+    } else {
+      rows = `<div class="std-chips">${t.items.map(modelChip).join("")}</div>`;
+    }
+    return `<div class="std-iss"><div class="ih">⚠ ${escapeHtml(t.label)} `
+      + `(${t.items.length})</div>${rows}</div>`;
+  }).join("");
+  return `<div class="std-grp"><div class="h">Quality issues</div>${block}</div>`;
 }
 
 function renderStdDetail(id) {
@@ -2606,26 +2865,12 @@ function renderStdDetail(id) {
 
   let html = "";
   if (s) {
-    const inSet = new Set([...(s.normative || []), ...(s.non_normative || [])]);
-    const other = (s.referenced_standards || []).filter(x => !inSet.has(x));
     html += refGroup("Normative references", s.normative);
-    html += refGroup("Non-normative references", s.non_normative);
-    html += refGroup("Other referenced standards", other,
-      "Standards mentioned elsewhere in the document (e.g. a “standalone "
-      + "standards” list or inline text), not declared under the formal "
-      + "Normative / Non-normative References sections. Collected for "
-      + "completeness, so nothing referenced is missed.");
-    if (s.deprecated_refs && s.deprecated_refs.length) {
-      const items = s.deprecated_refs.map(cx => {
-        const d = (standardsData.deprecated_standards || {})[cx] || {};
-        return `<div class="std-dep-note"><b>${escapeHtml(cx)}</b> `
-          + `${escapeHtml(d.name || "")} — deprecated in `
-          + `${escapeHtml(d.deprecated_in || "?")}: ${escapeHtml(d.reason || "")}`
-          + `</div>`;
-      }).join("");
-      html += `<div class="std-grp"><div class="h">⚠ Deprecated references `
-        + `(${s.deprecated_refs.length})</div>${items}</div>`;
-    }
+    html += refGroup("Non-normative references", s.non_normative,
+      "Includes standards referenced outside the formal Non-normative "
+      + "References section (e.g. inline text or a “standalone standards” "
+      + "list) — everything cited that is not normative.");
+    html += qualityIssuesGroup(id);
     html += modelGroup(s.semantic_models);
   }
   html += refGroup("Referenced by", stdRevMap[id] || []);
@@ -2643,9 +2888,11 @@ function renderStdDetail(id) {
 // Ego reference graph : selected standard centered, outgoing references on the
 // right, incoming (referenced-by) on the left. 1 hop ; click an active/
 // deprecated node to re-center.
+// Fill = identity/status (NOT the "selected" role) so a selected deprecated
+// standard still reads red. The selected node is marked by a blue ring instead
+// (see the stroke in drawStdGraph).
 function stdNodeColor(d) {
   if (d.type === "model") return STD_COLORS.model;
-  if (d.side === "root") return STD_COLORS.root;
   if (stdIsDeprecated(d.id)) return STD_COLORS.deprecated;
   if (stdIsActive(d.id)) return STD_COLORS.active;
   return STD_COLORS.absent;
@@ -2699,16 +2946,13 @@ function drawStdGraph(rootId) {
   const showOut = stdDir === "both" || stdDir === "out";
   const showIn = stdDir === "both" || stdDir === "in";
   // Outgoing references restricted to the selected categories (normative on by
-  // default ; non-normative / other are opt-in).
+  // default ; non-normative is opt-in).
   let out = [];
   if (showOut && s) {
     const norm = s.normative || [], nonn = s.non_normative || [];
-    const inSet = new Set([...norm, ...nonn]);
-    const other = (s.referenced_standards || []).filter(x => !inSet.has(x));
     const set = new Set();
     if (stdCats.has("normative")) norm.forEach(x => set.add(x));
     if (stdCats.has("non_normative")) nonn.forEach(x => set.add(x));
-    if (stdCats.has("other")) other.forEach(x => set.add(x));
     out = [...set];
   }
   const inc = showIn ? (stdRevMap[rootId] || []).filter(x => x !== rootId) : [];
@@ -2776,9 +3020,7 @@ function drawStdGraph(rootId) {
         .on("end", () => {})
     : dragger(stdSim, ticked);
   const node = sgContainer.append("g").selectAll("g").data(nodes).enter()
-    .append("g").attr("class", "node").call(drag);
-  node.append("circle").attr("r", 11).attr("fill", stdNodeColor)
-    .style("stroke", "var(--surface)").style("stroke-width", "2px")
+    .append("g").attr("class", "node").call(drag)
     .style("cursor", d => stdNodeClickable(d, rootId) ? "pointer" : "default")
     .on("mouseover", (e, d) => tooltip.style("opacity", 1).html(stdNodeTip(d, rootId)))
     .on("mousemove", e => tooltip
@@ -2791,15 +3033,36 @@ function drawStdGraph(rootId) {
       if (d.id !== rootId && (stdIsActive(d.id) || stdIsDeprecated(d.id)))
         selectStandard(d.id);
     });
-  node.append("text").attr("x", 14).attr("y", 4).text(d => d.label);
+  // Shape encodes the kind : rounded rectangle = standard, circle = model. The
+  // circle is kept for models so they look the SAME as in the Model/Dependency
+  // graphs ; standards get the distinctive rectangle. The selected (root) node
+  // gets a thick blue ring (its fill keeps the real status colour, e.g. red
+  // when the selected standard is deprecated).
+  const RW = 27, RH = 19;
+  node.each(function (d) {
+    const g = d3.select(this);
+    if (d.type === "model")
+      g.append("circle").attr("class", "shape").attr("r", 11);
+    else
+      g.append("rect").attr("class", "shape")
+        .attr("x", -RW / 2).attr("y", -RH / 2)
+        .attr("width", RW).attr("height", RH).attr("rx", 4);
+  });
+  node.select(".shape").attr("fill", stdNodeColor)
+    .style("stroke", d => d.side === "root" ? STD_COLORS.root : "var(--surface)")
+    .style("stroke-width", d => d.side === "root" ? "3px" : "2px");
+  node.append("text").attr("x", d => d.type === "model" ? 14 : 17)
+    .attr("y", 4).text(d => d.label);
 
   if (stdSim) stdSim.on("tick", ticked);
   ticked();
 }
 
 function renderKpis() {
-  // KPIs honor the source filter so the counts match the visible catalog.
-  const scoped = allModels.filter(m => catSrcFilter.has(m.source));
+  // KPIs honor the source filter (and the "used in a standard" toggle) so the
+  // counts always match the visible catalog.
+  const scoped = allModels.filter(m =>
+    catSrcFilter.has(m.source) && (!catStdOnly || inAnyStandard(m)));
   const counts = d3.rollup(scoped, v => v.length, d => d.status);
   // Per-source breakdown (shown only when more than one source is checked,
   // otherwise the breakdown is just the total and the line is redundant).
@@ -2826,6 +3089,10 @@ function renderKpis() {
                `${sourceColor(s)}"></span>${sourceLabel(s)} ${n}</span>`;
       }).join("");
       html += `<div class="kbd">${parts}</div>`;
+    } else {
+      // Keep the breakdown line's height reserved (empty) so single-source
+      // cards stay as tall as two-source ones — no vertical jump below.
+      html += `<div class="kbd"></div>`;
     }
     box.append("div")
       .attr("class", "kpi" + (statusFilter === k ? " sel" : ""))
@@ -2844,16 +3111,29 @@ function renderSourceFilter() {
   if (box.dataset.built) return;
   SOURCE_ORDER.forEach(s => {
     const lab = document.createElement("label");
+    lab.className = "fpill";
+    lab.style.setProperty("--c", sourceColor(s));
     lab.innerHTML =
       `<input type="checkbox" ${catSrcFilter.has(s) ? "checked" : ""}>` +
-      `<span class="badge" style="background:${sourceColor(s)}">` +
-      `${sourceLabel(s)}</span>`;
+      `<span class="dot"></span><span>${sourceLabel(s)}</span>`;
     lab.querySelector("input").addEventListener("change", function () {
       if (this.checked) catSrcFilter.add(s); else catSrcFilter.delete(s);
       renderKpis(); renderCatalog();
     });
     box.appendChild(lab);
   });
+  // "Used in a standard" toggle — far right of the same line (margin-left:auto).
+  const stdLab = document.createElement("label");
+  stdLab.className = "switch std-only";
+  stdLab.title = "Keep only models referenced by a Catena-X standard";
+  stdLab.innerHTML =
+    `<input type="checkbox" ${catStdOnly ? "checked" : ""}>` +
+    `<span class="track"></span><span class="lbl">Used in a standard</span>`;
+  stdLab.querySelector("input").addEventListener("change", function () {
+    catStdOnly = this.checked;
+    renderKpis(); renderCatalog();
+  });
+  box.appendChild(stdLab);
   box.dataset.built = "1";
 }
 
@@ -2871,6 +3151,7 @@ function renderCatalog() {
   // that status) but never removes versions from a model's dropdown.
   const visible = list
     .filter(g => g.entries.some(e => catSrcFilter.has(e.source)))
+    .filter(g => !catStdOnly || g.entries.some(e => inAnyStandard(e)))
     .filter(g => !statusFilter || g.entries.some(e => e.status === statusFilter))
     .filter(g =>
       !q ||
@@ -2882,13 +3163,21 @@ function renderCatalog() {
         e.source.toLowerCase().includes(q) ||
         (e.name || "").toLowerCase().includes(q)));
 
+  // The "used in a standard" toggle also prunes individual versions, so the
+  // expanded dropdown only lists the versions a standard actually references
+  // (unlike the status KPI, which keeps every version of a matching model).
+  const shownEntries = g =>
+    catStdOnly ? g.entries.filter(inAnyStandard) : g.entries;
+
   d3.select("#count").text(
-    `${visible.length} models · ${visible.reduce((n, g) => n + g.entries.length, 0)} versions`);
+    `${visible.length} models · ` +
+    `${visible.reduce((n, g) => n + shownEntries(g).length, 0)} versions`);
 
   const cat = d3.select("#catalog");
   cat.selectAll("*").remove();
   visible.forEach(g => {
-    const nRel = g.entries.filter(e => e.status === "release").length;
+    const entries = shownEntries(g);
+    const nRel = entries.filter(e => e.status === "release").length;
     const open = catOpen.has(g.name);
     const row = cat.append("div").attr("class", "crow" + (open ? " open" : ""));
 
@@ -2898,12 +3187,12 @@ function renderCatalog() {
     head.append("span").attr("class", "cn").text(g.name);
     // Source badge — model_name is single-source in practice, so we take it
     // from the first entry. Helps the user spot Catena-X vs IDTA at a glance.
-    const src = g.entries[0].source;
+    const src = entries[0].source;
     head.append("span").attr("class", "badge")
       .style("background", sourceColor(src))
       .text(sourceLabel(src));
     head.append("span").attr("class", "cs")
-      .html(`${g.entries.length} version${g.entries.length > 1 ? "s" : ""}` +
+      .html(`${entries.length} version${entries.length > 1 ? "s" : ""}` +
             (nRel ? ` · <b>${nRel} release</b>` : ""));
     head.on("click", () => {
       if (catOpen.has(g.name)) catOpen.delete(g.name);
@@ -2917,7 +3206,7 @@ function renderCatalog() {
     // is the single grid item that clips its overflow during the transition.
     const vs = row.append("div").attr("class", "cvs")
                   .append("div").attr("class", "cvs-inner");
-    g.entries.forEach(e => {
+    entries.forEach(e => {
       const v = vs.append("div").attr("class", "cv").on("click", () => openEntry(e));
       v.append("span").attr("class", "vv").text("v" + e.version);
       v.append("span").attr("class", "vf").text(e.family);
@@ -2929,6 +3218,28 @@ function renderCatalog() {
       if (e.n_aspects > 1)
         v.append("span").attr("class", "vc")
           .text(`${e.n_aspects} Aspects`);
+      // Linked Catena-X standards for this exact version. Cap to a few chips
+      // and collapse the rest into a hover-titled "+N" so a heavily-referenced
+      // model doesn't blow up the row. Clicking a chip opens the Standards tab.
+      const stds = (standardsData && standardsData.models
+        && standardsData.models[`${e.model_name}@${e.version}`]) || [];
+      if (stds.length) {
+        const CAP = 3;
+        const wrap = v.append("span").attr("class", "vstd");
+        stds.slice(0, CAP).forEach(cx => {
+          wrap.append("span").attr("class", "sc")
+            .attr("title", `Used in ${cx} — open standard`)
+            .text(cx)
+            .on("click", ev => {
+              ev.stopPropagation();          // don't also open the model
+              selectStandard(cx); showTab("standardsview");
+            });
+        });
+        if (stds.length > CAP)
+          wrap.append("span").attr("class", "more")
+            .attr("title", stds.join(", "))
+            .text(`+${stds.length - CAP}`);
+      }
       v.append("span").attr("class", "va").text("→");
     });
   });
@@ -2976,9 +3287,11 @@ function renderIssues() {
   if (!sbox.dataset.built) {
     STATUS_ORDER.forEach(s => {
       const lab = document.createElement("label");
+      lab.className = "fpill";
+      lab.style.setProperty("--c", statusColor(s));
       lab.innerHTML =
         `<input type="checkbox" ${issStatuses.has(s) ? "checked" : ""}>` +
-        `<span class="badge" style="background:${statusColor(s)}">${s}</span>`;
+        `<span class="dot"></span><span>${s}</span>`;
       lab.querySelector("input").addEventListener("change", function () {
         if (this.checked) issStatuses.add(s); else issStatuses.delete(s);
         renderIssues();
@@ -2992,10 +3305,11 @@ function renderIssues() {
   if (!srcbox.dataset.built) {
     SOURCE_ORDER.forEach(s => {
       const lab = document.createElement("label");
+      lab.className = "fpill";
+      lab.style.setProperty("--c", sourceColor(s));
       lab.innerHTML =
         `<input type="checkbox" ${issSources.has(s) ? "checked" : ""}>` +
-        `<span class="badge" style="background:${sourceColor(s)}">` +
-        `${sourceLabel(s)}</span>`;
+        `<span class="dot"></span><span>${sourceLabel(s)}</span>`;
       lab.querySelector("input").addEventListener("change", function () {
         if (this.checked) issSources.add(s); else issSources.delete(s);
         renderIssues();
@@ -3134,9 +3448,11 @@ function renderSearch() {
   if (!sbox.dataset.built) {
     STATUS_ORDER.forEach(s => {
       const lab = document.createElement("label");
+      lab.className = "fpill";
+      lab.style.setProperty("--c", statusColor(s));
       lab.innerHTML =
         `<input type="checkbox" ${srStatuses.has(s) ? "checked" : ""}>` +
-        `<span class="badge" style="background:${statusColor(s)}">${s}</span>`;
+        `<span class="dot"></span><span>${s}</span>`;
       lab.querySelector("input").addEventListener("change", function () {
         if (this.checked) srStatuses.add(s); else srStatuses.delete(s);
         renderSearch();
@@ -3150,9 +3466,11 @@ function renderSearch() {
   if (!kbox.dataset.built) {
     SR_KINDS.forEach(k => {
       const lab = document.createElement("label");
+      lab.className = "fpill";
+      lab.style.setProperty("--c", color(k));
       lab.innerHTML =
         `<input type="checkbox" ${srKinds.has(k) ? "checked" : ""}>` +
-        `<span class="badge" style="background:${color(k)}">${k}</span>`;
+        `<span class="dot"></span><span>${k}</span>`;
       lab.querySelector("input").addEventListener("change", function () {
         if (this.checked) srKinds.add(k); else srKinds.delete(k);
         renderSearch();
@@ -3166,10 +3484,11 @@ function renderSearch() {
   if (!srcbox.dataset.built) {
     SOURCE_ORDER.forEach(s => {
       const lab = document.createElement("label");
+      lab.className = "fpill";
+      lab.style.setProperty("--c", sourceColor(s));
       lab.innerHTML =
         `<input type="checkbox" ${srSources.has(s) ? "checked" : ""}>` +
-        `<span class="badge" style="background:${sourceColor(s)}">` +
-        `${sourceLabel(s)}</span>`;
+        `<span class="dot"></span><span>${sourceLabel(s)}</span>`;
       lab.querySelector("input").addEventListener("change", function () {
         if (this.checked) {
           srSources.add(s);
