@@ -15,6 +15,10 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
+  <!-- Map the layout viewport to the device width so the responsive CSS
+       (≤720 / ≤480 breakpoints) actually engages on phones — without this a
+       mobile browser assumes a ~980px desktop width and shrinks the page. -->
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Semantic Models Analyser</title>
   <!-- GoatCounter analytics : privacy-friendly, no cookies, no PII. The
        script auto-counts the initial pageview ; per-view counts on internal
@@ -192,13 +196,14 @@
     #overview { display: grid; gap: var(--sp-3);
       grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); }
     .ov {
-      padding: var(--sp-3) var(--sp-4);
+      padding: var(--sp-3) var(--sp-4); min-width: 0;
       border: 1px solid var(--border); border-radius: var(--r-md);
       background: var(--surface); box-shadow: var(--shadow-sm); }
     .ov .lbl { font-size: var(--fs-xs); color: var(--text-3);
       text-transform: uppercase; letter-spacing: .04em; }
     .ov .val { font-size: var(--fs-xl); font-weight: 700; line-height: 1.2;
-      margin-top: 2px; font-variant-numeric: tabular-nums; }
+      margin-top: 2px; font-variant-numeric: tabular-nums;
+      overflow-wrap: anywhere; }
     .ov .sub { margin-top: 4px; font-size: var(--fs-xs); color: var(--text-3);
       display: flex; gap: var(--sp-3); flex-wrap: wrap;
       font-variant-numeric: tabular-nums; }
@@ -675,7 +680,11 @@
       #home, #issues { padding: var(--sp-3); gap: var(--sp-3); }
       #appbar { padding: var(--sp-2) var(--sp-3); gap: var(--sp-2); }
       .brand .bs { display: none; }                    /* hide the subtitle to save space */
-      #tabs, #subtabs { overflow-x: auto; flex-wrap: nowrap; }
+      #tabs, #subtabs { overflow-x: auto; flex-wrap: nowrap;
+        /* Fade the right edge as a "more tabs ↦" scroll affordance — the 5 top
+           tabs never all fit on a phone and the native scrollbar is hidden. */
+        -webkit-mask-image: linear-gradient(90deg, #000 calc(100% - 26px), transparent);
+        mask-image: linear-gradient(90deg, #000 calc(100% - 26px), transparent); }
       .tab, .subtab { flex: none; }
       #catalog-head { flex-direction: column; align-items: stretch;
         gap: var(--sp-2); }
@@ -700,6 +709,14 @@
       #std-layout { grid-template-columns: 1fr;
         grid-template-areas: "list" "refs" "graph"; }
       #std-list { min-height: 200px; max-height: 40vh; }
+    }
+
+    /* ---- Phones (portrait, ≤ 480px) --------------------------------------
+       Below this width two stat columns get too narrow for labels like
+       "86 models linked · release Saturn" — stack them so nothing clips. */
+    @media (max-width: 480px) {
+      #overview { grid-template-columns: 1fr; }
+      #kpis .kpi { flex: 1 1 100%; }
     }
 
     /* ---- Standards tab ---------------------------------------------------- */
@@ -1396,6 +1413,15 @@ function makeSim(nodes, links, width, height, opt) {
     .force("charge", d3.forceManyBody().strength(opt.charge))
     .force("center", d3.forceCenter(width / 2, height / 2))
     .force("collide", d3.forceCollide(opt.collide));
+  // Mild gravity toward centre : keeps DISCONNECTED components (a model with
+  // several aspects / orphan elements) from drifting into far corners under
+  // the repulsion charge. Collision still prevents overlap, so the result is
+  // compact-but-readable. `gravity` defaults to 0 (no pull) for graphs that
+  // don't ask for it.
+  if (opt.gravity) {
+    sim.force("x", d3.forceX(width / 2).strength(opt.gravity))
+       .force("y", d3.forceY(height / 2).strength(opt.gravity));
+  }
   if (layoutMode === "circle" || layoutMode === "grid") {
     sim.stop();
     placeStatic(nodes, layoutMode, width, height);
@@ -1433,6 +1459,38 @@ function dragger(sim, ticked) {
     });
 }
 
+// Fit a laid-out graph into its viewport : compute the node bounding box and
+// apply a zoom transform so the graph fills `svgNode` with padding, instead of
+// sitting as a tiny cluster in the middle of a large canvas. `labelPad` reserves
+// room on the right for node labels (drawn at x+12, ~6px/char at 10px font) so
+// they aren't clipped. Caps the scale so a 1–2 node graph isn't blown up huge.
+function fitView(svgNode, zoomB, nodes, opts) {
+  if (!nodes.length) return;
+  opts = opts || {};
+  let minX = Infinity, minY = Infinity, maxX = -Infinity, maxY = -Infinity;
+  let labelW = 0;
+  nodes.forEach(d => {
+    if (d.x < minX) minX = d.x;
+    if (d.x > maxX) maxX = d.x;
+    if (d.y < minY) minY = d.y;
+    if (d.y > maxY) maxY = d.y;
+    if (opts.labelPad) {
+      const w = 12 + (d.label || d.name || "").length * 6;
+      if (w > labelW) labelW = w;
+    }
+  });
+  maxX += labelW;                                   // keep right-side labels in view
+  const rect = svgNode.getBoundingClientRect();
+  const pad = opts.pad == null ? 48 : opts.pad;
+  const bw = Math.max(maxX - minX, 1), bh = Math.max(maxY - minY, 1);
+  const scale = Math.max(0.1, Math.min(opts.maxScale || 1.5,
+    (rect.width - 2 * pad) / bw, (rect.height - 2 * pad) / bh));
+  const tx = rect.width / 2 - scale * (minX + maxX) / 2;
+  const ty = rect.height / 2 - scale * (minY + maxY) / 2;
+  d3.select(svgNode).transition().duration(opts.instant ? 0 : 300)
+    .call(zoomB.transform, d3.zoomIdentity.translate(tx, ty).scale(scale));
+}
+
 // Layout selector applies to whichever graph sub-tab is showing.
 // Layout selectors — one per graph. Each writes to its own variable, and
 // the active draw() / drawDep() copies that into the global `layoutMode`
@@ -1450,8 +1508,9 @@ document.getElementById("dep-layout").addEventListener("change", function () {
 const svg = d3.select("#graph");
 const tooltip = d3.select("#tooltip");
 const container = svg.append("g");
-svg.call(d3.zoom().scaleExtent([0.1, 4]).on("zoom",
-  e => container.attr("transform", e.transform)));
+const zoomEl = d3.zoom().scaleExtent([0.1, 4]).on("zoom",
+  e => container.attr("transform", e.transform));
+svg.call(zoomEl);
 
 // Directed arrow for edges
 svg.append("defs").append("marker")
@@ -1486,8 +1545,12 @@ function draw(g) {
   // option is functional too (roots = Aspects).
   layoutMode = elementLayoutMode;
   const aspectIds = nodes.filter(n => n.kind === "Aspect").map(n => n.id);
+  // Stronger repulsion + a label-aware collision radius (wider for long
+  // names) so nodes spread out and their labels stop overlapping ; fitView()
+  // below then zooms the result to fill the canvas.
   sim = makeSim(nodes, links, width, height,
-    { distance: 70, charge: -180, collide: 22,
+    { distance: 80, charge: -240, gravity: 0.16,
+      collide: d => 18 + Math.min(64, (d.label || d.name || "").length * 3.2),
       hierarchy: { rootIds: aspectIds, directionFlip: false } });
 
   const link = container.append("g").selectAll("line").data(links).enter()
@@ -1547,6 +1610,12 @@ function draw(g) {
 
   sim.on("tick", ticked);
   ticked();                       // initial paint (static layouts won't tick)
+
+  // Frame the graph: static layouts are final now ; the live "force" layout
+  // keeps moving, so fit once it settles (and roughly during the run).
+  const fit = inst => fitView(svg.node(), zoomEl, nodes, { labelPad: true, instant: inst });
+  if (layoutMode === "force") sim.on("end", () => fit(false));
+  else fit(false);
 }
 
 function drawLegend(g) {
