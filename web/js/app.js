@@ -658,6 +658,14 @@ function keySource(k) {
   return sourceByKey[k] || null;
 }
 
+// Split a "name@version" catalog key into [name, version]. Uses lastIndexOf
+// so a name containing "@" (none today, but cheap insurance) keeps its version
+// as the final segment.
+function splitKey(k) {
+  const at = k.lastIndexOf("@");
+  return [k.slice(0, at), k.slice(at + 1)];
+}
+
 // BFS, transitive. `expanded` guards cycles: A→B and B→A both draw an edge,
 // but each node is expanded once, so no infinite recursion.
 function buildDepGraph(rootKey) {
@@ -665,11 +673,11 @@ function buildDepGraph(rootKey) {
   const ensure = k => {
     if (!nodes.has(k)) {
       const m = depsMap && depsMap[k];
-      const at = k.lastIndexOf("@");
+      const [kn, kv] = splitKey(k);
       nodes.set(k, {
         id: k, present: !!m,
-        name: m ? m.name : k.slice(0, at),
-        version: m ? m.version : k.slice(at + 1),
+        name: m ? m.name : kn,
+        version: m ? m.version : kv,
         status: m ? (keyStatus(k) || "undefined") : null,
         source: m ? keySource(k) : null,
         root: k === rootKey,
@@ -1390,8 +1398,7 @@ function openEntry(e) {
 // Resolve a "name@version" dep key to a catalog entry (prefer one with an
 // Aspect) so a dependency node can be opened in the Model Viewer.
 function entryForKey(key) {
-  const at = key.lastIndexOf("@");
-  const name = key.slice(0, at), ver = key.slice(at + 1);
+  const [name, ver] = splitKey(key);
   const cands = allModels.filter(e => e.model_name === name && e.version === ver);
   return cands.find(e => e.has_aspect) || cands[0] || null;
 }
@@ -1825,8 +1832,7 @@ function refGroup(title, arr, desc) {
 // One model chip ("name@version"). Clickable (data-model) when the model is in
 // the catalog ; dimmed otherwise (cited but not ingested).
 function modelChip(mk) {
-  const at = mk.lastIndexOf("@");
-  const name = mk.slice(0, at), ver = mk.slice(at + 1);
+  const [name, ver] = splitKey(mk);
   const inCat = !!entryForKey(mk);
   return `<span class="chip${inCat ? "" : " dim"}"`
     + `${inCat ? ` data-model="${escapeHtml(mk)}"` : ""}>`
@@ -1928,9 +1934,9 @@ function stdNodeClickable(d, rootId) {
 }
 function stdNodeTip(d, rootId) {
   if (d.type === "model") {
-    const mk = d.mk, at = mk.lastIndexOf("@");
-    return `<b>${escapeHtml(mk.slice(0, at))}</b> `
-      + `<span class="k">v${escapeHtml(mk.slice(at + 1))}</span><br>semantic model`
+    const mk = d.mk, [mn, mv] = splitKey(mk);
+    return `<b>${escapeHtml(mn)}</b> `
+      + `<span class="k">v${escapeHtml(mv)}</span><br>semantic model`
       + (entryForKey(mk) ? "<br><i>click to open in Model Viewer</i>"
                          : "<br><i>not in catalog</i>");
   }
@@ -1998,7 +2004,7 @@ function drawStdGraph(rootId) {
     const id = "model:" + mk;
     if (!nodeMap.has(id)) nodeMap.set(id, {
       id, side: "out", type: "model", mk,
-      label: mk.slice(0, mk.lastIndexOf("@")),
+      label: splitKey(mk)[0],
     });
   });
   const nodes = [...nodeMap.values()];
