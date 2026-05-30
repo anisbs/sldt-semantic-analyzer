@@ -883,11 +883,16 @@
     #stdgraph .node text { font-size: 11px; fill: var(--text);
       paint-order: stroke; stroke: var(--surface); stroke-width: 3px; }
     #stdgraph line.link { stroke: var(--border-strong); }
-    .std-glegend { display: flex; flex-wrap: wrap; gap: var(--sp-3);
-      font-size: var(--fs-2xs); color: var(--text-3);
+    /* Each cue group (Standards / Models / direction) on its own line, at a
+       readable size — was one cramped 10px row that wrapped into a jumble. */
+    .std-glegend { display: flex; flex-direction: column; gap: var(--sp-2);
+      font-size: var(--fs-xs); color: var(--text-3);
       margin: var(--sp-3) 0 var(--sp-2); }
+    .std-glegend .grp { display: flex; flex-wrap: wrap; align-items: center;
+      gap: var(--sp-1) var(--sp-4); }
+    .std-glegend .grp > span { display: inline-flex; align-items: center; }
     .std-glegend span.dot { display: inline-block; width: 10px; height: 10px;
-      border-radius: 50%; margin-right: 4px; vertical-align: -1px; }
+      border-radius: 50%; margin-right: 5px; }
     /* Shape cues in the legend : rounded rectangle = standard (override the
        circle), ring = selected node, plain dot (circle) = model. */
     .std-glegend span.rect { width: 16px; height: 11px; border-radius: 3px; }
@@ -2880,18 +2885,22 @@ function ensureStdDetailSkeleton() {
       '</div>' +
     '</div>' +
     '<div class="std-glegend">' +
-      '<span class="glab">Standards (▭):</span>' +
-      `<span><span class="dot rect ring" style="border-color:${STD_COLORS.root}"></span>selected</span>` +
-      `<span><span class="dot rect" style="background:${STD_COLORS.active}"></span>active</span>` +
-      `<span><span class="dot rect" style="background:${STD_COLORS.deprecated}"></span>deprecated</span>` +
-      `<span><span class="dot rect" style="background:${STD_COLORS.absent}"></span>other</span>` +
-      '<span class="glab">Models (○, ring = status):</span>' +
-      `<span><span class="dot" style="background:${STD_COLORS.model}"></span>model</span>` +
-      `<span><span class="dot ring" style="border-color:${statusColor("release")}"></span>release</span>` +
-      `<span><span class="dot ring" style="border-color:${statusColor("draft")}"></span>draft</span>` +
-      `<span><span class="dot ring" style="border-color:${statusColor("deprecated")}"></span>deprecated</span>` +
-      `<span><span class="dot ring" style="border-color:${statusColor("undefined")}"></span>undefined</span>` +
-      '<span class="gsep">← referenced by · references / models →</span>' +
+      '<div class="grp">' +
+        '<span class="glab">Standards (▭):</span>' +
+        `<span><span class="dot rect ring" style="border-color:${STD_COLORS.root}"></span>selected</span>` +
+        `<span><span class="dot rect" style="background:${STD_COLORS.active}"></span>active</span>` +
+        `<span><span class="dot rect" style="background:${STD_COLORS.deprecated}"></span>deprecated</span>` +
+        `<span><span class="dot rect" style="background:${STD_COLORS.absent}"></span>other</span>` +
+      '</div>' +
+      '<div class="grp">' +
+        '<span class="glab">Models (○, ring = status):</span>' +
+        `<span><span class="dot" style="background:${STD_COLORS.model}"></span>model</span>` +
+        `<span><span class="dot ring" style="border-color:${statusColor("release")}"></span>release</span>` +
+        `<span><span class="dot ring" style="border-color:${statusColor("draft")}"></span>draft</span>` +
+        `<span><span class="dot ring" style="border-color:${statusColor("deprecated")}"></span>deprecated</span>` +
+        `<span><span class="dot ring" style="border-color:${statusColor("undefined")}"></span>undefined</span>` +
+      '</div>' +
+      '<div class="grp"><span class="gsep">← referenced by · references / models →</span></div>' +
     '</div>' +
     '<svg id="stdgraph"></svg>';
   const sg = d3.select("#stdgraph");
