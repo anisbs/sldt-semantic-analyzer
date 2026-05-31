@@ -297,7 +297,15 @@
       "label": "ListOfDiagnosticSessions",
       "kind": "Characteristic",
       "preferredName": "List of diagnostic Sessions",
-      "description": "references to a list of diagnostic session IDs - only present if matching between diag session and claim is possible"
+      "description": "references to a list of diagnostic session IDs - only present if matching between diag session and claim is possible",
+      "external_refs": [
+        {
+          "predicate": "elementCharacteristic",
+          "target_local": "Text",
+          "target_model": "io.openmanufacturing:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.fleet.claim_data:1.0.0#Claim",
@@ -629,6 +637,12 @@
       "source": "urn:bamm:io.catenax.fleet.claim_data:1.0.0#PartCharacteristic",
       "target": "urn:bamm:io.catenax.fleet.claim_data:1.0.0#Part",
       "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.fleet.claim_data:1.0.0#CatenaXIdTrait",
+      "target": "urn:bamm:io.catenax.fleet.claim_data:1.0.0#UUIDv4",
+      "label": "baseCharacteristic",
       "optional": false
     },
     {

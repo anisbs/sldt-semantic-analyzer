@@ -443,6 +443,24 @@
     },
     {
       "source": "urn:samm:io.catenax.batch:3.0.1#KeyTrait",
+      "target": "urn:samm:io.catenax.batch:3.0.1#KeyCharacteristic",
+      "label": "baseCharacteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.batch:3.0.1#DateTrait",
+      "target": "urn:samm:io.catenax.batch:3.0.1#DateTimeCharacteristic",
+      "label": "baseCharacteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.batch:3.0.1#ProductionCountryCodeTrait",
+      "target": "urn:samm:io.catenax.batch:3.0.1#CountryCodeCharacteristic",
+      "label": "baseCharacteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.batch:3.0.1#KeyTrait",
       "target": "urn:samm:io.catenax.batch:3.0.1#KeyRegularExpression",
       "label": "constraint",
       "optional": false

@@ -37,18 +37,26 @@ _ELEMENT_TYPES = {
     "Characteristic", "Entity", "AbstractEntity",
     "Operation", "Event", "Constraint",
 }
-# Prédicats reliant les éléments entre eux (nom local -> libellé d'arête).
+# Prédicats reliant les éléments entre eux (nom local -> libellé d'arête),
+# vivant dans le namespace **cœur** `samm:` (méta-modèle).
 _EDGE_PREDICATES = {
     "properties": "properties",
     "characteristic": "characteristic",
     "dataType": "dataType",
+}
+# Prédicats vivant dans le namespace `samm-c:` (caractéristiques), PAS dans le
+# méta-modèle `samm:`. Indispensable de les résoudre avec le bon namespace,
+# sinon l'arête n'est jamais créée :
+#  - `samm-c:baseCharacteristic` relie un `Trait` à sa Characteristic de base ;
+#    sans cette arête, une Characteristic atteignable seulement via un Trait est
+#    faussement signalée `orphan_unreachable`.
+#  - `samm-c:elementCharacteristic` relie une collection à la Characteristic de
+#    ses éléments (même piège).
+#  - `samm-c:constraint` relie un Trait à ses Constraint(s) : nécessaire pour
+#    détecter `trait_without_constraint`.
+_CHAR_EDGE_PREDICATES = {
     "baseCharacteristic": "baseCharacteristic",
     "elementCharacteristic": "elementCharacteristic",
-}
-# Prédicats vivant dans le namespace `samm-c:` (caractéristiques), pas dans
-# le méta-modèle. `samm-c:constraint` relie un Trait à ses Constraint(s) :
-# nécessaire pour détecter `trait_without_constraint`.
-_CHAR_EDGE_PREDICATES = {
     "constraint": "constraint",
 }
 

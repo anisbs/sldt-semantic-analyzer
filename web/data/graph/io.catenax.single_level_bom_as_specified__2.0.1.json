@@ -231,7 +231,15 @@
       "label": "assetIdTrait",
       "kind": "Characteristic",
       "preferredName": null,
-      "description": null
+      "description": null,
+      "external_refs": [
+        {
+          "predicate": "baseCharacteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.single_level_bom_as_specified:2.0.1#Uuidv4RegularExpression",

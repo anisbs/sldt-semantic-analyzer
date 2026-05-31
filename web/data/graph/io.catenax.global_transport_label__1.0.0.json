@@ -629,7 +629,15 @@
       "label": "CustomerReference3ContentTrait",
       "kind": "Characteristic",
       "preferredName": "Customer Reference 3 Content Trait",
-      "description": "Trait limiting the content of the lines to a maximum of 25 characters."
+      "description": "Trait limiting the content of the lines to a maximum of 25 characters.",
+      "external_refs": [
+        {
+          "predicate": "baseCharacteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.global_transport_label:1.0.0#LicensePlateTrait",
@@ -1258,6 +1266,42 @@
       "source": "urn:samm:io.catenax.global_transport_label:1.0.0#DateCategorySet",
       "target": "urn:samm:io.catenax.global_transport_label:1.0.0#DateCategoryEntity",
       "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.global_transport_label:1.0.0#OptionalInformationTrait",
+      "target": "urn:samm:io.catenax.global_transport_label:1.0.0#OptionalInformationList",
+      "label": "baseCharacteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.global_transport_label:1.0.0#CustomerReference3Trait",
+      "target": "urn:samm:io.catenax.global_transport_label:1.0.0#CustomerReference3List",
+      "label": "baseCharacteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.global_transport_label:1.0.0#LicensePlateTrait",
+      "target": "urn:samm:io.catenax.global_transport_label:1.0.0#LicensePlateCharacteristic",
+      "label": "baseCharacteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.global_transport_label:1.0.0#DateTrait",
+      "target": "urn:samm:io.catenax.global_transport_label:1.0.0#DateCharacteristic",
+      "label": "baseCharacteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.global_transport_label:1.0.0#OptionalInformationList",
+      "target": "urn:samm:io.catenax.global_transport_label:1.0.0#CustomerReference3ContentTrait",
+      "label": "elementCharacteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.global_transport_label:1.0.0#CustomerReference3List",
+      "target": "urn:samm:io.catenax.global_transport_label:1.0.0#CustomerReference3ContentTrait",
+      "label": "elementCharacteristic",
       "optional": false
     },
     {

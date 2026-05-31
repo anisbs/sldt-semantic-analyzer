@@ -168,6 +168,24 @@
     },
     {
       "source": "urn:samm:io.catenax.shared.business_partner_number:1.0.0#BpnlTrait",
+      "target": "urn:samm:io.catenax.shared.business_partner_number:1.0.0#BpnlCharacteristic",
+      "label": "baseCharacteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.shared.business_partner_number:1.0.0#BpnaTrait",
+      "target": "urn:samm:io.catenax.shared.business_partner_number:1.0.0#BpnaCharacteristic",
+      "label": "baseCharacteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.shared.business_partner_number:1.0.0#BpnsTrait",
+      "target": "urn:samm:io.catenax.shared.business_partner_number:1.0.0#BpnsCharacteristic",
+      "label": "baseCharacteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.shared.business_partner_number:1.0.0#BpnlTrait",
       "target": "urn:samm:io.catenax.shared.business_partner_number:1.0.0#BpnlRegularExpression",
       "label": "constraint",
       "optional": false

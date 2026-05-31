@@ -407,7 +407,15 @@
       "label": "FileSet",
       "kind": "Characteristic",
       "preferredName": null,
-      "description": null
+      "description": null,
+      "external_refs": [
+        {
+          "predicate": "elementCharacteristic",
+          "target_local": "FileWithContentType",
+          "target_model": "shared@3.1.0",
+          "target_source": "idta"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.admin-shell.idta.handover_documentation:2.0.0#ReferenceSet",
@@ -739,6 +747,30 @@
       "source": "urn:samm:io.admin-shell.idta.handover_documentation:2.0.0#DocumentVersions",
       "target": "urn:samm:io.admin-shell.idta.handover_documentation:2.0.0#DocumentVersion",
       "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.handover_documentation:2.0.0#DocumentSetTrait",
+      "target": "urn:samm:io.admin-shell.idta.handover_documentation:2.0.0#DocumentSet",
+      "label": "baseCharacteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.handover_documentation:2.0.0#EntitySetTrait",
+      "target": "urn:samm:io.admin-shell.idta.handover_documentation:2.0.0#EntitySet",
+      "label": "baseCharacteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.handover_documentation:2.0.0#FileSetTrait",
+      "target": "urn:samm:io.admin-shell.idta.handover_documentation:2.0.0#FileSet",
+      "label": "baseCharacteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.handover_documentation:2.0.0#ReferenceSetTrait",
+      "target": "urn:samm:io.admin-shell.idta.handover_documentation:2.0.0#ReferenceSet",
+      "label": "baseCharacteristic",
       "optional": false
     },
     {

@@ -227,14 +227,30 @@
       "label": "AffectedSitesCharacteristic",
       "kind": "Characteristic",
       "preferredName": "Affected Sites Characteristic",
-      "description": "A set of Business Partner Number Sites (BPNS) that are affected."
+      "description": "A set of Business Partner Number Sites (BPNS) that are affected.",
+      "external_refs": [
+        {
+          "predicate": "elementCharacteristic",
+          "target_local": "BpnsTrait",
+          "target_model": "shared.business_partner_number@2.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.demand_and_capacity_notification:3.0.0#NotificationIdSet",
       "label": "NotificationIdSet",
       "kind": "Characteristic",
       "preferredName": "Notification ID Set",
-      "description": "A set of unique Notification IDs."
+      "description": "A set of unique Notification IDs.",
+      "external_refs": [
+        {
+          "predicate": "elementCharacteristic",
+          "target_local": "UuidV4Trait",
+          "target_model": "shared.uuid@2.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.demand_and_capacity_notification:3.0.0#MaterialsSet",
@@ -486,6 +502,12 @@
       "source": "urn:samm:io.catenax.demand_and_capacity_notification:3.0.0#MaterialsSet",
       "target": "urn:samm:io.catenax.demand_and_capacity_notification:3.0.0#Material",
       "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.demand_and_capacity_notification:3.0.0#UserInputTrait",
+      "target": "urn:samm:io.catenax.demand_and_capacity_notification:3.0.0#UserInputCharacteristic",
+      "label": "baseCharacteristic",
       "optional": false
     },
     {

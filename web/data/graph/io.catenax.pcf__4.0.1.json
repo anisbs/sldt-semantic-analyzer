@@ -656,7 +656,15 @@
       "label": "NonEmptyStringTrait",
       "kind": "Characteristic",
       "preferredName": null,
-      "description": null
+      "description": null,
+      "external_refs": [
+        {
+          "predicate": "baseCharacteristic",
+          "target_local": "Text",
+          "target_model": "io.openmanufacturing:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.pcf:4.0.1#CompanyIdsTrait",
@@ -698,14 +706,30 @@
       "label": "GeographyCountrySubdivisionTrait",
       "kind": "Characteristic",
       "preferredName": null,
-      "description": null
+      "description": null,
+      "external_refs": [
+        {
+          "predicate": "baseCharacteristic",
+          "target_local": "Text",
+          "target_model": "io.openmanufacturing:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.pcf:4.0.1#GeographyCountryTrait",
       "label": "GeographyCountryTrait",
       "kind": "Characteristic",
       "preferredName": null,
-      "description": null
+      "description": null,
+      "external_refs": [
+        {
+          "predicate": "baseCharacteristic",
+          "target_local": "Text",
+          "target_model": "io.openmanufacturing:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.pcf:4.0.1#PercentTrait",
@@ -2066,6 +2090,72 @@
       "source": "urn:bamm:io.catenax.pcf:4.0.1#RuleNamesCharacteristic",
       "target": "urn:bamm:io.catenax.pcf:4.0.1#RuleName",
       "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.pcf:4.0.1#IdTrait",
+      "target": "urn:bamm:io.catenax.pcf:4.0.1#PfId",
+      "label": "baseCharacteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.pcf:4.0.1#PrecedingPfIdsTrait",
+      "target": "urn:bamm:io.catenax.pcf:4.0.1#PrecedingPfIdsCharacteristic",
+      "label": "baseCharacteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.pcf:4.0.1#CompanyIdsTrait",
+      "target": "urn:bamm:io.catenax.pcf:4.0.1#CompanyIdSet",
+      "label": "baseCharacteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.pcf:4.0.1#ProductIdsTrait",
+      "target": "urn:bamm:io.catenax.pcf:4.0.1#ProductIdSet",
+      "label": "baseCharacteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.pcf:4.0.1#StrictlyPositiveDecimalTrait",
+      "target": "urn:bamm:io.catenax.pcf:4.0.1#StrictlyPositiveDecimal",
+      "label": "baseCharacteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.pcf:4.0.1#PositiveDecimalWeightTrait",
+      "target": "urn:bamm:io.catenax.pcf:4.0.1#PositiveDecimalWeight",
+      "label": "baseCharacteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.pcf:4.0.1#ExemptedEmissionsPercentTrait",
+      "target": "urn:bamm:io.catenax.pcf:4.0.1#ExemptedEmissionsPercentCharacteristic",
+      "label": "baseCharacteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.pcf:4.0.1#PercentTrait",
+      "target": "urn:bamm:io.catenax.pcf:4.0.1#Percent",
+      "label": "baseCharacteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.pcf:4.0.1#PositiveEmissionsTrait",
+      "target": "urn:bamm:io.catenax.pcf:4.0.1#PositiveEmission",
+      "label": "baseCharacteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.pcf:4.0.1#RuleNamesTrait",
+      "target": "urn:bamm:io.catenax.pcf:4.0.1#RuleNamesCharacteristic",
+      "label": "baseCharacteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.pcf:4.0.1#DqiNumberTrait",
+      "target": "urn:bamm:io.catenax.pcf:4.0.1#DqiNumber",
+      "label": "baseCharacteristic",
       "optional": false
     },
     {

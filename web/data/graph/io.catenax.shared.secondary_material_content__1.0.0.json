@@ -1076,6 +1076,18 @@
     },
     {
       "source": "urn:samm:io.catenax.shared.secondary_material_content:1.0.0#UnitOfMeasureKeyTrait",
+      "target": "urn:samm:io.catenax.shared.secondary_material_content:1.0.0#UnitReferenceCharacteristic",
+      "label": "baseCharacteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.shared.secondary_material_content:1.0.0#PercentageOfMaterialWeightTrait",
+      "target": "urn:samm:io.catenax.shared.secondary_material_content:1.0.0#PercentageOfMaterialWeightCharacteristic",
+      "label": "baseCharacteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.shared.secondary_material_content:1.0.0#UnitOfMeasureKeyTrait",
       "target": "urn:samm:io.catenax.shared.secondary_material_content:1.0.0#AllowMassUnit",
       "label": "constraint",
       "optional": false

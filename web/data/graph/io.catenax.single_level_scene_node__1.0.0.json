@@ -420,6 +420,30 @@
     },
     {
       "source": "urn:samm:io.catenax.single_level_scene_node:1.0.0#MatrixTrait",
+      "target": "urn:samm:io.catenax.single_level_scene_node:1.0.0#MatrixCharacteristic",
+      "label": "baseCharacteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.single_level_scene_node:1.0.0#Vector3Trait",
+      "target": "urn:samm:io.catenax.single_level_scene_node:1.0.0#Vector3ListCharacteristic",
+      "label": "baseCharacteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.single_level_scene_node:1.0.0#MatrixCharacteristic",
+      "target": "urn:samm:io.catenax.single_level_scene_node:1.0.0#FloatCharacteristic",
+      "label": "elementCharacteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.single_level_scene_node:1.0.0#Vector3ListCharacteristic",
+      "target": "urn:samm:io.catenax.single_level_scene_node:1.0.0#FloatCharacteristic",
+      "label": "elementCharacteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.single_level_scene_node:1.0.0#MatrixTrait",
       "target": "urn:samm:io.catenax.single_level_scene_node:1.0.0#MatrixConstraint",
       "label": "constraint",
       "optional": false

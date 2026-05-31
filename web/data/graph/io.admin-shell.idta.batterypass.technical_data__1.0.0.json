@@ -1227,6 +1227,18 @@
       "optional": false
     },
     {
+      "source": "urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#PowerCapabilityAtSoCTrait",
+      "target": "urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#PowerCapabilityAtSoC",
+      "label": "baseCharacteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#PowerCapabilityAtSoC",
+      "target": "urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#PowerCapabilityAtCharacteristic",
+      "label": "elementCharacteristic",
+      "optional": false
+    },
+    {
       "source": "urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#GeneralInformationCharacteristic",
       "target": "urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#GeneralInformationEntity",
       "label": "dataType",

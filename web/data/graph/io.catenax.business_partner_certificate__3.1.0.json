@@ -687,6 +687,12 @@
     },
     {
       "source": "urn:samm:io.catenax.business_partner_certificate:3.1.0#BpnTrait",
+      "target": "urn:samm:io.catenax.business_partner_certificate:3.1.0#BpnNumberCharacteristic",
+      "label": "baseCharacteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.business_partner_certificate:3.1.0#BpnTrait",
       "target": "urn:samm:io.catenax.business_partner_certificate:3.1.0#BpnNumberRegularExpression",
       "label": "constraint",
       "optional": false

@@ -602,7 +602,15 @@
       "label": "ContactMailTrait",
       "kind": "Characteristic",
       "preferredName": "Contact Mail Trait",
-      "description": "Trait for a contact mail address."
+      "description": "Trait for a contact mail address.",
+      "external_refs": [
+        {
+          "predicate": "baseCharacteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.essincident:3.0.0#LongitudeTrait",
@@ -952,6 +960,18 @@
       "source": "urn:samm:io.catenax.essincident:3.0.0#EssOriginatorCoordinatesCharacteristic",
       "target": "urn:samm:io.catenax.essincident:3.0.0#EssOriginatorCoordinatesEntity",
       "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.essincident:3.0.0#LongitudeTrait",
+      "target": "urn:samm:io.catenax.essincident:3.0.0#LongitudeCharacteristic",
+      "label": "baseCharacteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.essincident:3.0.0#LatitudeTrait",
+      "target": "urn:samm:io.catenax.essincident:3.0.0#LatitudeCharacteristic",
+      "label": "baseCharacteristic",
       "optional": false
     },
     {

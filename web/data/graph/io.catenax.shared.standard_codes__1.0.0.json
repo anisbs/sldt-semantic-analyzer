@@ -39,21 +39,45 @@
       "label": "CountryAlpha3Trait",
       "kind": "Characteristic",
       "preferredName": "ISO 3166-1 alpha-3 country trait ",
-      "description": "trait for 3 letter country code"
+      "description": "trait for 3 letter country code",
+      "external_refs": [
+        {
+          "predicate": "baseCharacteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.shared.standard_codes:1.0.0#CountrySubdivisionTrait",
       "label": "CountrySubdivisionTrait",
       "kind": "Characteristic",
       "preferredName": "country subdivision trait",
-      "description": "ISO 3166-2 Codes for the representation of names of countries and their subdivisions"
+      "description": "ISO 3166-2 Codes for the representation of names of countries and their subdivisions",
+      "external_refs": [
+        {
+          "predicate": "baseCharacteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.shared.standard_codes:1.0.0#CurrencyTrait",
       "label": "CurrencyTrait",
       "kind": "Characteristic",
       "preferredName": "ISO 4217 currency trait",
-      "description": "trait for currency code according to ISO 4217."
+      "description": "trait for currency code according to ISO 4217.",
+      "external_refs": [
+        {
+          "predicate": "baseCharacteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.shared.standard_codes:1.0.0#ISO31661Alpha3Regex",

@@ -351,6 +351,12 @@
     },
     {
       "source": "urn:samm:io.catenax.warranty_claim_request_verification:1.0.0#PositiveFloatNumber",
+      "target": "urn:samm:io.catenax.warranty_claim_request_verification:1.0.0#Float",
+      "label": "baseCharacteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.warranty_claim_request_verification:1.0.0#PositiveFloatNumber",
       "target": "urn:samm:io.catenax.warranty_claim_request_verification:1.0.0#GreaterZero",
       "label": "constraint",
       "optional": false

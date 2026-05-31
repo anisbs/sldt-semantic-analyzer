@@ -471,7 +471,15 @@
       "label": "GearTrait",
       "kind": "Characteristic",
       "preferredName": "Gear Trait",
-      "description": "Constraint to match a gear from 1 to 18 or R (reverse)."
+      "description": "Constraint to match a gear from 1 to 18 or R (reverse).",
+      "external_refs": [
+        {
+          "predicate": "baseCharacteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.transmission.transmission_pass:3.1.0#TorqueNewtonMetre",
@@ -1104,6 +1112,12 @@
       "source": "urn:samm:io.catenax.transmission.transmission_pass:3.1.0#MachinePowerCharacteristic",
       "target": "urn:samm:io.catenax.transmission.transmission_pass:3.1.0#MachinePowerEntity",
       "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.transmission.transmission_pass:3.1.0#DriveTypeTrait",
+      "target": "urn:samm:io.catenax.transmission.transmission_pass:3.1.0#DriveList",
+      "label": "baseCharacteristic",
       "optional": false
     },
     {

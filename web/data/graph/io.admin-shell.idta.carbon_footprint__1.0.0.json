@@ -539,6 +539,12 @@
       "optional": false
     },
     {
+      "source": "urn:samm:io.admin-shell.idta.carbon_footprint:1.0.0#PcfCalculationMethodSet",
+      "target": "urn:samm:io.admin-shell.idta.carbon_footprint:1.0.0#PcfCalculationMethodCharacteristic",
+      "label": "elementCharacteristic",
+      "optional": false
+    },
+    {
       "source": "urn:samm:io.admin-shell.idta.carbon_footprint:1.0.0#ProductOrSectorSpecificCarbonFootprintEntity",
       "target": "urn:samm:io.admin-shell.idta.carbon_footprint:1.0.0#productOrSectorSpecificPcfInformation",
       "label": "properties",
@@ -638,6 +644,12 @@
       "source": "urn:samm:io.admin-shell.idta.carbon_footprint:1.0.0#referenceImpactUnitForCalculation",
       "target": "urn:samm:io.admin-shell.idta.carbon_footprint:1.0.0#ReferenceImpactUnitForCalculationEnum",
       "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.carbon_footprint:1.0.0#LifeCyclePhaseSet",
+      "target": "urn:samm:io.admin-shell.idta.carbon_footprint:1.0.0#LifeCyclePhaseEnum",
+      "label": "elementCharacteristic",
       "optional": false
     },
     {

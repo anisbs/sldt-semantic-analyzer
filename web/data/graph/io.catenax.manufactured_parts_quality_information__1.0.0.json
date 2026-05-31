@@ -523,6 +523,18 @@
     },
     {
       "source": "urn:bamm:io.catenax.manufactured_parts_quality_information:1.0.0#ProductionCountryCodeTrait",
+      "target": "urn:bamm:io.catenax.manufactured_parts_quality_information:1.0.0#CountryCodeCharacteristic",
+      "label": "baseCharacteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.manufactured_parts_quality_information:1.0.0#CatenaXIdTrait",
+      "target": "urn:bamm:io.catenax.manufactured_parts_quality_information:1.0.0#UUIDv4",
+      "label": "baseCharacteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.manufactured_parts_quality_information:1.0.0#ProductionCountryCodeTrait",
       "target": "urn:bamm:io.catenax.manufactured_parts_quality_information:1.0.0#CountryCodeRegularExpression",
       "label": "constraint",
       "optional": false

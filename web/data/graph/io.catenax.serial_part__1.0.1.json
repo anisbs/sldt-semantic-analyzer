@@ -466,6 +466,18 @@
     },
     {
       "source": "urn:bamm:io.catenax.serial_part:1.0.1#CatenaXIdTrait",
+      "target": "urn:bamm:io.catenax.serial_part:1.0.1#Uuidv4Characteristic",
+      "label": "baseCharacteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.serial_part:1.0.1#ProductionCountryCodeTrait",
+      "target": "urn:bamm:io.catenax.serial_part:1.0.1#CountryCodeCharacteristic",
+      "label": "baseCharacteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.serial_part:1.0.1#CatenaXIdTrait",
       "target": "urn:bamm:io.catenax.serial_part:1.0.1#Uuidv4RegularExpression",
       "label": "constraint",
       "optional": false

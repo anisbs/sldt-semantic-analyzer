@@ -286,7 +286,15 @@
       "label": "CountryAndStateCodeTrait",
       "kind": "Characteristic",
       "preferredName": "Country And State Code Trait",
-      "description": "Trait to ensure regular expressions with different countries and states. "
+      "description": "Trait to ensure regular expressions with different countries and states. ",
+      "external_refs": [
+        {
+          "predicate": "baseCharacteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.customs_information:2.0.0#TradeRelationTrait",
@@ -540,6 +548,18 @@
       "source": "urn:samm:io.catenax.customs_information:2.0.0#TracedWorthCharacteristic",
       "target": "urn:samm:io.catenax.customs_information:2.0.0#TracedWorthEntity",
       "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.customs_information:2.0.0#TradeRelationTrait",
+      "target": "urn:samm:io.catenax.customs_information:2.0.0#TradeRelation",
+      "label": "baseCharacteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.customs_information:2.0.0#CurrencyTrait",
+      "target": "urn:samm:io.catenax.customs_information:2.0.0#TracedWorthCurrenyCharacteristic",
+      "label": "baseCharacteristic",
       "optional": false
     },
     {

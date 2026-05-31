@@ -186,6 +186,12 @@
       "description": null,
       "external_refs": [
         {
+          "predicate": "baseCharacteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.2.0",
+          "target_source": "unknown"
+        },
+        {
           "predicate": "constraint",
           "target_local": "ISO8601Duration",
           "target_model": "shared@3.1.0",
@@ -1245,6 +1251,18 @@
       "source": "urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.1#PowerCapabilityAtCharacteristic",
       "target": "urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.1#PowerCapabilityAt",
       "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.1#PowerCapabilityAtSoCTrait",
+      "target": "urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.1#PowerCapabilityAtSoC",
+      "label": "baseCharacteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.1#PowerCapabilityAtSoC",
+      "target": "urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.1#PowerCapabilityAtCharacteristic",
+      "label": "elementCharacteristic",
       "optional": false
     },
     {

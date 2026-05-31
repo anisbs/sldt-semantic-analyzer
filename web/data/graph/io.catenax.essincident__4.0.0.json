@@ -609,7 +609,15 @@
       "label": "ContactMailTrait",
       "kind": "Characteristic",
       "preferredName": "Contact Mail Trait",
-      "description": "Trait for a contact mail address."
+      "description": "Trait for a contact mail address.",
+      "external_refs": [
+        {
+          "predicate": "baseCharacteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.essincident:4.0.0#BPNLTrait",
@@ -618,6 +626,12 @@
       "preferredName": "BPNL Trait",
       "description": "Trait to ensure data format for BPNL.",
       "external_refs": [
+        {
+          "predicate": "baseCharacteristic",
+          "target_local": "BpnlCharacteristic",
+          "target_model": "shared.business_partner_number@2.0.0",
+          "target_source": "catenax"
+        },
         {
           "predicate": "constraint",
           "target_local": "BpnlRegularExpression",
@@ -1001,6 +1015,24 @@
       "source": "urn:samm:io.catenax.essincident:4.0.0#EssOriginatorCoordinatesCharacteristic",
       "target": "urn:samm:io.catenax.essincident:4.0.0#EssOriginatorCoordinatesEntity",
       "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.essincident:4.0.0#LongitudeTrait",
+      "target": "urn:samm:io.catenax.essincident:4.0.0#LongitudeCharacteristic",
+      "label": "baseCharacteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.essincident:4.0.0#LatitudeTrait",
+      "target": "urn:samm:io.catenax.essincident:4.0.0#LatitudeCharacteristic",
+      "label": "baseCharacteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.essincident:4.0.0#EssIncidentModeratorCharacteristic",
+      "target": "urn:samm:io.catenax.essincident:4.0.0#BPNLTrait",
+      "label": "elementCharacteristic",
       "optional": false
     },
     {

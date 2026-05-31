@@ -110,7 +110,15 @@
       "label": "DocumentIdentifierSetTrait",
       "kind": "Characteristic",
       "preferredName": null,
-      "description": null
+      "description": null,
+      "external_refs": [
+        {
+          "predicate": "baseCharacteristic",
+          "target_local": "DocumentIdentifier",
+          "target_model": "handover_documentation@2.0.0",
+          "target_source": "idta"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.admin-shell.idta.shared:3.1.0#statements",
@@ -342,7 +350,15 @@
       "label": "MultiLanguageTexts",
       "kind": "Characteristic",
       "preferredName": "multilanguage text set",
-      "description": "A set of language-text items."
+      "description": "A set of language-text items.",
+      "external_refs": [
+        {
+          "predicate": "elementCharacteristic",
+          "target_local": "MultiLanguageText",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.2.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.admin-shell.idta.shared:3.1.0#rangeMinAbstract",
@@ -963,7 +979,15 @@
       "label": "LanguageSet",
       "kind": "Characteristic",
       "preferredName": null,
-      "description": null
+      "description": null,
+      "external_refs": [
+        {
+          "predicate": "elementCharacteristic",
+          "target_local": "Locale",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.2.0",
+          "target_source": "unknown"
+        }
+      ]
     }
   ],
   "links": [
@@ -1001,6 +1025,12 @@
       "source": "urn:samm:io.admin-shell.idta.shared:3.1.0#BlobWithContentType",
       "target": "urn:samm:io.admin-shell.idta.shared:3.1.0#BlobWithContentTypeEntity",
       "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.shared:3.1.0#DocumentIdentifierSet",
+      "target": "urn:samm:io.admin-shell.idta.shared:3.1.0#DocumentIdentifierSetTrait",
+      "label": "elementCharacteristic",
       "optional": false
     },
     {
@@ -1481,6 +1511,12 @@
       "source": "urn:samm:io.admin-shell.idta.shared:3.1.0#languages",
       "target": "urn:samm:io.admin-shell.idta.shared:3.1.0#LanguageSetTrait",
       "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.shared:3.1.0#LanguageSetTrait",
+      "target": "urn:samm:io.admin-shell.idta.shared:3.1.0#LanguageSet",
+      "label": "baseCharacteristic",
       "optional": false
     },
     {

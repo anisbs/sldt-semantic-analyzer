@@ -817,6 +817,24 @@
     },
     {
       "source": "urn:samm:io.catenax.us_tariff_information:1.0.0#CurrencyTrait",
+      "target": "urn:samm:io.catenax.us_tariff_information:1.0.0#CurrencyCharacteristic",
+      "label": "baseCharacteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.us_tariff_information:1.0.0#HtsTrait",
+      "target": "urn:samm:io.catenax.us_tariff_information:1.0.0#HtsCharacteristic",
+      "label": "baseCharacteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.us_tariff_information:1.0.0#CountryTrait",
+      "target": "urn:samm:io.catenax.us_tariff_information:1.0.0#CountryCharacteristic",
+      "label": "baseCharacteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.us_tariff_information:1.0.0#CurrencyTrait",
       "target": "urn:samm:io.catenax.us_tariff_information:1.0.0#CurrencyRegularExpression",
       "label": "constraint",
       "optional": false

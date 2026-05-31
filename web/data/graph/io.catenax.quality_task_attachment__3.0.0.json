@@ -340,14 +340,30 @@
       "label": "NamespaceTrait",
       "kind": "Characteristic",
       "preferredName": "Namespace Trait",
-      "description": "This trait ensures proper namespaces of Catena-X semantic models"
+      "description": "This trait ensures proper namespaces of Catena-X semantic models",
+      "external_refs": [
+        {
+          "predicate": "baseCharacteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.quality_task_attachment:3.0.0#ModelVersionTrait",
       "label": "ModelVersionTrait",
       "kind": "Characteristic",
       "preferredName": "Model Version Trait",
-      "description": "This trait ensures proper versioning of a Catena-X semantic model."
+      "description": "This trait ensures proper versioning of a Catena-X semantic model.",
+      "external_refs": [
+        {
+          "predicate": "baseCharacteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.quality_task_attachment:3.0.0#NamespaceConstraint",

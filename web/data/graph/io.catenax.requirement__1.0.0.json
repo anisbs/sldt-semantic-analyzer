@@ -601,14 +601,30 @@
       "label": "VersionNumberTrait",
       "kind": "Characteristic",
       "preferredName": "Version Number Trait",
-      "description": "String that is semantic versioning compatible"
+      "description": "String that is semantic versioning compatible",
+      "external_refs": [
+        {
+          "predicate": "baseCharacteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.requirement:1.0.0#KeyTrait",
       "label": "KeyTrait",
       "kind": "Characteristic",
       "preferredName": "Key Trait",
-      "description": "Key that only contains letters, digits, underscores, and hyphens."
+      "description": "Key that only contains letters, digits, underscores, and hyphens.",
+      "external_refs": [
+        {
+          "predicate": "baseCharacteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.requirement:1.0.0#VersionRegularExpression",

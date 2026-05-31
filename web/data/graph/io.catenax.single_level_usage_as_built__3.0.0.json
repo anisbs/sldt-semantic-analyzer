@@ -132,7 +132,15 @@
       "label": "ListOfCustomersCharacteristic",
       "kind": "Characteristic",
       "preferredName": "List of Customers Characteristic",
-      "description": "A list of customers and their related parent items."
+      "description": "A list of customers and their related parent items.",
+      "external_refs": [
+        {
+          "predicate": "elementCharacteristic",
+          "target_local": "BpnlTrait",
+          "target_model": "shared.business_partner_number@2.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.single_level_usage_as_built:3.0.0#SetOfParentItemsCharacteristic",
@@ -261,6 +269,12 @@
       "source": "urn:samm:io.catenax.single_level_usage_as_built:3.0.0#SetOfParentItemsCharacteristic",
       "target": "urn:samm:io.catenax.single_level_usage_as_built:3.0.0#ParentData",
       "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.single_level_usage_as_built:3.0.0#DateTimeTrait",
+      "target": "urn:samm:io.catenax.single_level_usage_as_built:3.0.0#DateTimeCharacteristic",
+      "label": "baseCharacteristic",
       "optional": false
     },
     {

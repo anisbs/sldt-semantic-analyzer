@@ -378,7 +378,15 @@
       "label": "SpecVersionTrait",
       "kind": "Characteristic",
       "preferredName": null,
-      "description": null
+      "description": null,
+      "external_refs": [
+        {
+          "predicate": "baseCharacteristic",
+          "target_local": "Text",
+          "target_model": "io.openmanufacturing:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.pcf:3.0.0#EmissionsTrait",
@@ -406,7 +414,15 @@
       "label": "GeographyCountryTrait",
       "kind": "Characteristic",
       "preferredName": null,
-      "description": null
+      "description": null,
+      "external_refs": [
+        {
+          "predicate": "baseCharacteristic",
+          "target_local": "Text",
+          "target_model": "io.openmanufacturing:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.pcf:3.0.0#RuleNamesTrait",
@@ -1175,6 +1191,54 @@
       "source": "urn:bamm:io.catenax.pcf:3.0.0#ProductOrSectorSpecificRuleSet",
       "target": "urn:bamm:io.catenax.pcf:3.0.0#ProductOrSectorSpecificRulesEntity",
       "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.pcf:3.0.0#IdTrait",
+      "target": "urn:bamm:io.catenax.pcf:3.0.0#IdCharacteristic",
+      "label": "baseCharacteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.pcf:3.0.0#EmissionsTrait",
+      "target": "urn:bamm:io.catenax.pcf:3.0.0#EmissionCharacteristic",
+      "label": "baseCharacteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.pcf:3.0.0#PrimaryDataShareTrait",
+      "target": "urn:bamm:io.catenax.pcf:3.0.0#PrimaryDataShareCharacteristic",
+      "label": "baseCharacteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.pcf:3.0.0#GeographyCountrySubdivisionTrait",
+      "target": "urn:bamm:io.catenax.pcf:3.0.0#NonEmptyString",
+      "label": "baseCharacteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.pcf:3.0.0#NonEmptyStringTrait",
+      "target": "urn:bamm:io.catenax.pcf:3.0.0#NonEmptyString",
+      "label": "baseCharacteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.pcf:3.0.0#RuleNamesTrait",
+      "target": "urn:bamm:io.catenax.pcf:3.0.0#RuleNamesCharacteristic",
+      "label": "baseCharacteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.pcf:3.0.0#StrictlyPositiveDecimalTrait",
+      "target": "urn:bamm:io.catenax.pcf:3.0.0#StrictlyPositiveDecimal",
+      "label": "baseCharacteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.pcf:3.0.0#RuleNamesCharacteristic",
+      "target": "urn:bamm:io.catenax.pcf:3.0.0#NonEmptyString",
+      "label": "elementCharacteristic",
       "optional": false
     },
     {

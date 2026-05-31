@@ -185,6 +185,12 @@
     },
     {
       "source": "urn:bamm:io.catenax.shared.recycling_strategy_certificate:1.0.0#CatenaXIdTraitCharacteristic",
+      "target": "urn:bamm:io.catenax.shared.recycling_strategy_certificate:1.0.0#UUIDCharacteristic",
+      "label": "baseCharacteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.shared.recycling_strategy_certificate:1.0.0#CatenaXIdTraitCharacteristic",
       "target": "urn:bamm:io.catenax.shared.recycling_strategy_certificate:1.0.0#UUIDv4RegularExpression",
       "label": "constraint",
       "optional": false

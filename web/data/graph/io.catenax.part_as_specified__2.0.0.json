@@ -194,7 +194,15 @@
       "label": "CatenaXIdTrait",
       "kind": "Characteristic",
       "preferredName": null,
-      "description": null
+      "description": null,
+      "external_refs": [
+        {
+          "predicate": "baseCharacteristic",
+          "target_local": "Text",
+          "target_model": "io.openmanufacturing:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.part_as_specified:2.0.0#PartTypeInformationEntity",

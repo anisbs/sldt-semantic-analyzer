@@ -1087,42 +1087,90 @@
       "label": "ReachRegistrationTrait",
       "kind": "Characteristic",
       "preferredName": "Reach Registration Trait",
-      "description": "Constraints the value to two digits followed by an - followed by ten digits followed by an - followed by two digits followed by an - and four digits."
+      "description": "Constraints the value to two digits followed by an - followed by ten digits followed by an - followed by two digits followed by an - and four digits.",
+      "external_refs": [
+        {
+          "predicate": "baseCharacteristic",
+          "target_local": "Text",
+          "target_model": "io.openmanufacturing:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#CasNumberTrait",
       "label": "CasNumberTrait",
       "kind": "Characteristic",
       "preferredName": "CAS Number Trait",
-      "description": "Constraints the value to four digits followed by an - followed by two digits followed by an - and one digit."
+      "description": "Constraints the value to four digits followed by an - followed by two digits followed by an - and one digit.",
+      "external_refs": [
+        {
+          "predicate": "baseCharacteristic",
+          "target_local": "Text",
+          "target_model": "io.openmanufacturing:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#EcNumberTrait",
       "label": "EcNumberTrait",
       "kind": "Characteristic",
       "preferredName": "EC Number Trait",
-      "description": "Constraints the value to three digits followed by an - followed by three digits followed by an - and one digit."
+      "description": "Constraints the value to three digits followed by an - followed by three digits followed by an - and one digit.",
+      "external_refs": [
+        {
+          "predicate": "baseCharacteristic",
+          "target_local": "Text",
+          "target_model": "io.openmanufacturing:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#IndexNumberTrait",
       "label": "IndexNumberTrait",
       "kind": "Characteristic",
       "preferredName": "Index Number Trait",
-      "description": "Constraints the value to three digits followed by an - followed by three digits followed by an - followed by two digits followed by an - and one digit."
+      "description": "Constraints the value to three digits followed by an - followed by three digits followed by an - followed by two digits followed by an - and one digit.",
+      "external_refs": [
+        {
+          "predicate": "baseCharacteristic",
+          "target_local": "Text",
+          "target_model": "io.openmanufacturing:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#UsageTrait",
       "label": "UsageTrait",
       "kind": "Characteristic",
       "preferredName": "Usage Trait",
-      "description": "Constraint to allow only numbers, blanks and an optional leading + sign."
+      "description": "Constraint to allow only numbers, blanks and an optional leading + sign.",
+      "external_refs": [
+        {
+          "predicate": "baseCharacteristic",
+          "target_local": "Text",
+          "target_model": "io.openmanufacturing:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#DocumentTitleTrait",
       "label": "DocumentTitleTrait",
       "kind": "Characteristic",
       "preferredName": "Document Title Trait",
-      "description": "Constraints the length to 60 characters."
+      "description": "Constraints the length to 60 characters.",
+      "external_refs": [
+        {
+          "predicate": "baseCharacteristic",
+          "target_local": "Text",
+          "target_model": "io.openmanufacturing:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#ProvisioningCountryTrait",
@@ -1136,7 +1184,15 @@
       "label": "ChemicalPercentageTrait",
       "kind": "Characteristic",
       "preferredName": "Chemical Percentage Trait",
-      "description": "Constraints the value to a percentage range. Either 10% or 5.5%-6% . Allowed are decimal values with a dot as separator. Mandatory are no spaces between the values and the percentage character."
+      "description": "Constraints the value to a percentage range. Either 10% or 5.5%-6% . Allowed are decimal values with a dot as separator. Mandatory are no spaces between the values and the percentage character.",
+      "external_refs": [
+        {
+          "predicate": "baseCharacteristic",
+          "target_local": "Text",
+          "target_model": "io.openmanufacturing:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#PhysicalState",
@@ -2082,6 +2138,12 @@
       "source": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#OtherInformationCharacteristic",
       "target": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#OtherInformationEntity",
       "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#ProvisioningCountryTrait",
+      "target": "urn:bamm:io.catenax.sealant.sealant_pass:1.0.0#ProvisioningCountry",
+      "label": "baseCharacteristic",
       "optional": false
     },
     {

@@ -1727,14 +1727,30 @@
       "label": "DateTrait",
       "kind": "Characteristic",
       "preferredName": "Date Trait",
-      "description": "Trait for valid traits.."
+      "description": "Trait for valid traits..",
+      "external_refs": [
+        {
+          "predicate": "baseCharacteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.generic.digital_product_passport:2.0.0#HeaderTrait",
       "label": "HeaderTrait",
       "kind": "Characteristic",
       "preferredName": null,
-      "description": null
+      "description": null,
+      "external_refs": [
+        {
+          "predicate": "baseCharacteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.generic.digital_product_passport:2.0.0#CodeTrait",
@@ -3245,6 +3261,24 @@
       "source": "urn:samm:io.catenax.generic.digital_product_passport:2.0.0#ConcentrationCharacteristic",
       "target": "urn:samm:io.catenax.generic.digital_product_passport:2.0.0#SingleEntity",
       "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.generic.digital_product_passport:2.0.0#CodeTrait",
+      "target": "urn:samm:io.catenax.generic.digital_product_passport:2.0.0#IdentifierCharacteristic",
+      "label": "baseCharacteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.generic.digital_product_passport:2.0.0#EoriTrait",
+      "target": "urn:samm:io.catenax.generic.digital_product_passport:2.0.0#IdentifierCharacteristic",
+      "label": "baseCharacteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.generic.digital_product_passport:2.0.0#GtinTrait",
+      "target": "urn:samm:io.catenax.generic.digital_product_passport:2.0.0#IdentifierCharacteristic",
+      "label": "baseCharacteristic",
       "optional": false
     },
     {

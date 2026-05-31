@@ -1411,6 +1411,24 @@
     },
     {
       "source": "urn:samm:io.catenax.vehicle.product_description:3.0.0#CatenaXIdTrait",
+      "target": "urn:samm:io.catenax.vehicle.product_description:3.0.0#UUIDv4",
+      "label": "baseCharacteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.vehicle.product_description:3.0.0#OemShortNameTrait",
+      "target": "urn:samm:io.catenax.vehicle.product_description:3.0.0#WorldManufacturerInformation",
+      "label": "baseCharacteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.vehicle.product_description:3.0.0#CountryCodeTrait",
+      "target": "urn:samm:io.catenax.vehicle.product_description:3.0.0#CountryCodeCharacteristic",
+      "label": "baseCharacteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.vehicle.product_description:3.0.0#CatenaXIdTrait",
       "target": "urn:samm:io.catenax.vehicle.product_description:3.0.0#UUIDv4RegularExpression",
       "label": "constraint",
       "optional": false

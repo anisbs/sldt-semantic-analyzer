@@ -242,7 +242,15 @@
       "label": "ProductImageSet",
       "kind": "Characteristic",
       "preferredName": null,
-      "description": null
+      "description": null,
+      "external_refs": [
+        {
+          "predicate": "elementCharacteristic",
+          "target_local": "FileWithContentType",
+          "target_model": "shared@3.1.0",
+          "target_source": "idta"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.admin-shell.idta.generic.technical_data:1.2.0#technicalProperties",

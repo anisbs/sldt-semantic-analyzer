@@ -550,6 +550,12 @@
       "description": "Trait to ensure data format for BPNS.",
       "external_refs": [
         {
+          "predicate": "baseCharacteristic",
+          "target_local": "BpnsCharacteristic",
+          "target_model": "shared.business_partner_number@2.0.0",
+          "target_source": "catenax"
+        },
+        {
           "predicate": "constraint",
           "target_local": "BpnsRegularExpression",
           "target_model": "shared.business_partner_number@2.0.0",
@@ -564,6 +570,12 @@
       "preferredName": "UUIDv4 Trait",
       "description": "Trait to ensure data format for UUIDv4.",
       "external_refs": [
+        {
+          "predicate": "baseCharacteristic",
+          "target_local": "Uuidv4Characteristic",
+          "target_model": "shared.uuid@2.0.0",
+          "target_source": "catenax"
+        },
         {
           "predicate": "constraint",
           "target_local": "Uuidv4RegularExpression",
@@ -1062,6 +1074,36 @@
       "source": "urn:samm:io.catenax.week_based_capacity_group:3.0.1#RollingHorizonAlertThresholdsSet",
       "target": "urn:samm:io.catenax.week_based_capacity_group:3.0.1#RollingHorizonAlertThresholdsEntity",
       "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.week_based_capacity_group:3.0.1#QuantityTrait",
+      "target": "urn:samm:io.catenax.week_based_capacity_group:3.0.1#Quantity",
+      "label": "baseCharacteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.week_based_capacity_group:3.0.1#MeasurementTrait",
+      "target": "urn:samm:io.catenax.week_based_capacity_group:3.0.1#Integer",
+      "label": "baseCharacteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.week_based_capacity_group:3.0.1#RelativeNegativeDeviationTrait",
+      "target": "urn:samm:io.catenax.week_based_capacity_group:3.0.1#Decimal",
+      "label": "baseCharacteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.week_based_capacity_group:3.0.1#SupplierLocationsCharacteristic",
+      "target": "urn:samm:io.catenax.week_based_capacity_group:3.0.1#BPNSTrait",
+      "label": "elementCharacteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.week_based_capacity_group:3.0.1#LinkedCapacityGroupsCharacteristic",
+      "target": "urn:samm:io.catenax.week_based_capacity_group:3.0.1#UUIDv4IdTrait",
+      "label": "elementCharacteristic",
       "optional": false
     },
     {

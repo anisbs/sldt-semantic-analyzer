@@ -133,21 +133,45 @@
       "label": "FormatTrait",
       "kind": "Characteristic",
       "preferredName": "format trait",
-      "description": "Restriction of the value range of format version base characteristic"
+      "description": "Restriction of the value range of format version base characteristic",
+      "external_refs": [
+        {
+          "predicate": "baseCharacteristic",
+          "target_local": "MimeType",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.sbom:1.0.0#DescriptionFileTrait",
       "label": "DescriptionFileTrait",
       "kind": "Characteristic",
       "preferredName": "description file trait",
-      "description": "Restriction of the mime type of the descrition file"
+      "description": "Restriction of the mime type of the descrition file",
+      "external_refs": [
+        {
+          "predicate": "baseCharacteristic",
+          "target_local": "MimeType",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.sbom:1.0.0#SpdxDataTrait",
       "label": "SpdxDataTrait",
       "kind": "Characteristic",
       "preferredName": "SPDX data trait",
-      "description": "Restricts the spdx data string"
+      "description": "Restricts the spdx data string",
+      "external_refs": [
+        {
+          "predicate": "baseCharacteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.sbom:1.0.0#FormatVersionConstraint",
@@ -261,6 +285,12 @@
       "source": "urn:samm:io.catenax.sbom:1.0.0#SbomFile",
       "target": "urn:samm:io.catenax.sbom:1.0.0#File",
       "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.sbom:1.0.0#FormatVersionTrait",
+      "target": "urn:samm:io.catenax.sbom:1.0.0#FormatVersionBaseCharacteristic",
+      "label": "baseCharacteristic",
       "optional": false
     },
     {

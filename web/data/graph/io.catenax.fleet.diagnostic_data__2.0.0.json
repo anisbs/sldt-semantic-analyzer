@@ -1631,6 +1631,30 @@
     },
     {
       "source": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#CountryCodeTrait",
+      "target": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#CountryCodeCharacteristic",
+      "label": "baseCharacteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#LatitudeTrait",
+      "target": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#Float",
+      "label": "baseCharacteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#LongitudeTrait",
+      "target": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#Float",
+      "label": "baseCharacteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#HexValueTrait",
+      "target": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#HexCodeCharacteristic",
+      "label": "baseCharacteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#CountryCodeTrait",
       "target": "urn:samm:io.catenax.fleet.diagnostic_data:2.0.0#CountryCodeRegularExpression",
       "label": "constraint",
       "optional": false

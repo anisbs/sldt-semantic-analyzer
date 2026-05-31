@@ -301,6 +301,18 @@
     },
     {
       "source": "urn:bamm:io.catenax.single_level_bom_as_built:1.0.0#CatenaXIdTraitCharacteristic",
+      "target": "urn:bamm:io.catenax.single_level_bom_as_built:1.0.0#Uuidv4Characteristic",
+      "label": "baseCharacteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.single_level_bom_as_built:1.0.0#BpnTrait",
+      "target": "urn:bamm:io.catenax.single_level_bom_as_built:1.0.0#BpnCharacteristic",
+      "label": "baseCharacteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.single_level_bom_as_built:1.0.0#CatenaXIdTraitCharacteristic",
       "target": "urn:bamm:io.catenax.single_level_bom_as_built:1.0.0#Uuidv4RegularExpression",
       "label": "constraint",
       "optional": false

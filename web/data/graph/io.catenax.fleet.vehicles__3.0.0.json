@@ -794,7 +794,15 @@
       "label": "OemShortNameTrait",
       "kind": "Characteristic",
       "preferredName": "OEM short name",
-      "description": "The OEM short name is also called Word Manufacturer Index - these are the first 3 characters of a vehicle identification number (VIN)."
+      "description": "The OEM short name is also called Word Manufacturer Index - these are the first 3 characters of a vehicle identification number (VIN).",
+      "external_refs": [
+        {
+          "predicate": "baseCharacteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.fleet.vehicles:3.0.0#CountryCodeRegularExpression",
@@ -1266,6 +1274,12 @@
       "source": "urn:samm:io.catenax.fleet.vehicles:3.0.0#ComponentsList",
       "target": "urn:samm:io.catenax.fleet.vehicles:3.0.0#Component",
       "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.fleet.vehicles:3.0.0#CountryCodeTrait",
+      "target": "urn:samm:io.catenax.fleet.vehicles:3.0.0#CountryCodeCharacteristic",
+      "label": "baseCharacteristic",
       "optional": false
     },
     {

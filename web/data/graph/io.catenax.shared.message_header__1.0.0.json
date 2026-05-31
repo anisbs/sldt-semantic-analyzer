@@ -307,6 +307,18 @@
     },
     {
       "source": "urn:samm:io.catenax.shared.message_header:1.0.0#SemanticVersioningTrait",
+      "target": "urn:samm:io.catenax.shared.message_header:1.0.0#VersionCharacteristic",
+      "label": "baseCharacteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.shared.message_header:1.0.0#IdTrait",
+      "target": "urn:samm:io.catenax.shared.message_header:1.0.0#UuidCharacteristic",
+      "label": "baseCharacteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.shared.message_header:1.0.0#SemanticVersioningTrait",
       "target": "urn:samm:io.catenax.shared.message_header:1.0.0#SemVer",
       "label": "constraint",
       "optional": false

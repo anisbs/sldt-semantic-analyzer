@@ -245,7 +245,15 @@
       "label": "ListOfCustomers",
       "kind": "Characteristic",
       "preferredName": "list of customers characteristic",
-      "description": "A list of customers and their related parent items."
+      "description": "A list of customers and their related parent items.",
+      "external_refs": [
+        {
+          "predicate": "elementCharacteristic",
+          "target_local": "BpnlTrait",
+          "target_model": "shared.business_partner_number@2.0.0",
+          "target_source": "catenax"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.shared.industry_core.common:1.0.0#LocalIdentifierCharacteristic",

@@ -669,6 +669,24 @@
     },
     {
       "source": "urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#PreConsumerShareTrait",
+      "target": "urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#PreConsumerShare",
+      "label": "baseCharacteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#PostConsumerShareTrait",
+      "target": "urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#PostConsumerShare",
+      "label": "baseCharacteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#ExtinguishingAgentsList",
+      "target": "urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#ExtinguishingAgent",
+      "label": "elementCharacteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#PreConsumerShareTrait",
       "target": "urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#ConsumerShareRange",
       "label": "constraint",
       "optional": false

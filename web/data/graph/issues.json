@@ -192,28 +192,8 @@
       "family": "BAMM",
       "source": "catenax",
       "status": "deprecated",
-      "total": 7,
+      "total": 5,
       "issues": {
-        "orphan_isolated": {
-          "count": 1,
-          "detail": [
-            {
-              "name": "UUIDv4Characteristic",
-              "kind": "Characteristic",
-              "file": "AssetTrackerLinks"
-            }
-          ]
-        },
-        "orphan_unreachable": {
-          "count": 1,
-          "detail": [
-            {
-              "name": "UUIDv4Characteristic",
-              "kind": "Characteristic",
-              "file": "AssetTrackerLinks"
-            }
-          ]
-        },
         "property_without_characteristic": {
           "count": 2,
           "detail": [
@@ -311,38 +291,8 @@
       "family": "BAMM",
       "source": "catenax",
       "status": "deprecated",
-      "total": 13,
+      "total": 9,
       "issues": {
-        "orphan_isolated": {
-          "count": 2,
-          "detail": [
-            {
-              "name": "CountryCodeCharacteristic",
-              "kind": "Characteristic",
-              "file": "Batch"
-            },
-            {
-              "name": "UUIDv4",
-              "kind": "Characteristic",
-              "file": "Batch"
-            }
-          ]
-        },
-        "orphan_unreachable": {
-          "count": 2,
-          "detail": [
-            {
-              "name": "CountryCodeCharacteristic",
-              "kind": "Characteristic",
-              "file": "Batch"
-            },
-            {
-              "name": "UUIDv4",
-              "kind": "Characteristic",
-              "file": "Batch"
-            }
-          ]
-        },
         "property_without_characteristic": {
           "count": 1,
           "detail": [
@@ -410,48 +360,8 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "deprecated",
-      "total": 15,
+      "total": 9,
       "issues": {
-        "orphan_isolated": {
-          "count": 3,
-          "detail": [
-            {
-              "name": "UUIDv4",
-              "kind": "Characteristic",
-              "file": "Batch"
-            },
-            {
-              "name": "KeyCharacteristic",
-              "kind": "Characteristic",
-              "file": "Batch"
-            },
-            {
-              "name": "CountryCodeCharacteristic",
-              "kind": "Characteristic",
-              "file": "Batch"
-            }
-          ]
-        },
-        "orphan_unreachable": {
-          "count": 3,
-          "detail": [
-            {
-              "name": "UUIDv4",
-              "kind": "Characteristic",
-              "file": "Batch"
-            },
-            {
-              "name": "KeyCharacteristic",
-              "kind": "Characteristic",
-              "file": "Batch"
-            },
-            {
-              "name": "CountryCodeCharacteristic",
-              "kind": "Characteristic",
-              "file": "Batch"
-            }
-          ]
-        },
         "property_without_characteristic": {
           "count": 1,
           "detail": [
@@ -519,7 +429,7 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "deprecated",
-      "total": 15,
+      "total": 11,
       "issues": {
         "outdated_dependency": {
           "count": 1,
@@ -527,36 +437,6 @@
             {
               "target": "shared.uuid@1.0.0",
               "latest_release": "shared.uuid@2.0.0"
-            }
-          ]
-        },
-        "orphan_isolated": {
-          "count": 2,
-          "detail": [
-            {
-              "name": "KeyCharacteristic",
-              "kind": "Characteristic",
-              "file": "Batch"
-            },
-            {
-              "name": "CountryCodeCharacteristic",
-              "kind": "Characteristic",
-              "file": "Batch"
-            }
-          ]
-        },
-        "orphan_unreachable": {
-          "count": 2,
-          "detail": [
-            {
-              "name": "KeyCharacteristic",
-              "kind": "Characteristic",
-              "file": "Batch"
-            },
-            {
-              "name": "CountryCodeCharacteristic",
-              "kind": "Characteristic",
-              "file": "Batch"
             }
           ]
         },
@@ -633,7 +513,7 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 17,
+      "total": 11,
       "issues": {
         "deprecated_dep": {
           "count": 2,
@@ -659,46 +539,6 @@
           "detail": [
             {
               "latest_release": "batch@4.0.0"
-            }
-          ]
-        },
-        "orphan_isolated": {
-          "count": 3,
-          "detail": [
-            {
-              "name": "KeyCharacteristic",
-              "kind": "Characteristic",
-              "file": "Batch"
-            },
-            {
-              "name": "DateTimeCharacteristic",
-              "kind": "Characteristic",
-              "file": "Batch"
-            },
-            {
-              "name": "CountryCodeCharacteristic",
-              "kind": "Characteristic",
-              "file": "Batch"
-            }
-          ]
-        },
-        "orphan_unreachable": {
-          "count": 3,
-          "detail": [
-            {
-              "name": "KeyCharacteristic",
-              "kind": "Characteristic",
-              "file": "Batch"
-            },
-            {
-              "name": "DateTimeCharacteristic",
-              "kind": "Characteristic",
-              "file": "Batch"
-            },
-            {
-              "name": "CountryCodeCharacteristic",
-              "kind": "Characteristic",
-              "file": "Batch"
             }
           ]
         },
@@ -761,7 +601,7 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 17,
+      "total": 11,
       "issues": {
         "deprecated_dep": {
           "count": 2,
@@ -787,46 +627,6 @@
           "detail": [
             {
               "latest_release": "batch@4.0.0"
-            }
-          ]
-        },
-        "orphan_isolated": {
-          "count": 3,
-          "detail": [
-            {
-              "name": "KeyCharacteristic",
-              "kind": "Characteristic",
-              "file": "Batch"
-            },
-            {
-              "name": "DateTimeCharacteristic",
-              "kind": "Characteristic",
-              "file": "Batch"
-            },
-            {
-              "name": "CountryCodeCharacteristic",
-              "kind": "Characteristic",
-              "file": "Batch"
-            }
-          ]
-        },
-        "orphan_unreachable": {
-          "count": 3,
-          "detail": [
-            {
-              "name": "KeyCharacteristic",
-              "kind": "Characteristic",
-              "file": "Batch"
-            },
-            {
-              "name": "DateTimeCharacteristic",
-              "kind": "Characteristic",
-              "file": "Batch"
-            },
-            {
-              "name": "CountryCodeCharacteristic",
-              "kind": "Characteristic",
-              "file": "Batch"
             }
           ]
         },
@@ -2649,10 +2449,10 @@
       "family": "SAMM",
       "source": "idta",
       "status": "release",
-      "total": 31,
+      "total": 25,
       "issues": {
         "orphan_isolated": {
-          "count": 5,
+          "count": 2,
           "detail": [
             {
               "name": "nameOfSupplier",
@@ -2662,27 +2462,12 @@
             {
               "name": "supplierWebAddress",
               "kind": "Property",
-              "file": "Circularity"
-            },
-            {
-              "name": "PreConsumerShare",
-              "kind": "Characteristic",
-              "file": "Circularity"
-            },
-            {
-              "name": "PostConsumerShare",
-              "kind": "Characteristic",
-              "file": "Circularity"
-            },
-            {
-              "name": "ExtinguishingAgent",
-              "kind": "Characteristic",
               "file": "Circularity"
             }
           ]
         },
         "orphan_unreachable": {
-          "count": 5,
+          "count": 2,
           "detail": [
             {
               "name": "nameOfSupplier",
@@ -2692,21 +2477,6 @@
             {
               "name": "supplierWebAddress",
               "kind": "Property",
-              "file": "Circularity"
-            },
-            {
-              "name": "PreConsumerShare",
-              "kind": "Characteristic",
-              "file": "Circularity"
-            },
-            {
-              "name": "PostConsumerShare",
-              "kind": "Characteristic",
-              "file": "Circularity"
-            },
-            {
-              "name": "ExtinguishingAgent",
-              "kind": "Characteristic",
               "file": "Circularity"
             }
           ]
@@ -2918,23 +2688,8 @@
       "family": "SAMM",
       "source": "idta",
       "status": "release",
-      "total": 7,
+      "total": 5,
       "issues": {
-        "orphan_unreachable": {
-          "count": 2,
-          "detail": [
-            {
-              "name": "DocumentVersions",
-              "kind": "Characteristic",
-              "file": "HandoverDocumentation"
-            },
-            {
-              "name": "DocumentVersion",
-              "kind": "Entity",
-              "file": "HandoverDocumentation"
-            }
-          ]
-        },
         "key_element_missing_description": {
           "count": 1,
           "detail": [
@@ -2985,33 +2740,13 @@
       "family": "SAMM",
       "source": "idta",
       "status": "release",
-      "total": 18,
+      "total": 16,
       "issues": {
         "older_release_exists": {
           "count": 1,
           "detail": [
             {
               "latest_release": "batterypass.material_composition@1.0.1"
-            }
-          ]
-        },
-        "orphan_isolated": {
-          "count": 1,
-          "detail": [
-            {
-              "name": "Impact",
-              "kind": "Characteristic",
-              "file": "MaterialComposition"
-            }
-          ]
-        },
-        "orphan_unreachable": {
-          "count": 1,
-          "detail": [
-            {
-              "name": "Impact",
-              "kind": "Characteristic",
-              "file": "MaterialComposition"
             }
           ]
         },
@@ -3115,28 +2850,8 @@
       "family": "SAMM",
       "source": "idta",
       "status": "release",
-      "total": 17,
+      "total": 15,
       "issues": {
-        "orphan_isolated": {
-          "count": 1,
-          "detail": [
-            {
-              "name": "Impact",
-              "kind": "Characteristic",
-              "file": "MaterialComposition"
-            }
-          ]
-        },
-        "orphan_unreachable": {
-          "count": 1,
-          "detail": [
-            {
-              "name": "Impact",
-              "kind": "Characteristic",
-              "file": "MaterialComposition"
-            }
-          ]
-        },
         "key_element_missing_description": {
           "count": 1,
           "detail": [
@@ -3943,7 +3658,7 @@
       "family": "SAMM",
       "source": "idta",
       "status": "release",
-      "total": 40,
+      "total": 33,
       "issues": {
         "unresolved_dep": {
           "count": 2,
@@ -3957,51 +3672,6 @@
           "detail": [
             {
               "latest_release": "batterypass.technical_data@1.0.1"
-            }
-          ]
-        },
-        "orphan_isolated": {
-          "count": 1,
-          "detail": [
-            {
-              "name": "PowerCapabilityAtSoC",
-              "kind": "Characteristic",
-              "file": "TechnicalData"
-            }
-          ]
-        },
-        "orphan_unreachable": {
-          "count": 6,
-          "detail": [
-            {
-              "name": "atSoC",
-              "kind": "Property",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "powerCapabilityAt",
-              "kind": "Property",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "AtSoC",
-              "kind": "Characteristic",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "PowerCapabilityAt",
-              "kind": "Entity",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "PowerCapabilityAtSoC",
-              "kind": "Characteristic",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "PowerCapabilityAtCharacteristic",
-              "kind": "Characteristic",
-              "file": "TechnicalData"
             }
           ]
         },
@@ -4190,58 +3860,13 @@
       "family": "SAMM",
       "source": "idta",
       "status": "release",
-      "total": 39,
+      "total": 32,
       "issues": {
         "unresolved_dep": {
           "count": 2,
           "detail": [
             "GeneralProductInformation@1.2.0",
             "Performance@1.2.1"
-          ]
-        },
-        "orphan_isolated": {
-          "count": 1,
-          "detail": [
-            {
-              "name": "PowerCapabilityAtSoC",
-              "kind": "Characteristic",
-              "file": "TechnicalData"
-            }
-          ]
-        },
-        "orphan_unreachable": {
-          "count": 6,
-          "detail": [
-            {
-              "name": "atSoC",
-              "kind": "Property",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "powerCapabilityAt",
-              "kind": "Property",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "AtSoC",
-              "kind": "Characteristic",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "PowerCapabilityAt",
-              "kind": "Entity",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "PowerCapabilityAtSoC",
-              "kind": "Characteristic",
-              "file": "TechnicalData"
-            },
-            {
-              "name": "PowerCapabilityAtCharacteristic",
-              "kind": "Characteristic",
-              "file": "TechnicalData"
-            }
           ]
         },
         "key_element_missing_preferred_name": {
@@ -5026,28 +4651,8 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 20,
+      "total": 18,
       "issues": {
-        "orphan_isolated": {
-          "count": 1,
-          "detail": [
-            {
-              "name": "BpnNumberCharacteristic",
-              "kind": "Characteristic",
-              "file": "BusinessPartnerCertificate"
-            }
-          ]
-        },
-        "orphan_unreachable": {
-          "count": 1,
-          "detail": [
-            {
-              "name": "BpnNumberCharacteristic",
-              "kind": "Characteristic",
-              "file": "BusinessPartnerCertificate"
-            }
-          ]
-        },
         "property_without_characteristic": {
           "count": 12,
           "detail": [
@@ -5157,7 +4762,7 @@
       "family": "SAMM",
       "source": "idta",
       "status": "release",
-      "total": 24,
+      "total": 20,
       "issues": {
         "outdated_dependency": {
           "count": 1,
@@ -5165,36 +4770,6 @@
             {
               "target": "pcf@8.0.0",
               "latest_release": "pcf@9.0.0"
-            }
-          ]
-        },
-        "orphan_isolated": {
-          "count": 2,
-          "detail": [
-            {
-              "name": "PcfCalculationMethodCharacteristic",
-              "kind": "Characteristic",
-              "file": "CarbonFootprint"
-            },
-            {
-              "name": "LifeCyclePhaseEnum",
-              "kind": "Characteristic",
-              "file": "CarbonFootprint"
-            }
-          ]
-        },
-        "orphan_unreachable": {
-          "count": 2,
-          "detail": [
-            {
-              "name": "PcfCalculationMethodCharacteristic",
-              "kind": "Characteristic",
-              "file": "CarbonFootprint"
-            },
-            {
-              "name": "LifeCyclePhaseEnum",
-              "kind": "Characteristic",
-              "file": "CarbonFootprint"
             }
           ]
         },
@@ -5428,28 +5003,8 @@
       "family": "BAMM",
       "source": "catenax",
       "status": "deprecated",
-      "total": 22,
+      "total": 20,
       "issues": {
-        "orphan_isolated": {
-          "count": 1,
-          "detail": [
-            {
-              "name": "Zip",
-              "kind": "Characteristic",
-              "file": "CertificateOfDestruction"
-            }
-          ]
-        },
-        "orphan_unreachable": {
-          "count": 1,
-          "detail": [
-            {
-              "name": "Zip",
-              "kind": "Characteristic",
-              "file": "CertificateOfDestruction"
-            }
-          ]
-        },
         "property_without_characteristic": {
           "count": 16,
           "detail": [
@@ -5572,28 +5127,8 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "draft",
-      "total": 21,
+      "total": 19,
       "issues": {
-        "orphan_isolated": {
-          "count": 1,
-          "detail": [
-            {
-              "name": "Zip",
-              "kind": "Characteristic",
-              "file": "CertificateOfDestruction"
-            }
-          ]
-        },
-        "orphan_unreachable": {
-          "count": 1,
-          "detail": [
-            {
-              "name": "Zip",
-              "kind": "Characteristic",
-              "file": "CertificateOfDestruction"
-            }
-          ]
-        },
         "property_without_characteristic": {
           "count": 16,
           "detail": [
@@ -6571,63 +6106,13 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 25,
+      "total": 17,
       "issues": {
         "older_release_exists": {
           "count": 1,
           "detail": [
             {
               "latest_release": "customs_information@2.0.0"
-            }
-          ]
-        },
-        "orphan_isolated": {
-          "count": 4,
-          "detail": [
-            {
-              "name": "TradeRelationCharacteristic",
-              "kind": "Characteristic",
-              "file": "CustomsInformation"
-            },
-            {
-              "name": "CommercialCountryOfOriginCharacteristic",
-              "kind": "Characteristic",
-              "file": "CustomsInformation"
-            },
-            {
-              "name": "CurrencyCharacteristic",
-              "kind": "Characteristic",
-              "file": "CustomsInformation"
-            },
-            {
-              "name": "FederalStateEnumeration",
-              "kind": "Characteristic",
-              "file": "CustomsInformation"
-            }
-          ]
-        },
-        "orphan_unreachable": {
-          "count": 4,
-          "detail": [
-            {
-              "name": "TradeRelationCharacteristic",
-              "kind": "Characteristic",
-              "file": "CustomsInformation"
-            },
-            {
-              "name": "CommercialCountryOfOriginCharacteristic",
-              "kind": "Characteristic",
-              "file": "CustomsInformation"
-            },
-            {
-              "name": "CurrencyCharacteristic",
-              "kind": "Characteristic",
-              "file": "CustomsInformation"
-            },
-            {
-              "name": "FederalStateEnumeration",
-              "kind": "Characteristic",
-              "file": "CustomsInformation"
             }
           ]
         },
@@ -6730,38 +6215,8 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 16,
+      "total": 12,
       "issues": {
-        "orphan_isolated": {
-          "count": 2,
-          "detail": [
-            {
-              "name": "TracedWorthCurrenyCharacteristic",
-              "kind": "Characteristic",
-              "file": "CustomsInformation"
-            },
-            {
-              "name": "TradeRelation",
-              "kind": "Characteristic",
-              "file": "CustomsInformation"
-            }
-          ]
-        },
-        "orphan_unreachable": {
-          "count": 2,
-          "detail": [
-            {
-              "name": "TracedWorthCurrenyCharacteristic",
-              "kind": "Characteristic",
-              "file": "CustomsInformation"
-            },
-            {
-              "name": "TradeRelation",
-              "kind": "Characteristic",
-              "file": "CustomsInformation"
-            }
-          ]
-        },
         "property_without_characteristic": {
           "count": 3,
           "detail": [
@@ -7005,7 +6460,7 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 20,
+      "total": 15,
       "issues": {
         "outdated_dependency": {
           "count": 3,
@@ -7041,36 +6496,6 @@
           "detail": [
             {
               "latest_release": "delivery_information@2.0.0"
-            }
-          ]
-        },
-        "orphan_unreachable": {
-          "count": 5,
-          "detail": [
-            {
-              "name": "dateTimeOfEvent",
-              "kind": "Property",
-              "file": "DeliveryInformation"
-            },
-            {
-              "name": "eventType",
-              "kind": "Property",
-              "file": "DeliveryInformation"
-            },
-            {
-              "name": "TransitEvent",
-              "kind": "Entity",
-              "file": "DeliveryInformation"
-            },
-            {
-              "name": "EventTypeEnumeration",
-              "kind": "Characteristic",
-              "file": "DeliveryInformation"
-            },
-            {
-              "name": "TransitEventsSet",
-              "kind": "Characteristic",
-              "file": "DeliveryInformation"
             }
           ]
         },
@@ -7146,7 +6571,7 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 15,
+      "total": 10,
       "issues": {
         "outdated_dependency": {
           "count": 1,
@@ -7154,36 +6579,6 @@
             {
               "target": "shared.quantity@2.0.0",
               "latest_release": "shared.quantity@3.0.0"
-            }
-          ]
-        },
-        "orphan_unreachable": {
-          "count": 5,
-          "detail": [
-            {
-              "name": "dateTimeOfEvent",
-              "kind": "Property",
-              "file": "DeliveryInformation"
-            },
-            {
-              "name": "eventType",
-              "kind": "Property",
-              "file": "DeliveryInformation"
-            },
-            {
-              "name": "TransitEventsSet",
-              "kind": "Characteristic",
-              "file": "DeliveryInformation"
-            },
-            {
-              "name": "TransitEvent",
-              "kind": "Entity",
-              "file": "DeliveryInformation"
-            },
-            {
-              "name": "EventTypeEnumeration",
-              "kind": "Characteristic",
-              "file": "DeliveryInformation"
             }
           ]
         },
@@ -7250,33 +6645,13 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 14,
+      "total": 12,
       "issues": {
         "older_release_exists": {
           "count": 1,
           "detail": [
             {
               "latest_release": "demand_and_capacity_notification@3.0.0"
-            }
-          ]
-        },
-        "orphan_isolated": {
-          "count": 1,
-          "detail": [
-            {
-              "name": "UserInputCharacteristic",
-              "kind": "Characteristic",
-              "file": "DemandAndCapacityNotification"
-            }
-          ]
-        },
-        "orphan_unreachable": {
-          "count": 1,
-          "detail": [
-            {
-              "name": "UserInputCharacteristic",
-              "kind": "Characteristic",
-              "file": "DemandAndCapacityNotification"
             }
           ]
         },
@@ -7353,33 +6728,13 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 16,
+      "total": 14,
       "issues": {
         "older_release_exists": {
           "count": 1,
           "detail": [
             {
               "latest_release": "demand_and_capacity_notification@3.0.0"
-            }
-          ]
-        },
-        "orphan_isolated": {
-          "count": 1,
-          "detail": [
-            {
-              "name": "UserInputCharacteristic",
-              "kind": "Characteristic",
-              "file": "DemandAndCapacityNotification"
-            }
-          ]
-        },
-        "orphan_unreachable": {
-          "count": 1,
-          "detail": [
-            {
-              "name": "UserInputCharacteristic",
-              "kind": "Characteristic",
-              "file": "DemandAndCapacityNotification"
             }
           ]
         },
@@ -7466,7 +6821,7 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 18,
+      "total": 16,
       "issues": {
         "outdated_dependency": {
           "count": 1,
@@ -7487,26 +6842,6 @@
                 "part_type_information@1.0.0",
                 "shared.part_classification@1.0.0"
               ]
-            }
-          ]
-        },
-        "orphan_isolated": {
-          "count": 1,
-          "detail": [
-            {
-              "name": "UserInputCharacteristic",
-              "kind": "Characteristic",
-              "file": "DemandAndCapacityNotification"
-            }
-          ]
-        },
-        "orphan_unreachable": {
-          "count": 1,
-          "detail": [
-            {
-              "name": "UserInputCharacteristic",
-              "kind": "Characteristic",
-              "file": "DemandAndCapacityNotification"
             }
           ]
         },
@@ -7598,28 +6933,8 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 45,
+      "total": 43,
       "issues": {
-        "orphan_isolated": {
-          "count": 1,
-          "detail": [
-            {
-              "name": "WeightToleranceCharacteristic",
-              "kind": "Characteristic",
-              "file": "DigitalEngineeringMasterData"
-            }
-          ]
-        },
-        "orphan_unreachable": {
-          "count": 1,
-          "detail": [
-            {
-              "name": "WeightToleranceCharacteristic",
-              "kind": "Characteristic",
-              "file": "DigitalEngineeringMasterData"
-            }
-          ]
-        },
         "property_without_characteristic": {
           "count": 16,
           "detail": [
@@ -8055,7 +7370,7 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 34,
+      "total": 32,
       "issues": {
         "outdated_dependency": {
           "count": 3,
@@ -8108,26 +7423,6 @@
           "detail": [
             {
               "latest_release": "electric_drive.electric_drive_passport@2.0.0"
-            }
-          ]
-        },
-        "orphan_isolated": {
-          "count": 1,
-          "detail": [
-            {
-              "name": "StringList",
-              "kind": "Characteristic",
-              "file": "ElectricDrivePassport"
-            }
-          ]
-        },
-        "orphan_unreachable": {
-          "count": 1,
-          "detail": [
-            {
-              "name": "StringList",
-              "kind": "Characteristic",
-              "file": "ElectricDrivePassport"
             }
           ]
         },
@@ -8274,7 +7569,7 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 30,
+      "total": 28,
       "issues": {
         "outdated_dependency": {
           "count": 3,
@@ -8312,26 +7607,6 @@
                 "batch@3.0.0",
                 "shared.part_site_information_as_built@2.0.0"
               ]
-            }
-          ]
-        },
-        "orphan_isolated": {
-          "count": 1,
-          "detail": [
-            {
-              "name": "StringList",
-              "kind": "Characteristic",
-              "file": "ElectricDrivePassport"
-            }
-          ]
-        },
-        "orphan_unreachable": {
-          "count": 1,
-          "detail": [
-            {
-              "name": "StringList",
-              "kind": "Characteristic",
-              "file": "ElectricDrivePassport"
             }
           ]
         },
@@ -8639,7 +7914,7 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "deprecated",
-      "total": 48,
+      "total": 36,
       "issues": {
         "outdated_dependency": {
           "count": 1,
@@ -8647,76 +7922,6 @@
             {
               "target": "shared.address_characteristic@3.0.0",
               "latest_release": "shared.address_characteristic@4.0.0"
-            }
-          ]
-        },
-        "orphan_isolated": {
-          "count": 6,
-          "detail": [
-            {
-              "name": "UUIDv4",
-              "kind": "Characteristic",
-              "file": "EssIncident"
-            },
-            {
-              "name": "BpnLCharacteristic",
-              "kind": "Characteristic",
-              "file": "EssIncident"
-            },
-            {
-              "name": "BpnSCharacteristic",
-              "kind": "Characteristic",
-              "file": "EssIncident"
-            },
-            {
-              "name": "BpnACharacteristic",
-              "kind": "Characteristic",
-              "file": "EssIncident"
-            },
-            {
-              "name": "LongitudeCharacteristic",
-              "kind": "Characteristic",
-              "file": "EssIncident"
-            },
-            {
-              "name": "LatitudeCharacteristic",
-              "kind": "Characteristic",
-              "file": "EssIncident"
-            }
-          ]
-        },
-        "orphan_unreachable": {
-          "count": 6,
-          "detail": [
-            {
-              "name": "UUIDv4",
-              "kind": "Characteristic",
-              "file": "EssIncident"
-            },
-            {
-              "name": "BpnLCharacteristic",
-              "kind": "Characteristic",
-              "file": "EssIncident"
-            },
-            {
-              "name": "BpnSCharacteristic",
-              "kind": "Characteristic",
-              "file": "EssIncident"
-            },
-            {
-              "name": "BpnACharacteristic",
-              "kind": "Characteristic",
-              "file": "EssIncident"
-            },
-            {
-              "name": "LongitudeCharacteristic",
-              "kind": "Characteristic",
-              "file": "EssIncident"
-            },
-            {
-              "name": "LatitudeCharacteristic",
-              "kind": "Characteristic",
-              "file": "EssIncident"
             }
           ]
         },
@@ -8917,43 +8122,13 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 40,
+      "total": 36,
       "issues": {
         "older_release_exists": {
           "count": 1,
           "detail": [
             {
               "latest_release": "essincident@4.0.0"
-            }
-          ]
-        },
-        "orphan_isolated": {
-          "count": 2,
-          "detail": [
-            {
-              "name": "LongitudeCharacteristic",
-              "kind": "Characteristic",
-              "file": "EssIncident"
-            },
-            {
-              "name": "LatitudeCharacteristic",
-              "kind": "Characteristic",
-              "file": "EssIncident"
-            }
-          ]
-        },
-        "orphan_unreachable": {
-          "count": 2,
-          "detail": [
-            {
-              "name": "LongitudeCharacteristic",
-              "kind": "Characteristic",
-              "file": "EssIncident"
-            },
-            {
-              "name": "LatitudeCharacteristic",
-              "kind": "Characteristic",
-              "file": "EssIncident"
             }
           ]
         },
@@ -9150,48 +8325,8 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 43,
+      "total": 37,
       "issues": {
-        "orphan_isolated": {
-          "count": 3,
-          "detail": [
-            {
-              "name": "BPNLTrait",
-              "kind": "Characteristic",
-              "file": "EssIncident"
-            },
-            {
-              "name": "LongitudeCharacteristic",
-              "kind": "Characteristic",
-              "file": "EssIncident"
-            },
-            {
-              "name": "LatitudeCharacteristic",
-              "kind": "Characteristic",
-              "file": "EssIncident"
-            }
-          ]
-        },
-        "orphan_unreachable": {
-          "count": 3,
-          "detail": [
-            {
-              "name": "BPNLTrait",
-              "kind": "Characteristic",
-              "file": "EssIncident"
-            },
-            {
-              "name": "LongitudeCharacteristic",
-              "kind": "Characteristic",
-              "file": "EssIncident"
-            },
-            {
-              "name": "LatitudeCharacteristic",
-              "kind": "Characteristic",
-              "file": "EssIncident"
-            }
-          ]
-        },
         "property_without_characteristic": {
           "count": 29,
           "detail": [
@@ -9495,28 +8630,8 @@
       "family": "BAMM",
       "source": "catenax",
       "status": "deprecated",
-      "total": 19,
+      "total": 17,
       "issues": {
-        "orphan_isolated": {
-          "count": 1,
-          "detail": [
-            {
-              "name": "UUIDv4",
-              "kind": "Characteristic",
-              "file": "ClaimData"
-            }
-          ]
-        },
-        "orphan_unreachable": {
-          "count": 1,
-          "detail": [
-            {
-              "name": "UUIDv4",
-              "kind": "Characteristic",
-              "file": "ClaimData"
-            }
-          ]
-        },
         "property_without_characteristic": {
           "count": 13,
           "detail": [
@@ -9620,7 +8735,7 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 30,
+      "total": 26,
       "issues": {
         "outdated_dependency": {
           "count": 1,
@@ -9636,36 +8751,6 @@
           "detail": [
             {
               "latest_release": "fleet.claim_data@3.0.0"
-            }
-          ]
-        },
-        "orphan_isolated": {
-          "count": 2,
-          "detail": [
-            {
-              "name": "CountryCodeCharacteristic",
-              "kind": "Characteristic",
-              "file": "ClaimData"
-            },
-            {
-              "name": "Float",
-              "kind": "Characteristic",
-              "file": "ClaimData"
-            }
-          ]
-        },
-        "orphan_unreachable": {
-          "count": 2,
-          "detail": [
-            {
-              "name": "CountryCodeCharacteristic",
-              "kind": "Characteristic",
-              "file": "ClaimData"
-            },
-            {
-              "name": "Float",
-              "kind": "Characteristic",
-              "file": "ClaimData"
             }
           ]
         },
@@ -9907,78 +8992,8 @@
       "family": "BAMM",
       "source": "catenax",
       "status": "deprecated",
-      "total": 57,
+      "total": 45,
       "issues": {
-        "orphan_isolated": {
-          "count": 6,
-          "detail": [
-            {
-              "name": "CountryCodeCharacteristic",
-              "kind": "Characteristic",
-              "file": "DiagnosticData"
-            },
-            {
-              "name": "UUIDv4",
-              "kind": "Characteristic",
-              "file": "DiagnosticData"
-            },
-            {
-              "name": "Latitude",
-              "kind": "Characteristic",
-              "file": "DiagnosticData"
-            },
-            {
-              "name": "Longitude",
-              "kind": "Characteristic",
-              "file": "DiagnosticData"
-            },
-            {
-              "name": "HEXString",
-              "kind": "Characteristic",
-              "file": "DiagnosticData"
-            },
-            {
-              "name": "FullDTCCharacteristic",
-              "kind": "Characteristic",
-              "file": "DiagnosticData"
-            }
-          ]
-        },
-        "orphan_unreachable": {
-          "count": 6,
-          "detail": [
-            {
-              "name": "CountryCodeCharacteristic",
-              "kind": "Characteristic",
-              "file": "DiagnosticData"
-            },
-            {
-              "name": "UUIDv4",
-              "kind": "Characteristic",
-              "file": "DiagnosticData"
-            },
-            {
-              "name": "Latitude",
-              "kind": "Characteristic",
-              "file": "DiagnosticData"
-            },
-            {
-              "name": "Longitude",
-              "kind": "Characteristic",
-              "file": "DiagnosticData"
-            },
-            {
-              "name": "HEXString",
-              "kind": "Characteristic",
-              "file": "DiagnosticData"
-            },
-            {
-              "name": "FullDTCCharacteristic",
-              "kind": "Characteristic",
-              "file": "DiagnosticData"
-            }
-          ]
-        },
         "key_element_missing_preferred_name": {
           "count": 4,
           "detail": [
@@ -10227,7 +9242,7 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 54,
+      "total": 48,
       "issues": {
         "outdated_dependency": {
           "count": 1,
@@ -10243,46 +9258,6 @@
           "detail": [
             {
               "latest_release": "fleet.diagnostic_data@3.0.0"
-            }
-          ]
-        },
-        "orphan_isolated": {
-          "count": 3,
-          "detail": [
-            {
-              "name": "CountryCodeCharacteristic",
-              "kind": "Characteristic",
-              "file": "DiagnosticData"
-            },
-            {
-              "name": "Float",
-              "kind": "Characteristic",
-              "file": "DiagnosticData"
-            },
-            {
-              "name": "HexCodeCharacteristic",
-              "kind": "Characteristic",
-              "file": "DiagnosticData"
-            }
-          ]
-        },
-        "orphan_unreachable": {
-          "count": 3,
-          "detail": [
-            {
-              "name": "CountryCodeCharacteristic",
-              "kind": "Characteristic",
-              "file": "DiagnosticData"
-            },
-            {
-              "name": "Float",
-              "kind": "Characteristic",
-              "file": "DiagnosticData"
-            },
-            {
-              "name": "HexCodeCharacteristic",
-              "kind": "Characteristic",
-              "file": "DiagnosticData"
             }
           ]
         },
@@ -10758,7 +9733,7 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "deprecated",
-      "total": 36,
+      "total": 34,
       "issues": {
         "outdated_dependency": {
           "count": 2,
@@ -10770,26 +9745,6 @@
             {
               "target": "shared.uuid@1.0.0",
               "latest_release": "shared.uuid@2.0.0"
-            }
-          ]
-        },
-        "orphan_isolated": {
-          "count": 1,
-          "detail": [
-            {
-              "name": "CountryCodeCharacteristic",
-              "kind": "Characteristic",
-              "file": "Vehicles"
-            }
-          ]
-        },
-        "orphan_unreachable": {
-          "count": 1,
-          "detail": [
-            {
-              "name": "CountryCodeCharacteristic",
-              "kind": "Characteristic",
-              "file": "Vehicles"
             }
           ]
         },
@@ -10971,28 +9926,8 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "deprecated",
-      "total": 34,
+      "total": 32,
       "issues": {
-        "orphan_isolated": {
-          "count": 1,
-          "detail": [
-            {
-              "name": "CountryCodeCharacteristic",
-              "kind": "Characteristic",
-              "file": "Vehicles"
-            }
-          ]
-        },
-        "orphan_unreachable": {
-          "count": 1,
-          "detail": [
-            {
-              "name": "CountryCodeCharacteristic",
-              "kind": "Characteristic",
-              "file": "Vehicles"
-            }
-          ]
-        },
         "property_without_characteristic": {
           "count": 23,
           "detail": [
@@ -11171,33 +10106,13 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 38,
+      "total": 36,
       "issues": {
         "older_release_exists": {
           "count": 1,
           "detail": [
             {
               "latest_release": "fleet.vehicles@4.0.0"
-            }
-          ]
-        },
-        "orphan_isolated": {
-          "count": 1,
-          "detail": [
-            {
-              "name": "CountryCodeCharacteristic",
-              "kind": "Characteristic",
-              "file": "Vehicles"
-            }
-          ]
-        },
-        "orphan_unreachable": {
-          "count": 1,
-          "detail": [
-            {
-              "name": "CountryCodeCharacteristic",
-              "kind": "Characteristic",
-              "file": "Vehicles"
             }
           ]
         },
@@ -12957,7 +11872,7 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 69,
+      "total": 65,
       "issues": {
         "outdated_dependency": {
           "count": 4,
@@ -13005,36 +11920,6 @@
           "detail": [
             {
               "latest_release": "generic.digital_product_passport@7.0.0"
-            }
-          ]
-        },
-        "orphan_isolated": {
-          "count": 2,
-          "detail": [
-            {
-              "name": "FloatValue",
-              "kind": "Characteristic",
-              "file": "DigitalProductPassport"
-            },
-            {
-              "name": "Share",
-              "kind": "Characteristic",
-              "file": "DigitalProductPassport"
-            }
-          ]
-        },
-        "orphan_unreachable": {
-          "count": 2,
-          "detail": [
-            {
-              "name": "FloatValue",
-              "kind": "Characteristic",
-              "file": "DigitalProductPassport"
-            },
-            {
-              "name": "Share",
-              "kind": "Characteristic",
-              "file": "DigitalProductPassport"
             }
           ]
         },
@@ -13346,7 +12231,7 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 69,
+      "total": 65,
       "issues": {
         "outdated_dependency": {
           "count": 4,
@@ -13394,36 +12279,6 @@
           "detail": [
             {
               "latest_release": "generic.digital_product_passport@7.0.0"
-            }
-          ]
-        },
-        "orphan_isolated": {
-          "count": 2,
-          "detail": [
-            {
-              "name": "FloatValue",
-              "kind": "Characteristic",
-              "file": "DigitalProductPassport"
-            },
-            {
-              "name": "Share",
-              "kind": "Characteristic",
-              "file": "DigitalProductPassport"
-            }
-          ]
-        },
-        "orphan_unreachable": {
-          "count": 2,
-          "detail": [
-            {
-              "name": "FloatValue",
-              "kind": "Characteristic",
-              "file": "DigitalProductPassport"
-            },
-            {
-              "name": "Share",
-              "kind": "Characteristic",
-              "file": "DigitalProductPassport"
             }
           ]
         },
@@ -13735,7 +12590,7 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 71,
+      "total": 67,
       "issues": {
         "outdated_dependency": {
           "count": 4,
@@ -13783,36 +12638,6 @@
           "detail": [
             {
               "latest_release": "generic.digital_product_passport@7.0.0"
-            }
-          ]
-        },
-        "orphan_isolated": {
-          "count": 2,
-          "detail": [
-            {
-              "name": "FloatValue",
-              "kind": "Characteristic",
-              "file": "DigitalProductPassport"
-            },
-            {
-              "name": "Share",
-              "kind": "Characteristic",
-              "file": "DigitalProductPassport"
-            }
-          ]
-        },
-        "orphan_unreachable": {
-          "count": 2,
-          "detail": [
-            {
-              "name": "FloatValue",
-              "kind": "Characteristic",
-              "file": "DigitalProductPassport"
-            },
-            {
-              "name": "Share",
-              "kind": "Characteristic",
-              "file": "DigitalProductPassport"
             }
           ]
         },
@@ -14134,7 +12959,7 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 72,
+      "total": 68,
       "issues": {
         "outdated_dependency": {
           "count": 4,
@@ -14182,36 +13007,6 @@
           "detail": [
             {
               "latest_release": "generic.digital_product_passport@7.0.0"
-            }
-          ]
-        },
-        "orphan_isolated": {
-          "count": 2,
-          "detail": [
-            {
-              "name": "FloatValue",
-              "kind": "Characteristic",
-              "file": "DigitalProductPassport"
-            },
-            {
-              "name": "Share",
-              "kind": "Characteristic",
-              "file": "DigitalProductPassport"
-            }
-          ]
-        },
-        "orphan_unreachable": {
-          "count": 2,
-          "detail": [
-            {
-              "name": "FloatValue",
-              "kind": "Characteristic",
-              "file": "DigitalProductPassport"
-            },
-            {
-              "name": "Share",
-              "kind": "Characteristic",
-              "file": "DigitalProductPassport"
             }
           ]
         },
@@ -14538,38 +13333,8 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 98,
+      "total": 94,
       "issues": {
-        "orphan_isolated": {
-          "count": 2,
-          "detail": [
-            {
-              "name": "FloatValue",
-              "kind": "Characteristic",
-              "file": "DigitalProductPassport"
-            },
-            {
-              "name": "Share",
-              "kind": "Characteristic",
-              "file": "DigitalProductPassport"
-            }
-          ]
-        },
-        "orphan_unreachable": {
-          "count": 2,
-          "detail": [
-            {
-              "name": "FloatValue",
-              "kind": "Characteristic",
-              "file": "DigitalProductPassport"
-            },
-            {
-              "name": "Share",
-              "kind": "Characteristic",
-              "file": "DigitalProductPassport"
-            }
-          ]
-        },
         "property_without_characteristic": {
           "count": 76,
           "detail": [
@@ -15303,7 +14068,7 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 34,
+      "total": 24,
       "issues": {
         "outdated_dependency": {
           "count": 2,
@@ -15315,66 +14080,6 @@
             {
               "target": "shared.quantity@2.0.0",
               "latest_release": "shared.quantity@3.0.0"
-            }
-          ]
-        },
-        "orphan_isolated": {
-          "count": 4,
-          "detail": [
-            {
-              "name": "LicensePlateCharacteristic",
-              "kind": "Characteristic",
-              "file": "GlobalTransportLabel"
-            },
-            {
-              "name": "DateCharacteristic",
-              "kind": "Characteristic",
-              "file": "GlobalTransportLabel"
-            },
-            {
-              "name": "OptionalInformationList",
-              "kind": "Characteristic",
-              "file": "GlobalTransportLabel"
-            },
-            {
-              "name": "CustomerReference3List",
-              "kind": "Characteristic",
-              "file": "GlobalTransportLabel"
-            }
-          ]
-        },
-        "orphan_unreachable": {
-          "count": 6,
-          "detail": [
-            {
-              "name": "LicensePlateCharacteristic",
-              "kind": "Characteristic",
-              "file": "GlobalTransportLabel"
-            },
-            {
-              "name": "DateCharacteristic",
-              "kind": "Characteristic",
-              "file": "GlobalTransportLabel"
-            },
-            {
-              "name": "CustomerReference3ContentTrait",
-              "kind": "Characteristic",
-              "file": "GlobalTransportLabel"
-            },
-            {
-              "name": "OptionalInformationList",
-              "kind": "Characteristic",
-              "file": "GlobalTransportLabel"
-            },
-            {
-              "name": "CustomerReference3List",
-              "kind": "Characteristic",
-              "file": "GlobalTransportLabel"
-            },
-            {
-              "name": "ContentLengthConstraint",
-              "kind": "Characteristic",
-              "file": "GlobalTransportLabel"
             }
           ]
         },
@@ -15506,222 +14211,12 @@
       "family": "SAMM",
       "source": "idta",
       "status": "release",
-      "total": 70,
+      "total": 30,
       "issues": {
         "circular_dep": {
           "count": 1,
           "detail": [
             "shared@3.1.0"
-          ]
-        },
-        "orphan_isolated": {
-          "count": 2,
-          "detail": [
-            {
-              "name": "EntitySet",
-              "kind": "Characteristic",
-              "file": "HandoverDocumentation"
-            },
-            {
-              "name": "FileSet",
-              "kind": "Characteristic",
-              "file": "HandoverDocumentation"
-            }
-          ]
-        },
-        "orphan_unreachable": {
-          "count": 38,
-          "detail": [
-            {
-              "name": "documentIds",
-              "kind": "Property",
-              "file": "HandoverDocumentation"
-            },
-            {
-              "name": "documentClassifications",
-              "kind": "Property",
-              "file": "HandoverDocumentation"
-            },
-            {
-              "name": "documentVersions",
-              "kind": "Property",
-              "file": "HandoverDocumentation"
-            },
-            {
-              "name": "documentDomainId",
-              "kind": "Property",
-              "file": "HandoverDocumentation"
-            },
-            {
-              "name": "documentIdentifier",
-              "kind": "Property",
-              "file": "HandoverDocumentation"
-            },
-            {
-              "name": "documentIsPrimary",
-              "kind": "Property",
-              "file": "HandoverDocumentation"
-            },
-            {
-              "name": "classId",
-              "kind": "Property",
-              "file": "HandoverDocumentation"
-            },
-            {
-              "name": "className",
-              "kind": "Property",
-              "file": "HandoverDocumentation"
-            },
-            {
-              "name": "classificationSystem",
-              "kind": "Property",
-              "file": "HandoverDocumentation"
-            },
-            {
-              "name": "version",
-              "kind": "Property",
-              "file": "HandoverDocumentation"
-            },
-            {
-              "name": "title",
-              "kind": "Property",
-              "file": "HandoverDocumentation"
-            },
-            {
-              "name": "description",
-              "kind": "Property",
-              "file": "HandoverDocumentation"
-            },
-            {
-              "name": "keywords",
-              "kind": "Property",
-              "file": "HandoverDocumentation"
-            },
-            {
-              "name": "statusValue",
-              "kind": "Property",
-              "file": "HandoverDocumentation"
-            },
-            {
-              "name": "statusSetDate",
-              "kind": "Property",
-              "file": "HandoverDocumentation"
-            },
-            {
-              "name": "digitalFiles",
-              "kind": "Property",
-              "file": "HandoverDocumentation"
-            },
-            {
-              "name": "previewFile",
-              "kind": "Property",
-              "file": "HandoverDocumentation"
-            },
-            {
-              "name": "basedOnReferences",
-              "kind": "Property",
-              "file": "HandoverDocumentation"
-            },
-            {
-              "name": "translationOfEntities",
-              "kind": "Property",
-              "file": "HandoverDocumentation"
-            },
-            {
-              "name": "refersToEntities",
-              "kind": "Property",
-              "file": "HandoverDocumentation"
-            },
-            {
-              "name": "subtitle",
-              "kind": "Property",
-              "file": "HandoverDocumentation"
-            },
-            {
-              "name": "documentedEntities",
-              "kind": "Property",
-              "file": "HandoverDocumentation"
-            },
-            {
-              "name": "FileSetTrait",
-              "kind": "Characteristic",
-              "file": "HandoverDocumentation"
-            },
-            {
-              "name": "ReferenceSetTrait",
-              "kind": "Characteristic",
-              "file": "HandoverDocumentation"
-            },
-            {
-              "name": "DocumentSet",
-              "kind": "Characteristic",
-              "file": "HandoverDocumentation"
-            },
-            {
-              "name": "EntitySet",
-              "kind": "Characteristic",
-              "file": "HandoverDocumentation"
-            },
-            {
-              "name": "DocumentIdSet",
-              "kind": "Characteristic",
-              "file": "HandoverDocumentation"
-            },
-            {
-              "name": "DocumentClassificationSet",
-              "kind": "Characteristic",
-              "file": "HandoverDocumentation"
-            },
-            {
-              "name": "DocumentVersions",
-              "kind": "Characteristic",
-              "file": "HandoverDocumentation"
-            },
-            {
-              "name": "FileSet",
-              "kind": "Characteristic",
-              "file": "HandoverDocumentation"
-            },
-            {
-              "name": "ReferenceSet",
-              "kind": "Characteristic",
-              "file": "HandoverDocumentation"
-            },
-            {
-              "name": "Document",
-              "kind": "Entity",
-              "file": "HandoverDocumentation"
-            },
-            {
-              "name": "DocumentId",
-              "kind": "Entity",
-              "file": "HandoverDocumentation"
-            },
-            {
-              "name": "DocumentClassification",
-              "kind": "Entity",
-              "file": "HandoverDocumentation"
-            },
-            {
-              "name": "DocumentVersion",
-              "kind": "Entity",
-              "file": "HandoverDocumentation"
-            },
-            {
-              "name": "DocumentIdentifier",
-              "kind": "Characteristic",
-              "file": "HandoverDocumentation"
-            },
-            {
-              "name": "organizationOfficialName",
-              "kind": "Property",
-              "file": "HandoverDocumentation"
-            },
-            {
-              "name": "organizationName",
-              "kind": "Property",
-              "file": "HandoverDocumentation"
-            }
           ]
         },
         "key_element_missing_description": {
@@ -15904,7 +14399,7 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 17,
+      "total": 15,
       "issues": {
         "outdated_dependency": {
           "count": 2,
@@ -15924,26 +14419,6 @@
           "detail": [
             {
               "latest_release": "id_based_comment@1.1.0"
-            }
-          ]
-        },
-        "orphan_isolated": {
-          "count": 1,
-          "detail": [
-            {
-              "name": "CommentTextCharacteristic",
-              "kind": "Characteristic",
-              "file": "IdBasedComment"
-            }
-          ]
-        },
-        "orphan_unreachable": {
-          "count": 1,
-          "detail": [
-            {
-              "name": "CommentTextCharacteristic",
-              "kind": "Characteristic",
-              "file": "IdBasedComment"
             }
           ]
         },
@@ -16029,28 +14504,8 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 15,
+      "total": 13,
       "issues": {
-        "orphan_isolated": {
-          "count": 1,
-          "detail": [
-            {
-              "name": "CommentTextCharacteristic",
-              "kind": "Characteristic",
-              "file": "IdBasedComment"
-            }
-          ]
-        },
-        "orphan_unreachable": {
-          "count": 1,
-          "detail": [
-            {
-              "name": "CommentTextCharacteristic",
-              "kind": "Characteristic",
-              "file": "IdBasedComment"
-            }
-          ]
-        },
         "property_without_characteristic": {
           "count": 6,
           "detail": [
@@ -16138,33 +14593,13 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 6,
+      "total": 4,
       "issues": {
         "older_release_exists": {
           "count": 1,
           "detail": [
             {
               "latest_release": "id_based_request_for_update@3.0.0"
-            }
-          ]
-        },
-        "orphan_isolated": {
-          "count": 1,
-          "detail": [
-            {
-              "name": "UUIDv4",
-              "kind": "Characteristic",
-              "file": "IdBasedRequestForUpdate"
-            }
-          ]
-        },
-        "orphan_unreachable": {
-          "count": 1,
-          "detail": [
-            {
-              "name": "UUIDv4",
-              "kind": "Characteristic",
-              "file": "IdBasedRequestForUpdate"
             }
           ]
         },
@@ -16695,7 +15130,7 @@
       "family": "BAMM",
       "source": "catenax",
       "status": "release",
-      "total": 10,
+      "total": 8,
       "issues": {
         "outdated_dependency": {
           "count": 1,
@@ -16723,26 +15158,6 @@
           "detail": [
             {
               "latest_release": "individual_asset_definition@2.0.0"
-            }
-          ]
-        },
-        "orphan_isolated": {
-          "count": 1,
-          "detail": [
-            {
-              "name": "UUIDv4",
-              "kind": "Characteristic",
-              "file": "IndividualAssetDefinition"
-            }
-          ]
-        },
-        "orphan_unreachable": {
-          "count": 1,
-          "detail": [
-            {
-              "name": "UUIDv4",
-              "kind": "Characteristic",
-              "file": "IndividualAssetDefinition"
             }
           ]
         },
@@ -16789,28 +15204,8 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 7,
+      "total": 5,
       "issues": {
-        "orphan_isolated": {
-          "count": 1,
-          "detail": [
-            {
-              "name": "UUIDv4",
-              "kind": "Characteristic",
-              "file": "IndividualAssetDefinition"
-            }
-          ]
-        },
-        "orphan_unreachable": {
-          "count": 1,
-          "detail": [
-            {
-              "name": "UUIDv4",
-              "kind": "Characteristic",
-              "file": "IndividualAssetDefinition"
-            }
-          ]
-        },
         "property_without_characteristic": {
           "count": 1,
           "detail": [
@@ -16854,28 +15249,8 @@
       "family": "BAMM",
       "source": "catenax",
       "status": "deprecated",
-      "total": 22,
+      "total": 20,
       "issues": {
-        "orphan_isolated": {
-          "count": 1,
-          "detail": [
-            {
-              "name": "UUIDv4",
-              "kind": "Characteristic",
-              "file": "IotSensorData"
-            }
-          ]
-        },
-        "orphan_unreachable": {
-          "count": 1,
-          "detail": [
-            {
-              "name": "UUIDv4",
-              "kind": "Characteristic",
-              "file": "IotSensorData"
-            }
-          ]
-        },
         "property_without_characteristic": {
           "count": 2,
           "detail": [
@@ -17088,28 +15463,8 @@
       "family": "BAMM",
       "source": "catenax",
       "status": "deprecated",
-      "total": 7,
+      "total": 5,
       "issues": {
-        "orphan_isolated": {
-          "count": 1,
-          "detail": [
-            {
-              "name": "UUIDv4",
-              "kind": "Characteristic",
-              "file": "IotSensorDeviceDefinition"
-            }
-          ]
-        },
-        "orphan_unreachable": {
-          "count": 1,
-          "detail": [
-            {
-              "name": "UUIDv4",
-              "kind": "Characteristic",
-              "file": "IotSensorDeviceDefinition"
-            }
-          ]
-        },
         "characteristic_without_datatype": {
           "count": 5,
           "detail": [
@@ -17396,38 +15751,8 @@
       "family": "BAMM",
       "source": "catenax",
       "status": "deprecated",
-      "total": 13,
+      "total": 9,
       "issues": {
-        "orphan_isolated": {
-          "count": 2,
-          "detail": [
-            {
-              "name": "CountryCodeCharacteristic",
-              "kind": "Characteristic",
-              "file": "JustInSequencePart"
-            },
-            {
-              "name": "Uuidv4",
-              "kind": "Characteristic",
-              "file": "JustInSequencePart"
-            }
-          ]
-        },
-        "orphan_unreachable": {
-          "count": 2,
-          "detail": [
-            {
-              "name": "CountryCodeCharacteristic",
-              "kind": "Characteristic",
-              "file": "JustInSequencePart"
-            },
-            {
-              "name": "Uuidv4",
-              "kind": "Characteristic",
-              "file": "JustInSequencePart"
-            }
-          ]
-        },
         "property_without_characteristic": {
           "count": 1,
           "detail": [
@@ -17492,7 +15817,7 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "deprecated",
-      "total": 13,
+      "total": 11,
       "issues": {
         "outdated_dependency": {
           "count": 1,
@@ -17500,26 +15825,6 @@
             {
               "target": "shared.uuid@1.0.0",
               "latest_release": "shared.uuid@2.0.0"
-            }
-          ]
-        },
-        "orphan_isolated": {
-          "count": 1,
-          "detail": [
-            {
-              "name": "CountryCodeCharacteristic",
-              "kind": "Characteristic",
-              "file": "JustInSequencePart"
-            }
-          ]
-        },
-        "orphan_unreachable": {
-          "count": 1,
-          "detail": [
-            {
-              "name": "CountryCodeCharacteristic",
-              "kind": "Characteristic",
-              "file": "JustInSequencePart"
             }
           ]
         },
@@ -17596,7 +15901,7 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 17,
+      "total": 11,
       "issues": {
         "deprecated_dep": {
           "count": 2,
@@ -17622,46 +15927,6 @@
           "detail": [
             {
               "latest_release": "just_in_sequence_part@4.0.0"
-            }
-          ]
-        },
-        "orphan_isolated": {
-          "count": 3,
-          "detail": [
-            {
-              "name": "KeyCharacteristic",
-              "kind": "Characteristic",
-              "file": "JustInSequencePart"
-            },
-            {
-              "name": "DateTimeCharacteristic",
-              "kind": "Characteristic",
-              "file": "JustInSequencePart"
-            },
-            {
-              "name": "CountryCodeCharacteristic",
-              "kind": "Characteristic",
-              "file": "JustInSequencePart"
-            }
-          ]
-        },
-        "orphan_unreachable": {
-          "count": 3,
-          "detail": [
-            {
-              "name": "KeyCharacteristic",
-              "kind": "Characteristic",
-              "file": "JustInSequencePart"
-            },
-            {
-              "name": "DateTimeCharacteristic",
-              "kind": "Characteristic",
-              "file": "JustInSequencePart"
-            },
-            {
-              "name": "CountryCodeCharacteristic",
-              "kind": "Characteristic",
-              "file": "JustInSequencePart"
             }
           ]
         },
@@ -18036,38 +16301,8 @@
       "family": "BAMM",
       "source": "catenax",
       "status": "deprecated",
-      "total": 19,
+      "total": 15,
       "issues": {
-        "orphan_isolated": {
-          "count": 2,
-          "detail": [
-            {
-              "name": "CountryCodeCharacteristic",
-              "kind": "Characteristic",
-              "file": "ManufacturedPartsQualityInformation"
-            },
-            {
-              "name": "UUIDv4",
-              "kind": "Characteristic",
-              "file": "ManufacturedPartsQualityInformation"
-            }
-          ]
-        },
-        "orphan_unreachable": {
-          "count": 2,
-          "detail": [
-            {
-              "name": "CountryCodeCharacteristic",
-              "kind": "Characteristic",
-              "file": "ManufacturedPartsQualityInformation"
-            },
-            {
-              "name": "UUIDv4",
-              "kind": "Characteristic",
-              "file": "ManufacturedPartsQualityInformation"
-            }
-          ]
-        },
         "property_without_characteristic": {
           "count": 12,
           "detail": [
@@ -18161,7 +16396,7 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "deprecated",
-      "total": 23,
+      "total": 21,
       "issues": {
         "outdated_dependency": {
           "count": 2,
@@ -18173,26 +16408,6 @@
             {
               "target": "shared.uuid@1.0.0",
               "latest_release": "shared.uuid@2.0.0"
-            }
-          ]
-        },
-        "orphan_isolated": {
-          "count": 1,
-          "detail": [
-            {
-              "name": "CountryCodeCharacteristic",
-              "kind": "Characteristic",
-              "file": "ManufacturedPartsQualityInformation"
-            }
-          ]
-        },
-        "orphan_unreachable": {
-          "count": 1,
-          "detail": [
-            {
-              "name": "CountryCodeCharacteristic",
-              "kind": "Characteristic",
-              "file": "ManufacturedPartsQualityInformation"
             }
           ]
         },
@@ -18309,33 +16524,13 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 23,
+      "total": 21,
       "issues": {
         "older_release_exists": {
           "count": 1,
           "detail": [
             {
               "latest_release": "manufactured_parts_quality_information@3.0.0"
-            }
-          ]
-        },
-        "orphan_isolated": {
-          "count": 1,
-          "detail": [
-            {
-              "name": "CountryCodeCharacteristic",
-              "kind": "Characteristic",
-              "file": "ManufacturedPartsQualityInformation"
-            }
-          ]
-        },
-        "orphan_unreachable": {
-          "count": 1,
-          "detail": [
-            {
-              "name": "CountryCodeCharacteristic",
-              "kind": "Characteristic",
-              "file": "ManufacturedPartsQualityInformation"
             }
           ]
         },
@@ -19095,28 +17290,8 @@
       "family": "BAMM",
       "source": "catenax",
       "status": "deprecated",
-      "total": 41,
+      "total": 39,
       "issues": {
-        "orphan_isolated": {
-          "count": 1,
-          "detail": [
-            {
-              "name": "UUIDv4",
-              "kind": "Characteristic",
-              "file": "MarketplaceOffer"
-            }
-          ]
-        },
-        "orphan_unreachable": {
-          "count": 1,
-          "detail": [
-            {
-              "name": "UUIDv4",
-              "kind": "Characteristic",
-              "file": "MarketplaceOffer"
-            }
-          ]
-        },
         "key_element_missing_description": {
           "count": 3,
           "detail": [
@@ -20615,18 +18790,8 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 29,
+      "total": 28,
       "issues": {
-        "orphan_isolated": {
-          "count": 1,
-          "detail": [
-            {
-              "name": "Alpha3CodeCharacteristic",
-              "kind": "Characteristic",
-              "file": "SafetyDataSheet"
-            }
-          ]
-        },
         "orphan_unreachable": {
           "count": 16,
           "detail": [
@@ -20790,18 +18955,8 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 23,
+      "total": 22,
       "issues": {
-        "orphan_isolated": {
-          "count": 1,
-          "detail": [
-            {
-              "name": "Alpha3CodeCharacteristic",
-              "kind": "Characteristic",
-              "file": "TechnicalInformation"
-            }
-          ]
-        },
         "orphan_unreachable": {
           "count": 15,
           "detail": [
@@ -20951,28 +19106,8 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 41,
+      "total": 39,
       "issues": {
-        "orphan_isolated": {
-          "count": 1,
-          "detail": [
-            {
-              "name": "MaterialPercentageCharacteristic",
-              "kind": "Characteristic",
-              "file": "Composition"
-            }
-          ]
-        },
-        "orphan_unreachable": {
-          "count": 1,
-          "detail": [
-            {
-              "name": "MaterialPercentageCharacteristic",
-              "kind": "Characteristic",
-              "file": "Composition"
-            }
-          ]
-        },
         "property_without_characteristic": {
           "count": 25,
           "detail": [
@@ -21187,7 +19322,7 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 24,
+      "total": 22,
       "issues": {
         "outdated_dependency": {
           "count": 3,
@@ -21215,26 +19350,6 @@
                 "material_demand@1.0.0",
                 "shared.quantity@1.0.0"
               ]
-            }
-          ]
-        },
-        "orphan_isolated": {
-          "count": 1,
-          "detail": [
-            {
-              "name": "Quantity",
-              "kind": "Characteristic",
-              "file": "MaterialDemand"
-            }
-          ]
-        },
-        "orphan_unreachable": {
-          "count": 1,
-          "detail": [
-            {
-              "name": "Quantity",
-              "kind": "Characteristic",
-              "file": "MaterialDemand"
             }
           ]
         },
@@ -21916,7 +20031,7 @@
       "family": "BAMM",
       "source": "catenax",
       "status": "release",
-      "total": 22,
+      "total": 10,
       "issues": {
         "unresolved_dep": {
           "count": 1,
@@ -21930,76 +20045,6 @@
             {
               "target": "shared.address_characteristic@1.0.0",
               "latest_release": "shared.address_characteristic@4.0.0"
-            }
-          ]
-        },
-        "orphan_isolated": {
-          "count": 6,
-          "detail": [
-            {
-              "name": "NameCharacteristic",
-              "kind": "Characteristic",
-              "file": "MaterialForHomologation"
-            },
-            {
-              "name": "ItemNumberCharacteristic",
-              "kind": "Characteristic",
-              "file": "MaterialForHomologation"
-            },
-            {
-              "name": "MainGroupCharacteristic",
-              "kind": "Characteristic",
-              "file": "MaterialForHomologation"
-            },
-            {
-              "name": "SubgroupCharacteristic",
-              "kind": "Characteristic",
-              "file": "MaterialForHomologation"
-            },
-            {
-              "name": "StandardCharacteristic",
-              "kind": "Characteristic",
-              "file": "MaterialForHomologation"
-            },
-            {
-              "name": "MaterialNumberCharacteristic",
-              "kind": "Characteristic",
-              "file": "MaterialForHomologation"
-            }
-          ]
-        },
-        "orphan_unreachable": {
-          "count": 6,
-          "detail": [
-            {
-              "name": "NameCharacteristic",
-              "kind": "Characteristic",
-              "file": "MaterialForHomologation"
-            },
-            {
-              "name": "ItemNumberCharacteristic",
-              "kind": "Characteristic",
-              "file": "MaterialForHomologation"
-            },
-            {
-              "name": "MainGroupCharacteristic",
-              "kind": "Characteristic",
-              "file": "MaterialForHomologation"
-            },
-            {
-              "name": "SubgroupCharacteristic",
-              "kind": "Characteristic",
-              "file": "MaterialForHomologation"
-            },
-            {
-              "name": "StandardCharacteristic",
-              "kind": "Characteristic",
-              "file": "MaterialForHomologation"
-            },
-            {
-              "name": "MaterialNumberCharacteristic",
-              "kind": "Characteristic",
-              "file": "MaterialForHomologation"
             }
           ]
         },
@@ -22060,7 +20105,7 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "draft",
-      "total": 21,
+      "total": 9,
       "issues": {
         "unresolved_dep": {
           "count": 1,
@@ -22074,76 +20119,6 @@
             {
               "target": "shared.address_characteristic@1.0.0",
               "latest_release": "shared.address_characteristic@4.0.0"
-            }
-          ]
-        },
-        "orphan_isolated": {
-          "count": 6,
-          "detail": [
-            {
-              "name": "ItemNumberCharacteristic",
-              "kind": "Characteristic",
-              "file": "MaterialForHomologation"
-            },
-            {
-              "name": "NameCharacteristic",
-              "kind": "Characteristic",
-              "file": "MaterialForHomologation"
-            },
-            {
-              "name": "StandardCharacteristic",
-              "kind": "Characteristic",
-              "file": "MaterialForHomologation"
-            },
-            {
-              "name": "MaterialNumberCharacteristic",
-              "kind": "Characteristic",
-              "file": "MaterialForHomologation"
-            },
-            {
-              "name": "MainGroupCharacteristic",
-              "kind": "Characteristic",
-              "file": "MaterialForHomologation"
-            },
-            {
-              "name": "SubgroupCharacteristic",
-              "kind": "Characteristic",
-              "file": "MaterialForHomologation"
-            }
-          ]
-        },
-        "orphan_unreachable": {
-          "count": 6,
-          "detail": [
-            {
-              "name": "ItemNumberCharacteristic",
-              "kind": "Characteristic",
-              "file": "MaterialForHomologation"
-            },
-            {
-              "name": "NameCharacteristic",
-              "kind": "Characteristic",
-              "file": "MaterialForHomologation"
-            },
-            {
-              "name": "StandardCharacteristic",
-              "kind": "Characteristic",
-              "file": "MaterialForHomologation"
-            },
-            {
-              "name": "MaterialNumberCharacteristic",
-              "kind": "Characteristic",
-              "file": "MaterialForHomologation"
-            },
-            {
-              "name": "MainGroupCharacteristic",
-              "kind": "Characteristic",
-              "file": "MaterialForHomologation"
-            },
-            {
-              "name": "SubgroupCharacteristic",
-              "kind": "Characteristic",
-              "file": "MaterialForHomologation"
             }
           ]
         },
@@ -22653,28 +20628,8 @@
       "family": "BAMM",
       "source": "catenax",
       "status": "deprecated",
-      "total": 8,
+      "total": 6,
       "issues": {
-        "orphan_isolated": {
-          "count": 1,
-          "detail": [
-            {
-              "name": "UUIDv4",
-              "kind": "Characteristic",
-              "file": "PartSiteInformationAsPlanned"
-            }
-          ]
-        },
-        "orphan_unreachable": {
-          "count": 1,
-          "detail": [
-            {
-              "name": "UUIDv4",
-              "kind": "Characteristic",
-              "file": "PartSiteInformationAsPlanned"
-            }
-          ]
-        },
         "property_without_characteristic": {
           "count": 2,
           "detail": [
@@ -22727,7 +20682,7 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 13,
+      "total": 11,
       "issues": {
         "deprecated_dep": {
           "count": 1,
@@ -22746,26 +20701,6 @@
           "detail": [
             {
               "latest_release": "part_type_information@2.0.0"
-            }
-          ]
-        },
-        "orphan_isolated": {
-          "count": 1,
-          "detail": [
-            {
-              "name": "DateTimeCharacteristic",
-              "kind": "Characteristic",
-              "file": "PartTypeInformation"
-            }
-          ]
-        },
-        "orphan_unreachable": {
-          "count": 1,
-          "detail": [
-            {
-              "name": "DateTimeCharacteristic",
-              "kind": "Characteristic",
-              "file": "PartTypeInformation"
             }
           ]
         },
@@ -22899,28 +20834,8 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "deprecated",
-      "total": 17,
+      "total": 15,
       "issues": {
-        "orphan_isolated": {
-          "count": 1,
-          "detail": [
-            {
-              "name": "UUIDv4",
-              "kind": "Characteristic",
-              "file": "PartsAnalyses"
-            }
-          ]
-        },
-        "orphan_unreachable": {
-          "count": 1,
-          "detail": [
-            {
-              "name": "UUIDv4",
-              "kind": "Characteristic",
-              "file": "PartsAnalyses"
-            }
-          ]
-        },
         "property_without_characteristic": {
           "count": 9,
           "detail": [
@@ -23185,35 +21100,10 @@
       "family": "BAMM",
       "source": "catenax",
       "status": "deprecated",
-      "total": 36,
+      "total": 28,
       "issues": {
-        "orphan_isolated": {
-          "count": 4,
-          "detail": [
-            {
-              "name": "IdCharacteristic",
-              "kind": "Characteristic",
-              "file": "Pcf"
-            },
-            {
-              "name": "RuleNamesCharacteristic",
-              "kind": "Characteristic",
-              "file": "Pcf"
-            },
-            {
-              "name": "EmissionCharacteristic",
-              "kind": "Characteristic",
-              "file": "Pcf"
-            },
-            {
-              "name": "PrimaryDataShareCharacteristic",
-              "kind": "Characteristic",
-              "file": "Pcf"
-            }
-          ]
-        },
         "orphan_unreachable": {
-          "count": 8,
+          "count": 4,
           "detail": [
             {
               "name": "NonEmptyStringTrait",
@@ -23226,27 +21116,7 @@
               "file": "Pcf"
             },
             {
-              "name": "IdCharacteristic",
-              "kind": "Characteristic",
-              "file": "Pcf"
-            },
-            {
-              "name": "RuleNamesCharacteristic",
-              "kind": "Characteristic",
-              "file": "Pcf"
-            },
-            {
-              "name": "EmissionCharacteristic",
-              "kind": "Characteristic",
-              "file": "Pcf"
-            },
-            {
               "name": "StrictlyPositiveDecimalConstraint",
-              "kind": "Characteristic",
-              "file": "Pcf"
-            },
-            {
-              "name": "PrimaryDataShareCharacteristic",
               "kind": "Characteristic",
               "file": "Pcf"
             },
@@ -23399,35 +21269,10 @@
       "family": "BAMM",
       "source": "catenax",
       "status": "deprecated",
-      "total": 35,
+      "total": 27,
       "issues": {
-        "orphan_isolated": {
-          "count": 4,
-          "detail": [
-            {
-              "name": "IdCharacteristic",
-              "kind": "Characteristic",
-              "file": "Pcf"
-            },
-            {
-              "name": "RuleNamesCharacteristic",
-              "kind": "Characteristic",
-              "file": "Pcf"
-            },
-            {
-              "name": "EmissionCharacteristic",
-              "kind": "Characteristic",
-              "file": "Pcf"
-            },
-            {
-              "name": "PrimaryDataShareCharacteristic",
-              "kind": "Characteristic",
-              "file": "Pcf"
-            }
-          ]
-        },
         "orphan_unreachable": {
-          "count": 8,
+          "count": 4,
           "detail": [
             {
               "name": "NonEmptyStringTrait",
@@ -23440,27 +21285,7 @@
               "file": "Pcf"
             },
             {
-              "name": "IdCharacteristic",
-              "kind": "Characteristic",
-              "file": "Pcf"
-            },
-            {
-              "name": "RuleNamesCharacteristic",
-              "kind": "Characteristic",
-              "file": "Pcf"
-            },
-            {
-              "name": "EmissionCharacteristic",
-              "kind": "Characteristic",
-              "file": "Pcf"
-            },
-            {
               "name": "StrictlyPositiveDecimalConstraint",
-              "kind": "Characteristic",
-              "file": "Pcf"
-            },
-            {
-              "name": "PrimaryDataShareCharacteristic",
               "kind": "Characteristic",
               "file": "Pcf"
             },
@@ -23604,153 +21429,8 @@
       "family": "BAMM",
       "source": "catenax",
       "status": "deprecated",
-      "total": 61,
+      "total": 34,
       "issues": {
-        "orphan_isolated": {
-          "count": 7,
-          "detail": [
-            {
-              "name": "PfId",
-              "kind": "Characteristic",
-              "file": "Pcf"
-            },
-            {
-              "name": "StrictlyPositiveDecimal",
-              "kind": "Characteristic",
-              "file": "Pcf"
-            },
-            {
-              "name": "DqiNumber",
-              "kind": "Characteristic",
-              "file": "Pcf"
-            },
-            {
-              "name": "PositiveDecimalWeight",
-              "kind": "Characteristic",
-              "file": "Pcf"
-            },
-            {
-              "name": "ExemptedEmissionsPercentCharacteristic",
-              "kind": "Characteristic",
-              "file": "Pcf"
-            },
-            {
-              "name": "Percent",
-              "kind": "Characteristic",
-              "file": "Pcf"
-            },
-            {
-              "name": "PositiveEmission",
-              "kind": "Characteristic",
-              "file": "Pcf"
-            }
-          ]
-        },
-        "orphan_unreachable": {
-          "count": 20,
-          "detail": [
-            {
-              "name": "companyId",
-              "kind": "Property",
-              "file": "Pcf"
-            },
-            {
-              "name": "productId",
-              "kind": "Property",
-              "file": "Pcf"
-            },
-            {
-              "name": "ruleName",
-              "kind": "Property",
-              "file": "Pcf"
-            },
-            {
-              "name": "PfId",
-              "kind": "Characteristic",
-              "file": "Pcf"
-            },
-            {
-              "name": "CompanyIdCharacteristic",
-              "kind": "Characteristic",
-              "file": "Pcf"
-            },
-            {
-              "name": "ProductIdCharacteristic",
-              "kind": "Characteristic",
-              "file": "Pcf"
-            },
-            {
-              "name": "StrictlyPositiveDecimal",
-              "kind": "Characteristic",
-              "file": "Pcf"
-            },
-            {
-              "name": "DqiNumber",
-              "kind": "Characteristic",
-              "file": "Pcf"
-            },
-            {
-              "name": "PrecedingPfIdsCharacteristic",
-              "kind": "Characteristic",
-              "file": "Pcf"
-            },
-            {
-              "name": "CompanyIdSet",
-              "kind": "Characteristic",
-              "file": "Pcf"
-            },
-            {
-              "name": "ProductIdSet",
-              "kind": "Characteristic",
-              "file": "Pcf"
-            },
-            {
-              "name": "RuleNamesCharacteristic",
-              "kind": "Characteristic",
-              "file": "Pcf"
-            },
-            {
-              "name": "PrecedingPfId",
-              "kind": "Entity",
-              "file": "Pcf"
-            },
-            {
-              "name": "CompanyId",
-              "kind": "Entity",
-              "file": "Pcf"
-            },
-            {
-              "name": "ProductId",
-              "kind": "Entity",
-              "file": "Pcf"
-            },
-            {
-              "name": "RuleName",
-              "kind": "Entity",
-              "file": "Pcf"
-            },
-            {
-              "name": "PositiveDecimalWeight",
-              "kind": "Characteristic",
-              "file": "Pcf"
-            },
-            {
-              "name": "ExemptedEmissionsPercentCharacteristic",
-              "kind": "Characteristic",
-              "file": "Pcf"
-            },
-            {
-              "name": "Percent",
-              "kind": "Characteristic",
-              "file": "Pcf"
-            },
-            {
-              "name": "PositiveEmission",
-              "kind": "Characteristic",
-              "file": "Pcf"
-            }
-          ]
-        },
         "property_without_characteristic": {
           "count": 15,
           "detail": [
@@ -23939,153 +21619,8 @@
       "family": "BAMM",
       "source": "catenax",
       "status": "deprecated",
-      "total": 61,
+      "total": 34,
       "issues": {
-        "orphan_isolated": {
-          "count": 7,
-          "detail": [
-            {
-              "name": "PfId",
-              "kind": "Characteristic",
-              "file": "Pcf"
-            },
-            {
-              "name": "StrictlyPositiveDecimal",
-              "kind": "Characteristic",
-              "file": "Pcf"
-            },
-            {
-              "name": "DqiNumber",
-              "kind": "Characteristic",
-              "file": "Pcf"
-            },
-            {
-              "name": "PositiveDecimalWeight",
-              "kind": "Characteristic",
-              "file": "Pcf"
-            },
-            {
-              "name": "ExemptedEmissionsPercentCharacteristic",
-              "kind": "Characteristic",
-              "file": "Pcf"
-            },
-            {
-              "name": "Percent",
-              "kind": "Characteristic",
-              "file": "Pcf"
-            },
-            {
-              "name": "PositiveEmission",
-              "kind": "Characteristic",
-              "file": "Pcf"
-            }
-          ]
-        },
-        "orphan_unreachable": {
-          "count": 20,
-          "detail": [
-            {
-              "name": "companyId",
-              "kind": "Property",
-              "file": "Pcf"
-            },
-            {
-              "name": "productId",
-              "kind": "Property",
-              "file": "Pcf"
-            },
-            {
-              "name": "ruleName",
-              "kind": "Property",
-              "file": "Pcf"
-            },
-            {
-              "name": "PfId",
-              "kind": "Characteristic",
-              "file": "Pcf"
-            },
-            {
-              "name": "CompanyIdCharacteristic",
-              "kind": "Characteristic",
-              "file": "Pcf"
-            },
-            {
-              "name": "ProductIdCharacteristic",
-              "kind": "Characteristic",
-              "file": "Pcf"
-            },
-            {
-              "name": "StrictlyPositiveDecimal",
-              "kind": "Characteristic",
-              "file": "Pcf"
-            },
-            {
-              "name": "DqiNumber",
-              "kind": "Characteristic",
-              "file": "Pcf"
-            },
-            {
-              "name": "PrecedingPfIdsCharacteristic",
-              "kind": "Characteristic",
-              "file": "Pcf"
-            },
-            {
-              "name": "CompanyIdSet",
-              "kind": "Characteristic",
-              "file": "Pcf"
-            },
-            {
-              "name": "ProductIdSet",
-              "kind": "Characteristic",
-              "file": "Pcf"
-            },
-            {
-              "name": "RuleNamesCharacteristic",
-              "kind": "Characteristic",
-              "file": "Pcf"
-            },
-            {
-              "name": "PrecedingPfId",
-              "kind": "Entity",
-              "file": "Pcf"
-            },
-            {
-              "name": "CompanyId",
-              "kind": "Entity",
-              "file": "Pcf"
-            },
-            {
-              "name": "ProductId",
-              "kind": "Entity",
-              "file": "Pcf"
-            },
-            {
-              "name": "RuleName",
-              "kind": "Entity",
-              "file": "Pcf"
-            },
-            {
-              "name": "PositiveDecimalWeight",
-              "kind": "Characteristic",
-              "file": "Pcf"
-            },
-            {
-              "name": "ExemptedEmissionsPercentCharacteristic",
-              "kind": "Characteristic",
-              "file": "Pcf"
-            },
-            {
-              "name": "Percent",
-              "kind": "Characteristic",
-              "file": "Pcf"
-            },
-            {
-              "name": "PositiveEmission",
-              "kind": "Characteristic",
-              "file": "Pcf"
-            }
-          ]
-        },
         "property_without_characteristic": {
           "count": 15,
           "detail": [
@@ -24274,7 +21809,7 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "deprecated",
-      "total": 52,
+      "total": 35,
       "issues": {
         "outdated_dependency": {
           "count": 1,
@@ -24282,101 +21817,6 @@
             {
               "target": "shared.uuid@1.0.0",
               "latest_release": "shared.uuid@2.0.0"
-            }
-          ]
-        },
-        "orphan_isolated": {
-          "count": 7,
-          "detail": [
-            {
-              "name": "IdSet",
-              "kind": "Characteristic",
-              "file": "Pcf"
-            },
-            {
-              "name": "StrictlyPositiveDecimal",
-              "kind": "Characteristic",
-              "file": "Pcf"
-            },
-            {
-              "name": "DqiNumber",
-              "kind": "Characteristic",
-              "file": "Pcf"
-            },
-            {
-              "name": "PositiveDecimalWeight",
-              "kind": "Characteristic",
-              "file": "Pcf"
-            },
-            {
-              "name": "ExemptedEmissionsPercentCharacteristic",
-              "kind": "Characteristic",
-              "file": "Pcf"
-            },
-            {
-              "name": "Percent",
-              "kind": "Characteristic",
-              "file": "Pcf"
-            },
-            {
-              "name": "PositiveEmission",
-              "kind": "Characteristic",
-              "file": "Pcf"
-            }
-          ]
-        },
-        "orphan_unreachable": {
-          "count": 10,
-          "detail": [
-            {
-              "name": "ruleName",
-              "kind": "Property",
-              "file": "Pcf"
-            },
-            {
-              "name": "IdSet",
-              "kind": "Characteristic",
-              "file": "Pcf"
-            },
-            {
-              "name": "StrictlyPositiveDecimal",
-              "kind": "Characteristic",
-              "file": "Pcf"
-            },
-            {
-              "name": "DqiNumber",
-              "kind": "Characteristic",
-              "file": "Pcf"
-            },
-            {
-              "name": "RuleName",
-              "kind": "Entity",
-              "file": "Pcf"
-            },
-            {
-              "name": "RuleNamesCharacteristic",
-              "kind": "Characteristic",
-              "file": "Pcf"
-            },
-            {
-              "name": "PositiveDecimalWeight",
-              "kind": "Characteristic",
-              "file": "Pcf"
-            },
-            {
-              "name": "ExemptedEmissionsPercentCharacteristic",
-              "kind": "Characteristic",
-              "file": "Pcf"
-            },
-            {
-              "name": "Percent",
-              "kind": "Characteristic",
-              "file": "Pcf"
-            },
-            {
-              "name": "PositiveEmission",
-              "kind": "Characteristic",
-              "file": "Pcf"
             }
           ]
         },
@@ -24572,113 +22012,8 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "deprecated",
-      "total": 53,
+      "total": 34,
       "issues": {
-        "orphan_isolated": {
-          "count": 8,
-          "detail": [
-            {
-              "name": "IdSet",
-              "kind": "Characteristic",
-              "file": "Pcf"
-            },
-            {
-              "name": "StrictlyPositiveDecimal",
-              "kind": "Characteristic",
-              "file": "Pcf"
-            },
-            {
-              "name": "DqiNumber",
-              "kind": "Characteristic",
-              "file": "Pcf"
-            },
-            {
-              "name": "PositiveDecimalWeight",
-              "kind": "Characteristic",
-              "file": "Pcf"
-            },
-            {
-              "name": "ExemptedEmissionsPercentCharacteristic",
-              "kind": "Characteristic",
-              "file": "Pcf"
-            },
-            {
-              "name": "Percent",
-              "kind": "Characteristic",
-              "file": "Pcf"
-            },
-            {
-              "name": "PositiveEmission",
-              "kind": "Characteristic",
-              "file": "Pcf"
-            },
-            {
-              "name": "NegativeEmission",
-              "kind": "Characteristic",
-              "file": "Pcf"
-            }
-          ]
-        },
-        "orphan_unreachable": {
-          "count": 11,
-          "detail": [
-            {
-              "name": "ruleName",
-              "kind": "Property",
-              "file": "Pcf"
-            },
-            {
-              "name": "IdSet",
-              "kind": "Characteristic",
-              "file": "Pcf"
-            },
-            {
-              "name": "StrictlyPositiveDecimal",
-              "kind": "Characteristic",
-              "file": "Pcf"
-            },
-            {
-              "name": "DqiNumber",
-              "kind": "Characteristic",
-              "file": "Pcf"
-            },
-            {
-              "name": "RuleName",
-              "kind": "Entity",
-              "file": "Pcf"
-            },
-            {
-              "name": "RuleNamesCharacteristic",
-              "kind": "Characteristic",
-              "file": "Pcf"
-            },
-            {
-              "name": "PositiveDecimalWeight",
-              "kind": "Characteristic",
-              "file": "Pcf"
-            },
-            {
-              "name": "ExemptedEmissionsPercentCharacteristic",
-              "kind": "Characteristic",
-              "file": "Pcf"
-            },
-            {
-              "name": "Percent",
-              "kind": "Characteristic",
-              "file": "Pcf"
-            },
-            {
-              "name": "PositiveEmission",
-              "kind": "Characteristic",
-              "file": "Pcf"
-            },
-            {
-              "name": "NegativeEmission",
-              "kind": "Characteristic",
-              "file": "Pcf"
-            }
-          ]
-        },
         "property_without_characteristic": {
           "count": 16,
           "detail": [
@@ -24867,118 +22202,13 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 54,
+      "total": 35,
       "issues": {
         "older_release_exists": {
           "count": 1,
           "detail": [
             {
               "latest_release": "pcf@9.0.0"
-            }
-          ]
-        },
-        "orphan_isolated": {
-          "count": 8,
-          "detail": [
-            {
-              "name": "IdSet",
-              "kind": "Characteristic",
-              "file": "Pcf"
-            },
-            {
-              "name": "StrictlyPositiveDecimal",
-              "kind": "Characteristic",
-              "file": "Pcf"
-            },
-            {
-              "name": "DqiNumber",
-              "kind": "Characteristic",
-              "file": "Pcf"
-            },
-            {
-              "name": "PositiveDecimalWeight",
-              "kind": "Characteristic",
-              "file": "Pcf"
-            },
-            {
-              "name": "ExemptedEmissionsPercentCharacteristic",
-              "kind": "Characteristic",
-              "file": "Pcf"
-            },
-            {
-              "name": "Percent",
-              "kind": "Characteristic",
-              "file": "Pcf"
-            },
-            {
-              "name": "PositiveEmission",
-              "kind": "Characteristic",
-              "file": "Pcf"
-            },
-            {
-              "name": "NegativeEmission",
-              "kind": "Characteristic",
-              "file": "Pcf"
-            }
-          ]
-        },
-        "orphan_unreachable": {
-          "count": 11,
-          "detail": [
-            {
-              "name": "ruleName",
-              "kind": "Property",
-              "file": "Pcf"
-            },
-            {
-              "name": "IdSet",
-              "kind": "Characteristic",
-              "file": "Pcf"
-            },
-            {
-              "name": "StrictlyPositiveDecimal",
-              "kind": "Characteristic",
-              "file": "Pcf"
-            },
-            {
-              "name": "DqiNumber",
-              "kind": "Characteristic",
-              "file": "Pcf"
-            },
-            {
-              "name": "RuleName",
-              "kind": "Entity",
-              "file": "Pcf"
-            },
-            {
-              "name": "RuleNamesCharacteristic",
-              "kind": "Characteristic",
-              "file": "Pcf"
-            },
-            {
-              "name": "PositiveDecimalWeight",
-              "kind": "Characteristic",
-              "file": "Pcf"
-            },
-            {
-              "name": "ExemptedEmissionsPercentCharacteristic",
-              "kind": "Characteristic",
-              "file": "Pcf"
-            },
-            {
-              "name": "Percent",
-              "kind": "Characteristic",
-              "file": "Pcf"
-            },
-            {
-              "name": "PositiveEmission",
-              "kind": "Characteristic",
-              "file": "Pcf"
-            },
-            {
-              "name": "NegativeEmission",
-              "kind": "Characteristic",
-              "file": "Pcf"
             }
           ]
         },
@@ -25170,7 +22400,7 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 73,
+      "total": 59,
       "issues": {
         "older_release_exists": {
           "count": 1,
@@ -25181,7 +22411,7 @@
           ]
         },
         "orphan_isolated": {
-          "count": 9,
+          "count": 2,
           "detail": [
             {
               "name": "text",
@@ -25190,48 +22420,13 @@
             },
             {
               "name": "CrossSectoralStandardsUsedEnumerationCharacteristic",
-              "kind": "Characteristic",
-              "file": "Pcf"
-            },
-            {
-              "name": "StrictlyPositiveDecimal",
-              "kind": "Characteristic",
-              "file": "Pcf"
-            },
-            {
-              "name": "ProgramCertificationShareCharacteristic",
-              "kind": "Characteristic",
-              "file": "Pcf"
-            },
-            {
-              "name": "DqiNumber",
-              "kind": "Characteristic",
-              "file": "Pcf"
-            },
-            {
-              "name": "PositiveDecimalWeight",
-              "kind": "Characteristic",
-              "file": "Pcf"
-            },
-            {
-              "name": "ExemptedEmissionsPercentCharacteristic",
-              "kind": "Characteristic",
-              "file": "Pcf"
-            },
-            {
-              "name": "Percent",
-              "kind": "Characteristic",
-              "file": "Pcf"
-            },
-            {
-              "name": "PositiveEmission",
               "kind": "Characteristic",
               "file": "Pcf"
             }
           ]
         },
         "orphan_unreachable": {
-          "count": 11,
+          "count": 4,
           "detail": [
             {
               "name": "text",
@@ -25244,42 +22439,7 @@
               "file": "Pcf"
             },
             {
-              "name": "StrictlyPositiveDecimal",
-              "kind": "Characteristic",
-              "file": "Pcf"
-            },
-            {
-              "name": "ProgramCertificationShareCharacteristic",
-              "kind": "Characteristic",
-              "file": "Pcf"
-            },
-            {
-              "name": "DqiNumber",
-              "kind": "Characteristic",
-              "file": "Pcf"
-            },
-            {
               "name": "SpecVersionTrait",
-              "kind": "Characteristic",
-              "file": "Pcf"
-            },
-            {
-              "name": "PositiveDecimalWeight",
-              "kind": "Characteristic",
-              "file": "Pcf"
-            },
-            {
-              "name": "ExemptedEmissionsPercentCharacteristic",
-              "kind": "Characteristic",
-              "file": "Pcf"
-            },
-            {
-              "name": "Percent",
-              "kind": "Characteristic",
-              "file": "Pcf"
-            },
-            {
-              "name": "PositiveEmission",
               "kind": "Characteristic",
               "file": "Pcf"
             },
@@ -25573,88 +22733,8 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 65,
+      "total": 51,
       "issues": {
-        "orphan_isolated": {
-          "count": 7,
-          "detail": [
-            {
-              "name": "PositiveEmission",
-              "kind": "Characteristic",
-              "file": "Pcf"
-            },
-            {
-              "name": "PositiveDecimalWeight",
-              "kind": "Characteristic",
-              "file": "Pcf"
-            },
-            {
-              "name": "Percent",
-              "kind": "Characteristic",
-              "file": "Pcf"
-            },
-            {
-              "name": "ExemptedEmissionsPercentCharacteristic",
-              "kind": "Characteristic",
-              "file": "Pcf"
-            },
-            {
-              "name": "StrictlyPositiveDecimal",
-              "kind": "Characteristic",
-              "file": "Pcf"
-            },
-            {
-              "name": "DqiNumber",
-              "kind": "Characteristic",
-              "file": "Pcf"
-            },
-            {
-              "name": "ProgramCertificationShareCharacteristic",
-              "kind": "Characteristic",
-              "file": "Pcf"
-            }
-          ]
-        },
-        "orphan_unreachable": {
-          "count": 7,
-          "detail": [
-            {
-              "name": "PositiveEmission",
-              "kind": "Characteristic",
-              "file": "Pcf"
-            },
-            {
-              "name": "PositiveDecimalWeight",
-              "kind": "Characteristic",
-              "file": "Pcf"
-            },
-            {
-              "name": "Percent",
-              "kind": "Characteristic",
-              "file": "Pcf"
-            },
-            {
-              "name": "ExemptedEmissionsPercentCharacteristic",
-              "kind": "Characteristic",
-              "file": "Pcf"
-            },
-            {
-              "name": "StrictlyPositiveDecimal",
-              "kind": "Characteristic",
-              "file": "Pcf"
-            },
-            {
-              "name": "DqiNumber",
-              "kind": "Characteristic",
-              "file": "Pcf"
-            },
-            {
-              "name": "ProgramCertificationShareCharacteristic",
-              "kind": "Characteristic",
-              "file": "Pcf"
-            }
-          ]
-        },
         "property_without_characteristic": {
           "count": 25,
           "detail": [
@@ -25933,28 +23013,8 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 14,
+      "total": 12,
       "issues": {
-        "orphan_isolated": {
-          "count": 1,
-          "detail": [
-            {
-              "name": "CharacteristicStageValue",
-              "kind": "Characteristic",
-              "file": "PcfForBatteryComponentSupplier"
-            }
-          ]
-        },
-        "orphan_unreachable": {
-          "count": 1,
-          "detail": [
-            {
-              "name": "CharacteristicStageValue",
-              "kind": "Characteristic",
-              "file": "PcfForBatteryComponentSupplier"
-            }
-          ]
-        },
         "property_without_characteristic": {
           "count": 8,
           "detail": [
@@ -26199,28 +23259,8 @@
       "family": "BAMM",
       "source": "catenax",
       "status": "release",
-      "total": 11,
+      "total": 9,
       "issues": {
-        "orphan_isolated": {
-          "count": 1,
-          "detail": [
-            {
-              "name": "Uuidv4Characteristic",
-              "kind": "Characteristic",
-              "file": "ProductStock"
-            }
-          ]
-        },
-        "orphan_unreachable": {
-          "count": 1,
-          "detail": [
-            {
-              "name": "Uuidv4Characteristic",
-              "kind": "Characteristic",
-              "file": "ProductStock"
-            }
-          ]
-        },
         "property_without_characteristic": {
           "count": 1,
           "detail": [
@@ -26284,28 +23324,8 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "draft",
-      "total": 11,
+      "total": 9,
       "issues": {
-        "orphan_isolated": {
-          "count": 1,
-          "detail": [
-            {
-              "name": "Uuidv4Characteristic",
-              "kind": "Characteristic",
-              "file": "ProductStock"
-            }
-          ]
-        },
-        "orphan_unreachable": {
-          "count": 1,
-          "detail": [
-            {
-              "name": "Uuidv4Characteristic",
-              "kind": "Characteristic",
-              "file": "ProductStock"
-            }
-          ]
-        },
         "property_without_characteristic": {
           "count": 1,
           "detail": [
@@ -28259,28 +25279,8 @@
       "family": "BAMM",
       "source": "catenax",
       "status": "deprecated",
-      "total": 20,
+      "total": 18,
       "issues": {
-        "orphan_isolated": {
-          "count": 1,
-          "detail": [
-            {
-              "name": "CurrencyCharacteristic",
-              "kind": "Characteristic",
-              "file": "ReturnRequest"
-            }
-          ]
-        },
-        "orphan_unreachable": {
-          "count": 1,
-          "detail": [
-            {
-              "name": "CurrencyCharacteristic",
-              "kind": "Characteristic",
-              "file": "ReturnRequest"
-            }
-          ]
-        },
         "property_without_characteristic": {
           "count": 13,
           "detail": [
@@ -28393,28 +25393,8 @@
       "family": "BAMM",
       "source": "catenax",
       "status": "deprecated",
-      "total": 20,
+      "total": 18,
       "issues": {
-        "orphan_isolated": {
-          "count": 1,
-          "detail": [
-            {
-              "name": "CurrencyCharacteristic",
-              "kind": "Characteristic",
-              "file": "ReturnRequest"
-            }
-          ]
-        },
-        "orphan_unreachable": {
-          "count": 1,
-          "detail": [
-            {
-              "name": "CurrencyCharacteristic",
-              "kind": "Characteristic",
-              "file": "ReturnRequest"
-            }
-          ]
-        },
         "property_without_characteristic": {
           "count": 13,
           "detail": [
@@ -28895,28 +25875,8 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 7,
+      "total": 5,
       "issues": {
-        "orphan_isolated": {
-          "count": 1,
-          "detail": [
-            {
-              "name": "FormatVersionBaseCharacteristic",
-              "kind": "Characteristic",
-              "file": "Sbom"
-            }
-          ]
-        },
-        "orphan_unreachable": {
-          "count": 1,
-          "detail": [
-            {
-              "name": "FormatVersionBaseCharacteristic",
-              "kind": "Characteristic",
-              "file": "Sbom"
-            }
-          ]
-        },
         "property_without_characteristic": {
           "count": 1,
           "detail": [
@@ -28965,7 +25925,7 @@
       "family": "BAMM",
       "source": "catenax",
       "status": "deprecated",
-      "total": 44,
+      "total": 42,
       "issues": {
         "unresolved_dep": {
           "count": 1,
@@ -28979,26 +25939,6 @@
             {
               "target": "pcf@3.0.0",
               "latest_release": "pcf@9.0.0"
-            }
-          ]
-        },
-        "orphan_isolated": {
-          "count": 1,
-          "detail": [
-            {
-              "name": "ProvisioningCountry",
-              "kind": "Characteristic",
-              "file": "SealantPass"
-            }
-          ]
-        },
-        "orphan_unreachable": {
-          "count": 1,
-          "detail": [
-            {
-              "name": "ProvisioningCountry",
-              "kind": "Characteristic",
-              "file": "SealantPass"
             }
           ]
         },
@@ -29220,38 +26160,8 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "deprecated",
-      "total": 19,
+      "total": 15,
       "issues": {
-        "orphan_isolated": {
-          "count": 2,
-          "detail": [
-            {
-              "name": "UnitReference",
-              "kind": "Characteristic",
-              "file": "SecondaryMaterialContent"
-            },
-            {
-              "name": "PercentageOfMaterialWeight",
-              "kind": "Characteristic",
-              "file": "SecondaryMaterialContent"
-            }
-          ]
-        },
-        "orphan_unreachable": {
-          "count": 2,
-          "detail": [
-            {
-              "name": "UnitReference",
-              "kind": "Characteristic",
-              "file": "SecondaryMaterialContent"
-            },
-            {
-              "name": "PercentageOfMaterialWeight",
-              "kind": "Characteristic",
-              "file": "SecondaryMaterialContent"
-            }
-          ]
-        },
         "property_without_characteristic": {
           "count": 7,
           "detail": [
@@ -29389,38 +26299,8 @@
       "family": "BAMM",
       "source": "catenax",
       "status": "deprecated",
-      "total": 13,
+      "total": 9,
       "issues": {
-        "orphan_isolated": {
-          "count": 2,
-          "detail": [
-            {
-              "name": "Uuidv4Characteristic",
-              "kind": "Characteristic",
-              "file": "SerialPart"
-            },
-            {
-              "name": "CountryCodeCharacteristic",
-              "kind": "Characteristic",
-              "file": "SerialPart"
-            }
-          ]
-        },
-        "orphan_unreachable": {
-          "count": 2,
-          "detail": [
-            {
-              "name": "Uuidv4Characteristic",
-              "kind": "Characteristic",
-              "file": "SerialPart"
-            },
-            {
-              "name": "CountryCodeCharacteristic",
-              "kind": "Characteristic",
-              "file": "SerialPart"
-            }
-          ]
-        },
         "property_without_characteristic": {
           "count": 1,
           "detail": [
@@ -29485,7 +26365,7 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "deprecated",
-      "total": 13,
+      "total": 11,
       "issues": {
         "outdated_dependency": {
           "count": 1,
@@ -29493,26 +26373,6 @@
             {
               "target": "shared.uuid@1.0.0",
               "latest_release": "shared.uuid@2.0.0"
-            }
-          ]
-        },
-        "orphan_isolated": {
-          "count": 1,
-          "detail": [
-            {
-              "name": "CountryCodeCharacteristic",
-              "kind": "Characteristic",
-              "file": "SerialPart"
-            }
-          ]
-        },
-        "orphan_unreachable": {
-          "count": 1,
-          "detail": [
-            {
-              "name": "CountryCodeCharacteristic",
-              "kind": "Characteristic",
-              "file": "SerialPart"
             }
           ]
         },
@@ -29589,7 +26449,7 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 17,
+      "total": 11,
       "issues": {
         "deprecated_dep": {
           "count": 2,
@@ -29615,46 +26475,6 @@
           "detail": [
             {
               "latest_release": "serial_part@4.0.0"
-            }
-          ]
-        },
-        "orphan_isolated": {
-          "count": 3,
-          "detail": [
-            {
-              "name": "KeyCharacteristic",
-              "kind": "Characteristic",
-              "file": "SerialPart"
-            },
-            {
-              "name": "DateTimeCharacteristic",
-              "kind": "Characteristic",
-              "file": "SerialPart"
-            },
-            {
-              "name": "CountryCodeCharacteristic",
-              "kind": "Characteristic",
-              "file": "SerialPart"
-            }
-          ]
-        },
-        "orphan_unreachable": {
-          "count": 3,
-          "detail": [
-            {
-              "name": "KeyCharacteristic",
-              "kind": "Characteristic",
-              "file": "SerialPart"
-            },
-            {
-              "name": "DateTimeCharacteristic",
-              "kind": "Characteristic",
-              "file": "SerialPart"
-            },
-            {
-              "name": "CountryCodeCharacteristic",
-              "kind": "Characteristic",
-              "file": "SerialPart"
             }
           ]
         },
@@ -29717,7 +26537,7 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 17,
+      "total": 11,
       "issues": {
         "deprecated_dep": {
           "count": 2,
@@ -29743,46 +26563,6 @@
           "detail": [
             {
               "latest_release": "serial_part@4.0.0"
-            }
-          ]
-        },
-        "orphan_isolated": {
-          "count": 3,
-          "detail": [
-            {
-              "name": "KeyCharacteristic",
-              "kind": "Characteristic",
-              "file": "SerialPart"
-            },
-            {
-              "name": "DateTimeCharacteristic",
-              "kind": "Characteristic",
-              "file": "SerialPart"
-            },
-            {
-              "name": "CountryCodeCharacteristic",
-              "kind": "Characteristic",
-              "file": "SerialPart"
-            }
-          ]
-        },
-        "orphan_unreachable": {
-          "count": 3,
-          "detail": [
-            {
-              "name": "KeyCharacteristic",
-              "kind": "Characteristic",
-              "file": "SerialPart"
-            },
-            {
-              "name": "DateTimeCharacteristic",
-              "kind": "Characteristic",
-              "file": "SerialPart"
-            },
-            {
-              "name": "CountryCodeCharacteristic",
-              "kind": "Characteristic",
-              "file": "SerialPart"
             }
           ]
         },
@@ -29877,33 +26657,13 @@
       "family": "BAMM",
       "source": "catenax",
       "status": "release",
-      "total": 13,
+      "total": 11,
       "issues": {
         "older_release_exists": {
           "count": 1,
           "detail": [
             {
               "latest_release": "shared.address_characteristic@4.0.0"
-            }
-          ]
-        },
-        "orphan_isolated": {
-          "count": 1,
-          "detail": [
-            {
-              "name": "CountryShortNameCharacteristic",
-              "kind": "Characteristic",
-              "file": "AddressAspect"
-            }
-          ]
-        },
-        "orphan_unreachable": {
-          "count": 1,
-          "detail": [
-            {
-              "name": "CountryShortNameCharacteristic",
-              "kind": "Characteristic",
-              "file": "AddressAspect"
             }
           ]
         },
@@ -29979,33 +26739,13 @@
       "family": "BAMM",
       "source": "catenax",
       "status": "release",
-      "total": 12,
+      "total": 10,
       "issues": {
         "older_release_exists": {
           "count": 1,
           "detail": [
             {
               "latest_release": "shared.address_characteristic@4.0.0"
-            }
-          ]
-        },
-        "orphan_isolated": {
-          "count": 1,
-          "detail": [
-            {
-              "name": "CountryShortNameCharacteristic",
-              "kind": "Characteristic",
-              "file": "AddressAspect"
-            }
-          ]
-        },
-        "orphan_unreachable": {
-          "count": 1,
-          "detail": [
-            {
-              "name": "CountryShortNameCharacteristic",
-              "kind": "Characteristic",
-              "file": "AddressAspect"
             }
           ]
         },
@@ -30072,33 +26812,13 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 16,
+      "total": 14,
       "issues": {
         "older_release_exists": {
           "count": 1,
           "detail": [
             {
               "latest_release": "shared.address_characteristic@4.0.0"
-            }
-          ]
-        },
-        "orphan_isolated": {
-          "count": 1,
-          "detail": [
-            {
-              "name": "CountryShortNameCharacteristic",
-              "kind": "Characteristic",
-              "file": "AddressAspect"
-            }
-          ]
-        },
-        "orphan_unreachable": {
-          "count": 1,
-          "detail": [
-            {
-              "name": "CountryShortNameCharacteristic",
-              "kind": "Characteristic",
-              "file": "AddressAspect"
             }
           ]
         },
@@ -30190,28 +26910,8 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 14,
+      "total": 12,
       "issues": {
-        "orphan_isolated": {
-          "count": 1,
-          "detail": [
-            {
-              "name": "CountryShortNameCharacteristic",
-              "kind": "Characteristic",
-              "file": "AddressAspect"
-            }
-          ]
-        },
-        "orphan_unreachable": {
-          "count": 1,
-          "detail": [
-            {
-              "name": "CountryShortNameCharacteristic",
-              "kind": "Characteristic",
-              "file": "AddressAspect"
-            }
-          ]
-        },
         "property_without_characteristic": {
           "count": 5,
           "detail": [
@@ -30426,53 +27126,13 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 11,
+      "total": 5,
       "issues": {
         "older_release_exists": {
           "count": 1,
           "detail": [
             {
               "latest_release": "shared.business_partner_number@2.0.0"
-            }
-          ]
-        },
-        "orphan_isolated": {
-          "count": 3,
-          "detail": [
-            {
-              "name": "BpnlCharacteristic",
-              "kind": "Characteristic",
-              "file": "BusinessPartnerNumber"
-            },
-            {
-              "name": "BpnaCharacteristic",
-              "kind": "Characteristic",
-              "file": "BusinessPartnerNumber"
-            },
-            {
-              "name": "BpnsCharacteristic",
-              "kind": "Characteristic",
-              "file": "BusinessPartnerNumber"
-            }
-          ]
-        },
-        "orphan_unreachable": {
-          "count": 3,
-          "detail": [
-            {
-              "name": "BpnlCharacteristic",
-              "kind": "Characteristic",
-              "file": "BusinessPartnerNumber"
-            },
-            {
-              "name": "BpnaCharacteristic",
-              "kind": "Characteristic",
-              "file": "BusinessPartnerNumber"
-            },
-            {
-              "name": "BpnsCharacteristic",
-              "kind": "Characteristic",
-              "file": "BusinessPartnerNumber"
             }
           ]
         },
@@ -30513,48 +27173,8 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 9,
+      "total": 3,
       "issues": {
-        "orphan_isolated": {
-          "count": 3,
-          "detail": [
-            {
-              "name": "BpnlCharacteristic",
-              "kind": "Characteristic",
-              "file": "BusinessPartnerNumber"
-            },
-            {
-              "name": "BpnaCharacteristic",
-              "kind": "Characteristic",
-              "file": "BusinessPartnerNumber"
-            },
-            {
-              "name": "BpnsCharacteristic",
-              "kind": "Characteristic",
-              "file": "BusinessPartnerNumber"
-            }
-          ]
-        },
-        "orphan_unreachable": {
-          "count": 3,
-          "detail": [
-            {
-              "name": "BpnlCharacteristic",
-              "kind": "Characteristic",
-              "file": "BusinessPartnerNumber"
-            },
-            {
-              "name": "BpnaCharacteristic",
-              "kind": "Characteristic",
-              "file": "BusinessPartnerNumber"
-            },
-            {
-              "name": "BpnsCharacteristic",
-              "kind": "Characteristic",
-              "file": "BusinessPartnerNumber"
-            }
-          ]
-        },
         "characteristic_without_datatype": {
           "count": 3,
           "detail": [
@@ -31199,7 +27819,7 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 14,
+      "total": 12,
       "issues": {
         "outdated_dependency": {
           "count": 2,
@@ -31219,26 +27839,6 @@
           "detail": [
             {
               "latest_release": "shared.message_header@3.0.0"
-            }
-          ]
-        },
-        "orphan_isolated": {
-          "count": 1,
-          "detail": [
-            {
-              "name": "VersionCharacteristic",
-              "kind": "Characteristic",
-              "file": "MessageHeaderAspect"
-            }
-          ]
-        },
-        "orphan_unreachable": {
-          "count": 1,
-          "detail": [
-            {
-              "name": "VersionCharacteristic",
-              "kind": "Characteristic",
-              "file": "MessageHeaderAspect"
             }
           ]
         },
@@ -31309,28 +27909,8 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 11,
+      "total": 9,
       "issues": {
-        "orphan_isolated": {
-          "count": 1,
-          "detail": [
-            {
-              "name": "VersionCharacteristic",
-              "kind": "Characteristic",
-              "file": "MessageHeaderAspect"
-            }
-          ]
-        },
-        "orphan_unreachable": {
-          "count": 1,
-          "detail": [
-            {
-              "name": "VersionCharacteristic",
-              "kind": "Characteristic",
-              "file": "MessageHeaderAspect"
-            }
-          ]
-        },
         "property_without_characteristic": {
           "count": 6,
           "detail": [
@@ -31624,58 +28204,8 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 37,
+      "total": 29,
       "issues": {
-        "orphan_isolated": {
-          "count": 4,
-          "detail": [
-            {
-              "name": "CountryCodeCharacteristic",
-              "kind": "Characteristic",
-              "file": "QualityCore"
-            },
-            {
-              "name": "HexCodeCharacteristic",
-              "kind": "Characteristic",
-              "file": "QualityCore"
-            },
-            {
-              "name": "Integer",
-              "kind": "Characteristic",
-              "file": "QualityCore"
-            },
-            {
-              "name": "Float",
-              "kind": "Characteristic",
-              "file": "QualityCore"
-            }
-          ]
-        },
-        "orphan_unreachable": {
-          "count": 4,
-          "detail": [
-            {
-              "name": "CountryCodeCharacteristic",
-              "kind": "Characteristic",
-              "file": "QualityCore"
-            },
-            {
-              "name": "HexCodeCharacteristic",
-              "kind": "Characteristic",
-              "file": "QualityCore"
-            },
-            {
-              "name": "Integer",
-              "kind": "Characteristic",
-              "file": "QualityCore"
-            },
-            {
-              "name": "Float",
-              "kind": "Characteristic",
-              "file": "QualityCore"
-            }
-          ]
-        },
         "property_without_characteristic": {
           "count": 22,
           "detail": [
@@ -32105,33 +28635,13 @@
       "family": "BAMM",
       "source": "catenax",
       "status": "release",
-      "total": 7,
+      "total": 5,
       "issues": {
         "older_release_exists": {
           "count": 1,
           "detail": [
             {
               "latest_release": "shared.recycling_strategy_certificate@3.0.0"
-            }
-          ]
-        },
-        "orphan_isolated": {
-          "count": 1,
-          "detail": [
-            {
-              "name": "UUIDCharacteristic",
-              "kind": "Characteristic",
-              "file": "RecyclingStrategyCertificate"
-            }
-          ]
-        },
-        "orphan_unreachable": {
-          "count": 1,
-          "detail": [
-            {
-              "name": "UUIDCharacteristic",
-              "kind": "Characteristic",
-              "file": "RecyclingStrategyCertificate"
             }
           ]
         },
@@ -32323,38 +28833,8 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 18,
+      "total": 14,
       "issues": {
-        "orphan_isolated": {
-          "count": 2,
-          "detail": [
-            {
-              "name": "UnitReferenceCharacteristic",
-              "kind": "Characteristic",
-              "file": "SecondaryMaterialContent"
-            },
-            {
-              "name": "PercentageOfMaterialWeightCharacteristic",
-              "kind": "Characteristic",
-              "file": "SecondaryMaterialContent"
-            }
-          ]
-        },
-        "orphan_unreachable": {
-          "count": 2,
-          "detail": [
-            {
-              "name": "UnitReferenceCharacteristic",
-              "kind": "Characteristic",
-              "file": "SecondaryMaterialContent"
-            },
-            {
-              "name": "PercentageOfMaterialWeightCharacteristic",
-              "kind": "Characteristic",
-              "file": "SecondaryMaterialContent"
-            }
-          ]
-        },
         "property_without_characteristic": {
           "count": 7,
           "detail": [
@@ -32614,33 +29094,13 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 5,
+      "total": 3,
       "issues": {
         "older_release_exists": {
           "count": 1,
           "detail": [
             {
               "latest_release": "shared.uuid@2.0.0"
-            }
-          ]
-        },
-        "orphan_isolated": {
-          "count": 1,
-          "detail": [
-            {
-              "name": "Uuidv4Characteristic",
-              "kind": "Characteristic",
-              "file": "Uuid"
-            }
-          ]
-        },
-        "orphan_unreachable": {
-          "count": 1,
-          "detail": [
-            {
-              "name": "Uuidv4Characteristic",
-              "kind": "Characteristic",
-              "file": "Uuid"
             }
           ]
         },
@@ -32671,28 +29131,8 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 4,
+      "total": 2,
       "issues": {
-        "orphan_isolated": {
-          "count": 1,
-          "detail": [
-            {
-              "name": "Uuidv4Characteristic",
-              "kind": "Characteristic",
-              "file": "Uuid"
-            }
-          ]
-        },
-        "orphan_unreachable": {
-          "count": 1,
-          "detail": [
-            {
-              "name": "Uuidv4Characteristic",
-              "kind": "Characteristic",
-              "file": "Uuid"
-            }
-          ]
-        },
         "characteristic_without_datatype": {
           "count": 1,
           "detail": [
@@ -32717,7 +29157,7 @@
       "family": "SAMM",
       "source": "idta",
       "status": "release",
-      "total": 120,
+      "total": 117,
       "issues": {
         "circular_dep": {
           "count": 1,
@@ -32726,7 +29166,7 @@
           ]
         },
         "orphan_isolated": {
-          "count": 6,
+          "count": 5,
           "detail": [
             {
               "name": "ISO8601Duration",
@@ -32752,16 +29192,11 @@
               "name": "RangeTypeAbstract",
               "kind": "AbstractEntity",
               "file": "TestAspect"
-            },
-            {
-              "name": "LanguageSet",
-              "kind": "Characteristic",
-              "file": "TestAspect"
             }
           ]
         },
         "orphan_unreachable": {
-          "count": 15,
+          "count": 13,
           "detail": [
             {
               "name": "annotations",
@@ -32799,11 +29234,6 @@
               "file": "TestAspect"
             },
             {
-              "name": "DocumentIdentifierSetTrait",
-              "kind": "Characteristic",
-              "file": "TestAspect"
-            },
-            {
               "name": "statements",
               "kind": "AbstractProperty",
               "file": "TestAspect"
@@ -32831,11 +29261,6 @@
             {
               "name": "RangeTypeAbstract",
               "kind": "AbstractEntity",
-              "file": "TestAspect"
-            },
-            {
-              "name": "LanguageSet",
-              "kind": "Characteristic",
               "file": "TestAspect"
             }
           ]
@@ -33987,38 +30412,8 @@
       "family": "BAMM",
       "source": "catenax",
       "status": "deprecated",
-      "total": 12,
+      "total": 8,
       "issues": {
-        "orphan_isolated": {
-          "count": 2,
-          "detail": [
-            {
-              "name": "Uuidv4Characteristic",
-              "kind": "Characteristic",
-              "file": "SingleLevelBomAsBuilt"
-            },
-            {
-              "name": "BpnCharacteristic",
-              "kind": "Characteristic",
-              "file": "SingleLevelBomAsBuilt"
-            }
-          ]
-        },
-        "orphan_unreachable": {
-          "count": 2,
-          "detail": [
-            {
-              "name": "Uuidv4Characteristic",
-              "kind": "Characteristic",
-              "file": "SingleLevelBomAsBuilt"
-            },
-            {
-              "name": "BpnCharacteristic",
-              "kind": "Characteristic",
-              "file": "SingleLevelBomAsBuilt"
-            }
-          ]
-        },
         "key_element_missing_preferred_name": {
           "count": 1,
           "detail": [
@@ -34083,38 +30478,8 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "deprecated",
-      "total": 14,
+      "total": 10,
       "issues": {
-        "orphan_isolated": {
-          "count": 2,
-          "detail": [
-            {
-              "name": "Uuidv4Characteristic",
-              "kind": "Characteristic",
-              "file": "SingleLevelBomAsBuilt"
-            },
-            {
-              "name": "BpnCharacteristic",
-              "kind": "Characteristic",
-              "file": "SingleLevelBomAsBuilt"
-            }
-          ]
-        },
-        "orphan_unreachable": {
-          "count": 2,
-          "detail": [
-            {
-              "name": "Uuidv4Characteristic",
-              "kind": "Characteristic",
-              "file": "SingleLevelBomAsBuilt"
-            },
-            {
-              "name": "BpnCharacteristic",
-              "kind": "Characteristic",
-              "file": "SingleLevelBomAsBuilt"
-            }
-          ]
-        },
         "key_element_missing_preferred_name": {
           "count": 1,
           "detail": [
@@ -34193,7 +30558,7 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 10,
+      "total": 8,
       "issues": {
         "outdated_dependency": {
           "count": 1,
@@ -34209,26 +30574,6 @@
           "detail": [
             {
               "latest_release": "single_level_bom_as_built@4.0.0"
-            }
-          ]
-        },
-        "orphan_isolated": {
-          "count": 1,
-          "detail": [
-            {
-              "name": "DateTimeCharacteristic",
-              "kind": "Characteristic",
-              "file": "SingleLevelBomAsBuilt"
-            }
-          ]
-        },
-        "orphan_unreachable": {
-          "count": 1,
-          "detail": [
-            {
-              "name": "DateTimeCharacteristic",
-              "kind": "Characteristic",
-              "file": "SingleLevelBomAsBuilt"
             }
           ]
         },
@@ -34312,38 +30657,8 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "deprecated",
-      "total": 14,
+      "total": 10,
       "issues": {
-        "orphan_isolated": {
-          "count": 2,
-          "detail": [
-            {
-              "name": "Uuidv4Characteristic",
-              "kind": "Characteristic",
-              "file": "SingleLevelBomAsPlanned"
-            },
-            {
-              "name": "BpnCharacteristic",
-              "kind": "Characteristic",
-              "file": "SingleLevelBomAsPlanned"
-            }
-          ]
-        },
-        "orphan_unreachable": {
-          "count": 2,
-          "detail": [
-            {
-              "name": "Uuidv4Characteristic",
-              "kind": "Characteristic",
-              "file": "SingleLevelBomAsPlanned"
-            },
-            {
-              "name": "BpnCharacteristic",
-              "kind": "Characteristic",
-              "file": "SingleLevelBomAsPlanned"
-            }
-          ]
-        },
         "property_without_characteristic": {
           "count": 5,
           "detail": [
@@ -34417,7 +30732,7 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 9,
+      "total": 7,
       "issues": {
         "outdated_dependency": {
           "count": 1,
@@ -34433,26 +30748,6 @@
           "detail": [
             {
               "latest_release": "single_level_bom_as_planned@4.0.0"
-            }
-          ]
-        },
-        "orphan_isolated": {
-          "count": 1,
-          "detail": [
-            {
-              "name": "DateTimeCharacteristic",
-              "kind": "Characteristic",
-              "file": "SingleLevelBomAsPlanned"
-            }
-          ]
-        },
-        "orphan_unreachable": {
-          "count": 1,
-          "detail": [
-            {
-              "name": "DateTimeCharacteristic",
-              "kind": "Characteristic",
-              "file": "SingleLevelBomAsPlanned"
             }
           ]
         },
@@ -34802,48 +31097,8 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 12,
+      "total": 6,
       "issues": {
-        "orphan_isolated": {
-          "count": 3,
-          "detail": [
-            {
-              "name": "FloatCharacteristic",
-              "kind": "Characteristic",
-              "file": "SingleLevelSceneNode"
-            },
-            {
-              "name": "MatrixCharacteristic",
-              "kind": "Characteristic",
-              "file": "SingleLevelSceneNode"
-            },
-            {
-              "name": "Vector3ListCharacteristic",
-              "kind": "Characteristic",
-              "file": "SingleLevelSceneNode"
-            }
-          ]
-        },
-        "orphan_unreachable": {
-          "count": 3,
-          "detail": [
-            {
-              "name": "FloatCharacteristic",
-              "kind": "Characteristic",
-              "file": "SingleLevelSceneNode"
-            },
-            {
-              "name": "MatrixCharacteristic",
-              "kind": "Characteristic",
-              "file": "SingleLevelSceneNode"
-            },
-            {
-              "name": "Vector3ListCharacteristic",
-              "kind": "Characteristic",
-              "file": "SingleLevelSceneNode"
-            }
-          ]
-        },
         "property_without_characteristic": {
           "count": 1,
           "detail": [
@@ -34892,38 +31147,8 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "deprecated",
-      "total": 13,
+      "total": 9,
       "issues": {
-        "orphan_isolated": {
-          "count": 2,
-          "detail": [
-            {
-              "name": "UUIDv4Characteristic",
-              "kind": "Characteristic",
-              "file": "SingleLevelUsageAsBuilt"
-            },
-            {
-              "name": "BpnCharacteristic",
-              "kind": "Characteristic",
-              "file": "SingleLevelUsageAsBuilt"
-            }
-          ]
-        },
-        "orphan_unreachable": {
-          "count": 2,
-          "detail": [
-            {
-              "name": "UUIDv4Characteristic",
-              "kind": "Characteristic",
-              "file": "SingleLevelUsageAsBuilt"
-            },
-            {
-              "name": "BpnCharacteristic",
-              "kind": "Characteristic",
-              "file": "SingleLevelUsageAsBuilt"
-            }
-          ]
-        },
         "key_element_missing_preferred_name": {
           "count": 1,
           "detail": [
@@ -34997,7 +31222,7 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 11,
+      "total": 9,
       "issues": {
         "outdated_dependency": {
           "count": 1,
@@ -35013,26 +31238,6 @@
           "detail": [
             {
               "latest_release": "single_level_usage_as_built@4.0.0"
-            }
-          ]
-        },
-        "orphan_isolated": {
-          "count": 1,
-          "detail": [
-            {
-              "name": "DateTimeCharacteristic",
-              "kind": "Characteristic",
-              "file": "SingleLevelUsageAsBuilt"
-            }
-          ]
-        },
-        "orphan_unreachable": {
-          "count": 1,
-          "detail": [
-            {
-              "name": "DateTimeCharacteristic",
-              "kind": "Characteristic",
-              "file": "SingleLevelUsageAsBuilt"
             }
           ]
         },
@@ -35121,28 +31326,8 @@
       "family": "BAMM",
       "source": "catenax",
       "status": "deprecated",
-      "total": 10,
+      "total": 8,
       "issues": {
-        "orphan_isolated": {
-          "count": 1,
-          "detail": [
-            {
-              "name": "Uuidv4Characteristic",
-              "kind": "Characteristic",
-              "file": "SingleLevelUsageAsPlanned"
-            }
-          ]
-        },
-        "orphan_unreachable": {
-          "count": 1,
-          "detail": [
-            {
-              "name": "Uuidv4Characteristic",
-              "kind": "Characteristic",
-              "file": "SingleLevelUsageAsPlanned"
-            }
-          ]
-        },
         "property_without_characteristic": {
           "count": 5,
           "detail": [
@@ -35202,7 +31387,7 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 9,
+      "total": 7,
       "issues": {
         "outdated_dependency": {
           "count": 1,
@@ -35218,26 +31403,6 @@
           "detail": [
             {
               "latest_release": "single_level_usage_as_planned@3.0.0"
-            }
-          ]
-        },
-        "orphan_isolated": {
-          "count": 1,
-          "detail": [
-            {
-              "name": "DateTimeCharacteristic",
-              "kind": "Characteristic",
-              "file": "SingleLevelUsageAsPlanned"
-            }
-          ]
-        },
-        "orphan_unreachable": {
-          "count": 1,
-          "detail": [
-            {
-              "name": "DateTimeCharacteristic",
-              "kind": "Characteristic",
-              "file": "SingleLevelUsageAsPlanned"
             }
           ]
         },
@@ -35646,28 +31811,8 @@
       "family": "BAMM",
       "source": "catenax",
       "status": "deprecated",
-      "total": 5,
+      "total": 3,
       "issues": {
-        "orphan_isolated": {
-          "count": 1,
-          "detail": [
-            {
-              "name": "TractionBatteryCodeCharacteristic",
-              "kind": "Characteristic",
-              "file": "TractionBatteryCode"
-            }
-          ]
-        },
-        "orphan_unreachable": {
-          "count": 1,
-          "detail": [
-            {
-              "name": "TractionBatteryCodeCharacteristic",
-              "kind": "Characteristic",
-              "file": "TractionBatteryCode"
-            }
-          ]
-        },
         "characteristic_without_datatype": {
           "count": 2,
           "detail": [
@@ -35697,28 +31842,8 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 5,
+      "total": 3,
       "issues": {
-        "orphan_isolated": {
-          "count": 1,
-          "detail": [
-            {
-              "name": "TractionBatteryCodeCharacteristic",
-              "kind": "Characteristic",
-              "file": "TractionBatteryCode"
-            }
-          ]
-        },
-        "orphan_unreachable": {
-          "count": 1,
-          "detail": [
-            {
-              "name": "TractionBatteryCodeCharacteristic",
-              "kind": "Characteristic",
-              "file": "TractionBatteryCode"
-            }
-          ]
-        },
         "characteristic_without_datatype": {
           "count": 2,
           "detail": [
@@ -35941,7 +32066,7 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "deprecated",
-      "total": 16,
+      "total": 14,
       "issues": {
         "outdated_dependency": {
           "count": 1,
@@ -35949,26 +32074,6 @@
             {
               "target": "generic.digital_product_passport@4.0.0",
               "latest_release": "generic.digital_product_passport@7.0.0"
-            }
-          ]
-        },
-        "orphan_isolated": {
-          "count": 1,
-          "detail": [
-            {
-              "name": "DriveList",
-              "kind": "Characteristic",
-              "file": "TransmissionPass"
-            }
-          ]
-        },
-        "orphan_unreachable": {
-          "count": 1,
-          "detail": [
-            {
-              "name": "DriveList",
-              "kind": "Characteristic",
-              "file": "TransmissionPass"
             }
           ]
         },
@@ -36055,7 +32160,7 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 19,
+      "total": 17,
       "issues": {
         "outdated_dependency": {
           "count": 1,
@@ -36093,26 +32198,6 @@
           "detail": [
             {
               "latest_release": "transmission.transmission_pass@3.1.0"
-            }
-          ]
-        },
-        "orphan_isolated": {
-          "count": 1,
-          "detail": [
-            {
-              "name": "DriveList",
-              "kind": "Characteristic",
-              "file": "TransmissionPass"
-            }
-          ]
-        },
-        "orphan_unreachable": {
-          "count": 1,
-          "detail": [
-            {
-              "name": "DriveList",
-              "kind": "Characteristic",
-              "file": "TransmissionPass"
             }
           ]
         },
@@ -36199,7 +32284,7 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 19,
+      "total": 17,
       "issues": {
         "outdated_dependency": {
           "count": 1,
@@ -36229,26 +32314,6 @@
                 "batch@3.0.0",
                 "shared.part_site_information_as_built@2.0.0"
               ]
-            }
-          ]
-        },
-        "orphan_isolated": {
-          "count": 1,
-          "detail": [
-            {
-              "name": "DriveList",
-              "kind": "Characteristic",
-              "file": "TransmissionPass"
-            }
-          ]
-        },
-        "orphan_unreachable": {
-          "count": 1,
-          "detail": [
-            {
-              "name": "DriveList",
-              "kind": "Characteristic",
-              "file": "TransmissionPass"
             }
           ]
         },
@@ -36340,7 +32405,7 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 24,
+      "total": 18,
       "issues": {
         "outdated_dependency": {
           "count": 1,
@@ -36356,46 +32421,6 @@
           "detail": [
             {
               "latest_release": "us_tariff_information@2.0.0"
-            }
-          ]
-        },
-        "orphan_isolated": {
-          "count": 3,
-          "detail": [
-            {
-              "name": "CurrencyCharacteristic",
-              "kind": "Characteristic",
-              "file": "UsTariffInformation"
-            },
-            {
-              "name": "HtsCharacteristic",
-              "kind": "Characteristic",
-              "file": "UsTariffInformation"
-            },
-            {
-              "name": "CountryCharacteristic",
-              "kind": "Characteristic",
-              "file": "UsTariffInformation"
-            }
-          ]
-        },
-        "orphan_unreachable": {
-          "count": 3,
-          "detail": [
-            {
-              "name": "CurrencyCharacteristic",
-              "kind": "Characteristic",
-              "file": "UsTariffInformation"
-            },
-            {
-              "name": "HtsCharacteristic",
-              "kind": "Characteristic",
-              "file": "UsTariffInformation"
-            },
-            {
-              "name": "CountryCharacteristic",
-              "kind": "Characteristic",
-              "file": "UsTariffInformation"
             }
           ]
         },
@@ -36826,48 +32851,8 @@
       "family": "BAMM",
       "source": "catenax",
       "status": "deprecated",
-      "total": 45,
+      "total": 39,
       "issues": {
-        "orphan_isolated": {
-          "count": 3,
-          "detail": [
-            {
-              "name": "WorldManufacturerInformation",
-              "kind": "Characteristic",
-              "file": "ProductDescription"
-            },
-            {
-              "name": "CountryCodeCharacteristic",
-              "kind": "Characteristic",
-              "file": "ProductDescription"
-            },
-            {
-              "name": "UUIDv4",
-              "kind": "Characteristic",
-              "file": "ProductDescription"
-            }
-          ]
-        },
-        "orphan_unreachable": {
-          "count": 3,
-          "detail": [
-            {
-              "name": "WorldManufacturerInformation",
-              "kind": "Characteristic",
-              "file": "ProductDescription"
-            },
-            {
-              "name": "CountryCodeCharacteristic",
-              "kind": "Characteristic",
-              "file": "ProductDescription"
-            },
-            {
-              "name": "UUIDv4",
-              "kind": "Characteristic",
-              "file": "ProductDescription"
-            }
-          ]
-        },
         "property_without_characteristic": {
           "count": 25,
           "detail": [
@@ -37081,48 +33066,8 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 46,
+      "total": 40,
       "issues": {
-        "orphan_isolated": {
-          "count": 3,
-          "detail": [
-            {
-              "name": "UUIDv4",
-              "kind": "Characteristic",
-              "file": "ProductDescription"
-            },
-            {
-              "name": "WorldManufacturerInformation",
-              "kind": "Characteristic",
-              "file": "ProductDescription"
-            },
-            {
-              "name": "CountryCodeCharacteristic",
-              "kind": "Characteristic",
-              "file": "ProductDescription"
-            }
-          ]
-        },
-        "orphan_unreachable": {
-          "count": 3,
-          "detail": [
-            {
-              "name": "UUIDv4",
-              "kind": "Characteristic",
-              "file": "ProductDescription"
-            },
-            {
-              "name": "WorldManufacturerInformation",
-              "kind": "Characteristic",
-              "file": "ProductDescription"
-            },
-            {
-              "name": "CountryCodeCharacteristic",
-              "kind": "Characteristic",
-              "file": "ProductDescription"
-            }
-          ]
-        },
         "property_without_characteristic": {
           "count": 24,
           "detail": [
@@ -37430,28 +33375,8 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 12,
+      "total": 10,
       "issues": {
-        "orphan_isolated": {
-          "count": 1,
-          "detail": [
-            {
-              "name": "Float",
-              "kind": "Characteristic",
-              "file": "WarrantyClaimRequestVerification"
-            }
-          ]
-        },
-        "orphan_unreachable": {
-          "count": 1,
-          "detail": [
-            {
-              "name": "Float",
-              "kind": "Characteristic",
-              "file": "WarrantyClaimRequestVerification"
-            }
-          ]
-        },
         "property_without_characteristic": {
           "count": 7,
           "detail": [
@@ -37787,68 +33712,8 @@
       "family": "BAMM",
       "source": "catenax",
       "status": "deprecated",
-      "total": 22,
+      "total": 12,
       "issues": {
-        "orphan_isolated": {
-          "count": 5,
-          "detail": [
-            {
-              "name": "UUIDv4",
-              "kind": "Characteristic",
-              "file": "WeekBasedCapacityGroup"
-            },
-            {
-              "name": "BPNL",
-              "kind": "Characteristic",
-              "file": "WeekBasedCapacityGroup"
-            },
-            {
-              "name": "BPNS",
-              "kind": "Characteristic",
-              "file": "WeekBasedCapacityGroup"
-            },
-            {
-              "name": "Quantity",
-              "kind": "Characteristic",
-              "file": "WeekBasedCapacityGroup"
-            },
-            {
-              "name": "BPNSSet",
-              "kind": "Characteristic",
-              "file": "WeekBasedCapacityGroup"
-            }
-          ]
-        },
-        "orphan_unreachable": {
-          "count": 5,
-          "detail": [
-            {
-              "name": "UUIDv4",
-              "kind": "Characteristic",
-              "file": "WeekBasedCapacityGroup"
-            },
-            {
-              "name": "BPNL",
-              "kind": "Characteristic",
-              "file": "WeekBasedCapacityGroup"
-            },
-            {
-              "name": "BPNS",
-              "kind": "Characteristic",
-              "file": "WeekBasedCapacityGroup"
-            },
-            {
-              "name": "Quantity",
-              "kind": "Characteristic",
-              "file": "WeekBasedCapacityGroup"
-            },
-            {
-              "name": "BPNSSet",
-              "kind": "Characteristic",
-              "file": "WeekBasedCapacityGroup"
-            }
-          ]
-        },
         "property_without_characteristic": {
           "count": 1,
           "detail": [
@@ -37927,7 +33792,7 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "deprecated",
-      "total": 29,
+      "total": 23,
       "issues": {
         "outdated_dependency": {
           "count": 3,
@@ -37943,46 +33808,6 @@
             {
               "target": "shared.uuid@1.0.0",
               "latest_release": "shared.uuid@2.0.0"
-            }
-          ]
-        },
-        "orphan_isolated": {
-          "count": 3,
-          "detail": [
-            {
-              "name": "Quantity",
-              "kind": "Characteristic",
-              "file": "WeekBasedCapacityGroup"
-            },
-            {
-              "name": "BPNSTrait",
-              "kind": "Characteristic",
-              "file": "WeekBasedCapacityGroup"
-            },
-            {
-              "name": "UUIDv4IdTrait",
-              "kind": "Characteristic",
-              "file": "WeekBasedCapacityGroup"
-            }
-          ]
-        },
-        "orphan_unreachable": {
-          "count": 3,
-          "detail": [
-            {
-              "name": "Quantity",
-              "kind": "Characteristic",
-              "file": "WeekBasedCapacityGroup"
-            },
-            {
-              "name": "BPNSTrait",
-              "kind": "Characteristic",
-              "file": "WeekBasedCapacityGroup"
-            },
-            {
-              "name": "UUIDv4IdTrait",
-              "kind": "Characteristic",
-              "file": "WeekBasedCapacityGroup"
             }
           ]
         },
@@ -38113,7 +33938,7 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 33,
+      "total": 25,
       "issues": {
         "outdated_dependency": {
           "count": 1,
@@ -38129,56 +33954,6 @@
           "detail": [
             {
               "latest_release": "week_based_capacity_group@3.0.1"
-            }
-          ]
-        },
-        "orphan_isolated": {
-          "count": 4,
-          "detail": [
-            {
-              "name": "Quantity",
-              "kind": "Characteristic",
-              "file": "WeekBasedCapacityGroup"
-            },
-            {
-              "name": "Integer",
-              "kind": "Characteristic",
-              "file": "WeekBasedCapacityGroup"
-            },
-            {
-              "name": "BPNSTrait",
-              "kind": "Characteristic",
-              "file": "WeekBasedCapacityGroup"
-            },
-            {
-              "name": "UUIDv4IdTrait",
-              "kind": "Characteristic",
-              "file": "WeekBasedCapacityGroup"
-            }
-          ]
-        },
-        "orphan_unreachable": {
-          "count": 4,
-          "detail": [
-            {
-              "name": "Quantity",
-              "kind": "Characteristic",
-              "file": "WeekBasedCapacityGroup"
-            },
-            {
-              "name": "Integer",
-              "kind": "Characteristic",
-              "file": "WeekBasedCapacityGroup"
-            },
-            {
-              "name": "BPNSTrait",
-              "kind": "Characteristic",
-              "file": "WeekBasedCapacityGroup"
-            },
-            {
-              "name": "UUIDv4IdTrait",
-              "kind": "Characteristic",
-              "file": "WeekBasedCapacityGroup"
             }
           ]
         },
@@ -38320,7 +34095,7 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 32,
+      "total": 24,
       "issues": {
         "outdated_dependency": {
           "count": 1,
@@ -38328,56 +34103,6 @@
             {
               "target": "shared.quantity@2.0.0",
               "latest_release": "shared.quantity@3.0.0"
-            }
-          ]
-        },
-        "orphan_isolated": {
-          "count": 4,
-          "detail": [
-            {
-              "name": "Quantity",
-              "kind": "Characteristic",
-              "file": "WeekBasedCapacityGroup"
-            },
-            {
-              "name": "Integer",
-              "kind": "Characteristic",
-              "file": "WeekBasedCapacityGroup"
-            },
-            {
-              "name": "BPNSTrait",
-              "kind": "Characteristic",
-              "file": "WeekBasedCapacityGroup"
-            },
-            {
-              "name": "UUIDv4IdTrait",
-              "kind": "Characteristic",
-              "file": "WeekBasedCapacityGroup"
-            }
-          ]
-        },
-        "orphan_unreachable": {
-          "count": 4,
-          "detail": [
-            {
-              "name": "Quantity",
-              "kind": "Characteristic",
-              "file": "WeekBasedCapacityGroup"
-            },
-            {
-              "name": "Integer",
-              "kind": "Characteristic",
-              "file": "WeekBasedCapacityGroup"
-            },
-            {
-              "name": "BPNSTrait",
-              "kind": "Characteristic",
-              "file": "WeekBasedCapacityGroup"
-            },
-            {
-              "name": "UUIDv4IdTrait",
-              "kind": "Characteristic",
-              "file": "WeekBasedCapacityGroup"
             }
           ]
         },
@@ -38519,58 +34244,8 @@
       "family": "BAMM",
       "source": "catenax",
       "status": "deprecated",
-      "total": 20,
+      "total": 12,
       "issues": {
-        "orphan_isolated": {
-          "count": 4,
-          "detail": [
-            {
-              "name": "UUIDv4",
-              "kind": "Characteristic",
-              "file": "WeekBasedMaterialDemand"
-            },
-            {
-              "name": "BPNL",
-              "kind": "Characteristic",
-              "file": "WeekBasedMaterialDemand"
-            },
-            {
-              "name": "BPNS",
-              "kind": "Characteristic",
-              "file": "WeekBasedMaterialDemand"
-            },
-            {
-              "name": "Quantity",
-              "kind": "Characteristic",
-              "file": "WeekBasedMaterialDemand"
-            }
-          ]
-        },
-        "orphan_unreachable": {
-          "count": 4,
-          "detail": [
-            {
-              "name": "UUIDv4",
-              "kind": "Characteristic",
-              "file": "WeekBasedMaterialDemand"
-            },
-            {
-              "name": "BPNL",
-              "kind": "Characteristic",
-              "file": "WeekBasedMaterialDemand"
-            },
-            {
-              "name": "BPNS",
-              "kind": "Characteristic",
-              "file": "WeekBasedMaterialDemand"
-            },
-            {
-              "name": "Quantity",
-              "kind": "Characteristic",
-              "file": "WeekBasedMaterialDemand"
-            }
-          ]
-        },
         "property_without_characteristic": {
           "count": 1,
           "detail": [
@@ -38650,58 +34325,8 @@
       "family": "BAMM",
       "source": "catenax",
       "status": "deprecated",
-      "total": 19,
+      "total": 11,
       "issues": {
-        "orphan_isolated": {
-          "count": 4,
-          "detail": [
-            {
-              "name": "UUIDv4",
-              "kind": "Characteristic",
-              "file": "WeekBasedMaterialDemand"
-            },
-            {
-              "name": "BPNL",
-              "kind": "Characteristic",
-              "file": "WeekBasedMaterialDemand"
-            },
-            {
-              "name": "BPNS",
-              "kind": "Characteristic",
-              "file": "WeekBasedMaterialDemand"
-            },
-            {
-              "name": "Quantity",
-              "kind": "Characteristic",
-              "file": "WeekBasedMaterialDemand"
-            }
-          ]
-        },
-        "orphan_unreachable": {
-          "count": 4,
-          "detail": [
-            {
-              "name": "UUIDv4",
-              "kind": "Characteristic",
-              "file": "WeekBasedMaterialDemand"
-            },
-            {
-              "name": "BPNL",
-              "kind": "Characteristic",
-              "file": "WeekBasedMaterialDemand"
-            },
-            {
-              "name": "BPNS",
-              "kind": "Characteristic",
-              "file": "WeekBasedMaterialDemand"
-            },
-            {
-              "name": "Quantity",
-              "kind": "Characteristic",
-              "file": "WeekBasedMaterialDemand"
-            }
-          ]
-        },
         "property_without_characteristic": {
           "count": 1,
           "detail": [
@@ -38775,58 +34400,8 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "deprecated",
-      "total": 20,
+      "total": 12,
       "issues": {
-        "orphan_isolated": {
-          "count": 4,
-          "detail": [
-            {
-              "name": "UUIDv4",
-              "kind": "Characteristic",
-              "file": "WeekBasedMaterialDemand"
-            },
-            {
-              "name": "BPNL",
-              "kind": "Characteristic",
-              "file": "WeekBasedMaterialDemand"
-            },
-            {
-              "name": "BPNS",
-              "kind": "Characteristic",
-              "file": "WeekBasedMaterialDemand"
-            },
-            {
-              "name": "Quantity",
-              "kind": "Characteristic",
-              "file": "WeekBasedMaterialDemand"
-            }
-          ]
-        },
-        "orphan_unreachable": {
-          "count": 4,
-          "detail": [
-            {
-              "name": "UUIDv4",
-              "kind": "Characteristic",
-              "file": "WeekBasedMaterialDemand"
-            },
-            {
-              "name": "BPNL",
-              "kind": "Characteristic",
-              "file": "WeekBasedMaterialDemand"
-            },
-            {
-              "name": "BPNS",
-              "kind": "Characteristic",
-              "file": "WeekBasedMaterialDemand"
-            },
-            {
-              "name": "Quantity",
-              "kind": "Characteristic",
-              "file": "WeekBasedMaterialDemand"
-            }
-          ]
-        },
         "property_without_characteristic": {
           "count": 1,
           "detail": [
@@ -38906,7 +34481,7 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 20,
+      "total": 18,
       "issues": {
         "outdated_dependency": {
           "count": 1,
@@ -38922,26 +34497,6 @@
           "detail": [
             {
               "latest_release": "week_based_material_demand@3.0.1"
-            }
-          ]
-        },
-        "orphan_isolated": {
-          "count": 1,
-          "detail": [
-            {
-              "name": "Quantity",
-              "kind": "Characteristic",
-              "file": "WeekBasedMaterialDemand"
-            }
-          ]
-        },
-        "orphan_unreachable": {
-          "count": 1,
-          "detail": [
-            {
-              "name": "Quantity",
-              "kind": "Characteristic",
-              "file": "WeekBasedMaterialDemand"
             }
           ]
         },
@@ -39043,7 +34598,7 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 19,
+      "total": 17,
       "issues": {
         "outdated_dependency": {
           "count": 1,
@@ -39051,26 +34606,6 @@
             {
               "target": "shared.quantity@2.0.0",
               "latest_release": "shared.quantity@3.0.0"
-            }
-          ]
-        },
-        "orphan_isolated": {
-          "count": 1,
-          "detail": [
-            {
-              "name": "Quantity",
-              "kind": "Characteristic",
-              "file": "WeekBasedMaterialDemand"
-            }
-          ]
-        },
-        "orphan_unreachable": {
-          "count": 1,
-          "detail": [
-            {
-              "name": "Quantity",
-              "kind": "Characteristic",
-              "file": "WeekBasedMaterialDemand"
             }
           ]
         },

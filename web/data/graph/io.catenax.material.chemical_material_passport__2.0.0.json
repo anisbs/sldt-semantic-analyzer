@@ -1475,14 +1475,30 @@
       "label": "UNNumberTrait",
       "kind": "Characteristic",
       "preferredName": "UN Number Trait",
-      "description": "Trait for the UN number."
+      "description": "Trait for the UN number.",
+      "external_refs": [
+        {
+          "predicate": "baseCharacteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.material.chemical_material_passport:2.0.0#PrecautionaryCodeTrait",
       "label": "PrecautionaryCodeTrait",
       "kind": "Characteristic",
       "preferredName": "Precautionary Code Trait",
-      "description": "Trait for the precautionary codes."
+      "description": "Trait for the precautionary codes.",
+      "external_refs": [
+        {
+          "predicate": "baseCharacteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.material.chemical_material_passport:2.0.0#CountryCodeRegEx",
@@ -2423,6 +2439,12 @@
       "source": "urn:samm:io.catenax.material.chemical_material_passport:2.0.0#SpecialProvisionsCodeList",
       "target": "urn:samm:io.catenax.material.chemical_material_passport:2.0.0#SpecialProvisionsCodeEntity",
       "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.material.chemical_material_passport:2.0.0#ProductComplianceCountryTrait",
+      "target": "urn:samm:io.catenax.material.chemical_material_passport:2.0.0#StringList",
+      "label": "baseCharacteristic",
       "optional": false
     },
     {

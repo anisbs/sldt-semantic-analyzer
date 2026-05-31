@@ -575,7 +575,15 @@
       "label": "MarketIndexCurrencyTrait",
       "kind": "Characteristic",
       "preferredName": null,
-      "description": null
+      "description": null,
+      "external_refs": [
+        {
+          "predicate": "baseCharacteristic",
+          "target_local": "Text",
+          "target_model": "io.openmanufacturing:characteristic@1.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.waste:1.0.0#LengthConstraint",

@@ -460,6 +460,12 @@
     },
     {
       "source": "urn:samm:io.catenax.just_in_sequence_part:2.0.0#ProductionCountryCodeTrait",
+      "target": "urn:samm:io.catenax.just_in_sequence_part:2.0.0#CountryCodeCharacteristic",
+      "label": "baseCharacteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.just_in_sequence_part:2.0.0#ProductionCountryCodeTrait",
       "target": "urn:samm:io.catenax.just_in_sequence_part:2.0.0#CountryCodeRegularExpression",
       "label": "constraint",
       "optional": false

@@ -286,7 +286,15 @@
       "label": "PostCodeTrait",
       "kind": "Characteristic",
       "preferredName": null,
-      "description": null
+      "description": null,
+      "external_refs": [
+        {
+          "predicate": "baseCharacteristic",
+          "target_local": "Text",
+          "target_model": "io.openmanufacturing:characteristic@1.0.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:bamm:io.catenax.shared.address_characteristic:1.0.1#CountryTrait",
@@ -654,6 +662,12 @@
       "source": "urn:bamm:io.catenax.shared.address_characteristic:1.0.1#PostCodeCharacteristic",
       "target": "urn:bamm:io.catenax.shared.address_characteristic:1.0.1#PostCodeEntity",
       "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:bamm:io.catenax.shared.address_characteristic:1.0.1#CountryTrait",
+      "target": "urn:bamm:io.catenax.shared.address_characteristic:1.0.1#CountryShortNameCharacteristic",
+      "label": "baseCharacteristic",
       "optional": false
     },
     {

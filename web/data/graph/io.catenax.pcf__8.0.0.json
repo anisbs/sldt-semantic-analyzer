@@ -1204,7 +1204,15 @@
       "label": "NonEmptyStringTrait",
       "kind": "Characteristic",
       "preferredName": "Non Empty String Trait",
-      "description": "Trait for defining a string with at least one character."
+      "description": "Trait for defining a string with at least one character.",
+      "external_refs": [
+        {
+          "predicate": "baseCharacteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.pcf:8.0.0#StrictlyPositiveDecimalTrait",
@@ -1232,14 +1240,30 @@
       "label": "GeographyCountrySubdivisionTrait",
       "kind": "Characteristic",
       "preferredName": "Geography Country Subdivision Trait",
-      "description": "Trait for defining a country subdivision in context of a product carbon footprint."
+      "description": "Trait for defining a country subdivision in context of a product carbon footprint.",
+      "external_refs": [
+        {
+          "predicate": "baseCharacteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.pcf:8.0.0#GeographyCountryTrait",
       "label": "GeographyCountryTrait",
       "kind": "Characteristic",
       "preferredName": "Geography Country Trait",
-      "description": "Trait for defining a geography country in context of a product carbon footprint."
+      "description": "Trait for defining a geography country in context of a product carbon footprint.",
+      "external_refs": [
+        {
+          "predicate": "baseCharacteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.pcf:8.0.0#PercentTrait",
@@ -2520,6 +2544,60 @@
       "source": "urn:samm:io.catenax.pcf:8.0.0#AttestationOfConformanceCollection",
       "target": "urn:samm:io.catenax.pcf:8.0.0#AttestationOfConformanceEntity",
       "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.pcf:8.0.0#StrictlyPositiveDecimalTrait",
+      "target": "urn:samm:io.catenax.pcf:8.0.0#StrictlyPositiveDecimal",
+      "label": "baseCharacteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.pcf:8.0.0#PositiveDecimalWeightTrait",
+      "target": "urn:samm:io.catenax.pcf:8.0.0#PositiveDecimalWeight",
+      "label": "baseCharacteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.pcf:8.0.0#ExemptedEmissionsPercentTrait",
+      "target": "urn:samm:io.catenax.pcf:8.0.0#ExemptedEmissionsPercentCharacteristic",
+      "label": "baseCharacteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.pcf:8.0.0#PercentTrait",
+      "target": "urn:samm:io.catenax.pcf:8.0.0#Percent",
+      "label": "baseCharacteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.pcf:8.0.0#PositiveEmissionsTrait",
+      "target": "urn:samm:io.catenax.pcf:8.0.0#PositiveEmission",
+      "label": "baseCharacteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.pcf:8.0.0#NegativeEmissionsTrait",
+      "target": "urn:samm:io.catenax.pcf:8.0.0#NegativeEmission",
+      "label": "baseCharacteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.pcf:8.0.0#ProgramCertificationShareTrait",
+      "target": "urn:samm:io.catenax.pcf:8.0.0#ProgramCertificationShareCharacteristic",
+      "label": "baseCharacteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.pcf:8.0.0#DqiNumberTrait",
+      "target": "urn:samm:io.catenax.pcf:8.0.0#DqiNumber",
+      "label": "baseCharacteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.pcf:8.0.0#SpecVersionTrait",
+      "target": "urn:samm:io.catenax.pcf:8.0.0#SpecVersionCharacteristic",
+      "label": "baseCharacteristic",
       "optional": false
     },
     {

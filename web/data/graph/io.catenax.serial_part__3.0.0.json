@@ -481,6 +481,24 @@
     },
     {
       "source": "urn:samm:io.catenax.serial_part:3.0.0#KeyTrait",
+      "target": "urn:samm:io.catenax.serial_part:3.0.0#KeyCharacteristic",
+      "label": "baseCharacteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.serial_part:3.0.0#DateTimeTrait",
+      "target": "urn:samm:io.catenax.serial_part:3.0.0#DateTimeCharacteristic",
+      "label": "baseCharacteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.serial_part:3.0.0#ProductionCountryCodeTrait",
+      "target": "urn:samm:io.catenax.serial_part:3.0.0#CountryCodeCharacteristic",
+      "label": "baseCharacteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.serial_part:3.0.0#KeyTrait",
       "target": "urn:samm:io.catenax.serial_part:3.0.0#KeyRegularExpression",
       "label": "constraint",
       "optional": false

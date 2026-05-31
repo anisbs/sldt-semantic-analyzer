@@ -439,7 +439,15 @@
       "label": "ModelVersionTrait",
       "kind": "Characteristic",
       "preferredName": "Model Versioning Trait",
-      "description": "This trait ensures proper versioning of an aspect model."
+      "description": "This trait ensures proper versioning of an aspect model.",
+      "external_refs": [
+        {
+          "predicate": "baseCharacteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.catenax.failure_pattern:1.0.0#RegexForAspectModelVersions",

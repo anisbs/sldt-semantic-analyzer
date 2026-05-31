@@ -72,6 +72,12 @@
     },
     {
       "source": "urn:samm:io.catenax.shared.uuid:1.0.0#UuidV4Trait",
+      "target": "urn:samm:io.catenax.shared.uuid:1.0.0#Uuidv4Characteristic",
+      "label": "baseCharacteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.shared.uuid:1.0.0#UuidV4Trait",
       "target": "urn:samm:io.catenax.shared.uuid:1.0.0#Uuidv4RegularExpression",
       "label": "constraint",
       "optional": false
