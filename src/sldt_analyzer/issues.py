@@ -230,12 +230,16 @@ _NAME_PROP = re.compile(r"^[a-z][a-zA-Z0-9]*$")    # camelCase
 _NAME_TYPE = re.compile(r"^[A-Z][a-zA-Z0-9]*$")    # PascalCase
 
 # Sous-types de `Characteristic` qui n'exigent PAS `samm:dataType` (Trait
-# utilise baseCharacteristic+constraint, les *Constraint sont des contraintes
-# pas des caractéristiques porteuses de données). Tout sous-type ABSENT de
-# cette liste qui n'est pas non plus `Characteristic` "pur" est traité comme
-# un sous-type spécialisé (Enumeration, Quantifiable, …) -> dataType requis.
+# utilise baseCharacteristic+constraint, Either utilise left+right, les
+# *Constraint sont des contraintes pas des caractéristiques porteuses de
+# données). Tout sous-type ABSENT de cette liste qui n'est pas non plus
+# `Characteristic` "pur" est traité comme un sous-type spécialisé
+# (Enumeration, Quantifiable, …) -> dataType requis. NB : les collections
+# (List/Set/…) ne sont PAS ici car elles peuvent porter `dataType` ; quand
+# elles ne l'ont pas, le check accepte `elementCharacteristic` (cf. plus bas).
 _CHAR_NO_DATATYPE_REQUIRED = {
     "Trait",
+    "Either",
     "Constraint", "RegularExpressionConstraint", "LengthConstraint",
     "RangeConstraint", "EncodingConstraint", "LocaleConstraint",
     "LanguageConstraint", "FixedPointConstraint",
@@ -511,6 +515,22 @@ def _element_issues(model: ParsedModel) -> dict[str, list[dict]]:
     def stub(e):
         return {"name": e.name, "kind": e.kind, "file": file}
 
+    def has_out(e, label) -> bool:
+        # Une arête « présente » = l'un des trois cas suivants :
+        #  1. résolue dans CE modèle (`out_edges`) ;
+        #  2. `external_ref` vers une cible hors fichier (ex. une
+        #     `samm:characteristic shared:Xxx` qui pointe vers un modèle
+        #     `shared.*`, jamais fusionné) ;
+        #  3. cible ANONYME inline (ex. `samm:characteristic [ a … ]`),
+        #     captée en `inline_predicates` faute de nœud nommé.
+        # Sans 2 et 3, on flaggait à tort comme manquant ce qui n'est qu'une
+        # cible cross-fichier ou définie en ligne.
+        if label in out_edges.get(e.urn, {}):
+            return True
+        if any(r.predicate == label for r in e.external_refs):
+            return True
+        return label in e.inline_predicates
+
     # -- orphelins (logique d'origine)
     for e in model.elements:
         if deg.get(e.urn, 0) == 0:
@@ -576,14 +596,14 @@ def _element_issues(model: ParsedModel) -> dict[str, list[dict]]:
         if e.kind == "Aspect" and e.urn in empty_aspects:
             res["aspect_without_properties"].append(stub(e))
         if e.kind == "Property":
-            if "characteristic" not in out_edges.get(e.urn, {}):
+            if not has_out(e, "characteristic"):
                 res["property_without_characteristic"].append(stub(e))
             if e.urn in unused:
                 res["unused_property"].append(stub(e))
         if e.kind == "Characteristic":
             # Trait n'exige pas dataType, mais exige constraint(s).
             if "Trait" in e.types:
-                if "constraint" not in out_edges.get(e.urn, {}):
+                if not has_out(e, "constraint"):
                     res["trait_without_constraint"].append(stub(e))
             else:
                 # Sous-type exigeant dataType (pur Characteristic, ou subtype
@@ -592,7 +612,17 @@ def _element_issues(model: ParsedModel) -> dict[str, list[dict]]:
                 requires_dt = not any(
                     t in _CHAR_NO_DATATYPE_REQUIRED for t in e.types
                 )
-                if requires_dt and "dataType" not in out_edges.get(e.urn, {}):
+                # Une collection (List/Set/…) déclare son type d'élément via
+                # `samm:dataType` OU `samm-c:elementCharacteristic` (le dataType
+                # est alors dérivé de cette characteristic). Sans cette
+                # alternative, on flaggait à tort toute collection typée par
+                # son élément (ex. `ExtinguishingAgentsList a samm-c:List ;
+                # samm-c:elementCharacteristic :ExtinguishingAgent`).
+                is_collection = any(t in _COLLECTION_TYPES for t in e.types)
+                typed = has_out(e, "dataType") or (
+                    is_collection and has_out(e, "elementCharacteristic")
+                )
+                if requires_dt and not typed:
                     res["characteristic_without_datatype"].append(stub(e))
 
     return res

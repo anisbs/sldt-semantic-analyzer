@@ -100,6 +100,12 @@ class Element:
     # (cf. ExternalRef). Tient compte de la cible et permet la promotion en
     # Edge lors de la fusion (`graph.merge_models`).
     external_refs: list[ExternalRef] = field(default_factory=list)
+    # Prédicats sortants dont la cible est un nœud ANONYME inline (bnode typé,
+    # ex. `samm:characteristic [ a samm-c:List ; samm:dataType … ]`). Pas de
+    # nœud nommé à relier (la cible est anonyme), mais la relation EXISTE :
+    # sert à ne pas flagger « sans characteristic / dataType / constraint » un
+    # élément qui définit ces choses en ligne. (cf. `issues.has_out`.)
+    inline_predicates: list[str] = field(default_factory=list)
 
 
 @dataclass
@@ -482,6 +488,12 @@ def parse_file(path: Path) -> ParsedModel | None:
                 if not isinstance(t, URIRef):  # bnode wrapper { property, optional }
                     inner = graph.value(t, prop_pred)
                     if inner is None:
+                        # Pas un wrapper { samm:property ; samm:optional } :
+                        # c'est une cible ANONYME inline (ex. une Characteristic
+                        # `[ a samm-c:List ; … ]` posée directement). Aucun nœud
+                        # nommé à relier, mais la relation existe -> on la note
+                        # pour ne pas la compter comme manquante côté issues.
+                        seen[src].inline_predicates.append(label)
                         continue
                     opt = bool(graph.value(t, optional_pred))
                     t = inner
