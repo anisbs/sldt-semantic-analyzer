@@ -1803,6 +1803,11 @@ function ensureStdDetailSkeleton() {
 
 function selectStandard(id) {
   if (!standardsData) return;
+  // stdRevMap is normally built by renderStandards(), but selectStandard can be
+  // reached first (e.g. clicking a standard chip in the Model Viewer before the
+  // Standards tab was ever opened). Build it here so renderStdDetail/drawStdGraph
+  // never read a null map.
+  if (!stdRevMap) stdRevMap = buildStdRevMap();
   stdSelId = id;
   setUrl(buildHash(URL_BY_VIEW.standardsview, id));
   highlightStdRow(id);
