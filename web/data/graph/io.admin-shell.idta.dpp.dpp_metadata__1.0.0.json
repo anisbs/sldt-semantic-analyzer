@@ -1,0 +1,254 @@
+{
+  "meta": {
+    "namespace": "urn:samm:io.admin-shell.idta.dpp.dpp_metadata:1.0.0#",
+    "meta_model": "SAMM 2.1.0",
+    "model_family": "SAMM",
+    "model_name": "dpp.dpp_metadata",
+    "model_version": "1.0.0",
+    "source": "idta",
+    "status": "release",
+    "release_date": null,
+    "release_notes": null,
+    "dependencies": [],
+    "path": "data/smt-semantic-models/io.admin-shell.idta.dpp.dpp_metadata/1.0.0/DppMetadata.ttl"
+  },
+  "nodes": [
+    {
+      "id": "urn:samm:io.admin-shell.idta.dpp.dpp_metadata:1.0.0#DppMetadata",
+      "label": "DppMetadata",
+      "kind": "Aspect",
+      "preferredName": "digital product passport (DPP)",
+      "description": "\n   Digital record of product characteristics throughout its life cycle.\n   \n   SOURCE: EN 18223:2026(en)   \n   "
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.dpp.dpp_metadata:1.0.0#digitalProductPassportId",
+      "label": "digitalProductPassportId",
+      "kind": "Property",
+      "preferredName": "unique product passport identifier (DPP ID)",
+      "description": "\n   Unique identifier of an instance of the digital product passport.\n   \n   SOURCE: EN 18223:2026(en)   \n   ",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.dpp.dpp_metadata:1.0.0#uniqueProductIdentifier",
+      "label": "uniqueProductIdentifier",
+      "kind": "Property",
+      "preferredName": "unique product identifier",
+      "description": "\n   Unique string of characters for the identification of a product, that also enables a web link to the digital product passport.\n   \n   String formatted according to EN 18219:2026.\n\n   SOURCE: EN 18223:2026(en)   \n   ",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.dpp.dpp_metadata:1.0.0#granularity",
+      "label": "granularity",
+      "kind": "Property",
+      "preferredName": "granularity",
+      "description": " \n   The granularity of the Product. \n   \n   There are three values: ‘Model‘, ‘Item‘ and ‘Batch‘.\n   \n   The term ‘model’ usually refers to a version of a product of which all units share the same technical characteristics relevant for the ecodesign requirements \n   and the same model identifier, the term ‘batch’ usually refers to a subset \n   of a specific model composed of all products produced in a specific manufacturing plant at a specific moment \n   in time and the term ‘item’ usually refers to a single unit of a model. \n   \n  SOURCE: ESPR p2024/1781, REGULATION (EU) 2024/1781 OF THE EUROPEAN PARLIAMENT AND OF THE COUNCIL of 13 June 2024 \n  establishing a framework for the setting of ecodesign requirements for sustainable products, \n  amending Directive (EU) 2020/1828 and Regulation (EU) 2023/1542 and repealing Directive 2009/125/EC. URI: OJ:L_202401781\n   "
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.dpp.dpp_metadata:1.0.0#dppSchemaVersion",
+      "label": "dppSchemaVersion",
+      "kind": "Property",
+      "preferredName": "DPP schema version",
+      "description": "\n   Reference standard the DPP instance schema refers to.\n   \n   SOURCE: EN 18223:2026(en)   \n   ",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.dpp.dpp_metadata:1.0.0#dppStatus",
+      "label": "dppStatus",
+      "kind": "Property",
+      "preferredName": "DPP status",
+      "description": "\n   Status of the DPP instance as digital resource.\n   \n   SOURCE: EN 18223:2026(en)   \n   ",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.dpp.dpp_metadata:1.0.0#lastUpdate",
+      "label": "lastUpdate",
+      "kind": "Property",
+      "preferredName": "last update",
+      "description": "\n   Date and time of the latest update to the DPP instance.\n   \n   String formatted as Timestamp UTC-based according to ISO 8601-1:2019/Amd1:2022.\n   \n   SOURCE: EN 18223:2026(en)   \n   ",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Timestamp",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.dpp.dpp_metadata:1.0.0#economicOperatorId",
+      "label": "economicOperatorId",
+      "kind": "Property",
+      "preferredName": "economic operator ID",
+      "description": "\n   Unique string of characters for the identification of an actor involved in a product's life cycle.\n   \n   String formatted according to EN 18219:2026.\n\n   SOURCE: EN 18223:2026(en)   \n   ",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.dpp.dpp_metadata:1.0.0#facilityId",
+      "label": "facilityId",
+      "kind": "Property",
+      "preferredName": "facility ID",
+      "description": "\n   Unique string of characters for the identification of locations or buildings involved in a product's value chain or used by actors  involved in a product's life cycle.\n   \n   String formatted according to EN 18219:2026.\n\n   SOURCE: EN 18223:2026(en)   \n   ",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.dpp.dpp_metadata:1.0.0#contentSpecificationIds",
+      "label": "contentSpecificationIds",
+      "kind": "Property",
+      "preferredName": "content specification IDs",
+      "description": "\n   Reference to horizontal or product-type related content specifications for the DPP.\n   \n   SOURCE: EN 18223:2026(en)   \n   "
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.dpp.dpp_metadata:1.0.0#GranularityEnum",
+      "label": "GranularityEnum",
+      "kind": "Characteristic",
+      "preferredName": "granularity enumeration",
+      "description": "\n   Enumeration for granularity.\n   \n   SOURCE: EN 18223:2026(en)   \n   ",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.dpp.dpp_metadata:1.0.0#ContentSpecificationIdSet",
+      "label": "ContentSpecificationIdSet",
+      "kind": "Characteristic",
+      "preferredName": null,
+      "description": null
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.dpp.dpp_metadata:1.0.0#ContentSpecificationId",
+      "label": "ContentSpecificationId",
+      "kind": "Characteristic",
+      "preferredName": "content specification ID",
+      "description": "\n   Reference to horizontal or product-type related content specification for the DPP.\n   \n   SOURCE: EN 18223:2026(en)  \n   ",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
+    }
+  ],
+  "links": [
+    {
+      "source": "urn:samm:io.admin-shell.idta.dpp.dpp_metadata:1.0.0#DppMetadata",
+      "target": "urn:samm:io.admin-shell.idta.dpp.dpp_metadata:1.0.0#digitalProductPassportId",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.dpp.dpp_metadata:1.0.0#DppMetadata",
+      "target": "urn:samm:io.admin-shell.idta.dpp.dpp_metadata:1.0.0#uniqueProductIdentifier",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.dpp.dpp_metadata:1.0.0#DppMetadata",
+      "target": "urn:samm:io.admin-shell.idta.dpp.dpp_metadata:1.0.0#granularity",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.dpp.dpp_metadata:1.0.0#DppMetadata",
+      "target": "urn:samm:io.admin-shell.idta.dpp.dpp_metadata:1.0.0#dppSchemaVersion",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.dpp.dpp_metadata:1.0.0#DppMetadata",
+      "target": "urn:samm:io.admin-shell.idta.dpp.dpp_metadata:1.0.0#dppStatus",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.dpp.dpp_metadata:1.0.0#DppMetadata",
+      "target": "urn:samm:io.admin-shell.idta.dpp.dpp_metadata:1.0.0#lastUpdate",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.dpp.dpp_metadata:1.0.0#DppMetadata",
+      "target": "urn:samm:io.admin-shell.idta.dpp.dpp_metadata:1.0.0#economicOperatorId",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.dpp.dpp_metadata:1.0.0#DppMetadata",
+      "target": "urn:samm:io.admin-shell.idta.dpp.dpp_metadata:1.0.0#facilityId",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.dpp.dpp_metadata:1.0.0#DppMetadata",
+      "target": "urn:samm:io.admin-shell.idta.dpp.dpp_metadata:1.0.0#contentSpecificationIds",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.dpp.dpp_metadata:1.0.0#granularity",
+      "target": "urn:samm:io.admin-shell.idta.dpp.dpp_metadata:1.0.0#GranularityEnum",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.dpp.dpp_metadata:1.0.0#contentSpecificationIds",
+      "target": "urn:samm:io.admin-shell.idta.dpp.dpp_metadata:1.0.0#ContentSpecificationIdSet",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.dpp.dpp_metadata:1.0.0#ContentSpecificationIdSet",
+      "target": "urn:samm:io.admin-shell.idta.dpp.dpp_metadata:1.0.0#ContentSpecificationId",
+      "label": "elementCharacteristic",
+      "optional": false
+    }
+  ]
+}

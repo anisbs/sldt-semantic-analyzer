@@ -934,17 +934,9 @@
       "version": "1.0.0",
       "family": "SAMM",
       "source": "idta",
-      "status": "release",
-      "total": 4,
+      "status": "invalidated",
+      "total": 3,
       "issues": {
-        "older_release_exists": {
-          "count": 1,
-          "detail": [
-            {
-              "latest_release": "batterypass.material_composition@1.0.1"
-            }
-          ]
-        },
         "key_element_missing_description": {
           "count": 1,
           "detail": [
@@ -1006,17 +998,9 @@
       "version": "1.0.0",
       "family": "SAMM",
       "source": "idta",
-      "status": "release",
-      "total": 9,
+      "status": "invalidated",
+      "total": 8,
       "issues": {
-        "older_release_exists": {
-          "count": 1,
-          "detail": [
-            {
-              "latest_release": "batterypass.product_condition@1.0.1"
-            }
-          ]
-        },
         "orphan_unreachable": {
           "count": 5,
           "detail": [
@@ -1487,22 +1471,14 @@
       "version": "1.0.0",
       "family": "SAMM",
       "source": "idta",
-      "status": "release",
-      "total": 7,
+      "status": "invalidated",
+      "total": 6,
       "issues": {
         "unresolved_dep": {
           "count": 2,
           "detail": [
             "GeneralProductInformation@1.2.0",
             "Performance@1.2.1"
-          ]
-        },
-        "older_release_exists": {
-          "count": 1,
-          "detail": [
-            {
-              "latest_release": "batterypass.technical_data@1.0.1"
-            }
           ]
         },
         "key_element_missing_preferred_name": {
@@ -2435,6 +2411,31 @@
           "count": 1,
           "detail": [
             "AddressInformation_shared"
+          ]
+        }
+      }
+    },
+    "dpp.dpp_metadata@1.0.0": {
+      "name": "dpp.dpp_metadata",
+      "version": "1.0.0",
+      "family": "SAMM",
+      "source": "idta",
+      "status": "release",
+      "total": 2,
+      "issues": {
+        "meta_model_drift": {
+          "count": 1,
+          "detail": [
+            {
+              "using": "SAMM 2.1.0",
+              "latest": "SAMM 2.2.0"
+            }
+          ]
+        },
+        "missing_release_notes": {
+          "count": 1,
+          "detail": [
+            "data/smt-semantic-models/io.admin-shell.idta.dpp.dpp_metadata/RELEASE_NOTES.md"
           ]
         }
       }
@@ -3853,21 +3854,13 @@
       "version": "1.2.0",
       "family": "SAMM",
       "source": "idta",
-      "status": "release",
-      "total": 6,
+      "status": "deprecated",
+      "total": 5,
       "issues": {
         "unresolved_dep": {
           "count": 1,
           "detail": [
             "nameplate@3.0.0"
-          ]
-        },
-        "older_release_exists": {
-          "count": 1,
-          "detail": [
-            {
-              "latest_release": "generic.technical_data@2.0.0"
-            }
           ]
         },
         "key_element_missing_preferred_name": {
@@ -3981,14 +3974,8 @@
       "family": "SAMM",
       "source": "idta",
       "status": "release",
-      "total": 7,
+      "total": 6,
       "issues": {
-        "circular_dep": {
-          "count": 1,
-          "detail": [
-            "shared@3.1.0"
-          ]
-        },
         "key_element_missing_description": {
           "count": 2,
           "detail": [
@@ -8637,16 +8624,10 @@
       "family": "SAMM",
       "source": "idta",
       "status": "release",
-      "total": 90,
+      "total": 146,
       "issues": {
-        "circular_dep": {
-          "count": 1,
-          "detail": [
-            "handover_documentation@2.0.0"
-          ]
-        },
         "orphan_isolated": {
-          "count": 5,
+          "count": 6,
           "detail": [
             {
               "name": "ISO8601Duration",
@@ -8672,11 +8653,16 @@
               "name": "RangeTypeAbstract",
               "kind": "AbstractEntity",
               "file": "TestAspect"
+            },
+            {
+              "name": "toggle",
+              "kind": "Operation",
+              "file": "TestAspect"
             }
           ]
         },
         "orphan_unreachable": {
-          "count": 13,
+          "count": 35,
           "detail": [
             {
               "name": "annotations",
@@ -8714,6 +8700,11 @@
               "file": "TestAspect"
             },
             {
+              "name": "documentIdentifier",
+              "kind": "Property",
+              "file": "TestAspect"
+            },
+            {
               "name": "statements",
               "kind": "AbstractProperty",
               "file": "TestAspect"
@@ -8726,6 +8717,76 @@
             {
               "name": "ProductMarkingEnum",
               "kind": "Characteristic",
+              "file": "TestAspect"
+            },
+            {
+              "name": "OperationResultValueOnly",
+              "kind": "AbstractEntity",
+              "file": "TestAspect"
+            },
+            {
+              "name": "inoutputArguments",
+              "kind": "AbstractProperty",
+              "file": "TestAspect"
+            },
+            {
+              "name": "outputArguments",
+              "kind": "AbstractProperty",
+              "file": "TestAspect"
+            },
+            {
+              "name": "BaseOperationResult",
+              "kind": "Entity",
+              "file": "TestAspect"
+            },
+            {
+              "name": "Result",
+              "kind": "Entity",
+              "file": "TestAspect"
+            },
+            {
+              "name": "Message",
+              "kind": "Entity",
+              "file": "TestAspect"
+            },
+            {
+              "name": "messages",
+              "kind": "Property",
+              "file": "TestAspect"
+            },
+            {
+              "name": "executionState",
+              "kind": "Property",
+              "file": "TestAspect"
+            },
+            {
+              "name": "success",
+              "kind": "Property",
+              "file": "TestAspect"
+            },
+            {
+              "name": "messageCode",
+              "kind": "Property",
+              "file": "TestAspect"
+            },
+            {
+              "name": "correlationId",
+              "kind": "Property",
+              "file": "TestAspect"
+            },
+            {
+              "name": "messageType",
+              "kind": "Property",
+              "file": "TestAspect"
+            },
+            {
+              "name": "messageText",
+              "kind": "Property",
+              "file": "TestAspect"
+            },
+            {
+              "name": "timestamp",
+              "kind": "Property",
               "file": "TestAspect"
             },
             {
@@ -8742,11 +8803,46 @@
               "name": "RangeTypeAbstract",
               "kind": "AbstractEntity",
               "file": "TestAspect"
+            },
+            {
+              "name": "toggle",
+              "kind": "Operation",
+              "file": "TestAspect"
+            },
+            {
+              "name": "resultInoutArg",
+              "kind": "Property",
+              "file": "TestAspect"
+            },
+            {
+              "name": "outArg",
+              "kind": "Property",
+              "file": "TestAspect"
+            },
+            {
+              "name": "ToggleOutputArgumentsCharacteristic",
+              "kind": "Characteristic",
+              "file": "TestAspect"
+            },
+            {
+              "name": "ToggleInoutputArgumentsCharacteristic",
+              "kind": "Characteristic",
+              "file": "TestAspect"
+            },
+            {
+              "name": "ToggleOutputArguments",
+              "kind": "Entity",
+              "file": "TestAspect"
+            },
+            {
+              "name": "ToggleInoutputArguments",
+              "kind": "Entity",
+              "file": "TestAspect"
             }
           ]
         },
         "key_element_missing_description": {
-          "count": 32,
+          "count": 48,
           "detail": [
             {
               "name": "annotations",
@@ -8776,6 +8872,56 @@
             {
               "name": "Marking",
               "kind": "Entity",
+              "file": "TestAspect"
+            },
+            {
+              "name": "inoutputArguments",
+              "kind": "AbstractProperty",
+              "file": "TestAspect"
+            },
+            {
+              "name": "outputArguments",
+              "kind": "AbstractProperty",
+              "file": "TestAspect"
+            },
+            {
+              "name": "messages",
+              "kind": "Property",
+              "file": "TestAspect"
+            },
+            {
+              "name": "executionState",
+              "kind": "Property",
+              "file": "TestAspect"
+            },
+            {
+              "name": "success",
+              "kind": "Property",
+              "file": "TestAspect"
+            },
+            {
+              "name": "messageCode",
+              "kind": "Property",
+              "file": "TestAspect"
+            },
+            {
+              "name": "correlationId",
+              "kind": "Property",
+              "file": "TestAspect"
+            },
+            {
+              "name": "messageType",
+              "kind": "Property",
+              "file": "TestAspect"
+            },
+            {
+              "name": "messageText",
+              "kind": "Property",
+              "file": "TestAspect"
+            },
+            {
+              "name": "timestamp",
+              "kind": "Property",
               "file": "TestAspect"
             },
             {
@@ -8904,6 +9050,36 @@
               "file": "TestAspect"
             },
             {
+              "name": "toggle",
+              "kind": "Operation",
+              "file": "TestAspect"
+            },
+            {
+              "name": "toggleResult",
+              "kind": "Property",
+              "file": "TestAspect"
+            },
+            {
+              "name": "inArg",
+              "kind": "Property",
+              "file": "TestAspect"
+            },
+            {
+              "name": "inoutArg",
+              "kind": "Property",
+              "file": "TestAspect"
+            },
+            {
+              "name": "resultInoutArg",
+              "kind": "Property",
+              "file": "TestAspect"
+            },
+            {
+              "name": "outArg",
+              "kind": "Property",
+              "file": "TestAspect"
+            },
+            {
               "name": "languages",
               "kind": "Property",
               "file": "TestAspect"
@@ -8911,7 +9087,7 @@
           ]
         },
         "key_element_missing_preferred_name": {
-          "count": 29,
+          "count": 45,
           "detail": [
             {
               "name": "annotations",
@@ -8930,6 +9106,56 @@
             },
             {
               "name": "resourceValue",
+              "kind": "Property",
+              "file": "TestAspect"
+            },
+            {
+              "name": "inoutputArguments",
+              "kind": "AbstractProperty",
+              "file": "TestAspect"
+            },
+            {
+              "name": "outputArguments",
+              "kind": "AbstractProperty",
+              "file": "TestAspect"
+            },
+            {
+              "name": "messages",
+              "kind": "Property",
+              "file": "TestAspect"
+            },
+            {
+              "name": "executionState",
+              "kind": "Property",
+              "file": "TestAspect"
+            },
+            {
+              "name": "success",
+              "kind": "Property",
+              "file": "TestAspect"
+            },
+            {
+              "name": "messageCode",
+              "kind": "Property",
+              "file": "TestAspect"
+            },
+            {
+              "name": "correlationId",
+              "kind": "Property",
+              "file": "TestAspect"
+            },
+            {
+              "name": "messageType",
+              "kind": "Property",
+              "file": "TestAspect"
+            },
+            {
+              "name": "messageText",
+              "kind": "Property",
+              "file": "TestAspect"
+            },
+            {
+              "name": "timestamp",
               "kind": "Property",
               "file": "TestAspect"
             },
@@ -9054,7 +9280,47 @@
               "file": "TestAspect"
             },
             {
+              "name": "toggle",
+              "kind": "Operation",
+              "file": "TestAspect"
+            },
+            {
+              "name": "toggleResult",
+              "kind": "Property",
+              "file": "TestAspect"
+            },
+            {
+              "name": "inArg",
+              "kind": "Property",
+              "file": "TestAspect"
+            },
+            {
+              "name": "inoutArg",
+              "kind": "Property",
+              "file": "TestAspect"
+            },
+            {
+              "name": "resultInoutArg",
+              "kind": "Property",
+              "file": "TestAspect"
+            },
+            {
+              "name": "outArg",
+              "kind": "Property",
+              "file": "TestAspect"
+            },
+            {
               "name": "languages",
+              "kind": "Property",
+              "file": "TestAspect"
+            }
+          ]
+        },
+        "unused_property": {
+          "count": 1,
+          "detail": [
+            {
+              "name": "documentIdentifier",
               "kind": "Property",
               "file": "TestAspect"
             }
@@ -9120,6 +9386,15 @@
           "count": 1,
           "detail": [
             "AnnotatedRelationshipElement_abstract"
+          ]
+        },
+        "meta_model_drift": {
+          "count": 1,
+          "detail": [
+            {
+              "using": "SAMM 2.1.0",
+              "latest": "SAMM 2.2.0"
+            }
           ]
         }
       }

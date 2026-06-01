@@ -9,14 +9,7 @@
     "status": "release",
     "release_date": null,
     "release_notes": null,
-    "dependencies": [
-      {
-        "name": "handover_documentation",
-        "version": "2.0.0",
-        "family": "SAMM",
-        "source": "idta"
-      }
-    ],
+    "dependencies": [],
     "path": "data/smt-semantic-models/io.admin-shell.idta.shared/3.1.0/TestAspect.ttl"
   },
   "nodes": [
@@ -110,13 +103,27 @@
       "label": "DocumentIdentifierSetTrait",
       "kind": "Characteristic",
       "preferredName": null,
-      "description": null,
+      "description": null
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.shared:3.1.0#documentIdentifier",
+      "label": "documentIdentifier",
+      "kind": "Property",
+      "preferredName": "Dokumentennummer",
+      "description": "Alphanumerische Zeichenfolge, die ein Dokument eindeutig identifiziert."
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.shared:3.1.0#DocumentIdentifier",
+      "label": "DocumentIdentifier",
+      "kind": "Characteristic",
+      "preferredName": "Dokumentennummer",
+      "description": "Alphanumerische Zeichenfolge, die ein Dokument eindeutig identifiziert.",
       "external_refs": [
         {
-          "predicate": "baseCharacteristic",
-          "target_local": "DocumentIdentifier",
-          "target_model": "handover_documentation@2.0.0",
-          "target_source": "idta"
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
         }
       ]
     },
@@ -355,6 +362,168 @@
         {
           "predicate": "elementCharacteristic",
           "target_local": "MultiLanguageText",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.2.0",
+          "target_source": "unknown"
+        }
+      ]
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.shared:3.1.0#OperationResultValueOnly",
+      "label": "OperationResultValueOnly",
+      "kind": "AbstractEntity",
+      "preferredName": null,
+      "description": null
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.shared:3.1.0#inoutputArguments",
+      "label": "inoutputArguments",
+      "kind": "AbstractProperty",
+      "preferredName": null,
+      "description": null
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.shared:3.1.0#outputArguments",
+      "label": "outputArguments",
+      "kind": "AbstractProperty",
+      "preferredName": null,
+      "description": null
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.shared:3.1.0#BaseOperationResult",
+      "label": "BaseOperationResult",
+      "kind": "Entity",
+      "preferredName": null,
+      "description": null
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.shared:3.1.0#Result",
+      "label": "Result",
+      "kind": "Entity",
+      "preferredName": null,
+      "description": null
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.shared:3.1.0#Message",
+      "label": "Message",
+      "kind": "Entity",
+      "preferredName": null,
+      "description": null
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.shared:3.1.0#messages",
+      "label": "messages",
+      "kind": "Property",
+      "preferredName": null,
+      "description": null,
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Messages",
+          "target_model": "shared@3.1.0",
+          "target_source": "idta"
+        }
+      ]
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.shared:3.1.0#executionState",
+      "label": "executionState",
+      "kind": "Property",
+      "preferredName": null,
+      "description": null,
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "ExecutionStateOperationEnum",
+          "target_model": "shared@3.1.0",
+          "target_source": "idta"
+        }
+      ]
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.shared:3.1.0#success",
+      "label": "success",
+      "kind": "Property",
+      "preferredName": null,
+      "description": null,
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Boolean",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.2.0",
+          "target_source": "unknown"
+        }
+      ]
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.shared:3.1.0#messageCode",
+      "label": "messageCode",
+      "kind": "Property",
+      "preferredName": null,
+      "description": null,
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.2.0",
+          "target_source": "unknown"
+        }
+      ]
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.shared:3.1.0#correlationId",
+      "label": "correlationId",
+      "kind": "Property",
+      "preferredName": null,
+      "description": null,
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.2.0",
+          "target_source": "unknown"
+        }
+      ]
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.shared:3.1.0#messageType",
+      "label": "messageType",
+      "kind": "Property",
+      "preferredName": null,
+      "description": null,
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "MessageTypeOperationEnum",
+          "target_model": "shared@3.1.0",
+          "target_source": "idta"
+        }
+      ]
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.shared:3.1.0#messageText",
+      "label": "messageText",
+      "kind": "Property",
+      "preferredName": null,
+      "description": null,
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.2.0",
+          "target_source": "unknown"
+        }
+      ]
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.shared:3.1.0#timestamp",
+      "label": "timestamp",
+      "kind": "Property",
+      "preferredName": null,
+      "description": null,
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Timestamp",
           "target_model": "org.eclipse.esmf.samm:characteristic@2.2.0",
           "target_source": "unknown"
         }
@@ -939,6 +1108,129 @@
       "description": null
     },
     {
+      "id": "urn:samm:io.admin-shell.idta.shared:3.1.0#ValueOnlyOperationExampleAspect",
+      "label": "ValueOnlyOperationExampleAspect",
+      "kind": "Aspect",
+      "preferredName": "Value-Only Beispiel für Operationen",
+      "description": "Beispiel-Aspekt, der Charakteristiken für Submodel-Elemente vom Type 'Operation' testet."
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.shared:3.1.0#toggle",
+      "label": "toggle",
+      "kind": "Operation",
+      "preferredName": null,
+      "description": null
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.shared:3.1.0#toggleResult",
+      "label": "toggleResult",
+      "kind": "Property",
+      "preferredName": null,
+      "description": null
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.shared:3.1.0#inArg",
+      "label": "inArg",
+      "kind": "Property",
+      "preferredName": null,
+      "description": null,
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.2.0",
+          "target_source": "unknown"
+        }
+      ]
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.shared:3.1.0#inoutArg",
+      "label": "inoutArg",
+      "kind": "Property",
+      "preferredName": null,
+      "description": null,
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.2.0",
+          "target_source": "unknown"
+        }
+      ]
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.shared:3.1.0#resultInoutArg",
+      "label": "resultInoutArg",
+      "kind": "Property",
+      "preferredName": null,
+      "description": null,
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.2.0",
+          "target_source": "unknown"
+        }
+      ]
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.shared:3.1.0#outArg",
+      "label": "outArg",
+      "kind": "Property",
+      "preferredName": null,
+      "description": null,
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.2.0",
+          "target_source": "unknown"
+        }
+      ]
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.shared:3.1.0#ToggleResultCharacteristic",
+      "label": "ToggleResultCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": null,
+      "description": null
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.shared:3.1.0#ToggleOutputArgumentsCharacteristic",
+      "label": "ToggleOutputArgumentsCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": null,
+      "description": null
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.shared:3.1.0#ToggleInoutputArgumentsCharacteristic",
+      "label": "ToggleInoutputArgumentsCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": null,
+      "description": null
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.shared:3.1.0#ToggleResult",
+      "label": "ToggleResult",
+      "kind": "Entity",
+      "preferredName": null,
+      "description": null
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.shared:3.1.0#ToggleOutputArguments",
+      "label": "ToggleOutputArguments",
+      "kind": "Entity",
+      "preferredName": null,
+      "description": null
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.shared:3.1.0#ToggleInoutputArguments",
+      "label": "ToggleInoutputArguments",
+      "kind": "Entity",
+      "preferredName": null,
+      "description": null
+    },
+    {
       "id": "urn:samm:io.admin-shell.idta.shared:3.1.0#contentType",
       "label": "contentType",
       "kind": "Property",
@@ -1025,6 +1317,18 @@
       "source": "urn:samm:io.admin-shell.idta.shared:3.1.0#BlobWithContentType",
       "target": "urn:samm:io.admin-shell.idta.shared:3.1.0#BlobWithContentTypeEntity",
       "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.shared:3.1.0#documentIdentifier",
+      "target": "urn:samm:io.admin-shell.idta.shared:3.1.0#DocumentIdentifier",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.shared:3.1.0#DocumentIdentifierSetTrait",
+      "target": "urn:samm:io.admin-shell.idta.shared:3.1.0#DocumentIdentifier",
+      "label": "baseCharacteristic",
       "optional": false
     },
     {
@@ -1140,6 +1444,72 @@
       "target": "urn:samm:io.admin-shell.idta.shared:3.1.0#Marking",
       "label": "dataType",
       "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.shared:3.1.0#OperationResultValueOnly",
+      "target": "urn:samm:io.admin-shell.idta.shared:3.1.0#inoutputArguments",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.shared:3.1.0#OperationResultValueOnly",
+      "target": "urn:samm:io.admin-shell.idta.shared:3.1.0#outputArguments",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.shared:3.1.0#BaseOperationResult",
+      "target": "urn:samm:io.admin-shell.idta.shared:3.1.0#executionState",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.shared:3.1.0#BaseOperationResult",
+      "target": "urn:samm:io.admin-shell.idta.shared:3.1.0#success",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.shared:3.1.0#Result",
+      "target": "urn:samm:io.admin-shell.idta.shared:3.1.0#messages",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.shared:3.1.0#Message",
+      "target": "urn:samm:io.admin-shell.idta.shared:3.1.0#messageCode",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.shared:3.1.0#Message",
+      "target": "urn:samm:io.admin-shell.idta.shared:3.1.0#executionState",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.shared:3.1.0#Message",
+      "target": "urn:samm:io.admin-shell.idta.shared:3.1.0#correlationId",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.shared:3.1.0#Message",
+      "target": "urn:samm:io.admin-shell.idta.shared:3.1.0#messageType",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.shared:3.1.0#Message",
+      "target": "urn:samm:io.admin-shell.idta.shared:3.1.0#messageText",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.shared:3.1.0#Message",
+      "target": "urn:samm:io.admin-shell.idta.shared:3.1.0#timestamp",
+      "label": "properties",
+      "optional": true
     },
     {
       "source": "urn:samm:io.admin-shell.idta.shared:3.1.0#RangeFloatType",
@@ -1504,6 +1874,60 @@
     {
       "source": "urn:samm:io.admin-shell.idta.shared:3.1.0#ExampleAnnotationsCharacteristic",
       "target": "urn:samm:io.admin-shell.idta.shared:3.1.0#ExampleAnnotations",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.shared:3.1.0#ValueOnlyOperationExampleAspect",
+      "target": "urn:samm:io.admin-shell.idta.shared:3.1.0#inArg",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.shared:3.1.0#ValueOnlyOperationExampleAspect",
+      "target": "urn:samm:io.admin-shell.idta.shared:3.1.0#inoutArg",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.shared:3.1.0#ValueOnlyOperationExampleAspect",
+      "target": "urn:samm:io.admin-shell.idta.shared:3.1.0#toggleResult",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.shared:3.1.0#ToggleOutputArguments",
+      "target": "urn:samm:io.admin-shell.idta.shared:3.1.0#outArg",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.shared:3.1.0#ToggleInoutputArguments",
+      "target": "urn:samm:io.admin-shell.idta.shared:3.1.0#resultInoutArg",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.shared:3.1.0#toggleResult",
+      "target": "urn:samm:io.admin-shell.idta.shared:3.1.0#ToggleResultCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.shared:3.1.0#ToggleResultCharacteristic",
+      "target": "urn:samm:io.admin-shell.idta.shared:3.1.0#ToggleResult",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.shared:3.1.0#ToggleOutputArgumentsCharacteristic",
+      "target": "urn:samm:io.admin-shell.idta.shared:3.1.0#ToggleOutputArguments",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.shared:3.1.0#ToggleInoutputArgumentsCharacteristic",
+      "target": "urn:samm:io.admin-shell.idta.shared:3.1.0#ToggleInoutputArguments",
       "label": "dataType",
       "optional": false
     },

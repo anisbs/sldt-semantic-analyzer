@@ -78,13 +78,6 @@
       ]
     },
     {
-      "id": "urn:samm:io.admin-shell.idta.handover_documentation:2.0.0#documentIdentifier",
-      "label": "documentIdentifier",
-      "kind": "Property",
-      "preferredName": "Dokumentennummer",
-      "description": "Alphanumerische Zeichenfolge, die ein Dokument eindeutig identifiziert."
-    },
-    {
       "id": "urn:samm:io.admin-shell.idta.handover_documentation:2.0.0#documentIsPrimary",
       "label": "documentIsPrimary",
       "kind": "Property",
@@ -444,7 +437,15 @@
       "label": "DocumentId",
       "kind": "Entity",
       "preferredName": "Dokumentennummer",
-      "description": "Spezifikation einer Dokumentennummer."
+      "description": "Spezifikation einer Dokumentennummer.",
+      "external_refs": [
+        {
+          "predicate": "properties",
+          "target_local": "documentIdentifier",
+          "target_model": "shared@3.1.0",
+          "target_source": "idta"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.admin-shell.idta.handover_documentation:2.0.0#DocumentClassification",
@@ -465,21 +466,6 @@
           "target_local": "languages",
           "target_model": "shared@3.1.0",
           "target_source": "idta"
-        }
-      ]
-    },
-    {
-      "id": "urn:samm:io.admin-shell.idta.handover_documentation:2.0.0#DocumentIdentifier",
-      "label": "DocumentIdentifier",
-      "kind": "Characteristic",
-      "preferredName": "Dokumentennummer",
-      "description": "Alphanumerische Zeichenfolge, die ein Dokument eindeutig identifiziert.",
-      "external_refs": [
-        {
-          "predicate": "dataType",
-          "target_local": "string",
-          "target_model": "",
-          "target_source": "unknown"
         }
       ]
     },
@@ -554,12 +540,6 @@
     {
       "source": "urn:samm:io.admin-shell.idta.handover_documentation:2.0.0#DocumentId",
       "target": "urn:samm:io.admin-shell.idta.handover_documentation:2.0.0#documentDomainId",
-      "label": "properties",
-      "optional": false
-    },
-    {
-      "source": "urn:samm:io.admin-shell.idta.handover_documentation:2.0.0#DocumentId",
-      "target": "urn:samm:io.admin-shell.idta.handover_documentation:2.0.0#documentIdentifier",
       "label": "properties",
       "optional": false
     },
@@ -686,12 +666,6 @@
     {
       "source": "urn:samm:io.admin-shell.idta.handover_documentation:2.0.0#documentVersions",
       "target": "urn:samm:io.admin-shell.idta.handover_documentation:2.0.0#DocumentVersions",
-      "label": "characteristic",
-      "optional": false
-    },
-    {
-      "source": "urn:samm:io.admin-shell.idta.handover_documentation:2.0.0#documentIdentifier",
-      "target": "urn:samm:io.admin-shell.idta.handover_documentation:2.0.0#DocumentIdentifier",
       "label": "characteristic",
       "optional": false
     },
