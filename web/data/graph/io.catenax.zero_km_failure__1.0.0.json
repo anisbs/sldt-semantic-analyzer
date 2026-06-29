@@ -1,0 +1,418 @@
+{
+  "meta": {
+    "namespace": "urn:samm:io.catenax.zero_km_failure:1.0.0#",
+    "meta_model": "SAMM 2.1.0",
+    "model_family": "SAMM",
+    "model_name": "zero_km_failure",
+    "model_version": "1.0.0",
+    "source": "catenax",
+    "status": "release",
+    "release_date": "R26.09",
+    "release_notes": "# Changelog\n\nAll notable changes to this model will be documented in this file.\n\n## [1.0.0] - R26.09\n\n### Added\n\n- initial model\n\n### Changed\n\nn/a\n\n### Removed",
+    "dependencies": [
+      {
+        "name": "fleet.diagnostic_data",
+        "version": "3.0.0",
+        "family": "SAMM",
+        "source": "catenax"
+      },
+      {
+        "name": "fleet.vehicles",
+        "version": "4.0.0",
+        "family": "SAMM",
+        "source": "catenax"
+      },
+      {
+        "name": "shared.business_partner_number",
+        "version": "2.0.0",
+        "family": "SAMM",
+        "source": "catenax"
+      },
+      {
+        "name": "shared.industry_core.common",
+        "version": "1.0.0",
+        "family": "SAMM",
+        "source": "catenax"
+      },
+      {
+        "name": "shared.quality_core",
+        "version": "1.0.0",
+        "family": "SAMM",
+        "source": "catenax"
+      },
+      {
+        "name": "shared.quantity",
+        "version": "3.0.0",
+        "family": "SAMM",
+        "source": "catenax"
+      },
+      {
+        "name": "shared.uuid",
+        "version": "2.0.0",
+        "family": "SAMM",
+        "source": "catenax"
+      }
+    ],
+    "path": "data/sldt-semantic-models/io.catenax.zero_km_failure/1.0.0/ZeroKmFailure.ttl"
+  },
+  "nodes": [
+    {
+      "id": "urn:samm:io.catenax.zero_km_failure:1.0.0#ZeroKmFailure",
+      "label": "ZeroKmFailure",
+      "kind": "Aspect",
+      "preferredName": "zero kilometre failure",
+      "description": "This model describes the properties that are necessary to communicate zero kilometer failures of products from the customer to the supplier. Zero km failures are issues with a vehicle component that occur during vehicle assembly."
+    },
+    {
+      "id": "urn:samm:io.catenax.zero_km_failure:1.0.0#partInformation",
+      "label": "partInformation",
+      "kind": "Property",
+      "preferredName": "part information",
+      "description": "Describes and identifies the given part which is suspected to cause the zero kilometre failure."
+    },
+    {
+      "id": "urn:samm:io.catenax.zero_km_failure:1.0.0#vehicle",
+      "label": "vehicle",
+      "kind": "Property",
+      "preferredName": "vehicle",
+      "description": "Describes and identifies the vehicle or subassambly  in which the part has been assemblied into. "
+    },
+    {
+      "id": "urn:samm:io.catenax.zero_km_failure:1.0.0#plantInformation",
+      "label": "plantInformation",
+      "kind": "Property",
+      "preferredName": "plant information",
+      "description": "Information on the plant at which the failure has been discovered (during assembly) for a given part."
+    },
+    {
+      "id": "urn:samm:io.catenax.zero_km_failure:1.0.0#defect",
+      "label": "defect",
+      "kind": "Property",
+      "preferredName": "defect",
+      "description": "Defect related data"
+    },
+    {
+      "id": "urn:samm:io.catenax.zero_km_failure:1.0.0#assemblyTimestamp",
+      "label": "assemblyTimestamp",
+      "kind": "Property",
+      "preferredName": "assembly timestamp",
+      "description": "Timestamp of the assembly of the given part.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Timestamp",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
+    },
+    {
+      "id": "urn:samm:io.catenax.zero_km_failure:1.0.0#assemblyLineName",
+      "label": "assemblyLineName",
+      "kind": "Property",
+      "preferredName": "name of plant assembly line",
+      "description": "The name of the assembly line in the plant, where the given part has been assemblied into the vehicle.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
+    },
+    {
+      "id": "urn:samm:io.catenax.zero_km_failure:1.0.0#defectPartsPerShift",
+      "label": "defectPartsPerShift",
+      "kind": "Property",
+      "preferredName": "defect parts per shift",
+      "description": "Amount of defect parts per shift",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "CountQuantityCharacteristic",
+          "target_model": "shared.quantity@3.0.0",
+          "target_source": "catenax"
+        }
+      ]
+    },
+    {
+      "id": "urn:samm:io.catenax.zero_km_failure:1.0.0#siteIdentifier",
+      "label": "siteIdentifier",
+      "kind": "Property",
+      "preferredName": "plant site identifier",
+      "description": "Identifier of the plant site that uniqly identifies the plant within this dataspace.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "BpnsTrait",
+          "target_model": "shared.business_partner_number@2.0.0",
+          "target_source": "catenax"
+        }
+      ]
+    },
+    {
+      "id": "urn:samm:io.catenax.zero_km_failure:1.0.0#description",
+      "label": "description",
+      "kind": "Property",
+      "preferredName": "defect description",
+      "description": "Description of the defect as human readable text.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "MultiLanguageText",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
+    },
+    {
+      "id": "urn:samm:io.catenax.zero_km_failure:1.0.0#parentItems",
+      "label": "parentItems",
+      "kind": "Property",
+      "preferredName": "parent items",
+      "description": "List of references to related items, e.g. quality tasks. The references are unique within this data space."
+    },
+    {
+      "id": "urn:samm:io.catenax.zero_km_failure:1.0.0#PartInformationCharacteristic",
+      "label": "PartInformationCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "part information characteristic",
+      "description": "An entity of part related information relevant for tracebaility of quality issues."
+    },
+    {
+      "id": "urn:samm:io.catenax.zero_km_failure:1.0.0#VehicleCharacteristic",
+      "label": "VehicleCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "vehicle characteristic",
+      "description": "An entity of vehicle related information relevant for traceability of quality issues."
+    },
+    {
+      "id": "urn:samm:io.catenax.zero_km_failure:1.0.0#PlantCharacteristic",
+      "label": "PlantCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "plant characteristic",
+      "description": "An entity of plant related information relevant for tracebaility of quality issues."
+    },
+    {
+      "id": "urn:samm:io.catenax.zero_km_failure:1.0.0#DefectCharacteristic",
+      "label": "DefectCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "defect characteristic",
+      "description": "An entity of defect related information relevant for tracebaility of quality issues."
+    },
+    {
+      "id": "urn:samm:io.catenax.zero_km_failure:1.0.0#PartInformationEntity",
+      "label": "PartInformationEntity",
+      "kind": "Entity",
+      "preferredName": "part information entity",
+      "description": "An entity of part related information relevant for tracebaility of quality issues.",
+      "external_refs": [
+        {
+          "predicate": "properties",
+          "target_local": "dataMatrixCode",
+          "target_model": "shared.quality_core@1.0.0",
+          "target_source": "catenax"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "nameAtManufacturer",
+          "target_model": "shared.industry_core.common@1.0.0",
+          "target_source": "catenax"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "localIdentifiers",
+          "target_model": "shared.industry_core.common@1.0.0",
+          "target_source": "catenax"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "customerPartId",
+          "target_model": "shared.industry_core.common@1.0.0",
+          "target_source": "catenax"
+        }
+      ]
+    },
+    {
+      "id": "urn:samm:io.catenax.zero_km_failure:1.0.0#VehicleEntity",
+      "label": "VehicleEntity",
+      "kind": "Entity",
+      "preferredName": "vehicle entity",
+      "description": "An entity of vehicle related information relevant for traceability of quality issues.",
+      "external_refs": [
+        {
+          "predicate": "properties",
+          "target_local": "anonymizedVIN",
+          "target_model": "shared.quality_core@1.0.0",
+          "target_source": "catenax"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "modelIdentifier",
+          "target_model": "fleet.vehicles@4.0.0",
+          "target_source": "catenax"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "engineId",
+          "target_model": "fleet.vehicles@4.0.0",
+          "target_source": "catenax"
+        }
+      ]
+    },
+    {
+      "id": "urn:samm:io.catenax.zero_km_failure:1.0.0#PlantEntity",
+      "label": "PlantEntity",
+      "kind": "Entity",
+      "preferredName": "plant entity",
+      "description": "An entity of plant related information relevant for tracebaility of quality issues."
+    },
+    {
+      "id": "urn:samm:io.catenax.zero_km_failure:1.0.0#DefectEntity",
+      "label": "DefectEntity",
+      "kind": "Entity",
+      "preferredName": "defect entity",
+      "description": "An entity of defect related information relevant for tracebaility of quality issues.",
+      "external_refs": [
+        {
+          "predicate": "properties",
+          "target_local": "dtcs",
+          "target_model": "fleet.diagnostic_data@3.0.0",
+          "target_source": "catenax"
+        }
+      ]
+    },
+    {
+      "id": "urn:samm:io.catenax.zero_km_failure:1.0.0#ParentItemsCharacteristic",
+      "label": "ParentItemsCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "parent items list characteristic",
+      "description": "List of referenced parent items referenced by their unified unique identifier (UUIDv4).",
+      "external_refs": [
+        {
+          "predicate": "elementCharacteristic",
+          "target_local": "UuidV4Trait",
+          "target_model": "shared.uuid@2.0.0",
+          "target_source": "catenax"
+        }
+      ]
+    }
+  ],
+  "links": [
+    {
+      "source": "urn:samm:io.catenax.zero_km_failure:1.0.0#ZeroKmFailure",
+      "target": "urn:samm:io.catenax.zero_km_failure:1.0.0#partInformation",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.zero_km_failure:1.0.0#ZeroKmFailure",
+      "target": "urn:samm:io.catenax.zero_km_failure:1.0.0#vehicle",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.zero_km_failure:1.0.0#ZeroKmFailure",
+      "target": "urn:samm:io.catenax.zero_km_failure:1.0.0#plantInformation",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.zero_km_failure:1.0.0#ZeroKmFailure",
+      "target": "urn:samm:io.catenax.zero_km_failure:1.0.0#defect",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.zero_km_failure:1.0.0#PlantEntity",
+      "target": "urn:samm:io.catenax.zero_km_failure:1.0.0#assemblyTimestamp",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.zero_km_failure:1.0.0#PlantEntity",
+      "target": "urn:samm:io.catenax.zero_km_failure:1.0.0#assemblyLineName",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.zero_km_failure:1.0.0#PlantEntity",
+      "target": "urn:samm:io.catenax.zero_km_failure:1.0.0#defectPartsPerShift",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.zero_km_failure:1.0.0#PlantEntity",
+      "target": "urn:samm:io.catenax.zero_km_failure:1.0.0#siteIdentifier",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.zero_km_failure:1.0.0#DefectEntity",
+      "target": "urn:samm:io.catenax.zero_km_failure:1.0.0#description",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.zero_km_failure:1.0.0#DefectEntity",
+      "target": "urn:samm:io.catenax.zero_km_failure:1.0.0#parentItems",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.zero_km_failure:1.0.0#partInformation",
+      "target": "urn:samm:io.catenax.zero_km_failure:1.0.0#PartInformationCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.zero_km_failure:1.0.0#vehicle",
+      "target": "urn:samm:io.catenax.zero_km_failure:1.0.0#VehicleCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.zero_km_failure:1.0.0#plantInformation",
+      "target": "urn:samm:io.catenax.zero_km_failure:1.0.0#PlantCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.zero_km_failure:1.0.0#defect",
+      "target": "urn:samm:io.catenax.zero_km_failure:1.0.0#DefectCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.zero_km_failure:1.0.0#parentItems",
+      "target": "urn:samm:io.catenax.zero_km_failure:1.0.0#ParentItemsCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.zero_km_failure:1.0.0#PartInformationCharacteristic",
+      "target": "urn:samm:io.catenax.zero_km_failure:1.0.0#PartInformationEntity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.zero_km_failure:1.0.0#VehicleCharacteristic",
+      "target": "urn:samm:io.catenax.zero_km_failure:1.0.0#VehicleEntity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.zero_km_failure:1.0.0#PlantCharacteristic",
+      "target": "urn:samm:io.catenax.zero_km_failure:1.0.0#PlantEntity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.zero_km_failure:1.0.0#DefectCharacteristic",
+      "target": "urn:samm:io.catenax.zero_km_failure:1.0.0#DefectEntity",
+      "label": "dataType",
+      "optional": false
+    }
+  ]
+}
