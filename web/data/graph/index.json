@@ -4769,7 +4769,7 @@
     "version": "1.0.0",
     "family": "SAMM",
     "source": "catenax",
-    "status": "release",
+    "status": "deprecated",
     "meta_model": "SAMM 2.0.0",
     "n_nodes": 13,
     "n_links": 12,
@@ -4806,6 +4806,29 @@
       "schema": true,
       "payload": true,
       "openapi": true
+    }
+  },
+  {
+    "id": "io.catenax.shared.business_partner_number__3.0.0",
+    "name": "io.catenax.shared.business_partner_number__3.0.0",
+    "model_name": "shared.business_partner_number",
+    "version": "3.0.0",
+    "family": "SAMM",
+    "source": "catenax",
+    "status": "release",
+    "meta_model": "SAMM 2.2.0",
+    "n_nodes": 8,
+    "n_links": 3,
+    "n_aspects": 0,
+    "has_aspect": false,
+    "file": "io.catenax.shared.business_partner_number__3.0.0.json",
+    "repo_path": "io.catenax.shared.business_partner_number/3.0.0",
+    "gen": {
+      "base": "io.catenax.shared.business_partner_number/3.0.0/gen/BusinessPartnerNumber",
+      "html": false,
+      "schema": false,
+      "payload": false,
+      "openapi": false
     }
   },
   {
@@ -5519,6 +5542,29 @@
       "schema": true,
       "payload": true,
       "openapi": true
+    }
+  },
+  {
+    "id": "io.catenax.shared.uuid__2.1.0",
+    "name": "io.catenax.shared.uuid__2.1.0",
+    "model_name": "shared.uuid",
+    "version": "2.1.0",
+    "family": "SAMM",
+    "source": "catenax",
+    "status": "undefined",
+    "meta_model": "SAMM 2.1.0",
+    "n_nodes": 4,
+    "n_links": 3,
+    "n_aspects": 0,
+    "has_aspect": false,
+    "file": "io.catenax.shared.uuid__2.1.0.json",
+    "repo_path": "io.catenax.shared.uuid/2.1.0",
+    "gen": {
+      "base": "io.catenax.shared.uuid/2.1.0/gen/Uuid",
+      "html": false,
+      "schema": false,
+      "payload": false,
+      "openapi": false
     }
   },
   {

@@ -192,7 +192,7 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 1,
+      "total": 2,
       "issues": {
         "outdated_dependency": {
           "count": 1,
@@ -200,6 +200,15 @@
             {
               "target": "shared.uuid@1.0.0",
               "latest_release": "shared.uuid@2.0.0"
+            }
+          ]
+        },
+        "meta_model_drift": {
+          "count": 1,
+          "detail": [
+            {
+              "using": "SAMM 2.1.0",
+              "latest": "SAMM 2.2.0"
             }
           ]
         }
@@ -237,7 +246,7 @@
           "detail": [
             {
               "using": "SAMM 2.0.0",
-              "latest": "SAMM 2.1.0"
+              "latest": "SAMM 2.2.0"
             }
           ]
         }
@@ -265,7 +274,7 @@
           "detail": [
             {
               "using": "SAMM 2.0.0",
-              "latest": "SAMM 2.1.0"
+              "latest": "SAMM 2.2.0"
             }
           ]
         },
@@ -283,7 +292,7 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 4,
+      "total": 5,
       "issues": {
         "deprecated_dep": {
           "count": 2,
@@ -309,6 +318,15 @@
           "detail": [
             {
               "latest_release": "batch@4.0.0"
+            }
+          ]
+        },
+        "meta_model_drift": {
+          "count": 1,
+          "detail": [
+            {
+              "using": "SAMM 2.1.0",
+              "latest": "SAMM 2.2.0"
             }
           ]
         },
@@ -326,7 +344,7 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 4,
+      "total": 5,
       "issues": {
         "deprecated_dep": {
           "count": 2,
@@ -355,6 +373,15 @@
             }
           ]
         },
+        "meta_model_drift": {
+          "count": 1,
+          "detail": [
+            {
+              "using": "SAMM 2.1.0",
+              "latest": "SAMM 2.2.0"
+            }
+          ]
+        },
         "missing_release_date": {
           "count": 1,
           "detail": [
@@ -369,8 +396,17 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 1,
+      "total": 2,
       "issues": {
+        "meta_model_drift": {
+          "count": 1,
+          "detail": [
+            {
+              "using": "SAMM 2.1.0",
+              "latest": "SAMM 2.2.0"
+            }
+          ]
+        },
         "missing_release_date": {
           "count": 1,
           "detail": [
@@ -564,7 +600,7 @@
           "detail": [
             {
               "using": "SAMM 2.0.0",
-              "latest": "SAMM 2.1.0"
+              "latest": "SAMM 2.2.0"
             }
           ]
         }
@@ -576,7 +612,7 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 4,
+      "total": 5,
       "issues": {
         "outdated_dependency": {
           "count": 1,
@@ -616,6 +652,15 @@
               "latest_release": "battery.battery_pass@6.1.0"
             }
           ]
+        },
+        "meta_model_drift": {
+          "count": 1,
+          "detail": [
+            {
+              "using": "SAMM 2.1.0",
+              "latest": "SAMM 2.2.0"
+            }
+          ]
         }
       }
     },
@@ -625,7 +670,7 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 4,
+      "total": 5,
       "issues": {
         "outdated_dependency": {
           "count": 1,
@@ -665,6 +710,15 @@
               "latest_release": "battery.battery_pass@6.1.0"
             }
           ]
+        },
+        "meta_model_drift": {
+          "count": 1,
+          "detail": [
+            {
+              "using": "SAMM 2.1.0",
+              "latest": "SAMM 2.2.0"
+            }
+          ]
         }
       }
     },
@@ -674,7 +728,7 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 3,
+      "total": 4,
       "issues": {
         "outdated_dependency": {
           "count": 1,
@@ -704,6 +758,15 @@
                 "batch@3.0.0",
                 "shared.part_site_information_as_built@2.0.0"
               ]
+            }
+          ]
+        },
+        "meta_model_drift": {
+          "count": 1,
+          "detail": [
+            {
+              "using": "SAMM 2.1.0",
+              "latest": "SAMM 2.2.0"
             }
           ]
         }
@@ -1564,6 +1627,25 @@
         }
       }
     },
+    "binary_exchange@1.0.0": {
+      "name": "binary_exchange",
+      "version": "1.0.0",
+      "family": "SAMM",
+      "source": "catenax",
+      "status": "release",
+      "total": 1,
+      "issues": {
+        "meta_model_drift": {
+          "count": 1,
+          "detail": [
+            {
+              "using": "SAMM 2.1.0",
+              "latest": "SAMM 2.2.0"
+            }
+          ]
+        }
+      }
+    },
     "bom_as_specified@1.0.0": {
       "name": "bom_as_specified",
       "version": "1.0.0",
@@ -1611,8 +1693,17 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "deprecated",
-      "total": 6,
+      "total": 8,
       "issues": {
+        "outdated_dependency": {
+          "count": 1,
+          "detail": [
+            {
+              "target": "shared.business_partner_number@2.0.0",
+              "latest_release": "shared.business_partner_number@3.0.0"
+            }
+          ]
+        },
         "orphan_unreachable": {
           "count": 5,
           "detail": [
@@ -1640,6 +1731,15 @@
               "name": "EnclosedSiteEntity",
               "kind": "Entity",
               "file": "BusinessPartnerCertificate"
+            }
+          ]
+        },
+        "meta_model_drift": {
+          "count": 1,
+          "detail": [
+            {
+              "using": "SAMM 2.1.0",
+              "latest": "SAMM 2.2.0"
             }
           ]
         },
@@ -1657,8 +1757,17 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "deprecated",
-      "total": 6,
+      "total": 8,
       "issues": {
+        "outdated_dependency": {
+          "count": 1,
+          "detail": [
+            {
+              "target": "shared.business_partner_number@2.0.0",
+              "latest_release": "shared.business_partner_number@3.0.0"
+            }
+          ]
+        },
         "orphan_unreachable": {
           "count": 5,
           "detail": [
@@ -1689,6 +1798,15 @@
             }
           ]
         },
+        "meta_model_drift": {
+          "count": 1,
+          "detail": [
+            {
+              "using": "SAMM 2.1.0",
+              "latest": "SAMM 2.2.0"
+            }
+          ]
+        },
         "missing_release_date": {
           "count": 1,
           "detail": [
@@ -1703,13 +1821,31 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 2,
+      "total": 4,
       "issues": {
+        "outdated_dependency": {
+          "count": 1,
+          "detail": [
+            {
+              "target": "shared.business_partner_number@2.0.0",
+              "latest_release": "shared.business_partner_number@3.0.0"
+            }
+          ]
+        },
         "older_release_exists": {
           "count": 1,
           "detail": [
             {
               "latest_release": "business_partner_certificate@3.1.0"
+            }
+          ]
+        },
+        "meta_model_drift": {
+          "count": 1,
+          "detail": [
+            {
+              "using": "SAMM 2.1.0",
+              "latest": "SAMM 2.2.0"
             }
           ]
         },
@@ -1727,8 +1863,26 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 1,
+      "total": 3,
       "issues": {
+        "outdated_dependency": {
+          "count": 1,
+          "detail": [
+            {
+              "target": "shared.business_partner_number@2.0.0",
+              "latest_release": "shared.business_partner_number@3.0.0"
+            }
+          ]
+        },
+        "meta_model_drift": {
+          "count": 1,
+          "detail": [
+            {
+              "using": "SAMM 2.1.0",
+              "latest": "SAMM 2.2.0"
+            }
+          ]
+        },
         "missing_release_date": {
           "count": 1,
           "detail": [
@@ -1774,20 +1928,32 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 3,
+      "total": 6,
       "issues": {
         "outdated_dependency": {
-          "count": 1,
+          "count": 2,
           "detail": [
             {
               "target": "batch@3.0.1",
               "latest_release": "batch@4.0.0"
+            },
+            {
+              "target": "shared.business_partner_number@2.0.0",
+              "latest_release": "shared.business_partner_number@3.0.0"
             }
           ]
         },
         "deprecated_dep": {
-          "count": 2,
+          "count": 3,
           "detail": [
+            {
+              "target": "shared.business_partner_number@1.0.0",
+              "path": [
+                "certificate_of_analysis@1.0.0",
+                "part_as_planned@2.0.0",
+                "shared.business_partner_number@1.0.0"
+              ]
+            },
             {
               "target": "shared.part_classification@1.0.0",
               "path": [
@@ -1803,6 +1969,15 @@
                 "batch@3.0.1",
                 "shared.part_site_information_as_built@2.0.0"
               ]
+            }
+          ]
+        },
+        "meta_model_drift": {
+          "count": 1,
+          "detail": [
+            {
+              "using": "SAMM 2.1.0",
+              "latest": "SAMM 2.2.0"
             }
           ]
         }
@@ -1822,6 +1997,25 @@
             {
               "using": "BAMM 1.0.0",
               "latest": "BAMM 2.0.0"
+            }
+          ]
+        }
+      }
+    },
+    "certificate_of_destruction@2.0.0": {
+      "name": "certificate_of_destruction",
+      "version": "2.0.0",
+      "family": "SAMM",
+      "source": "catenax",
+      "status": "draft",
+      "total": 1,
+      "issues": {
+        "meta_model_drift": {
+          "count": 1,
+          "detail": [
+            {
+              "using": "SAMM 2.1.0",
+              "latest": "SAMM 2.2.0"
             }
           ]
         }
@@ -1865,8 +2059,17 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 1,
+      "total": 2,
       "issues": {
+        "meta_model_drift": {
+          "count": 1,
+          "detail": [
+            {
+              "using": "SAMM 2.1.0",
+              "latest": "SAMM 2.2.0"
+            }
+          ]
+        },
         "missing_release_date": {
           "count": 1,
           "detail": [
@@ -1975,7 +2178,7 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "draft",
-      "total": 14,
+      "total": 15,
       "issues": {
         "key_element_missing_preferred_name": {
           "count": 14,
@@ -2049,6 +2252,15 @@
               "name": "ClassesListEntity",
               "kind": "Entity",
               "file": "ClassifiedLoadSpectrum"
+            }
+          ]
+        },
+        "meta_model_drift": {
+          "count": 1,
+          "detail": [
+            {
+              "using": "SAMM 2.1.0",
+              "latest": "SAMM 2.2.0"
             }
           ]
         }
@@ -2197,13 +2409,22 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 2,
+      "total": 3,
       "issues": {
         "older_release_exists": {
           "count": 1,
           "detail": [
             {
               "latest_release": "customs_information@2.0.0"
+            }
+          ]
+        },
+        "meta_model_drift": {
+          "count": 1,
+          "detail": [
+            {
+              "using": "SAMM 2.1.0",
+              "latest": "SAMM 2.2.0"
             }
           ]
         },
@@ -2221,12 +2442,77 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 1,
+      "total": 2,
       "issues": {
+        "meta_model_drift": {
+          "count": 1,
+          "detail": [
+            {
+              "using": "SAMM 2.1.0",
+              "latest": "SAMM 2.2.0"
+            }
+          ]
+        },
         "missing_release_date": {
           "count": 1,
           "detail": [
             "2.0.0"
+          ]
+        }
+      }
+    },
+    "days_of_supply@1.0.0": {
+      "name": "days_of_supply",
+      "version": "1.0.0",
+      "family": "SAMM",
+      "source": "catenax",
+      "status": "deprecated",
+      "total": 2,
+      "issues": {
+        "outdated_dependency": {
+          "count": 1,
+          "detail": [
+            {
+              "target": "shared.business_partner_number@2.0.0",
+              "latest_release": "shared.business_partner_number@3.0.0"
+            }
+          ]
+        },
+        "meta_model_drift": {
+          "count": 1,
+          "detail": [
+            {
+              "using": "SAMM 2.1.0",
+              "latest": "SAMM 2.2.0"
+            }
+          ]
+        }
+      }
+    },
+    "days_of_supply@2.0.0": {
+      "name": "days_of_supply",
+      "version": "2.0.0",
+      "family": "SAMM",
+      "source": "catenax",
+      "status": "release",
+      "total": 2,
+      "issues": {
+        "outdated_dependency": {
+          "count": 1,
+          "detail": [
+            {
+              "target": "shared.business_partner_number@2.0.0",
+              "latest_release": "shared.business_partner_number@3.0.0"
+            }
+          ]
+        },
+        "meta_model_drift": {
+          "count": 1,
+          "detail": [
+            {
+              "using": "SAMM 2.1.0",
+              "latest": "SAMM 2.2.0"
+            }
           ]
         }
       }
@@ -2250,20 +2536,39 @@
         }
       }
     },
+    "decomissioning_certificate@2.0.0": {
+      "name": "decomissioning_certificate",
+      "version": "2.0.0",
+      "family": "SAMM",
+      "source": "catenax",
+      "status": "draft",
+      "total": 1,
+      "issues": {
+        "meta_model_drift": {
+          "count": 1,
+          "detail": [
+            {
+              "using": "SAMM 2.1.0",
+              "latest": "SAMM 2.2.0"
+            }
+          ]
+        }
+      }
+    },
     "delivery_information@1.0.0": {
       "name": "delivery_information",
       "version": "1.0.0",
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 6,
+      "total": 7,
       "issues": {
         "outdated_dependency": {
           "count": 3,
           "detail": [
             {
               "target": "shared.business_partner_number@1.0.0",
-              "latest_release": "shared.business_partner_number@2.0.0"
+              "latest_release": "shared.business_partner_number@3.0.0"
             },
             {
               "target": "shared.quantity@1.0.0",
@@ -2276,8 +2581,15 @@
           ]
         },
         "deprecated_dep": {
-          "count": 1,
+          "count": 2,
           "detail": [
+            {
+              "target": "shared.business_partner_number@1.0.0",
+              "path": [
+                "delivery_information@1.0.0",
+                "shared.business_partner_number@1.0.0"
+              ]
+            },
             {
               "target": "shared.quantity@1.0.0",
               "path": [
@@ -2300,7 +2612,7 @@
           "detail": [
             {
               "using": "SAMM 2.0.0",
-              "latest": "SAMM 2.1.0"
+              "latest": "SAMM 2.2.0"
             }
           ]
         }
@@ -2312,14 +2624,27 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 1,
+      "total": 3,
       "issues": {
         "outdated_dependency": {
-          "count": 1,
+          "count": 2,
           "detail": [
+            {
+              "target": "shared.business_partner_number@2.0.0",
+              "latest_release": "shared.business_partner_number@3.0.0"
+            },
             {
               "target": "shared.quantity@2.0.0",
               "latest_release": "shared.quantity@3.0.0"
+            }
+          ]
+        },
+        "meta_model_drift": {
+          "count": 1,
+          "detail": [
+            {
+              "using": "SAMM 2.1.0",
+              "latest": "SAMM 2.2.0"
             }
           ]
         }
@@ -2331,13 +2656,31 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 1,
+      "total": 3,
       "issues": {
+        "outdated_dependency": {
+          "count": 1,
+          "detail": [
+            {
+              "target": "shared.business_partner_number@2.0.0",
+              "latest_release": "shared.business_partner_number@3.0.0"
+            }
+          ]
+        },
         "older_release_exists": {
           "count": 1,
           "detail": [
             {
               "latest_release": "demand_and_capacity_notification@3.0.0"
+            }
+          ]
+        },
+        "meta_model_drift": {
+          "count": 1,
+          "detail": [
+            {
+              "using": "SAMM 2.1.0",
+              "latest": "SAMM 2.2.0"
             }
           ]
         }
@@ -2349,13 +2692,31 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 1,
+      "total": 3,
       "issues": {
+        "outdated_dependency": {
+          "count": 1,
+          "detail": [
+            {
+              "target": "shared.business_partner_number@2.0.0",
+              "latest_release": "shared.business_partner_number@3.0.0"
+            }
+          ]
+        },
         "older_release_exists": {
           "count": 1,
           "detail": [
             {
               "latest_release": "demand_and_capacity_notification@3.0.0"
+            }
+          ]
+        },
+        "meta_model_drift": {
+          "count": 1,
+          "detail": [
+            {
+              "using": "SAMM 2.1.0",
+              "latest": "SAMM 2.2.0"
             }
           ]
         }
@@ -2367,14 +2728,18 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 2,
+      "total": 4,
       "issues": {
         "outdated_dependency": {
-          "count": 1,
+          "count": 2,
           "detail": [
             {
               "target": "part_type_information@1.0.0",
               "latest_release": "part_type_information@2.0.0"
+            },
+            {
+              "target": "shared.business_partner_number@2.0.0",
+              "latest_release": "shared.business_partner_number@3.0.0"
             }
           ]
         },
@@ -2388,6 +2753,43 @@
                 "part_type_information@1.0.0",
                 "shared.part_classification@1.0.0"
               ]
+            }
+          ]
+        },
+        "meta_model_drift": {
+          "count": 1,
+          "detail": [
+            {
+              "using": "SAMM 2.1.0",
+              "latest": "SAMM 2.2.0"
+            }
+          ]
+        }
+      }
+    },
+    "digital_engineering_master_data@1.0.0": {
+      "name": "digital_engineering_master_data",
+      "version": "1.0.0",
+      "family": "SAMM",
+      "source": "catenax",
+      "status": "release",
+      "total": 2,
+      "issues": {
+        "outdated_dependency": {
+          "count": 1,
+          "detail": [
+            {
+              "target": "shared.business_partner_number@2.0.0",
+              "latest_release": "shared.business_partner_number@3.0.0"
+            }
+          ]
+        },
+        "meta_model_drift": {
+          "count": 1,
+          "detail": [
+            {
+              "using": "SAMM 2.1.0",
+              "latest": "SAMM 2.2.0"
             }
           ]
         }
@@ -2440,13 +2842,32 @@
         }
       }
     },
+    "early_warning_notification@1.0.0": {
+      "name": "early_warning_notification",
+      "version": "1.0.0",
+      "family": "SAMM",
+      "source": "catenax",
+      "status": "release",
+      "total": 1,
+      "issues": {
+        "meta_model_drift": {
+          "count": 1,
+          "detail": [
+            {
+              "using": "SAMM 2.1.0",
+              "latest": "SAMM 2.2.0"
+            }
+          ]
+        }
+      }
+    },
     "electric_drive.electric_drive_passport@1.0.0": {
       "name": "electric_drive.electric_drive_passport",
       "version": "1.0.0",
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 7,
+      "total": 8,
       "issues": {
         "outdated_dependency": {
           "count": 3,
@@ -2501,6 +2922,15 @@
               "latest_release": "electric_drive.electric_drive_passport@2.0.0"
             }
           ]
+        },
+        "meta_model_drift": {
+          "count": 1,
+          "detail": [
+            {
+              "using": "SAMM 2.1.0",
+              "latest": "SAMM 2.2.0"
+            }
+          ]
         }
       }
     },
@@ -2510,7 +2940,7 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 5,
+      "total": 6,
       "issues": {
         "outdated_dependency": {
           "count": 3,
@@ -2550,6 +2980,15 @@
               ]
             }
           ]
+        },
+        "meta_model_drift": {
+          "count": 1,
+          "detail": [
+            {
+              "using": "SAMM 2.1.0",
+              "latest": "SAMM 2.2.0"
+            }
+          ]
         }
       }
     },
@@ -2567,6 +3006,25 @@
             {
               "using": "BAMM 1.0.0",
               "latest": "BAMM 2.0.0"
+            }
+          ]
+        }
+      }
+    },
+    "eol_story@2.0.0": {
+      "name": "eol_story",
+      "version": "2.0.0",
+      "family": "SAMM",
+      "source": "catenax",
+      "status": "draft",
+      "total": 1,
+      "issues": {
+        "meta_model_drift": {
+          "count": 1,
+          "detail": [
+            {
+              "using": "SAMM 2.1.0",
+              "latest": "SAMM 2.2.0"
             }
           ]
         }
@@ -2626,7 +3084,7 @@
           "detail": [
             {
               "using": "SAMM 2.0.0",
-              "latest": "SAMM 2.1.0"
+              "latest": "SAMM 2.2.0"
             }
           ]
         }
@@ -2638,13 +3096,78 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 1,
+      "total": 3,
       "issues": {
+        "outdated_dependency": {
+          "count": 1,
+          "detail": [
+            {
+              "target": "shared.business_partner_number@2.0.0",
+              "latest_release": "shared.business_partner_number@3.0.0"
+            }
+          ]
+        },
         "older_release_exists": {
           "count": 1,
           "detail": [
             {
               "latest_release": "essincident@4.0.0"
+            }
+          ]
+        },
+        "meta_model_drift": {
+          "count": 1,
+          "detail": [
+            {
+              "using": "SAMM 2.1.0",
+              "latest": "SAMM 2.2.0"
+            }
+          ]
+        }
+      }
+    },
+    "essincident@4.0.0": {
+      "name": "essincident",
+      "version": "4.0.0",
+      "family": "SAMM",
+      "source": "catenax",
+      "status": "release",
+      "total": 2,
+      "issues": {
+        "outdated_dependency": {
+          "count": 1,
+          "detail": [
+            {
+              "target": "shared.business_partner_number@2.0.0",
+              "latest_release": "shared.business_partner_number@3.0.0"
+            }
+          ]
+        },
+        "meta_model_drift": {
+          "count": 1,
+          "detail": [
+            {
+              "using": "SAMM 2.1.0",
+              "latest": "SAMM 2.2.0"
+            }
+          ]
+        }
+      }
+    },
+    "failure_pattern@1.0.0": {
+      "name": "failure_pattern",
+      "version": "1.0.0",
+      "family": "SAMM",
+      "source": "catenax",
+      "status": "release",
+      "total": 1,
+      "issues": {
+        "meta_model_drift": {
+          "count": 1,
+          "detail": [
+            {
+              "using": "SAMM 2.1.0",
+              "latest": "SAMM 2.2.0"
             }
           ]
         }
@@ -2656,7 +3179,7 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 2,
+      "total": 3,
       "issues": {
         "outdated_dependency": {
           "count": 1,
@@ -2672,6 +3195,34 @@
           "detail": [
             {
               "latest_release": "fleet.claim_data@3.0.0"
+            }
+          ]
+        },
+        "meta_model_drift": {
+          "count": 1,
+          "detail": [
+            {
+              "using": "SAMM 2.1.0",
+              "latest": "SAMM 2.2.0"
+            }
+          ]
+        }
+      }
+    },
+    "fleet.claim_data@3.0.0": {
+      "name": "fleet.claim_data",
+      "version": "3.0.0",
+      "family": "SAMM",
+      "source": "catenax",
+      "status": "release",
+      "total": 1,
+      "issues": {
+        "meta_model_drift": {
+          "count": 1,
+          "detail": [
+            {
+              "using": "SAMM 2.1.0",
+              "latest": "SAMM 2.2.0"
             }
           ]
         }
@@ -2718,7 +3269,7 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 3,
+      "total": 4,
       "issues": {
         "outdated_dependency": {
           "count": 1,
@@ -2746,6 +3297,34 @@
               "file": "DiagnosticData"
             }
           ]
+        },
+        "meta_model_drift": {
+          "count": 1,
+          "detail": [
+            {
+              "using": "SAMM 2.1.0",
+              "latest": "SAMM 2.2.0"
+            }
+          ]
+        }
+      }
+    },
+    "fleet.diagnostic_data@3.0.0": {
+      "name": "fleet.diagnostic_data",
+      "version": "3.0.0",
+      "family": "SAMM",
+      "source": "catenax",
+      "status": "release",
+      "total": 1,
+      "issues": {
+        "meta_model_drift": {
+          "count": 1,
+          "detail": [
+            {
+              "using": "SAMM 2.1.0",
+              "latest": "SAMM 2.2.0"
+            }
+          ]
         }
       }
     },
@@ -2762,7 +3341,7 @@
           "detail": [
             {
               "using": "SAMM 2.0.0",
-              "latest": "SAMM 2.1.0"
+              "latest": "SAMM 2.2.0"
             }
           ]
         }
@@ -2774,18 +3353,55 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "deprecated",
-      "total": 2,
+      "total": 3,
       "issues": {
         "outdated_dependency": {
           "count": 2,
           "detail": [
             {
               "target": "shared.business_partner_number@1.0.0",
-              "latest_release": "shared.business_partner_number@2.0.0"
+              "latest_release": "shared.business_partner_number@3.0.0"
             },
             {
               "target": "shared.uuid@1.0.0",
               "latest_release": "shared.uuid@2.0.0"
+            }
+          ]
+        },
+        "meta_model_drift": {
+          "count": 1,
+          "detail": [
+            {
+              "using": "SAMM 2.1.0",
+              "latest": "SAMM 2.2.0"
+            }
+          ]
+        }
+      }
+    },
+    "fleet.vehicles@2.1.0": {
+      "name": "fleet.vehicles",
+      "version": "2.1.0",
+      "family": "SAMM",
+      "source": "catenax",
+      "status": "deprecated",
+      "total": 2,
+      "issues": {
+        "outdated_dependency": {
+          "count": 1,
+          "detail": [
+            {
+              "target": "shared.business_partner_number@2.0.0",
+              "latest_release": "shared.business_partner_number@3.0.0"
+            }
+          ]
+        },
+        "meta_model_drift": {
+          "count": 1,
+          "detail": [
+            {
+              "using": "SAMM 2.1.0",
+              "latest": "SAMM 2.2.0"
             }
           ]
         }
@@ -2797,13 +3413,50 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 1,
+      "total": 3,
       "issues": {
+        "outdated_dependency": {
+          "count": 1,
+          "detail": [
+            {
+              "target": "shared.business_partner_number@2.0.0",
+              "latest_release": "shared.business_partner_number@3.0.0"
+            }
+          ]
+        },
         "older_release_exists": {
           "count": 1,
           "detail": [
             {
               "latest_release": "fleet.vehicles@4.0.0"
+            }
+          ]
+        },
+        "meta_model_drift": {
+          "count": 1,
+          "detail": [
+            {
+              "using": "SAMM 2.1.0",
+              "latest": "SAMM 2.2.0"
+            }
+          ]
+        }
+      }
+    },
+    "fleet.vehicles@4.0.0": {
+      "name": "fleet.vehicles",
+      "version": "4.0.0",
+      "family": "SAMM",
+      "source": "catenax",
+      "status": "release",
+      "total": 1,
+      "issues": {
+        "meta_model_drift": {
+          "count": 1,
+          "detail": [
+            {
+              "using": "SAMM 2.1.0",
+              "latest": "SAMM 2.2.0"
             }
           ]
         }
@@ -3122,7 +3775,7 @@
           "detail": [
             {
               "using": "SAMM 2.0.0",
-              "latest": "SAMM 2.1.0"
+              "latest": "SAMM 2.2.0"
             }
           ]
         }
@@ -3134,7 +3787,7 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 86,
+      "total": 87,
       "issues": {
         "outdated_dependency": {
           "count": 5,
@@ -3145,7 +3798,7 @@
             },
             {
               "target": "shared.business_partner_number@1.0.0",
-              "latest_release": "shared.business_partner_number@2.0.0"
+              "latest_release": "shared.business_partner_number@3.0.0"
             },
             {
               "target": "shared.contact_information@3.0.0",
@@ -3162,8 +3815,15 @@
           ]
         },
         "deprecated_dep": {
-          "count": 1,
+          "count": 2,
           "detail": [
+            {
+              "target": "shared.business_partner_number@1.0.0",
+              "path": [
+                "generic.digital_product_passport@3.0.0",
+                "shared.business_partner_number@1.0.0"
+              ]
+            },
             {
               "target": "shared.quantity@1.0.0",
               "path": [
@@ -3591,7 +4251,7 @@
           "detail": [
             {
               "using": "SAMM 2.0.0",
-              "latest": "SAMM 2.1.0"
+              "latest": "SAMM 2.2.0"
             }
           ]
         }
@@ -3603,10 +4263,10 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 7,
+      "total": 9,
       "issues": {
         "outdated_dependency": {
-          "count": 4,
+          "count": 5,
           "detail": [
             {
               "target": "batch@3.0.0",
@@ -3619,6 +4279,10 @@
             {
               "target": "serial_part@3.0.0",
               "latest_release": "serial_part@4.0.0"
+            },
+            {
+              "target": "shared.business_partner_number@2.0.0",
+              "latest_release": "shared.business_partner_number@3.0.0"
             },
             {
               "target": "shared.quantity@2.0.0",
@@ -3651,6 +4315,15 @@
           "detail": [
             {
               "latest_release": "generic.digital_product_passport@7.0.0"
+            }
+          ]
+        },
+        "meta_model_drift": {
+          "count": 1,
+          "detail": [
+            {
+              "using": "SAMM 2.1.0",
+              "latest": "SAMM 2.2.0"
             }
           ]
         }
@@ -3662,10 +4335,10 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 7,
+      "total": 9,
       "issues": {
         "outdated_dependency": {
-          "count": 4,
+          "count": 5,
           "detail": [
             {
               "target": "batch@3.0.0",
@@ -3678,6 +4351,10 @@
             {
               "target": "serial_part@3.0.0",
               "latest_release": "serial_part@4.0.0"
+            },
+            {
+              "target": "shared.business_partner_number@2.0.0",
+              "latest_release": "shared.business_partner_number@3.0.0"
             },
             {
               "target": "shared.quantity@2.0.0",
@@ -3710,6 +4387,15 @@
           "detail": [
             {
               "latest_release": "generic.digital_product_passport@7.0.0"
+            }
+          ]
+        },
+        "meta_model_drift": {
+          "count": 1,
+          "detail": [
+            {
+              "using": "SAMM 2.1.0",
+              "latest": "SAMM 2.2.0"
             }
           ]
         }
@@ -3721,10 +4407,10 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 7,
+      "total": 9,
       "issues": {
         "outdated_dependency": {
-          "count": 4,
+          "count": 5,
           "detail": [
             {
               "target": "batch@3.0.0",
@@ -3737,6 +4423,10 @@
             {
               "target": "serial_part@3.0.0",
               "latest_release": "serial_part@4.0.0"
+            },
+            {
+              "target": "shared.business_partner_number@2.0.0",
+              "latest_release": "shared.business_partner_number@3.0.0"
             },
             {
               "target": "shared.quantity@2.0.0",
@@ -3771,6 +4461,15 @@
               "latest_release": "generic.digital_product_passport@7.0.0"
             }
           ]
+        },
+        "meta_model_drift": {
+          "count": 1,
+          "detail": [
+            {
+              "using": "SAMM 2.1.0",
+              "latest": "SAMM 2.2.0"
+            }
+          ]
         }
       }
     },
@@ -3780,10 +4479,10 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 7,
+      "total": 9,
       "issues": {
         "outdated_dependency": {
-          "count": 4,
+          "count": 5,
           "detail": [
             {
               "target": "batch@3.0.1",
@@ -3796,6 +4495,10 @@
             {
               "target": "serial_part@3.0.1",
               "latest_release": "serial_part@4.0.0"
+            },
+            {
+              "target": "shared.business_partner_number@2.0.0",
+              "latest_release": "shared.business_partner_number@3.0.0"
             },
             {
               "target": "shared.quantity@2.0.0",
@@ -3830,6 +4533,15 @@
               "latest_release": "generic.digital_product_passport@7.0.0"
             }
           ]
+        },
+        "meta_model_drift": {
+          "count": 1,
+          "detail": [
+            {
+              "using": "SAMM 2.1.0",
+              "latest": "SAMM 2.2.0"
+            }
+          ]
         }
       }
     },
@@ -3839,8 +4551,17 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 1,
+      "total": 2,
       "issues": {
+        "meta_model_drift": {
+          "count": 1,
+          "detail": [
+            {
+              "using": "SAMM 2.1.0",
+              "latest": "SAMM 2.2.0"
+            }
+          ]
+        },
         "missing_release_date": {
           "count": 1,
           "detail": [
@@ -3951,18 +4672,31 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 2,
+      "total": 4,
       "issues": {
         "outdated_dependency": {
-          "count": 2,
+          "count": 3,
           "detail": [
             {
               "target": "shared.address_characteristic@3.0.0",
               "latest_release": "shared.address_characteristic@4.0.0"
             },
             {
+              "target": "shared.business_partner_number@2.0.0",
+              "latest_release": "shared.business_partner_number@3.0.0"
+            },
+            {
               "target": "shared.quantity@2.0.0",
               "latest_release": "shared.quantity@3.0.0"
+            }
+          ]
+        },
+        "meta_model_drift": {
+          "count": 1,
+          "detail": [
+            {
+              "using": "SAMM 2.1.0",
+              "latest": "SAMM 2.2.0"
             }
           ]
         }
@@ -4026,18 +4760,30 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 4,
+      "total": 5,
       "issues": {
         "outdated_dependency": {
           "count": 2,
           "detail": [
             {
               "target": "shared.business_partner_number@1.0.0",
-              "latest_release": "shared.business_partner_number@2.0.0"
+              "latest_release": "shared.business_partner_number@3.0.0"
             },
             {
               "target": "shared.uuid@1.0.0",
               "latest_release": "shared.uuid@2.0.0"
+            }
+          ]
+        },
+        "deprecated_dep": {
+          "count": 1,
+          "detail": [
+            {
+              "target": "shared.business_partner_number@1.0.0",
+              "path": [
+                "id_based_comment@1.0.0",
+                "shared.business_partner_number@1.0.0"
+              ]
             }
           ]
         },
@@ -4054,7 +4800,7 @@
           "detail": [
             {
               "using": "SAMM 2.0.0",
-              "latest": "SAMM 2.1.0"
+              "latest": "SAMM 2.2.0"
             }
           ]
         }
@@ -4066,14 +4812,23 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 1,
+      "total": 2,
       "issues": {
+        "outdated_dependency": {
+          "count": 1,
+          "detail": [
+            {
+              "target": "shared.business_partner_number@2.0.0",
+              "latest_release": "shared.business_partner_number@3.0.0"
+            }
+          ]
+        },
         "meta_model_drift": {
           "count": 1,
           "detail": [
             {
               "using": "SAMM 2.0.0",
-              "latest": "SAMM 2.1.0"
+              "latest": "SAMM 2.2.0"
             }
           ]
         }
@@ -4100,7 +4855,7 @@
           "detail": [
             {
               "using": "SAMM 2.0.0",
-              "latest": "SAMM 2.1.0"
+              "latest": "SAMM 2.2.0"
             }
           ]
         }
@@ -4136,7 +4891,26 @@
           "detail": [
             {
               "using": "SAMM 2.0.0",
-              "latest": "SAMM 2.1.0"
+              "latest": "SAMM 2.2.0"
+            }
+          ]
+        }
+      }
+    },
+    "id_based_request_for_update@3.0.0": {
+      "name": "id_based_request_for_update",
+      "version": "3.0.0",
+      "family": "SAMM",
+      "source": "catenax",
+      "status": "release",
+      "total": 1,
+      "issues": {
+        "meta_model_drift": {
+          "count": 1,
+          "detail": [
+            {
+              "using": "SAMM 2.1.0",
+              "latest": "SAMM 2.2.0"
             }
           ]
         }
@@ -4327,7 +5101,7 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "draft",
-      "total": 27,
+      "total": 28,
       "issues": {
         "orphan_isolated": {
           "count": 3,
@@ -4488,6 +5262,15 @@
               "file": "IdConversion"
             }
           ]
+        },
+        "meta_model_drift": {
+          "count": 1,
+          "detail": [
+            {
+              "using": "SAMM 2.1.0",
+              "latest": "SAMM 2.2.0"
+            }
+          ]
         }
       }
     },
@@ -4530,13 +5313,32 @@
         }
       }
     },
+    "individual_asset_definition@2.0.0": {
+      "name": "individual_asset_definition",
+      "version": "2.0.0",
+      "family": "SAMM",
+      "source": "catenax",
+      "status": "release",
+      "total": 1,
+      "issues": {
+        "meta_model_drift": {
+          "count": 1,
+          "detail": [
+            {
+              "using": "SAMM 2.1.0",
+              "latest": "SAMM 2.2.0"
+            }
+          ]
+        }
+      }
+    },
     "iot_sensor_data@2.0.0": {
       "name": "iot_sensor_data",
       "version": "2.0.0",
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 2,
+      "total": 3,
       "issues": {
         "outdated_dependency": {
           "count": 1,
@@ -4556,6 +5358,15 @@
               "file": "IotSensorData"
             }
           ]
+        },
+        "meta_model_drift": {
+          "count": 1,
+          "detail": [
+            {
+              "using": "SAMM 2.1.0",
+              "latest": "SAMM 2.2.0"
+            }
+          ]
         }
       }
     },
@@ -4565,18 +5376,39 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 2,
+      "total": 4,
       "issues": {
         "outdated_dependency": {
           "count": 2,
           "detail": [
             {
               "target": "shared.business_partner_number@1.0.0",
-              "latest_release": "shared.business_partner_number@2.0.0"
+              "latest_release": "shared.business_partner_number@3.0.0"
             },
             {
               "target": "shared.uuid@1.0.0",
               "latest_release": "shared.uuid@2.0.0"
+            }
+          ]
+        },
+        "deprecated_dep": {
+          "count": 1,
+          "detail": [
+            {
+              "target": "shared.business_partner_number@1.0.0",
+              "path": [
+                "iot_sensor_device_definition@2.0.0",
+                "shared.business_partner_number@1.0.0"
+              ]
+            }
+          ]
+        },
+        "meta_model_drift": {
+          "count": 1,
+          "detail": [
+            {
+              "using": "SAMM 2.1.0",
+              "latest": "SAMM 2.2.0"
             }
           ]
         }
@@ -4588,14 +5420,14 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 6,
+      "total": 7,
       "issues": {
         "outdated_dependency": {
           "count": 3,
           "detail": [
             {
               "target": "shared.business_partner_number@1.0.0",
-              "latest_release": "shared.business_partner_number@2.0.0"
+              "latest_release": "shared.business_partner_number@3.0.0"
             },
             {
               "target": "shared.quantity@1.0.0",
@@ -4608,8 +5440,15 @@
           ]
         },
         "deprecated_dep": {
-          "count": 1,
+          "count": 2,
           "detail": [
+            {
+              "target": "shared.business_partner_number@1.0.0",
+              "path": [
+                "item_stock@1.0.0",
+                "shared.business_partner_number@1.0.0"
+              ]
+            },
             {
               "target": "shared.quantity@1.0.0",
               "path": [
@@ -4632,7 +5471,7 @@
           "detail": [
             {
               "using": "SAMM 2.0.0",
-              "latest": "SAMM 2.1.0"
+              "latest": "SAMM 2.2.0"
             }
           ]
         }
@@ -4644,14 +5483,27 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 1,
+      "total": 3,
       "issues": {
         "outdated_dependency": {
-          "count": 1,
+          "count": 2,
           "detail": [
+            {
+              "target": "shared.business_partner_number@2.0.0",
+              "latest_release": "shared.business_partner_number@3.0.0"
+            },
             {
               "target": "shared.quantity@2.0.0",
               "latest_release": "shared.quantity@3.0.0"
+            }
+          ]
+        },
+        "meta_model_drift": {
+          "count": 1,
+          "detail": [
+            {
+              "using": "SAMM 2.1.0",
+              "latest": "SAMM 2.2.0"
             }
           ]
         }
@@ -4695,7 +5547,7 @@
           "detail": [
             {
               "using": "SAMM 2.0.0",
-              "latest": "SAMM 2.1.0"
+              "latest": "SAMM 2.2.0"
             }
           ]
         },
@@ -4713,7 +5565,7 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 4,
+      "total": 5,
       "issues": {
         "deprecated_dep": {
           "count": 2,
@@ -4742,6 +5594,15 @@
             }
           ]
         },
+        "meta_model_drift": {
+          "count": 1,
+          "detail": [
+            {
+              "using": "SAMM 2.1.0",
+              "latest": "SAMM 2.2.0"
+            }
+          ]
+        },
         "missing_release_date": {
           "count": 1,
           "detail": [
@@ -4756,8 +5617,17 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 1,
+      "total": 2,
       "issues": {
+        "meta_model_drift": {
+          "count": 1,
+          "detail": [
+            {
+              "using": "SAMM 2.1.0",
+              "latest": "SAMM 2.2.0"
+            }
+          ]
+        },
         "missing_release_date": {
           "count": 1,
           "detail": [
@@ -4772,11 +5642,15 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 2,
+      "total": 4,
       "issues": {
         "outdated_dependency": {
-          "count": 1,
+          "count": 2,
           "detail": [
+            {
+              "target": "shared.business_partner_number@2.0.0",
+              "latest_release": "shared.business_partner_number@3.0.0"
+            },
             {
               "target": "shared.quantity@2.0.0",
               "latest_release": "shared.quantity@3.0.0"
@@ -4790,6 +5664,15 @@
               "latest_release": "mandatory_dismantling@2.0.0"
             }
           ]
+        },
+        "meta_model_drift": {
+          "count": 1,
+          "detail": [
+            {
+              "using": "SAMM 2.1.0",
+              "latest": "SAMM 2.2.0"
+            }
+          ]
         }
       }
     },
@@ -4799,14 +5682,27 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 1,
+      "total": 3,
       "issues": {
         "outdated_dependency": {
-          "count": 1,
+          "count": 2,
           "detail": [
+            {
+              "target": "shared.business_partner_number@2.0.0",
+              "latest_release": "shared.business_partner_number@3.0.0"
+            },
             {
               "target": "shared.quantity@2.0.0",
               "latest_release": "shared.quantity@3.0.0"
+            }
+          ]
+        },
+        "meta_model_drift": {
+          "count": 1,
+          "detail": [
+            {
+              "using": "SAMM 2.1.0",
+              "latest": "SAMM 2.2.0"
             }
           ]
         }
@@ -4818,18 +5714,27 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "deprecated",
-      "total": 2,
+      "total": 3,
       "issues": {
         "outdated_dependency": {
           "count": 2,
           "detail": [
             {
               "target": "shared.business_partner_number@1.0.0",
-              "latest_release": "shared.business_partner_number@2.0.0"
+              "latest_release": "shared.business_partner_number@3.0.0"
             },
             {
               "target": "shared.uuid@1.0.0",
               "latest_release": "shared.uuid@2.0.0"
+            }
+          ]
+        },
+        "meta_model_drift": {
+          "count": 1,
+          "detail": [
+            {
+              "using": "SAMM 2.1.0",
+              "latest": "SAMM 2.2.0"
             }
           ]
         }
@@ -4841,13 +5746,50 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 1,
+      "total": 3,
       "issues": {
+        "outdated_dependency": {
+          "count": 1,
+          "detail": [
+            {
+              "target": "shared.business_partner_number@2.0.0",
+              "latest_release": "shared.business_partner_number@3.0.0"
+            }
+          ]
+        },
         "older_release_exists": {
           "count": 1,
           "detail": [
             {
               "latest_release": "manufactured_parts_quality_information@3.0.0"
+            }
+          ]
+        },
+        "meta_model_drift": {
+          "count": 1,
+          "detail": [
+            {
+              "using": "SAMM 2.1.0",
+              "latest": "SAMM 2.2.0"
+            }
+          ]
+        }
+      }
+    },
+    "manufactured_parts_quality_information@3.0.0": {
+      "name": "manufactured_parts_quality_information",
+      "version": "3.0.0",
+      "family": "SAMM",
+      "source": "catenax",
+      "status": "release",
+      "total": 1,
+      "issues": {
+        "meta_model_drift": {
+          "count": 1,
+          "detail": [
+            {
+              "using": "SAMM 2.1.0",
+              "latest": "SAMM 2.2.0"
             }
           ]
         }
@@ -4906,7 +5848,7 @@
           "detail": [
             {
               "using": "SAMM 2.0.0",
-              "latest": "SAMM 2.1.0"
+              "latest": "SAMM 2.2.0"
             }
           ]
         }
@@ -4918,7 +5860,7 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 13,
+      "total": 15,
       "issues": {
         "outdated_dependency": {
           "count": 1,
@@ -4933,6 +5875,20 @@
           "count": 1,
           "detail": [
             "shared.bill_of_process@1.0.0"
+          ]
+        },
+        "deprecated_dep": {
+          "count": 1,
+          "detail": [
+            {
+              "target": "shared.business_partner_number@1.0.0",
+              "path": [
+                "manufacturing_capability@3.0.0",
+                "shared.bill_of_process@1.0.0",
+                "shared.message_header@2.0.0",
+                "shared.business_partner_number@1.0.0"
+              ]
+            }
           ]
         },
         "older_release_exists": {
@@ -4997,6 +5953,15 @@
               "file": "ManufacturingCapability"
             }
           ]
+        },
+        "meta_model_drift": {
+          "count": 1,
+          "detail": [
+            {
+              "using": "SAMM 2.1.0",
+              "latest": "SAMM 2.2.0"
+            }
+          ]
         }
       }
     },
@@ -5006,7 +5971,7 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 11,
+      "total": 12,
       "issues": {
         "circular_dep": {
           "count": 1,
@@ -5066,6 +6031,15 @@
               "name": "HierarchyElementIdCharacteristic",
               "kind": "Characteristic",
               "file": "ManufacturingCapability"
+            }
+          ]
+        },
+        "meta_model_drift": {
+          "count": 1,
+          "detail": [
+            {
+              "using": "SAMM 2.1.0",
+              "latest": "SAMM 2.2.0"
             }
           ]
         }
@@ -5262,7 +6236,7 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 4,
+      "total": 5,
       "issues": {
         "outdated_dependency": {
           "count": 2,
@@ -5297,6 +6271,15 @@
               ]
             }
           ]
+        },
+        "meta_model_drift": {
+          "count": 1,
+          "detail": [
+            {
+              "using": "SAMM 2.1.0",
+              "latest": "SAMM 2.2.0"
+            }
+          ]
         }
       }
     },
@@ -5306,7 +6289,7 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 5,
+      "total": 6,
       "issues": {
         "orphan_unreachable": {
           "count": 5,
@@ -5337,6 +6320,15 @@
               "file": "CertificateOfAnalysis"
             }
           ]
+        },
+        "meta_model_drift": {
+          "count": 1,
+          "detail": [
+            {
+              "using": "SAMM 2.1.0",
+              "latest": "SAMM 2.2.0"
+            }
+          ]
         }
       }
     },
@@ -5346,7 +6338,7 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 5,
+      "total": 6,
       "issues": {
         "outdated_dependency": {
           "count": 2,
@@ -5390,6 +6382,15 @@
               "latest_release": "material.chemical_material_passport@3.0.0"
             }
           ]
+        },
+        "meta_model_drift": {
+          "count": 1,
+          "detail": [
+            {
+              "using": "SAMM 2.1.0",
+              "latest": "SAMM 2.2.0"
+            }
+          ]
         }
       }
     },
@@ -5399,7 +6400,7 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 5,
+      "total": 6,
       "issues": {
         "outdated_dependency": {
           "count": 2,
@@ -5443,6 +6444,15 @@
               "latest_release": "material.chemical_material_passport@3.0.0"
             }
           ]
+        },
+        "meta_model_drift": {
+          "count": 1,
+          "detail": [
+            {
+              "using": "SAMM 2.1.0",
+              "latest": "SAMM 2.2.0"
+            }
+          ]
         }
       }
     },
@@ -5452,7 +6462,7 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 4,
+      "total": 5,
       "issues": {
         "outdated_dependency": {
           "count": 2,
@@ -5488,6 +6498,15 @@
               ]
             }
           ]
+        },
+        "meta_model_drift": {
+          "count": 1,
+          "detail": [
+            {
+              "using": "SAMM 2.1.0",
+              "latest": "SAMM 2.2.0"
+            }
+          ]
         }
       }
     },
@@ -5497,7 +6516,7 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 16,
+      "total": 17,
       "issues": {
         "orphan_unreachable": {
           "count": 16,
@@ -5583,6 +6602,15 @@
               "file": "SafetyDataSheet"
             }
           ]
+        },
+        "meta_model_drift": {
+          "count": 1,
+          "detail": [
+            {
+              "using": "SAMM 2.1.0",
+              "latest": "SAMM 2.2.0"
+            }
+          ]
         }
       }
     },
@@ -5592,7 +6620,7 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 15,
+      "total": 16,
       "issues": {
         "orphan_unreachable": {
           "count": 15,
@@ -5673,6 +6701,15 @@
               "file": "TechnicalInformation"
             }
           ]
+        },
+        "meta_model_drift": {
+          "count": 1,
+          "detail": [
+            {
+              "using": "SAMM 2.1.0",
+              "latest": "SAMM 2.2.0"
+            }
+          ]
         }
       }
     },
@@ -5698,8 +6735,26 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 1,
+      "total": 3,
       "issues": {
+        "outdated_dependency": {
+          "count": 1,
+          "detail": [
+            {
+              "target": "shared.business_partner_number@2.0.0",
+              "latest_release": "shared.business_partner_number@3.0.0"
+            }
+          ]
+        },
+        "meta_model_drift": {
+          "count": 1,
+          "detail": [
+            {
+              "using": "SAMM 2.1.0",
+              "latest": "SAMM 2.2.0"
+            }
+          ]
+        },
         "missing_release_date": {
           "count": 1,
           "detail": [
@@ -5714,14 +6769,14 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 5,
+      "total": 6,
       "issues": {
         "outdated_dependency": {
           "count": 3,
           "detail": [
             {
               "target": "shared.business_partner_number@1.0.0",
-              "latest_release": "shared.business_partner_number@2.0.0"
+              "latest_release": "shared.business_partner_number@3.0.0"
             },
             {
               "target": "shared.quantity@1.0.0",
@@ -5734,8 +6789,15 @@
           ]
         },
         "deprecated_dep": {
-          "count": 1,
+          "count": 2,
           "detail": [
+            {
+              "target": "shared.business_partner_number@1.0.0",
+              "path": [
+                "material_demand@1.0.0",
+                "shared.business_partner_number@1.0.0"
+              ]
+            },
             {
               "target": "shared.quantity@1.0.0",
               "path": [
@@ -5750,7 +6812,7 @@
           "detail": [
             {
               "using": "SAMM 2.0.0",
-              "latest": "SAMM 2.1.0"
+              "latest": "SAMM 2.2.0"
             }
           ]
         }
@@ -5786,7 +6848,7 @@
           "detail": [
             {
               "using": "SAMM 2.0.0",
-              "latest": "SAMM 2.1.0"
+              "latest": "SAMM 2.2.0"
             }
           ]
         },
@@ -5804,8 +6866,17 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 1,
+      "total": 2,
       "issues": {
+        "meta_model_drift": {
+          "count": 1,
+          "detail": [
+            {
+              "using": "SAMM 2.1.0",
+              "latest": "SAMM 2.2.0"
+            }
+          ]
+        },
         "missing_release_date": {
           "count": 1,
           "detail": [
@@ -5859,7 +6930,7 @@
           "detail": [
             {
               "using": "SAMM 2.0.0",
-              "latest": "SAMM 2.1.0"
+              "latest": "SAMM 2.2.0"
             }
           ]
         },
@@ -5877,8 +6948,26 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 1,
+      "total": 3,
       "issues": {
+        "outdated_dependency": {
+          "count": 1,
+          "detail": [
+            {
+              "target": "shared.business_partner_number@2.0.0",
+              "latest_release": "shared.business_partner_number@3.0.0"
+            }
+          ]
+        },
+        "meta_model_drift": {
+          "count": 1,
+          "detail": [
+            {
+              "using": "SAMM 2.1.0",
+              "latest": "SAMM 2.2.0"
+            }
+          ]
+        },
         "missing_release_date": {
           "count": 1,
           "detail": [
@@ -5927,7 +7016,7 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "draft",
-      "total": 2,
+      "total": 3,
       "issues": {
         "unresolved_dep": {
           "count": 1,
@@ -5941,6 +7030,15 @@
             {
               "target": "shared.address_characteristic@1.0.0",
               "latest_release": "shared.address_characteristic@4.0.0"
+            }
+          ]
+        },
+        "meta_model_drift": {
+          "count": 1,
+          "detail": [
+            {
+              "using": "SAMM 2.1.0",
+              "latest": "SAMM 2.2.0"
             }
           ]
         }
@@ -5968,7 +7066,7 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 2,
+      "total": 3,
       "issues": {
         "outdated_dependency": {
           "count": 1,
@@ -5979,12 +7077,25 @@
             }
           ]
         },
+        "deprecated_dep": {
+          "count": 1,
+          "detail": [
+            {
+              "target": "shared.business_partner_number@1.0.0",
+              "path": [
+                "material_recycling_certificate@1.0.0",
+                "shared.recycling_strategy_certificate@2.0.0",
+                "shared.business_partner_number@1.0.0"
+              ]
+            }
+          ]
+        },
         "meta_model_drift": {
           "count": 1,
           "detail": [
             {
               "using": "SAMM 2.0.0",
-              "latest": "SAMM 2.1.0"
+              "latest": "SAMM 2.2.0"
             }
           ]
         }
@@ -5996,18 +7107,31 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 2,
+      "total": 4,
       "issues": {
         "outdated_dependency": {
-          "count": 2,
+          "count": 3,
           "detail": [
             {
               "target": "shared.address_characteristic@3.0.0",
               "latest_release": "shared.address_characteristic@4.0.0"
             },
             {
+              "target": "shared.business_partner_number@2.0.0",
+              "latest_release": "shared.business_partner_number@3.0.0"
+            },
+            {
               "target": "shared.quantity@2.0.0",
               "latest_release": "shared.quantity@3.0.0"
+            }
+          ]
+        },
+        "meta_model_drift": {
+          "count": 1,
+          "detail": [
+            {
+              "using": "SAMM 2.1.0",
+              "latest": "SAMM 2.2.0"
             }
           ]
         }
@@ -6019,18 +7143,30 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 5,
+      "total": 6,
       "issues": {
         "outdated_dependency": {
           "count": 2,
           "detail": [
             {
               "target": "shared.business_partner_number@1.0.0",
-              "latest_release": "shared.business_partner_number@2.0.0"
+              "latest_release": "shared.business_partner_number@3.0.0"
             },
             {
               "target": "shared.uuid@1.0.0",
               "latest_release": "shared.uuid@2.0.0"
+            }
+          ]
+        },
+        "deprecated_dep": {
+          "count": 1,
+          "detail": [
+            {
+              "target": "shared.business_partner_number@1.0.0",
+              "path": [
+                "part_as_planned@2.0.0",
+                "shared.business_partner_number@1.0.0"
+              ]
             }
           ]
         },
@@ -6054,7 +7190,7 @@
           "detail": [
             {
               "using": "SAMM 2.0.0",
-              "latest": "SAMM 2.1.0"
+              "latest": "SAMM 2.2.0"
             }
           ]
         }
@@ -6109,6 +7245,25 @@
         }
       }
     },
+    "part_as_specified@3.0.0": {
+      "name": "part_as_specified",
+      "version": "3.0.0",
+      "family": "SAMM",
+      "source": "catenax",
+      "status": "draft",
+      "total": 1,
+      "issues": {
+        "meta_model_drift": {
+          "count": 1,
+          "detail": [
+            {
+              "using": "SAMM 2.1.0",
+              "latest": "SAMM 2.2.0"
+            }
+          ]
+        }
+      }
+    },
     "part_site_information_as_planned@1.0.0": {
       "name": "part_site_information_as_planned",
       "version": "1.0.0",
@@ -6134,8 +7289,17 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 5,
+      "total": 7,
       "issues": {
+        "outdated_dependency": {
+          "count": 1,
+          "detail": [
+            {
+              "target": "shared.business_partner_number@2.0.0",
+              "latest_release": "shared.business_partner_number@3.0.0"
+            }
+          ]
+        },
         "deprecated_dep": {
           "count": 1,
           "detail": [
@@ -6171,6 +7335,15 @@
             }
           ]
         },
+        "meta_model_drift": {
+          "count": 1,
+          "detail": [
+            {
+              "using": "SAMM 2.1.0",
+              "latest": "SAMM 2.2.0"
+            }
+          ]
+        },
         "missing_release_date": {
           "count": 1,
           "detail": [
@@ -6185,8 +7358,17 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 3,
+      "total": 5,
       "issues": {
+        "outdated_dependency": {
+          "count": 1,
+          "detail": [
+            {
+              "target": "shared.business_partner_number@2.0.0",
+              "latest_release": "shared.business_partner_number@3.0.0"
+            }
+          ]
+        },
         "bad_naming_type": {
           "count": 2,
           "detail": [
@@ -6199,6 +7381,15 @@
               "name": "partSitesInformationAsPlannedEntity",
               "kind": "Entity",
               "file": "PartTypeInformation"
+            }
+          ]
+        },
+        "meta_model_drift": {
+          "count": 1,
+          "detail": [
+            {
+              "using": "SAMM 2.1.0",
+              "latest": "SAMM 2.2.0"
             }
           ]
         },
@@ -6223,7 +7414,7 @@
           "detail": [
             {
               "using": "SAMM 2.0.0",
-              "latest": "SAMM 2.1.0"
+              "latest": "SAMM 2.2.0"
             }
           ]
         }
@@ -6235,7 +7426,7 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 3,
+      "total": 4,
       "issues": {
         "outdated_dependency": {
           "count": 1,
@@ -6261,6 +7452,34 @@
               "name": "AdditionalInformationCharacteristic",
               "kind": "Characteristic",
               "file": "PartsAnalyses"
+            }
+          ]
+        },
+        "meta_model_drift": {
+          "count": 1,
+          "detail": [
+            {
+              "using": "SAMM 2.1.0",
+              "latest": "SAMM 2.2.0"
+            }
+          ]
+        }
+      }
+    },
+    "parts_analyses@4.0.0": {
+      "name": "parts_analyses",
+      "version": "4.0.0",
+      "family": "SAMM",
+      "source": "catenax",
+      "status": "release",
+      "total": 1,
+      "issues": {
+        "meta_model_drift": {
+          "count": 1,
+          "detail": [
+            {
+              "using": "SAMM 2.1.0",
+              "latest": "SAMM 2.2.0"
             }
           ]
         }
@@ -6367,7 +7586,26 @@
           "detail": [
             {
               "using": "SAMM 2.0.0",
-              "latest": "SAMM 2.1.0"
+              "latest": "SAMM 2.2.0"
+            }
+          ]
+        }
+      }
+    },
+    "pcf@6.0.0": {
+      "name": "pcf",
+      "version": "6.0.0",
+      "family": "SAMM",
+      "source": "catenax",
+      "status": "deprecated",
+      "total": 1,
+      "issues": {
+        "meta_model_drift": {
+          "count": 1,
+          "detail": [
+            {
+              "using": "SAMM 2.1.0",
+              "latest": "SAMM 2.2.0"
             }
           ]
         }
@@ -6379,13 +7617,22 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 1,
+      "total": 2,
       "issues": {
         "older_release_exists": {
           "count": 1,
           "detail": [
             {
               "latest_release": "pcf@9.0.0"
+            }
+          ]
+        },
+        "meta_model_drift": {
+          "count": 1,
+          "detail": [
+            {
+              "using": "SAMM 2.1.0",
+              "latest": "SAMM 2.2.0"
             }
           ]
         }
@@ -6397,7 +7644,7 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 8,
+      "total": 9,
       "issues": {
         "older_release_exists": {
           "count": 1,
@@ -6456,6 +7703,15 @@
               "file": "Pcf"
             }
           ]
+        },
+        "meta_model_drift": {
+          "count": 1,
+          "detail": [
+            {
+              "using": "SAMM 2.1.0",
+              "latest": "SAMM 2.2.0"
+            }
+          ]
         }
       }
     },
@@ -6465,7 +7721,7 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 2,
+      "total": 3,
       "issues": {
         "bad_naming_type": {
           "count": 2,
@@ -6481,6 +7737,15 @@
               "file": "Pcf"
             }
           ]
+        },
+        "meta_model_drift": {
+          "count": 1,
+          "detail": [
+            {
+              "using": "SAMM 2.1.0",
+              "latest": "SAMM 2.2.0"
+            }
+          ]
         }
       }
     },
@@ -6490,8 +7755,26 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 1,
+      "total": 3,
       "issues": {
+        "outdated_dependency": {
+          "count": 1,
+          "detail": [
+            {
+              "target": "shared.business_partner_number@2.0.0",
+              "latest_release": "shared.business_partner_number@3.0.0"
+            }
+          ]
+        },
+        "meta_model_drift": {
+          "count": 1,
+          "detail": [
+            {
+              "using": "SAMM 2.1.0",
+              "latest": "SAMM 2.2.0"
+            }
+          ]
+        },
         "missing_release_date": {
           "count": 1,
           "detail": [
@@ -6506,14 +7789,14 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 6,
+      "total": 7,
       "issues": {
         "outdated_dependency": {
           "count": 3,
           "detail": [
             {
               "target": "shared.business_partner_number@1.0.0",
-              "latest_release": "shared.business_partner_number@2.0.0"
+              "latest_release": "shared.business_partner_number@3.0.0"
             },
             {
               "target": "shared.quantity@1.0.0",
@@ -6526,8 +7809,15 @@
           ]
         },
         "deprecated_dep": {
-          "count": 1,
+          "count": 2,
           "detail": [
+            {
+              "target": "shared.business_partner_number@1.0.0",
+              "path": [
+                "planned_production_output@1.0.0",
+                "shared.business_partner_number@1.0.0"
+              ]
+            },
             {
               "target": "shared.quantity@1.0.0",
               "path": [
@@ -6550,7 +7840,7 @@
           "detail": [
             {
               "using": "SAMM 2.0.0",
-              "latest": "SAMM 2.1.0"
+              "latest": "SAMM 2.2.0"
             }
           ]
         }
@@ -6562,14 +7852,46 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 1,
+      "total": 3,
       "issues": {
         "outdated_dependency": {
-          "count": 1,
+          "count": 2,
           "detail": [
+            {
+              "target": "shared.business_partner_number@2.0.0",
+              "latest_release": "shared.business_partner_number@3.0.0"
+            },
             {
               "target": "shared.quantity@2.0.0",
               "latest_release": "shared.quantity@3.0.0"
+            }
+          ]
+        },
+        "meta_model_drift": {
+          "count": 1,
+          "detail": [
+            {
+              "using": "SAMM 2.1.0",
+              "latest": "SAMM 2.2.0"
+            }
+          ]
+        }
+      }
+    },
+    "product_stock@2.0.0": {
+      "name": "product_stock",
+      "version": "2.0.0",
+      "family": "SAMM",
+      "source": "catenax",
+      "status": "draft",
+      "total": 1,
+      "issues": {
+        "meta_model_drift": {
+          "count": 1,
+          "detail": [
+            {
+              "using": "SAMM 2.1.0",
+              "latest": "SAMM 2.2.0"
             }
           ]
         }
@@ -6581,14 +7903,14 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 4,
+      "total": 6,
       "issues": {
         "outdated_dependency": {
           "count": 3,
           "detail": [
             {
               "target": "shared.business_partner_number@1.0.0",
-              "latest_release": "shared.business_partner_number@2.0.0"
+              "latest_release": "shared.business_partner_number@3.0.0"
             },
             {
               "target": "shared.contact_information@3.0.0",
@@ -6600,11 +7922,60 @@
             }
           ]
         },
+        "deprecated_dep": {
+          "count": 1,
+          "detail": [
+            {
+              "target": "shared.business_partner_number@1.0.0",
+              "path": [
+                "quality_task@2.0.0",
+                "shared.business_partner_number@1.0.0"
+              ]
+            }
+          ]
+        },
         "older_release_exists": {
           "count": 1,
           "detail": [
             {
               "latest_release": "quality_task@3.0.0"
+            }
+          ]
+        },
+        "meta_model_drift": {
+          "count": 1,
+          "detail": [
+            {
+              "using": "SAMM 2.1.0",
+              "latest": "SAMM 2.2.0"
+            }
+          ]
+        }
+      }
+    },
+    "quality_task@3.0.0": {
+      "name": "quality_task",
+      "version": "3.0.0",
+      "family": "SAMM",
+      "source": "catenax",
+      "status": "release",
+      "total": 2,
+      "issues": {
+        "outdated_dependency": {
+          "count": 1,
+          "detail": [
+            {
+              "target": "shared.business_partner_number@2.0.0",
+              "latest_release": "shared.business_partner_number@3.0.0"
+            }
+          ]
+        },
+        "meta_model_drift": {
+          "count": 1,
+          "detail": [
+            {
+              "using": "SAMM 2.1.0",
+              "latest": "SAMM 2.2.0"
             }
           ]
         }
@@ -6623,7 +7994,7 @@
           "detail": [
             {
               "using": "SAMM 2.0.0",
-              "latest": "SAMM 2.1.0"
+              "latest": "SAMM 2.2.0"
             }
           ]
         }
@@ -6635,7 +8006,7 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 2,
+      "total": 3,
       "issues": {
         "older_release_exists": {
           "count": 1,
@@ -6654,6 +8025,15 @@
               "file": "QualityTaskAttachment"
             }
           ]
+        },
+        "meta_model_drift": {
+          "count": 1,
+          "detail": [
+            {
+              "using": "SAMM 2.1.0",
+              "latest": "SAMM 2.2.0"
+            }
+          ]
         }
       }
     },
@@ -6663,7 +8043,7 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 1,
+      "total": 2,
       "issues": {
         "bad_naming_type": {
           "count": 1,
@@ -6672,6 +8052,15 @@
               "name": "schemaCharacteristic",
               "kind": "Characteristic",
               "file": "QualityTaskAttachment"
+            }
+          ]
+        },
+        "meta_model_drift": {
+          "count": 1,
+          "detail": [
+            {
+              "using": "SAMM 2.1.0",
+              "latest": "SAMM 2.2.0"
             }
           ]
         }
@@ -6712,7 +8101,7 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 3,
+      "total": 4,
       "issues": {
         "outdated_dependency": {
           "count": 1,
@@ -6720,6 +8109,19 @@
             {
               "target": "shared.recycling_strategy_certificate@2.0.0",
               "latest_release": "shared.recycling_strategy_certificate@3.0.0"
+            }
+          ]
+        },
+        "deprecated_dep": {
+          "count": 1,
+          "detail": [
+            {
+              "target": "shared.business_partner_number@1.0.0",
+              "path": [
+                "refurbishing_certificate@2.0.0",
+                "shared.recycling_strategy_certificate@2.0.0",
+                "shared.business_partner_number@1.0.0"
+              ]
             }
           ]
         },
@@ -6736,7 +8138,7 @@
           "detail": [
             {
               "using": "SAMM 2.0.0",
-              "latest": "SAMM 2.1.0"
+              "latest": "SAMM 2.2.0"
             }
           ]
         }
@@ -6785,7 +8187,7 @@
           "detail": [
             {
               "using": "SAMM 2.0.0",
-              "latest": "SAMM 2.1.0"
+              "latest": "SAMM 2.2.0"
             }
           ]
         }
@@ -6826,7 +8228,7 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 3,
+      "total": 4,
       "issues": {
         "outdated_dependency": {
           "count": 1,
@@ -6834,6 +8236,19 @@
             {
               "target": "shared.recycling_strategy_certificate@2.0.0",
               "latest_release": "shared.recycling_strategy_certificate@3.0.0"
+            }
+          ]
+        },
+        "deprecated_dep": {
+          "count": 1,
+          "detail": [
+            {
+              "target": "shared.business_partner_number@1.0.0",
+              "path": [
+                "remanufacturing_certificate@2.0.0",
+                "shared.recycling_strategy_certificate@2.0.0",
+                "shared.business_partner_number@1.0.0"
+              ]
             }
           ]
         },
@@ -6850,7 +8265,7 @@
           "detail": [
             {
               "using": "SAMM 2.0.0",
-              "latest": "SAMM 2.1.0"
+              "latest": "SAMM 2.2.0"
             }
           ]
         }
@@ -6862,7 +8277,7 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 3,
+      "total": 4,
       "issues": {
         "outdated_dependency": {
           "count": 1,
@@ -6891,6 +8306,15 @@
                 "serial_part@3.0.0",
                 "shared.part_site_information_as_built@2.0.0"
               ]
+            }
+          ]
+        },
+        "meta_model_drift": {
+          "count": 1,
+          "detail": [
+            {
+              "using": "SAMM 2.1.0",
+              "latest": "SAMM 2.2.0"
             }
           ]
         }
@@ -6902,7 +8326,7 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 3,
+      "total": 4,
       "issues": {
         "outdated_dependency": {
           "count": 1,
@@ -6933,6 +8357,43 @@
               ]
             }
           ]
+        },
+        "meta_model_drift": {
+          "count": 1,
+          "detail": [
+            {
+              "using": "SAMM 2.1.0",
+              "latest": "SAMM 2.2.0"
+            }
+          ]
+        }
+      }
+    },
+    "report_8d@1.0.0": {
+      "name": "report_8d",
+      "version": "1.0.0",
+      "family": "SAMM",
+      "source": "catenax",
+      "status": "release",
+      "total": 2,
+      "issues": {
+        "outdated_dependency": {
+          "count": 1,
+          "detail": [
+            {
+              "target": "shared.business_partner_number@2.0.0",
+              "latest_release": "shared.business_partner_number@3.0.0"
+            }
+          ]
+        },
+        "meta_model_drift": {
+          "count": 1,
+          "detail": [
+            {
+              "using": "SAMM 2.1.0",
+              "latest": "SAMM 2.2.0"
+            }
+          ]
         }
       }
     },
@@ -6942,18 +8403,30 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 4,
+      "total": 6,
       "issues": {
         "outdated_dependency": {
           "count": 2,
           "detail": [
             {
               "target": "shared.business_partner_number@1.0.0",
-              "latest_release": "shared.business_partner_number@2.0.0"
+              "latest_release": "shared.business_partner_number@3.0.0"
             },
             {
               "target": "shared.uuid@1.0.0",
               "latest_release": "shared.uuid@2.0.0"
+            }
+          ]
+        },
+        "deprecated_dep": {
+          "count": 1,
+          "detail": [
+            {
+              "target": "shared.business_partner_number@1.0.0",
+              "path": [
+                "request_for_quotation@1.0.0",
+                "shared.business_partner_number@1.0.0"
+              ]
             }
           ]
         },
@@ -6974,6 +8447,15 @@
               "file": "RequestForQuotation"
             }
           ]
+        },
+        "meta_model_drift": {
+          "count": 1,
+          "detail": [
+            {
+              "using": "SAMM 2.1.0",
+              "latest": "SAMM 2.2.0"
+            }
+          ]
         }
       }
     },
@@ -6983,14 +8465,14 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 6,
+      "total": 8,
       "issues": {
         "outdated_dependency": {
           "count": 3,
           "detail": [
             {
               "target": "shared.business_partner_number@1.0.0",
-              "latest_release": "shared.business_partner_number@2.0.0"
+              "latest_release": "shared.business_partner_number@3.0.0"
             },
             {
               "target": "shared.message_header@1.0.0",
@@ -7003,8 +8485,15 @@
           ]
         },
         "deprecated_dep": {
-          "count": 2,
+          "count": 3,
           "detail": [
+            {
+              "target": "shared.business_partner_number@1.0.0",
+              "path": [
+                "request_for_quotation@2.0.0",
+                "shared.business_partner_number@1.0.0"
+              ]
+            },
             {
               "target": "shared.message_header@1.0.0",
               "path": [
@@ -7028,6 +8517,15 @@
               "latest_release": "request_for_quotation@3.0.0"
             }
           ]
+        },
+        "meta_model_drift": {
+          "count": 1,
+          "detail": [
+            {
+              "using": "SAMM 2.1.0",
+              "latest": "SAMM 2.2.0"
+            }
+          ]
         }
       }
     },
@@ -7037,7 +8535,7 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 1,
+      "total": 2,
       "issues": {
         "outdated_dependency": {
           "count": 1,
@@ -7045,6 +8543,34 @@
             {
               "target": "shared.quantity@2.0.0",
               "latest_release": "shared.quantity@3.0.0"
+            }
+          ]
+        },
+        "meta_model_drift": {
+          "count": 1,
+          "detail": [
+            {
+              "using": "SAMM 2.1.0",
+              "latest": "SAMM 2.2.0"
+            }
+          ]
+        }
+      }
+    },
+    "requirement@1.0.0": {
+      "name": "requirement",
+      "version": "1.0.0",
+      "family": "SAMM",
+      "source": "catenax",
+      "status": "release",
+      "total": 1,
+      "issues": {
+        "meta_model_drift": {
+          "count": 1,
+          "detail": [
+            {
+              "using": "SAMM 2.1.0",
+              "latest": "SAMM 2.2.0"
             }
           ]
         }
@@ -7094,7 +8620,7 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 5,
+      "total": 6,
       "issues": {
         "outdated_dependency": {
           "count": 3,
@@ -7130,6 +8656,15 @@
                 "serial_part@3.0.0",
                 "shared.part_site_information_as_built@2.0.0"
               ]
+            }
+          ]
+        },
+        "meta_model_drift": {
+          "count": 1,
+          "detail": [
+            {
+              "using": "SAMM 2.1.0",
+              "latest": "SAMM 2.2.0"
             }
           ]
         }
@@ -7186,7 +8721,7 @@
           "detail": [
             {
               "using": "SAMM 2.0.0",
-              "latest": "SAMM 2.1.0"
+              "latest": "SAMM 2.2.0"
             }
           ]
         }
@@ -7198,7 +8733,7 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 3,
+      "total": 4,
       "issues": {
         "outdated_dependency": {
           "count": 1,
@@ -7229,6 +8764,15 @@
               ]
             }
           ]
+        },
+        "meta_model_drift": {
+          "count": 1,
+          "detail": [
+            {
+              "using": "SAMM 2.1.0",
+              "latest": "SAMM 2.2.0"
+            }
+          ]
         }
       }
     },
@@ -7251,13 +8795,32 @@
         }
       }
     },
+    "rul@2.0.0": {
+      "name": "rul",
+      "version": "2.0.0",
+      "family": "SAMM",
+      "source": "catenax",
+      "status": "draft",
+      "total": 1,
+      "issues": {
+        "meta_model_drift": {
+          "count": 1,
+          "detail": [
+            {
+              "using": "SAMM 2.1.0",
+              "latest": "SAMM 2.2.0"
+            }
+          ]
+        }
+      }
+    },
     "sbom@1.0.0": {
       "name": "sbom",
       "version": "1.0.0",
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 2,
+      "total": 3,
       "issues": {
         "stem_name_mismatch": {
           "count": 1,
@@ -7265,6 +8828,15 @@
             {
               "file": "Sbom",
               "aspect": "Softwaremodule"
+            }
+          ]
+        },
+        "meta_model_drift": {
+          "count": 1,
+          "detail": [
+            {
+              "using": "SAMM 2.1.0",
+              "latest": "SAMM 2.2.0"
             }
           ]
         },
@@ -7314,7 +8886,7 @@
           "detail": [
             {
               "using": "SAMM 2.0.0",
-              "latest": "SAMM 2.1.0"
+              "latest": "SAMM 2.2.0"
             }
           ]
         }
@@ -7326,7 +8898,7 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 1,
+      "total": 2,
       "issues": {
         "orphan_isolated": {
           "count": 1,
@@ -7335,6 +8907,15 @@
               "name": "SecondaryMaterialContentCalculated",
               "kind": "Aspect",
               "file": "SecondaryMaterialContentCalculated"
+            }
+          ]
+        },
+        "meta_model_drift": {
+          "count": 1,
+          "detail": [
+            {
+              "using": "SAMM 2.1.0",
+              "latest": "SAMM 2.2.0"
             }
           ]
         }
@@ -7346,7 +8927,7 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 1,
+      "total": 2,
       "issues": {
         "orphan_isolated": {
           "count": 1,
@@ -7355,6 +8936,15 @@
               "name": "SecondaryMaterialContentVerifiable",
               "kind": "Aspect",
               "file": "SecondaryMaterialContentVerifiable"
+            }
+          ]
+        },
+        "meta_model_drift": {
+          "count": 1,
+          "detail": [
+            {
+              "using": "SAMM 2.1.0",
+              "latest": "SAMM 2.2.0"
             }
           ]
         }
@@ -7398,7 +8988,7 @@
           "detail": [
             {
               "using": "SAMM 2.0.0",
-              "latest": "SAMM 2.1.0"
+              "latest": "SAMM 2.2.0"
             }
           ]
         },
@@ -7416,7 +9006,7 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 4,
+      "total": 5,
       "issues": {
         "deprecated_dep": {
           "count": 2,
@@ -7442,6 +9032,15 @@
           "detail": [
             {
               "latest_release": "serial_part@4.0.0"
+            }
+          ]
+        },
+        "meta_model_drift": {
+          "count": 1,
+          "detail": [
+            {
+              "using": "SAMM 2.1.0",
+              "latest": "SAMM 2.2.0"
             }
           ]
         },
@@ -7459,7 +9058,7 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 4,
+      "total": 5,
       "issues": {
         "deprecated_dep": {
           "count": 2,
@@ -7488,6 +9087,15 @@
             }
           ]
         },
+        "meta_model_drift": {
+          "count": 1,
+          "detail": [
+            {
+              "using": "SAMM 2.1.0",
+              "latest": "SAMM 2.2.0"
+            }
+          ]
+        },
         "missing_release_date": {
           "count": 1,
           "detail": [
@@ -7502,8 +9110,17 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 1,
+      "total": 2,
       "issues": {
+        "meta_model_drift": {
+          "count": 1,
+          "detail": [
+            {
+              "using": "SAMM 2.1.0",
+              "latest": "SAMM 2.2.0"
+            }
+          ]
+        },
         "missing_release_date": {
           "count": 1,
           "detail": [
@@ -7624,7 +9241,7 @@
           "detail": [
             {
               "using": "SAMM 2.0.0",
-              "latest": "SAMM 2.1.0"
+              "latest": "SAMM 2.2.0"
             }
           ]
         },
@@ -7642,8 +9259,17 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 1,
+      "total": 2,
       "issues": {
+        "meta_model_drift": {
+          "count": 1,
+          "detail": [
+            {
+              "using": "SAMM 2.1.0",
+              "latest": "SAMM 2.2.0"
+            }
+          ]
+        },
         "missing_release_date": {
           "count": 1,
           "detail": [
@@ -7658,7 +9284,7 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 5,
+      "total": 7,
       "issues": {
         "outdated_dependency": {
           "count": 2,
@@ -7679,11 +9305,33 @@
             "manufacturing_capability@3.0.0"
           ]
         },
+        "deprecated_dep": {
+          "count": 1,
+          "detail": [
+            {
+              "target": "shared.business_partner_number@1.0.0",
+              "path": [
+                "shared.bill_of_process@1.0.0",
+                "shared.message_header@2.0.0",
+                "shared.business_partner_number@1.0.0"
+              ]
+            }
+          ]
+        },
         "older_release_exists": {
           "count": 1,
           "detail": [
             {
               "latest_release": "shared.bill_of_process@1.1.0"
+            }
+          ]
+        },
+        "meta_model_drift": {
+          "count": 1,
+          "detail": [
+            {
+              "using": "SAMM 2.1.0",
+              "latest": "SAMM 2.2.0"
             }
           ]
         },
@@ -7701,12 +9349,21 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 2,
+      "total": 3,
       "issues": {
         "circular_dep": {
           "count": 1,
           "detail": [
             "manufacturing_capability@3.1.0"
+          ]
+        },
+        "meta_model_drift": {
+          "count": 1,
+          "detail": [
+            {
+              "using": "SAMM 2.1.0",
+              "latest": "SAMM 2.2.0"
+            }
           ]
         },
         "missing_release_date": {
@@ -7722,6 +9379,25 @@
       "version": "1.0.0",
       "family": "SAMM",
       "source": "catenax",
+      "status": "deprecated",
+      "total": 1,
+      "issues": {
+        "meta_model_drift": {
+          "count": 1,
+          "detail": [
+            {
+              "using": "SAMM 2.0.0",
+              "latest": "SAMM 2.2.0"
+            }
+          ]
+        }
+      }
+    },
+    "shared.business_partner_number@2.0.0": {
+      "name": "shared.business_partner_number",
+      "version": "2.0.0",
+      "family": "SAMM",
+      "source": "catenax",
       "status": "release",
       "total": 2,
       "issues": {
@@ -7729,7 +9405,7 @@
           "count": 1,
           "detail": [
             {
-              "latest_release": "shared.business_partner_number@2.0.0"
+              "latest_release": "shared.business_partner_number@3.0.0"
             }
           ]
         },
@@ -7737,9 +9413,66 @@
           "count": 1,
           "detail": [
             {
-              "using": "SAMM 2.0.0",
-              "latest": "SAMM 2.1.0"
+              "using": "SAMM 2.1.0",
+              "latest": "SAMM 2.2.0"
             }
+          ]
+        }
+      }
+    },
+    "shared.business_partner_number@3.0.0": {
+      "name": "shared.business_partner_number",
+      "version": "3.0.0",
+      "family": "SAMM",
+      "source": "catenax",
+      "status": "release",
+      "total": 7,
+      "issues": {
+        "orphan_isolated": {
+          "count": 2,
+          "detail": [
+            {
+              "name": "AnyBpnCharacteristic",
+              "kind": "Characteristic",
+              "file": "BusinessPartnerNumber"
+            },
+            {
+              "name": "BpnsOrBpnaCharacteristic",
+              "kind": "Characteristic",
+              "file": "BusinessPartnerNumber"
+            }
+          ]
+        },
+        "unused_property": {
+          "count": 3,
+          "detail": [
+            {
+              "name": "bpna",
+              "kind": "Property",
+              "file": "BusinessPartnerNumber"
+            },
+            {
+              "name": "bpns",
+              "kind": "Property",
+              "file": "BusinessPartnerNumber"
+            },
+            {
+              "name": "bpnl",
+              "kind": "Property",
+              "file": "BusinessPartnerNumber"
+            }
+          ]
+        },
+        "missing_release_date": {
+          "count": 1,
+          "detail": [
+            "3.0.0"
+          ]
+        },
+        "missing_gen_docs": {
+          "count": 1,
+          "detail": [
+            "BusinessPartnerNumber"
           ]
         }
       }
@@ -7810,7 +9543,7 @@
           "detail": [
             {
               "using": "SAMM 2.0.0",
-              "latest": "SAMM 2.1.0"
+              "latest": "SAMM 2.2.0"
             }
           ]
         }
@@ -7822,8 +9555,17 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 1,
+      "total": 2,
       "issues": {
+        "meta_model_drift": {
+          "count": 1,
+          "detail": [
+            {
+              "using": "SAMM 2.1.0",
+              "latest": "SAMM 2.2.0"
+            }
+          ]
+        },
         "missing_release_date": {
           "count": 1,
           "detail": [
@@ -7838,8 +9580,17 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 21,
+      "total": 23,
       "issues": {
+        "outdated_dependency": {
+          "count": 1,
+          "detail": [
+            {
+              "target": "shared.business_partner_number@2.0.0",
+              "latest_release": "shared.business_partner_number@3.0.0"
+            }
+          ]
+        },
         "orphan_isolated": {
           "count": 8,
           "detail": [
@@ -7945,6 +9696,15 @@
             }
           ]
         },
+        "meta_model_drift": {
+          "count": 1,
+          "detail": [
+            {
+              "using": "SAMM 2.1.0",
+              "latest": "SAMM 2.2.0"
+            }
+          ]
+        },
         "missing_release_date": {
           "count": 1,
           "detail": [
@@ -7965,7 +9725,7 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 2,
+      "total": 3,
       "issues": {
         "unused_property": {
           "count": 1,
@@ -7974,6 +9734,15 @@
               "name": "manufacturingInformation",
               "kind": "Property",
               "file": "ManufacturingInformation"
+            }
+          ]
+        },
+        "meta_model_drift": {
+          "count": 1,
+          "detail": [
+            {
+              "using": "SAMM 2.1.0",
+              "latest": "SAMM 2.2.0"
             }
           ]
         },
@@ -7991,7 +9760,7 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 3,
+      "total": 4,
       "issues": {
         "unused_property": {
           "count": 1,
@@ -8000,6 +9769,15 @@
               "name": "partClassification",
               "kind": "Property",
               "file": "PartClassification"
+            }
+          ]
+        },
+        "meta_model_drift": {
+          "count": 1,
+          "detail": [
+            {
+              "using": "SAMM 2.1.0",
+              "latest": "SAMM 2.2.0"
             }
           ]
         },
@@ -8023,8 +9801,17 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 2,
+      "total": 4,
       "issues": {
+        "outdated_dependency": {
+          "count": 1,
+          "detail": [
+            {
+              "target": "shared.business_partner_number@2.0.0",
+              "latest_release": "shared.business_partner_number@3.0.0"
+            }
+          ]
+        },
         "unused_property": {
           "count": 1,
           "detail": [
@@ -8032,6 +9819,15 @@
               "name": "sites",
               "kind": "Property",
               "file": "SiteInformation"
+            }
+          ]
+        },
+        "meta_model_drift": {
+          "count": 1,
+          "detail": [
+            {
+              "using": "SAMM 2.1.0",
+              "latest": "SAMM 2.2.0"
             }
           ]
         },
@@ -8049,7 +9845,7 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 3,
+      "total": 4,
       "issues": {
         "unused_property": {
           "count": 1,
@@ -8058,6 +9854,15 @@
               "name": "materialClassification",
               "kind": "Property",
               "file": "MaterialClassification"
+            }
+          ]
+        },
+        "meta_model_drift": {
+          "count": 1,
+          "detail": [
+            {
+              "using": "SAMM 2.1.0",
+              "latest": "SAMM 2.2.0"
             }
           ]
         },
@@ -8113,7 +9918,7 @@
           "detail": [
             {
               "using": "SAMM 2.0.0",
-              "latest": "SAMM 2.1.0"
+              "latest": "SAMM 2.2.0"
             }
           ]
         },
@@ -8131,18 +9936,30 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 4,
+      "total": 5,
       "issues": {
         "outdated_dependency": {
           "count": 2,
           "detail": [
             {
               "target": "shared.business_partner_number@1.0.0",
-              "latest_release": "shared.business_partner_number@2.0.0"
+              "latest_release": "shared.business_partner_number@3.0.0"
             },
             {
               "target": "shared.uuid@1.0.0",
               "latest_release": "shared.uuid@2.0.0"
+            }
+          ]
+        },
+        "deprecated_dep": {
+          "count": 1,
+          "detail": [
+            {
+              "target": "shared.business_partner_number@1.0.0",
+              "path": [
+                "shared.message_header@2.0.0",
+                "shared.business_partner_number@1.0.0"
+              ]
             }
           ]
         },
@@ -8159,7 +9976,7 @@
           "detail": [
             {
               "using": "SAMM 2.0.0",
-              "latest": "SAMM 2.1.0"
+              "latest": "SAMM 2.2.0"
             }
           ]
         }
@@ -8171,12 +9988,49 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 1,
+      "total": 3,
       "issues": {
+        "outdated_dependency": {
+          "count": 1,
+          "detail": [
+            {
+              "target": "shared.business_partner_number@2.0.0",
+              "latest_release": "shared.business_partner_number@3.0.0"
+            }
+          ]
+        },
+        "meta_model_drift": {
+          "count": 1,
+          "detail": [
+            {
+              "using": "SAMM 2.1.0",
+              "latest": "SAMM 2.2.0"
+            }
+          ]
+        },
         "missing_release_date": {
           "count": 1,
           "detail": [
             "3.0.0"
+          ]
+        }
+      }
+    },
+    "shared.part_classification@1.0.0": {
+      "name": "shared.part_classification",
+      "version": "1.0.0",
+      "family": "SAMM",
+      "source": "catenax",
+      "status": "deprecated",
+      "total": 1,
+      "issues": {
+        "meta_model_drift": {
+          "count": 1,
+          "detail": [
+            {
+              "using": "SAMM 2.1.0",
+              "latest": "SAMM 2.2.0"
+            }
           ]
         }
       }
@@ -8194,7 +10048,7 @@
           "detail": [
             {
               "target": "shared.business_partner_number@1.0.0",
-              "latest_release": "shared.business_partner_number@2.0.0"
+              "latest_release": "shared.business_partner_number@3.0.0"
             },
             {
               "target": "shared.uuid@1.0.0",
@@ -8207,7 +10061,7 @@
           "detail": [
             {
               "using": "SAMM 2.0.0",
-              "latest": "SAMM 2.1.0"
+              "latest": "SAMM 2.2.0"
             }
           ]
         },
@@ -8225,8 +10079,26 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "deprecated",
-      "total": 1,
+      "total": 3,
       "issues": {
+        "outdated_dependency": {
+          "count": 1,
+          "detail": [
+            {
+              "target": "shared.business_partner_number@2.0.0",
+              "latest_release": "shared.business_partner_number@3.0.0"
+            }
+          ]
+        },
+        "meta_model_drift": {
+          "count": 1,
+          "detail": [
+            {
+              "using": "SAMM 2.1.0",
+              "latest": "SAMM 2.2.0"
+            }
+          ]
+        },
         "missing_release_date": {
           "count": 1,
           "detail": [
@@ -8260,12 +10132,49 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 1,
+      "total": 2,
       "issues": {
+        "meta_model_drift": {
+          "count": 1,
+          "detail": [
+            {
+              "using": "SAMM 2.1.0",
+              "latest": "SAMM 2.2.0"
+            }
+          ]
+        },
         "missing_release_date": {
           "count": 1,
           "detail": [
             "3.0.0"
+          ]
+        }
+      }
+    },
+    "shared.quality_core@1.0.0": {
+      "name": "shared.quality_core",
+      "version": "1.0.0",
+      "family": "SAMM",
+      "source": "catenax",
+      "status": "release",
+      "total": 2,
+      "issues": {
+        "outdated_dependency": {
+          "count": 1,
+          "detail": [
+            {
+              "target": "shared.business_partner_number@2.0.0",
+              "latest_release": "shared.business_partner_number@3.0.0"
+            }
+          ]
+        },
+        "meta_model_drift": {
+          "count": 1,
+          "detail": [
+            {
+              "using": "SAMM 2.1.0",
+              "latest": "SAMM 2.2.0"
+            }
           ]
         }
       }
@@ -8283,7 +10192,7 @@
           "detail": [
             {
               "using": "SAMM 2.0.0",
-              "latest": "SAMM 2.1.0"
+              "latest": "SAMM 2.2.0"
             }
           ]
         },
@@ -8301,13 +10210,22 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 2,
+      "total": 3,
       "issues": {
         "older_release_exists": {
           "count": 1,
           "detail": [
             {
               "latest_release": "shared.quantity@3.0.0"
+            }
+          ]
+        },
+        "meta_model_drift": {
+          "count": 1,
+          "detail": [
+            {
+              "using": "SAMM 2.1.0",
+              "latest": "SAMM 2.2.0"
             }
           ]
         },
@@ -8325,7 +10243,7 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 10,
+      "total": 11,
       "issues": {
         "unused_property": {
           "count": 8,
@@ -8369,6 +10287,15 @@
               "name": "linearProperty",
               "kind": "Property",
               "file": "Quantity"
+            }
+          ]
+        },
+        "meta_model_drift": {
+          "count": 1,
+          "detail": [
+            {
+              "using": "SAMM 2.1.0",
+              "latest": "SAMM 2.2.0"
             }
           ]
         },
@@ -8420,18 +10347,30 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 4,
+      "total": 5,
       "issues": {
         "outdated_dependency": {
           "count": 2,
           "detail": [
             {
               "target": "shared.business_partner_number@1.0.0",
-              "latest_release": "shared.business_partner_number@2.0.0"
+              "latest_release": "shared.business_partner_number@3.0.0"
             },
             {
               "target": "shared.uuid@1.0.0",
               "latest_release": "shared.uuid@2.0.0"
+            }
+          ]
+        },
+        "deprecated_dep": {
+          "count": 1,
+          "detail": [
+            {
+              "target": "shared.business_partner_number@1.0.0",
+              "path": [
+                "shared.recycling_strategy_certificate@2.0.0",
+                "shared.business_partner_number@1.0.0"
+              ]
             }
           ]
         },
@@ -8448,7 +10387,54 @@
           "detail": [
             {
               "using": "SAMM 2.0.0",
-              "latest": "SAMM 2.1.0"
+              "latest": "SAMM 2.2.0"
+            }
+          ]
+        }
+      }
+    },
+    "shared.recycling_strategy_certificate@3.0.0": {
+      "name": "shared.recycling_strategy_certificate",
+      "version": "3.0.0",
+      "family": "SAMM",
+      "source": "catenax",
+      "status": "release",
+      "total": 2,
+      "issues": {
+        "outdated_dependency": {
+          "count": 1,
+          "detail": [
+            {
+              "target": "shared.business_partner_number@2.0.0",
+              "latest_release": "shared.business_partner_number@3.0.0"
+            }
+          ]
+        },
+        "meta_model_drift": {
+          "count": 1,
+          "detail": [
+            {
+              "using": "SAMM 2.1.0",
+              "latest": "SAMM 2.2.0"
+            }
+          ]
+        }
+      }
+    },
+    "shared.secondary_material_content@1.0.0": {
+      "name": "shared.secondary_material_content",
+      "version": "1.0.0",
+      "family": "SAMM",
+      "source": "catenax",
+      "status": "release",
+      "total": 1,
+      "issues": {
+        "meta_model_drift": {
+          "count": 1,
+          "detail": [
+            {
+              "using": "SAMM 2.1.0",
+              "latest": "SAMM 2.2.0"
             }
           ]
         }
@@ -8496,7 +10482,7 @@
           "detail": [
             {
               "using": "SAMM 2.0.0",
-              "latest": "SAMM 2.1.0"
+              "latest": "SAMM 2.2.0"
             }
           ]
         },
@@ -8514,7 +10500,7 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 2,
+      "total": 4,
       "issues": {
         "outdated_dependency": {
           "count": 1,
@@ -8522,6 +10508,28 @@
             {
               "target": "shared.message_header@2.0.0",
               "latest_release": "shared.message_header@3.0.0"
+            }
+          ]
+        },
+        "deprecated_dep": {
+          "count": 1,
+          "detail": [
+            {
+              "target": "shared.business_partner_number@1.0.0",
+              "path": [
+                "shared.shopfloor_information_types@2.0.0",
+                "shared.message_header@2.0.0",
+                "shared.business_partner_number@1.0.0"
+              ]
+            }
+          ]
+        },
+        "meta_model_drift": {
+          "count": 1,
+          "detail": [
+            {
+              "using": "SAMM 2.1.0",
+              "latest": "SAMM 2.2.0"
             }
           ]
         },
@@ -8539,7 +10547,7 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 5,
+      "total": 6,
       "issues": {
         "unused_property": {
           "count": 3,
@@ -8558,6 +10566,15 @@
               "name": "countrySubdivision",
               "kind": "Property",
               "file": "StandardCodes"
+            }
+          ]
+        },
+        "meta_model_drift": {
+          "count": 1,
+          "detail": [
+            {
+              "using": "SAMM 2.1.0",
+              "latest": "SAMM 2.2.0"
             }
           ]
         },
@@ -8581,7 +10598,7 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 2,
+      "total": 3,
       "issues": {
         "older_release_exists": {
           "count": 1,
@@ -8596,8 +10613,14 @@
           "detail": [
             {
               "using": "SAMM 2.0.0",
-              "latest": "SAMM 2.1.0"
+              "latest": "SAMM 2.2.0"
             }
+          ]
+        },
+        "missing_release_date": {
+          "count": 1,
+          "detail": [
+            "1.0.0"
           ]
         }
       }
@@ -8608,12 +10631,68 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 1,
+      "total": 2,
       "issues": {
+        "meta_model_drift": {
+          "count": 1,
+          "detail": [
+            {
+              "using": "SAMM 2.1.0",
+              "latest": "SAMM 2.2.0"
+            }
+          ]
+        },
         "missing_release_date": {
           "count": 1,
           "detail": [
             "2.0.0"
+          ]
+        }
+      }
+    },
+    "shared.uuid@2.1.0": {
+      "name": "shared.uuid",
+      "version": "2.1.0",
+      "family": "SAMM",
+      "source": "catenax",
+      "status": "undefined",
+      "total": 5,
+      "issues": {
+        "unused_property": {
+          "count": 1,
+          "detail": [
+            {
+              "name": "uuidV4Property",
+              "kind": "Property",
+              "file": "Uuid"
+            }
+          ]
+        },
+        "missing_files": {
+          "count": 1,
+          "detail": [
+            "metadata.json"
+          ]
+        },
+        "meta_model_drift": {
+          "count": 1,
+          "detail": [
+            {
+              "using": "SAMM 2.1.0",
+              "latest": "SAMM 2.2.0"
+            }
+          ]
+        },
+        "missing_release_date": {
+          "count": 1,
+          "detail": [
+            "2.1.0"
+          ]
+        },
+        "missing_gen_docs": {
+          "count": 1,
+          "detail": [
+            "Uuid"
           ]
         }
       }
@@ -9445,7 +11524,7 @@
           "detail": [
             {
               "using": "SAMM 2.0.0",
-              "latest": "SAMM 2.1.0"
+              "latest": "SAMM 2.2.0"
             }
           ]
         },
@@ -9463,14 +11542,14 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 4,
+      "total": 6,
       "issues": {
         "outdated_dependency": {
           "count": 3,
           "detail": [
             {
               "target": "shared.business_partner_number@1.0.0",
-              "latest_release": "shared.business_partner_number@2.0.0"
+              "latest_release": "shared.business_partner_number@3.0.0"
             },
             {
               "target": "shared.message_header@2.0.0",
@@ -9479,6 +11558,27 @@
             {
               "target": "shared.uuid@1.0.0",
               "latest_release": "shared.uuid@2.0.0"
+            }
+          ]
+        },
+        "deprecated_dep": {
+          "count": 1,
+          "detail": [
+            {
+              "target": "shared.business_partner_number@1.0.0",
+              "path": [
+                "shopfloor_information.get_production_forecast@2.0.0",
+                "shared.business_partner_number@1.0.0"
+              ]
+            }
+          ]
+        },
+        "meta_model_drift": {
+          "count": 1,
+          "detail": [
+            {
+              "using": "SAMM 2.1.0",
+              "latest": "SAMM 2.2.0"
             }
           ]
         },
@@ -9496,14 +11596,18 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 5,
+      "total": 8,
       "issues": {
         "outdated_dependency": {
-          "count": 2,
+          "count": 3,
           "detail": [
             {
               "target": "serial_part@3.0.0",
               "latest_release": "serial_part@4.0.0"
+            },
+            {
+              "target": "shared.business_partner_number@2.0.0",
+              "latest_release": "shared.business_partner_number@3.0.0"
             },
             {
               "target": "shared.message_header@2.0.0",
@@ -9512,8 +11616,16 @@
           ]
         },
         "deprecated_dep": {
-          "count": 2,
+          "count": 3,
           "detail": [
+            {
+              "target": "shared.business_partner_number@1.0.0",
+              "path": [
+                "shopfloor_information.get_production_tracking@1.0.0",
+                "shared.message_header@2.0.0",
+                "shared.business_partner_number@1.0.0"
+              ]
+            },
             {
               "target": "shared.part_classification@1.0.0",
               "path": [
@@ -9529,6 +11641,15 @@
                 "serial_part@3.0.0",
                 "shared.part_site_information_as_built@2.0.0"
               ]
+            }
+          ]
+        },
+        "meta_model_drift": {
+          "count": 1,
+          "detail": [
+            {
+              "using": "SAMM 2.1.0",
+              "latest": "SAMM 2.2.0"
             }
           ]
         },
@@ -9586,7 +11707,7 @@
           "detail": [
             {
               "using": "SAMM 2.0.0",
-              "latest": "SAMM 2.1.0"
+              "latest": "SAMM 2.2.0"
             }
           ]
         },
@@ -9604,7 +11725,7 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 3,
+      "total": 5,
       "issues": {
         "outdated_dependency": {
           "count": 2,
@@ -9616,6 +11737,28 @@
             {
               "target": "shared.uuid@1.0.0",
               "latest_release": "shared.uuid@2.0.0"
+            }
+          ]
+        },
+        "deprecated_dep": {
+          "count": 1,
+          "detail": [
+            {
+              "target": "shared.business_partner_number@1.0.0",
+              "path": [
+                "shopfloor_information.provide_production_forecast@2.0.0",
+                "shared.message_header@2.0.0",
+                "shared.business_partner_number@1.0.0"
+              ]
+            }
+          ]
+        },
+        "meta_model_drift": {
+          "count": 1,
+          "detail": [
+            {
+              "using": "SAMM 2.1.0",
+              "latest": "SAMM 2.2.0"
             }
           ]
         },
@@ -9633,7 +11776,7 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 5,
+      "total": 7,
       "issues": {
         "outdated_dependency": {
           "count": 2,
@@ -9649,8 +11792,16 @@
           ]
         },
         "deprecated_dep": {
-          "count": 2,
+          "count": 3,
           "detail": [
+            {
+              "target": "shared.business_partner_number@1.0.0",
+              "path": [
+                "shopfloor_information.provide_production_tracking@1.0.0",
+                "shared.message_header@2.0.0",
+                "shared.business_partner_number@1.0.0"
+              ]
+            },
             {
               "target": "shared.part_classification@1.0.0",
               "path": [
@@ -9669,6 +11820,15 @@
             }
           ]
         },
+        "meta_model_drift": {
+          "count": 1,
+          "detail": [
+            {
+              "using": "SAMM 2.1.0",
+              "latest": "SAMM 2.2.0"
+            }
+          ]
+        },
         "missing_release_date": {
           "count": 1,
           "detail": [
@@ -9683,14 +11843,46 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 1,
+      "total": 3,
       "issues": {
         "outdated_dependency": {
-          "count": 1,
+          "count": 2,
           "detail": [
+            {
+              "target": "shared.business_partner_number@2.0.0",
+              "latest_release": "shared.business_partner_number@3.0.0"
+            },
             {
               "target": "shared.quantity@2.0.0",
               "latest_release": "shared.quantity@3.0.0"
+            }
+          ]
+        },
+        "meta_model_drift": {
+          "count": 1,
+          "detail": [
+            {
+              "using": "SAMM 2.1.0",
+              "latest": "SAMM 2.2.0"
+            }
+          ]
+        }
+      }
+    },
+    "simulated_week_based_material_demand@1.0.0": {
+      "name": "simulated_week_based_material_demand",
+      "version": "1.0.0",
+      "family": "SAMM",
+      "source": "catenax",
+      "status": "release",
+      "total": 1,
+      "issues": {
+        "meta_model_drift": {
+          "count": 1,
+          "detail": [
+            {
+              "using": "SAMM 2.1.0",
+              "latest": "SAMM 2.2.0"
             }
           ]
         }
@@ -9745,7 +11937,7 @@
           "detail": [
             {
               "using": "SAMM 2.0.0",
-              "latest": "SAMM 2.1.0"
+              "latest": "SAMM 2.2.0"
             }
           ]
         },
@@ -9763,11 +11955,15 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 3,
+      "total": 5,
       "issues": {
         "outdated_dependency": {
-          "count": 1,
+          "count": 2,
           "detail": [
+            {
+              "target": "shared.business_partner_number@2.0.0",
+              "latest_release": "shared.business_partner_number@3.0.0"
+            },
             {
               "target": "shared.quantity@2.0.0",
               "latest_release": "shared.quantity@3.0.0"
@@ -9779,6 +11975,15 @@
           "detail": [
             {
               "latest_release": "single_level_bom_as_built@4.0.0"
+            }
+          ]
+        },
+        "meta_model_drift": {
+          "count": 1,
+          "detail": [
+            {
+              "using": "SAMM 2.1.0",
+              "latest": "SAMM 2.2.0"
             }
           ]
         },
@@ -9796,8 +12001,17 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 1,
+      "total": 2,
       "issues": {
+        "meta_model_drift": {
+          "count": 1,
+          "detail": [
+            {
+              "using": "SAMM 2.1.0",
+              "latest": "SAMM 2.2.0"
+            }
+          ]
+        },
         "missing_release_date": {
           "count": 1,
           "detail": [
@@ -9819,7 +12033,7 @@
           "detail": [
             {
               "using": "SAMM 2.0.0",
-              "latest": "SAMM 2.1.0"
+              "latest": "SAMM 2.2.0"
             }
           ]
         },
@@ -9837,11 +12051,15 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 3,
+      "total": 5,
       "issues": {
         "outdated_dependency": {
-          "count": 1,
+          "count": 2,
           "detail": [
+            {
+              "target": "shared.business_partner_number@2.0.0",
+              "latest_release": "shared.business_partner_number@3.0.0"
+            },
             {
               "target": "shared.quantity@2.0.0",
               "latest_release": "shared.quantity@3.0.0"
@@ -9853,6 +12071,15 @@
           "detail": [
             {
               "latest_release": "single_level_bom_as_planned@4.0.0"
+            }
+          ]
+        },
+        "meta_model_drift": {
+          "count": 1,
+          "detail": [
+            {
+              "using": "SAMM 2.1.0",
+              "latest": "SAMM 2.2.0"
             }
           ]
         },
@@ -9870,8 +12097,17 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 1,
+      "total": 2,
       "issues": {
+        "meta_model_drift": {
+          "count": 1,
+          "detail": [
+            {
+              "using": "SAMM 2.1.0",
+              "latest": "SAMM 2.2.0"
+            }
+          ]
+        },
         "missing_release_date": {
           "count": 1,
           "detail": [
@@ -9911,7 +12147,7 @@
           "detail": [
             {
               "using": "SAMM 2.0.0",
-              "latest": "SAMM 2.1.0"
+              "latest": "SAMM 2.2.0"
             }
           ]
         }
@@ -9940,7 +12176,26 @@
           "detail": [
             {
               "using": "SAMM 2.0.0",
-              "latest": "SAMM 2.1.0"
+              "latest": "SAMM 2.2.0"
+            }
+          ]
+        }
+      }
+    },
+    "single_level_scene_node@1.0.0": {
+      "name": "single_level_scene_node",
+      "version": "1.0.0",
+      "family": "SAMM",
+      "source": "catenax",
+      "status": "release",
+      "total": 1,
+      "issues": {
+        "meta_model_drift": {
+          "count": 1,
+          "detail": [
+            {
+              "using": "SAMM 2.1.0",
+              "latest": "SAMM 2.2.0"
             }
           ]
         }
@@ -9969,7 +12224,7 @@
           "detail": [
             {
               "using": "SAMM 2.0.0",
-              "latest": "SAMM 2.1.0"
+              "latest": "SAMM 2.2.0"
             }
           ]
         },
@@ -9987,11 +12242,15 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 3,
+      "total": 5,
       "issues": {
         "outdated_dependency": {
-          "count": 1,
+          "count": 2,
           "detail": [
+            {
+              "target": "shared.business_partner_number@2.0.0",
+              "latest_release": "shared.business_partner_number@3.0.0"
+            },
             {
               "target": "shared.quantity@2.0.0",
               "latest_release": "shared.quantity@3.0.0"
@@ -10003,6 +12262,15 @@
           "detail": [
             {
               "latest_release": "single_level_usage_as_built@4.0.0"
+            }
+          ]
+        },
+        "meta_model_drift": {
+          "count": 1,
+          "detail": [
+            {
+              "using": "SAMM 2.1.0",
+              "latest": "SAMM 2.2.0"
             }
           ]
         },
@@ -10020,8 +12288,17 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 1,
+      "total": 2,
       "issues": {
+        "meta_model_drift": {
+          "count": 1,
+          "detail": [
+            {
+              "using": "SAMM 2.1.0",
+              "latest": "SAMM 2.2.0"
+            }
+          ]
+        },
         "missing_release_date": {
           "count": 1,
           "detail": [
@@ -10052,11 +12329,15 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 2,
+      "total": 4,
       "issues": {
         "outdated_dependency": {
-          "count": 1,
+          "count": 2,
           "detail": [
+            {
+              "target": "shared.business_partner_number@2.0.0",
+              "latest_release": "shared.business_partner_number@3.0.0"
+            },
             {
               "target": "shared.quantity@2.0.0",
               "latest_release": "shared.quantity@3.0.0"
@@ -10070,6 +12351,15 @@
               "latest_release": "single_level_usage_as_planned@3.0.0"
             }
           ]
+        },
+        "meta_model_drift": {
+          "count": 1,
+          "detail": [
+            {
+              "using": "SAMM 2.1.0",
+              "latest": "SAMM 2.2.0"
+            }
+          ]
         }
       }
     },
@@ -10079,8 +12369,17 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 1,
+      "total": 2,
       "issues": {
+        "meta_model_drift": {
+          "count": 1,
+          "detail": [
+            {
+              "using": "SAMM 2.1.0",
+              "latest": "SAMM 2.2.0"
+            }
+          ]
+        },
         "missing_release_date": {
           "count": 1,
           "detail": [
@@ -10095,8 +12394,17 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 1,
+      "total": 2,
       "issues": {
+        "meta_model_drift": {
+          "count": 1,
+          "detail": [
+            {
+              "using": "SAMM 2.1.0",
+              "latest": "SAMM 2.2.0"
+            }
+          ]
+        },
         "missing_release_date": {
           "count": 1,
           "detail": [
@@ -10111,14 +12419,18 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 7,
+      "total": 9,
       "issues": {
         "outdated_dependency": {
-          "count": 1,
+          "count": 2,
           "detail": [
             {
               "target": "serial_part@3.0.0",
               "latest_release": "serial_part@4.0.0"
+            },
+            {
+              "target": "shared.business_partner_number@2.0.0",
+              "latest_release": "shared.business_partner_number@3.0.0"
             }
           ]
         },
@@ -10171,6 +12483,15 @@
             }
           ]
         },
+        "meta_model_drift": {
+          "count": 1,
+          "detail": [
+            {
+              "using": "SAMM 2.1.0",
+              "latest": "SAMM 2.2.0"
+            }
+          ]
+        },
         "missing_release_date": {
           "count": 1,
           "detail": [
@@ -10185,14 +12506,18 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 4,
+      "total": 6,
       "issues": {
         "outdated_dependency": {
-          "count": 1,
+          "count": 2,
           "detail": [
             {
               "target": "serial_part@3.0.0",
               "latest_release": "serial_part@4.0.0"
+            },
+            {
+              "target": "shared.business_partner_number@2.0.0",
+              "latest_release": "shared.business_partner_number@3.0.0"
             }
           ]
         },
@@ -10214,6 +12539,15 @@
                 "serial_part@3.0.0",
                 "shared.part_site_information_as_built@2.0.0"
               ]
+            }
+          ]
+        },
+        "meta_model_drift": {
+          "count": 1,
+          "detail": [
+            {
+              "using": "SAMM 2.1.0",
+              "latest": "SAMM 2.2.0"
             }
           ]
         },
@@ -10247,8 +12581,17 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 1,
+      "total": 2,
       "issues": {
+        "meta_model_drift": {
+          "count": 1,
+          "detail": [
+            {
+              "using": "SAMM 2.1.0",
+              "latest": "SAMM 2.2.0"
+            }
+          ]
+        },
         "missing_release_date": {
           "count": 1,
           "detail": [
@@ -10296,7 +12639,7 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "deprecated",
-      "total": 1,
+      "total": 2,
       "issues": {
         "outdated_dependency": {
           "count": 1,
@@ -10304,6 +12647,15 @@
             {
               "target": "generic.digital_product_passport@4.0.0",
               "latest_release": "generic.digital_product_passport@7.0.0"
+            }
+          ]
+        },
+        "meta_model_drift": {
+          "count": 1,
+          "detail": [
+            {
+              "using": "SAMM 2.1.0",
+              "latest": "SAMM 2.2.0"
             }
           ]
         }
@@ -10315,7 +12667,7 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 4,
+      "total": 5,
       "issues": {
         "outdated_dependency": {
           "count": 1,
@@ -10355,6 +12707,15 @@
               "latest_release": "transmission.transmission_pass@3.1.0"
             }
           ]
+        },
+        "meta_model_drift": {
+          "count": 1,
+          "detail": [
+            {
+              "using": "SAMM 2.1.0",
+              "latest": "SAMM 2.2.0"
+            }
+          ]
         }
       }
     },
@@ -10364,7 +12725,7 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 3,
+      "total": 4,
       "issues": {
         "outdated_dependency": {
           "count": 1,
@@ -10396,6 +12757,15 @@
               ]
             }
           ]
+        },
+        "meta_model_drift": {
+          "count": 1,
+          "detail": [
+            {
+              "using": "SAMM 2.1.0",
+              "latest": "SAMM 2.2.0"
+            }
+          ]
         }
       }
     },
@@ -10405,7 +12775,7 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 2,
+      "total": 3,
       "issues": {
         "outdated_dependency": {
           "count": 1,
@@ -10421,6 +12791,53 @@
           "detail": [
             {
               "latest_release": "us_tariff_information@2.0.0"
+            }
+          ]
+        },
+        "meta_model_drift": {
+          "count": 1,
+          "detail": [
+            {
+              "using": "SAMM 2.1.0",
+              "latest": "SAMM 2.2.0"
+            }
+          ]
+        }
+      }
+    },
+    "us_tariff_information@2.0.0": {
+      "name": "us_tariff_information",
+      "version": "2.0.0",
+      "family": "SAMM",
+      "source": "catenax",
+      "status": "release",
+      "total": 1,
+      "issues": {
+        "meta_model_drift": {
+          "count": 1,
+          "detail": [
+            {
+              "using": "SAMM 2.1.0",
+              "latest": "SAMM 2.2.0"
+            }
+          ]
+        }
+      }
+    },
+    "user_estimated_loading@2.0.0": {
+      "name": "user_estimated_loading",
+      "version": "2.0.0",
+      "family": "SAMM",
+      "source": "catenax",
+      "status": "draft",
+      "total": 1,
+      "issues": {
+        "meta_model_drift": {
+          "count": 1,
+          "detail": [
+            {
+              "using": "SAMM 2.1.0",
+              "latest": "SAMM 2.2.0"
             }
           ]
         }
@@ -10458,7 +12875,63 @@
           "detail": [
             {
               "using": "SAMM 2.0.0",
-              "latest": "SAMM 2.1.0"
+              "latest": "SAMM 2.2.0"
+            }
+          ]
+        }
+      }
+    },
+    "warranty_claim_request@1.0.0": {
+      "name": "warranty_claim_request",
+      "version": "1.0.0",
+      "family": "SAMM",
+      "source": "catenax",
+      "status": "release",
+      "total": 2,
+      "issues": {
+        "outdated_dependency": {
+          "count": 1,
+          "detail": [
+            {
+              "target": "shared.business_partner_number@2.0.0",
+              "latest_release": "shared.business_partner_number@3.0.0"
+            }
+          ]
+        },
+        "meta_model_drift": {
+          "count": 1,
+          "detail": [
+            {
+              "using": "SAMM 2.1.0",
+              "latest": "SAMM 2.2.0"
+            }
+          ]
+        }
+      }
+    },
+    "warranty_claim_request_verification@1.0.0": {
+      "name": "warranty_claim_request_verification",
+      "version": "1.0.0",
+      "family": "SAMM",
+      "source": "catenax",
+      "status": "release",
+      "total": 2,
+      "issues": {
+        "outdated_dependency": {
+          "count": 1,
+          "detail": [
+            {
+              "target": "shared.business_partner_number@2.0.0",
+              "latest_release": "shared.business_partner_number@3.0.0"
+            }
+          ]
+        },
+        "meta_model_drift": {
+          "count": 1,
+          "detail": [
+            {
+              "using": "SAMM 2.1.0",
+              "latest": "SAMM 2.2.0"
             }
           ]
         }
@@ -10483,13 +12956,32 @@
         }
       }
     },
+    "waste@2.0.0": {
+      "name": "waste",
+      "version": "2.0.0",
+      "family": "SAMM",
+      "source": "catenax",
+      "status": "draft",
+      "total": 1,
+      "issues": {
+        "meta_model_drift": {
+          "count": 1,
+          "detail": [
+            {
+              "using": "SAMM 2.1.0",
+              "latest": "SAMM 2.2.0"
+            }
+          ]
+        }
+      }
+    },
     "waste_certificate@1.0.0": {
       "name": "waste_certificate",
       "version": "1.0.0",
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 2,
+      "total": 3,
       "issues": {
         "outdated_dependency": {
           "count": 1,
@@ -10500,12 +12992,25 @@
             }
           ]
         },
+        "deprecated_dep": {
+          "count": 1,
+          "detail": [
+            {
+              "target": "shared.business_partner_number@1.0.0",
+              "path": [
+                "waste_certificate@1.0.0",
+                "shared.recycling_strategy_certificate@2.0.0",
+                "shared.business_partner_number@1.0.0"
+              ]
+            }
+          ]
+        },
         "meta_model_drift": {
           "count": 1,
           "detail": [
             {
               "using": "SAMM 2.0.0",
-              "latest": "SAMM 2.1.0"
+              "latest": "SAMM 2.2.0"
             }
           ]
         }
@@ -10524,7 +13029,7 @@
           "detail": [
             {
               "target": "shared.business_partner_number@1.0.0",
-              "latest_release": "shared.business_partner_number@2.0.0"
+              "latest_release": "shared.business_partner_number@3.0.0"
             },
             {
               "target": "shared.quantity@1.0.0",
@@ -10541,7 +13046,7 @@
           "detail": [
             {
               "using": "SAMM 2.0.0",
-              "latest": "SAMM 2.1.0"
+              "latest": "SAMM 2.2.0"
             }
           ]
         }
@@ -10553,11 +13058,15 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 2,
+      "total": 4,
       "issues": {
         "outdated_dependency": {
-          "count": 1,
+          "count": 2,
           "detail": [
+            {
+              "target": "shared.business_partner_number@2.0.0",
+              "latest_release": "shared.business_partner_number@3.0.0"
+            },
             {
               "target": "shared.quantity@2.0.0",
               "latest_release": "shared.quantity@3.0.0"
@@ -10571,6 +13080,15 @@
               "latest_release": "week_based_capacity_group@3.0.1"
             }
           ]
+        },
+        "meta_model_drift": {
+          "count": 1,
+          "detail": [
+            {
+              "using": "SAMM 2.1.0",
+              "latest": "SAMM 2.2.0"
+            }
+          ]
         }
       }
     },
@@ -10580,14 +13098,27 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 1,
+      "total": 3,
       "issues": {
         "outdated_dependency": {
-          "count": 1,
+          "count": 2,
           "detail": [
+            {
+              "target": "shared.business_partner_number@2.0.0",
+              "latest_release": "shared.business_partner_number@3.0.0"
+            },
             {
               "target": "shared.quantity@2.0.0",
               "latest_release": "shared.quantity@3.0.0"
+            }
+          ]
+        },
+        "meta_model_drift": {
+          "count": 1,
+          "detail": [
+            {
+              "using": "SAMM 2.1.0",
+              "latest": "SAMM 2.2.0"
             }
           ]
         }
@@ -10615,8 +13146,17 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "deprecated",
-      "total": 1,
+      "total": 2,
       "issues": {
+        "meta_model_drift": {
+          "count": 1,
+          "detail": [
+            {
+              "using": "SAMM 2.1.0",
+              "latest": "SAMM 2.2.0"
+            }
+          ]
+        },
         "missing_release_date": {
           "count": 1,
           "detail": [
@@ -10631,11 +13171,15 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 2,
+      "total": 4,
       "issues": {
         "outdated_dependency": {
-          "count": 1,
+          "count": 2,
           "detail": [
+            {
+              "target": "shared.business_partner_number@2.0.0",
+              "latest_release": "shared.business_partner_number@3.0.0"
+            },
             {
               "target": "shared.quantity@2.0.0",
               "latest_release": "shared.quantity@3.0.0"
@@ -10649,6 +13193,15 @@
               "latest_release": "week_based_material_demand@3.0.1"
             }
           ]
+        },
+        "meta_model_drift": {
+          "count": 1,
+          "detail": [
+            {
+              "using": "SAMM 2.1.0",
+              "latest": "SAMM 2.2.0"
+            }
+          ]
         }
       }
     },
@@ -10658,14 +13211,55 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 1,
+      "total": 3,
+      "issues": {
+        "outdated_dependency": {
+          "count": 2,
+          "detail": [
+            {
+              "target": "shared.business_partner_number@2.0.0",
+              "latest_release": "shared.business_partner_number@3.0.0"
+            },
+            {
+              "target": "shared.quantity@2.0.0",
+              "latest_release": "shared.quantity@3.0.0"
+            }
+          ]
+        },
+        "meta_model_drift": {
+          "count": 1,
+          "detail": [
+            {
+              "using": "SAMM 2.1.0",
+              "latest": "SAMM 2.2.0"
+            }
+          ]
+        }
+      }
+    },
+    "zero_km_failure@1.0.0": {
+      "name": "zero_km_failure",
+      "version": "1.0.0",
+      "family": "SAMM",
+      "source": "catenax",
+      "status": "release",
+      "total": 2,
       "issues": {
         "outdated_dependency": {
           "count": 1,
           "detail": [
             {
-              "target": "shared.quantity@2.0.0",
-              "latest_release": "shared.quantity@3.0.0"
+              "target": "shared.business_partner_number@2.0.0",
+              "latest_release": "shared.business_partner_number@3.0.0"
+            }
+          ]
+        },
+        "meta_model_drift": {
+          "count": 1,
+          "detail": [
+            {
+              "using": "SAMM 2.1.0",
+              "latest": "SAMM 2.2.0"
             }
           ]
         }
