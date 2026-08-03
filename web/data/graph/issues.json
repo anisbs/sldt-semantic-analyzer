@@ -199,7 +199,7 @@
           "detail": [
             {
               "target": "shared.uuid@1.0.0",
-              "latest_release": "shared.uuid@2.0.0"
+              "latest_release": "shared.uuid@2.1.0"
             }
           ]
         },
@@ -265,7 +265,7 @@
           "detail": [
             {
               "target": "shared.uuid@1.0.0",
-              "latest_release": "shared.uuid@2.0.0"
+              "latest_release": "shared.uuid@2.1.0"
             }
           ]
         },
@@ -292,10 +292,19 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 5,
+      "total": 7,
       "issues": {
+        "outdated_dependency": {
+          "count": 1,
+          "detail": [
+            {
+              "target": "shared.uuid@2.0.0",
+              "latest_release": "shared.uuid@2.1.0"
+            }
+          ]
+        },
         "deprecated_dep": {
-          "count": 2,
+          "count": 3,
           "detail": [
             {
               "target": "shared.part_classification@1.0.0",
@@ -309,6 +318,13 @@
               "path": [
                 "batch@3.0.0",
                 "shared.part_site_information_as_built@2.0.0"
+              ]
+            },
+            {
+              "target": "shared.uuid@2.0.0",
+              "path": [
+                "batch@3.0.0",
+                "shared.uuid@2.0.0"
               ]
             }
           ]
@@ -344,10 +360,19 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 5,
+      "total": 7,
       "issues": {
+        "outdated_dependency": {
+          "count": 1,
+          "detail": [
+            {
+              "target": "shared.uuid@2.0.0",
+              "latest_release": "shared.uuid@2.1.0"
+            }
+          ]
+        },
         "deprecated_dep": {
-          "count": 2,
+          "count": 3,
           "detail": [
             {
               "target": "shared.part_classification@1.0.0",
@@ -361,6 +386,13 @@
               "path": [
                 "batch@3.0.1",
                 "shared.part_site_information_as_built@2.0.0"
+              ]
+            },
+            {
+              "target": "shared.uuid@2.0.0",
+              "path": [
+                "batch@3.0.1",
+                "shared.uuid@2.0.0"
               ]
             }
           ]
@@ -396,8 +428,21 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 2,
+      "total": 3,
       "issues": {
+        "deprecated_dep": {
+          "count": 1,
+          "detail": [
+            {
+              "target": "shared.uuid@2.0.0",
+              "path": [
+                "batch@4.0.0",
+                "shared.industry_core.common@1.0.0",
+                "shared.uuid@2.0.0"
+              ]
+            }
+          ]
+        },
         "meta_model_drift": {
           "count": 1,
           "detail": [
@@ -612,7 +657,7 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 5,
+      "total": 6,
       "issues": {
         "outdated_dependency": {
           "count": 1,
@@ -624,7 +669,7 @@
           ]
         },
         "deprecated_dep": {
-          "count": 2,
+          "count": 3,
           "detail": [
             {
               "target": "shared.part_classification@1.0.0",
@@ -641,6 +686,14 @@
                 "generic.digital_product_passport@4.0.0",
                 "batch@3.0.0",
                 "shared.part_site_information_as_built@2.0.0"
+              ]
+            },
+            {
+              "target": "shared.uuid@2.0.0",
+              "path": [
+                "battery.battery_pass@5.0.0",
+                "generic.digital_product_passport@4.0.0",
+                "shared.uuid@2.0.0"
               ]
             }
           ]
@@ -670,7 +723,7 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 5,
+      "total": 6,
       "issues": {
         "outdated_dependency": {
           "count": 1,
@@ -682,7 +735,7 @@
           ]
         },
         "deprecated_dep": {
-          "count": 2,
+          "count": 3,
           "detail": [
             {
               "target": "shared.part_classification@1.0.0",
@@ -699,6 +752,14 @@
                 "generic.digital_product_passport@5.0.0",
                 "batch@3.0.0",
                 "shared.part_site_information_as_built@2.0.0"
+              ]
+            },
+            {
+              "target": "shared.uuid@2.0.0",
+              "path": [
+                "battery.battery_pass@6.0.0",
+                "generic.digital_product_passport@5.0.0",
+                "shared.uuid@2.0.0"
               ]
             }
           ]
@@ -728,7 +789,7 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 4,
+      "total": 5,
       "issues": {
         "outdated_dependency": {
           "count": 1,
@@ -740,7 +801,7 @@
           ]
         },
         "deprecated_dep": {
-          "count": 2,
+          "count": 3,
           "detail": [
             {
               "target": "shared.part_classification@1.0.0",
@@ -757,6 +818,14 @@
                 "generic.digital_product_passport@5.0.0",
                 "batch@3.0.0",
                 "shared.part_site_information_as_built@2.0.0"
+              ]
+            },
+            {
+              "target": "shared.uuid@2.0.0",
+              "path": [
+                "battery.battery_pass@6.1.0",
+                "generic.digital_product_passport@5.0.0",
+                "shared.uuid@2.0.0"
               ]
             }
           ]
@@ -797,14 +866,27 @@
       "family": "SAMM",
       "source": "idta",
       "status": "release",
-      "total": 2,
+      "total": 3,
       "issues": {
         "outdated_dependency": {
           "count": 1,
           "detail": [
             {
               "target": "pcf@8.0.0",
-              "latest_release": "pcf@9.0.0"
+              "latest_release": "pcf@10.0.0"
+            }
+          ]
+        },
+        "deprecated_dep": {
+          "count": 1,
+          "detail": [
+            {
+              "target": "shared.uuid@2.0.0",
+              "path": [
+                "batterypass.carbon_footprint@1.0.0",
+                "pcf@8.0.0",
+                "shared.uuid@2.0.0"
+              ]
             }
           ]
         },
@@ -1897,14 +1979,27 @@
       "family": "SAMM",
       "source": "idta",
       "status": "release",
-      "total": 3,
+      "total": 4,
       "issues": {
         "outdated_dependency": {
           "count": 1,
           "detail": [
             {
               "target": "pcf@8.0.0",
-              "latest_release": "pcf@9.0.0"
+              "latest_release": "pcf@10.0.0"
+            }
+          ]
+        },
+        "deprecated_dep": {
+          "count": 1,
+          "detail": [
+            {
+              "target": "shared.uuid@2.0.0",
+              "path": [
+                "carbon_footprint@1.0.0",
+                "pcf@8.0.0",
+                "shared.uuid@2.0.0"
+              ]
             }
           ]
         },
@@ -1928,7 +2023,7 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 6,
+      "total": 7,
       "issues": {
         "outdated_dependency": {
           "count": 2,
@@ -1944,7 +2039,7 @@
           ]
         },
         "deprecated_dep": {
-          "count": 3,
+          "count": 4,
           "detail": [
             {
               "target": "shared.business_partner_number@1.0.0",
@@ -1968,6 +2063,14 @@
                 "certificate_of_analysis@1.0.0",
                 "batch@3.0.1",
                 "shared.part_site_information_as_built@2.0.0"
+              ]
+            },
+            {
+              "target": "shared.uuid@2.0.0",
+              "path": [
+                "certificate_of_analysis@1.0.0",
+                "batch@3.0.1",
+                "shared.uuid@2.0.0"
               ]
             }
           ]
@@ -2409,8 +2512,29 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 3,
+      "total": 5,
       "issues": {
+        "outdated_dependency": {
+          "count": 1,
+          "detail": [
+            {
+              "target": "shared.uuid@2.0.0",
+              "latest_release": "shared.uuid@2.1.0"
+            }
+          ]
+        },
+        "deprecated_dep": {
+          "count": 1,
+          "detail": [
+            {
+              "target": "shared.uuid@2.0.0",
+              "path": [
+                "customs_information@1.0.0",
+                "shared.uuid@2.0.0"
+              ]
+            }
+          ]
+        },
         "older_release_exists": {
           "count": 1,
           "detail": [
@@ -2442,8 +2566,29 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 2,
+      "total": 4,
       "issues": {
+        "outdated_dependency": {
+          "count": 1,
+          "detail": [
+            {
+              "target": "shared.uuid@2.0.0",
+              "latest_release": "shared.uuid@2.1.0"
+            }
+          ]
+        },
+        "deprecated_dep": {
+          "count": 1,
+          "detail": [
+            {
+              "target": "shared.uuid@2.0.0",
+              "path": [
+                "customs_information@2.0.0",
+                "shared.uuid@2.0.0"
+              ]
+            }
+          ]
+        },
         "meta_model_drift": {
           "count": 1,
           "detail": [
@@ -2467,14 +2612,18 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "deprecated",
-      "total": 2,
+      "total": 3,
       "issues": {
         "outdated_dependency": {
-          "count": 1,
+          "count": 2,
           "detail": [
             {
               "target": "shared.business_partner_number@2.0.0",
               "latest_release": "shared.business_partner_number@3.0.0"
+            },
+            {
+              "target": "shared.uuid@2.0.0",
+              "latest_release": "shared.uuid@2.1.0"
             }
           ]
         },
@@ -2495,14 +2644,30 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 2,
+      "total": 4,
       "issues": {
         "outdated_dependency": {
-          "count": 1,
+          "count": 2,
           "detail": [
             {
               "target": "shared.business_partner_number@2.0.0",
               "latest_release": "shared.business_partner_number@3.0.0"
+            },
+            {
+              "target": "shared.uuid@2.0.0",
+              "latest_release": "shared.uuid@2.1.0"
+            }
+          ]
+        },
+        "deprecated_dep": {
+          "count": 1,
+          "detail": [
+            {
+              "target": "shared.uuid@2.0.0",
+              "path": [
+                "days_of_supply@2.0.0",
+                "shared.uuid@2.0.0"
+              ]
             }
           ]
         },
@@ -2576,7 +2741,7 @@
             },
             {
               "target": "shared.uuid@1.0.0",
-              "latest_release": "shared.uuid@2.0.0"
+              "latest_release": "shared.uuid@2.1.0"
             }
           ]
         },
@@ -2624,10 +2789,10 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 3,
+      "total": 5,
       "issues": {
         "outdated_dependency": {
-          "count": 2,
+          "count": 3,
           "detail": [
             {
               "target": "shared.business_partner_number@2.0.0",
@@ -2636,6 +2801,22 @@
             {
               "target": "shared.quantity@2.0.0",
               "latest_release": "shared.quantity@3.0.0"
+            },
+            {
+              "target": "shared.uuid@2.0.0",
+              "latest_release": "shared.uuid@2.1.0"
+            }
+          ]
+        },
+        "deprecated_dep": {
+          "count": 1,
+          "detail": [
+            {
+              "target": "shared.uuid@2.0.0",
+              "path": [
+                "delivery_information@2.0.0",
+                "shared.uuid@2.0.0"
+              ]
             }
           ]
         },
@@ -2656,14 +2837,30 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 3,
+      "total": 5,
       "issues": {
         "outdated_dependency": {
-          "count": 1,
+          "count": 2,
           "detail": [
             {
               "target": "shared.business_partner_number@2.0.0",
               "latest_release": "shared.business_partner_number@3.0.0"
+            },
+            {
+              "target": "shared.uuid@2.0.0",
+              "latest_release": "shared.uuid@2.1.0"
+            }
+          ]
+        },
+        "deprecated_dep": {
+          "count": 1,
+          "detail": [
+            {
+              "target": "shared.uuid@2.0.0",
+              "path": [
+                "demand_and_capacity_notification@1.0.0",
+                "shared.uuid@2.0.0"
+              ]
             }
           ]
         },
@@ -2692,14 +2889,30 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 3,
+      "total": 5,
       "issues": {
         "outdated_dependency": {
-          "count": 1,
+          "count": 2,
           "detail": [
             {
               "target": "shared.business_partner_number@2.0.0",
               "latest_release": "shared.business_partner_number@3.0.0"
+            },
+            {
+              "target": "shared.uuid@2.0.0",
+              "latest_release": "shared.uuid@2.1.0"
+            }
+          ]
+        },
+        "deprecated_dep": {
+          "count": 1,
+          "detail": [
+            {
+              "target": "shared.uuid@2.0.0",
+              "path": [
+                "demand_and_capacity_notification@2.0.0",
+                "shared.uuid@2.0.0"
+              ]
             }
           ]
         },
@@ -2728,10 +2941,10 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 4,
+      "total": 6,
       "issues": {
         "outdated_dependency": {
-          "count": 2,
+          "count": 3,
           "detail": [
             {
               "target": "part_type_information@1.0.0",
@@ -2740,11 +2953,15 @@
             {
               "target": "shared.business_partner_number@2.0.0",
               "latest_release": "shared.business_partner_number@3.0.0"
+            },
+            {
+              "target": "shared.uuid@2.0.0",
+              "latest_release": "shared.uuid@2.1.0"
             }
           ]
         },
         "deprecated_dep": {
-          "count": 1,
+          "count": 2,
           "detail": [
             {
               "target": "shared.part_classification@1.0.0",
@@ -2752,6 +2969,13 @@
                 "demand_and_capacity_notification@3.0.0",
                 "part_type_information@1.0.0",
                 "shared.part_classification@1.0.0"
+              ]
+            },
+            {
+              "target": "shared.uuid@2.0.0",
+              "path": [
+                "demand_and_capacity_notification@3.0.0",
+                "shared.uuid@2.0.0"
               ]
             }
           ]
@@ -2773,14 +2997,30 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 2,
+      "total": 4,
       "issues": {
         "outdated_dependency": {
-          "count": 1,
+          "count": 2,
           "detail": [
             {
               "target": "shared.business_partner_number@2.0.0",
               "latest_release": "shared.business_partner_number@3.0.0"
+            },
+            {
+              "target": "shared.uuid@2.0.0",
+              "latest_release": "shared.uuid@2.1.0"
+            }
+          ]
+        },
+        "deprecated_dep": {
+          "count": 1,
+          "detail": [
+            {
+              "target": "shared.uuid@2.0.0",
+              "path": [
+                "digital_engineering_master_data@1.0.0",
+                "shared.uuid@2.0.0"
+              ]
             }
           ]
         },
@@ -2848,8 +3088,29 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 1,
+      "total": 3,
       "issues": {
+        "outdated_dependency": {
+          "count": 1,
+          "detail": [
+            {
+              "target": "shared.uuid@2.0.0",
+              "latest_release": "shared.uuid@2.1.0"
+            }
+          ]
+        },
+        "deprecated_dep": {
+          "count": 1,
+          "detail": [
+            {
+              "target": "shared.uuid@2.0.0",
+              "path": [
+                "early_warning_notification@1.0.0",
+                "shared.uuid@2.0.0"
+              ]
+            }
+          ]
+        },
         "meta_model_drift": {
           "count": 1,
           "detail": [
@@ -2867,7 +3128,7 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 8,
+      "total": 9,
       "issues": {
         "outdated_dependency": {
           "count": 3,
@@ -2887,7 +3148,7 @@
           ]
         },
         "deprecated_dep": {
-          "count": 3,
+          "count": 4,
           "detail": [
             {
               "target": "shared.part_classification@1.0.0",
@@ -2904,6 +3165,14 @@
                 "generic.digital_product_passport@4.0.0",
                 "batch@3.0.0",
                 "shared.part_site_information_as_built@2.0.0"
+              ]
+            },
+            {
+              "target": "shared.uuid@2.0.0",
+              "path": [
+                "electric_drive.electric_drive_passport@1.0.0",
+                "generic.digital_product_passport@4.0.0",
+                "shared.uuid@2.0.0"
               ]
             },
             {
@@ -2940,7 +3209,7 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 6,
+      "total": 7,
       "issues": {
         "outdated_dependency": {
           "count": 3,
@@ -2960,7 +3229,7 @@
           ]
         },
         "deprecated_dep": {
-          "count": 2,
+          "count": 3,
           "detail": [
             {
               "target": "shared.part_classification@1.0.0",
@@ -2977,6 +3246,14 @@
                 "generic.digital_product_passport@5.0.0",
                 "batch@3.0.0",
                 "shared.part_site_information_as_built@2.0.0"
+              ]
+            },
+            {
+              "target": "shared.uuid@2.0.0",
+              "path": [
+                "electric_drive.electric_drive_passport@2.0.0",
+                "generic.digital_product_passport@5.0.0",
+                "shared.uuid@2.0.0"
               ]
             }
           ]
@@ -3026,6 +3303,448 @@
               "using": "SAMM 2.1.0",
               "latest": "SAMM 2.2.0"
             }
+          ]
+        }
+      }
+    },
+    "esdscom@1.0.0": {
+      "name": "esdscom",
+      "version": "1.0.0",
+      "family": "SAMM",
+      "source": "catenax",
+      "status": "undefined",
+      "total": 83,
+      "issues": {
+        "orphan_unreachable": {
+          "count": 78,
+          "detail": [
+            {
+              "name": "abntNrb2017HazardLabelling",
+              "kind": "Property",
+              "file": "eSDScom"
+            },
+            {
+              "name": "aerosolLabelling",
+              "kind": "Property",
+              "file": "eSDScom"
+            },
+            {
+              "name": "appropriateEnvionmentalExposureControl",
+              "kind": "Property",
+              "file": "eSDScom"
+            },
+            {
+              "name": "assessmentPhrase",
+              "kind": "Property",
+              "file": "eSDScom"
+            },
+            {
+              "name": "california",
+              "kind": "Property",
+              "file": "eSDScom"
+            },
+            {
+              "name": "certification",
+              "kind": "Property",
+              "file": "eSDScom"
+            },
+            {
+              "name": "childResistantOpening",
+              "kind": "Property",
+              "file": "eSDScom"
+            },
+            {
+              "name": "classificationPhrase",
+              "kind": "Property",
+              "file": "eSDScom"
+            },
+            {
+              "name": "detergentLabelling",
+              "kind": "Property",
+              "file": "eSDScom"
+            },
+            {
+              "name": "effectTested",
+              "kind": "Property",
+              "file": "eSDScom"
+            },
+            {
+              "name": "gbClpHazardLabelling2020",
+              "kind": "Property",
+              "file": "eSDScom"
+            },
+            {
+              "name": "hazardousWasteCode",
+              "kind": "Property",
+              "file": "eSDScom"
+            },
+            {
+              "name": "hazardousWasteStatus",
+              "kind": "Property",
+              "file": "eSDScom"
+            },
+            {
+              "name": "hazcom2012HazardLabelling",
+              "kind": "Property",
+              "file": "eSDScom"
+            },
+            {
+              "name": "justificationForDataWaiving",
+              "kind": "Property",
+              "file": "eSDScom"
+            },
+            {
+              "name": "labellingAccordingToOtherLegislation",
+              "kind": "Property",
+              "file": "eSDScom"
+            },
+            {
+              "name": "maxVocConcInMixture",
+              "kind": "Property",
+              "file": "eSDScom"
+            },
+            {
+              "name": "meanPhotoEffect",
+              "kind": "Property",
+              "file": "eSDScom"
+            },
+            {
+              "name": "nom2015HazardLabelling",
+              "kind": "Property",
+              "file": "eSDScom"
+            },
+            {
+              "name": "otherEuLabellingRequirements",
+              "kind": "Property",
+              "file": "eSDScom"
+            },
+            {
+              "name": "particleFractionFulltext",
+              "kind": "Property",
+              "file": "eSDScom"
+            },
+            {
+              "name": "photoIrritationFactor",
+              "kind": "Property",
+              "file": "eSDScom"
+            },
+            {
+              "name": "phraseCodeAtp12SpecialSupplementalLabelInfoEnum",
+              "kind": "Property",
+              "file": "eSDScom"
+            },
+            {
+              "name": "phraseCodeGhs03HazardEnum",
+              "kind": "Property",
+              "file": "eSDScom"
+            },
+            {
+              "name": "phraseCodeGhs03PrecautionEnum",
+              "kind": "Property",
+              "file": "eSDScom"
+            },
+            {
+              "name": "phraseCodeGhs07HazardEnum",
+              "kind": "Property",
+              "file": "eSDScom"
+            },
+            {
+              "name": "phraseCodeGhs07PrecautionEnum",
+              "kind": "Property",
+              "file": "eSDScom"
+            },
+            {
+              "name": "productSubcategory",
+              "kind": "Property",
+              "file": "eSDScom"
+            },
+            {
+              "name": "restriction",
+              "kind": "Property",
+              "file": "eSDScom"
+            },
+            {
+              "name": "seaHazardLabelling2021",
+              "kind": "Property",
+              "file": "eSDScom"
+            },
+            {
+              "name": "specialRulesOnPackaging",
+              "kind": "Property",
+              "file": "eSDScom"
+            },
+            {
+              "name": "specialSupplementalLabelInfoMixtures",
+              "kind": "Property",
+              "file": "eSDScom"
+            },
+            {
+              "name": "tactileWarning",
+              "kind": "Property",
+              "file": "eSDScom"
+            },
+            {
+              "name": "unit",
+              "kind": "Property",
+              "file": "eSDScom"
+            },
+            {
+              "name": "unitFulltext",
+              "kind": "Property",
+              "file": "eSDScom"
+            },
+            {
+              "name": "valueFloat",
+              "kind": "Property",
+              "file": "eSDScom"
+            },
+            {
+              "name": "vocLabelling",
+              "kind": "Property",
+              "file": "eSDScom"
+            },
+            {
+              "name": "vocLimitForSubcategory",
+              "kind": "Property",
+              "file": "eSDScom"
+            },
+            {
+              "name": "AbntNrb2017HazardLabellingCharacteristic",
+              "kind": "Characteristic",
+              "file": "eSDScom"
+            },
+            {
+              "name": "AppropriateEnvionmentalExposureControlCharacteristic",
+              "kind": "Characteristic",
+              "file": "eSDScom"
+            },
+            {
+              "name": "CaliforniaCharacteristic",
+              "kind": "Characteristic",
+              "file": "eSDScom"
+            },
+            {
+              "name": "GbClpHazardLabelling2020Characteristic",
+              "kind": "Characteristic",
+              "file": "eSDScom"
+            },
+            {
+              "name": "Hazcom2012HazardLabellingCharacteristic",
+              "kind": "Characteristic",
+              "file": "eSDScom"
+            },
+            {
+              "name": "LabellingAccordingToOtherLegislationCharacteristic",
+              "kind": "Characteristic",
+              "file": "eSDScom"
+            },
+            {
+              "name": "Nom2015HazardLabellingCharacteristic",
+              "kind": "Characteristic",
+              "file": "eSDScom"
+            },
+            {
+              "name": "SeaHazardLabelling2021Characteristic",
+              "kind": "Characteristic",
+              "file": "eSDScom"
+            },
+            {
+              "name": "Atp12SpecialSupplementalLabelInfoEnumCharacteristic",
+              "kind": "Characteristic",
+              "file": "eSDScom"
+            },
+            {
+              "name": "UnitEnumCharacteristic",
+              "kind": "Characteristic",
+              "file": "eSDScom"
+            },
+            {
+              "name": "Atp12SpecialSupplementalLabelInfoList",
+              "kind": "Characteristic",
+              "file": "eSDScom"
+            },
+            {
+              "name": "VocLabellingList",
+              "kind": "Characteristic",
+              "file": "eSDScom"
+            },
+            {
+              "name": "AbntNrb2017HazardLabelling",
+              "kind": "Entity",
+              "file": "eSDScom"
+            },
+            {
+              "name": "AppropriateEnvionmentalExposureControl",
+              "kind": "Entity",
+              "file": "eSDScom"
+            },
+            {
+              "name": "AteValue",
+              "kind": "Entity",
+              "file": "eSDScom"
+            },
+            {
+              "name": "Atp12SpecialSupplementalLabelInfo",
+              "kind": "Entity",
+              "file": "eSDScom"
+            },
+            {
+              "name": "California",
+              "kind": "Entity",
+              "file": "eSDScom"
+            },
+            {
+              "name": "EnvironmentalExposureControls",
+              "kind": "Entity",
+              "file": "eSDScom"
+            },
+            {
+              "name": "GbClpHazardLabelling2020",
+              "kind": "Entity",
+              "file": "eSDScom"
+            },
+            {
+              "name": "Ghs03HazardStatementUs",
+              "kind": "Entity",
+              "file": "eSDScom"
+            },
+            {
+              "name": "Ghs03PrecautionaryStatement",
+              "kind": "Entity",
+              "file": "eSDScom"
+            },
+            {
+              "name": "Ghs07HazardStatement",
+              "kind": "Entity",
+              "file": "eSDScom"
+            },
+            {
+              "name": "Ghs07PrecautionaryStatement",
+              "kind": "Entity",
+              "file": "eSDScom"
+            },
+            {
+              "name": "HazardLabellingBr",
+              "kind": "Entity",
+              "file": "eSDScom"
+            },
+            {
+              "name": "HazardLabellingGb",
+              "kind": "Entity",
+              "file": "eSDScom"
+            },
+            {
+              "name": "HazardLabellingMx",
+              "kind": "Entity",
+              "file": "eSDScom"
+            },
+            {
+              "name": "HazardLabellingTr",
+              "kind": "Entity",
+              "file": "eSDScom"
+            },
+            {
+              "name": "HazardLabellingUs",
+              "kind": "Entity",
+              "file": "eSDScom"
+            },
+            {
+              "name": "Hazcom2012HazardLabelling",
+              "kind": "Entity",
+              "file": "eSDScom"
+            },
+            {
+              "name": "LabellingAccordingToOtherLegislation",
+              "kind": "Entity",
+              "file": "eSDScom"
+            },
+            {
+              "name": "Nom2015HazardLabelling",
+              "kind": "Entity",
+              "file": "eSDScom"
+            },
+            {
+              "name": "ParticleFraction",
+              "kind": "Entity",
+              "file": "eSDScom"
+            },
+            {
+              "name": "PhysicalHazardsGeneralInformation",
+              "kind": "Entity",
+              "file": "eSDScom"
+            },
+            {
+              "name": "RegulationsAr",
+              "kind": "Entity",
+              "file": "eSDScom"
+            },
+            {
+              "name": "RegulationsTr",
+              "kind": "Entity",
+              "file": "eSDScom"
+            },
+            {
+              "name": "Results",
+              "kind": "Entity",
+              "file": "eSDScom"
+            },
+            {
+              "name": "SeaHazardLabelling2021",
+              "kind": "Entity",
+              "file": "eSDScom"
+            },
+            {
+              "name": "State",
+              "kind": "Entity",
+              "file": "eSDScom"
+            },
+            {
+              "name": "TestResults",
+              "kind": "Entity",
+              "file": "eSDScom"
+            },
+            {
+              "name": "VocLabelling",
+              "kind": "Entity",
+              "file": "eSDScom"
+            }
+          ]
+        },
+        "bad_naming_type": {
+          "count": 1,
+          "detail": [
+            {
+              "name": "eSDScom",
+              "kind": "Aspect",
+              "file": "eSDScom"
+            }
+          ]
+        },
+        "missing_files": {
+          "count": 1,
+          "detail": [
+            "metadata.json"
+          ]
+        },
+        "meta_model_drift": {
+          "count": 1,
+          "detail": [
+            {
+              "using": "SAMM 2.1.0",
+              "latest": "SAMM 2.2.0"
+            }
+          ]
+        },
+        "missing_release_date": {
+          "count": 1,
+          "detail": [
+            "1.0.0"
+          ]
+        },
+        "missing_gen_docs": {
+          "count": 1,
+          "detail": [
+            "eSDScom"
           ]
         }
       }
@@ -3096,14 +3815,30 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 3,
+      "total": 5,
       "issues": {
         "outdated_dependency": {
-          "count": 1,
+          "count": 2,
           "detail": [
             {
               "target": "shared.business_partner_number@2.0.0",
               "latest_release": "shared.business_partner_number@3.0.0"
+            },
+            {
+              "target": "shared.uuid@2.0.0",
+              "latest_release": "shared.uuid@2.1.0"
+            }
+          ]
+        },
+        "deprecated_dep": {
+          "count": 1,
+          "detail": [
+            {
+              "target": "shared.uuid@2.0.0",
+              "path": [
+                "essincident@3.0.0",
+                "shared.uuid@2.0.0"
+              ]
             }
           ]
         },
@@ -3132,14 +3867,30 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 2,
+      "total": 4,
       "issues": {
         "outdated_dependency": {
-          "count": 1,
+          "count": 2,
           "detail": [
             {
               "target": "shared.business_partner_number@2.0.0",
               "latest_release": "shared.business_partner_number@3.0.0"
+            },
+            {
+              "target": "shared.uuid@2.0.0",
+              "latest_release": "shared.uuid@2.1.0"
+            }
+          ]
+        },
+        "deprecated_dep": {
+          "count": 1,
+          "detail": [
+            {
+              "target": "shared.uuid@2.0.0",
+              "path": [
+                "essincident@4.0.0",
+                "shared.uuid@2.0.0"
+              ]
             }
           ]
         },
@@ -3186,7 +3937,7 @@
           "detail": [
             {
               "target": "shared.uuid@1.0.0",
-              "latest_release": "shared.uuid@2.0.0"
+              "latest_release": "shared.uuid@2.1.0"
             }
           ]
         },
@@ -3215,8 +3966,21 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 1,
+      "total": 2,
       "issues": {
+        "deprecated_dep": {
+          "count": 1,
+          "detail": [
+            {
+              "target": "shared.uuid@2.0.0",
+              "path": [
+                "fleet.claim_data@3.0.0",
+                "shared.quality_core@1.0.0",
+                "shared.uuid@2.0.0"
+              ]
+            }
+          ]
+        },
         "meta_model_drift": {
           "count": 1,
           "detail": [
@@ -3276,7 +4040,7 @@
           "detail": [
             {
               "target": "shared.uuid@1.0.0",
-              "latest_release": "shared.uuid@2.0.0"
+              "latest_release": "shared.uuid@2.1.0"
             }
           ]
         },
@@ -3315,8 +4079,21 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 1,
+      "total": 2,
       "issues": {
+        "deprecated_dep": {
+          "count": 1,
+          "detail": [
+            {
+              "target": "shared.uuid@2.0.0",
+              "path": [
+                "fleet.diagnostic_data@3.0.0",
+                "shared.quality_core@1.0.0",
+                "shared.uuid@2.0.0"
+              ]
+            }
+          ]
+        },
         "meta_model_drift": {
           "count": 1,
           "detail": [
@@ -3364,7 +4141,7 @@
             },
             {
               "target": "shared.uuid@1.0.0",
-              "latest_release": "shared.uuid@2.0.0"
+              "latest_release": "shared.uuid@2.1.0"
             }
           ]
         },
@@ -3385,14 +4162,18 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "deprecated",
-      "total": 2,
+      "total": 3,
       "issues": {
         "outdated_dependency": {
-          "count": 1,
+          "count": 2,
           "detail": [
             {
               "target": "shared.business_partner_number@2.0.0",
               "latest_release": "shared.business_partner_number@3.0.0"
+            },
+            {
+              "target": "shared.uuid@2.0.0",
+              "latest_release": "shared.uuid@2.1.0"
             }
           ]
         },
@@ -3413,14 +4194,30 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 3,
+      "total": 5,
       "issues": {
         "outdated_dependency": {
-          "count": 1,
+          "count": 2,
           "detail": [
             {
               "target": "shared.business_partner_number@2.0.0",
               "latest_release": "shared.business_partner_number@3.0.0"
+            },
+            {
+              "target": "shared.uuid@2.0.0",
+              "latest_release": "shared.uuid@2.1.0"
+            }
+          ]
+        },
+        "deprecated_dep": {
+          "count": 1,
+          "detail": [
+            {
+              "target": "shared.uuid@2.0.0",
+              "path": [
+                "fleet.vehicles@3.0.0",
+                "shared.uuid@2.0.0"
+              ]
             }
           ]
         },
@@ -3449,8 +4246,21 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 1,
+      "total": 2,
       "issues": {
+        "deprecated_dep": {
+          "count": 1,
+          "detail": [
+            {
+              "target": "shared.uuid@2.0.0",
+              "path": [
+                "fleet.vehicles@4.0.0",
+                "shared.quality_core@1.0.0",
+                "shared.uuid@2.0.0"
+              ]
+            }
+          ]
+        },
         "meta_model_drift": {
           "count": 1,
           "detail": [
@@ -3810,7 +4620,7 @@
             },
             {
               "target": "shared.uuid@1.0.0",
-              "latest_release": "shared.uuid@2.0.0"
+              "latest_release": "shared.uuid@2.1.0"
             }
           ]
         },
@@ -4263,10 +5073,10 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 9,
+      "total": 11,
       "issues": {
         "outdated_dependency": {
-          "count": 5,
+          "count": 6,
           "detail": [
             {
               "target": "batch@3.0.0",
@@ -4287,11 +5097,15 @@
             {
               "target": "shared.quantity@2.0.0",
               "latest_release": "shared.quantity@3.0.0"
+            },
+            {
+              "target": "shared.uuid@2.0.0",
+              "latest_release": "shared.uuid@2.1.0"
             }
           ]
         },
         "deprecated_dep": {
-          "count": 2,
+          "count": 3,
           "detail": [
             {
               "target": "shared.part_classification@1.0.0",
@@ -4306,6 +5120,13 @@
                 "generic.digital_product_passport@4.0.0",
                 "batch@3.0.0",
                 "shared.part_site_information_as_built@2.0.0"
+              ]
+            },
+            {
+              "target": "shared.uuid@2.0.0",
+              "path": [
+                "generic.digital_product_passport@4.0.0",
+                "shared.uuid@2.0.0"
               ]
             }
           ]
@@ -4335,10 +5156,10 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 9,
+      "total": 11,
       "issues": {
         "outdated_dependency": {
-          "count": 5,
+          "count": 6,
           "detail": [
             {
               "target": "batch@3.0.0",
@@ -4359,11 +5180,15 @@
             {
               "target": "shared.quantity@2.0.0",
               "latest_release": "shared.quantity@3.0.0"
+            },
+            {
+              "target": "shared.uuid@2.0.0",
+              "latest_release": "shared.uuid@2.1.0"
             }
           ]
         },
         "deprecated_dep": {
-          "count": 2,
+          "count": 3,
           "detail": [
             {
               "target": "shared.part_classification@1.0.0",
@@ -4378,6 +5203,13 @@
                 "generic.digital_product_passport@5.0.0",
                 "batch@3.0.0",
                 "shared.part_site_information_as_built@2.0.0"
+              ]
+            },
+            {
+              "target": "shared.uuid@2.0.0",
+              "path": [
+                "generic.digital_product_passport@5.0.0",
+                "shared.uuid@2.0.0"
               ]
             }
           ]
@@ -4407,10 +5239,10 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 9,
+      "total": 11,
       "issues": {
         "outdated_dependency": {
-          "count": 5,
+          "count": 6,
           "detail": [
             {
               "target": "batch@3.0.0",
@@ -4431,11 +5263,15 @@
             {
               "target": "shared.quantity@2.0.0",
               "latest_release": "shared.quantity@3.0.0"
+            },
+            {
+              "target": "shared.uuid@2.0.0",
+              "latest_release": "shared.uuid@2.1.0"
             }
           ]
         },
         "deprecated_dep": {
-          "count": 2,
+          "count": 3,
           "detail": [
             {
               "target": "shared.part_classification@1.0.0",
@@ -4450,6 +5286,13 @@
                 "generic.digital_product_passport@6.0.0",
                 "batch@3.0.0",
                 "shared.part_site_information_as_built@2.0.0"
+              ]
+            },
+            {
+              "target": "shared.uuid@2.0.0",
+              "path": [
+                "generic.digital_product_passport@6.0.0",
+                "shared.uuid@2.0.0"
               ]
             }
           ]
@@ -4479,10 +5322,10 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 9,
+      "total": 11,
       "issues": {
         "outdated_dependency": {
-          "count": 5,
+          "count": 6,
           "detail": [
             {
               "target": "batch@3.0.1",
@@ -4503,11 +5346,15 @@
             {
               "target": "shared.quantity@2.0.0",
               "latest_release": "shared.quantity@3.0.0"
+            },
+            {
+              "target": "shared.uuid@2.0.0",
+              "latest_release": "shared.uuid@2.1.0"
             }
           ]
         },
         "deprecated_dep": {
-          "count": 2,
+          "count": 3,
           "detail": [
             {
               "target": "shared.part_classification@1.0.0",
@@ -4522,6 +5369,13 @@
                 "generic.digital_product_passport@6.1.0",
                 "batch@3.0.1",
                 "shared.part_site_information_as_built@2.0.0"
+              ]
+            },
+            {
+              "target": "shared.uuid@2.0.0",
+              "path": [
+                "generic.digital_product_passport@6.1.0",
+                "shared.uuid@2.0.0"
               ]
             }
           ]
@@ -4551,8 +5405,29 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 2,
+      "total": 4,
       "issues": {
+        "outdated_dependency": {
+          "count": 1,
+          "detail": [
+            {
+              "target": "shared.uuid@2.0.0",
+              "latest_release": "shared.uuid@2.1.0"
+            }
+          ]
+        },
+        "deprecated_dep": {
+          "count": 1,
+          "detail": [
+            {
+              "target": "shared.uuid@2.0.0",
+              "path": [
+                "generic.digital_product_passport@7.0.0",
+                "shared.uuid@2.0.0"
+              ]
+            }
+          ]
+        },
         "meta_model_drift": {
           "count": 1,
           "detail": [
@@ -4672,10 +5547,10 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 4,
+      "total": 6,
       "issues": {
         "outdated_dependency": {
-          "count": 3,
+          "count": 4,
           "detail": [
             {
               "target": "shared.address_characteristic@3.0.0",
@@ -4688,6 +5563,22 @@
             {
               "target": "shared.quantity@2.0.0",
               "latest_release": "shared.quantity@3.0.0"
+            },
+            {
+              "target": "shared.uuid@2.0.0",
+              "latest_release": "shared.uuid@2.1.0"
+            }
+          ]
+        },
+        "deprecated_dep": {
+          "count": 1,
+          "detail": [
+            {
+              "target": "shared.uuid@2.0.0",
+              "path": [
+                "global_transport_label@1.0.0",
+                "shared.uuid@2.0.0"
+              ]
             }
           ]
         },
@@ -4771,7 +5662,7 @@
             },
             {
               "target": "shared.uuid@1.0.0",
-              "latest_release": "shared.uuid@2.0.0"
+              "latest_release": "shared.uuid@2.1.0"
             }
           ]
         },
@@ -4812,14 +5703,30 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 2,
+      "total": 4,
       "issues": {
         "outdated_dependency": {
-          "count": 1,
+          "count": 2,
           "detail": [
             {
               "target": "shared.business_partner_number@2.0.0",
               "latest_release": "shared.business_partner_number@3.0.0"
+            },
+            {
+              "target": "shared.uuid@2.0.0",
+              "latest_release": "shared.uuid@2.1.0"
+            }
+          ]
+        },
+        "deprecated_dep": {
+          "count": 1,
+          "detail": [
+            {
+              "target": "shared.uuid@2.0.0",
+              "path": [
+                "id_based_comment@1.1.0",
+                "shared.uuid@2.0.0"
+              ]
             }
           ]
         },
@@ -4874,7 +5781,7 @@
           "detail": [
             {
               "target": "shared.uuid@1.0.0",
-              "latest_release": "shared.uuid@2.0.0"
+              "latest_release": "shared.uuid@2.1.0"
             }
           ]
         },
@@ -4903,8 +5810,29 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 1,
+      "total": 3,
       "issues": {
+        "outdated_dependency": {
+          "count": 1,
+          "detail": [
+            {
+              "target": "shared.uuid@2.0.0",
+              "latest_release": "shared.uuid@2.1.0"
+            }
+          ]
+        },
+        "deprecated_dep": {
+          "count": 1,
+          "detail": [
+            {
+              "target": "shared.uuid@2.0.0",
+              "path": [
+                "id_based_request_for_update@3.0.0",
+                "shared.uuid@2.0.0"
+              ]
+            }
+          ]
+        },
         "meta_model_drift": {
           "count": 1,
           "detail": [
@@ -5345,7 +6273,7 @@
           "detail": [
             {
               "target": "shared.uuid@1.0.0",
-              "latest_release": "shared.uuid@2.0.0"
+              "latest_release": "shared.uuid@2.1.0"
             }
           ]
         },
@@ -5387,7 +6315,7 @@
             },
             {
               "target": "shared.uuid@1.0.0",
-              "latest_release": "shared.uuid@2.0.0"
+              "latest_release": "shared.uuid@2.1.0"
             }
           ]
         },
@@ -5435,7 +6363,7 @@
             },
             {
               "target": "shared.uuid@1.0.0",
-              "latest_release": "shared.uuid@2.0.0"
+              "latest_release": "shared.uuid@2.1.0"
             }
           ]
         },
@@ -5483,10 +6411,10 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 3,
+      "total": 5,
       "issues": {
         "outdated_dependency": {
-          "count": 2,
+          "count": 3,
           "detail": [
             {
               "target": "shared.business_partner_number@2.0.0",
@@ -5495,6 +6423,22 @@
             {
               "target": "shared.quantity@2.0.0",
               "latest_release": "shared.quantity@3.0.0"
+            },
+            {
+              "target": "shared.uuid@2.0.0",
+              "latest_release": "shared.uuid@2.1.0"
+            }
+          ]
+        },
+        "deprecated_dep": {
+          "count": 1,
+          "detail": [
+            {
+              "target": "shared.uuid@2.0.0",
+              "path": [
+                "item_stock@2.0.0",
+                "shared.uuid@2.0.0"
+              ]
             }
           ]
         },
@@ -5538,7 +6482,7 @@
           "detail": [
             {
               "target": "shared.uuid@1.0.0",
-              "latest_release": "shared.uuid@2.0.0"
+              "latest_release": "shared.uuid@2.1.0"
             }
           ]
         },
@@ -5565,10 +6509,19 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 5,
+      "total": 7,
       "issues": {
+        "outdated_dependency": {
+          "count": 1,
+          "detail": [
+            {
+              "target": "shared.uuid@2.0.0",
+              "latest_release": "shared.uuid@2.1.0"
+            }
+          ]
+        },
         "deprecated_dep": {
-          "count": 2,
+          "count": 3,
           "detail": [
             {
               "target": "shared.part_classification@1.0.0",
@@ -5582,6 +6535,13 @@
               "path": [
                 "just_in_sequence_part@3.0.0",
                 "shared.part_site_information_as_built@2.0.0"
+              ]
+            },
+            {
+              "target": "shared.uuid@2.0.0",
+              "path": [
+                "just_in_sequence_part@3.0.0",
+                "shared.uuid@2.0.0"
               ]
             }
           ]
@@ -5617,8 +6577,21 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 2,
+      "total": 3,
       "issues": {
+        "deprecated_dep": {
+          "count": 1,
+          "detail": [
+            {
+              "target": "shared.uuid@2.0.0",
+              "path": [
+                "just_in_sequence_part@4.0.0",
+                "shared.industry_core.common@1.0.0",
+                "shared.uuid@2.0.0"
+              ]
+            }
+          ]
+        },
         "meta_model_drift": {
           "count": 1,
           "detail": [
@@ -5642,10 +6615,10 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 4,
+      "total": 6,
       "issues": {
         "outdated_dependency": {
-          "count": 2,
+          "count": 3,
           "detail": [
             {
               "target": "shared.business_partner_number@2.0.0",
@@ -5654,6 +6627,22 @@
             {
               "target": "shared.quantity@2.0.0",
               "latest_release": "shared.quantity@3.0.0"
+            },
+            {
+              "target": "shared.uuid@2.0.0",
+              "latest_release": "shared.uuid@2.1.0"
+            }
+          ]
+        },
+        "deprecated_dep": {
+          "count": 1,
+          "detail": [
+            {
+              "target": "shared.uuid@2.0.0",
+              "path": [
+                "mandatory_dismantling@1.0.0",
+                "shared.uuid@2.0.0"
+              ]
             }
           ]
         },
@@ -5682,10 +6671,10 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 3,
+      "total": 5,
       "issues": {
         "outdated_dependency": {
-          "count": 2,
+          "count": 3,
           "detail": [
             {
               "target": "shared.business_partner_number@2.0.0",
@@ -5694,6 +6683,22 @@
             {
               "target": "shared.quantity@2.0.0",
               "latest_release": "shared.quantity@3.0.0"
+            },
+            {
+              "target": "shared.uuid@2.0.0",
+              "latest_release": "shared.uuid@2.1.0"
+            }
+          ]
+        },
+        "deprecated_dep": {
+          "count": 1,
+          "detail": [
+            {
+              "target": "shared.uuid@2.0.0",
+              "path": [
+                "mandatory_dismantling@2.0.0",
+                "shared.uuid@2.0.0"
+              ]
             }
           ]
         },
@@ -5725,7 +6730,7 @@
             },
             {
               "target": "shared.uuid@1.0.0",
-              "latest_release": "shared.uuid@2.0.0"
+              "latest_release": "shared.uuid@2.1.0"
             }
           ]
         },
@@ -5746,14 +6751,30 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 3,
+      "total": 5,
       "issues": {
         "outdated_dependency": {
-          "count": 1,
+          "count": 2,
           "detail": [
             {
               "target": "shared.business_partner_number@2.0.0",
               "latest_release": "shared.business_partner_number@3.0.0"
+            },
+            {
+              "target": "shared.uuid@2.0.0",
+              "latest_release": "shared.uuid@2.1.0"
+            }
+          ]
+        },
+        "deprecated_dep": {
+          "count": 1,
+          "detail": [
+            {
+              "target": "shared.uuid@2.0.0",
+              "path": [
+                "manufactured_parts_quality_information@2.1.0",
+                "shared.uuid@2.0.0"
+              ]
             }
           ]
         },
@@ -5782,8 +6803,21 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 1,
+      "total": 2,
       "issues": {
+        "deprecated_dep": {
+          "count": 1,
+          "detail": [
+            {
+              "target": "shared.uuid@2.0.0",
+              "path": [
+                "manufactured_parts_quality_information@3.0.0",
+                "shared.quality_core@1.0.0",
+                "shared.uuid@2.0.0"
+              ]
+            }
+          ]
+        },
         "meta_model_drift": {
           "count": 1,
           "detail": [
@@ -5971,12 +7005,26 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 12,
+      "total": 13,
       "issues": {
         "circular_dep": {
           "count": 1,
           "detail": [
             "shared.bill_of_process@1.1.0"
+          ]
+        },
+        "deprecated_dep": {
+          "count": 1,
+          "detail": [
+            {
+              "target": "shared.uuid@2.0.0",
+              "path": [
+                "manufacturing_capability@3.1.0",
+                "shared.bill_of_process@1.1.0",
+                "shared.message_header@3.0.0",
+                "shared.uuid@2.0.0"
+              ]
+            }
           ]
         },
         "orphan_unreachable": {
@@ -6236,7 +7284,7 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 5,
+      "total": 6,
       "issues": {
         "outdated_dependency": {
           "count": 2,
@@ -6252,7 +7300,7 @@
           ]
         },
         "deprecated_dep": {
-          "count": 2,
+          "count": 3,
           "detail": [
             {
               "target": "shared.part_classification@1.0.0",
@@ -6268,6 +7316,14 @@
                 "market_place_offer@2.0.0",
                 "serial_part@3.0.0",
                 "shared.part_site_information_as_built@2.0.0"
+              ]
+            },
+            {
+              "target": "shared.uuid@2.0.0",
+              "path": [
+                "market_place_offer@2.0.0",
+                "serial_part@3.0.0",
+                "shared.uuid@2.0.0"
               ]
             }
           ]
@@ -6338,7 +7394,7 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 6,
+      "total": 7,
       "issues": {
         "outdated_dependency": {
           "count": 2,
@@ -6354,7 +7410,7 @@
           ]
         },
         "deprecated_dep": {
-          "count": 2,
+          "count": 3,
           "detail": [
             {
               "target": "shared.part_classification@1.0.0",
@@ -6371,6 +7427,14 @@
                 "generic.digital_product_passport@4.0.0",
                 "batch@3.0.0",
                 "shared.part_site_information_as_built@2.0.0"
+              ]
+            },
+            {
+              "target": "shared.uuid@2.0.0",
+              "path": [
+                "material.chemical_material_passport@1.0.0",
+                "generic.digital_product_passport@4.0.0",
+                "shared.uuid@2.0.0"
               ]
             }
           ]
@@ -6400,7 +7464,7 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 6,
+      "total": 7,
       "issues": {
         "outdated_dependency": {
           "count": 2,
@@ -6416,7 +7480,7 @@
           ]
         },
         "deprecated_dep": {
-          "count": 2,
+          "count": 3,
           "detail": [
             {
               "target": "shared.part_classification@1.0.0",
@@ -6433,6 +7497,14 @@
                 "generic.digital_product_passport@5.0.0",
                 "batch@3.0.0",
                 "shared.part_site_information_as_built@2.0.0"
+              ]
+            },
+            {
+              "target": "shared.uuid@2.0.0",
+              "path": [
+                "material.chemical_material_passport@2.0.0",
+                "generic.digital_product_passport@5.0.0",
+                "shared.uuid@2.0.0"
               ]
             }
           ]
@@ -6462,7 +7534,7 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 5,
+      "total": 6,
       "issues": {
         "outdated_dependency": {
           "count": 2,
@@ -6478,7 +7550,7 @@
           ]
         },
         "deprecated_dep": {
-          "count": 2,
+          "count": 3,
           "detail": [
             {
               "target": "shared.part_classification@1.0.0",
@@ -6495,6 +7567,14 @@
                 "generic.digital_product_passport@6.0.0",
                 "batch@3.0.0",
                 "shared.part_site_information_as_built@2.0.0"
+              ]
+            },
+            {
+              "target": "shared.uuid@2.0.0",
+              "path": [
+                "material.chemical_material_passport@3.0.0",
+                "generic.digital_product_passport@6.0.0",
+                "shared.uuid@2.0.0"
               ]
             }
           ]
@@ -6735,7 +7815,7 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 3,
+      "total": 4,
       "issues": {
         "outdated_dependency": {
           "count": 1,
@@ -6743,6 +7823,19 @@
             {
               "target": "shared.business_partner_number@2.0.0",
               "latest_release": "shared.business_partner_number@3.0.0"
+            }
+          ]
+        },
+        "deprecated_dep": {
+          "count": 1,
+          "detail": [
+            {
+              "target": "shared.uuid@2.0.0",
+              "path": [
+                "material_accounting@1.0.0",
+                "shared.industry_core.common@1.0.0",
+                "shared.uuid@2.0.0"
+              ]
             }
           ]
         },
@@ -6784,7 +7877,7 @@
             },
             {
               "target": "shared.uuid@1.0.0",
-              "latest_release": "shared.uuid@2.0.0"
+              "latest_release": "shared.uuid@2.1.0"
             }
           ]
         },
@@ -7107,10 +8200,10 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 4,
+      "total": 6,
       "issues": {
         "outdated_dependency": {
-          "count": 3,
+          "count": 4,
           "detail": [
             {
               "target": "shared.address_characteristic@3.0.0",
@@ -7123,6 +8216,22 @@
             {
               "target": "shared.quantity@2.0.0",
               "latest_release": "shared.quantity@3.0.0"
+            },
+            {
+              "target": "shared.uuid@2.0.0",
+              "latest_release": "shared.uuid@2.1.0"
+            }
+          ]
+        },
+        "deprecated_dep": {
+          "count": 1,
+          "detail": [
+            {
+              "target": "shared.uuid@2.0.0",
+              "path": [
+                "packing_list@1.0.0",
+                "shared.uuid@2.0.0"
+              ]
             }
           ]
         },
@@ -7154,7 +8263,7 @@
             },
             {
               "target": "shared.uuid@1.0.0",
-              "latest_release": "shared.uuid@2.0.0"
+              "latest_release": "shared.uuid@2.1.0"
             }
           ]
         },
@@ -7289,25 +8398,36 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 7,
+      "total": 9,
       "issues": {
         "outdated_dependency": {
-          "count": 1,
+          "count": 2,
           "detail": [
             {
               "target": "shared.business_partner_number@2.0.0",
               "latest_release": "shared.business_partner_number@3.0.0"
+            },
+            {
+              "target": "shared.uuid@2.0.0",
+              "latest_release": "shared.uuid@2.1.0"
             }
           ]
         },
         "deprecated_dep": {
-          "count": 1,
+          "count": 2,
           "detail": [
             {
               "target": "shared.part_classification@1.0.0",
               "path": [
                 "part_type_information@1.0.0",
                 "shared.part_classification@1.0.0"
+              ]
+            },
+            {
+              "target": "shared.uuid@2.0.0",
+              "path": [
+                "part_type_information@1.0.0",
+                "shared.uuid@2.0.0"
               ]
             }
           ]
@@ -7358,7 +8478,7 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 5,
+      "total": 6,
       "issues": {
         "outdated_dependency": {
           "count": 1,
@@ -7366,6 +8486,19 @@
             {
               "target": "shared.business_partner_number@2.0.0",
               "latest_release": "shared.business_partner_number@3.0.0"
+            }
+          ]
+        },
+        "deprecated_dep": {
+          "count": 1,
+          "detail": [
+            {
+              "target": "shared.uuid@2.0.0",
+              "path": [
+                "part_type_information@2.0.0",
+                "shared.industry_core.common@1.0.0",
+                "shared.uuid@2.0.0"
+              ]
             }
           ]
         },
@@ -7433,7 +8566,7 @@
           "detail": [
             {
               "target": "shared.uuid@1.0.0",
-              "latest_release": "shared.uuid@2.0.0"
+              "latest_release": "shared.uuid@2.1.0"
             }
           ]
         },
@@ -7472,8 +8605,55 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 1,
+      "total": 2,
       "issues": {
+        "deprecated_dep": {
+          "count": 1,
+          "detail": [
+            {
+              "target": "shared.uuid@2.0.0",
+              "path": [
+                "parts_analyses@4.0.0",
+                "shared.quality_core@1.0.0",
+                "shared.uuid@2.0.0"
+              ]
+            }
+          ]
+        },
+        "meta_model_drift": {
+          "count": 1,
+          "detail": [
+            {
+              "using": "SAMM 2.1.0",
+              "latest": "SAMM 2.2.0"
+            }
+          ]
+        }
+      }
+    },
+    "pcf@10.0.0": {
+      "name": "pcf",
+      "version": "10.0.0",
+      "family": "SAMM",
+      "source": "catenax",
+      "status": "release",
+      "total": 3,
+      "issues": {
+        "bad_naming_type": {
+          "count": 2,
+          "detail": [
+            {
+              "name": "pcfAssessmentAndMethodologyCollection",
+              "kind": "Characteristic",
+              "file": "Pcf"
+            },
+            {
+              "name": "pcfAssessmentAndMethodologyEntity",
+              "kind": "Entity",
+              "file": "Pcf"
+            }
+          ]
+        },
         "meta_model_drift": {
           "count": 1,
           "detail": [
@@ -7490,7 +8670,7 @@
       "version": "2.0.0",
       "family": "BAMM",
       "source": "catenax",
-      "status": "deprecated",
+      "status": "invalidated",
       "total": 5,
       "issues": {
         "orphan_unreachable": {
@@ -7534,7 +8714,7 @@
       "version": "3.0.0",
       "family": "BAMM",
       "source": "catenax",
-      "status": "deprecated",
+      "status": "invalidated",
       "total": 4,
       "issues": {
         "orphan_unreachable": {
@@ -7569,7 +8749,7 @@
       "version": "5.0.0",
       "family": "SAMM",
       "source": "catenax",
-      "status": "deprecated",
+      "status": "invalidated",
       "total": 2,
       "issues": {
         "outdated_dependency": {
@@ -7577,7 +8757,7 @@
           "detail": [
             {
               "target": "shared.uuid@1.0.0",
-              "latest_release": "shared.uuid@2.0.0"
+              "latest_release": "shared.uuid@2.1.0"
             }
           ]
         },
@@ -7597,9 +8777,30 @@
       "version": "6.0.0",
       "family": "SAMM",
       "source": "catenax",
-      "status": "deprecated",
-      "total": 1,
+      "status": "invalidated",
+      "total": 3,
       "issues": {
+        "outdated_dependency": {
+          "count": 1,
+          "detail": [
+            {
+              "target": "shared.uuid@2.0.0",
+              "latest_release": "shared.uuid@2.1.0"
+            }
+          ]
+        },
+        "deprecated_dep": {
+          "count": 1,
+          "detail": [
+            {
+              "target": "shared.uuid@2.0.0",
+              "path": [
+                "pcf@6.0.0",
+                "shared.uuid@2.0.0"
+              ]
+            }
+          ]
+        },
         "meta_model_drift": {
           "count": 1,
           "detail": [
@@ -7616,14 +8817,15 @@
       "version": "7.0.0",
       "family": "SAMM",
       "source": "catenax",
-      "status": "release",
+      "status": "deprecated",
       "total": 2,
       "issues": {
-        "older_release_exists": {
+        "outdated_dependency": {
           "count": 1,
           "detail": [
             {
-              "latest_release": "pcf@9.0.0"
+              "target": "shared.uuid@2.0.0",
+              "latest_release": "shared.uuid@2.1.0"
             }
           ]
         },
@@ -7643,14 +8845,27 @@
       "version": "8.0.0",
       "family": "SAMM",
       "source": "catenax",
-      "status": "release",
-      "total": 9,
+      "status": "invalidated",
+      "total": 10,
       "issues": {
-        "older_release_exists": {
+        "outdated_dependency": {
           "count": 1,
           "detail": [
             {
-              "latest_release": "pcf@9.0.0"
+              "target": "shared.uuid@2.0.0",
+              "latest_release": "shared.uuid@2.1.0"
+            }
+          ]
+        },
+        "deprecated_dep": {
+          "count": 1,
+          "detail": [
+            {
+              "target": "shared.uuid@2.0.0",
+              "path": [
+                "pcf@8.0.0",
+                "shared.uuid@2.0.0"
+              ]
             }
           ]
         },
@@ -7721,8 +8936,37 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 3,
+      "total": 6,
       "issues": {
+        "outdated_dependency": {
+          "count": 1,
+          "detail": [
+            {
+              "target": "shared.uuid@2.0.0",
+              "latest_release": "shared.uuid@2.1.0"
+            }
+          ]
+        },
+        "deprecated_dep": {
+          "count": 1,
+          "detail": [
+            {
+              "target": "shared.uuid@2.0.0",
+              "path": [
+                "pcf@9.0.0",
+                "shared.uuid@2.0.0"
+              ]
+            }
+          ]
+        },
+        "older_release_exists": {
+          "count": 1,
+          "detail": [
+            {
+              "latest_release": "pcf@10.0.0"
+            }
+          ]
+        },
         "bad_naming_type": {
           "count": 2,
           "detail": [
@@ -7755,14 +8999,31 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 3,
+      "total": 5,
       "issues": {
         "outdated_dependency": {
-          "count": 1,
+          "count": 2,
           "detail": [
+            {
+              "target": "pcf@9.0.0",
+              "latest_release": "pcf@10.0.0"
+            },
             {
               "target": "shared.business_partner_number@2.0.0",
               "latest_release": "shared.business_partner_number@3.0.0"
+            }
+          ]
+        },
+        "deprecated_dep": {
+          "count": 1,
+          "detail": [
+            {
+              "target": "shared.uuid@2.0.0",
+              "path": [
+                "pcf_for_battery_component_supplier@1.0.0",
+                "pcf@9.0.0",
+                "shared.uuid@2.0.0"
+              ]
             }
           ]
         },
@@ -7804,7 +9065,7 @@
             },
             {
               "target": "shared.uuid@1.0.0",
-              "latest_release": "shared.uuid@2.0.0"
+              "latest_release": "shared.uuid@2.1.0"
             }
           ]
         },
@@ -7852,10 +9113,10 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 3,
+      "total": 5,
       "issues": {
         "outdated_dependency": {
-          "count": 2,
+          "count": 3,
           "detail": [
             {
               "target": "shared.business_partner_number@2.0.0",
@@ -7864,6 +9125,22 @@
             {
               "target": "shared.quantity@2.0.0",
               "latest_release": "shared.quantity@3.0.0"
+            },
+            {
+              "target": "shared.uuid@2.0.0",
+              "latest_release": "shared.uuid@2.1.0"
+            }
+          ]
+        },
+        "deprecated_dep": {
+          "count": 1,
+          "detail": [
+            {
+              "target": "shared.uuid@2.0.0",
+              "path": [
+                "planned_production_output@2.0.0",
+                "shared.uuid@2.0.0"
+              ]
             }
           ]
         },
@@ -7918,7 +9195,7 @@
             },
             {
               "target": "shared.uuid@1.0.0",
-              "latest_release": "shared.uuid@2.0.0"
+              "latest_release": "shared.uuid@2.1.0"
             }
           ]
         },
@@ -7959,7 +9236,7 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 2,
+      "total": 3,
       "issues": {
         "outdated_dependency": {
           "count": 1,
@@ -7967,6 +9244,19 @@
             {
               "target": "shared.business_partner_number@2.0.0",
               "latest_release": "shared.business_partner_number@3.0.0"
+            }
+          ]
+        },
+        "deprecated_dep": {
+          "count": 1,
+          "detail": [
+            {
+              "target": "shared.uuid@2.0.0",
+              "path": [
+                "quality_task@3.0.0",
+                "shared.quality_core@1.0.0",
+                "shared.uuid@2.0.0"
+              ]
             }
           ]
         },
@@ -8006,8 +9296,29 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 3,
+      "total": 5,
       "issues": {
+        "outdated_dependency": {
+          "count": 1,
+          "detail": [
+            {
+              "target": "shared.uuid@2.0.0",
+              "latest_release": "shared.uuid@2.1.0"
+            }
+          ]
+        },
+        "deprecated_dep": {
+          "count": 1,
+          "detail": [
+            {
+              "target": "shared.uuid@2.0.0",
+              "path": [
+                "quality_task_attachment@2.0.0",
+                "shared.uuid@2.0.0"
+              ]
+            }
+          ]
+        },
         "older_release_exists": {
           "count": 1,
           "detail": [
@@ -8043,8 +9354,21 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 2,
+      "total": 3,
       "issues": {
+        "deprecated_dep": {
+          "count": 1,
+          "detail": [
+            {
+              "target": "shared.uuid@2.0.0",
+              "path": [
+                "quality_task_attachment@3.0.0",
+                "shared.quality_core@1.0.0",
+                "shared.uuid@2.0.0"
+              ]
+            }
+          ]
+        },
         "bad_naming_type": {
           "count": 1,
           "detail": [
@@ -8150,7 +9474,7 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 4,
+      "total": 5,
       "issues": {
         "outdated_dependency": {
           "count": 1,
@@ -8162,7 +9486,7 @@
           ]
         },
         "deprecated_dep": {
-          "count": 2,
+          "count": 3,
           "detail": [
             {
               "target": "shared.part_classification@1.0.0",
@@ -8178,6 +9502,14 @@
                 "refurbishing_certificate@3.0.0",
                 "serial_part@3.0.0",
                 "shared.part_site_information_as_built@2.0.0"
+              ]
+            },
+            {
+              "target": "shared.uuid@2.0.0",
+              "path": [
+                "refurbishing_certificate@3.0.0",
+                "serial_part@3.0.0",
+                "shared.uuid@2.0.0"
               ]
             }
           ]
@@ -8277,7 +9609,7 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 4,
+      "total": 5,
       "issues": {
         "outdated_dependency": {
           "count": 1,
@@ -8289,7 +9621,7 @@
           ]
         },
         "deprecated_dep": {
-          "count": 2,
+          "count": 3,
           "detail": [
             {
               "target": "shared.part_classification@1.0.0",
@@ -8305,6 +9637,14 @@
                 "remanufacturing_certificate@3.0.0",
                 "serial_part@3.0.0",
                 "shared.part_site_information_as_built@2.0.0"
+              ]
+            },
+            {
+              "target": "shared.uuid@2.0.0",
+              "path": [
+                "remanufacturing_certificate@3.0.0",
+                "serial_part@3.0.0",
+                "shared.uuid@2.0.0"
               ]
             }
           ]
@@ -8326,7 +9666,7 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 4,
+      "total": 5,
       "issues": {
         "outdated_dependency": {
           "count": 1,
@@ -8338,7 +9678,7 @@
           ]
         },
         "deprecated_dep": {
-          "count": 2,
+          "count": 3,
           "detail": [
             {
               "target": "shared.part_classification@1.0.0",
@@ -8354,6 +9694,14 @@
                 "repair_certificate@1.0.0",
                 "serial_part@3.0.0",
                 "shared.part_site_information_as_built@2.0.0"
+              ]
+            },
+            {
+              "target": "shared.uuid@2.0.0",
+              "path": [
+                "repair_certificate@1.0.0",
+                "serial_part@3.0.0",
+                "shared.uuid@2.0.0"
               ]
             }
           ]
@@ -8375,7 +9723,7 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 2,
+      "total": 3,
       "issues": {
         "outdated_dependency": {
           "count": 1,
@@ -8383,6 +9731,19 @@
             {
               "target": "shared.business_partner_number@2.0.0",
               "latest_release": "shared.business_partner_number@3.0.0"
+            }
+          ]
+        },
+        "deprecated_dep": {
+          "count": 1,
+          "detail": [
+            {
+              "target": "shared.uuid@2.0.0",
+              "path": [
+                "report_8d@1.0.0",
+                "shared.quality_core@1.0.0",
+                "shared.uuid@2.0.0"
+              ]
             }
           ]
         },
@@ -8414,7 +9775,7 @@
             },
             {
               "target": "shared.uuid@1.0.0",
-              "latest_release": "shared.uuid@2.0.0"
+              "latest_release": "shared.uuid@2.1.0"
             }
           ]
         },
@@ -8535,7 +9896,7 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 2,
+      "total": 3,
       "issues": {
         "outdated_dependency": {
           "count": 1,
@@ -8543,6 +9904,19 @@
             {
               "target": "shared.quantity@2.0.0",
               "latest_release": "shared.quantity@3.0.0"
+            }
+          ]
+        },
+        "deprecated_dep": {
+          "count": 1,
+          "detail": [
+            {
+              "target": "shared.uuid@2.0.0",
+              "path": [
+                "request_for_quotation@3.0.0",
+                "shared.message_header@3.0.0",
+                "shared.uuid@2.0.0"
+              ]
             }
           ]
         },
@@ -8563,8 +9937,29 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 1,
+      "total": 3,
       "issues": {
+        "outdated_dependency": {
+          "count": 1,
+          "detail": [
+            {
+              "target": "shared.uuid@2.0.0",
+              "latest_release": "shared.uuid@2.1.0"
+            }
+          ]
+        },
+        "deprecated_dep": {
+          "count": 1,
+          "detail": [
+            {
+              "target": "shared.uuid@2.0.0",
+              "path": [
+                "requirement@1.0.0",
+                "shared.uuid@2.0.0"
+              ]
+            }
+          ]
+        },
         "meta_model_drift": {
           "count": 1,
           "detail": [
@@ -8620,7 +10015,7 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 6,
+      "total": 7,
       "issues": {
         "outdated_dependency": {
           "count": 3,
@@ -8640,7 +10035,7 @@
           ]
         },
         "deprecated_dep": {
-          "count": 2,
+          "count": 3,
           "detail": [
             {
               "target": "shared.part_classification@1.0.0",
@@ -8655,6 +10050,14 @@
                 "return_request@2.0.0",
                 "serial_part@3.0.0",
                 "shared.part_site_information_as_built@2.0.0"
+              ]
+            },
+            {
+              "target": "shared.uuid@2.0.0",
+              "path": [
+                "return_request@2.0.0",
+                "serial_part@3.0.0",
+                "shared.uuid@2.0.0"
               ]
             }
           ]
@@ -8733,7 +10136,7 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 4,
+      "total": 5,
       "issues": {
         "outdated_dependency": {
           "count": 1,
@@ -8745,7 +10148,7 @@
           ]
         },
         "deprecated_dep": {
-          "count": 2,
+          "count": 3,
           "detail": [
             {
               "target": "shared.part_classification@1.0.0",
@@ -8761,6 +10164,14 @@
                 "reuse_certificate@3.0.0",
                 "serial_part@3.0.0",
                 "shared.part_site_information_as_built@2.0.0"
+              ]
+            },
+            {
+              "target": "shared.uuid@2.0.0",
+              "path": [
+                "reuse_certificate@3.0.0",
+                "serial_part@3.0.0",
+                "shared.uuid@2.0.0"
               ]
             }
           ]
@@ -8867,7 +10278,7 @@
           "detail": [
             {
               "target": "pcf@3.0.0",
-              "latest_release": "pcf@9.0.0"
+              "latest_release": "pcf@10.0.0"
             }
           ]
         }
@@ -8979,7 +10390,7 @@
           "detail": [
             {
               "target": "shared.uuid@1.0.0",
-              "latest_release": "shared.uuid@2.0.0"
+              "latest_release": "shared.uuid@2.1.0"
             }
           ]
         },
@@ -9006,10 +10417,19 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 5,
+      "total": 7,
       "issues": {
+        "outdated_dependency": {
+          "count": 1,
+          "detail": [
+            {
+              "target": "shared.uuid@2.0.0",
+              "latest_release": "shared.uuid@2.1.0"
+            }
+          ]
+        },
         "deprecated_dep": {
-          "count": 2,
+          "count": 3,
           "detail": [
             {
               "target": "shared.part_classification@1.0.0",
@@ -9023,6 +10443,13 @@
               "path": [
                 "serial_part@3.0.0",
                 "shared.part_site_information_as_built@2.0.0"
+              ]
+            },
+            {
+              "target": "shared.uuid@2.0.0",
+              "path": [
+                "serial_part@3.0.0",
+                "shared.uuid@2.0.0"
               ]
             }
           ]
@@ -9058,10 +10485,19 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 5,
+      "total": 7,
       "issues": {
+        "outdated_dependency": {
+          "count": 1,
+          "detail": [
+            {
+              "target": "shared.uuid@2.0.0",
+              "latest_release": "shared.uuid@2.1.0"
+            }
+          ]
+        },
         "deprecated_dep": {
-          "count": 2,
+          "count": 3,
           "detail": [
             {
               "target": "shared.part_classification@1.0.0",
@@ -9075,6 +10511,13 @@
               "path": [
                 "serial_part@3.0.1",
                 "shared.part_site_information_as_built@2.0.0"
+              ]
+            },
+            {
+              "target": "shared.uuid@2.0.0",
+              "path": [
+                "serial_part@3.0.1",
+                "shared.uuid@2.0.0"
               ]
             }
           ]
@@ -9110,8 +10553,21 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 2,
+      "total": 3,
       "issues": {
+        "deprecated_dep": {
+          "count": 1,
+          "detail": [
+            {
+              "target": "shared.uuid@2.0.0",
+              "path": [
+                "serial_part@4.0.0",
+                "shared.industry_core.common@1.0.0",
+                "shared.uuid@2.0.0"
+              ]
+            }
+          ]
+        },
         "meta_model_drift": {
           "count": 1,
           "detail": [
@@ -9349,12 +10805,25 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 3,
+      "total": 4,
       "issues": {
         "circular_dep": {
           "count": 1,
           "detail": [
             "manufacturing_capability@3.1.0"
+          ]
+        },
+        "deprecated_dep": {
+          "count": 1,
+          "detail": [
+            {
+              "target": "shared.uuid@2.0.0",
+              "path": [
+                "shared.bill_of_process@1.1.0",
+                "shared.message_header@3.0.0",
+                "shared.uuid@2.0.0"
+              ]
+            }
           ]
         },
         "meta_model_drift": {
@@ -9580,14 +11049,30 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 23,
+      "total": 25,
       "issues": {
         "outdated_dependency": {
-          "count": 1,
+          "count": 2,
           "detail": [
             {
               "target": "shared.business_partner_number@2.0.0",
               "latest_release": "shared.business_partner_number@3.0.0"
+            },
+            {
+              "target": "shared.uuid@2.0.0",
+              "latest_release": "shared.uuid@2.1.0"
+            }
+          ]
+        },
+        "deprecated_dep": {
+          "count": 1,
+          "detail": [
+            {
+              "target": "shared.uuid@2.0.0",
+              "path": [
+                "shared.industry_core.common@1.0.0",
+                "shared.uuid@2.0.0"
+              ]
             }
           ]
         },
@@ -9725,8 +11210,21 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 3,
+      "total": 4,
       "issues": {
+        "deprecated_dep": {
+          "count": 1,
+          "detail": [
+            {
+              "target": "shared.uuid@2.0.0",
+              "path": [
+                "shared.industry_core.manufacturing_information@1.0.0",
+                "shared.industry_core.site_information@1.0.0",
+                "shared.uuid@2.0.0"
+              ]
+            }
+          ]
+        },
         "unused_property": {
           "count": 1,
           "detail": [
@@ -9801,14 +11299,30 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 4,
+      "total": 6,
       "issues": {
         "outdated_dependency": {
-          "count": 1,
+          "count": 2,
           "detail": [
             {
               "target": "shared.business_partner_number@2.0.0",
               "latest_release": "shared.business_partner_number@3.0.0"
+            },
+            {
+              "target": "shared.uuid@2.0.0",
+              "latest_release": "shared.uuid@2.1.0"
+            }
+          ]
+        },
+        "deprecated_dep": {
+          "count": 1,
+          "detail": [
+            {
+              "target": "shared.uuid@2.0.0",
+              "path": [
+                "shared.industry_core.site_information@1.0.0",
+                "shared.uuid@2.0.0"
+              ]
             }
           ]
         },
@@ -9947,7 +11461,7 @@
             },
             {
               "target": "shared.uuid@1.0.0",
-              "latest_release": "shared.uuid@2.0.0"
+              "latest_release": "shared.uuid@2.1.0"
             }
           ]
         },
@@ -9988,14 +11502,30 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 3,
+      "total": 5,
       "issues": {
         "outdated_dependency": {
-          "count": 1,
+          "count": 2,
           "detail": [
             {
               "target": "shared.business_partner_number@2.0.0",
               "latest_release": "shared.business_partner_number@3.0.0"
+            },
+            {
+              "target": "shared.uuid@2.0.0",
+              "latest_release": "shared.uuid@2.1.0"
+            }
+          ]
+        },
+        "deprecated_dep": {
+          "count": 1,
+          "detail": [
+            {
+              "target": "shared.uuid@2.0.0",
+              "path": [
+                "shared.message_header@3.0.0",
+                "shared.uuid@2.0.0"
+              ]
             }
           ]
         },
@@ -10052,7 +11582,7 @@
             },
             {
               "target": "shared.uuid@1.0.0",
-              "latest_release": "shared.uuid@2.0.0"
+              "latest_release": "shared.uuid@2.1.0"
             }
           ]
         },
@@ -10079,14 +11609,18 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "deprecated",
-      "total": 3,
+      "total": 4,
       "issues": {
         "outdated_dependency": {
-          "count": 1,
+          "count": 2,
           "detail": [
             {
               "target": "shared.business_partner_number@2.0.0",
               "latest_release": "shared.business_partner_number@3.0.0"
+            },
+            {
+              "target": "shared.uuid@2.0.0",
+              "latest_release": "shared.uuid@2.1.0"
             }
           ]
         },
@@ -10157,14 +11691,30 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 2,
+      "total": 4,
       "issues": {
         "outdated_dependency": {
-          "count": 1,
+          "count": 2,
           "detail": [
             {
               "target": "shared.business_partner_number@2.0.0",
               "latest_release": "shared.business_partner_number@3.0.0"
+            },
+            {
+              "target": "shared.uuid@2.0.0",
+              "latest_release": "shared.uuid@2.1.0"
+            }
+          ]
+        },
+        "deprecated_dep": {
+          "count": 1,
+          "detail": [
+            {
+              "target": "shared.uuid@2.0.0",
+              "path": [
+                "shared.quality_core@1.0.0",
+                "shared.uuid@2.0.0"
+              ]
             }
           ]
         },
@@ -10358,7 +11908,7 @@
             },
             {
               "target": "shared.uuid@1.0.0",
-              "latest_release": "shared.uuid@2.0.0"
+              "latest_release": "shared.uuid@2.1.0"
             }
           ]
         },
@@ -10399,14 +11949,30 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 2,
+      "total": 4,
       "issues": {
         "outdated_dependency": {
-          "count": 1,
+          "count": 2,
           "detail": [
             {
               "target": "shared.business_partner_number@2.0.0",
               "latest_release": "shared.business_partner_number@3.0.0"
+            },
+            {
+              "target": "shared.uuid@2.0.0",
+              "latest_release": "shared.uuid@2.1.0"
+            }
+          ]
+        },
+        "deprecated_dep": {
+          "count": 1,
+          "detail": [
+            {
+              "target": "shared.uuid@2.0.0",
+              "path": [
+                "shared.recycling_strategy_certificate@3.0.0",
+                "shared.uuid@2.0.0"
+              ]
             }
           ]
         },
@@ -10597,17 +12163,9 @@
       "version": "1.0.0",
       "family": "SAMM",
       "source": "catenax",
-      "status": "release",
-      "total": 3,
+      "status": "invalidated",
+      "total": 2,
       "issues": {
-        "older_release_exists": {
-          "count": 1,
-          "detail": [
-            {
-              "latest_release": "shared.uuid@2.0.0"
-            }
-          ]
-        },
         "meta_model_drift": {
           "count": 1,
           "detail": [
@@ -10630,7 +12188,7 @@
       "version": "2.0.0",
       "family": "SAMM",
       "source": "catenax",
-      "status": "release",
+      "status": "deprecated",
       "total": 2,
       "issues": {
         "meta_model_drift": {
@@ -10655,8 +12213,8 @@
       "version": "2.1.0",
       "family": "SAMM",
       "source": "catenax",
-      "status": "undefined",
-      "total": 5,
+      "status": "release",
+      "total": 4,
       "issues": {
         "unused_property": {
           "count": 1,
@@ -10666,12 +12224,6 @@
               "kind": "Property",
               "file": "Uuid"
             }
-          ]
-        },
-        "missing_files": {
-          "count": 1,
-          "detail": [
-            "metadata.json"
           ]
         },
         "meta_model_drift": {
@@ -11557,7 +13109,7 @@
             },
             {
               "target": "shared.uuid@1.0.0",
-              "latest_release": "shared.uuid@2.0.0"
+              "latest_release": "shared.uuid@2.1.0"
             }
           ]
         },
@@ -11596,7 +13148,7 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 8,
+      "total": 9,
       "issues": {
         "outdated_dependency": {
           "count": 3,
@@ -11616,7 +13168,7 @@
           ]
         },
         "deprecated_dep": {
-          "count": 3,
+          "count": 4,
           "detail": [
             {
               "target": "shared.business_partner_number@1.0.0",
@@ -11640,6 +13192,14 @@
                 "shopfloor_information.get_production_tracking@1.0.0",
                 "serial_part@3.0.0",
                 "shared.part_site_information_as_built@2.0.0"
+              ]
+            },
+            {
+              "target": "shared.uuid@2.0.0",
+              "path": [
+                "shopfloor_information.get_production_tracking@1.0.0",
+                "serial_part@3.0.0",
+                "shared.uuid@2.0.0"
               ]
             }
           ]
@@ -11736,7 +13296,7 @@
             },
             {
               "target": "shared.uuid@1.0.0",
-              "latest_release": "shared.uuid@2.0.0"
+              "latest_release": "shared.uuid@2.1.0"
             }
           ]
         },
@@ -11776,7 +13336,7 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 7,
+      "total": 8,
       "issues": {
         "outdated_dependency": {
           "count": 2,
@@ -11792,7 +13352,7 @@
           ]
         },
         "deprecated_dep": {
-          "count": 3,
+          "count": 4,
           "detail": [
             {
               "target": "shared.business_partner_number@1.0.0",
@@ -11816,6 +13376,14 @@
                 "shopfloor_information.provide_production_tracking@1.0.0",
                 "serial_part@3.0.0",
                 "shared.part_site_information_as_built@2.0.0"
+              ]
+            },
+            {
+              "target": "shared.uuid@2.0.0",
+              "path": [
+                "shopfloor_information.provide_production_tracking@1.0.0",
+                "serial_part@3.0.0",
+                "shared.uuid@2.0.0"
               ]
             }
           ]
@@ -11843,10 +13411,10 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 3,
+      "total": 5,
       "issues": {
         "outdated_dependency": {
-          "count": 2,
+          "count": 3,
           "detail": [
             {
               "target": "shared.business_partner_number@2.0.0",
@@ -11855,6 +13423,22 @@
             {
               "target": "shared.quantity@2.0.0",
               "latest_release": "shared.quantity@3.0.0"
+            },
+            {
+              "target": "shared.uuid@2.0.0",
+              "latest_release": "shared.uuid@2.1.0"
+            }
+          ]
+        },
+        "deprecated_dep": {
+          "count": 1,
+          "detail": [
+            {
+              "target": "shared.uuid@2.0.0",
+              "path": [
+                "short_term_material_demand@1.0.0",
+                "shared.uuid@2.0.0"
+              ]
             }
           ]
         },
@@ -11875,8 +13459,29 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 1,
+      "total": 3,
       "issues": {
+        "outdated_dependency": {
+          "count": 1,
+          "detail": [
+            {
+              "target": "shared.uuid@2.0.0",
+              "latest_release": "shared.uuid@2.1.0"
+            }
+          ]
+        },
+        "deprecated_dep": {
+          "count": 1,
+          "detail": [
+            {
+              "target": "shared.uuid@2.0.0",
+              "path": [
+                "simulated_week_based_material_demand@1.0.0",
+                "shared.uuid@2.0.0"
+              ]
+            }
+          ]
+        },
         "meta_model_drift": {
           "count": 1,
           "detail": [
@@ -11955,10 +13560,10 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 5,
+      "total": 7,
       "issues": {
         "outdated_dependency": {
-          "count": 2,
+          "count": 3,
           "detail": [
             {
               "target": "shared.business_partner_number@2.0.0",
@@ -11967,6 +13572,22 @@
             {
               "target": "shared.quantity@2.0.0",
               "latest_release": "shared.quantity@3.0.0"
+            },
+            {
+              "target": "shared.uuid@2.0.0",
+              "latest_release": "shared.uuid@2.1.0"
+            }
+          ]
+        },
+        "deprecated_dep": {
+          "count": 1,
+          "detail": [
+            {
+              "target": "shared.uuid@2.0.0",
+              "path": [
+                "single_level_bom_as_built@3.0.0",
+                "shared.uuid@2.0.0"
+              ]
             }
           ]
         },
@@ -12001,8 +13622,21 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 2,
+      "total": 3,
       "issues": {
+        "deprecated_dep": {
+          "count": 1,
+          "detail": [
+            {
+              "target": "shared.uuid@2.0.0",
+              "path": [
+                "single_level_bom_as_built@4.0.0",
+                "shared.industry_core.common@1.0.0",
+                "shared.uuid@2.0.0"
+              ]
+            }
+          ]
+        },
         "meta_model_drift": {
           "count": 1,
           "detail": [
@@ -12051,10 +13685,10 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 5,
+      "total": 7,
       "issues": {
         "outdated_dependency": {
-          "count": 2,
+          "count": 3,
           "detail": [
             {
               "target": "shared.business_partner_number@2.0.0",
@@ -12063,6 +13697,22 @@
             {
               "target": "shared.quantity@2.0.0",
               "latest_release": "shared.quantity@3.0.0"
+            },
+            {
+              "target": "shared.uuid@2.0.0",
+              "latest_release": "shared.uuid@2.1.0"
+            }
+          ]
+        },
+        "deprecated_dep": {
+          "count": 1,
+          "detail": [
+            {
+              "target": "shared.uuid@2.0.0",
+              "path": [
+                "single_level_bom_as_planned@3.0.0",
+                "shared.uuid@2.0.0"
+              ]
             }
           ]
         },
@@ -12097,8 +13747,21 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 2,
+      "total": 3,
       "issues": {
+        "deprecated_dep": {
+          "count": 1,
+          "detail": [
+            {
+              "target": "shared.uuid@2.0.0",
+              "path": [
+                "single_level_bom_as_planned@4.0.0",
+                "shared.industry_core.common@1.0.0",
+                "shared.uuid@2.0.0"
+              ]
+            }
+          ]
+        },
         "meta_model_drift": {
           "count": 1,
           "detail": [
@@ -12188,8 +13851,29 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 1,
+      "total": 3,
       "issues": {
+        "outdated_dependency": {
+          "count": 1,
+          "detail": [
+            {
+              "target": "shared.uuid@2.0.0",
+              "latest_release": "shared.uuid@2.1.0"
+            }
+          ]
+        },
+        "deprecated_dep": {
+          "count": 1,
+          "detail": [
+            {
+              "target": "shared.uuid@2.0.0",
+              "path": [
+                "single_level_scene_node@1.0.0",
+                "shared.uuid@2.0.0"
+              ]
+            }
+          ]
+        },
         "meta_model_drift": {
           "count": 1,
           "detail": [
@@ -12242,10 +13926,10 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 5,
+      "total": 7,
       "issues": {
         "outdated_dependency": {
-          "count": 2,
+          "count": 3,
           "detail": [
             {
               "target": "shared.business_partner_number@2.0.0",
@@ -12254,6 +13938,22 @@
             {
               "target": "shared.quantity@2.0.0",
               "latest_release": "shared.quantity@3.0.0"
+            },
+            {
+              "target": "shared.uuid@2.0.0",
+              "latest_release": "shared.uuid@2.1.0"
+            }
+          ]
+        },
+        "deprecated_dep": {
+          "count": 1,
+          "detail": [
+            {
+              "target": "shared.uuid@2.0.0",
+              "path": [
+                "single_level_usage_as_built@3.0.0",
+                "shared.uuid@2.0.0"
+              ]
             }
           ]
         },
@@ -12288,8 +13988,21 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 2,
+      "total": 3,
       "issues": {
+        "deprecated_dep": {
+          "count": 1,
+          "detail": [
+            {
+              "target": "shared.uuid@2.0.0",
+              "path": [
+                "single_level_usage_as_built@4.0.0",
+                "shared.industry_core.common@1.0.0",
+                "shared.uuid@2.0.0"
+              ]
+            }
+          ]
+        },
         "meta_model_drift": {
           "count": 1,
           "detail": [
@@ -12329,10 +14042,10 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 4,
+      "total": 6,
       "issues": {
         "outdated_dependency": {
-          "count": 2,
+          "count": 3,
           "detail": [
             {
               "target": "shared.business_partner_number@2.0.0",
@@ -12341,6 +14054,22 @@
             {
               "target": "shared.quantity@2.0.0",
               "latest_release": "shared.quantity@3.0.0"
+            },
+            {
+              "target": "shared.uuid@2.0.0",
+              "latest_release": "shared.uuid@2.1.0"
+            }
+          ]
+        },
+        "deprecated_dep": {
+          "count": 1,
+          "detail": [
+            {
+              "target": "shared.uuid@2.0.0",
+              "path": [
+                "single_level_usage_as_planned@2.0.0",
+                "shared.uuid@2.0.0"
+              ]
             }
           ]
         },
@@ -12369,8 +14098,21 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 2,
+      "total": 3,
       "issues": {
+        "deprecated_dep": {
+          "count": 1,
+          "detail": [
+            {
+              "target": "shared.uuid@2.0.0",
+              "path": [
+                "single_level_usage_as_planned@3.0.0",
+                "shared.industry_core.common@1.0.0",
+                "shared.uuid@2.0.0"
+              ]
+            }
+          ]
+        },
         "meta_model_drift": {
           "count": 1,
           "detail": [
@@ -12394,8 +14136,29 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 2,
+      "total": 4,
       "issues": {
+        "outdated_dependency": {
+          "count": 1,
+          "detail": [
+            {
+              "target": "shared.uuid@2.0.0",
+              "latest_release": "shared.uuid@2.1.0"
+            }
+          ]
+        },
+        "deprecated_dep": {
+          "count": 1,
+          "detail": [
+            {
+              "target": "shared.uuid@2.0.0",
+              "path": [
+                "software_information@1.0.0",
+                "shared.uuid@2.0.0"
+              ]
+            }
+          ]
+        },
         "meta_model_drift": {
           "count": 1,
           "detail": [
@@ -12419,7 +14182,7 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 9,
+      "total": 10,
       "issues": {
         "outdated_dependency": {
           "count": 2,
@@ -12435,7 +14198,7 @@
           ]
         },
         "deprecated_dep": {
-          "count": 2,
+          "count": 3,
           "detail": [
             {
               "target": "shared.part_classification@1.0.0",
@@ -12451,6 +14214,14 @@
                 "special_characteristics.measurement@1.0.0",
                 "serial_part@3.0.0",
                 "shared.part_site_information_as_built@2.0.0"
+              ]
+            },
+            {
+              "target": "shared.uuid@2.0.0",
+              "path": [
+                "special_characteristics.measurement@1.0.0",
+                "serial_part@3.0.0",
+                "shared.uuid@2.0.0"
               ]
             }
           ]
@@ -12506,7 +14277,7 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 6,
+      "total": 7,
       "issues": {
         "outdated_dependency": {
           "count": 2,
@@ -12522,7 +14293,7 @@
           ]
         },
         "deprecated_dep": {
-          "count": 2,
+          "count": 3,
           "detail": [
             {
               "target": "shared.part_classification@1.0.0",
@@ -12538,6 +14309,14 @@
                 "special_characteristics.measurement@2.0.0",
                 "serial_part@3.0.0",
                 "shared.part_site_information_as_built@2.0.0"
+              ]
+            },
+            {
+              "target": "shared.uuid@2.0.0",
+              "path": [
+                "special_characteristics.measurement@2.0.0",
+                "serial_part@3.0.0",
+                "shared.uuid@2.0.0"
               ]
             }
           ]
@@ -12619,7 +14398,7 @@
           "detail": [
             {
               "target": "pcf@3.0.0",
-              "latest_release": "pcf@9.0.0"
+              "latest_release": "pcf@10.0.0"
             },
             {
               "target": "shared.contact_information@2.0.0",
@@ -12667,7 +14446,7 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 5,
+      "total": 6,
       "issues": {
         "outdated_dependency": {
           "count": 1,
@@ -12679,7 +14458,7 @@
           ]
         },
         "deprecated_dep": {
-          "count": 2,
+          "count": 3,
           "detail": [
             {
               "target": "shared.part_classification@1.0.0",
@@ -12696,6 +14475,14 @@
                 "generic.digital_product_passport@5.0.0",
                 "batch@3.0.0",
                 "shared.part_site_information_as_built@2.0.0"
+              ]
+            },
+            {
+              "target": "shared.uuid@2.0.0",
+              "path": [
+                "transmission.transmission_pass@3.0.0",
+                "generic.digital_product_passport@5.0.0",
+                "shared.uuid@2.0.0"
               ]
             }
           ]
@@ -12725,7 +14512,7 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 4,
+      "total": 5,
       "issues": {
         "outdated_dependency": {
           "count": 1,
@@ -12737,7 +14524,7 @@
           ]
         },
         "deprecated_dep": {
-          "count": 2,
+          "count": 3,
           "detail": [
             {
               "target": "shared.part_classification@1.0.0",
@@ -12754,6 +14541,14 @@
                 "generic.digital_product_passport@5.0.0",
                 "batch@3.0.0",
                 "shared.part_site_information_as_built@2.0.0"
+              ]
+            },
+            {
+              "target": "shared.uuid@2.0.0",
+              "path": [
+                "transmission.transmission_pass@3.1.0",
+                "generic.digital_product_passport@5.0.0",
+                "shared.uuid@2.0.0"
               ]
             }
           ]
@@ -12775,14 +14570,30 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 3,
+      "total": 5,
       "issues": {
         "outdated_dependency": {
-          "count": 1,
+          "count": 2,
           "detail": [
             {
               "target": "shared.quantity@2.0.0",
               "latest_release": "shared.quantity@3.0.0"
+            },
+            {
+              "target": "shared.uuid@2.0.0",
+              "latest_release": "shared.uuid@2.1.0"
+            }
+          ]
+        },
+        "deprecated_dep": {
+          "count": 1,
+          "detail": [
+            {
+              "target": "shared.uuid@2.0.0",
+              "path": [
+                "us_tariff_information@1.0.0",
+                "shared.uuid@2.0.0"
+              ]
             }
           ]
         },
@@ -12811,8 +14622,21 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 1,
+      "total": 2,
       "issues": {
+        "deprecated_dep": {
+          "count": 1,
+          "detail": [
+            {
+              "target": "shared.uuid@2.0.0",
+              "path": [
+                "us_tariff_information@2.0.0",
+                "shared.industry_core.common@1.0.0",
+                "shared.uuid@2.0.0"
+              ]
+            }
+          ]
+        },
         "meta_model_drift": {
           "count": 1,
           "detail": [
@@ -12887,7 +14711,7 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 2,
+      "total": 3,
       "issues": {
         "outdated_dependency": {
           "count": 1,
@@ -12895,6 +14719,19 @@
             {
               "target": "shared.business_partner_number@2.0.0",
               "latest_release": "shared.business_partner_number@3.0.0"
+            }
+          ]
+        },
+        "deprecated_dep": {
+          "count": 1,
+          "detail": [
+            {
+              "target": "shared.uuid@2.0.0",
+              "path": [
+                "warranty_claim_request@1.0.0",
+                "shared.quality_core@1.0.0",
+                "shared.uuid@2.0.0"
+              ]
             }
           ]
         },
@@ -12915,14 +14752,30 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 2,
+      "total": 4,
       "issues": {
         "outdated_dependency": {
-          "count": 1,
+          "count": 2,
           "detail": [
             {
               "target": "shared.business_partner_number@2.0.0",
               "latest_release": "shared.business_partner_number@3.0.0"
+            },
+            {
+              "target": "shared.uuid@2.0.0",
+              "latest_release": "shared.uuid@2.1.0"
+            }
+          ]
+        },
+        "deprecated_dep": {
+          "count": 1,
+          "detail": [
+            {
+              "target": "shared.uuid@2.0.0",
+              "path": [
+                "warranty_claim_request_verification@1.0.0",
+                "shared.uuid@2.0.0"
+              ]
             }
           ]
         },
@@ -13037,7 +14890,7 @@
             },
             {
               "target": "shared.uuid@1.0.0",
-              "latest_release": "shared.uuid@2.0.0"
+              "latest_release": "shared.uuid@2.1.0"
             }
           ]
         },
@@ -13058,10 +14911,10 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 4,
+      "total": 6,
       "issues": {
         "outdated_dependency": {
-          "count": 2,
+          "count": 3,
           "detail": [
             {
               "target": "shared.business_partner_number@2.0.0",
@@ -13070,6 +14923,22 @@
             {
               "target": "shared.quantity@2.0.0",
               "latest_release": "shared.quantity@3.0.0"
+            },
+            {
+              "target": "shared.uuid@2.0.0",
+              "latest_release": "shared.uuid@2.1.0"
+            }
+          ]
+        },
+        "deprecated_dep": {
+          "count": 1,
+          "detail": [
+            {
+              "target": "shared.uuid@2.0.0",
+              "path": [
+                "week_based_capacity_group@3.0.0",
+                "shared.uuid@2.0.0"
+              ]
             }
           ]
         },
@@ -13098,10 +14967,10 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 3,
+      "total": 5,
       "issues": {
         "outdated_dependency": {
-          "count": 2,
+          "count": 3,
           "detail": [
             {
               "target": "shared.business_partner_number@2.0.0",
@@ -13110,6 +14979,22 @@
             {
               "target": "shared.quantity@2.0.0",
               "latest_release": "shared.quantity@3.0.0"
+            },
+            {
+              "target": "shared.uuid@2.0.0",
+              "latest_release": "shared.uuid@2.1.0"
+            }
+          ]
+        },
+        "deprecated_dep": {
+          "count": 1,
+          "detail": [
+            {
+              "target": "shared.uuid@2.0.0",
+              "path": [
+                "week_based_capacity_group@3.0.1",
+                "shared.uuid@2.0.0"
+              ]
             }
           ]
         },
@@ -13171,10 +15056,10 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 4,
+      "total": 6,
       "issues": {
         "outdated_dependency": {
-          "count": 2,
+          "count": 3,
           "detail": [
             {
               "target": "shared.business_partner_number@2.0.0",
@@ -13183,6 +15068,22 @@
             {
               "target": "shared.quantity@2.0.0",
               "latest_release": "shared.quantity@3.0.0"
+            },
+            {
+              "target": "shared.uuid@2.0.0",
+              "latest_release": "shared.uuid@2.1.0"
+            }
+          ]
+        },
+        "deprecated_dep": {
+          "count": 1,
+          "detail": [
+            {
+              "target": "shared.uuid@2.0.0",
+              "path": [
+                "week_based_material_demand@3.0.0",
+                "shared.uuid@2.0.0"
+              ]
             }
           ]
         },
@@ -13211,10 +15112,10 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 3,
+      "total": 5,
       "issues": {
         "outdated_dependency": {
-          "count": 2,
+          "count": 3,
           "detail": [
             {
               "target": "shared.business_partner_number@2.0.0",
@@ -13223,6 +15124,22 @@
             {
               "target": "shared.quantity@2.0.0",
               "latest_release": "shared.quantity@3.0.0"
+            },
+            {
+              "target": "shared.uuid@2.0.0",
+              "latest_release": "shared.uuid@2.1.0"
+            }
+          ]
+        },
+        "deprecated_dep": {
+          "count": 1,
+          "detail": [
+            {
+              "target": "shared.uuid@2.0.0",
+              "path": [
+                "week_based_material_demand@3.0.1",
+                "shared.uuid@2.0.0"
+              ]
             }
           ]
         },
@@ -13243,14 +15160,30 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 2,
+      "total": 4,
       "issues": {
         "outdated_dependency": {
-          "count": 1,
+          "count": 2,
           "detail": [
             {
               "target": "shared.business_partner_number@2.0.0",
               "latest_release": "shared.business_partner_number@3.0.0"
+            },
+            {
+              "target": "shared.uuid@2.0.0",
+              "latest_release": "shared.uuid@2.1.0"
+            }
+          ]
+        },
+        "deprecated_dep": {
+          "count": 1,
+          "detail": [
+            {
+              "target": "shared.uuid@2.0.0",
+              "path": [
+                "zero_km_failure@1.0.0",
+                "shared.uuid@2.0.0"
+              ]
             }
           ]
         },
