@@ -215,6 +215,17 @@
       "shared@3.1.0"
     ]
   },
+  "batterypass.product_condition@1.0.2": {
+    "name": "batterypass.product_condition",
+    "version": "1.0.2",
+    "family": "SAMM",
+    "source": "idta",
+    "deps": [
+      "batterypass.product_condition@1.0.0",
+      "handover_documentation@2.0.0",
+      "shared@3.1.0"
+    ]
+  },
   "batterypass.technical_data@1.0.0": {
     "name": "batterypass.technical_data",
     "version": "1.0.0",
@@ -231,6 +242,19 @@
   "batterypass.technical_data@1.0.1": {
     "name": "batterypass.technical_data",
     "version": "1.0.1",
+    "family": "SAMM",
+    "source": "idta",
+    "deps": [
+      "GeneralProductInformation@1.2.0",
+      "Performance@1.2.1",
+      "digital_nameplate@3.0.0",
+      "generic.technical_data@2.0.0",
+      "shared@3.1.0"
+    ]
+  },
+  "batterypass.technical_data@1.0.2": {
+    "name": "batterypass.technical_data",
+    "version": "1.0.2",
     "family": "SAMM",
     "source": "idta",
     "deps": [
@@ -909,6 +933,90 @@
     "source": "catenax",
     "deps": [
       "shared.physical_dimension@3.0.0"
+    ]
+  },
+  "industry_core.batch@4.0.0": {
+    "name": "industry_core.batch",
+    "version": "4.0.0",
+    "family": "SAMM",
+    "source": "catenax",
+    "deps": [
+      "shared.industry_core.common@1.0.0",
+      "shared.industry_core.manufacturing_information@1.0.0",
+      "shared.industry_core.part_classification@1.0.0"
+    ]
+  },
+  "industry_core.just_in_sequence_part@4.0.0": {
+    "name": "industry_core.just_in_sequence_part",
+    "version": "4.0.0",
+    "family": "SAMM",
+    "source": "catenax",
+    "deps": [
+      "shared.industry_core.common@1.0.0",
+      "shared.industry_core.manufacturing_information@1.0.0",
+      "shared.industry_core.part_classification@1.0.0"
+    ]
+  },
+  "industry_core.part_type@2.0.0": {
+    "name": "industry_core.part_type",
+    "version": "2.0.0",
+    "family": "SAMM",
+    "source": "catenax",
+    "deps": [
+      "shared.business_partner_number@2.0.0",
+      "shared.industry_core.common@1.0.0",
+      "shared.industry_core.part_classification@1.0.0"
+    ]
+  },
+  "industry_core.serial_part@4.0.0": {
+    "name": "industry_core.serial_part",
+    "version": "4.0.0",
+    "family": "SAMM",
+    "source": "catenax",
+    "deps": [
+      "shared.industry_core.common@1.0.0",
+      "shared.industry_core.manufacturing_information@1.0.0",
+      "shared.industry_core.part_classification@1.0.0"
+    ]
+  },
+  "industry_core.single_level_bom_as_built@4.0.0": {
+    "name": "industry_core.single_level_bom_as_built",
+    "version": "4.0.0",
+    "family": "SAMM",
+    "source": "catenax",
+    "deps": [
+      "shared.industry_core.common@1.0.0",
+      "shared.quantity@3.0.0"
+    ]
+  },
+  "industry_core.single_level_bom_as_planned@4.0.0": {
+    "name": "industry_core.single_level_bom_as_planned",
+    "version": "4.0.0",
+    "family": "SAMM",
+    "source": "catenax",
+    "deps": [
+      "shared.industry_core.common@1.0.0",
+      "shared.quantity@3.0.0"
+    ]
+  },
+  "industry_core.single_level_usage_as_built@4.0.0": {
+    "name": "industry_core.single_level_usage_as_built",
+    "version": "4.0.0",
+    "family": "SAMM",
+    "source": "catenax",
+    "deps": [
+      "shared.industry_core.common@1.0.0",
+      "shared.quantity@3.0.0"
+    ]
+  },
+  "industry_core.single_level_usage_as_planned@3.0.0": {
+    "name": "industry_core.single_level_usage_as_planned",
+    "version": "3.0.0",
+    "family": "SAMM",
+    "source": "catenax",
+    "deps": [
+      "shared.industry_core.common@1.0.0",
+      "shared.quantity@3.0.0"
     ]
   },
   "iot_sensor_data@1.0.0": {
