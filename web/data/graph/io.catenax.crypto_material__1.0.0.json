@@ -1,0 +1,250 @@
+{
+  "meta": {
+    "namespace": "urn:samm:io.catenax.crypto_material:1.0.0#",
+    "meta_model": "SAMM 2.1.0",
+    "model_family": "SAMM",
+    "model_name": "crypto_material",
+    "model_version": "1.0.0",
+    "source": "catenax",
+    "status": "release",
+    "release_date": null,
+    "release_notes": "# Changelog\n\nAll notable changes to this model will be documented in this file.\n\n## [1.0.0] 26.09\n\n- initial version of the aspect model",
+    "dependencies": [
+      {
+        "name": "shared.industry_core.common",
+        "version": "1.0.0",
+        "family": "SAMM",
+        "source": "catenax"
+      }
+    ],
+    "path": "data/sldt-semantic-models/io.catenax.crypto_material/1.0.0/CryptoMaterial.ttl"
+  },
+  "nodes": [
+    {
+      "id": "urn:samm:io.catenax.crypto_material:1.0.0#CryptoMaterial",
+      "label": "CryptoMaterial",
+      "kind": "Aspect",
+      "preferredName": "crypto material",
+      "description": "The crypto material model contains information on the set of cryptographic materials associated with a unique instance of a serialized part or just-in-sequence part, such as e.g, an Electronic Control Unit (ECU).",
+      "external_refs": [
+        {
+          "predicate": "properties",
+          "target_local": "globalAssetId",
+          "target_model": "shared.industry_core.common@1.0.0",
+          "target_source": "catenax"
+        }
+      ]
+    },
+    {
+      "id": "urn:samm:io.catenax.crypto_material:1.0.0#cryptoMaterials",
+      "label": "cryptoMaterials",
+      "kind": "Property",
+      "preferredName": "crypto materials",
+      "description": "Set of one or more instances of cryptographic material associated with a unique instance of a serialized part or just-in-sequence part."
+    },
+    {
+      "id": "urn:samm:io.catenax.crypto_material:1.0.0#value",
+      "label": "value",
+      "kind": "Property",
+      "preferredName": "value",
+      "description": "Value of cryptographic material in the format and encoding specified in the respective properties."
+    },
+    {
+      "id": "urn:samm:io.catenax.crypto_material:1.0.0#type",
+      "label": "type",
+      "kind": "Property",
+      "preferredName": "type",
+      "description": "Type of cryptographic material.\r\n\r\nProvided cryptographic material must have one of the following types:\r\n- symmetric key\r\n- private key\r\n- public key\r\n- digital certificate\r\n- certificate signing request\r\n- secret material"
+    },
+    {
+      "id": "urn:samm:io.catenax.crypto_material:1.0.0#encoding",
+      "label": "encoding",
+      "kind": "Property",
+      "preferredName": "encoding",
+      "description": "Encoding of cryptographic material.\r\n\r\nProvided cryptographic material must have one of the following encodings:\r\n- Base64\r\n- HEX\r\n- RFC 7468"
+    },
+    {
+      "id": "urn:samm:io.catenax.crypto_material:1.0.0#name",
+      "label": "name",
+      "kind": "Property",
+      "preferredName": "name",
+      "description": "Name assigned to the cryptographic material.\r\n\r\nThis property may be used to indicate the security service  provided by the cryptographic material and the usage or application it is associated with."
+    },
+    {
+      "id": "urn:samm:io.catenax.crypto_material:1.0.0#format",
+      "label": "format",
+      "kind": "Property",
+      "preferredName": "format",
+      "description": "Format of cryptographic material.\r\n\r\nProvided cryptographic material must have one of the following formats:\r\n- PKCS#1\r\n- PKCS#8\r\n- PKCS#10\r\n- raw\r\n- subjectPublicKeyInfo\r\n- X.509v3"
+    },
+    {
+      "id": "urn:samm:io.catenax.crypto_material:1.0.0#CryptoMaterialEntity",
+      "label": "CryptoMaterialEntity",
+      "kind": "Entity",
+      "preferredName": "crypto material entity",
+      "description": "Entity containing information describing an instance of cryptographic material."
+    },
+    {
+      "id": "urn:samm:io.catenax.crypto_material:1.0.0#ValueCharacteristic",
+      "label": "ValueCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "value characteristic",
+      "description": "String containing the textual representation the value of cryptographic material in the format and encoding specified in the respective properties.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
+    },
+    {
+      "id": "urn:samm:io.catenax.crypto_material:1.0.0#NameCharacteristic",
+      "label": "NameCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "name characteristic",
+      "description": "String containing the name assigned to cryptographic material.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
+    },
+    {
+      "id": "urn:samm:io.catenax.crypto_material:1.0.0#FormatEnumeration",
+      "label": "FormatEnumeration",
+      "kind": "Characteristic",
+      "preferredName": "format enumeration",
+      "description": "Enumeration defining the allowed formats for cryptographic material.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
+    },
+    {
+      "id": "urn:samm:io.catenax.crypto_material:1.0.0#EncodingEnumeration",
+      "label": "EncodingEnumeration",
+      "kind": "Characteristic",
+      "preferredName": "encoding enumeration",
+      "description": "Enumeration defining the allowed encodings for cryptographic material.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
+    },
+    {
+      "id": "urn:samm:io.catenax.crypto_material:1.0.0#TypeEnumeration",
+      "label": "TypeEnumeration",
+      "kind": "Characteristic",
+      "preferredName": "type enumeration",
+      "description": "Enumeration defining the allowed types of cryptographic material.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
+    },
+    {
+      "id": "urn:samm:io.catenax.crypto_material:1.0.0#CryptoMaterialsSet",
+      "label": "CryptoMaterialsSet",
+      "kind": "Characteristic",
+      "preferredName": "Crypto Materials Set",
+      "description": "Set containing instances of cryptographic material."
+    }
+  ],
+  "links": [
+    {
+      "source": "urn:samm:io.catenax.crypto_material:1.0.0#CryptoMaterial",
+      "target": "urn:samm:io.catenax.crypto_material:1.0.0#cryptoMaterials",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.crypto_material:1.0.0#CryptoMaterialEntity",
+      "target": "urn:samm:io.catenax.crypto_material:1.0.0#name",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.crypto_material:1.0.0#CryptoMaterialEntity",
+      "target": "urn:samm:io.catenax.crypto_material:1.0.0#type",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.crypto_material:1.0.0#CryptoMaterialEntity",
+      "target": "urn:samm:io.catenax.crypto_material:1.0.0#value",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.crypto_material:1.0.0#CryptoMaterialEntity",
+      "target": "urn:samm:io.catenax.crypto_material:1.0.0#format",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.crypto_material:1.0.0#CryptoMaterialEntity",
+      "target": "urn:samm:io.catenax.crypto_material:1.0.0#encoding",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.crypto_material:1.0.0#cryptoMaterials",
+      "target": "urn:samm:io.catenax.crypto_material:1.0.0#CryptoMaterialsSet",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.crypto_material:1.0.0#value",
+      "target": "urn:samm:io.catenax.crypto_material:1.0.0#ValueCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.crypto_material:1.0.0#type",
+      "target": "urn:samm:io.catenax.crypto_material:1.0.0#TypeEnumeration",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.crypto_material:1.0.0#encoding",
+      "target": "urn:samm:io.catenax.crypto_material:1.0.0#EncodingEnumeration",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.crypto_material:1.0.0#name",
+      "target": "urn:samm:io.catenax.crypto_material:1.0.0#NameCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.crypto_material:1.0.0#format",
+      "target": "urn:samm:io.catenax.crypto_material:1.0.0#FormatEnumeration",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.crypto_material:1.0.0#CryptoMaterialsSet",
+      "target": "urn:samm:io.catenax.crypto_material:1.0.0#CryptoMaterialEntity",
+      "label": "dataType",
+      "optional": false
+    }
+  ]
+}

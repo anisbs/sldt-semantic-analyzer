@@ -2932,6 +2932,44 @@
         }
       }
     },
+    "crypto_material@1.0.0": {
+      "name": "crypto_material",
+      "version": "1.0.0",
+      "family": "SAMM",
+      "source": "catenax",
+      "status": "release",
+      "total": 3,
+      "issues": {
+        "deprecated_dep": {
+          "count": 1,
+          "detail": [
+            {
+              "target": "shared.uuid@2.0.0",
+              "path": [
+                "crypto_material@1.0.0",
+                "shared.industry_core.common@1.0.0",
+                "shared.uuid@2.0.0"
+              ]
+            }
+          ]
+        },
+        "meta_model_drift": {
+          "count": 1,
+          "detail": [
+            {
+              "using": "SAMM 2.1.0",
+              "latest": "SAMM 2.2.0"
+            }
+          ]
+        },
+        "missing_release_date": {
+          "count": 1,
+          "detail": [
+            "1.0.0"
+          ]
+        }
+      }
+    },
     "customs_information@1.0.0": {
       "name": "customs_information",
       "version": "1.0.0",
