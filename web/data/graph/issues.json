@@ -1075,8 +1075,88 @@
       "family": "SAMM",
       "source": "idta",
       "status": "release",
-      "total": 3,
+      "total": 6,
       "issues": {
+        "older_release_exists": {
+          "count": 1,
+          "detail": [
+            {
+              "latest_release": "batterypass.material_composition@1.0.2"
+            }
+          ]
+        },
+        "orphan_isolated": {
+          "count": 1,
+          "detail": [
+            {
+              "name": "CASNumberConstraint",
+              "kind": "Characteristic",
+              "file": "MaterialComposition"
+            }
+          ]
+        },
+        "orphan_unreachable": {
+          "count": 1,
+          "detail": [
+            {
+              "name": "CASNumberConstraint",
+              "kind": "Characteristic",
+              "file": "MaterialComposition"
+            }
+          ]
+        },
+        "key_element_missing_description": {
+          "count": 1,
+          "detail": [
+            {
+              "name": "componentName",
+              "kind": "Property",
+              "file": "MaterialComposition"
+            }
+          ]
+        },
+        "missing_release_notes": {
+          "count": 1,
+          "detail": [
+            "data/smt-semantic-models/io.admin-shell.idta.batterypass.material_composition/RELEASE_NOTES.md"
+          ]
+        },
+        "missing_gen_docs": {
+          "count": 1,
+          "detail": [
+            "MaterialComposition"
+          ]
+        }
+      }
+    },
+    "batterypass.material_composition@1.0.2": {
+      "name": "batterypass.material_composition",
+      "version": "1.0.2",
+      "family": "SAMM",
+      "source": "idta",
+      "status": "release",
+      "total": 5,
+      "issues": {
+        "orphan_isolated": {
+          "count": 1,
+          "detail": [
+            {
+              "name": "CASNumberConstraint",
+              "kind": "Characteristic",
+              "file": "MaterialComposition"
+            }
+          ]
+        },
+        "orphan_unreachable": {
+          "count": 1,
+          "detail": [
+            {
+              "name": "CASNumberConstraint",
+              "kind": "Characteristic",
+              "file": "MaterialComposition"
+            }
+          ]
+        },
         "key_element_missing_description": {
           "count": 1,
           "detail": [

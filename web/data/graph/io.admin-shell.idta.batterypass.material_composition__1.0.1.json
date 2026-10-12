@@ -82,8 +82,16 @@
       "id": "urn:samm:io.admin-shell.idta.batterypass.material_composition:1.0.1#batteryMaterialIdentifier",
       "label": "batteryMaterialIdentifier",
       "kind": "Property",
-      "preferredName": "CAS Number",
-      "description": "Registration number of an international designation standard (CAS = Chemical Abstracts Service) for chemical substances. For each chemical substance registered in the CAS database (also biosequences, alloys, polymers) there is a unique CAS number."
+      "preferredName": "material name or identifier",
+      "description": "The materials should be named using a public standard or agreed nomenclature, which refers e.g. to the nomenclature of IUPAC or related identifiers such as the CAS (Chemical Abstracts Service) number. \n\nDIN DKE Spec 99100 chapter reference: 6.5.4 k)",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.2.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.admin-shell.idta.batterypass.material_composition:1.0.1#batteryMaterialName",
@@ -169,8 +177,16 @@
       "id": "urn:samm:io.admin-shell.idta.batterypass.material_composition:1.0.1#hazardousSubstanceIdentifier",
       "label": "hazardousSubstanceIdentifier",
       "kind": "Property",
-      "preferredName": "identifier",
-      "description": "CAS identifier of hazardous substance."
+      "preferredName": "material name or identifier of hazardous substance",
+      "description": "Material name or identifier of hazardous substance.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.2.0",
+          "target_source": "unknown"
+        }
+      ]
     },
     {
       "id": "urn:samm:io.admin-shell.idta.batterypass.material_composition:1.0.1#componentName",
@@ -279,21 +295,6 @@
       "kind": "Entity",
       "preferredName": "battery location ",
       "description": "Battery component that includes the material."
-    },
-    {
-      "id": "urn:samm:io.admin-shell.idta.batterypass.material_composition:1.0.1#MaterialIdentifierTrait",
-      "label": "MaterialIdentifierTrait",
-      "kind": "Characteristic",
-      "preferredName": null,
-      "description": null,
-      "external_refs": [
-        {
-          "predicate": "baseCharacteristic",
-          "target_local": "Text",
-          "target_model": "org.eclipse.esmf.samm:characteristic@2.2.0",
-          "target_source": "unknown"
-        }
-      ]
     },
     {
       "id": "urn:samm:io.admin-shell.idta.batterypass.material_composition:1.0.1#WeightInKilogram",
@@ -479,18 +480,6 @@
       "optional": false
     },
     {
-      "source": "urn:samm:io.admin-shell.idta.batterypass.material_composition:1.0.1#batteryMaterialIdentifier",
-      "target": "urn:samm:io.admin-shell.idta.batterypass.material_composition:1.0.1#MaterialIdentifierTrait",
-      "label": "characteristic",
-      "optional": false
-    },
-    {
-      "source": "urn:samm:io.admin-shell.idta.batterypass.material_composition:1.0.1#hazardousSubstanceIdentifier",
-      "target": "urn:samm:io.admin-shell.idta.batterypass.material_composition:1.0.1#MaterialIdentifierTrait",
-      "label": "characteristic",
-      "optional": false
-    },
-    {
       "source": "urn:samm:io.admin-shell.idta.batterypass.material_composition:1.0.1#batteryMaterialMass",
       "target": "urn:samm:io.admin-shell.idta.batterypass.material_composition:1.0.1#WeightInKilogram",
       "label": "characteristic",
@@ -548,12 +537,6 @@
       "source": "urn:samm:io.admin-shell.idta.batterypass.material_composition:1.0.1#ImpactList",
       "target": "urn:samm:io.admin-shell.idta.batterypass.material_composition:1.0.1#Impact",
       "label": "elementCharacteristic",
-      "optional": false
-    },
-    {
-      "source": "urn:samm:io.admin-shell.idta.batterypass.material_composition:1.0.1#MaterialIdentifierTrait",
-      "target": "urn:samm:io.admin-shell.idta.batterypass.material_composition:1.0.1#CASNumberConstraint",
-      "label": "constraint",
       "optional": false
     },
     {
