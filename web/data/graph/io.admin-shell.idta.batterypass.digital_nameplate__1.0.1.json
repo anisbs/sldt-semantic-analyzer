@@ -1,0 +1,67 @@
+{
+  "meta": {
+    "namespace": "urn:samm:io.admin-shell.idta.batterypass.digital_nameplate:1.0.1#",
+    "meta_model": "SAMM 2.2.0",
+    "model_family": "SAMM",
+    "model_name": "batterypass.digital_nameplate",
+    "model_version": "1.0.1",
+    "source": "idta",
+    "status": "release",
+    "release_date": null,
+    "release_notes": null,
+    "dependencies": [
+      {
+        "name": "contact_information",
+        "version": "1.0.1",
+        "family": "SAMM",
+        "source": "idta"
+      },
+      {
+        "name": "digital_nameplate",
+        "version": "3.0.1",
+        "family": "SAMM",
+        "source": "idta"
+      },
+      {
+        "name": "shared",
+        "version": "3.1.1",
+        "family": "SAMM",
+        "source": "idta"
+      }
+    ],
+    "path": "data/smt-semantic-models/io.admin-shell.idta.batterypass.digital_nameplate/1.0.1/AddressInformation_shared.ttl"
+  },
+  "nodes": [
+    {
+      "id": "urn:samm:io.admin-shell.idta.batterypass.digital_nameplate:1.0.1#addressInformation",
+      "label": "addressInformation",
+      "kind": "Property",
+      "preferredName": "Adresse des Herstellers",
+      "description": "\n    The manufacturer information postal address, indicating a single contact point. \n\tWeb address, if available; and e-mail address, if available.\n\t\n\t\nDIN DKE Spec 99100:2025-02 chapter reference: 6.1.2.3\n   ",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "AddressInformationCharacteristic",
+          "target_model": "digital_nameplate@3.0.1",
+          "target_source": "idta"
+        }
+      ]
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.batterypass.digital_nameplate:1.0.1#BatteryStatusEnumeration",
+      "label": "BatteryStatusEnumeration",
+      "kind": "Characteristic",
+      "preferredName": null,
+      "description": "Lifecycle status of the battery. Status defined from a list, with the options suggested as follows: 'original', 'repurposed', 'reused', 'remanufactured', 'waste'\n\nEUBR: Annex XIII (4c)",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
+    }
+  ],
+  "links": []
+}

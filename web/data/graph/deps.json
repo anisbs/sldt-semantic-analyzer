@@ -148,6 +148,18 @@
       "shared@3.1.0"
     ]
   },
+  "batterypass.carbon_footprint@1.0.1": {
+    "name": "batterypass.carbon_footprint",
+    "version": "1.0.1",
+    "family": "SAMM",
+    "source": "idta",
+    "deps": [
+      "carbon_footprint@1.0.0",
+      "contact_information@1.0.0",
+      "pcf@8.0.0",
+      "shared@3.1.0"
+    ]
+  },
   "batterypass.circularity@1.0.0": {
     "name": "batterypass.circularity",
     "version": "1.0.0",
@@ -157,6 +169,17 @@
       "contact_information@1.0.0",
       "handover_documentation@2.0.0",
       "shared@3.1.0"
+    ]
+  },
+  "batterypass.circularity@1.0.1": {
+    "name": "batterypass.circularity",
+    "version": "1.0.1",
+    "family": "SAMM",
+    "source": "idta",
+    "deps": [
+      "contact_information@1.0.0",
+      "handover_documentation@2.0.0",
+      "shared@3.1.1"
     ]
   },
   "batterypass.digital_nameplate@1.0.0": {
@@ -170,6 +193,17 @@
       "shared@3.1.0"
     ]
   },
+  "batterypass.digital_nameplate@1.0.1": {
+    "name": "batterypass.digital_nameplate",
+    "version": "1.0.1",
+    "family": "SAMM",
+    "source": "idta",
+    "deps": [
+      "contact_information@1.0.1",
+      "digital_nameplate@3.0.1",
+      "shared@3.1.1"
+    ]
+  },
   "batterypass.handover_documentation@1.0.0": {
     "name": "batterypass.handover_documentation",
     "version": "1.0.0",
@@ -178,6 +212,16 @@
     "deps": [
       "handover_documentation@2.0.0",
       "shared@3.1.0"
+    ]
+  },
+  "batterypass.handover_documentation@1.0.1": {
+    "name": "batterypass.handover_documentation",
+    "version": "1.0.1",
+    "family": "SAMM",
+    "source": "idta",
+    "deps": [
+      "handover_documentation@2.0.1",
+      "shared@3.1.1"
     ]
   },
   "batterypass.material_composition@1.0.0": {
@@ -233,6 +277,17 @@
       "shared@3.1.0"
     ]
   },
+  "batterypass.product_condition@1.0.3": {
+    "name": "batterypass.product_condition",
+    "version": "1.0.3",
+    "family": "SAMM",
+    "source": "idta",
+    "deps": [
+      "batterypass.product_condition@1.0.0",
+      "handover_documentation@2.0.0",
+      "shared@3.1.1"
+    ]
+  },
   "batterypass.technical_data@1.0.0": {
     "name": "batterypass.technical_data",
     "version": "1.0.0",
@@ -270,6 +325,20 @@
       "digital_nameplate@3.0.0",
       "generic.technical_data@2.0.0",
       "shared@3.1.0"
+    ]
+  },
+  "batterypass.technical_data@1.0.3": {
+    "name": "batterypass.technical_data",
+    "version": "1.0.3",
+    "family": "SAMM",
+    "source": "idta",
+    "deps": [
+      "GeneralProductInformation@1.2.0",
+      "Performance@1.2.1",
+      "digital_nameplate@3.0.0",
+      "digital_nameplate@3.0.1",
+      "generic.technical_data@2.0.1",
+      "shared@3.1.1"
     ]
   },
   "binary_exchange@1.0.0": {
@@ -340,6 +409,17 @@
       "shared@3.1.0"
     ]
   },
+  "carbon_footprint@1.0.1": {
+    "name": "carbon_footprint",
+    "version": "1.0.1",
+    "family": "SAMM",
+    "source": "idta",
+    "deps": [
+      "contact_information@1.0.1",
+      "pcf@8.0.0",
+      "shared@3.1.1"
+    ]
+  },
   "certificate_of_analysis@1.0.0": {
     "name": "certificate_of_analysis",
     "version": "1.0.0",
@@ -404,6 +484,15 @@
     "source": "idta",
     "deps": [
       "shared@3.1.0"
+    ]
+  },
+  "contact_information@1.0.1": {
+    "name": "contact_information",
+    "version": "1.0.1",
+    "family": "SAMM",
+    "source": "idta",
+    "deps": [
+      "shared@3.1.1"
     ]
   },
   "crypto_material@1.0.0": {
@@ -542,9 +631,26 @@
       "shared@3.1.0"
     ]
   },
+  "digital_nameplate@3.0.1": {
+    "name": "digital_nameplate",
+    "version": "3.0.1",
+    "family": "SAMM",
+    "source": "idta",
+    "deps": [
+      "contact_information@1.0.1",
+      "shared@3.1.1"
+    ]
+  },
   "dpp.dpp_metadata@1.0.0": {
     "name": "dpp.dpp_metadata",
     "version": "1.0.0",
+    "family": "SAMM",
+    "source": "idta",
+    "deps": []
+  },
+  "dpp.dpp_metadata@1.0.1": {
+    "name": "dpp.dpp_metadata",
+    "version": "1.0.1",
     "family": "SAMM",
     "source": "idta",
     "deps": []
@@ -853,6 +959,17 @@
       "shared@3.1.0"
     ]
   },
+  "generic.technical_data@2.0.1": {
+    "name": "generic.technical_data",
+    "version": "2.0.1",
+    "family": "SAMM",
+    "source": "idta",
+    "deps": [
+      "digital_nameplate@3.0.0",
+      "nameplate@3.0.0",
+      "shared@3.1.1"
+    ]
+  },
   "global_transport_label@1.0.0": {
     "name": "global_transport_label",
     "version": "1.0.0",
@@ -872,6 +989,15 @@
     "source": "idta",
     "deps": [
       "shared@3.1.0"
+    ]
+  },
+  "handover_documentation@2.0.1": {
+    "name": "handover_documentation",
+    "version": "2.0.1",
+    "family": "SAMM",
+    "source": "idta",
+    "deps": [
+      "shared@3.1.1"
     ]
   },
   "id_based_comment@1.0.0": {
@@ -2282,6 +2408,13 @@
   "shared@3.1.0": {
     "name": "shared",
     "version": "3.1.0",
+    "family": "SAMM",
+    "source": "idta",
+    "deps": []
+  },
+  "shared@3.1.1": {
+    "name": "shared",
+    "version": "3.1.1",
     "family": "SAMM",
     "source": "idta",
     "deps": []

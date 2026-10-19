@@ -1,0 +1,763 @@
+{
+  "meta": {
+    "namespace": "urn:samm:io.admin-shell.idta.handover_documentation:2.0.1#",
+    "meta_model": "SAMM 2.2.0",
+    "model_family": "SAMM",
+    "model_name": "handover_documentation",
+    "model_version": "2.0.1",
+    "source": "idta",
+    "status": "release",
+    "release_date": null,
+    "release_notes": null,
+    "dependencies": [
+      {
+        "name": "shared",
+        "version": "3.1.1",
+        "family": "SAMM",
+        "source": "idta"
+      }
+    ],
+    "path": "data/smt-semantic-models/io.admin-shell.idta.handover_documentation/2.0.1/HandoverDocumentation.ttl"
+  },
+  "nodes": [
+    {
+      "id": "urn:samm:io.admin-shell.idta.handover_documentation:2.0.1#HandoverDocumentation",
+      "label": "HandoverDocumentation",
+      "kind": "Aspect",
+      "preferredName": "Handover Documentation",
+      "description": "Handover Documentation defines a set of meta data for the handover of documentation from the manufacturer to the operator for industrial equipment."
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.handover_documentation:2.0.1#documents",
+      "label": "documents",
+      "kind": "Property",
+      "preferredName": "documents",
+      "description": "A set of relevant documents to hand over to customers for documentation purposes."
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.handover_documentation:2.0.1#entities",
+      "label": "entities",
+      "kind": "Property",
+      "preferredName": "entities for documentation",
+      "description": "States that the described Entity is an important entity for documentation of the superordinate Asset of the Asset Administration Shell.\nNote: typically, such Entities are well-identified sub-parts of the Asset, such as supplier parts delivered to the manufacturer of the Asset.\nNote: these Entities are the target of the 'DocumentedEntity'-ReferenceElements of the particular Documents contained in this Submodel. This mechanism substitutes the ObjectId-provision of VDI 2770 (see section 2.2).\nNote: if the described Entity has an own Asset Administration Shell, the SelfManaged-flag and AssetId-reference of the Entity shall be set accordingly."
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.handover_documentation:2.0.1#documentIds",
+      "label": "documentIds",
+      "kind": "Property",
+      "preferredName": "document identifiers",
+      "description": "Set of document identifiers for the Document. One ID in this collection should be used as a preferred ID (see isPrimary)."
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.handover_documentation:2.0.1#documentClassifications",
+      "label": "documentClassifications",
+      "kind": "Property",
+      "preferredName": "document classifications",
+      "description": "Set of information for describing the classification of the Document according to ClassificationSystems.\nConstraint: at least one classification according to VDI 2770 shall be provided."
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.handover_documentation:2.0.1#documentVersions",
+      "label": "documentVersions",
+      "kind": "Property",
+      "preferredName": "document versions",
+      "description": "Information elements of individual VDI 2770 DocumentVersion entities.\nNote: at the time of handover, this collection shall include at least one DocumentVersion."
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.handover_documentation:2.0.1#documentDomainId",
+      "label": "documentDomainId",
+      "kind": "Property",
+      "preferredName": "document domain ID",
+      "description": "Identification of the domain in which the given DocumentId is unique. The domain ID can e.g., be the name or acronym of the providing organisation.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.2.0",
+          "target_source": "unknown"
+        }
+      ]
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.handover_documentation:2.0.1#documentIsPrimary",
+      "label": "documentIsPrimary",
+      "kind": "Property",
+      "preferredName": "document is primary",
+      "description": "Flag indicating that a DocumentId within a collection of at least two DocumentId`s is the 'primary' identifier for the document. This is the preferred ID of the document (commonly from the point of view of the owner of the asset).",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Boolean",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.2.0",
+          "target_source": "unknown"
+        }
+      ]
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.handover_documentation:2.0.1#classId",
+      "label": "classId",
+      "kind": "Property",
+      "preferredName": "Klassenidentifikator",
+      "description": "Eindeutige ID der Dokumentenklasse innerhalb eines Klassifikationsystems.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.2.0",
+          "target_source": "unknown"
+        }
+      ]
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.handover_documentation:2.0.1#className",
+      "label": "className",
+      "kind": "Property",
+      "preferredName": "Klassifikations-Name",
+      "description": "Dokumententyp.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "MultiLanguageTexts",
+          "target_model": "shared@3.1.1",
+          "target_source": "idta"
+        }
+      ]
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.handover_documentation:2.0.1#classificationSystem",
+      "label": "classificationSystem",
+      "kind": "Property",
+      "preferredName": "Klassifikationssystem",
+      "description": "Charakterisierung eines Dokuments bezüglich des Zwecks oder der Information, die es beinhaltet.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.2.0",
+          "target_source": "unknown"
+        }
+      ]
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.handover_documentation:2.0.1#version",
+      "label": "version",
+      "kind": "Property",
+      "preferredName": "Dokumentenversion",
+      "description": "Eindeutige Version dieses Dokuments.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.2.0",
+          "target_source": "unknown"
+        }
+      ]
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.handover_documentation:2.0.1#title",
+      "label": "title",
+      "kind": "Property",
+      "preferredName": "Titel",
+      "description": "Titel dieses Dokuments.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "MultiLanguageTexts",
+          "target_model": "shared@3.1.1",
+          "target_source": "idta"
+        }
+      ]
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.handover_documentation:2.0.1#description",
+      "label": "description",
+      "kind": "Property",
+      "preferredName": "Dokumentenbeschreibung",
+      "description": "Klartext, der den Inhalt des Dokuments kennzeichnet.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "MultiLanguageTexts",
+          "target_model": "shared@3.1.1",
+          "target_source": "idta"
+        }
+      ]
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.handover_documentation:2.0.1#keywords",
+      "label": "keywords",
+      "kind": "Property",
+      "preferredName": "Stichworte",
+      "description": "Stichworte, die dieses Dokument beschreiben.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "MultiLanguageTexts",
+          "target_model": "shared@3.1.1",
+          "target_source": "idta"
+        }
+      ]
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.handover_documentation:2.0.1#statusValue",
+      "label": "statusValue",
+      "kind": "Property",
+      "preferredName": "Status",
+      "description": "Jede Dokumentversion repräsentiert einen Zeitpunkt im Dokumentlebenszyklus. Dieser Statuswert bezieht sich auf die Meilensteine im Dokumentenlebenszyklus. Für die Anwendung dieser Richtlinie sollten die folgenden zwei Werte verwendet werden: InReview (in Überprüfung), Released (freigegeben).",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.2.0",
+          "target_source": "unknown"
+        }
+      ]
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.handover_documentation:2.0.1#statusSetDate",
+      "label": "statusSetDate",
+      "kind": "Property",
+      "preferredName": "Datum der Einstellung des Dokumentenstatus",
+      "description": "Datum, an dem der Dokumentenstatus gesetzt wurde.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Timestamp",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.2.0",
+          "target_source": "unknown"
+        }
+      ]
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.handover_documentation:2.0.1#digitalFiles",
+      "label": "digitalFiles",
+      "kind": "Property",
+      "preferredName": "digital files",
+      "description": "MIME-Type, file name and file contents\n\nConstraint: at least one PDF/A file type shall be provided.\nNote: each DigitalFile represents the same content or Document version, but can be provided in different technical formats (PDF, PDFA, html, etc.) or by a link."
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.handover_documentation:2.0.1#previewFile",
+      "label": "previewFile",
+      "kind": "Property",
+      "preferredName": "Vorschaudatei",
+      "description": "Liefert ein Vorschaubild der DocumentVersion, z.B. erste Seite, in einem gängigen Bildformat und niedriger Auflösung.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "FileWithContentType",
+          "target_model": "shared@3.1.1",
+          "target_source": "idta"
+        }
+      ]
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.handover_documentation:2.0.1#basedOnReferences",
+      "label": "basedOnReferences",
+      "kind": "Property",
+      "preferredName": "based on references",
+      "description": "Forms a based on-relationship to another document or document version. Typically states, that the content of the document bases on another document (e.g. specification requirements). Both have a strong relationship\n\nConstraint: reference targets a  'Document' or a 'DocumentVersion'."
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.handover_documentation:2.0.1#translationOfEntities",
+      "label": "translationOfEntities",
+      "kind": "Property",
+      "preferredName": null,
+      "description": "Forms a translation of-relationship to another document or document version. Both have a strong relationship\n\nConstraint: the (language-independent) content must be identical in both Documents or DocumentVersions.\n\nConstraint: reference targets a 'Document' or a 'DocumentVersion'."
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.handover_documentation:2.0.1#refersToEntities",
+      "label": "refersToEntities",
+      "kind": "Property",
+      "preferredName": null,
+      "description": "Forms a generic refers to-relationship to another document or document version. They have a loose relationship\n\nConstraint: reference targets a 'Document' or a 'DocumentVersion'."
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.handover_documentation:2.0.1#subtitle",
+      "label": "subtitle",
+      "kind": "Property",
+      "preferredName": "Untertitel",
+      "description": "Denotes the focus of the document and has a referential or communicative function, which is to refer to the content, subject matter or theme of the document\nConstraint: for each language-dependent Title, a Summary and at least one KeyWord shall exist for the given language.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "MultiLanguageTexts",
+          "target_model": "shared@3.1.1",
+          "target_source": "idta"
+        }
+      ]
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.handover_documentation:2.0.1#documentedEntities",
+      "label": "documentedEntities",
+      "kind": "Property",
+      "preferredName": "documented entities",
+      "description": "Documented Entities."
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.handover_documentation:2.0.1#DocumentSetTrait",
+      "label": "DocumentSetTrait",
+      "kind": "Characteristic",
+      "preferredName": null,
+      "description": null,
+      "external_refs": [
+        {
+          "predicate": "constraint",
+          "target_local": "CardinalityOneToMany",
+          "target_model": "shared@3.1.1",
+          "target_source": "idta"
+        }
+      ]
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.handover_documentation:2.0.1#EntitySetTrait",
+      "label": "EntitySetTrait",
+      "kind": "Characteristic",
+      "preferredName": null,
+      "description": null,
+      "external_refs": [
+        {
+          "predicate": "constraint",
+          "target_local": "CardinalityOneToMany",
+          "target_model": "shared@3.1.1",
+          "target_source": "idta"
+        }
+      ]
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.handover_documentation:2.0.1#FileSetTrait",
+      "label": "FileSetTrait",
+      "kind": "Characteristic",
+      "preferredName": null,
+      "description": null,
+      "external_refs": [
+        {
+          "predicate": "constraint",
+          "target_local": "CardinalityOneToMany",
+          "target_model": "shared@3.1.1",
+          "target_source": "idta"
+        }
+      ]
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.handover_documentation:2.0.1#ReferenceSetTrait",
+      "label": "ReferenceSetTrait",
+      "kind": "Characteristic",
+      "preferredName": null,
+      "description": null,
+      "external_refs": [
+        {
+          "predicate": "constraint",
+          "target_local": "CardinalityOneToMany",
+          "target_model": "shared@3.1.1",
+          "target_source": "idta"
+        }
+      ]
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.handover_documentation:2.0.1#DocumentSet",
+      "label": "DocumentSet",
+      "kind": "Characteristic",
+      "preferredName": null,
+      "description": null
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.handover_documentation:2.0.1#EntitySet",
+      "label": "EntitySet",
+      "kind": "Characteristic",
+      "preferredName": null,
+      "description": "Set of entities representing an asset.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "AasEntityType",
+          "target_model": "shared@3.1.1",
+          "target_source": "idta"
+        }
+      ]
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.handover_documentation:2.0.1#DocumentIdSet",
+      "label": "DocumentIdSet",
+      "kind": "Characteristic",
+      "preferredName": "specification of document IDs",
+      "description": "Set of the IDs of the documents."
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.handover_documentation:2.0.1#DocumentClassificationSet",
+      "label": "DocumentClassificationSet",
+      "kind": "Characteristic",
+      "preferredName": null,
+      "description": null
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.handover_documentation:2.0.1#DocumentVersions",
+      "label": "DocumentVersions",
+      "kind": "Characteristic",
+      "preferredName": null,
+      "description": null
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.handover_documentation:2.0.1#FileSet",
+      "label": "FileSet",
+      "kind": "Characteristic",
+      "preferredName": null,
+      "description": null,
+      "external_refs": [
+        {
+          "predicate": "elementCharacteristic",
+          "target_local": "FileWithContentType",
+          "target_model": "shared@3.1.1",
+          "target_source": "idta"
+        }
+      ]
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.handover_documentation:2.0.1#ReferenceSet",
+      "label": "ReferenceSet",
+      "kind": "Characteristic",
+      "preferredName": "set of references",
+      "description": null,
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "ReferenceEntity",
+          "target_model": "shared@3.1.1",
+          "target_source": "idta"
+        }
+      ]
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.handover_documentation:2.0.1#Document",
+      "label": "Document",
+      "kind": "Entity",
+      "preferredName": "document",
+      "description": "A single handover document."
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.handover_documentation:2.0.1#DocumentId",
+      "label": "DocumentId",
+      "kind": "Entity",
+      "preferredName": "Dokumentennummer",
+      "description": "Spezifikation einer Dokumentennummer.",
+      "external_refs": [
+        {
+          "predicate": "properties",
+          "target_local": "documentIdentifier",
+          "target_model": "shared@3.1.1",
+          "target_source": "idta"
+        }
+      ]
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.handover_documentation:2.0.1#DocumentClassification",
+      "label": "DocumentClassification",
+      "kind": "Entity",
+      "preferredName": "Dokumenten-Klassifikation",
+      "description": null
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.handover_documentation:2.0.1#DocumentVersion",
+      "label": "DocumentVersion",
+      "kind": "Entity",
+      "preferredName": "Dokumenten-Version",
+      "description": null,
+      "external_refs": [
+        {
+          "predicate": "properties",
+          "target_local": "languages",
+          "target_model": "shared@3.1.1",
+          "target_source": "idta"
+        }
+      ]
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.handover_documentation:2.0.1#organizationOfficialName",
+      "label": "organizationOfficialName",
+      "kind": "Property",
+      "preferredName": "offizieller Organisationsname",
+      "description": "Offizieller Name der Organisation.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.2.0",
+          "target_source": "unknown"
+        }
+      ]
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.handover_documentation:2.0.1#organizationName",
+      "label": "organizationName",
+      "kind": "Property",
+      "preferredName": "Organisationsname",
+      "description": "Organisationsname in Kurzform.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.2.0",
+          "target_source": "unknown"
+        }
+      ]
+    }
+  ],
+  "links": [
+    {
+      "source": "urn:samm:io.admin-shell.idta.handover_documentation:2.0.1#HandoverDocumentation",
+      "target": "urn:samm:io.admin-shell.idta.handover_documentation:2.0.1#documents",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.handover_documentation:2.0.1#HandoverDocumentation",
+      "target": "urn:samm:io.admin-shell.idta.handover_documentation:2.0.1#entities",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.handover_documentation:2.0.1#Document",
+      "target": "urn:samm:io.admin-shell.idta.handover_documentation:2.0.1#documentIds",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.handover_documentation:2.0.1#Document",
+      "target": "urn:samm:io.admin-shell.idta.handover_documentation:2.0.1#documentClassifications",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.handover_documentation:2.0.1#Document",
+      "target": "urn:samm:io.admin-shell.idta.handover_documentation:2.0.1#documentVersions",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.handover_documentation:2.0.1#Document",
+      "target": "urn:samm:io.admin-shell.idta.handover_documentation:2.0.1#documentedEntities",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.handover_documentation:2.0.1#DocumentId",
+      "target": "urn:samm:io.admin-shell.idta.handover_documentation:2.0.1#documentDomainId",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.handover_documentation:2.0.1#DocumentId",
+      "target": "urn:samm:io.admin-shell.idta.handover_documentation:2.0.1#documentIsPrimary",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.handover_documentation:2.0.1#DocumentClassification",
+      "target": "urn:samm:io.admin-shell.idta.handover_documentation:2.0.1#classId",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.handover_documentation:2.0.1#DocumentClassification",
+      "target": "urn:samm:io.admin-shell.idta.handover_documentation:2.0.1#className",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.handover_documentation:2.0.1#DocumentClassification",
+      "target": "urn:samm:io.admin-shell.idta.handover_documentation:2.0.1#classificationSystem",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.handover_documentation:2.0.1#DocumentVersion",
+      "target": "urn:samm:io.admin-shell.idta.handover_documentation:2.0.1#version",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.handover_documentation:2.0.1#DocumentVersion",
+      "target": "urn:samm:io.admin-shell.idta.handover_documentation:2.0.1#title",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.handover_documentation:2.0.1#DocumentVersion",
+      "target": "urn:samm:io.admin-shell.idta.handover_documentation:2.0.1#subtitle",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.handover_documentation:2.0.1#DocumentVersion",
+      "target": "urn:samm:io.admin-shell.idta.handover_documentation:2.0.1#description",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.handover_documentation:2.0.1#DocumentVersion",
+      "target": "urn:samm:io.admin-shell.idta.handover_documentation:2.0.1#keywords",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.handover_documentation:2.0.1#DocumentVersion",
+      "target": "urn:samm:io.admin-shell.idta.handover_documentation:2.0.1#statusSetDate",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.handover_documentation:2.0.1#DocumentVersion",
+      "target": "urn:samm:io.admin-shell.idta.handover_documentation:2.0.1#statusValue",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.handover_documentation:2.0.1#DocumentVersion",
+      "target": "urn:samm:io.admin-shell.idta.handover_documentation:2.0.1#refersToEntities",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.handover_documentation:2.0.1#DocumentVersion",
+      "target": "urn:samm:io.admin-shell.idta.handover_documentation:2.0.1#basedOnReferences",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.handover_documentation:2.0.1#DocumentVersion",
+      "target": "urn:samm:io.admin-shell.idta.handover_documentation:2.0.1#translationOfEntities",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.handover_documentation:2.0.1#DocumentVersion",
+      "target": "urn:samm:io.admin-shell.idta.handover_documentation:2.0.1#digitalFiles",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.handover_documentation:2.0.1#DocumentVersion",
+      "target": "urn:samm:io.admin-shell.idta.handover_documentation:2.0.1#previewFile",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.handover_documentation:2.0.1#documents",
+      "target": "urn:samm:io.admin-shell.idta.handover_documentation:2.0.1#DocumentSetTrait",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.handover_documentation:2.0.1#entities",
+      "target": "urn:samm:io.admin-shell.idta.handover_documentation:2.0.1#EntitySetTrait",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.handover_documentation:2.0.1#documentIds",
+      "target": "urn:samm:io.admin-shell.idta.handover_documentation:2.0.1#DocumentIdSet",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.handover_documentation:2.0.1#documentClassifications",
+      "target": "urn:samm:io.admin-shell.idta.handover_documentation:2.0.1#DocumentClassificationSet",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.handover_documentation:2.0.1#documentVersions",
+      "target": "urn:samm:io.admin-shell.idta.handover_documentation:2.0.1#DocumentVersions",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.handover_documentation:2.0.1#digitalFiles",
+      "target": "urn:samm:io.admin-shell.idta.handover_documentation:2.0.1#FileSetTrait",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.handover_documentation:2.0.1#basedOnReferences",
+      "target": "urn:samm:io.admin-shell.idta.handover_documentation:2.0.1#ReferenceSetTrait",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.handover_documentation:2.0.1#refersToEntities",
+      "target": "urn:samm:io.admin-shell.idta.handover_documentation:2.0.1#ReferenceSetTrait",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.handover_documentation:2.0.1#translationOfEntities",
+      "target": "urn:samm:io.admin-shell.idta.handover_documentation:2.0.1#ReferenceSet",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.handover_documentation:2.0.1#documentedEntities",
+      "target": "urn:samm:io.admin-shell.idta.handover_documentation:2.0.1#ReferenceSet",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.handover_documentation:2.0.1#DocumentSet",
+      "target": "urn:samm:io.admin-shell.idta.handover_documentation:2.0.1#Document",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.handover_documentation:2.0.1#DocumentIdSet",
+      "target": "urn:samm:io.admin-shell.idta.handover_documentation:2.0.1#DocumentId",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.handover_documentation:2.0.1#DocumentClassificationSet",
+      "target": "urn:samm:io.admin-shell.idta.handover_documentation:2.0.1#DocumentClassification",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.handover_documentation:2.0.1#DocumentVersions",
+      "target": "urn:samm:io.admin-shell.idta.handover_documentation:2.0.1#DocumentVersion",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.handover_documentation:2.0.1#DocumentSetTrait",
+      "target": "urn:samm:io.admin-shell.idta.handover_documentation:2.0.1#DocumentSet",
+      "label": "baseCharacteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.handover_documentation:2.0.1#EntitySetTrait",
+      "target": "urn:samm:io.admin-shell.idta.handover_documentation:2.0.1#EntitySet",
+      "label": "baseCharacteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.handover_documentation:2.0.1#FileSetTrait",
+      "target": "urn:samm:io.admin-shell.idta.handover_documentation:2.0.1#FileSet",
+      "label": "baseCharacteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.handover_documentation:2.0.1#ReferenceSetTrait",
+      "target": "urn:samm:io.admin-shell.idta.handover_documentation:2.0.1#ReferenceSet",
+      "label": "baseCharacteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.handover_documentation:2.0.1#DocumentVersion",
+      "target": "urn:samm:io.admin-shell.idta.handover_documentation:2.0.1#organizationName",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.handover_documentation:2.0.1#DocumentVersion",
+      "target": "urn:samm:io.admin-shell.idta.handover_documentation:2.0.1#organizationOfficialName",
+      "label": "properties",
+      "optional": false
+    }
+  ]
+}

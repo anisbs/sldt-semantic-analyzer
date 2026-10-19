@@ -1,0 +1,190 @@
+{
+  "meta": {
+    "namespace": "urn:samm:io.admin-shell.idta.batterypass.handover_documentation:1.0.1#",
+    "meta_model": "SAMM 2.2.0",
+    "model_family": "SAMM",
+    "model_name": "batterypass.handover_documentation",
+    "model_version": "1.0.1",
+    "source": "idta",
+    "status": "release",
+    "release_date": null,
+    "release_notes": null,
+    "dependencies": [
+      {
+        "name": "handover_documentation",
+        "version": "2.0.1",
+        "family": "SAMM",
+        "source": "idta"
+      },
+      {
+        "name": "shared",
+        "version": "3.1.1",
+        "family": "SAMM",
+        "source": "idta"
+      }
+    ],
+    "path": "data/smt-semantic-models/io.admin-shell.idta.batterypass.handover_documentation/1.0.1/HandoverDocumentation.ttl"
+  },
+  "nodes": [
+    {
+      "id": "urn:samm:io.admin-shell.idta.batterypass.handover_documentation:1.0.1#HandoverDocumentation",
+      "label": "HandoverDocumentation",
+      "kind": "Aspect",
+      "preferredName": "Handover Documentation of Battery Passport",
+      "description": "Handover Documentation defines a set of meta data for the handover of documentation from the operator to the users of the Battery Passport."
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.batterypass.handover_documentation:1.0.1#documents",
+      "label": "documents",
+      "kind": "Property",
+      "preferredName": "documents",
+      "description": "A set of relevant documents to hand over to customers for documentation purposes."
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.batterypass.handover_documentation:1.0.1#documentVersions",
+      "label": "documentVersions",
+      "kind": "Property",
+      "preferredName": "document versions",
+      "description": "Information elements of individual VDI 2770 DocumentVersion entities.\nNote: at the time of handover, this collection shall include at least one DocumentVersion."
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.batterypass.handover_documentation:1.0.1#DocumentSet",
+      "label": "DocumentSet",
+      "kind": "Characteristic",
+      "preferredName": null,
+      "description": null
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.batterypass.handover_documentation:1.0.1#DocumentVersions",
+      "label": "DocumentVersions",
+      "kind": "Characteristic",
+      "preferredName": null,
+      "description": null
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.batterypass.handover_documentation:1.0.1#Document",
+      "label": "Document",
+      "kind": "Entity",
+      "preferredName": null,
+      "description": "A single handover document.",
+      "external_refs": [
+        {
+          "predicate": "properties",
+          "target_local": "documentIds",
+          "target_model": "handover_documentation@2.0.1",
+          "target_source": "idta"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "documentClassifications",
+          "target_model": "handover_documentation@2.0.1",
+          "target_source": "idta"
+        }
+      ]
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.batterypass.handover_documentation:1.0.1#DocumentVersion",
+      "label": "DocumentVersion",
+      "kind": "Entity",
+      "preferredName": "Dokumenten-Version",
+      "description": null,
+      "external_refs": [
+        {
+          "predicate": "properties",
+          "target_local": "languages",
+          "target_model": "shared@3.1.1",
+          "target_source": "idta"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "version",
+          "target_model": "handover_documentation@2.0.1",
+          "target_source": "idta"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "title",
+          "target_model": "handover_documentation@2.0.1",
+          "target_source": "idta"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "subtitle",
+          "target_model": "handover_documentation@2.0.1",
+          "target_source": "idta"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "description",
+          "target_model": "handover_documentation@2.0.1",
+          "target_source": "idta"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "digitalFiles",
+          "target_model": "handover_documentation@2.0.1",
+          "target_source": "idta"
+        }
+      ]
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.batterypass.handover_documentation:1.0.1#DocumentVersionsTrait",
+      "label": "DocumentVersionsTrait",
+      "kind": "Characteristic",
+      "preferredName": null,
+      "description": null,
+      "external_refs": [
+        {
+          "predicate": "constraint",
+          "target_local": "CardinalityOneToMany",
+          "target_model": "shared@3.1.1",
+          "target_source": "idta"
+        }
+      ]
+    }
+  ],
+  "links": [
+    {
+      "source": "urn:samm:io.admin-shell.idta.batterypass.handover_documentation:1.0.1#HandoverDocumentation",
+      "target": "urn:samm:io.admin-shell.idta.batterypass.handover_documentation:1.0.1#documents",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.batterypass.handover_documentation:1.0.1#Document",
+      "target": "urn:samm:io.admin-shell.idta.batterypass.handover_documentation:1.0.1#documentVersions",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.batterypass.handover_documentation:1.0.1#documents",
+      "target": "urn:samm:io.admin-shell.idta.batterypass.handover_documentation:1.0.1#DocumentSet",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.batterypass.handover_documentation:1.0.1#documentVersions",
+      "target": "urn:samm:io.admin-shell.idta.batterypass.handover_documentation:1.0.1#DocumentVersionsTrait",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.batterypass.handover_documentation:1.0.1#DocumentSet",
+      "target": "urn:samm:io.admin-shell.idta.batterypass.handover_documentation:1.0.1#Document",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.batterypass.handover_documentation:1.0.1#DocumentVersions",
+      "target": "urn:samm:io.admin-shell.idta.batterypass.handover_documentation:1.0.1#DocumentVersion",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.batterypass.handover_documentation:1.0.1#DocumentVersionsTrait",
+      "target": "urn:samm:io.admin-shell.idta.batterypass.handover_documentation:1.0.1#DocumentVersions",
+      "label": "baseCharacteristic",
+      "optional": false
+    }
+  ]
+}

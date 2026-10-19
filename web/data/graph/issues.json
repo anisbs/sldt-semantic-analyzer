@@ -829,14 +829,26 @@
       "family": "SAMM",
       "source": "idta",
       "status": "release",
-      "total": 3,
+      "total": 7,
       "issues": {
         "outdated_dependency": {
-          "count": 1,
+          "count": 4,
           "detail": [
+            {
+              "target": "carbon_footprint@1.0.0",
+              "latest_release": "carbon_footprint@1.0.1"
+            },
+            {
+              "target": "contact_information@1.0.0",
+              "latest_release": "contact_information@1.0.1"
+            },
             {
               "target": "pcf@8.0.0",
               "latest_release": "pcf@10.0.0"
+            },
+            {
+              "target": "shared@3.1.0",
+              "latest_release": "shared@3.1.1"
             }
           ]
         },
@@ -847,6 +859,64 @@
               "target": "shared.uuid@2.0.0",
               "path": [
                 "batterypass.carbon_footprint@1.0.0",
+                "pcf@8.0.0",
+                "shared.uuid@2.0.0"
+              ]
+            }
+          ]
+        },
+        "older_release_exists": {
+          "count": 1,
+          "detail": [
+            {
+              "latest_release": "batterypass.carbon_footprint@1.0.1"
+            }
+          ]
+        },
+        "missing_release_notes": {
+          "count": 1,
+          "detail": [
+            "data/smt-semantic-models/io.admin-shell.idta.batterypass.carbon_footprint/RELEASE_NOTES.md"
+          ]
+        }
+      }
+    },
+    "batterypass.carbon_footprint@1.0.1": {
+      "name": "batterypass.carbon_footprint",
+      "version": "1.0.1",
+      "family": "SAMM",
+      "source": "idta",
+      "status": "release",
+      "total": 6,
+      "issues": {
+        "outdated_dependency": {
+          "count": 4,
+          "detail": [
+            {
+              "target": "carbon_footprint@1.0.0",
+              "latest_release": "carbon_footprint@1.0.1"
+            },
+            {
+              "target": "contact_information@1.0.0",
+              "latest_release": "contact_information@1.0.1"
+            },
+            {
+              "target": "pcf@8.0.0",
+              "latest_release": "pcf@10.0.0"
+            },
+            {
+              "target": "shared@3.1.0",
+              "latest_release": "shared@3.1.1"
+            }
+          ]
+        },
+        "deprecated_dep": {
+          "count": 1,
+          "detail": [
+            {
+              "target": "shared.uuid@2.0.0",
+              "path": [
+                "batterypass.carbon_footprint@1.0.1",
                 "pcf@8.0.0",
                 "shared.uuid@2.0.0"
               ]
@@ -867,35 +937,30 @@
       "family": "SAMM",
       "source": "idta",
       "status": "release",
-      "total": 10,
+      "total": 8,
       "issues": {
-        "orphan_isolated": {
-          "count": 2,
+        "outdated_dependency": {
+          "count": 3,
           "detail": [
             {
-              "name": "nameOfSupplier",
-              "kind": "Property",
-              "file": "Circularity"
+              "target": "contact_information@1.0.0",
+              "latest_release": "contact_information@1.0.1"
             },
             {
-              "name": "supplierWebAddress",
-              "kind": "Property",
-              "file": "Circularity"
+              "target": "handover_documentation@2.0.0",
+              "latest_release": "handover_documentation@2.0.1"
+            },
+            {
+              "target": "shared@3.1.0",
+              "latest_release": "shared@3.1.1"
             }
           ]
         },
-        "orphan_unreachable": {
-          "count": 2,
+        "older_release_exists": {
+          "count": 1,
           "detail": [
             {
-              "name": "nameOfSupplier",
-              "kind": "Property",
-              "file": "Circularity"
-            },
-            {
-              "name": "supplierWebAddress",
-              "kind": "Property",
-              "file": "Circularity"
+              "latest_release": "batterypass.circularity@1.0.1"
             }
           ]
         },
@@ -919,17 +984,57 @@
             }
           ]
         },
-        "unused_property": {
+        "missing_release_notes": {
+          "count": 1,
+          "detail": [
+            "data/smt-semantic-models/io.admin-shell.idta.batterypass.circularity/RELEASE_NOTES.md"
+          ]
+        },
+        "missing_gen_docs": {
+          "count": 1,
+          "detail": [
+            "Circularity"
+          ]
+        }
+      }
+    },
+    "batterypass.circularity@1.0.1": {
+      "name": "batterypass.circularity",
+      "version": "1.0.1",
+      "family": "SAMM",
+      "source": "idta",
+      "status": "release",
+      "total": 6,
+      "issues": {
+        "outdated_dependency": {
           "count": 2,
           "detail": [
             {
-              "name": "nameOfSupplier",
-              "kind": "Property",
-              "file": "Circularity"
+              "target": "contact_information@1.0.0",
+              "latest_release": "contact_information@1.0.1"
             },
             {
-              "name": "supplierWebAddress",
-              "kind": "Property",
+              "target": "handover_documentation@2.0.0",
+              "latest_release": "handover_documentation@2.0.1"
+            }
+          ]
+        },
+        "key_element_missing_description": {
+          "count": 1,
+          "detail": [
+            {
+              "name": "Component",
+              "kind": "Entity",
+              "file": "Circularity"
+            }
+          ]
+        },
+        "key_element_missing_preferred_name": {
+          "count": 1,
+          "detail": [
+            {
+              "name": "Component",
+              "kind": "Entity",
               "file": "Circularity"
             }
           ]
@@ -951,6 +1056,78 @@
     "batterypass.digital_nameplate@1.0.0": {
       "name": "batterypass.digital_nameplate",
       "version": "1.0.0",
+      "family": "SAMM",
+      "source": "idta",
+      "status": "release",
+      "total": 9,
+      "issues": {
+        "outdated_dependency": {
+          "count": 3,
+          "detail": [
+            {
+              "target": "contact_information@1.0.0",
+              "latest_release": "contact_information@1.0.1"
+            },
+            {
+              "target": "digital_nameplate@3.0.0",
+              "latest_release": "digital_nameplate@3.0.1"
+            },
+            {
+              "target": "shared@3.1.0",
+              "latest_release": "shared@3.1.1"
+            }
+          ]
+        },
+        "older_release_exists": {
+          "count": 1,
+          "detail": [
+            {
+              "latest_release": "batterypass.digital_nameplate@1.0.1"
+            }
+          ]
+        },
+        "orphan_isolated": {
+          "count": 2,
+          "detail": [
+            {
+              "name": "addressInformation",
+              "kind": "Property",
+              "file": "AddressInformation_shared"
+            },
+            {
+              "name": "BatteryStatusEnumeration",
+              "kind": "Characteristic",
+              "file": "AddressInformation_shared"
+            }
+          ]
+        },
+        "unused_property": {
+          "count": 1,
+          "detail": [
+            {
+              "name": "addressInformation",
+              "kind": "Property",
+              "file": "AddressInformation_shared"
+            }
+          ]
+        },
+        "missing_release_notes": {
+          "count": 1,
+          "detail": [
+            "data/smt-semantic-models/io.admin-shell.idta.batterypass.digital_nameplate/RELEASE_NOTES.md"
+          ]
+        },
+        "missing_gen_docs": {
+          "count": 1,
+          "detail": [
+            "AddressInformation_shared"
+          ]
+        }
+      }
+    },
+    "batterypass.digital_nameplate@1.0.1": {
+      "name": "batterypass.digital_nameplate",
+      "version": "1.0.1",
       "family": "SAMM",
       "source": "idta",
       "status": "release",
@@ -998,6 +1175,69 @@
     "batterypass.handover_documentation@1.0.0": {
       "name": "batterypass.handover_documentation",
       "version": "1.0.0",
+      "family": "SAMM",
+      "source": "idta",
+      "status": "release",
+      "total": 7,
+      "issues": {
+        "outdated_dependency": {
+          "count": 2,
+          "detail": [
+            {
+              "target": "handover_documentation@2.0.0",
+              "latest_release": "handover_documentation@2.0.1"
+            },
+            {
+              "target": "shared@3.1.0",
+              "latest_release": "shared@3.1.1"
+            }
+          ]
+        },
+        "older_release_exists": {
+          "count": 1,
+          "detail": [
+            {
+              "latest_release": "batterypass.handover_documentation@1.0.1"
+            }
+          ]
+        },
+        "key_element_missing_description": {
+          "count": 1,
+          "detail": [
+            {
+              "name": "DocumentVersion",
+              "kind": "Entity",
+              "file": "HandoverDocumentation"
+            }
+          ]
+        },
+        "key_element_missing_preferred_name": {
+          "count": 1,
+          "detail": [
+            {
+              "name": "Document",
+              "kind": "Entity",
+              "file": "HandoverDocumentation"
+            }
+          ]
+        },
+        "missing_release_notes": {
+          "count": 1,
+          "detail": [
+            "data/smt-semantic-models/io.admin-shell.idta.batterypass.handover_documentation/RELEASE_NOTES.md"
+          ]
+        },
+        "missing_gen_docs": {
+          "count": 1,
+          "detail": [
+            "HandoverDocumentation"
+          ]
+        }
+      }
+    },
+    "batterypass.handover_documentation@1.0.1": {
+      "name": "batterypass.handover_documentation",
+      "version": "1.0.1",
       "family": "SAMM",
       "source": "idta",
       "status": "release",
@@ -1187,8 +1427,21 @@
       "family": "SAMM",
       "source": "idta",
       "status": "invalidated",
-      "total": 8,
+      "total": 10,
       "issues": {
+        "outdated_dependency": {
+          "count": 2,
+          "detail": [
+            {
+              "target": "handover_documentation@2.0.0",
+              "latest_release": "handover_documentation@2.0.1"
+            },
+            {
+              "target": "shared@3.1.0",
+              "latest_release": "shared@3.1.1"
+            }
+          ]
+        },
         "orphan_unreachable": {
           "count": 5,
           "detail": [
@@ -1249,14 +1502,22 @@
       "family": "SAMM",
       "source": "idta",
       "status": "invalidated",
-      "total": 76,
+      "total": 78,
       "issues": {
         "outdated_dependency": {
-          "count": 1,
+          "count": 3,
           "detail": [
             {
               "target": "batterypass.product_condition@1.0.0",
-              "latest_release": "batterypass.product_condition@1.0.2"
+              "latest_release": "batterypass.product_condition@1.0.3"
+            },
+            {
+              "target": "handover_documentation@2.0.0",
+              "latest_release": "handover_documentation@2.0.1"
+            },
+            {
+              "target": "shared@3.1.0",
+              "latest_release": "shared@3.1.1"
             }
           ]
         },
@@ -1660,14 +1921,445 @@
       "family": "SAMM",
       "source": "idta",
       "status": "release",
-      "total": 76,
+      "total": 79,
       "issues": {
         "outdated_dependency": {
-          "count": 1,
+          "count": 3,
           "detail": [
             {
               "target": "batterypass.product_condition@1.0.0",
-              "latest_release": "batterypass.product_condition@1.0.2"
+              "latest_release": "batterypass.product_condition@1.0.3"
+            },
+            {
+              "target": "handover_documentation@2.0.0",
+              "latest_release": "handover_documentation@2.0.1"
+            },
+            {
+              "target": "shared@3.1.0",
+              "latest_release": "shared@3.1.1"
+            }
+          ]
+        },
+        "older_release_exists": {
+          "count": 1,
+          "detail": [
+            {
+              "latest_release": "batterypass.product_condition@1.0.3"
+            }
+          ]
+        },
+        "orphan_unreachable": {
+          "count": 61,
+          "detail": [
+            {
+              "name": "energyThroughput",
+              "kind": "Property",
+              "file": "ProductCondition"
+            },
+            {
+              "name": "energyThroughputValue",
+              "kind": "Property",
+              "file": "ProductCondition"
+            },
+            {
+              "name": "capacityThroughput",
+              "kind": "Property",
+              "file": "ProductCondition"
+            },
+            {
+              "name": "capacityThroughputValue",
+              "kind": "Property",
+              "file": "ProductCondition"
+            },
+            {
+              "name": "stateOfCertifiedEnergy",
+              "kind": "Property",
+              "file": "ProductCondition"
+            },
+            {
+              "name": "stateOfCertifiedEnergyValue",
+              "kind": "Property",
+              "file": "ProductCondition"
+            },
+            {
+              "name": "remainingEnergy",
+              "kind": "Property",
+              "file": "ProductCondition"
+            },
+            {
+              "name": "remainingEnergyValue",
+              "kind": "Property",
+              "file": "ProductCondition"
+            },
+            {
+              "name": "remainingCapacity",
+              "kind": "Property",
+              "file": "ProductCondition"
+            },
+            {
+              "name": "remainingCapacityValue",
+              "kind": "Property",
+              "file": "ProductCondition"
+            },
+            {
+              "name": "negativeEvents",
+              "kind": "Property",
+              "file": "ProductCondition"
+            },
+            {
+              "name": "negativeEventValue",
+              "kind": "Property",
+              "file": "ProductCondition"
+            },
+            {
+              "name": "remainingPowerCapability",
+              "kind": "Property",
+              "file": "ProductCondition"
+            },
+            {
+              "name": "remainingPowerCapabilityValue",
+              "kind": "Property",
+              "file": "ProductCondition"
+            },
+            {
+              "name": "atSoC",
+              "kind": "Property",
+              "file": "ProductCondition"
+            },
+            {
+              "name": "powerCapabilityAt",
+              "kind": "Property",
+              "file": "ProductCondition"
+            },
+            {
+              "name": "rPCLastUpdated",
+              "kind": "Property",
+              "file": "ProductCondition"
+            },
+            {
+              "name": "evolutionOfSelfDischarge",
+              "kind": "Property",
+              "file": "ProductCondition"
+            },
+            {
+              "name": "evolutionOfSelfDischargeValue",
+              "kind": "Property",
+              "file": "ProductCondition"
+            },
+            {
+              "name": "currentSelfDischargingRate",
+              "kind": "Property",
+              "file": "ProductCondition"
+            },
+            {
+              "name": "currentSelfDischargingRateValue",
+              "kind": "Property",
+              "file": "ProductCondition"
+            },
+            {
+              "name": "stateOfCharge",
+              "kind": "Property",
+              "file": "ProductCondition"
+            },
+            {
+              "name": "stateOfChargeValue",
+              "kind": "Property",
+              "file": "ProductCondition"
+            },
+            {
+              "name": "remainingRoundTripEnergyEfficiency",
+              "kind": "Property",
+              "file": "ProductCondition"
+            },
+            {
+              "name": "remainingRoundTripEnergyEfficiencyValue",
+              "kind": "Property",
+              "file": "ProductCondition"
+            },
+            {
+              "name": "EnergyThroughput",
+              "kind": "Characteristic",
+              "file": "ProductCondition"
+            },
+            {
+              "name": "CapacityThroughput",
+              "kind": "Characteristic",
+              "file": "ProductCondition"
+            },
+            {
+              "name": "StateOfCertifiedEnergy",
+              "kind": "Characteristic",
+              "file": "ProductCondition"
+            },
+            {
+              "name": "RemainingEnergy",
+              "kind": "Characteristic",
+              "file": "ProductCondition"
+            },
+            {
+              "name": "RemainingCapacity",
+              "kind": "Characteristic",
+              "file": "ProductCondition"
+            },
+            {
+              "name": "RemainingPowerCapability",
+              "kind": "Characteristic",
+              "file": "ProductCondition"
+            },
+            {
+              "name": "RemainingPowerCapabilityValue",
+              "kind": "Characteristic",
+              "file": "ProductCondition"
+            },
+            {
+              "name": "EvolutionOfSelfDischarge",
+              "kind": "Characteristic",
+              "file": "ProductCondition"
+            },
+            {
+              "name": "CurrentSelfDischargingRate",
+              "kind": "Characteristic",
+              "file": "ProductCondition"
+            },
+            {
+              "name": "StateOfCharge",
+              "kind": "Characteristic",
+              "file": "ProductCondition"
+            },
+            {
+              "name": "RemainingRoundTripEnergyEfficiency",
+              "kind": "Characteristic",
+              "file": "ProductCondition"
+            },
+            {
+              "name": "EnergyThroughputEntity",
+              "kind": "Entity",
+              "file": "ProductCondition"
+            },
+            {
+              "name": "CapacityThroughputEntity",
+              "kind": "Entity",
+              "file": "ProductCondition"
+            },
+            {
+              "name": "StateOfCertifiedEnergyEntity",
+              "kind": "Entity",
+              "file": "ProductCondition"
+            },
+            {
+              "name": "RemainingEnergyEntity",
+              "kind": "Entity",
+              "file": "ProductCondition"
+            },
+            {
+              "name": "RemainingCapacityEntity",
+              "kind": "Entity",
+              "file": "ProductCondition"
+            },
+            {
+              "name": "NegativeEvent",
+              "kind": "Entity",
+              "file": "ProductCondition"
+            },
+            {
+              "name": "RemainingPowerCapabilityEntity",
+              "kind": "Entity",
+              "file": "ProductCondition"
+            },
+            {
+              "name": "RemainingPowerCapabilityDynamicAt",
+              "kind": "Entity",
+              "file": "ProductCondition"
+            },
+            {
+              "name": "PowerCapabilityAtEntity",
+              "kind": "Entity",
+              "file": "ProductCondition"
+            },
+            {
+              "name": "EvolutionOfSelfDischargeEntity",
+              "kind": "Entity",
+              "file": "ProductCondition"
+            },
+            {
+              "name": "CurrentSelfDischargingRateEntity",
+              "kind": "Entity",
+              "file": "ProductCondition"
+            },
+            {
+              "name": "StateOfChargeEntity",
+              "kind": "Entity",
+              "file": "ProductCondition"
+            },
+            {
+              "name": "RemainingRoundTripEnergyEfficiencyEntity",
+              "kind": "Entity",
+              "file": "ProductCondition"
+            },
+            {
+              "name": "EnergyThroughputValue",
+              "kind": "Characteristic",
+              "file": "ProductCondition"
+            },
+            {
+              "name": "CapacityThroughputValue",
+              "kind": "Characteristic",
+              "file": "ProductCondition"
+            },
+            {
+              "name": "StateOfCertifiedEnergyValue",
+              "kind": "Characteristic",
+              "file": "ProductCondition"
+            },
+            {
+              "name": "UBERemainingValue",
+              "kind": "Characteristic",
+              "file": "ProductCondition"
+            },
+            {
+              "name": "RemainingCapacityValue",
+              "kind": "Characteristic",
+              "file": "ProductCondition"
+            },
+            {
+              "name": "AtSoC",
+              "kind": "Characteristic",
+              "file": "ProductCondition"
+            },
+            {
+              "name": "PowerCapabilityAtSoc",
+              "kind": "Characteristic",
+              "file": "ProductCondition"
+            },
+            {
+              "name": "EvolutionOfSelfDischargeEntityValue",
+              "kind": "Characteristic",
+              "file": "ProductCondition"
+            },
+            {
+              "name": "CurrentSelfDischargingRateValue",
+              "kind": "Characteristic",
+              "file": "ProductCondition"
+            },
+            {
+              "name": "StateOfChargeValue",
+              "kind": "Characteristic",
+              "file": "ProductCondition"
+            },
+            {
+              "name": "RemainingRoundTripEnergyEfficiencyValue",
+              "kind": "Characteristic",
+              "file": "ProductCondition"
+            },
+            {
+              "name": "NegativeEvents",
+              "kind": "Characteristic",
+              "file": "ProductCondition"
+            }
+          ]
+        },
+        "key_element_missing_preferred_name": {
+          "count": 1,
+          "detail": [
+            {
+              "name": "capacityThroughput",
+              "kind": "Property",
+              "file": "ProductCondition"
+            }
+          ]
+        },
+        "unused_property": {
+          "count": 11,
+          "detail": [
+            {
+              "name": "energyThroughput",
+              "kind": "Property",
+              "file": "ProductCondition"
+            },
+            {
+              "name": "capacityThroughput",
+              "kind": "Property",
+              "file": "ProductCondition"
+            },
+            {
+              "name": "stateOfCertifiedEnergy",
+              "kind": "Property",
+              "file": "ProductCondition"
+            },
+            {
+              "name": "remainingEnergy",
+              "kind": "Property",
+              "file": "ProductCondition"
+            },
+            {
+              "name": "remainingCapacity",
+              "kind": "Property",
+              "file": "ProductCondition"
+            },
+            {
+              "name": "negativeEvents",
+              "kind": "Property",
+              "file": "ProductCondition"
+            },
+            {
+              "name": "remainingPowerCapability",
+              "kind": "Property",
+              "file": "ProductCondition"
+            },
+            {
+              "name": "evolutionOfSelfDischarge",
+              "kind": "Property",
+              "file": "ProductCondition"
+            },
+            {
+              "name": "currentSelfDischargingRate",
+              "kind": "Property",
+              "file": "ProductCondition"
+            },
+            {
+              "name": "stateOfCharge",
+              "kind": "Property",
+              "file": "ProductCondition"
+            },
+            {
+              "name": "remainingRoundTripEnergyEfficiency",
+              "kind": "Property",
+              "file": "ProductCondition"
+            }
+          ]
+        },
+        "missing_release_notes": {
+          "count": 1,
+          "detail": [
+            "data/smt-semantic-models/io.admin-shell.idta.batterypass.product_condition/RELEASE_NOTES.md"
+          ]
+        },
+        "missing_gen_docs": {
+          "count": 1,
+          "detail": [
+            "Namespace"
+          ]
+        }
+      }
+    },
+    "batterypass.product_condition@1.0.3": {
+      "name": "batterypass.product_condition",
+      "version": "1.0.3",
+      "family": "SAMM",
+      "source": "idta",
+      "status": "release",
+      "total": 77,
+      "issues": {
+        "outdated_dependency": {
+          "count": 2,
+          "detail": [
+            {
+              "target": "batterypass.product_condition@1.0.0",
+              "latest_release": "batterypass.product_condition@1.0.3"
+            },
+            {
+              "target": "handover_documentation@2.0.0",
+              "latest_release": "handover_documentation@2.0.1"
             }
           ]
         },
@@ -2071,13 +2763,30 @@
       "family": "SAMM",
       "source": "idta",
       "status": "invalidated",
-      "total": 6,
+      "total": 9,
       "issues": {
         "unresolved_dep": {
           "count": 2,
           "detail": [
             "GeneralProductInformation@1.2.0",
             "Performance@1.2.1"
+          ]
+        },
+        "outdated_dependency": {
+          "count": 3,
+          "detail": [
+            {
+              "target": "digital_nameplate@3.0.0",
+              "latest_release": "digital_nameplate@3.0.1"
+            },
+            {
+              "target": "generic.technical_data@2.0.0",
+              "latest_release": "generic.technical_data@2.0.1"
+            },
+            {
+              "target": "shared@3.1.0",
+              "latest_release": "shared@3.1.1"
+            }
           ]
         },
         "key_element_missing_preferred_name": {
@@ -2120,13 +2829,30 @@
       "family": "SAMM",
       "source": "idta",
       "status": "invalidated",
-      "total": 6,
+      "total": 9,
       "issues": {
         "unresolved_dep": {
           "count": 2,
           "detail": [
             "GeneralProductInformation@1.2.0",
             "Performance@1.2.1"
+          ]
+        },
+        "outdated_dependency": {
+          "count": 3,
+          "detail": [
+            {
+              "target": "digital_nameplate@3.0.0",
+              "latest_release": "digital_nameplate@3.0.1"
+            },
+            {
+              "target": "generic.technical_data@2.0.0",
+              "latest_release": "generic.technical_data@2.0.1"
+            },
+            {
+              "target": "shared@3.1.0",
+              "latest_release": "shared@3.1.1"
+            }
           ]
         },
         "key_element_missing_preferred_name": {
@@ -2169,13 +2895,88 @@
       "family": "SAMM",
       "source": "idta",
       "status": "released",
-      "total": 6,
+      "total": 9,
       "issues": {
         "unresolved_dep": {
           "count": 2,
           "detail": [
             "GeneralProductInformation@1.2.0",
             "Performance@1.2.1"
+          ]
+        },
+        "outdated_dependency": {
+          "count": 3,
+          "detail": [
+            {
+              "target": "digital_nameplate@3.0.0",
+              "latest_release": "digital_nameplate@3.0.1"
+            },
+            {
+              "target": "generic.technical_data@2.0.0",
+              "latest_release": "generic.technical_data@2.0.1"
+            },
+            {
+              "target": "shared@3.1.0",
+              "latest_release": "shared@3.1.1"
+            }
+          ]
+        },
+        "key_element_missing_preferred_name": {
+          "count": 1,
+          "detail": [
+            {
+              "name": "powerFade",
+              "kind": "Property",
+              "file": "TechnicalData"
+            }
+          ]
+        },
+        "bad_naming_type": {
+          "count": 1,
+          "detail": [
+            {
+              "name": "energyRoundTripEfficiencyFadeValue",
+              "kind": "Characteristic",
+              "file": "TechnicalData"
+            }
+          ]
+        },
+        "missing_release_notes": {
+          "count": 1,
+          "detail": [
+            "data/smt-semantic-models/io.admin-shell.idta.batterypass.technical_data/RELEASE_NOTES.md"
+          ]
+        },
+        "missing_gen_docs": {
+          "count": 1,
+          "detail": [
+            "TechnicalData"
+          ]
+        }
+      }
+    },
+    "batterypass.technical_data@1.0.3": {
+      "name": "batterypass.technical_data",
+      "version": "1.0.3",
+      "family": "SAMM",
+      "source": "idta",
+      "status": "released",
+      "total": 7,
+      "issues": {
+        "unresolved_dep": {
+          "count": 2,
+          "detail": [
+            "GeneralProductInformation@1.2.0",
+            "Performance@1.2.1"
+          ]
+        },
+        "outdated_dependency": {
+          "count": 1,
+          "detail": [
+            {
+              "target": "digital_nameplate@3.0.0",
+              "latest_release": "digital_nameplate@3.0.1"
+            }
           ]
         },
         "key_element_missing_preferred_name": {
@@ -2482,6 +3283,66 @@
       "family": "SAMM",
       "source": "idta",
       "status": "release",
+      "total": 7,
+      "issues": {
+        "outdated_dependency": {
+          "count": 3,
+          "detail": [
+            {
+              "target": "contact_information@1.0.0",
+              "latest_release": "contact_information@1.0.1"
+            },
+            {
+              "target": "pcf@8.0.0",
+              "latest_release": "pcf@10.0.0"
+            },
+            {
+              "target": "shared@3.1.0",
+              "latest_release": "shared@3.1.1"
+            }
+          ]
+        },
+        "deprecated_dep": {
+          "count": 1,
+          "detail": [
+            {
+              "target": "shared.uuid@2.0.0",
+              "path": [
+                "carbon_footprint@1.0.0",
+                "pcf@8.0.0",
+                "shared.uuid@2.0.0"
+              ]
+            }
+          ]
+        },
+        "older_release_exists": {
+          "count": 1,
+          "detail": [
+            {
+              "latest_release": "carbon_footprint@1.0.1"
+            }
+          ]
+        },
+        "missing_release_notes": {
+          "count": 1,
+          "detail": [
+            "data/smt-semantic-models/io.admin-shell.idta.carbon_footprint/RELEASE_NOTES.md"
+          ]
+        },
+        "missing_gen_docs": {
+          "count": 1,
+          "detail": [
+            "CarbonFootprints_shared"
+          ]
+        }
+      }
+    },
+    "carbon_footprint@1.0.1": {
+      "name": "carbon_footprint",
+      "version": "1.0.1",
+      "family": "SAMM",
+      "source": "idta",
+      "status": "release",
       "total": 4,
       "issues": {
         "outdated_dependency": {
@@ -2499,7 +3360,7 @@
             {
               "target": "shared.uuid@2.0.0",
               "path": [
-                "carbon_footprint@1.0.0",
+                "carbon_footprint@1.0.1",
                 "pcf@8.0.0",
                 "shared.uuid@2.0.0"
               ]
@@ -2878,6 +3739,160 @@
     "contact_information@1.0.0": {
       "name": "contact_information",
       "version": "1.0.0",
+      "family": "SAMM",
+      "source": "idta",
+      "status": "release",
+      "total": 22,
+      "issues": {
+        "outdated_dependency": {
+          "count": 1,
+          "detail": [
+            {
+              "target": "shared@3.1.0",
+              "latest_release": "shared@3.1.1"
+            }
+          ]
+        },
+        "older_release_exists": {
+          "count": 1,
+          "detail": [
+            {
+              "latest_release": "contact_information@1.0.1"
+            }
+          ]
+        },
+        "orphan_isolated": {
+          "count": 5,
+          "detail": [
+            {
+              "name": "ContactRoleEnum",
+              "kind": "Characteristic",
+              "file": "ContactInformations"
+            },
+            {
+              "name": "TelephoneTypeEnum",
+              "kind": "Characteristic",
+              "file": "ContactInformations"
+            },
+            {
+              "name": "EmailTypeEnum",
+              "kind": "Characteristic",
+              "file": "ContactInformations"
+            },
+            {
+              "name": "FaxTypeEnum",
+              "kind": "Characteristic",
+              "file": "ContactInformations"
+            },
+            {
+              "name": "postalCode",
+              "kind": "Property",
+              "file": "ContactInformations"
+            }
+          ]
+        },
+        "orphan_unreachable": {
+          "count": 7,
+          "detail": [
+            {
+              "name": "ContactRoleEnum",
+              "kind": "Characteristic",
+              "file": "ContactInformations"
+            },
+            {
+              "name": "TelephoneTypeEnum",
+              "kind": "Characteristic",
+              "file": "ContactInformations"
+            },
+            {
+              "name": "EmailTypeEnum",
+              "kind": "Characteristic",
+              "file": "ContactInformations"
+            },
+            {
+              "name": "FaxTypeEnum",
+              "kind": "Characteristic",
+              "file": "ContactInformations"
+            },
+            {
+              "name": "contactInformation",
+              "kind": "Property",
+              "file": "ContactInformations"
+            },
+            {
+              "name": "ContactInformationCharacteristic",
+              "kind": "Characteristic",
+              "file": "ContactInformations"
+            },
+            {
+              "name": "postalCode",
+              "kind": "Property",
+              "file": "ContactInformations"
+            }
+          ]
+        },
+        "key_element_missing_description": {
+          "count": 2,
+          "detail": [
+            {
+              "name": "fax",
+              "kind": "Property",
+              "file": "ContactInformations"
+            },
+            {
+              "name": "nameOfContact",
+              "kind": "Property",
+              "file": "ContactInformations"
+            }
+          ]
+        },
+        "key_element_missing_preferred_name": {
+          "count": 2,
+          "detail": [
+            {
+              "name": "ContactInformation",
+              "kind": "Entity",
+              "file": "ContactInformations"
+            },
+            {
+              "name": "phone",
+              "kind": "Property",
+              "file": "ContactInformations"
+            }
+          ]
+        },
+        "unused_property": {
+          "count": 2,
+          "detail": [
+            {
+              "name": "contactInformation",
+              "kind": "Property",
+              "file": "ContactInformations"
+            },
+            {
+              "name": "postalCode",
+              "kind": "Property",
+              "file": "ContactInformations"
+            }
+          ]
+        },
+        "missing_release_notes": {
+          "count": 1,
+          "detail": [
+            "data/smt-semantic-models/io.admin-shell.idta.contact_information/RELEASE_NOTES.md"
+          ]
+        },
+        "missing_gen_docs": {
+          "count": 1,
+          "detail": [
+            "ContactInformation_enum_shared"
+          ]
+        }
+      }
+    },
+    "contact_information@1.0.1": {
+      "name": "contact_information",
+      "version": "1.0.1",
       "family": "SAMM",
       "source": "idta",
       "status": "release",
@@ -3572,6 +4587,49 @@
       "family": "SAMM",
       "source": "idta",
       "status": "release",
+      "total": 5,
+      "issues": {
+        "outdated_dependency": {
+          "count": 2,
+          "detail": [
+            {
+              "target": "contact_information@1.0.0",
+              "latest_release": "contact_information@1.0.1"
+            },
+            {
+              "target": "shared@3.1.0",
+              "latest_release": "shared@3.1.1"
+            }
+          ]
+        },
+        "older_release_exists": {
+          "count": 1,
+          "detail": [
+            {
+              "latest_release": "digital_nameplate@3.0.1"
+            }
+          ]
+        },
+        "missing_release_notes": {
+          "count": 1,
+          "detail": [
+            "data/smt-semantic-models/io.admin-shell.idta.digital_nameplate/RELEASE_NOTES.md"
+          ]
+        },
+        "missing_gen_docs": {
+          "count": 1,
+          "detail": [
+            "AddressInformation_shared"
+          ]
+        }
+      }
+    },
+    "digital_nameplate@3.0.1": {
+      "name": "digital_nameplate",
+      "version": "3.0.1",
+      "family": "SAMM",
+      "source": "idta",
+      "status": "release",
       "total": 2,
       "issues": {
         "missing_release_notes": {
@@ -3594,8 +4652,16 @@
       "family": "SAMM",
       "source": "idta",
       "status": "release",
-      "total": 2,
+      "total": 3,
       "issues": {
+        "older_release_exists": {
+          "count": 1,
+          "detail": [
+            {
+              "latest_release": "dpp.dpp_metadata@1.0.1"
+            }
+          ]
+        },
         "meta_model_drift": {
           "count": 1,
           "detail": [
@@ -3605,6 +4671,22 @@
             }
           ]
         },
+        "missing_release_notes": {
+          "count": 1,
+          "detail": [
+            "data/smt-semantic-models/io.admin-shell.idta.dpp.dpp_metadata/RELEASE_NOTES.md"
+          ]
+        }
+      }
+    },
+    "dpp.dpp_metadata@1.0.1": {
+      "name": "dpp.dpp_metadata",
+      "version": "1.0.1",
+      "family": "SAMM",
+      "source": "idta",
+      "status": "release",
+      "total": 1,
+      "issues": {
         "missing_release_notes": {
           "count": 1,
           "detail": [
@@ -5984,12 +7066,25 @@
       "family": "SAMM",
       "source": "idta",
       "status": "deprecated",
-      "total": 5,
+      "total": 7,
       "issues": {
         "unresolved_dep": {
           "count": 1,
           "detail": [
             "nameplate@3.0.0"
+          ]
+        },
+        "outdated_dependency": {
+          "count": 2,
+          "detail": [
+            {
+              "target": "digital_nameplate@3.0.0",
+              "latest_release": "digital_nameplate@3.0.1"
+            },
+            {
+              "target": "shared@3.1.0",
+              "latest_release": "shared@3.1.1"
+            }
           ]
         },
         "key_element_missing_preferred_name": {
@@ -6027,12 +7122,95 @@
       "family": "SAMM",
       "source": "idta",
       "status": "release",
-      "total": 6,
+      "total": 9,
       "issues": {
         "unresolved_dep": {
           "count": 1,
           "detail": [
             "nameplate@3.0.0"
+          ]
+        },
+        "outdated_dependency": {
+          "count": 2,
+          "detail": [
+            {
+              "target": "digital_nameplate@3.0.0",
+              "latest_release": "digital_nameplate@3.0.1"
+            },
+            {
+              "target": "shared@3.1.0",
+              "latest_release": "shared@3.1.1"
+            }
+          ]
+        },
+        "older_release_exists": {
+          "count": 1,
+          "detail": [
+            {
+              "latest_release": "generic.technical_data@2.0.1"
+            }
+          ]
+        },
+        "key_element_missing_description": {
+          "count": 1,
+          "detail": [
+            {
+              "name": "SpecificDescriptionEntity",
+              "kind": "Entity",
+              "file": "TechnicalData"
+            }
+          ]
+        },
+        "key_element_missing_preferred_name": {
+          "count": 2,
+          "detail": [
+            {
+              "name": "furtherInformation",
+              "kind": "Property",
+              "file": "TechnicalData"
+            },
+            {
+              "name": "SpecificDescriptionEntity",
+              "kind": "Entity",
+              "file": "TechnicalData"
+            }
+          ]
+        },
+        "missing_release_notes": {
+          "count": 1,
+          "detail": [
+            "data/smt-semantic-models/io.admin-shell.idta.generic.technical_data/RELEASE_NOTES.md"
+          ]
+        },
+        "missing_gen_docs": {
+          "count": 1,
+          "detail": [
+            "TechnicalData"
+          ]
+        }
+      }
+    },
+    "generic.technical_data@2.0.1": {
+      "name": "generic.technical_data",
+      "version": "2.0.1",
+      "family": "SAMM",
+      "source": "idta",
+      "status": "release",
+      "total": 7,
+      "issues": {
+        "unresolved_dep": {
+          "count": 1,
+          "detail": [
+            "nameplate@3.0.0"
+          ]
+        },
+        "outdated_dependency": {
+          "count": 1,
+          "detail": [
+            {
+              "target": "digital_nameplate@3.0.0",
+              "latest_release": "digital_nameplate@3.0.1"
+            }
           ]
         },
         "key_element_missing_description": {
@@ -6129,6 +7307,75 @@
     "handover_documentation@2.0.0": {
       "name": "handover_documentation",
       "version": "2.0.0",
+      "family": "SAMM",
+      "source": "idta",
+      "status": "release",
+      "total": 8,
+      "issues": {
+        "outdated_dependency": {
+          "count": 1,
+          "detail": [
+            {
+              "target": "shared@3.1.0",
+              "latest_release": "shared@3.1.1"
+            }
+          ]
+        },
+        "older_release_exists": {
+          "count": 1,
+          "detail": [
+            {
+              "latest_release": "handover_documentation@2.0.1"
+            }
+          ]
+        },
+        "key_element_missing_description": {
+          "count": 2,
+          "detail": [
+            {
+              "name": "DocumentClassification",
+              "kind": "Entity",
+              "file": "HandoverDocumentation"
+            },
+            {
+              "name": "DocumentVersion",
+              "kind": "Entity",
+              "file": "HandoverDocumentation"
+            }
+          ]
+        },
+        "key_element_missing_preferred_name": {
+          "count": 2,
+          "detail": [
+            {
+              "name": "translationOfEntities",
+              "kind": "Property",
+              "file": "HandoverDocumentation"
+            },
+            {
+              "name": "refersToEntities",
+              "kind": "Property",
+              "file": "HandoverDocumentation"
+            }
+          ]
+        },
+        "missing_release_notes": {
+          "count": 1,
+          "detail": [
+            "data/smt-semantic-models/io.admin-shell.idta.handover_documentation/RELEASE_NOTES.md"
+          ]
+        },
+        "missing_gen_docs": {
+          "count": 1,
+          "detail": [
+            "Namespace"
+          ]
+        }
+      }
+    },
+    "handover_documentation@2.0.1": {
+      "name": "handover_documentation",
+      "version": "2.0.1",
       "family": "SAMM",
       "source": "idta",
       "status": "release",
@@ -13091,8 +14338,16 @@
       "family": "SAMM",
       "source": "idta",
       "status": "release",
-      "total": 146,
+      "total": 147,
       "issues": {
+        "older_release_exists": {
+          "count": 1,
+          "detail": [
+            {
+              "latest_release": "shared@3.1.1"
+            }
+          ]
+        },
         "orphan_isolated": {
           "count": 6,
           "detail": [
@@ -13339,6 +14594,782 @@
             {
               "name": "Marking",
               "kind": "Entity",
+              "file": "TestAspect"
+            },
+            {
+              "name": "inoutputArguments",
+              "kind": "AbstractProperty",
+              "file": "TestAspect"
+            },
+            {
+              "name": "outputArguments",
+              "kind": "AbstractProperty",
+              "file": "TestAspect"
+            },
+            {
+              "name": "messages",
+              "kind": "Property",
+              "file": "TestAspect"
+            },
+            {
+              "name": "executionState",
+              "kind": "Property",
+              "file": "TestAspect"
+            },
+            {
+              "name": "success",
+              "kind": "Property",
+              "file": "TestAspect"
+            },
+            {
+              "name": "messageCode",
+              "kind": "Property",
+              "file": "TestAspect"
+            },
+            {
+              "name": "correlationId",
+              "kind": "Property",
+              "file": "TestAspect"
+            },
+            {
+              "name": "messageType",
+              "kind": "Property",
+              "file": "TestAspect"
+            },
+            {
+              "name": "messageText",
+              "kind": "Property",
+              "file": "TestAspect"
+            },
+            {
+              "name": "timestamp",
+              "kind": "Property",
+              "file": "TestAspect"
+            },
+            {
+              "name": "rangeFloatMin",
+              "kind": "Property",
+              "file": "TestAspect"
+            },
+            {
+              "name": "rangeFloatMax",
+              "kind": "Property",
+              "file": "TestAspect"
+            },
+            {
+              "name": "KeyEntity",
+              "kind": "Entity",
+              "file": "TestAspect"
+            },
+            {
+              "name": "ModelReferenceKeyEntity",
+              "kind": "Entity",
+              "file": "TestAspect"
+            },
+            {
+              "name": "ExternalReferenceKeyEntity",
+              "kind": "Entity",
+              "file": "TestAspect"
+            },
+            {
+              "name": "keys",
+              "kind": "Property",
+              "file": "TestAspect"
+            },
+            {
+              "name": "type",
+              "kind": "Property",
+              "file": "TestAspect"
+            },
+            {
+              "name": "key",
+              "kind": "Property",
+              "file": "TestAspect"
+            },
+            {
+              "name": "keyValue",
+              "kind": "Property",
+              "file": "TestAspect"
+            },
+            {
+              "name": "modelReferenceKeys",
+              "kind": "Property",
+              "file": "TestAspect"
+            },
+            {
+              "name": "modelReferenceType",
+              "kind": "Property",
+              "file": "TestAspect"
+            },
+            {
+              "name": "ModelReferenceKey",
+              "kind": "Property",
+              "file": "TestAspect"
+            },
+            {
+              "name": "ModelReferenceKeyValue",
+              "kind": "Property",
+              "file": "TestAspect"
+            },
+            {
+              "name": "KeysExternalReference",
+              "kind": "Property",
+              "file": "TestAspect"
+            },
+            {
+              "name": "TypeExternalReference",
+              "kind": "Property",
+              "file": "TestAspect"
+            },
+            {
+              "name": "ExternalReferenceKey",
+              "kind": "Property",
+              "file": "TestAspect"
+            },
+            {
+              "name": "ExternalReferenceKeyValue",
+              "kind": "Property",
+              "file": "TestAspect"
+            },
+            {
+              "name": "first",
+              "kind": "Property",
+              "file": "TestAspect"
+            },
+            {
+              "name": "second",
+              "kind": "Property",
+              "file": "TestAspect"
+            },
+            {
+              "name": "example4Markings",
+              "kind": "Property",
+              "file": "TestAspect"
+            },
+            {
+              "name": "example4documentIdentifierSet",
+              "kind": "Property",
+              "file": "TestAspect"
+            },
+            {
+              "name": "example4specificAssetId",
+              "kind": "Property",
+              "file": "TestAspect"
+            },
+            {
+              "name": "valueOnly4MultiLanguageProperty",
+              "kind": "Property",
+              "file": "TestAspect"
+            },
+            {
+              "name": "exampleStatements",
+              "kind": "Property",
+              "file": "TestAspect"
+            },
+            {
+              "name": "exampleAnnotations",
+              "kind": "Property",
+              "file": "TestAspect"
+            },
+            {
+              "name": "toggle",
+              "kind": "Operation",
+              "file": "TestAspect"
+            },
+            {
+              "name": "toggleResult",
+              "kind": "Property",
+              "file": "TestAspect"
+            },
+            {
+              "name": "inArg",
+              "kind": "Property",
+              "file": "TestAspect"
+            },
+            {
+              "name": "inoutArg",
+              "kind": "Property",
+              "file": "TestAspect"
+            },
+            {
+              "name": "resultInoutArg",
+              "kind": "Property",
+              "file": "TestAspect"
+            },
+            {
+              "name": "outArg",
+              "kind": "Property",
+              "file": "TestAspect"
+            },
+            {
+              "name": "languages",
+              "kind": "Property",
+              "file": "TestAspect"
+            }
+          ]
+        },
+        "key_element_missing_preferred_name": {
+          "count": 45,
+          "detail": [
+            {
+              "name": "annotations",
+              "kind": "AbstractProperty",
+              "file": "TestAspect"
+            },
+            {
+              "name": "observed",
+              "kind": "Property",
+              "file": "TestAspect"
+            },
+            {
+              "name": "statements",
+              "kind": "AbstractProperty",
+              "file": "TestAspect"
+            },
+            {
+              "name": "resourceValue",
+              "kind": "Property",
+              "file": "TestAspect"
+            },
+            {
+              "name": "inoutputArguments",
+              "kind": "AbstractProperty",
+              "file": "TestAspect"
+            },
+            {
+              "name": "outputArguments",
+              "kind": "AbstractProperty",
+              "file": "TestAspect"
+            },
+            {
+              "name": "messages",
+              "kind": "Property",
+              "file": "TestAspect"
+            },
+            {
+              "name": "executionState",
+              "kind": "Property",
+              "file": "TestAspect"
+            },
+            {
+              "name": "success",
+              "kind": "Property",
+              "file": "TestAspect"
+            },
+            {
+              "name": "messageCode",
+              "kind": "Property",
+              "file": "TestAspect"
+            },
+            {
+              "name": "correlationId",
+              "kind": "Property",
+              "file": "TestAspect"
+            },
+            {
+              "name": "messageType",
+              "kind": "Property",
+              "file": "TestAspect"
+            },
+            {
+              "name": "messageText",
+              "kind": "Property",
+              "file": "TestAspect"
+            },
+            {
+              "name": "timestamp",
+              "kind": "Property",
+              "file": "TestAspect"
+            },
+            {
+              "name": "rangeFloatMin",
+              "kind": "Property",
+              "file": "TestAspect"
+            },
+            {
+              "name": "rangeFloatMax",
+              "kind": "Property",
+              "file": "TestAspect"
+            },
+            {
+              "name": "KeyEntity",
+              "kind": "Entity",
+              "file": "TestAspect"
+            },
+            {
+              "name": "ModelReferenceKeyEntity",
+              "kind": "Entity",
+              "file": "TestAspect"
+            },
+            {
+              "name": "ExternalReferenceKeyEntity",
+              "kind": "Entity",
+              "file": "TestAspect"
+            },
+            {
+              "name": "keys",
+              "kind": "Property",
+              "file": "TestAspect"
+            },
+            {
+              "name": "type",
+              "kind": "Property",
+              "file": "TestAspect"
+            },
+            {
+              "name": "key",
+              "kind": "Property",
+              "file": "TestAspect"
+            },
+            {
+              "name": "keyValue",
+              "kind": "Property",
+              "file": "TestAspect"
+            },
+            {
+              "name": "modelReferenceKeys",
+              "kind": "Property",
+              "file": "TestAspect"
+            },
+            {
+              "name": "modelReferenceType",
+              "kind": "Property",
+              "file": "TestAspect"
+            },
+            {
+              "name": "ModelReferenceKey",
+              "kind": "Property",
+              "file": "TestAspect"
+            },
+            {
+              "name": "ModelReferenceKeyValue",
+              "kind": "Property",
+              "file": "TestAspect"
+            },
+            {
+              "name": "KeysExternalReference",
+              "kind": "Property",
+              "file": "TestAspect"
+            },
+            {
+              "name": "TypeExternalReference",
+              "kind": "Property",
+              "file": "TestAspect"
+            },
+            {
+              "name": "ExternalReferenceKey",
+              "kind": "Property",
+              "file": "TestAspect"
+            },
+            {
+              "name": "ExternalReferenceKeyValue",
+              "kind": "Property",
+              "file": "TestAspect"
+            },
+            {
+              "name": "first",
+              "kind": "Property",
+              "file": "TestAspect"
+            },
+            {
+              "name": "second",
+              "kind": "Property",
+              "file": "TestAspect"
+            },
+            {
+              "name": "example4Markings",
+              "kind": "Property",
+              "file": "TestAspect"
+            },
+            {
+              "name": "example4documentIdentifierSet",
+              "kind": "Property",
+              "file": "TestAspect"
+            },
+            {
+              "name": "example4specificAssetId",
+              "kind": "Property",
+              "file": "TestAspect"
+            },
+            {
+              "name": "exampleStatements",
+              "kind": "Property",
+              "file": "TestAspect"
+            },
+            {
+              "name": "exampleAnnotations",
+              "kind": "Property",
+              "file": "TestAspect"
+            },
+            {
+              "name": "toggle",
+              "kind": "Operation",
+              "file": "TestAspect"
+            },
+            {
+              "name": "toggleResult",
+              "kind": "Property",
+              "file": "TestAspect"
+            },
+            {
+              "name": "inArg",
+              "kind": "Property",
+              "file": "TestAspect"
+            },
+            {
+              "name": "inoutArg",
+              "kind": "Property",
+              "file": "TestAspect"
+            },
+            {
+              "name": "resultInoutArg",
+              "kind": "Property",
+              "file": "TestAspect"
+            },
+            {
+              "name": "outArg",
+              "kind": "Property",
+              "file": "TestAspect"
+            },
+            {
+              "name": "languages",
+              "kind": "Property",
+              "file": "TestAspect"
+            }
+          ]
+        },
+        "unused_property": {
+          "count": 1,
+          "detail": [
+            {
+              "name": "documentIdentifier",
+              "kind": "Property",
+              "file": "TestAspect"
+            }
+          ]
+        },
+        "bad_naming_property": {
+          "count": 6,
+          "detail": [
+            {
+              "name": "ModelReferenceKey",
+              "kind": "Property",
+              "file": "TestAspect"
+            },
+            {
+              "name": "ModelReferenceKeyValue",
+              "kind": "Property",
+              "file": "TestAspect"
+            },
+            {
+              "name": "KeysExternalReference",
+              "kind": "Property",
+              "file": "TestAspect"
+            },
+            {
+              "name": "TypeExternalReference",
+              "kind": "Property",
+              "file": "TestAspect"
+            },
+            {
+              "name": "ExternalReferenceKey",
+              "kind": "Property",
+              "file": "TestAspect"
+            },
+            {
+              "name": "ExternalReferenceKeyValue",
+              "kind": "Property",
+              "file": "TestAspect"
+            }
+          ]
+        },
+        "bad_naming_type": {
+          "count": 2,
+          "detail": [
+            {
+              "name": "valueOnly4EntityWithStatementsCharacteristic",
+              "kind": "Characteristic",
+              "file": "TestAspect"
+            },
+            {
+              "name": "valueOnly4RelationshipElementWithAnnotationsCharacteristic",
+              "kind": "Characteristic",
+              "file": "TestAspect"
+            }
+          ]
+        },
+        "missing_release_notes": {
+          "count": 1,
+          "detail": [
+            "data/smt-semantic-models/io.admin-shell.idta.shared/RELEASE_NOTES.md"
+          ]
+        },
+        "missing_gen_docs": {
+          "count": 1,
+          "detail": [
+            "AnnotatedRelationshipElement_abstract"
+          ]
+        },
+        "meta_model_drift": {
+          "count": 1,
+          "detail": [
+            {
+              "using": "SAMM 2.1.0",
+              "latest": "SAMM 2.2.0"
+            }
+          ]
+        }
+      }
+    },
+    "shared@3.1.1": {
+      "name": "shared",
+      "version": "3.1.1",
+      "family": "SAMM",
+      "source": "idta",
+      "status": "release",
+      "total": 145,
+      "issues": {
+        "orphan_isolated": {
+          "count": 6,
+          "detail": [
+            {
+              "name": "ISO8601Duration",
+              "kind": "Characteristic",
+              "file": "TestAspect"
+            },
+            {
+              "name": "ProductMarkingEnum",
+              "kind": "Characteristic",
+              "file": "TestAspect"
+            },
+            {
+              "name": "rangeMinAbstract",
+              "kind": "AbstractProperty",
+              "file": "TestAspect"
+            },
+            {
+              "name": "rangeMaxAbstract",
+              "kind": "AbstractProperty",
+              "file": "TestAspect"
+            },
+            {
+              "name": "RangeTypeAbstract",
+              "kind": "AbstractEntity",
+              "file": "TestAspect"
+            },
+            {
+              "name": "toggle",
+              "kind": "Operation",
+              "file": "TestAspect"
+            }
+          ]
+        },
+        "orphan_unreachable": {
+          "count": 35,
+          "detail": [
+            {
+              "name": "annotations",
+              "kind": "AbstractProperty",
+              "file": "TestAspect"
+            },
+            {
+              "name": "AasAnnotatedRelationshipElementWithAnnotationsType",
+              "kind": "AbstractEntity",
+              "file": "TestAspect"
+            },
+            {
+              "name": "BlobWithContentType",
+              "kind": "Characteristic",
+              "file": "TestAspect"
+            },
+            {
+              "name": "BlobType",
+              "kind": "Characteristic",
+              "file": "TestAspect"
+            },
+            {
+              "name": "blobValue",
+              "kind": "Property",
+              "file": "TestAspect"
+            },
+            {
+              "name": "BlobWithContentTypeEntity",
+              "kind": "Entity",
+              "file": "TestAspect"
+            },
+            {
+              "name": "ISO8601Duration",
+              "kind": "Characteristic",
+              "file": "TestAspect"
+            },
+            {
+              "name": "documentIdentifier",
+              "kind": "Property",
+              "file": "TestAspect"
+            },
+            {
+              "name": "statements",
+              "kind": "AbstractProperty",
+              "file": "TestAspect"
+            },
+            {
+              "name": "AasEntityWithStatementsType",
+              "kind": "AbstractEntity",
+              "file": "TestAspect"
+            },
+            {
+              "name": "ProductMarkingEnum",
+              "kind": "Characteristic",
+              "file": "TestAspect"
+            },
+            {
+              "name": "OperationResultValueOnly",
+              "kind": "AbstractEntity",
+              "file": "TestAspect"
+            },
+            {
+              "name": "inoutputArguments",
+              "kind": "AbstractProperty",
+              "file": "TestAspect"
+            },
+            {
+              "name": "outputArguments",
+              "kind": "AbstractProperty",
+              "file": "TestAspect"
+            },
+            {
+              "name": "BaseOperationResult",
+              "kind": "Entity",
+              "file": "TestAspect"
+            },
+            {
+              "name": "Result",
+              "kind": "Entity",
+              "file": "TestAspect"
+            },
+            {
+              "name": "Message",
+              "kind": "Entity",
+              "file": "TestAspect"
+            },
+            {
+              "name": "messages",
+              "kind": "Property",
+              "file": "TestAspect"
+            },
+            {
+              "name": "executionState",
+              "kind": "Property",
+              "file": "TestAspect"
+            },
+            {
+              "name": "success",
+              "kind": "Property",
+              "file": "TestAspect"
+            },
+            {
+              "name": "messageCode",
+              "kind": "Property",
+              "file": "TestAspect"
+            },
+            {
+              "name": "correlationId",
+              "kind": "Property",
+              "file": "TestAspect"
+            },
+            {
+              "name": "messageType",
+              "kind": "Property",
+              "file": "TestAspect"
+            },
+            {
+              "name": "messageText",
+              "kind": "Property",
+              "file": "TestAspect"
+            },
+            {
+              "name": "timestamp",
+              "kind": "Property",
+              "file": "TestAspect"
+            },
+            {
+              "name": "rangeMinAbstract",
+              "kind": "AbstractProperty",
+              "file": "TestAspect"
+            },
+            {
+              "name": "rangeMaxAbstract",
+              "kind": "AbstractProperty",
+              "file": "TestAspect"
+            },
+            {
+              "name": "RangeTypeAbstract",
+              "kind": "AbstractEntity",
+              "file": "TestAspect"
+            },
+            {
+              "name": "toggle",
+              "kind": "Operation",
+              "file": "TestAspect"
+            },
+            {
+              "name": "resultInoutArg",
+              "kind": "Property",
+              "file": "TestAspect"
+            },
+            {
+              "name": "outArg",
+              "kind": "Property",
+              "file": "TestAspect"
+            },
+            {
+              "name": "ToggleOutputArgumentsCharacteristic",
+              "kind": "Characteristic",
+              "file": "TestAspect"
+            },
+            {
+              "name": "ToggleInoutputArgumentsCharacteristic",
+              "kind": "Characteristic",
+              "file": "TestAspect"
+            },
+            {
+              "name": "ToggleOutputArguments",
+              "kind": "Entity",
+              "file": "TestAspect"
+            },
+            {
+              "name": "ToggleInoutputArguments",
+              "kind": "Entity",
+              "file": "TestAspect"
+            }
+          ]
+        },
+        "key_element_missing_description": {
+          "count": 47,
+          "detail": [
+            {
+              "name": "annotations",
+              "kind": "AbstractProperty",
+              "file": "TestAspect"
+            },
+            {
+              "name": "observed",
+              "kind": "Property",
+              "file": "TestAspect"
+            },
+            {
+              "name": "statements",
+              "kind": "AbstractProperty",
+              "file": "TestAspect"
+            },
+            {
+              "name": "specificAssetIds",
+              "kind": "Property",
+              "file": "TestAspect"
+            },
+            {
+              "name": "entityType",
+              "kind": "Property",
               "file": "TestAspect"
             },
             {

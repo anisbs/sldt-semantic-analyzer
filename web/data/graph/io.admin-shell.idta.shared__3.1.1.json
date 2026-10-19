@@ -1,0 +1,2091 @@
+{
+  "meta": {
+    "namespace": "urn:samm:io.admin-shell.idta.shared:3.1.1#",
+    "meta_model": "SAMM 2.2.0",
+    "model_family": "SAMM",
+    "model_name": "shared",
+    "model_version": "3.1.1",
+    "source": "idta",
+    "status": "release",
+    "release_date": null,
+    "release_notes": null,
+    "dependencies": [],
+    "path": "data/smt-semantic-models/io.admin-shell.idta.shared/3.1.1/TestAspect.ttl"
+  },
+  "nodes": [
+    {
+      "id": "urn:samm:io.admin-shell.idta.shared:3.1.1#annotations",
+      "label": "annotations",
+      "kind": "AbstractProperty",
+      "preferredName": null,
+      "description": null
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.shared:3.1.1#AasAnnotatedRelationshipElementWithAnnotationsType",
+      "label": "AasAnnotatedRelationshipElementWithAnnotationsType",
+      "kind": "AbstractEntity",
+      "preferredName": null,
+      "description": null
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.shared:3.1.1#BasicEventElementType",
+      "label": "BasicEventElementType",
+      "kind": "Characteristic",
+      "preferredName": null,
+      "description": null
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.shared:3.1.1#BasicEventElementEntity",
+      "label": "BasicEventElementEntity",
+      "kind": "Entity",
+      "preferredName": null,
+      "description": "A basic event element."
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.shared:3.1.1#observed",
+      "label": "observed",
+      "kind": "Property",
+      "preferredName": null,
+      "description": null
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.shared:3.1.1#BlobWithContentType",
+      "label": "BlobWithContentType",
+      "kind": "Characteristic",
+      "preferredName": "Large Binary Object (BLOB) mit Content-Type",
+      "description": "A Blob is a data element representing a file that is contained in the value attribute with its source code. The code syntax is characterized by its content type (MIME type)."
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.shared:3.1.1#BlobType",
+      "label": "BlobType",
+      "kind": "Characteristic",
+      "preferredName": null,
+      "description": null,
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "base64Binary",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.shared:3.1.1#blobValue",
+      "label": "blobValue",
+      "kind": "Property",
+      "preferredName": "Binary Large Object (BLOB)",
+      "description": "The data of the BLOB (Binary Large Object)."
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.shared:3.1.1#BlobWithContentTypeEntity",
+      "label": "BlobWithContentTypeEntity",
+      "kind": "Entity",
+      "preferredName": "Large Binary Object (BLOB) mit Content-Type",
+      "description": "A Blob is a data element representing a file that is contained in the value attribute with its source code. The code syntax is characterized by its content type (MIME type)."
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.shared:3.1.1#ISO8601Duration",
+      "label": "ISO8601Duration",
+      "kind": "Characteristic",
+      "preferredName": "ISO 8601 duration format",
+      "description": "ISO 8601 duration format."
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.shared:3.1.1#DocumentIdentifierSet",
+      "label": "DocumentIdentifierSet",
+      "kind": "Characteristic",
+      "preferredName": "set of document identifiers",
+      "description": "Each document is uniquely discoverable via its identifier. If more information is needed, please refer to the 'Handover Documentation'."
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.shared:3.1.1#DocumentIdentifierSetTrait",
+      "label": "DocumentIdentifierSetTrait",
+      "kind": "Characteristic",
+      "preferredName": null,
+      "description": null
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.shared:3.1.1#documentIdentifier",
+      "label": "documentIdentifier",
+      "kind": "Property",
+      "preferredName": "Dokumentennummer",
+      "description": "Alphanumerische Zeichenfolge, die ein Dokument eindeutig identifiziert."
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.shared:3.1.1#DocumentIdentifier",
+      "label": "DocumentIdentifier",
+      "kind": "Characteristic",
+      "preferredName": "Dokumentennummer",
+      "description": "Alphanumerische Zeichenfolge, die ein Dokument eindeutig identifiziert.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.shared:3.1.1#statements",
+      "label": "statements",
+      "kind": "AbstractProperty",
+      "preferredName": null,
+      "description": null
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.shared:3.1.1#AasEntityWithStatementsType",
+      "label": "AasEntityWithStatementsType",
+      "kind": "AbstractEntity",
+      "preferredName": null,
+      "description": null
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.shared:3.1.1#specificAssetIds",
+      "label": "specificAssetIds",
+      "kind": "Property",
+      "preferredName": "specific asset ID",
+      "description": null
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.shared:3.1.1#globalAssetId",
+      "label": "globalAssetId",
+      "kind": "Property",
+      "preferredName": "global asset ID",
+      "description": "Globally unique identifier of an asset.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.2.0",
+          "target_source": "unknown"
+        }
+      ]
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.shared:3.1.1#entityType",
+      "label": "entityType",
+      "kind": "Property",
+      "preferredName": "entity type",
+      "description": null
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.shared:3.1.1#SpecificAssetIdSet",
+      "label": "SpecificAssetIdSet",
+      "kind": "Characteristic",
+      "preferredName": null,
+      "description": null
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.shared:3.1.1#AasEntityCharacteristic",
+      "label": "AasEntityCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": null,
+      "description": null
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.shared:3.1.1#EntityType",
+      "label": "EntityType",
+      "kind": "Characteristic",
+      "preferredName": null,
+      "description": null,
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.shared:3.1.1#AasEntityType",
+      "label": "AasEntityType",
+      "kind": "Entity",
+      "preferredName": null,
+      "description": "A predefined submodel element subtype of the Asset Administration Shell used to model entities without additional statements."
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.shared:3.1.1#resourceValue",
+      "label": "resourceValue",
+      "kind": "Property",
+      "preferredName": null,
+      "description": "Path and name of the file (with file extension).\n\nThe path can be absolute or relative.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "ResourcePath",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.2.0",
+          "target_source": "unknown"
+        }
+      ]
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.shared:3.1.1#FileWithContentType",
+      "label": "FileWithContentType",
+      "kind": "Characteristic",
+      "preferredName": null,
+      "description": null
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.shared:3.1.1#ResourceWithContentType",
+      "label": "ResourceWithContentType",
+      "kind": "Entity",
+      "preferredName": "Datei mit Content Type",
+      "description": "A file is a data element that represents an address to a file (a locator). The value is a URI that can represent an absolute or relative path."
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.shared:3.1.1#CardinalityOneToMany",
+      "label": "CardinalityOneToMany",
+      "kind": "Characteristic",
+      "preferredName": null,
+      "description": null
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.shared:3.1.1#expiryDate",
+      "label": "expiryDate",
+      "kind": "Property",
+      "preferredName": "Ablaufdatum",
+      "description": "Datum zu welchem die Kennzeichnung abläuft."
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.shared:3.1.1#markingName",
+      "label": "markingName",
+      "kind": "Property",
+      "preferredName": "marking IRDI",
+      "description": "Common name of the marking.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.2.0",
+          "target_source": "unknown"
+        }
+      ]
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.shared:3.1.1#markingFile",
+      "label": "markingFile",
+      "kind": "Property",
+      "preferredName": "marking file",
+      "description": "Conformity symbol of the marking."
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.shared:3.1.1#issueDate",
+      "label": "issueDate",
+      "kind": "Property",
+      "preferredName": "Ausstelldatum",
+      "description": "Datum zu welchem die Kennzeichnung ausgestellt wurde."
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.shared:3.1.1#markingAdditionalText",
+      "label": "markingAdditionalText",
+      "kind": "Property",
+      "preferredName": "additional text",
+      "description": "Zusätzlicher sprechender Text für die Kennzeichnung.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.2.0",
+          "target_source": "unknown"
+        }
+      ]
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.shared:3.1.1#designationOfCertificateOrApproval",
+      "label": "designationOfCertificateOrApproval",
+      "kind": "Property",
+      "preferredName": "designation of certificate or approval",
+      "description": "Alphanumeric character sequence identifying a certificate or approval.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.2.0",
+          "target_source": "unknown"
+        }
+      ]
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.shared:3.1.1#Date",
+      "label": "Date",
+      "kind": "Characteristic",
+      "preferredName": null,
+      "description": "Date in format CCYY-MM-DD.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "date",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.shared:3.1.1#Marking",
+      "label": "Marking",
+      "kind": "Entity",
+      "preferredName": "single marking information",
+      "description": "Single marking information. \n   \n   Note: CE marking is declared as mandatory according to the Blue Guide of the EU-Commission"
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.shared:3.1.1#Markings",
+      "label": "Markings",
+      "kind": "Characteristic",
+      "preferredName": "markings",
+      "description": "Note: CE marking is declared as mandatory according to EU Blue Guide."
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.shared:3.1.1#ProductMarkingEnum",
+      "label": "ProductMarkingEnum",
+      "kind": "Characteristic",
+      "preferredName": "product marking types",
+      "description": null,
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.shared:3.1.1#MultiLanguageTexts",
+      "label": "MultiLanguageTexts",
+      "kind": "Characteristic",
+      "preferredName": "multilanguage text set",
+      "description": "A set of language-text items.",
+      "external_refs": [
+        {
+          "predicate": "elementCharacteristic",
+          "target_local": "MultiLanguageText",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.2.0",
+          "target_source": "unknown"
+        }
+      ]
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.shared:3.1.1#OperationResultValueOnly",
+      "label": "OperationResultValueOnly",
+      "kind": "AbstractEntity",
+      "preferredName": null,
+      "description": null
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.shared:3.1.1#inoutputArguments",
+      "label": "inoutputArguments",
+      "kind": "AbstractProperty",
+      "preferredName": null,
+      "description": null
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.shared:3.1.1#outputArguments",
+      "label": "outputArguments",
+      "kind": "AbstractProperty",
+      "preferredName": null,
+      "description": null
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.shared:3.1.1#BaseOperationResult",
+      "label": "BaseOperationResult",
+      "kind": "Entity",
+      "preferredName": null,
+      "description": null
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.shared:3.1.1#Result",
+      "label": "Result",
+      "kind": "Entity",
+      "preferredName": null,
+      "description": null
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.shared:3.1.1#Message",
+      "label": "Message",
+      "kind": "Entity",
+      "preferredName": null,
+      "description": null
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.shared:3.1.1#messages",
+      "label": "messages",
+      "kind": "Property",
+      "preferredName": null,
+      "description": null,
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Messages",
+          "target_model": "shared@3.1.1",
+          "target_source": "idta"
+        }
+      ]
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.shared:3.1.1#executionState",
+      "label": "executionState",
+      "kind": "Property",
+      "preferredName": null,
+      "description": null,
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "ExecutionStateOperationEnum",
+          "target_model": "shared@3.1.1",
+          "target_source": "idta"
+        }
+      ]
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.shared:3.1.1#success",
+      "label": "success",
+      "kind": "Property",
+      "preferredName": null,
+      "description": null,
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Boolean",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.2.0",
+          "target_source": "unknown"
+        }
+      ]
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.shared:3.1.1#messageCode",
+      "label": "messageCode",
+      "kind": "Property",
+      "preferredName": null,
+      "description": null,
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.2.0",
+          "target_source": "unknown"
+        }
+      ]
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.shared:3.1.1#correlationId",
+      "label": "correlationId",
+      "kind": "Property",
+      "preferredName": null,
+      "description": null,
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.2.0",
+          "target_source": "unknown"
+        }
+      ]
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.shared:3.1.1#messageType",
+      "label": "messageType",
+      "kind": "Property",
+      "preferredName": null,
+      "description": null,
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "MessageTypeOperationEnum",
+          "target_model": "shared@3.1.1",
+          "target_source": "idta"
+        }
+      ]
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.shared:3.1.1#messageText",
+      "label": "messageText",
+      "kind": "Property",
+      "preferredName": null,
+      "description": null,
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.2.0",
+          "target_source": "unknown"
+        }
+      ]
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.shared:3.1.1#timestamp",
+      "label": "timestamp",
+      "kind": "Property",
+      "preferredName": null,
+      "description": null,
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Timestamp",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.2.0",
+          "target_source": "unknown"
+        }
+      ]
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.shared:3.1.1#rangeMinAbstract",
+      "label": "rangeMinAbstract",
+      "kind": "AbstractProperty",
+      "preferredName": "min",
+      "description": "Minimum value within range."
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.shared:3.1.1#rangeMaxAbstract",
+      "label": "rangeMaxAbstract",
+      "kind": "AbstractProperty",
+      "preferredName": "max",
+      "description": "Maximum value within range."
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.shared:3.1.1#RangeTypeAbstract",
+      "label": "RangeTypeAbstract",
+      "kind": "AbstractEntity",
+      "preferredName": "Wertebereich",
+      "description": "A range data element is a data element that defines a range with min and max.\n\n If the min value is missing, the value is assumed to be negative infinite.\n If the max value is missing, the value is assumed to be positive infinite."
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.shared:3.1.1#RangeFloatTypeCharacteristic",
+      "label": "RangeFloatTypeCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": null,
+      "description": null
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.shared:3.1.1#rangeFloatMin",
+      "label": "rangeFloatMin",
+      "kind": "Property",
+      "preferredName": null,
+      "description": null
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.shared:3.1.1#rangeFloatMax",
+      "label": "rangeFloatMax",
+      "kind": "Property",
+      "preferredName": null,
+      "description": null
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.shared:3.1.1#RangeFloatType",
+      "label": "RangeFloatType",
+      "kind": "Entity",
+      "preferredName": null,
+      "description": null
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.shared:3.1.1#ReferenceType",
+      "label": "ReferenceType",
+      "kind": "Characteristic",
+      "preferredName": null,
+      "description": null
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.shared:3.1.1#ModelReferenceType",
+      "label": "ModelReferenceType",
+      "kind": "Characteristic",
+      "preferredName": null,
+      "description": null
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.shared:3.1.1#ExternalReferenceType",
+      "label": "ExternalReferenceType",
+      "kind": "Characteristic",
+      "preferredName": null,
+      "description": null
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.shared:3.1.1#ReferenceEntity",
+      "label": "ReferenceEntity",
+      "kind": "Entity",
+      "preferredName": null,
+      "description": null
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.shared:3.1.1#KeyEntity",
+      "label": "KeyEntity",
+      "kind": "Entity",
+      "preferredName": null,
+      "description": null
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.shared:3.1.1#ModelReferenceEntity",
+      "label": "ModelReferenceEntity",
+      "kind": "Entity",
+      "preferredName": null,
+      "description": null
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.shared:3.1.1#ModelReferenceKeyEntity",
+      "label": "ModelReferenceKeyEntity",
+      "kind": "Entity",
+      "preferredName": null,
+      "description": null
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.shared:3.1.1#ExternalReferenceEntity",
+      "label": "ExternalReferenceEntity",
+      "kind": "Entity",
+      "preferredName": null,
+      "description": null
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.shared:3.1.1#ExternalReferenceKeyEntity",
+      "label": "ExternalReferenceKeyEntity",
+      "kind": "Entity",
+      "preferredName": null,
+      "description": null
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.shared:3.1.1#keys",
+      "label": "keys",
+      "kind": "Property",
+      "preferredName": null,
+      "description": null
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.shared:3.1.1#type",
+      "label": "type",
+      "kind": "Property",
+      "preferredName": null,
+      "description": null
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.shared:3.1.1#key",
+      "label": "key",
+      "kind": "Property",
+      "preferredName": null,
+      "description": null
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.shared:3.1.1#keyValue",
+      "label": "keyValue",
+      "kind": "Property",
+      "preferredName": null,
+      "description": null,
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.2.0",
+          "target_source": "unknown"
+        }
+      ]
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.shared:3.1.1#modelReferenceKeys",
+      "label": "modelReferenceKeys",
+      "kind": "Property",
+      "preferredName": null,
+      "description": null
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.shared:3.1.1#modelReferenceType",
+      "label": "modelReferenceType",
+      "kind": "Property",
+      "preferredName": null,
+      "description": null
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.shared:3.1.1#ModelReferenceKey",
+      "label": "ModelReferenceKey",
+      "kind": "Property",
+      "preferredName": null,
+      "description": null
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.shared:3.1.1#ModelReferenceKeyValue",
+      "label": "ModelReferenceKeyValue",
+      "kind": "Property",
+      "preferredName": null,
+      "description": null,
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.2.0",
+          "target_source": "unknown"
+        }
+      ]
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.shared:3.1.1#KeysExternalReference",
+      "label": "KeysExternalReference",
+      "kind": "Property",
+      "preferredName": null,
+      "description": null
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.shared:3.1.1#TypeExternalReference",
+      "label": "TypeExternalReference",
+      "kind": "Property",
+      "preferredName": null,
+      "description": null
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.shared:3.1.1#ExternalReferenceKey",
+      "label": "ExternalReferenceKey",
+      "kind": "Property",
+      "preferredName": null,
+      "description": null
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.shared:3.1.1#ExternalReferenceKeyValue",
+      "label": "ExternalReferenceKeyValue",
+      "kind": "Property",
+      "preferredName": null,
+      "description": null,
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.2.0",
+          "target_source": "unknown"
+        }
+      ]
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.shared:3.1.1#KeyReferenceTypesEnum",
+      "label": "KeyReferenceTypesEnum",
+      "kind": "Characteristic",
+      "preferredName": null,
+      "description": null,
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.shared:3.1.1#ReferenceKeyEnum",
+      "label": "ReferenceKeyEnum",
+      "kind": "Characteristic",
+      "preferredName": null,
+      "description": null,
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.shared:3.1.1#KeyModelReferenceTypesEnum",
+      "label": "KeyModelReferenceTypesEnum",
+      "kind": "Characteristic",
+      "preferredName": null,
+      "description": null,
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.shared:3.1.1#ModelReferenceKeyEnum",
+      "label": "ModelReferenceKeyEnum",
+      "kind": "Characteristic",
+      "preferredName": null,
+      "description": null,
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.shared:3.1.1#KeyExternalReferenceTypesEnum",
+      "label": "KeyExternalReferenceTypesEnum",
+      "kind": "Characteristic",
+      "preferredName": null,
+      "description": null,
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.shared:3.1.1#ExternalReferenceKeyEnum",
+      "label": "ExternalReferenceKeyEnum",
+      "kind": "Characteristic",
+      "preferredName": null,
+      "description": null,
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.shared:3.1.1#SetOfKeys",
+      "label": "SetOfKeys",
+      "kind": "Characteristic",
+      "preferredName": null,
+      "description": null
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.shared:3.1.1#ModelReferenceSetOfKeys",
+      "label": "ModelReferenceSetOfKeys",
+      "kind": "Characteristic",
+      "preferredName": null,
+      "description": null
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.shared:3.1.1#ExternalReferenceSetOfKeys",
+      "label": "ExternalReferenceSetOfKeys",
+      "kind": "Characteristic",
+      "preferredName": null,
+      "description": null
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.shared:3.1.1#RelationshipElementType",
+      "label": "RelationshipElementType",
+      "kind": "Characteristic",
+      "preferredName": null,
+      "description": null
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.shared:3.1.1#RelationshipElementEntity",
+      "label": "RelationshipElementEntity",
+      "kind": "Entity",
+      "preferredName": null,
+      "description": "A predefined submodel element subtype of the Asset Administration Shell used to model relationships."
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.shared:3.1.1#first",
+      "label": "first",
+      "kind": "Property",
+      "preferredName": null,
+      "description": null
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.shared:3.1.1#second",
+      "label": "second",
+      "kind": "Property",
+      "preferredName": null,
+      "description": null
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.shared:3.1.1#SpecificAssetId",
+      "label": "SpecificAssetId",
+      "kind": "Entity",
+      "preferredName": "specific asset ID",
+      "description": "A specific asset ID describes a generic supplementary identifying attribute of the asset. The specific asset ID is not necessarily globally unique."
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.shared:3.1.1#specificAssetIdName",
+      "label": "specificAssetIdName",
+      "kind": "Property",
+      "preferredName": "name",
+      "description": "Name of the asset identifier.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.2.0",
+          "target_source": "unknown"
+        }
+      ]
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.shared:3.1.1#specificAssetIdValue",
+      "label": "specificAssetIdValue",
+      "kind": "Property",
+      "preferredName": "value",
+      "description": "The value of the specific asset identifier with the corresponding name.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.2.0",
+          "target_source": "unknown"
+        }
+      ]
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.shared:3.1.1#TestAspect",
+      "label": "TestAspect",
+      "kind": "Aspect",
+      "preferredName": "Test-Aspect",
+      "description": "Test-Aspect."
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.shared:3.1.1#example4Markings",
+      "label": "example4Markings",
+      "kind": "Property",
+      "preferredName": null,
+      "description": null
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.shared:3.1.1#example4documentIdentifierSet",
+      "label": "example4documentIdentifierSet",
+      "kind": "Property",
+      "preferredName": null,
+      "description": null
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.shared:3.1.1#example4specificAssetId",
+      "label": "example4specificAssetId",
+      "kind": "Property",
+      "preferredName": null,
+      "description": null
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.shared:3.1.1#ValueOnlyExampleAspect",
+      "label": "ValueOnlyExampleAspect",
+      "kind": "Aspect",
+      "preferredName": "Value-Only Beispiele",
+      "description": "Beispiel-Aspekt, der Charakteristiken für Submodel-Elemente testet."
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.shared:3.1.1#valueOnly4MultiLanguageProperty",
+      "label": "valueOnly4MultiLanguageProperty",
+      "kind": "Property",
+      "preferredName": "multi language text",
+      "description": null
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.shared:3.1.1#valueOnly4File",
+      "label": "valueOnly4File",
+      "kind": "Property",
+      "preferredName": "digital file",
+      "description": "Digital copy of this document"
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.shared:3.1.1#valueOnly4Reference",
+      "label": "valueOnly4Reference",
+      "kind": "Property",
+      "preferredName": "Reference",
+      "description": "Reference conformant to AAS."
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.shared:3.1.1#valueOnly4ModelReference",
+      "label": "valueOnly4ModelReference",
+      "kind": "Property",
+      "preferredName": "Reference",
+      "description": "Reference conformant to AAS."
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.shared:3.1.1#valueOnly4ExternalReference",
+      "label": "valueOnly4ExternalReference",
+      "kind": "Property",
+      "preferredName": "Reference",
+      "description": "Reference conformant to AAS."
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.shared:3.1.1#valueOnly4RelationshipElement",
+      "label": "valueOnly4RelationshipElement",
+      "kind": "Property",
+      "preferredName": "RelationshipElement",
+      "description": "RelationshipElement conformant to AAS."
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.shared:3.1.1#valueOnly4Entity",
+      "label": "valueOnly4Entity",
+      "kind": "Property",
+      "preferredName": "Entity",
+      "description": "Entity conformant to AAS."
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.shared:3.1.1#valueOnly4EntityWithStatements",
+      "label": "valueOnly4EntityWithStatements",
+      "kind": "Property",
+      "preferredName": "Example Entity with statements",
+      "description": "Example Entity conformant to AAS with statements."
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.shared:3.1.1#exampleStatements",
+      "label": "exampleStatements",
+      "kind": "Property",
+      "preferredName": null,
+      "description": null
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.shared:3.1.1#valueOnly4Range",
+      "label": "valueOnly4Range",
+      "kind": "Property",
+      "preferredName": "Range",
+      "description": "Range conformant to AAS."
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.shared:3.1.1#valueOnly4BasicEventElement",
+      "label": "valueOnly4BasicEventElement",
+      "kind": "Property",
+      "preferredName": "Basic Event",
+      "description": "BasicEventElement conformant to AAS."
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.shared:3.1.1#valueOnly4RelationshipElementWithAnnotations",
+      "label": "valueOnly4RelationshipElementWithAnnotations",
+      "kind": "Property",
+      "preferredName": "example RelationshipElement with annotations",
+      "description": "Example RelationshipElement with annotations."
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.shared:3.1.1#exampleAnnotations",
+      "label": "exampleAnnotations",
+      "kind": "Property",
+      "preferredName": null,
+      "description": null
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.shared:3.1.1#valueOnly4EntityWithStatementsCharacteristic",
+      "label": "valueOnly4EntityWithStatementsCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": null,
+      "description": null
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.shared:3.1.1#ExampleStatementsCharacteristic",
+      "label": "ExampleStatementsCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": null,
+      "description": null
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.shared:3.1.1#valueOnly4RelationshipElementWithAnnotationsCharacteristic",
+      "label": "valueOnly4RelationshipElementWithAnnotationsCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": null,
+      "description": null
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.shared:3.1.1#ExampleAnnotationsCharacteristic",
+      "label": "ExampleAnnotationsCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": null,
+      "description": null
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.shared:3.1.1#ValueOnly4EntityWithStatements",
+      "label": "ValueOnly4EntityWithStatements",
+      "kind": "Entity",
+      "preferredName": null,
+      "description": null
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.shared:3.1.1#ExampleStatements",
+      "label": "ExampleStatements",
+      "kind": "Entity",
+      "preferredName": null,
+      "description": null
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.shared:3.1.1#ValueOnly4RelationshipElementWithAnnotations",
+      "label": "ValueOnly4RelationshipElementWithAnnotations",
+      "kind": "Entity",
+      "preferredName": null,
+      "description": null
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.shared:3.1.1#ExampleAnnotations",
+      "label": "ExampleAnnotations",
+      "kind": "Entity",
+      "preferredName": null,
+      "description": null
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.shared:3.1.1#ValueOnlyOperationExampleAspect",
+      "label": "ValueOnlyOperationExampleAspect",
+      "kind": "Aspect",
+      "preferredName": "Value-Only Beispiel für Operationen",
+      "description": "Beispiel-Aspekt, der Charakteristiken für Submodel-Elemente vom Type 'Operation' testet."
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.shared:3.1.1#toggle",
+      "label": "toggle",
+      "kind": "Operation",
+      "preferredName": null,
+      "description": null
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.shared:3.1.1#toggleResult",
+      "label": "toggleResult",
+      "kind": "Property",
+      "preferredName": null,
+      "description": null
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.shared:3.1.1#inArg",
+      "label": "inArg",
+      "kind": "Property",
+      "preferredName": null,
+      "description": null,
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.2.0",
+          "target_source": "unknown"
+        }
+      ]
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.shared:3.1.1#inoutArg",
+      "label": "inoutArg",
+      "kind": "Property",
+      "preferredName": null,
+      "description": null,
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.2.0",
+          "target_source": "unknown"
+        }
+      ]
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.shared:3.1.1#resultInoutArg",
+      "label": "resultInoutArg",
+      "kind": "Property",
+      "preferredName": null,
+      "description": null,
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.2.0",
+          "target_source": "unknown"
+        }
+      ]
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.shared:3.1.1#outArg",
+      "label": "outArg",
+      "kind": "Property",
+      "preferredName": null,
+      "description": null,
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.2.0",
+          "target_source": "unknown"
+        }
+      ]
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.shared:3.1.1#ToggleResultCharacteristic",
+      "label": "ToggleResultCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": null,
+      "description": null
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.shared:3.1.1#ToggleOutputArgumentsCharacteristic",
+      "label": "ToggleOutputArgumentsCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": null,
+      "description": null
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.shared:3.1.1#ToggleInoutputArgumentsCharacteristic",
+      "label": "ToggleInoutputArgumentsCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": null,
+      "description": null
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.shared:3.1.1#ToggleResult",
+      "label": "ToggleResult",
+      "kind": "Entity",
+      "preferredName": null,
+      "description": null
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.shared:3.1.1#ToggleOutputArguments",
+      "label": "ToggleOutputArguments",
+      "kind": "Entity",
+      "preferredName": null,
+      "description": null
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.shared:3.1.1#ToggleInoutputArguments",
+      "label": "ToggleInoutputArguments",
+      "kind": "Entity",
+      "preferredName": null,
+      "description": null
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.shared:3.1.1#contentType",
+      "label": "contentType",
+      "kind": "Property",
+      "preferredName": "content type",
+      "description": "Content type of the content of the file or blob.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "MimeType",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.2.0",
+          "target_source": "unknown"
+        }
+      ]
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.shared:3.1.1#externalSubjectId",
+      "label": "externalSubjectId",
+      "kind": "Property",
+      "preferredName": "external subject ID",
+      "description": "The unique ID of the (external) subject the specific asset ID value belongs to or has meaning to."
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.shared:3.1.1#languages",
+      "label": "languages",
+      "kind": "Property",
+      "preferredName": null,
+      "description": null
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.shared:3.1.1#LanguageSetTrait",
+      "label": "LanguageSetTrait",
+      "kind": "Characteristic",
+      "preferredName": null,
+      "description": null
+    },
+    {
+      "id": "urn:samm:io.admin-shell.idta.shared:3.1.1#LanguageSet",
+      "label": "LanguageSet",
+      "kind": "Characteristic",
+      "preferredName": null,
+      "description": null,
+      "external_refs": [
+        {
+          "predicate": "elementCharacteristic",
+          "target_local": "Locale",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.2.0",
+          "target_source": "unknown"
+        }
+      ]
+    }
+  ],
+  "links": [
+    {
+      "source": "urn:samm:io.admin-shell.idta.shared:3.1.1#AasAnnotatedRelationshipElementWithAnnotationsType",
+      "target": "urn:samm:io.admin-shell.idta.shared:3.1.1#annotations",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.shared:3.1.1#BasicEventElementEntity",
+      "target": "urn:samm:io.admin-shell.idta.shared:3.1.1#observed",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.shared:3.1.1#BasicEventElementType",
+      "target": "urn:samm:io.admin-shell.idta.shared:3.1.1#BasicEventElementEntity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.shared:3.1.1#BlobWithContentTypeEntity",
+      "target": "urn:samm:io.admin-shell.idta.shared:3.1.1#blobValue",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.shared:3.1.1#blobValue",
+      "target": "urn:samm:io.admin-shell.idta.shared:3.1.1#BlobType",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.shared:3.1.1#BlobWithContentType",
+      "target": "urn:samm:io.admin-shell.idta.shared:3.1.1#BlobWithContentTypeEntity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.shared:3.1.1#documentIdentifier",
+      "target": "urn:samm:io.admin-shell.idta.shared:3.1.1#DocumentIdentifier",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.shared:3.1.1#DocumentIdentifierSetTrait",
+      "target": "urn:samm:io.admin-shell.idta.shared:3.1.1#DocumentIdentifier",
+      "label": "baseCharacteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.shared:3.1.1#DocumentIdentifierSet",
+      "target": "urn:samm:io.admin-shell.idta.shared:3.1.1#DocumentIdentifierSetTrait",
+      "label": "elementCharacteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.shared:3.1.1#AasEntityWithStatementsType",
+      "target": "urn:samm:io.admin-shell.idta.shared:3.1.1#statements",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.shared:3.1.1#AasEntityType",
+      "target": "urn:samm:io.admin-shell.idta.shared:3.1.1#specificAssetIds",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.shared:3.1.1#AasEntityType",
+      "target": "urn:samm:io.admin-shell.idta.shared:3.1.1#globalAssetId",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.shared:3.1.1#AasEntityType",
+      "target": "urn:samm:io.admin-shell.idta.shared:3.1.1#entityType",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.shared:3.1.1#specificAssetIds",
+      "target": "urn:samm:io.admin-shell.idta.shared:3.1.1#SpecificAssetIdSet",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.shared:3.1.1#entityType",
+      "target": "urn:samm:io.admin-shell.idta.shared:3.1.1#EntityType",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.shared:3.1.1#AasEntityCharacteristic",
+      "target": "urn:samm:io.admin-shell.idta.shared:3.1.1#AasEntityType",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.shared:3.1.1#ResourceWithContentType",
+      "target": "urn:samm:io.admin-shell.idta.shared:3.1.1#resourceValue",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.shared:3.1.1#FileWithContentType",
+      "target": "urn:samm:io.admin-shell.idta.shared:3.1.1#ResourceWithContentType",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.shared:3.1.1#Marking",
+      "target": "urn:samm:io.admin-shell.idta.shared:3.1.1#markingName",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.shared:3.1.1#Marking",
+      "target": "urn:samm:io.admin-shell.idta.shared:3.1.1#designationOfCertificateOrApproval",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.shared:3.1.1#Marking",
+      "target": "urn:samm:io.admin-shell.idta.shared:3.1.1#issueDate",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.shared:3.1.1#Marking",
+      "target": "urn:samm:io.admin-shell.idta.shared:3.1.1#expiryDate",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.shared:3.1.1#Marking",
+      "target": "urn:samm:io.admin-shell.idta.shared:3.1.1#markingFile",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.shared:3.1.1#Marking",
+      "target": "urn:samm:io.admin-shell.idta.shared:3.1.1#markingAdditionalText",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.shared:3.1.1#expiryDate",
+      "target": "urn:samm:io.admin-shell.idta.shared:3.1.1#Date",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.shared:3.1.1#issueDate",
+      "target": "urn:samm:io.admin-shell.idta.shared:3.1.1#Date",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.shared:3.1.1#Markings",
+      "target": "urn:samm:io.admin-shell.idta.shared:3.1.1#Marking",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.shared:3.1.1#OperationResultValueOnly",
+      "target": "urn:samm:io.admin-shell.idta.shared:3.1.1#inoutputArguments",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.shared:3.1.1#OperationResultValueOnly",
+      "target": "urn:samm:io.admin-shell.idta.shared:3.1.1#outputArguments",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.shared:3.1.1#BaseOperationResult",
+      "target": "urn:samm:io.admin-shell.idta.shared:3.1.1#executionState",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.shared:3.1.1#BaseOperationResult",
+      "target": "urn:samm:io.admin-shell.idta.shared:3.1.1#success",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.shared:3.1.1#Result",
+      "target": "urn:samm:io.admin-shell.idta.shared:3.1.1#messages",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.shared:3.1.1#Message",
+      "target": "urn:samm:io.admin-shell.idta.shared:3.1.1#messageCode",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.shared:3.1.1#Message",
+      "target": "urn:samm:io.admin-shell.idta.shared:3.1.1#executionState",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.shared:3.1.1#Message",
+      "target": "urn:samm:io.admin-shell.idta.shared:3.1.1#correlationId",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.shared:3.1.1#Message",
+      "target": "urn:samm:io.admin-shell.idta.shared:3.1.1#messageType",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.shared:3.1.1#Message",
+      "target": "urn:samm:io.admin-shell.idta.shared:3.1.1#messageText",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.shared:3.1.1#Message",
+      "target": "urn:samm:io.admin-shell.idta.shared:3.1.1#timestamp",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.shared:3.1.1#RangeFloatType",
+      "target": "urn:samm:io.admin-shell.idta.shared:3.1.1#rangeFloatMin",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.shared:3.1.1#RangeFloatType",
+      "target": "urn:samm:io.admin-shell.idta.shared:3.1.1#rangeFloatMax",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.shared:3.1.1#RangeFloatTypeCharacteristic",
+      "target": "urn:samm:io.admin-shell.idta.shared:3.1.1#RangeFloatType",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.shared:3.1.1#ReferenceEntity",
+      "target": "urn:samm:io.admin-shell.idta.shared:3.1.1#keys",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.shared:3.1.1#ReferenceEntity",
+      "target": "urn:samm:io.admin-shell.idta.shared:3.1.1#type",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.shared:3.1.1#KeyEntity",
+      "target": "urn:samm:io.admin-shell.idta.shared:3.1.1#key",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.shared:3.1.1#KeyEntity",
+      "target": "urn:samm:io.admin-shell.idta.shared:3.1.1#keyValue",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.shared:3.1.1#ModelReferenceEntity",
+      "target": "urn:samm:io.admin-shell.idta.shared:3.1.1#modelReferenceKeys",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.shared:3.1.1#ModelReferenceEntity",
+      "target": "urn:samm:io.admin-shell.idta.shared:3.1.1#modelReferenceType",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.shared:3.1.1#ModelReferenceKeyEntity",
+      "target": "urn:samm:io.admin-shell.idta.shared:3.1.1#ModelReferenceKey",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.shared:3.1.1#ModelReferenceKeyEntity",
+      "target": "urn:samm:io.admin-shell.idta.shared:3.1.1#ModelReferenceKeyValue",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.shared:3.1.1#ExternalReferenceEntity",
+      "target": "urn:samm:io.admin-shell.idta.shared:3.1.1#KeysExternalReference",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.shared:3.1.1#ExternalReferenceEntity",
+      "target": "urn:samm:io.admin-shell.idta.shared:3.1.1#TypeExternalReference",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.shared:3.1.1#ExternalReferenceKeyEntity",
+      "target": "urn:samm:io.admin-shell.idta.shared:3.1.1#ExternalReferenceKey",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.shared:3.1.1#ExternalReferenceKeyEntity",
+      "target": "urn:samm:io.admin-shell.idta.shared:3.1.1#ExternalReferenceKeyValue",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.shared:3.1.1#keys",
+      "target": "urn:samm:io.admin-shell.idta.shared:3.1.1#SetOfKeys",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.shared:3.1.1#type",
+      "target": "urn:samm:io.admin-shell.idta.shared:3.1.1#KeyReferenceTypesEnum",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.shared:3.1.1#key",
+      "target": "urn:samm:io.admin-shell.idta.shared:3.1.1#ReferenceKeyEnum",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.shared:3.1.1#modelReferenceKeys",
+      "target": "urn:samm:io.admin-shell.idta.shared:3.1.1#ModelReferenceSetOfKeys",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.shared:3.1.1#modelReferenceType",
+      "target": "urn:samm:io.admin-shell.idta.shared:3.1.1#KeyModelReferenceTypesEnum",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.shared:3.1.1#ModelReferenceKey",
+      "target": "urn:samm:io.admin-shell.idta.shared:3.1.1#ModelReferenceKeyEnum",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.shared:3.1.1#KeysExternalReference",
+      "target": "urn:samm:io.admin-shell.idta.shared:3.1.1#ExternalReferenceSetOfKeys",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.shared:3.1.1#TypeExternalReference",
+      "target": "urn:samm:io.admin-shell.idta.shared:3.1.1#KeyExternalReferenceTypesEnum",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.shared:3.1.1#ExternalReferenceKey",
+      "target": "urn:samm:io.admin-shell.idta.shared:3.1.1#ExternalReferenceKeyEnum",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.shared:3.1.1#ReferenceType",
+      "target": "urn:samm:io.admin-shell.idta.shared:3.1.1#ReferenceEntity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.shared:3.1.1#SetOfKeys",
+      "target": "urn:samm:io.admin-shell.idta.shared:3.1.1#KeyEntity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.shared:3.1.1#ModelReferenceType",
+      "target": "urn:samm:io.admin-shell.idta.shared:3.1.1#ModelReferenceEntity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.shared:3.1.1#ModelReferenceSetOfKeys",
+      "target": "urn:samm:io.admin-shell.idta.shared:3.1.1#ModelReferenceKeyEntity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.shared:3.1.1#ExternalReferenceType",
+      "target": "urn:samm:io.admin-shell.idta.shared:3.1.1#ExternalReferenceEntity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.shared:3.1.1#ExternalReferenceSetOfKeys",
+      "target": "urn:samm:io.admin-shell.idta.shared:3.1.1#ExternalReferenceKeyEntity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.shared:3.1.1#RelationshipElementEntity",
+      "target": "urn:samm:io.admin-shell.idta.shared:3.1.1#first",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.shared:3.1.1#RelationshipElementEntity",
+      "target": "urn:samm:io.admin-shell.idta.shared:3.1.1#second",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.shared:3.1.1#RelationshipElementType",
+      "target": "urn:samm:io.admin-shell.idta.shared:3.1.1#RelationshipElementEntity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.shared:3.1.1#SpecificAssetId",
+      "target": "urn:samm:io.admin-shell.idta.shared:3.1.1#specificAssetIdValue",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.shared:3.1.1#SpecificAssetId",
+      "target": "urn:samm:io.admin-shell.idta.shared:3.1.1#specificAssetIdName",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.shared:3.1.1#TestAspect",
+      "target": "urn:samm:io.admin-shell.idta.shared:3.1.1#example4Markings",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.shared:3.1.1#TestAspect",
+      "target": "urn:samm:io.admin-shell.idta.shared:3.1.1#example4specificAssetId",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.shared:3.1.1#TestAspect",
+      "target": "urn:samm:io.admin-shell.idta.shared:3.1.1#example4documentIdentifierSet",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.shared:3.1.1#ValueOnlyExampleAspect",
+      "target": "urn:samm:io.admin-shell.idta.shared:3.1.1#valueOnly4MultiLanguageProperty",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.shared:3.1.1#ValueOnlyExampleAspect",
+      "target": "urn:samm:io.admin-shell.idta.shared:3.1.1#valueOnly4File",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.shared:3.1.1#ValueOnlyExampleAspect",
+      "target": "urn:samm:io.admin-shell.idta.shared:3.1.1#valueOnly4Reference",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.shared:3.1.1#ValueOnlyExampleAspect",
+      "target": "urn:samm:io.admin-shell.idta.shared:3.1.1#valueOnly4ModelReference",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.shared:3.1.1#ValueOnlyExampleAspect",
+      "target": "urn:samm:io.admin-shell.idta.shared:3.1.1#valueOnly4ExternalReference",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.shared:3.1.1#ValueOnlyExampleAspect",
+      "target": "urn:samm:io.admin-shell.idta.shared:3.1.1#valueOnly4RelationshipElement",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.shared:3.1.1#ValueOnlyExampleAspect",
+      "target": "urn:samm:io.admin-shell.idta.shared:3.1.1#valueOnly4RelationshipElementWithAnnotations",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.shared:3.1.1#ValueOnlyExampleAspect",
+      "target": "urn:samm:io.admin-shell.idta.shared:3.1.1#valueOnly4Entity",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.shared:3.1.1#ValueOnlyExampleAspect",
+      "target": "urn:samm:io.admin-shell.idta.shared:3.1.1#valueOnly4EntityWithStatements",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.shared:3.1.1#ValueOnlyExampleAspect",
+      "target": "urn:samm:io.admin-shell.idta.shared:3.1.1#valueOnly4Range",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.shared:3.1.1#ValueOnlyExampleAspect",
+      "target": "urn:samm:io.admin-shell.idta.shared:3.1.1#valueOnly4BasicEventElement",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.shared:3.1.1#ValueOnly4EntityWithStatements",
+      "target": "urn:samm:io.admin-shell.idta.shared:3.1.1#exampleStatements",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.shared:3.1.1#ExampleStatements",
+      "target": "urn:samm:io.admin-shell.idta.shared:3.1.1#valueOnly4MultiLanguageProperty",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.shared:3.1.1#ValueOnly4RelationshipElementWithAnnotations",
+      "target": "urn:samm:io.admin-shell.idta.shared:3.1.1#exampleAnnotations",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.shared:3.1.1#ExampleAnnotations",
+      "target": "urn:samm:io.admin-shell.idta.shared:3.1.1#valueOnly4MultiLanguageProperty",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.shared:3.1.1#valueOnly4EntityWithStatements",
+      "target": "urn:samm:io.admin-shell.idta.shared:3.1.1#valueOnly4EntityWithStatementsCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.shared:3.1.1#exampleStatements",
+      "target": "urn:samm:io.admin-shell.idta.shared:3.1.1#ExampleStatementsCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.shared:3.1.1#valueOnly4RelationshipElementWithAnnotations",
+      "target": "urn:samm:io.admin-shell.idta.shared:3.1.1#valueOnly4RelationshipElementWithAnnotationsCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.shared:3.1.1#exampleAnnotations",
+      "target": "urn:samm:io.admin-shell.idta.shared:3.1.1#ExampleAnnotationsCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.shared:3.1.1#valueOnly4EntityWithStatementsCharacteristic",
+      "target": "urn:samm:io.admin-shell.idta.shared:3.1.1#ValueOnly4EntityWithStatements",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.shared:3.1.1#ExampleStatementsCharacteristic",
+      "target": "urn:samm:io.admin-shell.idta.shared:3.1.1#ExampleStatements",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.shared:3.1.1#valueOnly4RelationshipElementWithAnnotationsCharacteristic",
+      "target": "urn:samm:io.admin-shell.idta.shared:3.1.1#ValueOnly4RelationshipElementWithAnnotations",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.shared:3.1.1#ExampleAnnotationsCharacteristic",
+      "target": "urn:samm:io.admin-shell.idta.shared:3.1.1#ExampleAnnotations",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.shared:3.1.1#ValueOnlyOperationExampleAspect",
+      "target": "urn:samm:io.admin-shell.idta.shared:3.1.1#inArg",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.shared:3.1.1#ValueOnlyOperationExampleAspect",
+      "target": "urn:samm:io.admin-shell.idta.shared:3.1.1#inoutArg",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.shared:3.1.1#ValueOnlyOperationExampleAspect",
+      "target": "urn:samm:io.admin-shell.idta.shared:3.1.1#toggleResult",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.shared:3.1.1#ToggleOutputArguments",
+      "target": "urn:samm:io.admin-shell.idta.shared:3.1.1#outArg",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.shared:3.1.1#ToggleInoutputArguments",
+      "target": "urn:samm:io.admin-shell.idta.shared:3.1.1#resultInoutArg",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.shared:3.1.1#toggleResult",
+      "target": "urn:samm:io.admin-shell.idta.shared:3.1.1#ToggleResultCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.shared:3.1.1#ToggleResultCharacteristic",
+      "target": "urn:samm:io.admin-shell.idta.shared:3.1.1#ToggleResult",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.shared:3.1.1#ToggleOutputArgumentsCharacteristic",
+      "target": "urn:samm:io.admin-shell.idta.shared:3.1.1#ToggleOutputArguments",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.shared:3.1.1#ToggleInoutputArgumentsCharacteristic",
+      "target": "urn:samm:io.admin-shell.idta.shared:3.1.1#ToggleInoutputArguments",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.shared:3.1.1#languages",
+      "target": "urn:samm:io.admin-shell.idta.shared:3.1.1#LanguageSetTrait",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.shared:3.1.1#LanguageSetTrait",
+      "target": "urn:samm:io.admin-shell.idta.shared:3.1.1#LanguageSet",
+      "label": "baseCharacteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.shared:3.1.1#observed",
+      "target": "urn:samm:io.admin-shell.idta.shared:3.1.1#ModelReferenceType",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.shared:3.1.1#BlobWithContentTypeEntity",
+      "target": "urn:samm:io.admin-shell.idta.shared:3.1.1#contentType",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.shared:3.1.1#DocumentIdentifierSetTrait",
+      "target": "urn:samm:io.admin-shell.idta.shared:3.1.1#CardinalityOneToMany",
+      "label": "constraint",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.shared:3.1.1#SpecificAssetIdSet",
+      "target": "urn:samm:io.admin-shell.idta.shared:3.1.1#SpecificAssetId",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.shared:3.1.1#ResourceWithContentType",
+      "target": "urn:samm:io.admin-shell.idta.shared:3.1.1#contentType",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.shared:3.1.1#markingFile",
+      "target": "urn:samm:io.admin-shell.idta.shared:3.1.1#FileWithContentType",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.shared:3.1.1#first",
+      "target": "urn:samm:io.admin-shell.idta.shared:3.1.1#ReferenceType",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.shared:3.1.1#second",
+      "target": "urn:samm:io.admin-shell.idta.shared:3.1.1#ReferenceType",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.shared:3.1.1#SpecificAssetId",
+      "target": "urn:samm:io.admin-shell.idta.shared:3.1.1#externalSubjectId",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.shared:3.1.1#TestAspect",
+      "target": "urn:samm:io.admin-shell.idta.shared:3.1.1#languages",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.shared:3.1.1#TestAspect",
+      "target": "urn:samm:io.admin-shell.idta.shared:3.1.1#externalSubjectId",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.shared:3.1.1#example4Markings",
+      "target": "urn:samm:io.admin-shell.idta.shared:3.1.1#Markings",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.shared:3.1.1#example4documentIdentifierSet",
+      "target": "urn:samm:io.admin-shell.idta.shared:3.1.1#DocumentIdentifierSet",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.shared:3.1.1#valueOnly4MultiLanguageProperty",
+      "target": "urn:samm:io.admin-shell.idta.shared:3.1.1#MultiLanguageTexts",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.shared:3.1.1#valueOnly4File",
+      "target": "urn:samm:io.admin-shell.idta.shared:3.1.1#FileWithContentType",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.shared:3.1.1#valueOnly4Reference",
+      "target": "urn:samm:io.admin-shell.idta.shared:3.1.1#ReferenceType",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.shared:3.1.1#valueOnly4ModelReference",
+      "target": "urn:samm:io.admin-shell.idta.shared:3.1.1#ModelReferenceType",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.shared:3.1.1#valueOnly4ExternalReference",
+      "target": "urn:samm:io.admin-shell.idta.shared:3.1.1#ExternalReferenceType",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.shared:3.1.1#valueOnly4RelationshipElement",
+      "target": "urn:samm:io.admin-shell.idta.shared:3.1.1#RelationshipElementType",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.shared:3.1.1#valueOnly4Entity",
+      "target": "urn:samm:io.admin-shell.idta.shared:3.1.1#AasEntityCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.shared:3.1.1#valueOnly4Range",
+      "target": "urn:samm:io.admin-shell.idta.shared:3.1.1#RangeFloatTypeCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.shared:3.1.1#valueOnly4BasicEventElement",
+      "target": "urn:samm:io.admin-shell.idta.shared:3.1.1#BasicEventElementType",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.shared:3.1.1#externalSubjectId",
+      "target": "urn:samm:io.admin-shell.idta.shared:3.1.1#ExternalReferenceType",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.admin-shell.idta.shared:3.1.1#LanguageSetTrait",
+      "target": "urn:samm:io.admin-shell.idta.shared:3.1.1#CardinalityOneToMany",
+      "label": "constraint",
+      "optional": false
+    }
+  ]
+}

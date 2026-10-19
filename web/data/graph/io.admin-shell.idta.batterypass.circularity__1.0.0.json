@@ -90,41 +90,11 @@
       "description": "Share of renewable material content. A renewable material is a material made of natural resources that can be replenished. \n\nDIN DKE Spec 99100 chapter reference: 6.6.2.11"
     },
     {
-      "id": "urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#nameOfSupplier",
-      "label": "nameOfSupplier",
-      "kind": "Property",
-      "preferredName": "name of supplier",
-      "description": "Name of Supplier",
-      "external_refs": [
-        {
-          "predicate": "characteristic",
-          "target_local": "Text",
-          "target_model": "org.eclipse.esmf.samm:characteristic@2.2.0",
-          "target_source": "unknown"
-        }
-      ]
-    },
-    {
       "id": "urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#addressOfSupplier",
       "label": "addressOfSupplier",
       "kind": "Property",
       "preferredName": "address of supplier",
       "description": "Postal address of supplier for spare parts."
-    },
-    {
-      "id": "urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#supplierWebAddress",
-      "label": "supplierWebAddress",
-      "kind": "Property",
-      "preferredName": "WEB address of supplier",
-      "description": "Web address of supplier for spare parts.",
-      "external_refs": [
-        {
-          "predicate": "characteristic",
-          "target_local": "ResourcePath",
-          "target_model": "org.eclipse.esmf.samm:characteristic@2.2.0",
-          "target_source": "unknown"
-        }
-      ]
     },
     {
       "id": "urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#components",

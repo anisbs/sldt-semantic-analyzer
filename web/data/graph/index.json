@@ -23,6 +23,29 @@
     }
   },
   {
+    "id": "io.admin-shell.idta.batterypass.carbon_footprint__1.0.1",
+    "name": "CarbonFootprintBattery",
+    "model_name": "batterypass.carbon_footprint",
+    "version": "1.0.1",
+    "family": "SAMM",
+    "source": "idta",
+    "status": "release",
+    "meta_model": "SAMM 2.2.0",
+    "n_nodes": 10,
+    "n_links": 9,
+    "n_aspects": 1,
+    "has_aspect": true,
+    "file": "io.admin-shell.idta.batterypass.carbon_footprint__1.0.1.json",
+    "repo_path": "io.admin-shell.idta.batterypass.carbon_footprint/1.0.1",
+    "gen": {
+      "base": "io.admin-shell.idta.batterypass.carbon_footprint/1.0.1/gen/CarbonFootprintBattery",
+      "html": true,
+      "schema": true,
+      "payload": true,
+      "openapi": false
+    }
+  },
+  {
     "id": "io.admin-shell.idta.batterypass.circularity__1.0.0",
     "name": "Circularity",
     "model_name": "batterypass.circularity",
@@ -31,7 +54,7 @@
     "source": "idta",
     "status": "release",
     "meta_model": "SAMM 2.2.0",
-    "n_nodes": 43,
+    "n_nodes": 41,
     "n_links": 41,
     "n_aspects": 1,
     "has_aspect": true,
@@ -39,6 +62,29 @@
     "repo_path": "io.admin-shell.idta.batterypass.circularity/1.0.0",
     "gen": {
       "base": "io.admin-shell.idta.batterypass.circularity/1.0.0/gen/CircularityBattery",
+      "html": true,
+      "schema": true,
+      "payload": true,
+      "openapi": false
+    }
+  },
+  {
+    "id": "io.admin-shell.idta.batterypass.circularity__1.0.1",
+    "name": "Circularity",
+    "model_name": "batterypass.circularity",
+    "version": "1.0.1",
+    "family": "SAMM",
+    "source": "idta",
+    "status": "release",
+    "meta_model": "SAMM 2.2.0",
+    "n_nodes": 41,
+    "n_links": 41,
+    "n_aspects": 1,
+    "has_aspect": true,
+    "file": "io.admin-shell.idta.batterypass.circularity__1.0.1.json",
+    "repo_path": "io.admin-shell.idta.batterypass.circularity/1.0.1",
+    "gen": {
+      "base": "io.admin-shell.idta.batterypass.circularity/1.0.1/gen/CircularityBattery",
       "html": true,
       "schema": true,
       "payload": true,
@@ -69,6 +115,47 @@
     }
   },
   {
+    "id": "io.admin-shell.idta.batterypass.digital_nameplate__1.0.1",
+    "name": "io.admin-shell.idta.batterypass.digital_nameplate__1.0.1",
+    "model_name": "batterypass.digital_nameplate",
+    "version": "1.0.1",
+    "family": "SAMM",
+    "source": "idta",
+    "status": "release",
+    "meta_model": "SAMM 2.2.0",
+    "n_nodes": 2,
+    "n_links": 0,
+    "n_aspects": 0,
+    "has_aspect": false,
+    "file": "io.admin-shell.idta.batterypass.digital_nameplate__1.0.1.json",
+    "repo_path": "io.admin-shell.idta.batterypass.digital_nameplate/1.0.1",
+    "gen": {
+      "base": "io.admin-shell.idta.batterypass.digital_nameplate/1.0.1/gen/NameplateBattery",
+      "html": true,
+      "schema": true,
+      "payload": true,
+      "openapi": false,
+      "aspects": [
+        {
+          "name": "NameplateBattery",
+          "base": "io.admin-shell.idta.batterypass.digital_nameplate/1.0.1/gen/NameplateBattery",
+          "html": true,
+          "schema": true,
+          "payload": true,
+          "openapi": false
+        },
+        {
+          "name": "NameplateBattery_1.0.0",
+          "base": "io.admin-shell.idta.batterypass.digital_nameplate/1.0.1/gen/NameplateBattery_1.0.0",
+          "html": true,
+          "schema": true,
+          "payload": true,
+          "openapi": false
+        }
+      ]
+    }
+  },
+  {
     "id": "io.admin-shell.idta.batterypass.handover_documentation__1.0.0",
     "name": "HandoverDocumentation",
     "model_name": "batterypass.handover_documentation",
@@ -85,6 +172,29 @@
     "repo_path": "io.admin-shell.idta.batterypass.handover_documentation/1.0.0",
     "gen": {
       "base": "io.admin-shell.idta.batterypass.handover_documentation/1.0.0/gen/HandoverDocumentationBattery",
+      "html": true,
+      "schema": true,
+      "payload": true,
+      "openapi": false
+    }
+  },
+  {
+    "id": "io.admin-shell.idta.batterypass.handover_documentation__1.0.1",
+    "name": "HandoverDocumentation",
+    "model_name": "batterypass.handover_documentation",
+    "version": "1.0.1",
+    "family": "SAMM",
+    "source": "idta",
+    "status": "release",
+    "meta_model": "SAMM 2.2.0",
+    "n_nodes": 8,
+    "n_links": 7,
+    "n_aspects": 1,
+    "has_aspect": true,
+    "file": "io.admin-shell.idta.batterypass.handover_documentation__1.0.1.json",
+    "repo_path": "io.admin-shell.idta.batterypass.handover_documentation/1.0.1",
+    "gen": {
+      "base": "io.admin-shell.idta.batterypass.handover_documentation/1.0.1/gen/HandoverDocumentationBattery",
       "html": true,
       "schema": true,
       "payload": true,
@@ -230,6 +340,29 @@
     }
   },
   {
+    "id": "io.admin-shell.idta.batterypass.product_condition__1.0.3",
+    "name": "ProductCondition",
+    "model_name": "batterypass.product_condition",
+    "version": "1.0.3",
+    "family": "SAMM",
+    "source": "idta",
+    "status": "release",
+    "meta_model": "SAMM 2.2.0",
+    "n_nodes": 82,
+    "n_links": 81,
+    "n_aspects": 1,
+    "has_aspect": true,
+    "file": "io.admin-shell.idta.batterypass.product_condition__1.0.3.json",
+    "repo_path": "io.admin-shell.idta.batterypass.product_condition/1.0.3",
+    "gen": {
+      "base": "io.admin-shell.idta.batterypass.product_condition/1.0.3/gen/ProductConditionBattery",
+      "html": true,
+      "schema": true,
+      "payload": true,
+      "openapi": false
+    }
+  },
+  {
     "id": "io.admin-shell.idta.batterypass.technical_data__1.0.0",
     "name": "TechnicalData",
     "model_name": "batterypass.technical_data",
@@ -299,6 +432,29 @@
     }
   },
   {
+    "id": "io.admin-shell.idta.batterypass.technical_data__1.0.3",
+    "name": "TechnicalData",
+    "model_name": "batterypass.technical_data",
+    "version": "1.0.3",
+    "family": "SAMM",
+    "source": "idta",
+    "status": "released",
+    "meta_model": "SAMM 2.2.0",
+    "n_nodes": 87,
+    "n_links": 94,
+    "n_aspects": 1,
+    "has_aspect": true,
+    "file": "io.admin-shell.idta.batterypass.technical_data__1.0.3.json",
+    "repo_path": "io.admin-shell.idta.batterypass.technical_data/1.0.3",
+    "gen": {
+      "base": "io.admin-shell.idta.batterypass.technical_data/1.0.3/gen/TechnicalDataBattery",
+      "html": true,
+      "schema": true,
+      "payload": true,
+      "openapi": false
+    }
+  },
+  {
     "id": "io.admin-shell.idta.carbon_footprint__1.0.0",
     "name": "CarbonFootprint",
     "model_name": "carbon_footprint",
@@ -315,6 +471,29 @@
     "repo_path": "io.admin-shell.idta.carbon_footprint/1.0.0",
     "gen": {
       "base": "io.admin-shell.idta.carbon_footprint/1.0.0/gen/CarbonFootprint",
+      "html": true,
+      "schema": true,
+      "payload": true,
+      "openapi": false
+    }
+  },
+  {
+    "id": "io.admin-shell.idta.carbon_footprint__1.0.1",
+    "name": "CarbonFootprint",
+    "model_name": "carbon_footprint",
+    "version": "1.0.1",
+    "family": "SAMM",
+    "source": "idta",
+    "status": "release",
+    "meta_model": "SAMM 2.2.0",
+    "n_nodes": 40,
+    "n_links": 40,
+    "n_aspects": 1,
+    "has_aspect": true,
+    "file": "io.admin-shell.idta.carbon_footprint__1.0.1.json",
+    "repo_path": "io.admin-shell.idta.carbon_footprint/1.0.1",
+    "gen": {
+      "base": "io.admin-shell.idta.carbon_footprint/1.0.1/gen/CarbonFootprint",
       "html": true,
       "schema": true,
       "payload": true,
@@ -345,6 +524,29 @@
     }
   },
   {
+    "id": "io.admin-shell.idta.contact_information__1.0.1",
+    "name": "ContactInformations",
+    "model_name": "contact_information",
+    "version": "1.0.1",
+    "family": "SAMM",
+    "source": "idta",
+    "status": "release",
+    "meta_model": "SAMM 2.2.0",
+    "n_nodes": 53,
+    "n_links": 47,
+    "n_aspects": 1,
+    "has_aspect": true,
+    "file": "io.admin-shell.idta.contact_information__1.0.1.json",
+    "repo_path": "io.admin-shell.idta.contact_information/1.0.1",
+    "gen": {
+      "base": "io.admin-shell.idta.contact_information/1.0.1/gen/ContactInformations",
+      "html": true,
+      "schema": true,
+      "payload": true,
+      "openapi": false
+    }
+  },
+  {
     "id": "io.admin-shell.idta.digital_nameplate__3.0.0",
     "name": "Nameplate",
     "model_name": "digital_nameplate",
@@ -368,6 +570,29 @@
     }
   },
   {
+    "id": "io.admin-shell.idta.digital_nameplate__3.0.1",
+    "name": "Nameplate",
+    "model_name": "digital_nameplate",
+    "version": "3.0.1",
+    "family": "SAMM",
+    "source": "idta",
+    "status": "release",
+    "meta_model": "SAMM 2.2.0",
+    "n_nodes": 24,
+    "n_links": 23,
+    "n_aspects": 1,
+    "has_aspect": true,
+    "file": "io.admin-shell.idta.digital_nameplate__3.0.1.json",
+    "repo_path": "io.admin-shell.idta.digital_nameplate/3.0.1",
+    "gen": {
+      "base": "io.admin-shell.idta.digital_nameplate/3.0.1/gen/Nameplate",
+      "html": true,
+      "schema": true,
+      "payload": true,
+      "openapi": false
+    }
+  },
+  {
     "id": "io.admin-shell.idta.dpp.dpp_metadata__1.0.0",
     "name": "DppMetadata",
     "model_name": "dpp.dpp_metadata",
@@ -384,6 +609,29 @@
     "repo_path": "io.admin-shell.idta.dpp.dpp_metadata/1.0.0",
     "gen": {
       "base": "io.admin-shell.idta.dpp.dpp_metadata/1.0.0/gen/DppMetadata",
+      "html": true,
+      "schema": true,
+      "payload": true,
+      "openapi": false
+    }
+  },
+  {
+    "id": "io.admin-shell.idta.dpp.dpp_metadata__1.0.1",
+    "name": "DppMetadata",
+    "model_name": "dpp.dpp_metadata",
+    "version": "1.0.1",
+    "family": "SAMM",
+    "source": "idta",
+    "status": "release",
+    "meta_model": "SAMM 2.2.0",
+    "n_nodes": 13,
+    "n_links": 12,
+    "n_aspects": 1,
+    "has_aspect": true,
+    "file": "io.admin-shell.idta.dpp.dpp_metadata__1.0.1.json",
+    "repo_path": "io.admin-shell.idta.dpp.dpp_metadata/1.0.1",
+    "gen": {
+      "base": "io.admin-shell.idta.dpp.dpp_metadata/1.0.1/gen/DppMetadata",
       "html": true,
       "schema": true,
       "payload": true,
@@ -455,6 +703,29 @@
     }
   },
   {
+    "id": "io.admin-shell.idta.generic.technical_data__2.0.1",
+    "name": "TechnicalData",
+    "model_name": "generic.technical_data",
+    "version": "2.0.1",
+    "family": "SAMM",
+    "source": "idta",
+    "status": "release",
+    "meta_model": "SAMM 2.2.0",
+    "n_nodes": 35,
+    "n_links": 34,
+    "n_aspects": 1,
+    "has_aspect": true,
+    "file": "io.admin-shell.idta.generic.technical_data__2.0.1.json",
+    "repo_path": "io.admin-shell.idta.generic.technical_data/2.0.1",
+    "gen": {
+      "base": "io.admin-shell.idta.generic.technical_data/2.0.1/gen/TechnicalData",
+      "html": false,
+      "schema": false,
+      "payload": false,
+      "openapi": false
+    }
+  },
+  {
     "id": "io.admin-shell.idta.handover_documentation__2.0.0",
     "name": "HandoverDocumentation",
     "model_name": "handover_documentation",
@@ -471,6 +742,29 @@
     "repo_path": "io.admin-shell.idta.handover_documentation/2.0.0",
     "gen": {
       "base": "io.admin-shell.idta.handover_documentation/2.0.0/gen/HandoverDocumentation",
+      "html": true,
+      "schema": true,
+      "payload": true,
+      "openapi": false
+    }
+  },
+  {
+    "id": "io.admin-shell.idta.handover_documentation__2.0.1",
+    "name": "HandoverDocumentation",
+    "model_name": "handover_documentation",
+    "version": "2.0.1",
+    "family": "SAMM",
+    "source": "idta",
+    "status": "release",
+    "meta_model": "SAMM 2.2.0",
+    "n_nodes": 41,
+    "n_links": 43,
+    "n_aspects": 1,
+    "has_aspect": true,
+    "file": "io.admin-shell.idta.handover_documentation__2.0.1.json",
+    "repo_path": "io.admin-shell.idta.handover_documentation/2.0.1",
+    "gen": {
+      "base": "io.admin-shell.idta.handover_documentation/2.0.1/gen/HandoverDocumentation",
       "html": true,
       "schema": true,
       "payload": true,
@@ -524,6 +818,29 @@
           "openapi": false
         }
       ]
+    }
+  },
+  {
+    "id": "io.admin-shell.idta.shared__3.1.1",
+    "name": "TestAspect · ValueOnlyExampleAspect · ValueOnlyOperationExampleAspect",
+    "model_name": "shared",
+    "version": "3.1.1",
+    "family": "SAMM",
+    "source": "idta",
+    "status": "release",
+    "meta_model": "SAMM 2.2.0",
+    "n_nodes": 140,
+    "n_links": 134,
+    "n_aspects": 3,
+    "has_aspect": true,
+    "file": "io.admin-shell.idta.shared__3.1.1.json",
+    "repo_path": "io.admin-shell.idta.shared/3.1.1",
+    "gen": {
+      "base": "io.admin-shell.idta.shared/3.1.1/gen/ValueOnlyExampleAspect",
+      "html": true,
+      "schema": true,
+      "payload": true,
+      "openapi": false
     }
   },
   {
