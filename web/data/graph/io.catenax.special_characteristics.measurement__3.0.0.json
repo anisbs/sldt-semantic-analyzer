@@ -1,0 +1,300 @@
+{
+  "meta": {
+    "namespace": "urn:samm:io.catenax.special_characteristics.measurement:3.0.0#",
+    "meta_model": "SAMM 2.1.0",
+    "model_family": "SAMM",
+    "model_name": "special_characteristics.measurement",
+    "model_version": "3.0.0",
+    "source": "catenax",
+    "status": "release",
+    "release_date": null,
+    "release_notes": "# Changelog\n\nAll notable changes to this model will be documented in this file.\n\n## [3.0.0] 26.09\n\n### Added\n- added optional property _attachmentUrl_ (xsd:anyURI) to the measurement object to reference related artifacts, e.g. images, instead of embedding links in the description text\n- added enumeration _MeasurementTypeEnumeration_ with the values simpleMeasurement, functionalMeasurement and qualitativeMeasurement\n\n### Changed\n- renamed property _manufacturerId_ to _manufacturerBpn_ and changed its characteristic from BpnlTrait to AnyBpnCharacteristic to allow BPNL, BPNS or BPNA\n- updated reference to the shared business partner number model from 2.0.0 to 3.0.0\n- changed property _measurementType_ from optional free text to mandatory, constrained to _MeasurementTypeEnumeration_\n- adapted preferred names and descriptions of a few properties to be more understandable\n\n### Removed\n- removed property _revisionIndex_, as part-instance information is carried by the digital twin and the Industry Core submodels\n- removed properties _localIdentifiers_ and _customerPartId_ (and the reference to io.catenax.serial_part) for the same reason\n\n## [2.0.0] 2025-04-07\n\n### Changed\n- changed current datatype of the property _value_ from float to string\n- adapted description of a few properties to be more understandable\n- adapted the exampleValue of a few properties to be more understandable\n\n## [1.0.0] 2024-12-16\n\n### Added\n\n- added data model for measurement results of special characteristics",
+    "dependencies": [
+      {
+        "name": "shared.business_partner_number",
+        "version": "3.0.0",
+        "family": "SAMM",
+        "source": "catenax"
+      }
+    ],
+    "path": "data/sldt-semantic-models/io.catenax.special_characteristics.measurement/3.0.0/SpecialCharacteristicsMeasurement.ttl"
+  },
+  "nodes": [
+    {
+      "id": "urn:samm:io.catenax.special_characteristics.measurement:3.0.0#SpecialCharacteristicsMeasurement",
+      "label": "SpecialCharacteristicsMeasurement",
+      "kind": "Aspect",
+      "preferredName": "special characteristics measurement",
+      "description": "Special Characteristics are measureable and these measurements are of interest for a consumer who defined these characteristics. The proposal is a data model \"result\" which represents a measurement related to a specific measurement and product. A measurement result is identified by the identification of a characteristic and the product. Identifying part-instance information (local identifiers, customer part id, revision index) is carried by the digital twin and the Industry Core submodels and is therefore not duplicated in this aspect model."
+    },
+    {
+      "id": "urn:samm:io.catenax.special_characteristics.measurement:3.0.0#manufacturerBpn",
+      "label": "manufacturerBpn",
+      "kind": "Property",
+      "preferredName": "Manufacturer Business Partner Number",
+      "description": "Business Partner Number (BPNL, BPNS or BPNA) of the manufacturer of the related product. Kept deliberately, although also available via the digital twin, to enable cross-referencing.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "AnyBpnCharacteristic",
+          "target_model": "shared.business_partner_number@3.0.0",
+          "target_source": "catenax"
+        }
+      ]
+    },
+    {
+      "id": "urn:samm:io.catenax.special_characteristics.measurement:3.0.0#characteristicId",
+      "label": "characteristicId",
+      "kind": "Property",
+      "preferredName": "characteristic identifier",
+      "description": "Identifier of the special characteristic in relation to a specified part.",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
+    },
+    {
+      "id": "urn:samm:io.catenax.special_characteristics.measurement:3.0.0#measurementType",
+      "label": "measurementType",
+      "kind": "Property",
+      "preferredName": "Measurement Type",
+      "description": "The type of the measurement. Constrained to a fixed set of supported measurement types."
+    },
+    {
+      "id": "urn:samm:io.catenax.special_characteristics.measurement:3.0.0#results",
+      "label": "results",
+      "kind": "Property",
+      "preferredName": "measurement results",
+      "description": "List of measurement objects regarding special characteristic of a specific part."
+    },
+    {
+      "id": "urn:samm:io.catenax.special_characteristics.measurement:3.0.0#identifier",
+      "label": "identifier",
+      "kind": "Property",
+      "preferredName": "Identifier",
+      "description": "Identifier of the individual measurement object. ",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
+    },
+    {
+      "id": "urn:samm:io.catenax.special_characteristics.measurement:3.0.0#measurementTimestamp",
+      "label": "measurementTimestamp",
+      "kind": "Property",
+      "preferredName": "Measurement Timestamp",
+      "description": "Timestamp when the measurement was taken",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Timestamp",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
+    },
+    {
+      "id": "urn:samm:io.catenax.special_characteristics.measurement:3.0.0#value",
+      "label": "value",
+      "kind": "Property",
+      "preferredName": "Value",
+      "description": "The actual value of the measurement for special characteristics. NOTE: data type is an open question to be confirmed with BMW (currently xsd:string; examples use numeric values)."
+    },
+    {
+      "id": "urn:samm:io.catenax.special_characteristics.measurement:3.0.0#unit",
+      "label": "unit",
+      "kind": "Property",
+      "preferredName": "Unit",
+      "description": "The unit of the measurement object, expressed via the SAMM / UNECE common unit catalog. ",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "UnitReference",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
+    },
+    {
+      "id": "urn:samm:io.catenax.special_characteristics.measurement:3.0.0#description",
+      "label": "description",
+      "kind": "Property",
+      "preferredName": "Description",
+      "description": "Detailed description of the measurement object. ",
+      "external_refs": [
+        {
+          "predicate": "characteristic",
+          "target_local": "Text",
+          "target_model": "org.eclipse.esmf.samm:characteristic@2.1.0",
+          "target_source": "unknown"
+        }
+      ]
+    },
+    {
+      "id": "urn:samm:io.catenax.special_characteristics.measurement:3.0.0#attachmentUrl",
+      "label": "attachmentUrl",
+      "kind": "Property",
+      "preferredName": "Attachment URL",
+      "description": "Optional reference (URI) to a related artifact, e.g. an image documenting the measurement. Replaces the previous practice of embedding image links inside the description text."
+    },
+    {
+      "id": "urn:samm:io.catenax.special_characteristics.measurement:3.0.0#MeasurementTypeEnumeration",
+      "label": "MeasurementTypeEnumeration",
+      "kind": "Characteristic",
+      "preferredName": "Measurement Type Enumeration",
+      "description": "Enumeration of the supported special characteristic measurement types: simpleMeasurement, functionalMeasurement and qualitativeMeasurement.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
+    },
+    {
+      "id": "urn:samm:io.catenax.special_characteristics.measurement:3.0.0#ResultList",
+      "label": "ResultList",
+      "kind": "Characteristic",
+      "preferredName": "ResultList",
+      "description": "List of result objects"
+    },
+    {
+      "id": "urn:samm:io.catenax.special_characteristics.measurement:3.0.0#MeasurementObject",
+      "label": "MeasurementObject",
+      "kind": "Entity",
+      "preferredName": "Measurement Object",
+      "description": "This Entity represents a generic Measurement Object"
+    },
+    {
+      "id": "urn:samm:io.catenax.special_characteristics.measurement:3.0.0#ValueCharacteristic",
+      "label": "ValueCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Value Characteristic",
+      "description": "The datatype of the measurement value, currently defined as string (open question with BMW). ",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "string",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
+    },
+    {
+      "id": "urn:samm:io.catenax.special_characteristics.measurement:3.0.0#AttachmentUrlCharacteristic",
+      "label": "AttachmentUrlCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": "Attachment URL Characteristic",
+      "description": "A URI referencing an external artifact related to the measurement.",
+      "external_refs": [
+        {
+          "predicate": "dataType",
+          "target_local": "anyURI",
+          "target_model": "",
+          "target_source": "unknown"
+        }
+      ]
+    }
+  ],
+  "links": [
+    {
+      "source": "urn:samm:io.catenax.special_characteristics.measurement:3.0.0#SpecialCharacteristicsMeasurement",
+      "target": "urn:samm:io.catenax.special_characteristics.measurement:3.0.0#manufacturerBpn",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.special_characteristics.measurement:3.0.0#SpecialCharacteristicsMeasurement",
+      "target": "urn:samm:io.catenax.special_characteristics.measurement:3.0.0#characteristicId",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.special_characteristics.measurement:3.0.0#SpecialCharacteristicsMeasurement",
+      "target": "urn:samm:io.catenax.special_characteristics.measurement:3.0.0#measurementType",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.special_characteristics.measurement:3.0.0#SpecialCharacteristicsMeasurement",
+      "target": "urn:samm:io.catenax.special_characteristics.measurement:3.0.0#results",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.special_characteristics.measurement:3.0.0#MeasurementObject",
+      "target": "urn:samm:io.catenax.special_characteristics.measurement:3.0.0#identifier",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.special_characteristics.measurement:3.0.0#MeasurementObject",
+      "target": "urn:samm:io.catenax.special_characteristics.measurement:3.0.0#measurementTimestamp",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.special_characteristics.measurement:3.0.0#MeasurementObject",
+      "target": "urn:samm:io.catenax.special_characteristics.measurement:3.0.0#value",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.special_characteristics.measurement:3.0.0#MeasurementObject",
+      "target": "urn:samm:io.catenax.special_characteristics.measurement:3.0.0#unit",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.special_characteristics.measurement:3.0.0#MeasurementObject",
+      "target": "urn:samm:io.catenax.special_characteristics.measurement:3.0.0#description",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.special_characteristics.measurement:3.0.0#MeasurementObject",
+      "target": "urn:samm:io.catenax.special_characteristics.measurement:3.0.0#attachmentUrl",
+      "label": "properties",
+      "optional": true
+    },
+    {
+      "source": "urn:samm:io.catenax.special_characteristics.measurement:3.0.0#measurementType",
+      "target": "urn:samm:io.catenax.special_characteristics.measurement:3.0.0#MeasurementTypeEnumeration",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.special_characteristics.measurement:3.0.0#results",
+      "target": "urn:samm:io.catenax.special_characteristics.measurement:3.0.0#ResultList",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.special_characteristics.measurement:3.0.0#value",
+      "target": "urn:samm:io.catenax.special_characteristics.measurement:3.0.0#ValueCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.special_characteristics.measurement:3.0.0#attachmentUrl",
+      "target": "urn:samm:io.catenax.special_characteristics.measurement:3.0.0#AttachmentUrlCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.special_characteristics.measurement:3.0.0#ResultList",
+      "target": "urn:samm:io.catenax.special_characteristics.measurement:3.0.0#MeasurementObject",
+      "label": "dataType",
+      "optional": false
+    }
+  ]
+}

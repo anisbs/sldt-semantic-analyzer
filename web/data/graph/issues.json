@@ -16965,7 +16965,7 @@
           "count": 1,
           "detail": [
             {
-              "latest_release": "special_characteristics.measurement@2.0.0"
+              "latest_release": "special_characteristics.measurement@3.0.0"
             }
           ]
         },
@@ -17012,7 +17012,7 @@
       "family": "SAMM",
       "source": "catenax",
       "status": "release",
-      "total": 7,
+      "total": 8,
       "issues": {
         "outdated_dependency": {
           "count": 2,
@@ -17056,6 +17056,14 @@
             }
           ]
         },
+        "older_release_exists": {
+          "count": 1,
+          "detail": [
+            {
+              "latest_release": "special_characteristics.measurement@3.0.0"
+            }
+          ]
+        },
         "meta_model_drift": {
           "count": 1,
           "detail": [
@@ -17069,6 +17077,31 @@
           "count": 1,
           "detail": [
             "2.0.0"
+          ]
+        }
+      }
+    },
+    "special_characteristics.measurement@3.0.0": {
+      "name": "special_characteristics.measurement",
+      "version": "3.0.0",
+      "family": "SAMM",
+      "source": "catenax",
+      "status": "release",
+      "total": 2,
+      "issues": {
+        "meta_model_drift": {
+          "count": 1,
+          "detail": [
+            {
+              "using": "SAMM 2.1.0",
+              "latest": "SAMM 2.2.0"
+            }
+          ]
+        },
+        "missing_release_date": {
+          "count": 1,
+          "detail": [
+            "3.0.0"
           ]
         }
       }
