@@ -1,0 +1,199 @@
+{
+  "meta": {
+    "namespace": "urn:samm:io.catenax.batterypass.component_supplier.technical_data:1.0.0#",
+    "meta_model": "SAMM 2.2.0",
+    "model_family": "SAMM",
+    "model_name": "batterypass.component_supplier.technical_data",
+    "model_version": "1.0.0",
+    "source": "catenax",
+    "status": "release",
+    "release_date": null,
+    "release_notes": "# Changelog\n\nAll notable changes to this model will be documented in this file.\n\n## [1.0.0] 26.09\n\n### Added\n\n- initial version of battery passport supplier model\n\n### Changed\n\nn/a\n\n### Removed",
+    "dependencies": [
+      {
+        "name": "batterypass.technical_data",
+        "version": "1.0.3",
+        "family": "SAMM",
+        "source": "idta"
+      },
+      {
+        "name": "generic.technical_data",
+        "version": "2.0.1",
+        "family": "SAMM",
+        "source": "idta"
+      }
+    ],
+    "path": "data/sldt-semantic-models/io.catenax.battery.component_supplier.technical_data/1.0.0/TechnicalData.ttl"
+  },
+  "nodes": [
+    {
+      "id": "urn:samm:io.catenax.batterypass.component_supplier.technical_data:1.0.0#TechnicalData",
+      "label": "TechnicalData",
+      "kind": "Aspect",
+      "preferredName": null,
+      "description": "Technical data of the asset and associated product classificatons."
+    },
+    {
+      "id": "urn:samm:io.catenax.batterypass.component_supplier.technical_data:1.0.0#generalInformation",
+      "label": "generalInformation",
+      "kind": "Property",
+      "preferredName": "general information",
+      "description": "General information, for example ordering and manufacturer information."
+    },
+    {
+      "id": "urn:samm:io.catenax.batterypass.component_supplier.technical_data:1.0.0#technicalPropertyAreas",
+      "label": "technicalPropertyAreas",
+      "kind": "Property",
+      "preferredName": "battery characteristics",
+      "description": "Individual battery characteristics based on DIN DKE SPEC 99100."
+    },
+    {
+      "id": "urn:samm:io.catenax.batterypass.component_supplier.technical_data:1.0.0#GeneralInformationCharacteristic",
+      "label": "GeneralInformationCharacteristic",
+      "kind": "Characteristic",
+      "preferredName": null,
+      "description": null
+    },
+    {
+      "id": "urn:samm:io.catenax.batterypass.component_supplier.technical_data:1.0.0#TechnicalPropertyAreaSet",
+      "label": "TechnicalPropertyAreaSet",
+      "kind": "Characteristic",
+      "preferredName": null,
+      "description": null
+    },
+    {
+      "id": "urn:samm:io.catenax.batterypass.component_supplier.technical_data:1.0.0#GeneralInformationEntity",
+      "label": "GeneralInformationEntity",
+      "kind": "Entity",
+      "preferredName": null,
+      "description": null,
+      "external_refs": [
+        {
+          "predicate": "properties",
+          "target_local": "manufacturerName",
+          "target_model": "generic.technical_data@2.0.1",
+          "target_source": "idta"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "companyLogo",
+          "target_model": "generic.technical_data@2.0.1",
+          "target_source": "idta"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "manufacturerIdentifier",
+          "target_model": "batterypass.technical_data@1.0.3",
+          "target_source": "idta"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "warrantyInformation",
+          "target_model": "batterypass.technical_data@1.0.3",
+          "target_source": "idta"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "batteryCategory",
+          "target_model": "batterypass.technical_data@1.0.3",
+          "target_source": "idta"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "batteryMass",
+          "target_model": "batterypass.technical_data@1.0.3",
+          "target_source": "idta"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "productImages",
+          "target_model": "generic.technical_data@2.0.1",
+          "target_source": "idta"
+        }
+      ]
+    },
+    {
+      "id": "urn:samm:io.catenax.batterypass.component_supplier.technical_data:1.0.0#TechnicalAttributes",
+      "label": "TechnicalAttributes",
+      "kind": "Entity",
+      "preferredName": null,
+      "description": null,
+      "external_refs": [
+        {
+          "predicate": "properties",
+          "target_local": "capacityEnergyVoltage",
+          "target_model": "batterypass.technical_data@1.0.3",
+          "target_source": "idta"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "roundTripEnergyEfficiency",
+          "target_model": "batterypass.technical_data@1.0.3",
+          "target_source": "idta"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "resistance",
+          "target_model": "batterypass.technical_data@1.0.3",
+          "target_source": "idta"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "powerCapability",
+          "target_model": "batterypass.technical_data@1.0.3",
+          "target_source": "idta"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "temperature",
+          "target_model": "batterypass.technical_data@1.0.3",
+          "target_source": "idta"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "lifetime",
+          "target_model": "batterypass.technical_data@1.0.3",
+          "target_source": "idta"
+        }
+      ]
+    }
+  ],
+  "links": [
+    {
+      "source": "urn:samm:io.catenax.batterypass.component_supplier.technical_data:1.0.0#TechnicalData",
+      "target": "urn:samm:io.catenax.batterypass.component_supplier.technical_data:1.0.0#generalInformation",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.batterypass.component_supplier.technical_data:1.0.0#TechnicalData",
+      "target": "urn:samm:io.catenax.batterypass.component_supplier.technical_data:1.0.0#technicalPropertyAreas",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.batterypass.component_supplier.technical_data:1.0.0#generalInformation",
+      "target": "urn:samm:io.catenax.batterypass.component_supplier.technical_data:1.0.0#GeneralInformationCharacteristic",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.batterypass.component_supplier.technical_data:1.0.0#technicalPropertyAreas",
+      "target": "urn:samm:io.catenax.batterypass.component_supplier.technical_data:1.0.0#TechnicalPropertyAreaSet",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.batterypass.component_supplier.technical_data:1.0.0#GeneralInformationCharacteristic",
+      "target": "urn:samm:io.catenax.batterypass.component_supplier.technical_data:1.0.0#GeneralInformationEntity",
+      "label": "dataType",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.batterypass.component_supplier.technical_data:1.0.0#TechnicalPropertyAreaSet",
+      "target": "urn:samm:io.catenax.batterypass.component_supplier.technical_data:1.0.0#TechnicalAttributes",
+      "label": "dataType",
+      "optional": false
+    }
+  ]
+}

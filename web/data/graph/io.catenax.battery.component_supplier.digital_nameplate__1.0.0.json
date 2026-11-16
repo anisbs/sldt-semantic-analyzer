@@ -1,0 +1,118 @@
+{
+  "meta": {
+    "namespace": "urn:samm:io.catenax.batterypass.component_supplier.digital_nameplate:1.0.0#",
+    "meta_model": "SAMM 2.2.0",
+    "model_family": "SAMM",
+    "model_name": "batterypass.component_supplier.digital_nameplate",
+    "model_version": "1.0.0",
+    "source": "catenax",
+    "status": "release",
+    "release_date": null,
+    "release_notes": "# Changelog\n\nAll notable changes to this model will be documented in this file.\n\n## [1.0.0] 26.09\n\n### Added\n\n- initial version of battery passport supplier model\n\n### Changed\n\nn/a\n\n### Removed",
+    "dependencies": [
+      {
+        "name": "batterypass.digital_nameplate",
+        "version": "1.0.1",
+        "family": "SAMM",
+        "source": "idta"
+      },
+      {
+        "name": "batterypass.technical_data",
+        "version": "1.0.3",
+        "family": "SAMM",
+        "source": "idta"
+      }
+    ],
+    "path": "data/sldt-semantic-models/io.catenax.battery.component_supplier.digital_nameplate/1.0.0/DigitalNameplate.ttl"
+  },
+  "nodes": [
+    {
+      "id": "urn:samm:io.catenax.batterypass.component_supplier.digital_nameplate:1.0.0#DigitalNameplate",
+      "label": "DigitalNameplate",
+      "kind": "Aspect",
+      "preferredName": "nameplate for battery passport",
+      "description": "Contains the nameplate information attached to the product within the Battery Product Passport.",
+      "external_refs": [
+        {
+          "predicate": "properties",
+          "target_local": "uriOfTheProduct",
+          "target_model": "batterypass.digital_nameplate@1.0.1",
+          "target_source": "idta"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "manufacturerName",
+          "target_model": "batterypass.digital_nameplate@1.0.1",
+          "target_source": "idta"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "addressInformation",
+          "target_model": "batterypass.digital_nameplate@1.0.1",
+          "target_source": "idta"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "serialNumber",
+          "target_model": "batterypass.digital_nameplate@1.0.1",
+          "target_source": "idta"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "dateOfManufacture",
+          "target_model": "batterypass.digital_nameplate@1.0.1",
+          "target_source": "idta"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "dateOfPuttingIntoService",
+          "target_model": "batterypass.digital_nameplate@1.0.1",
+          "target_source": "idta"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "uniqueFacilityIdentifier",
+          "target_model": "batterypass.digital_nameplate@1.0.1",
+          "target_source": "idta"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "batteryStatus",
+          "target_model": "batterypass.digital_nameplate@1.0.1",
+          "target_source": "idta"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "operatorIdentifier",
+          "target_model": "batterypass.digital_nameplate@1.0.1",
+          "target_source": "idta"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "manufacturerIdentifier",
+          "target_model": "batterypass.technical_data@1.0.3",
+          "target_source": "idta"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "markings",
+          "target_model": "batterypass.digital_nameplate@1.0.1",
+          "target_source": "idta"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "euDeclarationOfConformity",
+          "target_model": "batterypass.digital_nameplate@1.0.1",
+          "target_source": "idta"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "resultsOfTestReportsProvingCompliance",
+          "target_model": "batterypass.digital_nameplate@1.0.1",
+          "target_source": "idta"
+        }
+      ]
+    }
+  ],
+  "links": []
+}

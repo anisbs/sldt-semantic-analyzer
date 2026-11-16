@@ -1,0 +1,70 @@
+{
+  "meta": {
+    "namespace": "urn:samm:io.catenax.batterypass.component_supplier.circularity:1.0.0#",
+    "meta_model": "SAMM 2.2.0",
+    "model_family": "SAMM",
+    "model_name": "batterypass.component_supplier.circularity",
+    "model_version": "1.0.0",
+    "source": "catenax",
+    "status": "release",
+    "release_date": null,
+    "release_notes": "# Changelog\n\nAll notable changes to this model will be documented in this file.\n\n## [1.0.0] 26.09\n\n### Added\n\n- initial version of battery passport supplier model\n\n### Changed\n\nn/a\n\n### Removed",
+    "dependencies": [
+      {
+        "name": "batterypass.circularity",
+        "version": "1.0.1",
+        "family": "SAMM",
+        "source": "idta"
+      }
+    ],
+    "path": "data/sldt-semantic-models/io.catenax.battery.component_supplier.circularity/1.0.0/Circularity.ttl"
+  },
+  "nodes": [
+    {
+      "id": "urn:samm:io.catenax.batterypass.component_supplier.circularity:1.0.0#Circularity",
+      "label": "Circularity",
+      "kind": "Aspect",
+      "preferredName": null,
+      "description": "Dismantling information (including at least: exploded diagrams of the battery system/pack showing the location of battery cells; disassembly sequences; type and number of fastening techniques to be unlocked; tools required for disassembly; warnings if risk of damaging parts exists; amount of cells used and layout); part numbers for components and contact details of sources for replacement spares; safety measures \n   \n   (Annex XIII (2b-d)); usable extinguishing agent (Annex VI, Part A(9)).",
+      "external_refs": [
+        {
+          "predicate": "properties",
+          "target_local": "dismantlingAndRemovalInformation",
+          "target_model": "batterypass.circularity@1.0.1",
+          "target_source": "idta"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "sparePartSources",
+          "target_model": "batterypass.circularity@1.0.1",
+          "target_source": "idta"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "recycledContent",
+          "target_model": "batterypass.circularity@1.0.1",
+          "target_source": "idta"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "safetyMeasures",
+          "target_model": "batterypass.circularity@1.0.1",
+          "target_source": "idta"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "endOfLifeInformation",
+          "target_model": "batterypass.circularity@1.0.1",
+          "target_source": "idta"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "renewableContent",
+          "target_model": "batterypass.circularity@1.0.1",
+          "target_source": "idta"
+        }
+      ]
+    }
+  ],
+  "links": []
+}

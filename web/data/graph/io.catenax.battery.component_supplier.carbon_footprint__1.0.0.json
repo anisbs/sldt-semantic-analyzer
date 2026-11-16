@@ -1,0 +1,122 @@
+{
+  "meta": {
+    "namespace": "urn:samm:io.catenax.batterypass.component_supplier.carbon_footprint:1.0.0#",
+    "meta_model": "SAMM 2.2.0",
+    "model_family": "SAMM",
+    "model_name": "batterypass.component_supplier.carbon_footprint",
+    "model_version": "1.0.0",
+    "source": "catenax",
+    "status": "release",
+    "release_date": null,
+    "release_notes": "# Changelog\n\nAll notable changes to this model will be documented in this file.\n\n## [1.0.0] 26.09\n\n### Added\n\n- initial version of battery passport supplier model\n\n### Changed\n\nn/a\n\n### Removed",
+    "dependencies": [
+      {
+        "name": "batterypass.carbon_footprint",
+        "version": "1.0.1",
+        "family": "SAMM",
+        "source": "idta"
+      },
+      {
+        "name": "carbon_footprint",
+        "version": "1.0.1",
+        "family": "SAMM",
+        "source": "idta"
+      }
+    ],
+    "path": "data/sldt-semantic-models/io.catenax.battery.component_supplier.carbon_footprint/1.0.0/CarbonFootprint.ttl"
+  },
+  "nodes": [
+    {
+      "id": "urn:samm:io.catenax.batterypass.component_supplier.carbon_footprint:1.0.0#CarbonFootprint",
+      "label": "CarbonFootprint",
+      "kind": "Aspect",
+      "preferredName": "Carbon Footprint for Battery Passport",
+      "description": "Provides the means to access the Carbon Footprint of the asset in the context of a Battery Passport."
+    },
+    {
+      "id": "urn:samm:io.catenax.batterypass.component_supplier.carbon_footprint:1.0.0#productCarbonFootprints",
+      "label": "productCarbonFootprints",
+      "kind": "Property",
+      "preferredName": "product carbon footprints",
+      "description": "(Set) Balance of greenhouse gas emissions along the entire life cycle of a product in a defined application and in relation to a defined unit of use."
+    },
+    {
+      "id": "urn:samm:io.catenax.batterypass.component_supplier.carbon_footprint:1.0.0#ProductCarbonFootprintSet",
+      "label": "ProductCarbonFootprintSet",
+      "kind": "Characteristic",
+      "preferredName": null,
+      "description": null
+    },
+    {
+      "id": "urn:samm:io.catenax.batterypass.component_supplier.carbon_footprint:1.0.0#ProductCarbonFootprint",
+      "label": "ProductCarbonFootprint",
+      "kind": "Entity",
+      "preferredName": "carbon footprint of a product",
+      "description": "Balance of greenhouse gas emissions along the entire life cycle of a product in a defined application and in relation to a defined unit of use.",
+      "external_refs": [
+        {
+          "predicate": "properties",
+          "target_local": "pcfCalculationMethods",
+          "target_model": "carbon_footprint@1.0.1",
+          "target_source": "idta"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "pcfCo2eq",
+          "target_model": "batterypass.carbon_footprint@1.0.1",
+          "target_source": "idta"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "referenceImpactUnitForCalculation",
+          "target_model": "batterypass.carbon_footprint@1.0.1",
+          "target_source": "idta"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "quantityOfMeasureForCalculation",
+          "target_model": "batterypass.carbon_footprint@1.0.1",
+          "target_source": "idta"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "lifeCyclePhases",
+          "target_model": "batterypass.carbon_footprint@1.0.1",
+          "target_source": "idta"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "performanceClass",
+          "target_model": "batterypass.carbon_footprint@1.0.1",
+          "target_source": "idta"
+        },
+        {
+          "predicate": "properties",
+          "target_local": "webLinkToPublicCarbonFootprintStudy",
+          "target_model": "batterypass.carbon_footprint@1.0.1",
+          "target_source": "idta"
+        }
+      ]
+    }
+  ],
+  "links": [
+    {
+      "source": "urn:samm:io.catenax.batterypass.component_supplier.carbon_footprint:1.0.0#CarbonFootprint",
+      "target": "urn:samm:io.catenax.batterypass.component_supplier.carbon_footprint:1.0.0#productCarbonFootprints",
+      "label": "properties",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.batterypass.component_supplier.carbon_footprint:1.0.0#productCarbonFootprints",
+      "target": "urn:samm:io.catenax.batterypass.component_supplier.carbon_footprint:1.0.0#ProductCarbonFootprintSet",
+      "label": "characteristic",
+      "optional": false
+    },
+    {
+      "source": "urn:samm:io.catenax.batterypass.component_supplier.carbon_footprint:1.0.0#ProductCarbonFootprintSet",
+      "target": "urn:samm:io.catenax.batterypass.component_supplier.carbon_footprint:1.0.0#ProductCarbonFootprint",
+      "label": "dataType",
+      "optional": false
+    }
+  ]
+}
